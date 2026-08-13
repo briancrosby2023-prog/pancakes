@@ -28,5 +28,10 @@ Run `uv run operation-pancake sources --status partial`, `search`, `unresolved`,
 In a no-sync development shell, the equivalent entry point is
 `uv run --no-sync python -m operation_pancake.cli`.
 
+Recovered evidence can be supplied in bulk through the versioned JSON contract documented in
+`file_library_handoff.md`. Ingestion writes a separate deterministic state overlay and report; it
+does not edit the canonical workbook. `--dry-run` classifies every item before persistence, while
+`--promote` only accepts complete, explicitly validated `CANONICAL_CARD` records.
+
 `SRC-C-RAW-003` is the known 14-page partial `raw str centers2(2).pdf` Center CUT source. It is not
 the EA base-roster reference source and is not treated as complete or canonically ingested.

@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "operation-pancake/historical-ingestion-manifest-v1",
+  "title": "Operation Pancake bulk evidence manifest",
+  "type": "object",
+  "required": ["manifest_id", "schema_version", "origin", "sources", "records"],
+  "properties": {
+    "manifest_id": {"type": "string", "minLength": 1},
+    "schema_version": {"const": "1.0"},
+    "origin": {"enum": ["CHATGPT_FILE_LIBRARY", "CURRENT_CHAT_UPLOAD", "LOCAL_REPOSITORY", "EXTERNAL_WEB", "USER_OBSERVATION", "DERIVED_RESEARCH"]},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "source_name", "original_filename", "source_type"],
+        "properties": {
+          "source_id": {"type": "string"},
+          "source_name": {"type": "string"},
+          "original_filename": {"type": "string"},
+          "source_type": {"enum": ["PDF", "IMAGE", "SCREENSHOT", "WORKBOOK", "CSV", "WEB", "API", "MANUAL_OBSERVATION", "HISTORICAL_RESEARCH", "OTHER"]},
+          "extraction_status": {"enum": ["UNPROCESSED", "PARTIAL", "COMPLETE", "NEEDS_REVIEW", "BLOCKED", "SUPERSEDED"]},
+          "coverage": {
+            "type": "object",
+            "properties": {
+              "expected_items": {"type": "array", "items": {"type": ["string", "integer"]}},
+              "processed_items": {"type": "array", "items": {"type": ["string", "integer"]}},
+              "unresolved_items": {"type": "array", "items": {"type": ["string", "integer"]}},
+              "cards_identified": {"type": "array", "items": {"type": "string"}},
+              "cards_extracted": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["record_id", "record_type", "disposition", "validation_status"],
+        "properties": {
+          "record_id": {"type": "string"},
+          "record_type": {"enum": ["player", "card", "progression_observation", "experiment", "research_artifact", "market_observation"]},
+          "disposition": {"enum": ["CANONICAL_CARD", "HISTORICAL_CARD", "REFERENCE_DATA", "PROGRESSION_EVIDENCE", "RESEARCH_ONLY"]},
+          "validation_status": {"type": "string"},
+          "values": {"type": "object"},
+          "unresolved_fields": {"type": "array", "items": {"type": "string"}},
+          "source_links": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["source_id", "locator"],
+              "properties": {
+                "source_id": {"type": "string"},
+                "locator": {"type": "string"},
+                "catalog_source": {"type": "boolean"}
+              }
+            }
+          },
+          "provenance": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["provenance_id", "field_name", "source_id", "locator", "provenance_status"],
+              "properties": {
+                "provenance_id": {"type": "string"},
+                "field_name": {"type": "string"},
+                "source_id": {"type": "string"},
+                "locator": {"type": "string"},
+                "provenance_status": {"enum": ["DIRECTLY_OBSERVED", "HISTORICALLY_RECOVERED", "REPOSITORY_CONFIRMED", "DERIVED", "EXTERNAL_REFERENCE", "UNKNOWN"]}
+              }
+            }
+          }
+        }
+      }
+    },
+    "reconciliation_resolutions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["item_id", "status", "resolution"],
+        "properties": {
+          "item_id": {"type": "string"},
+          "status": {"enum": ["OPEN", "PARTIAL", "RESOLVED"]},
+          "resolution": {"type": "string"},
+          "resolved_at": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}
