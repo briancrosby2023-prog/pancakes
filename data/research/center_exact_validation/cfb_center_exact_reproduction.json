@@ -1,0 +1,17 @@
+{
+  "complete_profiles": 3,
+  "model_m_metrics_reproduced": false,
+  "model_mc_metrics_reproduced": false,
+  "ovr_range": [
+    80,
+    85
+  ],
+  "reason": "Only 3 of 12 profiles are complete and historical weights cannot be evaluated on missing rows.",
+  "recalibration_performed": false,
+  "recovered_names": 12,
+  "reported_model_mc_metrics": {
+    "mae": 0.4624,
+    "r_squared": 0.8109
+  },
+  "reported_population_count": 12
+}

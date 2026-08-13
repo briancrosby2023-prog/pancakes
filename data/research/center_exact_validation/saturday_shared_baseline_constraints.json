@@ -1,0 +1,16 @@
+{
+  "common_80_to_81_threshold_interval": {
+    "feasible": true,
+    "lower_exclusive": 76.8425925926,
+    "upper_inclusive": 77.2314814815
+  },
+  "common_81_to_82_threshold_condition": {
+    "feasible": false,
+    "maximum_intermediate_score": 78.2314814815,
+    "minimum_end_score": 77.6388888889,
+    "overlap": 0.5925925926,
+    "required": "maximum intermediate < minimum end"
+  },
+  "interpretation": "Frozen weights can place one common 80→81 threshold above the shared base, but no single 81→82 threshold separates all intermediate and end scores.",
+  "result": "CONTRADICTED"
+}
