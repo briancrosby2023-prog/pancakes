@@ -1,0 +1,136 @@
+[
+  {
+    "changed_rating_count": 12,
+    "descriptive_constraint": "The observed combined rating change crosses the stated OVR interval; unobserved intermediate thresholds remain unknown.",
+    "information_priority": 0.25,
+    "lower_qb_id": "QB-0038",
+    "ovr_change": 3,
+    "player": "Joey Harrington",
+    "program": "SI Legends - Millennium",
+    "provenance_references": [
+      {
+        "record": "QB-JH-81-84",
+        "sheet": "QB_Progression"
+      },
+      {
+        "record": "QB-JH-81-84",
+        "sheet": "Progression_Logs"
+      },
+      {
+        "record": "QB-F-009",
+        "sheet": "Research_Findings"
+      }
+    ],
+    "rating_changes": {
+      "ACC": 3,
+      "AGI": 3,
+      "AWR": 0,
+      "BSK": 3,
+      "DAC": 3,
+      "MAC": 3,
+      "PAC": 3,
+      "RUN": 3,
+      "SAC": 3,
+      "SPD": 3,
+      "STR": 3,
+      "TAC": 0,
+      "TGH": 0,
+      "THP": 3,
+      "TUP": 4
+    },
+    "upper_qb_id": "QB-0013"
+  },
+  {
+    "changed_rating_count": 12,
+    "descriptive_constraint": "The observed combined rating change crosses the stated OVR interval; unobserved intermediate thresholds remain unknown.",
+    "information_priority": 0.16666667,
+    "lower_qb_id": "QB-0013",
+    "ovr_change": 2,
+    "player": "Joey Harrington",
+    "program": "SI Legends - Millennium",
+    "provenance_references": [
+      {
+        "record": "QB-JH-84-86",
+        "sheet": "QB_Progression"
+      },
+      {
+        "record": "QB-JH-84-86",
+        "sheet": "Progression_Logs"
+      },
+      {
+        "record": "QB-F-009",
+        "sheet": "Research_Findings"
+      }
+    ],
+    "rating_changes": {
+      "ACC": 2,
+      "AGI": 2,
+      "AWR": 0,
+      "BSK": 2,
+      "DAC": 2,
+      "MAC": 2,
+      "PAC": 2,
+      "RUN": 2,
+      "SAC": 2,
+      "SPD": 2,
+      "STR": 2,
+      "TAC": 0,
+      "TGH": 0,
+      "THP": 2,
+      "TUP": 2
+    },
+    "upper_qb_id": "QB-0003"
+  },
+  {
+    "changed_rating_count": 12,
+    "descriptive_constraint": "The explicit workbook progression record links these states; the heuristic sequence list omitted the link because an unrelated same-player program occurs between their OVRs.",
+    "information_priority": 0.16666667,
+    "lower_qb_id": "QB-0074",
+    "meaningful_architecture_a_changes": {
+      "ACC": 2,
+      "AGI": 2,
+      "DAC": 2,
+      "MAC": 2,
+      "PAC": 2,
+      "SAC": 2,
+      "THP": 2,
+      "TUP": 2
+    },
+    "ovr_change": 2,
+    "player": "Joey Harrington",
+    "program": "SI Legends - Millennium",
+    "provenance_references": [
+      {
+        "record": "QB-JH-79-81",
+        "sheet": "QB_Progression"
+      },
+      {
+        "record": "QB-JH-79-81",
+        "sheet": "Progression_Logs"
+      },
+      {
+        "record": "QB-F-009",
+        "sheet": "Research_Findings"
+      }
+    ],
+    "rating_changes": {
+      "ACC": 2,
+      "AGI": 2,
+      "AWR": 0,
+      "BSK": 2,
+      "DAC": 2,
+      "MAC": 2,
+      "PAC": 2,
+      "RUN": 2,
+      "SAC": 2,
+      "SPD": 2,
+      "STR": 2,
+      "TAC": 0,
+      "TGH": 0,
+      "THP": 2,
+      "TUP": 2
+    },
+    "recovered_outside_17_candidates": true,
+    "upper_qb_id": "QB-0038"
+  }
+]

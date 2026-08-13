@@ -1,0 +1,29 @@
+[
+  {
+    "current_status": "Workbook validation records support classification, but raw images are absent from this repository.",
+    "priority": "high",
+    "qb_ids": [
+      "QB-0074",
+      "QB-0038",
+      "QB-0013",
+      "QB-0003"
+    ],
+    "required_evidence": "Add the referenced SRC-QB-002 image archive to a controlled evidence location for independent pixel-level re-verification.",
+    "scope": "raw_source_preservation"
+  },
+  {
+    "current_status": "The registered source PDF is absent from the repository.",
+    "priority": "medium",
+    "qb_ids": [
+      "QB-0016",
+      "QB-0033",
+      "QB-0034",
+      "QB-0070",
+      "QB-0071",
+      "QB-0002",
+      "QB-0005"
+    ],
+    "required_evidence": "Preserve referenced SRC-QB-001 PDF pages for independent visual transcription checks.",
+    "scope": "systematic_error_source_reverification"
+  }
+]
