@@ -1,0 +1,151 @@
+{
+  "canonical_record_count": 145,
+  "canonical_records_missing_source_provenance": [],
+  "extraction_status_counts": {
+    "COMPLETE": 4,
+    "NEEDS_REVIEW": 1,
+    "PARTIAL": 8,
+    "UNPROCESSED": 1
+  },
+  "highest_priority_reconciliation": [
+    {
+      "affected_id": "SRC-C-RAW-003",
+      "affected_type": "source",
+      "created_at": "2026-08-13",
+      "issue_type": "PARTIALLY_EXTRACTED",
+      "item_id": "REC-SRC-C-RAW-003",
+      "notes": "Pages/cards beyond the known 14-page partial set remain unavailable or unvalidated.",
+      "priority": "HIGH",
+      "resolution": null,
+      "resolved_at": null,
+      "source_id": "SRC-C-RAW-003",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "SRC-C-RAW-001",
+      "affected_type": "source",
+      "created_at": "2026-08-13",
+      "issue_type": "PARTIALLY_EXTRACTED",
+      "item_id": "REC-SRC-C-RAW-001",
+      "notes": "Source registry identifies remaining evidence as unprocessed.",
+      "priority": "MEDIUM",
+      "resolution": null,
+      "resolved_at": null,
+      "source_id": "SRC-C-RAW-001",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "SRC-C-RAW-002",
+      "affected_type": "source",
+      "created_at": "2026-08-13",
+      "issue_type": "NEEDS_VALIDATION",
+      "item_id": "REC-SRC-C-RAW-002",
+      "notes": "Duplicate/cross-check relationship requires reconciliation.",
+      "priority": "MEDIUM",
+      "resolution": null,
+      "resolved_at": null,
+      "source_id": "SRC-C-RAW-002",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "SRC-HIST-001",
+      "affected_type": "source",
+      "created_at": "2026-08-13",
+      "issue_type": "PARTIALLY_EXTRACTED",
+      "item_id": "REC-SRC-HIST-001",
+      "notes": "Source registry identifies remaining evidence as unprocessed.",
+      "priority": "MEDIUM",
+      "resolution": null,
+      "resolved_at": null,
+      "source_id": "SRC-HIST-001",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "SRC-IMG-ARCH",
+      "affected_type": "source",
+      "created_at": "2026-08-13",
+      "issue_type": "NEEDS_VALIDATION",
+      "item_id": "REC-SRC-IMG-ARCH",
+      "notes": "Registered source has not been extracted.",
+      "priority": "MEDIUM",
+      "resolution": null,
+      "resolved_at": null,
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "SRC-M19-001",
+      "affected_type": "source",
+      "created_at": "2026-08-13",
+      "issue_type": "PARTIALLY_EXTRACTED",
+      "item_id": "REC-SRC-M19-001",
+      "notes": "Only the stated subset has been extracted.",
+      "priority": "MEDIUM",
+      "resolution": null,
+      "resolved_at": null,
+      "source_id": "SRC-M19-001",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "SRC-M19-IMG",
+      "affected_type": "source",
+      "created_at": "2026-08-13",
+      "issue_type": "PARTIALLY_EXTRACTED",
+      "item_id": "REC-SRC-M19-IMG",
+      "notes": "Only the stated subset has been extracted.",
+      "priority": "MEDIUM",
+      "resolution": null,
+      "resolved_at": null,
+      "source_id": "SRC-M19-IMG",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "SRC-M19-QB-001",
+      "affected_type": "source",
+      "created_at": "2026-08-13",
+      "issue_type": "PARTIALLY_EXTRACTED",
+      "item_id": "REC-SRC-M19-QB-001",
+      "notes": "Only the stated subset has been extracted.",
+      "priority": "MEDIUM",
+      "resolution": null,
+      "resolved_at": null,
+      "source_id": "SRC-M19-QB-001",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "SRC-RATE-001",
+      "affected_type": "source",
+      "created_at": "2026-08-13",
+      "issue_type": "PARTIALLY_EXTRACTED",
+      "item_id": "REC-SRC-RATE-001",
+      "notes": "Source registry identifies remaining evidence as unprocessed.",
+      "priority": "MEDIUM",
+      "resolution": null,
+      "resolved_at": null,
+      "source_id": "SRC-RATE-001",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "SRC-XP-001",
+      "affected_type": "source",
+      "created_at": "2026-08-13",
+      "issue_type": "PARTIALLY_EXTRACTED",
+      "item_id": "REC-SRC-XP-001",
+      "notes": "Only the stated subset has been extracted.",
+      "priority": "MEDIUM",
+      "resolution": null,
+      "resolved_at": null,
+      "source_id": "SRC-XP-001",
+      "status": "OPEN"
+    }
+  ],
+  "known_source_count": 14,
+  "open_reconciliation_count": 10,
+  "positions_with_incomplete_ingestion": {
+    "C": 1,
+    "QB": 1
+  },
+  "research_artifacts_with_missing_sources": [],
+  "staged_count": 0,
+  "staged_promoted_count": 0
+}

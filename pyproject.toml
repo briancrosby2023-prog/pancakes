@@ -12,6 +12,9 @@ dependencies = [
     "openpyxl>=3.1",
 ]
 
+[project.scripts]
+operation-pancake = "operation_pancake.cli:main"
+
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0",
