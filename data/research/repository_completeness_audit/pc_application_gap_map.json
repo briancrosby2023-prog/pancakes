@@ -1,0 +1,47 @@
+[
+  {
+    "capability": "card_lookup",
+    "dependency": "145 canonical cards indexed",
+    "status": "READY"
+  },
+  {
+    "capability": "player_comparison",
+    "dependency": "complete canonical vectors",
+    "status": "READY"
+  },
+  {
+    "capability": "positional_evaluation",
+    "dependency": "validated evaluators beyond research-only Center",
+    "status": "PARTIAL"
+  },
+  {
+    "capability": "hidden_effective_ovr",
+    "dependency": "operationally solved positional formulas",
+    "status": "BLOCKED"
+  },
+  {
+    "capability": "progression_analysis",
+    "dependency": "missing historical progression vectors",
+    "status": "PARTIAL"
+  },
+  {
+    "capability": "source_provenance",
+    "dependency": "evidence index and field provenance",
+    "status": "READY"
+  },
+  {
+    "capability": "archetype_comparison",
+    "dependency": "positions lacking archetype populations",
+    "status": "PARTIAL"
+  },
+  {
+    "capability": "market_evaluation",
+    "dependency": "timestamped market observations",
+    "status": "BLOCKED"
+  },
+  {
+    "capability": "roster_construction",
+    "dependency": "broad positional and market coverage",
+    "status": "BLOCKED"
+  }
+]

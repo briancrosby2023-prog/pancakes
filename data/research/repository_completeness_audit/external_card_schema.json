@@ -1,0 +1,42 @@
+{
+  "market_fields": [
+    "price",
+    "currency",
+    "platform",
+    "observed_at",
+    "listing_type"
+  ],
+  "recommended": [
+    "archetype",
+    "program",
+    "card_type",
+    "displayed_ratings",
+    "release_date",
+    "market"
+  ],
+  "required": [
+    "external_id",
+    "player",
+    "position",
+    "overall",
+    "source_reference",
+    "retrieved_at"
+  ],
+  "staging_mapping": {
+    "attributes": "displayed_ratings",
+    "automatic_canonical_promotion": false,
+    "default_disposition": "REFERENCE_DATA",
+    "identity": [
+      "external_id",
+      "player",
+      "position",
+      "overall",
+      "program",
+      "card_type"
+    ],
+    "provenance": [
+      "source_reference",
+      "retrieved_at"
+    ]
+  }
+}
