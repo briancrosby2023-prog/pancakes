@@ -9,12 +9,21 @@ from operation_pancake.models.player_card import PlayerCard
 
 IDENTITY_FIELDS = {
     "Card_ID",
+    "QB_ID",
     "Player",
     "OVR",
     "Program",
     "Archetype",
     "Source_ID",
     "Source_Page",
+    "Source_Locator",
+    "Population_Scope",
+    "Model_Role",
+    "Unique_Profile_Key",
+    "Duplicate_Note",
+    "Frozen_Score_Check",
+    "Frozen_Score_Formula",
+    "Formula_Delta",
     "Validation_Status",
     "Notes",
 }
@@ -92,6 +101,51 @@ def map_te_card(record: WorkbookRecord) -> PlayerCard:
     return PlayerCard(
         name=name,
         position="TE",
+        overall=overall,
+        archetype=_optional_text(values.get("Archetype")),
+        program=_optional_text(values.get("Program")),
+        attributes=attributes,
+        source=source,
+        source_record=record.source_record,
+        confidence=_optional_text(values.get("Validation_Status")) or "unverified",
+        notes=_optional_text(values.get("Notes")),
+        metadata=metadata,
+    )
+def map_qb_card(record: WorkbookRecord) -> PlayerCard:
+    """Map one canonical QB_Cards workbook row into a PlayerCard."""
+    values = record.values
+
+    name = _required_text(values.get("Player"), "Player")
+    overall = _rating(values.get("OVR"), "OVR")
+
+    attributes: dict[str, int] = {}
+
+    for field_name, value in values.items():
+        if field_name in IDENTITY_FIELDS or value is None:
+            continue
+
+        attributes[field_name.strip().upper()] = _rating(value, field_name)
+
+    source_id = _optional_text(values.get("Source_ID"))
+    source_page = _optional_text(values.get("Source_Page"))
+
+    source_parts = [
+        part
+        for part in (source_id, source_page)
+        if part is not None
+    ]
+
+    source = " | ".join(source_parts) if source_parts else None
+
+    metadata = {
+        "qb_id": _optional_text(values.get("QB_ID")),
+        "workbook_sheet": record.sheet_name,
+        "workbook_row": record.row_number,
+    }
+
+    return PlayerCard(
+        name=name,
+        position="QB",
         overall=overall,
         archetype=_optional_text(values.get("Archetype")),
         program=_optional_text(values.get("Program")),
