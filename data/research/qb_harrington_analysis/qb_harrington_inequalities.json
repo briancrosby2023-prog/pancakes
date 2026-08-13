@@ -1,0 +1,78 @@
+{
+  "A": [
+    {
+      "latent_score_movement": 1.6739779,
+      "lower_qb_id": "QB-0074",
+      "movement_compatible": true,
+      "observed_ovr_movement": 2,
+      "ordinary_rounding_movement_interval": {
+        "lower_exclusive": 1,
+        "note": "Necessary range across two independently unknown positions inside their observed rounding bands; it is not a sufficient constraint.",
+        "upper_exclusive": 3
+      },
+      "upper_qb_id": "QB-0038"
+    },
+    {
+      "latent_score_movement": 2.59581014,
+      "lower_qb_id": "QB-0038",
+      "movement_compatible": true,
+      "observed_ovr_movement": 3,
+      "ordinary_rounding_movement_interval": {
+        "lower_exclusive": 2,
+        "note": "Necessary range across two independently unknown positions inside their observed rounding bands; it is not a sufficient constraint.",
+        "upper_exclusive": 4
+      },
+      "upper_qb_id": "QB-0013"
+    },
+    {
+      "latent_score_movement": 1.6739779,
+      "lower_qb_id": "QB-0013",
+      "movement_compatible": true,
+      "observed_ovr_movement": 2,
+      "ordinary_rounding_movement_interval": {
+        "lower_exclusive": 1,
+        "note": "Necessary range across two independently unknown positions inside their observed rounding bands; it is not a sufficient constraint.",
+        "upper_exclusive": 3
+      },
+      "upper_qb_id": "QB-0003"
+    }
+  ],
+  "C": [
+    {
+      "latent_score_movement": 1.6739779,
+      "lower_qb_id": "QB-0074",
+      "movement_compatible": true,
+      "observed_ovr_movement": 2,
+      "ordinary_rounding_movement_interval": {
+        "lower_exclusive": 1,
+        "note": "Necessary range across two independently unknown positions inside their observed rounding bands; it is not a sufficient constraint.",
+        "upper_exclusive": 3
+      },
+      "upper_qb_id": "QB-0038"
+    },
+    {
+      "latent_score_movement": 2.59581014,
+      "lower_qb_id": "QB-0038",
+      "movement_compatible": true,
+      "observed_ovr_movement": 3,
+      "ordinary_rounding_movement_interval": {
+        "lower_exclusive": 2,
+        "note": "Necessary range across two independently unknown positions inside their observed rounding bands; it is not a sufficient constraint.",
+        "upper_exclusive": 4
+      },
+      "upper_qb_id": "QB-0013"
+    },
+    {
+      "latent_score_movement": 1.6739779,
+      "lower_qb_id": "QB-0013",
+      "movement_compatible": true,
+      "observed_ovr_movement": 2,
+      "ordinary_rounding_movement_interval": {
+        "lower_exclusive": 1,
+        "note": "Necessary range across two independently unknown positions inside their observed rounding bands; it is not a sufficient constraint.",
+        "upper_exclusive": 3
+      },
+      "upper_qb_id": "QB-0003"
+    }
+  ]
+}

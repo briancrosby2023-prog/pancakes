@@ -1,0 +1,600 @@
+{
+  "A": [
+    {
+      "contribution_sum": 1.67397792,
+      "contributions": [
+        {
+          "attribute": "THP",
+          "percent_of_score_movement": 21.89729,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1832778981,
+          "score_contribution": 0.3665558
+        },
+        {
+          "attribute": "MAC",
+          "percent_of_score_movement": 16.853473,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1410617097,
+          "score_contribution": 0.28212342
+        },
+        {
+          "attribute": "DAC",
+          "percent_of_score_movement": 14.274066,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1194723549,
+          "score_contribution": 0.23894471
+        },
+        {
+          "attribute": "SAC",
+          "percent_of_score_movement": 12.047324,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1008347693,
+          "score_contribution": 0.20166954
+        },
+        {
+          "attribute": "TUP",
+          "percent_of_score_movement": 10.136728,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0848432926,
+          "score_contribution": 0.16968659
+        },
+        {
+          "attribute": "ACC",
+          "percent_of_score_movement": 9.055928,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0757971139,
+          "score_contribution": 0.15159423
+        },
+        {
+          "attribute": "PAC",
+          "percent_of_score_movement": 5.907129,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0494420128,
+          "score_contribution": 0.09888403
+        },
+        {
+          "attribute": "AGI",
+          "percent_of_score_movement": 3.878738,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0324646082,
+          "score_contribution": 0.06492922
+        },
+        {
+          "attribute": "SPD",
+          "percent_of_score_movement": 2.891472,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.024201298,
+          "score_contribution": 0.0484026
+        },
+        {
+          "attribute": "RUN",
+          "percent_of_score_movement": 2.013791,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0168552067,
+          "score_contribution": 0.03371041
+        },
+        {
+          "attribute": "BSK",
+          "percent_of_score_movement": 0.585353,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0048993422,
+          "score_contribution": 0.00979868
+        },
+        {
+          "attribute": "STR",
+          "percent_of_score_movement": 0.458709,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0038393434,
+          "score_contribution": 0.00767869
+        }
+      ],
+      "latent_score_movement": 1.6739779,
+      "lower_qb_id": "QB-0074",
+      "movement_compatible": true,
+      "observed_ovr_movement": 2,
+      "ordinary_rounding_movement_interval": {
+        "lower_exclusive": 1,
+        "note": "Necessary range across two independently unknown positions inside their observed rounding bands; it is not a sufficient constraint.",
+        "upper_exclusive": 3
+      },
+      "upper_qb_id": "QB-0038"
+    },
+    {
+      "contribution_sum": 2.59581013,
+      "contributions": [
+        {
+          "attribute": "THP",
+          "percent_of_score_movement": 21.181583,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.1832778981,
+          "score_contribution": 0.54983369
+        },
+        {
+          "attribute": "MAC",
+          "percent_of_score_movement": 16.302623,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.1410617097,
+          "score_contribution": 0.42318513
+        },
+        {
+          "attribute": "DAC",
+          "percent_of_score_movement": 13.807522,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.1194723549,
+          "score_contribution": 0.35841706
+        },
+        {
+          "attribute": "TUP",
+          "percent_of_score_movement": 13.073883,
+          "raw_delta": 4,
+          "raw_score_coefficient": 0.0848432926,
+          "score_contribution": 0.33937317
+        },
+        {
+          "attribute": "SAC",
+          "percent_of_score_movement": 11.653561,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.1008347693,
+          "score_contribution": 0.30250431
+        },
+        {
+          "attribute": "ACC",
+          "percent_of_score_movement": 8.759937,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.0757971139,
+          "score_contribution": 0.22739134
+        },
+        {
+          "attribute": "PAC",
+          "percent_of_score_movement": 5.714056,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.0494420128,
+          "score_contribution": 0.14832604
+        },
+        {
+          "attribute": "AGI",
+          "percent_of_score_movement": 3.751962,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.0324646082,
+          "score_contribution": 0.09739382
+        },
+        {
+          "attribute": "SPD",
+          "percent_of_score_movement": 2.796965,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.024201298,
+          "score_contribution": 0.07260389
+        },
+        {
+          "attribute": "RUN",
+          "percent_of_score_movement": 1.947971,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.0168552067,
+          "score_contribution": 0.05056562
+        },
+        {
+          "attribute": "BSK",
+          "percent_of_score_movement": 0.566221,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.0048993422,
+          "score_contribution": 0.01469803
+        },
+        {
+          "attribute": "STR",
+          "percent_of_score_movement": 0.443716,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.0038393434,
+          "score_contribution": 0.01151803
+        }
+      ],
+      "latent_score_movement": 2.59581014,
+      "lower_qb_id": "QB-0038",
+      "movement_compatible": true,
+      "observed_ovr_movement": 3,
+      "ordinary_rounding_movement_interval": {
+        "lower_exclusive": 2,
+        "note": "Necessary range across two independently unknown positions inside their observed rounding bands; it is not a sufficient constraint.",
+        "upper_exclusive": 4
+      },
+      "upper_qb_id": "QB-0013"
+    },
+    {
+      "contribution_sum": 1.67397792,
+      "contributions": [
+        {
+          "attribute": "THP",
+          "percent_of_score_movement": 21.89729,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1832778981,
+          "score_contribution": 0.3665558
+        },
+        {
+          "attribute": "MAC",
+          "percent_of_score_movement": 16.853473,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1410617097,
+          "score_contribution": 0.28212342
+        },
+        {
+          "attribute": "DAC",
+          "percent_of_score_movement": 14.274066,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1194723549,
+          "score_contribution": 0.23894471
+        },
+        {
+          "attribute": "SAC",
+          "percent_of_score_movement": 12.047324,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1008347693,
+          "score_contribution": 0.20166954
+        },
+        {
+          "attribute": "TUP",
+          "percent_of_score_movement": 10.136728,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0848432926,
+          "score_contribution": 0.16968659
+        },
+        {
+          "attribute": "ACC",
+          "percent_of_score_movement": 9.055928,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0757971139,
+          "score_contribution": 0.15159423
+        },
+        {
+          "attribute": "PAC",
+          "percent_of_score_movement": 5.907129,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0494420128,
+          "score_contribution": 0.09888403
+        },
+        {
+          "attribute": "AGI",
+          "percent_of_score_movement": 3.878738,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0324646082,
+          "score_contribution": 0.06492922
+        },
+        {
+          "attribute": "SPD",
+          "percent_of_score_movement": 2.891472,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.024201298,
+          "score_contribution": 0.0484026
+        },
+        {
+          "attribute": "RUN",
+          "percent_of_score_movement": 2.013791,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0168552067,
+          "score_contribution": 0.03371041
+        },
+        {
+          "attribute": "BSK",
+          "percent_of_score_movement": 0.585353,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0048993422,
+          "score_contribution": 0.00979868
+        },
+        {
+          "attribute": "STR",
+          "percent_of_score_movement": 0.458709,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0038393434,
+          "score_contribution": 0.00767869
+        }
+      ],
+      "latent_score_movement": 1.6739779,
+      "lower_qb_id": "QB-0013",
+      "movement_compatible": true,
+      "observed_ovr_movement": 2,
+      "ordinary_rounding_movement_interval": {
+        "lower_exclusive": 1,
+        "note": "Necessary range across two independently unknown positions inside their observed rounding bands; it is not a sufficient constraint.",
+        "upper_exclusive": 3
+      },
+      "upper_qb_id": "QB-0003"
+    }
+  ],
+  "C": [
+    {
+      "contribution_sum": 1.67397792,
+      "contributions": [
+        {
+          "attribute": "THP",
+          "percent_of_score_movement": 21.89729,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1832778981,
+          "score_contribution": 0.3665558
+        },
+        {
+          "attribute": "MAC",
+          "percent_of_score_movement": 16.853473,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1410617097,
+          "score_contribution": 0.28212342
+        },
+        {
+          "attribute": "DAC",
+          "percent_of_score_movement": 14.274066,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1194723549,
+          "score_contribution": 0.23894471
+        },
+        {
+          "attribute": "SAC",
+          "percent_of_score_movement": 12.047324,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1008347693,
+          "score_contribution": 0.20166954
+        },
+        {
+          "attribute": "TUP",
+          "percent_of_score_movement": 10.136728,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0848432926,
+          "score_contribution": 0.16968659
+        },
+        {
+          "attribute": "ACC",
+          "percent_of_score_movement": 9.055928,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0757971139,
+          "score_contribution": 0.15159423
+        },
+        {
+          "attribute": "PAC",
+          "percent_of_score_movement": 5.907129,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0494420128,
+          "score_contribution": 0.09888403
+        },
+        {
+          "attribute": "AGI",
+          "percent_of_score_movement": 3.878738,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0324646082,
+          "score_contribution": 0.06492922
+        },
+        {
+          "attribute": "SPD",
+          "percent_of_score_movement": 2.891472,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.024201298,
+          "score_contribution": 0.0484026
+        },
+        {
+          "attribute": "RUN",
+          "percent_of_score_movement": 2.013791,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0168552067,
+          "score_contribution": 0.03371041
+        },
+        {
+          "attribute": "BSK",
+          "percent_of_score_movement": 0.585353,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0048993422,
+          "score_contribution": 0.00979868
+        },
+        {
+          "attribute": "STR",
+          "percent_of_score_movement": 0.458709,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0038393434,
+          "score_contribution": 0.00767869
+        }
+      ],
+      "latent_score_movement": 1.6739779,
+      "lower_qb_id": "QB-0074",
+      "movement_compatible": true,
+      "observed_ovr_movement": 2,
+      "ordinary_rounding_movement_interval": {
+        "lower_exclusive": 1,
+        "note": "Necessary range across two independently unknown positions inside their observed rounding bands; it is not a sufficient constraint.",
+        "upper_exclusive": 3
+      },
+      "upper_qb_id": "QB-0038"
+    },
+    {
+      "contribution_sum": 2.59581013,
+      "contributions": [
+        {
+          "attribute": "THP",
+          "percent_of_score_movement": 21.181583,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.1832778981,
+          "score_contribution": 0.54983369
+        },
+        {
+          "attribute": "MAC",
+          "percent_of_score_movement": 16.302623,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.1410617097,
+          "score_contribution": 0.42318513
+        },
+        {
+          "attribute": "DAC",
+          "percent_of_score_movement": 13.807522,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.1194723549,
+          "score_contribution": 0.35841706
+        },
+        {
+          "attribute": "TUP",
+          "percent_of_score_movement": 13.073883,
+          "raw_delta": 4,
+          "raw_score_coefficient": 0.0848432926,
+          "score_contribution": 0.33937317
+        },
+        {
+          "attribute": "SAC",
+          "percent_of_score_movement": 11.653561,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.1008347693,
+          "score_contribution": 0.30250431
+        },
+        {
+          "attribute": "ACC",
+          "percent_of_score_movement": 8.759937,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.0757971139,
+          "score_contribution": 0.22739134
+        },
+        {
+          "attribute": "PAC",
+          "percent_of_score_movement": 5.714056,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.0494420128,
+          "score_contribution": 0.14832604
+        },
+        {
+          "attribute": "AGI",
+          "percent_of_score_movement": 3.751962,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.0324646082,
+          "score_contribution": 0.09739382
+        },
+        {
+          "attribute": "SPD",
+          "percent_of_score_movement": 2.796965,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.024201298,
+          "score_contribution": 0.07260389
+        },
+        {
+          "attribute": "RUN",
+          "percent_of_score_movement": 1.947971,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.0168552067,
+          "score_contribution": 0.05056562
+        },
+        {
+          "attribute": "BSK",
+          "percent_of_score_movement": 0.566221,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.0048993422,
+          "score_contribution": 0.01469803
+        },
+        {
+          "attribute": "STR",
+          "percent_of_score_movement": 0.443716,
+          "raw_delta": 3,
+          "raw_score_coefficient": 0.0038393434,
+          "score_contribution": 0.01151803
+        }
+      ],
+      "latent_score_movement": 2.59581014,
+      "lower_qb_id": "QB-0038",
+      "movement_compatible": true,
+      "observed_ovr_movement": 3,
+      "ordinary_rounding_movement_interval": {
+        "lower_exclusive": 2,
+        "note": "Necessary range across two independently unknown positions inside their observed rounding bands; it is not a sufficient constraint.",
+        "upper_exclusive": 4
+      },
+      "upper_qb_id": "QB-0013"
+    },
+    {
+      "contribution_sum": 1.67397792,
+      "contributions": [
+        {
+          "attribute": "THP",
+          "percent_of_score_movement": 21.89729,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1832778981,
+          "score_contribution": 0.3665558
+        },
+        {
+          "attribute": "MAC",
+          "percent_of_score_movement": 16.853473,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1410617097,
+          "score_contribution": 0.28212342
+        },
+        {
+          "attribute": "DAC",
+          "percent_of_score_movement": 14.274066,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1194723549,
+          "score_contribution": 0.23894471
+        },
+        {
+          "attribute": "SAC",
+          "percent_of_score_movement": 12.047324,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.1008347693,
+          "score_contribution": 0.20166954
+        },
+        {
+          "attribute": "TUP",
+          "percent_of_score_movement": 10.136728,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0848432926,
+          "score_contribution": 0.16968659
+        },
+        {
+          "attribute": "ACC",
+          "percent_of_score_movement": 9.055928,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0757971139,
+          "score_contribution": 0.15159423
+        },
+        {
+          "attribute": "PAC",
+          "percent_of_score_movement": 5.907129,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0494420128,
+          "score_contribution": 0.09888403
+        },
+        {
+          "attribute": "AGI",
+          "percent_of_score_movement": 3.878738,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0324646082,
+          "score_contribution": 0.06492922
+        },
+        {
+          "attribute": "SPD",
+          "percent_of_score_movement": 2.891472,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.024201298,
+          "score_contribution": 0.0484026
+        },
+        {
+          "attribute": "RUN",
+          "percent_of_score_movement": 2.013791,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0168552067,
+          "score_contribution": 0.03371041
+        },
+        {
+          "attribute": "BSK",
+          "percent_of_score_movement": 0.585353,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0048993422,
+          "score_contribution": 0.00979868
+        },
+        {
+          "attribute": "STR",
+          "percent_of_score_movement": 0.458709,
+          "raw_delta": 2,
+          "raw_score_coefficient": 0.0038393434,
+          "score_contribution": 0.00767869
+        }
+      ],
+      "latent_score_movement": 1.6739779,
+      "lower_qb_id": "QB-0013",
+      "movement_compatible": true,
+      "observed_ovr_movement": 2,
+      "ordinary_rounding_movement_interval": {
+        "lower_exclusive": 1,
+        "note": "Necessary range across two independently unknown positions inside their observed rounding bands; it is not a sufficient constraint.",
+        "upper_exclusive": 3
+      },
+      "upper_qb_id": "QB-0003"
+    }
+  ]
+}

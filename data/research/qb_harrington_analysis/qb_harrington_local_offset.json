@@ -1,0 +1,64 @@
+{
+  "A": {
+    "descriptive_midpoint_offset": null,
+    "feasible": false,
+    "intersection_lower_inclusive": -0.30056268,
+    "intersection_upper_exclusive": -0.35679674,
+    "intersection_width": 0.0,
+    "production_parameter_created": false,
+    "rounding": "round_half_up",
+    "state_offset_intervals": [
+      {
+        "lower_inclusive": -1.35679674,
+        "qb_id": "QB-0074",
+        "upper_exclusive": -0.35679674
+      },
+      {
+        "lower_inclusive": -1.03077464,
+        "qb_id": "QB-0038",
+        "upper_exclusive": -0.03077464
+      },
+      {
+        "lower_inclusive": -0.62658478,
+        "qb_id": "QB-0013",
+        "upper_exclusive": 0.37341522
+      },
+      {
+        "lower_inclusive": -0.30056268,
+        "qb_id": "QB-0003",
+        "upper_exclusive": 0.69943732
+      }
+    ]
+  },
+  "C": {
+    "descriptive_midpoint_offset": null,
+    "feasible": false,
+    "intersection_lower_inclusive": -0.30629835,
+    "intersection_upper_exclusive": -0.36253241,
+    "intersection_width": 0.0,
+    "production_parameter_created": false,
+    "rounding": "round_half_up",
+    "state_offset_intervals": [
+      {
+        "lower_inclusive": -1.36253241,
+        "qb_id": "QB-0074",
+        "upper_exclusive": -0.36253241
+      },
+      {
+        "lower_inclusive": -1.03651031,
+        "qb_id": "QB-0038",
+        "upper_exclusive": -0.03651031
+      },
+      {
+        "lower_inclusive": -0.63232045,
+        "qb_id": "QB-0013",
+        "upper_exclusive": 0.36767955
+      },
+      {
+        "lower_inclusive": -0.30629835,
+        "qb_id": "QB-0003",
+        "upper_exclusive": 0.69370165
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strong_constraints": [
+    "Aggregate score response across the 12 jointly changing attributes.",
+    "Local linearity and relative movement across three confirmed transitions.",
+    "Whether one additive calibration shift can classify all four states."
+  ],
+  "weak_or_unidentified": [
+    "Relative weights among attributes that move together.",
+    "Weights for invariant AWR, TAC, and TGH.",
+    "Archetype, program, or tier effects from one player/program chain.",
+    "Exact hidden score thresholds within observed OVR bands."
+  ]
+}

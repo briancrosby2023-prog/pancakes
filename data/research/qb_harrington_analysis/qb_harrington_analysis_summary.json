@@ -1,0 +1,87 @@
+{
+  "constant_effect": {
+    "interpretation": "A state-invariant additive effect preserves all transition movements. Feasibility does not identify whether a program, archetype, tier, or other effect exists.",
+    "mathematically_permitted_for_a": false,
+    "mathematically_permitted_for_c": false,
+    "production_effect_claimed": false
+  },
+  "formula_status": "unsolved",
+  "global_formula_search_performed": false,
+  "magnitude_comparison": {
+    "best_descriptive_representations": [
+      "mean_changed_attribute_delta",
+      "total_raw_rating_points"
+    ],
+    "interpretation": "Total points and mean changed-attribute delta are equivalent here because all transitions change exactly 12 attributes. Count alone cannot explain the different +2/+3/+2 movements; this is descriptive, not a fitted formula.",
+    "proportional_no_intercept_comparisons": {
+      "changed_attribute_count": {
+        "proportional_scale": 0.1944444444,
+        "root_mean_squared_error": 0.47140452,
+        "scaled_predictions": [
+          2.33333333,
+          2.33333333,
+          2.33333333
+        ]
+      },
+      "mean_changed_attribute_delta": {
+        "proportional_scale": 0.985323285,
+        "root_mean_squared_error": 0.03252355,
+        "scaled_predictions": [
+          1.97064657,
+          3.03808013,
+          1.97064657
+        ]
+      },
+      "total_raw_rating_points": {
+        "proportional_scale": 0.0821102737,
+        "root_mean_squared_error": 0.03252355,
+        "scaled_predictions": [
+          1.97064657,
+          3.03808013,
+          1.97064657
+        ]
+      },
+      "weighted_rating_points_architecture_a": {
+        "proportional_scale": 1.1734400992,
+        "root_mean_squared_error": 0.03943646,
+        "scaled_predictions": [
+          1.96431279,
+          3.04602771,
+          1.96431279
+        ]
+      }
+    },
+    "transitions": [
+      {
+        "architecture_a_weighted_movement": 1.6739779,
+        "changed_attribute_count": 12,
+        "lower_qb_id": "QB-0074",
+        "mean_changed_attribute_delta": 2.0,
+        "observed_ovr_movement": 2,
+        "total_raw_rating_points": 24,
+        "upper_qb_id": "QB-0038"
+      },
+      {
+        "architecture_a_weighted_movement": 2.59581014,
+        "changed_attribute_count": 12,
+        "lower_qb_id": "QB-0038",
+        "mean_changed_attribute_delta": 3.08333333,
+        "observed_ovr_movement": 3,
+        "total_raw_rating_points": 37,
+        "upper_qb_id": "QB-0013"
+      },
+      {
+        "architecture_a_weighted_movement": 1.6739779,
+        "changed_attribute_count": 12,
+        "lower_qb_id": "QB-0013",
+        "mean_changed_attribute_delta": 2.0,
+        "observed_ovr_movement": 2,
+        "total_raw_rating_points": 24,
+        "upper_qb_id": "QB-0003"
+      }
+    ]
+  },
+  "new_interactions_added": false,
+  "phase": "QB Formula Phase — Controlled Harrington Progression Constraint Analysis",
+  "schema_version": 1
+}
