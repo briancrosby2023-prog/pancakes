@@ -2,7 +2,7 @@
 
 import pytest
 
-from operation_pancake.importers.player_card_mapper import map_te_card
+from operation_pancake.importers.player_card_mapper import map_qb_card, map_te_card
 from operation_pancake.importers.workbook_importer import WorkbookRecord
 
 
@@ -105,3 +105,110 @@ def test_whole_number_excel_float_is_accepted() -> None:
 def test_fractional_rating_is_rejected() -> None:
     with pytest.raises(TypeError):
         map_te_card(make_te_record(SPD=84.5))
+def make_qb_record(**overrides: object) -> WorkbookRecord:
+
+    """Create a canonical-style QB_Cards row for mapper tests."""
+    values = {
+        "QB_ID": "QB-0001",
+        "Player": "Julian Sayin",
+        "OVR": 87,
+        "Archetype": "Pocket Passer",
+        "Program": "Standouts",
+        "SPD": 79,
+        "ACC": 79,
+        "AGI": 75,
+        "AWR": 81,
+        "STR": 46,
+        "TGH": 90,
+        "THP": 86,
+        "TAC": 87,
+        "SAC": 88,
+        "MAC": 87,
+        "DAC": 86,
+        "RUN": 82,
+        "TUP": 86,
+        "PAC": 85,
+        "BSK": 70,
+        "Source_ID": "QB Research",
+        "Source_Locator": "QB_Cards",
+        "Validation_Status": "validated",
+        "Notes": "Observed QB card.",
+    }
+    values.update(overrides)
+
+    return WorkbookRecord(
+        sheet_name="QB_Cards",
+        row_number=5,
+        values=values,
+    )
+
+
+def test_qb_maps_identity_fields() -> None:
+    card = map_qb_card(make_qb_record())
+
+    assert card.name == "Julian Sayin"
+    assert card.position == "QB"
+    assert card.overall == 87
+    assert card.archetype == "Pocket Passer"
+    assert card.program == "Standouts"
+    assert card.metadata["qb_id"] == "QB-0001"
+
+
+def test_qb_maps_observed_attributes() -> None:
+    card = map_qb_card(make_qb_record())
+
+    assert card.attributes == {
+        "SPD": 79,
+        "ACC": 79,
+        "AGI": 75,
+        "AWR": 81,
+        "STR": 46,
+        "TGH": 90,
+        "THP": 86,
+        "TAC": 87,
+        "SAC": 88,
+        "MAC": 87,
+        "DAC": 86,
+        "RUN": 82,
+        "TUP": 86,
+        "PAC": 85,
+        "BSK": 70,
+    }
+
+
+def test_qb_metadata_is_not_treated_as_rating() -> None:
+    card = map_qb_card(make_qb_record())
+
+    assert "QB_ID" not in card.attributes
+    assert "SOURCE_LOCATOR" not in card.attributes
+    assert "VALIDATION_STATUS" not in card.attributes
+    assert "NOTES" not in card.attributes
+
+
+def test_qb_blank_attribute_is_not_invented() -> None:
+    card = map_qb_card(make_qb_record(BSK=None))
+
+    assert "BSK" not in card.attributes
+
+
+def test_qb_preserves_workbook_provenance() -> None:
+    card = map_qb_card(make_qb_record())
+
+    assert card.metadata["qb_id"] == "QB-0001"
+    assert card.metadata["workbook_sheet"] == "QB_Cards"
+    assert card.metadata["workbook_row"] == 5
+
+
+def test_qb_missing_player_is_rejected() -> None:
+    with pytest.raises(ValueError):
+        map_qb_card(make_qb_record(Player=None))
+
+
+def test_qb_missing_overall_is_rejected() -> None:
+    with pytest.raises(TypeError):
+        map_qb_card(make_qb_record(OVR=None))
+
+
+def test_qb_invalid_attribute_is_rejected() -> None:
+    with pytest.raises(TypeError):
+        map_qb_card(make_qb_record(THP="unknown"))   
