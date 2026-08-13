@@ -7,7 +7,6 @@ from pathlib import Path
 from typing import Any
 
 from openpyxl import load_workbook
-from openpyxl.worksheet.worksheet import Worksheet
 
 
 @dataclass(frozen=True, slots=True)
@@ -63,13 +62,53 @@ class WorkbookImporter:
             workbook.close()
 
     @staticmethod
-    def _headers(sheet: Worksheet) -> list[str | None]:
-        """Read and normalize the first-row headers."""
-        first_row = next(sheet.iter_rows(min_row=1, max_row=1, values_only=True))
+    def _headers(sheet) -> tuple[int, list[str | None]]:
+        """Detect and normalize the worksheet's actual header row."""
+        best_row_number = 1
+        best_row = None
+        best_score = -1
+
+        for row_number, row in enumerate(
+            sheet.iter_rows(
+                min_row=1,
+                max_row=min(sheet.max_row, 25),
+                values_only=True,
+            ),
+            start=1,
+        ):
+            normalized = [
+                str(value).strip() if value is not None else None
+                for value in row
+            ]
+
+            populated = [value for value in normalized if value]
+            if not populated:
+                continue
+
+            score = len(populated)
+
+            header_signals = {
+                "Player",
+                "OVR",
+                "Archetype",
+                "Program",
+                "Position",
+                "QB_ID",
+                "Card_ID",
+            }
+            score += 10 * len(header_signals.intersection(populated))
+
+            if score > best_score:
+                best_score = score
+                best_row_number = row_number
+                best_row = row
+
+        if best_row is None:
+            return 1, []
 
         headers: list[str | None] = []
 
-        for value in first_row:
+        for value in best_row:
             if value is None:
                 headers.append(None)
                 continue
@@ -77,7 +116,7 @@ class WorkbookImporter:
             header = str(value).strip()
             headers.append(header if header else None)
 
-        return headers
+        return best_row_number, headers
 
     def records(self, sheet_name: str) -> list[WorkbookRecord]:
         """Read non-empty rows from one worksheet with provenance."""
@@ -94,13 +133,16 @@ class WorkbookImporter:
                 raise KeyError(f"Worksheet not found: {sheet_name}")
 
             sheet = workbook[sheet_name]
-            headers = self._headers(sheet)
+            header_row, headers = self._headers(sheet)
 
             records: list[WorkbookRecord] = []
 
             for row_number, row in enumerate(
-                sheet.iter_rows(min_row=2, values_only=True),
-                start=2,
+                sheet.iter_rows(
+                    min_row=header_row + 1,
+                    values_only=True,
+                ),
+                start=header_row + 1,
             ):
                 values = {
                     header: value
