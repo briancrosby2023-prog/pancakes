@@ -1,0 +1,405 @@
+[
+  {
+    "known_transition_deltas": [
+      {
+        "attribute_deltas": {
+          "PBF": 5,
+          "SPD": 5,
+          "STR": 2
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-01"
+      },
+      {
+        "attribute_deltas": {
+          "PBF": 1
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-01B"
+      }
+    ],
+    "reset_id": "SAT-01",
+    "vectors": {
+      "end": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "intermediate": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "start": {
+        "ratings": null,
+        "status": "MISSING"
+      }
+    }
+  },
+  {
+    "known_transition_deltas": [
+      {
+        "attribute_deltas": {
+          "PBP": 2
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-02"
+      },
+      {
+        "attribute_deltas": {
+          "PBK": 1,
+          "RBF": 6,
+          "STR": 6
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-02B"
+      }
+    ],
+    "reset_id": "SAT-02",
+    "vectors": {
+      "end": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "intermediate": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "start": {
+        "ratings": null,
+        "status": "MISSING"
+      }
+    }
+  },
+  {
+    "known_transition_deltas": [
+      {
+        "attribute_deltas": {
+          "ACC": 5,
+          "AGI": 5,
+          "COD": 3,
+          "IBL": 4,
+          "RBF": 2,
+          "SPD": 2
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-03"
+      },
+      {
+        "attribute_deltas": {
+          "COD": 5,
+          "PBF": 5,
+          "PBK": 2,
+          "RBF": 2,
+          "RBK": 2
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-03B"
+      }
+    ],
+    "reset_id": "SAT-03",
+    "vectors": {
+      "end": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "intermediate": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "start": {
+        "ratings": null,
+        "status": "MISSING"
+      }
+    }
+  },
+  {
+    "known_transition_deltas": [
+      {
+        "attribute_deltas": {
+          "PBF": 6
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-04"
+      },
+      {
+        "attribute_deltas": {
+          "PBP": 4
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-04B"
+      }
+    ],
+    "reset_id": "SAT-04",
+    "vectors": {
+      "end": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "intermediate": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "start": {
+        "ratings": null,
+        "status": "MISSING"
+      }
+    }
+  },
+  {
+    "known_transition_deltas": [
+      {
+        "attribute_deltas": {
+          "PBP": 2
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-05"
+      },
+      {
+        "attribute_deltas": {
+          "AWR": 6,
+          "PBF": 4
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-05B"
+      }
+    ],
+    "reset_id": "SAT-05",
+    "vectors": {
+      "end": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "intermediate": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "start": {
+        "ratings": null,
+        "status": "MISSING"
+      }
+    }
+  },
+  {
+    "known_transition_deltas": [
+      {
+        "attribute_deltas": {
+          "PBP": 5
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-06"
+      },
+      {
+        "attribute_deltas": {
+          "PBK": 4
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-06B"
+      }
+    ],
+    "reset_id": "SAT-06",
+    "vectors": {
+      "end": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "intermediate": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "start": {
+        "ratings": null,
+        "status": "MISSING"
+      }
+    }
+  },
+  {
+    "known_transition_deltas": [
+      {
+        "attribute_deltas": {
+          "AGI": 2,
+          "PBP": 5,
+          "SPD": 6
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-07"
+      },
+      {
+        "attribute_deltas": {
+          "AGI": 5,
+          "AWR": 1
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-07B"
+      }
+    ],
+    "reset_id": "SAT-07",
+    "vectors": {
+      "end": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "intermediate": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "start": {
+        "ratings": null,
+        "status": "MISSING"
+      }
+    }
+  },
+  {
+    "known_transition_deltas": [
+      {
+        "attribute_deltas": {
+          "PBK": 2,
+          "PBP": 5,
+          "SPD": 4
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-08"
+      },
+      {
+        "attribute_deltas": {
+          "PBP": 1
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-08B"
+      }
+    ],
+    "reset_id": "SAT-08",
+    "vectors": {
+      "end": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "intermediate": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "start": {
+        "ratings": null,
+        "status": "MISSING"
+      }
+    }
+  },
+  {
+    "known_transition_deltas": [
+      {
+        "attribute_deltas": {
+          "COD": 5,
+          "IBL": 7,
+          "LBK": 1,
+          "PBK": 5,
+          "RBP": 4
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-09"
+      },
+      {
+        "attribute_deltas": {
+          "IBL": 5,
+          "LBK": 6,
+          "PBF": 3
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-09B"
+      }
+    ],
+    "reset_id": "SAT-09",
+    "vectors": {
+      "end": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "intermediate": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "start": {
+        "ratings": null,
+        "status": "MISSING"
+      }
+    }
+  },
+  {
+    "known_transition_deltas": [
+      {
+        "attribute_deltas": {
+          "ACC": 4,
+          "IBL": 1,
+          "PBK": 2,
+          "RBP": 6
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-10"
+      },
+      {
+        "attribute_deltas": {
+          "ACC": 2,
+          "COD": 3,
+          "IBL": 1,
+          "LBK": 2,
+          "PBK": 3,
+          "PBP": 3,
+          "SPD": 5
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-10B"
+      }
+    ],
+    "reset_id": "SAT-10",
+    "vectors": {
+      "end": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "intermediate": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "start": {
+        "ratings": null,
+        "status": "MISSING"
+      }
+    }
+  },
+  {
+    "known_transition_deltas": [
+      {
+        "attribute_deltas": {
+          "AGI": 6,
+          "AWR": 4
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-11"
+      },
+      {
+        "attribute_deltas": {
+          "AGI": 7,
+          "COD": 5,
+          "IBL": 3,
+          "LBK": 2,
+          "RBF": 5,
+          "RCK": 4
+        },
+        "status": "DIRECTLY_OBSERVED",
+        "transition_id": "SAT-11B"
+      }
+    ],
+    "reset_id": "SAT-11",
+    "vectors": {
+      "end": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "intermediate": {
+        "ratings": null,
+        "status": "MISSING"
+      },
+      "start": {
+        "ratings": null,
+        "status": "MISSING"
+      }
+    }
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "NO_REFERENCE_EXISTS": [
+    {
+      "required": "Explicit upgrade-chain identifier or source evidence linking the two observed card states.",
+      "scope": "TE-0020→TE-0011"
+    },
+    {
+      "required": "Explicit upgrade-chain identifier or source evidence linking the two observed card states.",
+      "scope": "TE-0037→TE-0013"
+    },
+    {
+      "required": "Explicit upgrade-chain identifier or source evidence linking the two observed card states.",
+      "scope": "TE-0048→TE-0038"
+    }
+  ],
+  "REFERENCED_BUT_RAW_SOURCE_ABSENT": [
+    {
+      "required": [
+        "Source PDF pages 4, 5, 13, and 14",
+        "Originating player/card identity and position",
+        "Archetype/program context",
+        "Complete before/intermediate/after vectors",
+        "Any primary/secondary labels and timestamps"
+      ],
+      "scope": "SAT-01 through SAT-11",
+      "source_file": "history(4).pdf",
+      "source_id": "SRC-HIST-001"
+    }
+  ]
+}
