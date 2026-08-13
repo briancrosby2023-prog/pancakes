@@ -1,0 +1,226 @@
+{
+  "canonical_observations_modified": false,
+  "coverage_gaps": {
+    "controlled_attribute_frequency": {
+      "ACC": 6,
+      "AGI": 8,
+      "AWR": 3,
+      "BSK": 3,
+      "COD": 5,
+      "DAC": 3,
+      "IBL": 6,
+      "LBK": 4,
+      "MAC": 3,
+      "PAC": 3,
+      "PBF": 6,
+      "PBK": 7,
+      "PBP": 8,
+      "RBF": 4,
+      "RBK": 1,
+      "RBP": 2,
+      "RCK": 1,
+      "RUN": 3,
+      "SAC": 3,
+      "SPD": 8,
+      "STR": 5,
+      "THP": 3,
+      "TUP": 3
+    },
+    "inseparable": [
+      "Harrington's 12 changing QB attributes",
+      "Position and archetype effects in Saturday Reset records"
+    ],
+    "poorly_constrained": [
+      "Same-OVR controlled upgrades",
+      "One-step QB boundaries",
+      "Non-QB boundaries above 82"
+    ],
+    "strong": [
+      "UNSPECIFIED controlled resets at 80→81 and 81→82",
+      "QB Harrington states spanning 79→81→84→86"
+    ],
+    "weak_or_none": [
+      "TE: no source-confirmed progression",
+      "C: no repeated-player observations",
+      "All other positions absent"
+    ],
+    "well_constrained_boundaries": {
+      "79→81": 1,
+      "80→81": 11,
+      "81→82": 11,
+      "81→84": 1,
+      "84→86": 1
+    }
+  },
+  "cross_position_evidence": {
+    "H1": "SUPPORTED ONLY AS PLAUSIBLE: resets show sparse position-dependent ratings can cross displayed 80→81→82 boundaries, but position is not recorded.",
+    "H2": "UNRESOLVED: no confirmed full-vector non-QB chain permits conversion comparison.",
+    "H3": "PLAUSIBLE: variable reset point totals produce identical +1 OVR outcomes; thresholds and starting band position confound weight inference.",
+    "H4": "SUPPORTED DESCRIPTIVELY: raw points vary widely for the same +1 OVR result, consistent with weighted increments or unknown starting locations.",
+    "H5": "NOT TESTABLE: reset archetypes are absent and only one confirmed QB archetype chain exists.",
+    "position_specific": [
+      "Attribute weights",
+      "Archetype effects",
+      "Exact score-to-OVR conversion"
+    ],
+    "transferable": [
+      "Displayed OVR boundaries permit diverse upgrade bundles.",
+      "Raw point totals alone do not determine OVR movement."
+    ]
+  },
+  "formula_fitting_performed": false,
+  "inventory": {
+    "candidate_classification_counts": {
+      "CONFIRMED_PROGRESSION": 2,
+      "CONTRADICTED": 26,
+      "UNRESOLVED": 3
+    },
+    "canonical_candidate_count": 31,
+    "canonical_observation_count": 145,
+    "confirmed_transition_count": 25,
+    "explicit_progression_log_count": 27,
+    "observations_by_position": {
+      "C": 3,
+      "QB": 74,
+      "TE": 68
+    },
+    "positions": [
+      "C",
+      "QB",
+      "TE"
+    ],
+    "program_count": 18,
+    "programs": [
+      "Bonus Content",
+      "Core Legends",
+      "Core Legends Classic",
+      "Core Legends Millennium",
+      "Core Legends Modern",
+      "Core Rare",
+      "Cornerstones",
+      "Countdown",
+      "Phenoms",
+      "Platinum Rare",
+      "Prime Prospects",
+      "S1 Legends - Classic",
+      "SI Legends - Classic",
+      "SI Legends - Millennium",
+      "Season 1",
+      "Standouts",
+      "Summer Rush",
+      "Sunday Spotlight: Retro"
+    ],
+    "progression_research_files": [
+      "data\\research\\qb_harrington_analysis\\qb_harrington_analysis_summary.json",
+      "data\\research\\qb_harrington_analysis\\qb_harrington_architecture_scores.json",
+      "data\\research\\qb_harrington_analysis\\qb_harrington_chain.json",
+      "data\\research\\qb_harrington_analysis\\qb_harrington_contributions.json",
+      "data\\research\\qb_harrington_analysis\\qb_harrington_cross_card_consequences.json",
+      "data\\research\\qb_harrington_analysis\\qb_harrington_inequalities.json",
+      "data\\research\\qb_harrington_analysis\\qb_harrington_information_value.json",
+      "data\\research\\qb_harrington_analysis\\qb_harrington_local_offset.json",
+      "data\\research\\qb_harrington_analysis\\qb_harrington_madden_reference.json",
+      "data\\research\\qb_harrington_analysis\\qb_harrington_next_experiment.json",
+      "data\\research\\qb_harrington_analysis\\qb_harrington_transition_deltas.json",
+      "data\\research\\qb_provenance_audit\\qb_0074_provenance_audit.json",
+      "data\\research\\qb_provenance_audit\\qb_confirmed_progression_constraints.json",
+      "data\\research\\qb_provenance_audit\\qb_evidence_acquisition_backlog.json",
+      "data\\research\\qb_provenance_audit\\qb_progression_candidate_classifications.json",
+      "data\\research\\qb_provenance_audit\\qb_progression_delta_analysis.json",
+      "data\\research\\qb_provenance_audit\\qb_provenance_audit_summary.json",
+      "data\\research\\qb_provenance_audit\\qb_source_inventory.json",
+      "data\\research\\qb_provenance_audit\\qb_systematic_error_provenance_audit.json"
+    ],
+    "repeated_player_groups": 26,
+    "repeated_player_observations": 57,
+    "repeated_player_same_program_groups": 4,
+    "unique_players_by_position": {
+      "C": 3,
+      "QB": 57,
+      "TE": 54
+    }
+  },
+  "pattern_analysis": {
+    "boundary_counts": {
+      "79→81": 1,
+      "80→81": 11,
+      "81→82": 11,
+      "81→84": 1,
+      "84→86": 1
+    },
+    "changed_attribute_frequency": {
+      "ACC": 6,
+      "AGI": 8,
+      "AWR": 3,
+      "BSK": 3,
+      "COD": 5,
+      "DAC": 3,
+      "IBL": 6,
+      "LBK": 4,
+      "MAC": 3,
+      "PAC": 3,
+      "PBF": 6,
+      "PBK": 7,
+      "PBP": 8,
+      "RBF": 4,
+      "RBK": 1,
+      "RBP": 2,
+      "RCK": 1,
+      "RUN": 3,
+      "SAC": 3,
+      "SPD": 8,
+      "STR": 5,
+      "THP": 3,
+      "TUP": 3
+    },
+    "confirmed_by_position": {
+      "QB": 3,
+      "UNSPECIFIED": 22
+    },
+    "mean_positive_points_by_position": {
+      "QB": 28.333333,
+      "UNSPECIFIED": 10.5
+    },
+    "repeated_templates": [
+      {
+        "attribute_deltas": {
+          "ACC": 2,
+          "AGI": 2,
+          "AWR": 0,
+          "BSK": 2,
+          "DAC": 2,
+          "MAC": 2,
+          "PAC": 2,
+          "RUN": 2,
+          "SAC": 2,
+          "SPD": 2,
+          "STR": 2,
+          "TAC": 0,
+          "TGH": 0,
+          "THP": 2,
+          "TUP": 2
+        },
+        "count": 2
+      },
+      {
+        "attribute_deltas": {
+          "PBP": 2
+        },
+        "count": 2
+      }
+    ],
+    "zero_ovr_movement_count": 0
+  },
+  "phase": "Database-Wide Progression Mining & OVR Constraint Audit",
+  "qb_implications": {
+    "additional_confirmed_qb_chains_beyond_harrington": 0,
+    "architecture_a": "Reset evidence cannot directly constrain QB weights because position and full state vectors are absent.",
+    "awr_tac_tgh": "AWR varies in two reset records, but unspecified position prevents direct QB constraint; TAC/TGH lack controlled non-Harrington variation.",
+    "direct_qb_transition_count": 3,
+    "general_architecture_transition_count": 22,
+    "harrington_pattern_elsewhere": "No identical +2/+3/+2 chain exists; resets only cover +1 transitions.",
+    "qb_0074": "Unchanged: confirmed Harrington baseline; database-wide evidence adds no factual correction or direct calibration constraint."
+  },
+  "schema_version": 1,
+  "speculative_progressions_promoted": false
+}

@@ -1,0 +1,52 @@
+{
+  "controlled_attribute_frequency": {
+    "ACC": 6,
+    "AGI": 8,
+    "AWR": 3,
+    "BSK": 3,
+    "COD": 5,
+    "DAC": 3,
+    "IBL": 6,
+    "LBK": 4,
+    "MAC": 3,
+    "PAC": 3,
+    "PBF": 6,
+    "PBK": 7,
+    "PBP": 8,
+    "RBF": 4,
+    "RBK": 1,
+    "RBP": 2,
+    "RCK": 1,
+    "RUN": 3,
+    "SAC": 3,
+    "SPD": 8,
+    "STR": 5,
+    "THP": 3,
+    "TUP": 3
+  },
+  "inseparable": [
+    "Harrington's 12 changing QB attributes",
+    "Position and archetype effects in Saturday Reset records"
+  ],
+  "poorly_constrained": [
+    "Same-OVR controlled upgrades",
+    "One-step QB boundaries",
+    "Non-QB boundaries above 82"
+  ],
+  "strong": [
+    "UNSPECIFIED controlled resets at 80→81 and 81→82",
+    "QB Harrington states spanning 79→81→84→86"
+  ],
+  "weak_or_none": [
+    "TE: no source-confirmed progression",
+    "C: no repeated-player observations",
+    "All other positions absent"
+  ],
+  "well_constrained_boundaries": {
+    "79→81": 1,
+    "80→81": 11,
+    "81→82": 11,
+    "81→84": 1,
+    "84→86": 1
+  }
+}
