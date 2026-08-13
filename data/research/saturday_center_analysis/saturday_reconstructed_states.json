@@ -1,0 +1,2314 @@
+[
+  {
+    "archetype": "Pass Protector",
+    "architecture_evidence": "Recovered historical evidence identifies common Jeff Saturday 80 OVR experiments; log A is 80→81 and matching B is 81→82.",
+    "player": "Jeff Saturday",
+    "position": "C",
+    "reset_id": "SAT-01",
+    "states": [
+      {
+        "overall": 80,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 81,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 83
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 70
+          },
+          "STR": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 84
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 82,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 84
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 70
+          },
+          "STR": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 84
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      }
+    ],
+    "trajectory_architecture": "FRESH_COMMON_80_BASELINE_THEN_SEQUENTIAL_A_B",
+    "transition_ids": [
+      "SAT-01",
+      "SAT-01B"
+    ],
+    "unknown_delta_fields": []
+  },
+  {
+    "archetype": "Pass Protector",
+    "architecture_evidence": "Recovered historical evidence identifies common Jeff Saturday 80 OVR experiments; log A is 80→81 and matching B is 81→82.",
+    "player": "Jeff Saturday",
+    "position": "C",
+    "reset_id": "SAT-02",
+    "states": [
+      {
+        "overall": 80,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 81,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 85
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 82,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 83
+          },
+          "PBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 85
+          },
+          "RBF": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 80
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 88
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      }
+    ],
+    "trajectory_architecture": "FRESH_COMMON_80_BASELINE_THEN_SEQUENTIAL_A_B",
+    "transition_ids": [
+      "SAT-02",
+      "SAT-02B"
+    ],
+    "unknown_delta_fields": []
+  },
+  {
+    "archetype": "Pass Protector",
+    "architecture_evidence": "Recovered historical evidence identifies common Jeff Saturday 80 OVR experiments; log A is 80→81 and matching B is 81→82.",
+    "player": "Jeff Saturday",
+    "position": "C",
+    "reset_id": "SAT-03",
+    "states": [
+      {
+        "overall": 80,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 81,
+        "ratings": {
+          "ACC": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 62
+          },
+          "AGI": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 69
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 68
+          },
+          "IBL": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 80
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 76
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 67
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 82,
+        "ratings": {
+          "ACC": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 62
+          },
+          "AGI": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 69
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 73
+          },
+          "IBL": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 80
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 83
+          },
+          "PBK": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 84
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 78
+          },
+          "RBK": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 80
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 67
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      }
+    ],
+    "trajectory_architecture": "FRESH_COMMON_80_BASELINE_THEN_SEQUENTIAL_A_B",
+    "transition_ids": [
+      "SAT-03",
+      "SAT-03B"
+    ],
+    "unknown_delta_fields": []
+  },
+  {
+    "archetype": "Pass Protector",
+    "architecture_evidence": "Recovered historical evidence identifies common Jeff Saturday 80 OVR experiments; log A is 80→81 and matching B is 81→82.",
+    "player": "Jeff Saturday",
+    "position": "C",
+    "reset_id": "SAT-04",
+    "states": [
+      {
+        "overall": 80,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 81,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 84
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 82,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 84
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 87
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      }
+    ],
+    "trajectory_architecture": "FRESH_COMMON_80_BASELINE_THEN_SEQUENTIAL_A_B",
+    "transition_ids": [
+      "SAT-04",
+      "SAT-04B"
+    ],
+    "unknown_delta_fields": []
+  },
+  {
+    "archetype": "Pass Protector",
+    "architecture_evidence": "Recovered historical evidence identifies common Jeff Saturday 80 OVR experiments; log A is 80→81 and matching B is 81→82.",
+    "player": "Jeff Saturday",
+    "position": "C",
+    "reset_id": "SAT-05",
+    "states": [
+      {
+        "overall": 80,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 81,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 85
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 82,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 76
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 82
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 85
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      }
+    ],
+    "trajectory_architecture": "FRESH_COMMON_80_BASELINE_THEN_SEQUENTIAL_A_B",
+    "transition_ids": [
+      "SAT-05",
+      "SAT-05B"
+    ],
+    "unknown_delta_fields": []
+  },
+  {
+    "archetype": "Pass Protector",
+    "architecture_evidence": "Recovered historical evidence identifies common Jeff Saturday 80 OVR experiments; log A is 80→81 and matching B is 81→82.",
+    "player": "Jeff Saturday",
+    "position": "C",
+    "reset_id": "SAT-06",
+    "states": [
+      {
+        "overall": 80,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 81,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 88
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 82,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 86
+          },
+          "PBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 88
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      }
+    ],
+    "trajectory_architecture": "FRESH_COMMON_80_BASELINE_THEN_SEQUENTIAL_A_B",
+    "transition_ids": [
+      "SAT-06",
+      "SAT-06B"
+    ],
+    "unknown_delta_fields": []
+  },
+  {
+    "archetype": "Pass Protector",
+    "architecture_evidence": "Recovered historical evidence identifies common Jeff Saturday 80 OVR experiments; log A is 80→81 and matching B is 81→82.",
+    "player": "Jeff Saturday",
+    "position": "C",
+    "reset_id": "SAT-07",
+    "states": [
+      {
+        "overall": 80,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 81,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 66
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 88
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 71
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 82,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 71
+          },
+          "AWR": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 71
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 88
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 71
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      }
+    ],
+    "trajectory_architecture": "FRESH_COMMON_80_BASELINE_THEN_SEQUENTIAL_A_B",
+    "transition_ids": [
+      "SAT-07",
+      "SAT-07B"
+    ],
+    "unknown_delta_fields": []
+  },
+  {
+    "archetype": "Pass Protector",
+    "architecture_evidence": "Recovered historical evidence identifies common Jeff Saturday 80 OVR experiments; log A is 80→81 and matching B is 81→82.",
+    "player": "Jeff Saturday",
+    "position": "C",
+    "reset_id": "SAT-08",
+    "states": [
+      {
+        "overall": 80,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 81,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 84
+          },
+          "PBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 88
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 69
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 82,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 84
+          },
+          "PBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 89
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 69
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      }
+    ],
+    "trajectory_architecture": "FRESH_COMMON_80_BASELINE_THEN_SEQUENTIAL_A_B",
+    "transition_ids": [
+      "SAT-08",
+      "SAT-08B"
+    ],
+    "unknown_delta_fields": []
+  },
+  {
+    "archetype": "Pass Protector",
+    "architecture_evidence": "Recovered historical evidence identifies common Jeff Saturday 80 OVR experiments; log A is 80→81 and matching B is 81→82.",
+    "player": "Jeff Saturday",
+    "position": "C",
+    "reset_id": "SAT-09",
+    "states": [
+      {
+        "overall": 80,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 81,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 70
+          },
+          "IBL": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 83
+          },
+          "LBK": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 79
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 87
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 79
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 82,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 70
+          },
+          "IBL": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 88
+          },
+          "LBK": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 85
+          },
+          "PBF": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 81
+          },
+          "PBK": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 87
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 79
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      }
+    ],
+    "trajectory_architecture": "FRESH_COMMON_80_BASELINE_THEN_SEQUENTIAL_A_B",
+    "transition_ids": [
+      "SAT-09",
+      "SAT-09B"
+    ],
+    "unknown_delta_fields": []
+  },
+  {
+    "archetype": "Pass Protector",
+    "architecture_evidence": "Recovered historical evidence identifies common Jeff Saturday 80 OVR experiments; log A is 80→81 and matching B is 81→82.",
+    "player": "Jeff Saturday",
+    "position": "C",
+    "reset_id": "SAT-10",
+    "states": [
+      {
+        "overall": 80,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 81,
+        "ratings": {
+          "ACC": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 61
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 77
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 84
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 81
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 82,
+        "ratings": {
+          "ACC": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 63
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 68
+          },
+          "IBL": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 78
+          },
+          "LBK": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 80
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 87
+          },
+          "PBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 86
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 81
+          },
+          "SPD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 70
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      }
+    ],
+    "trajectory_architecture": "FRESH_COMMON_80_BASELINE_THEN_SEQUENTIAL_A_B",
+    "transition_ids": [
+      "SAT-10",
+      "SAT-10B"
+    ],
+    "unknown_delta_fields": []
+  },
+  {
+    "archetype": "Pass Protector",
+    "architecture_evidence": "Recovered historical evidence identifies common Jeff Saturday 80 OVR experiments; log A is 80→81 and matching B is 81→82.",
+    "player": "Jeff Saturday",
+    "position": "C",
+    "reset_id": "SAT-11",
+    "states": [
+      {
+        "overall": 80,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 64
+          },
+          "AWR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 70
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 81,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 70
+          },
+          "AWR": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 74
+          },
+          "COD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "IBL": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 76
+          },
+          "LBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 74
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      },
+      {
+        "overall": 82,
+        "ratings": {
+          "ACC": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 57
+          },
+          "AGI": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 77
+          },
+          "AWR": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 74
+          },
+          "COD": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 70
+          },
+          "IBL": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 79
+          },
+          "LBK": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 80
+          },
+          "PBF": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "PBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "PBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 83
+          },
+          "RBF": {
+            "status": "DERIVED_FROM_CONFIRMED_DELTA",
+            "value": 79
+          },
+          "RBK": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 78
+          },
+          "RBP": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 75
+          },
+          "SPD": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 65
+          },
+          "STR": {
+            "status": "DIRECTLY_OBSERVED",
+            "value": 82
+          },
+          "TGH": {
+            "status": "UNKNOWN",
+            "value": null
+          }
+        }
+      }
+    ],
+    "trajectory_architecture": "FRESH_COMMON_80_BASELINE_THEN_SEQUENTIAL_A_B",
+    "transition_ids": [
+      "SAT-11",
+      "SAT-11B"
+    ],
+    "unknown_delta_fields": [
+      "RCK"
+    ]
+  }
+]

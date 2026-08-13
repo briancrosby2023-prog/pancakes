@@ -1,0 +1,940 @@
+[
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "aggregate_upgrade_response"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBF": 5,
+      "SPD": 5,
+      "STR": 2
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 3,
+    "changed_attributes": [
+      "PBF",
+      "SPD",
+      "STR"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "MEDIUM",
+    "information_value_score": 106,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 12,
+    "transition_id": "SAT-01",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBF": 1
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBF"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 82,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "HIGH_SPARSE_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 81,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 1,
+    "transition_id": "SAT-01B",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBP": 2
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBP"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "HIGH_SPARSE_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 2,
+    "transition_id": "SAT-02",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "aggregate_upgrade_response"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBK": 1,
+      "RBF": 6,
+      "STR": 6
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 3,
+    "changed_attributes": [
+      "PBK",
+      "RBF",
+      "STR"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 82,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "MEDIUM",
+    "information_value_score": 106,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 81,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 13,
+    "transition_id": "SAT-02B",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "aggregate_upgrade_response"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "ACC": 5,
+      "AGI": 5,
+      "COD": 3,
+      "IBL": 4,
+      "RBF": 2,
+      "SPD": 2
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 6,
+    "changed_attributes": [
+      "ACC",
+      "AGI",
+      "COD",
+      "IBL",
+      "RBF",
+      "SPD"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "MEDIUM",
+    "information_value_score": 82,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 21,
+    "transition_id": "SAT-03",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "aggregate_upgrade_response"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "COD": 5,
+      "PBF": 5,
+      "PBK": 2,
+      "RBF": 2,
+      "RBK": 2
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 5,
+    "changed_attributes": [
+      "COD",
+      "PBF",
+      "PBK",
+      "RBF",
+      "RBK"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 82,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "MEDIUM",
+    "information_value_score": 90,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 81,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 16,
+    "transition_id": "SAT-03B",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBF": 6
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBF"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "HIGH_SPARSE_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 6,
+    "transition_id": "SAT-04",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBP": 4
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBP"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 82,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 81,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 4,
+    "transition_id": "SAT-04B",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBP": 2
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBP"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "HIGH_SPARSE_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 2,
+    "transition_id": "SAT-05",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "AWR": 6,
+      "PBF": 4
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 2,
+    "changed_attributes": [
+      "AWR",
+      "PBF"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 82,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 134,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 81,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 10,
+    "transition_id": "SAT-05B",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBP": 5
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBP"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "HIGH_SPARSE_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 5,
+    "transition_id": "SAT-06",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBK": 4
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBK"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 82,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "HIGH_SPARSE_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 81,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 4,
+    "transition_id": "SAT-06B",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "aggregate_upgrade_response"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "AGI": 2,
+      "PBP": 5,
+      "SPD": 6
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 3,
+    "changed_attributes": [
+      "AGI",
+      "PBP",
+      "SPD"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "MEDIUM",
+    "information_value_score": 106,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 13,
+    "transition_id": "SAT-07",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "AGI": 5,
+      "AWR": 1
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 2,
+    "changed_attributes": [
+      "AGI",
+      "AWR"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 82,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 134,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 81,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 6,
+    "transition_id": "SAT-07B",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "aggregate_upgrade_response"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBK": 2,
+      "PBP": 5,
+      "SPD": 4
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 3,
+    "changed_attributes": [
+      "PBK",
+      "PBP",
+      "SPD"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "MEDIUM",
+    "information_value_score": 106,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 11,
+    "transition_id": "SAT-08",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBP": 1
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBP"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 82,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "HIGH_SPARSE_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 81,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 1,
+    "transition_id": "SAT-08B",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "aggregate_upgrade_response"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "COD": 5,
+      "IBL": 7,
+      "LBK": 1,
+      "PBK": 5,
+      "RBP": 4
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 5,
+    "changed_attributes": [
+      "COD",
+      "IBL",
+      "LBK",
+      "PBK",
+      "RBP"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "MEDIUM",
+    "information_value_score": 90,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 13,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 22,
+    "transition_id": "SAT-09",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "aggregate_upgrade_response"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "IBL": 5,
+      "LBK": 6,
+      "PBF": 3
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 3,
+    "changed_attributes": [
+      "IBL",
+      "LBK",
+      "PBF"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 82,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "MEDIUM",
+    "information_value_score": 106,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 13,
+    "start_ovr": 81,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 14,
+    "transition_id": "SAT-09B",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "aggregate_upgrade_response"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "ACC": 4,
+      "IBL": 1,
+      "PBK": 2,
+      "RBP": 6
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 4,
+    "changed_attributes": [
+      "ACC",
+      "IBL",
+      "PBK",
+      "RBP"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "MEDIUM",
+    "information_value_score": 98,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 14,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 13,
+    "transition_id": "SAT-10",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "aggregate_upgrade_response"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "ACC": 2,
+      "COD": 3,
+      "IBL": 1,
+      "LBK": 2,
+      "PBK": 3,
+      "PBP": 3,
+      "SPD": 5
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 7,
+    "changed_attributes": [
+      "ACC",
+      "COD",
+      "IBL",
+      "LBK",
+      "PBK",
+      "PBP",
+      "SPD"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 82,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "LOW",
+    "information_value_score": 74,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 14,
+    "start_ovr": 81,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 19,
+    "transition_id": "SAT-10B",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "AGI": 6,
+      "AWR": 4
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 2,
+    "changed_attributes": [
+      "AGI",
+      "AWR"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 134,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 5,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 10,
+    "transition_id": "SAT-11",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "aggregate_upgrade_response"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "AGI": 7,
+      "COD": 5,
+      "IBL": 3,
+      "LBK": 2,
+      "RBF": 5,
+      "RCK": 4
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 6,
+    "changed_attributes": [
+      "AGI",
+      "COD",
+      "IBL",
+      "LBK",
+      "RBF",
+      "RCK"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 82,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "CONTROLLED_BOUNDARY",
+    "information_value_category": "MEDIUM",
+    "information_value_score": 82,
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 5,
+    "start_ovr": 81,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 26,
+    "transition_id": "SAT-11B",
+    "unchanged_attributes": []
+  }
+]

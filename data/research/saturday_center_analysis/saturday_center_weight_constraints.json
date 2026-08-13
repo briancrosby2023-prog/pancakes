@@ -1,0 +1,42 @@
+{
+  "bundle_only_constraints": [
+    "RBK",
+    "RBF",
+    "RBP",
+    "IBL",
+    "LBK",
+    "STR",
+    "AWR",
+    "SPD",
+    "ACC",
+    "AGI",
+    "COD"
+  ],
+  "direct_local_sensitivity": [
+    "PBK",
+    "PBF",
+    "PBP"
+  ],
+  "inequality_interpretation": "Each positive bundle was sufficient to cross its observed +1 OVR boundary from that trajectory state. Unknown hidden-band locations prevent numeric coefficient lower bounds or cross-trajectory coefficient ratios.",
+  "single_attribute_evidence": {
+    "PBF": [
+      "SAT-01B +1",
+      "SAT-04 +6"
+    ],
+    "PBK": [
+      "SAT-06B +4"
+    ],
+    "PBP": [
+      "SAT-08B +1",
+      "SAT-02/SAT-05 +2",
+      "SAT-06 +5"
+    ]
+  },
+  "unidentifiable": [
+    "TGH",
+    "RCK meaning",
+    "exact weights",
+    "hidden starting scores",
+    "score-to-OVR thresholds"
+  ]
+}

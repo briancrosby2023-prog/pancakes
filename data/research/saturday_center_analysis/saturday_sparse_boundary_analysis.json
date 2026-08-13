@@ -1,0 +1,331 @@
+[
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBF": 1
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBF"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 82,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "explanations_remaining": [
+      "positive positional weight",
+      "proximity to an OVR threshold",
+      "trajectory-specific starting hidden score",
+      "discrete or nonlinear score conversion"
+    ],
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "HIGH_SPARSE_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "legitimate_conclusion": "PBF is locally OVR-sensitive under this trajectory; coefficient magnitude is unidentified.",
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "one_rating_point_equals_one_ovr": false,
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 81,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 1,
+    "transition_id": "SAT-01B",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBP": 1
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBP"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 82,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "explanations_remaining": [
+      "positive positional weight",
+      "proximity to an OVR threshold",
+      "trajectory-specific starting hidden score",
+      "discrete or nonlinear score conversion"
+    ],
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "HIGH_SPARSE_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "legitimate_conclusion": "PBP is locally OVR-sensitive under this trajectory; coefficient magnitude is unidentified.",
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "one_rating_point_equals_one_ovr": false,
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 81,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 1,
+    "transition_id": "SAT-08B",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBP": 2
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBP"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "explanations_remaining": [
+      "positive positional weight",
+      "proximity to an OVR threshold",
+      "trajectory-specific starting hidden score",
+      "discrete or nonlinear score conversion"
+    ],
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "HIGH_SPARSE_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "legitimate_conclusion": "A +2 PBP change crosses 80→81 from the common base.",
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "one_rating_point_equals_one_ovr": false,
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 2,
+    "transition_id": "SAT-02",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBP": 2
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBP"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "explanations_remaining": [
+      "positive positional weight",
+      "proximity to an OVR threshold",
+      "trajectory-specific starting hidden score",
+      "discrete or nonlinear score conversion"
+    ],
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "HIGH_SPARSE_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "legitimate_conclusion": "Replicates the +2 PBP 80→81 result from the common base.",
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "one_rating_point_equals_one_ovr": false,
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 2,
+    "transition_id": "SAT-05",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBF": 6
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBF"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "explanations_remaining": [
+      "positive positional weight",
+      "proximity to an OVR threshold",
+      "trajectory-specific starting hidden score",
+      "discrete or nonlinear score conversion"
+    ],
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "HIGH_SPARSE_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "legitimate_conclusion": "A +6 PBF change crosses 80→81; comparison with +1 PBF uses different hidden starts.",
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "one_rating_point_equals_one_ovr": false,
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 6,
+    "transition_id": "SAT-04",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBP": 5
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBP"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 81,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "explanations_remaining": [
+      "positive positional weight",
+      "proximity to an OVR threshold",
+      "trajectory-specific starting hidden score",
+      "discrete or nonlinear score conversion"
+    ],
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "HIGH_SPARSE_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "legitimate_conclusion": "A +5 PBP change crosses 80→81; larger delta does not imply a larger displayed jump.",
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "one_rating_point_equals_one_ovr": false,
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 80,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 5,
+    "transition_id": "SAT-06",
+    "unchanged_attributes": []
+  },
+  {
+    "applicable_research_questions": [
+      "score_to_ovr_boundary",
+      "attribute_sensitivity"
+    ],
+    "archetype": "Pass Protector",
+    "attribute_deltas": {
+      "PBK": 4
+    },
+    "can_constrain_qb_directly": false,
+    "changed_attribute_count": 1,
+    "changed_attributes": [
+      "PBK"
+    ],
+    "classification": "CONFIRMED_PROGRESSION",
+    "crosses_multiple_ovr_levels": false,
+    "delta_ovr": 1,
+    "end_ovr": 82,
+    "evidence": "Progression_Logs explicit controlled reset",
+    "explanations_remaining": [
+      "positive positional weight",
+      "proximity to an OVR threshold",
+      "trajectory-specific starting hidden score",
+      "discrete or nonlinear score conversion"
+    ],
+    "full_relevant_center_vector_known": false,
+    "general_ea_architecture_evidence_only": true,
+    "information_value": "HIGH_SPARSE_BOUNDARY",
+    "information_value_category": "HIGH",
+    "information_value_score": 142,
+    "legitimate_conclusion": "PBK is locally OVR-sensitive at this trajectory's 81 state.",
+    "linkage_status": "CONFIRMED",
+    "missing_center_attributes": [
+      "TGH"
+    ],
+    "one_rating_point_equals_one_ovr": false,
+    "player": "Jeff Saturday",
+    "position": "C",
+    "program": null,
+    "source_id": "SRC-HIST-001",
+    "source_locator": 4,
+    "start_ovr": 81,
+    "total_negative_rating_points": 0,
+    "total_positive_rating_points": 4,
+    "transition_id": "SAT-06B",
+    "unchanged_attributes": []
+  }
+]

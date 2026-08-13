@@ -1,0 +1,15 @@
+{
+  "canonical_observations_modified": false,
+  "center_formula_status": "INSUFFICIENT EVIDENCE",
+  "formula_fitting_performed": false,
+  "phase": "Jeff Saturday Controlled Center Reconstruction",
+  "schema_version": 1,
+  "trajectory_architecture": {
+    "classification": "FRESH_COMMON_80_BASELINE_THEN_SEQUENTIAL_A_B",
+    "confidence": "HIGH",
+    "reason": "Each numbered A record starts 80→81; its B record continues 81→82. Recovered evidence supplies one common Jeff Saturday 80 OVR base.",
+    "series_are_independent": true,
+    "within_series_b_follows_a": true
+  },
+  "unknown_ratings_guessed": false
+}
