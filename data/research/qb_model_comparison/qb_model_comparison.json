@@ -1,0 +1,1295 @@
+{
+  "architectures": [
+    {
+      "architecture": "A",
+      "boundary_tests": {
+        "adjacent_ovr_count": 14,
+        "adjacent_ovr_ordered": 13,
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 11,
+        "strongest_adjacent_constraints": [
+          {
+            "euclidean_distance": 4.582576,
+            "lower_qb_id": "QB-0016",
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "euclidean_distance": 6.557439,
+            "lower_qb_id": "QB-0042",
+            "upper_qb_id": "QB-0033"
+          },
+          {
+            "euclidean_distance": 7.416198,
+            "lower_qb_id": "QB-0004",
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "euclidean_distance": 8.660254,
+            "lower_qb_id": "QB-0010",
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "euclidean_distance": 10.954451,
+            "lower_qb_id": "QB-0057",
+            "upper_qb_id": "QB-0037"
+          }
+        ],
+        "strongest_same_ovr_contrasts": [
+          {
+            "euclidean_distance": 47.528939,
+            "left_qb_id": "QB-0038",
+            "right_qb_id": "QB-0040"
+          },
+          {
+            "euclidean_distance": 43.116122,
+            "left_qb_id": "QB-0013",
+            "right_qb_id": "QB-0018"
+          },
+          {
+            "euclidean_distance": 41.964271,
+            "left_qb_id": "QB-0001",
+            "right_qb_id": "QB-0002"
+          },
+          {
+            "euclidean_distance": 40.484565,
+            "left_qb_id": "QB-0047",
+            "right_qb_id": "QB-0059"
+          },
+          {
+            "euclidean_distance": 32.710854,
+            "left_qb_id": "QB-0031",
+            "right_qb_id": "QB-0032"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.666667,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.352941,
+        "mean_signed_residual": 0.039216,
+        "within_one_accuracy": 0.980392
+      },
+      "fit_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.862745,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.137255,
+        "mean_signed_residual": 0.019608,
+        "within_one_accuracy": 1.0
+      },
+      "holdout_by_archetype": {
+        "Backfield Creator": {
+          "count": 3,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "Dual Threat": {
+          "count": 3,
+          "exact_accuracy": 0.333333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.666667,
+          "mean_signed_residual": -0.666667,
+          "within_one_accuracy": 1.0
+        },
+        "Pocket Passer": {
+          "count": 12,
+          "exact_accuracy": 0.833333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.166667,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_by_ovr": {
+        "80": {
+          "count": 5,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "81": {
+          "count": 1,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "82": {
+          "count": 3,
+          "exact_accuracy": 0.666667,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.333333,
+          "mean_signed_residual": -0.333333,
+          "within_one_accuracy": 1.0
+        },
+        "83": {
+          "count": 3,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "84": {
+          "count": 1,
+          "exact_accuracy": 0.0,
+          "maximum_error": 1,
+          "mean_absolute_error": 1.0,
+          "mean_signed_residual": 1.0,
+          "within_one_accuracy": 1.0
+        },
+        "86": {
+          "count": 2,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "87": {
+          "count": 1,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "88": {
+          "count": 1,
+          "exact_accuracy": 0.0,
+          "maximum_error": 1,
+          "mean_absolute_error": 1.0,
+          "mean_signed_residual": -1.0,
+          "within_one_accuracy": 1.0
+        },
+        "89": {
+          "count": 1,
+          "exact_accuracy": 0.0,
+          "maximum_error": 1,
+          "mean_absolute_error": 1.0,
+          "mean_signed_residual": -1.0,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.777778,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.222222,
+        "mean_signed_residual": -0.111111,
+        "within_one_accuracy": 1.0
+      },
+      "name": "Universal",
+      "parameter_count": 16,
+      "parameterization": {
+        "shared": {
+          "intercept": 82.37254902,
+          "standardization_means": {
+            "ACC": 77.2156862745098,
+            "AGI": 75.7843137254902,
+            "AWR": 76.25490196078431,
+            "BSK": 76.80392156862744,
+            "DAC": 80.7843137254902,
+            "MAC": 81.2156862745098,
+            "PAC": 77.45098039215686,
+            "RUN": 77.94117647058823,
+            "SAC": 81.17647058823529,
+            "SPD": 78.6078431372549,
+            "STR": 64.3921568627451,
+            "TAC": 79.70588235294117,
+            "TGH": 83.17647058823529,
+            "THP": 81.05882352941177,
+            "TUP": 78.47058823529412
+          },
+          "standardization_scales": {
+            "ACC": 4.14120246575323,
+            "AGI": 4.486641284883758,
+            "AWR": 4.467060871929727,
+            "BSK": 4.9823988546471965,
+            "DAC": 2.7030391427906975,
+            "MAC": 2.946009101660501,
+            "PAC": 4.499733000750923,
+            "RUN": 4.552145646666633,
+            "SAC": 3.2401033773930377,
+            "SPD": 3.8809662803883938,
+            "STR": 12.590189818333503,
+            "TAC": 5.325830940036066,
+            "TGH": 3.622943675602193,
+            "THP": 4.616304288344045,
+            "TUP": 3.9623371058320807
+          },
+          "standardized_nonnegative_weights": {
+            "ACC": 0.3138911950847133,
+            "AGI": 0.14565705138104515,
+            "AWR": 0.345182846919286,
+            "BSK": 0.02441047684682947,
+            "DAC": 0.32293845184338776,
+            "MAC": 0.4155690806091415,
+            "PAC": 0.2224758566913307,
+            "RUN": 0.07672735584904457,
+            "SAC": 0.3267150765584424,
+            "SPD": 0.09392442135823036,
+            "STR": 0.04833806268285143,
+            "TAC": 0.07525833368027293,
+            "TGH": 0.007108877401769081,
+            "THP": 0.8460665468771053,
+            "TUP": 0.3361777266157747
+          }
+        }
+      },
+      "threshold_mapping_comparison": {
+        "ceiling": {
+          "count": 18,
+          "exact_accuracy": 0.5,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.5,
+          "mean_signed_residual": 0.5,
+          "within_one_accuracy": 1.0
+        },
+        "floor": {
+          "count": 18,
+          "exact_accuracy": 0.5,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.5,
+          "mean_signed_residual": -0.5,
+          "within_one_accuracy": 1.0
+        },
+        "round_half_up": {
+          "count": 18,
+          "exact_accuracy": 0.777778,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.222222,
+          "mean_signed_residual": -0.111111,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "training_population": {
+        "count": 51,
+        "partition": "fit"
+      },
+      "validation_population": {
+        "count": 18,
+        "partition": "holdout"
+      },
+      "viability_status": "PROVISIONALLY VIABLE",
+      "warnings": [
+        "Dual Threat holdout exact accuracy is low but data-limited (n=3)."
+      ]
+    },
+    {
+      "architecture": "B",
+      "boundary_tests": {
+        "adjacent_ovr_count": 14,
+        "adjacent_ovr_ordered": 14,
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 13,
+        "strongest_adjacent_constraints": [
+          {
+            "euclidean_distance": 4.582576,
+            "lower_qb_id": "QB-0016",
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "euclidean_distance": 6.557439,
+            "lower_qb_id": "QB-0042",
+            "upper_qb_id": "QB-0033"
+          },
+          {
+            "euclidean_distance": 7.416198,
+            "lower_qb_id": "QB-0004",
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "euclidean_distance": 8.660254,
+            "lower_qb_id": "QB-0010",
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "euclidean_distance": 10.954451,
+            "lower_qb_id": "QB-0057",
+            "upper_qb_id": "QB-0037"
+          }
+        ],
+        "strongest_same_ovr_contrasts": [
+          {
+            "euclidean_distance": 47.528939,
+            "left_qb_id": "QB-0038",
+            "right_qb_id": "QB-0040"
+          },
+          {
+            "euclidean_distance": 43.116122,
+            "left_qb_id": "QB-0013",
+            "right_qb_id": "QB-0018"
+          },
+          {
+            "euclidean_distance": 41.964271,
+            "left_qb_id": "QB-0001",
+            "right_qb_id": "QB-0002"
+          },
+          {
+            "euclidean_distance": 40.484565,
+            "left_qb_id": "QB-0047",
+            "right_qb_id": "QB-0059"
+          },
+          {
+            "euclidean_distance": 32.710854,
+            "left_qb_id": "QB-0031",
+            "right_qb_id": "QB-0032"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.627451,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.431373,
+        "mean_signed_residual": 0.0,
+        "within_one_accuracy": 0.941176
+      },
+      "fit_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.960784,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.039216,
+        "mean_signed_residual": 0.0,
+        "within_one_accuracy": 1.0
+      },
+      "holdout_by_archetype": {
+        "Backfield Creator": {
+          "count": 3,
+          "exact_accuracy": 0.666667,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.333333,
+          "mean_signed_residual": 0.333333,
+          "within_one_accuracy": 1.0
+        },
+        "Dual Threat": {
+          "count": 3,
+          "exact_accuracy": 0.666667,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.333333,
+          "mean_signed_residual": 0.333333,
+          "within_one_accuracy": 1.0
+        },
+        "Pocket Passer": {
+          "count": 12,
+          "exact_accuracy": 0.833333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.166667,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_by_ovr": {
+        "80": {
+          "count": 5,
+          "exact_accuracy": 0.8,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.2,
+          "mean_signed_residual": 0.2,
+          "within_one_accuracy": 1.0
+        },
+        "81": {
+          "count": 1,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "82": {
+          "count": 3,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "83": {
+          "count": 3,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "84": {
+          "count": 1,
+          "exact_accuracy": 0.0,
+          "maximum_error": 1,
+          "mean_absolute_error": 1.0,
+          "mean_signed_residual": 1.0,
+          "within_one_accuracy": 1.0
+        },
+        "86": {
+          "count": 2,
+          "exact_accuracy": 0.5,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.5,
+          "mean_signed_residual": 0.5,
+          "within_one_accuracy": 1.0
+        },
+        "87": {
+          "count": 1,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "88": {
+          "count": 1,
+          "exact_accuracy": 0.0,
+          "maximum_error": 1,
+          "mean_absolute_error": 1.0,
+          "mean_signed_residual": -1.0,
+          "within_one_accuracy": 1.0
+        },
+        "89": {
+          "count": 1,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.777778,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.222222,
+        "mean_signed_residual": 0.111111,
+        "within_one_accuracy": 1.0
+      },
+      "name": "Archetype Specific",
+      "parameter_count": 48,
+      "parameterization": {
+        "Backfield Creator": {
+          "intercept": 83.66666667,
+          "standardization_means": {
+            "ACC": 81.16666666666667,
+            "AGI": 80.16666666666667,
+            "AWR": 78.16666666666667,
+            "BSK": 80.0,
+            "DAC": 82.5,
+            "MAC": 81.5,
+            "PAC": 79.66666666666667,
+            "RUN": 82.33333333333333,
+            "SAC": 81.33333333333333,
+            "SPD": 83.16666666666667,
+            "STR": 63.5,
+            "TAC": 77.16666666666667,
+            "TGH": 84.16666666666667,
+            "THP": 81.83333333333333,
+            "TUP": 80.66666666666667
+          },
+          "standardization_scales": {
+            "ACC": 2.034425935955617,
+            "AGI": 3.0230595245361753,
+            "AWR": 3.8477987935383986,
+            "BSK": 3.0550504633038935,
+            "DAC": 2.5,
+            "MAC": 1.8929694486000912,
+            "PAC": 4.109609335312651,
+            "RUN": 2.494438257849294,
+            "SAC": 4.14996653266291,
+            "SPD": 2.91070819942883,
+            "STR": 14.419315748906627,
+            "TAC": 7.536946036396675,
+            "TGH": 3.8477987935383986,
+            "THP": 5.398044913567215,
+            "TUP": 2.5603819159562025
+          },
+          "standardized_nonnegative_weights": {
+            "ACC": 0.2785025636041472,
+            "AGI": 0.13840386420911255,
+            "AWR": 0.13479544316779793,
+            "BSK": 0.18406369806817194,
+            "DAC": 0.35832518034736194,
+            "MAC": 0.16651840697946282,
+            "PAC": 0.2744702616307714,
+            "RUN": 0.18315378102600102,
+            "SAC": 0.1830479948631599,
+            "SPD": 0.11149690689028181,
+            "STR": 0.11450333915713203,
+            "TAC": 0.14746763656190603,
+            "TGH": 0.3770407331521388,
+            "THP": 0.49123964704787176,
+            "TUP": 0.18975270387066176
+          }
+        },
+        "Dual Threat": {
+          "intercept": 81.71428571,
+          "standardization_means": {
+            "ACC": 79.71428571428571,
+            "AGI": 77.85714285714286,
+            "AWR": 73.85714285714286,
+            "BSK": 81.57142857142857,
+            "DAC": 79.57142857142857,
+            "MAC": 79.28571428571429,
+            "PAC": 74.57142857142857,
+            "RUN": 81.28571428571429,
+            "SAC": 78.57142857142857,
+            "SPD": 80.71428571428571,
+            "STR": 68.0,
+            "TAC": 79.71428571428571,
+            "TGH": 82.71428571428571,
+            "THP": 82.28571428571429,
+            "TUP": 74.0
+          },
+          "standardization_scales": {
+            "ACC": 2.249716535431946,
+            "AGI": 2.8996833043120627,
+            "AWR": 4.672979209656036,
+            "BSK": 1.5907898179514348,
+            "DAC": 1.5907898179514348,
+            "MAC": 3.0101867865293537,
+            "PAC": 3.5398604838182477,
+            "RUN": 2.4907993963089563,
+            "SAC": 3.4582052676886295,
+            "SPD": 1.979486637221574,
+            "STR": 9.38083151964686,
+            "TAC": 3.282607226593159,
+            "TGH": 3.325841921949376,
+            "THP": 2.710523708715754,
+            "TUP": 3.4641016151377544
+          },
+          "standardized_nonnegative_weights": {
+            "ACC": 0.23876021138342454,
+            "AGI": 0.20658637781294978,
+            "AWR": 0.04978016319997927,
+            "BSK": 0.04167558536060557,
+            "DAC": 0.06480997932153895,
+            "MAC": 0.3488770354516149,
+            "PAC": 0.2031158983679928,
+            "RUN": 0.24180231423374435,
+            "SAC": 0.1963334863035539,
+            "SPD": 0.22010069248570524,
+            "STR": 0.0,
+            "TAC": 0.057005356234623904,
+            "TGH": 0.11561747997286224,
+            "THP": 0.2012085340382603,
+            "TUP": 0.23014020139244246
+          }
+        },
+        "Pocket Passer": {
+          "intercept": 82.28947368,
+          "standardization_means": {
+            "ACC": 76.13157894736842,
+            "AGI": 74.71052631578948,
+            "AWR": 76.39473684210526,
+            "BSK": 75.42105263157895,
+            "DAC": 80.73684210526316,
+            "MAC": 81.52631578947368,
+            "PAC": 77.63157894736842,
+            "RUN": 76.63157894736842,
+            "SAC": 81.63157894736842,
+            "SPD": 77.5,
+            "STR": 63.86842105263158,
+            "TAC": 80.10526315789474,
+            "TGH": 83.10526315789474,
+            "THP": 80.71052631578948,
+            "TUP": 78.94736842105263
+          },
+          "standardization_scales": {
+            "ACC": 4.079286912862532,
+            "AGI": 4.364376694731793,
+            "AWR": 4.331885900743891,
+            "BSK": 4.864650033106013,
+            "DAC": 2.759521416614385,
+            "MAC": 2.9355967931335454,
+            "PAC": 4.456934588703074,
+            "RUN": 4.343301270690055,
+            "SAC": 2.77603515668223,
+            "SPD": 3.5817519970568945,
+            "STR": 12.684783782634545,
+            "TAC": 5.092768214698433,
+            "TGH": 3.6113087996649353,
+            "THP": 4.706702358489725,
+            "TUP": 3.6269994008463264
+          },
+          "standardized_nonnegative_weights": {
+            "ACC": 0.3099245914430195,
+            "AGI": 0.11946630137427877,
+            "AWR": 0.31774365041361985,
+            "BSK": 0.07729004680336271,
+            "DAC": 0.4170550728236316,
+            "MAC": 0.36660319693215865,
+            "PAC": 0.18809147565323822,
+            "RUN": 0.02922193106218734,
+            "SAC": 0.42167650027254455,
+            "SPD": 0.13837010507784164,
+            "STR": 0.0074671770661491575,
+            "TAC": 0.025952168438324305,
+            "TGH": 0.0,
+            "THP": 0.8259915072374258,
+            "TUP": 0.19332802960312262
+          }
+        },
+        "data_limited_archetypes": [
+          "Pure Runner"
+        ]
+      },
+      "threshold_mapping_comparison": {
+        "ceiling": {
+          "count": 18,
+          "exact_accuracy": 0.388889,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.611111,
+          "mean_signed_residual": 0.611111,
+          "within_one_accuracy": 1.0
+        },
+        "floor": {
+          "count": 18,
+          "exact_accuracy": 0.611111,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.388889,
+          "mean_signed_residual": -0.388889,
+          "within_one_accuracy": 1.0
+        },
+        "round_half_up": {
+          "count": 18,
+          "exact_accuracy": 0.777778,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.222222,
+          "mean_signed_residual": 0.111111,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "training_population": {
+        "count": 51,
+        "partition": "fit"
+      },
+      "validation_population": {
+        "count": 18,
+        "partition": "holdout"
+      },
+      "viability_status": "DATA LIMITED",
+      "warnings": [
+        "Pure Runner has zero fit observations; independent formula unsupported."
+      ]
+    },
+    {
+      "architecture": "C",
+      "boundary_tests": {
+        "adjacent_ovr_count": 14,
+        "adjacent_ovr_ordered": 13,
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 10,
+        "strongest_adjacent_constraints": [
+          {
+            "euclidean_distance": 4.582576,
+            "lower_qb_id": "QB-0016",
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "euclidean_distance": 6.557439,
+            "lower_qb_id": "QB-0042",
+            "upper_qb_id": "QB-0033"
+          },
+          {
+            "euclidean_distance": 7.416198,
+            "lower_qb_id": "QB-0004",
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "euclidean_distance": 8.660254,
+            "lower_qb_id": "QB-0010",
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "euclidean_distance": 10.954451,
+            "lower_qb_id": "QB-0057",
+            "upper_qb_id": "QB-0037"
+          }
+        ],
+        "strongest_same_ovr_contrasts": [
+          {
+            "euclidean_distance": 47.528939,
+            "left_qb_id": "QB-0038",
+            "right_qb_id": "QB-0040"
+          },
+          {
+            "euclidean_distance": 43.116122,
+            "left_qb_id": "QB-0013",
+            "right_qb_id": "QB-0018"
+          },
+          {
+            "euclidean_distance": 41.964271,
+            "left_qb_id": "QB-0001",
+            "right_qb_id": "QB-0002"
+          },
+          {
+            "euclidean_distance": 40.484565,
+            "left_qb_id": "QB-0047",
+            "right_qb_id": "QB-0059"
+          },
+          {
+            "euclidean_distance": 32.710854,
+            "left_qb_id": "QB-0031",
+            "right_qb_id": "QB-0032"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.686275,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.333333,
+        "mean_signed_residual": 0.019608,
+        "within_one_accuracy": 0.980392
+      },
+      "fit_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.862745,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.137255,
+        "mean_signed_residual": 0.019608,
+        "within_one_accuracy": 1.0
+      },
+      "holdout_by_archetype": {
+        "Backfield Creator": {
+          "count": 3,
+          "exact_accuracy": 0.666667,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.333333,
+          "mean_signed_residual": -0.333333,
+          "within_one_accuracy": 1.0
+        },
+        "Dual Threat": {
+          "count": 3,
+          "exact_accuracy": 0.333333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.666667,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "Pocket Passer": {
+          "count": 12,
+          "exact_accuracy": 0.833333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.166667,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_by_ovr": {
+        "80": {
+          "count": 5,
+          "exact_accuracy": 0.8,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.2,
+          "mean_signed_residual": 0.2,
+          "within_one_accuracy": 1.0
+        },
+        "81": {
+          "count": 1,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "82": {
+          "count": 3,
+          "exact_accuracy": 0.333333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.666667,
+          "mean_signed_residual": -0.666667,
+          "within_one_accuracy": 1.0
+        },
+        "83": {
+          "count": 3,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "84": {
+          "count": 1,
+          "exact_accuracy": 0.0,
+          "maximum_error": 1,
+          "mean_absolute_error": 1.0,
+          "mean_signed_residual": 1.0,
+          "within_one_accuracy": 1.0
+        },
+        "86": {
+          "count": 2,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "87": {
+          "count": 1,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "88": {
+          "count": 1,
+          "exact_accuracy": 0.0,
+          "maximum_error": 1,
+          "mean_absolute_error": 1.0,
+          "mean_signed_residual": -1.0,
+          "within_one_accuracy": 1.0
+        },
+        "89": {
+          "count": 1,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.722222,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.277778,
+        "mean_signed_residual": -0.055556,
+        "within_one_accuracy": 1.0
+      },
+      "name": "Shared Core + Archetype Modifier",
+      "parameter_count": 19,
+      "parameterization": {
+        "modifiers": {
+          "Backfield Creator": -0.15673070309426862,
+          "Dual Threat": 0.10320407203560933,
+          "Pocket Passer": 0.005735676692493547
+        },
+        "shared": {
+          "intercept": 82.37254902,
+          "standardization_means": {
+            "ACC": 77.2156862745098,
+            "AGI": 75.7843137254902,
+            "AWR": 76.25490196078431,
+            "BSK": 76.80392156862744,
+            "DAC": 80.7843137254902,
+            "MAC": 81.2156862745098,
+            "PAC": 77.45098039215686,
+            "RUN": 77.94117647058823,
+            "SAC": 81.17647058823529,
+            "SPD": 78.6078431372549,
+            "STR": 64.3921568627451,
+            "TAC": 79.70588235294117,
+            "TGH": 83.17647058823529,
+            "THP": 81.05882352941177,
+            "TUP": 78.47058823529412
+          },
+          "standardization_scales": {
+            "ACC": 4.14120246575323,
+            "AGI": 4.486641284883758,
+            "AWR": 4.467060871929727,
+            "BSK": 4.9823988546471965,
+            "DAC": 2.7030391427906975,
+            "MAC": 2.946009101660501,
+            "PAC": 4.499733000750923,
+            "RUN": 4.552145646666633,
+            "SAC": 3.2401033773930377,
+            "SPD": 3.8809662803883938,
+            "STR": 12.590189818333503,
+            "TAC": 5.325830940036066,
+            "TGH": 3.622943675602193,
+            "THP": 4.616304288344045,
+            "TUP": 3.9623371058320807
+          },
+          "standardized_nonnegative_weights": {
+            "ACC": 0.3138911950847133,
+            "AGI": 0.14565705138104515,
+            "AWR": 0.345182846919286,
+            "BSK": 0.02441047684682947,
+            "DAC": 0.32293845184338776,
+            "MAC": 0.4155690806091415,
+            "PAC": 0.2224758566913307,
+            "RUN": 0.07672735584904457,
+            "SAC": 0.3267150765584424,
+            "SPD": 0.09392442135823036,
+            "STR": 0.04833806268285143,
+            "TAC": 0.07525833368027293,
+            "TGH": 0.007108877401769081,
+            "THP": 0.8460665468771053,
+            "TUP": 0.3361777266157747
+          }
+        }
+      },
+      "threshold_mapping_comparison": {
+        "ceiling": {
+          "count": 18,
+          "exact_accuracy": 0.5,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.5,
+          "mean_signed_residual": 0.5,
+          "within_one_accuracy": 1.0
+        },
+        "floor": {
+          "count": 18,
+          "exact_accuracy": 0.5,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.5,
+          "mean_signed_residual": -0.5,
+          "within_one_accuracy": 1.0
+        },
+        "round_half_up": {
+          "count": 18,
+          "exact_accuracy": 0.722222,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.277778,
+          "mean_signed_residual": -0.055556,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "training_population": {
+        "count": 51,
+        "partition": "fit"
+      },
+      "validation_population": {
+        "count": 18,
+        "partition": "holdout"
+      },
+      "viability_status": "PROVISIONALLY VIABLE",
+      "warnings": [
+        "Dual Threat holdout exact accuracy is low but data-limited (n=3)."
+      ]
+    },
+    {
+      "architecture": "D",
+      "boundary_tests": {
+        "adjacent_ovr_count": 14,
+        "adjacent_ovr_ordered": 13,
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 11,
+        "strongest_adjacent_constraints": [
+          {
+            "euclidean_distance": 4.582576,
+            "lower_qb_id": "QB-0016",
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "euclidean_distance": 6.557439,
+            "lower_qb_id": "QB-0042",
+            "upper_qb_id": "QB-0033"
+          },
+          {
+            "euclidean_distance": 7.416198,
+            "lower_qb_id": "QB-0004",
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "euclidean_distance": 8.660254,
+            "lower_qb_id": "QB-0010",
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "euclidean_distance": 10.954451,
+            "lower_qb_id": "QB-0057",
+            "upper_qb_id": "QB-0037"
+          }
+        ],
+        "strongest_same_ovr_contrasts": [
+          {
+            "euclidean_distance": 47.528939,
+            "left_qb_id": "QB-0038",
+            "right_qb_id": "QB-0040"
+          },
+          {
+            "euclidean_distance": 43.116122,
+            "left_qb_id": "QB-0013",
+            "right_qb_id": "QB-0018"
+          },
+          {
+            "euclidean_distance": 41.964271,
+            "left_qb_id": "QB-0001",
+            "right_qb_id": "QB-0002"
+          },
+          {
+            "euclidean_distance": 40.484565,
+            "left_qb_id": "QB-0047",
+            "right_qb_id": "QB-0059"
+          },
+          {
+            "euclidean_distance": 32.710854,
+            "left_qb_id": "QB-0031",
+            "right_qb_id": "QB-0032"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.627451,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.411765,
+        "mean_signed_residual": 0.058824,
+        "within_one_accuracy": 0.960784
+      },
+      "fit_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.882353,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.117647,
+        "mean_signed_residual": 0.039216,
+        "within_one_accuracy": 1.0
+      },
+      "holdout_by_archetype": {
+        "Backfield Creator": {
+          "count": 3,
+          "exact_accuracy": 0.666667,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.333333,
+          "mean_signed_residual": -0.333333,
+          "within_one_accuracy": 1.0
+        },
+        "Dual Threat": {
+          "count": 3,
+          "exact_accuracy": 0.0,
+          "maximum_error": 1,
+          "mean_absolute_error": 1.0,
+          "mean_signed_residual": -0.333333,
+          "within_one_accuracy": 1.0
+        },
+        "Pocket Passer": {
+          "count": 12,
+          "exact_accuracy": 0.833333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.166667,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_by_ovr": {
+        "80": {
+          "count": 5,
+          "exact_accuracy": 0.8,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.2,
+          "mean_signed_residual": 0.2,
+          "within_one_accuracy": 1.0
+        },
+        "81": {
+          "count": 1,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "82": {
+          "count": 3,
+          "exact_accuracy": 0.333333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.666667,
+          "mean_signed_residual": -0.666667,
+          "within_one_accuracy": 1.0
+        },
+        "83": {
+          "count": 3,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "84": {
+          "count": 1,
+          "exact_accuracy": 0.0,
+          "maximum_error": 1,
+          "mean_absolute_error": 1.0,
+          "mean_signed_residual": 1.0,
+          "within_one_accuracy": 1.0
+        },
+        "86": {
+          "count": 2,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "87": {
+          "count": 1,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "88": {
+          "count": 1,
+          "exact_accuracy": 0.0,
+          "maximum_error": 1,
+          "mean_absolute_error": 1.0,
+          "mean_signed_residual": -1.0,
+          "within_one_accuracy": 1.0
+        },
+        "89": {
+          "count": 1,
+          "exact_accuracy": 0.0,
+          "maximum_error": 1,
+          "mean_absolute_error": 1.0,
+          "mean_signed_residual": -1.0,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.666667,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.333333,
+        "mean_signed_residual": -0.111111,
+        "within_one_accuracy": 1.0
+      },
+      "name": "Shared Weights + Archetype Thresholds",
+      "parameter_count": 19,
+      "parameterization": {
+        "calibrations": {
+          "Backfield Creator": [
+            -1.9926694853713087,
+            1.021902462079631
+          ],
+          "Dual Threat": [
+            3.3926829160195666,
+            0.9596932331027823
+          ],
+          "Pocket Passer": [
+            -0.050835480301572034,
+            1.000687513211771
+          ]
+        },
+        "shared": {
+          "intercept": 82.37254902,
+          "standardization_means": {
+            "ACC": 77.2156862745098,
+            "AGI": 75.7843137254902,
+            "AWR": 76.25490196078431,
+            "BSK": 76.80392156862744,
+            "DAC": 80.7843137254902,
+            "MAC": 81.2156862745098,
+            "PAC": 77.45098039215686,
+            "RUN": 77.94117647058823,
+            "SAC": 81.17647058823529,
+            "SPD": 78.6078431372549,
+            "STR": 64.3921568627451,
+            "TAC": 79.70588235294117,
+            "TGH": 83.17647058823529,
+            "THP": 81.05882352941177,
+            "TUP": 78.47058823529412
+          },
+          "standardization_scales": {
+            "ACC": 4.14120246575323,
+            "AGI": 4.486641284883758,
+            "AWR": 4.467060871929727,
+            "BSK": 4.9823988546471965,
+            "DAC": 2.7030391427906975,
+            "MAC": 2.946009101660501,
+            "PAC": 4.499733000750923,
+            "RUN": 4.552145646666633,
+            "SAC": 3.2401033773930377,
+            "SPD": 3.8809662803883938,
+            "STR": 12.590189818333503,
+            "TAC": 5.325830940036066,
+            "TGH": 3.622943675602193,
+            "THP": 4.616304288344045,
+            "TUP": 3.9623371058320807
+          },
+          "standardized_nonnegative_weights": {
+            "ACC": 0.3138911950847133,
+            "AGI": 0.14565705138104515,
+            "AWR": 0.345182846919286,
+            "BSK": 0.02441047684682947,
+            "DAC": 0.32293845184338776,
+            "MAC": 0.4155690806091415,
+            "PAC": 0.2224758566913307,
+            "RUN": 0.07672735584904457,
+            "SAC": 0.3267150765584424,
+            "SPD": 0.09392442135823036,
+            "STR": 0.04833806268285143,
+            "TAC": 0.07525833368027293,
+            "TGH": 0.007108877401769081,
+            "THP": 0.8460665468771053,
+            "TUP": 0.3361777266157747
+          }
+        }
+      },
+      "threshold_mapping_comparison": {
+        "ceiling": {
+          "count": 18,
+          "exact_accuracy": 0.5,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.5,
+          "mean_signed_residual": 0.5,
+          "within_one_accuracy": 1.0
+        },
+        "floor": {
+          "count": 18,
+          "exact_accuracy": 0.5,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.5,
+          "mean_signed_residual": -0.5,
+          "within_one_accuracy": 1.0
+        },
+        "round_half_up": {
+          "count": 18,
+          "exact_accuracy": 0.666667,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.333333,
+          "mean_signed_residual": -0.111111,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "training_population": {
+        "count": 51,
+        "partition": "fit"
+      },
+      "validation_population": {
+        "count": 18,
+        "partition": "holdout"
+      },
+      "viability_status": "PROVISIONALLY VIABLE",
+      "warnings": [
+        "Dual Threat holdout exact accuracy is low but data-limited (n=3)."
+      ]
+    }
+  ],
+  "fit_count": 51,
+  "formula_status": "unsolved",
+  "holdout_count": 18,
+  "leakage_controls": {
+    "cross_ovr_blocks_same_player_and_profile": true,
+    "holdout_used_for_training": false,
+    "profile_duplicates_used_for_training": false
+  },
+  "schema_version": 1
+}
