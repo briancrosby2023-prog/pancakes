@@ -36,3 +36,16 @@ operation-pancake acquire conflicts
 There is intentionally no live scrape command. The reusable state exposes last retrieval history,
 raw snapshots, new cards, conflicts, failure status, resume cursor, and market history for a future
 PC application.
+
+## Controlled CFB.FAN pilot
+
+On 2026-08-13, normal public access returned HTTP 200 for `robots.txt`, `/players/`, and the six
+fixed Center player pages used by the pilot. Robots rules disallow `/accounts/*` and `/api/*`, but
+not public player pages. The pilot made no API calls and fetched the six pages sequentially at no
+more than 12 requests per minute. The adapter has no broad crawl discovery method.
+
+The listing provides population discovery and key ratings. Player pages provide the 15 displayed
+Center ratings (`SPD ACC AGI COD AWR STR TGH RBK RBF RBP PBK PBF PBP LBK IBL`), program,
+archetype, team, quick-sell information, and sometimes date added. Release and market coverage are
+therefore partial rather than guaranteed. All six responses are retained as content-addressed raw
+snapshots and all normalized cards remain external staging evidence.

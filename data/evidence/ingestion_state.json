@@ -39,6 +39,7 @@
     }
   },
   "manifest_ids": [
+    "EXTERNAL-CFB_FAN-2026-08-13T20-00-00Z",
     "HIST-PROGRESSION-INVENTORY-V1"
   ],
   "provenance": {},
@@ -178,6 +179,236 @@
     }
   },
   "records": {
+    "card:EXT-CFB_FAN-102026556": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-102026556",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26556-kevin-mawae/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 66,
+          "AGI": 65,
+          "AWR": 75,
+          "COD": 62,
+          "IBL": 74,
+          "LBK": 82,
+          "PBF": 82,
+          "PBK": 79,
+          "PBP": 73,
+          "RBF": 79,
+          "RBK": 79,
+          "RBP": 77,
+          "SPD": 58,
+          "STR": 79,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "102026556",
+        "external_player_id": "26556",
+        "external_source": "CFB_FAN",
+        "overall": 80,
+        "player": "Kevin Mawae",
+        "position": "C",
+        "program": "Core Legends Classic",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/551d0403e73dabd10744b8ebd7d5d6927389c42bbdb60d7bbffdb5f4b69e35e8.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-240009242": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-240009242",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/9242-cole-best/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Well Rounded",
+        "attributes": {
+          "ACC": 70,
+          "AGI": 68,
+          "AWR": 80,
+          "COD": 68,
+          "IBL": 75,
+          "LBK": 74,
+          "PBF": 80,
+          "PBK": 80,
+          "PBP": 80,
+          "RBF": 80,
+          "RBK": 80,
+          "RBP": 80,
+          "SPD": 70,
+          "STR": 80,
+          "TGH": 90
+        },
+        "card_type": "CUT",
+        "external_card_id": "240009242",
+        "external_player_id": "9242",
+        "external_source": "CFB_FAN",
+        "overall": 81,
+        "player": "Cole Best",
+        "position": "C",
+        "program": "Cornerstones",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/26a7888a3b4e4fae3b425260bea7cd7f67dec34806becb4746dc7bc90721c7a8.bin",
+        "release_date": "07/11/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-260008177": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-260008177",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/8177-carson-hinzman/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 67,
+          "AGI": 65,
+          "AWR": 84,
+          "COD": 65,
+          "IBL": 83,
+          "LBK": 81,
+          "PBF": 80,
+          "PBK": 83,
+          "PBP": 86,
+          "RBF": 83,
+          "RBK": 85,
+          "RBP": 87,
+          "SPD": 67,
+          "STR": 86,
+          "TGH": 86
+        },
+        "card_type": "CUT",
+        "external_card_id": "260008177",
+        "external_player_id": "8177",
+        "external_source": "CFB_FAN",
+        "overall": 86,
+        "player": "Carson Hinzman",
+        "position": "C",
+        "program": "Phenoms",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/57f6f4e59563061130c215dc8224d2f9bdad43746c06546708ff4d7f4699bb70.bin",
+        "release_date": "07/24/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-9023669": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-9023669",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/23669-iapani-laloulu/27-9023669/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 66,
+          "AGI": 62,
+          "AWR": 83,
+          "COD": 62,
+          "IBL": 84,
+          "LBK": 80,
+          "PBF": 84,
+          "PBK": 84,
+          "PBP": 85,
+          "RBF": 79,
+          "RBK": 80,
+          "RBP": 82,
+          "SPD": 66,
+          "STR": 86,
+          "TGH": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-9023669",
+        "external_player_id": "23669",
+        "external_source": "CFB_FAN",
+        "overall": 85,
+        "player": "Iapani Laloulu",
+        "position": "C",
+        "program": "Platinum Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/a4e161609cc8a54bb47a4775be6fa1ad2057d2b424eb0299b8b03a0febd3ec6c.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-9021692": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-9021692",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/21692-kade-pieper/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 68,
+          "AGI": 68,
+          "AWR": 81,
+          "COD": 68,
+          "IBL": 77,
+          "LBK": 83,
+          "PBF": 83,
+          "PBK": 82,
+          "PBP": 80,
+          "RBF": 85,
+          "RBK": 86,
+          "RBP": 83,
+          "SPD": 68,
+          "STR": 79,
+          "TGH": 84
+        },
+        "card_type": "CUT",
+        "external_card_id": "9021692",
+        "external_player_id": "21692",
+        "external_source": "CFB_FAN",
+        "overall": 84,
+        "player": "Kade Pieper",
+        "position": "C",
+        "program": "Platinum Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/931b849a5f4586f22829cd64fc0387406c7c3ddbdd5d89c3ff1313ff464d9fc1.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
     "progression_observation:HIST-PROG-BO-JACKSON": {
       "disposition": "PROGRESSION_EVIDENCE",
       "promoted": false,
@@ -774,6 +1005,69 @@
     }
   },
   "reports": {
+    "INGEST-EXTERNAL-CFB_FAN-2026-08-13T20-00-00Z": {
+      "actions": [
+        {
+          "id": "CFB_FAN",
+          "kind": "source",
+          "result": "MATCH"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-9023669",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "duplicate_of": "C-0001",
+          "id": "EXT-CFB_FAN-27-250000734",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-9021692",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-260008177",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-240009242",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-102026556",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        }
+      ],
+      "dry_run": false,
+      "manifest_id": "EXTERNAL-CFB_FAN-2026-08-13T20-00-00Z",
+      "queue_items_closed": [],
+      "queue_items_remaining": 20,
+      "records_promoted": 0,
+      "records_staged": 6,
+      "result_counts": {
+        "CONFLICT": 0,
+        "DUPLICATE": 6,
+        "MATCH": 1,
+        "NEW": 0,
+        "REJECTED": 0,
+        "UNRESOLVED": 0,
+        "UPDATE": 0
+      },
+      "source_completion_changes": [],
+      "sources_processed": 1
+    },
     "INGEST-HIST-PROGRESSION-INVENTORY-V1": {
       "actions": [
         {
@@ -950,6 +1244,21 @@
     }
   },
   "sources": {
+    "CFB_FAN": {
+      "coverage": {
+        "cards_extracted": [],
+        "cards_identified": [],
+        "expected_items": [],
+        "processed_items": [],
+        "status": "UNPROCESSED",
+        "unresolved_items": []
+      },
+      "extraction_status": "PARTIAL",
+      "original_filename": "external://CFB_FAN",
+      "source_id": "CFB_FAN",
+      "source_name": "CFB_FAN external card source",
+      "source_type": "OTHER"
+    },
     "SRC-IMG-ARCH": {
       "coverage": {
         "cards_extracted": [],
