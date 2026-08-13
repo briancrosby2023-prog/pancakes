@@ -1,0 +1,30 @@
+[
+  {
+    "architecture": "historical weights + historical calibration",
+    "model": "Madden calibrated reference M",
+    "representative_validation": false,
+    "static_exact_accuracy": 0.0,
+    "status": "REJECTED_AS_CFB_PRACTICAL_MODEL"
+  },
+  {
+    "architecture": "historical weighted average without Madden calibration",
+    "model": "Historical weighted score W",
+    "representative_validation": false,
+    "static_exact_accuracy": 0.0,
+    "status": "EXPERIMENTAL_REFERENCE_ONLY"
+  },
+  {
+    "architecture": "weighted score bands",
+    "model": "Hidden-band Center",
+    "representative_validation": false,
+    "static_exact_accuracy": null,
+    "status": "INSUFFICIENT_BAND_LABELS"
+  },
+  {
+    "architecture": "universal or archetype-adjusted",
+    "model": "Minimal CFB Center fit",
+    "representative_validation": false,
+    "static_exact_accuracy": null,
+    "status": "NOT_FIT_TO_AVOID_THREE_CARD_OVERFIT"
+  }
+]

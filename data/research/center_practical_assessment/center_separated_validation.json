@@ -1,0 +1,67 @@
+{
+  "ARCHETYPE_ACCURACY": {
+    "Pass Protector": {
+      "count": 0,
+      "representative": false
+    },
+    "Raw Strength": {
+      "count": 3,
+      "representative": false
+    }
+  },
+  "CROSS_OVR_ACCURACY": {
+    "accuracy": null,
+    "count": 0
+  },
+  "PROGRESSION_COMPATIBILITY": {
+    "card_type": "LEGENDARY",
+    "frozen_madden_absolute_contradictions": 22,
+    "positive_direction_count": 22,
+    "transition_count": 22,
+    "universal_veto_applied": false
+  },
+  "REGULAR_CARD_ACCURACY": {
+    "accuracy": null,
+    "count": 0
+  },
+  "SPECIAL_CARD_ACCURACY": {
+    "count": 3,
+    "historical_weighted_score_exact_accuracy": 0.0
+  },
+  "STATIC_CARD_ACCURACY": {
+    "count": 3,
+    "independent_validation": false,
+    "madden_calibration_exact_accuracy": 0.0,
+    "predictions": [
+      {
+        "madden_calibrated_prediction": 83,
+        "madden_calibrated_score": 82.95928458,
+        "observed_ovr": 85,
+        "player": "Ashton Beers",
+        "validation_group": "SPECIAL_CARD_VALIDATION",
+        "weighted_score": 83.00925926,
+        "weighted_score_rounded": 83
+      },
+      {
+        "madden_calibrated_prediction": 81,
+        "madden_calibrated_score": 80.80856642,
+        "observed_ovr": 84,
+        "player": "Justin Evans",
+        "validation_group": "SPECIAL_CARD_VALIDATION",
+        "weighted_score": 81.80555556,
+        "weighted_score_rounded": 82
+      },
+      {
+        "madden_calibrated_prediction": 81,
+        "madden_calibrated_score": 80.5934946,
+        "observed_ovr": 84,
+        "player": "Bruce Mitchell",
+        "validation_group": "SPECIAL_CARD_VALIDATION",
+        "weighted_score": 81.68518519,
+        "weighted_score_rounded": 82
+      }
+    ],
+    "representative_regular_population": false,
+    "weighted_score_exact_accuracy": 0.0
+  }
+}

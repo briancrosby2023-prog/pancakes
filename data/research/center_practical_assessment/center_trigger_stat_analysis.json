@@ -1,0 +1,42 @@
+{
+  "MODERATE": [
+    {
+      "attribute": "RBP",
+      "scope": "unreproduced historical population evidence"
+    },
+    {
+      "attribute": "AWR",
+      "scope": "unreproduced historical population evidence"
+    }
+  ],
+  "STRONG": [
+    {
+      "attribute": "PBK",
+      "scope": "Legendary progression local sensitivity"
+    },
+    {
+      "attribute": "PBF",
+      "scope": "Legendary progression local sensitivity"
+    },
+    {
+      "attribute": "PBP",
+      "scope": "Legendary progression local sensitivity"
+    }
+  ],
+  "UNSUPPORTED": [
+    "TGH",
+    "RCK"
+  ],
+  "WEAK": [
+    "RBK",
+    "RBF",
+    "IBL",
+    "LBK",
+    "STR",
+    "SPD",
+    "ACC",
+    "AGI",
+    "COD"
+  ],
+  "ordinary_card_trigger_validation_available": false
+}
