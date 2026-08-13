@@ -46,6 +46,10 @@ def main() -> None:
     if args.command == "search":
         filters = {"positions": args.position} if args.position else {}
         result = index.search(args.query, **filters)
+        manifest_result = ingestor.search(args.query)
+        result["manifest_records"] = manifest_result["records"]
+        result["manifest_reconciliation"] = manifest_result["reconciliation"]
+        result["manifest_conflicts"] = manifest_result["conflicts"]
     elif args.command == "sources":
         result = (
             index.search(extraction_status=args.status.upper())["sources"]

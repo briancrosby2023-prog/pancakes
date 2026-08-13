@@ -85,6 +85,40 @@
           "resolved_at": {"type": ["string", "null"]}
         }
       }
+    },
+    "reconciliation_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["item_id", "issue_type", "status", "priority", "notes"],
+        "properties": {
+          "item_id": {"type": "string"},
+          "source_id": {"type": ["string", "null"]},
+          "affected_type": {"type": ["string", "null"]},
+          "affected_id": {"type": ["string", "null"]},
+          "issue_type": {"type": "string"},
+          "status": {"enum": ["OPEN", "PARTIAL", "RESOLVED"]},
+          "priority": {"enum": ["HIGH", "MEDIUM", "LOW"]},
+          "notes": {"type": "string"}
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["conflict_id", "affected_id", "existing_value", "incoming_value", "status"],
+        "properties": {
+          "conflict_id": {"type": "string"},
+          "affected_id": {"type": "string"},
+          "existing_value": {},
+          "incoming_value": {},
+          "existing_provenance": {"type": "array"},
+          "incoming_provenance": {"type": "array"},
+          "resolution": {"type": "string"},
+          "status": {"type": "string"}
+        }
+      }
     }
   }
 }

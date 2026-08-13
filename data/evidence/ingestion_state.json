@@ -1,0 +1,1002 @@
+{
+  "conflicts": {
+    "CONFLICT-HARRINGTON-HISTORICAL-CHAIN": {
+      "affected_id": "HIST-PROG-JOEY-HARRINGTON-OLD",
+      "conflict_id": "CONFLICT-HARRINGTON-HISTORICAL-CHAIN",
+      "existing_provenance": [
+        {
+          "locator": "QB_Cards QB-0074/QB-0038/QB-0013/QB-0003",
+          "source_id": "SRC-QB-001",
+          "strength": "VALIDATED_CANONICAL"
+        }
+      ],
+      "existing_value": {
+        "states": [
+          79,
+          81,
+          84,
+          86
+        ],
+        "status": "VALIDATED_CONTROLLING"
+      },
+      "incoming_provenance": [
+        {
+          "locator": "older historical conversation progression statement",
+          "source_id": "SRC-HIST-001",
+          "strength": "HISTORICALLY_RECOVERED"
+        }
+      ],
+      "incoming_value": {
+        "states": [
+          80,
+          84,
+          86
+        ],
+        "status": "OLDER_HISTORICAL_CLAIM"
+      },
+      "resolution": "Preserve older claim for screenshot recovery; do not replace validated 79/81/84/86 SI Legends chain. The 80 OVR Core Legends QB-0054 remains a separate-program comparison.",
+      "status": "RESOLVED_STRONGER_EVIDENCE_CONTROLS"
+    }
+  },
+  "manifest_ids": [
+    "HIST-PROGRESSION-INVENTORY-V1"
+  ],
+  "provenance": {},
+  "reconciliation": {
+    "REC-PROG-BO-JACKSON": {
+      "affected_id": "HIST-PROG-BO-JACKSON",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-BO-JACKSON",
+      "notes": "Recover Bo Jackson HB 80/83/86 screenshots and validated vectors.",
+      "priority": "HIGH",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    "REC-PROG-CHRIS-PEAL": {
+      "affected_id": "HIST-PROG-CHRIS-PEAL",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-CHRIS-PEAL",
+      "notes": "Recover Chris Peal CB 81/86/87 screenshots and validated vectors.",
+      "priority": "HIGH",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    "REC-PROG-CRABTREE": {
+      "affected_id": "HIST-PROG-MICHAEL-CRABTREE",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-CRABTREE",
+      "notes": "Recover Michael Crabtree WR 78/80/83/85 screenshots; validate AWR 80 and reported total deltas without synthesizing vectors.",
+      "priority": "HIGH",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    "REC-PROG-FB-TO-85": {
+      "affected_id": "RECOVERY-PROG-FB-TO-85",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-FB-TO-85",
+      "notes": "Identify FB progression and recover source states through at least 85.",
+      "priority": "MEDIUM",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    "REC-PROG-FS-TO-85": {
+      "affected_id": "RECOVERY-PROG-FS-TO-85",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-FS-TO-85",
+      "notes": "Identify FS progression and recover source states through at least 85.",
+      "priority": "MEDIUM",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    "REC-PROG-GUARD-TO-85": {
+      "affected_id": "RECOVERY-PROG-GUARD-TO-85",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-GUARD-TO-85",
+      "notes": "Identify Guard player/side and recover source states through at least 85.",
+      "priority": "MEDIUM",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    "REC-PROG-HARRINGTON-CROSSCHECK": {
+      "affected_id": "HIST-PROG-JOEY-HARRINGTON-OLD",
+      "affected_type": "conflict_recovery",
+      "issue_type": "CONFLICTING_EVIDENCE",
+      "item_id": "REC-PROG-HARRINGTON-CROSSCHECK",
+      "notes": "Recover older 80/84/86 screenshot claim for cross-check; validated 79/81/84/86 chain remains controlling.",
+      "priority": "HIGH",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    "REC-PROG-PEYTON-BOWEN": {
+      "affected_id": "HIST-PROG-PEYTON-BOWEN",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-PEYTON-BOWEN",
+      "notes": "Recover Peyton Bowen SS 83/85/86 screenshots and validated vectors.",
+      "priority": "HIGH",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    "REC-PROG-SEAU": {
+      "affected_id": "HIST-PROG-JUNIOR-SEAU",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-SEAU",
+      "notes": "Recover Junior Seau MIKE 81/84/86/87 screenshots and 80 Core Legend WILL comparison; transcribe validated vectors.",
+      "priority": "HIGH",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    "REC-PROG-TE-80-85": {
+      "affected_id": "RECOVERY-PROG-TE-80-85",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-TE-80-85",
+      "notes": "Identify and recover historical TE 80/85 chain; compare without duplicating known Clarke, Hoffman, Finley, or Newsome cards.",
+      "priority": "MEDIUM",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    "REC-PROG-WR-76-83": {
+      "affected_id": "RECOVERY-PROG-WR-76-83",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-WR-76-83",
+      "notes": "Identify WR and recover seven consecutive one-OVR progression steps from 76 through 83.",
+      "priority": "MEDIUM",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    "REC-PROG-WR-MIKE-80-85": {
+      "affected_id": "RECOVERY-PROG-WR-MIKE-80-85",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-WR-MIKE-80-85",
+      "notes": "Resolve full identity for WR historically called Mike and recover 80/85 screenshots.",
+      "priority": "MEDIUM",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    "REC-SRC-IMG-ARCH": {
+      "affected_id": "SRC-IMG-ARCH",
+      "affected_type": "source",
+      "created_at": "2026-08-13",
+      "issue_type": "NEEDS_VALIDATION",
+      "item_id": "REC-SRC-IMG-ARCH",
+      "notes": "Registered source has not been extracted.",
+      "priority": "MEDIUM",
+      "resolution": "Archive now has 12 deterministic progression recovery targets; individual screenshot filenames and card vectors remain unresolved.",
+      "resolved_at": null,
+      "source_id": "SRC-IMG-ARCH",
+      "status": "PARTIAL"
+    }
+  },
+  "records": {
+    "progression_observation:HIST-PROG-BO-JACKSON": {
+      "disposition": "PROGRESSION_EVIDENCE",
+      "promoted": false,
+      "record_id": "HIST-PROG-BO-JACKSON",
+      "record_type": "progression_observation",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "historical conversation progression inventory",
+          "source_id": "SRC-HIST-001"
+        },
+        {
+          "catalog_source": true,
+          "locator": "TARGET-BO-JACKSON",
+          "source_id": "SRC-IMG-ARCH"
+        }
+      ],
+      "unresolved_fields": [
+        "rating_vectors_80_83_86"
+      ],
+      "validation_status": "HISTORICALLY_RECOVERED",
+      "values": {
+        "canonical_links": [],
+        "evidence_class": "HISTORICAL_RESEARCH RECOVERY_TARGET",
+        "known_states": [
+          80,
+          83,
+          86
+        ],
+        "missing_vectors": [
+          80,
+          83,
+          86
+        ],
+        "player": "Bo Jackson",
+        "position": "HB",
+        "source_class": "HISTORICAL_SCREENSHOT_ARCHIVE",
+        "source_located": true,
+        "validated_states": []
+      }
+    },
+    "progression_observation:HIST-PROG-CHRIS-PEAL": {
+      "disposition": "PROGRESSION_EVIDENCE",
+      "promoted": false,
+      "record_id": "HIST-PROG-CHRIS-PEAL",
+      "record_type": "progression_observation",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "historical conversation progression inventory",
+          "source_id": "SRC-HIST-001"
+        },
+        {
+          "catalog_source": true,
+          "locator": "TARGET-CHRIS-PEAL",
+          "source_id": "SRC-IMG-ARCH"
+        }
+      ],
+      "unresolved_fields": [
+        "rating_vectors_81_86_87"
+      ],
+      "validation_status": "HISTORICALLY_RECOVERED",
+      "values": {
+        "canonical_links": [],
+        "evidence_class": "HISTORICAL_RESEARCH RECOVERY_TARGET",
+        "known_states": [
+          81,
+          86,
+          87
+        ],
+        "missing_vectors": [
+          81,
+          86,
+          87
+        ],
+        "player": "Chris Peal",
+        "position": "CB",
+        "source_class": "HISTORICAL_SCREENSHOT_ARCHIVE",
+        "source_located": true,
+        "validated_states": []
+      }
+    },
+    "progression_observation:HIST-PROG-JOEY-HARRINGTON-OLD": {
+      "disposition": "PROGRESSION_EVIDENCE",
+      "promoted": false,
+      "record_id": "HIST-PROG-JOEY-HARRINGTON-OLD",
+      "record_type": "progression_observation",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "older historical conversation claim 80/84/86",
+          "source_id": "SRC-HIST-001"
+        },
+        {
+          "catalog_source": true,
+          "locator": "QB_Cards validated Harrington records",
+          "source_id": "SRC-QB-001"
+        },
+        {
+          "catalog_source": true,
+          "locator": "TARGET-HARRINGTON",
+          "source_id": "SRC-IMG-ARCH"
+        }
+      ],
+      "unresolved_fields": [
+        "historical_80_state_screenshot_cross_check"
+      ],
+      "validation_status": "CONFLICTING_HISTORICAL_EVIDENCE",
+      "values": {
+        "canonical_links": [
+          "QB-0074",
+          "QB-0038",
+          "QB-0013",
+          "QB-0003"
+        ],
+        "evidence_class": "CONFLICTING_EVIDENCE",
+        "excluded_comparison_link": "QB-0054",
+        "known_states": [
+          80,
+          84,
+          86
+        ],
+        "missing_vectors": [
+          80
+        ],
+        "player": "Joey Harrington",
+        "position": "QB",
+        "source_class": "HISTORICAL_CONVERSATION",
+        "source_located": true,
+        "stronger_evidence_resolution": "Validated SI Legends chain 79/81/84/86 controls; 80 Core Legends card is a different-program comparison.",
+        "validated_states": [
+          79,
+          81,
+          84,
+          86
+        ]
+      }
+    },
+    "progression_observation:HIST-PROG-JUNIOR-SEAU": {
+      "disposition": "PROGRESSION_EVIDENCE",
+      "promoted": false,
+      "record_id": "HIST-PROG-JUNIOR-SEAU",
+      "record_type": "progression_observation",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "historical conversation progression inventory",
+          "source_id": "SRC-HIST-001"
+        },
+        {
+          "catalog_source": true,
+          "locator": "TARGET-SEAU",
+          "source_id": "SRC-IMG-ARCH"
+        }
+      ],
+      "unresolved_fields": [
+        "comparison_vector_80",
+        "rating_vectors_81_84_86_87"
+      ],
+      "validation_status": "HISTORICALLY_RECOVERED",
+      "values": {
+        "canonical_links": [],
+        "comparison_cards": [
+          {
+            "ovr": 80,
+            "program": "Core Legend",
+            "rating_vector_status": "MISSING",
+            "role": "WILL"
+          }
+        ],
+        "evidence_class": "HISTORICAL_RESEARCH RECOVERY_TARGET",
+        "known_states": [
+          81,
+          84,
+          86,
+          87
+        ],
+        "missing_vectors": [
+          81,
+          84,
+          86,
+          87
+        ],
+        "player": "Junior Seau",
+        "position": "MLB",
+        "role": "MIKE",
+        "source_class": "HISTORICAL_SCREENSHOT_ARCHIVE",
+        "source_located": true,
+        "validated_states": []
+      }
+    },
+    "progression_observation:HIST-PROG-MICHAEL-CRABTREE": {
+      "disposition": "PROGRESSION_EVIDENCE",
+      "promoted": false,
+      "record_id": "HIST-PROG-MICHAEL-CRABTREE",
+      "record_type": "progression_observation",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "historical conversation progression inventory",
+          "source_id": "SRC-HIST-001"
+        },
+        {
+          "catalog_source": true,
+          "locator": "TARGET-CRABTREE",
+          "source_id": "SRC-IMG-ARCH"
+        }
+      ],
+      "unresolved_fields": [
+        "rating_vectors_78_80_83_85"
+      ],
+      "validation_status": "HISTORICALLY_RECOVERED",
+      "values": {
+        "canonical_links": [],
+        "evidence_class": "HISTORICAL_RESEARCH RECOVERY_TARGET",
+        "known_states": [
+          78,
+          80,
+          83,
+          85
+        ],
+        "missing_vectors": [
+          78,
+          80,
+          83,
+          85
+        ],
+        "player": "Michael Crabtree",
+        "position": "WR",
+        "source_class": "HISTORICAL_SCREENSHOT_ARCHIVE",
+        "source_located": true,
+        "validated_states": []
+      }
+    },
+    "progression_observation:HIST-PROG-PEYTON-BOWEN": {
+      "disposition": "PROGRESSION_EVIDENCE",
+      "promoted": false,
+      "record_id": "HIST-PROG-PEYTON-BOWEN",
+      "record_type": "progression_observation",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "historical conversation progression inventory",
+          "source_id": "SRC-HIST-001"
+        },
+        {
+          "catalog_source": true,
+          "locator": "TARGET-PEYTON-BOWEN",
+          "source_id": "SRC-IMG-ARCH"
+        }
+      ],
+      "unresolved_fields": [
+        "rating_vectors_83_85_86"
+      ],
+      "validation_status": "HISTORICALLY_RECOVERED",
+      "values": {
+        "canonical_links": [],
+        "evidence_class": "HISTORICAL_RESEARCH RECOVERY_TARGET",
+        "known_states": [
+          83,
+          85,
+          86
+        ],
+        "missing_vectors": [
+          83,
+          85,
+          86
+        ],
+        "player": "Peyton Bowen",
+        "position": "SS",
+        "source_class": "HISTORICAL_SCREENSHOT_ARCHIVE",
+        "source_located": true,
+        "validated_states": []
+      }
+    },
+    "progression_observation:RECOVERY-PROG-FB-TO-85": {
+      "disposition": "PROGRESSION_EVIDENCE",
+      "promoted": false,
+      "record_id": "RECOVERY-PROG-FB-TO-85",
+      "record_type": "progression_observation",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "historical FB progression statement",
+          "source_id": "SRC-HIST-001"
+        },
+        {
+          "catalog_source": true,
+          "locator": "TARGET-FB-85",
+          "source_id": "SRC-IMG-ARCH"
+        }
+      ],
+      "unresolved_fields": [
+        "lower_states",
+        "player_identity",
+        "rating_vectors",
+        "source_images"
+      ],
+      "validation_status": "RECOVERY_TARGET",
+      "values": {
+        "canonical_links": [],
+        "evidence_class": "RECOVERY_TARGET",
+        "known_range_statement": "progression to at least 85",
+        "known_states": [
+          85
+        ],
+        "missing_vectors": [
+          85
+        ],
+        "player_identity_status": "UNIDENTIFIED",
+        "position": "FB",
+        "source_class": "HISTORICAL_SCREENSHOT_ARCHIVE",
+        "source_located": false,
+        "validated_states": []
+      }
+    },
+    "progression_observation:RECOVERY-PROG-FS-TO-85": {
+      "disposition": "PROGRESSION_EVIDENCE",
+      "promoted": false,
+      "record_id": "RECOVERY-PROG-FS-TO-85",
+      "record_type": "progression_observation",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "historical FS progression statement",
+          "source_id": "SRC-HIST-001"
+        },
+        {
+          "catalog_source": true,
+          "locator": "TARGET-FS-85",
+          "source_id": "SRC-IMG-ARCH"
+        }
+      ],
+      "unresolved_fields": [
+        "lower_states",
+        "player_identity",
+        "rating_vectors",
+        "source_images"
+      ],
+      "validation_status": "RECOVERY_TARGET",
+      "values": {
+        "canonical_links": [],
+        "evidence_class": "RECOVERY_TARGET",
+        "known_range_statement": "progression to at least 85",
+        "known_states": [
+          85
+        ],
+        "missing_vectors": [
+          85
+        ],
+        "player_identity_status": "UNIDENTIFIED",
+        "position": "FS",
+        "source_class": "HISTORICAL_SCREENSHOT_ARCHIVE",
+        "source_located": false,
+        "validated_states": []
+      }
+    },
+    "progression_observation:RECOVERY-PROG-GUARD-TO-85": {
+      "disposition": "PROGRESSION_EVIDENCE",
+      "promoted": false,
+      "record_id": "RECOVERY-PROG-GUARD-TO-85",
+      "record_type": "progression_observation",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "historical Guard progression statement",
+          "source_id": "SRC-HIST-001"
+        },
+        {
+          "catalog_source": true,
+          "locator": "TARGET-GUARD-85",
+          "source_id": "SRC-IMG-ARCH"
+        }
+      ],
+      "unresolved_fields": [
+        "guard_side",
+        "lower_states",
+        "player_identity",
+        "rating_vectors",
+        "source_images"
+      ],
+      "validation_status": "RECOVERY_TARGET",
+      "values": {
+        "canonical_links": [],
+        "evidence_class": "RECOVERY_TARGET",
+        "known_range_statement": "progression to at least 85",
+        "known_states": [
+          85
+        ],
+        "missing_vectors": [
+          85
+        ],
+        "player_identity_status": "UNIDENTIFIED",
+        "position_group": "GUARD",
+        "source_class": "HISTORICAL_SCREENSHOT_ARCHIVE",
+        "source_located": false,
+        "validated_states": []
+      }
+    },
+    "progression_observation:RECOVERY-PROG-TE-80-85": {
+      "disposition": "PROGRESSION_EVIDENCE",
+      "promoted": false,
+      "record_id": "RECOVERY-PROG-TE-80-85",
+      "record_type": "progression_observation",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "historical TE 80 to 85 statement",
+          "source_id": "SRC-HIST-001"
+        },
+        {
+          "catalog_source": true,
+          "locator": "TARGET-TE-80-85",
+          "source_id": "SRC-IMG-ARCH"
+        }
+      ],
+      "unresolved_fields": [
+        "player_identity",
+        "rating_vectors_80_85",
+        "source_images"
+      ],
+      "validation_status": "RECOVERY_TARGET",
+      "values": {
+        "canonical_links": [],
+        "evidence_class": "RECOVERY_TARGET",
+        "existing_te_cross_references": {
+          "Eli Finley": [
+            "TE-0020",
+            "TE-0011"
+          ],
+          "Jalen Hoffman": [
+            "TE-0048",
+            "TE-0038"
+          ],
+          "Ozzie Newsome": [
+            "TE-0037",
+            "TE-0013"
+          ],
+          "Peter Clarke": [
+            "TE-0049"
+          ]
+        },
+        "known_states": [
+          80,
+          85
+        ],
+        "missing_vectors": [
+          80,
+          85
+        ],
+        "player_identity_status": "UNIDENTIFIED",
+        "position": "TE",
+        "source_class": "HISTORICAL_SCREENSHOT_ARCHIVE",
+        "source_located": false,
+        "validated_states": []
+      }
+    },
+    "progression_observation:RECOVERY-PROG-WR-76-83": {
+      "disposition": "PROGRESSION_EVIDENCE",
+      "promoted": false,
+      "record_id": "RECOVERY-PROG-WR-76-83",
+      "record_type": "progression_observation",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "historical WR 76 to 83 statement",
+          "source_id": "SRC-HIST-001"
+        },
+        {
+          "catalog_source": true,
+          "locator": "TARGET-WR-76-83",
+          "source_id": "SRC-IMG-ARCH"
+        }
+      ],
+      "unresolved_fields": [
+        "player_identity",
+        "rating_vectors_76_through_83",
+        "source_images"
+      ],
+      "validation_status": "RECOVERY_TARGET",
+      "values": {
+        "canonical_links": [],
+        "evidence_class": "RECOVERY_TARGET",
+        "historical_description": "seven consecutive one-OVR steps",
+        "known_states": [
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "missing_vectors": [
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "player_identity_status": "UNIDENTIFIED",
+        "position": "WR",
+        "source_class": "HISTORICAL_SCREENSHOT_ARCHIVE",
+        "source_located": false,
+        "validated_states": []
+      }
+    },
+    "progression_observation:RECOVERY-PROG-WR-MIKE-80-85": {
+      "disposition": "PROGRESSION_EVIDENCE",
+      "promoted": false,
+      "record_id": "RECOVERY-PROG-WR-MIKE-80-85",
+      "record_type": "progression_observation",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "historical WR Mike 80 to 85 statement",
+          "source_id": "SRC-HIST-001"
+        },
+        {
+          "catalog_source": true,
+          "locator": "TARGET-WR-MIKE-80-85",
+          "source_id": "SRC-IMG-ARCH"
+        }
+      ],
+      "unresolved_fields": [
+        "full_player_identity",
+        "rating_vectors_80_85",
+        "source_images"
+      ],
+      "validation_status": "RECOVERY_TARGET",
+      "values": {
+        "canonical_links": [],
+        "evidence_class": "RECOVERY_TARGET",
+        "known_states": [
+          80,
+          85
+        ],
+        "missing_vectors": [
+          80,
+          85
+        ],
+        "player": "Mike (historical identifier only)",
+        "player_identity_status": "INCOMPLETE",
+        "position": "WR",
+        "source_class": "HISTORICAL_SCREENSHOT_ARCHIVE",
+        "source_located": false,
+        "validated_states": []
+      }
+    },
+    "research_artifact:HIST-RESEARCH-CRABTREE-DELTAS": {
+      "disposition": "RESEARCH_ONLY",
+      "promoted": false,
+      "record_id": "HIST-RESEARCH-CRABTREE-DELTAS",
+      "record_type": "research_artifact",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "historical Crabtree research conclusion",
+          "source_id": "SRC-HIST-001"
+        }
+      ],
+      "unresolved_fields": [
+        "complete_observed_rating_vectors"
+      ],
+      "validation_status": "HISTORICALLY_RECOVERED",
+      "values": {
+        "constant_fields": {
+          "AWR": 80
+        },
+        "evidence_class": "HISTORICAL_RESEARCH",
+        "intermediate_vectors_synthesized": false,
+        "player": "Michael Crabtree",
+        "position": "WR",
+        "reported_total_changes": {
+          "ACC": 8,
+          "AGI": 8,
+          "COD": 7,
+          "CTH": 7,
+          "DRR": 7,
+          "RBK": 7,
+          "SPD": 7
+        },
+        "states": [
+          78,
+          80,
+          83,
+          85
+        ]
+      }
+    }
+  },
+  "reports": {
+    "INGEST-HIST-PROGRESSION-INVENTORY-V1": {
+      "actions": [
+        {
+          "id": "SRC-IMG-ARCH",
+          "kind": "source",
+          "result": "MATCH"
+        },
+        {
+          "id": "HIST-PROG-JUNIOR-SEAU",
+          "kind": "record",
+          "promoted": false,
+          "result": "UNRESOLVED"
+        },
+        {
+          "id": "HIST-PROG-BO-JACKSON",
+          "kind": "record",
+          "promoted": false,
+          "result": "UNRESOLVED"
+        },
+        {
+          "id": "HIST-PROG-CHRIS-PEAL",
+          "kind": "record",
+          "promoted": false,
+          "result": "UNRESOLVED"
+        },
+        {
+          "id": "HIST-PROG-PEYTON-BOWEN",
+          "kind": "record",
+          "promoted": false,
+          "result": "UNRESOLVED"
+        },
+        {
+          "id": "HIST-PROG-MICHAEL-CRABTREE",
+          "kind": "record",
+          "promoted": false,
+          "result": "UNRESOLVED"
+        },
+        {
+          "id": "HIST-RESEARCH-CRABTREE-DELTAS",
+          "kind": "record",
+          "promoted": false,
+          "result": "UNRESOLVED"
+        },
+        {
+          "id": "HIST-PROG-JOEY-HARRINGTON-OLD",
+          "kind": "record",
+          "promoted": false,
+          "result": "UNRESOLVED"
+        },
+        {
+          "id": "RECOVERY-PROG-TE-80-85",
+          "kind": "record",
+          "promoted": false,
+          "result": "UNRESOLVED"
+        },
+        {
+          "id": "RECOVERY-PROG-WR-MIKE-80-85",
+          "kind": "record",
+          "promoted": false,
+          "result": "UNRESOLVED"
+        },
+        {
+          "id": "RECOVERY-PROG-WR-76-83",
+          "kind": "record",
+          "promoted": false,
+          "result": "UNRESOLVED"
+        },
+        {
+          "id": "RECOVERY-PROG-FB-TO-85",
+          "kind": "record",
+          "promoted": false,
+          "result": "UNRESOLVED"
+        },
+        {
+          "id": "RECOVERY-PROG-FS-TO-85",
+          "kind": "record",
+          "promoted": false,
+          "result": "UNRESOLVED"
+        },
+        {
+          "id": "RECOVERY-PROG-GUARD-TO-85",
+          "kind": "record",
+          "promoted": false,
+          "result": "UNRESOLVED"
+        },
+        {
+          "id": "REC-PROG-SEAU",
+          "kind": "reconciliation",
+          "result": "NEW"
+        },
+        {
+          "id": "REC-PROG-BO-JACKSON",
+          "kind": "reconciliation",
+          "result": "NEW"
+        },
+        {
+          "id": "REC-PROG-CHRIS-PEAL",
+          "kind": "reconciliation",
+          "result": "NEW"
+        },
+        {
+          "id": "REC-PROG-PEYTON-BOWEN",
+          "kind": "reconciliation",
+          "result": "NEW"
+        },
+        {
+          "id": "REC-PROG-CRABTREE",
+          "kind": "reconciliation",
+          "result": "NEW"
+        },
+        {
+          "id": "REC-PROG-HARRINGTON-CROSSCHECK",
+          "kind": "reconciliation",
+          "result": "NEW"
+        },
+        {
+          "id": "REC-PROG-TE-80-85",
+          "kind": "reconciliation",
+          "result": "NEW"
+        },
+        {
+          "id": "REC-PROG-WR-MIKE-80-85",
+          "kind": "reconciliation",
+          "result": "NEW"
+        },
+        {
+          "id": "REC-PROG-WR-76-83",
+          "kind": "reconciliation",
+          "result": "NEW"
+        },
+        {
+          "id": "REC-PROG-FB-TO-85",
+          "kind": "reconciliation",
+          "result": "NEW"
+        },
+        {
+          "id": "REC-PROG-FS-TO-85",
+          "kind": "reconciliation",
+          "result": "NEW"
+        },
+        {
+          "id": "REC-PROG-GUARD-TO-85",
+          "kind": "reconciliation",
+          "result": "NEW"
+        },
+        {
+          "id": "CONFLICT-HARRINGTON-HISTORICAL-CHAIN",
+          "kind": "conflict",
+          "result": "CONFLICT"
+        },
+        {
+          "id": "REC-SRC-IMG-ARCH",
+          "kind": "reconciliation",
+          "result": "UPDATE"
+        }
+      ],
+      "dry_run": false,
+      "manifest_id": "HIST-PROGRESSION-INVENTORY-V1",
+      "queue_items_closed": [],
+      "queue_items_remaining": 20,
+      "records_promoted": 0,
+      "records_staged": 13,
+      "result_counts": {
+        "CONFLICT": 1,
+        "DUPLICATE": 0,
+        "MATCH": 1,
+        "NEW": 12,
+        "REJECTED": 0,
+        "UNRESOLVED": 13,
+        "UPDATE": 1
+      },
+      "source_completion_changes": [],
+      "sources_processed": 1
+    }
+  },
+  "sources": {
+    "SRC-IMG-ARCH": {
+      "coverage": {
+        "cards_extracted": [],
+        "cards_identified": [
+          "Bo Jackson 80/83/86",
+          "Chris Peal 81/86/87",
+          "Joey Harrington historical 80/84/86",
+          "Junior Seau 80 Core Legend WILL comparison",
+          "Junior Seau 81/84/86/87",
+          "Michael Crabtree 78/80/83/85",
+          "Peyton Bowen 83/85/86"
+        ],
+        "expected_items": [
+          "TARGET-BO-JACKSON",
+          "TARGET-CHRIS-PEAL",
+          "TARGET-CRABTREE",
+          "TARGET-FB-85",
+          "TARGET-FS-85",
+          "TARGET-GUARD-85",
+          "TARGET-HARRINGTON",
+          "TARGET-PEYTON-BOWEN",
+          "TARGET-SEAU",
+          "TARGET-TE-80-85",
+          "TARGET-WR-76-83",
+          "TARGET-WR-MIKE-80-85"
+        ],
+        "processed_items": [],
+        "status": "PARTIAL",
+        "unresolved_items": [
+          "TARGET-BO-JACKSON",
+          "TARGET-CHRIS-PEAL",
+          "TARGET-CRABTREE",
+          "TARGET-FB-85",
+          "TARGET-FS-85",
+          "TARGET-GUARD-85",
+          "TARGET-HARRINGTON",
+          "TARGET-PEYTON-BOWEN",
+          "TARGET-SEAU",
+          "TARGET-TE-80-85",
+          "TARGET-WR-76-83",
+          "TARGET-WR-MIKE-80-85"
+        ]
+      },
+      "original_filename": "/mnt/data Screenshot 2026-07-* archive",
+      "source_id": "SRC-IMG-ARCH",
+      "source_name": "CFB27 CUT cards / research",
+      "source_type": "IMAGE"
+    }
+  }
+}

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 import re
-from dataclasses import replace
+from dataclasses import asdict, replace
 from pathlib import Path
 
 from openpyxl import load_workbook
@@ -367,7 +367,56 @@ def write_evidence_artifacts(root: Path) -> EvidenceIndex:
     (output / "source_index.json").write_text(
         json.dumps(index.as_dict(), indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
+    audit = index.audit()
+    state_path = output / "ingestion_state.json"
+    if state_path.exists():
+        from operation_pancake.evidence.ingestion import IngestionState
+
+        state = IngestionState.load(state_path)
+        queue = {item_id: asdict(item) for item_id, item in index.queue.items()}
+        queue.update(state.reconciliation)
+        priorities = {"HIGH": 0, "MEDIUM": 1, "LOW": 2}
+        open_queue = sorted(
+            (item for item in queue.values() if item["status"] != "RESOLVED"),
+            key=lambda item: (priorities.get(item["priority"], 9), item["item_id"]),
+        )
+        source_statuses = {
+            source_id: source.extraction_status for source_id, source in index.sources.items()
+        }
+        source_statuses.update(
+            {
+                source_id: source.get("coverage", {}).get(
+                    "status", source.get("extraction_status", "NEEDS_REVIEW")
+                )
+                for source_id, source in state.sources.items()
+            }
+        )
+        audit.update(
+            {
+                "queue_before_manifest_ingestion": audit["open_reconciliation_count"],
+                "open_reconciliation_count": len(open_queue),
+                "highest_priority_reconciliation": open_queue,
+                "extraction_status_counts": {
+                    status: sum(value == status for value in source_statuses.values())
+                    for status in ("COMPLETE", "PARTIAL", "UNPROCESSED", "NEEDS_REVIEW")
+                },
+                "manifest_ingestion": {
+                    "manifests_ingested": len(state.manifest_ids),
+                    "records_staged": len(state.records),
+                    "records_promoted": sum(
+                        record.get("promoted", False) for record in state.records.values()
+                    ),
+                    "new_progression_recovery_targets": sum(
+                        item_id.startswith("REC-PROG-") for item_id in state.reconciliation
+                    ),
+                    "existing_targets_merged": sum(
+                        item_id in index.queue for item_id in state.reconciliation
+                    ),
+                    "conflicts_preserved": len(state.conflicts),
+                },
+            }
+        )
     (output / "ingestion_audit.json").write_text(
-        json.dumps(index.audit(), indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        json.dumps(audit, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
     return index

@@ -168,6 +168,10 @@ class BulkManifestIngestor:
             actions.append(self._process_source(source, working, completion_changes))
         for record in manifest.get("records", []):
             actions.extend(self._process_record(record, working, promote))
+        for item in manifest.get("reconciliation_items", []):
+            actions.append(self._process_queue_item(item, working))
+        for conflict in manifest.get("conflicts", []):
+            actions.append(self._process_explicit_conflict(conflict, working))
         for resolution in manifest.get("reconciliation_resolutions", []):
             action, item_id = self._process_resolution(resolution, working)
             actions.append(action)
@@ -442,6 +446,48 @@ class BulkManifestIngestor:
         closed = item_id if resolution["status"] == "RESOLVED" else None
         return {"kind": "reconciliation", "id": item_id, "result": "UPDATE"}, closed
 
+    def _process_queue_item(self, item: dict[str, Any], state: IngestionState) -> dict[str, Any]:
+        _require(
+            item,
+            ("item_id", "issue_type", "status", "priority", "notes"),
+            "reconciliation item",
+        )
+        item_id = item["item_id"]
+        existing = state.reconciliation.get(item_id)
+        base = self.index.queue.get(item_id)
+        if existing == item:
+            result = "MATCH"
+        elif existing or base:
+            current = existing or asdict(base)
+            if current == item:
+                result = "MATCH"
+            else:
+                result = "UPDATE"
+        else:
+            result = "NEW"
+        state.reconciliation[item_id] = deepcopy(item)
+        return {"kind": "reconciliation", "id": item_id, "result": result}
+
+    @staticmethod
+    def _process_explicit_conflict(
+        conflict: dict[str, Any], state: IngestionState
+    ) -> dict[str, Any]:
+        _require(
+            conflict,
+            ("conflict_id", "affected_id", "existing_value", "incoming_value", "status"),
+            "conflict",
+        )
+        conflict_id = conflict["conflict_id"]
+        existing = state.conflicts.get(conflict_id)
+        if existing == conflict:
+            result = "MATCH"
+        elif existing:
+            result = "UPDATE"
+        else:
+            result = "CONFLICT"
+        state.conflicts[conflict_id] = deepcopy(conflict)
+        return {"kind": "conflict", "id": conflict_id, "result": result}
+
     def _queue_remaining(self, state: IngestionState) -> int:
         statuses = {item_id: item.status for item_id, item in self.index.queue.items()}
         statuses.update({item_id: item["status"] for item_id, item in state.reconciliation.items()})
@@ -469,6 +515,7 @@ class BulkManifestIngestor:
             and item.get("unresolved_fields")
             and item["values"].get("player")
         }
+
         historical_players.update(
             values.get("player")
             for (kind, _), values in self.index.records.items()
@@ -499,6 +546,33 @@ class BulkManifestIngestor:
             "conflicts": list(self.state.as_dict()["conflicts"].values()),
             "canonical_cards_with_multiple_sources": self._canonical_multi_source_cards(),
             "closable_reconciliation": self._closable_reconciliation(),
+        }
+
+    def search(self, query: str) -> dict[str, list[dict[str, Any]]]:
+        """Search persisted manifest records, targets, sources, and conflicts."""
+        needles = re.findall(r"[a-z0-9]+", query.casefold())
+
+        def matches(payload: dict[str, Any]) -> bool:
+            text = json.dumps(payload, sort_keys=True).casefold()
+            return all(needle in text for needle in needles)
+
+        return {
+            "records": [
+                {"record_key": key, **record}
+                for key, record in sorted(self.state.records.items())
+                if matches(record)
+            ],
+            "reconciliation": [
+                item for item in self.state.as_dict()["reconciliation"].values() if matches(item)
+            ],
+            "sources": [
+                {"source_id": source_id, **source}
+                for source_id, source in sorted(self.state.sources.items())
+                if matches(source)
+            ],
+            "conflicts": [
+                item for item in self.state.as_dict()["conflicts"].values() if matches(item)
+            ],
         }
 
     def promoted_cards(self) -> list[PlayerCard]:

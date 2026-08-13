@@ -4,10 +4,70 @@
   "extraction_status_counts": {
     "COMPLETE": 5,
     "NEEDS_REVIEW": 1,
-    "PARTIAL": 8,
-    "UNPROCESSED": 1
+    "PARTIAL": 9,
+    "UNPROCESSED": 0
   },
   "highest_priority_reconciliation": [
+    {
+      "affected_id": "HIST-PROG-BO-JACKSON",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-BO-JACKSON",
+      "notes": "Recover Bo Jackson HB 80/83/86 screenshots and validated vectors.",
+      "priority": "HIGH",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "HIST-PROG-CHRIS-PEAL",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-CHRIS-PEAL",
+      "notes": "Recover Chris Peal CB 81/86/87 screenshots and validated vectors.",
+      "priority": "HIGH",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "HIST-PROG-MICHAEL-CRABTREE",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-CRABTREE",
+      "notes": "Recover Michael Crabtree WR 78/80/83/85 screenshots; validate AWR 80 and reported total deltas without synthesizing vectors.",
+      "priority": "HIGH",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "HIST-PROG-JOEY-HARRINGTON-OLD",
+      "affected_type": "conflict_recovery",
+      "issue_type": "CONFLICTING_EVIDENCE",
+      "item_id": "REC-PROG-HARRINGTON-CROSSCHECK",
+      "notes": "Recover older 80/84/86 screenshot claim for cross-check; validated 79/81/84/86 chain remains controlling.",
+      "priority": "HIGH",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "HIST-PROG-PEYTON-BOWEN",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-PEYTON-BOWEN",
+      "notes": "Recover Peyton Bowen SS 83/85/86 screenshots and validated vectors.",
+      "priority": "HIGH",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "HIST-PROG-JUNIOR-SEAU",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-SEAU",
+      "notes": "Recover Junior Seau MIKE 81/84/86/87 screenshots and 80 Core Legend WILL comparison; transcribe validated vectors.",
+      "priority": "HIGH",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
     {
       "affected_id": "SRC-C-RAW-003",
       "affected_type": "source",
@@ -19,6 +79,66 @@
       "resolution": null,
       "resolved_at": null,
       "source_id": "SRC-C-RAW-003",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "RECOVERY-PROG-FB-TO-85",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-FB-TO-85",
+      "notes": "Identify FB progression and recover source states through at least 85.",
+      "priority": "MEDIUM",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "RECOVERY-PROG-FS-TO-85",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-FS-TO-85",
+      "notes": "Identify FS progression and recover source states through at least 85.",
+      "priority": "MEDIUM",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "RECOVERY-PROG-GUARD-TO-85",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-GUARD-TO-85",
+      "notes": "Identify Guard player/side and recover source states through at least 85.",
+      "priority": "MEDIUM",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "RECOVERY-PROG-TE-80-85",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-TE-80-85",
+      "notes": "Identify and recover historical TE 80/85 chain; compare without duplicating known Clarke, Hoffman, Finley, or Newsome cards.",
+      "priority": "MEDIUM",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "RECOVERY-PROG-WR-76-83",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-WR-76-83",
+      "notes": "Identify WR and recover seven consecutive one-OVR progression steps from 76 through 83.",
+      "priority": "MEDIUM",
+      "source_id": "SRC-IMG-ARCH",
+      "status": "OPEN"
+    },
+    {
+      "affected_id": "RECOVERY-PROG-WR-MIKE-80-85",
+      "affected_type": "progression_recovery",
+      "issue_type": "INDEXED_NOT_EXTRACTED",
+      "item_id": "REC-PROG-WR-MIKE-80-85",
+      "notes": "Resolve full identity for WR historically called Mike and recover 80/85 screenshots.",
+      "priority": "MEDIUM",
+      "source_id": "SRC-IMG-ARCH",
       "status": "OPEN"
     },
     {
@@ -42,10 +162,10 @@
       "item_id": "REC-SRC-IMG-ARCH",
       "notes": "Registered source has not been extracted.",
       "priority": "MEDIUM",
-      "resolution": null,
+      "resolution": "Archive now has 12 deterministic progression recovery targets; individual screenshot filenames and card vectors remain unresolved.",
       "resolved_at": null,
       "source_id": "SRC-IMG-ARCH",
-      "status": "OPEN"
+      "status": "PARTIAL"
     },
     {
       "affected_id": "SRC-M19-001",
@@ -114,11 +234,20 @@
     }
   ],
   "known_source_count": 15,
-  "open_reconciliation_count": 8,
+  "manifest_ingestion": {
+    "conflicts_preserved": 1,
+    "existing_targets_merged": 1,
+    "manifests_ingested": 1,
+    "new_progression_recovery_targets": 12,
+    "records_promoted": 0,
+    "records_staged": 13
+  },
+  "open_reconciliation_count": 20,
   "positions_with_incomplete_ingestion": {
     "C": 1,
     "QB": 1
   },
+  "queue_before_manifest_ingestion": 8,
   "research_artifacts_with_missing_sources": [],
   "staged_count": 0,
   "staged_promoted_count": 0

@@ -1,0 +1,174 @@
+{
+  "actions": [
+    {
+      "id": "SRC-IMG-ARCH",
+      "kind": "source",
+      "result": "MATCH"
+    },
+    {
+      "id": "HIST-PROG-JUNIOR-SEAU",
+      "kind": "record",
+      "promoted": false,
+      "result": "UNRESOLVED"
+    },
+    {
+      "id": "HIST-PROG-BO-JACKSON",
+      "kind": "record",
+      "promoted": false,
+      "result": "UNRESOLVED"
+    },
+    {
+      "id": "HIST-PROG-CHRIS-PEAL",
+      "kind": "record",
+      "promoted": false,
+      "result": "UNRESOLVED"
+    },
+    {
+      "id": "HIST-PROG-PEYTON-BOWEN",
+      "kind": "record",
+      "promoted": false,
+      "result": "UNRESOLVED"
+    },
+    {
+      "id": "HIST-PROG-MICHAEL-CRABTREE",
+      "kind": "record",
+      "promoted": false,
+      "result": "UNRESOLVED"
+    },
+    {
+      "id": "HIST-RESEARCH-CRABTREE-DELTAS",
+      "kind": "record",
+      "promoted": false,
+      "result": "UNRESOLVED"
+    },
+    {
+      "id": "HIST-PROG-JOEY-HARRINGTON-OLD",
+      "kind": "record",
+      "promoted": false,
+      "result": "UNRESOLVED"
+    },
+    {
+      "id": "RECOVERY-PROG-TE-80-85",
+      "kind": "record",
+      "promoted": false,
+      "result": "UNRESOLVED"
+    },
+    {
+      "id": "RECOVERY-PROG-WR-MIKE-80-85",
+      "kind": "record",
+      "promoted": false,
+      "result": "UNRESOLVED"
+    },
+    {
+      "id": "RECOVERY-PROG-WR-76-83",
+      "kind": "record",
+      "promoted": false,
+      "result": "UNRESOLVED"
+    },
+    {
+      "id": "RECOVERY-PROG-FB-TO-85",
+      "kind": "record",
+      "promoted": false,
+      "result": "UNRESOLVED"
+    },
+    {
+      "id": "RECOVERY-PROG-FS-TO-85",
+      "kind": "record",
+      "promoted": false,
+      "result": "UNRESOLVED"
+    },
+    {
+      "id": "RECOVERY-PROG-GUARD-TO-85",
+      "kind": "record",
+      "promoted": false,
+      "result": "UNRESOLVED"
+    },
+    {
+      "id": "REC-PROG-SEAU",
+      "kind": "reconciliation",
+      "result": "NEW"
+    },
+    {
+      "id": "REC-PROG-BO-JACKSON",
+      "kind": "reconciliation",
+      "result": "NEW"
+    },
+    {
+      "id": "REC-PROG-CHRIS-PEAL",
+      "kind": "reconciliation",
+      "result": "NEW"
+    },
+    {
+      "id": "REC-PROG-PEYTON-BOWEN",
+      "kind": "reconciliation",
+      "result": "NEW"
+    },
+    {
+      "id": "REC-PROG-CRABTREE",
+      "kind": "reconciliation",
+      "result": "NEW"
+    },
+    {
+      "id": "REC-PROG-HARRINGTON-CROSSCHECK",
+      "kind": "reconciliation",
+      "result": "NEW"
+    },
+    {
+      "id": "REC-PROG-TE-80-85",
+      "kind": "reconciliation",
+      "result": "NEW"
+    },
+    {
+      "id": "REC-PROG-WR-MIKE-80-85",
+      "kind": "reconciliation",
+      "result": "NEW"
+    },
+    {
+      "id": "REC-PROG-WR-76-83",
+      "kind": "reconciliation",
+      "result": "NEW"
+    },
+    {
+      "id": "REC-PROG-FB-TO-85",
+      "kind": "reconciliation",
+      "result": "NEW"
+    },
+    {
+      "id": "REC-PROG-FS-TO-85",
+      "kind": "reconciliation",
+      "result": "NEW"
+    },
+    {
+      "id": "REC-PROG-GUARD-TO-85",
+      "kind": "reconciliation",
+      "result": "NEW"
+    },
+    {
+      "id": "CONFLICT-HARRINGTON-HISTORICAL-CHAIN",
+      "kind": "conflict",
+      "result": "CONFLICT"
+    },
+    {
+      "id": "REC-SRC-IMG-ARCH",
+      "kind": "reconciliation",
+      "result": "UPDATE"
+    }
+  ],
+  "dry_run": false,
+  "manifest_id": "HIST-PROGRESSION-INVENTORY-V1",
+  "queue_items_closed": [],
+  "queue_items_remaining": 20,
+  "records_promoted": 0,
+  "records_staged": 13,
+  "result_counts": {
+    "CONFLICT": 1,
+    "DUPLICATE": 0,
+    "MATCH": 1,
+    "NEW": 12,
+    "REJECTED": 0,
+    "UNRESOLVED": 13,
+    "UPDATE": 1
+  },
+  "source_completion_changes": [],
+  "sources_processed": 1
+}
