@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+from dataclasses import replace
 from pathlib import Path
 
 from openpyxl import load_workbook
@@ -18,6 +19,9 @@ from operation_pancake.evidence.models import (
 
 WORKBOOK = Path("data/canonical/canonical_v1.9.xlsx")
 INVENTORY = Path("data/research/progression_audit/progression_inventory.json")
+HISTORICAL_CENTER = Path(
+    "data/research/center_source_reconciliation/center_historical_reconciliation_pass1.json"
+)
 
 
 def _status(raw: str) -> tuple[str, str | None]:
@@ -79,6 +83,16 @@ def build_evidence_index(root: Path) -> EvidenceIndex:
             )
         )
 
+    # Preserve legacy IDs while recording the workbook-declared duplicate relationship.
+    index.sources["SRC-C-RAW-002"] = replace(
+        index.sources["SRC-C-RAW-002"],
+        duplicate_of="SRC-C-RAW-001",
+        notes=(
+            f"{index.sources['SRC-C-RAW-002'].notes} Reconciled as a duplicate/cross-check "
+            "of SRC-C-RAW-001; provenance retained."
+        ),
+    )
+
     # This known File Library item is intentionally distinct from the EA roster reference.
     index.add_source(
         SourceRecord(
@@ -93,14 +107,143 @@ def build_evidence_index(root: Path) -> EvidenceIndex:
             item_count=14,
             extraction_status="PARTIAL",
             extraction_remaining=(
-                "Pages/cards beyond the known 14-page partial set remain unavailable or "
-                "unvalidated."
+                "Q-C-004-014: visually transcribe and validate Center CUT cards/rating panels "
+                "on pages 4-14; do not infer rating vectors from weighted averages."
             ),
             validation_status="NEEDS_REVIEW",
             canonical_ingestion_status="NOT_INGESTED",
             research_use_status="HISTORICAL_CENTER_EVIDENCE",
             provenance="HISTORICALLY_RECOVERED",
-            notes="Known 14-page partial source; not the EA base-roster reference dataset.",
+            notes=(
+                "Confirmed to exist in ChatGPT File Library. Historical ingestion was incomplete; "
+                "this CUT source is not the EA base-roster reference dataset."
+            ),
+        )
+    )
+    index.add_source(
+        SourceRecord(
+            source_id="SRC-C-HIST-WB-001",
+            source_name="Historical Madden 19 Center formula workbook",
+            original_filename="Operation_Pancake_Madden19_Center_Formula.xlsx",
+            source_type="WORKBOOK",
+            category="HISTORICAL_CENTER_MODEL_RESEARCH",
+            origin="CHATGPT_FILE_LIBRARY",
+            discovered_date="2026-08-13",
+            positions=("C",),
+            player_card_coverage=(
+                "Ashton Beers",
+                "Justin Evans",
+                "Bruce Mitchell",
+                "Carson Hinzman",
+                "Brady Small",
+                "Coleton Price",
+                "Landen Hatchett",
+                "Lyndon Cooper",
+                "Jake Guarnera",
+                "Jake Renfro",
+                "Levi Hubbard",
+            ),
+            item_count=12,
+            extraction_status="COMPLETE",
+            extraction_remaining=None,
+            validation_status="HISTORICALLY_RECOVERED",
+            canonical_ingestion_status="RESEARCH_ONLY",
+            research_use_status="HISTORICAL_MODEL_METADATA",
+            notes="Contains historical comparison and 53-player Madden Center model metadata.",
+            provenance="HISTORICALLY_RECOVERED",
+        )
+    )
+
+    historical = json.loads((root / HISTORICAL_CENTER).read_text(encoding="utf-8"))
+    for number, observation in enumerate(historical["center_comparison"], start=1):
+        record_id = f"HIST-C-{number:03d}"
+        values = {
+            **observation,
+            "position": "C",
+            "canonical": False,
+            "evidence_class": "HISTORICAL_DERIVED_COMPARISON",
+            "provenance_status": "HISTORICALLY_RECOVERED",
+            "unextracted_cut_fields": "Complete CUT rating vector; validate from Q-C-004-014",
+        }
+        index.add_record("historical_center_observation", record_id, values)
+        for source_id, relationship in (
+            ("SRC-C-HIST-WB-001", "HISTORICAL_DERIVED_RESULT"),
+            ("SRC-C-RAW-003", "UNDERLYING_CUT_CARD_SOURCE"),
+        ):
+            index.add_link(
+                EvidenceLink(
+                    link_id=f"LINK-{record_id}-{source_id}",
+                    source_id=source_id,
+                    target_type="historical_center_observation",
+                    target_id=record_id,
+                    relationship=relationship,
+                    locator="Q-C-004-014" if source_id == "SRC-C-RAW-003" else None,
+                )
+            )
+        for field in ("player", "weighted_average", "cut_ovr"):
+            index.add_field_provenance(
+                FieldProvenance(
+                    provenance_id=f"PROV-{record_id}-{field}",
+                    target_type="historical_center_observation",
+                    target_id=record_id,
+                    field_name=field,
+                    value=values[field],
+                    source_id="SRC-C-HIST-WB-001",
+                    locator="Recovered historical Center comparison",
+                    extraction_method="FILE_LIBRARY_RECONCILIATION",
+                    validation_status="HISTORICALLY_RECOVERED",
+                    confidence="historical_evidence",
+                    provenance_status="HISTORICALLY_RECOVERED",
+                    recorded_at="2026-08-13",
+                )
+            )
+
+    index.add_record(
+        "historical_model_result",
+        "HIST-M19-CENTER-MODEL-001",
+        {
+            **historical["madden_center_model"],
+            "canonical": False,
+            "production_formula": False,
+            "source_filename": "Operation_Pancake_Madden19_Center_Formula.xlsx",
+        },
+    )
+    index.add_link(
+        EvidenceLink(
+            link_id="LINK-HIST-M19-CENTER-MODEL-001",
+            source_id="SRC-C-HIST-WB-001",
+            target_type="historical_model_result",
+            target_id="HIST-M19-CENTER-MODEL-001",
+            relationship="HISTORICAL_MODEL_SOURCE",
+        )
+    )
+    index.add_link(
+        EvidenceLink(
+            link_id="LINK-HIST-M19-CENTER-MODEL-001-EA-ROSTER",
+            source_id="SRC-RATE-001",
+            target_type="historical_model_result",
+            target_id="HIST-M19-CENTER-MODEL-001",
+            relationship="EA_BASE_ROSTER_REFERENCE_POPULATION",
+            notes="Reference evidence only; not a CUT card source.",
+        )
+    )
+    index.add_record(
+        "historical_model_result",
+        "HIST-CFB-CENTER-CURVE-001",
+        {
+            **historical["cfb_fitted_curve"],
+            "canonical": False,
+            "production_formula": False,
+            "population": 12,
+        },
+    )
+    index.add_link(
+        EvidenceLink(
+            link_id="LINK-HIST-CFB-CENTER-CURVE-001",
+            source_id="SRC-C-HIST-WB-001",
+            target_type="historical_model_result",
+            target_id="HIST-CFB-CENTER-CURVE-001",
+            relationship="HISTORICAL_DERIVED_RESULT",
         )
     )
 
@@ -192,6 +335,7 @@ def build_evidence_index(root: Path) -> EvidenceIndex:
                 if source.extraction_status == "PARTIAL"
                 else "NEEDS_VALIDATION"
             )
+            resolved_center_alias = source.source_id in {"SRC-C-RAW-001", "SRC-C-RAW-002"}
             index.add_queue_item(
                 ReconciliationItem(
                     item_id=f"REC-{source.source_id}",
@@ -199,10 +343,17 @@ def build_evidence_index(root: Path) -> EvidenceIndex:
                     affected_type="source",
                     affected_id=source.source_id,
                     issue_type=issue,
-                    status="OPEN",
+                    status="RESOLVED" if resolved_center_alias else "OPEN",
                     priority="HIGH" if source.source_id == "SRC-C-RAW-003" else "MEDIUM",
                     notes=source.extraction_remaining or "Source requires review.",
+                    resolution=(
+                        "Legacy source identity reconciled and retained; remaining visual CUT "
+                        "extraction is tracked by SRC-C-RAW-003 / Q-C-004-014."
+                        if resolved_center_alias
+                        else None
+                    ),
                     created_at="2026-08-13",
+                    resolved_at="2026-08-13" if resolved_center_alias else None,
                 )
             )
     return index

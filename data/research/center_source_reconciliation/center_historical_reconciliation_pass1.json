@@ -1,0 +1,49 @@
+{
+  "artifact_id": "CENTER-HIST-RECON-PASS1",
+  "artifact_type": "historically_recovered_source_reconciliation",
+  "canonical": false,
+  "cfb_fitted_curve": {
+    "intercept": 16.780527613674707,
+    "mae": 0.4624217376648865,
+    "r_squared": 0.8109005463189437,
+    "slope": 0.8206312512486102,
+    "status": "HISTORICALLY_RECOVERED_NOT_PRODUCTION_FORMULA"
+  },
+  "center_comparison": [
+    {"cut_ovr": 85, "player": "Ashton Beers", "profile": "standard", "weighted_average": 83.01},
+    {"cut_ovr": 84, "player": "Justin Evans", "profile": "standard", "weighted_average": 81.81},
+    {"cut_ovr": 84, "player": "Bruce Mitchell", "profile": "standard", "weighted_average": 81.69},
+    {"cut_ovr": 83, "player": "Carson Hinzman", "profile": "standard", "weighted_average": 81.08},
+    {"cut_ovr": 84, "player": "Brady Small", "profile": "standard", "weighted_average": 80.10},
+    {"cut_ovr": 82, "player": "Coleton Price", "profile": "standard", "weighted_average": 80.07},
+    {"cut_ovr": 82, "player": "Landen Hatchett", "profile": "standard", "weighted_average": 79.94},
+    {"cut_ovr": 81, "player": "Lyndon Cooper", "profile": "standard", "weighted_average": 79.67},
+    {"cut_ovr": 81, "player": "Ashton Beers", "profile": "Core", "weighted_average": 78.72},
+    {"cut_ovr": 82, "player": "Jake Guarnera", "profile": "standard", "weighted_average": 78.35},
+    {"cut_ovr": 81, "player": "Jake Renfro", "profile": "standard", "weighted_average": 78.29},
+    {"cut_ovr": 80, "player": "Levi Hubbard", "profile": "standard", "weighted_average": 77.06}
+  ],
+  "cut_source": {
+    "extraction_task": "Q-C-004-014",
+    "open_pages": "4-14",
+    "source_id": "SRC-C-RAW-003",
+    "status": "KNOWN_IN_FILE_LIBRARY_PARTIAL_EXTRACTION"
+  },
+  "madden_center_model": {
+    "calibration_high": 91.98685048519587,
+    "calibration_low": 36.57900181382426,
+    "intercept": -65.35754891056946,
+    "mae": 0.9122432623766485,
+    "population": 53,
+    "r_squared": 0.9817225000815444,
+    "rmse": 1.2689376841061706,
+    "slope": 1.786750476221824,
+    "status": "HISTORICAL_MADDEN_REFERENCE_NOT_CFB_PRODUCTION",
+    "weight_total": 108,
+    "weights": {"ACC": 2, "AGI": 2, "AWR": 15, "IBL": 6, "LBK": 4, "PBF": 8, "PBK": 2, "PBP": 21, "RBK": 10, "RBP": 22, "SPD": 2, "STR": 14}
+  },
+  "provenance_status": "HISTORICALLY_RECOVERED",
+  "rating_vectors_recovered": false,
+  "supersedes_availability_claims": "Earlier local-repository unavailable labels; historical conclusions remain preserved in their original artifacts.",
+  "source_ids": ["SRC-C-HIST-WB-001", "SRC-C-RAW-003", "SRC-RATE-001"]
+}

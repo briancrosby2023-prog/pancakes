@@ -2,7 +2,7 @@
   "canonical_record_count": 145,
   "canonical_records_missing_source_provenance": [],
   "extraction_status_counts": {
-    "COMPLETE": 4,
+    "COMPLETE": 5,
     "NEEDS_REVIEW": 1,
     "PARTIAL": 8,
     "UNPROCESSED": 1
@@ -14,37 +14,11 @@
       "created_at": "2026-08-13",
       "issue_type": "PARTIALLY_EXTRACTED",
       "item_id": "REC-SRC-C-RAW-003",
-      "notes": "Pages/cards beyond the known 14-page partial set remain unavailable or unvalidated.",
+      "notes": "Q-C-004-014: visually transcribe and validate Center CUT cards/rating panels on pages 4-14; do not infer rating vectors from weighted averages.",
       "priority": "HIGH",
       "resolution": null,
       "resolved_at": null,
       "source_id": "SRC-C-RAW-003",
-      "status": "OPEN"
-    },
-    {
-      "affected_id": "SRC-C-RAW-001",
-      "affected_type": "source",
-      "created_at": "2026-08-13",
-      "issue_type": "PARTIALLY_EXTRACTED",
-      "item_id": "REC-SRC-C-RAW-001",
-      "notes": "Source registry identifies remaining evidence as unprocessed.",
-      "priority": "MEDIUM",
-      "resolution": null,
-      "resolved_at": null,
-      "source_id": "SRC-C-RAW-001",
-      "status": "OPEN"
-    },
-    {
-      "affected_id": "SRC-C-RAW-002",
-      "affected_type": "source",
-      "created_at": "2026-08-13",
-      "issue_type": "NEEDS_VALIDATION",
-      "item_id": "REC-SRC-C-RAW-002",
-      "notes": "Duplicate/cross-check relationship requires reconciliation.",
-      "priority": "MEDIUM",
-      "resolution": null,
-      "resolved_at": null,
-      "source_id": "SRC-C-RAW-002",
       "status": "OPEN"
     },
     {
@@ -139,8 +113,8 @@
       "status": "OPEN"
     }
   ],
-  "known_source_count": 14,
-  "open_reconciliation_count": 10,
+  "known_source_count": 15,
+  "open_reconciliation_count": 8,
   "positions_with_incomplete_ingestion": {
     "C": 1,
     "QB": 1
