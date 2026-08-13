@@ -1,0 +1,186 @@
+[
+  {
+    "architecture": "A",
+    "errors": [
+      {
+        "actual_ovr": 86,
+        "archetype": "Backfield Creator",
+        "baseline_prediction": 86,
+        "classification": "threshold_mapping_worsened",
+        "qb_id": "QB-0005",
+        "threshold_prediction": 87
+      },
+      {
+        "actual_ovr": 84,
+        "archetype": "Pocket Passer",
+        "baseline_prediction": 85,
+        "classification": "insufficient_to_distinguish_threshold_from_weighting",
+        "qb_id": "QB-0016",
+        "threshold_prediction": 85
+      },
+      {
+        "actual_ovr": 82,
+        "archetype": "Dual Threat",
+        "baseline_prediction": 81,
+        "classification": "possible_archetype_effect_data_limited",
+        "qb_id": "QB-0034",
+        "threshold_prediction": 81
+      },
+      {
+        "actual_ovr": 89,
+        "archetype": "Dual Threat",
+        "baseline_prediction": 88,
+        "classification": "possible_archetype_effect_data_limited",
+        "qb_id": "QB-0070",
+        "threshold_prediction": 88
+      },
+      {
+        "actual_ovr": 88,
+        "archetype": "Pocket Passer",
+        "baseline_prediction": 87,
+        "classification": "insufficient_to_distinguish_threshold_from_weighting",
+        "qb_id": "QB-0071",
+        "threshold_prediction": 87
+      }
+    ],
+    "variant": "global_bands"
+  },
+  {
+    "architecture": "A",
+    "errors": [
+      {
+        "actual_ovr": 86,
+        "archetype": "Backfield Creator",
+        "baseline_prediction": 86,
+        "classification": "threshold_mapping_worsened",
+        "qb_id": "QB-0005",
+        "threshold_prediction": 87
+      },
+      {
+        "actual_ovr": 84,
+        "archetype": "Pocket Passer",
+        "baseline_prediction": 85,
+        "classification": "insufficient_to_distinguish_threshold_from_weighting",
+        "qb_id": "QB-0016",
+        "threshold_prediction": 85
+      },
+      {
+        "actual_ovr": 82,
+        "archetype": "Backfield Creator",
+        "baseline_prediction": 82,
+        "classification": "threshold_mapping_worsened",
+        "qb_id": "QB-0033",
+        "threshold_prediction": 81
+      },
+      {
+        "actual_ovr": 82,
+        "archetype": "Dual Threat",
+        "baseline_prediction": 81,
+        "classification": "possible_archetype_effect_data_limited",
+        "qb_id": "QB-0034",
+        "threshold_prediction": 81
+      },
+      {
+        "actual_ovr": 89,
+        "archetype": "Dual Threat",
+        "baseline_prediction": 88,
+        "classification": "possible_archetype_effect_data_limited",
+        "qb_id": "QB-0070",
+        "threshold_prediction": 88
+      },
+      {
+        "actual_ovr": 88,
+        "archetype": "Pocket Passer",
+        "baseline_prediction": 87,
+        "classification": "insufficient_to_distinguish_threshold_from_weighting",
+        "qb_id": "QB-0071",
+        "threshold_prediction": 87
+      }
+    ],
+    "variant": "archetype_adjusted_bands"
+  },
+  {
+    "architecture": "C",
+    "errors": [
+      {
+        "actual_ovr": 87,
+        "archetype": "Pocket Passer",
+        "baseline_prediction": 87,
+        "classification": "threshold_mapping_worsened",
+        "qb_id": "QB-0002",
+        "threshold_prediction": 88
+      },
+      {
+        "actual_ovr": 86,
+        "archetype": "Backfield Creator",
+        "baseline_prediction": 86,
+        "classification": "threshold_mapping_worsened",
+        "qb_id": "QB-0005",
+        "threshold_prediction": 87
+      },
+      {
+        "actual_ovr": 84,
+        "archetype": "Pocket Passer",
+        "baseline_prediction": 85,
+        "classification": "insufficient_to_distinguish_threshold_from_weighting",
+        "qb_id": "QB-0016",
+        "threshold_prediction": 85
+      },
+      {
+        "actual_ovr": 82,
+        "archetype": "Backfield Creator",
+        "baseline_prediction": 81,
+        "classification": "possible_archetype_effect_data_limited",
+        "qb_id": "QB-0033",
+        "threshold_prediction": 81
+      },
+      {
+        "actual_ovr": 82,
+        "archetype": "Dual Threat",
+        "baseline_prediction": 81,
+        "classification": "possible_archetype_effect_data_limited",
+        "qb_id": "QB-0034",
+        "threshold_prediction": 81
+      }
+    ],
+    "variant": "global_bands"
+  },
+  {
+    "architecture": "C",
+    "errors": [
+      {
+        "actual_ovr": 87,
+        "archetype": "Pocket Passer",
+        "baseline_prediction": 87,
+        "classification": "threshold_mapping_worsened",
+        "qb_id": "QB-0002",
+        "threshold_prediction": 88
+      },
+      {
+        "actual_ovr": 84,
+        "archetype": "Pocket Passer",
+        "baseline_prediction": 85,
+        "classification": "insufficient_to_distinguish_threshold_from_weighting",
+        "qb_id": "QB-0016",
+        "threshold_prediction": 85
+      },
+      {
+        "actual_ovr": 82,
+        "archetype": "Backfield Creator",
+        "baseline_prediction": 81,
+        "classification": "possible_archetype_effect_data_limited",
+        "qb_id": "QB-0033",
+        "threshold_prediction": 81
+      },
+      {
+        "actual_ovr": 82,
+        "archetype": "Dual Threat",
+        "baseline_prediction": 81,
+        "classification": "possible_archetype_effect_data_limited",
+        "qb_id": "QB-0034",
+        "threshold_prediction": 81
+      }
+    ],
+    "variant": "archetype_adjusted_bands"
+  }
+]

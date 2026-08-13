@@ -1,0 +1,1474 @@
+{
+  "baseline_commit": "6a265ec",
+  "focus_architectures": [
+    "A",
+    "C"
+  ],
+  "formula_status": "unsolved",
+  "leakage_controls": {
+    "cross_ovr_blocks_same_player_and_profile": true,
+    "holdout_used_for_threshold_training": false,
+    "profile_duplicates_used_for_training": false,
+    "thresholds_learned_from_fit_only": true
+  },
+  "phase": "QB Formula Phase — Discrete Threshold & Boundary Analysis",
+  "results": [
+    {
+      "architecture": "A",
+      "architecture_name": "Universal",
+      "baseline_holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.777778,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.222222,
+        "mean_signed_residual": -0.111111,
+        "within_one_accuracy": 1.0
+      },
+      "boundary_diagnostics": {
+        "adjacent_count": 14,
+        "adjacent_ordered": 13,
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 10,
+        "sequence_information_priorities": [
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 6.928203,
+            "information_priority": 0.28867514,
+            "lower_qb_id": "QB-0013",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0003"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 10.723805,
+            "information_priority": 0.27975145,
+            "lower_qb_id": "QB-0038",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0013"
+          },
+          {
+            "actual_ovr_change": 6,
+            "confirmed_progression": false,
+            "euclidean_distance": 22.248595,
+            "information_priority": 0.26967995,
+            "lower_qb_id": "QB-0050",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0007"
+          },
+          {
+            "actual_ovr_change": 5,
+            "confirmed_progression": false,
+            "euclidean_distance": 18.788294,
+            "information_priority": 0.26612315,
+            "lower_qb_id": "QB-0027",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0071"
+          },
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 8.0,
+            "information_priority": 0.25,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "actual_ovr_change": 4,
+            "confirmed_progression": false,
+            "euclidean_distance": 18.439089,
+            "information_priority": 0.21693046,
+            "lower_qb_id": "QB-0039",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "actual_ovr_change": 6,
+            "confirmed_progression": false,
+            "euclidean_distance": 29.631065,
+            "information_priority": 0.20249019,
+            "lower_qb_id": "QB-0049",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "actual_ovr_change": 6,
+            "confirmed_progression": false,
+            "euclidean_distance": 31.144823,
+            "information_priority": 0.19264839,
+            "lower_qb_id": "QB-0051",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0008"
+          },
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 15.198684,
+            "information_priority": 0.13159034,
+            "lower_qb_id": "QB-0041",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0019"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 23.130067,
+            "information_priority": 0.12970131,
+            "lower_qb_id": "QB-0018",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0001"
+          },
+          {
+            "actual_ovr_change": 4,
+            "confirmed_progression": false,
+            "euclidean_distance": 33.674916,
+            "information_priority": 0.11878278,
+            "lower_qb_id": "QB-0046",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0011"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 26.324893,
+            "information_priority": 0.11396058,
+            "lower_qb_id": "QB-0047",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0024"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 28.0,
+            "information_priority": 0.10714286,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0072"
+          },
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 24.124676,
+            "information_priority": 0.08290267,
+            "lower_qb_id": "QB-0015",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0006"
+          },
+          {
+            "actual_ovr_change": 1,
+            "confirmed_progression": false,
+            "euclidean_distance": 20.760539,
+            "information_priority": 0.04816831,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0054"
+          },
+          {
+            "actual_ovr_change": 1,
+            "confirmed_progression": false,
+            "euclidean_distance": 22.51666,
+            "information_priority": 0.04441156,
+            "lower_qb_id": "QB-0054",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0038"
+          },
+          {
+            "actual_ovr_change": 0,
+            "confirmed_progression": false,
+            "euclidean_distance": 0.0,
+            "information_priority": 0.0,
+            "lower_qb_id": "QB-0067",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0068"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.607843,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.411765,
+        "mean_signed_residual": -0.058824,
+        "within_one_accuracy": 0.980392
+      },
+      "holdout_exact_change": -0.055556,
+      "interpretation": "Threshold evidence is material only if independent holdout and cross-OVR behavior improve without boundary regressions.",
+      "parameter_count": 10,
+      "parameters": {
+        "archetype_offsets": {},
+        "band_widths": {
+          "79": null,
+          "80": 1.06363205,
+          "81": 0.96230856,
+          "82": 0.98816818,
+          "83": 0.98120606,
+          "84": 1.02842614,
+          "85": 0.89796752,
+          "86": 0.86891525,
+          "87": 1.18811438,
+          "88": 1.22454184,
+          "89": null
+        },
+        "centers": {
+          "79": 78.9618717,
+          "80": 80.02550375,
+          "81": 81.0891358,
+          "82": 81.95012086,
+          "83": 83.06547217,
+          "84": 83.91253298,
+          "85": 85.12232445,
+          "86": 85.70846802,
+          "87": 86.86015495,
+          "88": 88.08469678,
+          "89": 89.30923862
+        },
+        "pooled_level_groups": [],
+        "thresholds": {
+          "79_to_80": 79.49368772,
+          "80_to_81": 80.55731978,
+          "81_to_82": 81.51962833,
+          "82_to_83": 82.50779652,
+          "83_to_84": 83.48900258,
+          "84_to_85": 84.51742871,
+          "85_to_86": 85.41539623,
+          "86_to_87": 86.28431148,
+          "87_to_88": 87.47242586,
+          "88_to_89": 88.6969677
+        }
+      },
+      "systematic_errors": [
+        {
+          "actual_ovr": 86,
+          "archetype": "Backfield Creator",
+          "baseline_prediction": 86,
+          "classification": "threshold_mapping_worsened",
+          "qb_id": "QB-0005",
+          "threshold_prediction": 87
+        },
+        {
+          "actual_ovr": 84,
+          "archetype": "Pocket Passer",
+          "baseline_prediction": 85,
+          "classification": "insufficient_to_distinguish_threshold_from_weighting",
+          "qb_id": "QB-0016",
+          "threshold_prediction": 85
+        },
+        {
+          "actual_ovr": 82,
+          "archetype": "Dual Threat",
+          "baseline_prediction": 81,
+          "classification": "possible_archetype_effect_data_limited",
+          "qb_id": "QB-0034",
+          "threshold_prediction": 81
+        },
+        {
+          "actual_ovr": 89,
+          "archetype": "Dual Threat",
+          "baseline_prediction": 88,
+          "classification": "possible_archetype_effect_data_limited",
+          "qb_id": "QB-0070",
+          "threshold_prediction": 88
+        },
+        {
+          "actual_ovr": 88,
+          "archetype": "Pocket Passer",
+          "baseline_prediction": 87,
+          "classification": "insufficient_to_distinguish_threshold_from_weighting",
+          "qb_id": "QB-0071",
+          "threshold_prediction": 87
+        }
+      ],
+      "threshold_holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.722222,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.277778,
+        "mean_signed_residual": -0.055556,
+        "within_one_accuracy": 1.0
+      },
+      "threshold_stability": {
+        "79_to_80": {
+          "fold_count": 9,
+          "maximum": 79.76081995,
+          "mean": 79.54379462,
+          "minimum": 79.47278162,
+          "range": 0.28803833
+        },
+        "80_to_81": {
+          "fold_count": 9,
+          "maximum": 80.64137336,
+          "mean": 80.56272429,
+          "minimum": 80.53393302,
+          "range": 0.10744034
+        },
+        "81_to_82": {
+          "fold_count": 9,
+          "maximum": 81.58866014,
+          "mean": 81.51495104,
+          "minimum": 81.41578116,
+          "range": 0.17287898
+        },
+        "82_to_83": {
+          "fold_count": 9,
+          "maximum": 82.57277557,
+          "mean": 82.49933178,
+          "minimum": 82.38889769,
+          "range": 0.18387788
+        },
+        "83_to_84": {
+          "fold_count": 9,
+          "maximum": 83.53035798,
+          "mean": 83.47273834,
+          "minimum": 83.40761597,
+          "range": 0.122742
+        },
+        "84_to_85": {
+          "fold_count": 9,
+          "maximum": 84.57862924,
+          "mean": 84.48885128,
+          "minimum": 84.37033748,
+          "range": 0.20829175
+        },
+        "85_to_86": {
+          "fold_count": 9,
+          "maximum": 85.48667434,
+          "mean": 85.41075617,
+          "minimum": 85.25791939,
+          "range": 0.22875495
+        },
+        "86_to_87": {
+          "fold_count": 9,
+          "maximum": 86.41563201,
+          "mean": 86.3148879,
+          "minimum": 86.18574597,
+          "range": 0.22988604
+        },
+        "87_to_88": {
+          "fold_count": 9,
+          "maximum": 87.80588451,
+          "mean": 87.48597505,
+          "minimum": 87.26243687,
+          "range": 0.54344764
+        },
+        "88_to_89": {
+          "fold_count": 9,
+          "maximum": 89.20866729,
+          "mean": 88.69504525,
+          "minimum": 88.40263344,
+          "range": 0.80603385
+        }
+      },
+      "training_population": {
+        "count": 51,
+        "partition": "fit"
+      },
+      "validation_population": {
+        "count": 18,
+        "partition": "holdout"
+      },
+      "variant": "global_bands"
+    },
+    {
+      "architecture": "A",
+      "architecture_name": "Universal",
+      "baseline_holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.777778,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.222222,
+        "mean_signed_residual": -0.111111,
+        "within_one_accuracy": 1.0
+      },
+      "boundary_diagnostics": {
+        "adjacent_count": 14,
+        "adjacent_ordered": 13,
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 10,
+        "sequence_information_priorities": [
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 6.928203,
+            "information_priority": 0.28867514,
+            "lower_qb_id": "QB-0013",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0003"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 10.723805,
+            "information_priority": 0.27975145,
+            "lower_qb_id": "QB-0038",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0013"
+          },
+          {
+            "actual_ovr_change": 6,
+            "confirmed_progression": false,
+            "euclidean_distance": 22.248595,
+            "information_priority": 0.26967995,
+            "lower_qb_id": "QB-0050",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0007"
+          },
+          {
+            "actual_ovr_change": 5,
+            "confirmed_progression": false,
+            "euclidean_distance": 18.788294,
+            "information_priority": 0.26612315,
+            "lower_qb_id": "QB-0027",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0071"
+          },
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 8.0,
+            "information_priority": 0.25,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "actual_ovr_change": 4,
+            "confirmed_progression": false,
+            "euclidean_distance": 18.439089,
+            "information_priority": 0.21693046,
+            "lower_qb_id": "QB-0039",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "actual_ovr_change": 6,
+            "confirmed_progression": false,
+            "euclidean_distance": 29.631065,
+            "information_priority": 0.20249019,
+            "lower_qb_id": "QB-0049",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "actual_ovr_change": 6,
+            "confirmed_progression": false,
+            "euclidean_distance": 31.144823,
+            "information_priority": 0.19264839,
+            "lower_qb_id": "QB-0051",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0008"
+          },
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 15.198684,
+            "information_priority": 0.13159034,
+            "lower_qb_id": "QB-0041",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0019"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 23.130067,
+            "information_priority": 0.12970131,
+            "lower_qb_id": "QB-0018",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0001"
+          },
+          {
+            "actual_ovr_change": 4,
+            "confirmed_progression": false,
+            "euclidean_distance": 33.674916,
+            "information_priority": 0.11878278,
+            "lower_qb_id": "QB-0046",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0011"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 26.324893,
+            "information_priority": 0.11396058,
+            "lower_qb_id": "QB-0047",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0024"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 28.0,
+            "information_priority": 0.10714286,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0072"
+          },
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 24.124676,
+            "information_priority": 0.08290267,
+            "lower_qb_id": "QB-0015",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0006"
+          },
+          {
+            "actual_ovr_change": 1,
+            "confirmed_progression": false,
+            "euclidean_distance": 20.760539,
+            "information_priority": 0.04816831,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0054"
+          },
+          {
+            "actual_ovr_change": 1,
+            "confirmed_progression": false,
+            "euclidean_distance": 22.51666,
+            "information_priority": 0.04441156,
+            "lower_qb_id": "QB-0054",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0038"
+          },
+          {
+            "actual_ovr_change": 0,
+            "confirmed_progression": false,
+            "euclidean_distance": 0.0,
+            "information_priority": 0.0,
+            "lower_qb_id": "QB-0067",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0068"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.607843,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.411765,
+        "mean_signed_residual": -0.058824,
+        "within_one_accuracy": 0.980392
+      },
+      "holdout_exact_change": -0.111111,
+      "interpretation": "Threshold evidence is material only if independent holdout and cross-OVR behavior improve without boundary regressions.",
+      "parameter_count": 13,
+      "parameters": {
+        "archetype_offsets": {
+          "Backfield Creator": -0.16002243,
+          "Dual Threat": 0.11321971,
+          "Pocket Passer": 0.00441044
+        },
+        "band_widths": {
+          "79": null,
+          "80": 1.06363205,
+          "81": 0.96230856,
+          "82": 0.98816818,
+          "83": 0.98120606,
+          "84": 1.02842614,
+          "85": 0.89796752,
+          "86": 0.86891525,
+          "87": 1.18811438,
+          "88": 1.22454184,
+          "89": null
+        },
+        "centers": {
+          "79": 78.9618717,
+          "80": 80.02550375,
+          "81": 81.0891358,
+          "82": 81.95012086,
+          "83": 83.06547217,
+          "84": 83.91253298,
+          "85": 85.12232445,
+          "86": 85.70846802,
+          "87": 86.86015495,
+          "88": 88.08469678,
+          "89": 89.30923862
+        },
+        "pooled_level_groups": [],
+        "thresholds": {
+          "79_to_80": 79.49368772,
+          "80_to_81": 80.55731978,
+          "81_to_82": 81.51962833,
+          "82_to_83": 82.50779652,
+          "83_to_84": 83.48900258,
+          "84_to_85": 84.51742871,
+          "85_to_86": 85.41539623,
+          "86_to_87": 86.28431148,
+          "87_to_88": 87.47242586,
+          "88_to_89": 88.6969677
+        }
+      },
+      "systematic_errors": [
+        {
+          "actual_ovr": 86,
+          "archetype": "Backfield Creator",
+          "baseline_prediction": 86,
+          "classification": "threshold_mapping_worsened",
+          "qb_id": "QB-0005",
+          "threshold_prediction": 87
+        },
+        {
+          "actual_ovr": 84,
+          "archetype": "Pocket Passer",
+          "baseline_prediction": 85,
+          "classification": "insufficient_to_distinguish_threshold_from_weighting",
+          "qb_id": "QB-0016",
+          "threshold_prediction": 85
+        },
+        {
+          "actual_ovr": 82,
+          "archetype": "Backfield Creator",
+          "baseline_prediction": 82,
+          "classification": "threshold_mapping_worsened",
+          "qb_id": "QB-0033",
+          "threshold_prediction": 81
+        },
+        {
+          "actual_ovr": 82,
+          "archetype": "Dual Threat",
+          "baseline_prediction": 81,
+          "classification": "possible_archetype_effect_data_limited",
+          "qb_id": "QB-0034",
+          "threshold_prediction": 81
+        },
+        {
+          "actual_ovr": 89,
+          "archetype": "Dual Threat",
+          "baseline_prediction": 88,
+          "classification": "possible_archetype_effect_data_limited",
+          "qb_id": "QB-0070",
+          "threshold_prediction": 88
+        },
+        {
+          "actual_ovr": 88,
+          "archetype": "Pocket Passer",
+          "baseline_prediction": 87,
+          "classification": "insufficient_to_distinguish_threshold_from_weighting",
+          "qb_id": "QB-0071",
+          "threshold_prediction": 87
+        }
+      ],
+      "threshold_holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.666667,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.333333,
+        "mean_signed_residual": -0.111111,
+        "within_one_accuracy": 1.0
+      },
+      "threshold_stability": {
+        "79_to_80": {
+          "fold_count": 9,
+          "maximum": 79.76081995,
+          "mean": 79.54379462,
+          "minimum": 79.47278162,
+          "range": 0.28803833
+        },
+        "80_to_81": {
+          "fold_count": 9,
+          "maximum": 80.64137336,
+          "mean": 80.56272429,
+          "minimum": 80.53393302,
+          "range": 0.10744034
+        },
+        "81_to_82": {
+          "fold_count": 9,
+          "maximum": 81.58866014,
+          "mean": 81.51495104,
+          "minimum": 81.41578116,
+          "range": 0.17287898
+        },
+        "82_to_83": {
+          "fold_count": 9,
+          "maximum": 82.57277557,
+          "mean": 82.49933178,
+          "minimum": 82.38889769,
+          "range": 0.18387788
+        },
+        "83_to_84": {
+          "fold_count": 9,
+          "maximum": 83.53035798,
+          "mean": 83.47273834,
+          "minimum": 83.40761597,
+          "range": 0.122742
+        },
+        "84_to_85": {
+          "fold_count": 9,
+          "maximum": 84.57862924,
+          "mean": 84.48885128,
+          "minimum": 84.37033748,
+          "range": 0.20829175
+        },
+        "85_to_86": {
+          "fold_count": 9,
+          "maximum": 85.48667434,
+          "mean": 85.41075617,
+          "minimum": 85.25791939,
+          "range": 0.22875495
+        },
+        "86_to_87": {
+          "fold_count": 9,
+          "maximum": 86.41563201,
+          "mean": 86.3148879,
+          "minimum": 86.18574597,
+          "range": 0.22988604
+        },
+        "87_to_88": {
+          "fold_count": 9,
+          "maximum": 87.80588451,
+          "mean": 87.48597505,
+          "minimum": 87.26243687,
+          "range": 0.54344764
+        },
+        "88_to_89": {
+          "fold_count": 9,
+          "maximum": 89.20866729,
+          "mean": 88.69504525,
+          "minimum": 88.40263344,
+          "range": 0.80603385
+        }
+      },
+      "training_population": {
+        "count": 51,
+        "partition": "fit"
+      },
+      "validation_population": {
+        "count": 18,
+        "partition": "holdout"
+      },
+      "variant": "archetype_adjusted_bands"
+    },
+    {
+      "architecture": "C",
+      "architecture_name": "Shared Core + Archetype Modifier",
+      "baseline_holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.722222,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.277778,
+        "mean_signed_residual": -0.055556,
+        "within_one_accuracy": 1.0
+      },
+      "boundary_diagnostics": {
+        "adjacent_count": 14,
+        "adjacent_ordered": 13,
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 9,
+        "sequence_information_priorities": [
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 6.928203,
+            "information_priority": 0.28867514,
+            "lower_qb_id": "QB-0013",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0003"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 10.723805,
+            "information_priority": 0.27975145,
+            "lower_qb_id": "QB-0038",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0013"
+          },
+          {
+            "actual_ovr_change": 6,
+            "confirmed_progression": false,
+            "euclidean_distance": 22.248595,
+            "information_priority": 0.26967995,
+            "lower_qb_id": "QB-0050",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0007"
+          },
+          {
+            "actual_ovr_change": 5,
+            "confirmed_progression": false,
+            "euclidean_distance": 18.788294,
+            "information_priority": 0.26612315,
+            "lower_qb_id": "QB-0027",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0071"
+          },
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 8.0,
+            "information_priority": 0.25,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "actual_ovr_change": 4,
+            "confirmed_progression": false,
+            "euclidean_distance": 18.439089,
+            "information_priority": 0.21693046,
+            "lower_qb_id": "QB-0039",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "actual_ovr_change": 6,
+            "confirmed_progression": false,
+            "euclidean_distance": 29.631065,
+            "information_priority": 0.20249019,
+            "lower_qb_id": "QB-0049",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "actual_ovr_change": 6,
+            "confirmed_progression": false,
+            "euclidean_distance": 31.144823,
+            "information_priority": 0.19264839,
+            "lower_qb_id": "QB-0051",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0008"
+          },
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 15.198684,
+            "information_priority": 0.13159034,
+            "lower_qb_id": "QB-0041",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0019"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 23.130067,
+            "information_priority": 0.12970131,
+            "lower_qb_id": "QB-0018",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0001"
+          },
+          {
+            "actual_ovr_change": 4,
+            "confirmed_progression": false,
+            "euclidean_distance": 33.674916,
+            "information_priority": 0.11878278,
+            "lower_qb_id": "QB-0046",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0011"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 26.324893,
+            "information_priority": 0.11396058,
+            "lower_qb_id": "QB-0047",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0024"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 28.0,
+            "information_priority": 0.10714286,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0072"
+          },
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 24.124676,
+            "information_priority": 0.08290267,
+            "lower_qb_id": "QB-0015",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0006"
+          },
+          {
+            "actual_ovr_change": 1,
+            "confirmed_progression": false,
+            "euclidean_distance": 20.760539,
+            "information_priority": 0.04816831,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0054"
+          },
+          {
+            "actual_ovr_change": 1,
+            "confirmed_progression": false,
+            "euclidean_distance": 22.51666,
+            "information_priority": 0.04441156,
+            "lower_qb_id": "QB-0054",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0038"
+          },
+          {
+            "actual_ovr_change": 0,
+            "confirmed_progression": false,
+            "euclidean_distance": 0.0,
+            "information_priority": 0.0,
+            "lower_qb_id": "QB-0067",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0068"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.627451,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.392157,
+        "mean_signed_residual": -0.039216,
+        "within_one_accuracy": 0.980392
+      },
+      "holdout_exact_change": 0.0,
+      "interpretation": "Threshold evidence is material only if independent holdout and cross-OVR behavior improve without boundary regressions.",
+      "parameter_count": 10,
+      "parameters": {
+        "archetype_offsets": {},
+        "band_widths": {
+          "79": null,
+          "80": 1.03745906,
+          "81": 0.94741497,
+          "82": 1.01111815,
+          "83": 1.00016142,
+          "84": 0.98742435,
+          "85": 0.86953685,
+          "86": 0.89599298,
+          "87": 1.12718949,
+          "88": 1.06207546,
+          "89": null
+        },
+        "centers": {
+          "79": 79.00190155,
+          "80": 80.0393606,
+          "81": 81.07681966,
+          "82": 81.93419054,
+          "83": 83.09905596,
+          "84": 83.93451339,
+          "85": 85.07390466,
+          "86": 85.6735871,
+          "87": 86.86589062,
+          "88": 87.92796608,
+          "89": 88.99004154
+        },
+        "pooled_level_groups": [],
+        "thresholds": {
+          "79_to_80": 79.52063107,
+          "80_to_81": 80.55809013,
+          "81_to_82": 81.5055051,
+          "82_to_83": 82.51662325,
+          "83_to_84": 83.51678468,
+          "84_to_85": 84.50420903,
+          "85_to_86": 85.37374588,
+          "86_to_87": 86.26973886,
+          "87_to_88": 87.39692835,
+          "88_to_89": 88.45900381
+        }
+      },
+      "systematic_errors": [
+        {
+          "actual_ovr": 87,
+          "archetype": "Pocket Passer",
+          "baseline_prediction": 87,
+          "classification": "threshold_mapping_worsened",
+          "qb_id": "QB-0002",
+          "threshold_prediction": 88
+        },
+        {
+          "actual_ovr": 86,
+          "archetype": "Backfield Creator",
+          "baseline_prediction": 86,
+          "classification": "threshold_mapping_worsened",
+          "qb_id": "QB-0005",
+          "threshold_prediction": 87
+        },
+        {
+          "actual_ovr": 84,
+          "archetype": "Pocket Passer",
+          "baseline_prediction": 85,
+          "classification": "insufficient_to_distinguish_threshold_from_weighting",
+          "qb_id": "QB-0016",
+          "threshold_prediction": 85
+        },
+        {
+          "actual_ovr": 82,
+          "archetype": "Backfield Creator",
+          "baseline_prediction": 81,
+          "classification": "possible_archetype_effect_data_limited",
+          "qb_id": "QB-0033",
+          "threshold_prediction": 81
+        },
+        {
+          "actual_ovr": 82,
+          "archetype": "Dual Threat",
+          "baseline_prediction": 81,
+          "classification": "possible_archetype_effect_data_limited",
+          "qb_id": "QB-0034",
+          "threshold_prediction": 81
+        }
+      ],
+      "threshold_holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.722222,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.277778,
+        "mean_signed_residual": 0.055556,
+        "within_one_accuracy": 1.0
+      },
+      "threshold_stability": {
+        "79_to_80": {
+          "fold_count": 9,
+          "maximum": 79.65285694,
+          "mean": 79.55193499,
+          "minimum": 79.49164254,
+          "range": 0.1612144
+        },
+        "80_to_81": {
+          "fold_count": 9,
+          "maximum": 80.58910623,
+          "mean": 80.55727721,
+          "minimum": 80.53462053,
+          "range": 0.0544857
+        },
+        "81_to_82": {
+          "fold_count": 9,
+          "maximum": 81.58682485,
+          "mean": 81.50056662,
+          "minimum": 81.40229385,
+          "range": 0.18453099
+        },
+        "82_to_83": {
+          "fold_count": 9,
+          "maximum": 82.5867228,
+          "mean": 82.50226394,
+          "minimum": 82.37616187,
+          "range": 0.21056093
+        },
+        "83_to_84": {
+          "fold_count": 9,
+          "maximum": 83.53689771,
+          "mean": 83.49250452,
+          "minimum": 83.42343861,
+          "range": 0.1134591
+        },
+        "84_to_85": {
+          "fold_count": 9,
+          "maximum": 84.56085403,
+          "mean": 84.47496192,
+          "minimum": 84.37266682,
+          "range": 0.18818721
+        },
+        "85_to_86": {
+          "fold_count": 9,
+          "maximum": 85.45487857,
+          "mean": 85.37413246,
+          "minimum": 85.23254404,
+          "range": 0.22233453
+        },
+        "86_to_87": {
+          "fold_count": 9,
+          "maximum": 86.41725607,
+          "mean": 86.29918134,
+          "minimum": 86.18345436,
+          "range": 0.23380171
+        },
+        "87_to_88": {
+          "fold_count": 9,
+          "maximum": 87.83106848,
+          "mean": 87.43983188,
+          "minimum": 87.21049425,
+          "range": 0.62057423
+        },
+        "88_to_89": {
+          "fold_count": 9,
+          "maximum": 89.27679237,
+          "mean": 88.56278463,
+          "minimum": 88.17429049,
+          "range": 1.10250188
+        }
+      },
+      "training_population": {
+        "count": 51,
+        "partition": "fit"
+      },
+      "validation_population": {
+        "count": 18,
+        "partition": "holdout"
+      },
+      "variant": "global_bands"
+    },
+    {
+      "architecture": "C",
+      "architecture_name": "Shared Core + Archetype Modifier",
+      "baseline_holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.722222,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.277778,
+        "mean_signed_residual": -0.055556,
+        "within_one_accuracy": 1.0
+      },
+      "boundary_diagnostics": {
+        "adjacent_count": 14,
+        "adjacent_ordered": 13,
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 10,
+        "sequence_information_priorities": [
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 6.928203,
+            "information_priority": 0.28867514,
+            "lower_qb_id": "QB-0013",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0003"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 10.723805,
+            "information_priority": 0.27975145,
+            "lower_qb_id": "QB-0038",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0013"
+          },
+          {
+            "actual_ovr_change": 6,
+            "confirmed_progression": false,
+            "euclidean_distance": 22.248595,
+            "information_priority": 0.26967995,
+            "lower_qb_id": "QB-0050",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0007"
+          },
+          {
+            "actual_ovr_change": 5,
+            "confirmed_progression": false,
+            "euclidean_distance": 18.788294,
+            "information_priority": 0.26612315,
+            "lower_qb_id": "QB-0027",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0071"
+          },
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 8.0,
+            "information_priority": 0.25,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "actual_ovr_change": 4,
+            "confirmed_progression": false,
+            "euclidean_distance": 18.439089,
+            "information_priority": 0.21693046,
+            "lower_qb_id": "QB-0039",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "actual_ovr_change": 6,
+            "confirmed_progression": false,
+            "euclidean_distance": 29.631065,
+            "information_priority": 0.20249019,
+            "lower_qb_id": "QB-0049",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "actual_ovr_change": 6,
+            "confirmed_progression": false,
+            "euclidean_distance": 31.144823,
+            "information_priority": 0.19264839,
+            "lower_qb_id": "QB-0051",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0008"
+          },
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 15.198684,
+            "information_priority": 0.13159034,
+            "lower_qb_id": "QB-0041",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0019"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 23.130067,
+            "information_priority": 0.12970131,
+            "lower_qb_id": "QB-0018",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0001"
+          },
+          {
+            "actual_ovr_change": 4,
+            "confirmed_progression": false,
+            "euclidean_distance": 33.674916,
+            "information_priority": 0.11878278,
+            "lower_qb_id": "QB-0046",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0011"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 26.324893,
+            "information_priority": 0.11396058,
+            "lower_qb_id": "QB-0047",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0024"
+          },
+          {
+            "actual_ovr_change": 3,
+            "confirmed_progression": false,
+            "euclidean_distance": 28.0,
+            "information_priority": 0.10714286,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0072"
+          },
+          {
+            "actual_ovr_change": 2,
+            "confirmed_progression": false,
+            "euclidean_distance": 24.124676,
+            "information_priority": 0.08290267,
+            "lower_qb_id": "QB-0015",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0006"
+          },
+          {
+            "actual_ovr_change": 1,
+            "confirmed_progression": false,
+            "euclidean_distance": 20.760539,
+            "information_priority": 0.04816831,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0054"
+          },
+          {
+            "actual_ovr_change": 1,
+            "confirmed_progression": false,
+            "euclidean_distance": 22.51666,
+            "information_priority": 0.04441156,
+            "lower_qb_id": "QB-0054",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0038"
+          },
+          {
+            "actual_ovr_change": 0,
+            "confirmed_progression": false,
+            "euclidean_distance": 0.0,
+            "information_priority": 0.0,
+            "lower_qb_id": "QB-0067",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0068"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.627451,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.392157,
+        "mean_signed_residual": -0.039216,
+        "within_one_accuracy": 0.980392
+      },
+      "holdout_exact_change": 0.055556,
+      "interpretation": "Threshold evidence is material only if independent holdout and cross-OVR behavior improve without boundary regressions.",
+      "parameter_count": 13,
+      "parameters": {
+        "archetype_offsets": {
+          "Backfield Creator": -0.04569523,
+          "Dual Threat": 0.02641395,
+          "Pocket Passer": 0.00234931
+        },
+        "band_widths": {
+          "79": null,
+          "80": 1.03745906,
+          "81": 0.94741497,
+          "82": 1.01111815,
+          "83": 1.00016142,
+          "84": 0.98742435,
+          "85": 0.86953685,
+          "86": 0.89599298,
+          "87": 1.12718949,
+          "88": 1.06207546,
+          "89": null
+        },
+        "centers": {
+          "79": 79.00190155,
+          "80": 80.0393606,
+          "81": 81.07681966,
+          "82": 81.93419054,
+          "83": 83.09905596,
+          "84": 83.93451339,
+          "85": 85.07390466,
+          "86": 85.6735871,
+          "87": 86.86589062,
+          "88": 87.92796608,
+          "89": 88.99004154
+        },
+        "pooled_level_groups": [],
+        "thresholds": {
+          "79_to_80": 79.52063107,
+          "80_to_81": 80.55809013,
+          "81_to_82": 81.5055051,
+          "82_to_83": 82.51662325,
+          "83_to_84": 83.51678468,
+          "84_to_85": 84.50420903,
+          "85_to_86": 85.37374588,
+          "86_to_87": 86.26973886,
+          "87_to_88": 87.39692835,
+          "88_to_89": 88.45900381
+        }
+      },
+      "systematic_errors": [
+        {
+          "actual_ovr": 87,
+          "archetype": "Pocket Passer",
+          "baseline_prediction": 87,
+          "classification": "threshold_mapping_worsened",
+          "qb_id": "QB-0002",
+          "threshold_prediction": 88
+        },
+        {
+          "actual_ovr": 84,
+          "archetype": "Pocket Passer",
+          "baseline_prediction": 85,
+          "classification": "insufficient_to_distinguish_threshold_from_weighting",
+          "qb_id": "QB-0016",
+          "threshold_prediction": 85
+        },
+        {
+          "actual_ovr": 82,
+          "archetype": "Backfield Creator",
+          "baseline_prediction": 81,
+          "classification": "possible_archetype_effect_data_limited",
+          "qb_id": "QB-0033",
+          "threshold_prediction": 81
+        },
+        {
+          "actual_ovr": 82,
+          "archetype": "Dual Threat",
+          "baseline_prediction": 81,
+          "classification": "possible_archetype_effect_data_limited",
+          "qb_id": "QB-0034",
+          "threshold_prediction": 81
+        }
+      ],
+      "threshold_holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.777778,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.222222,
+        "mean_signed_residual": 0.0,
+        "within_one_accuracy": 1.0
+      },
+      "threshold_stability": {
+        "79_to_80": {
+          "fold_count": 9,
+          "maximum": 79.65285694,
+          "mean": 79.55193499,
+          "minimum": 79.49164254,
+          "range": 0.1612144
+        },
+        "80_to_81": {
+          "fold_count": 9,
+          "maximum": 80.58910623,
+          "mean": 80.55727721,
+          "minimum": 80.53462053,
+          "range": 0.0544857
+        },
+        "81_to_82": {
+          "fold_count": 9,
+          "maximum": 81.58682485,
+          "mean": 81.50056662,
+          "minimum": 81.40229385,
+          "range": 0.18453099
+        },
+        "82_to_83": {
+          "fold_count": 9,
+          "maximum": 82.5867228,
+          "mean": 82.50226394,
+          "minimum": 82.37616187,
+          "range": 0.21056093
+        },
+        "83_to_84": {
+          "fold_count": 9,
+          "maximum": 83.53689771,
+          "mean": 83.49250452,
+          "minimum": 83.42343861,
+          "range": 0.1134591
+        },
+        "84_to_85": {
+          "fold_count": 9,
+          "maximum": 84.56085403,
+          "mean": 84.47496192,
+          "minimum": 84.37266682,
+          "range": 0.18818721
+        },
+        "85_to_86": {
+          "fold_count": 9,
+          "maximum": 85.45487857,
+          "mean": 85.37413246,
+          "minimum": 85.23254404,
+          "range": 0.22233453
+        },
+        "86_to_87": {
+          "fold_count": 9,
+          "maximum": 86.41725607,
+          "mean": 86.29918134,
+          "minimum": 86.18345436,
+          "range": 0.23380171
+        },
+        "87_to_88": {
+          "fold_count": 9,
+          "maximum": 87.83106848,
+          "mean": 87.43983188,
+          "minimum": 87.21049425,
+          "range": 0.62057423
+        },
+        "88_to_89": {
+          "fold_count": 9,
+          "maximum": 89.27679237,
+          "mean": 88.56278463,
+          "minimum": 88.17429049,
+          "range": 1.10250188
+        }
+      },
+      "training_population": {
+        "count": 51,
+        "partition": "fit"
+      },
+      "validation_population": {
+        "count": 18,
+        "partition": "holdout"
+      },
+      "variant": "archetype_adjusted_bands"
+    }
+  ],
+  "schema_version": 1
+}
