@@ -1,0 +1,4943 @@
+[
+  {
+    "attribute": "ACC",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 4,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 3,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 5,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "COD",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 6,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "LBK",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -8,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PBF",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -2,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PBK",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PBP",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 7,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBF",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBK",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBP",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 3,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 12,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "STR",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "80->81",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 10,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "84->85",
+    "classification": "INSUFFICIENT",
+    "lower_n": 6,
+    "mean_difference": 0,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "84->85",
+    "classification": "INSUFFICIENT",
+    "lower_n": 6,
+    "mean_difference": -2.3,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "84->85",
+    "classification": "INSUFFICIENT",
+    "lower_n": 6,
+    "mean_difference": 0.6333,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "COD",
+    "boundary": "84->85",
+    "classification": "INSUFFICIENT",
+    "lower_n": 6,
+    "mean_difference": 0.1667,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "84->85",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 6,
+    "mean_difference": 2.4,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "LBK",
+    "boundary": "84->85",
+    "classification": "INSUFFICIENT",
+    "lower_n": 6,
+    "mean_difference": -4.1667,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "PBF",
+    "boundary": "84->85",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 6,
+    "mean_difference": 2.3333,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "PBK",
+    "boundary": "84->85",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 6,
+    "mean_difference": 2.1667,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "PBP",
+    "boundary": "84->85",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 6,
+    "mean_difference": 3.7333,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "RBF",
+    "boundary": "84->85",
+    "classification": "INSUFFICIENT",
+    "lower_n": 6,
+    "mean_difference": -4.2667,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "RBK",
+    "boundary": "84->85",
+    "classification": "INSUFFICIENT",
+    "lower_n": 6,
+    "mean_difference": -2.8333,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "RBP",
+    "boundary": "84->85",
+    "classification": "INSUFFICIENT",
+    "lower_n": 6,
+    "mean_difference": -1.2333,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "84->85",
+    "classification": "INSUFFICIENT",
+    "lower_n": 6,
+    "mean_difference": -0.4333,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "STR",
+    "boundary": "84->85",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 6,
+    "mean_difference": 3.3333,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "84->85",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 6,
+    "mean_difference": 2.3333,
+    "position": "C",
+    "upper_n": 5
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 1.6667,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "85->86",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 5,
+    "mean_difference": 3.1333,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 0.8667,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "COD",
+    "boundary": "85->86",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 5,
+    "mean_difference": 4.3333,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": -1.7333,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "LBK",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 1.3333,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "PBF",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 0.3333,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "PBK",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 0.3333,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "PBP",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 0.6,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "RBF",
+    "boundary": "85->86",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 5,
+    "mean_difference": 2.9333,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "RBK",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 1.3333,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "RBP",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 1.4,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 1.6,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "STR",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 0,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 1.6667,
+    "position": "C",
+    "upper_n": 3
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 2.3333,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 0.6667,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 0.3333,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "COD",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 0.6667,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 4.3333,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "LBK",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 2.6667,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PBF",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -7.3333,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PBK",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -4.3333,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PBP",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -1,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBF",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 2.6667,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBK",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 4.6667,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBP",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 5,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 0,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "STR",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 3,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 6.3333,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -4,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 7,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "COD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -8,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "LBK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 2,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PBF",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 7,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PBK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 6,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PBP",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBF",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -3,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBP",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "STR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -7,
+    "position": "C",
+    "upper_n": 1
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.75,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.5,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1.5,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "BSH",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -4.75,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 4.25,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "COD",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 2.75,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -0.25,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "FMV",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.5,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1.75,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "MCV",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "PMV",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 4.5,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "POW",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 8.75,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "PRC",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 5.75,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "PRS",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -2.5,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "PUR",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.75,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "RET",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 15.25,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 14.25,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.75,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "STR",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -2.25,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "TAK",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -0.25,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "ZCV",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 3.75,
+    "position": "FS",
+    "upper_n": 4
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 0.9167,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 0.5,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 2.5,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "BSH",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 5.0833,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 3.4167,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "COD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 1.25,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 1.5833,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "FMV",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 14.5,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 6.0833,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 2.3333,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "MCV",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": -2.6667,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "PMV",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 11.5,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "POW",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 2.9167,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "PRC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": -0.0833,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "PRS",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": -1.1667,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "PUR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 1.5833,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "RET",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 3.4167,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 1.4167,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 1.25,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "STR",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 8.5833,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "TAK",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 2.6667,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": -1.4167,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "ZCV",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 1.25,
+    "position": "FS",
+    "upper_n": 3
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.8,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.6,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 2.4,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "BCV",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.6,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "BTK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 2.2,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "CAR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.8,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.6,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "COD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -0.8,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -4.2,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "DRR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -2.4,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "JKM",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -4,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.2,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "MRR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -5,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "RET",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.4,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "RLS",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 9.2,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "SFA",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 18.4,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1.2,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -0.2,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "SPM",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -0.4,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "SRR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -6.6,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "STR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 24,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -5.6,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "TRK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 15.2,
+    "position": "HB",
+    "upper_n": 5
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 2.2,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 1.4,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 1.6,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "BCV",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 2.4,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "BTK",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": -2.2,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "CAR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 1.2,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": -6.6,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "COD",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 3.8,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 8.2,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "DRR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 4.4,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "JKM",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 4,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": -1.2,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "MRR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 7,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RET",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 4.6,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RLS",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": -11.2,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SFA",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": -18.4,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 3.2,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 1.2,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPM",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 4.4,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SRR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 6.6,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "STR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": -32,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 5.6,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TRK",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": -21.2,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 2,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 6,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "BCV",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 2,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "BTK",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 5,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "CAR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 6,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "COD",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -2,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -11,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "DRR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -15,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "JKM",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -2,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 2,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "MRR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -14,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RET",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RLS",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -4,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SFA",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 19,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -6,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPM",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SRR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -11,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "STR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 27,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -5,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TRK",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 21,
+    "position": "HB",
+    "upper_n": 1
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 4,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 6,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -3.6667,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "BSH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 0,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "COD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 5.6667,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "FMV",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 7.6667,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -1.3333,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PMV",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -2.6667,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "POW",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 1.3333,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PRC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 1,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PUR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 0.6667,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 4,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "STR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -2,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TAK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -1.3333,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -1.6667,
+    "position": "LE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -2.3333,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -1.25,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -0.3333,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "COD",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -1.5833,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 0.8333,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "LBK",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 1.0833,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "PBF",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 1.5,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "PBK",
+    "boundary": "85->86",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2.75,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "PBP",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 1.8333,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "RBF",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -0.5,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "RBK",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 1.75,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "RBP",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 1.4167,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "85->86",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -0.9167,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "STR",
+    "boundary": "85->86",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2.1667,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "85->86",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 3,
+    "position": "LT",
+    "upper_n": 4
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.3333,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 3.6667,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1.3333,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "BSH",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.6667,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -7,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "COD",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 3,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 2,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "FMV",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.3333,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 3.6667,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -0.3333,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "MCV",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -3,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "PMV",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -2.3333,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "POW",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.6667,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "PRC",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 4.6667,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "PRS",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -13,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "PUR",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.6667,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -8.6667,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.6667,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "STR",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.3333,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "TAK",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 3.6667,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "ZCV",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0,
+    "position": "MLB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 0.4167,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 0.0833,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2.3333,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "BSH",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2.0833,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 8.75,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "COD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -2,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 4,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "FMV",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -0.8333,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -2.4167,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 0.3333,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "MCV",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "PMV",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 6.0833,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "POW",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2.8333,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "PRC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -0.9167,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "PRS",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 4.5,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "PUR",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2.0833,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 6.9167,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -0.4167,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "STR",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2.6667,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "TAK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -0.25,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -1.4167,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "ZCV",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -0.75,
+    "position": "MLB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.5,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 3.75,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "BCV",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.5,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "BSK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -3.25,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "BTK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -0.75,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "CAR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.25,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "COD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.75,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "DAC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 4.25,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "JKM",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.75,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "MAC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1.25,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "PAC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 3.5,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "RUN",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "SAC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.25,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "SFA",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -4.25,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -0.75,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "SPM",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 2.5,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "STR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "TAC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "THP",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "TRK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -3.75,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "TUP",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.75,
+    "position": "QB",
+    "upper_n": 4
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 4,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 0.1667,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": -4.0833,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "BCV",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": -2.8333,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "BSK",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": -1.4167,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "BTK",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": -2.5833,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "CAR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": -0.25,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "COD",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 1.25,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "DAC",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": -0.9167,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "JKM",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 0.9167,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "MAC",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 0.25,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "PAC",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 1.5,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "RUN",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 1,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "SAC",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 2.75,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "SFA",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": -1.0833,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": 1.0833,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "SPM",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 4.8333,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "STR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": -6,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "TAC",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": -0.6667,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 2,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "THP",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 2.3333,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "TRK",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 4,
+    "mean_difference": -8.9167,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "TUP",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 4,
+    "mean_difference": 2.5833,
+    "position": "QB",
+    "upper_n": 3
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.5,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -2,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "BSH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 2,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "COD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.5,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "FMV",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1.5,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.5,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PMV",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 5.5,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "POW",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 4,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PRC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 2,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PUR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1.5,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.5,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "STR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 6.5,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "TAK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "RE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -0.5,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 4,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "BSH",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "COD",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -1.5,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "FMV",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -1.5,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 4.5,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PMV",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 2.5,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "POW",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -2,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PRC",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 2,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PUR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -1.5,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -0.5,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "STR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0.5,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TAK",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 3,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1,
+    "position": "RE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -0.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "BSH",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 5.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "COD",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -3.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "FMV",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 10,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "MCV",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PMV",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -2.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "POW",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PRC",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -1,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PRS",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 0.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PUR",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 4,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "RET",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 11.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": -5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "STR",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 2.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "TAK",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 4,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 2.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "ZCV",
+    "boundary": "86->87",
+    "classification": "INSUFFICIENT",
+    "lower_n": 1,
+    "mean_difference": 1,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2.0,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -1.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "BSH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -4.0,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "COD",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 5.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "FMV",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 4.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "MCV",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 3.0,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PMV",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 5.0,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "POW",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 5.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PRC",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PRS",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -0.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PUR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -0.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "RET",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -10.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 5.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "STR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "TAK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -1.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 3.0,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "ZCV",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 4.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "BSH",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 3.0,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 4.0,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "COD",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -1,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "FMV",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 3.0,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -1,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "MCV",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2.0,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PMV",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 3.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "POW",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -6.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PRC",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1.0,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PRS",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -0.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PUR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "RET",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 8.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "STR",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 3,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "TAK",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0.5,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0.0,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "ZCV",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1,
+    "position": "SS",
+    "upper_n": 2
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 2,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -4.5,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "BSH",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -0.5,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -4.5,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "COD",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 4,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0.5,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "FMV",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -14.5,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -4,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "MCV",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0.5,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PMV",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -6,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "POW",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 6.5,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PRC",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1.5,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PRS",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 4.5,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PUR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RET",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -9.5,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -2,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 2,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "STR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -2,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TAK",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 3.5,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "ZCV",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1,
+    "position": "SS",
+    "upper_n": 1
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 3,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 0.1667,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "BCV",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2.8333,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "BTK",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 4.3333,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "CAR",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2.3333,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 1.1667,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "COD",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 1.8333,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -0.1667,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "DRR",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 3.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -1.8333,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "JKM",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 4.8333,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2.6667,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "LBK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -0.8333,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "MRR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 1.6667,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PBF",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -6.8333,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PBK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -2.6667,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PBP",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -3.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "RBF",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -0.3333,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "RBK",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2.3333,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "RBP",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -1.3333,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "RLS",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 4.6667,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SFA",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -1.6667,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -2,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2.1667,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SPM",
+    "boundary": "87->88",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 3,
+    "mean_difference": 2.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SRR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -0.1667,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "STR",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": 1.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -0.6667,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "TRK",
+    "boundary": "87->88",
+    "classification": "INSUFFICIENT",
+    "lower_n": 3,
+    "mean_difference": -0.1667,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1.0,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 3.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "BCV",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "BTK",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "CAR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -0.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "COD",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "DRR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0.0,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -1.0,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "JKM",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2.0,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "LBK",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -5.0,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "MRR",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PBF",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -1.0,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PBK",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -3.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "PBP",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0.0,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "RBF",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -2.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "RBK",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -4.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "RBP",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -2,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "RLS",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SFA",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 4.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SPM",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "SRR",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "STR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -1.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2.5,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "TRK",
+    "boundary": "88->89",
+    "classification": "CANDIDATE_THRESHOLD",
+    "lower_n": 2,
+    "mean_difference": 2.0,
+    "position": "TE",
+    "upper_n": 2
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "BCV",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -6,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "BTK",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "CAR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 2.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "COD",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 2,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "DRR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 2.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "JKM",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -1.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "LBK",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 7.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "MRR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PBF",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 2.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PBK",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 4.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "PBP",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 5.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBF",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 5.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBK",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 5.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBP",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RLS",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -1.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SFA",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 0.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -1.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 2,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPM",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SRR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 1,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "STR",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 2,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": 3.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TRK",
+    "boundary": "89->90",
+    "classification": "INSUFFICIENT",
+    "lower_n": 2,
+    "mean_difference": -0.5,
+    "position": "TE",
+    "upper_n": 1
+  },
+  {
+    "attribute": "ACC",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 2.4286,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AGI",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 2.5714,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "AWR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 1.5714,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "BCV",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 17.8571,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "BTK",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 0.4286,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "CAR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 4.2857,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "CIT",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 1.7143,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "COD",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 2.1429,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "CTH",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 1.2857,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "DRR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": -2.4286,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "IBL",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 8.1429,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "JKM",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 4.5714,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "JMP",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 3.7143,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "MRR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 0.5714,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBF",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 13.5714,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBK",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": -0.1429,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RBP",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 13.1429,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RET",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 13.8571,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "RLS",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 1.5714,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SFA",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": -1.5714,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPC",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 3.8571,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPD",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 0.8571,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SPM",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 2.7143,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "SRR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": -1.4286,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "STR",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": -5.1429,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TGH",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": -1.2857,
+    "position": "WR",
+    "upper_n": 1
+  },
+  {
+    "attribute": "TRK",
+    "boundary": "88->89",
+    "classification": "INSUFFICIENT",
+    "lower_n": 7,
+    "mean_difference": 1.5714,
+    "position": "WR",
+    "upper_n": 1
+  }
+]

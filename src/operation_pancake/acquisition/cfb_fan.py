@@ -14,6 +14,18 @@ from operation_pancake.acquisition.adapters import AccessPolicy, ExternalCardAda
 from operation_pancake.acquisition.models import ExternalCard, RawSnapshot
 
 PARSER_VERSION = "cfb-fan-html-v1"
+POSITION_ALIASES = {"MIKE": "MLB", "LEDG": "LE", "REDG": "RE"}
+
+
+def parse_player_listing(html: str, base_url: str = "https://cfb.fan") -> list[str]:
+    """Return stable CFB27 player URLs from a public listing, in displayed order."""
+    paths = re.findall(r'href="(?P<path>/players/\d+-[^"/]+/(?:27-[^"/]+/)?)"', html)
+    urls: list[str] = []
+    for path in paths:
+        url = f"{base_url}{path}"
+        if url not in urls:
+            urls.append(url)
+    return urls
 
 
 def _text(value: str) -> str:
@@ -40,7 +52,8 @@ def parse_player_page(html: str, source_url: str, retrieved_at: str, snapshot: s
     player = " ".join(unescape(re.sub(r"<[^>]+>", "", header_match.group("header"))).split())
     program = _text(meta_match.group("program"))
     overall = int(title_match.group("overall"))
-    position = _text(meta_match.group("position"))
+    source_position = _text(meta_match.group("position"))
+    position = POSITION_ALIASES.get(source_position, source_position)
     ratings_html = html
     general_index = html.find(">General</")
     team_index = html.find('text-lighter-gray">Team</div>', general_index)
@@ -77,7 +90,7 @@ def parse_player_page(html: str, source_url: str, retrieved_at: str, snapshot: s
         else source_url.rstrip("/").split("/")[-1]
     )
     archetype = (
-        _text(archetype_match.group(1)).removesuffix(f" - {position}") if archetype_match else None
+        re.sub(r" - [A-Z]+$", "", _text(archetype_match.group(1))) if archetype_match else None
     )
     return ExternalCard(
         external_source="CFB_FAN",
@@ -97,6 +110,7 @@ def parse_player_page(html: str, source_url: str, retrieved_at: str, snapshot: s
         raw_snapshot_reference=snapshot,
         extraction_status="COMPLETE" if ratings else "PARTIAL",
         validation_status="STAGED_EXTERNAL_PUBLIC_SOURCE",
+        metadata={"source_position": source_position} if source_position != position else {},
     )
 
 

@@ -18,10 +18,11 @@ in identity matching. Matching requires an external ID or the complete player/po
 archetype/program/card-type tuple. A same-player/same-OVR candidate with different program or card
 type is an ambiguity, not an automatic match.
 
-The `cfb_fan` namespace only imports historical saved-page discovery IDs. It deliberately has no
-live endpoint implementation. A live adapter must first validate a normal public interface and obey
-throttling, retry/backoff, caching, resume, and access restrictions. Authentication, anti-bot, and
-CAPTCHA bypasses are prohibited; inaccessible sources are logged as blocked.
+The `cfb_fan` namespace supports saved-page discovery IDs and a validated public-HTML adapter.
+The adapter is deliberately bounded by an explicit URL set: listing selection is performed by the
+research runner, requests are limited to 12 per minute, and every response is cached before parsing.
+Authentication, API access, anti-bot, and CAPTCHA bypasses are prohibited; inaccessible sources are
+logged as blocked.
 
 Commands:
 
@@ -49,3 +50,16 @@ Center ratings (`SPD ACC AGI COD AWR STR TGH RBK RBF RBP PBK PBF PBP LBK IBL`), 
 archetype, team, quick-sell information, and sometimes date added. Release and market coverage are
 therefore partial rather than guaranteed. All six responses are retained as content-addressed raw
 snapshots and all normalized cards remain external staging evidence.
+
+## CFB27 population phase I
+
+The phase-I runner uses bounded public position listings for C, WR, HB, CB, FS, SS, MIKE, left and
+right EDGE, LT, LG, QB, and TE. The site labels are preserved in metadata while MIKE/LEDG/REDG are
+normalized to the repository's MLB/LE/RE vocabulary. The selected listing pages and player pages
+are content-addressed, and subsequent runs operate from cache. The resulting external population is
+staging-only and does not modify the canonical workbook.
+
+Research outputs in `data/research/cfb27_inheritance_phase1` contain position descriptives,
+conservative threshold candidates, the frozen Madden 19 Center-weight inheritance test, unresolved
+historical tunable leads, and a machine-readable evaluator status. Correlations and threshold
+candidates are diagnostics, not formula proof.

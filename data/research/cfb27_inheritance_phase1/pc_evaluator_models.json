@@ -1,0 +1,32 @@
+{
+  "C": {
+    "archetype_handling": "minimal residual offset evaluated leakage-free",
+    "attribute_importance": {
+      "ACC": 2,
+      "AGI": 2,
+      "AWR": 15,
+      "IBL": 6,
+      "LBK": 4,
+      "PBF": 8,
+      "PBK": 2,
+      "PBP": 21,
+      "RBK": 10,
+      "RBP": 22,
+      "SPD": 2,
+      "STR": 14
+    },
+    "confidence": "MODERATE",
+    "known_limitations": [
+      "bounded public sample",
+      "historical Madden row-level population unavailable",
+      "special cards separated",
+      "not operationally solved"
+    ],
+    "status": "PRACTICAL_RESEARCH_MODEL",
+    "validation_metrics": {
+      "exact_accuracy": 0.75,
+      "mae": 0.25,
+      "within_one_accuracy": 1.0
+    }
+  }
+}

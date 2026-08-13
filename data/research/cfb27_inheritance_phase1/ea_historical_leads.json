@@ -1,0 +1,31 @@
+{
+  "madden16_attribute_weights": {
+    "numeric_values_recovered": false,
+    "public_search": "NO_VERIFIABLE_WEIGHT_TABLE_LOCATED",
+    "repository_search": "NO_MATCH",
+    "status": "PRECISE_UNRESOLVED_LEAD"
+  },
+  "madden19": {
+    "numeric_values_recovered": true,
+    "source": "historical frozen Center model",
+    "status": "EXISTING_REPOSITORY_PRIOR"
+  },
+  "madden21_public_secondary_evidence": {
+    "finding": "Public 2021 archetype tables support continued archetype-specific weighting, but do not authenticate the named Table_44 workbook.",
+    "source_url": "https://www.reddit.com/r/MaddenUltimateTeam/comments/npchdm",
+    "status": "CORROBORATING_SECONDARY_EVIDENCE"
+  },
+  "operation_sports_historical_lead": {
+    "finding": "Historical discussion attributes position/archetype weight extraction to game XML; retained as a lead, not primary numeric evidence.",
+    "source_url": "https://forums.operationsports.com/forums/forum/football/madden-nfl-football/862218-guide-weightings-towards-the-ovr-for-each-attribute-at-every-position-archetype",
+    "status": "CORROBORATING_SECONDARY_EVIDENCE"
+  },
+  "table_44_ability_progression_tunable_archetypes": {
+    "claimed_contributor": "Primetime",
+    "claimed_filename": "Table_44-_Ability_Progression_Tunable_Archetypes.xlsx",
+    "numeric_values_recovered": false,
+    "public_search": "NO_DOWNLOADABLE_SOURCE_LOCATED",
+    "repository_search": "NO_MATCH",
+    "status": "PRECISE_UNRESOLVED_LEAD"
+  }
+}

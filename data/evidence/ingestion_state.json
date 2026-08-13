@@ -40,6 +40,7 @@
   },
   "manifest_ids": [
     "EXTERNAL-CFB_FAN-2026-08-13T20-00-00Z",
+    "EXTERNAL-CFB_FAN-2026-08-13T22-00-00Z",
     "HIST-PROGRESSION-INVENTORY-V1"
   ],
   "provenance": {},
@@ -314,6 +315,4944 @@
         "program": "Phenoms",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/57f6f4e59563061130c215dc8224d2f9bdad43746c06546708ff4d7f4699bb70.bin",
         "release_date": "07/24/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-110001090": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-110001090",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/1090-kaleb-cost/27-110001090/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Field",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 83,
+          "AWR": 81,
+          "BSH": 80,
+          "CIT": 74,
+          "COD": 86,
+          "CTH": 77,
+          "FMV": 74,
+          "IBL": 79,
+          "JMP": 89,
+          "MCV": 88,
+          "PMV": 75,
+          "POW": 86,
+          "PRC": 81,
+          "PRS": 85,
+          "PUR": 90,
+          "RET": 65,
+          "SPC": 73,
+          "SPD": 88,
+          "STR": 83,
+          "TAK": 89,
+          "TGH": 88,
+          "ZCV": 86
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-110001090",
+        "external_player_id": "1090",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Kaleb Cost",
+        "position": "CB",
+        "program": "Sunday Spotlight: Retro",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/09ac6a3dd04fe839b27312326bb038100f0d27797f5e7e152bafa7e6c70e2ccb.bin",
+        "release_date": "08/09/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-110004584": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-110004584",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/4584-cruce-brookins/27-110004584/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Box Specialist",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 83,
+          "AWR": 80,
+          "BSH": 80,
+          "CIT": 75,
+          "COD": 85,
+          "CTH": 79,
+          "FMV": 74,
+          "IBL": 79,
+          "JMP": 87,
+          "MCV": 83,
+          "PMV": 71,
+          "POW": 88,
+          "PRC": 79,
+          "PRS": 81,
+          "PUR": 89,
+          "RET": 44,
+          "SPC": 70,
+          "SPD": 88,
+          "STR": 82,
+          "TAK": 89,
+          "TGH": 88,
+          "ZCV": 86
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-110004584",
+        "external_player_id": "4584",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Cruce Brookins",
+        "position": "FS",
+        "program": "Sunday Spotlight: Retro",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/d2ff8af97151ffd67636db21c03aeef4964fb37def5407d95779903d30f72b24.bin",
+        "release_date": "08/02/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-110010268": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-110010268",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/10268-marcel-reed/27-110010268/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Dual Threat",
+        "attributes": {
+          "ACC": 84,
+          "AGI": 84,
+          "AWR": 78,
+          "BCV": 80,
+          "BSK": 89,
+          "BTK": 81,
+          "CAR": 81,
+          "COD": 84,
+          "DAC": 83,
+          "JKM": 83,
+          "MAC": 88,
+          "PAC": 79,
+          "RUN": 87,
+          "SAC": 86,
+          "SFA": 79,
+          "SPD": 87,
+          "SPM": 79,
+          "STR": 80,
+          "TAC": 88,
+          "TGH": 88,
+          "THP": 88,
+          "TRK": 80,
+          "TUP": 83
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-110010268",
+        "external_player_id": "10268",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Marcel Reed",
+        "position": "QB",
+        "program": "Sunday Spotlight: Retro",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/3e6720543ea4bc6dcb3e26c4ef3d2c563042c3539ddafd18c26b249e87ccba83.bin",
+        "release_date": "08/09/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-110018638": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-110018638",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/18638-cameron-dickey/27-110018638/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "East/West Playmaker",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 88,
+          "AWR": 78,
+          "BCV": 82,
+          "BTK": 86,
+          "CAR": 84,
+          "CIT": 76,
+          "COD": 87,
+          "CTH": 76,
+          "DRR": 72,
+          "JKM": 89,
+          "JMP": 83,
+          "MRR": 74,
+          "RET": 83,
+          "RLS": 80,
+          "SFA": 84,
+          "SPC": 75,
+          "SPD": 88,
+          "SPM": 88,
+          "SRR": 77,
+          "STR": 86,
+          "TGH": 88,
+          "TRK": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-110018638",
+        "external_player_id": "18638",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Cameron Dickey",
+        "position": "HB",
+        "program": "Sunday Spotlight: Retro",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/e3bd143e37556cd2334cc4a36bcb069af1479c001088b4a0eb0f963326a696ab.bin",
+        "release_date": "08/02/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-110026099": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-110026099",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26099-devin-hester/27-110026099/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Field",
+        "attributes": {
+          "ACC": 89,
+          "AGI": 82,
+          "AWR": 80,
+          "BSH": 80,
+          "CIT": 72,
+          "COD": 88,
+          "CTH": 83,
+          "FMV": 76,
+          "IBL": 78,
+          "JMP": 88,
+          "MCV": 89,
+          "PMV": 75,
+          "POW": 83,
+          "PRC": 82,
+          "PRS": 82,
+          "PUR": 88,
+          "RET": 88,
+          "SPC": 72,
+          "SPD": 89,
+          "STR": 81,
+          "TAK": 88,
+          "TGH": 88,
+          "ZCV": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-110026099",
+        "external_player_id": "26099",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Devin Hester",
+        "position": "CB",
+        "program": "Sunday Spotlight: Retro",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/1350ab58744474d8c3ac0f33a91d78fc1152c8e95c8e24cc6bb8e0435138a797.bin",
+        "release_date": "07/05/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-110026550": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-110026550",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26550-junior-seau/27-110026550/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Lurker",
+        "attributes": {
+          "ACC": 85,
+          "AGI": 79,
+          "AWR": 80,
+          "BSH": 86,
+          "CIT": 73,
+          "COD": 83,
+          "CTH": 76,
+          "FMV": 80,
+          "IBL": 80,
+          "JMP": 83,
+          "MCV": 84,
+          "PMV": 80,
+          "POW": 85,
+          "PRC": 80,
+          "PRS": 81,
+          "PUR": 85,
+          "SPC": 73,
+          "SPD": 85,
+          "STR": 85,
+          "TAK": 90,
+          "TGH": 87,
+          "ZCV": 87
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-110026550",
+        "external_player_id": "26550",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Junior Seau",
+        "position": "MLB",
+        "program": "Sunday Spotlight: Retro",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/e0e53ed9a8fe0112238c5f24cd2634358a5bfe8742554652cba438f33a9ced0a.bin",
+        "release_date": "07/26/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-111010268": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-111010268",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/10268-marcel-reed/27-111010268/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Dual Threat",
+        "attributes": {
+          "ACC": 83,
+          "AGI": 83,
+          "AWR": 77,
+          "BCV": 79,
+          "BSK": 88,
+          "BTK": 80,
+          "CAR": 80,
+          "COD": 83,
+          "DAC": 82,
+          "JKM": 82,
+          "MAC": 87,
+          "PAC": 78,
+          "RUN": 86,
+          "SAC": 85,
+          "SFA": 78,
+          "SPD": 86,
+          "SPM": 78,
+          "STR": 79,
+          "TAC": 87,
+          "TGH": 87,
+          "THP": 87,
+          "TRK": 79,
+          "TUP": 82
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-111010268",
+        "external_player_id": "10268",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Marcel Reed",
+        "position": "QB",
+        "program": "Sunday Spotlight: Retro",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/ad982b44ff243bb180b3610eef6bf1a0d4d443f663e62d9be5c9a1d9d5b2f006.bin",
+        "release_date": "08/09/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-111026550": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-111026550",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26550-junior-seau/27-111026550/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Lurker",
+        "attributes": {
+          "ACC": 84,
+          "AGI": 78,
+          "AWR": 79,
+          "BSH": 85,
+          "CIT": 72,
+          "COD": 82,
+          "CTH": 75,
+          "FMV": 79,
+          "IBL": 79,
+          "JMP": 82,
+          "MCV": 83,
+          "PMV": 79,
+          "POW": 84,
+          "PRC": 79,
+          "PRS": 80,
+          "PUR": 84,
+          "SPC": 72,
+          "SPD": 84,
+          "STR": 84,
+          "TAK": 89,
+          "TGH": 86,
+          "ZCV": 86
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-111026550",
+        "external_player_id": "26550",
+        "external_source": "CFB_FAN",
+        "overall": 86,
+        "player": "Junior Seau",
+        "position": "MLB",
+        "program": "Sunday Spotlight: Retro",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/1d2a33baf3f9ba5d6fe06d508539c0f8971b9c72e393514405b69a449b7cf4c2.bin",
+        "release_date": "07/26/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2001567": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2001567",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/1567-shadre-hurst/27-2001567/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 66,
+          "AGI": 66,
+          "AWR": 83,
+          "COD": 66,
+          "IBL": 81,
+          "LBK": 81,
+          "PBF": 85,
+          "PBK": 84,
+          "PBP": 85,
+          "RBF": 80,
+          "RBK": 79,
+          "RBP": 79,
+          "SPD": 66,
+          "STR": 84,
+          "TGH": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2001567",
+        "external_player_id": "1567",
+        "external_source": "CFB_FAN",
+        "overall": 85,
+        "player": "Shadre Hurst",
+        "position": "LG",
+        "program": "Core Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/50aac7783b49122a1ea47f04ff0828f6c71841cb2029b64874d32aae89ceb396.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2007022": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2007022",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/7022-cayden-green/27-2007022/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 70,
+          "AGI": 69,
+          "AWR": 84,
+          "COD": 68,
+          "IBL": 83,
+          "LBK": 84,
+          "PBF": 85,
+          "PBK": 84,
+          "PBP": 83,
+          "RBF": 85,
+          "RBK": 82,
+          "RBP": 83,
+          "SPD": 67,
+          "STR": 84,
+          "TGH": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2007022",
+        "external_player_id": "7022",
+        "external_source": "CFB_FAN",
+        "overall": 85,
+        "player": "Cayden Green",
+        "position": "LT",
+        "program": "Core Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/73687a40940f4759cf204e259b56f4e3f5f8c30eee7012087f5fd82b1eded110.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-201002569": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-201002569",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/2569-carter-smith/27-201002569/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 69,
+          "AGI": 68,
+          "AWR": 86,
+          "COD": 67,
+          "IBL": 83,
+          "LBK": 85,
+          "PBF": 86,
+          "PBK": 85,
+          "PBP": 84,
+          "RBF": 86,
+          "RBK": 84,
+          "RBP": 84,
+          "SPD": 67,
+          "STR": 86,
+          "TGH": 86
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-201002569",
+        "external_player_id": "2569",
+        "external_source": "CFB_FAN",
+        "overall": 86,
+        "player": "Carter Smith",
+        "position": "LT",
+        "program": "Season 1",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/ea005fba89076e366accacb583b8ee7ef4acde9d25f895a19451021011970e91.bin",
+        "release_date": "07/09/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-201004853": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-201004853",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/4853-greg-johnson/27-201004853/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 67,
+          "AGI": 65,
+          "AWR": 85,
+          "COD": 65,
+          "IBL": 82,
+          "LBK": 85,
+          "PBF": 84,
+          "PBK": 83,
+          "PBP": 84,
+          "RBF": 82,
+          "RBK": 83,
+          "RBP": 85,
+          "SPD": 67,
+          "STR": 83,
+          "TGH": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-201004853",
+        "external_player_id": "4853",
+        "external_source": "CFB_FAN",
+        "overall": 85,
+        "player": "Greg Johnson",
+        "position": "LG",
+        "program": "Season 1",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/762778006bae2527d6e8bd2e5029e9227c51adbc8ff300039f49e0d1e70ef2e3.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-201006335": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-201006335",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/6335-colin-simmons/27-201006335/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Speed Rusher",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 83,
+          "AWR": 82,
+          "BSH": 84,
+          "COD": 85,
+          "FMV": 88,
+          "IBL": 82,
+          "PMV": 85,
+          "POW": 84,
+          "PRC": 86,
+          "PUR": 87,
+          "SPD": 86,
+          "STR": 84,
+          "TAK": 84,
+          "TGH": 88
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-201006335",
+        "external_player_id": "6335",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Colin Simmons",
+        "position": "RE",
+        "program": "Season 1",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/68e1954d8b04bfdebd54a2b7355bec178f47b4a524ed9f96d1fafed34d8e6949.bin",
+        "release_date": "07/21/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-201007473": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-201007473",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/7473-matayo-uiagalelei/27-201007473/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Power Rusher",
+        "attributes": {
+          "ACC": 87,
+          "AGI": 83,
+          "AWR": 84,
+          "BSH": 87,
+          "COD": 81,
+          "FMV": 85,
+          "IBL": 87,
+          "PMV": 90,
+          "POW": 84,
+          "PRC": 88,
+          "PUR": 84,
+          "SPD": 85,
+          "STR": 87,
+          "TAK": 87,
+          "TGH": 89
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-201007473",
+        "external_player_id": "7473",
+        "external_source": "CFB_FAN",
+        "overall": 89,
+        "player": "Matayo Uiagalelei",
+        "position": "RE",
+        "program": "Season 1",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/ee5fb93017a82144b11212d949c2d260d65aff7c50b8028ca49942f1f3417142.bin",
+        "release_date": "08/13/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-201008202": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-201008202",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/8202-bray-hubbard/27-201008202/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Coverage Specialist",
+        "attributes": {
+          "ACC": 89,
+          "AGI": 85,
+          "AWR": 86,
+          "BSH": 80,
+          "CIT": 87,
+          "COD": 85,
+          "CTH": 85,
+          "FMV": 79,
+          "IBL": 86,
+          "JMP": 84,
+          "MCV": 89,
+          "PMV": 77,
+          "POW": 75,
+          "PRC": 87,
+          "PRS": 76,
+          "PUR": 86,
+          "RET": 78,
+          "SPC": 83,
+          "SPD": 89,
+          "STR": 79,
+          "TAK": 84,
+          "TGH": 89,
+          "ZCV": 89
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-201008202",
+        "external_player_id": "8202",
+        "external_source": "CFB_FAN",
+        "overall": 89,
+        "player": "Bray Hubbard",
+        "position": "SS",
+        "program": "Season 1",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/5295e4c161d3a9aa479ad62b09b749ec68944231f420fff9dbe44a5c36ec2400.bin",
+        "release_date": "08/04/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-201018293": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-201018293",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/18293-treydez-green/27-201018293/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Vertical Threat",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 88,
+          "AWR": 87,
+          "BCV": 81,
+          "BTK": 86,
+          "CAR": 82,
+          "CIT": 89,
+          "COD": 86,
+          "CTH": 89,
+          "DRR": 87,
+          "IBL": 76,
+          "JKM": 83,
+          "JMP": 89,
+          "LBK": 63,
+          "MRR": 89,
+          "PBF": 68,
+          "PBK": 64,
+          "PBP": 67,
+          "RBF": 70,
+          "RBK": 69,
+          "RBP": 70,
+          "RLS": 89,
+          "SFA": 86,
+          "SPC": 89,
+          "SPD": 88,
+          "SPM": 81,
+          "SRR": 89,
+          "STR": 81,
+          "TGH": 89,
+          "TRK": 87
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-201018293",
+        "external_player_id": "18293",
+        "external_source": "CFB_FAN",
+        "overall": 89,
+        "player": "Trey'Dez Green",
+        "position": "TE",
+        "program": "Season 1",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/8b6eb1109982b544f4310e1b8b3762bf796e5f2fcad1aa821ee2715347d72a91.bin",
+        "release_date": "07/28/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-201018461": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-201018461",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/18461-evan-tengesdahl/27-201018461/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 64,
+          "AGI": 65,
+          "AWR": 83,
+          "COD": 50,
+          "IBL": 85,
+          "LBK": 77,
+          "PBF": 81,
+          "PBK": 81,
+          "PBP": 84,
+          "RBF": 83,
+          "RBK": 84,
+          "RBP": 86,
+          "SPD": 65,
+          "STR": 85,
+          "TGH": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-201018461",
+        "external_player_id": "18461",
+        "external_source": "CFB_FAN",
+        "overall": 85,
+        "player": "Evan Tengesdahl",
+        "position": "LG",
+        "program": "Season 1",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/c083e8d1489b42c5182f9f440531f0d712aac0272029158227868e9a4f423b6a.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-201019110": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-201019110",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/19110-john-mateer/27-201019110/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Dual Threat",
+        "attributes": {
+          "ACC": 86,
+          "AGI": 89,
+          "AWR": 86,
+          "BCV": 86,
+          "BSK": 86,
+          "BTK": 80,
+          "CAR": 80,
+          "COD": 87,
+          "DAC": 86,
+          "JKM": 87,
+          "MAC": 82,
+          "PAC": 82,
+          "RUN": 86,
+          "SAC": 84,
+          "SFA": 73,
+          "SPD": 85,
+          "SPM": 86,
+          "STR": 80,
+          "TAC": 88,
+          "TGH": 88,
+          "THP": 88,
+          "TRK": 74,
+          "TUP": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-201019110",
+        "external_player_id": "19110",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "John Mateer",
+        "position": "QB",
+        "program": "Season 1",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/4f8dae1ce9b8b31e317a3c66184f4a651fb7a94ed42ff9693ef5b409dc8aa78d.bin",
+        "release_date": "08/06/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-201020321": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-201020321",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20321-brice-pollock/27-201020321/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Bump and Run",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 86,
+          "AWR": 83,
+          "BSH": 66,
+          "CIT": 81,
+          "COD": 88,
+          "CTH": 83,
+          "FMV": 73,
+          "IBL": 78,
+          "JMP": 83,
+          "MCV": 88,
+          "PMV": 71,
+          "POW": 78,
+          "PRC": 85,
+          "PRS": 81,
+          "PUR": 84,
+          "RET": 62,
+          "SPC": 83,
+          "SPD": 88,
+          "STR": 67,
+          "TAK": 80,
+          "TGH": 88,
+          "ZCV": 86
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-201020321",
+        "external_player_id": "20321",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Brice Pollock",
+        "position": "CB",
+        "program": "Season 1",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/deab251d3880ff210fb0083afd3b227c5b9addc0d0761fc203cc11e2bb47d010.bin",
+        "release_date": "07/30/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-201023902": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-201023902",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/23902-ahmad-hardy/27-201023902/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "East/West Playmaker",
+        "attributes": {
+          "ACC": 90,
+          "AGI": 90,
+          "AWR": 86,
+          "BCV": 85,
+          "BTK": 90,
+          "CAR": 89,
+          "CIT": 71,
+          "COD": 89,
+          "CTH": 74,
+          "DRR": 58,
+          "JKM": 88,
+          "JMP": 83,
+          "MRR": 66,
+          "RET": 84,
+          "RLS": 57,
+          "SFA": 87,
+          "SPC": 71,
+          "SPD": 90,
+          "SPM": 89,
+          "SRR": 75,
+          "STR": 77,
+          "TGH": 90,
+          "TRK": 84
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-201023902",
+        "external_player_id": "23902",
+        "external_source": "CFB_FAN",
+        "overall": 90,
+        "player": "Ahmad Hardy",
+        "position": "HB",
+        "program": "Season 1",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/7b754f554a1794656e2b152e859ddd360b1c8cea734dbfad14507e67a239400e.bin",
+        "release_date": "08/11/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-201025824": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-201025824",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/25824-todd-gurley/27-201025824/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Contact Seeker",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 85,
+          "AWR": 79,
+          "BCV": 82,
+          "BTK": 85,
+          "CAR": 87,
+          "CIT": 77,
+          "COD": 87,
+          "CTH": 76,
+          "DRR": 73,
+          "JKM": 85,
+          "JMP": 84,
+          "MRR": 75,
+          "RET": 88,
+          "RLS": 78,
+          "SFA": 88,
+          "SPC": 76,
+          "SPD": 88,
+          "SPM": 83,
+          "SRR": 80,
+          "STR": 86,
+          "TGH": 88,
+          "TRK": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-201025824",
+        "external_player_id": "25824",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Todd Gurley",
+        "position": "HB",
+        "program": "Season 1",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/8932f8f8c6f888bce556f21bfdb9541c75b841cc905af7ec6227761a047daad8.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-201026047": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-201026047",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26047-manti-teo/27-201026047/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Signal Caller",
+        "attributes": {
+          "ACC": 86,
+          "AGI": 82,
+          "AWR": 83,
+          "BSH": 90,
+          "CIT": 75,
+          "COD": 81,
+          "CTH": 79,
+          "FMV": 81,
+          "IBL": 82,
+          "JMP": 84,
+          "MCV": 84,
+          "PMV": 79,
+          "POW": 89,
+          "PRC": 81,
+          "PRS": 78,
+          "PUR": 87,
+          "SPC": 72,
+          "SPD": 86,
+          "STR": 87,
+          "TAK": 88,
+          "TGH": 88,
+          "ZCV": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-201026047",
+        "external_player_id": "26047",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Manti Te'o",
+        "position": "MLB",
+        "program": "Season 1",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/795589ecbb27c166b38be8391264de3d8a17975be7f0760cfc97644bde01328c.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2018461": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2018461",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/18461-evan-tengesdahl/27-2018461/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 64,
+          "AGI": 64,
+          "AWR": 83,
+          "COD": 61,
+          "IBL": 85,
+          "LBK": 77,
+          "PBF": 80,
+          "PBK": 81,
+          "PBP": 84,
+          "RBF": 82,
+          "RBK": 84,
+          "RBP": 86,
+          "SPD": 65,
+          "STR": 85,
+          "TGH": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2018461",
+        "external_player_id": "18461",
+        "external_source": "CFB_FAN",
+        "overall": 85,
+        "player": "Evan Tengesdahl",
+        "position": "LG",
+        "program": "Core Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/f9f6b4ecf7fcc6bb948f88f1295612343f7eb04d8d3abe3b48d8e988b2c062d6.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2018777": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2018777",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/18777-justin-evans/27-2018777/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 67,
+          "AGI": 67,
+          "AWR": 82,
+          "COD": 64,
+          "IBL": 83,
+          "LBK": 81,
+          "PBF": 82,
+          "PBK": 83,
+          "PBP": 83,
+          "RBF": 82,
+          "RBK": 83,
+          "RBP": 83,
+          "SPD": 66,
+          "STR": 83,
+          "TGH": 84
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2018777",
+        "external_player_id": "18777",
+        "external_source": "CFB_FAN",
+        "overall": 84,
+        "player": "Justin Evans",
+        "position": "C",
+        "program": "Core Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/d04665226e49c8882c81be1ca7a5cc28d8fb9da11b80760c13b03fb38e8d90f0.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2020820": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2020820",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20820-bruce-mitchell/27-2020820/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 65,
+          "AGI": 63,
+          "AWR": 81,
+          "COD": 55,
+          "IBL": 81,
+          "LBK": 83,
+          "PBF": 79,
+          "PBK": 81,
+          "PBP": 83,
+          "RBF": 84,
+          "RBK": 85,
+          "RBP": 85,
+          "SPD": 64,
+          "STR": 82,
+          "TGH": 83
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2020820",
+        "external_player_id": "20820",
+        "external_source": "CFB_FAN",
+        "overall": 84,
+        "player": "Bruce Mitchell",
+        "position": "C",
+        "program": "Core Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/9f6b40ec3d84b4eb1733bf7143e43a818c4d8b44026260cf32325f83179dcab3.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2023669": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2023669",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/23669-iapani-laloulu/27-2023669/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 66,
+          "AGI": 62,
+          "AWR": 83,
+          "COD": 62,
+          "IBL": 84,
+          "LBK": 80,
+          "PBF": 84,
+          "PBK": 84,
+          "PBP": 85,
+          "RBF": 79,
+          "RBK": 80,
+          "RBP": 82,
+          "SPD": 66,
+          "STR": 86,
+          "TGH": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2023669",
+        "external_player_id": "23669",
+        "external_source": "CFB_FAN",
+        "overall": 85,
+        "player": "Iapani Laloulu",
+        "position": "C",
+        "program": "Core Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/af0940c13f42bc74d816dd98a2acbe7cae0da2ae62d0fe9c9599f6a7a583a3e2.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-211026417": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-211026417",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26417-warren-moon/27-211026417/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pocket Passer",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 81,
+          "AWR": 80,
+          "BCV": 78,
+          "BSK": 83,
+          "BTK": 77,
+          "CAR": 72,
+          "COD": 82,
+          "DAC": 85,
+          "JKM": 79,
+          "MAC": 85,
+          "PAC": 83,
+          "RUN": 88,
+          "SAC": 87,
+          "SFA": 75,
+          "SPD": 85,
+          "SPM": 80,
+          "STR": 84,
+          "TAC": 87,
+          "TGH": 90,
+          "THP": 90,
+          "TRK": 71,
+          "TUP": 86
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-211026417",
+        "external_player_id": "26417",
+        "external_source": "CFB_FAN",
+        "overall": 89,
+        "player": "Warren Moon",
+        "position": "QB",
+        "program": "S1 Legends - Classic",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/e8a0d33b0036b703fb8e10726e39f3079dc7424303f8b9de43a558749a75196e.bin",
+        "release_date": "08/11/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-212025884": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-212025884",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/25884-ray-lewis/27-212025884/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Signal Caller",
+        "attributes": {
+          "ACC": 85,
+          "AGI": 82,
+          "AWR": 80,
+          "BSH": 85,
+          "CIT": 68,
+          "COD": 83,
+          "CTH": 81,
+          "FMV": 74,
+          "IBL": 81,
+          "JMP": 84,
+          "MCV": 80,
+          "PMV": 80,
+          "POW": 89,
+          "PRC": 82,
+          "PRS": 79,
+          "PUR": 86,
+          "SPC": 59,
+          "SPD": 84,
+          "STR": 86,
+          "TAK": 89,
+          "TGH": 90,
+          "ZCV": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-212025884",
+        "external_player_id": "25884",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Ray Lewis",
+        "position": "MLB",
+        "program": "S1 Legends - Millenium",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/ca4f0b6a56ba2b885abaf1ec09d32ef6bc77a5baee8eea25efecdce37730a7b9.bin",
+        "release_date": "08/04/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-212025888": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-212025888",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/25888-vernon-davis/27-212025888/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Vertical Threat",
+        "attributes": {
+          "ACC": 87,
+          "AGI": 85,
+          "AWR": 80,
+          "BCV": 80,
+          "BTK": 84,
+          "CAR": 84,
+          "CIT": 85,
+          "COD": 86,
+          "CTH": 85,
+          "DRR": 88,
+          "IBL": 79,
+          "JKM": 80,
+          "JMP": 87,
+          "LBK": 74,
+          "MRR": 86,
+          "PBF": 71,
+          "PBK": 71,
+          "PBP": 68,
+          "RBF": 76,
+          "RBK": 79,
+          "RBP": 75,
+          "RLS": 85,
+          "SFA": 84,
+          "SPC": 81,
+          "SPD": 88,
+          "SPM": 79,
+          "SRR": 85,
+          "STR": 85,
+          "TGH": 90,
+          "TRK": 84
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-212025888",
+        "external_player_id": "25888",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Vernon Davis",
+        "position": "TE",
+        "program": "S1 Legends - Millenium",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/ea9b8b433f73d6b37817b6c11b46e0aa8c2df4d9b2c7f400dd8c5c6ce0e5dede.bin",
+        "release_date": "08/11/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-212026287": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-212026287",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26287-andre-johnson/27-212026287/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Contested Specialist",
+        "attributes": {
+          "ACC": 85,
+          "AGI": 83,
+          "AWR": 80,
+          "BCV": 80,
+          "BTK": 82,
+          "CAR": 84,
+          "CIT": 88,
+          "COD": 87,
+          "CTH": 87,
+          "DRR": 88,
+          "IBL": 74,
+          "JKM": 85,
+          "JMP": 86,
+          "MRR": 83,
+          "RBF": 71,
+          "RBK": 79,
+          "RBP": 74,
+          "RET": 80,
+          "RLS": 85,
+          "SFA": 86,
+          "SPC": 81,
+          "SPD": 88,
+          "SPM": 83,
+          "SRR": 82,
+          "STR": 84,
+          "TGH": 90,
+          "TRK": 84
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-212026287",
+        "external_player_id": "26287",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Andre Johnson",
+        "position": "WR",
+        "program": "S1 Legends - Millenium",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/611d47298ae374aa7e3605d820fd93fc9995b48c488eadffc4b0f46e5bb0bd6c.bin",
+        "release_date": "07/28/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-212026542": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-212026542",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26542-jeff-saturday/27-212026542/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 72,
+          "AGI": 70,
+          "AWR": 80,
+          "COD": 69,
+          "IBL": 83,
+          "LBK": 78,
+          "PBF": 85,
+          "PBK": 84,
+          "PBP": 85,
+          "RBF": 79,
+          "RBK": 82,
+          "RBP": 77,
+          "SPD": 74,
+          "STR": 84,
+          "TGH": 90
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-212026542",
+        "external_player_id": "26542",
+        "external_source": "CFB_FAN",
+        "overall": 85,
+        "player": "Jeff Saturday",
+        "position": "C",
+        "program": "S1 Legends - Millenium",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/36da2fcd43aa6a23f547b2054e3860c17693c38443a7ce57903024d2a227cc2a.bin",
+        "release_date": "07/02/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-213026309": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-213026309",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26309-earl-thomas/27-213026309/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Hybrid",
+        "attributes": {
+          "ACC": 87,
+          "AGI": 83,
+          "AWR": 80,
+          "BSH": 83,
+          "CIT": 75,
+          "COD": 83,
+          "CTH": 80,
+          "FMV": 77,
+          "IBL": 81,
+          "JMP": 84,
+          "MCV": 87,
+          "PMV": 74,
+          "POW": 81,
+          "PRC": 79,
+          "PRS": 81,
+          "PUR": 85,
+          "RET": 71,
+          "SPC": 70,
+          "SPD": 86,
+          "STR": 80,
+          "TAK": 85,
+          "TGH": 90,
+          "ZCV": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-213026309",
+        "external_player_id": "26309",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Earl Thomas",
+        "position": "FS",
+        "program": "S1 Legends - Modern",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/ff14ece3ca3663127a2d9829e10e6fe26ed41ddbecdf65b56e57db9ca8134050.bin",
+        "release_date": "07/14/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-240000320": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-240000320",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/320-knijeah-harris/27-240000320/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 67,
+          "AGI": 65,
+          "AWR": 80,
+          "COD": 65,
+          "IBL": 78,
+          "LBK": 82,
+          "PBF": 80,
+          "PBK": 79,
+          "PBP": 86,
+          "RBF": 80,
+          "RBK": 84,
+          "RBP": 86,
+          "SPD": 68,
+          "STR": 86,
+          "TGH": 90
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-240000320",
+        "external_player_id": "320",
+        "external_source": "CFB_FAN",
+        "overall": 85,
+        "player": "Knijeah Harris",
+        "position": "LG",
+        "program": "Cornerstones",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/350ea8860e7720c849ff0f458298b8a480a8107ecc2a0767c2c141a44fca39b4.bin",
+        "release_date": "07/11/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-240008068": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-240008068",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/8068-ronan-hanafin/27-240008068/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Box Specialist",
+        "attributes": {
+          "ACC": 84,
+          "AGI": 83,
+          "AWR": 80,
+          "BSH": 84,
+          "CIT": 74,
+          "COD": 78,
+          "CTH": 82,
+          "FMV": 70,
+          "IBL": 69,
+          "JMP": 83,
+          "MCV": 81,
+          "PMV": 60,
+          "POW": 79,
+          "PRC": 82,
+          "PRS": 80,
+          "PUR": 88,
+          "RET": 82,
+          "SPC": 67,
+          "SPD": 87,
+          "STR": 74,
+          "TAK": 88,
+          "TGH": 90,
+          "ZCV": 87
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-240008068",
+        "external_player_id": "8068",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Ronan Hanafin",
+        "position": "SS",
+        "program": "Cornerstones",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/f1344782ff2869ea67bb09978a7adbddb9417f8c6721e6108ad2409396744b59.bin",
+        "release_date": "07/15/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-240010722": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-240010722",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/10722-landen-livingston/27-240010722/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 72,
+          "AGI": 70,
+          "AWR": 80,
+          "COD": 70,
+          "IBL": 79,
+          "LBK": 77,
+          "PBF": 87,
+          "PBK": 85,
+          "PBP": 86,
+          "RBF": 83,
+          "RBK": 81,
+          "RBP": 82,
+          "SPD": 72,
+          "STR": 84,
+          "TGH": 90
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-240010722",
+        "external_player_id": "10722",
+        "external_source": "CFB_FAN",
+        "overall": 86,
+        "player": "Landen Livingston",
+        "position": "C",
+        "program": "Cornerstones",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/32835d22673a028a252968ba433e99dc69cbc4206114801eb919be7e35ad22d3.bin",
+        "release_date": "07/22/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-240018484": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-240018484",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/18484-tavin-ward/27-240018484/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Hybrid",
+        "attributes": {
+          "ACC": 86,
+          "AGI": 84,
+          "AWR": 80,
+          "BSH": 80,
+          "CIT": 70,
+          "COD": 83,
+          "CTH": 80,
+          "FMV": 63,
+          "IBL": 76,
+          "JMP": 83,
+          "MCV": 86,
+          "PMV": 56,
+          "POW": 73,
+          "PRC": 79,
+          "PRS": 83,
+          "PUR": 84,
+          "RET": 54,
+          "SPC": 60,
+          "SPD": 85,
+          "STR": 70,
+          "TAK": 84,
+          "TGH": 90,
+          "ZCV": 83
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-240018484",
+        "external_player_id": "18484",
+        "external_source": "CFB_FAN",
+        "overall": 86,
+        "player": "Tavin Ward",
+        "position": "FS",
+        "program": "Cornerstones",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/e67a3ade33bb32b60ccc1b8f09a20aae09f8d2ed5e21373356b497c390aa6e1a.bin",
+        "release_date": "07/15/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-240019998": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-240019998",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/19998-mckale-boley/27-240019998/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Well Rounded",
+        "attributes": {
+          "ACC": 70,
+          "AGI": 71,
+          "AWR": 80,
+          "COD": 70,
+          "IBL": 82,
+          "LBK": 82,
+          "PBF": 85,
+          "PBK": 87,
+          "PBP": 85,
+          "RBF": 85,
+          "RBK": 87,
+          "RBP": 85,
+          "SPD": 71,
+          "STR": 86,
+          "TGH": 90
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-240019998",
+        "external_player_id": "19998",
+        "external_source": "CFB_FAN",
+        "overall": 86,
+        "player": "McKale Boley",
+        "position": "LT",
+        "program": "Cornerstones",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/4c3ccd5418be100f017ea416a379f5f309119dc89ae1f659c981e5f3735bcba9.bin",
+        "release_date": "07/25/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-240023114": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-240023114",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/23114-caden-kitler/27-240023114/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 70,
+          "AGI": 71,
+          "AWR": 80,
+          "COD": 71,
+          "IBL": 81,
+          "LBK": 82,
+          "PBF": 85,
+          "PBK": 81,
+          "PBP": 78,
+          "RBF": 85,
+          "RBK": 81,
+          "RBP": 78,
+          "SPD": 79,
+          "STR": 81,
+          "TGH": 90
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-240023114",
+        "external_player_id": "23114",
+        "external_source": "CFB_FAN",
+        "overall": 84,
+        "player": "Caden Kitler",
+        "position": "C",
+        "program": "Cornerstones",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/522c634df9b932eb6528c14c97f427f745792315497511c7eb29e27670e0bcd1.bin",
+        "release_date": "07/22/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-250006924": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-250006924",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/6924-dominick-giudice/27-250006924/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 67,
+          "AGI": 67,
+          "AWR": 84,
+          "COD": 67,
+          "IBL": 83,
+          "LBK": 80,
+          "PBF": 86,
+          "PBK": 85,
+          "PBP": 86,
+          "RBF": 81,
+          "RBK": 81,
+          "RBP": 80,
+          "SPD": 68,
+          "STR": 85,
+          "TGH": 90
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-250006924",
+        "external_player_id": "6924",
+        "external_source": "CFB_FAN",
+        "overall": 86,
+        "player": "Dominick Giudice",
+        "position": "C",
+        "program": "Standouts",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/c3cde52c66b3fd070dca2c400f87480ba010761a4428f0e0dfcd4e54d5a31d6a.bin",
+        "release_date": "07/17/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-250020966": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-250020966",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20966-howard-sampson/27-250020966/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 62,
+          "AGI": 62,
+          "AWR": 85,
+          "COD": 60,
+          "IBL": 87,
+          "LBK": 80,
+          "PBF": 82,
+          "PBK": 84,
+          "PBP": 86,
+          "RBF": 82,
+          "RBK": 84,
+          "RBP": 86,
+          "SPD": 63,
+          "STR": 86,
+          "TGH": 90
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-250020966",
+        "external_player_id": "20966",
+        "external_source": "CFB_FAN",
+        "overall": 86,
+        "player": "Howard Sampson",
+        "position": "LT",
+        "program": "Standouts",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/d5a0db4d54fe24274074308605d23286636e203f1219229906433f89bd1d2b62.bin",
+        "release_date": "07/20/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-260000108": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-260000108",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/108-adepoju-adebawore/27-260000108/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Speed Rusher",
+        "attributes": {
+          "ACC": 87,
+          "AGI": 83,
+          "AWR": 82,
+          "BSH": 84,
+          "COD": 81,
+          "FMV": 88,
+          "IBL": 81,
+          "PMV": 82,
+          "POW": 82,
+          "PRC": 84,
+          "PUR": 87,
+          "SPD": 84,
+          "STR": 80,
+          "TAK": 84,
+          "TGH": 87
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-260000108",
+        "external_player_id": "108",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Adepoju Adebawore",
+        "position": "RE",
+        "program": "Phenoms",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/5ff61e155e9c4834bd28ab7e000cbcedb1b8c930e1a189e8ce0ced1d83c91542.bin",
+        "release_date": "07/31/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-260000917": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-260000917",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/917-kj-bolden/27-260000917/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Hybrid",
+        "attributes": {
+          "ACC": 86,
+          "AGI": 85,
+          "AWR": 80,
+          "BSH": 75,
+          "CIT": 77,
+          "COD": 86,
+          "CTH": 82,
+          "FMV": 73,
+          "IBL": 75,
+          "JMP": 84,
+          "MCV": 86,
+          "PMV": 60,
+          "POW": 78,
+          "PRC": 85,
+          "PRS": 79,
+          "PUR": 85,
+          "RET": 80,
+          "SPC": 80,
+          "SPD": 87,
+          "STR": 59,
+          "TAK": 83,
+          "TGH": 87,
+          "ZCV": 87
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-260000917",
+        "external_player_id": "917",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "KJ Bolden",
+        "position": "FS",
+        "program": "Phenoms",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/2c9abfbb0bfd45155184e2864f4342c734c7da77ef2aaeb3218a26ba6e34cb12.bin",
+        "release_date": "07/24/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-260005976": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-260005976",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/5976-drayk-bowen/27-260005976/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Thumper",
+        "attributes": {
+          "ACC": 85,
+          "AGI": 83,
+          "AWR": 75,
+          "BSH": 86,
+          "CIT": 66,
+          "COD": 85,
+          "CTH": 79,
+          "FMV": 76,
+          "IBL": 84,
+          "JMP": 80,
+          "MCV": 76,
+          "PMV": 87,
+          "POW": 85,
+          "PRC": 86,
+          "PRS": 73,
+          "PUR": 84,
+          "SPC": 68,
+          "SPD": 86,
+          "STR": 84,
+          "TAK": 87,
+          "TGH": 87,
+          "ZCV": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-260005976",
+        "external_player_id": "5976",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Drayk Bowen",
+        "position": "MLB",
+        "program": "Phenoms",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/529e748d9bb15f02bc2d0623ace45721c3b99626df3ebdb1fe60236b07d7f64c.bin",
+        "release_date": "07/27/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-260007128": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-260007128",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/7128-kewan-lacy/27-260007128/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "East/West Playmaker",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 87,
+          "AWR": 80,
+          "BCV": 82,
+          "BTK": 85,
+          "CAR": 88,
+          "CIT": 72,
+          "COD": 88,
+          "CTH": 79,
+          "DRR": 64,
+          "JKM": 88,
+          "JMP": 83,
+          "MRR": 70,
+          "RET": 76,
+          "RLS": 67,
+          "SFA": 85,
+          "SPC": 78,
+          "SPD": 88,
+          "SPM": 87,
+          "SRR": 81,
+          "STR": 70,
+          "TGH": 88,
+          "TRK": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-260007128",
+        "external_player_id": "7128",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Kewan Lacy",
+        "position": "HB",
+        "program": "Phenoms",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/c6e8e785f5d64e3148ae709c73793d8e032a632908bca34c39816bdb6e8061d0.bin",
+        "release_date": "07/31/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-260008172": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-260008172",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/8172-jyaire-hill/27-260008172/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Field",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 87,
+          "AWR": 82,
+          "BSH": 75,
+          "CIT": 78,
+          "COD": 88,
+          "CTH": 79,
+          "FMV": 45,
+          "IBL": 49,
+          "JMP": 85,
+          "MCV": 86,
+          "PMV": 43,
+          "POW": 80,
+          "PRC": 87,
+          "PRS": 84,
+          "PUR": 87,
+          "RET": 77,
+          "SPC": 82,
+          "SPD": 88,
+          "STR": 70,
+          "TAK": 84,
+          "TGH": 88,
+          "ZCV": 88
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-260008172",
+        "external_player_id": "8172",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Jyaire Hill",
+        "position": "CB",
+        "program": "Phenoms",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/902831d32758da1c0661fae01af64458d3af89697dfb286f6f74c677ec1dd040.bin",
+        "release_date": "07/31/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-260010199": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-260010199",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/10199-zavier-mincey/27-260010199/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Hybrid",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 86,
+          "AWR": 79,
+          "BSH": 60,
+          "CIT": 68,
+          "COD": 87,
+          "CTH": 79,
+          "FMV": 48,
+          "IBL": 60,
+          "JMP": 85,
+          "MCV": 87,
+          "PMV": 34,
+          "POW": 82,
+          "PRC": 87,
+          "PRS": 82,
+          "PUR": 86,
+          "RET": 59,
+          "SPC": 72,
+          "SPD": 87,
+          "STR": 60,
+          "TAK": 80,
+          "TGH": 87,
+          "ZCV": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-260010199",
+        "external_player_id": "10199",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Zavier Mincey",
+        "position": "FS",
+        "program": "Phenoms",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/6c8b15e4abfa98dadb79035a2a6cc83a5fa876a7adb665886a0076b547e9afdc.bin",
+        "release_date": "08/03/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-260019064": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-260019064",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/19064-ethan-mackenny/27-260019064/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 63,
+          "AGI": 62,
+          "AWR": 85,
+          "COD": 58,
+          "IBL": 86,
+          "LBK": 80,
+          "PBF": 81,
+          "PBK": 83,
+          "PBP": 87,
+          "RBF": 77,
+          "RBK": 84,
+          "RBP": 88,
+          "SPD": 62,
+          "STR": 88,
+          "TGH": 86
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-260019064",
+        "external_player_id": "19064",
+        "external_source": "CFB_FAN",
+        "overall": 86,
+        "player": "Ethan Mackenny",
+        "position": "LT",
+        "program": "Phenoms",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/6a3400ccf038148a9fdb88634c6cc04fe15000c8429aaaa6fe4ea8ad27bf91f9.bin",
+        "release_date": "07/27/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-260019440": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-260019440",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/19440-jamari-sharpe/27-260019440/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Field",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 87,
+          "AWR": 82,
+          "BSH": 72,
+          "CIT": 74,
+          "COD": 87,
+          "CTH": 81,
+          "FMV": 55,
+          "IBL": 73,
+          "JMP": 87,
+          "MCV": 87,
+          "PMV": 66,
+          "POW": 77,
+          "PRC": 88,
+          "PRS": 84,
+          "PUR": 85,
+          "RET": 71,
+          "SPC": 72,
+          "SPD": 88,
+          "STR": 73,
+          "TAK": 84,
+          "TGH": 80,
+          "ZCV": 88
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-260019440",
+        "external_player_id": "19440",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Jamari Sharpe",
+        "position": "CB",
+        "program": "Phenoms",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/b909756ab53bb7ce75a456353fd4a7f25da1bff763751f9130640719bb879765.bin",
+        "release_date": "08/03/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-260020353": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-260020353",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20353-quincy-rhodes-jr/27-260020353/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Power Rusher",
+        "attributes": {
+          "ACC": 82,
+          "AGI": 77,
+          "AWR": 83,
+          "BSH": 87,
+          "COD": 77,
+          "FMV": 81,
+          "IBL": 87,
+          "PMV": 88,
+          "POW": 85,
+          "PRC": 86,
+          "PUR": 86,
+          "SPD": 80,
+          "STR": 88,
+          "TAK": 87,
+          "TGH": 87
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-260020353",
+        "external_player_id": "20353",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Quincy Rhodes Jr.",
+        "position": "LE",
+        "program": "Phenoms",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/49907c25e493fe1b1ec1b84774fe9670d4a1109cf4ff48c3bb5dab36852c6479.bin",
+        "release_date": "08/03/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-260021426": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-260021426",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/21426-nyck-harbor/27-260021426/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Speedster",
+        "attributes": {
+          "ACC": 89,
+          "AGI": 88,
+          "AWR": 80,
+          "BCV": 49,
+          "BTK": 82,
+          "CAR": 80,
+          "CIT": 80,
+          "COD": 85,
+          "CTH": 84,
+          "DRR": 88,
+          "IBL": 68,
+          "JKM": 82,
+          "JMP": 88,
+          "MRR": 85,
+          "RBF": 68,
+          "RBK": 67,
+          "RBP": 68,
+          "RET": 69,
+          "RLS": 86,
+          "SFA": 80,
+          "SPC": 85,
+          "SPD": 89,
+          "SPM": 76,
+          "SRR": 81,
+          "STR": 85,
+          "TGH": 88,
+          "TRK": 75
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-260021426",
+        "external_player_id": "21426",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Nyck Harbor",
+        "position": "WR",
+        "program": "Phenoms",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/27cecf8d30114bea9daec05f0cf3833c12a91ad98250377fb35e03225ea7823b.bin",
+        "release_date": "08/03/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-270004131": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-270004131",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/4131-omarion-miller/27-270004131/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Speedster",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 83,
+          "AWR": 88,
+          "BCV": 78,
+          "BTK": 77,
+          "CAR": 67,
+          "CIT": 87,
+          "COD": 83,
+          "CTH": 87,
+          "DRR": 87,
+          "IBL": 71,
+          "JKM": 79,
+          "JMP": 82,
+          "MRR": 86,
+          "RBF": 75,
+          "RBK": 72,
+          "RBP": 75,
+          "RET": 75,
+          "RLS": 88,
+          "SFA": 69,
+          "SPC": 83,
+          "SPD": 88,
+          "SPM": 78,
+          "SRR": 87,
+          "STR": 79,
+          "TGH": 88,
+          "TRK": 71
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-270004131",
+        "external_player_id": "4131",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Omarion Miller",
+        "position": "WR",
+        "program": "Prime Prospects",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/d55510d6f3bf360b879bc503a23b8fbb34046f37246a728231781644559a1450.bin",
+        "release_date": "08/05/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-270005658": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-270005658",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/5658-cade-uluave/27-270005658/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Thumper",
+        "attributes": {
+          "ACC": 86,
+          "AGI": 82,
+          "AWR": 78,
+          "BSH": 87,
+          "CIT": 77,
+          "COD": 86,
+          "CTH": 87,
+          "FMV": 79,
+          "IBL": 76,
+          "JMP": 76,
+          "MCV": 80,
+          "PMV": 89,
+          "POW": 82,
+          "PRC": 90,
+          "PRS": 50,
+          "PUR": 86,
+          "SPC": 77,
+          "SPD": 86,
+          "STR": 87,
+          "TAK": 88,
+          "TGH": 87,
+          "ZCV": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-270005658",
+        "external_player_id": "5658",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Cade Uluave",
+        "position": "MLB",
+        "program": "Prime Prospects",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/3b298bcf16f905186d27d1bb3c746ee271245c2dc21b35a7d61a7bc0e79b5236.bin",
+        "release_date": "08/05/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-270007631": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-270007631",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/7631-cam-coleman/27-270007631/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Contested Specialist",
+        "attributes": {
+          "ACC": 90,
+          "AGI": 88,
+          "AWR": 81,
+          "BCV": 87,
+          "BTK": 82,
+          "CAR": 85,
+          "CIT": 87,
+          "COD": 88,
+          "CTH": 87,
+          "DRR": 86,
+          "IBL": 73,
+          "JKM": 87,
+          "JMP": 88,
+          "MRR": 87,
+          "RBF": 82,
+          "RBK": 71,
+          "RBP": 81,
+          "RET": 78,
+          "RLS": 88,
+          "SFA": 76,
+          "SPC": 88,
+          "SPD": 89,
+          "SPM": 83,
+          "SRR": 85,
+          "STR": 71,
+          "TGH": 89,
+          "TRK": 76
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-270007631",
+        "external_player_id": "7631",
+        "external_source": "CFB_FAN",
+        "overall": 89,
+        "player": "Cam Coleman",
+        "position": "WR",
+        "program": "Prime Prospects",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/2ffb25ac65534bf1f0126f3ce30f8fd9083dec2bc369b2bcd36f2c63b6446afa.bin",
+        "release_date": "07/29/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-270010269": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-270010269",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/10269-luke-reynolds/27-270010269/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Vertical Threat",
+        "attributes": {
+          "ACC": 85,
+          "AGI": 82,
+          "AWR": 80,
+          "BCV": 79,
+          "BTK": 74,
+          "CAR": 80,
+          "CIT": 86,
+          "COD": 88,
+          "CTH": 87,
+          "DRR": 86,
+          "IBL": 82,
+          "JKM": 80,
+          "JMP": 86,
+          "LBK": 79,
+          "MRR": 83,
+          "PBF": 78,
+          "PBK": 68,
+          "PBP": 68,
+          "RBF": 70,
+          "RBK": 68,
+          "RBP": 73,
+          "RLS": 71,
+          "SFA": 86,
+          "SPC": 86,
+          "SPD": 85,
+          "SPM": 79,
+          "SRR": 86,
+          "STR": 80,
+          "TGH": 87,
+          "TRK": 82
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-270010269",
+        "external_player_id": "10269",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Luke Reynolds",
+        "position": "TE",
+        "program": "Prime Prospects",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/a8879dcd7e9ce1dbcf8c58f55d38c3a5fa8a4671c8e62aea84cfe78a3d06ffba.bin",
+        "release_date": "07/29/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-27001160": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-27001160",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/1160-raleek-brown/27-27001160/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "East/West Playmaker",
+        "attributes": {
+          "ACC": 90,
+          "AGI": 88,
+          "AWR": 80,
+          "BCV": 83,
+          "BTK": 85,
+          "CAR": 88,
+          "CIT": 65,
+          "COD": 91,
+          "CTH": 85,
+          "DRR": 73,
+          "JKM": 90,
+          "JMP": 81,
+          "MRR": 80,
+          "RET": 84,
+          "RLS": 61,
+          "SFA": 68,
+          "SPC": 77,
+          "SPD": 89,
+          "SPM": 89,
+          "SRR": 86,
+          "STR": 50,
+          "TGH": 95,
+          "TRK": 63
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-27001160",
+        "external_player_id": "1160",
+        "external_source": "CFB_FAN",
+        "overall": 89,
+        "player": "Raleek Brown",
+        "position": "HB",
+        "program": "Prime Prospects",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/98d2d57c1580044085d5d603a5cd44f0f38ea0bb7b309c31a329ecbcf1855cd4.bin",
+        "release_date": "08/12/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-270014827": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-270014827",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/14827-coleton-price/27-270014827/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 67,
+          "AGI": 68,
+          "AWR": 90,
+          "COD": 60,
+          "IBL": 85,
+          "LBK": 84,
+          "PBF": 84,
+          "PBK": 86,
+          "PBP": 86,
+          "RBF": 82,
+          "RBK": 86,
+          "RBP": 87,
+          "SPD": 68,
+          "STR": 88,
+          "TGH": 88
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-270014827",
+        "external_player_id": "14827",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Coleton Price",
+        "position": "C",
+        "program": "Prime Prospects",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/c799d09109f52f4b59da5e7ac1833085b6f928ee2772dd21b167d1ec136a9a16.bin",
+        "release_date": "08/12/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-270019620": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-270019620",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/19620-jontez-williams/27-270019620/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Bump and Run",
+        "attributes": {
+          "ACC": 87,
+          "AGI": 84,
+          "AWR": 82,
+          "BSH": 72,
+          "CIT": 82,
+          "COD": 84,
+          "CTH": 84,
+          "FMV": 77,
+          "IBL": 80,
+          "JMP": 82,
+          "MCV": 86,
+          "PMV": 73,
+          "POW": 80,
+          "PRC": 85,
+          "PRS": 88,
+          "PUR": 83,
+          "RET": 70,
+          "SPC": 85,
+          "SPD": 87,
+          "STR": 71,
+          "TAK": 78,
+          "TGH": 87,
+          "ZCV": 82
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-270019620",
+        "external_player_id": "19620",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Jontez Williams",
+        "position": "CB",
+        "program": "Prime Prospects",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/327d6ca534b5e3f809744d58e82f7d225cd767f6b70e41dacf0432b6bee0b07f.bin",
+        "release_date": "08/12/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-270020185": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-270020185",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20185-dj-lagway/27-270020185/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Dual Threat",
+        "attributes": {
+          "ACC": 86,
+          "AGI": 84,
+          "AWR": 72,
+          "BCV": 82,
+          "BSK": 85,
+          "BTK": 76,
+          "CAR": 82,
+          "COD": 86,
+          "DAC": 87,
+          "JKM": 85,
+          "MAC": 88,
+          "PAC": 84,
+          "RUN": 85,
+          "SAC": 90,
+          "SFA": 72,
+          "SPD": 85,
+          "SPM": 86,
+          "STR": 77,
+          "TAC": 85,
+          "TGH": 85,
+          "THP": 91,
+          "TRK": 72,
+          "TUP": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-270020185",
+        "external_player_id": "20185",
+        "external_source": "CFB_FAN",
+        "overall": 89,
+        "player": "DJ Lagway",
+        "position": "QB",
+        "program": "Prime Prospects",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/037b16325a1655862f0527896df11778de98102fb8d0009202f41c1f5a95b691.bin",
+        "release_date": "08/12/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-270022520": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-270022520",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/22520-tegra-tshabola/27-270022520/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 70,
+          "AGI": 69,
+          "AWR": 88,
+          "COD": 69,
+          "IBL": 85,
+          "LBK": 77,
+          "PBF": 80,
+          "PBK": 81,
+          "PBP": 85,
+          "RBF": 78,
+          "RBK": 85,
+          "RBP": 88,
+          "SPD": 73,
+          "STR": 87,
+          "TGH": 87
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-270022520",
+        "external_player_id": "22520",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Tegra Tshabola",
+        "position": "LG",
+        "program": "Prime Prospects",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/f6ca0bf39001c24041a0ba2a9c61dc7cfda9cfd30bba4d01766127fdbcaddd3c.bin",
+        "release_date": "08/05/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-270023266": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-270023266",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/23266-koi-perich/27-270023266/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Box Specialist",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 86,
+          "AWR": 86,
+          "BSH": 79,
+          "CIT": 83,
+          "COD": 88,
+          "CTH": 84,
+          "FMV": 81,
+          "IBL": 81,
+          "JMP": 85,
+          "MCV": 84,
+          "PMV": 69,
+          "POW": 76,
+          "PRC": 87,
+          "PRS": 80,
+          "PUR": 86,
+          "RET": 88,
+          "SPC": 84,
+          "SPD": 88,
+          "STR": 68,
+          "TAK": 83,
+          "TGH": 89,
+          "ZCV": 88
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-270023266",
+        "external_player_id": "23266",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Koi Perich",
+        "position": "FS",
+        "program": "Prime Prospects",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/93f8302348beec4170ab19c59fde3b2702b932956f2450015f8eb9b434567c21.bin",
+        "release_date": "07/29/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-270030541": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-270030541",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/30541-owen-long/27-270030541/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Thumper",
+        "attributes": {
+          "ACC": 86,
+          "AGI": 81,
+          "AWR": 79,
+          "BSH": 89,
+          "CIT": 75,
+          "COD": 82,
+          "CTH": 77,
+          "FMV": 84,
+          "IBL": 82,
+          "JMP": 84,
+          "MCV": 84,
+          "PMV": 83,
+          "POW": 90,
+          "PRC": 78,
+          "PRS": 79,
+          "PUR": 88,
+          "SPC": 73,
+          "SPD": 85,
+          "STR": 88,
+          "TAK": 86,
+          "TGH": 88,
+          "ZCV": 86
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-270030541",
+        "external_player_id": "30541",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Owen Long",
+        "position": "MLB",
+        "program": "Prime Prospects",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/471daef9916133184e6d745af9a27a547d0697e6d16da8ee76a851387ce9cc89.bin",
+        "release_date": "07/29/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-27019234": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-27019234",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/19234-deandre-moore-jr/27-27019234/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Speedster",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 86,
+          "AWR": 78,
+          "BCV": 81,
+          "BTK": 80,
+          "CAR": 85,
+          "CIT": 83,
+          "COD": 87,
+          "CTH": 85,
+          "DRR": 90,
+          "IBL": 53,
+          "JKM": 84,
+          "JMP": 80,
+          "MRR": 87,
+          "RBF": 74,
+          "RBK": 78,
+          "RBP": 73,
+          "RET": 75,
+          "RLS": 84,
+          "SFA": 73,
+          "SPC": 82,
+          "SPD": 88,
+          "SPM": 85,
+          "SRR": 85,
+          "STR": 67,
+          "TGH": 95,
+          "TRK": 64
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-27019234",
+        "external_player_id": "19234",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "DeAndre Moore Jr.",
+        "position": "WR",
+        "program": "Prime Prospects",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/c44a83c70403e1687b972ff354456ee83f7620bdbdf1cdc3894c6c8eaadbc944.bin",
+        "release_date": "08/12/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-280000639": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-280000639",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/639-daniel-wingate/27-280000639/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Thumper",
+        "attributes": {
+          "ACC": 86,
+          "AGI": 83,
+          "AWR": 78,
+          "BSH": 85,
+          "CIT": 56,
+          "COD": 87,
+          "CTH": 76,
+          "FMV": 85,
+          "IBL": 84,
+          "JMP": 82,
+          "MCV": 80,
+          "PMV": 63,
+          "POW": 84,
+          "PRC": 85,
+          "PRS": 47,
+          "PUR": 85,
+          "SPC": 49,
+          "SPD": 86,
+          "STR": 84,
+          "TAK": 87,
+          "TGH": 95,
+          "ZCV": 86
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-280000639",
+        "external_player_id": "639",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Daniel Wingate",
+        "position": "MLB",
+        "program": "Supercharged",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/228fd0d9700b474ab59ae90682f96c1e714e1c4f8bc64b97e0ecd6c8e3e72609.bin",
+        "release_date": "08/07/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-280000723": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-280000723",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/723-joshua-bates/27-280000723/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 65,
+          "AGI": 62,
+          "AWR": 81,
+          "COD": 60,
+          "IBL": 81,
+          "LBK": 75,
+          "PBF": 86,
+          "PBK": 85,
+          "PBP": 87,
+          "RBF": 79,
+          "RBK": 79,
+          "RBP": 81,
+          "SPD": 64,
+          "STR": 84,
+          "TGH": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-280000723",
+        "external_player_id": "723",
+        "external_source": "CFB_FAN",
+        "overall": 85,
+        "player": "Joshua Bates",
+        "position": "C",
+        "program": "Supercharged",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/9a955eed9ef1a29e215d5a8db226f4ed452403e62bc3c3991fa966ca8e61ba98.bin",
+        "release_date": "08/07/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-280001353": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-280001353",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/1353-hayden-hansen/27-280001353/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Gritty Possession",
+        "attributes": {
+          "ACC": 82,
+          "AGI": 80,
+          "AWR": 78,
+          "BCV": 67,
+          "BTK": 82,
+          "CAR": 82,
+          "CIT": 82,
+          "COD": 79,
+          "CTH": 85,
+          "DRR": 80,
+          "IBL": 82,
+          "JKM": 68,
+          "JMP": 79,
+          "LBK": 72,
+          "MRR": 85,
+          "PBF": 85,
+          "PBK": 82,
+          "PBP": 82,
+          "RBF": 85,
+          "RBK": 83,
+          "RBP": 83,
+          "RLS": 85,
+          "SFA": 88,
+          "SPC": 84,
+          "SPD": 85,
+          "SPM": 73,
+          "SRR": 87,
+          "STR": 85,
+          "TGH": 95,
+          "TRK": 87
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-280001353",
+        "external_player_id": "1353",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Hayden Hansen",
+        "position": "TE",
+        "program": "Supercharged",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/884f43cd16df6349f15b259b70526d3c50809602fab008f6f3137f41d6e35a7e.bin",
+        "release_date": "08/07/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-280002279": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-280002279",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/2279-john-pastore/27-280002279/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 65,
+          "AGI": 63,
+          "AWR": 85,
+          "COD": 60,
+          "IBL": 85,
+          "LBK": 74,
+          "PBF": 76,
+          "PBK": 78,
+          "PBP": 85,
+          "RBF": 79,
+          "RBK": 85,
+          "RBP": 87,
+          "SPD": 66,
+          "STR": 85,
+          "TGH": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-280002279",
+        "external_player_id": "2279",
+        "external_source": "CFB_FAN",
+        "overall": 85,
+        "player": "John Pastore",
+        "position": "LT",
+        "program": "Supercharged",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/51d8265b9747f12576f6a407bfd3c3b587e84470fc91460c4fcdb5a43e0a3cbc.bin",
+        "release_date": "08/07/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-280008662": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-280008662",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/8662-xavier-scott/27-280008662/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Field",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 87,
+          "AWR": 78,
+          "BSH": 73,
+          "CIT": 82,
+          "COD": 88,
+          "CTH": 85,
+          "FMV": 47,
+          "IBL": 59,
+          "JMP": 86,
+          "MCV": 86,
+          "PMV": 61,
+          "POW": 77,
+          "PRC": 89,
+          "PRS": 81,
+          "PUR": 86,
+          "RET": 72,
+          "SPC": 80,
+          "SPD": 89,
+          "STR": 68,
+          "TAK": 84,
+          "TGH": 90,
+          "ZCV": 91
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-280008662",
+        "external_player_id": "8662",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Xavier Scott",
+        "position": "CB",
+        "program": "Supercharged",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/f35986089a14f97950aa0c2c932e9dc2515dbdc014cbdc3e20ba3ac142b70f30.bin",
+        "release_date": "08/07/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-280008728": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-280008728",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/8728-sutton-smith/27-280008728/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "East/West Playmaker",
+        "attributes": {
+          "ACC": 87,
+          "AGI": 86,
+          "AWR": 76,
+          "BCV": 80,
+          "BTK": 85,
+          "CAR": 85,
+          "CIT": 70,
+          "COD": 88,
+          "CTH": 81,
+          "DRR": 71,
+          "JKM": 90,
+          "JMP": 82,
+          "MRR": 78,
+          "RET": 78,
+          "RLS": 63,
+          "SFA": 68,
+          "SPC": 75,
+          "SPD": 88,
+          "SPM": 85,
+          "SRR": 86,
+          "STR": 58,
+          "TGH": 95,
+          "TRK": 69
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-280008728",
+        "external_player_id": "8728",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Sutton Smith",
+        "position": "HB",
+        "program": "Supercharged",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/a6dd0b42893aebaf3c1e49fd54c55a7dc9bb53a9041792df8834c321cd1ff861.bin",
+        "release_date": "08/07/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-280010111": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-280010111",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/10111-kamran-james/27-280010111/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Power Rusher",
+        "attributes": {
+          "ACC": 85,
+          "AGI": 76,
+          "AWR": 80,
+          "BSH": 88,
+          "COD": 77,
+          "FMV": 76,
+          "IBL": 88,
+          "PMV": 91,
+          "POW": 86,
+          "PRC": 86,
+          "PUR": 85,
+          "SPD": 82,
+          "STR": 89,
+          "TAK": 86,
+          "TGH": 95
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-280010111",
+        "external_player_id": "10111",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Kamran James",
+        "position": "LE",
+        "program": "Supercharged",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/df0d6c783719d981fae330091b4ca23a51427ad9229f27f45db8b1ca2950adf2.bin",
+        "release_date": "08/07/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-280019722": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-280019722",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/19722-jake-guarnera/27-280019722/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 71,
+          "AGI": 68,
+          "AWR": 83,
+          "COD": 68,
+          "IBL": 86,
+          "LBK": 82,
+          "PBF": 77,
+          "PBK": 80,
+          "PBP": 85,
+          "RBF": 85,
+          "RBK": 87,
+          "RBP": 88,
+          "SPD": 69,
+          "STR": 88,
+          "TGH": 95
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-280019722",
+        "external_player_id": "19722",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Jake Guarnera",
+        "position": "C",
+        "program": "Supercharged",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/64df61e0bbcd4bff05fcaf899a0bb3d3c8344c4371c7cbc54c7354eb883fc4ec.bin",
+        "release_date": "08/07/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-280020931": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-280020931",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20931-duce-robinson/27-280020931/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Contested Specialist",
+        "attributes": {
+          "ACC": 86,
+          "AGI": 84,
+          "AWR": 76,
+          "BCV": 51,
+          "BTK": 83,
+          "CAR": 82,
+          "CIT": 86,
+          "COD": 85,
+          "CTH": 86,
+          "DRR": 90,
+          "IBL": 69,
+          "JKM": 80,
+          "JMP": 84,
+          "MRR": 88,
+          "RBF": 70,
+          "RBK": 70,
+          "RBP": 70,
+          "RET": 46,
+          "RLS": 90,
+          "SFA": 80,
+          "SPC": 86,
+          "SPD": 87,
+          "SPM": 75,
+          "SRR": 91,
+          "STR": 73,
+          "TGH": 95,
+          "TRK": 77
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-280020931",
+        "external_player_id": "20931",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Duce Robinson",
+        "position": "WR",
+        "program": "Supercharged",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/a28f84de3f2f2093fa37f818f605028d7cd26d88c52f528ab0cf3919b389dbe9.bin",
+        "release_date": "08/07/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-280023092": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-280023092",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/23092-brenden-jordan/27-280023092/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Box Specialist",
+        "attributes": {
+          "ACC": 86,
+          "AGI": 84,
+          "AWR": 75,
+          "BSH": 83,
+          "CIT": 77,
+          "COD": 87,
+          "CTH": 78,
+          "FMV": 60,
+          "IBL": 81,
+          "JMP": 79,
+          "MCV": 80,
+          "PMV": 74,
+          "POW": 86,
+          "PRC": 88,
+          "PRS": 80,
+          "PUR": 83,
+          "RET": 67,
+          "SPC": 75,
+          "SPD": 87,
+          "STR": 72,
+          "TAK": 84,
+          "TGH": 95,
+          "ZCV": 90
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-280023092",
+        "external_player_id": "23092",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Brenden Jordan",
+        "position": "FS",
+        "program": "Supercharged",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/06e46b00151f8738e74a517aad2fe2446c46c17b65d24099ada787e25a9b2555.bin",
+        "release_date": "08/07/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-280024922": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-280024922",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/24922-bo-jackson/27-280024922/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "East/West Playmaker",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 87,
+          "AWR": 75,
+          "BCV": 78,
+          "BTK": 90,
+          "CAR": 87,
+          "CIT": 70,
+          "COD": 88,
+          "CTH": 78,
+          "DRR": 71,
+          "JKM": 86,
+          "JMP": 80,
+          "MRR": 78,
+          "RET": 79,
+          "RLS": 72,
+          "SFA": 85,
+          "SPC": 75,
+          "SPD": 88,
+          "SPM": 85,
+          "SRR": 82,
+          "STR": 83,
+          "TGH": 95,
+          "TRK": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-280024922",
+        "external_player_id": "24922",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Bo Jackson",
+        "position": "HB",
+        "program": "Supercharged",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/5255d89ebc79feb6baf7891e4658a43a56782a18bc2a4de2fea4f540c36f9149.bin",
+        "release_date": "08/07/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-700025936": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-700025936",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/25936-rod-woodson/27-700025936/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Field",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 87,
+          "AWR": 79,
+          "BSH": 77,
+          "CIT": 77,
+          "COD": 90,
+          "CTH": 82,
+          "FMV": 69,
+          "IBL": 73,
+          "JMP": 85,
+          "MCV": 87,
+          "PMV": 62,
+          "POW": 81,
+          "PRC": 87,
+          "PRS": 85,
+          "PUR": 85,
+          "RET": 95,
+          "SPC": 76,
+          "SPD": 89,
+          "STR": 75,
+          "TAK": 83,
+          "TGH": 88,
+          "ZCV": 87
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-700025936",
+        "external_player_id": "25936",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Rod Woodson",
+        "position": "CB",
+        "program": "Summer Rush",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/d909e911691848c1f98263dc687bd20d881777c0581e90f81553c3d531b1a169.bin",
+        "release_date": "08/04/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-700025946": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-700025946",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/25946-calvin-johnson/27-700025946/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Contested Specialist",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 86,
+          "AWR": 77,
+          "BCV": 75,
+          "BTK": 82,
+          "CAR": 83,
+          "CIT": 87,
+          "COD": 87,
+          "CTH": 86,
+          "DRR": 89,
+          "IBL": 53,
+          "JKM": 82,
+          "JMP": 85,
+          "MRR": 88,
+          "RBF": 46,
+          "RBK": 56,
+          "RBP": 40,
+          "RET": 60,
+          "RLS": 86,
+          "SFA": 80,
+          "SPC": 86,
+          "SPD": 88,
+          "SPM": 82,
+          "SRR": 90,
+          "STR": 74,
+          "TGH": 88,
+          "TRK": 74
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-700025946",
+        "external_player_id": "25946",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Calvin Johnson",
+        "position": "WR",
+        "program": "Summer Rush",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/570c9c5d57d3645769482193097eb6dc54aafd93f42c9cdb0d727d63b13e566c.bin",
+        "release_date": "07/31/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-700026070": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-700026070",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26070-brian-dawkins/27-700026070/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Coverage Specialist",
+        "attributes": {
+          "ACC": 87,
+          "AGI": 86,
+          "AWR": 77,
+          "BSH": 82,
+          "CIT": 75,
+          "COD": 88,
+          "CTH": 81,
+          "FMV": 82,
+          "IBL": 81,
+          "JMP": 84,
+          "MCV": 80,
+          "PMV": 76,
+          "POW": 90,
+          "PRC": 88,
+          "PRS": 77,
+          "PUR": 84,
+          "RET": 86,
+          "SPC": 73,
+          "SPD": 88,
+          "STR": 79,
+          "TAK": 85,
+          "TGH": 88,
+          "ZCV": 90
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-700026070",
+        "external_player_id": "26070",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Brian Dawkins",
+        "position": "FS",
+        "program": "Summer Rush",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/4b271ec90ed222e3c0d348e218ae3f63686c0a681fade52a978c2058e9aeb9ad.bin",
+        "release_date": "08/03/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-700026888": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-700026888",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26888-eddie-george/27-700026888/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Contact Seeker",
+        "attributes": {
+          "ACC": 87,
+          "AGI": 86,
+          "AWR": 80,
+          "BCV": 79,
+          "BTK": 90,
+          "CAR": 88,
+          "CIT": 63,
+          "COD": 86,
+          "CTH": 75,
+          "DRR": 63,
+          "JKM": 82,
+          "JMP": 81,
+          "MRR": 68,
+          "RET": 71,
+          "RLS": 64,
+          "SFA": 90,
+          "SPC": 65,
+          "SPD": 87,
+          "SPM": 80,
+          "SRR": 77,
+          "STR": 85,
+          "TGH": 88,
+          "TRK": 90
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-700026888",
+        "external_player_id": "26888",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Eddie George",
+        "position": "HB",
+        "program": "Summer Rush",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/74eaf67ff4a6ed2779da2e80ff912df9c6af05e0efabad4b4adab0ae5ff17324.bin",
+        "release_date": "08/05/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-700026895": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-700026895",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26895-brandon-meriweather/27-700026895/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Box Specialist",
+        "attributes": {
+          "ACC": 87,
+          "AGI": 86,
+          "AWR": 77,
+          "BSH": 75,
+          "CIT": 79,
+          "COD": 88,
+          "CTH": 81,
+          "FMV": 73,
+          "IBL": 77,
+          "JMP": 87,
+          "MCV": 86,
+          "PMV": 70,
+          "POW": 89,
+          "PRC": 86,
+          "PRS": 78,
+          "PUR": 86,
+          "RET": 61,
+          "SPC": 78,
+          "SPD": 88,
+          "STR": 74,
+          "TAK": 84,
+          "TGH": 95,
+          "ZCV": 88
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-700026895",
+        "external_player_id": "26895",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Brandon Meriweather",
+        "position": "SS",
+        "program": "Summer Rush",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/3d549aecd5ff825d71bb8e8c1a39964aa20135d38c09c03b8027b7a9ff7a4ed2.bin",
+        "release_date": "07/30/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-700900008": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-700900008",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/900008-ed-too-tall-jones/27-700900008/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Power Rusher",
+        "attributes": {
+          "ACC": 87,
+          "AGI": 81,
+          "AWR": 78,
+          "BSH": 88,
+          "COD": 80,
+          "FMV": 85,
+          "IBL": 83,
+          "PMV": 90,
+          "POW": 88,
+          "PRC": 86,
+          "PUR": 84,
+          "SPD": 85,
+          "STR": 89,
+          "TAK": 84,
+          "TGH": 88
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-700900008",
+        "external_player_id": "900008",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Ed Too Tall Jones",
+        "position": "RE",
+        "program": "Summer Rush",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/1c593435fe2b2d9ddd3b24eb5cc19628af8d7b8a8377b0bf92496147039fea4a.bin",
+        "release_date": "08/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-700900022": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-700900022",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/900022-walter-jones/27-700900022/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 70,
+          "AGI": 65,
+          "AWR": 84,
+          "COD": 65,
+          "IBL": 85,
+          "LBK": 81,
+          "PBF": 88,
+          "PBK": 87,
+          "PBP": 88,
+          "RBF": 85,
+          "RBK": 84,
+          "RBP": 84,
+          "SPD": 70,
+          "STR": 88,
+          "TGH": 88
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-700900022",
+        "external_player_id": "900022",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Walter Jones",
+        "position": "LT",
+        "program": "Summer Rush",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/7bc7fabe4eabd11c36d120ccfbe5b52f4731462dca6746b380a7fc7e518c85e8.bin",
+        "release_date": "08/02/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-800007424": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-800007424",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/7424-keshaun-singleton/27-800007424/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Contested Specialist",
+        "attributes": {
+          "ACC": 89,
+          "AGI": 88,
+          "AWR": 77,
+          "BCV": 70,
+          "BTK": 85,
+          "CAR": 84,
+          "CIT": 86,
+          "COD": 87,
+          "CTH": 85,
+          "DRR": 87,
+          "IBL": 66,
+          "JKM": 85,
+          "JMP": 85,
+          "MRR": 88,
+          "RBF": 75,
+          "RBK": 76,
+          "RBP": 75,
+          "RET": 44,
+          "RLS": 86,
+          "SFA": 75,
+          "SPC": 86,
+          "SPD": 89,
+          "SPM": 83,
+          "SRR": 89,
+          "STR": 71,
+          "TGH": 88,
+          "TRK": 76
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-800007424",
+        "external_player_id": "7424",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Keshaun Singleton",
+        "position": "WR",
+        "program": "Ranked",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/4a55fa3df0dda26b06de06a614d2cf731d4d8fd67dc669ba4ac753d682743df8.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-800020681": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-800020681",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20681-jay-green/27-800020681/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Hybrid",
+        "attributes": {
+          "ACC": 90,
+          "AGI": 88,
+          "AWR": 77,
+          "BSH": 78,
+          "CIT": 77,
+          "COD": 91,
+          "CTH": 85,
+          "FMV": 50,
+          "IBL": 77,
+          "JMP": 85,
+          "MCV": 89,
+          "PMV": 65,
+          "POW": 87,
+          "PRC": 89,
+          "PRS": 84,
+          "PUR": 85,
+          "RET": 59,
+          "SPC": 78,
+          "SPD": 91,
+          "STR": 74,
+          "TAK": 85,
+          "TGH": 95,
+          "ZCV": 90
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-800020681",
+        "external_player_id": "20681",
+        "external_source": "CFB_FAN",
+        "overall": 90,
+        "player": "Jay Green",
+        "position": "SS",
+        "program": "Ranked",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/aba8b24d3caa1ec9b4087246f1b91bd308509456347bacc512e3c91750911f44.bin",
+        "release_date": "08/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-800024466": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-800024466",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/24466-elyiss-williams/27-800024466/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Vertical Threat",
+        "attributes": {
+          "ACC": 89,
+          "AGI": 88,
+          "AWR": 77,
+          "BCV": 69,
+          "BTK": 86,
+          "CAR": 86,
+          "CIT": 88,
+          "COD": 88,
+          "CTH": 88,
+          "DRR": 89,
+          "IBL": 80,
+          "JKM": 85,
+          "JMP": 84,
+          "LBK": 77,
+          "MRR": 88,
+          "PBF": 72,
+          "PBK": 72,
+          "PBP": 77,
+          "RBF": 80,
+          "RBK": 79,
+          "RBP": 79,
+          "RLS": 85,
+          "SFA": 86,
+          "SPC": 85,
+          "SPD": 90,
+          "SPM": 82,
+          "SRR": 90,
+          "STR": 84,
+          "TGH": 95,
+          "TRK": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-800024466",
+        "external_player_id": "24466",
+        "external_source": "CFB_FAN",
+        "overall": 90,
+        "player": "Elyiss Williams",
+        "position": "TE",
+        "program": "Ranked",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/c1ad4cfdb1c0a8009f876d6ef4ac7292a62c3ab65ae977f1304ad16c137e2166.bin",
+        "release_date": "08/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-800025214": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-800025214",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/25214-mandrell-desir/27-800025214/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Speed Rusher",
+        "attributes": {
+          "ACC": 89,
+          "AGI": 85,
+          "AWR": 76,
+          "BSH": 87,
+          "COD": 85,
+          "FMV": 89,
+          "IBL": 85,
+          "PMV": 85,
+          "POW": 87,
+          "PRC": 87,
+          "PUR": 86,
+          "SPD": 86,
+          "STR": 85,
+          "TAK": 84,
+          "TGH": 88
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-800025214",
+        "external_player_id": "25214",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Mandrell Desir",
+        "position": "LE",
+        "program": "Ranked",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/deac0293734920d6e5399a967f9062bc2ab3e3e98e786bf6e763e5dc10dde3de.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-801020681": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-801020681",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20681-jay-green/27-801020681/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Hybrid",
+        "attributes": {
+          "ACC": 89,
+          "AGI": 87,
+          "AWR": 77,
+          "BSH": 77,
+          "CIT": 76,
+          "COD": 89,
+          "CTH": 84,
+          "FMV": 50,
+          "IBL": 76,
+          "JMP": 84,
+          "MCV": 88,
+          "PMV": 65,
+          "POW": 86,
+          "PRC": 88,
+          "PRS": 83,
+          "PUR": 84,
+          "RET": 59,
+          "SPC": 77,
+          "SPD": 89,
+          "STR": 73,
+          "TAK": 84,
+          "TGH": 94,
+          "ZCV": 89
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-801020681",
+        "external_player_id": "20681",
+        "external_source": "CFB_FAN",
+        "overall": 89,
+        "player": "Jay Green",
+        "position": "SS",
+        "program": "Ranked",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/53b18053921630c174ea8a8bf581c11ae62a346377a498f0bf3a64840400bea1.bin",
+        "release_date": "08/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-801024466": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-801024466",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/24466-elyiss-williams/27-801024466/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Vertical Threat",
+        "attributes": {
+          "ACC": 87,
+          "AGI": 86,
+          "AWR": 77,
+          "BCV": 69,
+          "BTK": 85,
+          "CAR": 85,
+          "CIT": 87,
+          "COD": 86,
+          "CTH": 87,
+          "DRR": 88,
+          "IBL": 79,
+          "JKM": 84,
+          "JMP": 82,
+          "LBK": 76,
+          "MRR": 87,
+          "PBF": 71,
+          "PBK": 71,
+          "PBP": 76,
+          "RBF": 79,
+          "RBK": 78,
+          "RBP": 78,
+          "RLS": 84,
+          "SFA": 85,
+          "SPC": 84,
+          "SPD": 88,
+          "SPM": 81,
+          "SRR": 89,
+          "STR": 83,
+          "TGH": 94,
+          "TRK": 84
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-801024466",
+        "external_player_id": "24466",
+        "external_source": "CFB_FAN",
+        "overall": 89,
+        "player": "Elyiss Williams",
+        "position": "TE",
+        "program": "Ranked",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/37d4b4417d71b9075c4af0a9c8312d6c85fa168ec498b85f9ebb74fe3de02f61.bin",
+        "release_date": "08/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-801025214": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-801025214",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/25214-mandrell-desir/27-801025214/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Speed Rusher",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 84,
+          "AWR": 76,
+          "BSH": 86,
+          "COD": 84,
+          "FMV": 87,
+          "IBL": 84,
+          "PMV": 84,
+          "POW": 86,
+          "PRC": 86,
+          "PUR": 85,
+          "SPD": 84,
+          "STR": 84,
+          "TAK": 83,
+          "TGH": 87
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-801025214",
+        "external_player_id": "25214",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Mandrell Desir",
+        "position": "LE",
+        "program": "Ranked",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/e56cd14156b11309263e92ce694bf6689d5cee665028fd0ec9f6c5783571e8b3.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-802020681": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-802020681",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20681-jay-green/27-802020681/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Hybrid",
+        "attributes": {
+          "ACC": 88,
+          "AGI": 86,
+          "AWR": 77,
+          "BSH": 76,
+          "CIT": 76,
+          "COD": 88,
+          "CTH": 83,
+          "FMV": 50,
+          "IBL": 75,
+          "JMP": 83,
+          "MCV": 87,
+          "PMV": 65,
+          "POW": 85,
+          "PRC": 87,
+          "PRS": 82,
+          "PUR": 83,
+          "RET": 59,
+          "SPC": 77,
+          "SPD": 88,
+          "STR": 72,
+          "TAK": 83,
+          "TGH": 88,
+          "ZCV": 88
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-802020681",
+        "external_player_id": "20681",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Jay Green",
+        "position": "SS",
+        "program": "Ranked",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/2d324cb2a0e94b0e600026c83ecfbcd9af0f395e12d16b5015a99905ff915f6c.bin",
+        "release_date": "08/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-802024466": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-802024466",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/24466-elyiss-williams/27-802024466/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Vertical Threat",
+        "attributes": {
+          "ACC": 86,
+          "AGI": 85,
+          "AWR": 77,
+          "BCV": 69,
+          "BTK": 84,
+          "CAR": 84,
+          "CIT": 86,
+          "COD": 85,
+          "CTH": 86,
+          "DRR": 87,
+          "IBL": 78,
+          "JKM": 83,
+          "JMP": 81,
+          "LBK": 75,
+          "MRR": 86,
+          "PBF": 70,
+          "PBK": 71,
+          "PBP": 75,
+          "RBF": 78,
+          "RBK": 77,
+          "RBP": 77,
+          "RLS": 83,
+          "SFA": 84,
+          "SPC": 83,
+          "SPD": 87,
+          "SPM": 80,
+          "SRR": 88,
+          "STR": 82,
+          "TGH": 88,
+          "TRK": 83
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-802024466",
+        "external_player_id": "24466",
+        "external_source": "CFB_FAN",
+        "overall": 88,
+        "player": "Elyiss Williams",
+        "position": "TE",
+        "program": "Ranked",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/52452adf3a0629d2b4724e611614e2b94bdb55e1efa0bab620c24a7033dc5608.bin",
+        "release_date": "08/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-803020681": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-803020681",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20681-jay-green/27-803020681/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Hybrid",
+        "attributes": {
+          "ACC": 87,
+          "AGI": 85,
+          "AWR": 77,
+          "BSH": 75,
+          "CIT": 76,
+          "COD": 87,
+          "CTH": 82,
+          "FMV": 50,
+          "IBL": 74,
+          "JMP": 82,
+          "MCV": 86,
+          "PMV": 65,
+          "POW": 84,
+          "PRC": 86,
+          "PRS": 81,
+          "PUR": 82,
+          "RET": 59,
+          "SPC": 77,
+          "SPD": 87,
+          "STR": 71,
+          "TAK": 82,
+          "TGH": 87,
+          "ZCV": 87
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-803020681",
+        "external_player_id": "20681",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Jay Green",
+        "position": "SS",
+        "program": "Ranked",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/6caea7caa4095609304a704024561317081814a6d4cc9c5e06ec41d5bc5ce15a.bin",
+        "release_date": "08/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-803024466": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-803024466",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/24466-elyiss-williams/27-803024466/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Vertical Threat",
+        "attributes": {
+          "ACC": 85,
+          "AGI": 84,
+          "AWR": 77,
+          "BCV": 69,
+          "BTK": 83,
+          "CAR": 83,
+          "CIT": 85,
+          "COD": 84,
+          "CTH": 85,
+          "DRR": 86,
+          "IBL": 77,
+          "JKM": 82,
+          "JMP": 79,
+          "LBK": 75,
+          "MRR": 85,
+          "PBF": 69,
+          "PBK": 71,
+          "PBP": 75,
+          "RBF": 77,
+          "RBK": 76,
+          "RBP": 76,
+          "RLS": 82,
+          "SFA": 83,
+          "SPC": 82,
+          "SPD": 86,
+          "SPM": 79,
+          "SRR": 87,
+          "STR": 81,
+          "TGH": 87,
+          "TRK": 82
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-803024466",
+        "external_player_id": "24466",
+        "external_source": "CFB_FAN",
+        "overall": 87,
+        "player": "Elyiss Williams",
+        "position": "TE",
+        "program": "Ranked",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/14bee1480f3ef2701ac11872164f037925714b7c00b5b9f945c053d1d610667a.bin",
+        "release_date": "08/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-804020681": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-804020681",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20681-jay-green/27-804020681/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Hybrid",
+        "attributes": {
+          "ACC": 86,
+          "AGI": 84,
+          "AWR": 77,
+          "BSH": 74,
+          "CIT": 76,
+          "COD": 86,
+          "CTH": 81,
+          "FMV": 50,
+          "IBL": 73,
+          "JMP": 81,
+          "MCV": 85,
+          "PMV": 65,
+          "POW": 83,
+          "PRC": 85,
+          "PRS": 80,
+          "PUR": 81,
+          "RET": 59,
+          "SPC": 77,
+          "SPD": 86,
+          "STR": 70,
+          "TAK": 81,
+          "TGH": 86,
+          "ZCV": 86
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-804020681",
+        "external_player_id": "20681",
+        "external_source": "CFB_FAN",
+        "overall": 86,
+        "player": "Jay Green",
+        "position": "SS",
+        "program": "Ranked",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/f461ed954838299702c380ad5a84392cff55d314c029c0289060dd38e346c635.bin",
+        "release_date": "08/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-9001567": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-9001567",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/1567-shadre-hurst/27-9001567/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 66,
+          "AGI": 66,
+          "AWR": 83,
+          "COD": 66,
+          "IBL": 81,
+          "LBK": 81,
+          "PBF": 85,
+          "PBK": 84,
+          "PBP": 85,
+          "RBF": 80,
+          "RBK": 79,
+          "RBP": 79,
+          "SPD": 66,
+          "STR": 84,
+          "TGH": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-9001567",
+        "external_player_id": "1567",
+        "external_source": "CFB_FAN",
+        "overall": 85,
+        "player": "Shadre Hurst",
+        "position": "LG",
+        "program": "Platinum Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/b4d3a13bade8b3e2a0e4a8a251654f34481d89a67d17b3d9b367cb8ce52e56b5.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-9007022": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-9007022",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/7022-cayden-green/27-9007022/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 70,
+          "AGI": 69,
+          "AWR": 84,
+          "COD": 68,
+          "IBL": 83,
+          "LBK": 84,
+          "PBF": 85,
+          "PBK": 84,
+          "PBP": 83,
+          "RBF": 85,
+          "RBK": 82,
+          "RBP": 83,
+          "SPD": 67,
+          "STR": 84,
+          "TGH": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-9007022",
+        "external_player_id": "7022",
+        "external_source": "CFB_FAN",
+        "overall": 85,
+        "player": "Cayden Green",
+        "position": "LT",
+        "program": "Platinum Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/b5a5d51bbed29378ca5616ab6a2a36c81bc94fdf177de3d7bef39e344dcaaf8c.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-9018461": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-9018461",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/18461-evan-tengesdahl/27-9018461/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 64,
+          "AGI": 64,
+          "AWR": 83,
+          "COD": 61,
+          "IBL": 85,
+          "LBK": 77,
+          "PBF": 80,
+          "PBK": 81,
+          "PBP": 84,
+          "RBF": 82,
+          "RBK": 84,
+          "RBP": 86,
+          "SPD": 65,
+          "STR": 85,
+          "TGH": 85
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-9018461",
+        "external_player_id": "18461",
+        "external_source": "CFB_FAN",
+        "overall": 85,
+        "player": "Evan Tengesdahl",
+        "position": "LG",
+        "program": "Platinum Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/e82197e20c3215b1bdc5be4d8014294f4ef383dbef2f117f9b12442a048a4007.bin",
+        "release_date": "07/01/2026",
         "team_school": null
       }
     },
@@ -1059,6 +5998,657 @@
       "result_counts": {
         "CONFLICT": 0,
         "DUPLICATE": 6,
+        "MATCH": 1,
+        "NEW": 0,
+        "REJECTED": 0,
+        "UNRESOLVED": 0,
+        "UPDATE": 0
+      },
+      "source_completion_changes": [],
+      "sources_processed": 1
+    },
+    "INGEST-EXTERNAL-CFB_FAN-2026-08-13T22-00-00Z": {
+      "actions": [
+        {
+          "id": "CFB_FAN",
+          "kind": "source",
+          "result": "MATCH"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-270014827",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-280019722",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "duplicate_of": "card:EXT-CFB_FAN-260008177",
+          "id": "EXT-CFB_FAN-27-260008177",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-240010722",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-250006924",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-280000723",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "duplicate_of": "C-0001",
+          "id": "EXT-CFB_FAN-27-250000734",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-212026542",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-9023669",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2023669",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-240023114",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2018777",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "duplicate_of": "C-0002",
+          "id": "EXT-CFB_FAN-27-9018777",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "duplicate_of": "C-0003",
+          "id": "EXT-CFB_FAN-27-9020820",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2020820",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-270007631",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-27019234",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-280020931",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-270004131",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-260021426",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-700025946",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-212026287",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-800007424",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-201023902",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-27001160",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-280024922",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-700026888",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-110018638",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-260007128",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-201025824",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-280008728",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-270019620",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-110001090",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-280008662",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-700025936",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-260019440",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-260008172",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-201020321",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-110026099",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-700026070",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-110004584",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-270023266",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-280023092",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-260010199",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-260000917",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-213026309",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-240018484",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-800020681",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-201008202",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-801020681",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-802020681",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-700026895",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-803020681",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-240008068",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-804020681",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-270005658",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-212025884",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-270030541",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-201026047",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-280000639",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-260005976",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-110026550",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-111026550",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-800025214",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-280010111",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-260020353",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-801025214",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-201007473",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-700900008",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-201006335",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-260000108",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-700900022",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-260019064",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-240019998",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-250020966",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-201002569",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-280002279",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-9007022",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2007022",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-270022520",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-240000320",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-9001567",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2001567",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-201004853",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-9018461",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2018461",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-201018461",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-270020185",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-211026417",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "duplicate_of": "QB-0070",
+          "id": "EXT-CFB_FAN-27-700026051",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-110010268",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-201019110",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "duplicate_of": "QB-0071",
+          "id": "EXT-CFB_FAN-27-270004056",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "duplicate_of": "QB-0072",
+          "id": "EXT-CFB_FAN-27-201033236",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-111010268",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-800024466",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-801024466",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-201018293",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-212025888",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-802024466",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-280001353",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-803024466",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-270010269",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        }
+      ],
+      "dry_run": false,
+      "manifest_id": "EXTERNAL-CFB_FAN-2026-08-13T22-00-00Z",
+      "queue_items_closed": [],
+      "queue_items_remaining": 20,
+      "records_promoted": 0,
+      "records_staged": 103,
+      "result_counts": {
+        "CONFLICT": 0,
+        "DUPLICATE": 103,
         "MATCH": 1,
         "NEW": 0,
         "REJECTED": 0,

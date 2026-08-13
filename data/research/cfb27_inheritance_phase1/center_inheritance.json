@@ -1,0 +1,196 @@
+{
+  "cards": [
+    {
+      "archetype": "Agile",
+      "card_id": "102026556",
+      "madden19_weighted_score": 76.03703704,
+      "ovr": 80,
+      "player": "Kevin Mawae",
+      "program": "Core Legends Classic",
+      "special_card": false
+    },
+    {
+      "archetype": "Well Rounded",
+      "card_id": "240009242",
+      "madden19_weighted_score": 78.90740741,
+      "ovr": 81,
+      "player": "Cole Best",
+      "program": "Cornerstones",
+      "special_card": true
+    },
+    {
+      "archetype": "Raw Strength",
+      "card_id": "27-2018777",
+      "madden19_weighted_score": 81.80555556,
+      "ovr": 84,
+      "player": "Justin Evans",
+      "program": "Core Rare",
+      "special_card": false
+    },
+    {
+      "archetype": "Raw Strength",
+      "card_id": "27-2020820",
+      "madden19_weighted_score": 81.68518519,
+      "ovr": 84,
+      "player": "Bruce Mitchell",
+      "program": "Core Rare",
+      "special_card": false
+    },
+    {
+      "archetype": "Agile",
+      "card_id": "27-240023114",
+      "madden19_weighted_score": 79.57407407,
+      "ovr": 84,
+      "player": "Caden Kitler",
+      "program": "Cornerstones",
+      "special_card": true
+    },
+    {
+      "archetype": "Raw Strength",
+      "card_id": "27-9018777",
+      "madden19_weighted_score": 81.80555556,
+      "ovr": 84,
+      "player": "Justin Evans",
+      "program": "Platinum Rare",
+      "special_card": false
+    },
+    {
+      "archetype": "Raw Strength",
+      "card_id": "27-9020820",
+      "madden19_weighted_score": 81.68518519,
+      "ovr": 84,
+      "player": "Bruce Mitchell",
+      "program": "Platinum Rare",
+      "special_card": false
+    },
+    {
+      "archetype": "Agile",
+      "card_id": "9021692",
+      "madden19_weighted_score": 80.71296296,
+      "ovr": 84,
+      "player": "Kade Pieper",
+      "program": "Platinum Rare",
+      "special_card": false
+    },
+    {
+      "archetype": "Pass Protector",
+      "card_id": "27-2023669",
+      "madden19_weighted_score": 82.31481481,
+      "ovr": 85,
+      "player": "Iapani Laloulu",
+      "program": "Core Rare",
+      "special_card": false
+    },
+    {
+      "archetype": "Pass Protector",
+      "card_id": "27-212026542",
+      "madden19_weighted_score": 81.15740741,
+      "ovr": 85,
+      "player": "Jeff Saturday",
+      "program": "S1 Legends - Millenium",
+      "special_card": true
+    },
+    {
+      "archetype": "Raw Strength",
+      "card_id": "27-250000734",
+      "madden19_weighted_score": 83.00925926,
+      "ovr": 85,
+      "player": "Ashton Beers",
+      "program": "Standouts",
+      "special_card": true
+    },
+    {
+      "archetype": "Pass Protector",
+      "card_id": "27-280000723",
+      "madden19_weighted_score": 81.62962963,
+      "ovr": 85,
+      "player": "Joshua Bates",
+      "program": "Supercharged",
+      "special_card": true
+    },
+    {
+      "archetype": "Pass Protector",
+      "card_id": "27-9023669",
+      "madden19_weighted_score": 82.31481481,
+      "ovr": 85,
+      "player": "Iapani Laloulu",
+      "program": "Platinum Rare",
+      "special_card": false
+    },
+    {
+      "archetype": "Pass Protector",
+      "card_id": "27-240010722",
+      "madden19_weighted_score": 82.14814815,
+      "ovr": 86,
+      "player": "Landen Livingston",
+      "program": "Cornerstones",
+      "special_card": true
+    },
+    {
+      "archetype": "Pass Protector",
+      "card_id": "27-250006924",
+      "madden19_weighted_score": 82.46296296,
+      "ovr": 86,
+      "player": "Dominick Giudice",
+      "program": "Standouts",
+      "special_card": true
+    },
+    {
+      "archetype": "Raw Strength",
+      "card_id": "27-260008177",
+      "madden19_weighted_score": 83.88888889,
+      "ovr": 86,
+      "player": "Carson Hinzman",
+      "program": "Phenoms",
+      "special_card": true
+    },
+    {
+      "archetype": "Raw Strength",
+      "card_id": "27-280019722",
+      "madden19_weighted_score": 84.2962963,
+      "ovr": 87,
+      "player": "Jake Guarnera",
+      "program": "Supercharged",
+      "special_card": true
+    },
+    {
+      "archetype": "Raw Strength",
+      "card_id": "27-270014827",
+      "madden19_weighted_score": 85.72222222,
+      "ovr": 88,
+      "player": "Coleton Price",
+      "program": "Prime Prospects",
+      "special_card": true
+    }
+  ],
+  "classification": "STABLE_CORE_WITH_RECALIBRATION",
+  "leave_one_out_minimal_archetype_adjustment": {
+    "exact_accuracy": 0.75,
+    "mae": 0.25,
+    "within_one_accuracy": 1.0
+  },
+  "leave_one_out_recalibration": {
+    "exact_accuracy": 0.75,
+    "mae": 0.25,
+    "within_one_accuracy": 1.0
+  },
+  "madden19_attribute_order": [
+    "RBP",
+    "PBP",
+    "AWR",
+    "STR",
+    "RBK",
+    "PBF",
+    "IBL",
+    "LBK",
+    "ACC",
+    "AGI",
+    "PBK",
+    "SPD"
+  ],
+  "madden19_score_ovr_correlation": 0.931272,
+  "ordinary_population": 8,
+  "population": 18,
+  "special_card_warning": "Legends and promotional cards are excluded from the primary ordinary-card validation when sample size permits.",
+  "special_population": 10
+}
