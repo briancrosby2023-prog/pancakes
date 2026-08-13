@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Callable
+from typing import TYPE_CHECKING, Callable
 
 from operation_pancake.importers.workbook_importer import (
     WorkbookImporter,
@@ -12,6 +12,9 @@ from operation_pancake.importers.workbook_importer import (
 )
 from operation_pancake.models.player_card import PlayerCard
 from operation_pancake.repository.canonical_repository import CanonicalRepository
+
+if TYPE_CHECKING:
+    from operation_pancake.importers.position_registry import PositionDatabaseRegistry
 
 CardMapper = Callable[[WorkbookRecord], PlayerCard]
 
@@ -88,3 +91,20 @@ def import_position_database(
         result.imported_count += 1
 
     return result
+
+
+def import_registered_position(
+    position: str,
+    registry: PositionDatabaseRegistry,
+    repository: CanonicalRepository,
+) -> PositionImportResult:
+    """Import a registered position through the normal application configuration."""
+    config = registry.require(position)
+
+    return import_position_database(
+        workbook_path=config.workbook_path,
+        sheet_name=config.sheet_name,
+        position=config.position,
+        mapper=config.mapper,
+        repository=repository,
+    )

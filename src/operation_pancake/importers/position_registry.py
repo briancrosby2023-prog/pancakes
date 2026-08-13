@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-from operation_pancake.importers.player_card_mapper import map_te_card
+from operation_pancake.importers.player_card_mapper import map_qb_card, map_te_card
 from operation_pancake.importers.position_database_importer import CardMapper
 
 
@@ -87,6 +87,15 @@ def create_default_registry(
     root = Path(data_root)
 
     registry = PositionDatabaseRegistry()
+
+    registry.register(
+        PositionDatabaseConfig(
+            position="QB",
+            workbook_path=root / "canonical" / "canonical_v1.9.xlsx",
+            sheet_name="QB_Cards",
+            mapper=map_qb_card,
+        )
+    )
 
     registry.register(
         PositionDatabaseConfig(

@@ -27,6 +27,23 @@ class CanonicalRepository:
         """Return canonical players matching a position."""
         return self.players.by_position(position)
 
+    def players_by_metadata(self, field_name: str, value: object) -> list[PlayerCard]:
+        """Return canonical players matching preserved research metadata."""
+        return self.players.by_metadata(field_name, value)
+
+    def qb_by_id(self, qb_id: str) -> PlayerCard | None:
+        """Return the canonical QB with a stable QB_ID, if one exists."""
+        matches = self.players.by_metadata("qb_id", qb_id)
+
+        if len(matches) > 1:
+            raise ValueError(f"Duplicate QB_ID in canonical repository: {qb_id}")
+
+        return matches[0] if matches else None
+
+    def qbs_by_profile(self, unique_profile_key: str) -> list[PlayerCard]:
+        """Return all canonical QBs sharing a research profile."""
+        return self.players.by_metadata("unique_profile_key", unique_profile_key)
+
     def progression_for_player(
         self,
         player_name: str,

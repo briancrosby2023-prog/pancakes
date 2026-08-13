@@ -105,8 +105,9 @@ def test_whole_number_excel_float_is_accepted() -> None:
 def test_fractional_rating_is_rejected() -> None:
     with pytest.raises(TypeError):
         map_te_card(make_te_record(SPD=84.5))
-def make_qb_record(**overrides: object) -> WorkbookRecord:
 
+
+def make_qb_record(**overrides: object) -> WorkbookRecord:
     """Create a canonical-style QB_Cards row for mapper tests."""
     values = {
         "QB_ID": "QB-0001",
@@ -131,6 +132,13 @@ def make_qb_record(**overrides: object) -> WorkbookRecord:
         "BSK": 70,
         "Source_ID": "QB Research",
         "Source_Locator": "QB_Cards",
+        "Population_Scope": "PRIMARY 80+ POPULATION",
+        "Model_Role": "DEVELOPMENT",
+        "Unique_Profile_Key": "Pocket Passer|test-profile",
+        "Duplicate_Note": None,
+        "Frozen_Score_Check": 83.98,
+        "Frozen_Score_Formula": 83.98,
+        "Formula_Delta": 0,
         "Validation_Status": "validated",
         "Notes": "Observed QB card.",
     }
@@ -185,6 +193,12 @@ def test_qb_metadata_is_not_treated_as_rating() -> None:
     assert "NOTES" not in card.attributes
 
 
+def test_qb_ignores_unknown_non_rating_columns() -> None:
+    card = map_qb_card(make_qb_record(Research_Comment="not a rating"))
+
+    assert "RESEARCH_COMMENT" not in card.attributes
+
+
 def test_qb_blank_attribute_is_not_invented() -> None:
     card = map_qb_card(make_qb_record(BSK=None))
 
@@ -194,7 +208,17 @@ def test_qb_blank_attribute_is_not_invented() -> None:
 def test_qb_preserves_workbook_provenance() -> None:
     card = map_qb_card(make_qb_record())
 
+    assert card.source == "QB Research | QB_Cards"
     assert card.metadata["qb_id"] == "QB-0001"
+    assert card.metadata["source_id"] == "QB Research"
+    assert card.metadata["source_locator"] == "QB_Cards"
+    assert card.metadata["population_scope"] == "PRIMARY 80+ POPULATION"
+    assert card.metadata["model_role"] == "DEVELOPMENT"
+    assert card.metadata["unique_profile_key"] == "Pocket Passer|test-profile"
+    assert card.metadata["duplicate_note"] is None
+    assert card.metadata["frozen_score_check"] == 83.98
+    assert card.metadata["frozen_score_formula"] == 83.98
+    assert card.metadata["formula_delta"] == 0
     assert card.metadata["workbook_sheet"] == "QB_Cards"
     assert card.metadata["workbook_row"] == 5
 
@@ -204,6 +228,11 @@ def test_qb_missing_player_is_rejected() -> None:
         map_qb_card(make_qb_record(Player=None))
 
 
+def test_qb_missing_stable_id_is_rejected() -> None:
+    with pytest.raises(ValueError, match="QB_ID"):
+        map_qb_card(make_qb_record(QB_ID=None))
+
+
 def test_qb_missing_overall_is_rejected() -> None:
     with pytest.raises(TypeError):
         map_qb_card(make_qb_record(OVR=None))
@@ -211,4 +240,4 @@ def test_qb_missing_overall_is_rejected() -> None:
 
 def test_qb_invalid_attribute_is_rejected() -> None:
     with pytest.raises(TypeError):
-        map_qb_card(make_qb_record(THP="unknown"))   
+        map_qb_card(make_qb_record(THP="unknown"))

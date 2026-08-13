@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from operation_pancake.importers.player_card_mapper import map_te_card
+from operation_pancake.importers.player_card_mapper import map_qb_card, map_te_card
 from operation_pancake.importers.position_registry import (
     PositionDatabaseConfig,
     PositionDatabaseRegistry,
@@ -107,11 +107,21 @@ def test_default_registry_contains_te() -> None:
 
     config = registry.require("TE")
 
-    assert registry.positions == ("TE",)
+    assert registry.positions == ("QB", "TE")
     assert config.position == "TE"
     assert config.workbook_path == Path("data/positions/te.xlsx")
     assert config.sheet_name == "TE_Cards"
     assert config.mapper is map_te_card
+
+
+def test_default_registry_contains_canonical_qb_database() -> None:
+    registry = create_default_registry()
+
+    config = registry.require("QB")
+
+    assert config.workbook_path == Path("data/canonical/canonical_v1.9.xlsx")
+    assert config.sheet_name == "QB_Cards"
+    assert config.mapper is map_qb_card
 
 
 def test_default_registry_accepts_custom_data_root(
