@@ -1,0 +1,35 @@
+{
+  "retrieved_at": "2026-08-13T12:00:00Z",
+  "cards": [
+    {
+      "external_source": "FIXTURE",
+      "external_player_id": "player-100",
+      "external_card_id": "card-100",
+      "player_name": "Fixture Center",
+      "position": "C",
+      "overall": 82,
+      "archetype": "Power",
+      "program": "Fixture Program",
+      "card_type": "Regular CUT",
+      "team_school": "Example State",
+      "release_date": "2026-08-01",
+      "displayed_ratings": {"STR": 85, "AWR": 81, "PBK": 82, "RBP": null, "KAC": 70},
+      "source_reference": "fixture://cards/card-100",
+      "retrieval_timestamp": "2026-08-13T12:00:00Z",
+      "market_observations": [
+        {
+          "observation_id": "MARKET-card-100-20260813",
+          "external_card_id": "card-100",
+          "price": 15000,
+          "listing_count": 4,
+          "quick_sell_value": 1000,
+          "training_value": null,
+          "currency": "coins",
+          "platform": "PC",
+          "observed_at": "2026-08-13T12:00:00Z",
+          "source": "FIXTURE"
+        }
+      ]
+    }
+  ]
+}

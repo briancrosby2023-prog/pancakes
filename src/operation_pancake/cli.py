@@ -6,6 +6,12 @@ import argparse
 import json
 from pathlib import Path
 
+from operation_pancake.acquisition.adapters import FixtureAdapter
+from operation_pancake.acquisition.pipeline import (
+    AcquisitionPipeline,
+    AcquisitionState,
+    population_targets,
+)
 from operation_pancake.evidence.catalog import build_evidence_index
 from operation_pancake.evidence.ingestion import (
     BulkManifestIngestor,
@@ -38,6 +44,14 @@ def main() -> None:
     sub.add_parser("coverage")
     sub.add_parser("conflicts")
     sub.add_parser("incomplete")
+    acquire = sub.add_parser("acquire")
+    acquire_sub = acquire.add_subparsers(dest="acquire_command", required=True)
+    acquire_sub.add_parser("plan")
+    acquire_import = acquire_sub.add_parser("import")
+    acquire_import.add_argument("file", type=Path)
+    acquire_import.add_argument("--dry-run", action="store_true")
+    acquire_sub.add_parser("status")
+    acquire_sub.add_parser("conflicts")
     args = parser.parse_args()
     root = args.root.resolve()
     index = build_evidence_index(root)
@@ -86,6 +100,34 @@ def main() -> None:
                 "historical_players_without_rating_vectors"
             ],
         }
+    elif args.command == "acquire":
+        acquisition_path = root / "data/external/acquisition_state.json"
+        acquisition = AcquisitionState.load(acquisition_path)
+        if args.acquire_command == "plan":
+            result = population_targets(root)
+        elif args.acquire_command == "status":
+            result = acquisition.as_dict()
+        elif args.acquire_command == "conflicts":
+            result = list(acquisition.as_dict()["conflicts"].values())
+        else:
+            payload = json.loads(args.file.resolve().read_text(encoding="utf-8"))
+            discoveries = [
+                {"external_card_id": str(card["external_card_id"])} for card in payload["cards"]
+            ]
+            fixture = FixtureAdapter(
+                discoveries,
+                {
+                    str(card["external_card_id"]): json.dumps(card, sort_keys=True).encode()
+                    for card in payload["cards"]
+                },
+            )
+            pipeline = AcquisitionPipeline(root, ingestor, acquisition)
+            result = pipeline.acquire_fixture(
+                fixture, payload["retrieved_at"], dry_run=args.dry_run
+            )
+            if not args.dry_run:
+                pipeline.save(acquisition_path)
+                save_state(state_path, ingestor.state)
     else:
         result = ingestor.coverage_report()
     print(json.dumps(result, indent=2, sort_keys=True))
