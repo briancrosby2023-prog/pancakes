@@ -1,0 +1,22 @@
+[
+  {
+    "architecture": "Historical Madden-style",
+    "status": "INPUTS_MISSING",
+    "tested": false
+  },
+  {
+    "architecture": "CFB recalibration of historical weights",
+    "status": "WEIGHTS_AND_PROFILES_MISSING",
+    "tested": false
+  },
+  {
+    "architecture": "Universal Center-specific model",
+    "status": "INSUFFICIENT_STATIC_POPULATION",
+    "tested": false
+  },
+  {
+    "architecture": "Shared weights + archetype modifier",
+    "status": "INSUFFICIENT_ARCHETYPE_COVERAGE",
+    "tested": false
+  }
+]

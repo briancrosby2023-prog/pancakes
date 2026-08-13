@@ -1,0 +1,55 @@
+{
+  "cfb_ovr_range": {
+    "status": "HISTORICAL_RESEARCH_RESULT",
+    "value": [
+      80,
+      85
+    ]
+  },
+  "cfb_population_count": {
+    "status": "HISTORICAL_RESEARCH_RESULT",
+    "value": 12
+  },
+  "formula_architecture": {
+    "status": "HISTORICAL_RESEARCH_RESULT",
+    "value": "OVR = (W - L) × 99 / (H - L)"
+  },
+  "madden_population_count": {
+    "status": "HISTORICAL_RESEARCH_RESULT",
+    "value": 53
+  },
+  "marginal_displayed_ovr": {
+    "AWR": {
+      "status": "UNVERIFIED_HISTORICAL_RESULT",
+      "value": 0.248
+    },
+    "RBP": {
+      "status": "UNVERIFIED_HISTORICAL_RESULT",
+      "value": 0.364
+    }
+  },
+  "missing_for_exact_reproduction": [
+    "53-player Madden Center rows and target OVR values",
+    "Exact attribute coefficients and calibration bounds L/H",
+    "Original fitting and validation partitions",
+    "Complete historical 12-Center CFB rating profiles"
+  ],
+  "performance": {
+    "mae_approximately": {
+      "status": "UNVERIFIED_HISTORICAL_RESULT",
+      "value": 0.91
+    },
+    "r_squared_approximately": {
+      "status": "UNVERIFIED_HISTORICAL_RESULT",
+      "value": 0.982
+    }
+  },
+  "provenance": "Recovered earlier Operation Pancake research supplied in current session",
+  "status_vocabulary": [
+    "HISTORICAL_RESEARCH_RESULT",
+    "CURRENTLY_REPRODUCED",
+    "CURRENTLY_VALIDATED",
+    "UNVERIFIED_HISTORICAL_RESULT",
+    "CONTRADICTED"
+  ]
+}

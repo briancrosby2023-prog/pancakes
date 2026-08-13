@@ -1,0 +1,219 @@
+{
+  "complete_compatibility_count": 0,
+  "contradicted_count": 0,
+  "historical_weights_refitted_to_saturday": false,
+  "indeterminate_count": 17,
+  "interpretation": "Only recovered RBP/AWR marginals can be evaluated. Positive contributions in five bundles are directionally compatible; omitted coefficients prevent a complete test of any transition, including all sparse PBF/PBP/PBK cases.",
+  "partially_compatible_count": 5,
+  "transitions": [
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-01"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-01B"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-02"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-02B"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-03"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-03B"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-04"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-04B"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-05"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "PARTIALLY_COMPATIBLE",
+      "known_historical_marginal_deltas": {
+        "AWR": 6
+      },
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 1.488,
+      "transition_id": "SAT-05B"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-06"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-06B"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-07"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "PARTIALLY_COMPATIBLE",
+      "known_historical_marginal_deltas": {
+        "AWR": 1
+      },
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0.248,
+      "transition_id": "SAT-07B"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-08"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-08B"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "PARTIALLY_COMPATIBLE",
+      "known_historical_marginal_deltas": {
+        "RBP": 4
+      },
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 1.456,
+      "transition_id": "SAT-09"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-09B"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "PARTIALLY_COMPATIBLE",
+      "known_historical_marginal_deltas": {
+        "RBP": 6
+      },
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 2.184,
+      "transition_id": "SAT-10"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-10B"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "PARTIALLY_COMPATIBLE",
+      "known_historical_marginal_deltas": {
+        "AWR": 4
+      },
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0.992,
+      "transition_id": "SAT-11"
+    },
+    {
+      "complete_historical_score_movement_available": false,
+      "contradicted": false,
+      "evaluation": "INDETERMINATE",
+      "known_historical_marginal_deltas": {},
+      "observed_ovr_movement": 1,
+      "partial_displayed_ovr_movement": 0,
+      "transition_id": "SAT-11B"
+    }
+  ],
+  "transitions_tested": 22
+}
