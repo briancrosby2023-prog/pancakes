@@ -1,0 +1,5283 @@
+{
+  "baseline_commit": "f4bf7d3",
+  "complexity_budget": {
+    "candidate_count_including_baseline": 8,
+    "candidate_set_predeclared_before_validation": true,
+    "maximum_mechanisms": 2
+  },
+  "formula_status": "unsolved",
+  "leakage_controls": {
+    "boundary_used_for_fitting": false,
+    "cross_ovr_blocks_same_player_and_profile": true,
+    "holdout_used_for_fitting": false,
+    "profile_duplicate_used_for_fitting": false,
+    "research_only_used_for_fitting": false
+  },
+  "phase": "QB Formula Phase — EA-Plausible Interactions, Caps & Nonlinearity",
+  "results": [
+    {
+      "candidate_id": "baseline_a",
+      "coefficient_stability": {
+        "ACC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.46019241,
+          "mean": 0.26035194,
+          "minimum": 0.1594365
+        },
+        "AGI": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.2029324,
+          "mean": 0.15929217,
+          "minimum": 0.13186833
+        },
+        "AWR": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.36679221,
+          "mean": 0.3244497,
+          "minimum": 0.23678146
+        },
+        "BSK": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.13137984,
+          "mean": 0.04947443,
+          "minimum": 0.0
+        },
+        "DAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.42069107,
+          "mean": 0.29120694,
+          "minimum": 0.11802424
+        },
+        "MAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.44474453,
+          "mean": 0.40238197,
+          "minimum": 0.30886526
+        },
+        "PAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.41371982,
+          "mean": 0.21705855,
+          "minimum": 0.0988026
+        },
+        "RUN": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.16762534,
+          "mean": 0.08348846,
+          "minimum": 0.0
+        },
+        "SAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.51448855,
+          "mean": 0.33086739,
+          "minimum": 0.20654306
+        },
+        "SPD": {
+          "collapsed_to_zero_folds": 2,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.23634588,
+          "mean": 0.09626675,
+          "minimum": 0.0
+        },
+        "STR": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.08179028,
+          "mean": 0.03556352,
+          "minimum": 0.0
+        },
+        "TAC": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.30578454,
+          "mean": 0.10519341,
+          "minimum": 0.0
+        },
+        "TGH": {
+          "collapsed_to_zero_folds": 3,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.17603276,
+          "mean": 0.04161599,
+          "minimum": 0.0
+        },
+        "THP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.8965863,
+          "mean": 0.81923782,
+          "minimum": 0.68585424
+        },
+        "TUP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.36294719,
+          "mean": 0.30761507,
+          "minimum": 0.18679808
+        }
+      },
+      "constraints": {
+        "adjacent_count": 14,
+        "adjacent_ordered": 13,
+        "adjacent_pair_effects": [
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0065",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0042"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0042",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0033"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_prediction": 86,
+            "upper_qb_id": "QB-0005"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0035",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0022"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0022",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0012"
+          },
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": false,
+            "upper_prediction": 79,
+            "upper_qb_id": "QB-0057"
+          },
+          {
+            "lower_prediction": 79,
+            "lower_qb_id": "QB-0057",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0037"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0037",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0032"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0032",
+            "predicted_ordered": true,
+            "upper_prediction": 83,
+            "upper_qb_id": "QB-0030"
+          },
+          {
+            "lower_prediction": 83,
+            "lower_qb_id": "QB-0025",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0015"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0016",
+            "predicted_ordered": true,
+            "upper_prediction": 85,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_prediction": 86,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "lower_prediction": 86,
+            "lower_qb_id": "QB-0004",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "lower_prediction": 87,
+            "lower_qb_id": "QB-0002",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0071"
+          }
+        ],
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 11,
+        "same_ovr_pair_effects": [
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0050",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0065"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0033",
+            "predicted_equal": true,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0036"
+          },
+          {
+            "left_prediction": 86,
+            "left_qb_id": "QB-0005",
+            "predicted_equal": true,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0006"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0048",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0069"
+          },
+          {
+            "left_prediction": 81,
+            "left_qb_id": "QB-0034",
+            "predicted_equal": false,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0035"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0022",
+            "predicted_equal": false,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0026"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0047",
+            "predicted_equal": false,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0059"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0038",
+            "predicted_equal": false,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0040"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0031",
+            "predicted_equal": true,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0032"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0019",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0021"
+          },
+          {
+            "left_prediction": 84,
+            "left_qb_id": "QB-0013",
+            "predicted_equal": true,
+            "right_prediction": 84,
+            "right_qb_id": "QB-0018"
+          },
+          {
+            "left_prediction": 85,
+            "left_qb_id": "QB-0010",
+            "predicted_equal": true,
+            "right_prediction": 85,
+            "right_qb_id": "QB-0011"
+          },
+          {
+            "left_prediction": 86,
+            "left_qb_id": "QB-0004",
+            "predicted_equal": true,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0008"
+          },
+          {
+            "left_prediction": 87,
+            "left_qb_id": "QB-0001",
+            "predicted_equal": true,
+            "right_prediction": 87,
+            "right_qb_id": "QB-0002"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0023",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0028"
+          }
+        ],
+        "sequence_effects_by_information_value": [
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.28867514,
+            "lower_qb_id": "QB-0013",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0003"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.27975145,
+            "lower_qb_id": "QB-0038",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0013"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26967995,
+            "lower_qb_id": "QB-0050",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0007"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26612315,
+            "lower_qb_id": "QB-0027",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0071"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.25,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.21693046,
+            "lower_qb_id": "QB-0039",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.20249019,
+            "lower_qb_id": "QB-0049",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.19264839,
+            "lower_qb_id": "QB-0051",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0008"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.13159034,
+            "lower_qb_id": "QB-0041",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0019"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.12970131,
+            "lower_qb_id": "QB-0018",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0001"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11878278,
+            "lower_qb_id": "QB-0046",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0011"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11396058,
+            "lower_qb_id": "QB-0047",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0024"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.10714286,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0072"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.08290267,
+            "lower_qb_id": "QB-0015",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0006"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04816831,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0054"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04441156,
+            "lower_qb_id": "QB-0054",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0038"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.0,
+            "lower_qb_id": "QB-0067",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0068"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.666667,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.352941,
+        "mean_signed_residual": 0.039216,
+        "within_one_accuracy": 0.980392
+      },
+      "feature_names": [
+        "SPD",
+        "ACC",
+        "AGI",
+        "AWR",
+        "STR",
+        "TGH",
+        "THP",
+        "TAC",
+        "SAC",
+        "MAC",
+        "DAC",
+        "RUN",
+        "TUP",
+        "PAC",
+        "BSK"
+      ],
+      "fit_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.862745,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.137255,
+        "mean_signed_residual": 0.019608,
+        "within_one_accuracy": 1.0
+      },
+      "holdout_by_archetype": {
+        "Backfield Creator": {
+          "count": 3,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "Dual Threat": {
+          "count": 3,
+          "exact_accuracy": 0.333333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.666667,
+          "mean_signed_residual": -0.666667,
+          "within_one_accuracy": 1.0
+        },
+        "Pocket Passer": {
+          "count": 12,
+          "exact_accuracy": 0.833333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.166667,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_errors": [
+        {
+          "actual_ovr": 84,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "baseline_a",
+          "latent_score": 84.67604321,
+          "player": "Arch Manning",
+          "predicted_ovr": 85,
+          "qb_id": "QB-0016",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 82,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "baseline_a",
+          "latent_score": 81.18654603,
+          "player": "Marcel Reed",
+          "predicted_ovr": 81,
+          "qb_id": "QB-0034",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 89,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "baseline_a",
+          "latent_score": 88.43043028,
+          "player": "Michael Vick",
+          "predicted_ovr": 88,
+          "qb_id": "QB-0070",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 88,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "baseline_a",
+          "latent_score": 87.42285676,
+          "player": "Sam Leavitt",
+          "predicted_ovr": 87,
+          "qb_id": "QB-0071",
+          "residual": -1
+        }
+      ],
+      "holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.777778,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.222222,
+        "mean_signed_residual": -0.111111,
+        "within_one_accuracy": 1.0
+      },
+      "learned_parameter_count": 16,
+      "mechanism_count": 0,
+      "motivation": [
+        "Mandatory simplicity baseline."
+      ],
+      "name": "Architecture A round-half-up",
+      "parameters": {
+        "coefficients": {
+          "ACC": 0.3138912,
+          "AGI": 0.14565705,
+          "AWR": 0.34518285,
+          "BSK": 0.02441048,
+          "DAC": 0.32293845,
+          "MAC": 0.41556908,
+          "PAC": 0.22247586,
+          "RUN": 0.07672736,
+          "SAC": 0.32671508,
+          "SPD": 0.09392442,
+          "STR": 0.04833806,
+          "TAC": 0.07525833,
+          "TGH": 0.00710888,
+          "THP": 0.84606655,
+          "TUP": 0.33617773
+        },
+        "fixed_structural_parameters": 0,
+        "intercept": 82.37254902
+      },
+      "qb_0074_audit": {
+        "frozen_formula_audit_matches": true,
+        "largest_positive_contributions": [
+          [
+            "AWR",
+            0.28939467
+          ],
+          [
+            "TAC",
+            0.08894101
+          ],
+          [
+            "STR",
+            0.0445665
+          ],
+          [
+            "TGH",
+            0.01338901
+          ],
+          [
+            "BSK",
+            -0.00393869
+          ]
+        ],
+        "latent_score": 79.85679674,
+        "predicted_ovr": 80,
+        "qb_id": "QB-0074",
+        "ratings_complete": true,
+        "source_id": "SRC-QB-002",
+        "source_locator": "Screenshot 2026-07-26 204922.jpg",
+        "source_record": "QB_Cards!78"
+      },
+      "rejection_reason": null,
+      "structural_parameter_count": 0,
+      "support_status": "BASELINE",
+      "total_complexity": 16
+    },
+    {
+      "candidate_id": "passing_cap_90",
+      "coefficient_stability": {
+        "ACC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.46019241,
+          "mean": 0.26035194,
+          "minimum": 0.1594365
+        },
+        "AGI": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.2029324,
+          "mean": 0.15929217,
+          "minimum": 0.13186833
+        },
+        "AWR": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.36679221,
+          "mean": 0.3244497,
+          "minimum": 0.23678146
+        },
+        "BSK": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.13137984,
+          "mean": 0.04947443,
+          "minimum": 0.0
+        },
+        "DAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.42069107,
+          "mean": 0.29120694,
+          "minimum": 0.11802424
+        },
+        "MAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.44474453,
+          "mean": 0.40238197,
+          "minimum": 0.30886526
+        },
+        "PAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.41371982,
+          "mean": 0.21705855,
+          "minimum": 0.0988026
+        },
+        "RUN": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.16762534,
+          "mean": 0.08348846,
+          "minimum": 0.0
+        },
+        "SAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.51448855,
+          "mean": 0.33086739,
+          "minimum": 0.20654306
+        },
+        "SPD": {
+          "collapsed_to_zero_folds": 2,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.23634588,
+          "mean": 0.09626675,
+          "minimum": 0.0
+        },
+        "STR": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.08179028,
+          "mean": 0.03556352,
+          "minimum": 0.0
+        },
+        "TAC": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.30578454,
+          "mean": 0.10519341,
+          "minimum": 0.0
+        },
+        "TGH": {
+          "collapsed_to_zero_folds": 3,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.17603276,
+          "mean": 0.04161599,
+          "minimum": 0.0
+        },
+        "THP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.8965863,
+          "mean": 0.81923782,
+          "minimum": 0.68585424
+        },
+        "TUP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.36294719,
+          "mean": 0.30761507,
+          "minimum": 0.18679808
+        }
+      },
+      "constraints": {
+        "adjacent_count": 14,
+        "adjacent_ordered": 13,
+        "adjacent_pair_effects": [
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0065",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0042"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0042",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0033"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_prediction": 86,
+            "upper_qb_id": "QB-0005"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0035",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0022"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0022",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0012"
+          },
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": false,
+            "upper_prediction": 79,
+            "upper_qb_id": "QB-0057"
+          },
+          {
+            "lower_prediction": 79,
+            "lower_qb_id": "QB-0057",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0037"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0037",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0032"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0032",
+            "predicted_ordered": true,
+            "upper_prediction": 83,
+            "upper_qb_id": "QB-0030"
+          },
+          {
+            "lower_prediction": 83,
+            "lower_qb_id": "QB-0025",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0015"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0016",
+            "predicted_ordered": true,
+            "upper_prediction": 85,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_prediction": 86,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "lower_prediction": 86,
+            "lower_qb_id": "QB-0004",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "lower_prediction": 87,
+            "lower_qb_id": "QB-0002",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0071"
+          }
+        ],
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 11,
+        "same_ovr_pair_effects": [
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0050",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0065"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0033",
+            "predicted_equal": true,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0036"
+          },
+          {
+            "left_prediction": 86,
+            "left_qb_id": "QB-0005",
+            "predicted_equal": true,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0006"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0048",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0069"
+          },
+          {
+            "left_prediction": 81,
+            "left_qb_id": "QB-0034",
+            "predicted_equal": false,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0035"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0022",
+            "predicted_equal": false,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0026"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0047",
+            "predicted_equal": false,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0059"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0038",
+            "predicted_equal": false,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0040"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0031",
+            "predicted_equal": true,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0032"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0019",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0021"
+          },
+          {
+            "left_prediction": 84,
+            "left_qb_id": "QB-0013",
+            "predicted_equal": true,
+            "right_prediction": 84,
+            "right_qb_id": "QB-0018"
+          },
+          {
+            "left_prediction": 85,
+            "left_qb_id": "QB-0010",
+            "predicted_equal": true,
+            "right_prediction": 85,
+            "right_qb_id": "QB-0011"
+          },
+          {
+            "left_prediction": 86,
+            "left_qb_id": "QB-0004",
+            "predicted_equal": true,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0008"
+          },
+          {
+            "left_prediction": 87,
+            "left_qb_id": "QB-0001",
+            "predicted_equal": true,
+            "right_prediction": 87,
+            "right_qb_id": "QB-0002"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0023",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0028"
+          }
+        ],
+        "sequence_effects_by_information_value": [
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.28867514,
+            "lower_qb_id": "QB-0013",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0003"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.27975145,
+            "lower_qb_id": "QB-0038",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0013"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26967995,
+            "lower_qb_id": "QB-0050",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0007"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26612315,
+            "lower_qb_id": "QB-0027",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0071"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.25,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.21693046,
+            "lower_qb_id": "QB-0039",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.20249019,
+            "lower_qb_id": "QB-0049",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.19264839,
+            "lower_qb_id": "QB-0051",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0008"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.13159034,
+            "lower_qb_id": "QB-0041",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0019"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.12970131,
+            "lower_qb_id": "QB-0018",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0001"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11878278,
+            "lower_qb_id": "QB-0046",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0011"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11396058,
+            "lower_qb_id": "QB-0047",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0024"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.10714286,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0072"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.08290267,
+            "lower_qb_id": "QB-0015",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0006"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04816831,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0054"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04441156,
+            "lower_qb_id": "QB-0054",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0038"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.0,
+            "lower_qb_id": "QB-0067",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0068"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.666667,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.352941,
+        "mean_signed_residual": 0.039216,
+        "within_one_accuracy": 0.980392
+      },
+      "feature_names": [
+        "SPD",
+        "ACC",
+        "AGI",
+        "AWR",
+        "STR",
+        "TGH",
+        "THP",
+        "TAC",
+        "SAC",
+        "MAC",
+        "DAC",
+        "RUN",
+        "TUP",
+        "PAC",
+        "BSK"
+      ],
+      "fit_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.862745,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.137255,
+        "mean_signed_residual": 0.019608,
+        "within_one_accuracy": 1.0
+      },
+      "holdout_by_archetype": {
+        "Backfield Creator": {
+          "count": 3,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "Dual Threat": {
+          "count": 3,
+          "exact_accuracy": 0.333333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.666667,
+          "mean_signed_residual": -0.666667,
+          "within_one_accuracy": 1.0
+        },
+        "Pocket Passer": {
+          "count": 12,
+          "exact_accuracy": 0.833333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.166667,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_errors": [
+        {
+          "actual_ovr": 84,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "passing_cap_90",
+          "latent_score": 84.67604321,
+          "player": "Arch Manning",
+          "predicted_ovr": 85,
+          "qb_id": "QB-0016",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 82,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "passing_cap_90",
+          "latent_score": 81.18654603,
+          "player": "Marcel Reed",
+          "predicted_ovr": 81,
+          "qb_id": "QB-0034",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 89,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "passing_cap_90",
+          "latent_score": 88.43043028,
+          "player": "Michael Vick",
+          "predicted_ovr": 88,
+          "qb_id": "QB-0070",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 88,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "passing_cap_90",
+          "latent_score": 87.42285676,
+          "player": "Sam Leavitt",
+          "predicted_ovr": 87,
+          "qb_id": "QB-0071",
+          "residual": -1
+        }
+      ],
+      "holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.777778,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.222222,
+        "mean_signed_residual": -0.111111,
+        "within_one_accuracy": 1.0
+      },
+      "learned_parameter_count": 16,
+      "mechanism_count": 1,
+      "motivation": [
+        "Same-OVR passing-profile contrasts.",
+        "QB-0002 threshold regression."
+      ],
+      "name": "SAC/MAC/DAC hard cap at 90",
+      "parameters": {
+        "coefficients": {
+          "ACC": 0.3138912,
+          "AGI": 0.14565705,
+          "AWR": 0.34518285,
+          "BSK": 0.02441048,
+          "DAC": 0.32293845,
+          "MAC": 0.41556908,
+          "PAC": 0.22247586,
+          "RUN": 0.07672736,
+          "SAC": 0.32671508,
+          "SPD": 0.09392442,
+          "STR": 0.04833806,
+          "TAC": 0.07525833,
+          "TGH": 0.00710888,
+          "THP": 0.84606655,
+          "TUP": 0.33617773
+        },
+        "fixed_structural_parameters": 1,
+        "intercept": 82.37254902
+      },
+      "qb_0074_audit": {
+        "frozen_formula_audit_matches": true,
+        "largest_positive_contributions": [
+          [
+            "AWR",
+            0.28939467
+          ],
+          [
+            "TAC",
+            0.08894101
+          ],
+          [
+            "STR",
+            0.0445665
+          ],
+          [
+            "TGH",
+            0.01338901
+          ],
+          [
+            "BSK",
+            -0.00393869
+          ]
+        ],
+        "latent_score": 79.85679674,
+        "predicted_ovr": 80,
+        "qb_id": "QB-0074",
+        "ratings_complete": true,
+        "source_id": "SRC-QB-002",
+        "source_locator": "Screenshot 2026-07-26 204922.jpg",
+        "source_record": "QB_Cards!78"
+      },
+      "rejection_reason": "No joint improvement over Architecture A on independent holdout and leakage-controlled cross-OVR exact accuracy.",
+      "structural_parameter_count": 1,
+      "support_status": "REJECTED",
+      "total_complexity": 17
+    },
+    {
+      "candidate_id": "passing_diminishing_90",
+      "coefficient_stability": {
+        "ACC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.46019241,
+          "mean": 0.26035194,
+          "minimum": 0.1594365
+        },
+        "AGI": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.2029324,
+          "mean": 0.15929217,
+          "minimum": 0.13186833
+        },
+        "AWR": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.36679221,
+          "mean": 0.3244497,
+          "minimum": 0.23678146
+        },
+        "BSK": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.13137984,
+          "mean": 0.04947443,
+          "minimum": 0.0
+        },
+        "DAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.42069107,
+          "mean": 0.29120694,
+          "minimum": 0.11802424
+        },
+        "MAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.44474453,
+          "mean": 0.40238197,
+          "minimum": 0.30886526
+        },
+        "PAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.41371982,
+          "mean": 0.21705855,
+          "minimum": 0.0988026
+        },
+        "RUN": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.16762534,
+          "mean": 0.08348846,
+          "minimum": 0.0
+        },
+        "SAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.51448855,
+          "mean": 0.33086739,
+          "minimum": 0.20654306
+        },
+        "SPD": {
+          "collapsed_to_zero_folds": 2,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.23634588,
+          "mean": 0.09626675,
+          "minimum": 0.0
+        },
+        "STR": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.08179028,
+          "mean": 0.03556352,
+          "minimum": 0.0
+        },
+        "TAC": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.30578454,
+          "mean": 0.10519341,
+          "minimum": 0.0
+        },
+        "TGH": {
+          "collapsed_to_zero_folds": 3,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.17603276,
+          "mean": 0.04161599,
+          "minimum": 0.0
+        },
+        "THP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.8965863,
+          "mean": 0.81923782,
+          "minimum": 0.68585424
+        },
+        "TUP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.36294719,
+          "mean": 0.30761507,
+          "minimum": 0.18679808
+        }
+      },
+      "constraints": {
+        "adjacent_count": 14,
+        "adjacent_ordered": 13,
+        "adjacent_pair_effects": [
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0065",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0042"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0042",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0033"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_prediction": 86,
+            "upper_qb_id": "QB-0005"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0035",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0022"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0022",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0012"
+          },
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": false,
+            "upper_prediction": 79,
+            "upper_qb_id": "QB-0057"
+          },
+          {
+            "lower_prediction": 79,
+            "lower_qb_id": "QB-0057",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0037"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0037",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0032"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0032",
+            "predicted_ordered": true,
+            "upper_prediction": 83,
+            "upper_qb_id": "QB-0030"
+          },
+          {
+            "lower_prediction": 83,
+            "lower_qb_id": "QB-0025",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0015"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0016",
+            "predicted_ordered": true,
+            "upper_prediction": 85,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_prediction": 86,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "lower_prediction": 86,
+            "lower_qb_id": "QB-0004",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "lower_prediction": 87,
+            "lower_qb_id": "QB-0002",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0071"
+          }
+        ],
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 11,
+        "same_ovr_pair_effects": [
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0050",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0065"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0033",
+            "predicted_equal": true,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0036"
+          },
+          {
+            "left_prediction": 86,
+            "left_qb_id": "QB-0005",
+            "predicted_equal": true,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0006"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0048",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0069"
+          },
+          {
+            "left_prediction": 81,
+            "left_qb_id": "QB-0034",
+            "predicted_equal": false,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0035"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0022",
+            "predicted_equal": false,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0026"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0047",
+            "predicted_equal": false,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0059"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0038",
+            "predicted_equal": false,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0040"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0031",
+            "predicted_equal": true,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0032"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0019",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0021"
+          },
+          {
+            "left_prediction": 84,
+            "left_qb_id": "QB-0013",
+            "predicted_equal": true,
+            "right_prediction": 84,
+            "right_qb_id": "QB-0018"
+          },
+          {
+            "left_prediction": 85,
+            "left_qb_id": "QB-0010",
+            "predicted_equal": true,
+            "right_prediction": 85,
+            "right_qb_id": "QB-0011"
+          },
+          {
+            "left_prediction": 86,
+            "left_qb_id": "QB-0004",
+            "predicted_equal": true,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0008"
+          },
+          {
+            "left_prediction": 87,
+            "left_qb_id": "QB-0001",
+            "predicted_equal": true,
+            "right_prediction": 87,
+            "right_qb_id": "QB-0002"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0023",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0028"
+          }
+        ],
+        "sequence_effects_by_information_value": [
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.28867514,
+            "lower_qb_id": "QB-0013",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0003"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.27975145,
+            "lower_qb_id": "QB-0038",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0013"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26967995,
+            "lower_qb_id": "QB-0050",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0007"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26612315,
+            "lower_qb_id": "QB-0027",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0071"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.25,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.21693046,
+            "lower_qb_id": "QB-0039",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.20249019,
+            "lower_qb_id": "QB-0049",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.19264839,
+            "lower_qb_id": "QB-0051",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0008"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.13159034,
+            "lower_qb_id": "QB-0041",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0019"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.12970131,
+            "lower_qb_id": "QB-0018",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0001"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11878278,
+            "lower_qb_id": "QB-0046",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0011"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11396058,
+            "lower_qb_id": "QB-0047",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0024"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.10714286,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0072"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.08290267,
+            "lower_qb_id": "QB-0015",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0006"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04816831,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0054"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04441156,
+            "lower_qb_id": "QB-0054",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0038"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.0,
+            "lower_qb_id": "QB-0067",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0068"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.666667,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.352941,
+        "mean_signed_residual": 0.039216,
+        "within_one_accuracy": 0.980392
+      },
+      "feature_names": [
+        "SPD",
+        "ACC",
+        "AGI",
+        "AWR",
+        "STR",
+        "TGH",
+        "THP",
+        "TAC",
+        "SAC",
+        "MAC",
+        "DAC",
+        "RUN",
+        "TUP",
+        "PAC",
+        "BSK"
+      ],
+      "fit_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.862745,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.137255,
+        "mean_signed_residual": 0.019608,
+        "within_one_accuracy": 1.0
+      },
+      "holdout_by_archetype": {
+        "Backfield Creator": {
+          "count": 3,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "Dual Threat": {
+          "count": 3,
+          "exact_accuracy": 0.333333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.666667,
+          "mean_signed_residual": -0.666667,
+          "within_one_accuracy": 1.0
+        },
+        "Pocket Passer": {
+          "count": 12,
+          "exact_accuracy": 0.833333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.166667,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_errors": [
+        {
+          "actual_ovr": 84,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "passing_diminishing_90",
+          "latent_score": 84.67604321,
+          "player": "Arch Manning",
+          "predicted_ovr": 85,
+          "qb_id": "QB-0016",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 82,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "passing_diminishing_90",
+          "latent_score": 81.18654603,
+          "player": "Marcel Reed",
+          "predicted_ovr": 81,
+          "qb_id": "QB-0034",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 89,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "passing_diminishing_90",
+          "latent_score": 88.43043028,
+          "player": "Michael Vick",
+          "predicted_ovr": 88,
+          "qb_id": "QB-0070",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 88,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "passing_diminishing_90",
+          "latent_score": 87.42285676,
+          "player": "Sam Leavitt",
+          "predicted_ovr": 87,
+          "qb_id": "QB-0071",
+          "residual": -1
+        }
+      ],
+      "holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.777778,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.222222,
+        "mean_signed_residual": -0.111111,
+        "within_one_accuracy": 1.0
+      },
+      "learned_parameter_count": 16,
+      "mechanism_count": 1,
+      "motivation": [
+        "High passing ratings may have diminishing EA valuation."
+      ],
+      "name": "SAC/MAC/DAC half contribution above 90",
+      "parameters": {
+        "coefficients": {
+          "ACC": 0.3138912,
+          "AGI": 0.14565705,
+          "AWR": 0.34518285,
+          "BSK": 0.02441048,
+          "DAC": 0.32293845,
+          "MAC": 0.41556908,
+          "PAC": 0.22247586,
+          "RUN": 0.07672736,
+          "SAC": 0.32671508,
+          "SPD": 0.09392442,
+          "STR": 0.04833806,
+          "TAC": 0.07525833,
+          "TGH": 0.00710888,
+          "THP": 0.84606655,
+          "TUP": 0.33617773
+        },
+        "fixed_structural_parameters": 2,
+        "intercept": 82.37254902
+      },
+      "qb_0074_audit": {
+        "frozen_formula_audit_matches": true,
+        "largest_positive_contributions": [
+          [
+            "AWR",
+            0.28939467
+          ],
+          [
+            "TAC",
+            0.08894101
+          ],
+          [
+            "STR",
+            0.0445665
+          ],
+          [
+            "TGH",
+            0.01338901
+          ],
+          [
+            "BSK",
+            -0.00393869
+          ]
+        ],
+        "latent_score": 79.85679674,
+        "predicted_ovr": 80,
+        "qb_id": "QB-0074",
+        "ratings_complete": true,
+        "source_id": "SRC-QB-002",
+        "source_locator": "Screenshot 2026-07-26 204922.jpg",
+        "source_record": "QB_Cards!78"
+      },
+      "rejection_reason": "No joint improvement over Architecture A on independent holdout and leakage-controlled cross-OVR exact accuracy.",
+      "structural_parameter_count": 2,
+      "support_status": "REJECTED",
+      "total_complexity": 18
+    },
+    {
+      "candidate_id": "passing_accuracy_bottleneck",
+      "coefficient_stability": {
+        "ACC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.48879491,
+          "mean": 0.2579347,
+          "minimum": 0.134836
+        },
+        "AGI": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.22648738,
+          "mean": 0.17482952,
+          "minimum": 0.14296696
+        },
+        "AWR": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.34220121,
+          "mean": 0.29316636,
+          "minimum": 0.20554853
+        },
+        "BSK": {
+          "collapsed_to_zero_folds": 2,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.1128899,
+          "mean": 0.04452088,
+          "minimum": 0.0
+        },
+        "DAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.30001805,
+          "mean": 0.19334524,
+          "minimum": 0.05961264
+        },
+        "MAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.40764999,
+          "mean": 0.36593591,
+          "minimum": 0.28682253
+        },
+        "MIN_SAC_MAC_DAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.33564095,
+          "mean": 0.28439698,
+          "minimum": 0.10419699
+        },
+        "PAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.35391828,
+          "mean": 0.17642266,
+          "minimum": 0.09123615
+        },
+        "RUN": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.12324217,
+          "mean": 0.08289318,
+          "minimum": 0.0
+        },
+        "SAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.34411935,
+          "mean": 0.19097364,
+          "minimum": 0.08391562
+        },
+        "SPD": {
+          "collapsed_to_zero_folds": 2,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.19359441,
+          "mean": 0.07769851,
+          "minimum": 0.0
+        },
+        "STR": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.09665699,
+          "mean": 0.06131625,
+          "minimum": 0.0
+        },
+        "TAC": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.28859253,
+          "mean": 0.09920002,
+          "minimum": 0.0
+        },
+        "TGH": {
+          "collapsed_to_zero_folds": 2,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.20237066,
+          "mean": 0.05290271,
+          "minimum": 0.0
+        },
+        "THP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.90818387,
+          "mean": 0.83507612,
+          "minimum": 0.71481376
+        },
+        "TUP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.36023546,
+          "mean": 0.29512809,
+          "minimum": 0.17742453
+        }
+      },
+      "constraints": {
+        "adjacent_count": 14,
+        "adjacent_ordered": 13,
+        "adjacent_pair_effects": [
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0065",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0042"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0042",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0033"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0005"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0035",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0022"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0022",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0012"
+          },
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_prediction": 80,
+            "upper_qb_id": "QB-0057"
+          },
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0057",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0037"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0037",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0032"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0032",
+            "predicted_ordered": true,
+            "upper_prediction": 83,
+            "upper_qb_id": "QB-0030"
+          },
+          {
+            "lower_prediction": 83,
+            "lower_qb_id": "QB-0025",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0015"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0016",
+            "predicted_ordered": true,
+            "upper_prediction": 85,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_prediction": 86,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "lower_prediction": 86,
+            "lower_qb_id": "QB-0004",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "lower_prediction": 88,
+            "lower_qb_id": "QB-0002",
+            "predicted_ordered": false,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0071"
+          }
+        ],
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 9,
+        "same_ovr_pair_effects": [
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0050",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0065"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0033",
+            "predicted_equal": false,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0036"
+          },
+          {
+            "left_prediction": 87,
+            "left_qb_id": "QB-0005",
+            "predicted_equal": false,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0006"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0048",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0069"
+          },
+          {
+            "left_prediction": 81,
+            "left_qb_id": "QB-0034",
+            "predicted_equal": false,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0035"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0022",
+            "predicted_equal": false,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0026"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0047",
+            "predicted_equal": false,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0059"
+          },
+          {
+            "left_prediction": 81,
+            "left_qb_id": "QB-0038",
+            "predicted_equal": true,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0040"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0031",
+            "predicted_equal": true,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0032"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0019",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0021"
+          },
+          {
+            "left_prediction": 84,
+            "left_qb_id": "QB-0013",
+            "predicted_equal": true,
+            "right_prediction": 84,
+            "right_qb_id": "QB-0018"
+          },
+          {
+            "left_prediction": 85,
+            "left_qb_id": "QB-0010",
+            "predicted_equal": true,
+            "right_prediction": 85,
+            "right_qb_id": "QB-0011"
+          },
+          {
+            "left_prediction": 86,
+            "left_qb_id": "QB-0004",
+            "predicted_equal": true,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0008"
+          },
+          {
+            "left_prediction": 87,
+            "left_qb_id": "QB-0001",
+            "predicted_equal": false,
+            "right_prediction": 88,
+            "right_qb_id": "QB-0002"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0023",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0028"
+          }
+        ],
+        "sequence_effects_by_information_value": [
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.28867514,
+            "lower_qb_id": "QB-0013",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0003"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.27975145,
+            "lower_qb_id": "QB-0038",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0013"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26967995,
+            "lower_qb_id": "QB-0050",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0007"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26612315,
+            "lower_qb_id": "QB-0027",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0071"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.25,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.21693046,
+            "lower_qb_id": "QB-0039",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.20249019,
+            "lower_qb_id": "QB-0049",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.19264839,
+            "lower_qb_id": "QB-0051",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0008"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.13159034,
+            "lower_qb_id": "QB-0041",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0019"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.12970131,
+            "lower_qb_id": "QB-0018",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0001"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11878278,
+            "lower_qb_id": "QB-0046",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0011"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11396058,
+            "lower_qb_id": "QB-0047",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0024"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.10714286,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0072"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.08290267,
+            "lower_qb_id": "QB-0015",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0006"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04816831,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0054"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04441156,
+            "lower_qb_id": "QB-0054",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0038"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.0,
+            "lower_qb_id": "QB-0067",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0068"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.627451,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.372549,
+        "mean_signed_residual": 0.019608,
+        "within_one_accuracy": 1.0
+      },
+      "feature_names": [
+        "SPD",
+        "ACC",
+        "AGI",
+        "AWR",
+        "STR",
+        "TGH",
+        "THP",
+        "TAC",
+        "SAC",
+        "MAC",
+        "DAC",
+        "RUN",
+        "TUP",
+        "PAC",
+        "BSK",
+        "MIN_SAC_MAC_DAC"
+      ],
+      "fit_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.882353,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.117647,
+        "mean_signed_residual": 0.039216,
+        "within_one_accuracy": 1.0
+      },
+      "holdout_by_archetype": {
+        "Backfield Creator": {
+          "count": 3,
+          "exact_accuracy": 0.666667,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.333333,
+          "mean_signed_residual": 0.333333,
+          "within_one_accuracy": 1.0
+        },
+        "Dual Threat": {
+          "count": 3,
+          "exact_accuracy": 0.0,
+          "maximum_error": 1,
+          "mean_absolute_error": 1.0,
+          "mean_signed_residual": -0.333333,
+          "within_one_accuracy": 1.0
+        },
+        "Pocket Passer": {
+          "count": 12,
+          "exact_accuracy": 0.75,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.25,
+          "mean_signed_residual": 0.083333,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_errors": [
+        {
+          "actual_ovr": 87,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "passing_accuracy_bottleneck",
+          "latent_score": 87.56006613,
+          "player": "Tom Brady",
+          "predicted_ovr": 88,
+          "qb_id": "QB-0002",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 86,
+          "analysis_partition": "holdout",
+          "archetype": "Backfield Creator",
+          "candidate_id": "passing_accuracy_bottleneck",
+          "latent_score": 86.52330643,
+          "player": "Robert Griffin III",
+          "predicted_ovr": 87,
+          "qb_id": "QB-0005",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 84,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "passing_accuracy_bottleneck",
+          "latent_score": 84.7046269,
+          "player": "Arch Manning",
+          "predicted_ovr": 85,
+          "qb_id": "QB-0016",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 82,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "passing_accuracy_bottleneck",
+          "latent_score": 81.23052689,
+          "player": "Marcel Reed",
+          "predicted_ovr": 81,
+          "qb_id": "QB-0034",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 80,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "passing_accuracy_bottleneck",
+          "latent_score": 80.57328119,
+          "player": "Donald Hammond III",
+          "predicted_ovr": 81,
+          "qb_id": "QB-0053",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 89,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "passing_accuracy_bottleneck",
+          "latent_score": 88.43285185,
+          "player": "Michael Vick",
+          "predicted_ovr": 88,
+          "qb_id": "QB-0070",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 88,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "passing_accuracy_bottleneck",
+          "latent_score": 87.26178433,
+          "player": "Sam Leavitt",
+          "predicted_ovr": 87,
+          "qb_id": "QB-0071",
+          "residual": -1
+        }
+      ],
+      "holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.611111,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.388889,
+        "mean_signed_residual": 0.055556,
+        "within_one_accuracy": 1.0
+      },
+      "learned_parameter_count": 17,
+      "mechanism_count": 1,
+      "motivation": [
+        "QB-0016 overprediction.",
+        "Large same-OVR passing contrasts."
+      ],
+      "name": "Minimum of SAC/MAC/DAC",
+      "parameters": {
+        "coefficients": {
+          "ACC": 0.32743184,
+          "AGI": 0.15511198,
+          "AWR": 0.31992464,
+          "BSK": 0.00787709,
+          "DAC": 0.20891298,
+          "MAC": 0.37367961,
+          "MIN_SAC_MAC_DAC": 0.29817711,
+          "PAC": 0.19003289,
+          "RUN": 0.08385929,
+          "SAC": 0.17947598,
+          "SPD": 0.07034526,
+          "STR": 0.08823129,
+          "TAC": 0.07342001,
+          "TGH": 0.01307684,
+          "THP": 0.86276039,
+          "TUP": 0.32426775
+        },
+        "fixed_structural_parameters": 0,
+        "intercept": 82.37254902
+      },
+      "qb_0074_audit": {
+        "frozen_formula_audit_matches": true,
+        "largest_positive_contributions": [
+          [
+            "AWR",
+            0.26821868
+          ],
+          [
+            "TAC",
+            0.08676846
+          ],
+          [
+            "STR",
+            0.08134707
+          ],
+          [
+            "TGH",
+            0.02462919
+          ],
+          [
+            "BSK",
+            -0.00127099
+          ]
+        ],
+        "latent_score": 79.80626287,
+        "predicted_ovr": 80,
+        "qb_id": "QB-0074",
+        "ratings_complete": true,
+        "source_id": "SRC-QB-002",
+        "source_locator": "Screenshot 2026-07-26 204922.jpg",
+        "source_record": "QB_Cards!78"
+      },
+      "rejection_reason": "No joint improvement over Architecture A on independent holdout and leakage-controlled cross-OVR exact accuracy.",
+      "structural_parameter_count": 0,
+      "support_status": "REJECTED",
+      "total_complexity": 17
+    },
+    {
+      "candidate_id": "power_deep_bottleneck",
+      "coefficient_stability": {
+        "ACC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.46630026,
+          "mean": 0.27905414,
+          "minimum": 0.17419616
+        },
+        "AGI": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.19309903,
+          "mean": 0.14272629,
+          "minimum": 0.11620661
+        },
+        "AWR": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.37784719,
+          "mean": 0.32820945,
+          "minimum": 0.23788978
+        },
+        "BSK": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.12021868,
+          "mean": 0.04306786,
+          "minimum": 0.0
+        },
+        "DAC": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.37970371,
+          "mean": 0.22856755,
+          "minimum": 0.0
+        },
+        "MAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.44584311,
+          "mean": 0.40425611,
+          "minimum": 0.3107789
+        },
+        "MIN_THP_DAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.24315796,
+          "mean": 0.15970271,
+          "minimum": 0.08168125
+        },
+        "PAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.40526862,
+          "mean": 0.21161618,
+          "minimum": 0.08050853
+        },
+        "RUN": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.14703041,
+          "mean": 0.08293628,
+          "minimum": 0.0
+        },
+        "SAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.51805541,
+          "mean": 0.34825464,
+          "minimum": 0.23124633
+        },
+        "SPD": {
+          "collapsed_to_zero_folds": 2,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.2413173,
+          "mean": 0.10479492,
+          "minimum": 0.0
+        },
+        "STR": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.09131875,
+          "mean": 0.03701515,
+          "minimum": 0.0
+        },
+        "TAC": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.29881481,
+          "mean": 0.10350627,
+          "minimum": 0.0
+        },
+        "TGH": {
+          "collapsed_to_zero_folds": 4,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.14549965,
+          "mean": 0.02983337,
+          "minimum": 0.0
+        },
+        "THP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.7641526,
+          "mean": 0.70956762,
+          "minimum": 0.59085807
+        },
+        "TUP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.36751227,
+          "mean": 0.30684827,
+          "minimum": 0.19068829
+        }
+      },
+      "constraints": {
+        "adjacent_count": 14,
+        "adjacent_ordered": 14,
+        "adjacent_pair_effects": [
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0065",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0042"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0042",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0033"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_prediction": 86,
+            "upper_qb_id": "QB-0005"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0035",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0022"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0022",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0012"
+          },
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_prediction": 80,
+            "upper_qb_id": "QB-0057"
+          },
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0057",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0037"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0037",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0032"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0032",
+            "predicted_ordered": true,
+            "upper_prediction": 83,
+            "upper_qb_id": "QB-0030"
+          },
+          {
+            "lower_prediction": 83,
+            "lower_qb_id": "QB-0025",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0015"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0016",
+            "predicted_ordered": true,
+            "upper_prediction": 85,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_prediction": 86,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "lower_prediction": 86,
+            "lower_qb_id": "QB-0004",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "lower_prediction": 87,
+            "lower_qb_id": "QB-0002",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0071"
+          }
+        ],
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 10,
+        "same_ovr_pair_effects": [
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0050",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0065"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0033",
+            "predicted_equal": false,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0036"
+          },
+          {
+            "left_prediction": 86,
+            "left_qb_id": "QB-0005",
+            "predicted_equal": true,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0006"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0048",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0069"
+          },
+          {
+            "left_prediction": 81,
+            "left_qb_id": "QB-0034",
+            "predicted_equal": false,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0035"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0022",
+            "predicted_equal": false,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0026"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0047",
+            "predicted_equal": false,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0059"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0038",
+            "predicted_equal": false,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0040"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0031",
+            "predicted_equal": true,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0032"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0019",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0021"
+          },
+          {
+            "left_prediction": 84,
+            "left_qb_id": "QB-0013",
+            "predicted_equal": true,
+            "right_prediction": 84,
+            "right_qb_id": "QB-0018"
+          },
+          {
+            "left_prediction": 85,
+            "left_qb_id": "QB-0010",
+            "predicted_equal": true,
+            "right_prediction": 85,
+            "right_qb_id": "QB-0011"
+          },
+          {
+            "left_prediction": 86,
+            "left_qb_id": "QB-0004",
+            "predicted_equal": true,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0008"
+          },
+          {
+            "left_prediction": 87,
+            "left_qb_id": "QB-0001",
+            "predicted_equal": true,
+            "right_prediction": 87,
+            "right_qb_id": "QB-0002"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0023",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0028"
+          }
+        ],
+        "sequence_effects_by_information_value": [
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.28867514,
+            "lower_qb_id": "QB-0013",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0003"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.27975145,
+            "lower_qb_id": "QB-0038",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0013"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26967995,
+            "lower_qb_id": "QB-0050",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0007"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26612315,
+            "lower_qb_id": "QB-0027",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0071"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.25,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.21693046,
+            "lower_qb_id": "QB-0039",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.20249019,
+            "lower_qb_id": "QB-0049",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.19264839,
+            "lower_qb_id": "QB-0051",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0008"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.13159034,
+            "lower_qb_id": "QB-0041",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0019"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.12970131,
+            "lower_qb_id": "QB-0018",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0001"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11878278,
+            "lower_qb_id": "QB-0046",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0011"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11396058,
+            "lower_qb_id": "QB-0047",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0024"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.10714286,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0072"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.08290267,
+            "lower_qb_id": "QB-0015",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0006"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04816831,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0054"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04441156,
+            "lower_qb_id": "QB-0054",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0038"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.0,
+            "lower_qb_id": "QB-0067",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0068"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.627451,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.392157,
+        "mean_signed_residual": 0.0,
+        "within_one_accuracy": 0.980392
+      },
+      "feature_names": [
+        "SPD",
+        "ACC",
+        "AGI",
+        "AWR",
+        "STR",
+        "TGH",
+        "THP",
+        "TAC",
+        "SAC",
+        "MAC",
+        "DAC",
+        "RUN",
+        "TUP",
+        "PAC",
+        "BSK",
+        "MIN_THP_DAC"
+      ],
+      "fit_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.862745,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.137255,
+        "mean_signed_residual": 0.058824,
+        "within_one_accuracy": 1.0
+      },
+      "holdout_by_archetype": {
+        "Backfield Creator": {
+          "count": 3,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "Dual Threat": {
+          "count": 3,
+          "exact_accuracy": 0.333333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.666667,
+          "mean_signed_residual": -0.666667,
+          "within_one_accuracy": 1.0
+        },
+        "Pocket Passer": {
+          "count": 12,
+          "exact_accuracy": 0.833333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.166667,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_errors": [
+        {
+          "actual_ovr": 84,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "power_deep_bottleneck",
+          "latent_score": 84.65471614,
+          "player": "Arch Manning",
+          "predicted_ovr": 85,
+          "qb_id": "QB-0016",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 82,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "power_deep_bottleneck",
+          "latent_score": 81.2353431,
+          "player": "Marcel Reed",
+          "predicted_ovr": 81,
+          "qb_id": "QB-0034",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 89,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "power_deep_bottleneck",
+          "latent_score": 88.35831406,
+          "player": "Michael Vick",
+          "predicted_ovr": 88,
+          "qb_id": "QB-0070",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 88,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "power_deep_bottleneck",
+          "latent_score": 87.39030132,
+          "player": "Sam Leavitt",
+          "predicted_ovr": 87,
+          "qb_id": "QB-0071",
+          "residual": -1
+        }
+      ],
+      "holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.777778,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.222222,
+        "mean_signed_residual": -0.111111,
+        "within_one_accuracy": 1.0
+      },
+      "learned_parameter_count": 17,
+      "mechanism_count": 1,
+      "motivation": [
+        "QB-0070 and QB-0071 underprediction.",
+        "Deep accuracy requires arm power."
+      ],
+      "name": "Minimum of THP/DAC",
+      "parameters": {
+        "coefficients": {
+          "ACC": 0.32426853,
+          "AGI": 0.13616886,
+          "AWR": 0.34605543,
+          "BSK": 0.01741681,
+          "DAC": 0.26978825,
+          "MAC": 0.41714488,
+          "MIN_THP_DAC": 0.13233981,
+          "PAC": 0.21894289,
+          "RUN": 0.07728764,
+          "SAC": 0.34155741,
+          "SPD": 0.10383075,
+          "STR": 0.04954577,
+          "TAC": 0.07206464,
+          "TGH": 0.0,
+          "THP": 0.75162278,
+          "TUP": 0.33640457
+        },
+        "fixed_structural_parameters": 0,
+        "intercept": 82.37254902
+      },
+      "qb_0074_audit": {
+        "frozen_formula_audit_matches": true,
+        "largest_positive_contributions": [
+          [
+            "AWR",
+            0.29012623
+          ],
+          [
+            "TAC",
+            0.08516668
+          ],
+          [
+            "STR",
+            0.04567997
+          ],
+          [
+            "TGH",
+            0.0
+          ],
+          [
+            "BSK",
+            -0.00281024
+          ]
+        ],
+        "latent_score": 79.86974,
+        "predicted_ovr": 80,
+        "qb_id": "QB-0074",
+        "ratings_complete": true,
+        "source_id": "SRC-QB-002",
+        "source_locator": "Screenshot 2026-07-26 204922.jpg",
+        "source_record": "QB_Cards!78"
+      },
+      "rejection_reason": "No joint improvement over Architecture A on independent holdout and leakage-controlled cross-OVR exact accuracy.",
+      "structural_parameter_count": 0,
+      "support_status": "REJECTED",
+      "total_complexity": 17
+    },
+    {
+      "candidate_id": "mobility_bottleneck",
+      "coefficient_stability": {
+        "ACC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.44150253,
+          "mean": 0.24736488,
+          "minimum": 0.13988046
+        },
+        "AGI": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.17314506,
+          "mean": 0.11453724,
+          "minimum": 0.0
+        },
+        "AWR": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.36672299,
+          "mean": 0.32428004,
+          "minimum": 0.23660466
+        },
+        "BSK": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.14342788,
+          "mean": 0.05412766,
+          "minimum": 0.0
+        },
+        "DAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.42222247,
+          "mean": 0.29268582,
+          "minimum": 0.11941653
+        },
+        "MAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.44521716,
+          "mean": 0.40353095,
+          "minimum": 0.31050738
+        },
+        "MIN_SPD_ACC_AGI": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.16494224,
+          "mean": 0.0585744,
+          "minimum": 0.0
+        },
+        "PAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.41377499,
+          "mean": 0.21598113,
+          "minimum": 0.10019536
+        },
+        "RUN": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.16686898,
+          "mean": 0.08294834,
+          "minimum": 0.0
+        },
+        "SAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.51541561,
+          "mean": 0.33189529,
+          "minimum": 0.20754072
+        },
+        "SPD": {
+          "collapsed_to_zero_folds": 2,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.23059734,
+          "mean": 0.09210887,
+          "minimum": 0.0
+        },
+        "STR": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.08141506,
+          "mean": 0.03392424,
+          "minimum": 0.0
+        },
+        "TAC": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.29937375,
+          "mean": 0.10291232,
+          "minimum": 0.0
+        },
+        "TGH": {
+          "collapsed_to_zero_folds": 3,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.17523166,
+          "mean": 0.04279636,
+          "minimum": 0.0
+        },
+        "THP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.89829364,
+          "mean": 0.81849637,
+          "minimum": 0.68006328
+        },
+        "TUP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.36417868,
+          "mean": 0.30881818,
+          "minimum": 0.18958392
+        }
+      },
+      "constraints": {
+        "adjacent_count": 14,
+        "adjacent_ordered": 13,
+        "adjacent_pair_effects": [
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0065",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0042"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0042",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0033"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_prediction": 86,
+            "upper_qb_id": "QB-0005"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0035",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0022"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0022",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0012"
+          },
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": false,
+            "upper_prediction": 79,
+            "upper_qb_id": "QB-0057"
+          },
+          {
+            "lower_prediction": 79,
+            "lower_qb_id": "QB-0057",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0037"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0037",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0032"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0032",
+            "predicted_ordered": true,
+            "upper_prediction": 83,
+            "upper_qb_id": "QB-0030"
+          },
+          {
+            "lower_prediction": 83,
+            "lower_qb_id": "QB-0025",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0015"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0016",
+            "predicted_ordered": true,
+            "upper_prediction": 85,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_prediction": 86,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "lower_prediction": 86,
+            "lower_qb_id": "QB-0004",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "lower_prediction": 87,
+            "lower_qb_id": "QB-0002",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0071"
+          }
+        ],
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 11,
+        "same_ovr_pair_effects": [
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0050",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0065"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0033",
+            "predicted_equal": true,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0036"
+          },
+          {
+            "left_prediction": 86,
+            "left_qb_id": "QB-0005",
+            "predicted_equal": true,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0006"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0048",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0069"
+          },
+          {
+            "left_prediction": 81,
+            "left_qb_id": "QB-0034",
+            "predicted_equal": false,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0035"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0022",
+            "predicted_equal": false,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0026"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0047",
+            "predicted_equal": false,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0059"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0038",
+            "predicted_equal": false,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0040"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0031",
+            "predicted_equal": true,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0032"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0019",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0021"
+          },
+          {
+            "left_prediction": 84,
+            "left_qb_id": "QB-0013",
+            "predicted_equal": true,
+            "right_prediction": 84,
+            "right_qb_id": "QB-0018"
+          },
+          {
+            "left_prediction": 85,
+            "left_qb_id": "QB-0010",
+            "predicted_equal": true,
+            "right_prediction": 85,
+            "right_qb_id": "QB-0011"
+          },
+          {
+            "left_prediction": 86,
+            "left_qb_id": "QB-0004",
+            "predicted_equal": true,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0008"
+          },
+          {
+            "left_prediction": 87,
+            "left_qb_id": "QB-0001",
+            "predicted_equal": true,
+            "right_prediction": 87,
+            "right_qb_id": "QB-0002"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0023",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0028"
+          }
+        ],
+        "sequence_effects_by_information_value": [
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.28867514,
+            "lower_qb_id": "QB-0013",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0003"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.27975145,
+            "lower_qb_id": "QB-0038",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0013"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26967995,
+            "lower_qb_id": "QB-0050",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0007"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26612315,
+            "lower_qb_id": "QB-0027",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0071"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.25,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.21693046,
+            "lower_qb_id": "QB-0039",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.20249019,
+            "lower_qb_id": "QB-0049",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.19264839,
+            "lower_qb_id": "QB-0051",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0008"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.13159034,
+            "lower_qb_id": "QB-0041",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0019"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.12970131,
+            "lower_qb_id": "QB-0018",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0001"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11878278,
+            "lower_qb_id": "QB-0046",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0011"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11396058,
+            "lower_qb_id": "QB-0047",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0024"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.10714286,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0072"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.08290267,
+            "lower_qb_id": "QB-0015",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0006"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04816831,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0054"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04441156,
+            "lower_qb_id": "QB-0054",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0038"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.0,
+            "lower_qb_id": "QB-0067",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0068"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.686275,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.333333,
+        "mean_signed_residual": 0.019608,
+        "within_one_accuracy": 0.980392
+      },
+      "feature_names": [
+        "SPD",
+        "ACC",
+        "AGI",
+        "AWR",
+        "STR",
+        "TGH",
+        "THP",
+        "TAC",
+        "SAC",
+        "MAC",
+        "DAC",
+        "RUN",
+        "TUP",
+        "PAC",
+        "BSK",
+        "MIN_SPD_ACC_AGI"
+      ],
+      "fit_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.862745,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.137255,
+        "mean_signed_residual": 0.019608,
+        "within_one_accuracy": 1.0
+      },
+      "holdout_by_archetype": {
+        "Backfield Creator": {
+          "count": 3,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "Dual Threat": {
+          "count": 3,
+          "exact_accuracy": 0.333333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.666667,
+          "mean_signed_residual": -0.666667,
+          "within_one_accuracy": 1.0
+        },
+        "Pocket Passer": {
+          "count": 12,
+          "exact_accuracy": 0.833333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.166667,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_errors": [
+        {
+          "actual_ovr": 84,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "mobility_bottleneck",
+          "latent_score": 84.67338091,
+          "player": "Arch Manning",
+          "predicted_ovr": 85,
+          "qb_id": "QB-0016",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 82,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "mobility_bottleneck",
+          "latent_score": 81.18739552,
+          "player": "Marcel Reed",
+          "predicted_ovr": 81,
+          "qb_id": "QB-0034",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 89,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "mobility_bottleneck",
+          "latent_score": 88.43159559,
+          "player": "Michael Vick",
+          "predicted_ovr": 88,
+          "qb_id": "QB-0070",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 88,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "mobility_bottleneck",
+          "latent_score": 87.42699896,
+          "player": "Sam Leavitt",
+          "predicted_ovr": 87,
+          "qb_id": "QB-0071",
+          "residual": -1
+        }
+      ],
+      "holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.777778,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.222222,
+        "mean_signed_residual": -0.111111,
+        "within_one_accuracy": 1.0
+      },
+      "learned_parameter_count": 17,
+      "mechanism_count": 1,
+      "motivation": [
+        "Dual Threat holdout errors.",
+        "EA mobility may be bottlenecked."
+      ],
+      "name": "Minimum of SPD/ACC/AGI",
+      "parameters": {
+        "coefficients": {
+          "ACC": 0.29741448,
+          "AGI": 0.08476289,
+          "AWR": 0.34435613,
+          "BSK": 0.03166205,
+          "DAC": 0.32529304,
+          "MAC": 0.41755768,
+          "MIN_SPD_ACC_AGI": 0.07958947,
+          "PAC": 0.22032103,
+          "RUN": 0.07620408,
+          "SAC": 0.32859364,
+          "SPD": 0.08508447,
+          "STR": 0.0447414,
+          "TAC": 0.0709033,
+          "TGH": 0.01027316,
+          "THP": 0.8457927,
+          "TUP": 0.33742928
+        },
+        "fixed_structural_parameters": 0,
+        "intercept": 82.37254902
+      },
+      "qb_0074_audit": {
+        "frozen_formula_audit_matches": true,
+        "largest_positive_contributions": [
+          [
+            "AWR",
+            0.28870156
+          ],
+          [
+            "TAC",
+            0.0837942
+          ],
+          [
+            "STR",
+            0.04125046
+          ],
+          [
+            "TGH",
+            0.01934869
+          ],
+          [
+            "BSK",
+            -0.00510875
+          ]
+        ],
+        "latent_score": 79.85155394,
+        "predicted_ovr": 80,
+        "qb_id": "QB-0074",
+        "ratings_complete": true,
+        "source_id": "SRC-QB-002",
+        "source_locator": "Screenshot 2026-07-26 204922.jpg",
+        "source_record": "QB_Cards!78"
+      },
+      "rejection_reason": "No joint improvement over Architecture A on independent holdout and leakage-controlled cross-OVR exact accuracy.",
+      "structural_parameter_count": 0,
+      "support_status": "REJECTED",
+      "total_complexity": 17
+    },
+    {
+      "candidate_id": "low_awareness_floor_80",
+      "coefficient_stability": {
+        "ACC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.44179172,
+          "mean": 0.23773882,
+          "minimum": 0.12136912
+        },
+        "AGI": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.2000634,
+          "mean": 0.15937913,
+          "minimum": 0.13093405
+        },
+        "AWR": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.11515778,
+          "mean": 0.06214335,
+          "minimum": 0.01226201
+        },
+        "AWR_BELOW_80": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.38026995,
+          "mean": 0.29140609,
+          "minimum": 0.16636702
+        },
+        "BSK": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.11516274,
+          "mean": 0.05294278,
+          "minimum": 0.0
+        },
+        "DAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.4305636,
+          "mean": 0.29387089,
+          "minimum": 0.12667831
+        },
+        "MAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.45424342,
+          "mean": 0.40329594,
+          "minimum": 0.31513487
+        },
+        "PAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.38571581,
+          "mean": 0.2035321,
+          "minimum": 0.09753461
+        },
+        "RUN": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.18358886,
+          "mean": 0.09392556,
+          "minimum": 0.0
+        },
+        "SAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.51887282,
+          "mean": 0.33957499,
+          "minimum": 0.22008126
+        },
+        "SPD": {
+          "collapsed_to_zero_folds": 2,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.22845582,
+          "mean": 0.09425976,
+          "minimum": 0.0
+        },
+        "STR": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.09322431,
+          "mean": 0.04208182,
+          "minimum": 0.0
+        },
+        "TAC": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.30200924,
+          "mean": 0.11092726,
+          "minimum": 0.0
+        },
+        "TGH": {
+          "collapsed_to_zero_folds": 3,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.14500633,
+          "mean": 0.02962859,
+          "minimum": 0.0
+        },
+        "THP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.90771213,
+          "mean": 0.82740603,
+          "minimum": 0.69779677
+        },
+        "TUP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.36598328,
+          "mean": 0.31302789,
+          "minimum": 0.19543851
+        }
+      },
+      "constraints": {
+        "adjacent_count": 14,
+        "adjacent_ordered": 13,
+        "adjacent_pair_effects": [
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0065",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0042"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0042",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0033"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_prediction": 86,
+            "upper_qb_id": "QB-0005"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0035",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0022"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0022",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0012"
+          },
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_prediction": 80,
+            "upper_qb_id": "QB-0057"
+          },
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0057",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0037"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0037",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0032"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0032",
+            "predicted_ordered": true,
+            "upper_prediction": 83,
+            "upper_qb_id": "QB-0030"
+          },
+          {
+            "lower_prediction": 83,
+            "lower_qb_id": "QB-0025",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0015"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0016",
+            "predicted_ordered": true,
+            "upper_prediction": 85,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_prediction": 86,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "lower_prediction": 86,
+            "lower_qb_id": "QB-0004",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "lower_prediction": 88,
+            "lower_qb_id": "QB-0002",
+            "predicted_ordered": false,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0071"
+          }
+        ],
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 10,
+        "same_ovr_pair_effects": [
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0050",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0065"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0033",
+            "predicted_equal": true,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0036"
+          },
+          {
+            "left_prediction": 86,
+            "left_qb_id": "QB-0005",
+            "predicted_equal": true,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0006"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0048",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0069"
+          },
+          {
+            "left_prediction": 81,
+            "left_qb_id": "QB-0034",
+            "predicted_equal": false,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0035"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0022",
+            "predicted_equal": false,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0026"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0047",
+            "predicted_equal": false,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0059"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0038",
+            "predicted_equal": false,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0040"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0031",
+            "predicted_equal": true,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0032"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0019",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0021"
+          },
+          {
+            "left_prediction": 84,
+            "left_qb_id": "QB-0013",
+            "predicted_equal": true,
+            "right_prediction": 84,
+            "right_qb_id": "QB-0018"
+          },
+          {
+            "left_prediction": 85,
+            "left_qb_id": "QB-0010",
+            "predicted_equal": true,
+            "right_prediction": 85,
+            "right_qb_id": "QB-0011"
+          },
+          {
+            "left_prediction": 86,
+            "left_qb_id": "QB-0004",
+            "predicted_equal": true,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0008"
+          },
+          {
+            "left_prediction": 87,
+            "left_qb_id": "QB-0001",
+            "predicted_equal": false,
+            "right_prediction": 88,
+            "right_qb_id": "QB-0002"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0023",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0028"
+          }
+        ],
+        "sequence_effects_by_information_value": [
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.28867514,
+            "lower_qb_id": "QB-0013",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0003"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.27975145,
+            "lower_qb_id": "QB-0038",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0013"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26967995,
+            "lower_qb_id": "QB-0050",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0007"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26612315,
+            "lower_qb_id": "QB-0027",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0071"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.25,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.21693046,
+            "lower_qb_id": "QB-0039",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.20249019,
+            "lower_qb_id": "QB-0049",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.19264839,
+            "lower_qb_id": "QB-0051",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0008"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.13159034,
+            "lower_qb_id": "QB-0041",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0019"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.12970131,
+            "lower_qb_id": "QB-0018",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0001"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11878278,
+            "lower_qb_id": "QB-0046",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0011"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11396058,
+            "lower_qb_id": "QB-0047",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0024"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.10714286,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0072"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.08290267,
+            "lower_qb_id": "QB-0015",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0006"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04816831,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0054"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04441156,
+            "lower_qb_id": "QB-0054",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0038"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.0,
+            "lower_qb_id": "QB-0067",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0068"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.686275,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.333333,
+        "mean_signed_residual": 0.019608,
+        "within_one_accuracy": 0.980392
+      },
+      "feature_names": [
+        "SPD",
+        "ACC",
+        "AGI",
+        "AWR",
+        "STR",
+        "TGH",
+        "THP",
+        "TAC",
+        "SAC",
+        "MAC",
+        "DAC",
+        "RUN",
+        "TUP",
+        "PAC",
+        "BSK",
+        "AWR_BELOW_80"
+      ],
+      "fit_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.901961,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.098039,
+        "mean_signed_residual": 0.058824,
+        "within_one_accuracy": 1.0
+      },
+      "holdout_by_archetype": {
+        "Backfield Creator": {
+          "count": 3,
+          "exact_accuracy": 1.0,
+          "maximum_error": 0,
+          "mean_absolute_error": 0.0,
+          "mean_signed_residual": 0.0,
+          "within_one_accuracy": 1.0
+        },
+        "Dual Threat": {
+          "count": 3,
+          "exact_accuracy": 0.333333,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.666667,
+          "mean_signed_residual": -0.666667,
+          "within_one_accuracy": 1.0
+        },
+        "Pocket Passer": {
+          "count": 12,
+          "exact_accuracy": 0.75,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.25,
+          "mean_signed_residual": 0.083333,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_errors": [
+        {
+          "actual_ovr": 87,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "low_awareness_floor_80",
+          "latent_score": 87.53826273,
+          "player": "Tom Brady",
+          "predicted_ovr": 88,
+          "qb_id": "QB-0002",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 84,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "low_awareness_floor_80",
+          "latent_score": 84.68851419,
+          "player": "Arch Manning",
+          "predicted_ovr": 85,
+          "qb_id": "QB-0016",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 82,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "low_awareness_floor_80",
+          "latent_score": 81.15329371,
+          "player": "Marcel Reed",
+          "predicted_ovr": 81,
+          "qb_id": "QB-0034",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 89,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "low_awareness_floor_80",
+          "latent_score": 88.42210785,
+          "player": "Michael Vick",
+          "predicted_ovr": 88,
+          "qb_id": "QB-0070",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 88,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "low_awareness_floor_80",
+          "latent_score": 87.4692946,
+          "player": "Sam Leavitt",
+          "predicted_ovr": 87,
+          "qb_id": "QB-0071",
+          "residual": -1
+        }
+      ],
+      "holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.722222,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.277778,
+        "mean_signed_residual": -0.055556,
+        "within_one_accuracy": 1.0
+      },
+      "learned_parameter_count": 17,
+      "mechanism_count": 1,
+      "motivation": [
+        "QB-0033 and QB-0034 boundary underprediction."
+      ],
+      "name": "Additional penalty below AWR 80",
+      "parameters": {
+        "coefficients": {
+          "ACC": 0.28357579,
+          "AGI": 0.14670377,
+          "AWR": 0.05532178,
+          "AWR_BELOW_80": 0.31573761,
+          "BSK": 0.02802319,
+          "DAC": 0.33004838,
+          "MAC": 0.41417903,
+          "PAC": 0.20711226,
+          "RUN": 0.09030157,
+          "SAC": 0.3359219,
+          "SPD": 0.09266806,
+          "STR": 0.05271437,
+          "TAC": 0.08020982,
+          "TGH": 0.0,
+          "THP": 0.85369439,
+          "TUP": 0.34119496
+        },
+        "fixed_structural_parameters": 1,
+        "intercept": 82.37254902
+      },
+      "qb_0074_audit": {
+        "frozen_formula_audit_matches": true,
+        "largest_positive_contributions": [
+          [
+            "AWR_BELOW_80",
+            0.29967174
+          ],
+          [
+            "TAC",
+            0.09479273
+          ],
+          [
+            "STR",
+            0.04860135
+          ],
+          [
+            "AWR",
+            0.04638072
+          ],
+          [
+            "TGH",
+            0.0
+          ]
+        ],
+        "latent_score": 79.88747251,
+        "predicted_ovr": 80,
+        "qb_id": "QB-0074",
+        "ratings_complete": true,
+        "source_id": "SRC-QB-002",
+        "source_locator": "Screenshot 2026-07-26 204922.jpg",
+        "source_record": "QB_Cards!78"
+      },
+      "rejection_reason": "No joint improvement over Architecture A on independent holdout and leakage-controlled cross-OVR exact accuracy.",
+      "structural_parameter_count": 1,
+      "support_status": "REJECTED",
+      "total_complexity": 18
+    },
+    {
+      "candidate_id": "passing_plus_power_bottlenecks",
+      "coefficient_stability": {
+        "ACC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.4905771,
+          "mean": 0.26958668,
+          "minimum": 0.13973
+        },
+        "AGI": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.22029765,
+          "mean": 0.16494579,
+          "minimum": 0.12330776
+        },
+        "AWR": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.34218864,
+          "mean": 0.29686211,
+          "minimum": 0.20685109
+        },
+        "BSK": {
+          "collapsed_to_zero_folds": 2,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.10983489,
+          "mean": 0.04340451,
+          "minimum": 0.0
+        },
+        "DAC": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.29080406,
+          "mean": 0.16763806,
+          "minimum": 0.0
+        },
+        "MAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.41564813,
+          "mean": 0.36985918,
+          "minimum": 0.29885845
+        },
+        "MIN_SAC_MAC_DAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.33113205,
+          "mean": 0.26493112,
+          "minimum": 0.05559389
+        },
+        "MIN_THP_DAC": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.22287407,
+          "mean": 0.08630214,
+          "minimum": 0.0
+        },
+        "PAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.3533821,
+          "mean": 0.17459735,
+          "minimum": 0.08127254
+        },
+        "RUN": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.11317122,
+          "mean": 0.080522,
+          "minimum": 0.0
+        },
+        "SAC": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.34789589,
+          "mean": 0.20994137,
+          "minimum": 0.13230345
+        },
+        "SPD": {
+          "collapsed_to_zero_folds": 2,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.19564895,
+          "mean": 0.08187616,
+          "minimum": 0.0
+        },
+        "STR": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.09810615,
+          "mean": 0.06047814,
+          "minimum": 0.0
+        },
+        "TAC": {
+          "collapsed_to_zero_folds": 1,
+          "fold_count": 9,
+          "large_fold_to_fold_change": true,
+          "maximum": 0.28645405,
+          "mean": 0.09883962,
+          "minimum": 0.0
+        },
+        "TGH": {
+          "collapsed_to_zero_folds": 4,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.17550241,
+          "mean": 0.04700505,
+          "minimum": 0.0
+        },
+        "THP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.82652655,
+          "mean": 0.77444562,
+          "minimum": 0.67606034
+        },
+        "TUP": {
+          "collapsed_to_zero_folds": 0,
+          "fold_count": 9,
+          "large_fold_to_fold_change": false,
+          "maximum": 0.36231683,
+          "mean": 0.29363047,
+          "minimum": 0.1784266
+        }
+      },
+      "constraints": {
+        "adjacent_count": 14,
+        "adjacent_ordered": 13,
+        "adjacent_pair_effects": [
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0065",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0042"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0042",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0033"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0005"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0035",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0022"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0022",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0012"
+          },
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_prediction": 80,
+            "upper_qb_id": "QB-0057"
+          },
+          {
+            "lower_prediction": 80,
+            "lower_qb_id": "QB-0057",
+            "predicted_ordered": true,
+            "upper_prediction": 81,
+            "upper_qb_id": "QB-0037"
+          },
+          {
+            "lower_prediction": 81,
+            "lower_qb_id": "QB-0037",
+            "predicted_ordered": true,
+            "upper_prediction": 82,
+            "upper_qb_id": "QB-0032"
+          },
+          {
+            "lower_prediction": 82,
+            "lower_qb_id": "QB-0032",
+            "predicted_ordered": true,
+            "upper_prediction": 83,
+            "upper_qb_id": "QB-0030"
+          },
+          {
+            "lower_prediction": 83,
+            "lower_qb_id": "QB-0025",
+            "predicted_ordered": true,
+            "upper_prediction": 84,
+            "upper_qb_id": "QB-0015"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0016",
+            "predicted_ordered": true,
+            "upper_prediction": 85,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "lower_prediction": 85,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_prediction": 86,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "lower_prediction": 86,
+            "lower_qb_id": "QB-0004",
+            "predicted_ordered": true,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "lower_prediction": 88,
+            "lower_qb_id": "QB-0002",
+            "predicted_ordered": false,
+            "upper_prediction": 87,
+            "upper_qb_id": "QB-0071"
+          }
+        ],
+        "candidate_sequence_count": 17,
+        "candidate_sequences_confirmed_progression": false,
+        "candidate_sequences_ordered": 17,
+        "explicit_79_prediction": 80,
+        "explicit_boundary_qb_id": "QB-0074",
+        "same_ovr_count": 15,
+        "same_ovr_equal": 9,
+        "same_ovr_pair_effects": [
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0050",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0065"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0033",
+            "predicted_equal": false,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0036"
+          },
+          {
+            "left_prediction": 87,
+            "left_qb_id": "QB-0005",
+            "predicted_equal": false,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0006"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0048",
+            "predicted_equal": true,
+            "right_prediction": 80,
+            "right_qb_id": "QB-0069"
+          },
+          {
+            "left_prediction": 81,
+            "left_qb_id": "QB-0034",
+            "predicted_equal": false,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0035"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0022",
+            "predicted_equal": false,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0026"
+          },
+          {
+            "left_prediction": 80,
+            "left_qb_id": "QB-0047",
+            "predicted_equal": false,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0059"
+          },
+          {
+            "left_prediction": 81,
+            "left_qb_id": "QB-0038",
+            "predicted_equal": true,
+            "right_prediction": 81,
+            "right_qb_id": "QB-0040"
+          },
+          {
+            "left_prediction": 82,
+            "left_qb_id": "QB-0031",
+            "predicted_equal": true,
+            "right_prediction": 82,
+            "right_qb_id": "QB-0032"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0019",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0021"
+          },
+          {
+            "left_prediction": 84,
+            "left_qb_id": "QB-0013",
+            "predicted_equal": true,
+            "right_prediction": 84,
+            "right_qb_id": "QB-0018"
+          },
+          {
+            "left_prediction": 85,
+            "left_qb_id": "QB-0010",
+            "predicted_equal": true,
+            "right_prediction": 85,
+            "right_qb_id": "QB-0011"
+          },
+          {
+            "left_prediction": 86,
+            "left_qb_id": "QB-0004",
+            "predicted_equal": true,
+            "right_prediction": 86,
+            "right_qb_id": "QB-0008"
+          },
+          {
+            "left_prediction": 87,
+            "left_qb_id": "QB-0001",
+            "predicted_equal": false,
+            "right_prediction": 88,
+            "right_qb_id": "QB-0002"
+          },
+          {
+            "left_prediction": 83,
+            "left_qb_id": "QB-0023",
+            "predicted_equal": true,
+            "right_prediction": 83,
+            "right_qb_id": "QB-0028"
+          }
+        ],
+        "sequence_effects_by_information_value": [
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.28867514,
+            "lower_qb_id": "QB-0013",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0003"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.27975145,
+            "lower_qb_id": "QB-0038",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0013"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26967995,
+            "lower_qb_id": "QB-0050",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0007"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.26612315,
+            "lower_qb_id": "QB-0027",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0071"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.25,
+            "lower_qb_id": "QB-0010",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0073"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.21693046,
+            "lower_qb_id": "QB-0039",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0010"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.20249019,
+            "lower_qb_id": "QB-0049",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0004"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.19264839,
+            "lower_qb_id": "QB-0051",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0008"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.13159034,
+            "lower_qb_id": "QB-0041",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0019"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.12970131,
+            "lower_qb_id": "QB-0018",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0001"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11878278,
+            "lower_qb_id": "QB-0046",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0011"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.11396058,
+            "lower_qb_id": "QB-0047",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0024"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.10714286,
+            "lower_qb_id": "QB-0009",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0072"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.08290267,
+            "lower_qb_id": "QB-0015",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0006"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04816831,
+            "lower_qb_id": "QB-0074",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0054"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.04441156,
+            "lower_qb_id": "QB-0054",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0038"
+          },
+          {
+            "confirmed_progression": false,
+            "information_priority": 0.0,
+            "lower_qb_id": "QB-0067",
+            "predicted_ordered": true,
+            "upper_qb_id": "QB-0068"
+          }
+        ]
+      },
+      "cross_ovr_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.588235,
+        "maximum_error": 2,
+        "mean_absolute_error": 0.431373,
+        "mean_signed_residual": 0.039216,
+        "within_one_accuracy": 0.980392
+      },
+      "feature_names": [
+        "SPD",
+        "ACC",
+        "AGI",
+        "AWR",
+        "STR",
+        "TGH",
+        "THP",
+        "TAC",
+        "SAC",
+        "MAC",
+        "DAC",
+        "RUN",
+        "TUP",
+        "PAC",
+        "BSK",
+        "MIN_SAC_MAC_DAC",
+        "MIN_THP_DAC"
+      ],
+      "fit_metrics": {
+        "count": 51,
+        "exact_accuracy": 0.882353,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.117647,
+        "mean_signed_residual": 0.039216,
+        "within_one_accuracy": 1.0
+      },
+      "holdout_by_archetype": {
+        "Backfield Creator": {
+          "count": 3,
+          "exact_accuracy": 0.666667,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.333333,
+          "mean_signed_residual": 0.333333,
+          "within_one_accuracy": 1.0
+        },
+        "Dual Threat": {
+          "count": 3,
+          "exact_accuracy": 0.0,
+          "maximum_error": 1,
+          "mean_absolute_error": 1.0,
+          "mean_signed_residual": -0.333333,
+          "within_one_accuracy": 1.0
+        },
+        "Pocket Passer": {
+          "count": 12,
+          "exact_accuracy": 0.75,
+          "maximum_error": 1,
+          "mean_absolute_error": 0.25,
+          "mean_signed_residual": 0.083333,
+          "within_one_accuracy": 1.0
+        }
+      },
+      "holdout_errors": [
+        {
+          "actual_ovr": 87,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "passing_plus_power_bottlenecks",
+          "latent_score": 87.56162177,
+          "player": "Tom Brady",
+          "predicted_ovr": 88,
+          "qb_id": "QB-0002",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 86,
+          "analysis_partition": "holdout",
+          "archetype": "Backfield Creator",
+          "candidate_id": "passing_plus_power_bottlenecks",
+          "latent_score": 86.50390779,
+          "player": "Robert Griffin III",
+          "predicted_ovr": 87,
+          "qb_id": "QB-0005",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 84,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "passing_plus_power_bottlenecks",
+          "latent_score": 84.69356211,
+          "player": "Arch Manning",
+          "predicted_ovr": 85,
+          "qb_id": "QB-0016",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 82,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "passing_plus_power_bottlenecks",
+          "latent_score": 81.25278629,
+          "player": "Marcel Reed",
+          "predicted_ovr": 81,
+          "qb_id": "QB-0034",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 80,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "passing_plus_power_bottlenecks",
+          "latent_score": 80.59194228,
+          "player": "Donald Hammond III",
+          "predicted_ovr": 81,
+          "qb_id": "QB-0053",
+          "residual": 1
+        },
+        {
+          "actual_ovr": 89,
+          "analysis_partition": "holdout",
+          "archetype": "Dual Threat",
+          "candidate_id": "passing_plus_power_bottlenecks",
+          "latent_score": 88.39124737,
+          "player": "Michael Vick",
+          "predicted_ovr": 88,
+          "qb_id": "QB-0070",
+          "residual": -1
+        },
+        {
+          "actual_ovr": 88,
+          "analysis_partition": "holdout",
+          "archetype": "Pocket Passer",
+          "candidate_id": "passing_plus_power_bottlenecks",
+          "latent_score": 87.25217556,
+          "player": "Sam Leavitt",
+          "predicted_ovr": 87,
+          "qb_id": "QB-0071",
+          "residual": -1
+        }
+      ],
+      "holdout_metrics": {
+        "count": 18,
+        "exact_accuracy": 0.611111,
+        "maximum_error": 1,
+        "mean_absolute_error": 0.388889,
+        "mean_signed_residual": 0.055556,
+        "within_one_accuracy": 1.0
+      },
+      "learned_parameter_count": 18,
+      "mechanism_count": 2,
+      "motivation": [
+        "Only predeclared two-mechanism candidate within the complexity budget."
+      ],
+      "name": "SAC/MAC/DAC and THP/DAC bottlenecks",
+      "parameters": {
+        "coefficients": {
+          "ACC": 0.33207487,
+          "AGI": 0.14956678,
+          "AWR": 0.32369048,
+          "BSK": 0.00452679,
+          "DAC": 0.18808739,
+          "MAC": 0.3758602,
+          "MIN_SAC_MAC_DAC": 0.28741428,
+          "MIN_THP_DAC": 0.06132156,
+          "PAC": 0.1898191,
+          "RUN": 0.08491984,
+          "SAC": 0.19202896,
+          "SPD": 0.07685878,
+          "STR": 0.08906217,
+          "TAC": 0.07277899,
+          "TGH": 0.00490024,
+          "THP": 0.81880743,
+          "TUP": 0.32528832
+        },
+        "fixed_structural_parameters": 0,
+        "intercept": 82.37254902
+      },
+      "qb_0074_audit": {
+        "frozen_formula_audit_matches": true,
+        "largest_positive_contributions": [
+          [
+            "AWR",
+            0.27137588
+          ],
+          [
+            "TAC",
+            0.0860109
+          ],
+          [
+            "STR",
+            0.08211312
+          ],
+          [
+            "TGH",
+            0.00922922
+          ],
+          [
+            "BSK",
+            -0.00073041
+          ]
+        ],
+        "latent_score": 79.80835028,
+        "predicted_ovr": 80,
+        "qb_id": "QB-0074",
+        "ratings_complete": true,
+        "source_id": "SRC-QB-002",
+        "source_locator": "Screenshot 2026-07-26 204922.jpg",
+        "source_record": "QB_Cards!78"
+      },
+      "rejection_reason": "No joint improvement over Architecture A on independent holdout and leakage-controlled cross-OVR exact accuracy.",
+      "structural_parameter_count": 0,
+      "support_status": "REJECTED",
+      "total_complexity": 18
+    }
+  ],
+  "schema_version": 1,
+  "selection_bias_warning": "Mechanisms were motivated by known errors; independent holdout is therefore not a pristine mechanism-selection set. Cross-OVR evidence is required.",
+  "surviving_mechanisms": []
+}
