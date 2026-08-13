@@ -1,0 +1,39 @@
+{
+  "frozen_artifacts_modified": false,
+  "inheritance_result": "STABLE_HISTORICAL_ARCHITECTURE_WITH_SMALL_MODIFICATION",
+  "reproduction": [
+    {
+      "Additional Data Needed": "New prospective VT cards, especially OVR 80\u201382; no blocking requirement.",
+      "Archetype": "Vertical Threat",
+      "Confidence": "HIGH",
+      "Cross-OVR Accuracy": 0.9857142857142858,
+      "Current Model": "TE-MODEL-006 v1.3 \u2014 M19 VT +2 LBK +3 IBL",
+      "Independent Validation": "17/17 (100%)",
+      "Operationally Solved?": "YES",
+      "Prospective Rule": "Frozen; reopen only for systematic prospective failure.",
+      "Unresolved Issues": "2 isolated inversions retained as research outliers."
+    },
+    {
+      "Additional Data Needed": "None required to proceed; future Gritty cards strengthen prospective evidence.",
+      "Archetype": "Gritty Possession",
+      "Confidence": "HIGH",
+      "Cross-OVR Accuracy": 0.9897959183673469,
+      "Current Model": "TE-MODEL-001 v1.1 \u2014 M19 Possession weights",
+      "Independent Validation": "82/83 (98.8%)",
+      "Operationally Solved?": "YES",
+      "Prospective Rule": "Frozen; prospective log active.",
+      "Unresolved Issues": "1 isolated 0.030 inversion: Jalen Hoffman 81 vs Christian Bentancur 80."
+    },
+    {
+      "Additional Data Needed": "None required to proceed; future cards are prospective checks only.",
+      "Archetype": "Physical Route Runner",
+      "Confidence": "HIGH",
+      "Cross-OVR Accuracy": 1,
+      "Current Model": "TE-MODEL-003 v1.1 \u2014 71% VT + 29% Possession",
+      "Independent Validation": "304/304 unique-profile blind (100%)",
+      "Operationally Solved?": "YES",
+      "Prospective Rule": "Frozen; reopen only for systematic prospective failure.",
+      "Unresolved Issues": "No observed cross-OVR inversions."
+    }
+  ]
+}

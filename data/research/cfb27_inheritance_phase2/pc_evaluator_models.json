@@ -1,0 +1,140 @@
+{
+  "C": {
+    "archetype_handling": "residual bias reported; no separate formula promoted",
+    "calibration": "linear",
+    "confidence": "MODERATE",
+    "metrics": {
+      "exact_accuracy": 0.380952,
+      "mae": 0.666667,
+      "n": 42,
+      "ordering_accuracy": 0.823789,
+      "within_one_accuracy": 0.952381
+    },
+    "ordinary_special_warning": true,
+    "status": "PRACTICAL"
+  },
+  "QB": {
+    "archetypes": {
+      "Backfield Creator": {
+        "failure_cards": [
+          {
+            "archetype": "Backfield Creator",
+            "card_id": "27-240019887",
+            "ovr": 86,
+            "player": "Jayden Maiava",
+            "prediction": 85,
+            "residual": 1.49146758,
+            "score": 82.32,
+            "special": true
+          },
+          {
+            "archetype": "Backfield Creator",
+            "card_id": "27-201033236",
+            "ovr": 88,
+            "player": "Trinidad Chambliss",
+            "prediction": 79,
+            "residual": 9.10416667,
+            "score": 85.73,
+            "special": true
+          }
+        ],
+        "historical_prior": "West Coast",
+        "metrics": {
+          "exact_accuracy": 0.0,
+          "mae": 3,
+          "n": 4,
+          "ordering_accuracy": 0.0,
+          "within_one_accuracy": 0.75
+        },
+        "n": 4,
+        "status": "INHERITED_BASELINE_ONLY"
+      },
+      "Dual Threat": {
+        "failure_cards": [],
+        "historical_prior": "Scrambler",
+        "metrics": {
+          "exact_accuracy": 0.25,
+          "mae": 0.75,
+          "n": 8,
+          "ordering_accuracy": 0.84,
+          "within_one_accuracy": 1.0
+        },
+        "n": 8,
+        "status": "INHERITED_BASELINE_ONLY"
+      },
+      "Pocket Passer": {
+        "failure_cards": [
+          {
+            "archetype": "Pocket Passer",
+            "card_id": "27-280010190",
+            "ovr": 85,
+            "player": "Owen McCown",
+            "prediction": 87,
+            "residual": -1.5657861,
+            "score": 84.01,
+            "special": true
+          },
+          {
+            "archetype": "Pocket Passer",
+            "card_id": "27-200900014",
+            "ovr": 86,
+            "player": "Kurt Benkert",
+            "prediction": 85,
+            "residual": 1.05651527,
+            "score": 82.91,
+            "special": true
+          }
+        ],
+        "historical_prior": "Field General",
+        "metrics": {
+          "exact_accuracy": 0.363636,
+          "mae": 0.727273,
+          "n": 11,
+          "ordering_accuracy": 0.688889,
+          "within_one_accuracy": 0.909091
+        },
+        "n": 11,
+        "status": "INHERITED_BASELINE_ONLY"
+      }
+    },
+    "status": "INHERITED_BASELINE_ONLY"
+  },
+  "TE": {
+    "models": [
+      {
+        "Additional Data Needed": "New prospective VT cards, especially OVR 80\u201382; no blocking requirement.",
+        "Archetype": "Vertical Threat",
+        "Confidence": "HIGH",
+        "Cross-OVR Accuracy": 0.9857142857142858,
+        "Current Model": "TE-MODEL-006 v1.3 \u2014 M19 VT +2 LBK +3 IBL",
+        "Independent Validation": "17/17 (100%)",
+        "Operationally Solved?": "YES",
+        "Prospective Rule": "Frozen; reopen only for systematic prospective failure.",
+        "Unresolved Issues": "2 isolated inversions retained as research outliers."
+      },
+      {
+        "Additional Data Needed": "None required to proceed; future Gritty cards strengthen prospective evidence.",
+        "Archetype": "Gritty Possession",
+        "Confidence": "HIGH",
+        "Cross-OVR Accuracy": 0.9897959183673469,
+        "Current Model": "TE-MODEL-001 v1.1 \u2014 M19 Possession weights",
+        "Independent Validation": "82/83 (98.8%)",
+        "Operationally Solved?": "YES",
+        "Prospective Rule": "Frozen; prospective log active.",
+        "Unresolved Issues": "1 isolated 0.030 inversion: Jalen Hoffman 81 vs Christian Bentancur 80."
+      },
+      {
+        "Additional Data Needed": "None required to proceed; future cards are prospective checks only.",
+        "Archetype": "Physical Route Runner",
+        "Confidence": "HIGH",
+        "Cross-OVR Accuracy": 1,
+        "Current Model": "TE-MODEL-003 v1.1 \u2014 71% VT + 29% Possession",
+        "Independent Validation": "304/304 unique-profile blind (100%)",
+        "Operationally Solved?": "YES",
+        "Prospective Rule": "Frozen; reopen only for systematic prospective failure.",
+        "Unresolved Issues": "No observed cross-OVR inversions."
+      }
+    ],
+    "status": "EXISTING_FROZEN_MODELS"
+  }
+}

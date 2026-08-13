@@ -63,3 +63,8 @@ Research outputs in `data/research/cfb27_inheritance_phase1` contain position de
 conservative threshold candidates, the frozen Madden 19 Center-weight inheritance test, unresolved
 historical tunable leads, and a machine-readable evaluator status. Correlations and threshold
 candidates are diagnostics, not formula proof.
+
+Phase II expands the same cache with bounded second-page listings for sixteen position labels and
+Center pages 3–4. Its research artifacts preserve ordinary/special separation, release chronology,
+position descriptives, inherited Center/QB tests, frozen TE results, and conservative same-archetype
+boundary candidates. The runner remains staging-only and does not promote external cards.

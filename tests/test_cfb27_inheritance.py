@@ -52,7 +52,12 @@ def test_current_position_labels_are_normalized_without_losing_source_label() ->
 def test_analysis_is_deterministic_and_staging_only() -> None:
     state = json.loads(STATE.read_text(encoding="utf-8"))
     summary = _summary()
-    rebuilt = build_inheritance_analysis(list(state["cards"].values()), summary["historical_leads"])
+    phase1_cards = [
+        card
+        for card in state["cards"].values()
+        if card["retrieval_timestamp"] in {"2026-08-13T20:00:00Z", "2026-08-13T22:00:00Z"}
+    ]
+    rebuilt = build_inheritance_analysis(phase1_cards, summary["historical_leads"])
     for key in (
         "cards_acquired",
         "positions",
