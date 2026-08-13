@@ -71,7 +71,7 @@ class WorkbookImporter:
         for row_number, row in enumerate(
             sheet.iter_rows(
                 min_row=1,
-                max_row=min(sheet.max_row, 25),
+               max_row=25,
                 values_only=True,
             ),
             start=1,
