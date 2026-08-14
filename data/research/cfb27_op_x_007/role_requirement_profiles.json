@@ -1,0 +1,28 @@
+{
+  "clock_control": {
+    "priority_groups": [
+      "FOUNDATION_COMPLETENESS",
+      "BALL_SECURITY_WHERE_OBSERVED",
+      "SHORT_INTERMEDIATE_EFFICIENCY"
+    ]
+  },
+  "defense": {
+    "EDGE1": "REQUIRED_CONCEPT",
+    "EDGE2": "REQUIRED_CONCEPT",
+    "MIKE": [
+      "RUN_FOUNDATION",
+      "COVERAGE_RESPONSIBILITY"
+    ],
+    "interior": "RUN_DEFENSE_FOUNDATION"
+  },
+  "formula_weights_separate": true,
+  "gameplay_importance_fabricated": false,
+  "run_first": {
+    "priority_groups": [
+      "OL_PRIMARY_BLOCKING",
+      "TE_BLOCKING_FOUNDATION",
+      "HB_SUSTAINABILITY",
+      "WR_BLOCKING_WHERE_OBSERVED"
+    ]
+  }
+}

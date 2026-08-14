@@ -1,0 +1,320 @@
+{
+  "layers": [
+    "TEAM",
+    "ROSTER",
+    "DEPTH_CHART",
+    "SPECIALISTS",
+    "THEME_TEAM",
+    "CHEMISTRY",
+    "SCHEME",
+    "FORMATIONS",
+    "PLAY_STYLE",
+    "PLAYER_CARDS",
+    "UPGRADE_STATES",
+    "BND_STATUS",
+    "MARKET_STATUS",
+    "RESOURCE_STATE",
+    "PROTECTED_ASSETS",
+    "DEVELOPMENT_PROJECTS",
+    "WATCHLIST",
+    "DECISION_HISTORY"
+  ],
+  "partial_records_legal": true,
+  "protected_assets": [
+    "FS1",
+    "MIKE1",
+    "MIKE2"
+  ],
+  "resource_state": {
+    "coins": "UNKNOWN",
+    "training": "UNKNOWN"
+  },
+  "roster": [
+    {
+      "bnd": true,
+      "card_id": "27-280020931",
+      "confidence": "HIGH",
+      "currentness": "CURRENT_CONFIRMED",
+      "last_confirmed": "OP-X-007_PACKET",
+      "normal_slot": null,
+      "overall": 88,
+      "player": "Duce Robinson",
+      "position": "WR",
+      "source": "USER_CONFIRMED_OP_X_006_007",
+      "specialist_status": "CANDIDATE",
+      "theme_fit": "INCOMPATIBLE_NORMAL_STARTER",
+      "version": "88 LTD"
+    },
+    {
+      "bnd": "UNKNOWN",
+      "card_id": "JUNIOR_SEAU_EVO_PROJECT",
+      "confidence": "HIGH_FOR_PROJECT_STATE",
+      "currentness": "CURRENT_CONFIRMED",
+      "last_confirmed": "OP-X-007_PACKET",
+      "normal_slot": "UNKNOWN",
+      "overall": 86,
+      "player": "Junior Seau",
+      "position": "MLB/MIKE",
+      "source": "USER_CONFIRMED_OP_X_004_007",
+      "specialist_status": "USER_CONTROLLED_MIKE_PROJECT",
+      "theme_fit": "UNKNOWN",
+      "version": "81_START_EVO_TO_86"
+    }
+  ],
+  "slots": [
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "QB1",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "HB1",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "WR1",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "WR2",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "WR3",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "TE1",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "LT",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "LG",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "C",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "RG",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "RT",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "EDGE1",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "EDGE2",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "DT",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": true,
+      "slot_id": "MIKE1",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": true,
+      "slot_id": "MIKE2",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "CB1",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "CB2",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "CB3",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": true,
+      "slot_id": "FS1",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "object_type": "ROSTER_SLOT",
+      "player_card_id": null,
+      "protected_policy": false,
+      "slot_id": "SS1",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "legal_placement": "UNKNOWN",
+      "object_type": "SPECIALIST_CONCEPT",
+      "player_card_id": null,
+      "slot_id": "SUB_LB",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "legal_placement": "UNKNOWN",
+      "object_type": "SPECIALIST_CONCEPT",
+      "player_card_id": null,
+      "slot_id": "SLOT_CB",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "legal_placement": "UNKNOWN",
+      "object_type": "SPECIALIST_CONCEPT",
+      "player_card_id": null,
+      "slot_id": "RUSH_EDGE",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "legal_placement": "UNKNOWN",
+      "object_type": "SPECIALIST_CONCEPT",
+      "player_card_id": null,
+      "slot_id": "RUSH_DT",
+      "source": null,
+      "status": "UNKNOWN"
+    },
+    {
+      "confidence": "UNKNOWN",
+      "legal_placement": "UNKNOWN",
+      "object_type": "SPECIALIST_CONCEPT",
+      "player_card_id": null,
+      "slot_id": "OFFENSIVE_SPECIALIST",
+      "source": null,
+      "status": "UNKNOWN"
+    }
+  ],
+  "team": {
+    "confidence": "HIGH",
+    "identity": [
+      "RUN_FIRST",
+      "CLOCK_CONTROL",
+      "OPTION_TURNOVER_RISK_DISFAVORED",
+      "4-2-5",
+      "6-1",
+      "TWO_EDGE_FREQUENT"
+    ],
+    "source": "USER_CONFIRMED_EXISTING_POLICY"
+  },
+  "theme_team": {
+    "bonuses": "UNKNOWN",
+    "count": "UNKNOWN",
+    "current_theme": "UNKNOWN",
+    "required_count": "UNKNOWN",
+    "threshold": "UNKNOWN"
+  },
+  "twin_id": "TEAM_DIGITAL_TWIN_V1"
+}

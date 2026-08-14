@@ -1,0 +1,91 @@
+{
+  "duce": {
+    "depth": "POSSIBLE",
+    "liquidity": "ZERO/BND",
+    "normal_start": "BLOCKED_THEME",
+    "player": "Duce Robinson",
+    "quicksell": "UNKNOWN",
+    "recommended": "KEEP_AND_RESOLVE_SPECIALIST_PLACEMENT",
+    "sell": "PROHIBITED",
+    "specialist": "CANDIDATE"
+  },
+  "protected": [
+    {
+      "discard_card_allowed": false,
+      "preserve_for_reroll": true,
+      "replace_active_role_allowed": true,
+      "replacement_semantics": [
+        "REPLACE_ACTIVE_ROLE",
+        "KEEP_CARD",
+        "MOVE_TO_DEPTH",
+        "PRESERVE_FOR_REROLL",
+        "USE_AS_DEVELOPMENT_ASSET"
+      ],
+      "slot": "FS1"
+    },
+    {
+      "discard_card_allowed": false,
+      "preserve_for_reroll": true,
+      "replace_active_role_allowed": true,
+      "replacement_semantics": [
+        "REPLACE_ACTIVE_ROLE",
+        "KEEP_CARD",
+        "MOVE_TO_DEPTH",
+        "PRESERVE_FOR_REROLL",
+        "USE_AS_DEVELOPMENT_ASSET"
+      ],
+      "slot": "MIKE1"
+    },
+    {
+      "discard_card_allowed": false,
+      "preserve_for_reroll": true,
+      "replace_active_role_allowed": true,
+      "replacement_semantics": [
+        "REPLACE_ACTIVE_ROLE",
+        "KEEP_CARD",
+        "MOVE_TO_DEPTH",
+        "PRESERVE_FOR_REROLL",
+        "USE_AS_DEVELOPMENT_ASSET"
+      ],
+      "slot": "MIKE2"
+    }
+  ],
+  "run_first": {
+    "priority_groups": [
+      "OL_PRIMARY_BLOCKING",
+      "TE_BLOCKING_FOUNDATION",
+      "HB_SUSTAINABILITY",
+      "WR_BLOCKING_WHERE_OBSERVED"
+    ]
+  },
+  "seau": {
+    "allocation_risk": "OBSERVED_HIGH",
+    "confidence": "EXPLORATORY_FOR_DISTRIBUTION_VALIDATED_FOR_OBSERVED_STATE",
+    "current_card_quality": "HIGH_ATHLETIC_SPECIALIZATION",
+    "current_version": 86,
+    "foundation_quality": "WEAKER_BROAD_FOUNDATION_THAN_84_PREMADE",
+    "future_investment_quality": "REQUIRES_NEW_TARGET_OR_VERSION",
+    "next_decision": "STOP_CURRENT_81_TO_86_CYCLE_AND_COMPARE_FUTURE_ALTERNATIVES",
+    "path": "LURKER",
+    "player": "Junior Seau",
+    "project_failure_declared": false,
+    "resource_spend": "UNKNOWN",
+    "roll_quality": "MIXED_ROLE_VALUE",
+    "rolls_remaining": 0,
+    "rolls_used": 4,
+    "specialization": "ATHLETIC_MAX_SPEED_MIKE",
+    "start_version": 81,
+    "starting_decision_quality": "UNKNOWN_COUNTERFACTUAL",
+    "stop_condition": [
+      "target unreachable",
+      "cost exceeds finished alternative",
+      "replacement pressure",
+      "better base"
+    ],
+    "target": 86
+  },
+  "two_edge": {
+    "EDGE1": "REQUIRED_CONCEPT",
+    "EDGE2": "REQUIRED_CONCEPT"
+  }
+}

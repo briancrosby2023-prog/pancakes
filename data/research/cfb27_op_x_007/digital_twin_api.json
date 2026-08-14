@@ -1,0 +1,19 @@
+{
+  "endpoints": [
+    "current_team",
+    "slot_status",
+    "player_role",
+    "weakness_map",
+    "replacement_options",
+    "development_projects",
+    "bnd_assets",
+    "protected_assets",
+    "theme_constraints",
+    "action_queue",
+    "coin_priority",
+    "missing_data",
+    "decision_history"
+  ],
+  "format": "DETERMINISTIC_JSON",
+  "partial_state_supported": true
+}

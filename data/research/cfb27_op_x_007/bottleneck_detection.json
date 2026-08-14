@@ -1,0 +1,21 @@
+[
+  {
+    "available_solutions": [
+      "OFFENSE_LINEUP_SCREEN",
+      "DEFENSE_LINEUP_SCREEN"
+    ],
+    "bottleneck": "CURRENT_LINEUP_VISIBILITY",
+    "confidence": "HIGH",
+    "cost_data": "NOT_REQUIRED",
+    "why": "No current slot assignments are confirmed"
+  },
+  {
+    "available_solutions": [
+      "SPECIALISTS_SCREEN"
+    ],
+    "bottleneck": "SPECIALIST_LEGALITY_FOR_DUCE",
+    "confidence": "HIGH",
+    "cost_data": "NOT_REQUIRED",
+    "why": "Specialist candidate is known but slot placement is not"
+  }
+]

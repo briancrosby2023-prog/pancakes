@@ -1,0 +1,23 @@
+[
+  {
+    "allocation_risk": "OBSERVED_HIGH",
+    "confidence": "EXPLORATORY_FOR_DISTRIBUTION_VALIDATED_FOR_OBSERVED_STATE",
+    "current_version": 86,
+    "foundation_quality": "WEAKER_BROAD_FOUNDATION_THAN_84_PREMADE",
+    "next_decision": "STOP_CURRENT_81_TO_86_CYCLE_AND_COMPARE_FUTURE_ALTERNATIVES",
+    "path": "LURKER",
+    "player": "Junior Seau",
+    "resource_spend": "UNKNOWN",
+    "rolls_remaining": 0,
+    "rolls_used": 4,
+    "specialization": "ATHLETIC_MAX_SPEED_MIKE",
+    "start_version": 81,
+    "stop_condition": [
+      "target unreachable",
+      "cost exceeds finished alternative",
+      "replacement pressure",
+      "better base"
+    ],
+    "target": 86
+  }
+]

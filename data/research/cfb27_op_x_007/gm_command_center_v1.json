@@ -1,0 +1,204 @@
+{
+  "bnd_assets": [
+    {
+      "depth": "POSSIBLE",
+      "liquidity": "ZERO/BND",
+      "normal_start": "BLOCKED_THEME",
+      "player": "Duce Robinson",
+      "quicksell": "UNKNOWN",
+      "recommended": "KEEP_AND_RESOLVE_SPECIALIST_PLACEMENT",
+      "sell": "PROHIBITED",
+      "specialist": "CANDIDATE"
+    }
+  ],
+  "coin_priority": "SAVE/NO_ACTION_UNTIL_NEEDS_AND_COSTS_LINKED",
+  "current_lineup": [],
+  "development_projects": [
+    {
+      "allocation_risk": "OBSERVED_HIGH",
+      "confidence": "EXPLORATORY_FOR_DISTRIBUTION_VALIDATED_FOR_OBSERVED_STATE",
+      "current_version": 86,
+      "foundation_quality": "WEAKER_BROAD_FOUNDATION_THAN_84_PREMADE",
+      "next_decision": "STOP_CURRENT_81_TO_86_CYCLE_AND_COMPARE_FUTURE_ALTERNATIVES",
+      "path": "LURKER",
+      "player": "Junior Seau",
+      "resource_spend": "UNKNOWN",
+      "rolls_remaining": 0,
+      "rolls_used": 4,
+      "specialization": "ATHLETIC_MAX_SPEED_MIKE",
+      "start_version": 81,
+      "stop_condition": [
+        "target unreachable",
+        "cost exceeds finished alternative",
+        "replacement pressure",
+        "better base"
+      ],
+      "target": 86
+    }
+  ],
+  "market_watch": [],
+  "missing_high_value_data": [
+    {
+      "information_value": "VERY_HIGH",
+      "input": "OFFENSE_LINEUP_SCREEN",
+      "rank": 1,
+      "unlocks": [
+        "run-first OL/TE/HB weakness",
+        "normal starters"
+      ]
+    },
+    {
+      "information_value": "VERY_HIGH",
+      "input": "DEFENSE_LINEUP_SCREEN",
+      "rank": 2,
+      "unlocks": [
+        "EDGE1/EDGE2",
+        "MIKE",
+        "4-2-5/6-1 foundation"
+      ]
+    },
+    {
+      "information_value": "VERY_HIGH",
+      "input": "SPECIALISTS_SCREEN",
+      "rank": 3,
+      "unlocks": [
+        "Duce legal placement",
+        "subpackages"
+      ]
+    },
+    {
+      "information_value": "HIGH",
+      "input": "THEME_CHEMISTRY_SCREEN",
+      "rank": 4,
+      "unlocks": [
+        "theme count",
+        "flex",
+        "bonuses"
+      ]
+    },
+    {
+      "information_value": "MEDIUM",
+      "input": "COINS_TRAINING_SCREEN",
+      "rank": 5,
+      "unlocks": [
+        "budget frontier",
+        "resource allocation"
+      ]
+    },
+    {
+      "information_value": "MEDIUM",
+      "input": "ACTIVE_EVO_SCREENS",
+      "rank": 6,
+      "unlocks": [
+        "development queue",
+        "rerolls"
+      ]
+    }
+  ],
+  "next_gm_actions": [
+    "CAPTURE_OFFENSE_LINEUP",
+    "CAPTURE_DEFENSE_LINEUP",
+    "RESOLVE_DUCE_SPECIALIST_PLACEMENT"
+  ],
+  "no_move_positions": [
+    "FS1",
+    "MIKE1",
+    "MIKE2"
+  ],
+  "protected_assets": [
+    {
+      "discard_card_allowed": false,
+      "preserve_for_reroll": true,
+      "replace_active_role_allowed": true,
+      "replacement_semantics": [
+        "REPLACE_ACTIVE_ROLE",
+        "KEEP_CARD",
+        "MOVE_TO_DEPTH",
+        "PRESERVE_FOR_REROLL",
+        "USE_AS_DEVELOPMENT_ASSET"
+      ],
+      "slot": "FS1"
+    },
+    {
+      "discard_card_allowed": false,
+      "preserve_for_reroll": true,
+      "replace_active_role_allowed": true,
+      "replacement_semantics": [
+        "REPLACE_ACTIVE_ROLE",
+        "KEEP_CARD",
+        "MOVE_TO_DEPTH",
+        "PRESERVE_FOR_REROLL",
+        "USE_AS_DEVELOPMENT_ASSET"
+      ],
+      "slot": "MIKE1"
+    },
+    {
+      "discard_card_allowed": false,
+      "preserve_for_reroll": true,
+      "replace_active_role_allowed": true,
+      "replacement_semantics": [
+        "REPLACE_ACTIVE_ROLE",
+        "KEEP_CARD",
+        "MOVE_TO_DEPTH",
+        "PRESERVE_FOR_REROLL",
+        "USE_AS_DEVELOPMENT_ASSET"
+      ],
+      "slot": "MIKE2"
+    }
+  ],
+  "replacement_pressure": "UNKNOWN",
+  "specialists": [
+    {
+      "exact_placement": "UNKNOWN",
+      "normal_starter": "BLOCKED_THEME",
+      "player": "Duce Robinson",
+      "status": "CANDIDATE"
+    }
+  ],
+  "strongest_positions": [],
+  "team_identity": {
+    "4-2-5_SUPPORT": {
+      "roster_support": "UNKNOWN",
+      "status": "INTENDED_IDENTITY"
+    },
+    "6-1_SUPPORT": {
+      "roster_support": "UNKNOWN",
+      "status": "INTENDED_IDENTITY"
+    },
+    "CLOCK_CONTROL": {
+      "roster_support": "UNKNOWN",
+      "status": "INTENDED_IDENTITY"
+    },
+    "DEFENSIVE_FRONT_PRESSURE": {
+      "roster_support": "UNKNOWN",
+      "status": "INTENDED_IDENTITY"
+    },
+    "DEVELOPMENT_PIPELINE": {
+      "roster_support": "UNKNOWN",
+      "status": "INTENDED_IDENTITY"
+    },
+    "MARKET_FLEXIBILITY": {
+      "roster_support": "UNKNOWN",
+      "status": "INTENDED_IDENTITY"
+    },
+    "RUN_FIRST": {
+      "roster_support": "UNKNOWN",
+      "status": "INTENDED_IDENTITY"
+    },
+    "SPECIALIST_FLEXIBILITY": {
+      "roster_support": "UNKNOWN",
+      "status": "INTENDED_IDENTITY"
+    },
+    "THEME_TEAM_INTEGRITY": {
+      "roster_support": "UNKNOWN",
+      "status": "INTENDED_IDENTITY"
+    },
+    "TWO_EDGE_DEPLOYMENT": {
+      "roster_support": "UNKNOWN",
+      "status": "INTENDED_IDENTITY"
+    }
+  },
+  "top_moneyball_options": "POPULATION_AVAILABLE_ROSTER_FIT_UNKNOWN",
+  "top_upgrade_options": [],
+  "weakest_positions": []
+}

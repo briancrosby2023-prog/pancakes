@@ -1,0 +1,31 @@
+{
+  "entries": [
+    {
+      "actual_user_decision": "UNKNOWN",
+      "alternatives": [
+        "DEPTH",
+        "QUIET_HOLD"
+      ],
+      "confidence": "HIGH_FOR_CONSTRAINT",
+      "cost": "UNKNOWN/NO_ACQUISITION",
+      "date": "OP-X-007",
+      "expected_benefit": "Recover BND roster utility",
+      "later_outcome": "UNKNOWN",
+      "reason": "High-quality BND cannot normal-start under known theme constraint",
+      "recommendation": "RESOLVE_DUCE_SPECIALIST_PLACEMENT",
+      "team_state": "TEAM_STATE_001"
+    }
+  ],
+  "schema": [
+    "date",
+    "team_state",
+    "recommendation",
+    "alternatives",
+    "reason",
+    "confidence",
+    "expected_benefit",
+    "cost",
+    "actual_user_decision",
+    "later_outcome"
+  ]
+}

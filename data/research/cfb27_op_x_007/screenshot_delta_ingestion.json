@@ -1,0 +1,14 @@
+{
+  "absent_slot_policy": "NOT_REMOVED_UNLESS_VISIBLE",
+  "classifications": [
+    "ADDED",
+    "REMOVED",
+    "MOVED",
+    "UPGRADED",
+    "DOWNGRADED",
+    "UNCHANGED",
+    "AMBIGUOUS"
+  ],
+  "idempotent": true,
+  "unreadable_policy": "AMBIGUOUS_NOT_GUESSED"
+}
