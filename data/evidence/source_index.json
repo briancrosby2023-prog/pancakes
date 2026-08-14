@@ -52998,6 +52998,96 @@
       "target_type": "research_artifact"
     },
     {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-CARD-UPGRADE-STATES-JSON-SRC-HIST-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-HIST-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-CARD-UPGRADE-STATES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-CARD-UPGRADE-STATES-JSON-SRC-QB-002",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-QB-002",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-CARD-UPGRADE-STATES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-PROGRESSION-EVENTS-JSON-SRC-HIST-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-HIST-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-PROGRESSION-EVENTS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-PROGRESSION-EVENTS-JSON-SRC-QB-002",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-QB-002",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-PROGRESSION-EVENTS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-010-CARD-UPGRADE-STATES-JSON-SRC-HIST-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-HIST-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CARD-UPGRADE-STATES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-010-CARD-UPGRADE-STATES-JSON-SRC-QB-002",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-QB-002",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CARD-UPGRADE-STATES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-010-CARD-VERSION-GRAPH-JSON-SRC-HIST-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-HIST-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CARD-VERSION-GRAPH-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-010-CARD-VERSION-GRAPH-JSON-SRC-QB-002",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-QB-002",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CARD-VERSION-GRAPH-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-010-PROGRESSION-EVENTS-JSON-SRC-HIST-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-HIST-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-PROGRESSION-EVENTS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-010-PROGRESSION-EVENTS-JSON-SRC-QB-002",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-QB-002",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-PROGRESSION-EVENTS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
       "link_id": "LINK-ART-DATA-RESEARCH-HISTORICAL-CENTER-ASSESSMENT-HISTORICAL-CENTER-POPULATION-RECONCILIATION-JSON-SRC-C-RAW-001",
       "locator": null,
       "notes": null,
@@ -66339,6 +66429,390 @@
       "referenced_card_ids": [],
       "research_only": true,
       "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-009-VECTOR-COVERAGE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/active_states.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-ACTIVE-STATES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/canonical_exports_manifest.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-MANIFEST-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/canonical_exports_v2/active_states.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-ACTIVE-STATES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/canonical_exports_v2/card_native_states.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-CARD-NATIVE-STATES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/canonical_exports_v2/card_upgrade_states.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-CARD-UPGRADE-STATES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/canonical_exports_v2/cards.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-CARDS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/canonical_exports_v2/data_quality.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-DATA-QUALITY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/canonical_exports_v2/database_coverage.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-DATABASE-COVERAGE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/canonical_exports_v2/market_instances.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-MARKET-INSTANCES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/canonical_exports_v2/players.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-PLAYERS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/canonical_exports_v2/positional_views.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-POSITIONAL-VIEWS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/canonical_exports_v2/progression_events.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-PROGRESSION-EVENTS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-ROSTER-INSTANCES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/canonical_exports_v2/source_evidence.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-SOURCE-EVIDENCE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/canonical_exports_v2/specialist_views.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CANONICAL-EXPORTS-V2-SPECIALIST-VIEWS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/card_native_states.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CARD-NATIVE-STATES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/card_upgrade_states.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CARD-UPGRADE-STATES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/card_version_graph.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CARD-VERSION-GRAPH-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/cards.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CARDS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/chemistry_contexts.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CHEMISTRY-CONTEXTS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/completeness_roadmap.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-COMPLETENESS-ROADMAP-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/current_roster_reconstruction.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-CURRENT-ROSTER-RECONSTRUCTION-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/data_quality_scorecard.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-DATA-QUALITY-SCORECARD-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/database_audit.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-DATABASE-AUDIT-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/database_coverage_audit.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-DATABASE-COVERAGE-AUDIT-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/database_first_queries.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-DATABASE-FIRST-QUERIES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/database_health.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-DATABASE-HEALTH-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/database_verdict.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-DATABASE-VERDICT-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/duplicate_resolution.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-DUPLICATE-RESOLUTION-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/entity_model_v2.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-ENTITY-MODEL-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/freeze.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-FREEZE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/incremental_ingestion_contract.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-INCREMENTAL-INGESTION-CONTRACT-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/model_readiness.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-MODEL-READINESS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/next_decision.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-NEXT-DECISION-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/players.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-PLAYERS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/primary_stat_retry.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-PRIMARY-STAT-RETRY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/progression_events.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-PROGRESSION-EVENTS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/research_backlog.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-RESEARCH-BACKLOG-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/roster_instances.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-ROSTER-INSTANCES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/screenshot_request_policy.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-SCREENSHOT-REQUEST-POLICY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/seau_generalization.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-SEAU-GENERALIZATION-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/seau_gold_standard.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-SEAU-GOLD-STANDARD-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/secondary_gates.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-SECONDARY-GATES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/source_evidence.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-SOURCE-EVIDENCE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/specialist_views.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-SPECIALIST-VIEWS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/upgrade_foundation_table.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-UPGRADE-FOUNDATION-TABLE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/upgrade_system_taxonomy.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-UPGRADE-SYSTEM-TAXONOMY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_010/validation.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-VALIDATION-JSON",
       "target_type": "research_artifact"
     },
     {

@@ -1,0 +1,34 @@
+{
+  "ability_thresholds": {
+    "source_present": true
+  },
+  "canonical_workbook": {
+    "path": "data/canonical/canonical_v1.9.xlsx",
+    "preserved": true
+  },
+  "evidence_catalog": {
+    "count_basis": "OP-X-010 start checkpoint c6227af",
+    "current_index_records": 680,
+    "meaning": "heterogeneous evidence targets; not a card population",
+    "records": 632
+  },
+  "market": {
+    "observations": 0
+  },
+  "progression": {
+    "chains": 12,
+    "events": 29,
+    "seau_states": 5
+  },
+  "public_population_state": {
+    "meaning": "staged public CUT card records",
+    "records": 435,
+    "unique_card_ids": 435,
+    "unique_players": 278
+  },
+  "roster": {
+    "normal_instances": 24,
+    "resolved_active_states": 1,
+    "specialist_views": 10
+  }
+}

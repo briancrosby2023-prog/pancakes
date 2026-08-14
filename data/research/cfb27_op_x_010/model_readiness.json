@@ -1,0 +1,30 @@
+{
+  "CURRENT_TEAM_READY": {
+    "coverage": "1/24",
+    "ready": false
+  },
+  "FORMULA_MODEL_READY": {
+    "ready": true,
+    "scope": "validated native population only"
+  },
+  "MARKET_MODEL_READY": {
+    "observations": 0,
+    "ready": false
+  },
+  "PRIMARY_STAT_MODEL_READY": {
+    "current_roster_coverage": "1/24",
+    "ready": false,
+    "requires": [
+      "exact active card identity",
+      "active ratings"
+    ]
+  },
+  "UPGRADE_FOUNDATION_READY": {
+    "ready": false,
+    "requires": [
+      "validated upgradeability",
+      "base state",
+      "progression system"
+    ]
+  }
+}

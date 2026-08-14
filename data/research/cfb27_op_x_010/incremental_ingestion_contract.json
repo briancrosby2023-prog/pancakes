@@ -1,0 +1,25 @@
+{
+  "access_bypass_permitted": false,
+  "change_classes": [
+    "NEW_CARD",
+    "UPDATED_SOURCE_RECORD",
+    "NEW_VERSION",
+    "NEW_UPGRADE_STATE",
+    "NEW_MARKET_OBSERVATION",
+    "CONFLICT",
+    "NO_CHANGE"
+  ],
+  "identity_key": [
+    "source",
+    "source_card_id"
+  ],
+  "operations": [
+    "discover",
+    "fetch",
+    "normalize",
+    "validate",
+    "upsert",
+    "diff"
+  ],
+  "raw_snapshot_required": true
+}
