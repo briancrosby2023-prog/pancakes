@@ -1,0 +1,1309 @@
+{
+  "archetype_population_balance": {
+    "C::Agile": 17,
+    "C::Pass Protector": 70,
+    "C::Raw Strength": 31,
+    "C::Well Rounded": 4,
+    "CB::Bump and Run": 8,
+    "CB::Field": 12,
+    "CB::Zone": 3,
+    "DT::Power Rusher": 2,
+    "DT::Pure Power": 12,
+    "DT::Speed Rusher": 1,
+    "FS::Box Specialist": 15,
+    "FS::Coverage Specialist": 3,
+    "FS::Hybrid": 5,
+    "HB::Backfield Threat": 2,
+    "HB::Contact Seeker": 4,
+    "HB::East/West Playmaker": 17,
+    "LEDG::Gap Specialist": 2,
+    "LEDG::Power Rusher": 4,
+    "LEDG::Pure Power": 8,
+    "LEDG::Speed Rusher": 5,
+    "LG::Agile": 2,
+    "LG::Pass Protector": 6,
+    "LG::Raw Strength": 15,
+    "LT::Agile": 15,
+    "LT::Pass Protector": 2,
+    "LT::Raw Strength": 5,
+    "LT::Well Rounded": 1,
+    "MIKE::Lurker": 5,
+    "MIKE::Signal Caller": 5,
+    "MIKE::Thumper": 13,
+    "QB::Backfield Creator": 4,
+    "QB::Dual Threat": 8,
+    "QB::Pocket Passer": 11,
+    "REDG::Gap Specialist": 2,
+    "REDG::Power Rusher": 6,
+    "REDG::Speed Rusher": 11,
+    "RG::Agile": 4,
+    "RG::Raw Strength": 10,
+    "RG::Well Rounded": 1,
+    "RT::Agile": 9,
+    "RT::Raw Strength": 6,
+    "SS::Box Specialist": 3,
+    "SS::Coverage Specialist": 7,
+    "SS::Hybrid": 13,
+    "TE::Gritty Possession": 7,
+    "TE::Physical Route Runner": 6,
+    "TE::Vertical Threat": 10,
+    "WR::Contested Specialist": 12,
+    "WR::Elusive Route Runner": 5,
+    "WR::Gadget Receiver": 1,
+    "WR::Speedster": 5
+  },
+  "ltd_construction": {
+    "cards": [],
+    "status": "DESCRIPTIVE_ONLY"
+  },
+  "pc_evaluator_interface": {
+    "optional_inputs": [
+      "archetype",
+      "program",
+      "release_date",
+      "market_observations",
+      "abilities"
+    ],
+    "outputs": [
+      "ovr_cost",
+      "market_premium",
+      "ability_leverage",
+      "gameplay_confidence"
+    ],
+    "required_inputs": [
+      "game",
+      "year",
+      "card_id",
+      "position",
+      "overall",
+      "attributes",
+      "source_provenance"
+    ]
+  },
+  "promo_construction": {
+    "Bonus Content": 1,
+    "Cornerstones": 25,
+    "Countdown": 8,
+    "Phenoms": 27,
+    "Prime Prospects": 23,
+    "Ranked": 18,
+    "S1 Legends - Classic": 6,
+    "S1 Legends - Millenium": 8,
+    "S1 Legends - Modern": 3,
+    "Season 1": 21,
+    "Standouts": 23,
+    "Summer Rush": 10,
+    "Sunday Spotlight: Retro": 23,
+    "Supercharged": 16
+  },
+  "same_player_lineage": [
+    {
+      "cards": [
+        "27-2021049",
+        "27-9021049"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "A'Mauri Washington",
+      "position": "DT"
+    },
+    {
+      "cards": [
+        "27-2018787",
+        "27-8018787"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Aaron Fenimore",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2020771",
+        "27-8020771",
+        "27-200020771"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Adam Lepkowski",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2005767",
+        "27-9005767"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Amare Ferrell",
+      "position": "FS"
+    },
+    {
+      "cards": [
+        "27-2002586",
+        "27-9002586"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Andrew Sprague",
+      "position": "RT"
+    },
+    {
+      "cards": [
+        "27-2014832",
+        "27-9014832"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Anthonie Knapp",
+      "position": "LT"
+    },
+    {
+      "cards": [
+        "27-2033549",
+        "27-9033549"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Anthony Boswell",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2022892",
+        "27-9022892",
+        "27-260022892"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Anthony Donkoh",
+      "position": "RG"
+    },
+    {
+      "cards": [
+        "27-2000734",
+        "27-9000734",
+        "27-250000734"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Ashton Beers",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2010045",
+        "27-8010045"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Ashton Craig",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2021833",
+        "27-9021833"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Austin Siereveld",
+      "position": "LT"
+    },
+    {
+      "cards": [
+        "27-2000116",
+        "27-9000116"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Bear Alexander",
+      "position": "DT"
+    },
+    {
+      "cards": [
+        "27-201018417",
+        "27-2018417",
+        "27-9018417"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Ben Roberts",
+      "position": "MLB"
+    },
+    {
+      "cards": [
+        "27-111025937",
+        "27-110025937",
+        "27-280024922"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Bo Jackson",
+      "position": "HB"
+    },
+    {
+      "cards": [
+        "27-2002562",
+        "27-9002562"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Brady Small",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2001791",
+        "27-9001791"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Braelin Moore",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2000160",
+        "27-8000160"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Brandon Best",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2002520",
+        "27-9002520"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Brauntae Johnson",
+      "position": "FS"
+    },
+    {
+      "cards": [
+        "27-2008202",
+        "27-9008202",
+        "27-201008202"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Bray Hubbard",
+      "position": "SS"
+    },
+    {
+      "cards": [
+        "27-2004087",
+        "27-8004087"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Bray Lynch",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-880026070",
+        "27-700026070"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Brian Dawkins",
+      "position": "FS"
+    },
+    {
+      "cards": [
+        "27-2003754",
+        "27-8003754"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Brock Riker",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2008621",
+        "27-8008621"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Broderick Roman",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2020820",
+        "27-9020820"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Bruce Mitchell",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2021429",
+        "27-9021429"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "CJ Carr",
+      "position": "QB"
+    },
+    {
+      "cards": [
+        "27-2023114",
+        "27-8023114",
+        "27-240023114"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Caden Kitler",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2020840",
+        "27-8020840"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Cam Nichols",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-112018638",
+        "27-110018638"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Cameron Dickey",
+      "position": "HB"
+    },
+    {
+      "cards": [
+        "27-2018855",
+        "27-8018855"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Cameron Griffin",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2008177",
+        "27-9008177",
+        "27-260008177"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Carson Hinzman",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2001770",
+        "27-8001770"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Carter Miller",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2007022",
+        "27-9007022"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Cayden Green",
+      "position": "LT"
+    },
+    {
+      "cards": [
+        "27-111014816",
+        "27-110014816"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Chris Peal",
+      "position": "CB"
+    },
+    {
+      "cards": [
+        "27-2014562",
+        "27-9014562"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Clev Lubin",
+      "position": "RE"
+    },
+    {
+      "cards": [
+        "27-2009242",
+        "27-8009242",
+        "240009242",
+        "27-240009242"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Cole Best",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2014827",
+        "27-9014827",
+        "27-270014827"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Coleton Price",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2006335",
+        "27-201006335"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Colin Simmons",
+      "position": "RE"
+    },
+    {
+      "cards": [
+        "27-2020925",
+        "27-8020925"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Connor Robertson",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-250002286",
+        "27-251002286"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Curtis Peagler",
+      "position": "RG"
+    },
+    {
+      "cards": [
+        "27-2003387",
+        "27-9003387"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Dalton Brooks",
+      "position": "SS"
+    },
+    {
+      "cards": [
+        "27-2004136",
+        "27-9004136"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Dante Moore",
+      "position": "QB"
+    },
+    {
+      "cards": [
+        "27-2024640",
+        "27-9024640"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "David Sanders Jr.",
+      "position": "RT"
+    },
+    {
+      "cards": [
+        "27-2006924",
+        "27-9006924",
+        "27-250006924"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Dominick Giudice",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2005976",
+        "27-9005976",
+        "27-260005976"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Drayk Bowen",
+      "position": "MLB"
+    },
+    {
+      "cards": [
+        "27-2000912",
+        "27-9000912"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Drew Bobo",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2020399",
+        "27-9020399"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Dylan Stewart",
+      "position": "RE"
+    },
+    {
+      "cards": [
+        "27-803024466",
+        "27-802024466",
+        "27-801024466",
+        "27-800024466"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Elyiss Williams",
+      "position": "TE"
+    },
+    {
+      "cards": [
+        "27-201018461",
+        "27-2018461",
+        "27-9018461"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Evan Tengesdahl",
+      "position": "LG"
+    },
+    {
+      "cards": [
+        "27-2023253",
+        "27-9023253"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Ezomo Oratokhai",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2005595",
+        "27-9005595"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Faletau Satuala",
+      "position": "SS"
+    },
+    {
+      "cards": [
+        "27-2023693",
+        "27-8023693"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Harrison Moore",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2020966",
+        "27-9020966",
+        "27-250020966"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Howard Sampson",
+      "position": "LT"
+    },
+    {
+      "cards": [
+        "27-2023669",
+        "27-9023669"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Iapani Laloulu",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2019722",
+        "27-9019722",
+        "27-280019722"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Jake Guarnera",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2014513",
+        "27-8014513"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Jake Maikkula",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2023317",
+        "27-9023317"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Jake Renfro",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2020985",
+        "27-9020985"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Jalen Slappy",
+      "position": "RG"
+    },
+    {
+      "cards": [
+        "27-2023073",
+        "27-9023073",
+        "27-250023073"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Jamari Johnson",
+      "position": "TE"
+    },
+    {
+      "cards": [
+        "27-2000985",
+        "27-9000985"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Jamarious Brown",
+      "position": "DT"
+    },
+    {
+      "cards": [
+        "27-805020681",
+        "27-804020681",
+        "27-803020681",
+        "27-802020681",
+        "27-801020681",
+        "27-800020681"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Jay Green",
+      "position": "SS"
+    },
+    {
+      "cards": [
+        "27-212326542",
+        "27-103026542",
+        "27-212226542",
+        "27-212126542",
+        "27-212026542"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Jeff Saturday",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2020050",
+        "27-9020050"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Jeremiah Cooper",
+      "position": "FS"
+    },
+    {
+      "cards": [
+        "27-2021298",
+        "27-9021298"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "John Henry Daley",
+      "position": "RE"
+    },
+    {
+      "cards": [
+        "27-2000723",
+        "27-9000723",
+        "27-280000723"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Joshua Bates",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-111026550",
+        "27-110026550"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Junior Seau",
+      "position": "MLB"
+    },
+    {
+      "cards": [
+        "27-2018777",
+        "27-9018777"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Justin Evans",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-9000917",
+        "27-260000917"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "KJ Bolden",
+      "position": "FS"
+    },
+    {
+      "cards": [
+        "27-2021692",
+        "27-9021692",
+        "9021692"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Kade Pieper",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2029210",
+        "27-8029210"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Kaden Robnett",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2009449",
+        "27-9009449"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Kenyatta Jackson Jr.",
+      "position": "LE"
+    },
+    {
+      "cards": [
+        "27-802007424",
+        "27-801007424",
+        "27-800007424"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Keshaun Singleton",
+      "position": "WR"
+    },
+    {
+      "cards": [
+        "102026556",
+        "27-102026556"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Kevin Mawae",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2019898",
+        "27-8019898"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Kilian O'Connor",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-802022750",
+        "27-801022750"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Kobe Black",
+      "position": "CB"
+    },
+    {
+      "cards": [
+        "27-2023266",
+        "27-9023266",
+        "27-270023266"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Koi Perich",
+      "position": "FS"
+    },
+    {
+      "cards": [
+        "27-2000529",
+        "27-9000529"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Lance Robinson",
+      "position": "RG"
+    },
+    {
+      "cards": [
+        "27-2010722",
+        "27-9010722"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Landen Livingston",
+      "position": "LG"
+    },
+    {
+      "cards": [
+        "27-2000210",
+        "27-9000210"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Levi Hubbard",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2019231",
+        "27-9019231"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Luke Montgomery",
+      "position": "LG"
+    },
+    {
+      "cards": [
+        "27-2020571",
+        "27-9020571"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Lyndon Cooper",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2020533",
+        "27-9020533"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Malachi Breland",
+      "position": "LG"
+    },
+    {
+      "cards": [
+        "27-804025214",
+        "27-801025214",
+        "27-800025214"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Mandrell Desir",
+      "position": "LE"
+    },
+    {
+      "cards": [
+        "27-112010268",
+        "27-111010268",
+        "27-110010268"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Marcel Reed",
+      "position": "QB"
+    },
+    {
+      "cards": [
+        "27-2001958",
+        "27-8001958"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Mark Nabou Jr.",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2007473",
+        "27-9007473",
+        "27-201007473"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Matayo Uiagalelei",
+      "position": "RE"
+    },
+    {
+      "cards": [
+        "27-2006113",
+        "27-8006113"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Mateo Guevara",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2010046",
+        "27-8010046"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Matt Craycraft",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2007553",
+        "27-9007553"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Matthew Bailey",
+      "position": "SS"
+    },
+    {
+      "cards": [
+        "27-2028919",
+        "27-9028919"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Melkart Abou-Jaoude",
+      "position": "LE"
+    },
+    {
+      "cards": [
+        "27-2023934",
+        "27-9023934"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Michael Carroll",
+      "position": "RT"
+    },
+    {
+      "cards": [
+        "27-2018133",
+        "27-9018133",
+        "27-110018133"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Michael Hershey",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2009529",
+        "27-8009529"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Michael Maxwell",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2005459",
+        "27-9005459"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Monroe Mills",
+      "position": "RT"
+    },
+    {
+      "cards": [
+        "27-2020805",
+        "27-9020805"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Noah McKinney",
+      "position": "RG"
+    },
+    {
+      "cards": [
+        "27-2020353",
+        "27-9020353",
+        "27-260020353"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Quincy Rhodes Jr.",
+      "position": "LE"
+    },
+    {
+      "cards": [
+        "27-2006788",
+        "27-9006788"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Rasheem Biles",
+      "position": "MLB"
+    },
+    {
+      "cards": [
+        "27-2019246",
+        "27-9019246",
+        "27-201019246"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Rod Moore",
+      "position": "FS"
+    },
+    {
+      "cards": [
+        "27-2019970",
+        "27-9019970"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Ryan Baer",
+      "position": "RT"
+    },
+    {
+      "cards": [
+        "27-2001567",
+        "27-9001567"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Shadre Hurst",
+      "position": "LG"
+    },
+    {
+      "cards": [
+        "27-2020453",
+        "27-9020453"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Sheridan Wilson",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2029453",
+        "27-8029453"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Steven Demboski",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2018641",
+        "27-9018641"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "TJ Bush Jr.",
+      "position": "LE"
+    },
+    {
+      "cards": [
+        "27-2007617",
+        "27-9007617"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Terrance Carter Jr.",
+      "position": "TE"
+    },
+    {
+      "cards": [
+        "27-2023222",
+        "27-8023222",
+        "27-250023222",
+        "27-251023222"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Terrence Moore",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2007009",
+        "27-9007009"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Trevor Goosby",
+      "position": "LT"
+    },
+    {
+      "cards": [
+        "27-2008358",
+        "27-9008358"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Trevor Lauck",
+      "position": "LT"
+    },
+    {
+      "cards": [
+        "27-2018293",
+        "27-9018293",
+        "27-201018293"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Trey'Dez Green",
+      "position": "TE"
+    },
+    {
+      "cards": [
+        "27-2033236",
+        "27-9033236",
+        "27-201033236"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Trinidad Chambliss",
+      "position": "QB"
+    },
+    {
+      "cards": [
+        "27-2002576",
+        "27-9002576"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Tristian Smith",
+      "position": "LG"
+    },
+    {
+      "cards": [
+        "27-2022001",
+        "27-9022001"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Tyrique Tucker",
+      "position": "DT"
+    },
+    {
+      "cards": [
+        "27-2008626",
+        "27-9008626"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Tyson Ruffins",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2005768",
+        "27-9005768"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Vincent Fiacable",
+      "position": "C"
+    },
+    {
+      "cards": [
+        "27-2022356",
+        "27-9022356"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Wendell Moe Jr.",
+      "position": "LG"
+    },
+    {
+      "cards": [
+        "27-2023483",
+        "27-9023483"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Whit Weeks",
+      "position": "MLB"
+    },
+    {
+      "cards": [
+        "27-2006085",
+        "27-9006085"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Wilkin Formby",
+      "position": "RT"
+    },
+    {
+      "cards": [
+        "27-2018763",
+        "27-9018763"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Will Echoles",
+      "position": "DT"
+    },
+    {
+      "cards": [
+        "27-2020312",
+        "27-9020312"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Yhonzae Pierre",
+      "position": "RE"
+    },
+    {
+      "cards": [
+        "27-2033840",
+        "27-9033840"
+      ],
+      "classification": "SAME_GAME_CANDIDATE_NOT_CONFIRMED_PROGRESSION",
+      "player": "Zach Cochnauer",
+      "position": "RT"
+    }
+  ],
+  "spd_inflation": {
+    "C": 0.16842,
+    "CB": 0.021666,
+    "DT": 0.078652,
+    "FS": 0.115404,
+    "HB": 0.056317,
+    "LEDG": -0.003275,
+    "LG": 0.062067,
+    "LT": 0.063189,
+    "MIKE": 0.078493,
+    "QB": 0.073244,
+    "REDG": 0.080023,
+    "RG": 0.014027,
+    "RT": -0.011583,
+    "SS": 0.133516,
+    "TE": 0.086047,
+    "WR": 0.030538
+  },
+  "technical_inflation": {
+    "C": {
+      "IBL": 0.161492,
+      "PBK": 0.138166,
+      "RBK": 0.119336,
+      "STR": 0.23764
+    },
+    "CB": {
+      "MCV": -0.00478,
+      "PRC": 0.071004,
+      "PRS": 0.022652,
+      "ZCV": -0.018043
+    },
+    "DT": {
+      "BSH": 0.011236,
+      "FMV": 0.046816,
+      "PMV": -0.031835,
+      "STR": 0.014045
+    },
+    "FS": {
+      "MCV": 0.123505,
+      "PRC": 0.060047,
+      "SPD": 0.115404,
+      "ZCV": 0.077639
+    },
+    "HB": {
+      "BTK": 0.034436,
+      "CAR": 0.074388,
+      "COD": 0.083533,
+      "SPD": 0.056317
+    },
+    "LEDG": {},
+    "LG": {
+      "IBL": -0.042772,
+      "PBK": -0.098651,
+      "RBK": -0.055856,
+      "STR": -0.000707
+    },
+    "LT": {
+      "IBL": 0.029634,
+      "PBK": -0.037249,
+      "RBK": 0.081864,
+      "STR": 0.110859
+    },
+    "MIKE": {
+      "BSH": 0.064703,
+      "POW": 0.042073,
+      "STR": 0.099103,
+      "TAK": 0.045289
+    },
+    "QB": {
+      "DAC": 0.011361,
+      "MAC": 0.069016,
+      "SAC": 0.046374,
+      "THP": 0.092113
+    },
+    "REDG": {},
+    "RG": {
+      "IBL": 0.013164,
+      "PBK": -0.152568,
+      "RBK": -0.01694,
+      "STR": 0.054273
+    },
+    "RT": {
+      "IBL": -0.212355,
+      "PBK": -0.158301,
+      "RBK": -0.057915,
+      "STR": -0.11583
+    },
+    "SS": {
+      "MCV": 0.055162,
+      "POW": 0.297993,
+      "SPD": 0.133516,
+      "ZCV": 0.0752
+    },
+    "TE": {
+      "IBL": 0.093086,
+      "PBK": 0.157,
+      "RBK": 0.102651,
+      "STR": 0.106473
+    },
+    "WR": {
+      "CTH": 0.039919,
+      "DRR": 0.06231,
+      "MRR": 0.005072,
+      "SRR": -0.005093
+    }
+  }
+}
