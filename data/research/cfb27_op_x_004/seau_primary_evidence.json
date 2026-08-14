@@ -1,0 +1,256 @@
+{
+  "development_pool": {
+    "general_cap": 91,
+    "primary": [
+      "ACC",
+      "CTH",
+      "MCV",
+      "PRS",
+      "PUR",
+      "SPD",
+      "TAK",
+      "ZCV"
+    ],
+    "secondary": [
+      "AGI",
+      "AWR",
+      "BSH",
+      "COD",
+      "IBL",
+      "JMP",
+      "POW",
+      "PRC",
+      "STR"
+    ],
+    "selection_probabilities": "UNKNOWN",
+    "spd_cap": 99
+  },
+  "evo_events": [
+    {
+      "confidence": "VALIDATED",
+      "deltas": {
+        "CTH": 6,
+        "SPD": 7,
+        "STR": 5
+      },
+      "development_path": "LURKER",
+      "ending_ovr": 83,
+      "source": "USER_PRIMARY",
+      "upgrade_type": "EVO"
+    },
+    {
+      "confidence": "VALIDATED",
+      "deltas": {
+        "ACC": 3,
+        "POW": 4
+      },
+      "development_path": "LURKER",
+      "ending_ovr": 84,
+      "source": "USER_PRIMARY",
+      "upgrade_type": "EVO"
+    },
+    {
+      "confidence": "VALIDATED",
+      "deltas": {
+        "ACC": 3,
+        "AWR": 3,
+        "BSH": 2,
+        "PRS": 7,
+        "SPD": 3
+      },
+      "development_path": "LURKER",
+      "ending_ovr": 85,
+      "source": "USER_PRIMARY",
+      "upgrade_type": "EVO"
+    },
+    {
+      "confidence": "VALIDATED",
+      "deltas": {
+        "AGI": 2,
+        "COD": 2,
+        "CTH": 8,
+        "PRC": 2,
+        "PUR": 2
+      },
+      "development_path": "LURKER",
+      "ending_ovr": 86,
+      "source": "USER_PRIMARY",
+      "upgrade_type": "EVO"
+    }
+  ],
+  "premade_and_evo_merged": false,
+  "states": [
+    {
+      "archetype": "Lurker",
+      "confidence": "VALIDATED_DERIVED_ARITHMETIC",
+      "missing_values": [
+        "CIT",
+        "FMV",
+        "PMV",
+        "SPC",
+        "TGH"
+      ],
+      "overall": 81,
+      "player": "Junior Seau",
+      "position": "MIKE",
+      "program": "EVO START",
+      "ratings": {
+        "ACC": 82,
+        "AGI": 77,
+        "AWR": 74,
+        "BSH": 80,
+        "COD": 77,
+        "CTH": 70,
+        "IBL": 74,
+        "JMP": 77,
+        "MCV": 78,
+        "POW": 79,
+        "PRC": 74,
+        "PRS": 75,
+        "PUR": 82,
+        "SPD": 79,
+        "STR": 79,
+        "TAK": 88,
+        "ZCV": 81
+      },
+      "upgrade_type": "EVO"
+    },
+    {
+      "archetype": "Lurker",
+      "confidence": "VALIDATED_USER_PRIMARY",
+      "missing_values": [],
+      "overall": 84,
+      "player": "Junior Seau",
+      "position": "MIKE",
+      "program": "Sunday Spotlight: Retro",
+      "ratings": {
+        "ACC": 82,
+        "AGI": 76,
+        "AWR": 77,
+        "BSH": 83,
+        "CIT": 70,
+        "COD": 80,
+        "CTH": 73,
+        "FMV": 77,
+        "IBL": 77,
+        "JMP": 80,
+        "MCV": 81,
+        "PMV": 77,
+        "POW": 82,
+        "PRC": 77,
+        "PRS": 78,
+        "PUR": 82,
+        "SPC": 70,
+        "SPD": 82,
+        "STR": 82,
+        "TAK": 87,
+        "TGH": 84,
+        "ZCV": 84
+      },
+      "upgrade_type": "PREMADE_CARD_PROGRESSION"
+    },
+    {
+      "archetype": "Lurker",
+      "confidence": "VALIDATED_USER_PRIMARY",
+      "missing_values": [],
+      "overall": 86,
+      "player": "Junior Seau",
+      "position": "MIKE",
+      "program": "Sunday Spotlight: Retro",
+      "ratings": {
+        "ACC": 84,
+        "AGI": 78,
+        "AWR": 79,
+        "BSH": 85,
+        "CIT": 72,
+        "COD": 82,
+        "CTH": 75,
+        "FMV": 79,
+        "IBL": 79,
+        "JMP": 82,
+        "MCV": 83,
+        "PMV": 79,
+        "POW": 84,
+        "PRC": 79,
+        "PRS": 80,
+        "PUR": 84,
+        "SPC": 72,
+        "SPD": 84,
+        "STR": 84,
+        "TAK": 89,
+        "TGH": 86,
+        "ZCV": 86
+      },
+      "upgrade_type": "PREMADE_CARD_PROGRESSION"
+    },
+    {
+      "archetype": "Lurker",
+      "confidence": "VALIDATED_USER_PRIMARY",
+      "missing_values": [],
+      "overall": 87,
+      "player": "Junior Seau",
+      "position": "MIKE",
+      "program": "Sunday Spotlight: Retro LTD",
+      "ratings": {
+        "ACC": 85,
+        "AGI": 79,
+        "AWR": 80,
+        "BSH": 86,
+        "CIT": 73,
+        "COD": 83,
+        "CTH": 76,
+        "FMV": 80,
+        "IBL": 80,
+        "JMP": 83,
+        "MCV": 84,
+        "PMV": 80,
+        "POW": 85,
+        "PRC": 80,
+        "PRS": 81,
+        "PUR": 85,
+        "SPC": 73,
+        "SPD": 85,
+        "STR": 85,
+        "TAK": 90,
+        "TGH": 87,
+        "ZCV": 87
+      },
+      "upgrade_type": "PREMADE_CARD_PROGRESSION"
+    },
+    {
+      "archetype": "Lurker",
+      "confidence": "VALIDATED_USER_PRIMARY",
+      "missing_values": [
+        "CIT",
+        "FMV",
+        "PMV",
+        "SPC",
+        "TGH"
+      ],
+      "overall": 86,
+      "player": "Junior Seau",
+      "position": "MIKE",
+      "program": "EVO",
+      "ratings": {
+        "ACC": 88,
+        "AGI": 79,
+        "AWR": 77,
+        "BSH": 82,
+        "COD": 79,
+        "CTH": 84,
+        "IBL": 74,
+        "JMP": 77,
+        "MCV": 78,
+        "POW": 83,
+        "PRC": 76,
+        "PRS": 82,
+        "PUR": 84,
+        "SPD": 89,
+        "STR": 84,
+        "TAK": 88,
+        "ZCV": 81
+      },
+      "upgrade_type": "EVO"
+    }
+  ]
+}

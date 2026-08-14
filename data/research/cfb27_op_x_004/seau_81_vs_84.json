@@ -1,0 +1,435 @@
+{
+  "actual_81_to_86": {
+    "cumulative_deltas": {
+      "ACC": 6,
+      "AGI": 2,
+      "AWR": 3,
+      "BSH": 2,
+      "COD": 2,
+      "CTH": 14,
+      "POW": 4,
+      "PRC": 2,
+      "PRS": 7,
+      "PUR": 2,
+      "SPD": 10,
+      "STR": 5
+    },
+    "final": {
+      "ACC": 88,
+      "AGI": 79,
+      "AWR": 77,
+      "BSH": 82,
+      "COD": 79,
+      "CTH": 84,
+      "IBL": 74,
+      "JMP": 77,
+      "MCV": 78,
+      "POW": 83,
+      "PRC": 76,
+      "PRS": 82,
+      "PUR": 84,
+      "SPD": 89,
+      "STR": 84,
+      "TAK": 88,
+      "ZCV": 81
+    },
+    "foundation_repair_points": 22,
+    "remaining_deficit_vs_premade_86": {
+      "already_exceeds_target": [
+        "SPD",
+        "ACC",
+        "AGI",
+        "PRS",
+        "CTH"
+      ],
+      "attributes": {
+        "ACC": 0,
+        "AGI": 0,
+        "AWR": 2,
+        "BSH": 3,
+        "COD": 3,
+        "CTH": 0,
+        "IBL": 5,
+        "JMP": 5,
+        "MCV": 5,
+        "POW": 1,
+        "PRC": 3,
+        "PRS": 0,
+        "PUR": 0,
+        "SPD": 0,
+        "STR": 0,
+        "TAK": 1,
+        "ZCV": 5
+      },
+      "total": 33,
+      "unknown": [
+        "CIT",
+        "FMV",
+        "PMV",
+        "SPC",
+        "TGH"
+      ],
+      "unknown_as_zero": false
+    },
+    "specialization_points": 16,
+    "wasted_for_target_role_points": 14
+  },
+  "classification": "INSUFFICIENT_EVIDENCE",
+  "confidence": "MODERATE",
+  "cost_justification": "UNKNOWN_WITHOUT_TIMESTAMP_AND_UPGRADE_RESOURCE_COSTS",
+  "counterfactual_84_range": {
+    "exact_final_ratings": null,
+    "observed-event-grounded_ceiling_per_two_opportunities": {
+      "ACC": 88,
+      "SPD": 92
+    },
+    "probabilities": null,
+    "speed_floor_if_no_speed_selection": {
+      "ACC": 82,
+      "SPD": 82
+    },
+    "sufficient_for_89_88": "POSSIBLE_BUT_NOT_ESTABLISHED",
+    "synthetic_vector": false
+  },
+  "evo_concentration": {
+    "attributes_changed": 12,
+    "classification": "SPECIALIZED_DEVELOPMENT",
+    "hhi": 0.1296,
+    "largest_gain": 14,
+    "top_3_share": 0.5254,
+    "total_points": 59
+  },
+  "ltd_87": {
+    "cost": null,
+    "ratings": {
+      "ACC": 85,
+      "AGI": 79,
+      "AWR": 80,
+      "BSH": 86,
+      "CIT": 73,
+      "COD": 83,
+      "CTH": 76,
+      "FMV": 80,
+      "IBL": 80,
+      "JMP": 83,
+      "MCV": 84,
+      "PMV": 80,
+      "POW": 85,
+      "PRC": 80,
+      "PRS": 81,
+      "PUR": 85,
+      "SPC": 73,
+      "SPD": 85,
+      "STR": 85,
+      "TAK": 90,
+      "TGH": 87,
+      "ZCV": 87
+    }
+  },
+  "opportunity_paradox": "SUPPORTED_AS_PLAUSIBLE_NOT_PROVEN_OPTIMUM",
+  "premade_86": {
+    "acquisition_cost_observation": 166000,
+    "ratings": {
+      "ACC": 84,
+      "AGI": 78,
+      "AWR": 79,
+      "BSH": 85,
+      "CIT": 72,
+      "COD": 82,
+      "CTH": 75,
+      "FMV": 79,
+      "IBL": 79,
+      "JMP": 82,
+      "MCV": 83,
+      "PMV": 79,
+      "POW": 84,
+      "PRC": 79,
+      "PRS": 80,
+      "PUR": 84,
+      "SPC": 72,
+      "SPD": 84,
+      "STR": 84,
+      "TAK": 89,
+      "TGH": 86,
+      "ZCV": 86
+    }
+  },
+  "premade_concentration": {
+    "attributes_changed": 22,
+    "classification": "BROAD_DEVELOPMENT",
+    "hhi": 0.0455,
+    "largest_gain": 2,
+    "top_3_share": 0.1364,
+    "total_points": 44
+  },
+  "resource_difference_81_to_84": 34500,
+  "start_81": {
+    "acquisition_cost_observation": 15500,
+    "deficit": {
+      "already_exceeds_target": [],
+      "attributes": {
+        "ACC": 2,
+        "AGI": 1,
+        "AWR": 5,
+        "BSH": 5,
+        "COD": 5,
+        "CTH": 5,
+        "IBL": 5,
+        "JMP": 5,
+        "MCV": 5,
+        "POW": 5,
+        "PRC": 5,
+        "PRS": 5,
+        "PUR": 2,
+        "SPD": 5,
+        "STR": 5,
+        "TAK": 1,
+        "ZCV": 5
+      },
+      "total": 71,
+      "unknown": [
+        "CIT",
+        "FMV",
+        "PMV",
+        "SPC",
+        "TGH"
+      ],
+      "unknown_as_zero": false
+    },
+    "foundation": {
+      "categories": {
+        "ATHLETIC": {
+          "attributes": [
+            "SPD",
+            "ACC",
+            "AGI",
+            "COD",
+            "JMP"
+          ],
+          "completeness": 0.9564,
+          "deficit": 18
+        },
+        "COVERAGE": {
+          "attributes": [
+            "MCV",
+            "ZCV",
+            "PRS",
+            "CTH"
+          ],
+          "completeness": 0.9381,
+          "deficit": 20
+        },
+        "PHYSICAL": {
+          "attributes": [
+            "STR",
+            "POW"
+          ],
+          "completeness": 0.9405,
+          "deficit": 10
+        },
+        "PROCESSING": {
+          "attributes": [
+            "AWR",
+            "PRC"
+          ],
+          "completeness": 0.9367,
+          "deficit": 10
+        },
+        "TECHNICAL": {
+          "attributes": [
+            "TAK",
+            "PUR",
+            "BSH",
+            "IBL"
+          ],
+          "completeness": 0.9607,
+          "deficit": 13
+        }
+      },
+      "role_foundation": 0.9489,
+      "strengths": [],
+      "target": "PREMADE_86_LURKER_REFERENCE",
+      "weaknesses": [
+        "SPD",
+        "ACC",
+        "AGI",
+        "COD",
+        "AWR",
+        "STR",
+        "JMP",
+        "PRC",
+        "TAK",
+        "POW",
+        "PUR",
+        "BSH",
+        "IBL",
+        "MCV",
+        "ZCV",
+        "PRS",
+        "CTH"
+      ]
+    },
+    "ratings": {
+      "ACC": 82,
+      "AGI": 77,
+      "AWR": 74,
+      "BSH": 80,
+      "COD": 77,
+      "CTH": 70,
+      "IBL": 74,
+      "JMP": 77,
+      "MCV": 78,
+      "POW": 79,
+      "PRC": 74,
+      "PRS": 75,
+      "PUR": 82,
+      "SPD": 79,
+      "STR": 79,
+      "TAK": 88,
+      "ZCV": 81
+    },
+    "remaining_opportunities": 4
+  },
+  "start_84": {
+    "acquisition_cost_observation": 50000,
+    "counterfactual_opportunities_to_86": 2,
+    "deficit": {
+      "already_exceeds_target": [],
+      "attributes": {
+        "ACC": 2,
+        "AGI": 2,
+        "AWR": 2,
+        "BSH": 2,
+        "CIT": 2,
+        "COD": 2,
+        "CTH": 2,
+        "FMV": 2,
+        "IBL": 2,
+        "JMP": 2,
+        "MCV": 2,
+        "PMV": 2,
+        "POW": 2,
+        "PRC": 2,
+        "PRS": 2,
+        "PUR": 2,
+        "SPC": 2,
+        "SPD": 2,
+        "STR": 2,
+        "TAK": 2,
+        "TGH": 2,
+        "ZCV": 2
+      },
+      "total": 44,
+      "unknown": [],
+      "unknown_as_zero": false
+    },
+    "foundation": {
+      "categories": {
+        "ATHLETIC": {
+          "attributes": [
+            "SPD",
+            "ACC",
+            "AGI",
+            "COD",
+            "JMP"
+          ],
+          "completeness": 0.9756,
+          "deficit": 10
+        },
+        "COVERAGE": {
+          "attributes": [
+            "MCV",
+            "ZCV",
+            "PRS",
+            "CTH",
+            "CIT",
+            "SPC"
+          ],
+          "completeness": 0.9742,
+          "deficit": 12
+        },
+        "PHYSICAL": {
+          "attributes": [
+            "STR",
+            "TGH",
+            "POW"
+          ],
+          "completeness": 0.9764,
+          "deficit": 6
+        },
+        "PROCESSING": {
+          "attributes": [
+            "AWR",
+            "PRC"
+          ],
+          "completeness": 0.9747,
+          "deficit": 4
+        },
+        "TECHNICAL": {
+          "attributes": [
+            "TAK",
+            "PUR",
+            "BSH",
+            "IBL",
+            "FMV",
+            "PMV"
+          ],
+          "completeness": 0.9757,
+          "deficit": 12
+        }
+      },
+      "role_foundation": 0.9753,
+      "strengths": [],
+      "target": "PREMADE_86_LURKER_REFERENCE",
+      "weaknesses": [
+        "SPD",
+        "ACC",
+        "AGI",
+        "COD",
+        "AWR",
+        "STR",
+        "JMP",
+        "PRC",
+        "TGH",
+        "FMV",
+        "PMV",
+        "TAK",
+        "POW",
+        "PUR",
+        "BSH",
+        "IBL",
+        "MCV",
+        "ZCV",
+        "PRS",
+        "CTH",
+        "CIT",
+        "SPC"
+      ]
+    },
+    "ratings": {
+      "ACC": 82,
+      "AGI": 76,
+      "AWR": 77,
+      "BSH": 83,
+      "CIT": 70,
+      "COD": 80,
+      "CTH": 73,
+      "FMV": 77,
+      "IBL": 77,
+      "JMP": 80,
+      "MCV": 81,
+      "PMV": 77,
+      "POW": 82,
+      "PRC": 77,
+      "PRS": 78,
+      "PUR": 82,
+      "SPC": 70,
+      "SPD": 82,
+      "STR": 82,
+      "TAK": 87,
+      "TGH": 84,
+      "ZCV": 84
+    }
+  },
+  "why": "81 produced validated extreme athletic specialization, while 84 purchases a substantially broader foundation; no validated 84-EVO outcome distribution or resource-cost history proves which final role value dominates."
+}

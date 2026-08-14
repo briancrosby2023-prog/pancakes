@@ -1,0 +1,40 @@
+{
+  "81_ACTUAL": {
+    "ratings": {
+      "ACC": 88,
+      "AGI": 79,
+      "AWR": 77,
+      "BSH": 82,
+      "COD": 79,
+      "CTH": 84,
+      "IBL": 74,
+      "JMP": 77,
+      "MCV": 78,
+      "POW": 83,
+      "PRC": 76,
+      "PRS": 82,
+      "PUR": 84,
+      "SPD": 89,
+      "STR": 84,
+      "TAK": 88,
+      "ZCV": 81
+    },
+    "status": "OBSERVED"
+  },
+  "84_COUNTERFACTUAL": {
+    "confidence": "LOW",
+    "ratings": null,
+    "speed_range": {
+      "ACC": [
+        82,
+        88
+      ],
+      "SPD": [
+        82,
+        92
+      ]
+    },
+    "status": "MODELED_RANGE",
+    "technical_floor": "PREMADE_84_FOUNDATION"
+  }
+}

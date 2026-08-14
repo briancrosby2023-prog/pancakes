@@ -1,0 +1,87 @@
+[
+  {
+    "failure_mode": "TOO_LOW_STARTING_OVR",
+    "seau_relevance": "PLAUSIBLE",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "TOO_LARGE_STARTING_DEFICIT",
+    "seau_relevance": "PLAUSIBLE",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "TOO_HIGH_STARTING_OVR",
+    "seau_relevance": "NOT_ESTABLISHED",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "INSUFFICIENT_SPECIALIZATION_HEADROOM",
+    "seau_relevance": "NOT_ESTABLISHED",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "TOO_MANY_LOW_VALUE_OPPORTUNITIES",
+    "seau_relevance": "PLAUSIBLE",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "RNG_DEPENDENCE",
+    "seau_relevance": "PLAUSIBLE",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "UPGRADE_ALLOCATION_RISK",
+    "seau_relevance": "PLAUSIBLE",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "WRONG_ATTRIBUTE_POOL",
+    "seau_relevance": "NOT_ESTABLISHED",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "CAP_LIMITATION",
+    "seau_relevance": "NOT_ESTABLISHED",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "ARCHETYPE_MISMATCH",
+    "seau_relevance": "NOT_ESTABLISHED",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "PATH_MISMATCH",
+    "seau_relevance": "NOT_ESTABLISHED",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "THRESHOLD_MISS",
+    "seau_relevance": "NOT_ESTABLISHED",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "REDUNDANT_UPGRADES",
+    "seau_relevance": "NOT_ESTABLISHED",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "HIGH_RESOURCE_COST",
+    "seau_relevance": "NOT_ESTABLISHED",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "FINAL_BUILD_BELOW_MARKET_ALTERNATIVE",
+    "seau_relevance": "NOT_ESTABLISHED",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "INSUFFICIENT_CONTROL",
+    "seau_relevance": "PLAUSIBLE",
+    "validated_failure": false
+  },
+  {
+    "failure_mode": "FOUNDATION_REPAIR_OVERLOAD",
+    "seau_relevance": "PLAUSIBLE",
+    "validated_failure": false
+  }
+]

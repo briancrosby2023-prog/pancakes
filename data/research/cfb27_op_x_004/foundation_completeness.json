@@ -1,0 +1,398 @@
+{
+  "81_EVO_START": {
+    "categories": {
+      "ATHLETIC": {
+        "attributes": [
+          "SPD",
+          "ACC",
+          "AGI",
+          "COD",
+          "JMP"
+        ],
+        "completeness": 0.9564,
+        "deficit": 18
+      },
+      "COVERAGE": {
+        "attributes": [
+          "MCV",
+          "ZCV",
+          "PRS",
+          "CTH"
+        ],
+        "completeness": 0.9381,
+        "deficit": 20
+      },
+      "PHYSICAL": {
+        "attributes": [
+          "STR",
+          "POW"
+        ],
+        "completeness": 0.9405,
+        "deficit": 10
+      },
+      "PROCESSING": {
+        "attributes": [
+          "AWR",
+          "PRC"
+        ],
+        "completeness": 0.9367,
+        "deficit": 10
+      },
+      "TECHNICAL": {
+        "attributes": [
+          "TAK",
+          "PUR",
+          "BSH",
+          "IBL"
+        ],
+        "completeness": 0.9607,
+        "deficit": 13
+      }
+    },
+    "role_foundation": 0.9489,
+    "strengths": [],
+    "target": "PREMADE_86_LURKER_REFERENCE",
+    "weaknesses": [
+      "SPD",
+      "ACC",
+      "AGI",
+      "COD",
+      "AWR",
+      "STR",
+      "JMP",
+      "PRC",
+      "TAK",
+      "POW",
+      "PUR",
+      "BSH",
+      "IBL",
+      "MCV",
+      "ZCV",
+      "PRS",
+      "CTH"
+    ]
+  },
+  "84_PREMADE": {
+    "categories": {
+      "ATHLETIC": {
+        "attributes": [
+          "SPD",
+          "ACC",
+          "AGI",
+          "COD",
+          "JMP"
+        ],
+        "completeness": 0.9756,
+        "deficit": 10
+      },
+      "COVERAGE": {
+        "attributes": [
+          "MCV",
+          "ZCV",
+          "PRS",
+          "CTH",
+          "CIT",
+          "SPC"
+        ],
+        "completeness": 0.9742,
+        "deficit": 12
+      },
+      "PHYSICAL": {
+        "attributes": [
+          "STR",
+          "TGH",
+          "POW"
+        ],
+        "completeness": 0.9764,
+        "deficit": 6
+      },
+      "PROCESSING": {
+        "attributes": [
+          "AWR",
+          "PRC"
+        ],
+        "completeness": 0.9747,
+        "deficit": 4
+      },
+      "TECHNICAL": {
+        "attributes": [
+          "TAK",
+          "PUR",
+          "BSH",
+          "IBL",
+          "FMV",
+          "PMV"
+        ],
+        "completeness": 0.9757,
+        "deficit": 12
+      }
+    },
+    "role_foundation": 0.9753,
+    "strengths": [],
+    "target": "PREMADE_86_LURKER_REFERENCE",
+    "weaknesses": [
+      "SPD",
+      "ACC",
+      "AGI",
+      "COD",
+      "AWR",
+      "STR",
+      "JMP",
+      "PRC",
+      "TGH",
+      "FMV",
+      "PMV",
+      "TAK",
+      "POW",
+      "PUR",
+      "BSH",
+      "IBL",
+      "MCV",
+      "ZCV",
+      "PRS",
+      "CTH",
+      "CIT",
+      "SPC"
+    ]
+  },
+  "86_EVO": {
+    "categories": {
+      "ATHLETIC": {
+        "attributes": [
+          "SPD",
+          "ACC",
+          "AGI",
+          "COD",
+          "JMP"
+        ],
+        "completeness": 0.9805,
+        "deficit": 8
+      },
+      "COVERAGE": {
+        "attributes": [
+          "MCV",
+          "ZCV",
+          "PRS",
+          "CTH"
+        ],
+        "completeness": 0.9704,
+        "deficit": 10
+      },
+      "PHYSICAL": {
+        "attributes": [
+          "STR",
+          "POW"
+        ],
+        "completeness": 0.994,
+        "deficit": 1
+      },
+      "PROCESSING": {
+        "attributes": [
+          "AWR",
+          "PRC"
+        ],
+        "completeness": 0.9684,
+        "deficit": 5
+      },
+      "TECHNICAL": {
+        "attributes": [
+          "TAK",
+          "PUR",
+          "BSH",
+          "IBL"
+        ],
+        "completeness": 0.9725,
+        "deficit": 9
+      }
+    },
+    "role_foundation": 0.9764,
+    "strengths": [
+      "SPD",
+      "ACC",
+      "AGI",
+      "STR",
+      "PUR",
+      "PRS",
+      "CTH"
+    ],
+    "target": "PREMADE_86_LURKER_REFERENCE",
+    "weaknesses": [
+      "COD",
+      "AWR",
+      "JMP",
+      "PRC",
+      "TAK",
+      "POW",
+      "BSH",
+      "IBL",
+      "MCV",
+      "ZCV"
+    ]
+  },
+  "86_PREMADE": {
+    "categories": {
+      "ATHLETIC": {
+        "attributes": [
+          "SPD",
+          "ACC",
+          "AGI",
+          "COD",
+          "JMP"
+        ],
+        "completeness": 1.0,
+        "deficit": 0
+      },
+      "COVERAGE": {
+        "attributes": [
+          "MCV",
+          "ZCV",
+          "PRS",
+          "CTH",
+          "CIT",
+          "SPC"
+        ],
+        "completeness": 1.0,
+        "deficit": 0
+      },
+      "PHYSICAL": {
+        "attributes": [
+          "STR",
+          "TGH",
+          "POW"
+        ],
+        "completeness": 1.0,
+        "deficit": 0
+      },
+      "PROCESSING": {
+        "attributes": [
+          "AWR",
+          "PRC"
+        ],
+        "completeness": 1.0,
+        "deficit": 0
+      },
+      "TECHNICAL": {
+        "attributes": [
+          "TAK",
+          "PUR",
+          "BSH",
+          "IBL",
+          "FMV",
+          "PMV"
+        ],
+        "completeness": 1.0,
+        "deficit": 0
+      }
+    },
+    "role_foundation": 1.0,
+    "strengths": [
+      "SPD",
+      "ACC",
+      "AGI",
+      "COD",
+      "AWR",
+      "STR",
+      "JMP",
+      "PRC",
+      "TGH",
+      "FMV",
+      "PMV",
+      "TAK",
+      "POW",
+      "PUR",
+      "BSH",
+      "IBL",
+      "MCV",
+      "ZCV",
+      "PRS",
+      "CTH",
+      "CIT",
+      "SPC"
+    ],
+    "target": "PREMADE_86_LURKER_REFERENCE",
+    "weaknesses": []
+  },
+  "87_LTD": {
+    "categories": {
+      "ATHLETIC": {
+        "attributes": [
+          "SPD",
+          "ACC",
+          "AGI",
+          "COD",
+          "JMP"
+        ],
+        "completeness": 1,
+        "deficit": 0
+      },
+      "COVERAGE": {
+        "attributes": [
+          "MCV",
+          "ZCV",
+          "PRS",
+          "CTH",
+          "CIT",
+          "SPC"
+        ],
+        "completeness": 1,
+        "deficit": 0
+      },
+      "PHYSICAL": {
+        "attributes": [
+          "STR",
+          "TGH",
+          "POW"
+        ],
+        "completeness": 1,
+        "deficit": 0
+      },
+      "PROCESSING": {
+        "attributes": [
+          "AWR",
+          "PRC"
+        ],
+        "completeness": 1,
+        "deficit": 0
+      },
+      "TECHNICAL": {
+        "attributes": [
+          "TAK",
+          "PUR",
+          "BSH",
+          "IBL",
+          "FMV",
+          "PMV"
+        ],
+        "completeness": 1,
+        "deficit": 0
+      }
+    },
+    "role_foundation": 1,
+    "strengths": [
+      "SPD",
+      "ACC",
+      "AGI",
+      "COD",
+      "AWR",
+      "STR",
+      "JMP",
+      "PRC",
+      "TGH",
+      "FMV",
+      "PMV",
+      "TAK",
+      "POW",
+      "PUR",
+      "BSH",
+      "IBL",
+      "MCV",
+      "ZCV",
+      "PRS",
+      "CTH",
+      "CIT",
+      "SPC"
+    ],
+    "target": "PREMADE_86_LURKER_REFERENCE",
+    "weaknesses": []
+  }
+}
