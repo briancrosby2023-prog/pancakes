@@ -1,0 +1,197 @@
+{
+  "limitations": "Direct requests returned HTTP 403 and were not bypassed. The 13-row Backfield Creator fallback contains only fields exposed by the source's public search index; full linked profile vectors were not inferred. Raw Strength's published n=105 is recorded as source-declared context, not acquired profiles.",
+  "no_access_bypass": true,
+  "populations": {
+    "Backfield Creator": {
+      "attribute_means": {
+        "ACC": 88.0,
+        "AWR": 77.923077,
+        "SPD": 84.615385,
+        "STR": 62.307692
+      },
+      "attribute_variance": {
+        "ACC": 13.538462,
+        "AWR": 111.147929,
+        "SPD": 16.698225,
+        "STR": 16.213018
+      },
+      "completeness": "PUBLIC_LISTING_FIELDS_ONLY",
+      "n": 13,
+      "ovr_range": [
+        67,
+        93
+      ],
+      "profiles": [
+        {
+          "ACC": 93,
+          "AWR": 96,
+          "OVR": 93,
+          "SPD": 90,
+          "STR": 66,
+          "player": "Trinidad Chambliss",
+          "position": "QB",
+          "source_scope": "PUBLIC_SEARCH_INDEX_LISTING"
+        },
+        {
+          "ACC": 93,
+          "AWR": 93,
+          "OVR": 88,
+          "SPD": 88,
+          "STR": 65,
+          "player": "Avery Johnson",
+          "position": "QB",
+          "source_scope": "PUBLIC_SEARCH_INDEX_LISTING"
+        },
+        {
+          "ACC": 93,
+          "AWR": 86,
+          "OVR": 88,
+          "SPD": 91,
+          "STR": 59,
+          "player": "Demond Williams Jr.",
+          "position": "QB",
+          "source_scope": "PUBLIC_SEARCH_INDEX_LISTING"
+        },
+        {
+          "ACC": 91,
+          "AWR": 89,
+          "OVR": 86,
+          "SPD": 89,
+          "STR": 68,
+          "player": "Alonza Barnett III",
+          "position": "QB",
+          "source_scope": "PUBLIC_SEARCH_INDEX_LISTING"
+        },
+        {
+          "ACC": 91,
+          "AWR": 77,
+          "OVR": 83,
+          "SPD": 87,
+          "STR": 63,
+          "player": "Bryce Underwood",
+          "position": "QB",
+          "source_scope": "PUBLIC_SEARCH_INDEX_LISTING"
+        },
+        {
+          "ACC": 86,
+          "AWR": 83,
+          "OVR": 80,
+          "SPD": 82,
+          "STR": 68,
+          "player": "Broc Lowry",
+          "position": "QB",
+          "source_scope": "PUBLIC_SEARCH_INDEX_LISTING"
+        },
+        {
+          "ACC": 88,
+          "AWR": 73,
+          "OVR": 75,
+          "SPD": 85,
+          "STR": 60,
+          "player": "Tramell Jones Jr.",
+          "position": "QB",
+          "source_scope": "PUBLIC_SEARCH_INDEX_LISTING"
+        },
+        {
+          "ACC": 87,
+          "AWR": 75,
+          "OVR": 71,
+          "SPD": 83,
+          "STR": 60,
+          "player": "Calvin Adkisson",
+          "position": "QB",
+          "source_scope": "PUBLIC_SEARCH_INDEX_LISTING"
+        },
+        {
+          "ACC": 87,
+          "AWR": 71,
+          "OVR": 71,
+          "SPD": 85,
+          "STR": 61,
+          "player": "Malachi Nelson",
+          "position": "QB",
+          "source_scope": "PUBLIC_SEARCH_INDEX_LISTING"
+        },
+        {
+          "ACC": 84,
+          "AWR": 60,
+          "OVR": 70,
+          "SPD": 78,
+          "STR": 58,
+          "player": "Nathan Peters",
+          "position": "QB",
+          "source_scope": "PUBLIC_SEARCH_INDEX_LISTING"
+        },
+        {
+          "ACC": 84,
+          "AWR": 76,
+          "OVR": 69,
+          "SPD": 82,
+          "STR": 66,
+          "player": "Carter Jones",
+          "position": "QB",
+          "source_scope": "PUBLIC_SEARCH_INDEX_LISTING"
+        },
+        {
+          "ACC": 85,
+          "AWR": 71,
+          "OVR": 68,
+          "SPD": 82,
+          "STR": 62,
+          "player": "Riley Trujillo",
+          "position": "QB",
+          "source_scope": "PUBLIC_SEARCH_INDEX_LISTING"
+        },
+        {
+          "ACC": 82,
+          "AWR": 63,
+          "OVR": 67,
+          "SPD": 78,
+          "STR": 54,
+          "player": "Trace Johnson",
+          "position": "QB",
+          "source_scope": "PUBLIC_SEARCH_INDEX_LISTING"
+        }
+      ]
+    },
+    "Pass Protector": {
+      "attribute_means": {},
+      "attribute_variance": {},
+      "completeness": "PUBLIC_LISTING_FIELDS_ONLY",
+      "n": 0,
+      "ovr_range": null,
+      "profiles": []
+    },
+    "Raw Strength": {
+      "attribute_means": {},
+      "attribute_variance": {},
+      "completeness": "PUBLIC_LISTING_FIELDS_ONLY",
+      "n": 0,
+      "ovr_range": null,
+      "profiles": []
+    }
+  },
+  "retrieved_at": "2026-08-14T02:30:00Z",
+  "source": "CollegeFootball.gg public CFB27 base-roster archetype listings",
+  "source_declared_population": {
+    "Backfield Creator": 13,
+    "Raw Strength": 105
+  },
+  "sources": [
+    {
+      "archetype": "Raw Strength",
+      "status": "HTTP_403",
+      "url": "https://collegefootball.gg/players/archetype/c-power/"
+    },
+    {
+      "archetype": "Pass Protector",
+      "status": "HTTP_403",
+      "url": "https://collegefootball.gg/players/archetype/c-pass-protector/"
+    },
+    {
+      "archetype": "Backfield Creator",
+      "status": "HTTP_403",
+      "url": "https://collegefootball.gg/players/archetype/qb-improviser/"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "Gritty Possession": {
+    "holdout": "82/83 independent pairs",
+    "model": "unmodified M19 Possession",
+    "objective": "all cross-OVR pair ordering",
+    "population_n": 16
+  },
+  "Physical Route Runner": {
+    "holdout": "304/304 holdout-involved unique-profile pairs",
+    "model": "71% M19 VT + 29% M19 Possession",
+    "objective": "all cross-OVR pair ordering",
+    "population_n": 32
+  },
+  "Vertical Threat": {
+    "holdout": "17/17 player-disjoint; hidden until freeze",
+    "model": "M19 VT +2 LBK +3 IBL",
+    "objective": "all cross-OVR pair ordering",
+    "population_n": 19
+  },
+  "leakage": false,
+  "source_provenance": "Authenticated XML-derived EA Madden 19 table; not community-estimated weights."
+}

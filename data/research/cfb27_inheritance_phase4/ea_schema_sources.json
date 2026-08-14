@@ -1,0 +1,140 @@
+{
+  "catalog": [
+    {
+      "enums": 0,
+      "fields": 15678,
+      "game": "M19",
+      "inventory": "data/external/ea_schema_inventory/M19_inventory.json.gz",
+      "meta": {
+        "gameYear": 19,
+        "major": 95,
+        "minor": 7
+      },
+      "tables": 2399
+    },
+    {
+      "enums": 0,
+      "fields": 19733,
+      "game": "M20",
+      "inventory": "data/external/ea_schema_inventory/M20_inventory.json.gz",
+      "meta": {
+        "gameYear": 20,
+        "major": 371,
+        "minor": 1
+      },
+      "tables": 2643
+    },
+    {
+      "enums": 0,
+      "fields": 19887,
+      "game": "M21",
+      "inventory": "data/external/ea_schema_inventory/M21_inventory.json.gz",
+      "meta": {
+        "gameYear": 21,
+        "major": 220,
+        "minor": 0
+      },
+      "tables": 2771
+    },
+    {
+      "enums": 0,
+      "fields": 21103,
+      "game": "M22",
+      "inventory": "data/external/ea_schema_inventory/M22_inventory.json.gz",
+      "meta": {
+        "gameYear": 22,
+        "major": 329,
+        "minor": 1
+      },
+      "tables": 2999
+    },
+    {
+      "enums": 0,
+      "fields": 21931,
+      "game": "M23",
+      "inventory": "data/external/ea_schema_inventory/M23_inventory.json.gz",
+      "meta": {
+        "gameYear": 23,
+        "major": 158,
+        "minor": 18
+      },
+      "tables": 3115
+    },
+    {
+      "enums": 0,
+      "fields": 22067,
+      "game": "M24",
+      "inventory": "data/external/ea_schema_inventory/M24_inventory.json.gz",
+      "meta": {
+        "gameYear": 24,
+        "major": 155,
+        "minor": 8
+      },
+      "tables": 3122
+    },
+    {
+      "enums": 0,
+      "fields": 21120,
+      "game": "M25",
+      "inventory": "data/external/ea_schema_inventory/M25_inventory.json.gz",
+      "meta": {
+        "gameYear": 25,
+        "major": 222,
+        "minor": 6
+      },
+      "tables": 3122
+    },
+    {
+      "enums": 380,
+      "fields": 22702,
+      "game": "M26",
+      "inventory": "data/external/ea_schema_inventory/M26_inventory.json.gz",
+      "meta": {
+        "gameYear": 26,
+        "major": 682,
+        "minor": 1
+      },
+      "tables": 3333
+    },
+    {
+      "enums": 0,
+      "fields": 27199,
+      "game": "C27",
+      "inventory": "data/external/ea_schema_inventory/C27_inventory.json.gz",
+      "meta": {
+        "gameYear": 27,
+        "major": 468,
+        "minor": 2
+      },
+      "tables": 3498
+    },
+    {
+      "enums": 437,
+      "fields": 26114,
+      "game": "M27",
+      "inventory": "data/external/ea_schema_inventory/M27_inventory.json.gz",
+      "meta": {
+        "gameYear": 27,
+        "major": 620,
+        "minor": 0
+      },
+      "tables": 3655
+    }
+  ],
+  "commit": "ab48706d0e0f1cc5864b6f5f9a1738821f32bd5a",
+  "license": "MIT",
+  "provenance": "Project documentation states schemas are found within EA game files via Frosty; inventories are direct transformations of bundled schema files.",
+  "repository": "https://github.com/bep713/madden-franchise",
+  "supported_games_from_bundled_schemas": [
+    "M19",
+    "M20",
+    "M21",
+    "M22",
+    "M23",
+    "M24",
+    "M25",
+    "M26",
+    "M27",
+    "C27"
+  ]
+}

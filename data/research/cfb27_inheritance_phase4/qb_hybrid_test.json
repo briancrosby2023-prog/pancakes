@@ -1,0 +1,73 @@
+{
+  "candidate_results": {
+    "SCRAMBLER_FIELD_GENERAL_50_50": {
+      "exact": 0.5,
+      "mae": 16.5,
+      "n": 4,
+      "ordering": 1.0,
+      "within_one": 0.75
+    },
+    "SCRAMBLER_FIELD_GENERAL_67_33": {
+      "exact": 0.5,
+      "mae": 873.25,
+      "n": 4,
+      "ordering": 1.0,
+      "within_one": 0.75
+    },
+    "SCRAMBLER_STRONG_ARM_67_33": {
+      "exact": 0.5,
+      "mae": 1,
+      "n": 4,
+      "ordering": 1.0,
+      "within_one": 0.75
+    }
+  },
+  "equal": {
+    "exact": 0.5,
+    "mae": 0.5,
+    "n": 4,
+    "ordering": 1.0,
+    "within_one": 1.0
+  },
+  "fresh_fit": "INSUFFICIENT_N_FOR_RELIABLE_15_ATTRIBUTE_FIT",
+  "population_n": 4,
+  "pre_registered_candidates": [
+    "SCRAMBLER_FIELD_GENERAL_50_50",
+    "SCRAMBLER_FIELD_GENERAL_67_33",
+    "SCRAMBLER_STRONG_ARM_67_33"
+  ],
+  "random_mae": {
+    "draws": 1000,
+    "median": 0.5
+  },
+  "status": "RESEARCH_ONLY_UNDERPOWERED",
+  "trinidad_chambliss": {
+    "attribute_percentiles_within_cut_backfield_creator": {
+      "ACC": 100.0,
+      "AGI": 100.0,
+      "AWR": 100.0,
+      "BCV": 100.0,
+      "BSK": 100.0,
+      "BTK": 75.0,
+      "CAR": 75.0,
+      "COD": 100.0,
+      "DAC": 100.0,
+      "JKM": 100.0,
+      "MAC": 100.0,
+      "PAC": 100.0,
+      "RUN": 100.0,
+      "SAC": 100.0,
+      "SFA": 75.0,
+      "SPD": 100.0,
+      "SPM": 75.0,
+      "STR": 75.0,
+      "TAC": 100.0,
+      "TGH": 75.0,
+      "THP": 100.0,
+      "TRK": 75.0,
+      "TUP": 100.0
+    },
+    "interpretation": "Extreme special profile; not allowed to select the archetype prior.",
+    "present": true
+  }
+}

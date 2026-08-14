@@ -1,0 +1,20 @@
+{
+  "ability_progression_tunable_present_games": [
+    "C27",
+    "M19",
+    "M20",
+    "M21",
+    "M22",
+    "M23",
+    "M24",
+    "M25",
+    "M26",
+    "M27"
+  ],
+  "cfb27_asset_id": "6494910",
+  "confidence": "HIGH_ARCHITECTURAL_MODERATE_ROW_IDENTITY",
+  "exact_historical_long_name_found": false,
+  "finding": "AbilityProgressionTunable exists in every M19-M27 and CFB27 schema. Madden retains six identical fields through M27; CFB27 retains the table name but changes its asset ID and fields. This strongly supports an EA table-family origin for the historical Table_44 artifact, but does not prove row-level identity.",
+  "m19_m21_asset_id": "115590",
+  "m22_m27_asset_id": "102144"
+}

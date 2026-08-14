@@ -1,0 +1,197 @@
+{
+  "date_range": [
+    "2026-07-01",
+    "2026-08-13"
+  ],
+  "forecast_readiness": "INSUFFICIENT",
+  "replacement_pressure": {
+    "C": {
+      "archetype_coverage": 4,
+      "current_ceiling": 88,
+      "days_since_ceiling_change": 1,
+      "median_replacement_interval": 16,
+      "pressure": "LOWER",
+      "program_coverage": 15,
+      "release_count": 122
+    },
+    "CB": {
+      "archetype_coverage": 3,
+      "current_ceiling": 88,
+      "days_since_ceiling_change": 39,
+      "median_replacement_interval": 4,
+      "pressure": "ELEVATED",
+      "program_coverage": 11,
+      "release_count": 23
+    },
+    "DT": {
+      "archetype_coverage": 3,
+      "current_ceiling": 85,
+      "days_since_ceiling_change": 43,
+      "median_replacement_interval": null,
+      "pressure": "NORMAL",
+      "program_coverage": 5,
+      "release_count": 15
+    },
+    "FS": {
+      "archetype_coverage": 3,
+      "current_ceiling": 88,
+      "days_since_ceiling_change": 15,
+      "median_replacement_interval": 14.0,
+      "pressure": "NORMAL",
+      "program_coverage": 11,
+      "release_count": 23
+    },
+    "HB": {
+      "archetype_coverage": 3,
+      "current_ceiling": 90,
+      "days_since_ceiling_change": 2,
+      "median_replacement_interval": 41,
+      "pressure": "LOWER",
+      "program_coverage": 10,
+      "release_count": 23
+    },
+    "LE": {
+      "archetype_coverage": 4,
+      "current_ceiling": 88,
+      "days_since_ceiling_change": 43,
+      "median_replacement_interval": null,
+      "pressure": "NORMAL",
+      "program_coverage": 10,
+      "release_count": 19
+    },
+    "LG": {
+      "archetype_coverage": 3,
+      "current_ceiling": 87,
+      "days_since_ceiling_change": 8,
+      "median_replacement_interval": 35,
+      "pressure": "LOWER",
+      "program_coverage": 6,
+      "release_count": 23
+    },
+    "LT": {
+      "archetype_coverage": 4,
+      "current_ceiling": 88,
+      "days_since_ceiling_change": 11,
+      "median_replacement_interval": 16.0,
+      "pressure": "NORMAL",
+      "program_coverage": 8,
+      "release_count": 23
+    },
+    "MLB": {
+      "archetype_coverage": 3,
+      "current_ceiling": 88,
+      "days_since_ceiling_change": 43,
+      "median_replacement_interval": null,
+      "pressure": "NORMAL",
+      "program_coverage": 11,
+      "release_count": 23
+    },
+    "QB": {
+      "archetype_coverage": 3,
+      "current_ceiling": 89,
+      "days_since_ceiling_change": 14,
+      "median_replacement_interval": 12,
+      "pressure": "NORMAL",
+      "program_coverage": 12,
+      "release_count": 23
+    },
+    "RE": {
+      "archetype_coverage": 3,
+      "current_ceiling": 89,
+      "days_since_ceiling_change": 0,
+      "median_replacement_interval": 21.5,
+      "pressure": "LOWER",
+      "program_coverage": 7,
+      "release_count": 19
+    },
+    "RG": {
+      "archetype_coverage": 3,
+      "current_ceiling": 84,
+      "days_since_ceiling_change": 43,
+      "median_replacement_interval": null,
+      "pressure": "NORMAL",
+      "program_coverage": 5,
+      "release_count": 15
+    },
+    "RT": {
+      "archetype_coverage": 2,
+      "current_ceiling": 84,
+      "days_since_ceiling_change": 43,
+      "median_replacement_interval": null,
+      "pressure": "NORMAL",
+      "program_coverage": 3,
+      "release_count": 15
+    },
+    "SS": {
+      "archetype_coverage": 3,
+      "current_ceiling": 90,
+      "days_since_ceiling_change": 12,
+      "median_replacement_interval": 14,
+      "pressure": "NORMAL",
+      "program_coverage": 9,
+      "release_count": 23
+    },
+    "TE": {
+      "archetype_coverage": 3,
+      "current_ceiling": 90,
+      "days_since_ceiling_change": 12,
+      "median_replacement_interval": 7,
+      "pressure": "ELEVATED",
+      "program_coverage": 12,
+      "release_count": 23
+    },
+    "WR": {
+      "archetype_coverage": 4,
+      "current_ceiling": 89,
+      "days_since_ceiling_change": 15,
+      "median_replacement_interval": 28,
+      "pressure": "NORMAL",
+      "program_coverage": 11,
+      "release_count": 23
+    }
+  },
+  "weekday_structure": {
+    "Friday": {
+      "cards": 53,
+      "mean_cards_per_release_day": 8.8333,
+      "mean_ceiling": 87,
+      "release_days": 6
+    },
+    "Monday": {
+      "cards": 19,
+      "mean_cards_per_release_day": 3.8,
+      "mean_ceiling": 86.6,
+      "release_days": 5
+    },
+    "Saturday": {
+      "cards": 24,
+      "mean_cards_per_release_day": 4.8,
+      "mean_ceiling": 87,
+      "release_days": 5
+    },
+    "Sunday": {
+      "cards": 24,
+      "mean_cards_per_release_day": 4,
+      "mean_ceiling": 87.3333,
+      "release_days": 6
+    },
+    "Thursday": {
+      "cards": 17,
+      "mean_cards_per_release_day": 3.4,
+      "mean_ceiling": 87.6,
+      "release_days": 5
+    },
+    "Tuesday": {
+      "cards": 16,
+      "mean_cards_per_release_day": 2.6667,
+      "mean_ceiling": 88.5,
+      "release_days": 6
+    },
+    "Wednesday": {
+      "cards": 282,
+      "mean_cards_per_release_day": 40.2857,
+      "mean_ceiling": 87.5714,
+      "release_days": 7
+    }
+  }
+}

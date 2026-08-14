@@ -1,0 +1,41 @@
+{
+  "Center": {
+    "architecture": "MODERATE",
+    "numeric": "REJECTED",
+    "ranking": "WEAK"
+  },
+  "QB": {
+    "Backfield Creator": {
+      "architecture": "STRONG",
+      "numeric": "REJECTED_WEST_COAST_MAPPING",
+      "ranking": "WEAK"
+    },
+    "Dual Threat": {
+      "architecture": "MODERATE",
+      "numeric": "INDETERMINATE",
+      "ranking": "INDETERMINATE"
+    },
+    "Pocket Passer": {
+      "architecture": "MODERATE",
+      "numeric": "INDETERMINATE",
+      "ranking": "INDETERMINATE"
+    }
+  },
+  "TE": {
+    "Gritty Possession": {
+      "architecture": "STRONG",
+      "numeric": "ARCHITECTURE_ONLY",
+      "ranking": "NOT_EXCEPTIONAL"
+    },
+    "Physical Route Runner": {
+      "architecture": "STRONG",
+      "numeric": "ARCHITECTURE_ONLY",
+      "ranking": "RANKING_INHERITANCE_STRONG"
+    },
+    "Vertical Threat": {
+      "architecture": "STRONG",
+      "numeric": "ARCHITECTURE_ONLY",
+      "ranking": "RANKING_INHERITANCE_STRONG"
+    }
+  }
+}
