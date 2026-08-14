@@ -52926,6 +52926,15 @@
       "target_type": "research_artifact"
     },
     {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-002-MIKE-SEAU-JSON-SRC-CFB27-ABILITY-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-CFB27-ABILITY-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-002-MIKE-SEAU-JSON",
+      "target_type": "research_artifact"
+    },
+    {
       "link_id": "LINK-ART-DATA-RESEARCH-HISTORICAL-CENTER-ASSESSMENT-HISTORICAL-CENTER-POPULATION-RECONCILIATION-JSON-SRC-C-RAW-001",
       "locator": null,
       "notes": null,
@@ -64545,6 +64554,70 @@
       "referenced_card_ids": [],
       "research_only": true,
       "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-001-VALIDATION-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_002/ability_coherence_v2.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-002-ABILITY-COHERENCE-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_002/attribute_cost_analysis.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-002-ATTRIBUTE-COST-ANALYSIS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_002/cb_technical_value.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-002-CB-TECHNICAL-VALUE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_002/freeze.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-002-FREEZE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_002/mike_seau.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-002-MIKE-SEAU-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_002/secondary_gates.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-002-SECONDARY-GATES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_002/te_moneyball.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-002-TE-MONEYBALL-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_002/validation.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-002-VALIDATION-JSON",
       "target_type": "research_artifact"
     },
     {

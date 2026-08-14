@@ -1,0 +1,1141 @@
+{
+  "diagnostic_attributes": [
+    {
+      "attribute": "MCV",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 6.3611
+    },
+    {
+      "attribute": "PRC",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 3.0435
+    },
+    {
+      "attribute": "ZCV",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 2.4833
+    },
+    {
+      "attribute": "STR",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 2.2981
+    },
+    {
+      "attribute": "TAK",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 2.1583
+    },
+    {
+      "attribute": "COD",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 1.8194
+    },
+    {
+      "attribute": "AWR",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 1.4111
+    },
+    {
+      "attribute": "ACC",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 1.2037
+    },
+    {
+      "attribute": "SPD",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 1.0
+    },
+    {
+      "attribute": "BSH",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 0.7556
+    },
+    {
+      "attribute": "POW",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 0.5185
+    },
+    {
+      "attribute": "PUR",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 0.4704
+    }
+  ],
+  "normalized_signatures": {
+    "Lurker": {
+      "ACC": 0.0,
+      "AWR": 0.0,
+      "BSH": -0.0,
+      "COD": 0.0,
+      "MCV": -0.0,
+      "POW": -0.0,
+      "PRC": 0.0,
+      "PUR": 0.0,
+      "SPD": 0.0,
+      "STR": -0.0,
+      "TAK": -0.0,
+      "ZCV": -0.0
+    },
+    "Signal Caller": {
+      "ACC": 0.0,
+      "AWR": 0.0,
+      "BSH": 0.0,
+      "COD": 0.0,
+      "MCV": 0.0,
+      "POW": 0.0,
+      "PRC": 0.0,
+      "PUR": 0.0,
+      "SPD": 0.0,
+      "STR": 0.0,
+      "TAK": 0.0,
+      "ZCV": 0.0
+    },
+    "Thumper": {
+      "ACC": 0.0,
+      "AWR": 0.0,
+      "BSH": 0.0,
+      "COD": 0.0,
+      "MCV": 0.0,
+      "POW": 0.0,
+      "PRC": -0.0,
+      "PUR": -0.0,
+      "SPD": 0.0,
+      "STR": 0.0,
+      "TAK": -0.0,
+      "ZCV": 0.0
+    }
+  },
+  "population": 23,
+  "seau_upgrade_decision_matrix": [
+    {
+      "attribute_contributions": {
+        "Lurker": {
+          "ACC": -0.25,
+          "AWR": -1.0,
+          "BSH": 1.0,
+          "COD": -1.375,
+          "MCV": 1.75,
+          "POW": 0.25,
+          "PRC": -1.875,
+          "PUR": -0.5,
+          "SPD": 0.0,
+          "STR": 1.75,
+          "TAK": 1.375,
+          "ZCV": 0.25
+        },
+        "Signal Caller": {
+          "ACC": -1.1667,
+          "AWR": -1.9444,
+          "BSH": 0.9444,
+          "COD": 0.4444,
+          "MCV": 8.1111,
+          "POW": 0.1111,
+          "PRC": -3.9444,
+          "PUR": -0.3889,
+          "SPD": 1.0,
+          "STR": 1.1667,
+          "TAK": 2.8333,
+          "ZCV": 2.3333
+        },
+        "Thumper": {
+          "ACC": 0.037,
+          "AWR": -0.5333,
+          "BSH": 0.2444,
+          "COD": -0.1852,
+          "MCV": 7.3111,
+          "POW": 0.6296,
+          "PRC": -4.9185,
+          "PUR": -0.0296,
+          "SPD": 0.5852,
+          "STR": -0.5481,
+          "TAK": 3.5333,
+          "ZCV": 2.7333
+        }
+      },
+      "card_id": "27-111026550",
+      "gameplay_path_recommended": false,
+      "normalized_distance": {
+        "Lurker": 0.9479,
+        "Signal Caller": 2.0324,
+        "Thumper": 1.774
+      },
+      "overall": 86,
+      "threshold_interactions": [
+        {
+          "ability": "Bouncer",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-111026550",
+          "deficits": {
+            "ZCV": 0
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 86,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "07/26/2026",
+          "requirements": [
+            {
+              "attribute": "ZCV",
+              "required_rating": 86
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 76,
+          "special": true,
+          "status": "AT_THRESHOLD",
+          "tier": "GOLD",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        },
+        {
+          "ability": "House Call",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-111026550",
+          "deficits": {
+            "CTH": 0
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 86,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "07/26/2026",
+          "requirements": [
+            {
+              "attribute": "CTH",
+              "required_rating": 75
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 77,
+          "special": true,
+          "status": "AT_THRESHOLD",
+          "tier": "GOLD",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        },
+        {
+          "ability": "House Call",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-111026550",
+          "deficits": {
+            "CTH": 3
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 86,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "07/26/2026",
+          "requirements": [
+            {
+              "attribute": "CTH",
+              "required_rating": 78
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 77,
+          "special": true,
+          "status": "3_BELOW",
+          "tier": "PLATINUM",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        },
+        {
+          "ability": "Knockout",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-111026550",
+          "deficits": {
+            "POW": 0
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 86,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "07/26/2026",
+          "requirements": [
+            {
+              "attribute": "POW",
+              "required_rating": 84
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 78,
+          "special": true,
+          "status": "AT_THRESHOLD",
+          "tier": "BRONZE",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        },
+        {
+          "ability": "Knockout",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-111026550",
+          "deficits": {
+            "POW": 2
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 86,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "07/26/2026",
+          "requirements": [
+            {
+              "attribute": "POW",
+              "required_rating": 86
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 78,
+          "special": true,
+          "status": "2_BELOW",
+          "tier": "SILVER",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        }
+      ],
+      "upgrade_matrix": [
+        {
+          "attribute": "SPD",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0834
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "SPD",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "SPD",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.2501
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "ACC",
+          "distance_delta": {
+            "Lurker": 0.0417,
+            "Signal Caller": -0.0833,
+            "Thumper": 0.0834
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "ACC",
+          "distance_delta": {
+            "Lurker": 0.125,
+            "Signal Caller": -0.0278,
+            "Thumper": 0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "ACC",
+          "distance_delta": {
+            "Lurker": 0.2083,
+            "Signal Caller": 0.0556,
+            "Thumper": 0.2501
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "COD",
+          "distance_delta": {
+            "Lurker": -0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0525
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "COD",
+          "distance_delta": {
+            "Lurker": -0.0625,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1359
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "COD",
+          "distance_delta": {
+            "Lurker": 0.0208,
+            "Signal Caller": 0.25,
+            "Thumper": 0.2192
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "STR",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": -0.008
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "STR",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.0754
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "STR",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.1587
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "BSH",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0834
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "BSH",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "BSH",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.2501
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "TAK",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0834
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "TAK",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "TAK",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.2501
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "POW",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0834
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "POW",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "POW",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.2501
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "PUR",
+          "distance_delta": {
+            "Lurker": 0.0,
+            "Signal Caller": 0.0185,
+            "Thumper": 0.0785
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "PUR",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.1019,
+            "Thumper": 0.1618
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "PUR",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1852,
+            "Thumper": 0.2451
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "PRC",
+          "distance_delta": {
+            "Lurker": -0.0833,
+            "Signal Caller": -0.0833,
+            "Thumper": -0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "PRC",
+          "distance_delta": {
+            "Lurker": -0.1458,
+            "Signal Caller": -0.1667,
+            "Thumper": -0.1666
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "PRC",
+          "distance_delta": {
+            "Lurker": -0.0625,
+            "Signal Caller": -0.25,
+            "Thumper": -0.2499
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": -0.0833,
+            "Signal Caller": -0.0833,
+            "Thumper": -0.0055
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": 0.0,
+            "Signal Caller": -0.1574,
+            "Thumper": 0.0779
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": -0.0741,
+            "Thumper": 0.1612
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "MCV",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0834
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "MCV",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "MCV",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.2501
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "ZCV",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0834
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "ZCV",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "ZCV",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.2501
+          },
+          "increase": 3
+        }
+      ]
+    },
+    {
+      "attribute_contributions": {
+        "Lurker": {
+          "ACC": 0.125,
+          "AWR": 0.5,
+          "BSH": -0.5,
+          "COD": 0.6875,
+          "MCV": -0.875,
+          "POW": -0.125,
+          "PRC": 0.9375,
+          "PUR": 0.25,
+          "SPD": 0.0,
+          "STR": -0.875,
+          "TAK": -0.6875,
+          "ZCV": -0.125
+        },
+        "Signal Caller": {
+          "ACC": -0.3333,
+          "AWR": -1.2222,
+          "BSH": 0.2222,
+          "COD": 1.2222,
+          "MCV": 5.5556,
+          "POW": -1.4444,
+          "PRC": -2.2222,
+          "PUR": -0.4444,
+          "SPD": 1.0,
+          "STR": 0.3333,
+          "TAK": 2.6667,
+          "ZCV": 2.6667
+        },
+        "Thumper": {
+          "ACC": -0.0926,
+          "AWR": 1.7333,
+          "BSH": -0.2111,
+          "COD": -1.037,
+          "MCV": 5.8222,
+          "POW": -0.0741,
+          "PRC": -4.4037,
+          "PUR": -0.1259,
+          "SPD": 0.237,
+          "STR": -0.3296,
+          "TAK": 3.2667,
+          "ZCV": 2.3667
+        }
+      },
+      "card_id": "27-110026550",
+      "gameplay_path_recommended": false,
+      "normalized_distance": {
+        "Lurker": 0.474,
+        "Signal Caller": 1.6111,
+        "Thumper": 1.6417
+      },
+      "overall": 87,
+      "threshold_interactions": [
+        {
+          "ability": "Bouncer",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-110026550",
+          "deficits": {
+            "ZCV": 3
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 87,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "07/26/2026",
+          "requirements": [
+            {
+              "attribute": "ZCV",
+              "required_rating": 90
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 76,
+          "special": true,
+          "status": "3_BELOW",
+          "tier": "PLATINUM",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        },
+        {
+          "ability": "House Call",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-110026550",
+          "deficits": {
+            "CTH": 2
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 87,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "07/26/2026",
+          "requirements": [
+            {
+              "attribute": "CTH",
+              "required_rating": 78
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 77,
+          "special": true,
+          "status": "2_BELOW",
+          "tier": "PLATINUM",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        },
+        {
+          "ability": "Knockout",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-110026550",
+          "deficits": {
+            "POW": 1
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 87,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "07/26/2026",
+          "requirements": [
+            {
+              "attribute": "POW",
+              "required_rating": 86
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 78,
+          "special": true,
+          "status": "1_BELOW",
+          "tier": "SILVER",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        },
+        {
+          "ability": "Knockout",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-110026550",
+          "deficits": {
+            "POW": 3
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 87,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "07/26/2026",
+          "requirements": [
+            {
+              "attribute": "POW",
+              "required_rating": 88
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 78,
+          "special": true,
+          "status": "3_BELOW",
+          "tier": "GOLD",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        }
+      ],
+      "upgrade_matrix": [
+        {
+          "attribute": "SPD",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "SPD",
+          "distance_delta": {
+            "Lurker": 0.1666,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1666
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "SPD",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "ACC",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0278,
+            "Thumper": 0.0679
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "ACC",
+          "distance_delta": {
+            "Lurker": 0.1666,
+            "Signal Caller": 0.1111,
+            "Thumper": 0.1512
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "ACC",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.1945,
+            "Thumper": 0.2345
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "COD",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": -0.0834
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "COD",
+          "distance_delta": {
+            "Lurker": 0.1666,
+            "Signal Caller": 0.1667,
+            "Thumper": -0.0062
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "COD",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.0771
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "STR",
+          "distance_delta": {
+            "Lurker": -0.0625,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0284
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "STR",
+          "distance_delta": {
+            "Lurker": 0.0208,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1117
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "STR",
+          "distance_delta": {
+            "Lurker": 0.1041,
+            "Signal Caller": 0.25,
+            "Thumper": 0.195
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "BSH",
+          "distance_delta": {
+            "Lurker": 0.0,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0481
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "BSH",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1314
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "BSH",
+          "distance_delta": {
+            "Lurker": 0.1666,
+            "Signal Caller": 0.25,
+            "Thumper": 0.2148
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "TAK",
+          "distance_delta": {
+            "Lurker": -0.0313,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "TAK",
+          "distance_delta": {
+            "Lurker": 0.052,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1666
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "TAK",
+          "distance_delta": {
+            "Lurker": 0.1354,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "POW",
+          "distance_delta": {
+            "Lurker": 0.0625,
+            "Signal Caller": -0.0833,
+            "Thumper": 0.071
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "POW",
+          "distance_delta": {
+            "Lurker": 0.1458,
+            "Signal Caller": -0.0741,
+            "Thumper": 0.1543
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "POW",
+          "distance_delta": {
+            "Lurker": 0.2291,
+            "Signal Caller": 0.0093,
+            "Thumper": 0.2376
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "PUR",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0093,
+            "Thumper": 0.0623
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "PUR",
+          "distance_delta": {
+            "Lurker": 0.1666,
+            "Signal Caller": 0.0926,
+            "Thumper": 0.1456
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "PUR",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.1759,
+            "Thumper": 0.229
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "PRC",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": -0.0833,
+            "Thumper": -0.0834
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "PRC",
+          "distance_delta": {
+            "Lurker": 0.1666,
+            "Signal Caller": -0.1667,
+            "Thumper": -0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "PRC",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": -0.1204,
+            "Thumper": -0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": -0.0833,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": 0.1666,
+            "Signal Caller": -0.037,
+            "Thumper": 0.1666
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.0463,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "MCV",
+          "distance_delta": {
+            "Lurker": -0.0625,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "MCV",
+          "distance_delta": {
+            "Lurker": 0.0208,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1666
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "MCV",
+          "distance_delta": {
+            "Lurker": 0.1041,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "ZCV",
+          "distance_delta": {
+            "Lurker": 0.0625,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "ZCV",
+          "distance_delta": {
+            "Lurker": 0.1458,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1666
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "ZCV",
+          "distance_delta": {
+            "Lurker": 0.2291,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        }
+      ]
+    }
+  ],
+  "small_sample_warning": {
+    "Lurker": 5,
+    "Signal Caller": 5,
+    "Thumper": 13
+  }
+}
