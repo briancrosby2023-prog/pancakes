@@ -1,0 +1,25 @@
+{
+  "MIKE_MAX_SPEED": {
+    "ability_value": {
+      "collapsed": false,
+      "source": "CFB27_SINGLE_STRUCTURED_THRESHOLDS"
+    },
+    "formula_value": {
+      "ACC": "UNRESOLVED",
+      "SPD": "UNRESOLVED"
+    },
+    "gameplay_weighted_score": null,
+    "rarity_value": {
+      "ACC": "POPULATION_SCARCITY_COMPONENT",
+      "SPD": "POPULATION_SCARCITY_COMPONENT"
+    },
+    "role_value": {
+      "ACC": "PRIMARY_SPECIALIZATION",
+      "BSH": "FOUNDATION_CONSTRAINT",
+      "CTH": "LOW_TARGET_PRIORITY",
+      "MCV": "FOUNDATION_CONSTRAINT",
+      "SPD": "PRIMARY_SPECIALIZATION",
+      "ZCV": "FOUNDATION_CONSTRAINT"
+    }
+  }
+}

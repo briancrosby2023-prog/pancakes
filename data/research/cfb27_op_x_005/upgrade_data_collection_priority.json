@@ -1,0 +1,25 @@
+{
+  "ranked_fields": [
+    "before_ratings_screenshot",
+    "path_and_primary_secondary_pool",
+    "roll_result",
+    "reroll_result",
+    "resource_cost",
+    "cap_state",
+    "retained_result",
+    "card_and_starting_ovr"
+  ],
+  "schema": {
+    "before_ratings": "required",
+    "caps": "nullable",
+    "card_id": "required",
+    "cost": "nullable",
+    "experiment_id": "required",
+    "path": "required",
+    "pool_labels": "required",
+    "reroll_number": "nullable",
+    "result_deltas": "required",
+    "source": "required",
+    "starting_ovr": "required"
+  }
+}

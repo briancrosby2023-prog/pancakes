@@ -1,0 +1,20 @@
+{
+  "current_dynamic_model": "EXPLORATORY",
+  "fact_presentation_guard": true,
+  "factors": {
+    "counterfactual_uncertainty": "HIGH",
+    "independent_validation": false,
+    "known_caps": true,
+    "known_costs": false,
+    "known_pool": true,
+    "path_coverage": 1,
+    "sample_size": 4
+  },
+  "tiers": {
+    "DO_NOT_MODEL": "missing pool or event identity",
+    "EXPLORATORY": "1-4 events or one player/path",
+    "HIGH_CONFIDENCE": "large replicated sample plus independent validation",
+    "PRACTICAL": "20+ events, costs and path coverage",
+    "USE_WITH_CAUTION": "5-19 events with pools/caps"
+  }
+}

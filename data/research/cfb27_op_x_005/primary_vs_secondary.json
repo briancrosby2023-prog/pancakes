@@ -1,0 +1,25 @@
+{
+  "classification": "PRIMARY_ADVANTAGE_PARTIAL",
+  "comparison": {
+    "PRIMARY": {
+      "large_delta_frequency": 0.5,
+      "mean_delta": 4.875,
+      "near_cap_selections": 0,
+      "per_attribute_event_selection_rate": 0.25,
+      "points": 39,
+      "pool_attributes": 8,
+      "selections": 8
+    },
+    "SECONDARY": {
+      "large_delta_frequency": 0.1429,
+      "mean_delta": 2.8571,
+      "near_cap_selections": 0,
+      "per_attribute_event_selection_rate": 0.1944,
+      "points": 20,
+      "pool_attributes": 9,
+      "selections": 7
+    }
+  },
+  "probability_assumed": false,
+  "why": "Primary has higher observed selection rate and mean delta, but only four events from one Lurker card are available."
+}

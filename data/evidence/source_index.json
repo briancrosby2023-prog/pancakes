@@ -52980,6 +52980,24 @@
       "target_type": "research_artifact"
     },
     {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-005-DYNAMIC-UPGRADE-EVENT-MASTER-V1-JSON-SRC-HIST-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-HIST-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-DYNAMIC-UPGRADE-EVENT-MASTER-V1-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-005-DYNAMIC-UPGRADE-EVENT-MASTER-V1-JSON-SRC-QB-002",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-QB-002",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-DYNAMIC-UPGRADE-EVENT-MASTER-V1-JSON",
+      "target_type": "research_artifact"
+    },
+    {
       "link_id": "LINK-ART-DATA-RESEARCH-HISTORICAL-CENTER-ASSESSMENT-HISTORICAL-CENTER-POPULATION-RECONCILIATION-JSON-SRC-C-RAW-001",
       "locator": null,
       "notes": null,
@@ -65081,6 +65099,190 @@
       "referenced_card_ids": [],
       "research_only": true,
       "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-004-VALIDATION-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/attribute_selection_frequency.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-ATTRIBUTE-SELECTION-FREQUENCY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/cap_interaction_model.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-CAP-INTERACTION-MODEL-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/cross_year_upgrade_architecture.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-CROSS-YEAR-UPGRADE-ARCHITECTURE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/delta_magnitude_distribution.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-DELTA-MAGNITUDE-DISTRIBUTION-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/dynamic_upgrade_event_master_v1.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-DYNAMIC-UPGRADE-EVENT-MASTER-V1-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/event_shape_distribution.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-EVENT-SHAPE-DISTRIBUTION-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/expected_opportunity_value.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-EXPECTED-OPPORTUNITY-VALUE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/freeze.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-FREEZE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/historical_acquisition_engine.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-HISTORICAL-ACQUISITION-ENGINE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/historical_progression_generalization.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-HISTORICAL-PROGRESSION-GENERALIZATION-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/marginal_upgrade_opportunity_curve.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-MARGINAL-UPGRADE-OPPORTUNITY-CURVE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/market_observation_expansion.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-MARKET-OBSERVATION-EXPANSION-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/optimal_starting_ovr_v2.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-OPTIMAL-STARTING-OVR-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/ovr_step_effect.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-OVR-STEP-EFFECT-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/pc_development_intelligence_v2.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-PC-DEVELOPMENT-INTELLIGENCE-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/primary_vs_secondary.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-PRIMARY-VS-SECONDARY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/reroll_value.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-REROLL-VALUE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/role_priority_profiles.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-ROLE-PRIORITY-PROFILES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/seau_counterfactual_v2.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-SEAU-COUNTERFACTUAL-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/secondary_gates.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-SECONDARY-GATES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/upgrade_data_collection_priority.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-UPGRADE-DATA-COLLECTION-PRIORITY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/upgrade_recommendation_confidence.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-UPGRADE-RECOMMENDATION-CONFIDENCE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_005/validation.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-005-VALIDATION-JSON",
       "target_type": "research_artifact"
     },
     {

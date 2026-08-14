@@ -1,0 +1,214 @@
+{
+  "by_attribute": {
+    "ACC": {
+      "maximum": 3,
+      "mean": 3,
+      "median": 3.0,
+      "minimum": 3,
+      "status": "INSUFFICIENT_SAMPLE"
+    },
+    "AGI": {
+      "maximum": 2,
+      "mean": 2,
+      "median": 2,
+      "minimum": 2,
+      "status": "INSUFFICIENT_SAMPLE"
+    },
+    "AWR": {
+      "maximum": 3,
+      "mean": 3,
+      "median": 3,
+      "minimum": 3,
+      "status": "INSUFFICIENT_SAMPLE"
+    },
+    "BSH": {
+      "maximum": 2,
+      "mean": 2,
+      "median": 2,
+      "minimum": 2,
+      "status": "INSUFFICIENT_SAMPLE"
+    },
+    "COD": {
+      "maximum": 2,
+      "mean": 2,
+      "median": 2,
+      "minimum": 2,
+      "status": "INSUFFICIENT_SAMPLE"
+    },
+    "CTH": {
+      "maximum": 8,
+      "mean": 7,
+      "median": 7.0,
+      "minimum": 6,
+      "status": "INSUFFICIENT_SAMPLE"
+    },
+    "POW": {
+      "maximum": 4,
+      "mean": 4,
+      "median": 4,
+      "minimum": 4,
+      "status": "INSUFFICIENT_SAMPLE"
+    },
+    "PRC": {
+      "maximum": 2,
+      "mean": 2,
+      "median": 2,
+      "minimum": 2,
+      "status": "INSUFFICIENT_SAMPLE"
+    },
+    "PRS": {
+      "maximum": 7,
+      "mean": 7,
+      "median": 7,
+      "minimum": 7,
+      "status": "INSUFFICIENT_SAMPLE"
+    },
+    "PUR": {
+      "maximum": 2,
+      "mean": 2,
+      "median": 2,
+      "minimum": 2,
+      "status": "INSUFFICIENT_SAMPLE"
+    },
+    "SPD": {
+      "maximum": 7,
+      "mean": 5,
+      "median": 5.0,
+      "minimum": 3,
+      "status": "INSUFFICIENT_SAMPLE"
+    },
+    "STR": {
+      "maximum": 5,
+      "mean": 5,
+      "median": 5,
+      "minimum": 5,
+      "status": "INSUFFICIENT_SAMPLE"
+    }
+  },
+  "by_pool": {
+    "PRIMARY": {
+      "maximum": 8,
+      "mean": 4.875,
+      "median": 4.5,
+      "minimum": 2,
+      "q1": 3.0,
+      "q3": 7.0
+    },
+    "SECONDARY": {
+      "maximum": 5,
+      "mean": 2.8571,
+      "median": 2,
+      "minimum": 2,
+      "q1": 2.0,
+      "q3": 3.5
+    }
+  },
+  "causal_classification": "ATTRIBUTE_PATH_OVR_RANDOM_EFFECTS_UNRESOLVED",
+  "large_jumps": [
+    {
+      "archetype": "Lurker",
+      "attribute": "SPD",
+      "attribute_class": "DYNAMIC_UPGRADE",
+      "cap": 99,
+      "card": "81_START_EVO",
+      "confidence": "VALIDATED",
+      "cost": null,
+      "delta": 7,
+      "ending_ovr": 83,
+      "path": "LURKER",
+      "player": "Junior Seau",
+      "pool": "PRIMARY",
+      "position": "MIKE",
+      "post_upgrade_value": 86,
+      "pre_upgrade_value": 79,
+      "reroll_number": null,
+      "source": "USER_PRIMARY_OP_X_004",
+      "starting_ovr": 81,
+      "upgrade_event": 1
+    },
+    {
+      "archetype": "Lurker",
+      "attribute": "STR",
+      "attribute_class": "DYNAMIC_UPGRADE",
+      "cap": 91,
+      "card": "81_START_EVO",
+      "confidence": "VALIDATED",
+      "cost": null,
+      "delta": 5,
+      "ending_ovr": 83,
+      "path": "LURKER",
+      "player": "Junior Seau",
+      "pool": "SECONDARY",
+      "position": "MIKE",
+      "post_upgrade_value": 84,
+      "pre_upgrade_value": 79,
+      "reroll_number": null,
+      "source": "USER_PRIMARY_OP_X_004",
+      "starting_ovr": 81,
+      "upgrade_event": 1
+    },
+    {
+      "archetype": "Lurker",
+      "attribute": "CTH",
+      "attribute_class": "DYNAMIC_UPGRADE",
+      "cap": 91,
+      "card": "81_START_EVO",
+      "confidence": "VALIDATED",
+      "cost": null,
+      "delta": 6,
+      "ending_ovr": 83,
+      "path": "LURKER",
+      "player": "Junior Seau",
+      "pool": "PRIMARY",
+      "position": "MIKE",
+      "post_upgrade_value": 76,
+      "pre_upgrade_value": 70,
+      "reroll_number": null,
+      "source": "USER_PRIMARY_OP_X_004",
+      "starting_ovr": 81,
+      "upgrade_event": 1
+    },
+    {
+      "archetype": "Lurker",
+      "attribute": "PRS",
+      "attribute_class": "DYNAMIC_UPGRADE",
+      "cap": 91,
+      "card": "81_START_EVO",
+      "confidence": "VALIDATED",
+      "cost": null,
+      "delta": 7,
+      "ending_ovr": 85,
+      "path": "LURKER",
+      "player": "Junior Seau",
+      "pool": "PRIMARY",
+      "position": "MIKE",
+      "post_upgrade_value": 82,
+      "pre_upgrade_value": 75,
+      "reroll_number": null,
+      "source": "USER_PRIMARY_OP_X_004",
+      "starting_ovr": 84,
+      "upgrade_event": 3
+    },
+    {
+      "archetype": "Lurker",
+      "attribute": "CTH",
+      "attribute_class": "DYNAMIC_UPGRADE",
+      "cap": 91,
+      "card": "81_START_EVO",
+      "confidence": "VALIDATED",
+      "cost": null,
+      "delta": 8,
+      "ending_ovr": 86,
+      "path": "LURKER",
+      "player": "Junior Seau",
+      "pool": "PRIMARY",
+      "position": "MIKE",
+      "post_upgrade_value": 84,
+      "pre_upgrade_value": 76,
+      "reroll_number": null,
+      "source": "USER_PRIMARY_OP_X_004",
+      "starting_ovr": 85,
+      "upgrade_event": 4
+    }
+  ]
+}

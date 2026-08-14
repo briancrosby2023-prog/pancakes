@@ -1,0 +1,29 @@
+{
+  "Bo_Jackson": {
+    "classification": "INSUFFICIENT_VECTORS"
+  },
+  "Chris_Peal": {
+    "classification": "INSUFFICIENT_VECTORS"
+  },
+  "Joey_Harrington": {
+    "classification": "PREMADE_OR_OTHER_BROAD_ONLY",
+    "dynamic_comparison": false
+  },
+  "Peyton_Bowen": {
+    "classification": "INSUFFICIENT_VECTORS"
+  },
+  "Saturday_Reset": {
+    "classification": "SEPARATE_SPARSE_SYSTEM",
+    "dynamic_comparison": false
+  },
+  "Seau": {
+    "classification": "SUPPORTED",
+    "dynamic": "SPECIALIZED",
+    "premade": "BROAD"
+  },
+  "TE_chains": {
+    "classification": "INSUFFICIENT_DYNAMIC_LABELS"
+  },
+  "cross_system_pooling": false,
+  "master_chain_count": 20
+}

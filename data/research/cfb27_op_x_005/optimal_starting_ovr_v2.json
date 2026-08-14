@@ -1,0 +1,41 @@
+{
+  "allocation_risk": "HIGH",
+  "cap_interaction": "UNRESOLVED",
+  "classification": "INSUFFICIENT_EVIDENCE",
+  "costs": "PARTIAL",
+  "finished_alternative": "PREMADE_86",
+  "foundation_84_advantage": true,
+  "opportunity_ev": {
+    "by_transition": {
+      "81->83": {
+        "observed_total": 18,
+        "range_not_distribution": true
+      },
+      "83->84": {
+        "observed_total": 7,
+        "range_not_distribution": true
+      },
+      "84->85": {
+        "observed_total": 18,
+        "range_not_distribution": true
+      },
+      "85->86": {
+        "observed_total": 16,
+        "range_not_distribution": true
+      }
+    },
+    "confidence": "EXPLORATORY",
+    "downside": 7,
+    "foundation_repair_ev": 5.5,
+    "low_value_allocation_ev": 3.5,
+    "sample_size": 4,
+    "scope": "SEAU_LURKER_81_TO_86_ONLY",
+    "specialization_ev": 4,
+    "stationarity_assumed": false,
+    "total_point_ev": 14.75,
+    "total_point_variance": 20.6875,
+    "unknown_value_ev": 1.75,
+    "upside": 18
+  },
+  "recommendation_confidence": "EXPLORATORY"
+}
