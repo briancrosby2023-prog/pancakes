@@ -1,0 +1,15 @@
+{
+  "claims_populated": false,
+  "fields": {
+    "ability_unlock_value": "number|null",
+    "expert_confidence": "LOW|MODERATE|HIGH|null",
+    "gameplay_importance": "number|null",
+    "sources": "array",
+    "threshold_evidence": "array"
+  },
+  "key": [
+    "position",
+    "attribute"
+  ],
+  "schema_version": 1
+}

@@ -81,6 +81,10 @@ def test_saturday_te_and_qb_inheritance_are_not_overpromoted() -> None:
 def test_analysis_rebuilds_deterministically() -> None:
     summary = _summary()
     cards = list(json.loads(STATE.read_text(encoding="utf-8"))["cards"].values())
+    freeze_path = ROOT / "data/research/cfb27_inheritance_phase3/phase3_frozen_snapshot.json"
+    if freeze_path.exists():
+        frozen_ids = set(json.loads(freeze_path.read_text())["population"]["card_ids"])
+        cards = [card for card in cards if card["external_card_id"] in frozen_ids]
     workbook = WorkbookImporter(ROOT / "data/canonical/canonical_v1.9.xlsx")
     te_status = [
         record.values

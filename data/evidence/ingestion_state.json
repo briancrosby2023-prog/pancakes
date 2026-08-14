@@ -42,6 +42,7 @@
     "EXTERNAL-CFB_FAN-2026-08-13T20-00-00Z",
     "EXTERNAL-CFB_FAN-2026-08-13T22-00-00Z",
     "EXTERNAL-CFB_FAN-2026-08-14T00-00-00Z",
+    "EXTERNAL-CFB_FAN-2026-08-14T02-00-00Z",
     "HIST-PROGRESSION-INVENTORY-V1"
   ],
   "provenance": {},
@@ -316,6 +317,190 @@
         "program": "Phenoms",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/57f6f4e59563061130c215dc8224d2f9bdad43746c06546708ff4d7f4699bb70.bin",
         "release_date": "07/24/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-103026542": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-103026542",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26542-jeff-saturday/27-103026542/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 57,
+          "AGI": 64,
+          "AWR": 70,
+          "COD": 65,
+          "IBL": 76,
+          "LBK": 78,
+          "PBF": 78,
+          "PBK": 82,
+          "PBP": 83,
+          "RBF": 74,
+          "RBK": 78,
+          "RBP": 75,
+          "SPD": 65,
+          "STR": 82,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-103026542",
+        "external_player_id": "26542",
+        "external_source": "CFB_FAN",
+        "overall": 80,
+        "player": "Jeff Saturday",
+        "position": "C",
+        "program": "Core Legends Millenium",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/95fafbb58bbf63c8fafce696a2b8e382169cf7d238de3da24d49f7da58a466da.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-103026882": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-103026882",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26882-damien-woody/27-103026882/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 62,
+          "AGI": 65,
+          "AWR": 69,
+          "COD": 66,
+          "IBL": 80,
+          "LBK": 83,
+          "PBF": 78,
+          "PBK": 78,
+          "PBP": 81,
+          "RBF": 76,
+          "RBK": 79,
+          "RBP": 83,
+          "SPD": 66,
+          "STR": 81,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-103026882",
+        "external_player_id": "26882",
+        "external_source": "CFB_FAN",
+        "overall": 80,
+        "player": "Damien Woody",
+        "position": "C",
+        "program": "Core Legends Millenium",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/2df52d35a91749208291e79ea4eba1bfc6b41fe24414afbb9af73ccccb885ec3.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-104026168": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-104026168",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26168-travis-frederick/27-104026168/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Well Rounded",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 65,
+          "AWR": 70,
+          "COD": 64,
+          "IBL": 81,
+          "LBK": 80,
+          "PBF": 80,
+          "PBK": 77,
+          "PBP": 82,
+          "RBF": 83,
+          "RBK": 79,
+          "RBP": 81,
+          "SPD": 60,
+          "STR": 81,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-104026168",
+        "external_player_id": "26168",
+        "external_source": "CFB_FAN",
+        "overall": 80,
+        "player": "Travis Frederick",
+        "position": "C",
+        "program": "Core Legends Modern",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/bddc64e047c992684d10d6ce4fc8d4c20f525e40d0bce9ab226b2f00e2cdf307.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-104900002": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-104900002",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/900002-alex-mack/27-104900002/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Well Rounded",
+        "attributes": {
+          "ACC": 62,
+          "AGI": 58,
+          "AWR": 70,
+          "COD": 63,
+          "IBL": 76,
+          "LBK": 77,
+          "PBF": 80,
+          "PBK": 81,
+          "PBP": 83,
+          "RBF": 80,
+          "RBK": 77,
+          "RBP": 78,
+          "SPD": 59,
+          "STR": 80,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-104900002",
+        "external_player_id": "900002",
+        "external_source": "CFB_FAN",
+        "overall": 80,
+        "player": "Alex Mack",
+        "position": "C",
+        "program": "Core Legends Modern",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/e320ed168cf9f6ddaf46f137bf5a02ac532ab4f5cea24abce5cd11c4607558b2.bin",
+        "release_date": "07/01/2026",
         "team_school": null
       }
     },
@@ -1585,6 +1770,52 @@
         "team_school": null
       }
     },
+    "card:EXT-CFB_FAN-27-2000160": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2000160",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/160-brandon-best/27-2000160/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 60,
+          "AWR": 78,
+          "COD": 49,
+          "IBL": 75,
+          "LBK": 75,
+          "PBF": 78,
+          "PBK": 78,
+          "PBP": 78,
+          "RBF": 73,
+          "RBK": 77,
+          "RBP": 83,
+          "SPD": 60,
+          "STR": 75,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2000160",
+        "external_player_id": "160",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Brandon Best",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/4bdaa87266bbbd7b9cbcdb684e9b7556eec12073a535c5339826a5d2270be332.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
     "card:EXT-CFB_FAN-27-200018268": {
       "disposition": "REFERENCE_DATA",
       "promoted": false,
@@ -1680,6 +1911,52 @@
         "position": "C",
         "program": "Countdown",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/557150a248fcc55843f53696b6bc6f7eba3ddb662cd8a9a4b5b1b6b6948b0a01.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2000210": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2000210",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/210-levi-hubbard/27-2000210/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 63,
+          "AWR": 60,
+          "COD": 43,
+          "IBL": 82,
+          "LBK": 69,
+          "PBF": 73,
+          "PBK": 77,
+          "PBP": 83,
+          "RBF": 81,
+          "RBK": 82,
+          "RBP": 83,
+          "SPD": 60,
+          "STR": 83,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2000210",
+        "external_player_id": "210",
+        "external_source": "CFB_FAN",
+        "overall": 80,
+        "player": "Levi Hubbard",
+        "position": "C",
+        "program": "Core Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/0125961e77fdec43c3e67ca5cd96ab26f763375efba6d331d2e6d655c6c49cd7.bin",
         "release_date": "07/01/2026",
         "team_school": null
       }
@@ -2172,6 +2449,52 @@
         "team_school": null
       }
     },
+    "card:EXT-CFB_FAN-27-2001770": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2001770",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/1770-carter-miller/27-2001770/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 63,
+          "AWR": 74,
+          "COD": 50,
+          "IBL": 80,
+          "LBK": 55,
+          "PBF": 78,
+          "PBK": 79,
+          "PBP": 76,
+          "RBF": 63,
+          "RBK": 63,
+          "RBP": 60,
+          "SPD": 60,
+          "STR": 73,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2001770",
+        "external_player_id": "1770",
+        "external_source": "CFB_FAN",
+        "overall": 76,
+        "player": "Carter Miller",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/3aa3bae6c06a313caffb036805cccdf998c04b01923ac7b70d3f2bf8e51ffea0.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
     "card:EXT-CFB_FAN-27-2001791": {
       "disposition": "REFERENCE_DATA",
       "promoted": false,
@@ -2214,6 +2537,52 @@
         "position": "C",
         "program": "Core Rare",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/415480970da8036dab00f1c3e013eff09d599f24857c1ddf3e7a13deed071336.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2001958": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2001958",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/1958-mark-nabou-jr/27-2001958/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 60,
+          "AWR": 81,
+          "COD": 46,
+          "IBL": 76,
+          "LBK": 67,
+          "PBF": 76,
+          "PBK": 76,
+          "PBP": 76,
+          "RBF": 71,
+          "RBK": 72,
+          "RBP": 76,
+          "SPD": 60,
+          "STR": 77,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2001958",
+        "external_player_id": "1958",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Mark Nabou Jr.",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/783eb926cf99f3f4bc08b4dac852ae98c484e63f435adabe815df2ba0111084c.bin",
         "release_date": "07/01/2026",
         "team_school": null
       }
@@ -2460,6 +2829,98 @@
         "position": "SS",
         "program": "Core Rare",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/f2139e3872053958188df5d69bfad12434c94ae44d159c02d1045e0fdf5ea168.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2003754": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2003754",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/3754-brock-riker/27-2003754/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 65,
+          "AGI": 63,
+          "AWR": 76,
+          "COD": 65,
+          "IBL": 74,
+          "LBK": 77,
+          "PBF": 79,
+          "PBK": 78,
+          "PBP": 72,
+          "RBF": 75,
+          "RBK": 74,
+          "RBP": 69,
+          "SPD": 65,
+          "STR": 72,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2003754",
+        "external_player_id": "3754",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Brock Riker",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/6bf72b62fa915cac0c97d35e5660f077829978f633f5de4b7a1d780d6a9ef87e.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2004087": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2004087",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/4087-bray-lynch/27-2004087/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 62,
+          "AGI": 63,
+          "AWR": 83,
+          "COD": 51,
+          "IBL": 76,
+          "LBK": 75,
+          "PBF": 72,
+          "PBK": 78,
+          "PBP": 79,
+          "RBF": 75,
+          "RBK": 76,
+          "RBP": 73,
+          "SPD": 62,
+          "STR": 78,
+          "TGH": 83
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2004087",
+        "external_player_id": "4087",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Bray Lynch",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/409a7b61a10082e5c461f2e68d1d8f0d6c39bfac9ab051c429ae5a4a2cc52753.bin",
         "release_date": "07/01/2026",
         "team_school": null
       }
@@ -2805,6 +3266,52 @@
         "position": "RT",
         "program": "Core Rare",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/89e975d83cadc4c19bc562e35dcb6ad253f2c801335ee0d533c3e0aa5f66770d.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2006113": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2006113",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/6113-mateo-guevara/27-2006113/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 60,
+          "AWR": 81,
+          "COD": 47,
+          "IBL": 76,
+          "LBK": 68,
+          "PBF": 76,
+          "PBK": 80,
+          "PBP": 80,
+          "RBF": 70,
+          "RBK": 72,
+          "RBP": 70,
+          "SPD": 60,
+          "STR": 78,
+          "TGH": 83
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2006113",
+        "external_player_id": "6113",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Mateo Guevara",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/345d1ee2480f6e82edd6e5313b82f3890260e129aa1bdb0fcd942625fe76c5cf.bin",
         "release_date": "07/01/2026",
         "team_school": null
       }
@@ -3292,6 +3799,52 @@
         "team_school": null
       }
     },
+    "card:EXT-CFB_FAN-27-2008621": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2008621",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/8621-broderick-roman/27-2008621/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 60,
+          "AWR": 74,
+          "COD": 44,
+          "IBL": 71,
+          "LBK": 74,
+          "PBF": 81,
+          "PBK": 77,
+          "PBP": 78,
+          "RBF": 74,
+          "RBK": 77,
+          "RBP": 72,
+          "SPD": 60,
+          "STR": 68,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2008621",
+        "external_player_id": "8621",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Broderick Roman",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/be00e7bebce3e7083af285ed3a80feac7cda4768a80cd14254328f3ed480b832.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
     "card:EXT-CFB_FAN-27-2008626": {
       "disposition": "REFERENCE_DATA",
       "promoted": false,
@@ -3338,6 +3891,52 @@
         "team_school": null
       }
     },
+    "card:EXT-CFB_FAN-27-2009242": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2009242",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/9242-cole-best/27-2009242/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 60,
+          "AWR": 78,
+          "COD": 48,
+          "IBL": 79,
+          "LBK": 71,
+          "PBF": 76,
+          "PBK": 79,
+          "PBP": 80,
+          "RBF": 71,
+          "RBK": 74,
+          "RBP": 77,
+          "SPD": 60,
+          "STR": 80,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2009242",
+        "external_player_id": "9242",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Cole Best",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/e26f32dd0c477e31342e7463a65827d2e08e3bcb4ae24fd524b2ceb34de48651.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
     "card:EXT-CFB_FAN-27-2009449": {
       "disposition": "REFERENCE_DATA",
       "promoted": false,
@@ -3380,6 +3979,52 @@
         "position": "LE",
         "program": "Core Rare",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/c43d8907437e3f6fafc67bd397695124abf136f8c5d7aee3896af5269d98ffa9.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2009529": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2009529",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/9529-michael-maxwell/27-2009529/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 65,
+          "AGI": 67,
+          "AWR": 74,
+          "COD": 44,
+          "IBL": 72,
+          "LBK": 79,
+          "PBF": 78,
+          "PBK": 77,
+          "PBP": 74,
+          "RBF": 80,
+          "RBK": 63,
+          "RBP": 67,
+          "SPD": 62,
+          "STR": 75,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2009529",
+        "external_player_id": "9529",
+        "external_source": "CFB_FAN",
+        "overall": 76,
+        "player": "Michael Maxwell",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/c4c22dc23e8ef6a65b4ec5f07e84fff8a38f3cff120194317cd63701f58dd04c.bin",
         "release_date": "07/01/2026",
         "team_school": null
       }
@@ -3481,6 +4126,98 @@
         "program": "Season 1",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/ea005fba89076e366accacb583b8ee7ef4acde9d25f895a19451021011970e91.bin",
         "release_date": "07/09/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2010045": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2010045",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/10045-ashton-craig/27-2010045/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 63,
+          "AGI": 63,
+          "AWR": 76,
+          "COD": 59,
+          "IBL": 81,
+          "LBK": 78,
+          "PBF": 69,
+          "PBK": 75,
+          "PBP": 76,
+          "RBF": 75,
+          "RBK": 78,
+          "RBP": 78,
+          "SPD": 63,
+          "STR": 79,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2010045",
+        "external_player_id": "10045",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Ashton Craig",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/91259c9a340fb6971bb998dcc08bc87208453ec40be72c8ba711bf3d4015c36d.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2010046": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2010046",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/10046-matt-craycraft/27-2010046/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 64,
+          "AGI": 65,
+          "AWR": 79,
+          "COD": 58,
+          "IBL": 74,
+          "LBK": 80,
+          "PBF": 76,
+          "PBK": 78,
+          "PBP": 78,
+          "RBF": 76,
+          "RBK": 77,
+          "RBP": 74,
+          "SPD": 64,
+          "STR": 74,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2010046",
+        "external_player_id": "10046",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Matt Craycraft",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/3f44604285a8c7a6fd180ef8df8aa16239bae1c9993e64e61201eeec1b9cebfc.bin",
+        "release_date": "07/01/2026",
         "team_school": null
       }
     },
@@ -4363,6 +5100,52 @@
         "team_school": null
       }
     },
+    "card:EXT-CFB_FAN-27-2014513": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2014513",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/14513-jake-maikkula/27-2014513/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 65,
+          "AGI": 64,
+          "AWR": 79,
+          "COD": 61,
+          "IBL": 75,
+          "LBK": 81,
+          "PBF": 79,
+          "PBK": 80,
+          "PBP": 79,
+          "RBF": 74,
+          "RBK": 75,
+          "RBP": 72,
+          "SPD": 66,
+          "STR": 71,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2014513",
+        "external_player_id": "14513",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Jake Maikkula",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/4e4e48d6705277b86a003a8a7feeece750ecc321f5aea41c00fdb84f2fba680b.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
     "card:EXT-CFB_FAN-27-2014562": {
       "disposition": "REFERENCE_DATA",
       "promoted": false,
@@ -4497,6 +5280,52 @@
         "position": "LT",
         "program": "Core Rare",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/8c3c60dd934e1ca3bbd354350e35aac17d090c22b1ec4f60a64e14087a094286.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2018133": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2018133",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/18133-michael-hershey/27-2018133/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 66,
+          "AGI": 70,
+          "AWR": 80,
+          "COD": 65,
+          "IBL": 72,
+          "LBK": 82,
+          "PBF": 83,
+          "PBK": 81,
+          "PBP": 77,
+          "RBF": 77,
+          "RBK": 78,
+          "RBP": 73,
+          "SPD": 67,
+          "STR": 69,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2018133",
+        "external_player_id": "18133",
+        "external_source": "CFB_FAN",
+        "overall": 80,
+        "player": "Michael Hershey",
+        "position": "C",
+        "program": "Core Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/48cd2314602d24938660ef5eb4d5822e617d53ff48237a820a840ec1017056e9.bin",
         "release_date": "07/01/2026",
         "team_school": null
       }
@@ -4799,6 +5628,144 @@
         "team_school": null
       }
     },
+    "card:EXT-CFB_FAN-27-2018787": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2018787",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/18787-aaron-fenimore/27-2018787/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 68,
+          "AGI": 68,
+          "AWR": 83,
+          "COD": 68,
+          "IBL": 74,
+          "LBK": 83,
+          "PBF": 69,
+          "PBK": 71,
+          "PBP": 75,
+          "RBF": 83,
+          "RBK": 83,
+          "RBP": 81,
+          "SPD": 69,
+          "STR": 75,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2018787",
+        "external_player_id": "18787",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Aaron Fenimore",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/ffe21ddaf5375590cd6167a0a8e6aff09542bb5f73eca0af4b0c842a608b4371.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2018855": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2018855",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/18855-cameron-griffin/27-2018855/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 60,
+          "AWR": 78,
+          "COD": 49,
+          "IBL": 75,
+          "LBK": 77,
+          "PBF": 77,
+          "PBK": 78,
+          "PBP": 76,
+          "RBF": 65,
+          "RBK": 63,
+          "RBP": 61,
+          "SPD": 60,
+          "STR": 72,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2018855",
+        "external_player_id": "18855",
+        "external_source": "CFB_FAN",
+        "overall": 76,
+        "player": "Cameron Griffin",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/bce273a4b96274d22a015171bf60c8119281e55a4ae3f6e7cadc337d85213c64.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2018977": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2018977",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/18977-bradyn-joiner/27-2018977/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 64,
+          "AGI": 64,
+          "AWR": 77,
+          "COD": 50,
+          "IBL": 81,
+          "LBK": 58,
+          "PBF": 65,
+          "PBK": 67,
+          "PBP": 74,
+          "RBF": 72,
+          "RBK": 75,
+          "RBP": 80,
+          "SPD": 64,
+          "STR": 82,
+          "TGH": 79
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2018977",
+        "external_player_id": "18977",
+        "external_source": "CFB_FAN",
+        "overall": 78,
+        "player": "Bradyn Joiner",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/1f70cbe1cf9d8340976484c456191780858c195efaed12157c68b4e1d898c965.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
     "card:EXT-CFB_FAN-27-2019231": {
       "disposition": "REFERENCE_DATA",
       "promoted": false,
@@ -4899,6 +5866,52 @@
         "team_school": null
       }
     },
+    "card:EXT-CFB_FAN-27-2019320": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2019320",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/19320-joe-otting/27-2019320/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 62,
+          "AGI": 63,
+          "AWR": 64,
+          "COD": 43,
+          "IBL": 70,
+          "LBK": 71,
+          "PBF": 80,
+          "PBK": 73,
+          "PBP": 73,
+          "RBF": 79,
+          "RBK": 67,
+          "RBP": 76,
+          "SPD": 60,
+          "STR": 79,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2019320",
+        "external_player_id": "19320",
+        "external_source": "CFB_FAN",
+        "overall": 76,
+        "player": "Joe Otting",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/e3bfb4bacd5e8e8fecb0a87df0274e5a02f3373a8e82a3b8b3cfbac774e8aa24.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
     "card:EXT-CFB_FAN-27-2019722": {
       "disposition": "REFERENCE_DATA",
       "promoted": false,
@@ -4941,6 +5954,52 @@
         "position": "C",
         "program": "Core Rare",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/b746ffdcc17b8b5bf7a9054af7bf782ad5204d3057b288745b2f2100dc6c7d25.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2019898": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2019898",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/19898-kilian-oconnor/27-2019898/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 62,
+          "AGI": 64,
+          "AWR": 79,
+          "COD": 63,
+          "IBL": 68,
+          "LBK": 79,
+          "PBF": 79,
+          "PBK": 77,
+          "PBP": 71,
+          "RBF": 79,
+          "RBK": 77,
+          "RBP": 69,
+          "SPD": 66,
+          "STR": 73,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2019898",
+        "external_player_id": "19898",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Kilian O'Connor",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/2fba4faeaae5165f06769ce45c125b5afc908f5a724e887fd433a83877500375.bin",
         "release_date": "07/01/2026",
         "team_school": null
       }
@@ -5321,6 +6380,52 @@
         "team_school": null
       }
     },
+    "card:EXT-CFB_FAN-27-2020771": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2020771",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20771-adam-lepkowski/27-2020771/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 61,
+          "AGI": 60,
+          "AWR": 77,
+          "COD": 50,
+          "IBL": 78,
+          "LBK": 67,
+          "PBF": 74,
+          "PBK": 78,
+          "PBP": 78,
+          "RBF": 73,
+          "RBK": 77,
+          "RBP": 69,
+          "SPD": 62,
+          "STR": 72,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2020771",
+        "external_player_id": "20771",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Adam Lepkowski",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/94a72bd7076c16bf00e81e2c9695d5d55d9152a0ae8000cffbe499ddb7448235.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
     "card:EXT-CFB_FAN-27-2020805": {
       "disposition": "REFERENCE_DATA",
       "promoted": false,
@@ -5409,6 +6514,98 @@
         "position": "C",
         "program": "Core Rare",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/9f6b40ec3d84b4eb1733bf7143e43a818c4d8b44026260cf32325f83179dcab3.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2020840": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2020840",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20840-cam-nichols/27-2020840/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 64,
+          "AGI": 62,
+          "AWR": 77,
+          "COD": 58,
+          "IBL": 67,
+          "LBK": 80,
+          "PBF": 72,
+          "PBK": 74,
+          "PBP": 74,
+          "RBF": 81,
+          "RBK": 80,
+          "RBP": 78,
+          "SPD": 63,
+          "STR": 74,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2020840",
+        "external_player_id": "20840",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Cam Nichols",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/994abdd674457173dcf4e59ae082812597889127cf1b2db3f3e0b8fb8aea0140.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2020925": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2020925",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20925-connor-robertson/27-2020925/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 61,
+          "AWR": 76,
+          "COD": 43,
+          "IBL": 74,
+          "LBK": 76,
+          "PBF": 72,
+          "PBK": 74,
+          "PBP": 74,
+          "RBF": 80,
+          "RBK": 78,
+          "RBP": 77,
+          "SPD": 62,
+          "STR": 79,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2020925",
+        "external_player_id": "20925",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Connor Robertson",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/8090411ddb8095553509ad78aee318e8ec4bf0b3de5eb96229afd39a8f360fa7.bin",
         "release_date": "07/01/2026",
         "team_school": null
       }
@@ -5827,6 +7024,98 @@
         "team_school": null
       }
     },
+    "card:EXT-CFB_FAN-27-2023114": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2023114",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/23114-caden-kitler/27-2023114/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 63,
+          "AWR": 74,
+          "COD": 41,
+          "IBL": 72,
+          "LBK": 73,
+          "PBF": 73,
+          "PBK": 75,
+          "PBP": 74,
+          "RBF": 73,
+          "RBK": 70,
+          "RBP": 71,
+          "SPD": 60,
+          "STR": 80,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2023114",
+        "external_player_id": "23114",
+        "external_source": "CFB_FAN",
+        "overall": 76,
+        "player": "Caden Kitler",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/66dc8ee83aad09ea95b379cf3281e84c28b92f6486c629cdf2eaddfa4344c3b2.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2023222": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2023222",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/23222-terrence-moore/27-2023222/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 60,
+          "AWR": 76,
+          "COD": 50,
+          "IBL": 68,
+          "LBK": 55,
+          "PBF": 80,
+          "PBK": 78,
+          "PBP": 76,
+          "RBF": 71,
+          "RBK": 60,
+          "RBP": 63,
+          "SPD": 60,
+          "STR": 72,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2023222",
+        "external_player_id": "23222",
+        "external_source": "CFB_FAN",
+        "overall": 76,
+        "player": "Terrence Moore",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/b680eccfff0894252d97fcbf73eff406a8de6f1a3dd50eb2d2943351e2b7aadb.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
     "card:EXT-CFB_FAN-27-2023253": {
       "disposition": "REFERENCE_DATA",
       "promoted": false,
@@ -6072,6 +7361,52 @@
         "team_school": null
       }
     },
+    "card:EXT-CFB_FAN-27-2023693": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2023693",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/23693-harrison-moore/27-2023693/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 64,
+          "AGI": 64,
+          "AWR": 75,
+          "COD": 58,
+          "IBL": 72,
+          "LBK": 80,
+          "PBF": 74,
+          "PBK": 76,
+          "PBP": 76,
+          "RBF": 76,
+          "RBK": 79,
+          "RBP": 78,
+          "SPD": 65,
+          "STR": 71,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2023693",
+        "external_player_id": "23693",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Harrison Moore",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/a03661529da1291bfea6a62152e57e6d4df71d685d1c0d9841f808ff976cdf49.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
     "card:EXT-CFB_FAN-27-2023934": {
       "disposition": "REFERENCE_DATA",
       "promoted": false,
@@ -6206,6 +7541,98 @@
         "position": "LE",
         "program": "Core Rare",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/033473ca5425c1946878f3037955d9d65283e29d8158387ff26d7a52fd4f85f3.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2029210": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2029210",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/29210-kaden-robnett/27-2029210/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 63,
+          "AGI": 61,
+          "AWR": 74,
+          "COD": 42,
+          "IBL": 71,
+          "LBK": 78,
+          "PBF": 79,
+          "PBK": 79,
+          "PBP": 76,
+          "RBF": 76,
+          "RBK": 80,
+          "RBP": 76,
+          "SPD": 64,
+          "STR": 68,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2029210",
+        "external_player_id": "29210",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Kaden Robnett",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/f2b34a553ede859b63c98f5d8e5e57a01996de9638a19a7f60680086d451d6a7.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-2029453": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-2029453",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/29453-steven-demboski/27-2029453/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 62,
+          "AGI": 60,
+          "AWR": 73,
+          "COD": 48,
+          "IBL": 66,
+          "LBK": 72,
+          "PBF": 79,
+          "PBK": 73,
+          "PBP": 80,
+          "RBF": 67,
+          "RBK": 71,
+          "RBP": 75,
+          "SPD": 63,
+          "STR": 67,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-2029453",
+        "external_player_id": "29453",
+        "external_source": "CFB_FAN",
+        "overall": 76,
+        "player": "Steven Demboski",
+        "position": "C",
+        "program": "Core Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/53cd550bd4eb76947b4ad0ad00bdcaac41d722dee0747eba82d7e54740a44042.bin",
         "release_date": "07/01/2026",
         "team_school": null
       }
@@ -7038,6 +8465,52 @@
         "position": "C",
         "program": "S1 Legends - Millenium",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/3acd1b742fffc3a546847038613c91b2a186389d60ff4d1cfb15478e34974005.bin",
+        "release_date": "07/02/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-212326542": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-212326542",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/26542-jeff-saturday/27-212326542/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 65,
+          "AGI": 63,
+          "AWR": 80,
+          "COD": 62,
+          "IBL": 76,
+          "LBK": 71,
+          "PBF": 77,
+          "PBK": 76,
+          "PBP": 77,
+          "RBF": 71,
+          "RBK": 74,
+          "RBP": 69,
+          "SPD": 67,
+          "STR": 76,
+          "TGH": 90
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-212326542",
+        "external_player_id": "26542",
+        "external_source": "CFB_FAN",
+        "overall": 78,
+        "player": "Jeff Saturday",
+        "position": "C",
+        "program": "S1 Legends - Millenium",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/a184b122e0e424f5608f27ed88545e8556e3a4bed5de7d44e9f8be4520860809.bin",
         "release_date": "07/02/2026",
         "team_school": null
       }
@@ -13156,6 +14629,52 @@
         "team_school": null
       }
     },
+    "card:EXT-CFB_FAN-27-8000160": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8000160",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/160-brandon-best/27-8000160/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 60,
+          "AWR": 78,
+          "COD": 49,
+          "IBL": 75,
+          "LBK": 75,
+          "PBF": 78,
+          "PBK": 78,
+          "PBP": 78,
+          "RBF": 73,
+          "RBK": 77,
+          "RBP": 83,
+          "SPD": 60,
+          "STR": 75,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8000160",
+        "external_player_id": "160",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Brandon Best",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/d290b5332476b35f1d85eff9b7e5d7cb94755568a7394442a34dc9558076a322.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
     "card:EXT-CFB_FAN-27-800020681": {
       "disposition": "REFERENCE_DATA",
       "promoted": false,
@@ -13313,6 +14832,466 @@
         "position": "LE",
         "program": "Ranked",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/deac0293734920d6e5399a967f9062bc2ab3e3e98e786bf6e763e5dc10dde3de.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8001770": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8001770",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/1770-carter-miller/27-8001770/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 63,
+          "AWR": 74,
+          "COD": 50,
+          "IBL": 80,
+          "LBK": 55,
+          "PBF": 78,
+          "PBK": 79,
+          "PBP": 76,
+          "RBF": 63,
+          "RBK": 63,
+          "RBP": 60,
+          "SPD": 60,
+          "STR": 73,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8001770",
+        "external_player_id": "1770",
+        "external_source": "CFB_FAN",
+        "overall": 76,
+        "player": "Carter Miller",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/008435a55a8710bc5f2e3bb0e2470c95a4c3cd1c8bbdb50936921b4e54ba93b2.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8001958": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8001958",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/1958-mark-nabou-jr/27-8001958/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 60,
+          "AWR": 81,
+          "COD": 46,
+          "IBL": 76,
+          "LBK": 67,
+          "PBF": 76,
+          "PBK": 76,
+          "PBP": 76,
+          "RBF": 71,
+          "RBK": 72,
+          "RBP": 76,
+          "SPD": 60,
+          "STR": 77,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8001958",
+        "external_player_id": "1958",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Mark Nabou Jr.",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/b49e50e8fbf384db6121926124834e1a15077397773fc0df407e17560a3d3a12.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8003754": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8003754",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/3754-brock-riker/27-8003754/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 65,
+          "AGI": 63,
+          "AWR": 76,
+          "COD": 65,
+          "IBL": 74,
+          "LBK": 77,
+          "PBF": 79,
+          "PBK": 78,
+          "PBP": 72,
+          "RBF": 75,
+          "RBK": 74,
+          "RBP": 69,
+          "SPD": 65,
+          "STR": 72,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8003754",
+        "external_player_id": "3754",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Brock Riker",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/3531da0a5f1da6bfcfe539a28d3c338704d4b01f028e4a2772ede8874a63e65d.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8004087": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8004087",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/4087-bray-lynch/27-8004087/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 62,
+          "AGI": 63,
+          "AWR": 83,
+          "COD": 51,
+          "IBL": 76,
+          "LBK": 75,
+          "PBF": 72,
+          "PBK": 78,
+          "PBP": 79,
+          "RBF": 75,
+          "RBK": 76,
+          "RBP": 73,
+          "SPD": 62,
+          "STR": 78,
+          "TGH": 83
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8004087",
+        "external_player_id": "4087",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Bray Lynch",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/550a13f440a46450d7abe5828d496de661d968aef2e93580b2fb91c6eb0247ff.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8006113": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8006113",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/6113-mateo-guevara/27-8006113/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 60,
+          "AWR": 81,
+          "COD": 47,
+          "IBL": 76,
+          "LBK": 68,
+          "PBF": 76,
+          "PBK": 80,
+          "PBP": 80,
+          "RBF": 70,
+          "RBK": 72,
+          "RBP": 70,
+          "SPD": 60,
+          "STR": 78,
+          "TGH": 83
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8006113",
+        "external_player_id": "6113",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Mateo Guevara",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/d3990b114cdda494d98c6bfa9ae8c25fb71ce27bea8555d2da02a9219a948272.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8008621": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8008621",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/8621-broderick-roman/27-8008621/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 60,
+          "AWR": 74,
+          "COD": 44,
+          "IBL": 71,
+          "LBK": 74,
+          "PBF": 81,
+          "PBK": 77,
+          "PBP": 78,
+          "RBF": 74,
+          "RBK": 77,
+          "RBP": 72,
+          "SPD": 60,
+          "STR": 68,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8008621",
+        "external_player_id": "8621",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Broderick Roman",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/0b2c008ddc4bc27a8928361f041c5011a8e61cda0f97a9f5278798b9b41d5ce3.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8009242": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8009242",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/9242-cole-best/27-8009242/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 60,
+          "AWR": 78,
+          "COD": 48,
+          "IBL": 79,
+          "LBK": 71,
+          "PBF": 76,
+          "PBK": 79,
+          "PBP": 80,
+          "RBF": 71,
+          "RBK": 74,
+          "RBP": 77,
+          "SPD": 60,
+          "STR": 80,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8009242",
+        "external_player_id": "9242",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Cole Best",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/9ee9181e113c0041d8e3ae1489efac6e4c2316c694250df6014a8d29bd78d8fd.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8009529": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8009529",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/9529-michael-maxwell/27-8009529/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 65,
+          "AGI": 67,
+          "AWR": 74,
+          "COD": 44,
+          "IBL": 72,
+          "LBK": 79,
+          "PBF": 78,
+          "PBK": 77,
+          "PBP": 74,
+          "RBF": 80,
+          "RBK": 63,
+          "RBP": 67,
+          "SPD": 62,
+          "STR": 75,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8009529",
+        "external_player_id": "9529",
+        "external_source": "CFB_FAN",
+        "overall": 76,
+        "player": "Michael Maxwell",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/1c8dd7699b026add078fc801330d7717ec90720c57ab1017b3423856ecb8ece0.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8010045": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8010045",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/10045-ashton-craig/27-8010045/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 63,
+          "AGI": 63,
+          "AWR": 76,
+          "COD": 59,
+          "IBL": 81,
+          "LBK": 78,
+          "PBF": 69,
+          "PBK": 75,
+          "PBP": 76,
+          "RBF": 75,
+          "RBK": 78,
+          "RBP": 78,
+          "SPD": 63,
+          "STR": 79,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8010045",
+        "external_player_id": "10045",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Ashton Craig",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/a6cce86d24acd81d8ed898ed7cef947a5648db2020741a6bf4e4a1e0a7b2422a.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8010046": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8010046",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/10046-matt-craycraft/27-8010046/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 64,
+          "AGI": 65,
+          "AWR": 79,
+          "COD": 58,
+          "IBL": 74,
+          "LBK": 80,
+          "PBF": 76,
+          "PBK": 78,
+          "PBP": 78,
+          "RBF": 76,
+          "RBK": 77,
+          "RBP": 74,
+          "SPD": 64,
+          "STR": 74,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8010046",
+        "external_player_id": "10046",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Matt Craycraft",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/803319d8d3dd9765ce023bea0dedd6d0207b1f2c5d0768a9e3f5e032e38e7215.bin",
         "release_date": "07/01/2026",
         "team_school": null
       }
@@ -13590,6 +15569,190 @@
         "team_school": null
       }
     },
+    "card:EXT-CFB_FAN-27-8014513": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8014513",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/14513-jake-maikkula/27-8014513/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 65,
+          "AGI": 64,
+          "AWR": 79,
+          "COD": 61,
+          "IBL": 75,
+          "LBK": 81,
+          "PBF": 79,
+          "PBK": 80,
+          "PBP": 79,
+          "RBF": 74,
+          "RBK": 75,
+          "RBP": 72,
+          "SPD": 66,
+          "STR": 71,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8014513",
+        "external_player_id": "14513",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Jake Maikkula",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/180b5b09401aa7aecb3db52b5299cc05199a5b0358b9e2e6c4224eac9cd788da.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8018787": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8018787",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/18787-aaron-fenimore/27-8018787/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 68,
+          "AGI": 68,
+          "AWR": 83,
+          "COD": 68,
+          "IBL": 74,
+          "LBK": 83,
+          "PBF": 69,
+          "PBK": 71,
+          "PBP": 75,
+          "RBF": 83,
+          "RBK": 83,
+          "RBP": 81,
+          "SPD": 69,
+          "STR": 75,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8018787",
+        "external_player_id": "18787",
+        "external_source": "CFB_FAN",
+        "overall": 79,
+        "player": "Aaron Fenimore",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/0864551356c01091e4f8979fcfd4c85b0669f9b2d7a58d01de2a7568559852d0.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8018855": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8018855",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/18855-cameron-griffin/27-8018855/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 60,
+          "AWR": 78,
+          "COD": 49,
+          "IBL": 75,
+          "LBK": 77,
+          "PBF": 77,
+          "PBK": 78,
+          "PBP": 76,
+          "RBF": 65,
+          "RBK": 63,
+          "RBP": 61,
+          "SPD": 60,
+          "STR": 72,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8018855",
+        "external_player_id": "18855",
+        "external_source": "CFB_FAN",
+        "overall": 76,
+        "player": "Cameron Griffin",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/b00e55c054587439b84f5c7297cf6dcb70de595ada83ca2ec9c663ad1d96b271.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8019898": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8019898",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/19898-kilian-oconnor/27-8019898/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 62,
+          "AGI": 64,
+          "AWR": 79,
+          "COD": 63,
+          "IBL": 68,
+          "LBK": 79,
+          "PBF": 79,
+          "PBK": 77,
+          "PBP": 71,
+          "RBF": 79,
+          "RBK": 77,
+          "RBP": 69,
+          "SPD": 66,
+          "STR": 73,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8019898",
+        "external_player_id": "19898",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Kilian O'Connor",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/82c4cc446c241b08d9ab61f657fb494dd3824c415e3344db518d384abba68f2f.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
     "card:EXT-CFB_FAN-27-802007424": {
       "disposition": "REFERENCE_DATA",
       "promoted": false,
@@ -13814,6 +15977,420 @@
         "program": "Ranked",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/52452adf3a0629d2b4724e611614e2b94bdb55e1efa0bab620c24a7033dc5608.bin",
         "release_date": "08/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8020771": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8020771",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20771-adam-lepkowski/27-8020771/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 61,
+          "AGI": 60,
+          "AWR": 77,
+          "COD": 50,
+          "IBL": 78,
+          "LBK": 67,
+          "PBF": 74,
+          "PBK": 78,
+          "PBP": 78,
+          "RBF": 73,
+          "RBK": 77,
+          "RBP": 69,
+          "SPD": 62,
+          "STR": 72,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8020771",
+        "external_player_id": "20771",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Adam Lepkowski",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/2d527eb82403dfc72c909ccbd789f17b077ed12edb3a8f2c954da64aa0bb3a41.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8020776": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8020776",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20776-jimmy-liston/27-8020776/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 63,
+          "AGI": 62,
+          "AWR": 81,
+          "COD": 60,
+          "IBL": 78,
+          "LBK": 81,
+          "PBF": 72,
+          "PBK": 77,
+          "PBP": 78,
+          "RBF": 76,
+          "RBK": 74,
+          "RBP": 67,
+          "SPD": 63,
+          "STR": 76,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8020776",
+        "external_player_id": "20776",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Jimmy Liston",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/31b823bc3c6de2ea9c2228d53403f49a6ea3ab79ed5ad609e732cde5f456abfe.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8020840": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8020840",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20840-cam-nichols/27-8020840/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 64,
+          "AGI": 62,
+          "AWR": 77,
+          "COD": 58,
+          "IBL": 67,
+          "LBK": 80,
+          "PBF": 72,
+          "PBK": 74,
+          "PBP": 74,
+          "RBF": 81,
+          "RBK": 80,
+          "RBP": 78,
+          "SPD": 63,
+          "STR": 74,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8020840",
+        "external_player_id": "20840",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Cam Nichols",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/745a0e4ee144ec3849d316a89d37576ae37cfb838015fab300e94461779ce0a6.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8020925": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8020925",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/20925-connor-robertson/27-8020925/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Agile",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 61,
+          "AWR": 76,
+          "COD": 43,
+          "IBL": 74,
+          "LBK": 76,
+          "PBF": 72,
+          "PBK": 74,
+          "PBP": 74,
+          "RBF": 80,
+          "RBK": 78,
+          "RBP": 77,
+          "SPD": 62,
+          "STR": 79,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8020925",
+        "external_player_id": "20925",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Connor Robertson",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/a1ad15d3a1273999d03701b9d8d6975091bd4d8bb43a1671a80ecb3d4eba9bfb.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8023114": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8023114",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/23114-caden-kitler/27-8023114/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 63,
+          "AWR": 74,
+          "COD": 41,
+          "IBL": 72,
+          "LBK": 73,
+          "PBF": 73,
+          "PBK": 75,
+          "PBP": 74,
+          "RBF": 73,
+          "RBK": 70,
+          "RBP": 71,
+          "SPD": 60,
+          "STR": 80,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8023114",
+        "external_player_id": "23114",
+        "external_source": "CFB_FAN",
+        "overall": 76,
+        "player": "Caden Kitler",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/5071814dc5c54040208193e37ebe651c621fd1d61dc1aa12ef06c95a9ad23009.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8023222": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8023222",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/23222-terrence-moore/27-8023222/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 60,
+          "AWR": 76,
+          "COD": 50,
+          "IBL": 68,
+          "LBK": 55,
+          "PBF": 80,
+          "PBK": 78,
+          "PBP": 76,
+          "RBF": 71,
+          "RBK": 60,
+          "RBP": 63,
+          "SPD": 60,
+          "STR": 72,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8023222",
+        "external_player_id": "23222",
+        "external_source": "CFB_FAN",
+        "overall": 76,
+        "player": "Terrence Moore",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/100a21c9e74fa84de3e50460cccaeebd69111d8e76e5d2e555a05e1eed432a0f.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8023693": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8023693",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/23693-harrison-moore/27-8023693/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 64,
+          "AGI": 64,
+          "AWR": 75,
+          "COD": 58,
+          "IBL": 72,
+          "LBK": 80,
+          "PBF": 74,
+          "PBK": 76,
+          "PBP": 76,
+          "RBF": 76,
+          "RBK": 79,
+          "RBP": 78,
+          "SPD": 65,
+          "STR": 71,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8023693",
+        "external_player_id": "23693",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Harrison Moore",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/744d677bfdb072163ddfc072961fd8bde16ea862423fa5bbbb95e3ac61d170b8.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8029210": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8029210",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/29210-kaden-robnett/27-8029210/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 63,
+          "AGI": 61,
+          "AWR": 74,
+          "COD": 42,
+          "IBL": 71,
+          "LBK": 78,
+          "PBF": 79,
+          "PBK": 79,
+          "PBP": 76,
+          "RBF": 76,
+          "RBK": 80,
+          "RBP": 76,
+          "SPD": 64,
+          "STR": 68,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8029210",
+        "external_player_id": "29210",
+        "external_source": "CFB_FAN",
+        "overall": 77,
+        "player": "Kaden Robnett",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/7fe4f92d623e30981926c312ed8630bca4b519e954d6843b4c96b32d185f98bb.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-8029453": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-8029453",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/29453-steven-demboski/27-8029453/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 62,
+          "AGI": 60,
+          "AWR": 73,
+          "COD": 48,
+          "IBL": 66,
+          "LBK": 72,
+          "PBF": 79,
+          "PBK": 73,
+          "PBP": 80,
+          "RBF": 67,
+          "RBK": 71,
+          "RBP": 75,
+          "SPD": 63,
+          "STR": 67,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-8029453",
+        "external_player_id": "29453",
+        "external_source": "CFB_FAN",
+        "overall": 76,
+        "player": "Steven Demboski",
+        "position": "C",
+        "program": "Platinum Uncommon",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/911d303b9fce4cf1fb343e3fe3531f20a2ccf3ff69882cb4e9bf5a495608c497.bin",
+        "release_date": "07/01/2026",
         "team_school": null
       }
     },
@@ -14182,6 +16759,52 @@
         "position": "DT",
         "program": "Platinum Rare",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/b68ce0a53d75572345f35d0fa12ba8eddae63f92e8ceebc2f5749e23e7f886b3.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-9000210": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-9000210",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/210-levi-hubbard/27-9000210/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Raw Strength",
+        "attributes": {
+          "ACC": 60,
+          "AGI": 63,
+          "AWR": 60,
+          "COD": 43,
+          "IBL": 82,
+          "LBK": 69,
+          "PBF": 73,
+          "PBK": 77,
+          "PBP": 83,
+          "RBF": 81,
+          "RBK": 82,
+          "RBP": 83,
+          "SPD": 60,
+          "STR": 83,
+          "TGH": 81
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-9000210",
+        "external_player_id": "210",
+        "external_source": "CFB_FAN",
+        "overall": 80,
+        "player": "Levi Hubbard",
+        "position": "C",
+        "program": "Platinum Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/3907a6e95e4144040b026ddada5ce14499149d97167474a46eaa03cc8f6628b5.bin",
         "release_date": "07/01/2026",
         "team_school": null
       }
@@ -16069,6 +18692,52 @@
         "position": "LT",
         "program": "Platinum Rare",
         "raw_snapshot_reference": "data/external/raw/cfb_fan/90ff9ee6c16241cd455832823f2b446d8a2df2296fe7b7c0d73aa2f54cbaf509.bin",
+        "release_date": "07/01/2026",
+        "team_school": null
+      }
+    },
+    "card:EXT-CFB_FAN-27-9018133": {
+      "disposition": "REFERENCE_DATA",
+      "promoted": false,
+      "record_id": "EXT-CFB_FAN-27-9018133",
+      "record_type": "card",
+      "source_links": [
+        {
+          "catalog_source": true,
+          "locator": "https://cfb.fan/players/18133-michael-hershey/27-9018133/",
+          "source_id": "CFB_FAN"
+        }
+      ],
+      "unresolved_fields": [],
+      "validation_status": "STAGED_EXTERNAL_PUBLIC_SOURCE",
+      "values": {
+        "archetype": "Pass Protector",
+        "attributes": {
+          "ACC": 66,
+          "AGI": 70,
+          "AWR": 80,
+          "COD": 65,
+          "IBL": 72,
+          "LBK": 82,
+          "PBF": 83,
+          "PBK": 81,
+          "PBP": 77,
+          "RBF": 77,
+          "RBK": 78,
+          "RBP": 73,
+          "SPD": 67,
+          "STR": 69,
+          "TGH": 80
+        },
+        "card_type": "CUT",
+        "external_card_id": "27-9018133",
+        "external_player_id": "18133",
+        "external_source": "CFB_FAN",
+        "overall": 80,
+        "player": "Michael Hershey",
+        "position": "C",
+        "program": "Platinum Rare",
+        "raw_snapshot_reference": "data/external/raw/cfb_fan/16d825cbd67bf9616658b20e488a2945b95155b7fb026f1c10392e5df1556dea.bin",
         "release_date": "07/01/2026",
         "team_school": null
       }
@@ -20887,6 +23556,387 @@
         "DUPLICATE": 17,
         "MATCH": 1,
         "NEW": 253,
+        "REJECTED": 0,
+        "UNRESOLVED": 0,
+        "UPDATE": 0
+      },
+      "source_completion_changes": [],
+      "sources_processed": 1
+    },
+    "INGEST-EXTERNAL-CFB_FAN-2026-08-14T02-00-00Z": {
+      "actions": [
+        {
+          "id": "CFB_FAN",
+          "kind": "source",
+          "result": "MATCH"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-104026168",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-9018133",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2018133",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2000210",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-9000210",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-104900002",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "duplicate_of": "card:EXT-CFB_FAN-102026556",
+          "id": "EXT-CFB_FAN-27-102026556",
+          "kind": "record",
+          "promoted": false,
+          "result": "DUPLICATE"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-103026542",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-103026882",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8000160",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2000160",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8009242",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2009242",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2010045",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8010045",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8010046",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2010046",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2018787",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8018787",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8006113",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2006113",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8004087",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2004087",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8014513",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2014513",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-212326542",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2018977",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2020771",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8020771",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8020776",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2023693",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8023693",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8001958",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2001958",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2020840",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8020840",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2019898",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8019898",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8003754",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2003754",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8020925",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2020925",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2029210",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8029210",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2008621",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8008621",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2029453",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8029453",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8018855",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2018855",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8023114",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2023114",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2009529",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8009529",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8001770",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2001770",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2023222",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-8023222",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        },
+        {
+          "id": "EXT-CFB_FAN-27-2019320",
+          "kind": "record",
+          "promoted": false,
+          "result": "NEW"
+        }
+      ],
+      "dry_run": false,
+      "manifest_id": "EXTERNAL-CFB_FAN-2026-08-14T02-00-00Z",
+      "queue_items_closed": [],
+      "queue_items_remaining": 20,
+      "records_promoted": 0,
+      "records_staged": 59,
+      "result_counts": {
+        "CONFLICT": 0,
+        "DUPLICATE": 1,
+        "MATCH": 1,
+        "NEW": 58,
         "REJECTED": 0,
         "UNRESOLVED": 0,
         "UPDATE": 0

@@ -16,6 +16,12 @@ def main() -> None:
             (root / "data/external/cfb_fan_population_state.json").read_text(encoding="utf-8")
         )["cards"].values()
     )
+    phase3_freeze = root / "data/research/cfb27_inheritance_phase3/phase3_frozen_snapshot.json"
+    if phase3_freeze.exists():
+        frozen_ids = set(
+            json.loads(phase3_freeze.read_text(encoding="utf-8"))["population"]["card_ids"]
+        )
+        cards = [card for card in cards if card["external_card_id"] in frozen_ids]
     workbook = WorkbookImporter(root / "data/canonical/canonical_v1.9.xlsx")
     te_status = [
         record.values

@@ -1,0 +1,90 @@
+{
+  "baseline": {
+    "archetypes": {
+      "Backfield Creator": {
+        "failure_cards": [
+          {
+            "archetype": "Backfield Creator",
+            "card_id": "27-240019887",
+            "ovr": 86,
+            "player": "Jayden Maiava",
+            "prediction": 85,
+            "residual": 1.49146758,
+            "score": 82.32,
+            "special": true
+          },
+          {
+            "archetype": "Backfield Creator",
+            "card_id": "27-201033236",
+            "ovr": 88,
+            "player": "Trinidad Chambliss",
+            "prediction": 79,
+            "residual": 9.10416667,
+            "score": 85.73,
+            "special": true
+          }
+        ],
+        "historical_prior": "West Coast",
+        "metrics": {
+          "exact_accuracy": 0.0,
+          "mae": 3,
+          "n": 4,
+          "ordering_accuracy": 0.0,
+          "within_one_accuracy": 0.75
+        },
+        "n": 4,
+        "status": "INHERITED_BASELINE_ONLY"
+      },
+      "Dual Threat": {
+        "failure_cards": [],
+        "historical_prior": "Scrambler",
+        "metrics": {
+          "exact_accuracy": 0.25,
+          "mae": 0.75,
+          "n": 8,
+          "ordering_accuracy": 0.84,
+          "within_one_accuracy": 1.0
+        },
+        "n": 8,
+        "status": "INHERITED_BASELINE_ONLY"
+      },
+      "Pocket Passer": {
+        "failure_cards": [
+          {
+            "archetype": "Pocket Passer",
+            "card_id": "27-280010190",
+            "ovr": 85,
+            "player": "Owen McCown",
+            "prediction": 87,
+            "residual": -1.5657861,
+            "score": 84.01,
+            "special": true
+          },
+          {
+            "archetype": "Pocket Passer",
+            "card_id": "27-200900014",
+            "ovr": 86,
+            "player": "Kurt Benkert",
+            "prediction": 85,
+            "residual": 1.05651527,
+            "score": 82.91,
+            "special": true
+          }
+        ],
+        "historical_prior": "Field General",
+        "metrics": {
+          "exact_accuracy": 0.363636,
+          "mae": 0.727273,
+          "n": 11,
+          "ordering_accuracy": 0.688889,
+          "within_one_accuracy": 0.909091
+        },
+        "n": 11,
+        "status": "INHERITED_BASELINE_ONLY"
+      }
+    },
+    "unmapped_archetypes": [],
+    "warning": "Historical archetype mapping is a declared research approximation, not an identity claim."
+  },
+  "conclusion": "Small archetype samples make inherited-vs-null discrimination underpowered; Backfield Creator remains rejected as West Coast identity."
+}

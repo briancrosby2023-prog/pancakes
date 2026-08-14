@@ -1,0 +1,152 @@
+{
+  "best_observed_factor": 0.7,
+  "bootstrap_best_factor_counts": {
+    "0.6": 557,
+    "0.65": 118,
+    "0.7": 128,
+    "0.75": 57,
+    "0.8": 27,
+    "0.85": 42,
+    "0.9": 31,
+    "0.95": 27,
+    "1.0": 13
+  },
+  "grid": [
+    {
+      "factor": 0.6,
+      "mae_by_archetype": {
+        "Agile": 0.741037,
+        "Pass Protector": 0.472463,
+        "Raw Strength": 0.712107
+      },
+      "metrics": {
+        "exact_accuracy": 0.47619,
+        "mae": 0.571429,
+        "n": 42,
+        "ordering_accuracy": 0.782673,
+        "within_one_accuracy": 0.952381
+      }
+    },
+    {
+      "factor": 0.65,
+      "mae_by_archetype": {
+        "Agile": 0.737568,
+        "Pass Protector": 0.486489,
+        "Raw Strength": 0.707998
+      },
+      "metrics": {
+        "exact_accuracy": 0.47619,
+        "mae": 0.571429,
+        "n": 42,
+        "ordering_accuracy": 0.782673,
+        "within_one_accuracy": 0.952381
+      }
+    },
+    {
+      "factor": 0.7,
+      "mae_by_archetype": {
+        "Agile": 0.7341,
+        "Pass Protector": 0.500233,
+        "Raw Strength": 0.703696
+      },
+      "metrics": {
+        "exact_accuracy": 0.47619,
+        "mae": 0.52381,
+        "n": 42,
+        "ordering_accuracy": 0.812041,
+        "within_one_accuracy": 1.0
+      }
+    },
+    {
+      "factor": 0.75,
+      "mae_by_archetype": {
+        "Agile": 0.730643,
+        "Pass Protector": 0.513676,
+        "Raw Strength": 0.699229
+      },
+      "metrics": {
+        "exact_accuracy": 0.428571,
+        "mae": 0.571429,
+        "n": 42,
+        "ordering_accuracy": 0.806167,
+        "within_one_accuracy": 1.0
+      }
+    },
+    {
+      "factor": 0.8,
+      "mae_by_archetype": {
+        "Agile": 0.727209,
+        "Pass Protector": 0.526804,
+        "Raw Strength": 0.694624
+      },
+      "metrics": {
+        "exact_accuracy": 0.428571,
+        "mae": 0.619048,
+        "n": 42,
+        "ordering_accuracy": 0.776799,
+        "within_one_accuracy": 0.952381
+      }
+    },
+    {
+      "factor": 0.85,
+      "mae_by_archetype": {
+        "Agile": 0.723806,
+        "Pass Protector": 0.539606,
+        "Raw Strength": 0.689903
+      },
+      "metrics": {
+        "exact_accuracy": 0.428571,
+        "mae": 0.619048,
+        "n": 42,
+        "ordering_accuracy": 0.776799,
+        "within_one_accuracy": 0.952381
+      }
+    },
+    {
+      "factor": 0.9,
+      "mae_by_archetype": {
+        "Agile": 0.720441,
+        "Pass Protector": 0.552074,
+        "Raw Strength": 0.685089
+      },
+      "metrics": {
+        "exact_accuracy": 0.428571,
+        "mae": 0.619048,
+        "n": 42,
+        "ordering_accuracy": 0.776799,
+        "within_one_accuracy": 0.952381
+      }
+    },
+    {
+      "factor": 0.95,
+      "mae_by_archetype": {
+        "Agile": 0.717122,
+        "Pass Protector": 0.564746,
+        "Raw Strength": 0.680202
+      },
+      "metrics": {
+        "exact_accuracy": 0.380952,
+        "mae": 0.666667,
+        "n": 42,
+        "ordering_accuracy": 0.782673,
+        "within_one_accuracy": 0.952381
+      }
+    },
+    {
+      "factor": 1.0,
+      "mae_by_archetype": {
+        "Agile": 0.713854,
+        "Pass Protector": 0.580868,
+        "Raw Strength": 0.675259
+      },
+      "metrics": {
+        "exact_accuracy": 0.380952,
+        "mae": 0.666667,
+        "n": 42,
+        "ordering_accuracy": 0.782673,
+        "within_one_accuracy": 0.952381
+      }
+    }
+  ],
+  "warning": "Best predictive factor is not asserted to be an EA production weight."
+}

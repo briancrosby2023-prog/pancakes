@@ -1,0 +1,354 @@
+{
+  "correlation_matrix": {
+    "ACC": {
+      "ACC": 1.0,
+      "AGI": 0.860706,
+      "AWR": 0.004421,
+      "COD": 0.729204,
+      "IBL": -0.122092,
+      "LBK": 0.549392,
+      "PBF": -0.0309,
+      "PBK": -0.127836,
+      "PBP": -0.15293,
+      "RBF": 0.42688,
+      "RBK": 0.494531,
+      "RBP": 0.168389,
+      "SPD": 0.778038,
+      "STR": -0.182932,
+      "TGH": 0.330372
+    },
+    "AGI": {
+      "ACC": 0.860706,
+      "AGI": 1.0,
+      "AWR": 0.10258,
+      "COD": 0.74506,
+      "IBL": -0.035213,
+      "LBK": 0.403889,
+      "PBF": -0.023841,
+      "PBK": 0.000904,
+      "PBP": -0.102476,
+      "RBF": 0.439033,
+      "RBK": 0.495548,
+      "RBP": 0.169734,
+      "SPD": 0.733625,
+      "STR": -0.123862,
+      "TGH": 0.340897
+    },
+    "AWR": {
+      "ACC": 0.004421,
+      "AGI": 0.10258,
+      "AWR": 1.0,
+      "COD": -0.314687,
+      "IBL": 0.270722,
+      "LBK": -0.271755,
+      "PBF": -0.204492,
+      "PBK": -0.220459,
+      "PBP": 0.12768,
+      "RBF": -0.257492,
+      "RBK": -0.200179,
+      "RBP": -0.223106,
+      "SPD": 0.241608,
+      "STR": 0.079189,
+      "TGH": 0.124979
+    },
+    "COD": {
+      "ACC": 0.729204,
+      "AGI": 0.74506,
+      "AWR": -0.314687,
+      "COD": 1.0,
+      "IBL": -0.220224,
+      "LBK": 0.728435,
+      "PBF": 0.136116,
+      "PBK": 0.263538,
+      "PBP": 0.012174,
+      "RBF": 0.677268,
+      "RBK": 0.634727,
+      "RBP": 0.46137,
+      "SPD": 0.664622,
+      "STR": -0.072642,
+      "TGH": 0.399272
+    },
+    "IBL": {
+      "ACC": -0.122092,
+      "AGI": -0.035213,
+      "AWR": 0.270722,
+      "COD": -0.220224,
+      "IBL": 1.0,
+      "LBK": -0.419957,
+      "PBF": -0.053041,
+      "PBK": 0.153661,
+      "PBP": 0.667419,
+      "RBF": -0.262251,
+      "RBK": -0.291431,
+      "RBP": 0.018135,
+      "SPD": -0.098382,
+      "STR": 0.564868,
+      "TGH": 0.244991
+    },
+    "LBK": {
+      "ACC": 0.549392,
+      "AGI": 0.403889,
+      "AWR": -0.271755,
+      "COD": 0.728435,
+      "IBL": -0.419957,
+      "LBK": 1.0,
+      "PBF": 0.046185,
+      "PBK": 0.027184,
+      "PBP": -0.183374,
+      "RBF": 0.798419,
+      "RBK": 0.768876,
+      "RBP": 0.641609,
+      "SPD": 0.470112,
+      "STR": -0.06658,
+      "TGH": 0.45323
+    },
+    "PBF": {
+      "ACC": -0.0309,
+      "AGI": -0.023841,
+      "AWR": -0.204492,
+      "COD": 0.136116,
+      "IBL": -0.053041,
+      "LBK": 0.046185,
+      "PBF": 1.0,
+      "PBK": 0.854862,
+      "PBP": 0.485431,
+      "RBF": -0.153188,
+      "RBK": -0.179648,
+      "RBP": -0.207897,
+      "SPD": -0.060414,
+      "STR": -0.107601,
+      "TGH": -0.211613
+    },
+    "PBK": {
+      "ACC": -0.127836,
+      "AGI": 0.000904,
+      "AWR": -0.220459,
+      "COD": 0.263538,
+      "IBL": 0.153661,
+      "LBK": 0.027184,
+      "PBF": 0.854862,
+      "PBK": 1.0,
+      "PBP": 0.698588,
+      "RBF": -0.03529,
+      "RBK": -0.105843,
+      "RBP": 0.040886,
+      "SPD": 0.013429,
+      "STR": 0.093163,
+      "TGH": -0.002926
+    },
+    "PBP": {
+      "ACC": -0.15293,
+      "AGI": -0.102476,
+      "AWR": 0.12768,
+      "COD": 0.012174,
+      "IBL": 0.667419,
+      "LBK": -0.183374,
+      "PBF": 0.485431,
+      "PBK": 0.698588,
+      "PBP": 1.0,
+      "RBF": -0.134908,
+      "RBK": -0.163968,
+      "RBP": 0.151563,
+      "SPD": 0.057372,
+      "STR": 0.381826,
+      "TGH": 0.227735
+    },
+    "RBF": {
+      "ACC": 0.42688,
+      "AGI": 0.439033,
+      "AWR": -0.257492,
+      "COD": 0.677268,
+      "IBL": -0.262251,
+      "LBK": 0.798419,
+      "PBF": -0.153188,
+      "PBK": -0.03529,
+      "PBP": -0.134908,
+      "RBF": 1.0,
+      "RBK": 0.89418,
+      "RBP": 0.72136,
+      "SPD": 0.38936,
+      "STR": -0.047045,
+      "TGH": 0.509151
+    },
+    "RBK": {
+      "ACC": 0.494531,
+      "AGI": 0.495548,
+      "AWR": -0.200179,
+      "COD": 0.634727,
+      "IBL": -0.291431,
+      "LBK": 0.768876,
+      "PBF": -0.179648,
+      "PBK": -0.105843,
+      "PBP": -0.163968,
+      "RBF": 0.89418,
+      "RBK": 1.0,
+      "RBP": 0.703305,
+      "SPD": 0.491096,
+      "STR": 0.07344,
+      "TGH": 0.48348
+    },
+    "RBP": {
+      "ACC": 0.168389,
+      "AGI": 0.169734,
+      "AWR": -0.223106,
+      "COD": 0.46137,
+      "IBL": 0.018135,
+      "LBK": 0.641609,
+      "PBF": -0.207897,
+      "PBK": 0.040886,
+      "PBP": 0.151563,
+      "RBF": 0.72136,
+      "RBK": 0.703305,
+      "RBP": 1.0,
+      "SPD": 0.288529,
+      "STR": 0.391208,
+      "TGH": 0.736926
+    },
+    "SPD": {
+      "ACC": 0.778038,
+      "AGI": 0.733625,
+      "AWR": 0.241608,
+      "COD": 0.664622,
+      "IBL": -0.098382,
+      "LBK": 0.470112,
+      "PBF": -0.060414,
+      "PBK": 0.013429,
+      "PBP": 0.057372,
+      "RBF": 0.38936,
+      "RBK": 0.491096,
+      "RBP": 0.288529,
+      "SPD": 1.0,
+      "STR": 0.038311,
+      "TGH": 0.456175
+    },
+    "STR": {
+      "ACC": -0.182932,
+      "AGI": -0.123862,
+      "AWR": 0.079189,
+      "COD": -0.072642,
+      "IBL": 0.564868,
+      "LBK": -0.06658,
+      "PBF": -0.107601,
+      "PBK": 0.093163,
+      "PBP": 0.381826,
+      "RBF": -0.047045,
+      "RBK": 0.07344,
+      "RBP": 0.391208,
+      "SPD": 0.038311,
+      "STR": 1.0,
+      "TGH": 0.447094
+    },
+    "TGH": {
+      "ACC": 0.330372,
+      "AGI": 0.340897,
+      "AWR": 0.124979,
+      "COD": 0.399272,
+      "IBL": 0.244991,
+      "LBK": 0.45323,
+      "PBF": -0.211613,
+      "PBK": -0.002926,
+      "PBP": 0.227735,
+      "RBF": 0.509151,
+      "RBK": 0.48348,
+      "RBP": 0.736926,
+      "SPD": 0.456175,
+      "STR": 0.447094,
+      "TGH": 1.0
+    }
+  },
+  "explanation": "Correlated blocking ratings create a broad observational equivalence class; predictive stability does not identify individual weights.",
+  "high_correlation_pairs": [
+    {
+      "absolute_correlation": 0.89418,
+      "left": "RBF",
+      "right": "RBK"
+    },
+    {
+      "absolute_correlation": 0.860706,
+      "left": "ACC",
+      "right": "AGI"
+    },
+    {
+      "absolute_correlation": 0.854862,
+      "left": "PBF",
+      "right": "PBK"
+    }
+  ],
+  "identifiability": [
+    {
+      "attribute": "ACC",
+      "classification": "POORLY_IDENTIFIED",
+      "max_peer_correlation": 0.860706
+    },
+    {
+      "attribute": "AGI",
+      "classification": "POORLY_IDENTIFIED",
+      "max_peer_correlation": 0.860706
+    },
+    {
+      "attribute": "AWR",
+      "classification": "MORE_IDENTIFIABLE",
+      "max_peer_correlation": 0.314687
+    },
+    {
+      "attribute": "COD",
+      "classification": "MORE_IDENTIFIABLE",
+      "max_peer_correlation": 0.74506
+    },
+    {
+      "attribute": "IBL",
+      "classification": "MORE_IDENTIFIABLE",
+      "max_peer_correlation": 0.667419
+    },
+    {
+      "attribute": "LBK",
+      "classification": "MORE_IDENTIFIABLE",
+      "max_peer_correlation": 0.798419
+    },
+    {
+      "attribute": "PBF",
+      "classification": "POORLY_IDENTIFIED",
+      "max_peer_correlation": 0.854862
+    },
+    {
+      "attribute": "PBK",
+      "classification": "POORLY_IDENTIFIED",
+      "max_peer_correlation": 0.854862
+    },
+    {
+      "attribute": "PBP",
+      "classification": "MORE_IDENTIFIABLE",
+      "max_peer_correlation": 0.698588
+    },
+    {
+      "attribute": "RBF",
+      "classification": "POORLY_IDENTIFIED",
+      "max_peer_correlation": 0.89418
+    },
+    {
+      "attribute": "RBK",
+      "classification": "POORLY_IDENTIFIED",
+      "max_peer_correlation": 0.89418
+    },
+    {
+      "attribute": "RBP",
+      "classification": "MORE_IDENTIFIABLE",
+      "max_peer_correlation": 0.736926
+    },
+    {
+      "attribute": "SPD",
+      "classification": "MORE_IDENTIFIABLE",
+      "max_peer_correlation": 0.778038
+    },
+    {
+      "attribute": "STR",
+      "classification": "MORE_IDENTIFIABLE",
+      "max_peer_correlation": 0.564868
+    },
+    {
+      "attribute": "TGH",
+      "classification": "MORE_IDENTIFIABLE",
+      "max_peer_correlation": 0.736926
+    }
+  ]
+}
