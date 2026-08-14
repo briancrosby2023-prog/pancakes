@@ -1,0 +1,38 @@
+{
+  "CFB_FAN": {
+    "card_ids": true,
+    "detail_full_ratings": true,
+    "enumeration": "ordinary public HTML",
+    "listing_ratings": "five key fields",
+    "market": "current listing display; not completed sale",
+    "page_size": 15,
+    "pagination": "590 populated pages",
+    "program": true,
+    "release_on_detail": true,
+    "status": "VALIDATED_CUT"
+  },
+  "CFB_LABS": {
+    "reason": "base-game/threshold context",
+    "status": "REJECTED_FOR_CUT_CARD_IDENTITY"
+  },
+  "COLLEGEFOOTBALL_GG": {
+    "reason": "base-game roster database; CUT quicksell reference is useful separately",
+    "status": "METADATA_ONLY"
+  },
+  "CUT_ALPHA": {
+    "claim": "Every CUT 27 card",
+    "evidence": "search-indexed page plus repeatable Cloudflare 521 origin failure",
+    "ingested": 0,
+    "status": "BLOCKED_HOST_DOWN"
+  },
+  "EA": {
+    "cards": "release/article subsets",
+    "enumerable_database": false,
+    "status": "VALIDATED_SYSTEM_METADATA",
+    "upgrade_rules": true
+  },
+  "GITHUB_PUBLIC_SEARCH": {
+    "result": "results were base-roster, dynasty, modding, or unrelated football data",
+    "status": "NO_VALIDATED_CUT27_DATASET_FOUND"
+  }
+}

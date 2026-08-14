@@ -30,3 +30,11 @@ identified card/family, ordered before and after states, exact observed deltas, 
 and confidence. Historical claims without original vectors remain recovery targets instead of
 synthetic transitions. Generate analytics with `scripts/generate_cfb27_op_x_011.py`; validate a
 future observation with `scripts/ingest_progression_observation.py`.
+
+## Public population acquisition
+
+OP-X-012R uses the ordinary CFB.FAN global listing as a restartable discovery layer. Listing-derived
+records are explicitly partial: their five displayed summary ratings never masquerade as a full
+native vector. Detail-page records take precedence while conflicts are retained. The initial run
+checkpoints all 590 populated pages; later bounded refreshes use
+`scripts/run_cfb27_population_v3.py --refresh-pages N` to scan only the newest pages.

@@ -1,0 +1,39 @@
+{
+  "CURRENT_TEAM_READY": {
+    "coverage": "1/24",
+    "ready": false
+  },
+  "MARKET_READY": {
+    "coverage": 0,
+    "ready": false
+  },
+  "NATIVE_DATABASE_READY": {
+    "ready": true,
+    "scope": "identity/program/OVR population"
+  },
+  "POSITION_MODEL_READY": {
+    "ready": true,
+    "scope": "positions with adequate full vectors only"
+  },
+  "PRIMARY_STAT_READY": {
+    "ready": true,
+    "scope": "reported per-position sample sizes"
+  },
+  "PRODUCTION_READY": {
+    "blockers": [
+      "full vectors",
+      "active states",
+      "abilities",
+      "market"
+    ],
+    "ready": false
+  },
+  "PROGRESSION_READY": {
+    "ready": true,
+    "scope": "31 observed events"
+  },
+  "UPGRADE_FOUNDATION_READY": {
+    "coverage": "120/6027",
+    "ready": true
+  }
+}

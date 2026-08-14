@@ -1,0 +1,74 @@
+{
+  "packet": "OP-X-012R",
+  "checkpoint_reason": "EARLY_CHECKPOINT_DUE_TO_USAGE_LIMIT",
+  "cfb_fan": {
+    "endpoint": "https://cfb.fan/players/?page={page}",
+    "enumeration_method": "ordinary unauthenticated HTML pagination; 15 cards per full page",
+    "public_denominator": 8838,
+    "denominator_evidence": "pages 1-589 contain 15 cards, page 590 contains 3, page 591 is empty",
+    "completed_through_page": 373,
+    "resume_page": 374,
+    "remaining_pages": 217,
+    "resume_command": "uv run --no-sync --no-cache python scripts/run_cfb27_population_v3.py",
+    "detail_page_target": "Acquire complete rating vectors and physical/ability metadata after identity enumeration"
+  },
+  "sources_and_leads": [
+    {
+      "source": "CFB.FAN global players",
+      "url": "https://cfb.fan/players/",
+      "status": "SUCCESSFUL_PARTIAL_ENUMERATION",
+      "value": "Stable card/player IDs, OVR, position, archetype, program, and five summary ratings"
+    },
+    {
+      "source": "CFB.FAN detail pages",
+      "url": "https://cfb.fan/players/{player}/{card}/",
+      "status": "SUCCESSFUL_EXISTING_ADAPTER",
+      "value": "Full rating vectors, release date, school, physical metadata, quicksell and abilities"
+    },
+    {
+      "source": "CFB.FAN launch recap",
+      "url": "https://cfb.fan/news/college-ultimate-team-27-launch-stream-complete-recap/",
+      "status": "SUCCESSFUL_METADATA",
+      "value": "LTD/BND identities, launch programs, and named upgradeable cards"
+    },
+    {
+      "source": "EA Ultimate Team deep dive",
+      "url": "https://www.ea.com/games/ea-sports-college-football/college-football-27/news/college-football-27-ultimate-team",
+      "status": "SUCCESSFUL_METADATA",
+      "value": "Official upgrade, Skill Point, dynamic path, attribute path, ability, chemistry and EVO mechanics"
+    },
+    {
+      "source": "CollegeFootball.gg",
+      "url": "https://collegefootball.gg/cfb-27-ultimate-team-quicksell-values-platinum-and-core/",
+      "status": "SUCCESSFUL_METADATA_ONLY",
+      "value": "Independent Platinum coin and Core training quicksell schedules; roster database is not CUT"
+    },
+    {
+      "source": "CFB Labs",
+      "url": "https://www.cfblabs.com/",
+      "status": "NOT_A_CUT_CARD_DATABASE",
+      "value": "Base roster, ability thresholds and Season 1 reward metadata only"
+    },
+    {
+      "source": "CUT Alpha",
+      "url": "https://cutalpha.com/",
+      "status": "BLOCKED_HOST_DOWN_521",
+      "value": "Search index claims every CUT 27 card; retry ordinary public access next session"
+    },
+    {
+      "source": "Public GitHub/dataset search",
+      "status": "NO_VALIDATED_CUT27_DATASET_FOUND",
+      "value": "Results were base roster, dynasty/franchise, sports statistics, modding, or unrelated football data"
+    }
+  ],
+  "next_targets": [
+    "Resume CFB.FAN page 374 through 590",
+    "Retry CUT Alpha if its origin recovers and inspect only ordinary public resources",
+    "Fetch complete detail vectors for high-OVR and research-priority cards",
+    "Expand promo chronology after July 17 for later LTD/BND/upgradeable identities",
+    "Recover card-level ability slots, height, weight, school and quicksell metadata",
+    "Investigate publicly validated completed-sale history; do not equate listings with sales",
+    "Identify Saturday Reset, Pillar, Dynamic and EVO items using exact card evidence",
+    "Make legacy phase 2/3/6-10 and OP-X-003/009 analyses explicitly filter COMPLETE records before rerunning the full suite"
+  ]
+}

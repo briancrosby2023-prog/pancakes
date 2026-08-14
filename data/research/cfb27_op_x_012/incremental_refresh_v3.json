@@ -1,0 +1,9 @@
+{
+  "bounded_retries": 2,
+  "deduplication": "source card ID",
+  "failure_log": true,
+  "initial": "590-page checkpointed enumeration",
+  "periodic": "--refresh-pages N rechecks newest pages",
+  "raw_snapshots": true,
+  "requests_per_minute": 12
+}

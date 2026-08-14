@@ -65,6 +65,7 @@ def _public_entities(cards: list[dict]) -> dict:
                 "native_ratings": ratings,
                 "active_ratings": None,
                 "attribute_count": len(ratings),
+                "extraction_status": card.get("extraction_status"),
                 "source": card.get("source_reference"),
                 "raw_snapshot": card.get("raw_snapshot_reference"),
             }
@@ -302,7 +303,7 @@ def build_op_x_010(root: Path) -> dict:
         for row in state3["specialists"]
     ]
     card_count = len(public["cards"])
-    full_native = sum(bool(row["native_ratings"]) for row in public["native_states"])
+    full_native = sum(row["extraction_status"] == "COMPLETE" for row in public["native_states"])
     programs = Counter(row["program"] or "UNKNOWN" for row in public["cards"])
     positions = Counter(row["position"] for row in public["cards"])
     archetypes = Counter(row["archetype"] or "UNKNOWN" for row in public["cards"])
