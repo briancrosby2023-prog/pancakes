@@ -1,0 +1,682 @@
+{
+  "CB": {
+    "Boundary": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "ACC": null,
+        "MCV": null,
+        "SPC": null,
+        "TAC": null,
+        "ZCV": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "ACC": 8,
+        "MCV": 4,
+        "SPC": 4,
+        "TAC": 4,
+        "ZCV": 4
+      },
+      "threshold_groups": 20
+    },
+    "Bump and Run": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "ACC": 86.375,
+        "CTH": 82,
+        "MCV": 85.875,
+        "ZCV": 82.125
+      },
+      "cards": 8,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "ACC": 8,
+        "CTH": 4,
+        "MCV": 8,
+        "ZCV": 8
+      },
+      "threshold_groups": 20
+    },
+    "Field": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "ACC": 87.167,
+        "COD": 87.083,
+        "MCV": 86.417,
+        "TAC": null,
+        "ZCV": 86.917
+      },
+      "cards": 12,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "ACC": 4,
+        "COD": 4,
+        "MCV": 8,
+        "TAC": 4,
+        "ZCV": 4
+      },
+      "threshold_groups": 20
+    }
+  },
+  "EDGE": {
+    "Edge Setter": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "ACC": null,
+        "BSH": null,
+        "STR": null,
+        "TGH": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "ACC": 4,
+        "BSH": 8,
+        "STR": 4,
+        "TGH": 4
+      },
+      "threshold_groups": 20
+    },
+    "Power Rusher": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "FMV": null,
+        "PMV": null,
+        "STR": null,
+        "TAC": null,
+        "TGH": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "FMV": 4,
+        "PMV": 8,
+        "STR": 4,
+        "TAC": 4,
+        "TGH": 4
+      },
+      "threshold_groups": 20
+    },
+    "Pure Power": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "BSH": null,
+        "PMV": null,
+        "POW": null,
+        "STR": null,
+        "TGH": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "BSH": 4,
+        "PMV": 4,
+        "POW": 4,
+        "STR": 4,
+        "TGH": 4
+      },
+      "threshold_groups": 20
+    },
+    "Speed Rusher": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "ACC": null,
+        "FMV": null,
+        "PMV": null,
+        "TAC": null,
+        "TGH": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "ACC": 4,
+        "FMV": 8,
+        "PMV": 4,
+        "TAC": 4,
+        "TGH": 4
+      },
+      "threshold_groups": 20
+    }
+  },
+  "FS": {
+    "Coverage Specialist": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "ACC": 84.333,
+        "COD": 85,
+        "CTH": 79.333,
+        "MCV": 80.333,
+        "SPC": 69.333,
+        "ZCV": 86
+      },
+      "cards": 3,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "ACC": 4,
+        "COD": 4,
+        "CTH": 4,
+        "MCV": 4,
+        "SPC": 4,
+        "ZCV": 4
+      },
+      "threshold_groups": 20
+    },
+    "Hybrid": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "MCV": 86,
+        "POW": 77.6,
+        "PUR": 83.6,
+        "TAC": null,
+        "ZCV": 83.8
+      },
+      "cards": 5,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "MCV": 4,
+        "POW": 8,
+        "PUR": 4,
+        "TAC": 4,
+        "ZCV": 4
+      },
+      "threshold_groups": 20
+    }
+  },
+  "HB": {
+    "Backfield Threat": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "ACC": 86,
+        "CTH": 85,
+        "JKM": 82.5,
+        "SPM": 83.5,
+        "TGH": 88
+      },
+      "cards": 2,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "ACC": 4,
+        "CTH": 4,
+        "JKM": 4,
+        "SPM": 4,
+        "TGH": 4
+      },
+      "threshold_groups": 20
+    },
+    "Contact Seeker": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "BTK": 85.75,
+        "CAR": 87,
+        "STR": 84.5,
+        "TGH": 89
+      },
+      "cards": 4,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "BTK": 4,
+        "CAR": 4,
+        "STR": 4,
+        "TGH": 8
+      },
+      "threshold_groups": 20
+    },
+    "East/West Playmaker": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "COD": 86.412,
+        "JKM": 85.941,
+        "SFA": 78.294,
+        "SPD": 86.529,
+        "SPM": 85.118,
+        "TGH": 88.706
+      },
+      "cards": 17,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "COD": 4,
+        "JKM": 4,
+        "SFA": 4,
+        "SPD": 4,
+        "SPM": 4,
+        "TGH": 4
+      },
+      "threshold_groups": 20
+    },
+    "Elusive Bruiser": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "BTK": null,
+        "COD": null,
+        "JKM": null,
+        "SFA": null,
+        "SPD": null,
+        "TRK": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "BTK": 4,
+        "COD": 4,
+        "JKM": 4,
+        "SFA": 4,
+        "SPD": 4,
+        "TRK": 4
+      },
+      "threshold_groups": 20
+    },
+    "North/South Blocker": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "CAR": null,
+        "PBK": null,
+        "STR": null,
+        "TRK": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "CAR": 4,
+        "PBK": 4,
+        "STR": 8,
+        "TRK": 4
+      },
+      "threshold_groups": 20
+    },
+    "North/South Receiver": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "BTK": null,
+        "CTH": null,
+        "SFA": null,
+        "STR": null,
+        "TRK": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "BTK": 4,
+        "CTH": 4,
+        "SFA": 4,
+        "STR": 4,
+        "TRK": 4
+      },
+      "threshold_groups": 20
+    }
+  },
+  "MIKE": {
+    "Lurker": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "ACC": 84,
+        "CTH": 78.4,
+        "POW": 83.2,
+        "TAC": null,
+        "ZCV": 85.2
+      },
+      "cards": 5,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "ACC": 4,
+        "CTH": 4,
+        "POW": 4,
+        "TAC": 4,
+        "ZCV": 4
+      },
+      "threshold_groups": 20
+    },
+    "Signal Caller": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "BSH": 84.4,
+        "POW": 84.4,
+        "STR": 83.2,
+        "TAC": null,
+        "TGH": 86.6
+      },
+      "cards": 5,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "BSH": 4,
+        "POW": 4,
+        "STR": 4,
+        "TAC": 4,
+        "TGH": 4
+      },
+      "threshold_groups": 20
+    },
+    "Thumper": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "BSH": 84.308,
+        "POW": 82.846,
+        "STR": 84.308,
+        "TAC": null
+      },
+      "cards": 13,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "BSH": 4,
+        "POW": 8,
+        "STR": 4,
+        "TAC": 4
+      },
+      "threshold_groups": 20
+    }
+  },
+  "QB": {
+    "Backfield Creator": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "CAR": 80,
+        "RUN": 84.25,
+        "SAC": 84.5,
+        "SPD": 84.25,
+        "THP": 85.75
+      },
+      "cards": 4,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "CAR": 4,
+        "RUN": 4,
+        "SAC": 8,
+        "SPD": 4,
+        "THP": 4
+      },
+      "threshold_groups": 20
+    },
+    "Dual Threat": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "BSK": 85.75,
+        "BTK": 77.875,
+        "DAC": 83.125,
+        "TUP": 81.75
+      },
+      "cards": 8,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "BSK": 4,
+        "BTK": 8,
+        "DAC": 4,
+        "TUP": 4
+      },
+      "threshold_groups": 20
+    },
+    "Pocket Passer": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "DAC": 84.091,
+        "MAC": 84.545,
+        "PAC": 81.273,
+        "SAC": 84,
+        "TUP": 82.545
+      },
+      "cards": 11,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "DAC": 4,
+        "MAC": 4,
+        "PAC": 4,
+        "SAC": 4,
+        "TUP": 4
+      },
+      "threshold_groups": 20
+    },
+    "Pure Runner": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "BTK": null,
+        "COD": null,
+        "JKM": null,
+        "SPD": null,
+        "TGH": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "BTK": 8,
+        "COD": 4,
+        "JKM": 4,
+        "SPD": 4,
+        "TGH": 4
+      },
+      "threshold_groups": 20
+    }
+  },
+  "TE": {
+    "Gritty Possession": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "CIT": 84.286,
+        "RBK": 78.571,
+        "STR": 81.143,
+        "TGH": 87.143
+      },
+      "cards": 7,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "CIT": 4,
+        "RBK": 4,
+        "STR": 4,
+        "TGH": 8
+      },
+      "threshold_groups": 20
+    },
+    "Physical Route Runner": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "BTK": 82,
+        "CIT": 83.667,
+        "MRR": 85,
+        "SPC": 83
+      },
+      "cards": 6,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "BTK": 8,
+        "CIT": 4,
+        "MRR": 4,
+        "SPC": 4
+      },
+      "threshold_groups": 20
+    },
+    "Pure Blocker": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "ACC": null,
+        "IBL": null,
+        "PBK": null,
+        "RBK": null,
+        "STR": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "ACC": 4,
+        "IBL": 4,
+        "PBK": 4,
+        "RBK": 4,
+        "STR": 4
+      },
+      "threshold_groups": 20
+    },
+    "Pure Possession": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "BTK": null,
+        "CIT": null,
+        "PBK": null,
+        "RBK": null,
+        "STR": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "BTK": 4,
+        "CIT": 4,
+        "PBK": 4,
+        "RBK": 4,
+        "STR": 4
+      },
+      "threshold_groups": 20
+    },
+    "Vertical Threat": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "ACC": 85.9,
+        "BTK": 82.4,
+        "SPC": 83.6,
+        "TGH": 90
+      },
+      "cards": 10,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "ACC": 4,
+        "BTK": 4,
+        "SPC": 4,
+        "TGH": 8
+      },
+      "threshold_groups": 20
+    }
+  },
+  "WR": {
+    "Contested Specialist": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "BTK": 80.417,
+        "SPC": 85.5,
+        "TGH": 88.5,
+        "TRK": 75.583
+      },
+      "cards": 12,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "BTK": 8,
+        "SPC": 4,
+        "TGH": 4,
+        "TRK": 4
+      },
+      "threshold_groups": 20
+    },
+    "Elusive Route Runner": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "DRR": 84.6,
+        "JKM": 84,
+        "MRR": 85.6,
+        "SPM": 82,
+        "TGH": 88.2
+      },
+      "cards": 5,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "DRR": 4,
+        "JKM": 4,
+        "MRR": 4,
+        "SPM": 4,
+        "TGH": 4
+      },
+      "threshold_groups": 20
+    },
+    "Gadget": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "ACC": null,
+        "JKM": null,
+        "MRR": null,
+        "THA": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "ACC": 4,
+        "JKM": 4,
+        "MRR": 8,
+        "THA": 4
+      },
+      "threshold_groups": 20
+    },
+    "Gritty Possession": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "CIT": null,
+        "IBL": null,
+        "RBK": null,
+        "STR": null,
+        "TGH": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "CIT": 4,
+        "IBL": 4,
+        "RBK": 4,
+        "STR": 4,
+        "TGH": 4
+      },
+      "threshold_groups": 20
+    },
+    "Physical Route Runner": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "BTK": null,
+        "CIT": null,
+        "MRR": null,
+        "RLS": null,
+        "SPC": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "BTK": 4,
+        "CIT": 4,
+        "MRR": 4,
+        "RLS": 4,
+        "SPC": 4
+      },
+      "threshold_groups": 20
+    },
+    "Route Artist": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "CIT": null,
+        "DRR": null,
+        "MRR": null,
+        "SPC": null,
+        "TGH": null
+      },
+      "cards": 0,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "CIT": 4,
+        "DRR": 4,
+        "MRR": 4,
+        "SPC": 4,
+        "TGH": 4
+      },
+      "threshold_groups": 20
+    },
+    "Speedster": {
+      "ability_families": 5,
+      "card_attribute_means": {
+        "ACC": 87.6,
+        "COD": 85,
+        "DRR": 88,
+        "JKM": 82,
+        "SPC": 83
+      },
+      "cards": 5,
+      "gameplay_value_claimed": false,
+      "threshold_attribute_centrality": {
+        "ACC": 8,
+        "COD": 4,
+        "DRR": 4,
+        "JKM": 4,
+        "SPC": 4
+      },
+      "threshold_groups": 20
+    }
+  }
+}

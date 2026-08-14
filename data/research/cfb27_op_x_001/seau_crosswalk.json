@@ -1,0 +1,120 @@
+{
+  "gameplay_recommendations": false,
+  "known_missing_vectors": [
+    81,
+    84
+  ],
+  "synthetic_vectors": false,
+  "validated_states": [
+    {
+      "card_id": "27-111026550",
+      "closest_descriptive_signature": "Lurker",
+      "increases_to_archetype_mean": {
+        "Lurker": {
+          "ACC": 0,
+          "AWR": 1.2,
+          "BSH": 0,
+          "COD": 1.8,
+          "MCV": 0,
+          "POW": 0,
+          "PRC": 2.6,
+          "PUR": 0.4,
+          "SPD": 0,
+          "STR": 0,
+          "TAK": 0,
+          "ZCV": 0
+        },
+        "Signal Caller": {
+          "ACC": 1.2,
+          "AWR": 2,
+          "BSH": 0,
+          "COD": 0,
+          "MCV": 0,
+          "POW": 0.4,
+          "PRC": 3.8,
+          "PUR": 0.6,
+          "SPD": 0,
+          "STR": 0,
+          "TAK": 0,
+          "ZCV": 0
+        },
+        "Thumper": {
+          "ACC": 0,
+          "AWR": 0.923,
+          "BSH": 0,
+          "COD": 0,
+          "MCV": 0,
+          "POW": 0,
+          "PRC": 4.769,
+          "PUR": 0,
+          "SPD": 0,
+          "STR": 0.308,
+          "TAK": 0,
+          "ZCV": 0
+        }
+      },
+      "listed_archetype": "Lurker",
+      "mean_absolute_distance": {
+        "Lurker": 1.583,
+        "Signal Caller": 1.9,
+        "Thumper": 2.09
+      },
+      "overall": 86
+    },
+    {
+      "card_id": "27-110026550",
+      "closest_descriptive_signature": "Lurker",
+      "increases_to_archetype_mean": {
+        "Lurker": {
+          "ACC": 0,
+          "AWR": 0.2,
+          "BSH": 0,
+          "COD": 0.8,
+          "MCV": 0,
+          "POW": 0,
+          "PRC": 1.6,
+          "PUR": 0,
+          "SPD": 0,
+          "STR": 0,
+          "TAK": 0,
+          "ZCV": 0
+        },
+        "Signal Caller": {
+          "ACC": 0.2,
+          "AWR": 1,
+          "BSH": 0,
+          "COD": 0,
+          "MCV": 0,
+          "POW": 0,
+          "PRC": 2.8,
+          "PUR": 0,
+          "SPD": 0,
+          "STR": 0,
+          "TAK": 0,
+          "ZCV": 0
+        },
+        "Thumper": {
+          "ACC": 0,
+          "AWR": 0,
+          "BSH": 0,
+          "COD": 0,
+          "MCV": 0,
+          "POW": 0,
+          "PRC": 3.769,
+          "PUR": 0,
+          "SPD": 0,
+          "STR": 0,
+          "TAK": 0,
+          "ZCV": 0
+        }
+      },
+      "listed_archetype": "Lurker",
+      "mean_absolute_distance": {
+        "Lurker": 2.017,
+        "Signal Caller": 2.233,
+        "Thumper": 2.718
+      },
+      "overall": 87
+    }
+  ]
+}
