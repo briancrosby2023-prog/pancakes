@@ -354,12 +354,13 @@ def build_op_x_008(root: Path) -> dict:
             "SECONDARY": ["FS1", "SS1", "CB1", "CB3"],
         }.items()
     ]
-    above = [
+    categorized = [
         row
         for row in profiles
         if row["ovr_relation"] in {"STRONG_ABOVE_OVR", "NORMAL_OR_MODERATE"}
         and row["ratings"] is not None
     ]
+    above = [row for row in categorized if row["ovr_relation"] == "STRONG_ABOVE_OVR"]
     traps = [row for row in profiles if row["ovr_relation"] == "BELOW_OVR_FOR_ROLE"]
     resistance = [
         {
@@ -702,7 +703,7 @@ def build_op_x_008(root: Path) -> dict:
         "fs1_protected_analysis": fs,
         "team_speed_floor": speed,
         "team_primary_stat_floor": floors,
-        "above_ovr_starters": above,
+        "above_ovr_starters": categorized,
         "ovr_traps": traps,
         "replacement_resistance": resistance,
         "team_weakness_map_v2": weakness,

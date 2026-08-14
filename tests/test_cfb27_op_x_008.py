@@ -48,6 +48,12 @@ def test_coin_plan_does_not_force_spend_or_invent_prices():
     assert load("coin_efficiency_frontier")["ranked"] == []
 
 
+def test_moneyball_requires_strong_above_ovr_evidence():
+    assert load("current_team_moneyball") == []
+    seau = next(row for row in load("above_ovr_starters") if row["player"] == "Junior Seau")
+    assert seau["ovr_relation"] == "NORMAL_OR_MODERATE"
+
+
 def test_packet_deterministic_and_integrity_strict():
     first = build_op_x_008(ROOT)
     assert first == build_op_x_008(ROOT)
