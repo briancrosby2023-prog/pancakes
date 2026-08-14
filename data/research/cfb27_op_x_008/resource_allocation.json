@@ -1,0 +1,31 @@
+{
+  "coins": {
+    "amount": 209644,
+    "confidence": "USER_CONFIRMED",
+    "identity": "COINS"
+  },
+  "green": {
+    "amount": 220,
+    "identity": "UNKNOWN"
+  },
+  "other": {
+    "amount": 200,
+    "identity": "UNKNOWN"
+  },
+  "recommendations": {
+    "coins": "SAVE_AND_WATCH",
+    "green": "NO_ACTION_UNKNOWN_IDENTITY",
+    "other": "NO_ACTION_UNKNOWN_IDENTITY",
+    "training": "NO_ACTION_MECHANICS_NOT_LINKED",
+    "trophy_like": "NO_ACTION_UNKNOWN_IDENTITY"
+  },
+  "training": {
+    "amount": 4189,
+    "confidence": "USER_CONFIRMED",
+    "identity": "TRAINING"
+  },
+  "trophy_like": {
+    "amount": 1000,
+    "identity": "UNKNOWN"
+  }
+}

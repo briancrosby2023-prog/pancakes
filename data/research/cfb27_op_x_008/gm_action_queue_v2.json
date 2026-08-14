@@ -1,0 +1,52 @@
+[
+  {
+    "action": "SAVE",
+    "confidence": "HIGH",
+    "cost": 0,
+    "expected_benefit": "Avoid unvalidated purchase",
+    "player_position": "TEAM",
+    "priority": 1,
+    "what_would_change": "Exact role deltas plus real prices",
+    "why": "No exact current weakness-to-priced-candidate comparison is validated"
+  },
+  {
+    "action": "COLLECT_DATA",
+    "confidence": "HIGH",
+    "cost": 0,
+    "expected_benefit": "Identify actual run-first weak link",
+    "player_position": "OL",
+    "priority": 2,
+    "what_would_change": "Exact current card pages/screens",
+    "why": "All five current vectors incomplete"
+  },
+  {
+    "action": "VERIFY_SPECIALIST",
+    "confidence": "HIGH_FOR_INFORMATION_VALUE",
+    "cost": 0,
+    "expected_benefit": "Potential zero-acquisition-cost specialist improvement",
+    "player_position": "Duce Robinson",
+    "priority": 3,
+    "what_would_change": "Specialist eligibility screen",
+    "why": "SLWR1 is 83 specialist OVR; legality/theme effect unknown"
+  },
+  {
+    "action": "STOP_UPGRADING_CURRENT_CYCLE",
+    "confidence": "HIGH",
+    "cost": 0,
+    "expected_benefit": "Avoid unsupported spend",
+    "player_position": "Junior Seau",
+    "priority": 4,
+    "what_would_change": "New upgrade path/version evidence",
+    "why": "Observed target reached and no rolls remain"
+  },
+  {
+    "action": "PRESERVE_CARD",
+    "confidence": "HIGH",
+    "cost": 0,
+    "expected_benefit": "Retain reroll asset",
+    "player_position": "FS1",
+    "priority": 5,
+    "what_would_change": "Policy change",
+    "why": "Protected policy"
+  }
+]
