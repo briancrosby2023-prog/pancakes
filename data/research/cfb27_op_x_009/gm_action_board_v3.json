@@ -1,0 +1,50 @@
+[
+  {
+    "action": "COLLECT_SPECIFIC_DATA",
+    "confidence": "HIGH",
+    "cost": 0,
+    "priority": 1,
+    "target": "ALL_FIVE_OL",
+    "why": "highest decision value"
+  },
+  {
+    "action": "SAVE",
+    "confidence": "HIGH",
+    "cost": 0,
+    "priority": 2,
+    "target": "209644_COINS",
+    "why": "no exact weakness-to-priced-target comparison"
+  },
+  {
+    "action": "DO_NOT_TOUCH",
+    "confidence": "POLICY_HIGH",
+    "cost": 0,
+    "priority": 3,
+    "target": "DRAYK_BOWEN",
+    "why": "protected; current identity unresolved"
+  },
+  {
+    "action": "PRESERVE_CARD",
+    "confidence": "POLICY_HIGH",
+    "cost": 0,
+    "priority": 4,
+    "target": "DASHAWN_SPEARS",
+    "why": "protected/rerollable"
+  },
+  {
+    "action": "STOP_DEVELOPING",
+    "confidence": "HIGH",
+    "cost": 0,
+    "priority": 5,
+    "target": "JUNIOR_SEAU_CURRENT_CYCLE",
+    "why": "no remaining observed roll action"
+  },
+  {
+    "action": "SPECIALIST_VERIFY",
+    "confidence": "INFORMATION_VALUE_HIGH",
+    "cost": 0,
+    "priority": 6,
+    "target": "DUCE_ROBINSON",
+    "why": "legality and theme effect unresolved"
+  }
+]

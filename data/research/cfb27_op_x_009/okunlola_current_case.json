@@ -1,0 +1,59 @@
+{
+  "above_84": "INSUFFICIENT_EXACT_CURRENT_IDENTITY",
+  "archetype_crosswalk_status": "UNKNOWN_CURRENT_VERSION",
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "archetype": "Agile",
+      "external_card_id": "27-260006225",
+      "native_overall": 83,
+      "player": "Samson Okunlola",
+      "position": "LT",
+      "program": "Phenoms",
+      "ratings_available": [
+        "ACC",
+        "AGI",
+        "AWR",
+        "COD",
+        "IBL",
+        "LBK",
+        "PBF",
+        "PBK",
+        "PBP",
+        "RBF",
+        "RBK",
+        "RBP",
+        "SPD",
+        "STR",
+        "TGH"
+      ],
+      "raw_snapshot_reference": "data/external/raw/cfb_fan/4095dcb0d504d11965771cfaf40af73d509806967cb7b8023cc06222f8f88f84.bin",
+      "release_date": "07/31/2026",
+      "retrieved_at": "2026-08-14T00:00:00Z",
+      "source": "CFB_FAN",
+      "source_reference": "https://cfb.fan/players/6225-samson-okunlola/27-260006225/",
+      "team": null
+    }
+  ],
+  "confidence": "HIGH_FOR_VISIBLE_FIELDS",
+  "current_attribute_vector": null,
+  "currentness": "CURRENT_CONFIRMED",
+  "exact_population_card_id": null,
+  "historical_reference_overalls": [
+    83
+  ],
+  "historical_reference_used_as_current": false,
+  "identity_classification": "PROBABLE_MATCH",
+  "identity_reason": "LINEUP_OVR_DIFFERS_FROM_NATIVE_SOURCE_OVR; BOOST_OR_UPGRADE_STATE_UNVERIFIED",
+  "last_confirmed": "OP-X-008",
+  "normalized_archetype": null,
+  "overall": 84,
+  "player": "Samson Okunlola",
+  "position": "LT",
+  "ratings": null,
+  "selected_external_card_id": null,
+  "slot_id": "LT1",
+  "source": "USER_SCREENSHOT_OP_X_008",
+  "source_archetype": null,
+  "unknown_ratings_converted_to_zero": false
+}

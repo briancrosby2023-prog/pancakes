@@ -1,0 +1,58 @@
+{
+  "CFB_FAN": {
+    "access_method": "ordinary public HTML; bounded cached adapter; no API",
+    "confidence": "HIGH_FOR_NATIVE_CUT_CARD; INSUFFICIENT_FOR_ACTIVE_UPGRADE_STATE",
+    "fields": [
+      "player",
+      "position",
+      "native OVR",
+      "program",
+      "archetype",
+      "team",
+      "ratings",
+      "quicksell",
+      "partial release/price"
+    ],
+    "live_discovery_examples": [
+      {
+        "native_candidate_overall": 82,
+        "player": "Samson Okunlola",
+        "url": "https://cfb.fan/players/6225-samson-okunlola/"
+      },
+      {
+        "native_candidate_overall": 83,
+        "player": "Carson Hinzman",
+        "url": "https://cfb.fan/players/8177-carson-hinzman/"
+      },
+      {
+        "native_candidate_overall": 80,
+        "player": "Cason Henry",
+        "url": "https://cfb.fan/players/10612-cason-henry/"
+      },
+      {
+        "native_candidate_overall": 85,
+        "player": "Drayk Bowen",
+        "url": "https://cfb.fan/players/5976-drayk-bowen/27-2005976/"
+      },
+      {
+        "native_candidate_overall": 73,
+        "player": "Landen Thomas",
+        "url": "https://cfb.fan/players/1151-landen-thomas/27-2001151/"
+      }
+    ],
+    "population_sha256": "c36a310b2790059612ec25e1530067645821447374680c91cfa812be792d155f",
+    "timestamp": "2026-08-14"
+  },
+  "CFB_LABS": {
+    "reason": "base-game roster ratings",
+    "status": "REJECTED_FOR_CUT_IDENTITY"
+  },
+  "COLLEGEFOOTBALL_GG": {
+    "reason": "base-game roster ratings",
+    "status": "REJECTED_FOR_CUT_IDENTITY"
+  },
+  "EA": {
+    "reason": "base-game roster ratings",
+    "status": "REJECTED_FOR_CUT_IDENTITY"
+  }
+}
