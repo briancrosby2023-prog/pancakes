@@ -6,9 +6,9 @@
     "enumeration_method": "ordinary unauthenticated HTML pagination; 15 cards per full page",
     "public_denominator": 8838,
     "denominator_evidence": "pages 1-589 contain 15 cards, page 590 contains 3, page 591 is empty",
-    "completed_through_page": 373,
-    "resume_page": 374,
-    "remaining_pages": 217,
+    "completed_through_page": 590,
+    "resume_page": null,
+    "remaining_pages": 0,
     "resume_command": "uv run --no-sync --no-cache python scripts/run_cfb27_population_v3.py",
     "detail_page_target": "Acquire complete rating vectors and physical/ability metadata after identity enumeration"
   },
@@ -62,7 +62,6 @@
     }
   ],
   "next_targets": [
-    "Resume CFB.FAN page 374 through 590",
     "Retry CUT Alpha if its origin recovers and inspect only ordinary public resources",
     "Fetch complete detail vectors for high-OVR and research-priority cards",
     "Expand promo chronology after July 17 for later LTD/BND/upgradeable identities",

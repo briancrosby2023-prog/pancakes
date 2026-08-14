@@ -7,6 +7,7 @@ MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
 parse_listing = MODULE.parse_listing
 merge_listing_cards = MODULE.merge_listing_cards
+normalize_listing_ids = MODULE.normalize_listing_ids
 pages_to_fetch = MODULE.pages_to_fetch
 
 
@@ -22,7 +23,7 @@ def test_listing_parser_preserves_partial_status_and_source_id():
     <div class="player-list-item__archetype">MIKE - Lurker</div>
     """
     card = parse_listing(html, "raw.html")[0]
-    assert card["external_card_id"] == "12345"
+    assert card["external_card_id"] == "27-12345"
     assert card["position"] == "MLB"
     assert card["displayed_ratings"] == {"SPD": 90}
     assert card["extraction_status"] == "PARTIAL_LISTING_VECTOR"
@@ -77,3 +78,27 @@ def test_new_cards_are_added_and_conflicts_preserve_existing_detail():
     assert state["cards"]["CFB_FAN:1"]["extraction_status"] == "COMPLETE"
     assert state["cards"]["CFB_FAN:2"]["player_name"] == "New Card"
     assert state["conflicts"]["V3:1"]["resolution"] == "PRESERVE_COMPLETE_DETAIL_RECORD"
+
+
+def test_listing_id_normalization_deduplicates_against_complete_detail():
+    checkpoint = {
+        "cards": {
+            "123": {
+                "external_card_id": "123",
+                "extraction_status": "PARTIAL_LISTING_VECTOR",
+            }
+        }
+    }
+    complete = {"external_card_id": "27-123", "extraction_status": "COMPLETE"}
+    state = {
+        "cards": {
+            "CFB_FAN:27-123": complete,
+            "CFB_FAN:123": {
+                "external_card_id": "123",
+                "extraction_status": "PARTIAL_LISTING_VECTOR",
+            },
+        }
+    }
+    normalize_listing_ids(checkpoint, state)
+    assert list(checkpoint["cards"]) == ["27-123"]
+    assert state["cards"] == {"CFB_FAN:27-123": complete}

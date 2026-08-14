@@ -47,7 +47,7 @@ def parse_listing(html: str, snapshot: str) -> list[dict]:
                 re.DOTALL,
             )
         }
-        external_id = url.group("card").removeprefix("27-")
+        external_id = url.group("card")
         cards.append(
             {
                 "external_source": "CFB_FAN",
@@ -128,6 +128,41 @@ def merge_listing_cards(state: dict, cards: dict[str, dict]) -> dict[str, int]:
     return {"added": added, "conflicts": conflicts}
 
 
+def normalize_listing_ids(checkpoint: dict, state: dict) -> None:
+    """Align legacy listing IDs with the canonical CFB.FAN ``27-*`` card IDs."""
+    normalized = {}
+    for card in checkpoint["cards"].values():
+        external_id = card["external_card_id"]
+        if not external_id.startswith("27-"):
+            external_id = f"27-{external_id}"
+            card["external_card_id"] = external_id
+        normalized[external_id] = card
+    checkpoint["cards"] = normalized
+
+    for key, card in list(state["cards"].items()):
+        external_id = card["external_card_id"]
+        if external_id.startswith("27-"):
+            continue
+        canonical_id = f"27-{external_id}"
+        checkpoint_card = checkpoint["cards"].get(canonical_id)
+        identity_fields = ("player_name", "position", "overall", "program")
+        if card.get("extraction_status") != "PARTIAL_LISTING_VECTOR" and (
+            checkpoint_card is None
+            or any(card.get(field) != checkpoint_card.get(field) for field in identity_fields)
+        ):
+            continue
+        state["cards"].pop(key)
+        external_id = canonical_id
+        card["external_card_id"] = external_id
+        canonical_key = f"CFB_FAN:{external_id}"
+        existing = state["cards"].get(canonical_key)
+        if existing is None or (
+            card.get("extraction_status") == "COMPLETE"
+            and existing.get("extraction_status") != "COMPLETE"
+        ):
+            state["cards"][canonical_key] = card
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -174,6 +209,9 @@ def main() -> None:
             cards = parse_listing(content.decode("utf-8"), relative.as_posix())
             for card in cards:
                 checkpoint["cards"][card["external_card_id"]] = card
+            checkpoint["failures"] = [
+                failure for failure in checkpoint["failures"] if failure.get("page") != page
+            ]
             checkpoint["pages"][key] = {
                 "url": url,
                 "sha256": digest,
@@ -181,11 +219,16 @@ def main() -> None:
                 "cards": len(cards),
             }
         except Exception as exc:  # noqa: BLE001 - persisted bounded acquisition failure
+            checkpoint["failures"] = [
+                failure for failure in checkpoint["failures"] if failure.get("page") != page
+            ]
             checkpoint["failures"].append({"page": page, "url": url, "error": str(exc)})
         _save(checkpoint_path, checkpoint)
         if page % 10 == 0 or page == LAST_PAGE:
             print(f"page={page}/{LAST_PAGE} unique={len(checkpoint['cards'])}", flush=True)
     state = json.loads(state_path.read_text(encoding="utf-8"))
+    normalize_listing_ids(checkpoint, state)
+    _save(checkpoint_path, checkpoint)
     for card in checkpoint["cards"].values():
         if card.get("extraction_status") == "PARTIAL_LISTING_VECTOR":
             card["validation_status"] = "VALIDATED_PUBLIC_LISTING_IDENTITY"
