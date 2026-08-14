@@ -5,8 +5,1216 @@
       "evidence_type": "STRUCTURED_SECONDARY",
       "provenance": "https://www.cfblabs.com/ability-requirements",
       "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "CB",
+      "target": "CB::Boundary"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "CB",
+      "target": "CB::Bump and Run"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "CB",
+      "target": "CB::Field"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "CB::Boundary",
+      "target": "ACC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "CB::Boundary",
+      "target": "MCV"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "CB::Boundary",
+      "target": "SPC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "CB::Boundary",
+      "target": "TAC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "CB::Boundary",
+      "target": "ZCV"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "CB::Bump and Run",
+      "target": "ACC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "CB::Bump and Run",
+      "target": "CTH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "CB::Bump and Run",
+      "target": "MCV"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "CB::Bump and Run",
+      "target": "ZCV"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "CB::Field",
+      "target": "ACC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "CB::Field",
+      "target": "COD"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "CB::Field",
+      "target": "MCV"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "CB::Field",
+      "target": "TAC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "CB::Field",
+      "target": "ZCV"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "EDGE",
+      "target": "EDGE::Edge Setter"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "EDGE",
+      "target": "EDGE::Power Rusher"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "EDGE",
+      "target": "EDGE::Pure Power"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "EDGE",
+      "target": "EDGE::Speed Rusher"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Edge Setter",
+      "target": "ACC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Edge Setter",
+      "target": "BSH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Edge Setter",
+      "target": "STR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Edge Setter",
+      "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Power Rusher",
+      "target": "FMV"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Power Rusher",
+      "target": "PMV"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Power Rusher",
+      "target": "STR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Power Rusher",
+      "target": "TAC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Power Rusher",
+      "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Pure Power",
+      "target": "BSH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Pure Power",
+      "target": "PMV"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Pure Power",
+      "target": "POW"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Pure Power",
+      "target": "STR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Pure Power",
+      "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Speed Rusher",
+      "target": "ACC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Speed Rusher",
+      "target": "FMV"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Speed Rusher",
+      "target": "PMV"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Speed Rusher",
+      "target": "TAC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "EDGE::Speed Rusher",
+      "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "FS",
+      "target": "FS::Coverage Specialist"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "FS",
+      "target": "FS::Hybrid"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "FS::Coverage Specialist",
+      "target": "ACC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "FS::Coverage Specialist",
+      "target": "COD"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "FS::Coverage Specialist",
+      "target": "CTH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "FS::Coverage Specialist",
+      "target": "MCV"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "FS::Coverage Specialist",
+      "target": "SPC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "FS::Coverage Specialist",
+      "target": "ZCV"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "FS::Hybrid",
+      "target": "MCV"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "FS::Hybrid",
+      "target": "POW"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "FS::Hybrid",
+      "target": "PUR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "FS::Hybrid",
+      "target": "TAC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "FS::Hybrid",
+      "target": "ZCV"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "HB",
+      "target": "HB::Backfield Threat"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "HB",
+      "target": "HB::Contact Seeker"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "HB",
+      "target": "HB::East/West Playmaker"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "HB",
+      "target": "HB::Elusive Bruiser"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "HB",
+      "target": "HB::North/South Blocker"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "HB",
+      "target": "HB::North/South Receiver"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Backfield Threat",
+      "target": "ACC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Backfield Threat",
+      "target": "CTH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Backfield Threat",
+      "target": "JKM"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Backfield Threat",
+      "target": "SPM"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Backfield Threat",
+      "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Contact Seeker",
+      "target": "BTK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Contact Seeker",
+      "target": "CAR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Contact Seeker",
+      "target": "STR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Contact Seeker",
+      "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::East/West Playmaker",
+      "target": "COD"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::East/West Playmaker",
+      "target": "JKM"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::East/West Playmaker",
+      "target": "SFA"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::East/West Playmaker",
+      "target": "SPD"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::East/West Playmaker",
+      "target": "SPM"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::East/West Playmaker",
+      "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Elusive Bruiser",
+      "target": "BTK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Elusive Bruiser",
+      "target": "COD"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Elusive Bruiser",
+      "target": "JKM"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Elusive Bruiser",
+      "target": "SFA"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Elusive Bruiser",
+      "target": "SPD"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::Elusive Bruiser",
+      "target": "TRK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::North/South Blocker",
+      "target": "CAR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::North/South Blocker",
+      "target": "PBK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::North/South Blocker",
+      "target": "STR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::North/South Blocker",
+      "target": "TRK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::North/South Receiver",
+      "target": "BTK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::North/South Receiver",
+      "target": "CTH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::North/South Receiver",
+      "target": "SFA"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::North/South Receiver",
+      "target": "STR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "HB::North/South Receiver",
+      "target": "TRK"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "MIKE",
+      "target": "MIKE::Lurker"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "MIKE",
+      "target": "MIKE::Signal Caller"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "MIKE",
+      "target": "MIKE::Thumper"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "MIKE::Lurker",
+      "target": "ACC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "MIKE::Lurker",
+      "target": "CTH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "MIKE::Lurker",
+      "target": "POW"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "MIKE::Lurker",
+      "target": "TAC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "MIKE::Lurker",
+      "target": "ZCV"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "MIKE::Signal Caller",
+      "target": "BSH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "MIKE::Signal Caller",
+      "target": "POW"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "MIKE::Signal Caller",
+      "target": "STR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "MIKE::Signal Caller",
+      "target": "TAC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "MIKE::Signal Caller",
+      "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "MIKE::Thumper",
+      "target": "BSH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "MIKE::Thumper",
+      "target": "POW"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "MIKE::Thumper",
+      "target": "STR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "MIKE::Thumper",
+      "target": "TAC"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "QB",
+      "target": "QB::Backfield Creator"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "QB",
+      "target": "QB::Dual Threat"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "QB",
+      "target": "QB::Pocket Passer"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "QB",
+      "target": "QB::Pure Runner"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Backfield Creator",
+      "target": "CAR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Backfield Creator",
+      "target": "RUN"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Backfield Creator",
+      "target": "SAC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Backfield Creator",
+      "target": "SPD"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Backfield Creator",
+      "target": "THP"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Dual Threat",
+      "target": "BSK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Dual Threat",
+      "target": "BTK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Dual Threat",
+      "target": "DAC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Dual Threat",
+      "target": "TUP"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Pocket Passer",
+      "target": "DAC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Pocket Passer",
+      "target": "MAC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Pocket Passer",
+      "target": "PAC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Pocket Passer",
+      "target": "SAC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Pocket Passer",
+      "target": "TUP"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Pure Runner",
+      "target": "BTK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Pure Runner",
+      "target": "COD"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Pure Runner",
+      "target": "JKM"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Pure Runner",
+      "target": "SPD"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "QB::Pure Runner",
+      "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "TE",
+      "target": "TE::Gritty Possession"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "TE",
+      "target": "TE::Physical Route Runner"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "TE",
+      "target": "TE::Pure Blocker"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "TE",
+      "target": "TE::Pure Possession"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
       "source": "TE",
       "target": "TE::Vertical Threat"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Gritty Possession",
+      "target": "CIT"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Gritty Possession",
+      "target": "RBK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Gritty Possession",
+      "target": "STR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Gritty Possession",
+      "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Physical Route Runner",
+      "target": "BTK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Physical Route Runner",
+      "target": "CIT"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Physical Route Runner",
+      "target": "MRR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Physical Route Runner",
+      "target": "SPC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Pure Blocker",
+      "target": "ACC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Pure Blocker",
+      "target": "IBL"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Pure Blocker",
+      "target": "PBK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Pure Blocker",
+      "target": "RBK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Pure Blocker",
+      "target": "STR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Pure Possession",
+      "target": "BTK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Pure Possession",
+      "target": "CIT"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Pure Possession",
+      "target": "PBK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Pure Possession",
+      "target": "RBK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Pure Possession",
+      "target": "STR"
     },
     {
       "confidence": "MODERATE_UNCORROBORATED",
@@ -30,7 +1238,335 @@
       "provenance": "https://www.cfblabs.com/ability-requirements",
       "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
       "source": "TE::Vertical Threat",
+      "target": "SPC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Vertical Threat",
       "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "WR",
+      "target": "WR::Contested Specialist"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "WR",
+      "target": "WR::Elusive Route Runner"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "WR",
+      "target": "WR::Gadget"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "WR",
+      "target": "WR::Gritty Possession"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "WR",
+      "target": "WR::Physical Route Runner"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "WR",
+      "target": "WR::Route Artist"
+    },
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "WR",
+      "target": "WR::Speedster"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Contested Specialist",
+      "target": "BTK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Contested Specialist",
+      "target": "SPC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Contested Specialist",
+      "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Contested Specialist",
+      "target": "TRK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Elusive Route Runner",
+      "target": "DRR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Elusive Route Runner",
+      "target": "JKM"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Elusive Route Runner",
+      "target": "MRR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Elusive Route Runner",
+      "target": "SPM"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Elusive Route Runner",
+      "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Gadget",
+      "target": "ACC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Gadget",
+      "target": "JKM"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Gadget",
+      "target": "MRR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Gadget",
+      "target": "THA"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Gritty Possession",
+      "target": "CIT"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Gritty Possession",
+      "target": "IBL"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Gritty Possession",
+      "target": "RBK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Gritty Possession",
+      "target": "STR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Gritty Possession",
+      "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Physical Route Runner",
+      "target": "BTK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Physical Route Runner",
+      "target": "CIT"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Physical Route Runner",
+      "target": "MRR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Physical Route Runner",
+      "target": "RLS"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Physical Route Runner",
+      "target": "SPC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Route Artist",
+      "target": "CIT"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Route Artist",
+      "target": "DRR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Route Artist",
+      "target": "MRR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Route Artist",
+      "target": "SPC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Route Artist",
+      "target": "TGH"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Speedster",
+      "target": "ACC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Speedster",
+      "target": "COD"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Speedster",
+      "target": "DRR"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Speedster",
+      "target": "JKM"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "WR::Speedster",
+      "target": "SPC"
     }
   ],
   "numeric_formula_weights_claimed": false,

@@ -59,9 +59,8 @@ def test_schema_graph_edges_require_explicit_field_types() -> None:
 def test_threshold_ingestion_expands_tiers_without_guessing() -> None:
     snapshot = json.loads((ROOT / "data/external/cfb27_ability_thresholds.json").read_text())
     records = normalize_thresholds(snapshot)
-    assert snapshot["source_record_count_claimed"] == 170
-    assert len(snapshot["records"]) == 4
-    assert len(records) == 16
+    assert len(snapshot["records"]) == 170
+    assert len(records) == 732
     assert all(record["ovr_requirement"] is None for record in records)
     assert all(record["source_class"] == "STRUCTURED_SECONDARY" for record in records)
     assert all(record["source_id"] == "SRC-CFB27-ABILITY-001" for record in records)

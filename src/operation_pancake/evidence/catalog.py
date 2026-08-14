@@ -164,12 +164,9 @@ def build_evidence_index(root: Path) -> EvidenceIndex:
             discovered_date="2026-08-13",
             positions=("TE",),
             item_count=170,
-            extraction_status="PARTIAL",
-            extraction_remaining=(
-                "Only four complete TE Vertical Threat rows are preserved. Acquire remaining "
-                "public rows without bypass and independently validate threshold records."
-            ),
-            validation_status="STRUCTURED_SECONDARY_UNCORROBORATED",
+            extraction_status="COMPLETE",
+            extraction_remaining=None,
+            validation_status="SINGLE_STRUCTURED_SOURCE",
             canonical_ingestion_status="RESEARCH_ONLY",
             research_use_status="ABILITY_THRESHOLD_RESEARCH",
             notes="https://www.cfblabs.com/ability-requirements",

@@ -1,0 +1,95 @@
+{
+  "classification": "DESCRIPTIVE",
+  "intent_claimed": false,
+  "matched_cell_count": 5,
+  "matched_cells": [
+    {
+      "archetype": "Lurker",
+      "ordinary": {
+        "1_BELOW": 2,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 4,
+        "ABOVE": 10,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 12
+      },
+      "overall": 85,
+      "position": "MIKE",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 2,
+        "3_BELOW": 2,
+        "ABOVE": 6,
+        "MORE_THAN_5_BELOW": 6
+      }
+    },
+    {
+      "archetype": "Signal Caller",
+      "ordinary": {
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 2,
+        "ABOVE": 2,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 24
+      },
+      "overall": 85,
+      "position": "MIKE",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 1,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 3,
+        "ABOVE": 2,
+        "MORE_THAN_5_BELOW": 9
+      }
+    },
+    {
+      "archetype": "Thumper",
+      "ordinary": {
+        "1_BELOW": 2,
+        "2_BELOW": 10,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 14,
+        "ABOVE": 8,
+        "MORE_THAN_5_BELOW": 28
+      },
+      "overall": 85,
+      "position": "MIKE",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 3,
+        "2_BELOW": 6,
+        "3_BELOW": 3,
+        "4_TO_5_BELOW": 13,
+        "ABOVE": 8,
+        "AT_THRESHOLD": 3,
+        "MORE_THAN_5_BELOW": 28
+      }
+    },
+    {
+      "archetype": "Pocket Passer",
+      "ordinary": {
+        "3_BELOW": 2,
+        "MORE_THAN_5_BELOW": 38
+      },
+      "overall": 84,
+      "position": "QB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 20
+      }
+    },
+    {
+      "archetype": "Pocket Passer",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 40
+      },
+      "overall": 85,
+      "position": "QB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 20
+      }
+    }
+  ]
+}

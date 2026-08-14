@@ -52854,6 +52854,60 @@
       "target_type": "research_artifact"
     },
     {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-ABILITY-SOURCE-DISCOVERY-JSON-SRC-CFB27-ABILITY-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-CFB27-ABILITY-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-ABILITY-SOURCE-DISCOVERY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-ABILITY-THRESHOLD-CONSTRAINTS-JSON-SRC-CFB27-ABILITY-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-CFB27-ABILITY-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-ABILITY-THRESHOLD-CONSTRAINTS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-ABILITY-THRESHOLD-GROUPS-JSON-SRC-CFB27-ABILITY-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-CFB27-ABILITY-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-ABILITY-THRESHOLD-GROUPS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-CARD-THRESHOLD-PROXIMITY-JSON-SRC-CFB27-ABILITY-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-CFB27-ABILITY-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-CARD-THRESHOLD-PROXIMITY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-PHASE6-10-SUMMARY-JSON-SRC-CFB27-ABILITY-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-CFB27-ABILITY-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-PHASE6-10-SUMMARY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-POSITION-CASE-MAPS-JSON-SRC-CFB27-ABILITY-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-CFB27-ABILITY-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-POSITION-CASE-MAPS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
       "link_id": "LINK-ART-DATA-RESEARCH-CFB27-INHERITANCE-PHASE5-ABILITY-THRESHOLD-RECORDS-JSON-SRC-CFB27-ABILITY-001",
       "locator": null,
       "notes": null,
@@ -53160,15 +53214,6 @@
       "target_type": "research_artifact"
     },
     {
-      "link_id": "LINK-ART-DATA-RESEARCH-REPOSITORY-COMPLETENESS-AUDIT-RECOVERY-WORK-QUEUE-JSON-SRC-CFB27-ABILITY-001",
-      "locator": null,
-      "notes": null,
-      "relationship": "CITED_OR_EMBEDDED_SOURCE",
-      "source_id": "SRC-CFB27-ABILITY-001",
-      "target_id": "ART-DATA-RESEARCH-REPOSITORY-COMPLETENESS-AUDIT-RECOVERY-WORK-QUEUE-JSON",
-      "target_type": "research_artifact"
-    },
-    {
       "link_id": "LINK-ART-DATA-RESEARCH-REPOSITORY-COMPLETENESS-AUDIT-RECOVERY-WORK-QUEUE-JSON-SRC-HIST-001",
       "locator": null,
       "notes": null,
@@ -53183,6 +53228,15 @@
       "notes": null,
       "relationship": "CITED_OR_EMBEDDED_SOURCE",
       "source_id": "SRC-IMG-ARCH",
+      "target_id": "ART-DATA-RESEARCH-REPOSITORY-COMPLETENESS-AUDIT-RECOVERY-WORK-QUEUE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-REPOSITORY-COMPLETENESS-AUDIT-RECOVERY-WORK-QUEUE-JSON-SRC-M19-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-M19-001",
       "target_id": "ART-DATA-RESEARCH-REPOSITORY-COMPLETENESS-AUDIT-RECOVERY-WORK-QUEUE-JSON",
       "target_type": "research_artifact"
     },
@@ -53219,15 +53273,6 @@
       "notes": null,
       "relationship": "CITED_OR_EMBEDDED_SOURCE",
       "source_id": "SRC-C-RAW-003",
-      "target_id": "ART-DATA-RESEARCH-REPOSITORY-COMPLETENESS-AUDIT-SOURCE-VALUE-RANKING-JSON",
-      "target_type": "research_artifact"
-    },
-    {
-      "link_id": "LINK-ART-DATA-RESEARCH-REPOSITORY-COMPLETENESS-AUDIT-SOURCE-VALUE-RANKING-JSON-SRC-CFB27-ABILITY-001",
-      "locator": null,
-      "notes": null,
-      "relationship": "CITED_OR_EMBEDDED_SOURCE",
-      "source_id": "SRC-CFB27-ABILITY-001",
       "target_id": "ART-DATA-RESEARCH-REPOSITORY-COMPLETENESS-AUDIT-SOURCE-VALUE-RANKING-JSON",
       "target_type": "research_artifact"
     },
@@ -55511,19 +55556,6 @@
       "resolution": null,
       "resolved_at": null,
       "source_id": "SRC-C-RAW-003",
-      "status": "OPEN"
-    },
-    {
-      "affected_id": "SRC-CFB27-ABILITY-001",
-      "affected_type": "source",
-      "created_at": "2026-08-13",
-      "issue_type": "PARTIALLY_EXTRACTED",
-      "item_id": "REC-SRC-CFB27-ABILITY-001",
-      "notes": "Only four complete TE Vertical Threat rows are preserved. Acquire remaining public rows without bypass and independently validate threshold records.",
-      "priority": "MEDIUM",
-      "resolution": null,
-      "resolved_at": null,
-      "source_id": "SRC-CFB27-ABILITY-001",
       "status": "OPEN"
     },
     {
@@ -63203,6 +63235,330 @@
     },
     {
       "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/ability_catalog.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-ABILITY-CATALOG-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/ability_source_discovery.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-ABILITY-SOURCE-DISCOVERY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/ability_threshold_constraints.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-ABILITY-THRESHOLD-CONSTRAINTS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/ability_threshold_groups.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-ABILITY-THRESHOLD-GROUPS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/capability_chronology.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-CAPABILITY-CHRONOLOGY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/card_threshold_proximity.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-CARD-THRESHOLD-PROXIMITY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/cfb27_spline_analysis.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-CFB27-SPLINE-ANALYSIS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/chatgpt_research_targets.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-CHATGPT-RESEARCH-TARGETS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/cross_source_validation.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-CROSS-SOURCE-VALIDATION-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/ea_design_signals.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-EA-DESIGN-SIGNALS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/gm_ability_layer.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-GM-ABILITY-LAYER-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/gm_replacement_layer.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-GM-REPLACEMENT-LAYER-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/moneyball_ability_crosswalk.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-MONEYBALL-ABILITY-CROSSWALK-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/ovr_capability_creep_comparison.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-OVR-CAPABILITY-CREEP-COMPARISON-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/phase6_10_frozen_snapshot.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-PHASE6-10-FROZEN-SNAPSHOT-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/phase6_10_summary.json",
+      "referenced_card_ids": [
+        "QB-0001",
+        "QB-0003",
+        "QB-0004",
+        "QB-0006",
+        "QB-0007",
+        "QB-0008",
+        "QB-0009",
+        "QB-0010",
+        "QB-0011",
+        "QB-0013",
+        "QB-0015",
+        "QB-0018",
+        "QB-0019",
+        "QB-0024",
+        "QB-0027",
+        "QB-0038",
+        "QB-0039",
+        "QB-0041",
+        "QB-0046",
+        "QB-0047",
+        "QB-0049",
+        "QB-0050",
+        "QB-0051",
+        "QB-0054",
+        "QB-0067",
+        "QB-0068",
+        "QB-0071",
+        "QB-0072",
+        "QB-0073",
+        "QB-0074",
+        "TE-0001",
+        "TE-0002",
+        "TE-0003",
+        "TE-0006",
+        "TE-0007",
+        "TE-0008",
+        "TE-0011",
+        "TE-0013",
+        "TE-0015",
+        "TE-0020",
+        "TE-0022",
+        "TE-0028",
+        "TE-0030",
+        "TE-0031",
+        "TE-0032",
+        "TE-0037",
+        "TE-0038",
+        "TE-0041",
+        "TE-0046",
+        "TE-0048",
+        "TE-0049",
+        "TE-0058",
+        "TE-0059",
+        "TE-0064",
+        "TE-0066",
+        "TE-0067",
+        "TE-0068"
+      ],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-PHASE6-10-SUMMARY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/physical_dimension_analysis.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-PHYSICAL-DIMENSION-ANALYSIS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/position_capability_gaps.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-POSITION-CAPABILITY-GAPS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/position_case_maps.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-POSITION-CASE-MAPS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/program_capability_signatures.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-PROGRAM-CAPABILITY-SIGNATURES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/progression_path_reconstruction.json",
+      "referenced_card_ids": [
+        "QB-0001",
+        "QB-0003",
+        "QB-0004",
+        "QB-0006",
+        "QB-0007",
+        "QB-0008",
+        "QB-0009",
+        "QB-0010",
+        "QB-0011",
+        "QB-0013",
+        "QB-0015",
+        "QB-0018",
+        "QB-0019",
+        "QB-0024",
+        "QB-0027",
+        "QB-0038",
+        "QB-0039",
+        "QB-0041",
+        "QB-0046",
+        "QB-0047",
+        "QB-0049",
+        "QB-0050",
+        "QB-0051",
+        "QB-0054",
+        "QB-0067",
+        "QB-0068",
+        "QB-0071",
+        "QB-0072",
+        "QB-0073",
+        "QB-0074",
+        "TE-0001",
+        "TE-0002",
+        "TE-0003",
+        "TE-0006",
+        "TE-0007",
+        "TE-0008",
+        "TE-0011",
+        "TE-0013",
+        "TE-0015",
+        "TE-0020",
+        "TE-0022",
+        "TE-0028",
+        "TE-0030",
+        "TE-0031",
+        "TE-0032",
+        "TE-0037",
+        "TE-0038",
+        "TE-0041",
+        "TE-0046",
+        "TE-0048",
+        "TE-0049",
+        "TE-0058",
+        "TE-0059",
+        "TE-0064",
+        "TE-0066",
+        "TE-0067",
+        "TE-0068"
+      ],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-PROGRESSION-PATH-RECONSTRUCTION-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/prospective_validation.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-PROSPECTIVE-VALIDATION-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/replacement_pressure_v3.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-REPLACEMENT-PRESSURE-V3-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/special_threshold_targeting.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-SPECIAL-THRESHOLD-TARGETING-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/threshold_distributions.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-THRESHOLD-DISTRIBUTIONS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_ability_phase6_10/unlock_centrality.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-ABILITY-PHASE6-10-UNLOCK-CENTRALITY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
       "path": "data/research/cfb27_inheritance_phase1/analysis_summary.json",
       "referenced_card_ids": [],
       "research_only": true,
@@ -65949,8 +66305,8 @@
       "category": "CFB27_ABILITY_THRESHOLDS",
       "discovered_date": "2026-08-13",
       "duplicate_of": null,
-      "extraction_remaining": "Only four complete TE Vertical Threat rows are preserved. Acquire remaining public rows without bypass and independently validate threshold records.",
-      "extraction_status": "PARTIAL",
+      "extraction_remaining": null,
+      "extraction_status": "COMPLETE",
       "item_count": 170,
       "notes": "https://www.cfblabs.com/ability-requirements",
       "origin": "EXTERNAL_WEB",
@@ -65965,7 +66321,7 @@
       "source_name": "CFB Labs CFB27 ability requirements",
       "source_type": "WEB",
       "superseded_by": null,
-      "validation_status": "STRUCTURED_SECONDARY_UNCORROBORATED"
+      "validation_status": "SINGLE_STRUCTURED_SOURCE"
     },
     {
       "canonical_ingestion_status": "Research evidence",

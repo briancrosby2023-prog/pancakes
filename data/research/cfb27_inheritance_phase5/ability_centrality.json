@@ -1,34 +1,605 @@
 {
-  "defense": [],
-  "interpretation": "UNLOCK_CENTRALITY_ONLY_NOT_GAMEPLAY_IMPORTANCE",
-  "offense": [
+  "defense": [
+    {
+      "attribute": "ACC",
+      "tier_unlocks": 36
+    },
+    {
+      "attribute": "TAC",
+      "tier_unlocks": 32
+    },
+    {
+      "attribute": "MCV",
+      "tier_unlocks": 28
+    },
+    {
+      "attribute": "ZCV",
+      "tier_unlocks": 28
+    },
+    {
+      "attribute": "POW",
+      "tier_unlocks": 28
+    },
+    {
+      "attribute": "STR",
+      "tier_unlocks": 20
+    },
+    {
+      "attribute": "BSH",
+      "tier_unlocks": 20
+    },
     {
       "attribute": "TGH",
+      "tier_unlocks": 20
+    },
+    {
+      "attribute": "PMV",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "CTH",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "FMV",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "SPC",
       "tier_unlocks": 8
     },
     {
-      "attribute": "BTK",
+      "attribute": "COD",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "PUR",
       "tier_unlocks": 4
+    }
+  ],
+  "interpretation": "UNLOCK_CENTRALITY_ONLY_NOT_GAMEPLAY_IMPORTANCE",
+  "offense": [
+    {
+      "attribute": "BTK",
+      "tier_unlocks": 56
+    },
+    {
+      "attribute": "TGH",
+      "tier_unlocks": 52
+    },
+    {
+      "attribute": "STR",
+      "tier_unlocks": 32
+    },
+    {
+      "attribute": "JKM",
+      "tier_unlocks": 28
     },
     {
       "attribute": "ACC",
+      "tier_unlocks": 24
+    },
+    {
+      "attribute": "CIT",
+      "tier_unlocks": 24
+    },
+    {
+      "attribute": "SPC",
+      "tier_unlocks": 24
+    },
+    {
+      "attribute": "MRR",
+      "tier_unlocks": 24
+    },
+    {
+      "attribute": "COD",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "SPD",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "TRK",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "RBK",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "SPM",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "CAR",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "SFA",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "PBK",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "SAC",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "DRR",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "CTH",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "DAC",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "TUP",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "IBL",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "RUN",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "THP",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "BSK",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "PAC",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "MAC",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "THA",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "RLS",
       "tier_unlocks": 4
     }
   ],
   "position_attribute_tier_unlocks": [
     {
+      "attribute": "ACC",
+      "position": "CB",
+      "tier_unlocks": 20
+    },
+    {
+      "attribute": "MCV",
+      "position": "CB",
+      "tier_unlocks": 20
+    },
+    {
+      "attribute": "MRR",
+      "position": "WR",
+      "tier_unlocks": 20
+    },
+    {
+      "attribute": "ZCV",
+      "position": "CB",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "PMV",
+      "position": "EDGE",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "TGH",
+      "position": "EDGE",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "STR",
+      "position": "HB",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "TGH",
+      "position": "HB",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "POW",
+      "position": "MIKE",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "BTK",
+      "position": "QB",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "BTK",
+      "position": "TE",
+      "tier_unlocks": 16
+    },
+    {
       "attribute": "TGH",
       "position": "TE",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "SPC",
+      "position": "WR",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "TGH",
+      "position": "WR",
+      "tier_unlocks": 16
+    },
+    {
+      "attribute": "BSH",
+      "position": "EDGE",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "FMV",
+      "position": "EDGE",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "STR",
+      "position": "EDGE",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "BTK",
+      "position": "HB",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "JKM",
+      "position": "HB",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "SFA",
+      "position": "HB",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "TRK",
+      "position": "HB",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "TAC",
+      "position": "MIKE",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "SAC",
+      "position": "QB",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "CIT",
+      "position": "TE",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "RBK",
+      "position": "TE",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "STR",
+      "position": "TE",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "ACC",
+      "position": "WR",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "BTK",
+      "position": "WR",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "CIT",
+      "position": "WR",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "DRR",
+      "position": "WR",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "JKM",
+      "position": "WR",
+      "tier_unlocks": 12
+    },
+    {
+      "attribute": "TAC",
+      "position": "CB",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "ACC",
+      "position": "EDGE",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "TAC",
+      "position": "EDGE",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "MCV",
+      "position": "FS",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "POW",
+      "position": "FS",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "ZCV",
+      "position": "FS",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "CAR",
+      "position": "HB",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "COD",
+      "position": "HB",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "CTH",
+      "position": "HB",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "SPD",
+      "position": "HB",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "SPM",
+      "position": "HB",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "BSH",
+      "position": "MIKE",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "STR",
+      "position": "MIKE",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "DAC",
+      "position": "QB",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "SPD",
+      "position": "QB",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "TUP",
+      "position": "QB",
       "tier_unlocks": 8
     },
     {
       "attribute": "ACC",
       "position": "TE",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "PBK",
+      "position": "TE",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "SPC",
+      "position": "TE",
+      "tier_unlocks": 8
+    },
+    {
+      "attribute": "COD",
+      "position": "CB",
       "tier_unlocks": 4
     },
     {
-      "attribute": "BTK",
+      "attribute": "CTH",
+      "position": "CB",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "SPC",
+      "position": "CB",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "POW",
+      "position": "EDGE",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "ACC",
+      "position": "FS",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "COD",
+      "position": "FS",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "CTH",
+      "position": "FS",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "PUR",
+      "position": "FS",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "SPC",
+      "position": "FS",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "TAC",
+      "position": "FS",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "ACC",
+      "position": "HB",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "PBK",
+      "position": "HB",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "ACC",
+      "position": "MIKE",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "CTH",
+      "position": "MIKE",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "TGH",
+      "position": "MIKE",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "ZCV",
+      "position": "MIKE",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "BSK",
+      "position": "QB",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "CAR",
+      "position": "QB",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "COD",
+      "position": "QB",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "JKM",
+      "position": "QB",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "MAC",
+      "position": "QB",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "PAC",
+      "position": "QB",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "RUN",
+      "position": "QB",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "TGH",
+      "position": "QB",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "THP",
+      "position": "QB",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "IBL",
       "position": "TE",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "MRR",
+      "position": "TE",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "COD",
+      "position": "WR",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "IBL",
+      "position": "WR",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "RBK",
+      "position": "WR",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "RLS",
+      "position": "WR",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "SPM",
+      "position": "WR",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "STR",
+      "position": "WR",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "THA",
+      "position": "WR",
+      "tier_unlocks": 4
+    },
+    {
+      "attribute": "TRK",
+      "position": "WR",
       "tier_unlocks": 4
     }
   ]

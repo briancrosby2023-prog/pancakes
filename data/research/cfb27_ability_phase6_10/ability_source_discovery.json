@@ -1,0 +1,38 @@
+{
+  "access_bypass": false,
+  "numeric_cross_source_validation_available": false,
+  "sources": [
+    {
+      "access": "ORDINARY_PUBLIC_PAGE_STRUCTURED_PAYLOAD",
+      "name": "CFB Labs CFB27 Ability Requirements",
+      "numeric_threshold_records": true,
+      "source_id": "SRC-CFB27-ABILITY-001",
+      "source_rows": 170,
+      "validation_role": "SINGLE_STRUCTURED_SOURCE"
+    },
+    {
+      "name": "EA CFB27 Ultimate Team Deep Dive",
+      "numeric_threshold_records": false,
+      "source_id": "EA-CFB27-UPGRADE-DOC",
+      "validation_role": "PRIMARY_ARCHITECTURE_ONLY"
+    },
+    {
+      "name": "TeamCrafters CFB27 Ability Catalog",
+      "numeric_threshold_records": false,
+      "source_id": "TEAMCRAFTERS-CFB27-ABILITIES",
+      "validation_role": "ABILITY_EXISTENCE_CROSS_CHECK_ONLY"
+    },
+    {
+      "name": "CollegeFootball.gg public ability pages",
+      "numeric_threshold_records": false,
+      "source_id": "COLLEGEFOOTBALL-GG",
+      "validation_role": "CFB26_ONLY_NOT_CFB27_THRESHOLD_VALIDATION"
+    },
+    {
+      "name": "CFB.FAN card-specific ability panels",
+      "numeric_threshold_records": true,
+      "source_id": "CFB-FAN-CARD-ABILITIES",
+      "validation_role": "CARD_POSITION_SPECIFIC_CROSS_CHECK; NO MATCHING POSITION-ARCHETYPE RECORD VALIDATED"
+    }
+  ]
+}

@@ -1,0 +1,2429 @@
+{
+  "ability_progression_tunable": {
+    "asset_id": "6494910",
+    "base": null,
+    "fields": [
+      {
+        "enum": {
+          "_assetId": "6320532",
+          "_maxLength": 6,
+          "_members": [
+            {
+              "_index": 0,
+              "_name": "Acceleration",
+              "_unformattedValue": "000000",
+              "_value": 0
+            },
+            {
+              "_index": 1,
+              "_name": "First_",
+              "_unformattedValue": "000000",
+              "_value": 0
+            },
+            {
+              "_index": 2,
+              "_name": "Agility",
+              "_unformattedValue": "000001",
+              "_value": 1
+            },
+            {
+              "_index": 3,
+              "_name": "Awareness",
+              "_unformattedValue": "000010",
+              "_value": 2
+            },
+            {
+              "_index": 4,
+              "_name": "BCVision",
+              "_unformattedValue": "000011",
+              "_value": 3
+            },
+            {
+              "_index": 5,
+              "_name": "BlockShedding",
+              "_unformattedValue": "000100",
+              "_value": 4
+            },
+            {
+              "_index": 6,
+              "_name": "BreakSack",
+              "_unformattedValue": "000101",
+              "_value": 5
+            },
+            {
+              "_index": 7,
+              "_name": "BreakTackle",
+              "_unformattedValue": "000110",
+              "_value": 6
+            },
+            {
+              "_index": 8,
+              "_name": "Carrying",
+              "_unformattedValue": "000111",
+              "_value": 7
+            },
+            {
+              "_index": 9,
+              "_name": "CatchInTraffic",
+              "_unformattedValue": "001000",
+              "_value": 8
+            },
+            {
+              "_index": 10,
+              "_name": "Catching",
+              "_unformattedValue": "001001",
+              "_value": 9
+            },
+            {
+              "_index": 11,
+              "_name": "ChangeOfDirection",
+              "_unformattedValue": "001010",
+              "_value": 10
+            },
+            {
+              "_index": 12,
+              "_name": "Confidence",
+              "_unformattedValue": "001011",
+              "_value": 11
+            },
+            {
+              "_index": 13,
+              "_name": "DeepRouteRunning",
+              "_unformattedValue": "001100",
+              "_value": 12
+            },
+            {
+              "_index": 14,
+              "_name": "FinesseMoves",
+              "_unformattedValue": "001101",
+              "_value": 13
+            },
+            {
+              "_index": 15,
+              "_name": "HitPower",
+              "_unformattedValue": "001110",
+              "_value": 14
+            },
+            {
+              "_index": 16,
+              "_name": "ImpactBlocking",
+              "_unformattedValue": "001111",
+              "_value": 15
+            },
+            {
+              "_index": 17,
+              "_name": "Injury",
+              "_unformattedValue": "010000",
+              "_value": 16
+            },
+            {
+              "_index": 18,
+              "_name": "JukeMove",
+              "_unformattedValue": "010001",
+              "_value": 17
+            },
+            {
+              "_index": 19,
+              "_name": "Jumping",
+              "_unformattedValue": "010010",
+              "_value": 18
+            },
+            {
+              "_index": 20,
+              "_name": "KickAccuracy",
+              "_unformattedValue": "010011",
+              "_value": 19
+            },
+            {
+              "_index": 21,
+              "_name": "KickPower",
+              "_unformattedValue": "010100",
+              "_value": 20
+            },
+            {
+              "_index": 22,
+              "_name": "KickReturn",
+              "_unformattedValue": "010101",
+              "_value": 21
+            },
+            {
+              "_index": 23,
+              "_name": "LeadBlock",
+              "_unformattedValue": "010110",
+              "_value": 22
+            },
+            {
+              "_index": 24,
+              "_name": "ManCoverage",
+              "_unformattedValue": "010111",
+              "_value": 23
+            },
+            {
+              "_index": 25,
+              "_name": "MediumRouteRunning",
+              "_unformattedValue": "011000",
+              "_value": 24
+            },
+            {
+              "_index": 26,
+              "_name": "PassBlock",
+              "_unformattedValue": "011001",
+              "_value": 25
+            },
+            {
+              "_index": 27,
+              "_name": "PassBlockFinesse",
+              "_unformattedValue": "011010",
+              "_value": 26
+            },
+            {
+              "_index": 28,
+              "_name": "PassBlockPower",
+              "_unformattedValue": "011011",
+              "_value": 27
+            },
+            {
+              "_index": 29,
+              "_name": "PlayAction",
+              "_unformattedValue": "011100",
+              "_value": 28
+            },
+            {
+              "_index": 30,
+              "_name": "PlayRecognition",
+              "_unformattedValue": "011101",
+              "_value": 29
+            },
+            {
+              "_index": 31,
+              "_name": "PowerMoves",
+              "_unformattedValue": "011110",
+              "_value": 30
+            },
+            {
+              "_index": 32,
+              "_name": "Press",
+              "_unformattedValue": "011111",
+              "_value": 31
+            },
+            {
+              "_index": 33,
+              "_name": "Pursuit",
+              "_unformattedValue": "100000",
+              "_value": 32
+            },
+            {
+              "_index": 34,
+              "_name": "Release",
+              "_unformattedValue": "100001",
+              "_value": 33
+            },
+            {
+              "_index": 35,
+              "_name": "RunBlock",
+              "_unformattedValue": "100010",
+              "_value": 34
+            },
+            {
+              "_index": 36,
+              "_name": "RunBlockFinesse",
+              "_unformattedValue": "100011",
+              "_value": 35
+            },
+            {
+              "_index": 37,
+              "_name": "RunBlockPower",
+              "_unformattedValue": "100100",
+              "_value": 36
+            },
+            {
+              "_index": 38,
+              "_name": "RunningStyle",
+              "_unformattedValue": "100101",
+              "_value": 37
+            },
+            {
+              "_index": 39,
+              "_name": "ShortRouteRunning",
+              "_unformattedValue": "100110",
+              "_value": 38
+            },
+            {
+              "_index": 40,
+              "_name": "SpectacularCatch",
+              "_unformattedValue": "100111",
+              "_value": 39
+            },
+            {
+              "_index": 41,
+              "_name": "Speed",
+              "_unformattedValue": "101000",
+              "_value": 40
+            },
+            {
+              "_index": 42,
+              "_name": "SpinMove",
+              "_unformattedValue": "101001",
+              "_value": 41
+            },
+            {
+              "_index": 43,
+              "_name": "Stamina",
+              "_unformattedValue": "101010",
+              "_value": 42
+            },
+            {
+              "_index": 44,
+              "_name": "StiffArm",
+              "_unformattedValue": "101011",
+              "_value": 43
+            },
+            {
+              "_index": 45,
+              "_name": "Strength",
+              "_unformattedValue": "101100",
+              "_value": 44
+            },
+            {
+              "_index": 46,
+              "_name": "Tackle",
+              "_unformattedValue": "101101",
+              "_value": 45
+            },
+            {
+              "_index": 47,
+              "_name": "ThrowAccuracy",
+              "_unformattedValue": "101110",
+              "_value": 46
+            },
+            {
+              "_index": 48,
+              "_name": "ThrowAccuracyDeep",
+              "_unformattedValue": "101111",
+              "_value": 47
+            },
+            {
+              "_index": 49,
+              "_name": "ThrowAccuracyMid",
+              "_unformattedValue": "110000",
+              "_value": 48
+            },
+            {
+              "_index": 50,
+              "_name": "ThrowAccuracyShort",
+              "_unformattedValue": "110001",
+              "_value": 49
+            },
+            {
+              "_index": 51,
+              "_name": "ThrowOnTheRun",
+              "_unformattedValue": "110010",
+              "_value": 50
+            },
+            {
+              "_index": 52,
+              "_name": "ThrowPower",
+              "_unformattedValue": "110011",
+              "_value": 51
+            },
+            {
+              "_index": 53,
+              "_name": "ThrowUnderPressure",
+              "_unformattedValue": "110100",
+              "_value": 52
+            },
+            {
+              "_index": 54,
+              "_name": "Toughness",
+              "_unformattedValue": "110101",
+              "_value": 53
+            },
+            {
+              "_index": 55,
+              "_name": "Trucking",
+              "_unformattedValue": "110110",
+              "_value": 54
+            },
+            {
+              "_index": 56,
+              "_name": "LongSnap",
+              "_unformattedValue": "110111",
+              "_value": 55
+            },
+            {
+              "_index": 57,
+              "_name": "ZoneCoverage",
+              "_unformattedValue": "111000",
+              "_value": 56
+            },
+            {
+              "_index": 58,
+              "_name": "Max_",
+              "_unformattedValue": "111001",
+              "_value": 57
+            },
+            {
+              "_index": 59,
+              "_name": "None",
+              "_unformattedValue": "111010",
+              "_value": 58
+            },
+            {
+              "_index": 60,
+              "_name": "Invalid_",
+              "_unformattedValue": "111111",
+              "_value": 63
+            }
+          ],
+          "_name": "PlayerAbility"
+        },
+        "name": "Ability",
+        "type": "PlayerAbility"
+      },
+      {
+        "enum": null,
+        "name": "HeightModifierSpline",
+        "type": "Spline"
+      },
+      {
+        "enum": null,
+        "name": "UpgradeCostSpline",
+        "type": "Spline"
+      },
+      {
+        "enum": null,
+        "name": "WeightModifierSpline",
+        "type": "Spline"
+      }
+    ],
+    "name": "AbilityProgressionTunable"
+  },
+  "all_cfb27_spline_reference_count": 395,
+  "all_cfb27_spline_references": [
+    {
+      "field": "DecaySpline",
+      "table": "Equipment",
+      "type": "Spline"
+    },
+    {
+      "field": "InjuryRiskSpline",
+      "table": "FootballInjuryEvalTuningData",
+      "type": "Spline"
+    },
+    {
+      "field": "LocalPlayerWearAndTearRecoveryPercentageSpline",
+      "table": "FootballInjuryEvalTuningData",
+      "type": "Spline"
+    },
+    {
+      "field": "WeeklyAdvanceWearAndTearRecoverySpline",
+      "table": "FootballInjuryEvalTuningData",
+      "type": "Spline"
+    },
+    {
+      "field": "C",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "CB",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "DT",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "FB",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "FS",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "HB",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "K",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "LE",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "LG",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "LOLB",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "LS",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "LT",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "MLB",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "P",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "QB",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "RE",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "RG",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "ROLB",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "RT",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "SS",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "TE",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "WR",
+      "table": "PositionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "GradeSpline",
+      "table": "ProgramPointsCategoryInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "BaseNILValueSpline",
+      "table": "ProgramPointsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "EquipmentBonusThresholdTable",
+      "table": "ProgramPointsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "EquipmentDecayThresholdTable",
+      "table": "ProgramPointsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "NILDealbreakerModifierSpline",
+      "table": "ProgramPointsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "PrestigeModifierSplineArray",
+      "table": "ProgramPointsTuning",
+      "type": "Spline[]"
+    },
+    {
+      "field": "RecruitRankToDummyOVRSpline",
+      "table": "ProgramPointsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "RiskOfEarlyNFLDraftModSpline",
+      "table": "ProgramPointsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "RiskOfTransferModSpline",
+      "table": "ProgramPointsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "SupportStaffRefundSpline",
+      "table": "ProgramPointsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "TeamPrestigeToSupportStaffSlotSpline",
+      "table": "ProgramPointsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "AmountToDecreaseBasedOnHealth",
+      "table": "WearAndTearTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "HeightModifierSpline",
+      "table": "AbilityProgressionTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "UpgradeCostSpline",
+      "table": "AbilityProgressionTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "WeightModifierSpline",
+      "table": "AbilityProgressionTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "AgeAdjustmentFactor",
+      "table": "BaseContractPositionPhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "EventWeights",
+      "table": "BranchingStoryCriteria",
+      "type": "Spline"
+    },
+    {
+      "field": "PrestigeTeamChallengeListSpline",
+      "table": "ChallengesEval",
+      "type": "Spline"
+    },
+    {
+      "field": "RewardExperienceSpline",
+      "table": "CoachFootballRecordMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "ConfPotentialWinsDifSpline",
+      "table": "CoachGoalsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "TeamRelativeOVRContractGoalsSpline",
+      "table": "CoachGoalsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "LevelCostSpline",
+      "table": "CoachPackageTraitProgression",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachLeavingOddsSpline",
+      "table": "CoachRetirementEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "LegacyScoreRetireSpline",
+      "table": "CoachRetirementEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "LegacyScoreReturnModSpline",
+      "table": "CoachRetirementEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "SuperBowlSpline",
+      "table": "CoachRetirementEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "YearsCoachingModSpline",
+      "table": "CoachRetirementEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "LevelSpline",
+      "table": "CoachWeeklyGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "OppOverall",
+      "table": "CoachWeeklyGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "OwnTeamOverall",
+      "table": "CoachWeeklyGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "LevelSpline",
+      "table": "CoachWeeklyActorGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "OppOverall",
+      "table": "CoachWeeklyActorGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "OwnTeamOverall",
+      "table": "CoachWeeklyActorGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PercentileToRegressChanceStar",
+      "table": "DevTraitRegressionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "PercentileToRegressChanceSuperstar",
+      "table": "DevTraitRegressionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "PercentileToRegressChanceXFactor",
+      "table": "DevTraitRegressionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "DraftPickStrengthSpline",
+      "table": "DraftClassScouting",
+      "type": "Spline"
+    },
+    {
+      "field": "ScoutingLetterSpline",
+      "table": "DraftClassScouting",
+      "type": "Spline"
+    },
+    {
+      "field": "ScoutingStrengthLetterSpline",
+      "table": "DraftClassScouting",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayersToConsiderSpline",
+      "table": "DraftPhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "DraftPickToPickValueSpline",
+      "table": "DraftTradePhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "DraftPickToPlayerValueSpline",
+      "table": "DraftTradePhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "TradeDownChanceSpline",
+      "table": "DraftTradePhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "TradeUpChanceSpline",
+      "table": "DraftTradePhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "DraftPickStrengthSpline",
+      "table": "FranchiseServer_DraftFlow",
+      "type": "Spline"
+    },
+    {
+      "field": "DraftPickStrengthSpline",
+      "table": "FranchiseServer_ScoutingV2Flow",
+      "type": "Spline"
+    },
+    {
+      "field": "StageModifierBonus",
+      "table": "FreeAgentTuning",
+      "type": "Spline[]"
+    },
+    {
+      "field": "StageModifierSalary",
+      "table": "FreeAgentTuning",
+      "type": "Spline[]"
+    },
+    {
+      "field": "AcademicsMeterBonusSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "BrandMeterBonusSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachTrustBonusSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "CommittedRecruitsFactorSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "ExperiencePointsBonusSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "FitnessMeterBonusSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "HoursSpentFactorSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "InitialTapeScoreBoostSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "InterestToBonusTierSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "LeadershipMeterBonusSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "PipelineEffectSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "ScholarshipBonusOfferInterestSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "ScholarshipTierToBonusPercentSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "SchoolPrestigeFactorSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "SkillPointsBonusSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "StarLevelToNationalRecruitingRankSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "TapeScoreToStarLevelThresholds",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "TeamNeedFactorSpline",
+      "table": "HighSchoolRecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "StarLevelWeightSplineArray",
+      "table": "RecruitScoreTunable",
+      "type": "Spline[]"
+    },
+    {
+      "field": "StarLevelWeightSplineArray",
+      "table": "HighSchoolRecruitScoreTunable",
+      "type": "Spline[]"
+    },
+    {
+      "field": "SeasonHealthPoolSpline",
+      "table": "InjuryEval",
+      "type": "Spline"
+    },
+    {
+      "field": "InjuryRiskSpline",
+      "table": "InjuryEvalTuningData",
+      "type": "Spline"
+    },
+    {
+      "field": "LocalPlayerWearAndTearRecoveryPercentageSpline",
+      "table": "InjuryEvalTuningData",
+      "type": "Spline"
+    },
+    {
+      "field": "WeeklyAdvanceWearAndTearRecoverySpline",
+      "table": "InjuryEvalTuningData",
+      "type": "Spline"
+    },
+    {
+      "field": "CareerHealthPoolGenerationSpline",
+      "table": "InjuryEvalTuningData",
+      "type": "Spline"
+    },
+    {
+      "field": "SeasonHealthDecrementSpline",
+      "table": "InjuryEvalTuningData",
+      "type": "Spline"
+    },
+    {
+      "field": "SeasonHealthWearAndTearRecoverySpline",
+      "table": "InjuryEvalTuningData",
+      "type": "Spline"
+    },
+    {
+      "field": "JobDifficultyScoreToEnumSpline",
+      "table": "JobDifficultyTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "LegacyScoreToModifierBySchoolYears",
+      "table": "LegacyScoreEval",
+      "type": "Spline[]"
+    },
+    {
+      "field": "OvrToDraftProjection",
+      "table": "LegacyScoreEval",
+      "type": "Spline[]"
+    },
+    {
+      "field": "WearTearToModifier",
+      "table": "LegacyScoreEval",
+      "type": "Spline"
+    },
+    {
+      "field": "PriceCurve",
+      "table": "SellableItemInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "PriceCurve",
+      "table": "MerchandiseItemInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "ScoreMedalsSpline",
+      "table": "MiniGame",
+      "type": "Spline"
+    },
+    {
+      "field": "NationalChampionshipsMadeRecencySpline",
+      "table": "MySchoolBrandExposureTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "NationalChampionshipsWonRecencySpline",
+      "table": "MySchoolBrandExposureTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "PrestigeModSpline",
+      "table": "MySchoolBrandExposureTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "CoordSeasonsWithTeamSpline",
+      "table": "MySchoolCoachStabilityTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "HCSeasonsWithTeamSpline",
+      "table": "MySchoolCoachStabilityTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "AthleticScoreToGradeSpline",
+      "table": "MySchoolFacilitiesTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "MaxRandomnessSpline",
+      "table": "MySchoolFacilitiesTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "MinRandomnessSpline",
+      "table": "MySchoolFacilitiesTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "ConferenceWinSpline",
+      "table": "MySchoolProgramTraditionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "HeismanWinSpline",
+      "table": "MySchoolProgramTraditionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "NationalWinSpline",
+      "table": "MySchoolProgramTraditionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "IndependentConfPrestigeSpline",
+      "table": "MySchoolTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "ProximityToHomeSpline",
+      "table": "MySchoolTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "StarLevelWeightSplineArray",
+      "table": "NarrativeHighSchoolRecruitScoreTunable",
+      "type": "Spline[]"
+    },
+    {
+      "field": "WeightModifierPerFitnessScoreSpline",
+      "table": "NarrativePlayerFitnessMeterTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "BrandFollowerIncreaseValueSpline",
+      "table": "NarrativePlayerMetersTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachHappinessOVRMod",
+      "table": "NarrativePlayerMetersTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachHappinessPerCoachPrestigeSpline",
+      "table": "NarrativePlayerMetersTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachTrustExtraPlaysPerLevelSpline",
+      "table": "NarrativePlayerMetersTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachTrustLevelConversionSpline",
+      "table": "NarrativePlayerMetersTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachTrustPlayCountPerLevelSpline",
+      "table": "NarrativePlayerMetersTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachHappinessKeepScoreSpline",
+      "table": "NarrativeRecruitingTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "DraftProjectionSpline",
+      "table": "NarrativeRecruitingTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "LeadershipKeepScoreSpline",
+      "table": "NarrativeRecruitingTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "OverallSchoolPrestigeSplines",
+      "table": "NarrativeRecruitingTunable",
+      "type": "Spline[]"
+    },
+    {
+      "field": "OverallSchoolYearSplines",
+      "table": "NarrativeRecruitingTunable",
+      "type": "Spline[]"
+    },
+    {
+      "field": "OVRKeepScoreSpline",
+      "table": "NarrativeRecruitingTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayingTimeKeepScoreSpline",
+      "table": "NarrativeRecruitingTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "SchoolPrestigeKeepScoreSpline",
+      "table": "NarrativeRecruitingTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "SchoolYearKeepScoreSpline",
+      "table": "NarrativeRecruitingTunable",
+      "type": "Spline"
+    },
+    {
+      "field": "StarLevelWeightSplineArray",
+      "table": "TransferRecruitScoreTunable",
+      "type": "Spline[]"
+    },
+    {
+      "field": "StarLevelWeightSplineArray",
+      "table": "NarrativeTransferRecruitScoreTunable",
+      "type": "Spline[]"
+    },
+    {
+      "field": "ValueSpline",
+      "table": "OfferEvaluationFactor",
+      "type": "Spline"
+    },
+    {
+      "field": "AcceptChanceSpline1",
+      "table": "OfferEvaluationPhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "AcceptChanceSpline2",
+      "table": "OfferEvaluationPhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "AcceptChanceSpline3",
+      "table": "OfferEvaluationPhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "PercentageSpline",
+      "table": "OverallPercentage",
+      "type": "Spline"
+    },
+    {
+      "field": "C",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "CB",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "DT",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "FB",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "FS",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "HB",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "K",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "LE",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "LG",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "LOLB",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "LT",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "MLB",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "P",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "QB",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "RE",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "RG",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "ROLB",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "RT",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "SS",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "TE",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "WR",
+      "table": "PlayerAgeRegressionSplineTable",
+      "type": "Spline"
+    },
+    {
+      "field": "ConfSpline",
+      "table": "PlayerMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerAgeSpline",
+      "table": "PlayerMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerOverallSpline",
+      "table": "PlayerMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "ConfSpline",
+      "table": "PlayerAwardMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerAgeSpline",
+      "table": "PlayerAwardMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerOverallSpline",
+      "table": "PlayerAwardMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "OverallDurabilityWeightSpline",
+      "table": "PlayerDurabilityGradePhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "ConfSpline",
+      "table": "PlayerFollowerMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerAgeSpline",
+      "table": "PlayerFollowerMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerOverallSpline",
+      "table": "PlayerFollowerMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "ConfSpline",
+      "table": "PlayerFootballRecordMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerAgeSpline",
+      "table": "PlayerFootballRecordMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerOverallSpline",
+      "table": "PlayerFootballRecordMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "ConfSpline",
+      "table": "PlayerStatMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerAgeSpline",
+      "table": "PlayerStatMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerOverallSpline",
+      "table": "PlayerStatMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "ConfSpline",
+      "table": "PlayerGameContextStatMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerAgeSpline",
+      "table": "PlayerGameContextStatMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerOverallSpline",
+      "table": "PlayerGameContextStatMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "QuarterLengthXPSpline",
+      "table": "PlayerGoalsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "ConfSpline",
+      "table": "PlayerGPAMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerAgeSpline",
+      "table": "PlayerGPAMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerOverallSpline",
+      "table": "PlayerGPAMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "CareerProductionGradeWeightSpline",
+      "table": "PlayerGradeEval",
+      "type": "Spline"
+    },
+    {
+      "field": "SeasonProductionGradeWeightSpline",
+      "table": "PlayerGradeEval",
+      "type": "Spline"
+    },
+    {
+      "field": "OverallIntangibleWeightSpline",
+      "table": "PlayerIntangibleGradePhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "LegacySpline",
+      "table": "PlayerMarketingEval",
+      "type": "Spline"
+    },
+    {
+      "field": "OverallSpline",
+      "table": "PlayerMarketingEval",
+      "type": "Spline"
+    },
+    {
+      "field": "PopAgeSpline",
+      "table": "PlayerMarketingEval",
+      "type": "Spline"
+    },
+    {
+      "field": "ConfSpline",
+      "table": "PlayerMetersMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerAgeSpline",
+      "table": "PlayerMetersMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerOverallSpline",
+      "table": "PlayerMetersMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "AgeCostSpline",
+      "table": "PlayerPackageAbilityProgression",
+      "type": "Spline"
+    },
+    {
+      "field": "CostSpline",
+      "table": "PlayerPackageAbilityProgression",
+      "type": "Spline"
+    },
+    {
+      "field": "OverallPhysicalWeightSpline",
+      "table": "PlayerPhysicalGradePhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "OverallProductionWeightSpline",
+      "table": "PlayerProductionGradePhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "StatSpline",
+      "table": "PlayerProductionStatWeight",
+      "type": "Spline"
+    },
+    {
+      "field": "OriginalRatingAgeSpline",
+      "table": "PlayerProgressionEval",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerDevTraitsSpline",
+      "table": "PlayerProgressionEval",
+      "type": "Spline"
+    },
+    {
+      "field": "CapBreakerAttributeIncreaseSpline",
+      "table": "PlayerProgressionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "HighestLevelSpline",
+      "table": "PlayerProgressionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "HighLevelSpline",
+      "table": "PlayerProgressionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "LegacyScoreToMaxOVRSplines",
+      "table": "PlayerProgressionTuning",
+      "type": "Spline[]"
+    },
+    {
+      "field": "LowLevelSpline",
+      "table": "PlayerProgressionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "MediumLevelSpline",
+      "table": "PlayerProgressionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerSPThresholdSpline",
+      "table": "PlayerProgressionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerXPLevelSpline",
+      "table": "PlayerProgressionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "RTGOffSeasonSpline",
+      "table": "PlayerProgressionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "RTGPlayerOVRtoSPCostSpline",
+      "table": "PlayerProgressionTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "TrainerRatingRegressionModifierSpline",
+      "table": "PlayerRegressionEval",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerInterestLevelsSpline",
+      "table": "PlayerSigningEval",
+      "type": "Spline"
+    },
+    {
+      "field": "ReSignWeekSpline",
+      "table": "PlayerSigningEval",
+      "type": "Spline"
+    },
+    {
+      "field": "Height",
+      "table": "PlayerSizeGradePhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "OverallSizeWeightSpline",
+      "table": "PlayerSizeGradePhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "Weight",
+      "table": "PlayerSizeGradePhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "MaxPotentialCost",
+      "table": "PlayerSkillGroupBucket",
+      "type": "Spline"
+    },
+    {
+      "field": "SPCost",
+      "table": "PlayerSkillGroupBucket",
+      "type": "Spline"
+    },
+    {
+      "field": "AgeModSpline",
+      "table": "PlayersLeavingEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "DurabilityModifierSpline",
+      "table": "PlayersLeavingEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "LegacyScoreRetireSpline",
+      "table": "PlayersLeavingEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "PercentageAppt1Spline",
+      "table": "PlayersLeavingEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "PercentageAppt2Spline",
+      "table": "PlayersLeavingEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "PercentageAppt3Spline",
+      "table": "PlayersLeavingEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "PercentageAppt4Spline",
+      "table": "PlayersLeavingEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "PercentageAppt5Spline",
+      "table": "PlayersLeavingEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "ReturnChanceLegacySpline",
+      "table": "PlayersLeavingEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "SuperBowlSpline",
+      "table": "PlayersLeavingEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "YearsProModSpline",
+      "table": "PlayersLeavingEvalInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "ChanceToLeaveModPercentageSpline",
+      "table": "PlayersLeavingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "ChanceToLeaveModRawSpline",
+      "table": "PlayersLeavingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "ChanceToTransfer",
+      "table": "PlayersLeavingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "ChanceToTransferGradeDeltaModifier",
+      "table": "PlayersLeavingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "ChanceToTransferPrestigeModifier",
+      "table": "PlayersLeavingTunables",
+      "type": "Spline[]"
+    },
+    {
+      "field": "DealbreakerOdds",
+      "table": "PlayersLeavingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "PersuasionChance",
+      "table": "PlayersLeavingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerArchetypeSpline",
+      "table": "PlayerTendencyStatGen",
+      "type": "Spline"
+    },
+    {
+      "field": "ConfSpline",
+      "table": "PlayerWeatherMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerAgeSpline",
+      "table": "PlayerWeatherMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerOverallSpline",
+      "table": "PlayerWeatherMilestoneGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "AgeSpline",
+      "table": "PlayerWeeklyGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "CompValueSpline",
+      "table": "PlayerWeeklyGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "DevelopmentSpline",
+      "table": "PlayerWeeklyGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PercentageSpline",
+      "table": "PlayerWeeklyGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "AgeSpline",
+      "table": "PlayerWeeklyActorGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "CompValueSpline",
+      "table": "PlayerWeeklyActorGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "DevelopmentSpline",
+      "table": "PlayerWeeklyActorGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "PercentageSpline",
+      "table": "PlayerWeeklyActorGoal",
+      "type": "Spline"
+    },
+    {
+      "field": "MaxLossPointsForCloseRankedLossSpline",
+      "table": "PollsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "MaxLossPointsForRankSpline",
+      "table": "PollsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "MaxLossPointsSeasonPercentageMultiplierSpline",
+      "table": "PollsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "MaxTop25TeamWinBonusTotalSpline",
+      "table": "PollsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "MaxUndefeatedBonusSpline",
+      "table": "PollsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "MaxUnrankedTeamWinBonusTotalSpline",
+      "table": "PollsTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "Acceleration",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Agility",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Awareness",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "BcVision",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "BlockShedding",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "BreakSack",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "BreakTackle",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Carrying",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Catching",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "CatchInTraffic",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "ChangeOfDirection",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Confidence",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Consistency",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "FinesseMoves",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "HitPower",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "ImpactBlocking",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Injury",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "JukeMove",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Jumping",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "KickAccuracy",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "KickPower",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "KickReturn",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "LeadBlock",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "LongSnap",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "ManCoverage",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "PassBlock",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "PassBlockFinesse",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "PassBlockPower",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayAction",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayRecognition",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "PowerMoves",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Press",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Pursuit",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Release",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "RouteRunningDeep",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "RouteRunningMid",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "RouteRunningShort",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "RunBlock",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "RunBlockFinesse",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "RunBlockPower",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "RunningStyle",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "SpectacularCatch",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Speed",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "SpinMove",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Stamina",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "StiffArm",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Strength",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Tackle",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "ThrowAccuracy",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "ThrowAccuracyDeep",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "ThrowAccuracyMid",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "ThrowAccuracyShort",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "ThrowOnTheRun",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "ThrowPower",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "ThrowUnderPressure",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Toughness",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "Trucking",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "ZoneCoverage",
+      "table": "PositionalAbilitySplines",
+      "type": "Spline"
+    },
+    {
+      "field": "MaxDevelopmentFactorSpline",
+      "table": "PracticeEval",
+      "type": "Spline"
+    },
+    {
+      "field": "MinDevelopmentFactorSpline",
+      "table": "PracticeEval",
+      "type": "Spline"
+    },
+    {
+      "field": "BacksReps_AwardXPSpline",
+      "table": "PracticeEvalTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "BacksReps_FatigueSpline",
+      "table": "PracticeEvalTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "BacksReps_InjurySpline",
+      "table": "PracticeEvalTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "PracticeIntensitySplineFatigue",
+      "table": "PracticeEvalTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "PracticeIntensitySplineGameBoost",
+      "table": "PracticeEvalTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "PracticeIntensitySplineInjury",
+      "table": "PracticeEvalTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "PracticeIntensitySplineXP",
+      "table": "PracticeEvalTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "Reps_GameBoostSpline",
+      "table": "PracticeEvalTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "StartingReps_AwardXPSpline",
+      "table": "PracticeEvalTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "StartingReps_FatigueSpline",
+      "table": "PracticeEvalTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "StartingReps_InjurySpline",
+      "table": "PracticeEvalTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "InjuryChanceSpline",
+      "table": "PracticePlanInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "WearAndTearRecoveryAmountSpline",
+      "table": "PracticePlanInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "PricePercentToRankSpline",
+      "table": "PriceRatingComponentTuningInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "RankToRatingSpline",
+      "table": "RatingComponentTuningInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "CPU_AI_PreseasonScoutingPercentSpline",
+      "table": "RecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "CPU_AI_SpendScoutingPercentSpline",
+      "table": "RecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "InitialInterestScoreThreshold",
+      "table": "RecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "InitialInterestStarLevelWeights",
+      "table": "RecruitingTunables",
+      "type": "Spline[]"
+    },
+    {
+      "field": "IntelUnlockThresholdSplines",
+      "table": "RecruitingTunables",
+      "type": "Spline[]"
+    },
+    {
+      "field": "PlayoffRecruitingHoursSpline",
+      "table": "RecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "ScholarshipBonusPercentageSpline",
+      "table": "RecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "ScholarshipBonusRawSpline",
+      "table": "RecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "SoftCommitPipelineInfluenceBonusSpline",
+      "table": "RecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "SoftCommitPrestigeInfluenceBonusSpline",
+      "table": "RecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "SoftCommitProximityInfluenceBonusSpline",
+      "table": "RecruitingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "DesiredContractVarianceSpline",
+      "table": "ReSignNegotiationManager",
+      "type": "Spline"
+    },
+    {
+      "field": "ScoutTierBonusSpline",
+      "table": "ScoutingTunables",
+      "type": "Spline"
+    },
+    {
+      "field": "SlotUnlockSpline",
+      "table": "SignatureAbilitiesTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "CostSpline",
+      "table": "SPCostSpeedEnumTableEntry",
+      "type": "Spline"
+    },
+    {
+      "field": "StadiumPartRatingToRankingSpline",
+      "table": "StadiumEval",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachLevelToRankSpline",
+      "table": "StaffEval",
+      "type": "Spline"
+    },
+    {
+      "field": "ExpectedCoachSalaryLevelSpline",
+      "table": "StaffHiringEval",
+      "type": "Spline"
+    },
+    {
+      "field": "ExpectedSalaryLegacySpline",
+      "table": "StaffHiringEval",
+      "type": "Spline"
+    },
+    {
+      "field": "ExpectedScoutSalaryLevelSpline",
+      "table": "StaffHiringEval",
+      "type": "Spline"
+    },
+    {
+      "field": "ExpectedTrainerSalaryLevelSpline",
+      "table": "StaffHiringEval",
+      "type": "Spline"
+    },
+    {
+      "field": "SalaryOfferRatioToCoachInterestSpline",
+      "table": "StaffHiringEval",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachAgeSpline",
+      "table": "StaffHiringPhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "OfferedSalaryLevelSpline",
+      "table": "StaffHiringPhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "RateCoachLegacyScoreSpline",
+      "table": "StaffHiringPhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "RateCoachLevelSpline",
+      "table": "StaffHiringPhilosophy",
+      "type": "Spline"
+    },
+    {
+      "field": "StaffAgeSpline",
+      "table": "StaffHiringRatingData",
+      "type": "Spline"
+    },
+    {
+      "field": "StaffTalentCountSpline",
+      "table": "StaffHiringRatingData",
+      "type": "Spline"
+    },
+    {
+      "field": "StaffWinsSpline",
+      "table": "StaffHiringRatingData",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachLeavingOddsSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachLevelToContractProgramPointsSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachPrestigePointsSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachPrestigeScoreGradeSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "CoachPrestigeToContractProgramPointsSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "ContractPointsToExpectationLevelSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "DemeanorChangePercentSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "JobSecurityCoachPrestigeSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "JobSecurityToInterestPointsSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "PrestigeCompareScoreSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "PrestigeInterestPointsSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "ProgramPointsToCoachPointsSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "ProgramPointsToInterestPercentSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "RolePrestigeDiffToProgramPointsPctSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "SchoolPrestigeToContractPointsSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "TeamPrestigeCoachPrestigeSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "TeamPrestigeToInterestPointsSpline",
+      "table": "StaffHiringTuning",
+      "type": "Spline"
+    },
+    {
+      "field": "PositionStrengthLetterGradeSpline",
+      "table": "TeamPrestigeEval",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerAddedValueSpline",
+      "table": "TeamRoadmapEval",
+      "type": "Spline"
+    },
+    {
+      "field": "CurrentSeasonGamesPlayedWeightModifier",
+      "table": "TeamSuccessEval",
+      "type": "Spline"
+    },
+    {
+      "field": "PriceCurve",
+      "table": "TicketItemInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "CPUFirstYearContractPlayerValueSpline",
+      "table": "TradeEval",
+      "type": "Spline"
+    },
+    {
+      "field": "CPURookieValueSpline",
+      "table": "TradeEval",
+      "type": "Spline"
+    },
+    {
+      "field": "OfferPickPremiumValueSpline",
+      "table": "TradeEval",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerPremiumValueSpline_Picks",
+      "table": "TradeEval",
+      "type": "Spline"
+    },
+    {
+      "field": "PlayerPremiumValueSpline_Players",
+      "table": "TradeEval",
+      "type": "Spline"
+    },
+    {
+      "field": "QB_PremiumValueSpline_Picks",
+      "table": "TradeEval",
+      "type": "Spline"
+    },
+    {
+      "field": "QB_PremiumValueSpline_Players",
+      "table": "TradeEval",
+      "type": "Spline"
+    },
+    {
+      "field": "TradeBlockWeightedOfferSpline",
+      "table": "TradeEval",
+      "type": "Spline"
+    },
+    {
+      "field": "AveragePrecipitation",
+      "table": "WeatherInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "AverageSustainedWindSpeed",
+      "table": "WeatherInfo",
+      "type": "Spline"
+    },
+    {
+      "field": "AverageTemperature",
+      "table": "WeatherInfo",
+      "type": "Spline"
+    }
+  ],
+  "direct_reference_edges": [
+    {
+      "evidence": "EXPLICIT_FIELD_TYPE",
+      "field": "HeightModifierSpline",
+      "field_type": "Spline",
+      "source_table": "AbilityProgressionTunable",
+      "target_table": "Spline"
+    },
+    {
+      "evidence": "EXPLICIT_FIELD_TYPE",
+      "field": "UpgradeCostSpline",
+      "field_type": "Spline",
+      "source_table": "AbilityProgressionTunable",
+      "target_table": "Spline"
+    },
+    {
+      "evidence": "EXPLICIT_FIELD_TYPE",
+      "field": "WeightModifierSpline",
+      "field_type": "Spline",
+      "source_table": "AbilityProgressionTunable",
+      "target_table": "Spline"
+    }
+  ],
+  "height_semantics": "UNKNOWN",
+  "row_data_status": "ROW_DATA_UNAVAILABLE",
+  "safe_structural_finding": "Each named field is a Spline with CalculateY and integer X/Y arrays.",
+  "spline_definition": {
+    "asset_id": "6321323",
+    "base": null,
+    "fields": [
+      {
+        "enum": null,
+        "name": "CalculateY",
+        "type": "Spline_CalculateY"
+      },
+      {
+        "enum": null,
+        "name": "X",
+        "type": "int[]"
+      },
+      {
+        "enum": null,
+        "name": "Y",
+        "type": "int[]"
+      }
+    ],
+    "name": "Spline"
+  },
+  "upgrade_cost_semantics": "UNKNOWN_BEYOND_FIELD_NAME",
+  "weight_semantics": "UNKNOWN"
+}

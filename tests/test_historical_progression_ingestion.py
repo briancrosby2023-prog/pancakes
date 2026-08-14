@@ -130,8 +130,8 @@ def test_manifest_is_deterministic_json() -> None:
 
 def test_reconciliation_audit_distinguishes_rediscovered_targets() -> None:
     audit = json.loads((ROOT / "data/evidence/ingestion_audit.json").read_text())
-    assert audit["queue_before_manifest_ingestion"] == 9
-    assert audit["open_reconciliation_count"] == 21
+    assert audit["queue_before_manifest_ingestion"] == 8
+    assert audit["open_reconciliation_count"] == 20
     ingestion = audit["manifest_ingestion"]
     assert ingestion["conflicts_preserved"] == 1
     assert ingestion["existing_targets_merged"] == 1

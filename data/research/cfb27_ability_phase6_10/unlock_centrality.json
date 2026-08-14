@@ -1,0 +1,2081 @@
+{
+  "by_archetype": {
+    "CB::Boundary": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "MCV",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ZCV",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "CB::Bump and Run": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "MCV",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "ZCV",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CTH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "CB::Field": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "MCV",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "COD",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ZCV",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "EDGE::Edge Setter": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "BSH",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "EDGE::Power Rusher": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "PMV",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "FMV",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "EDGE::Pure Power": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "BSH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "PMV",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "POW",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "EDGE::Speed Rusher": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "FMV",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "PMV",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "FS::Coverage Specialist": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "COD",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CTH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "MCV",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ZCV",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "FS::Hybrid": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "POW",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "MCV",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "PUR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ZCV",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "HB::Backfield Threat": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CTH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "JKM",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPM",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "HB::Contact Seeker": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "BTK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CAR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "HB::East/West Playmaker": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "COD",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "JKM",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SFA",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPD",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPM",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "HB::Elusive Bruiser": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "BTK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "COD",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "JKM",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SFA",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPD",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TRK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "HB::North/South Blocker": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CAR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "PBK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TRK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "HB::North/South Receiver": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "BTK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CTH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SFA",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TRK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "MIKE::Lurker": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CTH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "POW",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ZCV",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "MIKE::Signal Caller": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "BSH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "POW",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "MIKE::Thumper": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "POW",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "BSH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "QB::Backfield Creator": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "SAC",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CAR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "RUN",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPD",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "THP",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "QB::Dual Threat": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "BTK",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "BSK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "DAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TUP",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "QB::Pocket Passer": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "DAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "MAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "PAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TUP",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "QB::Pure Runner": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "BTK",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "COD",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "JKM",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPD",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "TE::Gritty Possession": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CIT",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "RBK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "TE::Physical Route Runner": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "BTK",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CIT",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "MRR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "TE::Pure Blocker": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "IBL",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "PBK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "RBK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "TE::Pure Possession": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "BTK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CIT",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "PBK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "RBK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "TE::Vertical Threat": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "BTK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "WR::Contested Specialist": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "BTK",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TRK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "WR::Elusive Route Runner": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "DRR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "JKM",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "MRR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPM",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "WR::Gadget": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "MRR",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "JKM",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "THA",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "WR::Gritty Possession": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CIT",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "IBL",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "RBK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "WR::Physical Route Runner": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "BTK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CIT",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "MRR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "RLS",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "WR::Route Artist": [
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CIT",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "DRR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "MRR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "WR::Speedster": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "COD",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "DRR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "JKM",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ]
+  },
+  "by_position": {
+    "CB": [
+      {
+        "abilities_gated": 3,
+        "archetypes_affected": 3,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 20
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 3,
+        "attribute": "MCV",
+        "positions_affected": 1,
+        "tiers_gated": 20
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 3,
+        "attribute": "ZCV",
+        "positions_affected": 1,
+        "tiers_gated": 16
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 2,
+        "attribute": "TAC",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "COD",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CTH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "EDGE": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 3,
+        "attribute": "PMV",
+        "positions_affected": 1,
+        "tiers_gated": 16
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 4,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 16
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 2,
+        "attribute": "BSH",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 2,
+        "attribute": "FMV",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 3,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 2,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 2,
+        "attribute": "TAC",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "POW",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "FS": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 1,
+        "attribute": "POW",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 2,
+        "attribute": "MCV",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 2,
+        "attribute": "ZCV",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "COD",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CTH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "PUR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "HB": [
+      {
+        "abilities_gated": 3,
+        "archetypes_affected": 3,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 16
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 3,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 16
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 3,
+        "attribute": "BTK",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 3,
+        "attribute": "JKM",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 3,
+        "attribute": "SFA",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 3,
+        "attribute": "TRK",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 2,
+        "attribute": "CAR",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 2,
+        "attribute": "COD",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 2,
+        "attribute": "CTH",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 2,
+        "attribute": "SPD",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 2,
+        "attribute": "SPM",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "PBK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "MIKE": [
+      {
+        "abilities_gated": 3,
+        "archetypes_affected": 3,
+        "attribute": "POW",
+        "positions_affected": 1,
+        "tiers_gated": 16
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 3,
+        "attribute": "TAC",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 2,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 2,
+        "attribute": "BSH",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CTH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "ZCV",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "QB": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 2,
+        "attribute": "BTK",
+        "positions_affected": 1,
+        "tiers_gated": 16
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 2,
+        "attribute": "SAC",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 2,
+        "attribute": "SPD",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 2,
+        "attribute": "TUP",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 2,
+        "attribute": "DAC",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "BSK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "CAR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "COD",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "JKM",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "MAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "PAC",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "RUN",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "THP",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "TE": [
+      {
+        "abilities_gated": 3,
+        "archetypes_affected": 2,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 16
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 3,
+        "attribute": "BTK",
+        "positions_affected": 1,
+        "tiers_gated": 16
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 3,
+        "attribute": "CIT",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 3,
+        "attribute": "RBK",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 3,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 2,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 2,
+        "attribute": "PBK",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 2,
+        "attribute": "SPC",
+        "positions_affected": 1,
+        "tiers_gated": 8
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "IBL",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "MRR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ],
+    "WR": [
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 4,
+        "attribute": "MRR",
+        "positions_affected": 1,
+        "tiers_gated": 20
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 4,
+        "attribute": "SPC",
+        "positions_affected": 1,
+        "tiers_gated": 16
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 4,
+        "attribute": "TGH",
+        "positions_affected": 1,
+        "tiers_gated": 16
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 2,
+        "attribute": "ACC",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 2,
+        "archetypes_affected": 2,
+        "attribute": "BTK",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 3,
+        "attribute": "CIT",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 3,
+        "attribute": "DRR",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 3,
+        "attribute": "JKM",
+        "positions_affected": 1,
+        "tiers_gated": 12
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "COD",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "IBL",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "RBK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "RLS",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "SPM",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "STR",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "THA",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      },
+      {
+        "abilities_gated": 1,
+        "archetypes_affected": 1,
+        "attribute": "TRK",
+        "positions_affected": 1,
+        "tiers_gated": 4
+      }
+    ]
+  },
+  "global": [
+    {
+      "abilities_gated": 3,
+      "archetypes_affected": 15,
+      "attribute": "TGH",
+      "positions_affected": 6,
+      "tiers_gated": 72
+    },
+    {
+      "abilities_gated": 8,
+      "archetypes_affected": 12,
+      "attribute": "ACC",
+      "positions_affected": 7,
+      "tiers_gated": 60
+    },
+    {
+      "abilities_gated": 3,
+      "archetypes_affected": 10,
+      "attribute": "BTK",
+      "positions_affected": 4,
+      "tiers_gated": 56
+    },
+    {
+      "abilities_gated": 4,
+      "archetypes_affected": 12,
+      "attribute": "STR",
+      "positions_affected": 5,
+      "tiers_gated": 52
+    },
+    {
+      "abilities_gated": 2,
+      "archetypes_affected": 8,
+      "attribute": "SPC",
+      "positions_affected": 4,
+      "tiers_gated": 32
+    },
+    {
+      "abilities_gated": 2,
+      "archetypes_affected": 8,
+      "attribute": "TAC",
+      "positions_affected": 4,
+      "tiers_gated": 32
+    },
+    {
+      "abilities_gated": 3,
+      "archetypes_affected": 5,
+      "attribute": "POW",
+      "positions_affected": 3,
+      "tiers_gated": 28
+    },
+    {
+      "abilities_gated": 3,
+      "archetypes_affected": 6,
+      "attribute": "ZCV",
+      "positions_affected": 3,
+      "tiers_gated": 28
+    },
+    {
+      "abilities_gated": 2,
+      "archetypes_affected": 5,
+      "attribute": "MCV",
+      "positions_affected": 2,
+      "tiers_gated": 28
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 7,
+      "attribute": "JKM",
+      "positions_affected": 3,
+      "tiers_gated": 28
+    },
+    {
+      "abilities_gated": 2,
+      "archetypes_affected": 6,
+      "attribute": "COD",
+      "positions_affected": 5,
+      "tiers_gated": 24
+    },
+    {
+      "abilities_gated": 2,
+      "archetypes_affected": 5,
+      "attribute": "MRR",
+      "positions_affected": 2,
+      "tiers_gated": 24
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 6,
+      "attribute": "CIT",
+      "positions_affected": 2,
+      "tiers_gated": 24
+    },
+    {
+      "abilities_gated": 3,
+      "archetypes_affected": 4,
+      "attribute": "BSH",
+      "positions_affected": 2,
+      "tiers_gated": 20
+    },
+    {
+      "abilities_gated": 2,
+      "archetypes_affected": 5,
+      "attribute": "CTH",
+      "positions_affected": 4,
+      "tiers_gated": 20
+    },
+    {
+      "abilities_gated": 2,
+      "archetypes_affected": 3,
+      "attribute": "PMV",
+      "positions_affected": 1,
+      "tiers_gated": 16
+    },
+    {
+      "abilities_gated": 2,
+      "archetypes_affected": 4,
+      "attribute": "SPD",
+      "positions_affected": 2,
+      "tiers_gated": 16
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 4,
+      "attribute": "RBK",
+      "positions_affected": 2,
+      "tiers_gated": 16
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 4,
+      "attribute": "TRK",
+      "positions_affected": 2,
+      "tiers_gated": 16
+    },
+    {
+      "abilities_gated": 3,
+      "archetypes_affected": 3,
+      "attribute": "PBK",
+      "positions_affected": 2,
+      "tiers_gated": 12
+    },
+    {
+      "abilities_gated": 2,
+      "archetypes_affected": 3,
+      "attribute": "CAR",
+      "positions_affected": 2,
+      "tiers_gated": 12
+    },
+    {
+      "abilities_gated": 2,
+      "archetypes_affected": 2,
+      "attribute": "FMV",
+      "positions_affected": 1,
+      "tiers_gated": 12
+    },
+    {
+      "abilities_gated": 2,
+      "archetypes_affected": 2,
+      "attribute": "SAC",
+      "positions_affected": 1,
+      "tiers_gated": 12
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 3,
+      "attribute": "DRR",
+      "positions_affected": 1,
+      "tiers_gated": 12
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 3,
+      "attribute": "SFA",
+      "positions_affected": 1,
+      "tiers_gated": 12
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 3,
+      "attribute": "SPM",
+      "positions_affected": 2,
+      "tiers_gated": 12
+    },
+    {
+      "abilities_gated": 2,
+      "archetypes_affected": 2,
+      "attribute": "TUP",
+      "positions_affected": 1,
+      "tiers_gated": 8
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 2,
+      "attribute": "DAC",
+      "positions_affected": 1,
+      "tiers_gated": 8
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 2,
+      "attribute": "IBL",
+      "positions_affected": 2,
+      "tiers_gated": 8
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 1,
+      "attribute": "BSK",
+      "positions_affected": 1,
+      "tiers_gated": 4
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 1,
+      "attribute": "MAC",
+      "positions_affected": 1,
+      "tiers_gated": 4
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 1,
+      "attribute": "PAC",
+      "positions_affected": 1,
+      "tiers_gated": 4
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 1,
+      "attribute": "PUR",
+      "positions_affected": 1,
+      "tiers_gated": 4
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 1,
+      "attribute": "RLS",
+      "positions_affected": 1,
+      "tiers_gated": 4
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 1,
+      "attribute": "RUN",
+      "positions_affected": 1,
+      "tiers_gated": 4
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 1,
+      "attribute": "THA",
+      "positions_affected": 1,
+      "tiers_gated": 4
+    },
+    {
+      "abilities_gated": 1,
+      "archetypes_affected": 1,
+      "attribute": "THP",
+      "positions_affected": 1,
+      "tiers_gated": 4
+    }
+  ],
+  "interpretation": "UNLOCK_CENTRALITY_NOT_GAMEPLAY_VALUE"
+}

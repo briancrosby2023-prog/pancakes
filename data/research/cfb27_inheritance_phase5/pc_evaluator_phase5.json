@@ -71,9 +71,64 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Arm Bar",
+        "attribute": "SFA",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-110000178",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -81,9 +136,70 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Field",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-110001090",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -111,9 +227,52 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 0,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Elusive Route Runner",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-110005601",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -121,9 +280,58 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "50/50",
+        "attribute": "SPC",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 7,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 5,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 7,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 5,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 3,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -1,
+        "tier": "PLATINUM"
+      }
+    ],
     "archetype": "Contested Specialist",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-110005855",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -131,9 +339,34 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": -2,
+        "tier": "PLATINUM"
+      }
+    ],
     "archetype": "Speedster",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-110008116",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -141,9 +374,76 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Dot!",
+        "attribute": "DAC",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": 6,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Option King",
+        "attribute": "BTK",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Option King",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Dual Threat",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-110010268",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "QB",
@@ -171,9 +471,94 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 5,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -1,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Arm Bar",
+        "attribute": "SFA",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Arm Bar",
+        "attribute": "SFA",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -2,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-110018638",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -191,9 +576,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Option King",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Dual Threat",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-110019930",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "QB",
@@ -201,9 +623,70 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Arm Bar",
+        "attribute": "SFA",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Arm Bar",
+        "attribute": "SFA",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-110025937",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -211,9 +694,82 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 5,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Field",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-110026099",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -241,9 +797,64 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": 5,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Option King",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Dual Threat",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-111010268",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "QB",
@@ -261,9 +872,52 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Arm Bar",
+        "attribute": "SFA",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Arm Bar",
+        "attribute": "SFA",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-111025937",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -281,9 +935,40 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Option King",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Dual Threat",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-112010268",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "QB",
@@ -291,9 +976,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Arm Bar",
+        "attribute": "SFA",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-112018638",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -351,9 +1073,22 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Gritty Possession",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-200021195",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "TE",
@@ -371,9 +1106,64 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Safety Valve",
+        "attribute": "CTH",
+        "distance": 12,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Safety Valve",
+        "attribute": "CTH",
+        "distance": 9,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Safety Valve",
+        "attribute": "CTH",
+        "distance": 5,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Safety Valve",
+        "attribute": "CTH",
+        "distance": 0,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Backfield Threat",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-200023567",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -381,9 +1171,88 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ZCV",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Bump and Run",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-200025976",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -721,9 +1590,64 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Physical Route Runner",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-2007617",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "TE",
@@ -821,9 +1745,16 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -1,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-201000758",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -911,9 +1842,52 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 12,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 9,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 6,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 2,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": -2,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Gritty Possession",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-201010739",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "TE",
@@ -922,6 +1896,18 @@
   {
     "ability_eligibility_confirmed": false,
     "ability_unlock_proximity": [
+      {
+        "ability": "50/50",
+        "attribute": "SPC",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "50/50",
+        "attribute": "SPC",
+        "distance": 1,
+        "tier": "SILVER"
+      },
       {
         "ability": "Balanced",
         "attribute": "BTK",
@@ -988,9 +1974,64 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Dot!",
+        "attribute": "DAC",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Dot!",
+        "attribute": "DAC",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Option King",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Dual Threat",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-201019110",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "QB",
@@ -1008,9 +2049,130 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 8,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 5,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 0,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 6,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 4,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ZCV",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ZCV",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ZCV",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Bump and Run",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-201020321",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -1028,9 +2190,124 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 6,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": -2,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 5,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ZCV",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ZCV",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ZCV",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Bump and Run",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-201023003",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -1038,9 +2315,106 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 6,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 4,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 0,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Arm Bar",
+        "attribute": "SFA",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Arm Bar",
+        "attribute": "SFA",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "SPD",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 0,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-201023902",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -1058,9 +2432,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "STR",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "STR",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "STR",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Contact Seeker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-201025824",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -1078,9 +2489,94 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Magician",
+        "attribute": "SPD",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Magician",
+        "attribute": "SPD",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Mobile Deadeye",
+        "attribute": "RUN",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Mobile Deadeye",
+        "attribute": "RUN",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Off Platform",
+        "attribute": "SAC",
+        "distance": 6,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Off Platform",
+        "attribute": "SAC",
+        "distance": 5,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Off Platform",
+        "attribute": "SAC",
+        "distance": 4,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Off Platform",
+        "attribute": "SAC",
+        "distance": 2,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Off Platform",
+        "attribute": "THP",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "On Time",
+        "attribute": "SAC",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "On Time",
+        "attribute": "SAC",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Pull Down",
+        "attribute": "CAR",
+        "distance": 8,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Pull Down",
+        "attribute": "CAR",
+        "distance": 5,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Pull Down",
+        "attribute": "CAR",
+        "distance": 1,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Backfield Creator",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-201033236",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "QB",
@@ -1148,9 +2644,70 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "50/50",
+        "attribute": "SPC",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 1,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Physical Route Runner",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-2018293",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "TE",
@@ -1518,9 +3075,58 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 1,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Physical Route Runner",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-2023073",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "TE",
@@ -1658,9 +3264,70 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Magician",
+        "attribute": "SPD",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Magician",
+        "attribute": "SPD",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Mobile Deadeye",
+        "attribute": "RUN",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Off Platform",
+        "attribute": "SAC",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Off Platform",
+        "attribute": "SAC",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Off Platform",
+        "attribute": "SAC",
+        "distance": 1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Off Platform",
+        "attribute": "SAC",
+        "distance": -1,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Pull Down",
+        "attribute": "CAR",
+        "distance": 6,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Pull Down",
+        "attribute": "CAR",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Pull Down",
+        "attribute": "CAR",
+        "distance": -1,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Backfield Creator",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-2033236",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "QB",
@@ -1698,9 +3365,82 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 9,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 6,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 3,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": -1,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Strong Grip",
+        "attribute": "STR",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Strong Grip",
+        "attribute": "STR",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Workhorse",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Gritty Possession",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-211026055",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "TE",
@@ -1799,9 +3539,52 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Headfirst",
+        "attribute": "TRK",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Workhorse",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Contested Specialist",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-212026287",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -1869,9 +3652,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Blow Up",
+        "attribute": "PUR",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blow Up",
+        "attribute": "PUR",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blow Up",
+        "attribute": "PUR",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -1,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Hybrid",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-213026309",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "FS",
@@ -1879,9 +3699,64 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Safety Valve",
+        "attribute": "CTH",
+        "distance": 12,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Safety Valve",
+        "attribute": "CTH",
+        "distance": 9,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Safety Valve",
+        "attribute": "CTH",
+        "distance": 5,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Safety Valve",
+        "attribute": "CTH",
+        "distance": 0,
+        "tier": "PLATINUM"
+      }
+    ],
     "archetype": "Backfield Threat",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-213126049",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -1909,9 +3784,34 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-240006834",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -1929,9 +3829,28 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Coverage Specialist",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-240007429",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "FS",
@@ -1959,9 +3878,52 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -1,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Field",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-240009873",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -1989,9 +3951,58 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Elusive Route Runner",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-240018248",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -2009,9 +4020,40 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Blow Up",
+        "attribute": "PUR",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blow Up",
+        "attribute": "PUR",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blow Up",
+        "attribute": "PUR",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Hybrid",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-240018484",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "FS",
@@ -2039,9 +4081,52 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Magician",
+        "attribute": "SPD",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Mobile Deadeye",
+        "attribute": "RUN",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Off Platform",
+        "attribute": "SAC",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Pull Down",
+        "attribute": "CAR",
+        "distance": 12,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Pull Down",
+        "attribute": "CAR",
+        "distance": 9,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Pull Down",
+        "attribute": "CAR",
+        "distance": 5,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Pull Down",
+        "attribute": "CAR",
+        "distance": 1,
+        "tier": "PLATINUM"
+      }
+    ],
     "archetype": "Backfield Creator",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-240019887",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "QB",
@@ -2108,9 +4193,58 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "STR",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "STR",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "STR",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Workhorse",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Contact Seeker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-240026892",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -2138,9 +4272,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "STR",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Workhorse",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Contact Seeker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-240033067",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -2168,9 +4339,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Workhorse",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Contested Specialist",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-250006879",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -2188,9 +4396,64 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-250008771",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -2198,9 +4461,100 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 6,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": -2,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ZCV",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Bump and Run",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-250010143",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -2208,9 +4562,76 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Elusive Route Runner",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-250010187",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -2218,9 +4639,16 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Workhorse",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Contested Specialist",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-250019673",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -2238,9 +4666,58 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-250021586",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -2248,9 +4725,112 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 11,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 8,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 5,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 3,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ZCV",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ZCV",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Bump and Run",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-250021742",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -2319,9 +4899,52 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -1,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Field",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-250024507",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -2330,6 +4953,12 @@
   {
     "ability_eligibility_confirmed": false,
     "ability_unlock_proximity": [
+      {
+        "ability": "50/50",
+        "attribute": "SPC",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
       {
         "ability": "Balanced",
         "attribute": "BTK",
@@ -2364,9 +4993,76 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -1,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-250026043",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -2444,9 +5140,52 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Blow Up",
+        "attribute": "PUR",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blow Up",
+        "attribute": "PUR",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blow Up",
+        "attribute": "PUR",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -1,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Hybrid",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260000917",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "FS",
@@ -2454,9 +5193,16 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Hybrid",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260001731",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "FS",
@@ -2474,9 +5220,64 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 5,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Strong Grip",
+        "attribute": "STR",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Strong Grip",
+        "attribute": "STR",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Strong Grip",
+        "attribute": "STR",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": -1,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Gritty Possession",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260006131",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "TE",
@@ -2494,9 +5295,94 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 8,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 5,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 0,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ZCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ZCV",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Bump and Run",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260007075",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -2504,9 +5390,94 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -2,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Arm Bar",
+        "attribute": "SFA",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Arm Bar",
+        "attribute": "SFA",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 0,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260007128",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -2514,9 +5485,82 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Field",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260008172",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -2544,9 +5588,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Blow Up",
+        "attribute": "PUR",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blow Up",
+        "attribute": "PUR",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blow Up",
+        "attribute": "PUR",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -1,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Hybrid",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260010199",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "FS",
@@ -2554,9 +5635,40 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Elusive Route Runner",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260018124",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -2594,9 +5706,76 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Field",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260019440",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -2624,9 +5803,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260021009",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -2634,9 +5850,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": -2,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "ACC",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "ACC",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Speedster",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260021426",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -2654,9 +5907,22 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": -1,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Dual Threat",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260023933",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "QB",
@@ -2664,9 +5930,58 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -1,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Field",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260024697",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -2674,9 +5989,40 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 1,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Speedster",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260024951",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -2694,9 +6040,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-260025270",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -2704,9 +6087,16 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "50/50",
+        "attribute": "SPC",
+        "distance": -1,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Contested Specialist",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-270001547",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -2724,9 +6114,34 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "ACC",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Speedster",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-270004131",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -2764,9 +6179,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "50/50",
+        "attribute": "SPC",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Contested Specialist",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-270007631",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -2775,6 +6227,18 @@
   {
     "ability_eligibility_confirmed": false,
     "ability_unlock_proximity": [
+      {
+        "ability": "50/50",
+        "attribute": "SPC",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "50/50",
+        "attribute": "SPC",
+        "distance": -2,
+        "tier": "SILVER"
+      },
       {
         "ability": "Recoup",
         "attribute": "TGH",
@@ -2791,9 +6255,64 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 7,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 4,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": -1,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": -2,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Bump and Run",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-270010689",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -2801,9 +6320,100 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 6,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 4,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 0,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 7,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 5,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 3,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 1,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 1,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -1,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-27001160",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -2831,9 +6441,106 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 9,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 6,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 3,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 1,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 5,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ZCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Jammer",
+        "attribute": "ZCV",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Bump and Run",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-270019620",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -2851,9 +6558,58 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Dot!",
+        "attribute": "DAC",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Dot!",
+        "attribute": "DAC",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": 5,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": 1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": -1,
+        "tier": "PLATINUM"
+      }
+    ],
     "archetype": "Dual Threat",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-270020185",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "QB",
@@ -2921,9 +6677,40 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Strong Grip",
+        "attribute": "STR",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 1,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Gritty Possession",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-270033169",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "TE",
@@ -2931,9 +6718,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 6,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 4,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 0,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "ACC",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Speedster",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-27019234",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -2961,9 +6785,112 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": 5,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": 4,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": 3,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": 1,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 11,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 8,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 5,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 1,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Strong Grip",
+        "attribute": "STR",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Strong Grip",
+        "attribute": "STR",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Strong Grip",
+        "attribute": "STR",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Workhorse",
+        "attribute": "TGH",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Workhorse",
+        "attribute": "TGH",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Workhorse",
+        "attribute": "TGH",
+        "distance": 1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Workhorse",
+        "attribute": "TGH",
+        "distance": -1,
+        "tier": "PLATINUM"
+      }
+    ],
     "archetype": "Gritty Possession",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-280001353",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "TE",
@@ -2991,9 +6918,70 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Double Dip",
+        "attribute": "DRR",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Elusive Route Runner",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-280004072",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -3001,9 +6989,82 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 5,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Field",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-280008662",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -3011,9 +7072,94 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 7,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 5,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 3,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 1,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -1,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-280008728",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -3051,9 +7197,64 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Workhorse",
+        "attribute": "TGH",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Workhorse",
+        "attribute": "TGH",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Workhorse",
+        "attribute": "TGH",
+        "distance": 1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Workhorse",
+        "attribute": "TGH",
+        "distance": -1,
+        "tier": "PLATINUM"
+      }
+    ],
     "archetype": "Contested Specialist",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-280020931",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -3061,9 +7262,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 8,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 5,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": 2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Outside Shield",
+        "attribute": "RBK",
+        "distance": -2,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 0,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Gritty Possession",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-280022318",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "TE",
@@ -3091,9 +7329,100 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "360",
+        "attribute": "SPM",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Arm Bar",
+        "attribute": "SFA",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Arm Bar",
+        "attribute": "SFA",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 7,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 5,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 3,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Recoup",
+        "attribute": "TGH",
+        "distance": 1,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Shifty",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Side Step",
+        "attribute": "JKM",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "East/West Playmaker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-280024922",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -3111,9 +7440,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Field",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-700018299",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -3121,9 +7487,82 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Field",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-700025936",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -3131,9 +7570,40 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Contested Specialist",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-700025946",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -3141,9 +7611,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Dot!",
+        "attribute": "DAC",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Extender",
+        "attribute": "BSK",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": 5,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": 1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Mobile Resistance",
+        "attribute": "TUP",
+        "distance": -1,
+        "tier": "PLATINUM"
+      }
+    ],
     "archetype": "Dual Threat",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-700026051",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "QB",
@@ -3151,9 +7658,88 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 6,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": -2,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Lay Out",
+        "attribute": "SPC",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Lay Out",
+        "attribute": "SPC",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Coverage Specialist",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-700026070",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "FS",
@@ -3161,9 +7747,58 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "STR",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "STR",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "STR",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Ball Security",
+        "attribute": "CAR",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Battering Ram",
+        "attribute": "TGH",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 6,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Contact Seeker",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-700026888",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "HB",
@@ -3201,9 +7836,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 5,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 5,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 1,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Contested Specialist",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-800007424",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -3232,6 +7904,12 @@
   {
     "ability_eligibility_confirmed": false,
     "ability_unlock_proximity": [
+      {
+        "ability": "50/50",
+        "attribute": "SPC",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
       {
         "ability": "Balanced",
         "attribute": "BTK",
@@ -3424,9 +8102,46 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Contested Specialist",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-801007424",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -3444,9 +8159,76 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Field",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-801022750",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -3455,6 +8237,12 @@
   {
     "ability_eligibility_confirmed": false,
     "ability_unlock_proximity": [
+      {
+        "ability": "50/50",
+        "attribute": "SPC",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
       {
         "ability": "Balanced",
         "attribute": "BTK",
@@ -3575,9 +8363,40 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -1,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Contested Specialist",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-802007424",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "WR",
@@ -3595,9 +8414,70 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Blanket Coverage",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "MCV",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Robber",
+        "attribute": "COD",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Field",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-802022750",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "CB",
@@ -3799,9 +8679,58 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Ballhawk",
+        "attribute": "ACC",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 4,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "House Call",
+        "attribute": "CTH",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Knockout",
+        "attribute": "ZCV",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Lay Out",
+        "attribute": "SPC",
+        "distance": 5,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Lay Out",
+        "attribute": "SPC",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Lay Out",
+        "attribute": "SPC",
+        "distance": 0,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Coverage Specialist",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-880026070",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "FS",
@@ -4109,9 +9038,64 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": -2,
+        "tier": "BRONZE"
+      }
+    ],
     "archetype": "Physical Route Runner",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-9007617",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "TE",
@@ -4229,9 +9213,70 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "50/50",
+        "attribute": "SPC",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": -1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 0,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 1,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Physical Route Runner",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-9018293",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "TE",
@@ -4549,9 +9594,58 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Balanced",
+        "attribute": "BTK",
+        "distance": -2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Cutter",
+        "attribute": "MRR",
+        "distance": 0,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": 1,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Downhill",
+        "attribute": "BTK",
+        "distance": -1,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 2,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Sure Hands",
+        "attribute": "CIT",
+        "distance": 1,
+        "tier": "SILVER"
+      }
+    ],
     "archetype": "Physical Route Runner",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-9023073",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "TE",
@@ -4639,9 +9733,70 @@
   },
   {
     "ability_eligibility_confirmed": false,
-    "ability_unlock_proximity": [],
+    "ability_unlock_proximity": [
+      {
+        "ability": "Magician",
+        "attribute": "SPD",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Magician",
+        "attribute": "SPD",
+        "distance": -2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Mobile Deadeye",
+        "attribute": "RUN",
+        "distance": 0,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Off Platform",
+        "attribute": "SAC",
+        "distance": 3,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Off Platform",
+        "attribute": "SAC",
+        "distance": 2,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Off Platform",
+        "attribute": "SAC",
+        "distance": 1,
+        "tier": "GOLD"
+      },
+      {
+        "ability": "Off Platform",
+        "attribute": "SAC",
+        "distance": -1,
+        "tier": "PLATINUM"
+      },
+      {
+        "ability": "Pull Down",
+        "attribute": "CAR",
+        "distance": 6,
+        "tier": "BRONZE"
+      },
+      {
+        "ability": "Pull Down",
+        "attribute": "CAR",
+        "distance": 3,
+        "tier": "SILVER"
+      },
+      {
+        "ability": "Pull Down",
+        "attribute": "CAR",
+        "distance": -1,
+        "tier": "GOLD"
+      }
+    ],
     "archetype": "Backfield Creator",
-    "architecture_confidence": "UNKNOWN",
+    "architecture_confidence": "PARTIAL",
     "card_id": "27-9033236",
     "moneyball_research_priority": "RESEARCH_ONLY",
     "position": "QB",

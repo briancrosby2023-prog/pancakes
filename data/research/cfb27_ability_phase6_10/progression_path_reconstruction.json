@@ -1,0 +1,1121 @@
+{
+  "chains": [
+    {
+      "chain_id": "QB-JH",
+      "observed_ovr_states": [
+        79,
+        81,
+        84,
+        86
+      ],
+      "player_or_entity": "Joey Harrington",
+      "position": "QB",
+      "state_vectors_complete": true,
+      "transition_ids": [
+        "QB-JH-79-81",
+        "QB-JH-81-84",
+        "QB-JH-84-86"
+      ]
+    },
+    {
+      "chain_id": "SAT-01",
+      "observed_ovr_states": [
+        80,
+        81,
+        82
+      ],
+      "player_or_entity": "Saturday Reset",
+      "position": "UNSPECIFIED",
+      "state_vectors_complete": false,
+      "transition_ids": [
+        "SAT-01",
+        "SAT-01B"
+      ]
+    },
+    {
+      "chain_id": "SAT-02",
+      "observed_ovr_states": [
+        80,
+        81,
+        82
+      ],
+      "player_or_entity": "Saturday Reset",
+      "position": "UNSPECIFIED",
+      "state_vectors_complete": false,
+      "transition_ids": [
+        "SAT-02",
+        "SAT-02B"
+      ]
+    },
+    {
+      "chain_id": "SAT-03",
+      "observed_ovr_states": [
+        80,
+        81,
+        82
+      ],
+      "player_or_entity": "Saturday Reset",
+      "position": "UNSPECIFIED",
+      "state_vectors_complete": false,
+      "transition_ids": [
+        "SAT-03",
+        "SAT-03B"
+      ]
+    },
+    {
+      "chain_id": "SAT-04",
+      "observed_ovr_states": [
+        80,
+        81,
+        82
+      ],
+      "player_or_entity": "Saturday Reset",
+      "position": "UNSPECIFIED",
+      "state_vectors_complete": false,
+      "transition_ids": [
+        "SAT-04",
+        "SAT-04B"
+      ]
+    },
+    {
+      "chain_id": "SAT-05",
+      "observed_ovr_states": [
+        80,
+        81,
+        82
+      ],
+      "player_or_entity": "Saturday Reset",
+      "position": "UNSPECIFIED",
+      "state_vectors_complete": false,
+      "transition_ids": [
+        "SAT-05",
+        "SAT-05B"
+      ]
+    },
+    {
+      "chain_id": "SAT-06",
+      "observed_ovr_states": [
+        80,
+        81,
+        82
+      ],
+      "player_or_entity": "Saturday Reset",
+      "position": "UNSPECIFIED",
+      "state_vectors_complete": false,
+      "transition_ids": [
+        "SAT-06",
+        "SAT-06B"
+      ]
+    },
+    {
+      "chain_id": "SAT-07",
+      "observed_ovr_states": [
+        80,
+        81,
+        82
+      ],
+      "player_or_entity": "Saturday Reset",
+      "position": "UNSPECIFIED",
+      "state_vectors_complete": false,
+      "transition_ids": [
+        "SAT-07",
+        "SAT-07B"
+      ]
+    },
+    {
+      "chain_id": "SAT-08",
+      "observed_ovr_states": [
+        80,
+        81,
+        82
+      ],
+      "player_or_entity": "Saturday Reset",
+      "position": "UNSPECIFIED",
+      "state_vectors_complete": false,
+      "transition_ids": [
+        "SAT-08",
+        "SAT-08B"
+      ]
+    },
+    {
+      "chain_id": "SAT-09",
+      "observed_ovr_states": [
+        80,
+        81,
+        82
+      ],
+      "player_or_entity": "Saturday Reset",
+      "position": "UNSPECIFIED",
+      "state_vectors_complete": false,
+      "transition_ids": [
+        "SAT-09",
+        "SAT-09B"
+      ]
+    },
+    {
+      "chain_id": "SAT-10",
+      "observed_ovr_states": [
+        80,
+        81,
+        82
+      ],
+      "player_or_entity": "Saturday Reset",
+      "position": "UNSPECIFIED",
+      "state_vectors_complete": false,
+      "transition_ids": [
+        "SAT-10",
+        "SAT-10B"
+      ]
+    },
+    {
+      "chain_id": "SAT-11",
+      "observed_ovr_states": [
+        80,
+        81,
+        82
+      ],
+      "player_or_entity": "Saturday Reset",
+      "position": "UNSPECIFIED",
+      "state_vectors_complete": false,
+      "transition_ids": [
+        "SAT-11",
+        "SAT-11B"
+      ]
+    }
+  ],
+  "cost_benefit": "UPGRADE_COSTS_UNAVAILABLE",
+  "path_caps": "NO_REPEATED_BOUNDARY_EVIDENCE",
+  "path_membership": "INSUFFICIENT_PATH_LABELED_REPLICATION",
+  "path_overlap": "INSUFFICIENT_PATH_LABELED_REPLICATION",
+  "selection_frequency": [
+    {
+      "attribute": "ACC",
+      "observations": 2,
+      "position": "QB"
+    },
+    {
+      "attribute": "AGI",
+      "observations": 2,
+      "position": "QB"
+    },
+    {
+      "attribute": "BSK",
+      "observations": 2,
+      "position": "QB"
+    },
+    {
+      "attribute": "DAC",
+      "observations": 2,
+      "position": "QB"
+    },
+    {
+      "attribute": "MAC",
+      "observations": 2,
+      "position": "QB"
+    },
+    {
+      "attribute": "PAC",
+      "observations": 2,
+      "position": "QB"
+    },
+    {
+      "attribute": "RUN",
+      "observations": 2,
+      "position": "QB"
+    },
+    {
+      "attribute": "SAC",
+      "observations": 2,
+      "position": "QB"
+    },
+    {
+      "attribute": "SPD",
+      "observations": 2,
+      "position": "QB"
+    },
+    {
+      "attribute": "STR",
+      "observations": 2,
+      "position": "QB"
+    },
+    {
+      "attribute": "THP",
+      "observations": 2,
+      "position": "QB"
+    },
+    {
+      "attribute": "TUP",
+      "observations": 2,
+      "position": "QB"
+    }
+  ],
+  "transitions": [
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0041",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "TAC",
+        "TGH",
+        "THP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0019"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0049",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "TAC",
+        "TGH",
+        "THP",
+        "TUP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0004"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0067",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0068"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0010",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "TAC",
+        "TGH",
+        "THP",
+        "TUP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0073"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0039",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "TAC",
+        "THP",
+        "TUP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0010"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0051",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "AWR",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "STR",
+        "TAC",
+        "TGH",
+        "THP",
+        "TUP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0008"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0046",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "AWR",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "STR",
+        "TAC",
+        "TGH",
+        "THP",
+        "TUP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0011"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0015",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "BSK",
+        "DAC",
+        "PAC",
+        "RUN",
+        "SPD",
+        "STR",
+        "TGH",
+        "THP",
+        "TUP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0006"
+    },
+    {
+      "classification": "CONFIRMED_PROGRESSION",
+      "lower_card_id": "QB-0013",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "STR",
+        "THP",
+        "TUP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [
+        "ACC",
+        "AGI",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "STR",
+        "THP",
+        "TUP"
+      ],
+      "threshold_relevant": [
+        "ACC",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "STR",
+        "THP",
+        "TUP"
+      ],
+      "upper_card_id": "QB-0003"
+    },
+    {
+      "classification": "CONFIRMED_PROGRESSION",
+      "lower_card_id": "QB-0038",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "STR",
+        "THP",
+        "TUP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [
+        "ACC",
+        "AGI",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "STR",
+        "THP",
+        "TUP"
+      ],
+      "threshold_relevant": [
+        "ACC",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "STR",
+        "THP",
+        "TUP"
+      ],
+      "upper_card_id": "QB-0013"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0054",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "AWR",
+        "BSK",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SPD",
+        "STR",
+        "TAC",
+        "TGH"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0038"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0074",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "DAC",
+        "SAC",
+        "THP",
+        "TUP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0054"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0018",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AWR",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "TAC",
+        "TGH",
+        "THP",
+        "TUP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0001"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0050",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "AWR",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "STR",
+        "TAC",
+        "TGH",
+        "THP",
+        "TUP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0007"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0047",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "BSK",
+        "DAC",
+        "PAC",
+        "RUN",
+        "SPD",
+        "TAC",
+        "THP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0024"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0027",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "AWR",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "STR",
+        "TAC",
+        "TGH",
+        "THP",
+        "TUP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0071"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "QB-0009",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "AWR",
+        "BSK",
+        "DAC",
+        "MAC",
+        "PAC",
+        "RUN",
+        "SAC",
+        "SPD",
+        "STR",
+        "TAC",
+        "TGH",
+        "THP",
+        "TUP"
+      ],
+      "path_label": null,
+      "position": "QB",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "QB-0072"
+    },
+    {
+      "classification": "UNRESOLVED",
+      "lower_card_id": "TE-0020",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "AGI",
+        "AWR",
+        "BTK",
+        "CAR",
+        "CIT",
+        "COD",
+        "CTH",
+        "DRR",
+        "IBL",
+        "JKM",
+        "JMP",
+        "LBK",
+        "MRR",
+        "PBF",
+        "PBK",
+        "PBP",
+        "RBF",
+        "RBK",
+        "RBP",
+        "RLS",
+        "SFA",
+        "SPC",
+        "SPD",
+        "SPM",
+        "SRR",
+        "STR",
+        "TRK"
+      ],
+      "path_label": null,
+      "position": "TE",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "TE-0011"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "TE-0030",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "BTK",
+        "CAR",
+        "CIT",
+        "COD",
+        "CTH",
+        "IBL",
+        "JKM",
+        "JMP",
+        "LBK",
+        "MRR",
+        "PBF",
+        "PBK",
+        "PBP",
+        "RBF",
+        "RBK",
+        "RBP",
+        "RLS",
+        "SFA",
+        "SPC",
+        "SPD",
+        "SPM",
+        "SRR",
+        "STR",
+        "TGH",
+        "TRK"
+      ],
+      "path_label": null,
+      "position": "TE",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "TE-0020"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "TE-0046",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AWR",
+        "CAR",
+        "CTH",
+        "LBK",
+        "PBF",
+        "PBK",
+        "PBP",
+        "RBF",
+        "RBK",
+        "RBP",
+        "SPC",
+        "SPD",
+        "SRR"
+      ],
+      "path_label": null,
+      "position": "TE",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "TE-0066"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "TE-0032",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "AWR",
+        "BCV",
+        "BTK",
+        "CAR",
+        "CIT",
+        "COD",
+        "CTH",
+        "DRR",
+        "IBL",
+        "JKM",
+        "JMP",
+        "LBK",
+        "MRR",
+        "PBF",
+        "PBK",
+        "PBP",
+        "RBF",
+        "RBK",
+        "RBP",
+        "RLS",
+        "SFA",
+        "SPC",
+        "SPD",
+        "SPM",
+        "SRR",
+        "STR",
+        "TGH",
+        "TRK"
+      ],
+      "path_label": null,
+      "position": "TE",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "TE-0003"
+    },
+    {
+      "classification": "UNRESOLVED",
+      "lower_card_id": "TE-0048",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "AWR",
+        "CIT",
+        "COD",
+        "CTH",
+        "LBK",
+        "MRR",
+        "RBF",
+        "SFA",
+        "SPC",
+        "SRR",
+        "STR",
+        "TRK"
+      ],
+      "path_label": null,
+      "position": "TE",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "TE-0038"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "TE-0006",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [],
+      "path_label": null,
+      "position": "TE",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "TE-0007"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "TE-0064",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "AWR",
+        "BCV",
+        "BTK",
+        "CAR",
+        "CIT",
+        "COD",
+        "CTH",
+        "DRR",
+        "JMP",
+        "MRR",
+        "RBK",
+        "RLS",
+        "SPC",
+        "SPD",
+        "SRR",
+        "TGH"
+      ],
+      "path_label": null,
+      "position": "TE",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "TE-0028"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "TE-0022",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "AWR",
+        "BCV",
+        "BTK",
+        "CAR",
+        "COD",
+        "CTH",
+        "IBL",
+        "LBK",
+        "MRR",
+        "RBF",
+        "RBK",
+        "RBP",
+        "RLS",
+        "SPD",
+        "TGH"
+      ],
+      "path_label": null,
+      "position": "TE",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "TE-0002"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "TE-0041",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "AWR",
+        "BCV",
+        "BTK",
+        "CAR",
+        "CIT",
+        "COD",
+        "CTH",
+        "DRR",
+        "IBL",
+        "JKM",
+        "JMP",
+        "LBK",
+        "MRR",
+        "PBF",
+        "PBK",
+        "PBP",
+        "RBF",
+        "RBK",
+        "RBP",
+        "RLS",
+        "SFA",
+        "SPC",
+        "SPD",
+        "SPM",
+        "SRR",
+        "STR",
+        "TGH",
+        "TRK"
+      ],
+      "path_label": null,
+      "position": "TE",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "TE-0008"
+    },
+    {
+      "classification": "UNRESOLVED",
+      "lower_card_id": "TE-0037",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "BCV",
+        "BTK",
+        "CAR",
+        "CIT",
+        "COD",
+        "CTH",
+        "DRR",
+        "IBL",
+        "JKM",
+        "JMP",
+        "LBK",
+        "MRR",
+        "PBF",
+        "PBK",
+        "PBP",
+        "RBF",
+        "RBK",
+        "RBP",
+        "RLS",
+        "SFA",
+        "SPC",
+        "SPD",
+        "SPM",
+        "SRR",
+        "STR",
+        "TRK"
+      ],
+      "path_label": null,
+      "position": "TE",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "TE-0013"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "TE-0049",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "AWR",
+        "CAR",
+        "CIT",
+        "CTH",
+        "IBL",
+        "LBK",
+        "MRR",
+        "PBF",
+        "PBK",
+        "PBP",
+        "RBF",
+        "RBK",
+        "RBP",
+        "RLS",
+        "SFA",
+        "SPC",
+        "SPD",
+        "SRR",
+        "STR",
+        "TGH",
+        "TRK"
+      ],
+      "path_label": null,
+      "position": "TE",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "TE-0015"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "TE-0031",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [
+        "ACC",
+        "AGI",
+        "BTK",
+        "CAR",
+        "CIT",
+        "COD",
+        "CTH",
+        "DRR",
+        "IBL",
+        "JKM",
+        "JMP",
+        "LBK",
+        "MRR",
+        "PBF",
+        "PBK",
+        "PBP",
+        "RBF",
+        "RBK",
+        "RBP",
+        "RLS",
+        "SFA",
+        "SPC",
+        "SPD",
+        "SPM",
+        "SRR",
+        "STR",
+        "TGH",
+        "TRK"
+      ],
+      "path_label": null,
+      "position": "TE",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "TE-0001"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "TE-0067",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [],
+      "path_label": null,
+      "position": "TE",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "TE-0068"
+    },
+    {
+      "classification": "CONTRADICTED",
+      "lower_card_id": "TE-0058",
+      "missing_changes_are_zero": false,
+      "observed_positive_deltas": [],
+      "path_label": null,
+      "position": "TE",
+      "selected_attributes": [],
+      "threshold_relevant": [],
+      "upper_card_id": "TE-0059"
+    }
+  ]
+}
