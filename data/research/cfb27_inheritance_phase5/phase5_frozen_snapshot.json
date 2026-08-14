@@ -1,0 +1,14 @@
+{
+  "card_ids_sha256": "68b73ff95726983339b6ad25a0279ca74d1f0f3749fa3099c32b2b2cd591ebfe",
+  "cutoff_date": "2026-08-14T02:00:00Z",
+  "input_sha256": {
+    "data/external/cfb27_ability_thresholds.json": "1d9e2550a32955beec93b8120cc6c3c450620ed6b6af3361444f89b2ac3065b9",
+    "data/external/cfb_fan_population_state.json": "c36a310b2790059612ec25e1530067645821447374680c91cfa812be792d155f",
+    "data/research/cfb27_inheritance_phase4/phase4_frozen_snapshot.json": "bbf2e9d02471ae7c56def8cc4d8864da68b4e8a28ecae3ac986a244d2366e789",
+    "data/research/cfb27_inheritance_phase4/phase4_summary.json": "735e50eb3a32c251422013525256ec30e572ee1e041b9eb8939c6c5297978c64",
+    "data/research/progression_audit/progression_inventory.json": "6138644c752ba452e390e997da5966d408aee050f967845165b264077f386cf7"
+  },
+  "no_retrospective_leakage": true,
+  "population_n": 435,
+  "source_commit": "49acdda"
+}

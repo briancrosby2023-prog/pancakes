@@ -102,4 +102,4 @@ def test_center_pdf_is_known_not_missing_and_remains_actionable(index) -> None:
     queue = index.queue["REC-SRC-C-RAW-003"]
     assert queue.status == "OPEN"
     assert queue.issue_type == "PARTIALLY_EXTRACTED"
-    assert index.audit()["open_reconciliation_count"] == 8
+    assert index.audit()["open_reconciliation_count"] == 9

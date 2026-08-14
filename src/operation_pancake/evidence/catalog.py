@@ -153,6 +153,29 @@ def build_evidence_index(root: Path) -> EvidenceIndex:
             provenance="HISTORICALLY_RECOVERED",
         )
     )
+    index.add_source(
+        SourceRecord(
+            source_id="SRC-CFB27-ABILITY-001",
+            source_name="CFB Labs CFB27 ability requirements",
+            original_filename="cfb27_ability_thresholds.json",
+            source_type="WEB",
+            category="CFB27_ABILITY_THRESHOLDS",
+            origin="EXTERNAL_WEB",
+            discovered_date="2026-08-13",
+            positions=("TE",),
+            item_count=170,
+            extraction_status="PARTIAL",
+            extraction_remaining=(
+                "Only four complete TE Vertical Threat rows are preserved. Acquire remaining "
+                "public rows without bypass and independently validate threshold records."
+            ),
+            validation_status="STRUCTURED_SECONDARY_UNCORROBORATED",
+            canonical_ingestion_status="RESEARCH_ONLY",
+            research_use_status="ABILITY_THRESHOLD_RESEARCH",
+            notes="https://www.cfblabs.com/ability-requirements",
+            provenance="EXTERNAL_REFERENCE",
+        )
+    )
 
     historical = json.loads((root / HISTORICAL_CENTER).read_text(encoding="utf-8"))
     for number, observation in enumerate(historical["center_comparison"], start=1):

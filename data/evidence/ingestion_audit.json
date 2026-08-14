@@ -4,7 +4,7 @@
   "extraction_status_counts": {
     "COMPLETE": 5,
     "NEEDS_REVIEW": 1,
-    "PARTIAL": 9,
+    "PARTIAL": 10,
     "UNPROCESSED": 1
   },
   "highest_priority_reconciliation": [
@@ -142,6 +142,19 @@
       "status": "OPEN"
     },
     {
+      "affected_id": "SRC-CFB27-ABILITY-001",
+      "affected_type": "source",
+      "created_at": "2026-08-13",
+      "issue_type": "PARTIALLY_EXTRACTED",
+      "item_id": "REC-SRC-CFB27-ABILITY-001",
+      "notes": "Only four complete TE Vertical Threat rows are preserved. Acquire remaining public rows without bypass and independently validate threshold records.",
+      "priority": "MEDIUM",
+      "resolution": null,
+      "resolved_at": null,
+      "source_id": "SRC-CFB27-ABILITY-001",
+      "status": "OPEN"
+    },
+    {
       "affected_id": "SRC-HIST-001",
       "affected_type": "source",
       "created_at": "2026-08-13",
@@ -233,7 +246,7 @@
       "status": "OPEN"
     }
   ],
-  "known_source_count": 15,
+  "known_source_count": 16,
   "manifest_ingestion": {
     "conflicts_preserved": 1,
     "existing_targets_merged": 1,
@@ -242,12 +255,13 @@
     "records_promoted": 0,
     "records_staged": 424
   },
-  "open_reconciliation_count": 20,
+  "open_reconciliation_count": 21,
   "positions_with_incomplete_ingestion": {
     "C": 1,
-    "QB": 1
+    "QB": 1,
+    "TE": 1
   },
-  "queue_before_manifest_ingestion": 8,
+  "queue_before_manifest_ingestion": 9,
   "research_artifacts_with_missing_sources": [],
   "staged_count": 0,
   "staged_promoted_count": 0

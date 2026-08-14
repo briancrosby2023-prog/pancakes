@@ -1,0 +1,659 @@
+{
+  "archetype_mapping_status": "UNSUPPORTED",
+  "calculated_status": "UNKNOWN_SCHEMA_DOES_NOT_EXPOSE_RUNTIME_SEMANTICS",
+  "cfb27_replacement_candidates": [],
+  "observations": {
+    "C27": [],
+    "M19": [
+      {
+        "enum": null,
+        "name": "OverallGrade0",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade1",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade2",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade3",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade4",
+        "type": "int"
+      }
+    ],
+    "M20": [
+      {
+        "enum": null,
+        "name": "OverallGrade0",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade1",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade2",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade3",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade4",
+        "type": "int"
+      }
+    ],
+    "M21": [
+      {
+        "enum": null,
+        "name": "OverallGrade0",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade1",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade2",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade3",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade4",
+        "type": "int"
+      }
+    ],
+    "M22": [
+      {
+        "enum": null,
+        "name": "OverallGrade0",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade1",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade2",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade3",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade4",
+        "type": "int"
+      }
+    ],
+    "M23": [
+      {
+        "enum": null,
+        "name": "OverallGrade0",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade1",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade2",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade3",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade4",
+        "type": "int"
+      }
+    ],
+    "M24": [
+      {
+        "enum": null,
+        "name": "OverallGrade0",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade1",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade2",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade3",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade4",
+        "type": "int"
+      }
+    ],
+    "M25": [
+      {
+        "enum": null,
+        "name": "OverallGrade0",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade1",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade2",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade3",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade4",
+        "type": "int"
+      }
+    ],
+    "M26": [
+      {
+        "enum": null,
+        "name": "OverallGrade0",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade1",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade2",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade3",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade4",
+        "type": "int"
+      }
+    ],
+    "M27": [
+      {
+        "enum": null,
+        "name": "OverallGrade0",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade1",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade2",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade3",
+        "type": "int"
+      },
+      {
+        "enum": null,
+        "name": "OverallGrade4",
+        "type": "int"
+      }
+    ]
+  },
+  "other_table_occurrences": [
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M19",
+      "table": "SalaryMetrics_GetMarketContractAnnualBonus"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M19",
+      "table": "SalaryMetrics_GetMarketContractAnnualSalary"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M19",
+      "table": "SalaryMetrics_GetMarketContractLength"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "M19",
+      "table": "PlayerGrades"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M20",
+      "table": "SalaryMetrics_GetMarketContractAnnualBonus"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M20",
+      "table": "SalaryMetrics_GetMarketContractAnnualSalary"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M20",
+      "table": "SalaryMetrics_GetMarketContractLength"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "M20",
+      "table": "PlayerGrades"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M21",
+      "table": "SalaryMetrics_GetMarketContractAnnualBonus"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M21",
+      "table": "SalaryMetrics_GetMarketContractAnnualSalary"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M21",
+      "table": "SalaryMetrics_GetMarketContractLength"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "M21",
+      "table": "PlayerGrades"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M22",
+      "table": "SalaryMetrics_GetMarketContractAnnualBonus"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M22",
+      "table": "SalaryMetrics_GetMarketContractAnnualSalary"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M22",
+      "table": "SalaryMetrics_GetMarketContractLength"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "M22",
+      "table": "PlayerGrades"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M23",
+      "table": "SalaryMetrics_GetMarketContractAnnualBonus"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M23",
+      "table": "SalaryMetrics_GetMarketContractAnnualSalary"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M23",
+      "table": "SalaryMetrics_GetMarketContractLength"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "M23",
+      "table": "ExternalGradeOverride"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "M23",
+      "table": "PlayerGrades"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M24",
+      "table": "SalaryMetrics_GetMarketContractAnnualBonus"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M24",
+      "table": "SalaryMetrics_GetMarketContractAnnualSalary"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M24",
+      "table": "SalaryMetrics_GetMarketContractLength"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "M24",
+      "table": "ExternalGradeOverride"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "M24",
+      "table": "PlayerGrades"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M25",
+      "table": "SalaryMetrics_GetMarketContractAnnualBonus"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M25",
+      "table": "SalaryMetrics_GetMarketContractAnnualSalary"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M25",
+      "table": "SalaryMetrics_GetMarketContractLength"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "M25",
+      "table": "ExternalGradeOverride"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "M25",
+      "table": "PlayerGrades"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M26",
+      "table": "SalaryMetrics_GetMarketContractAnnualBonus"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M26",
+      "table": "SalaryMetrics_GetMarketContractAnnualSalary"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M26",
+      "table": "SalaryMetrics_GetMarketContractLength"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "M26",
+      "table": "ExternalGradeOverride"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "M26",
+      "table": "PlayerGrades"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M27",
+      "table": "SalaryMetrics_GetMarketContractAnnualBonus"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M27",
+      "table": "SalaryMetrics_GetMarketContractAnnualSalary"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "M27",
+      "table": "SalaryMetrics_GetMarketContractLength"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "M27",
+      "table": "ExternalGradeOverride"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "M27",
+      "table": "PlayerGrades"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "C27",
+      "table": "SalaryMetrics_GetMarketContractAnnualBonus"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "C27",
+      "table": "SalaryMetrics_GetMarketContractAnnualSalary"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "PlayerGrades"
+      },
+      "game": "C27",
+      "table": "SalaryMetrics_GetMarketContractLength"
+    },
+    {
+      "field": {
+        "enum": null,
+        "name": "OverallGrade",
+        "type": "int"
+      },
+      "game": "C27",
+      "table": "PlayerGrades"
+    }
+  ],
+  "stored_in_player_schema": true
+}

@@ -1,0 +1,38 @@
+{
+  "edges": [
+    {
+      "confidence": "MODERATE",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "HAS_ARCHETYPE_THRESHOLD_CONTEXT",
+      "source": "TE",
+      "target": "TE::Vertical Threat"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Vertical Threat",
+      "target": "ACC"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Vertical Threat",
+      "target": "BTK"
+    },
+    {
+      "confidence": "MODERATE_UNCORROBORATED",
+      "evidence_type": "STRUCTURED_SECONDARY",
+      "provenance": "https://www.cfblabs.com/ability-requirements",
+      "relationship": "ABILITY_THRESHOLD_ATTRIBUTE",
+      "source": "TE::Vertical Threat",
+      "target": "TGH"
+    }
+  ],
+  "numeric_formula_weights_claimed": false,
+  "scope": "PARTIAL_TE_VERTICAL_THREAT_THRESHOLD_SUBGRAPH"
+}
