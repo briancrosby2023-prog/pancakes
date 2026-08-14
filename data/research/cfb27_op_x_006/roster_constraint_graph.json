@@ -1,0 +1,36 @@
+{
+  "edge_types": [
+    "ELIGIBLE_FOR",
+    "FITS",
+    "OCCUPIES",
+    "CONSTRAINED_BY",
+    "DEVELOPS_TO",
+    "OBSERVED_AT"
+  ],
+  "known_edges": [
+    {
+      "from": "Duce Robinson 88 LTD",
+      "to": "BND",
+      "type": "CONSTRAINED_BY"
+    },
+    {
+      "from": "Duce Robinson 88 LTD",
+      "to": "ACTIVE_THEME_TEAM",
+      "type": "DOES_NOT_FIT"
+    }
+  ],
+  "node_types": [
+    "PLAYER",
+    "POSITION",
+    "DEPTH_CHART_SLOT",
+    "SPECIALIST_SLOT",
+    "THEME_TEAM",
+    "CHEMISTRY",
+    "FORMATION",
+    "SCHEME",
+    "BND_STATUS",
+    "UPGRADE_STATUS",
+    "MARKET_STATUS"
+  ],
+  "unknown_nodes_allowed": true
+}

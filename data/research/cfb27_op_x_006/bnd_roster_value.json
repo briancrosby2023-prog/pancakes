@@ -1,0 +1,16 @@
+{
+  "components": [
+    "acquisition_cost",
+    "market_value",
+    "resale_value",
+    "quicksell_value",
+    "replacement_cost",
+    "roster_utility",
+    "opportunity_cost"
+  ],
+  "rules": [
+    "NEVER_RECOMMEND_SELL_WHEN_BND",
+    "BND_DOES_NOT_IMPLY_USEFUL"
+  ],
+  "unknown_to_zero": false
+}

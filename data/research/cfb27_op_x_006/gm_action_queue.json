@@ -1,0 +1,22 @@
+[
+  {
+    "action": "MOVE_TO_SPECIALIST",
+    "confidence": "HIGH_FOR_CONSTRAINT",
+    "cost": "UNKNOWN/NO_NEW_ACQUISITION",
+    "expected_benefit": "Retain high raw-quality BND utility without violating theme constraint",
+    "player": "Duce Robinson",
+    "priority": "HIGH",
+    "urgency": "CURRENT_ROSTER",
+    "why": "Known theme-team constraint blocks normal starter use; high observed route/possession ratings retain specialist potential and BND prevents sale."
+  },
+  {
+    "action": "COLLECT_MORE_DATA",
+    "confidence": "HIGH",
+    "cost": "UNKNOWN",
+    "expected_benefit": "Reduce Dynamic allocation uncertainty",
+    "player": "Junior Seau",
+    "priority": "HIGH_INFORMATION_VALUE",
+    "urgency": "BEFORE_NEXT_ROLL",
+    "why": "OP-X-005 remains exploratory"
+  }
+]

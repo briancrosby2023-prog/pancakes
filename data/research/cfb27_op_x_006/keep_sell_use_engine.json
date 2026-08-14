@@ -1,0 +1,66 @@
+{
+  "actions": [
+    "START",
+    "SPECIALIST",
+    "DEPTH",
+    "DEVELOP",
+    "KEEP",
+    "SELL",
+    "REPLACE",
+    "HOLD_FOR_MARKET",
+    "DO_NOT_ACQUIRE"
+  ],
+  "bnd_sell_guard": true,
+  "records": [
+    {
+      "acquisition_economics": "EXCELLENT_SUNK_OR_NEAR_ZERO_USER_ACQUISITION",
+      "bnd": true,
+      "card_version": "88 LTD",
+      "confidence": "HIGH_FOR_CONSTRAINT_EXPLORATORY_FOR_SPECIALIST_PACKAGE",
+      "evidence": "USER_SUPPLIED_AND_PUBLIC_CARD_VECTOR",
+      "exact_package": "UNKNOWN",
+      "normal_starter_status": "INELIGIBLE_BY_KNOWN_THEME_CONSTRAINT",
+      "player": "Duce Robinson",
+      "raw_card_quality": "HIGH",
+      "recommended_actions": [
+        "DO_NOT_START_NORMAL_THEME_SLOT",
+        "USE_AS_SPECIALIST_IF_FORMATION_ELIGIBLE",
+        "KEEP"
+      ],
+      "sell_recommendation": false,
+      "specialist_profile": {
+        "archetype": "Contested Specialist",
+        "card_id": "27-280020931",
+        "confidence": "STATISTICAL_SCREEN",
+        "key_attributes": {
+          "CIT": 86,
+          "CTH": 86,
+          "DRR": 90,
+          "MRR": 88,
+          "RLS": 90,
+          "SPC": 86,
+          "SRR": 91,
+          "TGH": 95
+        },
+        "limitations": [
+          "Statistical profile is not gameplay validation"
+        ],
+        "overall": 88,
+        "player": "Duce Robinson",
+        "position": "WR",
+        "profile_mean": 89,
+        "specialist_role": "large_possession_red_zone_wr",
+        "theme_team_status": "UNKNOWN",
+        "why": "Observed role-specific attribute profile"
+      },
+      "specialist_status": "CANDIDATE",
+      "theme_team_fit": "INCOMPATIBLE",
+      "what_would_change": [
+        "formation eligibility",
+        "specialist depth chart",
+        "theme-team rule change"
+      ],
+      "why": "Known theme-team constraint blocks normal starter use; high observed route/possession ratings retain specialist potential and BND prevents sale."
+    }
+  ]
+}
