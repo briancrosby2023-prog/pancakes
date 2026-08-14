@@ -53088,6 +53088,51 @@
       "target_type": "research_artifact"
     },
     {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-010-SEAU-GOLD-STANDARD-JSON-SRC-HIST-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-HIST-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-SEAU-GOLD-STANDARD-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-011-PROGRESSION-CHAINS-V2-JSON-SRC-HIST-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-HIST-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-PROGRESSION-CHAINS-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-011-PROGRESSION-CHAINS-V2-JSON-SRC-QB-002",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-QB-002",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-PROGRESSION-CHAINS-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-011-PROGRESSION-EVENTS-V2-JSON-SRC-HIST-001",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-HIST-001",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-PROGRESSION-EVENTS-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "link_id": "LINK-ART-DATA-RESEARCH-CFB27-OP-X-011-PROGRESSION-EVENTS-V2-JSON-SRC-QB-002",
+      "locator": null,
+      "notes": null,
+      "relationship": "CITED_OR_EMBEDDED_SOURCE",
+      "source_id": "SRC-QB-002",
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-PROGRESSION-EVENTS-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
       "link_id": "LINK-ART-DATA-RESEARCH-HISTORICAL-CENTER-ASSESSMENT-HISTORICAL-CENTER-POPULATION-RECONCILIATION-JSON-SRC-C-RAW-001",
       "locator": null,
       "notes": null,
@@ -66813,6 +66858,230 @@
       "referenced_card_ids": [],
       "research_only": true,
       "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-010-VALIDATION-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/archetype_effects.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-ARCHETYPE-EFFECTS-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/attribute_movement.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-ATTRIBUTE-MOVEMENT-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/current_reconstruction_v2.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-CURRENT-RECONSTRUCTION-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/database_health_v2.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-DATABASE-HEALTH-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/development_efficiency_v1.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-DEVELOPMENT-EFFICIENCY-V1-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/development_green_flag_rules_v1.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-DEVELOPMENT-GREEN-FLAG-RULES-V1-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/development_red_flag_rules_v1.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-DEVELOPMENT-RED-FLAG-RULES-V1-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/freeze.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-FREEZE-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/future_ingestion_contract.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-FUTURE-INGESTION-CONTRACT-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/model_readiness_v2.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-MODEL-READINESS-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/moneyball_development_queries.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-MONEYBALL-DEVELOPMENT-QUERIES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/next_sprint.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-NEXT-SPRINT-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/operational_development_policy.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-OPERATIONAL-DEVELOPMENT-POLICY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/ovr_transition_economy.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-OVR-TRANSITION-ECONOMY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/position_transition_economy.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-POSITION-TRANSITION-ECONOMY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/progression_chains_v2.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-PROGRESSION-CHAINS-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/progression_coverage_v2.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-PROGRESSION-COVERAGE-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/progression_data_loss_audit.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-PROGRESSION-DATA-LOSS-AUDIT-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/progression_events_v2.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-PROGRESSION-EVENTS-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/progression_evidence_inventory_v2.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-PROGRESSION-EVIDENCE-INVENTORY-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/progression_system_rules.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-PROGRESSION-SYSTEM-RULES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/reconstructability_v1.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-RECONSTRUCTABILITY-V1-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/repair_burden_v2.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-REPAIR-BURDEN-V2-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/secondary_gates.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-SECONDARY-GATES-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/system_transition_economy.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-SYSTEM-TRANSITION-ECONOMY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/upgrade_base_ranking_v1.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-UPGRADE-BASE-RANKING-V1-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/upgradeability_discovery.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-UPGRADEABILITY-DISCOVERY-JSON",
+      "target_type": "research_artifact"
+    },
+    {
+      "canonical": false,
+      "path": "data/research/cfb27_op_x_011/validation.json",
+      "referenced_card_ids": [],
+      "research_only": true,
+      "target_id": "ART-DATA-RESEARCH-CFB27-OP-X-011-VALIDATION-JSON",
       "target_type": "research_artifact"
     },
     {

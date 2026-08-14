@@ -215,6 +215,35 @@ def _seau(root: Path) -> dict:
                 "deterministic_or_random": "RANDOM_SELECTION_OBSERVED",
             }
         )
+    master = _load(root / "data/research/cfb27_op_x_005/dynamic_upgrade_event_master_v1.json")
+    premade = defaultdict(dict)
+    for row in master:
+        if str(row["upgrade_event"]).startswith("PREMADE_"):
+            premade[row["upgrade_event"]][row["attribute"]] = row["delta"]
+    reference_by_ovr = {
+        row["overall"]: row["state_id"]
+        for row in states
+        if row["state_type"] == "REFERENCE_VERSION"
+    }
+    for source_event, deltas in sorted(premade.items()):
+        _, from_ovr, to_ovr = source_event.split("_")
+        events.append(
+            {
+                "event_id": stable_id("event", family_id, source_event),
+                "card_id": family_id,
+                "from_state": reference_by_ovr[int(from_ovr)],
+                "to_state": reference_by_ovr[int(to_ovr)],
+                "from_ovr": int(from_ovr),
+                "to_ovr": int(to_ovr),
+                "attribute_deltas": dict(sorted(deltas.items())),
+                "system": "PREMADE_FIXED",
+                "tier": None,
+                "user_observed": True,
+                "source": "SRC-HIST-001",
+                "confidence": "VALIDATED",
+                "deterministic_or_random": "FIXED_OBSERVED",
+            }
+        )
     return {"card_family_id": family_id, "states": states, "events": events}
 
 

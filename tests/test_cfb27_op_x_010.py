@@ -52,7 +52,7 @@ def test_seau_is_one_family_with_multiple_states():
     seau = load("seau_gold_standard")
     assert len({row["card_id"] for row in seau["states"]}) == 1
     assert len(seau["states"]) >= 5
-    assert len(seau["events"]) == 4
+    assert len(seau["events"]) == 6
 
 
 def test_readiness_blocks_current_team_overclaim():

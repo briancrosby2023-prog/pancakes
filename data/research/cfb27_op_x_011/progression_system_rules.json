@@ -1,0 +1,27 @@
+{
+  "DYNAMIC": {
+    "events": 0,
+    "mechanics": "RESEARCH_HYPOTHESES_ONLY"
+  },
+  "EVO": {
+    "events": 4,
+    "fixed_random": "RANDOM_SELECTION_OBSERVED"
+  },
+  "FIXED_PROGRESSION": {
+    "events": 3,
+    "fixed_random": "FIXED_OBSERVED"
+  },
+  "PILLAR": {
+    "events": 0,
+    "mechanics": "UNKNOWN"
+  },
+  "PREMADE_FIXED": {
+    "events": 2,
+    "fixed_random": "FIXED_OBSERVED"
+  },
+  "SATURDAY_RESET": {
+    "events": 22,
+    "fixed_random": "RANDOM_OBSERVED",
+    "rerollable": true
+  }
+}

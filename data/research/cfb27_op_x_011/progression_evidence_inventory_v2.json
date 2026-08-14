@@ -1,0 +1,250 @@
+{
+  "manifest_records": [
+    {
+      "known_states": [
+        81,
+        84,
+        86,
+        87
+      ],
+      "player": "Junior Seau",
+      "position": "MLB",
+      "reason": "No complete before/after vectors in manifest record",
+      "record_id": "HIST-PROG-JUNIOR-SEAU",
+      "source_located": true,
+      "status": "HISTORICALLY_RECOVERED",
+      "unresolved_fields": [
+        "rating_vectors_81_84_86_87",
+        "comparison_vector_80"
+      ],
+      "usable_transition": false
+    },
+    {
+      "known_states": [
+        80,
+        83,
+        86
+      ],
+      "player": "Bo Jackson",
+      "position": "HB",
+      "reason": "No complete before/after vectors in manifest record",
+      "record_id": "HIST-PROG-BO-JACKSON",
+      "source_located": true,
+      "status": "HISTORICALLY_RECOVERED",
+      "unresolved_fields": [
+        "rating_vectors_80_83_86"
+      ],
+      "usable_transition": false
+    },
+    {
+      "known_states": [
+        81,
+        86,
+        87
+      ],
+      "player": "Chris Peal",
+      "position": "CB",
+      "reason": "No complete before/after vectors in manifest record",
+      "record_id": "HIST-PROG-CHRIS-PEAL",
+      "source_located": true,
+      "status": "HISTORICALLY_RECOVERED",
+      "unresolved_fields": [
+        "rating_vectors_81_86_87"
+      ],
+      "usable_transition": false
+    },
+    {
+      "known_states": [
+        83,
+        85,
+        86
+      ],
+      "player": "Peyton Bowen",
+      "position": "SS",
+      "reason": "No complete before/after vectors in manifest record",
+      "record_id": "HIST-PROG-PEYTON-BOWEN",
+      "source_located": true,
+      "status": "HISTORICALLY_RECOVERED",
+      "unresolved_fields": [
+        "rating_vectors_83_85_86"
+      ],
+      "usable_transition": false
+    },
+    {
+      "known_states": [
+        78,
+        80,
+        83,
+        85
+      ],
+      "player": "Michael Crabtree",
+      "position": "WR",
+      "reason": "No complete before/after vectors in manifest record",
+      "record_id": "HIST-PROG-MICHAEL-CRABTREE",
+      "source_located": true,
+      "status": "HISTORICALLY_RECOVERED",
+      "unresolved_fields": [
+        "rating_vectors_78_80_83_85"
+      ],
+      "usable_transition": false
+    },
+    {
+      "known_states": null,
+      "player": "Michael Crabtree",
+      "position": "WR",
+      "reason": "No complete before/after vectors in manifest record",
+      "record_id": "HIST-RESEARCH-CRABTREE-DELTAS",
+      "source_located": null,
+      "status": "HISTORICALLY_RECOVERED",
+      "unresolved_fields": [
+        "complete_observed_rating_vectors"
+      ],
+      "usable_transition": false
+    },
+    {
+      "known_states": [
+        80,
+        84,
+        86
+      ],
+      "player": "Joey Harrington",
+      "position": "QB",
+      "reason": "No complete before/after vectors in manifest record",
+      "record_id": "HIST-PROG-JOEY-HARRINGTON-OLD",
+      "source_located": true,
+      "status": "CONFLICTING_HISTORICAL_EVIDENCE",
+      "unresolved_fields": [
+        "historical_80_state_screenshot_cross_check"
+      ],
+      "usable_transition": false
+    },
+    {
+      "known_states": [
+        80,
+        85
+      ],
+      "player": null,
+      "position": "TE",
+      "reason": "No complete before/after vectors in manifest record",
+      "record_id": "RECOVERY-PROG-TE-80-85",
+      "source_located": false,
+      "status": "RECOVERY_TARGET",
+      "unresolved_fields": [
+        "player_identity",
+        "rating_vectors_80_85",
+        "source_images"
+      ],
+      "usable_transition": false
+    },
+    {
+      "known_states": [
+        80,
+        85
+      ],
+      "player": "Mike (historical identifier only)",
+      "position": "WR",
+      "reason": "No complete before/after vectors in manifest record",
+      "record_id": "RECOVERY-PROG-WR-MIKE-80-85",
+      "source_located": false,
+      "status": "RECOVERY_TARGET",
+      "unresolved_fields": [
+        "full_player_identity",
+        "rating_vectors_80_85",
+        "source_images"
+      ],
+      "usable_transition": false
+    },
+    {
+      "known_states": [
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83
+      ],
+      "player": null,
+      "position": "WR",
+      "reason": "No complete before/after vectors in manifest record",
+      "record_id": "RECOVERY-PROG-WR-76-83",
+      "source_located": false,
+      "status": "RECOVERY_TARGET",
+      "unresolved_fields": [
+        "player_identity",
+        "rating_vectors_76_through_83",
+        "source_images"
+      ],
+      "usable_transition": false
+    },
+    {
+      "known_states": [
+        85
+      ],
+      "player": null,
+      "position": "FB",
+      "reason": "No complete before/after vectors in manifest record",
+      "record_id": "RECOVERY-PROG-FB-TO-85",
+      "source_located": false,
+      "status": "RECOVERY_TARGET",
+      "unresolved_fields": [
+        "player_identity",
+        "lower_states",
+        "rating_vectors",
+        "source_images"
+      ],
+      "usable_transition": false
+    },
+    {
+      "known_states": [
+        85
+      ],
+      "player": null,
+      "position": "FS",
+      "reason": "No complete before/after vectors in manifest record",
+      "record_id": "RECOVERY-PROG-FS-TO-85",
+      "source_located": false,
+      "status": "RECOVERY_TARGET",
+      "unresolved_fields": [
+        "player_identity",
+        "lower_states",
+        "rating_vectors",
+        "source_images"
+      ],
+      "usable_transition": false
+    },
+    {
+      "known_states": [
+        85
+      ],
+      "player": null,
+      "position": null,
+      "reason": "No complete before/after vectors in manifest record",
+      "record_id": "RECOVERY-PROG-GUARD-TO-85",
+      "source_located": false,
+      "status": "RECOVERY_TARGET",
+      "unresolved_fields": [
+        "player_identity",
+        "guard_side",
+        "lower_states",
+        "rating_vectors",
+        "source_images"
+      ],
+      "usable_transition": false
+    }
+  ],
+  "recoverable_event_source": "dynamic_upgrade_event_master_v1.json",
+  "sources_searched": [
+    "canonical workbook",
+    "historical evidence manifest",
+    "progression audit",
+    "Saturday Reset artifacts",
+    "Seau OP-X-004/005 artifacts",
+    "QB Harrington artifacts",
+    "reset context audit",
+    "inheritance research",
+    "OP-X-001 through OP-X-010 artifacts",
+    "external staged/raw data"
+  ]
+}

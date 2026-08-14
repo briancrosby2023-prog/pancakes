@@ -1,0 +1,98 @@
+{
+  "comparison": {
+    "finding": "The 81 path spent allocation repairing a lower base; the premade 84 path began higher and its transitions touched every recorded rating group.",
+    "probability_claim": null,
+    "supported": true
+  },
+  "seau_81_path": {
+    "allocated_points": 59,
+    "allocation": {
+      "1": {
+        "CTH": 6,
+        "SPD": 7,
+        "STR": 5
+      },
+      "2": {
+        "ACC": 3,
+        "POW": 4
+      },
+      "3": {
+        "ACC": 3,
+        "AWR": 3,
+        "BSH": 2,
+        "PRS": 7,
+        "SPD": 3
+      },
+      "4": {
+        "AGI": 2,
+        "COD": 2,
+        "CTH": 8,
+        "PRC": 2,
+        "PUR": 2
+      }
+    },
+    "athletic_points": 20,
+    "ending_ovr": 86,
+    "foundation_verdict": "HIGH_REPAIR_BURDEN_OBSERVED",
+    "observed_events": 4,
+    "starting_ovr": 81
+  },
+  "seau_84_premade": {
+    "allocated_points": 66,
+    "allocation": {
+      "PREMADE_84_86": {
+        "ACC": 2,
+        "AGI": 2,
+        "AWR": 2,
+        "BSH": 2,
+        "CIT": 2,
+        "COD": 2,
+        "CTH": 2,
+        "FMV": 2,
+        "IBL": 2,
+        "JMP": 2,
+        "MCV": 2,
+        "PMV": 2,
+        "POW": 2,
+        "PRC": 2,
+        "PRS": 2,
+        "PUR": 2,
+        "SPC": 2,
+        "SPD": 2,
+        "STR": 2,
+        "TAK": 2,
+        "TGH": 2,
+        "ZCV": 2
+      },
+      "PREMADE_86_87": {
+        "ACC": 1,
+        "AGI": 1,
+        "AWR": 1,
+        "BSH": 1,
+        "CIT": 1,
+        "COD": 1,
+        "CTH": 1,
+        "FMV": 1,
+        "IBL": 1,
+        "JMP": 1,
+        "MCV": 1,
+        "PMV": 1,
+        "POW": 1,
+        "PRC": 1,
+        "PRS": 1,
+        "PUR": 1,
+        "SPC": 1,
+        "SPD": 1,
+        "STR": 1,
+        "TAK": 1,
+        "TGH": 1,
+        "ZCV": 1
+      }
+    },
+    "athletic_points": 15,
+    "ending_ovr": 87,
+    "foundation_verdict": "BROADER_HIGHER_STARTING_FOUNDATION",
+    "observed_events": 2,
+    "starting_ovr": 84
+  }
+}

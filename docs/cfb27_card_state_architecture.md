@@ -22,3 +22,11 @@ remain distinct.
 
 Run `uv run python scripts/cfb27_database_health.py` before downstream research. A model may proceed
 only when its readiness artifact lists the required fields as available for the requested scope.
+
+## Progression evidence
+
+OP-X-011 normalizes each observed upgrade as an append-only event. A valid event needs an
+identified card/family, ordered before and after states, exact observed deltas, system, source,
+and confidence. Historical claims without original vectors remain recovery targets instead of
+synthetic transitions. Generate analytics with `scripts/generate_cfb27_op_x_011.py`; validate a
+future observation with `scripts/ingest_progression_observation.py`.

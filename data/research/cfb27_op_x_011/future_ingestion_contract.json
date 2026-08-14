@@ -1,0 +1,15 @@
+{
+  "behavior": "validate, reject duplicate event IDs, append without overwrite",
+  "optional": [
+    "reroll_number"
+  ],
+  "required": [
+    "player",
+    "card",
+    "before_state",
+    "after_state",
+    "deltas",
+    "system",
+    "source"
+  ]
+}
