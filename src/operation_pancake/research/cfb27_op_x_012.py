@@ -311,6 +311,51 @@ def build_op_x_012(root: Path) -> dict:
     source_conflicts = {
         key: value for key, value in state.get("conflicts", {}).items() if key.startswith("V3:")
     }
+    bulk_conflicts = {
+        key: value
+        for key, value in state.get("conflicts", {}).items()
+        if key.startswith("OP-X-013:")
+    }
+    position_label_conflicts = sum(
+        1
+        for value in bulk_conflicts.values()
+        if value.get("identity_conflicts", {}).get("position")
+    )
+    highest_value_missing = [
+        "five current OL active vectors",
+        "card-level upgrade flags",
+        "ability slots",
+        "height/weight",
+        "card-level quicksell behavior",
+        "Saturday Reset identities",
+        "market observations",
+    ]
+    if partial:
+        if position_label_conflicts:
+            highest_value_missing.insert(
+                0,
+                (
+                    "position label reconciliation for "
+                    f"{position_label_conflicts} WILL vs ROLB listing labels"
+                ),
+            )
+        unresolved_partial = partial - position_label_conflicts
+        if unresolved_partial:
+            highest_value_missing.insert(
+                0,
+                f"structured vector promotion for {unresolved_partial} unresolved cards",
+            )
+    if len(cards) - _coverage(cards, "release_date") > 0:
+        highest_value_missing.insert(
+            len(highest_value_missing) - 3,
+            "release dates for remaining cards",
+        )
+    production_blockers = []
+    if partial:
+        production_blockers.append(f"{partial} partial vectors")
+    if validated_upgradeable == 0:
+        production_blockers.append("upgradeability evidence")
+    production_blockers.extend(["active states", "abilities", "market"])
     coverage = {
         "public_denominator": 8838,
         "source_claimed_count": None,
@@ -341,6 +386,8 @@ def build_op_x_012(root: Path) -> dict:
                 "enumeration": "ordinary public HTML",
                 "card_ids": True,
                 "listing_ratings": "five key fields",
+                "bulk_full_ratings": True,
+                "bulk_endpoint": "GET /api/27/player-items/?ids=...",
                 "detail_full_ratings": True,
                 "program": True,
                 "release_on_detail": True,
@@ -438,7 +485,11 @@ def build_op_x_012(root: Path) -> dict:
         "release_chronology_v3": {
             "cards_with_dates": coverage["release"],
             "cards_missing_dates": len(cards) - coverage["release"],
-            "status": "PARTIAL_DETAIL_PAGE_ONLY",
+            "status": (
+                "COMPLETE_FROM_STRUCTURED_BULK"
+                if coverage["release"] == len(cards)
+                else "PARTIAL_STRUCTURED_AND_DETAIL"
+            ),
         },
         "primary_stat_population_v3": {
             position: values["full_vectors"] for position, values in positions.items()
@@ -491,18 +542,9 @@ def build_op_x_012(root: Path) -> dict:
             "cards_missing_abilities": len(cards),
             "cards_missing_physical_metadata": len(cards),
             "current_roster_unresolved": 23,
-            "highest_value_missing": [
-                "five current OL active vectors",
-                "detail pages for high-OVR cards",
-                "card-level upgrade flags",
-                "release dates for listing-only cards",
-                "ability slots",
-                "height/weight",
-                "card-level quicksell behavior",
-                "Saturday Reset identities",
-                "market observations",
-                "complete public detail vectors",
-            ],
+            "position_label_conflicts": position_label_conflicts,
+            "bulk_vector_conflicts": len(bulk_conflicts),
+            "highest_value_missing": highest_value_missing,
         },
         "readiness_v3": {
             "NATIVE_DATABASE_READY": {"ready": True, "scope": "identity/program/OVR population"},
@@ -519,8 +561,8 @@ def build_op_x_012(root: Path) -> dict:
             "CURRENT_TEAM_READY": {"ready": False, "coverage": "1/24"},
             "MARKET_READY": {"ready": False, "coverage": 0},
             "PRODUCTION_READY": {
-                "ready": False,
-                "blockers": ["full vectors", "active states", "abilities", "market"],
+                "ready": not production_blockers,
+                "blockers": production_blockers,
             },
         },
         "user_input_v3": {
@@ -579,7 +621,13 @@ def build_op_x_012(root: Path) -> dict:
             "access_bypass": False,
             "destructive_canonical_changes": False,
         },
-        "next_decision": "DETAIL_PAGE_FULL_VECTOR_ACQUISITION_FOR_HIGH_VALUE_CARDS",
+        "next_decision": (
+            "RESOLVE_WILL_ROLB_POSITION_LABEL_CONFLICTS"
+            if partial and position_label_conflicts == partial
+            else "STRUCTURED_BULK_VECTOR_ACQUISITION_FOR_REMAINING_PARTIALS"
+            if partial
+            else "POPULATION_SCALE_PLAYER_RESEARCH"
+        ),
     }
 
 

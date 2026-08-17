@@ -21,7 +21,11 @@ def test_public_denominator_and_card_count_do_not_regress():
     assert coverage["unique_discovered"] == len(checkpoint["cards"])
     assert coverage["ingested"] == len(state["cards"])
     assert coverage["ingested"] > 435
-    assert coverage["full_native_vectors"] == 432
+    health = load("database_health_v3")
+    assert coverage["full_native_vectors"] == health["full_native_vectors"] == 8309
+    assert coverage["partial_vectors"] == health["partial_vectors"] == 529
+    assert health["cards_missing_full_vectors"] == 529
+    assert health["position_label_conflicts"] == 529
 
 
 def test_listing_vectors_remain_partial_and_unknown_is_not_zero():

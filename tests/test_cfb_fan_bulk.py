@@ -1,5 +1,6 @@
 import hashlib
 import json
+from collections import Counter
 from pathlib import Path
 
 from operation_pancake.acquisition.cfb_fan_bulk import (
@@ -86,11 +87,13 @@ def test_op_x_013_validated_artifacts_are_consistent():
         (root / "data/external/cfb_fan_full_vector_checkpoint.json").read_text()
     )
     assert len(state["cards"]) == 8838
-    assert sum(card["extraction_status"] == "COMPLETE" for card in state["cards"].values()) == 462
+    assert sum(card["extraction_status"] == "COMPLETE" for card in state["cards"].values()) == 8309
     assert len(validation) == 20
     assert {row["status"] for row in validation} == {"EXACT_EXISTING_FIELDS"}
-    assert len(pilot) == 30
-    assert {row["status"] for row in pilot} == {"PROMOTED_TO_COMPLETE"}
+    assert len(pilot) == 8376
+    pilot_status = Counter(row["status"] for row in pilot)
+    assert pilot_status["PROMOTED_TO_COMPLETE"] == 7847
+    assert pilot_status["PRESERVED_CONFLICT"] == 529
     batch = next(iter(checkpoint["batches"].values()))
     raw = (root / batch["snapshot"]).read_bytes()
     assert len(batch["requested_ids"]) == len(batch["returned_ids"]) == 50
