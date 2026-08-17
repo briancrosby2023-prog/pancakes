@@ -25,11 +25,18 @@ jobs:
       - name: Install project and development tools
         run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
 
+      - name: Show runner state
+        run: |
+          python --version
+          git rev-parse HEAD
+          git status --short
+          python -m pip show operation-pancake pytest ruff
+
       - name: Run Ruff
         run: python -m ruff check .
 
       - name: Run test suite
-        run: python -m pytest
+        run: python -m pytest -ra -vv
 
       - name: Verify Operation Pancake CLI
         run: operation-pancake --help
