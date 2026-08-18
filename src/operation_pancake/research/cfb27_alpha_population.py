@@ -25,10 +25,21 @@ def _load(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _structured_records(root: Path) -> dict[str, tuple[dict, str, str]]:
+def _structured_records(
+    root: Path, target_ids: set[str]
+) -> dict[str, tuple[dict, str, str]]:
+    """Load only structured snapshots capable of resolving target cards.
+
+    The full-vector checkpoint spans the entire population. Alpha reconciliation
+    only needs records still partial in persisted state, so parsing unrelated
+    snapshots makes the validation suite unnecessarily expensive.
+    """
     checkpoint = _load(root / "data/external/cfb_fan_full_vector_checkpoint.json")
     records: dict[str, tuple[dict, str, str]] = {}
     for batch in checkpoint.get("batches", {}).values():
+        requested = set(batch.get("requested_ids", ()))
+        if target_ids.isdisjoint(requested):
+            continue
         snapshot = batch.get("snapshot")
         if not snapshot:
             continue
@@ -36,14 +47,20 @@ def _structured_records(root: Path) -> dict[str, tuple[dict, str, str]]:
         if not path.exists():
             continue
         for card_id, record in parse_bulk_payload(path.read_bytes()).items():
-            records[card_id] = (record, snapshot, batch.get("retrieved_at") or "UNKNOWN")
+            if card_id in target_ids:
+                records[card_id] = (record, snapshot, batch.get("retrieved_at") or "UNKNOWN")
     return records
 
 
 def build_alpha_population(root: Path) -> dict:
     """Return Alpha-effective cards plus an auditable promotion summary."""
     state = _load(root / "data/external/cfb_fan_population_state.json")
-    structured = _structured_records(root)
+    target_ids = {
+        card_id
+        for card_id, card in state["cards"].items()
+        if card.get("extraction_status") != "COMPLETE"
+    }
+    structured = _structured_records(root, target_ids)
     cards: dict[str, dict] = {}
     promoted = 0
     residual_reasons: dict[str, int] = {}
