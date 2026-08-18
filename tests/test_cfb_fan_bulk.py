@@ -5,6 +5,7 @@ from pathlib import Path
 
 from operation_pancake.acquisition.cfb_fan_bulk import (
     CfbFanBulkAdapter,
+    cfb27_position,
     identity_conflicts,
     parse_bulk_payload,
     promote_record,
@@ -35,6 +36,29 @@ def test_parser_preserves_zero_and_unknown():
     assert ratings["SPD"] == 0
     assert ratings["AWR"] == 75
     assert "ACC" not in ratings
+
+
+def test_bulk_identity_prefers_cfb27_game_position():
+    mike = record(
+        position={"abbreviation": "MLB"},
+        gamePosition={"abbreviation": "MIKE"},
+    )
+    assert cfb27_position(mike) == "MIKE"
+    existing = {
+        "player_name": "Test Player",
+        "position": "MIKE",
+        "overall": 80,
+        "program": "Core",
+        "archetype": "Agile",
+    }
+    assert identity_conflicts(existing, mike) == {}
+    promoted = promote_record(
+        {"external_card_id": "27-123", "position": "MIKE", "extraction_status": "PARTIAL", "metadata": {}},
+        mike,
+        "raw.json",
+        "now",
+    )
+    assert promoted["position"] == "MIKE"
 
 
 def test_comparison_detects_identity_and_rating_conflicts():
