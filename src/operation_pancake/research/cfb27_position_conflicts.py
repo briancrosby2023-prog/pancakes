@@ -1,13 +1,15 @@
-"""Forensic classification for CFB27 structured-ingestion position conflicts.
+"""Forensic classification for CFB27 structured-ingestion position labels.
 
-The audit is deliberately non-destructive: source labels are preserved and no
-position aliases are applied to canonical records.  It exists to determine
-whether an alias is scientifically justified before normalization is allowed.
+Operation Pancake Alpha treats the CFB27/CFB.FAN listing label as canonical.
+Structured/secondary position nomenclature is retained as provenance but does
+not by itself block a valid CFB.FAN rating vector.
 """
 
 from __future__ import annotations
 
 from collections import Counter
+
+from operation_pancake.research.cfb27_alpha_policy import alpha_policy_metadata
 
 
 def _pair(conflict: dict) -> tuple[str, str] | None:
@@ -22,7 +24,7 @@ def _pair(conflict: dict) -> tuple[str, str] | None:
 
 
 def classify_conflict(conflict: dict) -> str:
-    """Classify evidence without declaring any taxonomy pair equivalent."""
+    """Classify conflicts under the Alpha canonical-source policy."""
     identities = conflict.get("identity_conflicts", {})
     ratings = conflict.get("rating_conflicts", {})
     pair = _pair(conflict)
@@ -31,11 +33,11 @@ def classify_conflict(conflict: dict) -> str:
     other_identity = {key: value for key, value in identities.items() if key != "position"}
     if other_identity or ratings:
         return "POSITION_PLUS_OTHER_CONFLICT"
-    return "POSITION_ONLY_ALIAS_CANDIDATE"
+    return "SECONDARY_POSITION_NON_BLOCKING"
 
 
 def audit_position_conflicts(state: dict) -> dict:
-    """Summarize OP-X-013 conflicts while preserving every original label."""
+    """Summarize OP-X-013 conflicts without rewriting original evidence."""
     conflicts = {
         key: value
         for key, value in state.get("conflicts", {}).items()
@@ -59,24 +61,26 @@ def audit_position_conflicts(state: dict) -> dict:
             rating_conflict_cards += 1
 
     pair_rows = [
-        {"existing": existing, "structured": structured, "count": count}
+        {"canonical": existing, "secondary": structured, "count": count}
         for (existing, structured), count in sorted(
             pairs.items(), key=lambda item: (-item[1], item[0][0], item[0][1])
         )
     ]
-    position_only = classes["POSITION_ONLY_ALIAS_CANDIDATE"]
+    non_blocking = classes["SECONDARY_POSITION_NON_BLOCKING"]
     return {
+        "alpha_policy": alpha_policy_metadata(),
         "total_op_x_013_conflicts": len(conflicts),
         "position_conflict_cards": position_conflict_cards,
         "classification_counts": dict(sorted(classes.items())),
         "position_pairs": pair_rows,
         "other_identity_conflict_fields": dict(sorted(other_identity_fields.items())),
         "rating_conflict_cards": rating_conflict_cards,
-        "position_only_alias_candidates": position_only,
-        "all_conflicts_position_only": bool(conflicts) and position_only == len(conflicts),
-        "normalization_decision": "PRESERVE_SOURCE_LABELS_PENDING_REVIEW",
+        "secondary_position_non_blocking": non_blocking,
+        "all_conflicts_position_only": bool(conflicts) and non_blocking == len(conflicts),
+        "alpha_decision": "CFB_FAN_CFB27_POSITION_CANONICAL",
         "evidence_rule": (
-            "A position-only mismatch is an alias candidate, not proof of equivalence; "
-            "canonical normalization requires pair-level source review."
+            "Preserve the CFB.FAN/CFB27 listing position as canonical; retain a different "
+            "structured position label as provenance only. Other identity or rating conflicts "
+            "remain blocking and must be investigated separately."
         ),
     }
