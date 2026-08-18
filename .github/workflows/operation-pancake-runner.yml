@@ -42,30 +42,18 @@ jobs:
       - name: Run Ruff
         run: python -m ruff check .
 
-      - name: Derive Alpha readiness
+      - name: Derive Alpha diagnostics
         run: |
           python scripts/generate_cfb27_alpha_readiness.py
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          p = json.loads(Path('data/research/cfb27_alpha/readiness.json').read_text())
-          print(json.dumps({
-              'alpha_population': p['alpha_population'],
-              'formula_eligibility': p['formula_eligibility'],
-              'focus_position_readiness': p['focus_position_readiness'],
-              'natural_experiment_inventory': {
-                  'same_ovr_archetype_cells': p['natural_experiment_inventory']['same_ovr_archetype_cells'],
-                  'pairwise_comparisons': p['natural_experiment_inventory']['pairwise_comparisons'],
-                  'richest_cells': p['natural_experiment_inventory']['richest_cells'][:10],
-              },
-          }, indent=2, sort_keys=True))
-          PY
+          python scripts/inspect_cfb27_v3_checkpoint.py
 
-      - name: Publish Alpha readiness
+      - name: Publish Alpha diagnostics
         uses: actions/upload-artifact@v4
         with:
-          name: cfb27-alpha-readiness
-          path: data/research/cfb27_alpha/readiness.json
+          name: cfb27-alpha-diagnostics
+          path: |
+            data/research/cfb27_alpha/readiness.json
+            data/research/cfb27_alpha/v3_checkpoint_summary.json
 
       - name: Run test suite
         run: python -m pytest -ra -vv
