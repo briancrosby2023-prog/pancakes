@@ -53,7 +53,12 @@ def test_bulk_identity_prefers_cfb27_game_position():
     }
     assert identity_conflicts(existing, mike) == {}
     promoted = promote_record(
-        {"external_card_id": "27-123", "position": "MIKE", "extraction_status": "PARTIAL", "metadata": {}},
+        {
+            "external_card_id": "27-123",
+            "position": "MIKE",
+            "extraction_status": "PARTIAL",
+            "metadata": {},
+        },
         mike,
         "raw.json",
         "now",
