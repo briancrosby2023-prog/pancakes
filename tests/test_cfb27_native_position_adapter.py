@@ -17,7 +17,7 @@ def test_cfb_fan_html_parser_preserves_cfb27_native_defensive_positions():
     for position in ("SAM", "MIKE", "WILL", "LEDG", "REDG", "DT", "CB", "FS", "SS"):
         card = parse_player_page(
             _page(position),
-            f"https://cfb.fan/players/123-test-player/27-456/",
+            "https://cfb.fan/players/123-test-player/27-456/",
             "2026-08-18T00:00:00Z",
             "fixture.html",
         )
