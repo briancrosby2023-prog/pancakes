@@ -47,13 +47,18 @@ jobs:
           python scripts/generate_cfb27_alpha_readiness.py
           python scripts/inspect_cfb27_v3_checkpoint.py
 
-      - name: Publish Alpha diagnostics
+      - name: Execute E.14 discovery
+        run: python scripts/run_cfb27_e14.py
+
+      - name: Publish research diagnostics
         uses: actions/upload-artifact@v4
         with:
-          name: cfb27-alpha-diagnostics
+          name: cfb27-research-diagnostics
           path: |
             data/research/cfb27_alpha/readiness.json
             data/research/cfb27_alpha/v3_checkpoint_summary.json
+            data/research/cfb27_e14/execution_discovery.json
+          if-no-files-found: error
 
       - name: Run test suite
         run: |
