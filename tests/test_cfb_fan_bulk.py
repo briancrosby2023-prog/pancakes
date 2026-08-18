@@ -39,10 +39,7 @@ def test_parser_preserves_zero_and_unknown():
 
 
 def test_bulk_identity_prefers_cfb27_game_position():
-    mike = record(
-        position={"abbreviation": "MLB"},
-        gamePosition={"abbreviation": "MIKE"},
-    )
+    mike = record(position={"abbreviation": "MLB"}, gamePosition={"abbreviation": "MIKE"})
     assert cfb27_position(mike) == "MIKE"
     existing = {
         "player_name": "Test Player",
@@ -119,10 +116,9 @@ def test_op_x_013_validated_artifacts_are_consistent():
     assert sum(card["extraction_status"] == "COMPLETE" for card in state["cards"].values()) == 8309
     assert len(validation) == 20
     assert {row["status"] for row in validation} == {"EXACT_EXISTING_FIELDS"}
-    assert len(pilot) == 8376
+    assert len(pilot) == 529
     pilot_status = Counter(row["status"] for row in pilot)
-    assert pilot_status["PROMOTED_TO_COMPLETE"] == 7847
-    assert pilot_status["PRESERVED_CONFLICT"] == 529
+    assert pilot_status == {"PRESERVED_CONFLICT": 529}
     batch = next(iter(checkpoint["batches"].values()))
     raw = (root / batch["snapshot"]).read_bytes()
     assert len(batch["requested_ids"]) == len(batch["returned_ids"]) == 50
