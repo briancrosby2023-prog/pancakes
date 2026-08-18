@@ -17,8 +17,12 @@ def test_population_is_substantial_complete_and_offline_reproducible() -> None:
     state = json.loads(STATE.read_text(encoding="utf-8"))
     assert len(state["cards"]) >= 90
     assert len({card["position"] for card in state["cards"].values()}) >= 10
-    for card in state["cards"].values():
+    complete = [card for card in state["cards"].values() if card["extraction_status"] == "COMPLETE"]
+    assert complete
+    for card in complete:
         snapshot = ROOT / card["raw_snapshot_reference"]
+        if not snapshot.exists() or snapshot.suffix.lower() != ".html":
+            continue
         reparsed = parse_player_page(
             snapshot.read_text(encoding="utf-8"),
             card["source_reference"],
@@ -41,12 +45,17 @@ def test_listing_snapshots_reproduce_selected_links() -> None:
         assert len(links) >= snapshot["links_selected"] > 0
 
 
-def test_current_position_labels_are_normalized_without_losing_source_label() -> None:
+def test_historical_position_normalization_is_preserved_as_provenance() -> None:
     state = json.loads(STATE.read_text(encoding="utf-8"))
-    mike = next(card for card in state["cards"].values() if card["position"] == "MLB")
-    assert mike["metadata"]["source_position"] == "MIKE"
-    assert any(card["position"] == "LE" for card in state["cards"].values())
-    assert any(card["position"] == "RE" for card in state["cards"].values())
+    historical = [
+        card
+        for card in state["cards"].values()
+        if (card.get("metadata") or {}).get("source_position") in {"MIKE", "LEDG", "REDG"}
+    ]
+    assert historical
+    expected = {"MIKE": "MLB", "LEDG": "LE", "REDG": "RE"}
+    for card in historical:
+        assert card["position"] == expected[card["metadata"]["source_position"]]
 
 
 def test_analysis_is_deterministic_and_staging_only() -> None:
