@@ -70,3 +70,21 @@ def test_generation_is_deterministic_and_source_conflicts_are_preserved():
     assert first["freeze"]["source_commit"] == "83d10a8"
     assert first["source_conflicts_v3"]["overwrite"] is False
     assert all(value is False for value in first["validation"].values())
+
+
+def test_all_persisted_artifacts_match_current_generator_output():
+    """Prevent a partial refresh from leaving OP-X-012 reports mutually inconsistent."""
+    generated = build_op_x_012(ROOT)
+    persisted_names = {path.stem for path in RESEARCH.glob("*.json")}
+
+    assert persisted_names == set(generated), (
+        "OP-X-012 artifact inventory differs from build_op_x_012 output; "
+        "run scripts/generate_cfb27_op_x_012.py and review the complete diff"
+    )
+
+    stale = [name for name, payload in generated.items() if load(name) != payload]
+    assert stale == [], (
+        "stale OP-X-012 artifacts: "
+        + ", ".join(stale)
+        + "; regenerate the entire artifact family before committing"
+    )
