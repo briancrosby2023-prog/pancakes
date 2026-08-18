@@ -32,11 +32,7 @@ def _text(value: str) -> str:
 
 
 def parse_player_page(html: str, source_url: str, retrieved_at: str, snapshot: str) -> ExternalCard:
-    """Parse fields exposed by one public CFB.FAN CFB27 player page.
-
-    Alpha preserves the position label displayed by CFB.FAN/CFB27. Historical
-    Madden/NFL aliases such as MLB/LE/RE are not canonicalized here.
-    """
+    """Parse fields exposed by one public CFB.FAN CFB27 player page."""
     title_match = re.search(r"<title>.*?(?P<overall>\d{2}) OVR - College Football 27", html)
     header_match = re.search(
         r'<h1 class="player-header__name[^>]*>(?P<header>.*?)'
@@ -103,59 +99,89 @@ def parse_player_page(html: str, source_url: str, retrieved_at: str, snapshot: s
         overall=overall,
         archetype=archetype,
         program=program,
-        team=_text(team_match.group(1)) if team_match else None,
-        date_added=_text(date_match.group(1)) if date_match else None,
-        ratings=ratings,
-        source_url=source_url,
-        retrieved_at=retrieved_at,
-        raw_snapshot=snapshot,
-        parser_version=PARSER_VERSION,
+        card_type="CUT",
+        team_school=_text(team_match.group(1)) or None if team_match else None,
+        release_date=_text(date_match.group(1)) or None if date_match else None,
+        displayed_ratings=ratings,
+        source_reference=source_url,
+        retrieval_timestamp=retrieved_at,
+        raw_snapshot_reference=snapshot,
+        extraction_status="COMPLETE" if ratings else "PARTIAL",
+        validation_status="STAGED_EXTERNAL_PUBLIC_SOURCE",
+        metadata={},
     )
 
 
-class CfbFanAdapter(ExternalCardAdapter):
-    """Optional live fetch plus deterministic saved-page parsing for CFB.FAN."""
+class CfbFanPublicAdapter(ExternalCardAdapter):
+    """Small-list public HTML adapter with no API or crawl discovery."""
 
     source_name = "CFB_FAN"
+    parser_version = PARSER_VERSION
+    access_policy = AccessPolicy(requests_per_minute=12, max_retries=2)
 
-    def __init__(self, snapshot_dir: Path | None = None) -> None:
-        self.snapshot_dir = snapshot_dir or Path("data/raw/cfb_fan")
+    def __init__(self, urls: list[str], cached_payloads: dict[str, bytes] | None = None) -> None:
+        self.urls = urls
+        self.cached_payloads = cached_payloads or {}
+        self._last_request = 0.0
 
-    def discover(self, query: str, policy: AccessPolicy) -> list[str]:
-        html = self._fetch(query, policy)
-        return parse_player_listing(html)
-
-    def fetch(self, external_id: str, policy: AccessPolicy) -> RawSnapshot:
-        url = external_id
-        html = self._fetch(url, policy)
-        snapshot_path = self.snapshot_dir / f"{int(time.time())}.html"
-        snapshot_path.parent.mkdir(parents=True, exist_ok=True)
-        snapshot_path.write_text(html, encoding="utf-8")
-        return RawSnapshot(
-            source=self.source_name,
-            source_url=url,
-            retrieved_at=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-            content=html,
-            snapshot_path=str(snapshot_path),
-        )
-
-    def parse(self, raw_snapshot: RawSnapshot) -> list[ExternalCard]:
+    def discover_cards(self):
         return [
-            parse_player_page(
-                raw_snapshot.content,
-                raw_snapshot.source_url,
-                raw_snapshot.retrieved_at,
-                raw_snapshot.snapshot_path,
-            )
+            {"external_card_id": url.rstrip("/").split("/")[-1], "source_url": url}
+            for url in self.urls
         ]
 
-    def _fetch(self, url: str, policy: AccessPolicy) -> str:
-        request = Request(url, headers={"User-Agent": policy.user_agent})
-        with urlopen(request, timeout=policy.timeout_seconds) as response:
-            payload = response.read()
-        return payload.decode("utf-8", errors="replace")
+    def fetch_card(self, discovery):
+        if discovery["source_url"] in self.cached_payloads:
+            return self.cached_payloads[discovery["source_url"]]
+        delay = 60 / self.access_policy.requests_per_minute
+        elapsed = time.monotonic() - self._last_request
+        if self._last_request and elapsed < delay:
+            time.sleep(delay - elapsed)
+        request = Request(
+            discovery["source_url"], headers={"User-Agent": "OperationPancakePilot/1.0"}
+        )
+        with urlopen(request, timeout=30) as response:
+            if response.status != 200:
+                raise PermissionError(f"HTTP {response.status}")
+            content = response.read()
+        self._last_request = time.monotonic()
+        return content
+
+    def parse_card(self, snapshot: RawSnapshot, content: bytes):
+        return {
+            "html": content.decode("utf-8"),
+            "source_url": snapshot.external_identifiers["source_url"],
+        }
+
+    def normalize_card(self, parsed, snapshot):
+        return parse_player_page(
+            parsed["html"], parsed["source_url"], snapshot.retrieved_at, snapshot.snapshot_location
+        )
 
 
-def save_manifest(path: Path, payload: dict[str, Any]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+def import_saved_discoveries(path: Path) -> list[dict[str, Any]]:
+    """Import historical offline discovery records with stable identifiers."""
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    discoveries = []
+    for item in payload:
+        if not item.get("season_id") or not item.get("card_id"):
+            raise ValueError("CFB.FAN discoveries require season_id and card_id.")
+        discoveries.append(
+            {
+                "external_source": "CFB_FAN",
+                "season_id": str(item["season_id"]),
+                "external_card_id": str(item["card_id"]),
+                "external_player_id": str(item["player_id"]) if item.get("player_id") else None,
+                "saved_page_reference": item["saved_page_reference"],
+                "discovered_at": item["discovered_at"],
+                "discovery_status": item.get("discovery_status", "DISCOVERED_OFFLINE"),
+            }
+        )
+    return sorted(discoveries, key=lambda item: (item["season_id"], item["external_card_id"]))
+
+
+class CfbFanAdapterNamespace:
+    """Marker for a future validated adapter; intentionally exposes no live acquisition."""
+
+    source_name = "CFB_FAN"
+    live_access_status = "BLOCKED_UNTIL_PUBLIC_INTERFACE_VALIDATED"
