@@ -1,7 +1,12 @@
+import json
+from pathlib import Path
+
 from operation_pancake.research.cfb27_position_conflicts import (
     audit_position_conflicts,
     classify_conflict,
 )
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def conflict(existing="WILL", structured="ROLB", **updates):
@@ -67,3 +72,15 @@ def test_audit_preserves_pair_direction_and_counts_other_conflicts():
         "POSITION_ONLY_ALIAS_CANDIDATE": 3,
     }
     assert audit["all_conflicts_position_only"] is False
+
+
+def test_current_529_conflicts_are_forensically_accounted_for():
+    state = json.loads((ROOT / "data/external/cfb_fan_population_state.json").read_text())
+    audit = audit_position_conflicts(state)
+    assert audit["total_op_x_013_conflicts"] == 529
+    assert audit["position_conflict_cards"] == 529
+    assert audit["position_only_alias_candidates"] == 529
+    assert audit["rating_conflict_cards"] == 0
+    assert audit["other_identity_conflict_fields"] == {}
+    assert audit["all_conflicts_position_only"] is True
+    assert sum(row["count"] for row in audit["position_pairs"]) == 529
