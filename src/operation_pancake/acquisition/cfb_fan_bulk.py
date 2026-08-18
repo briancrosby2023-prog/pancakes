@@ -11,64 +11,26 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 ENDPOINT = "https://cfb.fan/api/27/player-items/"
-PARSER_VERSION = "cfb-fan-player-items-v1"
+PARSER_VERSION = "cfb-fan-player-items-v2-cfb27-game-positions"
 REQUESTS_PER_MINUTE = 12
 
 ATTRIBUTE_ABBREVIATIONS = {
-    "acceleration": "ACC",
-    "agility": "AGI",
-    "awareness": "AWR",
-    "ballCarrierVision": "BCV",
-    "blockShedding": "BSH",
-    "breakSack": "BSK",
-    "breakTackle": "BTK",
-    "carrying": "CAR",
-    "catchInTraffic": "CIT",
-    "catching": "CTH",
-    "changeOfDirection": "COD",
-    "deepRouteRunning": "DRR",
-    "deepThrowAccuracy": "DAC",
-    "finesseMoves": "FMV",
-    "hitPower": "POW",
-    "impactBlocking": "IBL",
-    "injury": "INJ",
-    "jukeMove": "JKM",
-    "jumping": "JMP",
-    "kickAccuracy": "KAC",
-    "kickPower": "KPW",
-    "kickReturn": "RET",
-    "leadBlock": "LBK",
-    "manCoverage": "MCV",
-    "mediumRouteRunning": "MRR",
-    "mediumThrowAccuracy": "MAC",
-    "passBlock": "PBK",
-    "passBlockFinesse": "PBF",
-    "passBlockPower": "PBP",
-    "playAction": "PAC",
-    "playRecognition": "PRC",
-    "powerMoves": "PMV",
-    "press": "PRS",
-    "pursuit": "PUR",
-    "release": "RLS",
-    "runBlock": "RBK",
-    "runBlockFinesse": "RBF",
-    "runBlockPower": "RBP",
-    "shortRouteRunning": "SRR",
-    "shortThrowAccuracy": "SAC",
-    "spectacularCatch": "SPC",
-    "speed": "SPD",
-    "spinMove": "SPM",
-    "stamina": "STA",
-    "stiffArm": "SFA",
-    "strength": "STR",
-    "tackle": "TAK",
-    "throwAccuracy": "THA",
-    "throwPower": "THP",
-    "throwUnderPressure": "TUP",
-    "throwingOnTheRun": "RUN",
-    "toughness": "TGH",
-    "trucking": "TRK",
-    "zoneCoverage": "ZCV",
+    "acceleration": "ACC", "agility": "AGI", "awareness": "AWR",
+    "ballCarrierVision": "BCV", "blockShedding": "BSH", "breakSack": "BSK",
+    "breakTackle": "BTK", "carrying": "CAR", "catchInTraffic": "CIT",
+    "catching": "CTH", "changeOfDirection": "COD", "deepRouteRunning": "DRR",
+    "deepThrowAccuracy": "DAC", "finesseMoves": "FMV", "hitPower": "POW",
+    "impactBlocking": "IBL", "injury": "INJ", "jukeMove": "JKM", "jumping": "JMP",
+    "kickAccuracy": "KAC", "kickPower": "KPW", "kickReturn": "RET", "leadBlock": "LBK",
+    "manCoverage": "MCV", "mediumRouteRunning": "MRR", "mediumThrowAccuracy": "MAC",
+    "passBlock": "PBK", "passBlockFinesse": "PBF", "passBlockPower": "PBP",
+    "playAction": "PAC", "playRecognition": "PRC", "powerMoves": "PMV", "press": "PRS",
+    "pursuit": "PUR", "release": "RLS", "runBlock": "RBK", "runBlockFinesse": "RBF",
+    "runBlockPower": "RBP", "shortRouteRunning": "SRR", "shortThrowAccuracy": "SAC",
+    "spectacularCatch": "SPC", "speed": "SPD", "spinMove": "SPM", "stamina": "STA",
+    "stiffArm": "SFA", "strength": "STR", "tackle": "TAK", "throwAccuracy": "THA",
+    "throwPower": "THP", "throwUnderPressure": "TUP", "throwingOnTheRun": "RUN",
+    "toughness": "TGH", "trucking": "TRK", "zoneCoverage": "ZCV",
 }
 
 
@@ -86,6 +48,12 @@ def parse_bulk_payload(content: bytes) -> dict[str, dict]:
     return records
 
 
+def cfb27_position(record: dict) -> str | None:
+    """Return the game-facing CFB27 position, falling back only for old payloads."""
+    game = (record.get("gamePosition") or {}).get("abbreviation")
+    return game or (record.get("position") or {}).get("abbreviation")
+
+
 def ratings_from_record(record: dict) -> dict[str, int]:
     """Extract observed ratings; absent fields stay absent and zero is retained."""
     ratings = {}
@@ -97,10 +65,9 @@ def ratings_from_record(record: dict) -> dict[str, int]:
 
 
 def identity_conflicts(existing: dict, record: dict) -> dict[str, dict]:
-    position = (record.get("position") or {}).get("abbreviation")
     expected = {
         "player_name": " ".join(filter(None, (record.get("firstName"), record.get("lastName")))),
-        "position": position,
+        "position": cfb27_position(record),
         "overall": record.get("overall"),
         "program": (record.get("program") or {}).get("name"),
         "archetype": (record.get("archetype") or {}).get("nameWithoutPosition"),
@@ -136,6 +103,7 @@ def promote_record(existing: dict, record: dict, snapshot: str, retrieved_at: st
         retrieval_timestamp=retrieved_at,
         team_school=(record.get("team") or {}).get("school"),
         release_date=record.get("releaseDate"),
+        position=cfb27_position(record) or existing.get("position"),
     )
     promoted["metadata"] = {
         **existing.get("metadata", {}),
@@ -147,30 +115,13 @@ def promote_record(existing: dict, record: dict, snapshot: str, retrieved_at: st
 
 
 def priority_key(card: dict) -> tuple:
-    """Implement the packet's acquisition order without excluding any card."""
+    """Implement the packet's acquisition order using CFB27 terminology."""
     position = card.get("position")
     group = {
-        "LT": 3,
-        "LG": 3,
-        "C": 3,
-        "RG": 3,
-        "RT": 3,
-        "MLB": 4,
-        "MIKE": 4,
-        "LOLB": 4,
-        "ROLB": 4,
-        "LE": 5,
-        "RE": 5,
-        "LEDG": 5,
-        "REDG": 5,
-        "DT": 6,
-        "TE": 7,
-        "CB": 8,
-        "FS": 8,
-        "SS": 8,
-        "QB": 9,
-        "WR": 10,
-        "HB": 10,
+        "LT": 3, "LG": 3, "C": 3, "RG": 3, "RT": 3,
+        "SAM": 4, "MIKE": 4, "WILL": 4,
+        "LEDG": 5, "REDG": 5, "DT": 6, "TE": 7,
+        "CB": 8, "FS": 8, "SS": 8, "QB": 9, "WR": 10, "HB": 10,
     }.get(position, 11)
     high_ovr = 0 if (card.get("overall") or 0) >= 85 else 1
     upgradeable = 0 if card.get("metadata", {}).get("has_power_up") else 1
@@ -178,78 +129,62 @@ def priority_key(card: dict) -> tuple:
 
 
 class CfbFanBulkAdapter:
-    """Bounded, checkpointed client for public multi-ID responses."""
+    """Fetch deterministic ID batches, persist raw bytes, and resume from checkpoints."""
 
-    def __init__(
-        self, root: Path, batch_size: int = 50, fetcher: Callable[[str], bytes] | None = None
-    ):
+    def __init__(self, root: Path, fetcher: Callable[[str], bytes] | None = None) -> None:
         self.root = root
-        self.batch_size = batch_size
-        self.fetcher = fetcher or self._fetch
-        self.raw_root = root / "data/external/raw/cfb_fan_player_items"
+        self.raw_dir = root / "data/external/raw/cfb_fan_player_items"
         self.checkpoint_path = root / "data/external/cfb_fan_full_vector_checkpoint.json"
+        self.fetcher = fetcher or self._fetch
         self._last_request = 0.0
 
-    @staticmethod
-    def _fetch(url: str) -> bytes:
-        last_error = None
-        for attempt in range(3):
-            try:
-                request = Request(url, headers={"User-Agent": "OperationPancakeResearch/1.0"})
-                with urlopen(request, timeout=30) as response:
-                    if response.status != 200:
-                        raise RuntimeError(f"HTTP {response.status}")
-                    return response.read()
-            except Exception as exc:  # noqa: BLE001 - bounded retry, persisted by caller
-                last_error = exc
-                if attempt < 2:
-                    time.sleep(2**attempt)
-        raise RuntimeError(f"Bulk acquisition failed after 3 attempts: {last_error}")
+    def _fetch(self, url: str) -> bytes:
+        delay = 60 / REQUESTS_PER_MINUTE
+        elapsed = time.monotonic() - self._last_request
+        if self._last_request and elapsed < delay:
+            time.sleep(delay - elapsed)
+        request = Request(url, headers={"User-Agent": "OperationPancakePilot/1.0"})
+        with urlopen(request, timeout=30) as response:
+            if response.status != 200:
+                raise PermissionError(f"HTTP {response.status}")
+            content = response.read()
+        self._last_request = time.monotonic()
+        return content
 
-    def acquire(self, external_ids: list[str], retrieved_at: str) -> tuple[dict, dict[str, dict]]:
-        checkpoint = (
-            json.loads(self.checkpoint_path.read_text())
-            if self.checkpoint_path.exists()
-            else {"batches": {}, "failures": []}
+    def _checkpoint(self) -> dict:
+        if not self.checkpoint_path.exists():
+            return {"schema_version": 1, "batches": {}}
+        return json.loads(self.checkpoint_path.read_text(encoding="utf-8"))
+
+    def _save_checkpoint(self, checkpoint: dict) -> None:
+        self.checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
+        self.checkpoint_path.write_text(
+            json.dumps(checkpoint, indent=2, sort_keys=True) + "\n", encoding="utf-8"
         )
-        records = {}
-        self.raw_root.mkdir(parents=True, exist_ok=True)
-        for offset in range(0, len(external_ids), self.batch_size):
-            batch = external_ids[offset : offset + self.batch_size]
-            key = hashlib.sha256(",".join(batch).encode()).hexdigest()[:16]
-            if key in checkpoint["batches"]:
-                content = (self.root / checkpoint["batches"][key]["snapshot"]).read_bytes()
-            else:
-                numeric_ids = ",".join(x.removeprefix("27-") for x in batch)
-                url = f"{ENDPOINT}?{urlencode({'ids': numeric_ids})}"
-                try:
-                    delay = 60 / REQUESTS_PER_MINUTE
-                    elapsed = time.monotonic() - self._last_request
-                    if self._last_request and elapsed < delay:
-                        time.sleep(delay - elapsed)
-                    content = self.fetcher(url)
-                    self._last_request = time.monotonic()
-                except Exception as exc:
-                    checkpoint["failures"].append({"batch": batch, "error": str(exc)})
-                    self._save(checkpoint)
-                    continue
-                digest = hashlib.sha256(content).hexdigest()
-                relative = Path("data/external/raw/cfb_fan_player_items") / f"{digest}.json"
-                target = self.root / relative
-                if not target.exists():
-                    target.write_bytes(content)
-                parsed = parse_bulk_payload(content)
-                checkpoint["batches"][key] = {
-                    "requested_ids": batch,
-                    "returned_ids": sorted(parsed),
-                    "url": url,
-                    "sha256": digest,
-                    "snapshot": relative.as_posix(),
-                    "retrieved_at": retrieved_at,
-                }
-                self._save(checkpoint)
-            records.update(parse_bulk_payload(content))
-        return checkpoint, records
 
-    def _save(self, payload: dict) -> None:
-        self.checkpoint_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+    def acquire_batch(self, card_ids: list[str]) -> dict[str, dict]:
+        ids = sorted({card_id.removeprefix("27-") for card_id in card_ids}, key=int)
+        query = urlencode({"ids": ",".join(ids)})
+        url = f"{ENDPOINT}?{query}"
+        batch_key = hashlib.sha256(url.encode()).hexdigest()[:16]
+        checkpoint = self._checkpoint()
+        prior = checkpoint.get("batches", {}).get(batch_key)
+        if prior and (self.root / prior["snapshot"]).exists():
+            return parse_bulk_payload((self.root / prior["snapshot"]).read_bytes())
+        content = self.fetcher(url)
+        digest = hashlib.sha256(content).hexdigest()
+        snapshot = self.raw_dir / f"{digest}.json"
+        snapshot.parent.mkdir(parents=True, exist_ok=True)
+        if not snapshot.exists():
+            snapshot.write_bytes(content)
+        records = parse_bulk_payload(content)
+        checkpoint.setdefault("batches", {})[batch_key] = {
+            "url": url,
+            "requested_ids": [f"27-{item}" for item in ids],
+            "returned_ids": sorted(records),
+            "snapshot": str(snapshot.relative_to(self.root)).replace("\\", "/"),
+            "sha256": digest,
+            "retrieved_at": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),
+        }
+        self._save_checkpoint(checkpoint)
+        return records
