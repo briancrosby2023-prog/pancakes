@@ -25,20 +25,28 @@ def _load(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _bare_card_id(card_id: str) -> str:
+    """Normalize persisted ``CFB_FAN:27-*`` keys to bulk-endpoint ``27-*`` IDs."""
+    return card_id.split(":", 1)[-1]
+
+
 def _structured_records(
     root: Path, target_ids: set[str]
 ) -> dict[str, tuple[dict, str, str]]:
     """Load only structured snapshots capable of resolving target cards.
 
-    The full-vector checkpoint spans the entire population. Alpha reconciliation
-    only needs records still partial in persisted state, so parsing unrelated
-    snapshots makes the validation suite unnecessarily expensive.
+    Persisted population keys are source-qualified (``CFB_FAN:27-*``), while
+    the acquisition checkpoint and bulk parser use canonical endpoint IDs
+    (``27-*``). Reconcile those namespaces explicitly so the 529 Alpha
+    candidates can actually consume their already-snapshotted vectors.
     """
     checkpoint = _load(root / "data/external/cfb_fan_full_vector_checkpoint.json")
+    target_by_bare = {_bare_card_id(card_id): card_id for card_id in target_ids}
+    bare_targets = set(target_by_bare)
     records: dict[str, tuple[dict, str, str]] = {}
     for batch in checkpoint.get("batches", {}).values():
         requested = set(batch.get("requested_ids", ()))
-        if target_ids.isdisjoint(requested):
+        if bare_targets.isdisjoint(requested):
             continue
         snapshot = batch.get("snapshot")
         if not snapshot:
@@ -46,9 +54,14 @@ def _structured_records(
         path = root / snapshot
         if not path.exists():
             continue
-        for card_id, record in parse_bulk_payload(path.read_bytes()).items():
-            if card_id in target_ids:
-                records[card_id] = (record, snapshot, batch.get("retrieved_at") or "UNKNOWN")
+        for bare_id, record in parse_bulk_payload(path.read_bytes()).items():
+            persisted_id = target_by_bare.get(bare_id)
+            if persisted_id is not None:
+                records[persisted_id] = (
+                    record,
+                    snapshot,
+                    batch.get("retrieved_at") or "UNKNOWN",
+                )
     return records
 
 
