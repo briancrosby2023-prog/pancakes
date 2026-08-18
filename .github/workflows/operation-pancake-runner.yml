@@ -61,6 +61,12 @@ jobs:
           }, indent=2, sort_keys=True))
           PY
 
+      - name: Publish Alpha readiness
+        uses: actions/upload-artifact@v4
+        with:
+          name: cfb27-alpha-readiness
+          path: data/research/cfb27_alpha/readiness.json
+
       - name: Run test suite
         run: python -m pytest -ra -vv
 
