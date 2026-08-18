@@ -70,7 +70,8 @@ jobs:
           python scripts/generate_cfb27_alpha_readiness.py 2>&1 | tee diagnostics/alpha-readiness.log
           rc=${PIPESTATUS[0]}
           if [ $rc -eq 0 ]; then python scripts/inspect_cfb27_v3_checkpoint.py 2>&1 | tee diagnostics/alpha-checkpoint.log; rc=${PIPESTATUS[0]}; fi
-          sed -i "s/phase=RUFF/phase=ALPHA_INPUT/; s#command=python -m ruff check .#command=generate alpha readiness and inspect checkpoint#; s/exit_code=1/exit_code=$rc/; s/exit_code=0/exit_code=$rc/"
+          if [ $rc -ne 0 ]; then sed -i "s/classification=.*/classification=INPUT_FAILURE/; s/failed_component=.*/failed_component=Alpha input/" diagnostics/e14-status.txt; fi
+          sed -i "s/phase=RUFF/phase=ALPHA_INPUT/; s#command=python -m ruff check .#command=generate alpha readiness and inspect checkpoint#; s/exit_code=.*/exit_code=$rc/" diagnostics/e14-status.txt
           exit $rc
       - name: Execute E.14 evidence matrix
         id: e14
