@@ -21,18 +21,19 @@ def conflict(existing="WILL", structured="ROLB", **updates):
     return value
 
 
-def test_position_only_mismatch_is_candidate_not_auto_alias():
+def test_position_only_mismatch_is_non_blocking_under_alpha_policy():
     row = conflict()
-    assert classify_conflict(row) == "POSITION_ONLY_ALIAS_CANDIDATE"
+    assert classify_conflict(row) == "SECONDARY_POSITION_NON_BLOCKING"
     audit = audit_position_conflicts({"conflicts": {"OP-X-013:27-1": row}})
     assert audit["position_pairs"] == [
-        {"existing": "WILL", "structured": "ROLB", "count": 1}
+        {"canonical": "WILL", "secondary": "ROLB", "count": 1}
     ]
     assert audit["all_conflicts_position_only"] is True
-    assert audit["normalization_decision"] == "PRESERVE_SOURCE_LABELS_PENDING_REVIEW"
+    assert audit["alpha_decision"] == "CFB_FAN_CFB27_POSITION_CANONICAL"
+    assert audit["alpha_policy"]["canonical_taxonomy"] == "CFB27_GAME"
 
 
-def test_other_identity_or_rating_disagreement_blocks_alias_classification():
+def test_other_identity_or_rating_disagreement_remains_blocking():
     identity = conflict(
         identity_conflicts={
             "position": {"existing": "SAM", "structured": "LOLB"},
@@ -63,23 +64,23 @@ def test_audit_preserves_pair_direction_and_counts_other_conflicts():
     assert audit["total_op_x_013_conflicts"] == 4
     assert audit["position_conflict_cards"] == 3
     assert audit["position_pairs"] == [
-        {"existing": "WILL", "structured": "ROLB", "count": 2},
-        {"existing": "SAM", "structured": "LOLB", "count": 1},
+        {"canonical": "WILL", "secondary": "ROLB", "count": 2},
+        {"canonical": "SAM", "secondary": "LOLB", "count": 1},
     ]
     assert audit["other_identity_conflict_fields"] == {"program": 1}
     assert audit["classification_counts"] == {
         "NON_POSITION_CONFLICT": 1,
-        "POSITION_ONLY_ALIAS_CANDIDATE": 3,
+        "SECONDARY_POSITION_NON_BLOCKING": 3,
     }
     assert audit["all_conflicts_position_only"] is False
 
 
-def test_current_529_conflicts_are_forensically_accounted_for():
+def test_current_529_conflicts_are_non_blocking_position_only_for_alpha():
     state = json.loads((ROOT / "data/external/cfb_fan_population_state.json").read_text())
     audit = audit_position_conflicts(state)
     assert audit["total_op_x_013_conflicts"] == 529
     assert audit["position_conflict_cards"] == 529
-    assert audit["position_only_alias_candidates"] == 529
+    assert audit["secondary_position_non_blocking"] == 529
     assert audit["rating_conflict_cards"] == 0
     assert audit["other_identity_conflict_fields"] == {}
     assert audit["all_conflicts_position_only"] is True
