@@ -8,11 +8,44 @@ from pathlib import Path
 from operation_pancake.research.cfb27_alpha_population import build_alpha_population
 
 RESEARCH_RATINGS = {
-    "SPD", "ACC", "AGI", "COD", "STR", "AWR", "PRC", "BSH", "TAK", "PUR",
-    "POW", "MCV", "ZCV", "PRS", "PMV", "FMV", "PBK", "PBP", "PBF", "RBK",
-    "RBP", "RBF", "IBL", "LBK",
+    "SPD",
+    "ACC",
+    "AGI",
+    "COD",
+    "STR",
+    "AWR",
+    "PRC",
+    "BSH",
+    "TAK",
+    "PUR",
+    "POW",
+    "MCV",
+    "ZCV",
+    "PRS",
+    "PMV",
+    "FMV",
+    "PBK",
+    "PBP",
+    "PBF",
+    "RBK",
+    "RBP",
+    "RBF",
+    "IBL",
+    "LBK",
 }
-FOCUS_POSITIONS = {"C", "TE", "CB", "FS", "SS", "DT", "SAM", "MIKE", "WILL", "LEDG", "REDG"}
+FOCUS_POSITIONS = {
+    "C",
+    "TE",
+    "CB",
+    "FS",
+    "SS",
+    "DT",
+    "SAM",
+    "MIKE",
+    "WILL",
+    "LEDG",
+    "REDG",
+}
 
 
 def _formula_eligible(card: dict) -> tuple[bool, str]:
@@ -46,19 +79,30 @@ def _same_ovr_cells(cards: list[dict]) -> list[dict]:
         )
         spreads = {}
         for field in fields:
-            values = [card["displayed_ratings"][field] for card in members if field in card["displayed_ratings"]]
+            values = [
+                card["displayed_ratings"][field]
+                for card in members
+                if field in card["displayed_ratings"]
+            ]
             if len(values) >= 2:
                 spreads[field] = max(values) - min(values)
-        rows.append({
-            "position": position,
-            "archetype": archetype,
-            "ovr": ovr,
-            "cards": len(members),
-            "pairwise_comparisons": len(members) * (len(members) - 1) // 2,
-            "max_rating_spread": max(spreads.values()) if spreads else 0,
-            "largest_spreads": dict(sorted(spreads.items(), key=lambda item: (-item[1], item[0]))[:8]),
-        })
-    return sorted(rows, key=lambda row: (-row["pairwise_comparisons"], row["position"], row["ovr"]))
+        rows.append(
+            {
+                "position": position,
+                "archetype": archetype,
+                "ovr": ovr,
+                "cards": len(members),
+                "pairwise_comparisons": len(members) * (len(members) - 1) // 2,
+                "max_rating_spread": max(spreads.values()) if spreads else 0,
+                "largest_spreads": dict(
+                    sorted(spreads.items(), key=lambda item: (-item[1], item[0]))[:8]
+                ),
+            }
+        )
+    return sorted(
+        rows,
+        key=lambda row: (-row["pairwise_comparisons"], row["position"], row["ovr"]),
+    )
 
 
 def build_alpha_readiness(root: Path) -> dict:
@@ -101,8 +145,10 @@ def build_alpha_readiness(root: Path) -> dict:
             "readiness": readiness,
         }
 
-    focus = {position: by_position.get(position, {"readiness": "NOT_READY"}) for position in sorted(FOCUS_POSITIONS)}
-    richest = cells[:50]
+    focus = {
+        position: by_position.get(position, {"readiness": "NOT_READY"})
+        for position in sorted(FOCUS_POSITIONS)
+    }
     return {
         "alpha_population": population["summary"],
         "formula_eligibility": {
@@ -115,6 +161,6 @@ def build_alpha_readiness(root: Path) -> dict:
         "natural_experiment_inventory": {
             "same_ovr_archetype_cells": len(cells),
             "pairwise_comparisons": sum(row["pairwise_comparisons"] for row in cells),
-            "richest_cells": richest,
+            "richest_cells": cells[:50],
         },
     }
