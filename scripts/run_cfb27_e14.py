@@ -60,7 +60,11 @@ def _fingerprint(cards: list[dict]) -> str:
 
 def _family_inventory(cards: list[dict], rating: str, groups: tuple[set[str], ...]) -> dict:
     positions = set().union(*groups)
-    members = [card for card in cards if card["position"] in positions and rating in card["displayed_ratings"]]
+    members = [
+        card
+        for card in cards
+        if card["position"] in positions and rating in card["displayed_ratings"]
+    ]
     strata = Counter((card["position"], card["archetype"], card["overall"]) for card in members)
     by_ovr: dict[int, list[dict]] = defaultdict(list)
     for card in members:
@@ -83,7 +87,10 @@ def _family_inventory(cards: list[dict], rating: str, groups: tuple[set[str], ..
         "eligible_cards": len(members),
         "position_counts": dict(sorted(Counter(card["position"] for card in members).items())),
         "archetype_counts": dict(sorted(Counter(card["archetype"] for card in members).items())),
-        "ovr_range": [min(card["overall"] for card in members), max(card["overall"] for card in members)],
+        "ovr_range": [
+            min(card["overall"] for card in members),
+            max(card["overall"] for card in members),
+        ],
         "native_position_archetype_ovr_strata": len(strata),
         "same_ovr_cross_position_candidate_pairs": same_ovr,
         "adjacent_ovr_cross_position_candidate_pairs": adjacent_ovr,
@@ -94,11 +101,15 @@ def main() -> None:
     population = build_alpha_population(ROOT)
     all_cards = list(population["cards"].values())
     eligible = [card for card in all_cards if _eligible(card)]
+    input_source = (
+        "build_alpha_population(data/external/cfb_fan_population_state.json + "
+        "committed structured snapshots)"
+    )
     result = {
         "stage": "E.14_EXECUTION_DISCOVERY",
         "scientific_verdicts_emitted": False,
         "e15_started": False,
-        "input_source": "build_alpha_population(data/external/cfb_fan_population_state.json + committed structured snapshots)",
+        "input_source": input_source,
         "alpha_summary": population["summary"],
         "input_record_count": len(all_cards),
         "formula_eligible_record_count": len(eligible),
@@ -115,7 +126,8 @@ def main() -> None:
     print(f"E.14 input records: {len(all_cards)}; eligible: {len(eligible)}")
     for rating, family in result["component_families"].items():
         print(
-            f"E.14 {rating}: cards={family['eligible_cards']} positions={family['position_counts']} "
+            f"E.14 {rating}: cards={family['eligible_cards']} "
+            f"positions={family['position_counts']} "
             f"same_ovr_pairs={family['same_ovr_cross_position_candidate_pairs']} "
             f"adjacent_pairs={family['adjacent_ovr_cross_position_candidate_pairs']}"
         )
