@@ -38,7 +38,30 @@ jobs:
         run: python -m ruff check .
 
       - name: Run test suite
-        run: python -m pytest -ra -vv
+        id: pytest
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          python -m pytest -ra -vv 2>&1 | tee pytest-runner.log
+
+      - name: Persist pytest diagnostics
+        if: always()
+        run: |
+          {
+            echo '# Operation Pancake runner diagnostics'
+            echo
+            echo "Commit: $(git rev-parse HEAD)"
+            echo "Pytest outcome: ${{ steps.pytest.outcome }}"
+            echo
+            echo '```text'
+            cat pytest-runner.log
+            echo '```'
+          } > runner-diagnostics.md
 
       - name: Verify Operation Pancake CLI
+        if: steps.pytest.outcome == 'success'
         run: operation-pancake --help
+
+      - name: Fail validation if pytest failed
+        if: steps.pytest.outcome != 'success'
+        run: exit 1
