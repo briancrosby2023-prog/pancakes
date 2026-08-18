@@ -16,10 +16,17 @@ def _summary():
 def test_expanded_population_is_large_complete_and_staging_only() -> None:
     state = json.loads(STATE.read_text(encoding="utf-8"))
     summary = _summary()
+    cards = list(state["cards"].values())
+    complete = [card for card in cards if card["extraction_status"] == "COMPLETE"]
+    partial = [card for card in cards if card["extraction_status"] != "COMPLETE"]
     assert summary["population"]["total"] >= 250
     assert summary["center"]["ordinary_n"] > 8
     assert len(summary["population"]["positions"]) >= 15
-    assert all(len(card["displayed_ratings"]) >= 15 for card in state["cards"].values())
+    assert len(cards) == 8838
+    assert len(complete) == 8309
+    assert len(partial) == 529
+    assert all(len(card["displayed_ratings"]) >= 15 for card in complete)
+    assert all(0 < len(card["displayed_ratings"]) < 10 for card in partial)
     assert summary["canonical_modified"] is False
     assert summary["guessed_values"] is False
 
