@@ -17,6 +17,7 @@ from operation_pancake.acquisition.cfb_fan_bulk import (
     parse_bulk_payload,
     promote_record,
     rating_conflicts,
+    ratings_from_record,
 )
 
 
@@ -61,12 +62,7 @@ def build_alpha_population(root: Path) -> dict:
             continue
         record, snapshot, retrieved_at = payload
         identities = identity_conflicts(card, record)
-        ratings = rating_conflicts(card, {
-            key: value
-            for key, value in __import__(
-                "operation_pancake.acquisition.cfb_fan_bulk", fromlist=["ratings_from_record"]
-            ).ratings_from_record(record).items()
-        })
+        ratings = rating_conflicts(card, ratings_from_record(record))
         other_identity = {key: value for key, value in identities.items() if key != "position"}
         if other_identity:
             residual_reasons["OTHER_IDENTITY_CONFLICT"] = residual_reasons.get(
