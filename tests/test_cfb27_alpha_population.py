@@ -37,6 +37,13 @@ def test_promoted_alpha_cards_preserve_cfb27_position_and_provenance():
         assert len(card["displayed_ratings"]) >= 15
 
 
+def test_alpha_population_contains_no_legacy_defensive_position_labels():
+    alpha = build_alpha_population(ROOT)
+    positions = {card.get("position") for card in alpha["cards"].values()}
+    assert not positions.intersection({"MLB", "LOLB", "ROLB", "LE", "RE"})
+    assert {"SAM", "MIKE", "WILL", "LEDG", "REDG"}.issubset(positions)
+
+
 def test_formula_readiness_is_derived_from_alpha_population():
     readiness = build_alpha_readiness(ROOT)
     population = readiness["alpha_population"]
@@ -46,3 +53,5 @@ def test_formula_readiness_is_derived_from_alpha_population():
     assert readiness["natural_experiment_inventory"]["pairwise_comparisons"] > 0
     for position in ("C", "CB", "FS", "SS", "DT", "SAM", "MIKE", "WILL", "LEDG", "REDG"):
         assert position in readiness["focus_position_readiness"]
+        assert readiness["focus_position_readiness"][position]["readiness"] != "NOT_READY"
+        assert readiness["focus_extreme_contrasts"][position]
