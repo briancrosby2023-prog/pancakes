@@ -6,6 +6,11 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/op-x-013-historical-acquisition.yml'
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/op-x-013-trigger.txt'
 
 concurrency:
   group: op-x-013-historical-acquisition
