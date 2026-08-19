@@ -12,7 +12,21 @@ from typing import Iterable, Mapping
 from operation_pancake.research.cfb27_e15_formula import classify_deployment
 
 
-PRIORITY_POSITIONS = ("C", "TE", "CB", "FS", "SS", "DT", "MLB", "SAM", "WILL", "LE", "RE")
+# CFB27-native taxonomy is canonical. Do not silently collapse these positions
+# to legacy Madden/NFL aliases such as MLB/LE/RE.
+PRIORITY_POSITIONS = (
+    "C",
+    "TE",
+    "CB",
+    "FS",
+    "SS",
+    "DT",
+    "SAM",
+    "MIKE",
+    "WILL",
+    "LEDG",
+    "REDG",
+)
 
 
 def build_position_portfolio(cards: Iterable[Mapping]) -> dict:
