@@ -8,6 +8,8 @@ Starting checkpoint: `10297df6a580595e41321e275d0370888c6d72d9`
 
 Convert the validated CFB27 Alpha population and canonical E.14 cross-position evidence into reproducible position/archetype OVR formula candidates without reopening E.14 scientific work.
 
+The operating objective is decision-quality prediction, not mathematical perfection. A model that is sufficiently accurate and stable for GM decisions should be deployed and the research should advance rather than spending disproportionate effort chasing rare residuals.
+
 ## Authoritative inputs
 
 - `data/research/cfb27_alpha/readiness.json`
@@ -29,6 +31,17 @@ For each position/archetype with sufficient evidence:
 6. Score candidate formulas on exact displayed-OVR agreement, absolute error, boundary consistency, and outlier count.
 7. Test plausible rounding/quantization behavior separately from attribute weighting.
 8. Preserve multiple surviving hypotheses when the evidence is underdetermined. Do not label a formula solved solely because it fits the training population.
+9. Stop optimizing a position once its model is accurate and stable enough for actionable GM use unless residuals reveal a systematic error that materially affects decisions.
+
+## Practical prediction gates
+
+These are operating gates, not claims that a measured result has already been achieved:
+
+- `>=95%` exact displayed-OVR agreement with small, non-systematic residuals: **GM_READY**. Deploy and advance.
+- `90% to <95%`: **GM_USABLE** when misses are predominantly small and predictable. Deploy with confidence/limitation flags and advance unless a cheap material fix is evident.
+- `<90%`: **RESEARCH_REQUIRED**. Investigate the dominant systematic error before deployment.
+- Rare card families or special/reset/progression outliers must be classified separately when appropriate and must not hold the ordinary-card model hostage.
+- `100%` exact agreement is welcome but is not an E.15 requirement.
 
 ## Required model outputs
 
@@ -43,7 +56,8 @@ Each evaluated position/archetype must record:
 - mean and maximum absolute OVR error;
 - residual/outlier card IDs;
 - natural-experiment contradictions;
-- confidence classification: `EXACT`, `HIGH_CONFIDENCE`, `PROVISIONAL`, `UNDERDETERMINED`, or `REJECTED`.
+- confidence classification: `EXACT`, `HIGH_CONFIDENCE`, `PROVISIONAL`, `UNDERDETERMINED`, or `REJECTED`;
+- practical deployment classification: `GM_READY`, `GM_USABLE`, or `RESEARCH_REQUIRED`.
 
 ## First-pass priority
 
@@ -57,9 +71,10 @@ Start with positions where prior research and Alpha natural experiments provide 
 - Do not generalize Legendary/reset behavior to ordinary cards without independent evidence.
 - Keep source evidence, extraction state, model inference, and GM recommendation layers distinct.
 - A low-error regression is a candidate model, not proof of EA's implementation.
+- Scientific uncertainty may remain even after a model becomes practically useful; preserve that uncertainty rather than delaying deployment for perfection.
 
 ## Completion gate
 
-E.15 is complete only when the repository contains a deterministic formula-reconstruction artifact and implementation that can reproduce its candidate-model metrics from canonical inputs, with tests covering model scoring, rounding behavior, evidence preservation, and deterministic output.
+E.15 is complete when the repository contains deterministic formula-reconstruction artifacts and implementation that reproduce candidate-model metrics from canonical inputs, tests cover model scoring/rounding/evidence preservation/deterministic output, and the priority position models have reached practical GM deployment quality or have an explicit documented limitation. Exact reconstruction of every EA edge case is not required.
 
-Current state: E.15 protocol established; implementation/model fitting remains active.
+Current state: E.15 implementation/model fitting active; practical prediction gates adopted.
