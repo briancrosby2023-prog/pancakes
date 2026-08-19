@@ -2,9 +2,6 @@ name: OP-X-013 Historical Database Acquisition
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - 'agent/op-x-012-reconcile-artifacts'
 
 concurrency:
   group: op-x-013-historical-acquisition
@@ -46,5 +43,3 @@ jobs:
           name: op-x-013-cfb26-acquisition
           path: data/research/op_x_013
           if-no-files-found: warn
-
-# OP-X-013G dispatch marker: 2026-08-19T13:16-07:00
