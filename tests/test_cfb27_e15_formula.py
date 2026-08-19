@@ -1,6 +1,7 @@
 from operation_pancake.research.cfb27_e15_formula import (
     LinearFormulaCandidate,
     classify_candidate,
+    classify_deployment,
     compare_rounding_rules,
     rank_candidates,
     score_candidate,
@@ -28,6 +29,7 @@ def test_exact_candidate_scores_and_classifies_exact():
     assert result["exact_match_rate"] == 1.0
     assert result["mean_absolute_error"] == 0.0
     assert classify_candidate(result) == "EXACT"
+    assert classify_deployment(result) == "GM_READY"
 
 
 def test_missing_candidate_attribute_is_preserved_as_skip():
@@ -38,6 +40,7 @@ def test_missing_candidate_attribute_is_preserved_as_skip():
     assert result["scored_cards"] == 0
     assert result["skipped_cards"] == [{"card_id": "C-00", "missing_attributes": ["STR"]}]
     assert classify_candidate(result) == "UNDERDETERMINED"
+    assert classify_deployment(result) == "RESEARCH_REQUIRED"
 
 
 def test_rounding_rules_are_compared_without_changing_weights():
@@ -62,6 +65,43 @@ def test_contradiction_rejects_otherwise_exact_candidate():
     candidate = LinearFormulaCandidate("equal", (("AWR", 1), ("STR", 1)))
     result = score_candidate(candidate, _cards(), position="C", archetype="Test")
     assert classify_candidate(result, contradictions=1) == "REJECTED"
+
+
+def test_practical_deployment_gates_do_not_require_perfection():
+    assert classify_deployment(
+        {
+            "scored_cards": 100,
+            "exact_match_rate": 0.96,
+            "mean_absolute_error": 0.04,
+            "maximum_absolute_error": 1,
+        }
+    ) == "GM_READY"
+    assert classify_deployment(
+        {
+            "scored_cards": 100,
+            "exact_match_rate": 0.92,
+            "mean_absolute_error": 0.08,
+            "maximum_absolute_error": 1,
+        }
+    ) == "GM_USABLE"
+    assert classify_deployment(
+        {
+            "scored_cards": 100,
+            "exact_match_rate": 0.89,
+            "mean_absolute_error": 0.11,
+            "maximum_absolute_error": 1,
+        }
+    ) == "RESEARCH_REQUIRED"
+
+
+def test_systematic_failure_blocks_practical_deployment():
+    result = {
+        "scored_cards": 100,
+        "exact_match_rate": 0.99,
+        "mean_absolute_error": 0.01,
+        "maximum_absolute_error": 1,
+    }
+    assert classify_deployment(result, systematic_failure=True) == "RESEARCH_REQUIRED"
 
 
 def test_candidate_ranking_is_deterministic():
