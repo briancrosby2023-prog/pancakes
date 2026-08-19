@@ -353,7 +353,7 @@ def _dated_slope(cards: list[dict], attribute: str):
             card["displayed_ratings"][attribute],
         )
         for card in cards
-        if attribute in card["displayed_ratings"]
+        if card.get("release_date") and attribute in card["displayed_ratings"]
     ]
     return _slope(pairs)
 
