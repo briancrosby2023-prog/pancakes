@@ -528,6 +528,8 @@ def capability_chronology(cards: list[dict], proximity: dict) -> dict:
         if row["status"] not in {"AT_THRESHOLD", "ABOVE"}:
             continue
         card = card_map[row["card_id"]]
+        if not card.get("release_date"):
+            continue
         release = _parse_release_date(card["release_date"]).date().isoformat()
         key = (row["position"], row["archetype"], row["ability"], row["tier"])
         candidate = {
@@ -664,8 +666,9 @@ def ovr_capability_comparison(cards: list[dict], chronology: dict) -> dict:
     ceilings_before = {}
     for position, position_cards in sorted(by_position.items()):
         ceiling = -1
+        dated_position_cards = [card for card in position_cards if card.get("release_date")]
         for card in sorted(
-            position_cards,
+            dated_position_cards,
             key=lambda row: (
                 _parse_release_date(row["release_date"]).date(),
                 row["external_card_id"],
