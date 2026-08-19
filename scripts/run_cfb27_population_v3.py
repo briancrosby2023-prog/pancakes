@@ -1,4 +1,4 @@
-"""Restartable public CFB.FAN global-listing acquisition for OP-X-012."""
+"""Restartable public CFB.FAN global-listing acquisition for OP-X-012/CFB26 reuse."""
 
 from __future__ import annotations
 
@@ -9,11 +9,12 @@ import re
 import time
 from html import unescape
 from pathlib import Path
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
-LAST_PAGE = 590
+DEFAULT_LAST_PAGE = {27: 590, 26: 676}
 REQUESTS_PER_MINUTE = 12
-RETRIEVED_AT = "2026-08-14T12:00:00Z"
+RETRIEVED_AT = "2026-08-19T21:15:00Z"
 BASE_URL = "https://cfb.fan"
 POSITION_ALIASES = {"MIKE": "MLB", "LEDG": "LE", "REDG": "RE"}
 
@@ -22,12 +23,14 @@ def _text(value: str) -> str:
     return " ".join(unescape(re.sub(r"<[^>]+>", " ", value)).split())
 
 
-def parse_listing(html: str, snapshot: str) -> list[dict]:
+def parse_listing(html: str, snapshot: str, season: int = 27) -> list[dict]:
     """Parse public listing summaries without claiming a full vector."""
     cards = []
+    card_prefix = f"{season}-"
     for segment in html.split('<div class="player-list-item"')[1:]:
         url = re.search(
-            r'<a href="(?P<url>/players/(?P<player>\d+)-[^/]+/(?P<card>27-[^/]+)/)"', segment
+            rf'<a href="(?P<url>/players/(?P<player>\d+)-[^/]+/(?P<card>{re.escape(card_prefix)}[^/]+)/)"',
+            segment,
         )
         ovr = re.search(r'player-list-item__score-value">\s*(\d+)\s*</div>', segment)
         first = re.search(r'player-list-item__name-first">(.*?)</div>', segment, re.DOTALL)
@@ -68,13 +71,14 @@ def parse_listing(html: str, snapshot: str) -> list[dict]:
                 "extraction_status": "PARTIAL_LISTING_VECTOR",
                 "validation_status": "VALIDATED_PUBLIC_LISTING_IDENTITY",
                 "market_observations": [],
-                "metadata": {"listing_derived": True},
+                "metadata": {"listing_derived": True, "season": season},
             }
         )
     return cards
 
 
 def _save(path: Path, payload: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
@@ -89,14 +93,16 @@ def _fetch(url: str, attempts: int = 3) -> bytes:
             last_error = exc
             if attempt + 1 < attempts:
                 time.sleep(2**attempt)
+    if isinstance(last_error, HTTPError):
+        raise last_error
     raise RuntimeError(f"Acquisition failed after {attempts} attempts: {last_error}")
 
 
-def pages_to_fetch(refresh_pages: int) -> range:
-    """Return the full initial range or the newest bounded refresh range."""
+def pages_to_fetch(last_page: int, refresh_pages: int, start_page: int = 1) -> range:
+    """Return the requested initial/resume range or newest bounded refresh range."""
     if refresh_pages:
-        return range(max(1, LAST_PAGE - refresh_pages + 1), LAST_PAGE + 1)
-    return range(1, LAST_PAGE + 1)
+        return range(max(start_page, last_page - refresh_pages + 1), last_page + 1)
+    return range(start_page, last_page + 1)
 
 
 def merge_listing_cards(state: dict, cards: dict[str, dict]) -> dict[str, int]:
@@ -128,22 +134,23 @@ def merge_listing_cards(state: dict, cards: dict[str, dict]) -> dict[str, int]:
     return {"added": added, "conflicts": conflicts}
 
 
-def normalize_listing_ids(checkpoint: dict, state: dict) -> None:
-    """Align legacy listing IDs with the canonical CFB.FAN ``27-*`` card IDs."""
+def normalize_listing_ids(checkpoint: dict, state: dict, season: int) -> None:
+    """Align legacy listing IDs with canonical CFB.FAN season-prefixed card IDs."""
+    prefix = f"{season}-"
     normalized = {}
     for card in checkpoint["cards"].values():
         external_id = card["external_card_id"]
-        if not external_id.startswith("27-"):
-            external_id = f"27-{external_id}"
+        if not external_id.startswith(prefix):
+            external_id = f"{prefix}{external_id}"
             card["external_card_id"] = external_id
         normalized[external_id] = card
     checkpoint["cards"] = normalized
 
     for key, card in list(state["cards"].items()):
         external_id = card["external_card_id"]
-        if external_id.startswith("27-"):
+        if external_id.startswith(prefix):
             continue
-        canonical_id = f"27-{external_id}"
+        canonical_id = f"{prefix}{external_id}"
         checkpoint_card = checkpoint["cards"].get(canonical_id)
         identity_fields = ("player_name", "position", "overall", "program")
         if card.get("extraction_status") != "PARTIAL_LISTING_VECTOR" and (
@@ -152,9 +159,8 @@ def normalize_listing_ids(checkpoint: dict, state: dict) -> None:
         ):
             continue
         state["cards"].pop(key)
-        external_id = canonical_id
-        card["external_card_id"] = external_id
-        canonical_key = f"CFB_FAN:{external_id}"
+        card["external_card_id"] = canonical_id
+        canonical_key = f"CFB_FAN:{canonical_id}"
         existing = state["cards"].get(canonical_key)
         if existing is None or (
             card.get("extraction_status") == "COMPLETE"
@@ -165,31 +171,38 @@ def normalize_listing_ids(checkpoint: dict, state: dict) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--refresh-pages",
-        type=int,
-        default=0,
-        help="Recheck only the newest N pages after the initial complete enumeration.",
-    )
-    parser.add_argument(
-        "--finalize-only",
-        action="store_true",
-        help="Merge the persisted checkpoint without making network requests.",
-    )
+    parser.add_argument("--season", type=int, choices=(26, 27), default=27)
+    parser.add_argument("--last-page", type=int, default=0)
+    parser.add_argument("--refresh-pages", type=int, default=0)
+    parser.add_argument("--finalize-only", action="store_true")
     args = parser.parse_args()
+    season = args.season
+    last_page = args.last_page or DEFAULT_LAST_PAGE[season]
     root = Path(__file__).resolve().parents[1]
-    checkpoint_path = root / "data/external/cfb_fan_population_v3_checkpoint.json"
-    state_path = root / "data/external/cfb_fan_population_state.json"
-    raw_root = root / "data/external/raw/cfb_fan_global_listings"
+    if season == 27:
+        checkpoint_path = root / "data/external/cfb_fan_population_v3_checkpoint.json"
+        state_path = root / "data/external/cfb_fan_population_state.json"
+        raw_root = root / "data/external/raw/cfb_fan_global_listings"
+    else:
+        checkpoint_path = root / f"data/external/cfb_fan_{season}_population_v3_checkpoint.json"
+        state_path = root / f"data/external/cfb_fan_{season}_population_state.json"
+        raw_root = root / f"data/external/raw/cfb_fan_{season}_global_listings"
     raw_root.mkdir(parents=True, exist_ok=True)
     checkpoint = (
         json.loads(checkpoint_path.read_text(encoding="utf-8"))
         if checkpoint_path.exists()
-        else {"pages": {}, "cards": {}, "failures": []}
+        else {"season": season, "pages": {}, "cards": {}, "failures": []}
+    )
+    state = (
+        json.loads(state_path.read_text(encoding="utf-8"))
+        if state_path.exists()
+        else {"season": season, "cards": {}, "conflicts": {}, "resume_cursor": "global-page-0"}
     )
     delay = 60 / REQUESTS_PER_MINUTE
     last_request = 0.0
-    pages = range(0) if args.finalize_only else pages_to_fetch(args.refresh_pages)
+    completed_page = max((int(page) for page in checkpoint.get("pages", {})), default=0)
+    start_page = max(1, completed_page + 1) if not args.refresh_pages else 1
+    pages = range(0) if args.finalize_only else pages_to_fetch(last_page, args.refresh_pages, start_page)
     for page in pages:
         key = str(page)
         if key in checkpoint["pages"] and not args.refresh_pages:
@@ -197,37 +210,35 @@ def main() -> None:
         elapsed = time.monotonic() - last_request
         if last_request and elapsed < delay:
             time.sleep(delay - elapsed)
-        url = f"{BASE_URL}/players/?page={page}"
+        listing_prefix = "" if season == 27 else f"/{season}"
+        url = f"{BASE_URL}{listing_prefix}/players/?page={page}"
         try:
             content = _fetch(url)
             last_request = time.monotonic()
             digest = hashlib.sha256(content).hexdigest()
-            relative = Path("data/external/raw/cfb_fan_global_listings") / f"{digest}.html"
+            relative = Path(f"data/external/raw/cfb_fan_{season}_global_listings") / f"{digest}.html"
+            if season == 27:
+                relative = Path("data/external/raw/cfb_fan_global_listings") / f"{digest}.html"
             target = root / relative
             if not target.exists():
                 target.write_bytes(content)
-            cards = parse_listing(content.decode("utf-8"), relative.as_posix())
+            cards = parse_listing(content.decode("utf-8"), relative.as_posix(), season)
             for card in cards:
                 checkpoint["cards"][card["external_card_id"]] = card
-            checkpoint["failures"] = [
-                failure for failure in checkpoint["failures"] if failure.get("page") != page
-            ]
+            checkpoint["failures"] = [f for f in checkpoint["failures"] if f.get("page") != page]
             checkpoint["pages"][key] = {
                 "url": url,
                 "sha256": digest,
                 "snapshot": relative.as_posix(),
                 "cards": len(cards),
             }
-        except Exception as exc:  # noqa: BLE001 - persisted bounded acquisition failure
-            checkpoint["failures"] = [
-                failure for failure in checkpoint["failures"] if failure.get("page") != page
-            ]
+        except Exception as exc:  # noqa: BLE001
+            checkpoint["failures"] = [f for f in checkpoint["failures"] if f.get("page") != page]
             checkpoint["failures"].append({"page": page, "url": url, "error": str(exc)})
         _save(checkpoint_path, checkpoint)
-        if page % 10 == 0 or page == LAST_PAGE:
-            print(f"page={page}/{LAST_PAGE} unique={len(checkpoint['cards'])}", flush=True)
-    state = json.loads(state_path.read_text(encoding="utf-8"))
-    normalize_listing_ids(checkpoint, state)
+        if page % 10 == 0 or page == last_page:
+            print(f"page={page}/{last_page} unique={len(checkpoint['cards'])}", flush=True)
+    normalize_listing_ids(checkpoint, state, season)
     _save(checkpoint_path, checkpoint)
     for card in checkpoint["cards"].values():
         if card.get("extraction_status") == "PARTIAL_LISTING_VECTOR":
@@ -237,8 +248,8 @@ def main() -> None:
     state["resume_cursor"] = f"global-page-{completed_page}"
     _save(state_path, state)
     print(
-        f"Population now {len(state['cards'])}; enumerated={len(checkpoint['cards'])}; "
-        f"failures={len(checkpoint['failures'])}."
+        f"CFB{season} population now {len(state['cards'])}; enumerated={len(checkpoint['cards'])}; "
+        f"failures={len(checkpoint['failures'])}; completed_page={completed_page}."
     )
 
 
