@@ -1,5 +1,7 @@
 {
   "CFB_FAN": {
+    "bulk_endpoint": "GET /api/27/player-items/?ids=...",
+    "bulk_full_ratings": true,
     "card_ids": true,
     "detail_full_ratings": true,
     "enumeration": "ordinary public HTML",

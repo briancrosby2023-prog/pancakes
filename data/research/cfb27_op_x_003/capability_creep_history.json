@@ -1,8 +1,8 @@
 {
   "CFB27": {
     "C": {
-      "acc_date_slope": 0.152611,
-      "cards": 122,
+      "acc_date_slope": 0.204733,
+      "cards": 315,
       "causation_claimed": false,
       "days_to_next_ovr": [
         0,
@@ -54,7 +54,7 @@
           "special": false
         },
         {
-          "card_id": "102026556",
+          "card_id": "27-102026556",
           "date": "2026-07-01",
           "days_from_first": 0,
           "overall": 80,
@@ -126,15 +126,15 @@
           "special": true
         }
       ],
-      "spd_date_slope": 0.16842
+      "spd_date_slope": 0.218072
     },
     "CB": {
-      "acc_date_slope": 0.02403,
-      "cards": 23,
+      "acc_date_slope": 0.334779,
+      "cards": 863,
       "causation_claimed": false,
       "days_to_next_ovr": [
         0,
-        4
+        0
       ],
       "first_observed_ovr": 86,
       "maximum_observed_ovr": 88,
@@ -156,25 +156,28 @@
           "special": true
         },
         {
-          "card_id": "27-110026099",
-          "date": "2026-07-05",
-          "days_from_first": 4,
+          "card_id": "27-800022750",
+          "date": "2026-07-01",
+          "days_from_first": 0,
           "overall": 88,
-          "program": "Sunday Spotlight: Retro",
+          "program": "Ranked",
           "special": true
         }
       ],
-      "spd_date_slope": 0.021666
+      "spd_date_slope": 0.350076
     },
     "DT": {
-      "acc_date_slope": 0.09176,
-      "cards": 15,
+      "acc_date_slope": 0.363534,
+      "cards": 635,
       "causation_claimed": false,
       "days_to_next_ovr": [
-        0
+        0,
+        16,
+        8,
+        18
       ],
       "first_observed_ovr": 84,
-      "maximum_observed_ovr": 85,
+      "maximum_observed_ovr": 88,
       "ovr_ceiling_events": [
         {
           "card_id": "27-2000116",
@@ -191,17 +194,145 @@
           "overall": 85,
           "program": "Season 1",
           "special": true
+        },
+        {
+          "card_id": "27-250000116",
+          "date": "2026-07-17",
+          "days_from_first": 16,
+          "overall": 86,
+          "program": "Standouts",
+          "special": true
+        },
+        {
+          "card_id": "27-240018763",
+          "date": "2026-07-25",
+          "days_from_first": 24,
+          "overall": 87,
+          "program": "Cornerstones",
+          "special": true
+        },
+        {
+          "card_id": "27-270003763",
+          "date": "2026-08-12",
+          "days_from_first": 42,
+          "overall": 88,
+          "program": "Prime Prospects",
+          "special": true
         }
       ],
-      "spd_date_slope": 0.078652
+      "spd_date_slope": 0.332344
     },
-    "FS": {
-      "acc_date_slope": 0.124005,
-      "cards": 23,
+    "EDGE": {
+      "acc_date_slope": 0.339256,
+      "cards": 772,
       "causation_claimed": false,
       "days_to_next_ovr": [
         0,
-        13,
+        0,
+        0,
+        16
+      ],
+      "first_observed_ovr": 64,
+      "maximum_observed_ovr": 87,
+      "ovr_ceiling_events": [
+        {
+          "card_id": "27-2027986",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 64,
+          "program": "Core Common",
+          "special": false
+        },
+        {
+          "card_id": "27-9003067",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 82,
+          "program": "Platinum Rare",
+          "special": false
+        },
+        {
+          "card_id": "27-9006335",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 85,
+          "program": "Platinum Rare",
+          "special": false
+        },
+        {
+          "card_id": "27-802025214",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 86,
+          "program": "Ranked",
+          "special": true
+        },
+        {
+          "card_id": "27-250020312",
+          "date": "2026-07-17",
+          "days_from_first": 16,
+          "overall": 87,
+          "program": "Standouts",
+          "special": true
+        }
+      ],
+      "spd_date_slope": 0.331421
+    },
+    "FB": {
+      "acc_date_slope": 0.299863,
+      "cards": 28,
+      "causation_claimed": false,
+      "days_to_next_ovr": [
+        0,
+        1,
+        12
+      ],
+      "first_observed_ovr": 77,
+      "maximum_observed_ovr": 86,
+      "ovr_ceiling_events": [
+        {
+          "card_id": "27-2031490",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 77,
+          "program": "Core Uncommon",
+          "special": false
+        },
+        {
+          "card_id": "27-9009968",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 80,
+          "program": "Platinum Rare",
+          "special": false
+        },
+        {
+          "card_id": "27-240206423",
+          "date": "2026-07-02",
+          "days_from_first": 1,
+          "overall": 83,
+          "program": "Cornerstones",
+          "special": true
+        },
+        {
+          "card_id": "27-212026052",
+          "date": "2026-07-14",
+          "days_from_first": 13,
+          "overall": 86,
+          "program": "S1 Legends - Millenium",
+          "special": true
+        }
+      ],
+      "spd_date_slope": 0.285292
+    },
+    "FS": {
+      "acc_date_slope": 0.306192,
+      "cards": 400,
+      "causation_claimed": false,
+      "days_to_next_ovr": [
+        0,
+        4,
+        9,
         15
       ],
       "first_observed_ovr": 84,
@@ -224,6 +355,14 @@
           "special": true
         },
         {
+          "card_id": "27-110002916",
+          "date": "2026-07-05",
+          "days_from_first": 4,
+          "overall": 86,
+          "program": "Sunday Spotlight: Retro",
+          "special": true
+        },
+        {
           "card_id": "27-213026309",
           "date": "2026-07-14",
           "days_from_first": 13,
@@ -240,11 +379,11 @@
           "special": true
         }
       ],
-      "spd_date_slope": 0.115404
+      "spd_date_slope": 0.307062
     },
     "HB": {
-      "acc_date_slope": 0.08086,
-      "cards": 23,
+      "acc_date_slope": 0.406211,
+      "cards": 776,
       "causation_claimed": false,
       "days_to_next_ovr": [
         0,
@@ -278,7 +417,54 @@
           "special": true
         }
       ],
-      "spd_date_slope": 0.056317
+      "spd_date_slope": 0.396815
+    },
+    "K": {
+      "acc_date_slope": 0.324099,
+      "cards": 97,
+      "causation_claimed": false,
+      "days_to_next_ovr": [
+        0,
+        0,
+        21
+      ],
+      "first_observed_ovr": 76,
+      "maximum_observed_ovr": 84,
+      "ovr_ceiling_events": [
+        {
+          "card_id": "27-8020055",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 76,
+          "program": "Platinum Uncommon",
+          "special": false
+        },
+        {
+          "card_id": "27-9003954",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 81,
+          "program": "Platinum Rare",
+          "special": false
+        },
+        {
+          "card_id": "27-2001048",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 82,
+          "program": "Core Rare",
+          "special": false
+        },
+        {
+          "card_id": "27-240003954",
+          "date": "2026-07-22",
+          "days_from_first": 21,
+          "overall": 84,
+          "program": "Cornerstones",
+          "special": true
+        }
+      ],
+      "spd_date_slope": 0.367634
     },
     "LEDG": {
       "acc_date_slope": 0.002468,
@@ -328,8 +514,8 @@
       "spd_date_slope": -0.003275
     },
     "LG": {
-      "acc_date_slope": 0.04047,
-      "cards": 23,
+      "acc_date_slope": 0.124934,
+      "cards": 314,
       "causation_claimed": false,
       "days_to_next_ovr": [
         0,
@@ -372,11 +558,11 @@
           "special": true
         }
       ],
-      "spd_date_slope": 0.062067
+      "spd_date_slope": 0.163348
     },
     "LT": {
-      "acc_date_slope": 0.059569,
-      "cards": 23,
+      "acc_date_slope": 0.211934,
+      "cards": 339,
       "causation_claimed": false,
       "days_to_next_ovr": [
         0,
@@ -428,11 +614,11 @@
           "special": true
         }
       ],
-      "spd_date_slope": 0.063189
+      "spd_date_slope": 0.196343
     },
     "MIKE": {
-      "acc_date_slope": 0.047652,
-      "cards": 23,
+      "acc_date_slope": 0.276836,
+      "cards": 456,
       "causation_claimed": false,
       "days_to_next_ovr": [
         0
@@ -457,11 +643,67 @@
           "special": true
         }
       ],
-      "spd_date_slope": 0.078493
+      "spd_date_slope": 0.293701
+    },
+    "P": {
+      "acc_date_slope": 0.276822,
+      "cards": 79,
+      "causation_claimed": false,
+      "days_to_next_ovr": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_observed_ovr": 70,
+      "maximum_observed_ovr": 84,
+      "ovr_ceiling_events": [
+        {
+          "card_id": "27-2028002",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 70,
+          "program": "Core Uncommon",
+          "special": false
+        },
+        {
+          "card_id": "27-8020197",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 78,
+          "program": "Platinum Uncommon",
+          "special": false
+        },
+        {
+          "card_id": "27-2030793",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 79,
+          "program": "Core Uncommon",
+          "special": false
+        },
+        {
+          "card_id": "27-2001440",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 82,
+          "program": "Core Rare",
+          "special": false
+        },
+        {
+          "card_id": "27-9020949",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 84,
+          "program": "Platinum Rare",
+          "special": false
+        }
+      ],
+      "spd_date_slope": 0.276851
     },
     "QB": {
-      "acc_date_slope": 0.119017,
-      "cards": 23,
+      "acc_date_slope": 0.382863,
+      "cards": 470,
       "causation_claimed": false,
       "days_to_next_ovr": [
         0,
@@ -513,7 +755,7 @@
           "special": true
         }
       ],
-      "spd_date_slope": 0.073244
+      "spd_date_slope": 0.315358
     },
     "REDG": {
       "acc_date_slope": 0.052983,
@@ -563,14 +805,16 @@
       "spd_date_slope": 0.080023
     },
     "RG": {
-      "acc_date_slope": -0.042512,
-      "cards": 15,
+      "acc_date_slope": 0.100721,
+      "cards": 321,
       "causation_claimed": false,
       "days_to_next_ovr": [
-        0
+        0,
+        0,
+        33
       ],
       "first_observed_ovr": 82,
-      "maximum_observed_ovr": 84,
+      "maximum_observed_ovr": 87,
       "ovr_ceiling_events": [
         {
           "card_id": "27-2022892",
@@ -587,19 +831,38 @@
           "overall": 84,
           "program": "Core Rare",
           "special": false
+        },
+        {
+          "card_id": "27-9009232",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 85,
+          "program": "Platinum Rare",
+          "special": false
+        },
+        {
+          "card_id": "27-260019770",
+          "date": "2026-08-03",
+          "days_from_first": 33,
+          "overall": 87,
+          "program": "Phenoms",
+          "special": true
         }
       ],
-      "spd_date_slope": 0.014027
+      "spd_date_slope": 0.103147
     },
     "RT": {
-      "acc_date_slope": 0.092664,
-      "cards": 15,
+      "acc_date_slope": 0.208461,
+      "cards": 335,
       "causation_claimed": false,
       "days_to_next_ovr": [
-        0
+        0,
+        0,
+        14,
+        13
       ],
       "first_observed_ovr": 83,
-      "maximum_observed_ovr": 84,
+      "maximum_observed_ovr": 87,
       "ovr_ceiling_events": [
         {
           "card_id": "27-2005459",
@@ -616,17 +879,42 @@
           "overall": 84,
           "program": "Core Rare",
           "special": false
+        },
+        {
+          "card_id": "27-9007027",
+          "date": "2026-07-01",
+          "days_from_first": 0,
+          "overall": 85,
+          "program": "Platinum Rare",
+          "special": false
+        },
+        {
+          "card_id": "27-240007027",
+          "date": "2026-07-15",
+          "days_from_first": 14,
+          "overall": 86,
+          "program": "Cornerstones",
+          "special": true
+        },
+        {
+          "card_id": "27-2110900009",
+          "date": "2026-07-28",
+          "days_from_first": 27,
+          "overall": 87,
+          "program": "S1 Legends - Classic",
+          "special": true
         }
       ],
-      "spd_date_slope": -0.011583
+      "spd_date_slope": 0.215145
     },
     "SS": {
-      "acc_date_slope": 0.144119,
-      "cards": 23,
+      "acc_date_slope": 0.34308,
+      "cards": 406,
       "causation_claimed": false,
       "days_to_next_ovr": [
         0,
-        14,
+        4,
+        10,
         15,
         2,
         0
@@ -649,6 +937,14 @@
           "overall": 85,
           "program": "Core Rare",
           "special": false
+        },
+        {
+          "card_id": "27-200019149",
+          "date": "2026-07-05",
+          "days_from_first": 4,
+          "overall": 86,
+          "program": "Countdown",
+          "special": true
         },
         {
           "card_id": "27-240008068",
@@ -683,11 +979,11 @@
           "special": true
         }
       ],
-      "spd_date_slope": 0.133516
+      "spd_date_slope": 0.347738
     },
     "TE": {
-      "acc_date_slope": 0.039924,
-      "cards": 23,
+      "acc_date_slope": 0.278104,
+      "cards": 512,
       "causation_claimed": false,
       "days_to_next_ovr": [
         7,
@@ -730,11 +1026,11 @@
           "special": true
         }
       ],
-      "spd_date_slope": 0.086047
+      "spd_date_slope": 0.303981
     },
     "WR": {
-      "acc_date_slope": 0.026156,
-      "cards": 23,
+      "acc_date_slope": 0.361548,
+      "cards": 1153,
       "causation_claimed": false,
       "days_to_next_ovr": [
         0,
@@ -777,7 +1073,7 @@
           "special": true
         }
       ],
-      "spd_date_slope": 0.030538
+      "spd_date_slope": 0.364039
     }
   },
   "cross_year_status": "BLOCKED_BY_HISTORICAL_POPULATION_DATA"

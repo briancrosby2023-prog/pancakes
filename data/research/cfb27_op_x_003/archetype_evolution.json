@@ -3,30 +3,48 @@
   "forced_equivalence": false,
   "inventory": {
     "C": {
-      "Agile": 17,
-      "Pass Protector": 70,
-      "Raw Strength": 31,
-      "Well Rounded": 4
+      "Agile": 67,
+      "Pass Protector": 156,
+      "Raw Strength": 89,
+      "Well Rounded": 3
     },
     "CB": {
-      "Bump and Run": 8,
-      "Field": 12,
-      "Zone": 3
+      "Boundary": 96,
+      "Bump and Run": 415,
+      "Field": 309,
+      "Zone": 43
     },
     "DT": {
-      "Power Rusher": 2,
-      "Pure Power": 12,
-      "Speed Rusher": 1
+      "Gap Specialist": 21,
+      "Power Rusher": 71,
+      "Pure Power": 517,
+      "Speed Rusher": 26
+    },
+    "EDGE": {
+      "Gap Specialist": 56,
+      "Power Rusher": 173,
+      "Pure Power": 188,
+      "Speed Rusher": 355
+    },
+    "FB": {
+      "Blocking": 15,
+      "Utility": 13
     },
     "FS": {
-      "Box Specialist": 15,
-      "Coverage Specialist": 3,
-      "Hybrid": 5
+      "Box Specialist": 305,
+      "Coverage Specialist": 18,
+      "Hybrid": 77
     },
     "HB": {
-      "Backfield Threat": 2,
-      "Contact Seeker": 4,
-      "East/West Playmaker": 17
+      "Backfield Threat": 22,
+      "Contact Seeker": 110,
+      "East/West Playmaker": 621,
+      "Elusive Bruiser": 22,
+      "North/South Blocker": 1
+    },
+    "K": {
+      "Accurate": 9,
+      "Power": 88
     },
     "LEDG": {
       "Gap Specialist": 2,
@@ -35,25 +53,31 @@
       "Speed Rusher": 5
     },
     "LG": {
-      "Agile": 2,
-      "Pass Protector": 6,
-      "Raw Strength": 15
+      "Agile": 142,
+      "Pass Protector": 25,
+      "Raw Strength": 144,
+      "Well Rounded": 3
     },
     "LT": {
-      "Agile": 15,
-      "Pass Protector": 2,
-      "Raw Strength": 5,
-      "Well Rounded": 1
+      "Agile": 241,
+      "Pass Protector": 23,
+      "Raw Strength": 72,
+      "Well Rounded": 3
     },
     "MIKE": {
-      "Lurker": 5,
-      "Signal Caller": 5,
-      "Thumper": 13
+      "Lurker": 124,
+      "Signal Caller": 31,
+      "Thumper": 301
+    },
+    "P": {
+      "Accurate": 14,
+      "Power": 65
     },
     "QB": {
-      "Backfield Creator": 4,
-      "Dual Threat": 8,
-      "Pocket Passer": 11
+      "Backfield Creator": 23,
+      "Dual Threat": 78,
+      "Pocket Passer": 284,
+      "Pure Runner": 85
     },
     "REDG": {
       "Gap Specialist": 2,
@@ -61,29 +85,45 @@
       "Speed Rusher": 11
     },
     "RG": {
-      "Agile": 4,
-      "Raw Strength": 10,
-      "Well Rounded": 1
+      "Agile": 128,
+      "Pass Protector": 23,
+      "Raw Strength": 167,
+      "Well Rounded": 3
     },
     "RT": {
-      "Agile": 9,
-      "Raw Strength": 6
+      "Agile": 200,
+      "Pass Protector": 17,
+      "Raw Strength": 114,
+      "Well Rounded": 4
+    },
+    "SAM": {
+      "Lurker": 64,
+      "Signal Caller": 10,
+      "Thumper": 91
     },
     "SS": {
-      "Box Specialist": 3,
-      "Coverage Specialist": 7,
-      "Hybrid": 13
+      "Box Specialist": 80,
+      "Coverage Specialist": 150,
+      "Hybrid": 176
     },
     "TE": {
-      "Gritty Possession": 7,
-      "Physical Route Runner": 6,
-      "Vertical Threat": 10
+      "Gritty Possession": 51,
+      "Physical Route Runner": 284,
+      "Pure Blocker": 11,
+      "Vertical Threat": 166
+    },
+    "WILL": {
+      "Lurker": 128,
+      "Signal Caller": 20,
+      "Thumper": 216
     },
     "WR": {
-      "Contested Specialist": 12,
-      "Elusive Route Runner": 5,
-      "Gadget Receiver": 1,
-      "Speedster": 5
+      "Contested Specialist": 194,
+      "Elusive Route Runner": 576,
+      "Gadget Receiver": 102,
+      "Physical Route Runner": 16,
+      "Route Artist": 4,
+      "Speedster": 261
     }
   },
   "lineage_candidates": []

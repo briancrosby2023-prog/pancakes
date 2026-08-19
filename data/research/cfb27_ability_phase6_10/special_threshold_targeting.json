@@ -1,8 +1,804 @@
 {
   "classification": "DESCRIPTIVE",
   "intent_claimed": false,
-  "matched_cell_count": 5,
+  "matched_cell_count": 96,
   "matched_cells": [
+    {
+      "archetype": "Boundary",
+      "ordinary": {
+        "2_BELOW": 1,
+        "4_TO_5_BELOW": 1,
+        "ABOVE": 2,
+        "MORE_THAN_5_BELOW": 92
+      },
+      "overall": 70,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 3,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 4,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 310
+      }
+    },
+    {
+      "archetype": "Bump and Run",
+      "ordinary": {
+        "4_TO_5_BELOW": 1,
+        "MORE_THAN_5_BELOW": 179
+      },
+      "overall": 64,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 40
+      }
+    },
+    {
+      "archetype": "Bump and Run",
+      "ordinary": {
+        "1_BELOW": 1,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 2,
+        "MORE_THAN_5_BELOW": 176
+      },
+      "overall": 70,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "3_BELOW": 26,
+        "4_TO_5_BELOW": 9,
+        "MORE_THAN_5_BELOW": 1445
+      }
+    },
+    {
+      "archetype": "Bump and Run",
+      "ordinary": {
+        "1_BELOW": 2,
+        "2_BELOW": 4,
+        "3_BELOW": 4,
+        "4_TO_5_BELOW": 16,
+        "ABOVE": 8,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 244
+      },
+      "overall": 79,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 1,
+        "MORE_THAN_5_BELOW": 18
+      }
+    },
+    {
+      "archetype": "Bump and Run",
+      "ordinary": {
+        "1_BELOW": 10,
+        "2_BELOW": 1,
+        "3_BELOW": 14,
+        "4_TO_5_BELOW": 35,
+        "ABOVE": 18,
+        "AT_THRESHOLD": 8,
+        "MORE_THAN_5_BELOW": 274
+      },
+      "overall": 80,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "3_BELOW": 3,
+        "4_TO_5_BELOW": 9,
+        "ABOVE": 2,
+        "AT_THRESHOLD": 3,
+        "MORE_THAN_5_BELOW": 63
+      }
+    },
+    {
+      "archetype": "Bump and Run",
+      "ordinary": {
+        "1_BELOW": 2,
+        "2_BELOW": 10,
+        "3_BELOW": 4,
+        "4_TO_5_BELOW": 24,
+        "ABOVE": 18,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 140
+      },
+      "overall": 81,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 2,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 7,
+        "ABOVE": 2,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 27
+      }
+    },
+    {
+      "archetype": "Bump and Run",
+      "ordinary": {
+        "1_BELOW": 10,
+        "2_BELOW": 16,
+        "3_BELOW": 28,
+        "4_TO_5_BELOW": 70,
+        "ABOVE": 52,
+        "AT_THRESHOLD": 12,
+        "MORE_THAN_5_BELOW": 292
+      },
+      "overall": 82,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 1,
+        "2_BELOW": 1,
+        "4_TO_5_BELOW": 2,
+        "ABOVE": 1,
+        "MORE_THAN_5_BELOW": 15
+      }
+    },
+    {
+      "archetype": "Bump and Run",
+      "ordinary": {
+        "1_BELOW": 4,
+        "2_BELOW": 2,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 8,
+        "MORE_THAN_5_BELOW": 24
+      },
+      "overall": 83,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 2,
+        "2_BELOW": 1,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 4,
+        "ABOVE": 1,
+        "MORE_THAN_5_BELOW": 11
+      }
+    },
+    {
+      "archetype": "Bump and Run",
+      "ordinary": {
+        "1_BELOW": 6,
+        "2_BELOW": 14,
+        "3_BELOW": 10,
+        "4_TO_5_BELOW": 32,
+        "ABOVE": 28,
+        "AT_THRESHOLD": 14,
+        "MORE_THAN_5_BELOW": 96
+      },
+      "overall": 84,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 1,
+        "2_BELOW": 1,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 3,
+        "ABOVE": 2,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 10
+      }
+    },
+    {
+      "archetype": "Bump and Run",
+      "ordinary": {
+        "1_BELOW": 18,
+        "2_BELOW": 18,
+        "3_BELOW": 22,
+        "4_TO_5_BELOW": 24,
+        "ABOVE": 32,
+        "AT_THRESHOLD": 8,
+        "MORE_THAN_5_BELOW": 78
+      },
+      "overall": 85,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 8,
+        "2_BELOW": 3,
+        "3_BELOW": 9,
+        "4_TO_5_BELOW": 5,
+        "ABOVE": 15,
+        "AT_THRESHOLD": 3,
+        "MORE_THAN_5_BELOW": 37
+      }
+    },
+    {
+      "archetype": "Field",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 176
+      },
+      "overall": 63,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 16
+      }
+    },
+    {
+      "archetype": "Field",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 16
+      },
+      "overall": 70,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 624
+      }
+    },
+    {
+      "archetype": "Field",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 32
+      },
+      "overall": 75,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 16
+      }
+    },
+    {
+      "archetype": "Field",
+      "ordinary": {
+        "2_BELOW": 2,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 13,
+        "MORE_THAN_5_BELOW": 159
+      },
+      "overall": 80,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "4_TO_5_BELOW": 1,
+        "MORE_THAN_5_BELOW": 31
+      }
+    },
+    {
+      "archetype": "Field",
+      "ordinary": {
+        "1_BELOW": 2,
+        "2_BELOW": 4,
+        "3_BELOW": 8,
+        "4_TO_5_BELOW": 20,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 92
+      },
+      "overall": 81,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 1,
+        "4_TO_5_BELOW": 3,
+        "MORE_THAN_5_BELOW": 28
+      }
+    },
+    {
+      "archetype": "Field",
+      "ordinary": {
+        "3_BELOW": 6,
+        "4_TO_5_BELOW": 12,
+        "MORE_THAN_5_BELOW": 78
+      },
+      "overall": 82,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 1,
+        "4_TO_5_BELOW": 4,
+        "MORE_THAN_5_BELOW": 27
+      }
+    },
+    {
+      "archetype": "Field",
+      "ordinary": {
+        "2_BELOW": 8,
+        "3_BELOW": 6,
+        "4_TO_5_BELOW": 16,
+        "ABOVE": 2,
+        "AT_THRESHOLD": 4,
+        "MORE_THAN_5_BELOW": 60
+      },
+      "overall": 83,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 1,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 2,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 11
+      }
+    },
+    {
+      "archetype": "Field",
+      "ordinary": {
+        "1_BELOW": 8,
+        "3_BELOW": 14,
+        "4_TO_5_BELOW": 16,
+        "ABOVE": 2,
+        "MORE_THAN_5_BELOW": 56
+      },
+      "overall": 84,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 1,
+        "2_BELOW": 4,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 8,
+        "ABOVE": 1,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 16
+      }
+    },
+    {
+      "archetype": "Field",
+      "ordinary": {
+        "1_BELOW": 6,
+        "2_BELOW": 4,
+        "3_BELOW": 8,
+        "4_TO_5_BELOW": 14,
+        "ABOVE": 2,
+        "MORE_THAN_5_BELOW": 30
+      },
+      "overall": 85,
+      "position": "CB",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 9,
+        "2_BELOW": 2,
+        "3_BELOW": 13,
+        "4_TO_5_BELOW": 9,
+        "ABOVE": 4,
+        "MORE_THAN_5_BELOW": 27
+      }
+    },
+    {
+      "archetype": "Power Rusher",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 64
+      },
+      "overall": 64,
+      "position": "EDGE",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 16
+      }
+    },
+    {
+      "archetype": "Power Rusher",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 32
+      },
+      "overall": 70,
+      "position": "EDGE",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 336
+      }
+    },
+    {
+      "archetype": "Power Rusher",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 64
+      },
+      "overall": 78,
+      "position": "EDGE",
+      "release_period": "2026-07",
+      "special": {
+        "4_TO_5_BELOW": 2,
+        "MORE_THAN_5_BELOW": 14
+      }
+    },
+    {
+      "archetype": "Power Rusher",
+      "ordinary": {
+        "4_TO_5_BELOW": 4,
+        "MORE_THAN_5_BELOW": 92
+      },
+      "overall": 81,
+      "position": "EDGE",
+      "release_period": "2026-07",
+      "special": {
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 2,
+        "MORE_THAN_5_BELOW": 29
+      }
+    },
+    {
+      "archetype": "Power Rusher",
+      "ordinary": {
+        "4_TO_5_BELOW": 4,
+        "MORE_THAN_5_BELOW": 28
+      },
+      "overall": 82,
+      "position": "EDGE",
+      "release_period": "2026-07",
+      "special": {
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 3,
+        "MORE_THAN_5_BELOW": 28
+      }
+    },
+    {
+      "archetype": "Pure Power",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 80
+      },
+      "overall": 70,
+      "position": "EDGE",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 440
+      }
+    },
+    {
+      "archetype": "Speed Rusher",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 224
+      },
+      "overall": 63,
+      "position": "EDGE",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 48
+      }
+    },
+    {
+      "archetype": "Speed Rusher",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 144
+      },
+      "overall": 70,
+      "position": "EDGE",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 816
+      }
+    },
+    {
+      "archetype": "Speed Rusher",
+      "ordinary": {
+        "3_BELOW": 4,
+        "4_TO_5_BELOW": 10,
+        "MORE_THAN_5_BELOW": 146
+      },
+      "overall": 79,
+      "position": "EDGE",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 1,
+        "4_TO_5_BELOW": 1,
+        "ABOVE": 1,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 12
+      }
+    },
+    {
+      "archetype": "Speed Rusher",
+      "ordinary": {
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 10,
+        "MORE_THAN_5_BELOW": 228
+      },
+      "overall": 80,
+      "position": "EDGE",
+      "release_period": "2026-07",
+      "special": {
+        "4_TO_5_BELOW": 1,
+        "MORE_THAN_5_BELOW": 15
+      }
+    },
+    {
+      "archetype": "Speed Rusher",
+      "ordinary": {
+        "2_BELOW": 4,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 20,
+        "MORE_THAN_5_BELOW": 166
+      },
+      "overall": 81,
+      "position": "EDGE",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 3,
+        "4_TO_5_BELOW": 7,
+        "ABOVE": 3,
+        "AT_THRESHOLD": 3,
+        "MORE_THAN_5_BELOW": 48
+      }
+    },
+    {
+      "archetype": "Speed Rusher",
+      "ordinary": {
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 14,
+        "MORE_THAN_5_BELOW": 80
+      },
+      "overall": 82,
+      "position": "EDGE",
+      "release_period": "2026-07",
+      "special": {
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 1,
+        "MORE_THAN_5_BELOW": 14
+      }
+    },
+    {
+      "archetype": "Speed Rusher",
+      "ordinary": {
+        "2_BELOW": 4,
+        "3_BELOW": 4,
+        "4_TO_5_BELOW": 18,
+        "MORE_THAN_5_BELOW": 102
+      },
+      "overall": 83,
+      "position": "EDGE",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 1,
+        "4_TO_5_BELOW": 5,
+        "ABOVE": 1,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 24
+      }
+    },
+    {
+      "archetype": "Speed Rusher",
+      "ordinary": {
+        "1_BELOW": 1,
+        "3_BELOW": 3,
+        "4_TO_5_BELOW": 2,
+        "MORE_THAN_5_BELOW": 10
+      },
+      "overall": 85,
+      "position": "EDGE",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 1,
+        "2_BELOW": 2,
+        "3_BELOW": 5,
+        "4_TO_5_BELOW": 5,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 18
+      }
+    },
+    {
+      "archetype": "Coverage Specialist",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 20
+      },
+      "overall": 70,
+      "position": "FS",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 20
+      }
+    },
+    {
+      "archetype": "Hybrid",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 128
+      },
+      "overall": 70,
+      "position": "FS",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 64
+      }
+    },
+    {
+      "archetype": "Backfield Threat",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 20
+      },
+      "overall": 70,
+      "position": "HB",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 3,
+        "4_TO_5_BELOW": 3,
+        "MORE_THAN_5_BELOW": 54
+      }
+    },
+    {
+      "archetype": "Contact Seeker",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 200
+      },
+      "overall": 75,
+      "position": "HB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 20
+      }
+    },
+    {
+      "archetype": "East/West Playmaker",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 640
+      },
+      "overall": 70,
+      "position": "HB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 3920
+      }
+    },
+    {
+      "archetype": "East/West Playmaker",
+      "ordinary": {
+        "1_BELOW": 2,
+        "2_BELOW": 5,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 20,
+        "MORE_THAN_5_BELOW": 271
+      },
+      "overall": 80,
+      "position": "HB",
+      "release_period": "2026-07",
+      "special": {
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 4,
+        "MORE_THAN_5_BELOW": 34
+      }
+    },
+    {
+      "archetype": "East/West Playmaker",
+      "ordinary": {
+        "1_BELOW": 2,
+        "2_BELOW": 2,
+        "3_BELOW": 14,
+        "4_TO_5_BELOW": 20,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 400
+      },
+      "overall": 81,
+      "position": "HB",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 2,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 4,
+        "ABOVE": 1,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 30
+      }
+    },
+    {
+      "archetype": "East/West Playmaker",
+      "ordinary": {
+        "1_BELOW": 8,
+        "2_BELOW": 10,
+        "3_BELOW": 12,
+        "4_TO_5_BELOW": 44,
+        "ABOVE": 6,
+        "AT_THRESHOLD": 4,
+        "MORE_THAN_5_BELOW": 196
+      },
+      "overall": 83,
+      "position": "HB",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 1,
+        "2_BELOW": 2,
+        "3_BELOW": 5,
+        "4_TO_5_BELOW": 13,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 77
+      }
+    },
+    {
+      "archetype": "East/West Playmaker",
+      "ordinary": {
+        "1_BELOW": 6,
+        "2_BELOW": 12,
+        "3_BELOW": 12,
+        "4_TO_5_BELOW": 40,
+        "ABOVE": 6,
+        "AT_THRESHOLD": 8,
+        "MORE_THAN_5_BELOW": 196
+      },
+      "overall": 84,
+      "position": "HB",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 1,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 8,
+        "ABOVE": 2,
+        "MORE_THAN_5_BELOW": 47
+      }
+    },
+    {
+      "archetype": "East/West Playmaker",
+      "ordinary": {
+        "1_BELOW": 6,
+        "2_BELOW": 4,
+        "3_BELOW": 10,
+        "4_TO_5_BELOW": 16,
+        "ABOVE": 4,
+        "MORE_THAN_5_BELOW": 40
+      },
+      "overall": 85,
+      "position": "HB",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 5,
+        "2_BELOW": 8,
+        "3_BELOW": 10,
+        "4_TO_5_BELOW": 18,
+        "ABOVE": 6,
+        "AT_THRESHOLD": 6,
+        "MORE_THAN_5_BELOW": 67
+      }
+    },
+    {
+      "archetype": "Elusive Bruiser",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 40
+      },
+      "overall": 70,
+      "position": "HB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 160
+      }
+    },
+    {
+      "archetype": "Lurker",
+      "ordinary": {
+        "2_BELOW": 1,
+        "4_TO_5_BELOW": 1,
+        "MORE_THAN_5_BELOW": 46
+      },
+      "overall": 62,
+      "position": "MIKE",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 16
+      }
+    },
+    {
+      "archetype": "Lurker",
+      "ordinary": {
+        "1_BELOW": 5,
+        "3_BELOW": 5,
+        "4_TO_5_BELOW": 5,
+        "MORE_THAN_5_BELOW": 97
+      },
+      "overall": 64,
+      "position": "MIKE",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 16
+      }
+    },
+    {
+      "archetype": "Lurker",
+      "ordinary": {
+        "1_BELOW": 1,
+        "2_BELOW": 1,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 2,
+        "MORE_THAN_5_BELOW": 43
+      },
+      "overall": 70,
+      "position": "MIKE",
+      "release_period": "2026-07",
+      "special": {
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 1,
+        "MORE_THAN_5_BELOW": 14
+      }
+    },
     {
       "archetype": "Lurker",
       "ordinary": {
@@ -26,6 +822,27 @@
     {
       "archetype": "Signal Caller",
       "ordinary": {
+        "1_BELOW": 1,
+        "2_BELOW": 1,
+        "3_BELOW": 4,
+        "4_TO_5_BELOW": 5,
+        "ABOVE": 1,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 67
+      },
+      "overall": 80,
+      "position": "MIKE",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 1,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 2,
+        "MORE_THAN_5_BELOW": 11
+      }
+    },
+    {
+      "archetype": "Signal Caller",
+      "ordinary": {
         "3_BELOW": 2,
         "4_TO_5_BELOW": 2,
         "ABOVE": 2,
@@ -41,6 +858,138 @@
         "4_TO_5_BELOW": 3,
         "ABOVE": 2,
         "MORE_THAN_5_BELOW": 9
+      }
+    },
+    {
+      "archetype": "Thumper",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 16
+      },
+      "overall": 60,
+      "position": "MIKE",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 48
+      }
+    },
+    {
+      "archetype": "Thumper",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 48
+      },
+      "overall": 62,
+      "position": "MIKE",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 16
+      }
+    },
+    {
+      "archetype": "Thumper",
+      "ordinary": {
+        "1_BELOW": 2,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 2,
+        "MORE_THAN_5_BELOW": 58
+      },
+      "overall": 78,
+      "position": "MIKE",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 1,
+        "4_TO_5_BELOW": 1,
+        "MORE_THAN_5_BELOW": 14
+      }
+    },
+    {
+      "archetype": "Thumper",
+      "ordinary": {
+        "1_BELOW": 2,
+        "2_BELOW": 11,
+        "3_BELOW": 7,
+        "4_TO_5_BELOW": 26,
+        "ABOVE": 6,
+        "MORE_THAN_5_BELOW": 220
+      },
+      "overall": 80,
+      "position": "MIKE",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 1,
+        "2_BELOW": 1,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 3,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 41
+      }
+    },
+    {
+      "archetype": "Thumper",
+      "ordinary": {
+        "2_BELOW": 8,
+        "3_BELOW": 18,
+        "4_TO_5_BELOW": 18,
+        "ABOVE": 20,
+        "AT_THRESHOLD": 12,
+        "MORE_THAN_5_BELOW": 180
+      },
+      "overall": 82,
+      "position": "MIKE",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 1,
+        "2_BELOW": 1,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 3,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 9
+      }
+    },
+    {
+      "archetype": "Thumper",
+      "ordinary": {
+        "1_BELOW": 2,
+        "2_BELOW": 8,
+        "3_BELOW": 14,
+        "4_TO_5_BELOW": 18,
+        "ABOVE": 12,
+        "AT_THRESHOLD": 6,
+        "MORE_THAN_5_BELOW": 68
+      },
+      "overall": 83,
+      "position": "MIKE",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 1,
+        "2_BELOW": 2,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 6,
+        "ABOVE": 3,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 18
+      }
+    },
+    {
+      "archetype": "Thumper",
+      "ordinary": {
+        "1_BELOW": 2,
+        "2_BELOW": 8,
+        "3_BELOW": 8,
+        "4_TO_5_BELOW": 22,
+        "ABOVE": 12,
+        "AT_THRESHOLD": 6,
+        "MORE_THAN_5_BELOW": 70
+      },
+      "overall": 84,
+      "position": "MIKE",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 1,
+        "2_BELOW": 1,
+        "4_TO_5_BELOW": 2,
+        "ABOVE": 1,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 10
       }
     },
     {
@@ -67,10 +1016,115 @@
       }
     },
     {
+      "archetype": "Backfield Creator",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 20
+      },
+      "overall": 70,
+      "position": "QB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 100
+      }
+    },
+    {
+      "archetype": "Dual Threat",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 120
+      },
+      "overall": 70,
+      "position": "QB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 200
+      }
+    },
+    {
+      "archetype": "Dual Threat",
+      "ordinary": {
+        "2_BELOW": 1,
+        "3_BELOW": 4,
+        "4_TO_5_BELOW": 13,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 60
+      },
+      "overall": 80,
+      "position": "QB",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 2,
+        "4_TO_5_BELOW": 3,
+        "MORE_THAN_5_BELOW": 15
+      }
+    },
+    {
+      "archetype": "Pocket Passer",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 160
+      },
+      "overall": 70,
+      "position": "QB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 920
+      }
+    },
+    {
+      "archetype": "Pocket Passer",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 120
+      },
+      "overall": 79,
+      "position": "QB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 20
+      }
+    },
+    {
+      "archetype": "Pocket Passer",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 380
+      },
+      "overall": 80,
+      "position": "QB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 20
+      }
+    },
+    {
+      "archetype": "Pocket Passer",
+      "ordinary": {
+        "3_BELOW": 4,
+        "4_TO_5_BELOW": 2,
+        "MORE_THAN_5_BELOW": 234
+      },
+      "overall": 81,
+      "position": "QB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 60
+      }
+    },
+    {
+      "archetype": "Pocket Passer",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 160
+      },
+      "overall": 83,
+      "position": "QB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 80
+      }
+    },
+    {
       "archetype": "Pocket Passer",
       "ordinary": {
         "3_BELOW": 2,
-        "MORE_THAN_5_BELOW": 38
+        "4_TO_5_BELOW": 2,
+        "MORE_THAN_5_BELOW": 196
       },
       "overall": 84,
       "position": "QB",
@@ -89,6 +1143,478 @@
       "release_period": "2026-07",
       "special": {
         "MORE_THAN_5_BELOW": 20
+      }
+    },
+    {
+      "archetype": "Pure Runner",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 80
+      },
+      "overall": 70,
+      "position": "QB",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 220
+      }
+    },
+    {
+      "archetype": "Gritty Possession",
+      "ordinary": {
+        "1_BELOW": 2,
+        "2_BELOW": 2,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 7,
+        "ABOVE": 2,
+        "MORE_THAN_5_BELOW": 45
+      },
+      "overall": 80,
+      "position": "TE",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 2,
+        "2_BELOW": 4,
+        "3_BELOW": 4,
+        "4_TO_5_BELOW": 7,
+        "ABOVE": 4,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 18
+      }
+    },
+    {
+      "archetype": "Physical Route Runner",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 100
+      },
+      "overall": 62,
+      "position": "TE",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 20
+      }
+    },
+    {
+      "archetype": "Physical Route Runner",
+      "ordinary": {
+        "4_TO_5_BELOW": 2,
+        "MORE_THAN_5_BELOW": 218
+      },
+      "overall": 70,
+      "position": "TE",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 480
+      }
+    },
+    {
+      "archetype": "Physical Route Runner",
+      "ordinary": {
+        "1_BELOW": 8,
+        "2_BELOW": 16,
+        "3_BELOW": 12,
+        "4_TO_5_BELOW": 34,
+        "ABOVE": 12,
+        "AT_THRESHOLD": 16,
+        "MORE_THAN_5_BELOW": 102
+      },
+      "overall": 83,
+      "position": "TE",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 1,
+        "2_BELOW": 3,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 2,
+        "ABOVE": 1,
+        "MORE_THAN_5_BELOW": 12
+      }
+    },
+    {
+      "archetype": "Vertical Threat",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 140
+      },
+      "overall": 70,
+      "position": "TE",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 280
+      }
+    },
+    {
+      "archetype": "Vertical Threat",
+      "ordinary": {
+        "1_BELOW": 2,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 12,
+        "MORE_THAN_5_BELOW": 224
+      },
+      "overall": 78,
+      "position": "TE",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 20
+      }
+    },
+    {
+      "archetype": "Vertical Threat",
+      "ordinary": {
+        "4_TO_5_BELOW": 8,
+        "MORE_THAN_5_BELOW": 132
+      },
+      "overall": 80,
+      "position": "TE",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 1,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 2,
+        "ABOVE": 1,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 54
+      }
+    },
+    {
+      "archetype": "Vertical Threat",
+      "ordinary": {
+        "1_BELOW": 2,
+        "2_BELOW": 2,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 6,
+        "ABOVE": 2,
+        "MORE_THAN_5_BELOW": 66
+      },
+      "overall": 82,
+      "position": "TE",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 20
+      }
+    },
+    {
+      "archetype": "Contested Specialist",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 80
+      },
+      "overall": 70,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 940
+      }
+    },
+    {
+      "archetype": "Contested Specialist",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 240
+      },
+      "overall": 78,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 1,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 1,
+        "MORE_THAN_5_BELOW": 17
+      }
+    },
+    {
+      "archetype": "Contested Specialist",
+      "ordinary": {
+        "2_BELOW": 2,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 4,
+        "MORE_THAN_5_BELOW": 92
+      },
+      "overall": 80,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 2,
+        "3_BELOW": 4,
+        "4_TO_5_BELOW": 6,
+        "MORE_THAN_5_BELOW": 48
+      }
+    },
+    {
+      "archetype": "Contested Specialist",
+      "ordinary": {
+        "4_TO_5_BELOW": 2,
+        "MORE_THAN_5_BELOW": 118
+      },
+      "overall": 82,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 2,
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 1,
+        "MORE_THAN_5_BELOW": 35
+      }
+    },
+    {
+      "archetype": "Contested Specialist",
+      "ordinary": {
+        "2_BELOW": 4,
+        "4_TO_5_BELOW": 14,
+        "AT_THRESHOLD": 4,
+        "MORE_THAN_5_BELOW": 98
+      },
+      "overall": 83,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 2,
+        "2_BELOW": 2,
+        "3_BELOW": 4,
+        "4_TO_5_BELOW": 3,
+        "MORE_THAN_5_BELOW": 29
+      }
+    },
+    {
+      "archetype": "Contested Specialist",
+      "ordinary": {
+        "1_BELOW": 4,
+        "3_BELOW": 4,
+        "4_TO_5_BELOW": 2,
+        "MORE_THAN_5_BELOW": 30
+      },
+      "overall": 84,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 2,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 2,
+        "ABOVE": 2,
+        "MORE_THAN_5_BELOW": 33
+      }
+    },
+    {
+      "archetype": "Contested Specialist",
+      "ordinary": {
+        "2_BELOW": 12,
+        "3_BELOW": 6,
+        "4_TO_5_BELOW": 20,
+        "AT_THRESHOLD": 4,
+        "MORE_THAN_5_BELOW": 118
+      },
+      "overall": 85,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 2,
+        "2_BELOW": 3,
+        "3_BELOW": 4,
+        "4_TO_5_BELOW": 8,
+        "ABOVE": 4,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 37
+      }
+    },
+    {
+      "archetype": "Elusive Route Runner",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 260
+      },
+      "overall": 64,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 60
+      }
+    },
+    {
+      "archetype": "Elusive Route Runner",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 220
+      },
+      "overall": 70,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 2860
+      }
+    },
+    {
+      "archetype": "Elusive Route Runner",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 40
+      },
+      "overall": 75,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 1,
+        "MORE_THAN_5_BELOW": 38
+      }
+    },
+    {
+      "archetype": "Elusive Route Runner",
+      "ordinary": {
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 2,
+        "MORE_THAN_5_BELOW": 516
+      },
+      "overall": 76,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 20
+      }
+    },
+    {
+      "archetype": "Elusive Route Runner",
+      "ordinary": {
+        "1_BELOW": 3,
+        "2_BELOW": 4,
+        "3_BELOW": 11,
+        "4_TO_5_BELOW": 44,
+        "AT_THRESHOLD": 4,
+        "MORE_THAN_5_BELOW": 514
+      },
+      "overall": 80,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 1,
+        "2_BELOW": 1,
+        "3_BELOW": 4,
+        "4_TO_5_BELOW": 5,
+        "ABOVE": 2,
+        "AT_THRESHOLD": 1,
+        "MORE_THAN_5_BELOW": 46
+      }
+    },
+    {
+      "archetype": "Elusive Route Runner",
+      "ordinary": {
+        "1_BELOW": 4,
+        "2_BELOW": 12,
+        "3_BELOW": 10,
+        "4_TO_5_BELOW": 50,
+        "ABOVE": 4,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 318
+      },
+      "overall": 81,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 4,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 10,
+        "ABOVE": 1,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 62
+      }
+    },
+    {
+      "archetype": "Elusive Route Runner",
+      "ordinary": {
+        "1_BELOW": 8,
+        "2_BELOW": 6,
+        "3_BELOW": 8,
+        "4_TO_5_BELOW": 34,
+        "ABOVE": 2,
+        "AT_THRESHOLD": 4,
+        "MORE_THAN_5_BELOW": 178
+      },
+      "overall": 82,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "3_BELOW": 2,
+        "4_TO_5_BELOW": 2,
+        "MORE_THAN_5_BELOW": 16
+      }
+    },
+    {
+      "archetype": "Elusive Route Runner",
+      "ordinary": {
+        "1_BELOW": 8,
+        "2_BELOW": 18,
+        "3_BELOW": 24,
+        "4_TO_5_BELOW": 52,
+        "AT_THRESHOLD": 6,
+        "MORE_THAN_5_BELOW": 132
+      },
+      "overall": 84,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "2_BELOW": 2,
+        "4_TO_5_BELOW": 5,
+        "ABOVE": 1,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 10
+      }
+    },
+    {
+      "archetype": "Elusive Route Runner",
+      "ordinary": {
+        "1_BELOW": 18,
+        "2_BELOW": 8,
+        "3_BELOW": 18,
+        "4_TO_5_BELOW": 22,
+        "ABOVE": 14,
+        "AT_THRESHOLD": 8,
+        "MORE_THAN_5_BELOW": 32
+      },
+      "overall": 85,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 4,
+        "2_BELOW": 5,
+        "3_BELOW": 10,
+        "4_TO_5_BELOW": 12,
+        "ABOVE": 5,
+        "AT_THRESHOLD": 3,
+        "MORE_THAN_5_BELOW": 21
+      }
+    },
+    {
+      "archetype": "Physical Route Runner",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 40
+      },
+      "overall": 65,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 20
+      }
+    },
+    {
+      "archetype": "Speedster",
+      "ordinary": {
+        "MORE_THAN_5_BELOW": 140
+      },
+      "overall": 70,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "MORE_THAN_5_BELOW": 1420
+      }
+    },
+    {
+      "archetype": "Speedster",
+      "ordinary": {
+        "2_BELOW": 2,
+        "4_TO_5_BELOW": 2,
+        "AT_THRESHOLD": 2,
+        "MORE_THAN_5_BELOW": 34
+      },
+      "overall": 84,
+      "position": "WR",
+      "release_period": "2026-07",
+      "special": {
+        "1_BELOW": 1,
+        "3_BELOW": 1,
+        "4_TO_5_BELOW": 1,
+        "ABOVE": 1,
+        "MORE_THAN_5_BELOW": 16
       }
     }
   ]

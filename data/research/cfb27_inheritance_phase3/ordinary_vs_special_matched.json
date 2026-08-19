@@ -1,594 +1,6168 @@
 {
   "attribute_deltas": [
     {
-      "attribute": "STR",
+      "attribute": "RLS",
       "cells": 1,
-      "mean_special_delta": 16,
-      "position": "QB"
+      "mean_special_delta": -18,
+      "position": "FB"
     },
     {
-      "attribute": "BSH",
+      "attribute": "KAC",
       "cells": 1,
-      "mean_special_delta": 15.2,
-      "position": "FS"
-    },
-    {
-      "attribute": "PMV",
-      "cells": 1,
-      "mean_special_delta": 11.6,
-      "position": "FS"
-    },
-    {
-      "attribute": "RET",
-      "cells": 1,
-      "mean_special_delta": -11.6,
-      "position": "FS"
-    },
-    {
-      "attribute": "CAR",
-      "cells": 1,
-      "mean_special_delta": -10,
-      "position": "QB"
-    },
-    {
-      "attribute": "IBL",
-      "cells": 1,
-      "mean_special_delta": 8.8,
-      "position": "FS"
-    },
-    {
-      "attribute": "RUN",
-      "cells": 1,
-      "mean_special_delta": -7,
-      "position": "QB"
-    },
-    {
-      "attribute": "SPD",
-      "cells": 3,
-      "mean_special_delta": 6.822222,
-      "position": "C"
-    },
-    {
-      "attribute": "SPD",
-      "cells": 2,
-      "mean_special_delta": 6,
-      "position": "LG"
-    },
-    {
-      "attribute": "BCV",
-      "cells": 1,
-      "mean_special_delta": -6,
-      "position": "QB"
-    },
-    {
-      "attribute": "COD",
-      "cells": 1,
-      "mean_special_delta": -6,
-      "position": "QB"
-    },
-    {
-      "attribute": "SPM",
-      "cells": 1,
-      "mean_special_delta": -6,
-      "position": "QB"
-    },
-    {
-      "attribute": "TAK",
-      "cells": 1,
-      "mean_special_delta": -5.8,
-      "position": "FS"
-    },
-    {
-      "attribute": "TGH",
-      "cells": 3,
-      "mean_special_delta": 5.777778,
-      "position": "C"
-    },
-    {
-      "attribute": "ACC",
-      "cells": 2,
-      "mean_special_delta": 5.75,
-      "position": "LG"
-    },
-    {
-      "attribute": "POW",
-      "cells": 1,
-      "mean_special_delta": 5.4,
-      "position": "FS"
-    },
-    {
-      "attribute": "PRS",
-      "cells": 1,
-      "mean_special_delta": 5.2,
-      "position": "FS"
-    },
-    {
-      "attribute": "RBP",
-      "cells": 3,
-      "mean_special_delta": -5.122222,
-      "position": "C"
+      "mean_special_delta": 15,
+      "position": "FB"
     },
     {
       "attribute": "MCV",
       "cells": 1,
-      "mean_special_delta": 5.0,
+      "mean_special_delta": 15,
+      "position": "FB"
+    },
+    {
+      "attribute": "POW",
+      "cells": 1,
+      "mean_special_delta": 15,
+      "position": "FB"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 1,
+      "mean_special_delta": 15,
+      "position": "FB"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 1,
+      "mean_special_delta": 15,
+      "position": "FB"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 1,
+      "mean_special_delta": 15,
+      "position": "FB"
+    },
+    {
+      "attribute": "RET",
+      "cells": 2,
+      "mean_special_delta": 13.696078,
+      "position": "P"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 8,
+      "mean_special_delta": -13.613708,
       "position": "MLB"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 1,
+      "mean_special_delta": 13.130435,
+      "position": "K"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 3,
+      "mean_special_delta": 12.730159,
+      "position": "RT"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 1,
+      "mean_special_delta": -12,
+      "position": "FB"
+    },
+    {
+      "attribute": "COD",
+      "cells": 1,
+      "mean_special_delta": 12,
+      "position": "FB"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 1,
+      "mean_special_delta": -12,
+      "position": "FB"
     },
     {
       "attribute": "PMV",
       "cells": 1,
-      "mean_special_delta": -5.0,
+      "mean_special_delta": -12,
+      "position": "FB"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 1,
+      "mean_special_delta": -12,
+      "position": "FB"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 1,
+      "mean_special_delta": -12,
+      "position": "FB"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 3,
+      "mean_special_delta": -11.547619,
+      "position": "RT"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 8,
+      "mean_special_delta": -11.371586,
+      "position": "MLB"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 2,
+      "mean_special_delta": 11.124183,
+      "position": "P"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 4,
+      "mean_special_delta": 11.090909,
+      "position": "RG"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 1,
+      "mean_special_delta": -11,
+      "position": "FB"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 1,
+      "mean_special_delta": -11,
+      "position": "FB"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 1,
+      "mean_special_delta": 10.869565,
+      "position": "K"
+    },
+    {
+      "attribute": "THA",
+      "cells": 1,
+      "mean_special_delta": 10.449275,
+      "position": "K"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 1,
+      "mean_special_delta": 10.434783,
+      "position": "K"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 1,
+      "mean_special_delta": 10.405797,
+      "position": "K"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 4,
+      "mean_special_delta": 10.38174,
+      "position": "LE"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 1,
+      "mean_special_delta": 10.26087,
+      "position": "K"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 1,
+      "mean_special_delta": 10.26087,
+      "position": "K"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 1,
+      "mean_special_delta": 10.26087,
+      "position": "K"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 1,
+      "mean_special_delta": 10.217391,
+      "position": "K"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 4,
+      "mean_special_delta": 10.169118,
+      "position": "LE"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 1,
+      "mean_special_delta": 10,
+      "position": "FB"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 1,
+      "mean_special_delta": 10,
+      "position": "K"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 2,
+      "mean_special_delta": 9.933007,
+      "position": "P"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 1,
+      "mean_special_delta": 9.927536,
+      "position": "K"
+    },
+    {
+      "attribute": "THP",
+      "cells": 1,
+      "mean_special_delta": 9.927536,
+      "position": "K"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 1,
+      "mean_special_delta": 9.84058,
+      "position": "K"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 3,
+      "mean_special_delta": -9.833333,
+      "position": "RT"
+    },
+    {
+      "attribute": "THA",
+      "cells": 4,
+      "mean_special_delta": 9.781469,
+      "position": "RG"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 1,
+      "mean_special_delta": 9.73913,
+      "position": "K"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 1,
+      "mean_special_delta": 9.73913,
+      "position": "K"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 1,
+      "mean_special_delta": 9.695652,
+      "position": "K"
+    },
+    {
+      "attribute": "POW",
+      "cells": 3,
+      "mean_special_delta": -9.674603,
+      "position": "RT"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 1,
+      "mean_special_delta": 9.652174,
+      "position": "K"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 4,
+      "mean_special_delta": 9.643382,
+      "position": "LE"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 8,
+      "mean_special_delta": -9.628239,
+      "position": "MLB"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 1,
+      "mean_special_delta": 9.594203,
+      "position": "K"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 1,
+      "mean_special_delta": 9.565217,
+      "position": "K"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 4,
+      "mean_special_delta": 9.529412,
+      "position": "LE"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 1,
+      "mean_special_delta": 9.521739,
+      "position": "K"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 1,
+      "mean_special_delta": 9.333333,
+      "position": "K"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 8,
+      "mean_special_delta": -9.238183,
+      "position": "MLB"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 1,
+      "mean_special_delta": 9.231884,
+      "position": "K"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 1,
+      "mean_special_delta": 9.188406,
+      "position": "K"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 5,
+      "mean_special_delta": -9.157532,
+      "position": "TE"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 2,
+      "mean_special_delta": 9.155229,
+      "position": "P"
+    },
+    {
+      "attribute": "STR",
+      "cells": 1,
+      "mean_special_delta": 9.144928,
+      "position": "K"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 1,
+      "mean_special_delta": 9.101449,
+      "position": "K"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 1,
+      "mean_special_delta": 9.086957,
+      "position": "K"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 5,
+      "mean_special_delta": 9.00727,
+      "position": "FS"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 1,
+      "mean_special_delta": 9,
+      "position": "FB"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 1,
+      "mean_special_delta": -9,
+      "position": "FB"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 1,
+      "mean_special_delta": 8.826087,
+      "position": "K"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 1,
+      "mean_special_delta": 8.710145,
+      "position": "K"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 1,
+      "mean_special_delta": 8.710145,
+      "position": "K"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 5,
+      "mean_special_delta": 8.691076,
+      "position": "FS"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 15,
+      "mean_special_delta": -8.669818,
+      "position": "CB"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 3,
+      "mean_special_delta": 8.641414,
+      "position": "LT"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 1,
+      "mean_special_delta": 8.565217,
+      "position": "K"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 2,
+      "mean_special_delta": 8.560458,
+      "position": "P"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 1,
+      "mean_special_delta": 8.550725,
+      "position": "K"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 6,
+      "mean_special_delta": -8.511738,
+      "position": "SS"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 4,
+      "mean_special_delta": -8.480769,
+      "position": "RG"
+    },
+    {
+      "attribute": "STR",
+      "cells": 7,
+      "mean_special_delta": 8.415815,
+      "position": "QB"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 4,
+      "mean_special_delta": 8.395105,
+      "position": "RG"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 6,
+      "mean_special_delta": -8.383775,
+      "position": "SS"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 6,
+      "mean_special_delta": -8.361652,
+      "position": "SS"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 3,
+      "mean_special_delta": -8.34127,
+      "position": "RT"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 2,
+      "mean_special_delta": 8.310458,
+      "position": "P"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 6,
+      "mean_special_delta": -8.288897,
+      "position": "SS"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 8,
+      "mean_special_delta": 8.228878,
+      "position": "HB"
+    },
+    {
+      "attribute": "POW",
+      "cells": 2,
+      "mean_special_delta": 8.196078,
+      "position": "P"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 5,
+      "mean_special_delta": 8.195626,
+      "position": "FS"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 1,
+      "mean_special_delta": 8.144928,
+      "position": "K"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 9,
+      "mean_special_delta": 8.124261,
       "position": "MLB"
     },
     {
       "attribute": "JKM",
       "cells": 1,
-      "mean_special_delta": -5,
-      "position": "QB"
+      "mean_special_delta": 8.014493,
+      "position": "K"
     },
     {
-      "attribute": "TRK",
+      "attribute": "SPM",
+      "cells": 4,
+      "mean_special_delta": 8.00674,
+      "position": "LE"
+    },
+    {
+      "attribute": "SRR",
       "cells": 1,
-      "mean_special_delta": 5,
-      "position": "QB"
-    },
-    {
-      "attribute": "ACC",
-      "cells": 3,
-      "mean_special_delta": 4.911111,
-      "position": "C"
-    },
-    {
-      "attribute": "STR",
-      "cells": 1,
-      "mean_special_delta": -4.6,
-      "position": "FS"
-    },
-    {
-      "attribute": "FMV",
-      "cells": 1,
-      "mean_special_delta": 4.5,
-      "position": "MLB"
-    },
-    {
-      "attribute": "AWR",
-      "cells": 2,
-      "mean_special_delta": 4,
-      "position": "LG"
-    },
-    {
-      "attribute": "SFA",
-      "cells": 1,
-      "mean_special_delta": 4,
-      "position": "QB"
-    },
-    {
-      "attribute": "AGI",
-      "cells": 3,
-      "mean_special_delta": 3.844444,
-      "position": "C"
-    },
-    {
-      "attribute": "TGH",
-      "cells": 2,
-      "mean_special_delta": 3.5,
-      "position": "LG"
-    },
-    {
-      "attribute": "COD",
-      "cells": 3,
-      "mean_special_delta": 3.2,
-      "position": "C"
-    },
-    {
-      "attribute": "FMV",
-      "cells": 1,
-      "mean_special_delta": 3,
-      "position": "FS"
-    },
-    {
-      "attribute": "STR",
-      "cells": 2,
-      "mean_special_delta": -3,
-      "position": "LG"
-    },
-    {
-      "attribute": "AGI",
-      "cells": 1,
-      "mean_special_delta": -3,
-      "position": "QB"
-    },
-    {
-      "attribute": "BSK",
-      "cells": 1,
-      "mean_special_delta": 3,
-      "position": "QB"
-    },
-    {
-      "attribute": "DAC",
-      "cells": 1,
-      "mean_special_delta": -3,
-      "position": "QB"
-    },
-    {
-      "attribute": "LBK",
-      "cells": 3,
-      "mean_special_delta": -2.866667,
-      "position": "C"
-    },
-    {
-      "attribute": "AWR",
-      "cells": 1,
-      "mean_special_delta": 2.6,
-      "position": "FS"
+      "mean_special_delta": 8,
+      "position": "FB"
     },
     {
       "attribute": "CIT",
-      "cells": 1,
-      "mean_special_delta": -2.6,
+      "cells": 2,
+      "mean_special_delta": 7.993464,
+      "position": "P"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 2,
+      "mean_special_delta": 7.929739,
+      "position": "P"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 5,
+      "mean_special_delta": 7.898936,
       "position": "FS"
     },
     {
-      "attribute": "PBK",
+      "attribute": "LBK",
+      "cells": 1,
+      "mean_special_delta": 7.869565,
+      "position": "K"
+    },
+    {
+      "attribute": "MCV",
       "cells": 2,
-      "mean_special_delta": 2.5,
-      "position": "LG"
+      "mean_special_delta": 7.836601,
+      "position": "P"
     },
     {
-      "attribute": "TGH",
-      "cells": 1,
-      "mean_special_delta": 2.5,
-      "position": "MLB"
-    },
-    {
-      "attribute": "RBK",
+      "attribute": "CAR",
       "cells": 2,
-      "mean_special_delta": -2.25,
-      "position": "LG"
+      "mean_special_delta": 7.830065,
+      "position": "P"
     },
     {
-      "attribute": "COD",
-      "cells": 1,
-      "mean_special_delta": -2,
-      "position": "FS"
+      "attribute": "JKM",
+      "cells": 2,
+      "mean_special_delta": 7.803922,
+      "position": "P"
     },
     {
-      "attribute": "AWR",
-      "cells": 1,
-      "mean_special_delta": -2,
-      "position": "MLB"
+      "attribute": "JKM",
+      "cells": 4,
+      "mean_special_delta": 7.75,
+      "position": "LE"
     },
     {
-      "attribute": "JMP",
-      "cells": 1,
-      "mean_special_delta": 2.0,
-      "position": "MLB"
-    },
-    {
-      "attribute": "PRS",
-      "cells": 1,
-      "mean_special_delta": 2,
+      "attribute": "MAC",
+      "cells": 8,
+      "mean_special_delta": -7.69494,
       "position": "MLB"
     },
     {
       "attribute": "BTK",
+      "cells": 16,
+      "mean_special_delta": 7.63934,
+      "position": "WR"
+    },
+    {
+      "attribute": "RUN",
       "cells": 1,
-      "mean_special_delta": 2,
+      "mean_special_delta": 7.623188,
+      "position": "K"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 3,
+      "mean_special_delta": 7.551587,
+      "position": "RT"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 6,
+      "mean_special_delta": 7.546679,
+      "position": "QB"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 4,
+      "mean_special_delta": 7.54473,
+      "position": "LE"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 1,
+      "mean_special_delta": 7.536232,
+      "position": "K"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 4,
+      "mean_special_delta": -7.494755,
+      "position": "RG"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 2,
+      "mean_special_delta": 7.478758,
+      "position": "P"
+    },
+    {
+      "attribute": "COD",
+      "cells": 1,
+      "mean_special_delta": 7.478261,
+      "position": "K"
+    },
+    {
+      "attribute": "RET",
+      "cells": 6,
+      "mean_special_delta": 7.452613,
+      "position": "QB"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 4,
+      "mean_special_delta": 7.431985,
+      "position": "LE"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 4,
+      "mean_special_delta": 7.414828,
+      "position": "LE"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 5,
+      "mean_special_delta": -7.414416,
+      "position": "TE"
+    },
+    {
+      "attribute": "STR",
+      "cells": 2,
+      "mean_special_delta": 7.411765,
+      "position": "P"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 6,
+      "mean_special_delta": 7.333394,
       "position": "QB"
     },
     {
       "attribute": "TUP",
-      "cells": 1,
-      "mean_special_delta": 2,
-      "position": "QB"
+      "cells": 2,
+      "mean_special_delta": 7.318627,
+      "position": "P"
     },
     {
-      "attribute": "RBF",
-      "cells": 3,
-      "mean_special_delta": -1.911111,
-      "position": "C"
-    },
-    {
-      "attribute": "PBK",
-      "cells": 3,
-      "mean_special_delta": -1.833333,
-      "position": "C"
-    },
-    {
-      "attribute": "SPC",
-      "cells": 1,
-      "mean_special_delta": -1.8,
+      "attribute": "DRR",
+      "cells": 5,
+      "mean_special_delta": 7.300709,
       "position": "FS"
     },
     {
-      "attribute": "AWR",
-      "cells": 3,
-      "mean_special_delta": 1.777778,
-      "position": "C"
+      "attribute": "COD",
+      "cells": 2,
+      "mean_special_delta": 7.297386,
+      "position": "P"
     },
     {
-      "attribute": "RBF",
-      "cells": 2,
-      "mean_special_delta": -1.75,
-      "position": "LG"
+      "attribute": "KPW",
+      "cells": 4,
+      "mean_special_delta": 7.284965,
+      "position": "RG"
     },
     {
-      "attribute": "RBP",
-      "cells": 2,
-      "mean_special_delta": -1.75,
-      "position": "LG"
+      "attribute": "PMV",
+      "cells": 7,
+      "mean_special_delta": 7.244194,
+      "position": "HB"
     },
     {
       "attribute": "LBK",
+      "cells": 6,
+      "mean_special_delta": 7.233443,
+      "position": "QB"
+    },
+    {
+      "attribute": "ZCV",
       "cells": 2,
-      "mean_special_delta": -1.5,
-      "position": "LG"
+      "mean_special_delta": 7.228758,
+      "position": "P"
     },
     {
-      "attribute": "CIT",
-      "cells": 1,
-      "mean_special_delta": 1.5,
-      "position": "MLB"
-    },
-    {
-      "attribute": "IBL",
-      "cells": 1,
-      "mean_special_delta": -1.5,
-      "position": "MLB"
+      "attribute": "RET",
+      "cells": 15,
+      "mean_special_delta": 7.205277,
+      "position": "CB"
     },
     {
       "attribute": "SPC",
       "cells": 1,
-      "mean_special_delta": -1.5,
-      "position": "MLB"
+      "mean_special_delta": 7.173913,
+      "position": "K"
     },
     {
-      "attribute": "BSH",
-      "cells": 1,
-      "mean_special_delta": 1,
-      "position": "MLB"
-    },
-    {
-      "attribute": "COD",
-      "cells": 1,
-      "mean_special_delta": 1.0,
-      "position": "MLB"
-    },
-    {
-      "attribute": "CTH",
-      "cells": 1,
-      "mean_special_delta": 1,
-      "position": "MLB"
-    },
-    {
-      "attribute": "PRC",
-      "cells": 1,
-      "mean_special_delta": -1.0,
-      "position": "MLB"
-    },
-    {
-      "attribute": "ACC",
-      "cells": 1,
-      "mean_special_delta": -1,
-      "position": "QB"
-    },
-    {
-      "attribute": "AWR",
-      "cells": 1,
-      "mean_special_delta": 1,
-      "position": "QB"
-    },
-    {
-      "attribute": "SAC",
-      "cells": 1,
-      "mean_special_delta": 1,
-      "position": "QB"
-    },
-    {
-      "attribute": "PUR",
-      "cells": 1,
-      "mean_special_delta": 0.8,
-      "position": "FS"
-    },
-    {
-      "attribute": "COD",
+      "attribute": "THA",
       "cells": 2,
-      "mean_special_delta": -0.75,
-      "position": "LG"
-    },
-    {
-      "attribute": "ACC",
-      "cells": 1,
-      "mean_special_delta": 0.6,
-      "position": "FS"
-    },
-    {
-      "attribute": "MCV",
-      "cells": 1,
-      "mean_special_delta": -0.6,
-      "position": "FS"
-    },
-    {
-      "attribute": "PRC",
-      "cells": 1,
-      "mean_special_delta": -0.6,
-      "position": "FS"
-    },
-    {
-      "attribute": "SPD",
-      "cells": 1,
-      "mean_special_delta": 0.6,
-      "position": "FS"
-    },
-    {
-      "attribute": "ZCV",
-      "cells": 1,
-      "mean_special_delta": -0.6,
-      "position": "FS"
-    },
-    {
-      "attribute": "IBL",
-      "cells": 3,
-      "mean_special_delta": -0.533333,
-      "position": "C"
-    },
-    {
-      "attribute": "PBF",
-      "cells": 3,
-      "mean_special_delta": -0.522222,
-      "position": "C"
-    },
-    {
-      "attribute": "AGI",
-      "cells": 2,
-      "mean_special_delta": 0.5,
-      "position": "LG"
-    },
-    {
-      "attribute": "ACC",
-      "cells": 1,
-      "mean_special_delta": -0.5,
-      "position": "MLB"
-    },
-    {
-      "attribute": "AGI",
-      "cells": 1,
-      "mean_special_delta": -0.5,
-      "position": "MLB"
-    },
-    {
-      "attribute": "STR",
-      "cells": 3,
-      "mean_special_delta": 0.488889,
-      "position": "C"
-    },
-    {
-      "attribute": "AGI",
-      "cells": 1,
-      "mean_special_delta": -0.4,
-      "position": "FS"
-    },
-    {
-      "attribute": "IBL",
-      "cells": 2,
-      "mean_special_delta": -0.25,
-      "position": "LG"
-    },
-    {
-      "attribute": "PBF",
-      "cells": 2,
-      "mean_special_delta": -0.25,
-      "position": "LG"
-    },
-    {
-      "attribute": "CTH",
-      "cells": 1,
-      "mean_special_delta": 0.2,
-      "position": "FS"
-    },
-    {
-      "attribute": "JMP",
-      "cells": 1,
-      "mean_special_delta": 0.2,
-      "position": "FS"
-    },
-    {
-      "attribute": "RBK",
-      "cells": 3,
-      "mean_special_delta": -0.188889,
-      "position": "C"
+      "mean_special_delta": 7.169935,
+      "position": "P"
     },
     {
       "attribute": "PBP",
-      "cells": 3,
-      "mean_special_delta": -0.133333,
-      "position": "C"
+      "cells": 6,
+      "mean_special_delta": 7.168143,
+      "position": "QB"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 2,
+      "mean_special_delta": 7.156863,
+      "position": "P"
     },
     {
       "attribute": "TGH",
       "cells": 1,
-      "mean_special_delta": 0,
+      "mean_special_delta": 7.086957,
+      "position": "K"
+    },
+    {
+      "attribute": "COD",
+      "cells": 4,
+      "mean_special_delta": 7.08042,
+      "position": "RG"
+    },
+    {
+      "attribute": "POW",
+      "cells": 5,
+      "mean_special_delta": 7.067647,
+      "position": "LE"
+    },
+    {
+      "attribute": "POW",
+      "cells": 9,
+      "mean_special_delta": 7.06746,
+      "position": "MLB"
+    },
+    {
+      "attribute": "THP",
+      "cells": 4,
+      "mean_special_delta": 7.030114,
+      "position": "LG"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 2,
+      "mean_special_delta": 7.003268,
+      "position": "P"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 1,
+      "mean_special_delta": 7,
+      "position": "FB"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 1,
+      "mean_special_delta": 7,
+      "position": "FB"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 1,
+      "mean_special_delta": 7,
+      "position": "FB"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 1,
+      "mean_special_delta": 7,
+      "position": "FB"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 1,
+      "mean_special_delta": -7,
+      "position": "FB"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 1,
+      "mean_special_delta": -7,
+      "position": "FB"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 1,
+      "mean_special_delta": 7,
+      "position": "FB"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 15,
+      "mean_special_delta": -6.978952,
+      "position": "CB"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 2,
+      "mean_special_delta": 6.970588,
+      "position": "P"
+    },
+    {
+      "attribute": "THA",
+      "cells": 5,
+      "mean_special_delta": 6.967764,
+      "position": "C"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 2,
+      "mean_special_delta": 6.933007,
+      "position": "P"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 16,
+      "mean_special_delta": 6.90938,
+      "position": "WR"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 5,
+      "mean_special_delta": 6.893406,
+      "position": "C"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 8,
+      "mean_special_delta": 6.867517,
+      "position": "HB"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 2,
+      "mean_special_delta": 6.854575,
+      "position": "P"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 16,
+      "mean_special_delta": 6.83957,
+      "position": "WR"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 4,
+      "mean_special_delta": -6.774476,
+      "position": "RG"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 4,
+      "mean_special_delta": -6.722426,
+      "position": "LE"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 2,
+      "mean_special_delta": 6.699346,
+      "position": "P"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 3,
+      "mean_special_delta": -6.68254,
+      "position": "RT"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 4,
+      "mean_special_delta": 6.648284,
+      "position": "LE"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 4,
+      "mean_special_delta": -6.563997,
+      "position": "DT"
+    },
+    {
+      "attribute": "RET",
+      "cells": 4,
+      "mean_special_delta": -6.513809,
+      "position": "DT"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 5,
+      "mean_special_delta": -6.488139,
+      "position": "TE"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 6,
+      "mean_special_delta": 6.480407,
+      "position": "QB"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 5,
+      "mean_special_delta": 6.451655,
       "position": "FS"
     },
     {
-      "attribute": "PBP",
+      "attribute": "THP",
+      "cells": 6,
+      "mean_special_delta": -6.445438,
+      "position": "SS"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 5,
+      "mean_special_delta": -6.4321,
+      "position": "TE"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 3,
+      "mean_special_delta": -6.412698,
+      "position": "RT"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 6,
+      "mean_special_delta": -6.376568,
+      "position": "SS"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 4,
+      "mean_special_delta": -6.37337,
+      "position": "DT"
+    },
+    {
+      "attribute": "SRR",
       "cells": 2,
-      "mean_special_delta": 0,
-      "position": "LG"
+      "mean_special_delta": 6.359477,
+      "position": "P"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 6,
+      "mean_special_delta": 6.313731,
+      "position": "FS"
     },
     {
       "attribute": "POW",
       "cells": 1,
-      "mean_special_delta": 0.0,
+      "mean_special_delta": 6.26087,
+      "position": "K"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 1,
+      "mean_special_delta": 6.246377,
+      "position": "K"
+    },
+    {
+      "attribute": "RET",
+      "cells": 4,
+      "mean_special_delta": 6.178322,
+      "position": "RG"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 7,
+      "mean_special_delta": 6.162612,
+      "position": "HB"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 4,
+      "mean_special_delta": 6.087413,
+      "position": "RG"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 4,
+      "mean_special_delta": 6.079657,
+      "position": "LE"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 7,
+      "mean_special_delta": 6.053512,
+      "position": "HB"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 1,
+      "mean_special_delta": -6,
+      "position": "FB"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 1,
+      "mean_special_delta": 6,
+      "position": "FB"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 1,
+      "mean_special_delta": -6,
+      "position": "FB"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 1,
+      "mean_special_delta": -6,
+      "position": "FB"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 1,
+      "mean_special_delta": 6,
+      "position": "FB"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 1,
+      "mean_special_delta": 6,
+      "position": "FB"
+    },
+    {
+      "attribute": "THP",
+      "cells": 1,
+      "mean_special_delta": -6,
+      "position": "FB"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 5,
+      "mean_special_delta": 5.927009,
+      "position": "FS"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 6,
+      "mean_special_delta": 5.89759,
+      "position": "QB"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 6,
+      "mean_special_delta": 5.888291,
+      "position": "QB"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 1,
+      "mean_special_delta": 5.869565,
+      "position": "K"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 5,
+      "mean_special_delta": 5.864107,
+      "position": "C"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 4,
+      "mean_special_delta": 5.852328,
+      "position": "LE"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 2,
+      "mean_special_delta": 5.851307,
+      "position": "P"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 8,
+      "mean_special_delta": 5.844187,
+      "position": "HB"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 2,
+      "mean_special_delta": 5.79902,
+      "position": "P"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 16,
+      "mean_special_delta": 5.79899,
+      "position": "WR"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 7,
+      "mean_special_delta": 5.786875,
+      "position": "RE"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 7,
+      "mean_special_delta": 5.770669,
+      "position": "HB"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 9,
+      "mean_special_delta": 5.739963,
       "position": "MLB"
     },
     {
-      "attribute": "PUR",
+      "attribute": "KPW",
+      "cells": 4,
+      "mean_special_delta": -5.730169,
+      "position": "DT"
+    },
+    {
+      "attribute": "DRR",
       "cells": 1,
-      "mean_special_delta": 0,
+      "mean_special_delta": 5.724638,
+      "position": "K"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 8,
+      "mean_special_delta": -5.706845,
       "position": "MLB"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 6,
+      "mean_special_delta": -5.703283,
+      "position": "SS"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 2,
+      "mean_special_delta": 5.671569,
+      "position": "P"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 2,
+      "mean_special_delta": 5.645425,
+      "position": "P"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 8,
+      "mean_special_delta": 5.586397,
+      "position": "MLB"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 4,
+      "mean_special_delta": -5.582875,
+      "position": "DT"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 5,
+      "mean_special_delta": 5.576655,
+      "position": "FS"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 8,
+      "mean_special_delta": 5.556002,
+      "position": "HB"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 6,
+      "mean_special_delta": 5.550624,
+      "position": "SS"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 5,
+      "mean_special_delta": -5.547035,
+      "position": "TE"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 4,
+      "mean_special_delta": -5.461538,
+      "position": "RG"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 5,
+      "mean_special_delta": 5.454905,
+      "position": "FS"
+    },
+    {
+      "attribute": "STA",
+      "cells": 4,
+      "mean_special_delta": -5.445455,
+      "position": "LG"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 5,
+      "mean_special_delta": -5.440584,
+      "position": "TE"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 3,
+      "mean_special_delta": -5.412698,
+      "position": "RT"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 7,
+      "mean_special_delta": 5.396659,
+      "position": "RE"
+    },
+    {
+      "attribute": "THP",
+      "cells": 2,
+      "mean_special_delta": 5.375817,
+      "position": "P"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 6,
+      "mean_special_delta": 5.33397,
+      "position": "QB"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 8,
+      "mean_special_delta": 5.325473,
+      "position": "HB"
+    },
+    {
+      "attribute": "RET",
+      "cells": 8,
+      "mean_special_delta": 5.315088,
+      "position": "HB"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 15,
+      "mean_special_delta": 5.277826,
+      "position": "CB"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 4,
+      "mean_special_delta": 5.269231,
+      "position": "RG"
+    },
+    {
+      "attribute": "THA",
+      "cells": 3,
+      "mean_special_delta": -5.253737,
+      "position": "LT"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 2,
+      "mean_special_delta": 5.251634,
+      "position": "P"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 2,
+      "mean_special_delta": 5.236928,
+      "position": "P"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 3,
+      "mean_special_delta": 5.234127,
+      "position": "RT"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 4,
+      "mean_special_delta": 5.230769,
+      "position": "RG"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 5,
+      "mean_special_delta": 5.187411,
+      "position": "FS"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 2,
+      "mean_special_delta": 5.183007,
+      "position": "P"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 9,
+      "mean_special_delta": 5.156085,
+      "position": "MLB"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 2,
+      "mean_special_delta": 5.155229,
+      "position": "P"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 16,
+      "mean_special_delta": 5.132554,
+      "position": "WR"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 2,
+      "mean_special_delta": 5.125817,
+      "position": "P"
+    },
+    {
+      "attribute": "COD",
+      "cells": 8,
+      "mean_special_delta": 5.117803,
+      "position": "C"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 3,
+      "mean_special_delta": -5.072323,
+      "position": "LT"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 3,
+      "mean_special_delta": 5.039683,
+      "position": "RT"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 4,
+      "mean_special_delta": 5.037216,
+      "position": "LG"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 1,
+      "mean_special_delta": -5,
+      "position": "FB"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 1,
+      "mean_special_delta": -5,
+      "position": "FB"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 1,
+      "mean_special_delta": 5,
+      "position": "FB"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 5,
+      "mean_special_delta": 4.993225,
+      "position": "TE"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 7,
+      "mean_special_delta": 4.987395,
+      "position": "RE"
+    },
+    {
+      "attribute": "POW",
+      "cells": 6,
+      "mean_special_delta": 4.979375,
+      "position": "QB"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 4,
+      "mean_special_delta": 4.950568,
+      "position": "LG"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 4,
+      "mean_special_delta": -4.92917,
+      "position": "DT"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 2,
+      "mean_special_delta": 4.916667,
+      "position": "P"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 15,
+      "mean_special_delta": -4.915051,
+      "position": "CB"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 5,
+      "mean_special_delta": 4.90922,
+      "position": "FS"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 8,
+      "mean_special_delta": -4.888218,
+      "position": "MLB"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 7,
+      "mean_special_delta": -4.866427,
+      "position": "RE"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 6,
+      "mean_special_delta": 4.862802,
+      "position": "QB"
+    },
+    {
+      "attribute": "POW",
+      "cells": 8,
+      "mean_special_delta": 4.830427,
+      "position": "RE"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 4,
+      "mean_special_delta": -4.815894,
+      "position": "DT"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 3,
+      "mean_special_delta": 4.790303,
+      "position": "LT"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 2,
+      "mean_special_delta": 4.75817,
+      "position": "P"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 6,
+      "mean_special_delta": 4.754397,
+      "position": "QB"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 3,
+      "mean_special_delta": -4.718254,
+      "position": "RT"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 6,
+      "mean_special_delta": 4.703354,
+      "position": "QB"
+    },
+    {
+      "attribute": "RET",
+      "cells": 7,
+      "mean_special_delta": 4.690056,
+      "position": "RE"
+    },
+    {
+      "attribute": "STR",
+      "cells": 16,
+      "mean_special_delta": 4.679462,
+      "position": "WR"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 15,
+      "mean_special_delta": 4.669751,
+      "position": "CB"
+    },
+    {
+      "attribute": "RET",
+      "cells": 1,
+      "mean_special_delta": 4.666667,
+      "position": "K"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 4,
+      "mean_special_delta": 4.648897,
+      "position": "LE"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 6,
+      "mean_special_delta": 4.601361,
+      "position": "QB"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 5,
+      "mean_special_delta": 4.597446,
+      "position": "TE"
+    },
+    {
+      "attribute": "RET",
+      "cells": 5,
+      "mean_special_delta": -4.59316,
+      "position": "TE"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 5,
+      "mean_special_delta": -4.580293,
+      "position": "C"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 15,
+      "mean_special_delta": -4.579192,
+      "position": "CB"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 16,
+      "mean_special_delta": 4.558629,
+      "position": "WR"
+    },
+    {
+      "attribute": "RET",
+      "cells": 8,
+      "mean_special_delta": 4.553834,
+      "position": "MLB"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 3,
+      "mean_special_delta": 4.551587,
+      "position": "RT"
+    },
+    {
+      "attribute": "THP",
+      "cells": 4,
+      "mean_special_delta": 4.550245,
+      "position": "LE"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 15,
+      "mean_special_delta": 4.515881,
+      "position": "CB"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 3,
+      "mean_special_delta": 4.484127,
+      "position": "RT"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 4,
+      "mean_special_delta": -4.47549,
+      "position": "LE"
+    },
+    {
+      "attribute": "THP",
+      "cells": 5,
+      "mean_special_delta": -4.470931,
+      "position": "TE"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 5,
+      "mean_special_delta": 4.446959,
+      "position": "C"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 3,
+      "mean_special_delta": 4.440476,
+      "position": "RT"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 5,
+      "mean_special_delta": 4.386797,
+      "position": "TE"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 16,
+      "mean_special_delta": 4.386305,
+      "position": "WR"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 6,
+      "mean_special_delta": 4.383331,
+      "position": "SS"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 4,
+      "mean_special_delta": 4.323769,
+      "position": "LG"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 3,
+      "mean_special_delta": 4.31746,
+      "position": "RT"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 3,
+      "mean_special_delta": -4.315556,
+      "position": "LT"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 3,
+      "mean_special_delta": 4.313492,
+      "position": "RT"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 4,
+      "mean_special_delta": 4.298106,
+      "position": "LG"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 3,
+      "mean_special_delta": 4.293651,
+      "position": "RT"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 4,
+      "mean_special_delta": 4.292898,
+      "position": "LG"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 16,
+      "mean_special_delta": 4.286958,
+      "position": "WR"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 4,
+      "mean_special_delta": 4.282008,
+      "position": "LG"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 5,
+      "mean_special_delta": 4.259804,
+      "position": "LE"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 6,
+      "mean_special_delta": -4.259557,
+      "position": "SS"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 5,
+      "mean_special_delta": 4.257843,
+      "position": "LE"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 5,
+      "mean_special_delta": 4.257683,
+      "position": "FS"
+    },
+    {
+      "attribute": "STR",
+      "cells": 8,
+      "mean_special_delta": 4.252351,
+      "position": "HB"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 4,
+      "mean_special_delta": 4.24678,
+      "position": "LG"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 4,
+      "mean_special_delta": -4.236014,
+      "position": "RG"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 5,
+      "mean_special_delta": -4.234481,
+      "position": "TE"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 4,
+      "mean_special_delta": -4.22036,
+      "position": "LG"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 9,
+      "mean_special_delta": -4.205338,
+      "position": "MLB"
+    },
+    {
+      "attribute": "RET",
+      "cells": 16,
+      "mean_special_delta": 4.202868,
+      "position": "WR"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 3,
+      "mean_special_delta": 4.198413,
+      "position": "RT"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 5,
+      "mean_special_delta": 4.183117,
+      "position": "TE"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 4,
+      "mean_special_delta": 4.180147,
+      "position": "LE"
+    },
+    {
+      "attribute": "THP",
+      "cells": 4,
+      "mean_special_delta": -4.172615,
+      "position": "DT"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 4,
+      "mean_special_delta": 4.161152,
+      "position": "LE"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 3,
+      "mean_special_delta": 4.135354,
+      "position": "LT"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 4,
+      "mean_special_delta": 4.094508,
+      "position": "LG"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 6,
+      "mean_special_delta": -4.088642,
+      "position": "SS"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 7,
+      "mean_special_delta": 4.083449,
+      "position": "HB"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 5,
+      "mean_special_delta": -4.082987,
+      "position": "TE"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 9,
+      "mean_special_delta": -4.076175,
+      "position": "MLB"
+    },
+    {
+      "attribute": "RET",
+      "cells": 3,
+      "mean_special_delta": -4.074545,
+      "position": "LT"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 2,
+      "mean_special_delta": 4.071895,
+      "position": "P"
+    },
+    {
+      "attribute": "THA",
+      "cells": 7,
+      "mean_special_delta": 4.071649,
+      "position": "RE"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 9,
+      "mean_special_delta": -4.062092,
+      "position": "MLB"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 4,
+      "mean_special_delta": -4.022121,
+      "position": "LT"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 9,
+      "mean_special_delta": -4.005913,
+      "position": "MLB"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 5,
+      "mean_special_delta": 4.002128,
+      "position": "FS"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 5,
+      "mean_special_delta": -4.001623,
+      "position": "TE"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 6,
+      "mean_special_delta": 3.993276,
+      "position": "SS"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 5,
+      "mean_special_delta": 3.972944,
+      "position": "TE"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 7,
+      "mean_special_delta": 3.967026,
+      "position": "HB"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 4,
+      "mean_special_delta": 3.962311,
+      "position": "LG"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 6,
+      "mean_special_delta": 3.962242,
+      "position": "QB"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 4,
+      "mean_special_delta": -3.958333,
+      "position": "LE"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 15,
+      "mean_special_delta": 3.957765,
+      "position": "CB"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 6,
+      "mean_special_delta": -3.957515,
+      "position": "SS"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 6,
+      "mean_special_delta": 3.949734,
+      "position": "SS"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 4,
+      "mean_special_delta": 3.940559,
+      "position": "RG"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 4,
+      "mean_special_delta": 3.930492,
+      "position": "LG"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 4,
+      "mean_special_delta": 3.925932,
+      "position": "DT"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 1,
+      "mean_special_delta": 3.913043,
+      "position": "K"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 4,
+      "mean_special_delta": 3.896853,
+      "position": "RG"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 3,
+      "mean_special_delta": -3.894141,
+      "position": "LT"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 4,
+      "mean_special_delta": 3.86951,
+      "position": "DT"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 6,
+      "mean_special_delta": -3.864996,
+      "position": "SS"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 6,
+      "mean_special_delta": 3.852314,
+      "position": "SS"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 4,
+      "mean_special_delta": -3.842147,
+      "position": "DT"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 7,
+      "mean_special_delta": 3.817032,
+      "position": "HB"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 5,
+      "mean_special_delta": -3.812759,
+      "position": "C"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 4,
+      "mean_special_delta": 3.807386,
+      "position": "LG"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 3,
+      "mean_special_delta": 3.801587,
+      "position": "RT"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 5,
+      "mean_special_delta": -3.773145,
+      "position": "C"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 4,
+      "mean_special_delta": -3.772727,
+      "position": "RG"
+    },
+    {
+      "attribute": "STA",
+      "cells": 8,
+      "mean_special_delta": -3.771709,
+      "position": "MLB"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 3,
+      "mean_special_delta": -3.769841,
+      "position": "RT"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 7,
+      "mean_special_delta": 3.759728,
+      "position": "HB"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 6,
+      "mean_special_delta": 3.754287,
+      "position": "QB"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 6,
+      "mean_special_delta": 3.734892,
+      "position": "QB"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 4,
+      "mean_special_delta": 3.731913,
+      "position": "LG"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 16,
+      "mean_special_delta": 3.717767,
+      "position": "WR"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 7,
+      "mean_special_delta": 3.70911,
+      "position": "QB"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 16,
+      "mean_special_delta": 3.701816,
+      "position": "WR"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 7,
+      "mean_special_delta": 3.701381,
+      "position": "RE"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 5,
+      "mean_special_delta": -3.698615,
+      "position": "TE"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 6,
+      "mean_special_delta": 3.689828,
+      "position": "QB"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 16,
+      "mean_special_delta": -3.682783,
+      "position": "WR"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 3,
+      "mean_special_delta": 3.68254,
+      "position": "RT"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 6,
+      "mean_special_delta": 3.670346,
+      "position": "SS"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 6,
+      "mean_special_delta": -3.66844,
+      "position": "FS"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 3,
+      "mean_special_delta": 3.667273,
+      "position": "LT"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 7,
+      "mean_special_delta": 3.661985,
+      "position": "RE"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 5,
+      "mean_special_delta": 3.658038,
+      "position": "FS"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 9,
+      "mean_special_delta": 3.647137,
+      "position": "MLB"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 3,
+      "mean_special_delta": 3.64,
+      "position": "LT"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 6,
+      "mean_special_delta": 3.636229,
+      "position": "FS"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 4,
+      "mean_special_delta": -3.634615,
+      "position": "RG"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 5,
+      "mean_special_delta": 3.63418,
+      "position": "C"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 7,
+      "mean_special_delta": 3.632213,
+      "position": "RE"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 6,
+      "mean_special_delta": 3.629084,
+      "position": "QB"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 6,
+      "mean_special_delta": 3.619886,
+      "position": "LG"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 4,
+      "mean_special_delta": 3.611888,
+      "position": "RG"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 1,
+      "mean_special_delta": 3.608696,
+      "position": "K"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 9,
+      "mean_special_delta": -3.60014,
+      "position": "MLB"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 2,
+      "mean_special_delta": 3.599673,
+      "position": "P"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 4,
+      "mean_special_delta": 3.592519,
+      "position": "LG"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 7,
+      "mean_special_delta": 3.586935,
+      "position": "RE"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 5,
+      "mean_special_delta": -3.584913,
+      "position": "TE"
+    },
+    {
+      "attribute": "POW",
+      "cells": 3,
+      "mean_special_delta": 3.584444,
+      "position": "LT"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 15,
+      "mean_special_delta": -3.574422,
+      "position": "CB"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 2,
+      "mean_special_delta": 3.552288,
+      "position": "P"
+    },
+    {
+      "attribute": "THP",
+      "cells": 8,
+      "mean_special_delta": -3.543768,
+      "position": "MLB"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 6,
+      "mean_special_delta": -3.536052,
+      "position": "FS"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 4,
+      "mean_special_delta": -3.512238,
+      "position": "RG"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 4,
+      "mean_special_delta": 3.502451,
+      "position": "LE"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 6,
+      "mean_special_delta": 3.470806,
+      "position": "QB"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 6,
+      "mean_special_delta": 3.44697,
+      "position": "LG"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 3,
+      "mean_special_delta": -3.435152,
+      "position": "LT"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 7,
+      "mean_special_delta": 3.430792,
+      "position": "RE"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 6,
+      "mean_special_delta": -3.428191,
+      "position": "FS"
+    },
+    {
+      "attribute": "THP",
+      "cells": 5,
+      "mean_special_delta": 3.418015,
+      "position": "C"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 4,
+      "mean_special_delta": 3.412595,
+      "position": "LG"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 6,
+      "mean_special_delta": -3.392077,
+      "position": "SS"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 15,
+      "mean_special_delta": -3.373833,
+      "position": "CB"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 4,
+      "mean_special_delta": -3.352229,
+      "position": "DT"
+    },
+    {
+      "attribute": "POW",
+      "cells": 5,
+      "mean_special_delta": 3.342675,
+      "position": "C"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 4,
+      "mean_special_delta": 3.327152,
+      "position": "DT"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 6,
+      "mean_special_delta": -3.318529,
+      "position": "SS"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 6,
+      "mean_special_delta": 3.316292,
+      "position": "FS"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 7,
+      "mean_special_delta": 3.296178,
+      "position": "RE"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 7,
+      "mean_special_delta": 3.290876,
+      "position": "RE"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 3,
+      "mean_special_delta": 3.289683,
+      "position": "RT"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 6,
+      "mean_special_delta": 3.272872,
+      "position": "SS"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 5,
+      "mean_special_delta": -3.257554,
+      "position": "TE"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 7,
+      "mean_special_delta": 3.257183,
+      "position": "RE"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 4,
+      "mean_special_delta": -3.252273,
+      "position": "LT"
+    },
+    {
+      "attribute": "THA",
+      "cells": 15,
+      "mean_special_delta": -3.247683,
+      "position": "CB"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 7,
+      "mean_special_delta": 3.241474,
+      "position": "QB"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 4,
+      "mean_special_delta": 3.238199,
+      "position": "DT"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 4,
+      "mean_special_delta": -3.223776,
+      "position": "RG"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 5,
+      "mean_special_delta": -3.221099,
+      "position": "FS"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 7,
+      "mean_special_delta": 3.218123,
+      "position": "HB"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 15,
+      "mean_special_delta": -3.202096,
+      "position": "CB"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 6,
+      "mean_special_delta": -3.195693,
+      "position": "SS"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 4,
+      "mean_special_delta": 3.193312,
+      "position": "DT"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 8,
+      "mean_special_delta": 3.174265,
+      "position": "RE"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 8,
+      "mean_special_delta": -3.171919,
+      "position": "MLB"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 5,
+      "mean_special_delta": 3.155882,
+      "position": "LE"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 4,
+      "mean_special_delta": -3.153846,
+      "position": "RG"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 2,
+      "mean_special_delta": 3.148693,
+      "position": "P"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 4,
+      "mean_special_delta": 3.139678,
+      "position": "LG"
     },
     {
       "attribute": "SPD",
       "cells": 1,
-      "mean_special_delta": 0.0,
-      "position": "MLB"
+      "mean_special_delta": 3.130435,
+      "position": "K"
     },
     {
-      "attribute": "STR",
-      "cells": 1,
-      "mean_special_delta": 0,
-      "position": "MLB"
+      "attribute": "POW",
+      "cells": 15,
+      "mean_special_delta": 3.123356,
+      "position": "CB"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 6,
+      "mean_special_delta": 3.121517,
+      "position": "SS"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 4,
+      "mean_special_delta": 3.12083,
+      "position": "DT"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 15,
+      "mean_special_delta": 3.120474,
+      "position": "CB"
     },
     {
       "attribute": "TAK",
-      "cells": 1,
-      "mean_special_delta": 0,
+      "cells": 4,
+      "mean_special_delta": 3.118561,
+      "position": "LG"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 4,
+      "mean_special_delta": 3.118101,
+      "position": "DT"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 7,
+      "mean_special_delta": 3.116667,
+      "position": "QB"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 8,
+      "mean_special_delta": -3.102854,
       "position": "MLB"
     },
     {
-      "attribute": "ZCV",
+      "attribute": "PRC",
+      "cells": 6,
+      "mean_special_delta": 3.093769,
+      "position": "QB"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 7,
+      "mean_special_delta": -3.08898,
+      "position": "QB"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 6,
+      "mean_special_delta": 3.080292,
+      "position": "SS"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 2,
+      "mean_special_delta": 3.078431,
+      "position": "P"
+    },
+    {
+      "attribute": "POW",
+      "cells": 5,
+      "mean_special_delta": -3.075476,
+      "position": "TE"
+    },
+    {
+      "attribute": "THP",
+      "cells": 16,
+      "mean_special_delta": 3.061005,
+      "position": "WR"
+    },
+    {
+      "attribute": "STR",
+      "cells": 6,
+      "mean_special_delta": -3.028662,
+      "position": "LG"
+    },
+    {
+      "attribute": "STA",
+      "cells": 4,
+      "mean_special_delta": 3.027972,
+      "position": "RG"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 3,
+      "mean_special_delta": 3.027778,
+      "position": "RT"
+    },
+    {
+      "attribute": "COD",
+      "cells": 6,
+      "mean_special_delta": -3.017139,
+      "position": "FS"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 7,
+      "mean_special_delta": -3.001841,
+      "position": "RE"
+    },
+    {
+      "attribute": "ACC",
       "cells": 1,
-      "mean_special_delta": 0.0,
-      "position": "MLB"
+      "mean_special_delta": -3,
+      "position": "FB"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 1,
+      "mean_special_delta": -3,
+      "position": "FB"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 1,
+      "mean_special_delta": 3,
+      "position": "FB"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 1,
+      "mean_special_delta": 3,
+      "position": "FB"
     },
     {
       "attribute": "MAC",
       "cells": 1,
-      "mean_special_delta": 0,
-      "position": "QB"
+      "mean_special_delta": -3,
+      "position": "FB"
     },
     {
       "attribute": "PAC",
       "cells": 1,
-      "mean_special_delta": 0,
+      "mean_special_delta": -3,
+      "position": "FB"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 1,
+      "mean_special_delta": 3,
+      "position": "FB"
+    },
+    {
+      "attribute": "THA",
+      "cells": 1,
+      "mean_special_delta": -3,
+      "position": "FB"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 1,
+      "mean_special_delta": 3,
+      "position": "FB"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 1,
+      "mean_special_delta": -3,
+      "position": "FB"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 7,
+      "mean_special_delta": 2.993902,
       "position": "QB"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 15,
+      "mean_special_delta": 2.980232,
+      "position": "CB"
+    },
+    {
+      "attribute": "POW",
+      "cells": 7,
+      "mean_special_delta": 2.973531,
+      "position": "HB"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 8,
+      "mean_special_delta": -2.96945,
+      "position": "MLB"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 5,
+      "mean_special_delta": 2.967315,
+      "position": "C"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 16,
+      "mean_special_delta": -2.958793,
+      "position": "WR"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 15,
+      "mean_special_delta": -2.954656,
+      "position": "CB"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 15,
+      "mean_special_delta": -2.936416,
+      "position": "CB"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 8,
+      "mean_special_delta": 2.932869,
+      "position": "HB"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 15,
+      "mean_special_delta": 2.92302,
+      "position": "CB"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 4,
+      "mean_special_delta": 2.92197,
+      "position": "LG"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 16,
+      "mean_special_delta": -2.921729,
+      "position": "WR"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 4,
+      "mean_special_delta": 2.916084,
+      "position": "RG"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 16,
+      "mean_special_delta": 2.91149,
+      "position": "WR"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 6,
+      "mean_special_delta": 2.910644,
+      "position": "QB"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 6,
+      "mean_special_delta": 2.908652,
+      "position": "QB"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 16,
+      "mean_special_delta": 2.907115,
+      "position": "WR"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 4,
+      "mean_special_delta": -2.906534,
+      "position": "LG"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 3,
+      "mean_special_delta": 2.900202,
+      "position": "LT"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 7,
+      "mean_special_delta": 2.888235,
+      "position": "RE"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 3,
+      "mean_special_delta": 2.884921,
+      "position": "RT"
+    },
+    {
+      "attribute": "COD",
+      "cells": 6,
+      "mean_special_delta": 2.873548,
+      "position": "LG"
+    },
+    {
+      "attribute": "COD",
+      "cells": 3,
+      "mean_special_delta": -2.869048,
+      "position": "RT"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 3,
+      "mean_special_delta": 2.869048,
+      "position": "RT"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 16,
+      "mean_special_delta": 2.854082,
+      "position": "WR"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 8,
+      "mean_special_delta": -2.846289,
+      "position": "MLB"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 3,
+      "mean_special_delta": -2.845859,
+      "position": "LT"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 4,
+      "mean_special_delta": 2.826923,
+      "position": "RG"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 5,
+      "mean_special_delta": 2.810993,
+      "position": "FS"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 16,
+      "mean_special_delta": 2.792297,
+      "position": "WR"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 6,
+      "mean_special_delta": -2.786322,
+      "position": "SS"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 3,
+      "mean_special_delta": -2.782626,
+      "position": "LT"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 3,
+      "mean_special_delta": 2.779798,
+      "position": "LT"
+    },
+    {
+      "attribute": "THA",
+      "cells": 3,
+      "mean_special_delta": -2.777778,
+      "position": "RT"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 6,
+      "mean_special_delta": -2.773948,
+      "position": "SS"
+    },
+    {
+      "attribute": "THA",
+      "cells": 5,
+      "mean_special_delta": -2.76448,
+      "position": "FS"
+    },
+    {
+      "attribute": "THA",
+      "cells": 4,
+      "mean_special_delta": 2.750663,
+      "position": "LG"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 3,
+      "mean_special_delta": 2.75,
+      "position": "RT"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 6,
+      "mean_special_delta": -2.748769,
+      "position": "FS"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 2,
+      "mean_special_delta": 2.748366,
+      "position": "P"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 4,
+      "mean_special_delta": 2.736014,
+      "position": "RG"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 5,
+      "mean_special_delta": 2.725355,
+      "position": "FS"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 5,
+      "mean_special_delta": -2.724459,
+      "position": "TE"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 7,
+      "mean_special_delta": 2.72391,
+      "position": "RE"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 5,
+      "mean_special_delta": -2.720146,
+      "position": "C"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 16,
+      "mean_special_delta": 2.697699,
+      "position": "WR"
+    },
+    {
+      "attribute": "STR",
+      "cells": 4,
+      "mean_special_delta": -2.694499,
+      "position": "DT"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 7,
+      "mean_special_delta": -2.683465,
+      "position": "HB"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 4,
+      "mean_special_delta": 2.680157,
+      "position": "DT"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 9,
+      "mean_special_delta": -2.676782,
+      "position": "MLB"
+    },
+    {
+      "attribute": "COD",
+      "cells": 8,
+      "mean_special_delta": 2.666579,
+      "position": "RE"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 4,
+      "mean_special_delta": 2.655594,
+      "position": "RG"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 8,
+      "mean_special_delta": 2.646201,
+      "position": "RE"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 5,
+      "mean_special_delta": -2.644524,
+      "position": "TE"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 8,
+      "mean_special_delta": -2.641194,
+      "position": "RE"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 4,
+      "mean_special_delta": 2.640319,
+      "position": "LE"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 6,
+      "mean_special_delta": 2.637184,
+      "position": "LG"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 3,
+      "mean_special_delta": -2.63697,
+      "position": "LT"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 8,
+      "mean_special_delta": -2.636204,
+      "position": "MLB"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 5,
+      "mean_special_delta": 2.628139,
+      "position": "TE"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 15,
+      "mean_special_delta": -2.625258,
+      "position": "CB"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 5,
+      "mean_special_delta": 2.612825,
+      "position": "FS"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 4,
+      "mean_special_delta": 2.612689,
+      "position": "LG"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 16,
+      "mean_special_delta": 2.611763,
+      "position": "WR"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 4,
+      "mean_special_delta": -2.606643,
+      "position": "RG"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 9,
+      "mean_special_delta": 2.591503,
+      "position": "MLB"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 3,
+      "mean_special_delta": 2.589293,
+      "position": "LT"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 5,
+      "mean_special_delta": 2.584848,
+      "position": "TE"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 15,
+      "mean_special_delta": -2.577309,
+      "position": "CB"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 6,
+      "mean_special_delta": 2.568467,
+      "position": "QB"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 8,
+      "mean_special_delta": -2.564513,
+      "position": "MLB"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 7,
+      "mean_special_delta": -2.563125,
+      "position": "RE"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 8,
+      "mean_special_delta": -2.562412,
+      "position": "MLB"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 15,
+      "mean_special_delta": 2.560387,
+      "position": "CB"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 5,
+      "mean_special_delta": 2.556082,
+      "position": "TE"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 4,
+      "mean_special_delta": 2.551515,
+      "position": "LG"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 3,
+      "mean_special_delta": -2.547619,
+      "position": "RT"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 3,
+      "mean_special_delta": 2.542626,
+      "position": "LT"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 15,
+      "mean_special_delta": -2.542286,
+      "position": "CB"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 4,
+      "mean_special_delta": 2.539828,
+      "position": "LE"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 5,
+      "mean_special_delta": 2.539216,
+      "position": "LE"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 9,
+      "mean_special_delta": 2.532758,
+      "position": "MLB"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 15,
+      "mean_special_delta": 2.529719,
+      "position": "CB"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 4,
+      "mean_special_delta": 2.527972,
+      "position": "RG"
+    },
+    {
+      "attribute": "RET",
+      "cells": 6,
+      "mean_special_delta": 2.52475,
+      "position": "SS"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 3,
+      "mean_special_delta": -2.52381,
+      "position": "RT"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 15,
+      "mean_special_delta": -2.514209,
+      "position": "CB"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 15,
+      "mean_special_delta": 2.509833,
+      "position": "CB"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 15,
+      "mean_special_delta": 2.503242,
+      "position": "CB"
+    },
+    {
+      "attribute": "THA",
+      "cells": 4,
+      "mean_special_delta": 2.498775,
+      "position": "LE"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 6,
+      "mean_special_delta": -2.495085,
+      "position": "SS"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 15,
+      "mean_special_delta": -2.48182,
+      "position": "CB"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 4,
+      "mean_special_delta": 2.478139,
+      "position": "DT"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 15,
+      "mean_special_delta": 2.477738,
+      "position": "CB"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 2,
+      "mean_special_delta": 2.470588,
+      "position": "P"
+    },
+    {
+      "attribute": "RET",
+      "cells": 6,
+      "mean_special_delta": 2.469366,
+      "position": "FS"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 15,
+      "mean_special_delta": 2.468928,
+      "position": "CB"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 4,
+      "mean_special_delta": -2.468531,
+      "position": "RG"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 8,
+      "mean_special_delta": 2.464002,
+      "position": "HB"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 1,
+      "mean_special_delta": 2.434783,
+      "position": "K"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 6,
+      "mean_special_delta": 2.432033,
+      "position": "FS"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 16,
+      "mean_special_delta": -2.415567,
+      "position": "WR"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 7,
+      "mean_special_delta": -2.413926,
+      "position": "RE"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 7,
+      "mean_special_delta": -2.41166,
+      "position": "QB"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 7,
+      "mean_special_delta": 2.408911,
+      "position": "HB"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 7,
+      "mean_special_delta": 2.396759,
+      "position": "RE"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 3,
+      "mean_special_delta": 2.389899,
+      "position": "LT"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 16,
+      "mean_special_delta": -2.38822,
+      "position": "WR"
+    },
+    {
+      "attribute": "THP",
+      "cells": 4,
+      "mean_special_delta": -2.388112,
+      "position": "RG"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 2,
+      "mean_special_delta": 2.382353,
+      "position": "P"
+    },
+    {
+      "attribute": "THP",
+      "cells": 7,
+      "mean_special_delta": 2.371489,
+      "position": "RE"
+    },
+    {
+      "attribute": "STA",
+      "cells": 7,
+      "mean_special_delta": -2.363405,
+      "position": "RE"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 8,
+      "mean_special_delta": 2.363329,
+      "position": "C"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 5,
+      "mean_special_delta": -2.361765,
+      "position": "LE"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 7,
+      "mean_special_delta": 2.361244,
+      "position": "RE"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 2,
+      "mean_special_delta": -2.359477,
+      "position": "P"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 8,
+      "mean_special_delta": -2.354954,
+      "position": "MLB"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 15,
+      "mean_special_delta": -2.350999,
+      "position": "CB"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 4,
+      "mean_special_delta": -2.349877,
+      "position": "LE"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 2,
+      "mean_special_delta": 2.346405,
+      "position": "P"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 3,
+      "mean_special_delta": -2.343636,
+      "position": "LT"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 6,
+      "mean_special_delta": 2.329873,
+      "position": "SS"
+    },
+    {
+      "attribute": "STA",
+      "cells": 4,
+      "mean_special_delta": -2.314338,
+      "position": "LE"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 4,
+      "mean_special_delta": 2.31197,
+      "position": "LT"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 7,
+      "mean_special_delta": 2.307328,
+      "position": "HB"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 15,
+      "mean_special_delta": -2.292813,
+      "position": "CB"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 6,
+      "mean_special_delta": 2.283405,
+      "position": "SS"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 8,
+      "mean_special_delta": -2.277223,
+      "position": "MLB"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 15,
+      "mean_special_delta": 2.272793,
+      "position": "CB"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 8,
+      "mean_special_delta": 2.266823,
+      "position": "C"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 5,
+      "mean_special_delta": -2.253745,
+      "position": "TE"
+    },
+    {
+      "attribute": "COD",
+      "cells": 8,
+      "mean_special_delta": -2.247372,
+      "position": "HB"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 6,
+      "mean_special_delta": 2.24556,
+      "position": "SS"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 16,
+      "mean_special_delta": 2.227931,
+      "position": "WR"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 4,
+      "mean_special_delta": 2.226103,
+      "position": "LE"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 5,
+      "mean_special_delta": -2.223485,
+      "position": "TE"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 5,
+      "mean_special_delta": -2.210173,
+      "position": "TE"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 6,
+      "mean_special_delta": 2.210024,
+      "position": "QB"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 4,
+      "mean_special_delta": -2.20303,
+      "position": "LT"
+    },
+    {
+      "attribute": "COD",
+      "cells": 6,
+      "mean_special_delta": -2.200241,
+      "position": "SS"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 5,
+      "mean_special_delta": -2.197424,
+      "position": "TE"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 7,
+      "mean_special_delta": 2.19712,
+      "position": "QB"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 6,
+      "mean_special_delta": -2.19213,
+      "position": "FS"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 7,
+      "mean_special_delta": 2.189808,
+      "position": "QB"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 16,
+      "mean_special_delta": 2.189444,
+      "position": "WR"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 16,
+      "mean_special_delta": -2.188786,
+      "position": "WR"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 16,
+      "mean_special_delta": 2.186714,
+      "position": "WR"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 5,
+      "mean_special_delta": -2.18026,
+      "position": "TE"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 8,
+      "mean_special_delta": -2.150648,
+      "position": "RE"
+    },
+    {
+      "attribute": "STR",
+      "cells": 9,
+      "mean_special_delta": -2.127762,
+      "position": "MLB"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 8,
+      "mean_special_delta": -2.107197,
+      "position": "C"
+    },
+    {
+      "attribute": "POW",
+      "cells": 16,
+      "mean_special_delta": -2.105912,
+      "position": "WR"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 3,
+      "mean_special_delta": -2.103636,
+      "position": "LT"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 16,
+      "mean_special_delta": 2.093298,
+      "position": "WR"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 3,
+      "mean_special_delta": -2.087302,
+      "position": "RT"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 6,
+      "mean_special_delta": 2.068361,
+      "position": "FS"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 2,
+      "mean_special_delta": 2.066993,
+      "position": "P"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 5,
+      "mean_special_delta": -2.059436,
+      "position": "C"
+    },
+    {
+      "attribute": "STA",
+      "cells": 5,
+      "mean_special_delta": -2.058192,
+      "position": "C"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 6,
+      "mean_special_delta": 2.057329,
+      "position": "FS"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 6,
+      "mean_special_delta": 2.053409,
+      "position": "LG"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 4,
+      "mean_special_delta": -2.050821,
+      "position": "DT"
+    },
+    {
+      "attribute": "THA",
+      "cells": 6,
+      "mean_special_delta": -2.04899,
+      "position": "QB"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 6,
+      "mean_special_delta": 2.047414,
+      "position": "QB"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 6,
+      "mean_special_delta": -2.041017,
+      "position": "SS"
+    },
+    {
+      "attribute": "STR",
+      "cells": 5,
+      "mean_special_delta": 2.039827,
+      "position": "TE"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 5,
+      "mean_special_delta": -2.028589,
+      "position": "C"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 9,
+      "mean_special_delta": -2.027155,
+      "position": "MLB"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 16,
+      "mean_special_delta": 2.020226,
+      "position": "WR"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 4,
+      "mean_special_delta": -1.996324,
+      "position": "LE"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 4,
+      "mean_special_delta": 1.994602,
+      "position": "LG"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 7,
+      "mean_special_delta": -1.982073,
+      "position": "RE"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 15,
+      "mean_special_delta": 1.960524,
+      "position": "CB"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 4,
+      "mean_special_delta": -1.944476,
+      "position": "DT"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 3,
+      "mean_special_delta": 1.944444,
+      "position": "RT"
+    },
+    {
+      "attribute": "STA",
+      "cells": 3,
+      "mean_special_delta": -1.940476,
+      "position": "RT"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 5,
+      "mean_special_delta": 1.929329,
+      "position": "TE"
+    },
+    {
+      "attribute": "STR",
+      "cells": 4,
+      "mean_special_delta": 1.917832,
+      "position": "RG"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 3,
+      "mean_special_delta": -1.916667,
+      "position": "RT"
+    },
+    {
+      "attribute": "THA",
+      "cells": 16,
+      "mean_special_delta": 1.908734,
+      "position": "WR"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 4,
+      "mean_special_delta": 1.902652,
+      "position": "LG"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 15,
+      "mean_special_delta": 1.894586,
+      "position": "CB"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 4,
+      "mean_special_delta": 1.891667,
+      "position": "LG"
+    },
+    {
+      "attribute": "COD",
+      "cells": 9,
+      "mean_special_delta": -1.883676,
+      "position": "MLB"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 5,
+      "mean_special_delta": -1.879134,
+      "position": "TE"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 3,
+      "mean_special_delta": 1.876984,
+      "position": "RT"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 4,
+      "mean_special_delta": 1.875699,
+      "position": "DT"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 6,
+      "mean_special_delta": -1.875296,
+      "position": "FS"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 8,
+      "mean_special_delta": -1.873074,
+      "position": "MLB"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 4,
+      "mean_special_delta": -1.872378,
+      "position": "RG"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 8,
+      "mean_special_delta": -1.860626,
+      "position": "C"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 5,
+      "mean_special_delta": 1.858156,
+      "position": "FS"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 8,
+      "mean_special_delta": -1.851229,
+      "position": "HB"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 5,
+      "mean_special_delta": 1.832742,
+      "position": "FS"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 15,
+      "mean_special_delta": 1.824318,
+      "position": "CB"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 5,
+      "mean_special_delta": 1.823286,
+      "position": "FS"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 7,
+      "mean_special_delta": 1.819328,
+      "position": "RE"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 4,
+      "mean_special_delta": -1.815455,
+      "position": "LT"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 8,
+      "mean_special_delta": -1.814614,
+      "position": "HB"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 16,
+      "mean_special_delta": 1.812404,
+      "position": "WR"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 4,
+      "mean_special_delta": -1.810914,
+      "position": "DT"
+    },
+    {
+      "attribute": "THA",
+      "cells": 4,
+      "mean_special_delta": -1.804747,
+      "position": "DT"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 5,
+      "mean_special_delta": 1.800236,
+      "position": "FS"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 3,
+      "mean_special_delta": 1.798384,
+      "position": "LT"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 8,
+      "mean_special_delta": 1.797285,
+      "position": "HB"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 7,
+      "mean_special_delta": 1.796945,
+      "position": "HB"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 8,
+      "mean_special_delta": 1.795868,
+      "position": "MLB"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 3,
+      "mean_special_delta": 1.793651,
+      "position": "RT"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 5,
+      "mean_special_delta": 1.788896,
+      "position": "TE"
+    },
+    {
+      "attribute": "THP",
+      "cells": 7,
+      "mean_special_delta": 1.782701,
+      "position": "HB"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 4,
+      "mean_special_delta": 1.781469,
+      "position": "RG"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 8,
+      "mean_special_delta": -1.77563,
+      "position": "RE"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 4,
+      "mean_special_delta": -1.767491,
+      "position": "DT"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 6,
+      "mean_special_delta": -1.759998,
+      "position": "SS"
+    },
+    {
+      "attribute": "STR",
+      "cells": 3,
+      "mean_special_delta": -1.757937,
+      "position": "RT"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 16,
+      "mean_special_delta": 1.757256,
+      "position": "WR"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 1,
+      "mean_special_delta": 1.753623,
+      "position": "K"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 8,
+      "mean_special_delta": 1.750875,
+      "position": "C"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 8,
+      "mean_special_delta": 1.741964,
+      "position": "RE"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 4,
+      "mean_special_delta": -1.741422,
+      "position": "LE"
+    },
+    {
+      "attribute": "STR",
+      "cells": 4,
+      "mean_special_delta": -1.735455,
+      "position": "LT"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 7,
+      "mean_special_delta": 1.732833,
+      "position": "RE"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 8,
+      "mean_special_delta": -1.728446,
+      "position": "HB"
+    },
+    {
+      "attribute": "COD",
+      "cells": 4,
+      "mean_special_delta": 1.723636,
+      "position": "LT"
+    },
+    {
+      "attribute": "STA",
+      "cells": 2,
+      "mean_special_delta": -1.71732,
+      "position": "P"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 4,
+      "mean_special_delta": 1.713235,
+      "position": "LE"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 7,
+      "mean_special_delta": -1.71166,
+      "position": "QB"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 5,
+      "mean_special_delta": 1.70535,
+      "position": "C"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 16,
+      "mean_special_delta": -1.698121,
+      "position": "WR"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 7,
+      "mean_special_delta": 1.692006,
+      "position": "HB"
+    },
+    {
+      "attribute": "STA",
+      "cells": 7,
+      "mean_special_delta": 1.691424,
+      "position": "HB"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 5,
+      "mean_special_delta": 1.684113,
+      "position": "TE"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 4,
+      "mean_special_delta": 1.668966,
+      "position": "DT"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 4,
+      "mean_special_delta": 1.666212,
+      "position": "LT"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 6,
+      "mean_special_delta": 1.665459,
+      "position": "QB"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 6,
+      "mean_special_delta": 1.655934,
+      "position": "LG"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 6,
+      "mean_special_delta": 1.654837,
+      "position": "SS"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 7,
+      "mean_special_delta": -1.652021,
+      "position": "RE"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 5,
+      "mean_special_delta": 1.650368,
+      "position": "TE"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 4,
+      "mean_special_delta": -1.64472,
+      "position": "DT"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 3,
+      "mean_special_delta": 1.642857,
+      "position": "RT"
+    },
+    {
+      "attribute": "THP",
+      "cells": 3,
+      "mean_special_delta": 1.638889,
+      "position": "RT"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 6,
+      "mean_special_delta": 1.620321,
+      "position": "FS"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 6,
+      "mean_special_delta": -1.615025,
+      "position": "LG"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 4,
+      "mean_special_delta": 1.611888,
+      "position": "RG"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 7,
+      "mean_special_delta": 1.610204,
+      "position": "RE"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 2,
+      "mean_special_delta": 1.588235,
+      "position": "P"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 16,
+      "mean_special_delta": -1.585073,
+      "position": "WR"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 4,
+      "mean_special_delta": 1.58039,
+      "position": "DT"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 6,
+      "mean_special_delta": 1.568157,
+      "position": "SS"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 5,
+      "mean_special_delta": 1.56643,
+      "position": "FS"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 6,
+      "mean_special_delta": -1.564175,
+      "position": "FS"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 4,
+      "mean_special_delta": -1.557964,
+      "position": "DT"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 4,
+      "mean_special_delta": 1.555944,
+      "position": "RG"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 15,
+      "mean_special_delta": 1.551337,
+      "position": "CB"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 8,
+      "mean_special_delta": -1.550035,
+      "position": "RE"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 6,
+      "mean_special_delta": -1.544381,
+      "position": "SS"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 5,
+      "mean_special_delta": 1.54116,
+      "position": "C"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 4,
+      "mean_special_delta": 1.531469,
+      "position": "RG"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 7,
+      "mean_special_delta": 1.523557,
+      "position": "HB"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 5,
+      "mean_special_delta": 1.523114,
+      "position": "C"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 5,
+      "mean_special_delta": -1.519608,
+      "position": "LE"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 5,
+      "mean_special_delta": 1.513061,
+      "position": "FS"
+    },
+    {
+      "attribute": "STA",
+      "cells": 5,
+      "mean_special_delta": -1.501688,
+      "position": "TE"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 8,
+      "mean_special_delta": 1.500525,
+      "position": "MLB"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 5,
+      "mean_special_delta": 1.49349,
+      "position": "C"
+    },
+    {
+      "attribute": "COD",
+      "cells": 15,
+      "mean_special_delta": -1.491092,
+      "position": "CB"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 16,
+      "mean_special_delta": 1.487279,
+      "position": "WR"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 7,
+      "mean_special_delta": 1.487175,
+      "position": "RE"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 7,
+      "mean_special_delta": 1.486731,
+      "position": "QB"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 4,
+      "mean_special_delta": 1.461025,
+      "position": "DT"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 15,
+      "mean_special_delta": 1.459532,
+      "position": "CB"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 6,
+      "mean_special_delta": 1.45802,
+      "position": "QB"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 5,
+      "mean_special_delta": 1.45727,
+      "position": "FS"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 7,
+      "mean_special_delta": 1.448303,
+      "position": "HB"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 16,
+      "mean_special_delta": -1.446544,
+      "position": "WR"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 15,
+      "mean_special_delta": 1.446439,
+      "position": "CB"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 16,
+      "mean_special_delta": 1.444252,
+      "position": "WR"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 6,
+      "mean_special_delta": 1.422944,
+      "position": "SS"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 6,
+      "mean_special_delta": 1.42197,
+      "position": "LG"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 5,
+      "mean_special_delta": 1.416447,
+      "position": "C"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 6,
+      "mean_special_delta": 1.414372,
+      "position": "SS"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 6,
+      "mean_special_delta": 1.413219,
+      "position": "FS"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 3,
+      "mean_special_delta": -1.412698,
+      "position": "RT"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 3,
+      "mean_special_delta": 1.404762,
+      "position": "RT"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 5,
+      "mean_special_delta": -1.4,
+      "position": "LE"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 4,
+      "mean_special_delta": 1.398601,
+      "position": "RG"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 16,
+      "mean_special_delta": 1.394364,
+      "position": "WR"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 3,
+      "mean_special_delta": -1.392857,
+      "position": "RT"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 7,
+      "mean_special_delta": -1.388916,
+      "position": "RE"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 8,
+      "mean_special_delta": 1.38459,
+      "position": "HB"
+    },
+    {
+      "attribute": "POW",
+      "cells": 6,
+      "mean_special_delta": 1.375672,
+      "position": "SS"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 6,
+      "mean_special_delta": -1.368617,
+      "position": "SS"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 8,
+      "mean_special_delta": -1.36362,
+      "position": "RE"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 3,
+      "mean_special_delta": 1.360808,
+      "position": "LT"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 6,
+      "mean_special_delta": 1.358156,
+      "position": "FS"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 5,
+      "mean_special_delta": -1.355606,
+      "position": "TE"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 3,
+      "mean_special_delta": 1.345238,
+      "position": "RT"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 3,
+      "mean_special_delta": 1.341616,
+      "position": "LT"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 5,
+      "mean_special_delta": 1.340909,
+      "position": "TE"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 5,
+      "mean_special_delta": 1.339184,
+      "position": "FS"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 4,
+      "mean_special_delta": 1.337413,
+      "position": "RG"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 5,
+      "mean_special_delta": -1.335697,
+      "position": "FS"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 4,
+      "mean_special_delta": 1.332675,
+      "position": "DT"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 4,
+      "mean_special_delta": 1.316434,
+      "position": "RG"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 4,
+      "mean_special_delta": 1.314678,
+      "position": "LG"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 5,
+      "mean_special_delta": 1.311484,
+      "position": "C"
+    },
+    {
+      "attribute": "STR",
+      "cells": 6,
+      "mean_special_delta": -1.309299,
+      "position": "FS"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 4,
+      "mean_special_delta": 1.309242,
+      "position": "LT"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 5,
+      "mean_special_delta": 1.306186,
+      "position": "C"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 5,
+      "mean_special_delta": 1.303918,
+      "position": "TE"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 3,
+      "mean_special_delta": 1.301587,
+      "position": "RT"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 4,
+      "mean_special_delta": -1.298824,
+      "position": "DT"
+    },
+    {
+      "attribute": "SAC",
+      "cells": 7,
+      "mean_special_delta": -1.285592,
+      "position": "QB"
+    },
+    {
+      "attribute": "STA",
+      "cells": 4,
+      "mean_special_delta": -1.284383,
+      "position": "DT"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 8,
+      "mean_special_delta": -1.283438,
+      "position": "MLB"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 4,
+      "mean_special_delta": -1.269231,
+      "position": "RG"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 15,
+      "mean_special_delta": 1.267411,
+      "position": "CB"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 5,
+      "mean_special_delta": -1.248328,
+      "position": "C"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 4,
+      "mean_special_delta": 1.244755,
+      "position": "RG"
+    },
+    {
+      "attribute": "POW",
+      "cells": 4,
+      "mean_special_delta": 1.237267,
+      "position": "DT"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 8,
+      "mean_special_delta": 1.235607,
+      "position": "HB"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 8,
+      "mean_special_delta": 1.233011,
+      "position": "HB"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 5,
+      "mean_special_delta": -1.232957,
+      "position": "C"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 6,
+      "mean_special_delta": -1.231957,
+      "position": "SS"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 16,
+      "mean_special_delta": 1.231338,
+      "position": "WR"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 4,
+      "mean_special_delta": 1.229902,
+      "position": "DT"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 4,
+      "mean_special_delta": 1.229021,
+      "position": "RG"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 4,
+      "mean_special_delta": -1.228333,
+      "position": "LT"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 3,
+      "mean_special_delta": 1.224646,
+      "position": "LT"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 5,
+      "mean_special_delta": 1.22116,
+      "position": "C"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 8,
+      "mean_special_delta": 1.216431,
+      "position": "HB"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 4,
+      "mean_special_delta": 1.21553,
+      "position": "LG"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 16,
+      "mean_special_delta": -1.21287,
+      "position": "WR"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 4,
+      "mean_special_delta": -1.207875,
+      "position": "DT"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 5,
+      "mean_special_delta": -1.207056,
+      "position": "TE"
+    },
+    {
+      "attribute": "THA",
+      "cells": 6,
+      "mean_special_delta": -1.195338,
+      "position": "SS"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 4,
+      "mean_special_delta": 1.192402,
+      "position": "LE"
+    },
+    {
+      "attribute": "COD",
+      "cells": 5,
+      "mean_special_delta": 1.179902,
+      "position": "LE"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 4,
+      "mean_special_delta": 1.140717,
+      "position": "DT"
+    },
+    {
+      "attribute": "STR",
+      "cells": 8,
+      "mean_special_delta": -1.140091,
+      "position": "RE"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 7,
+      "mean_special_delta": 1.134014,
+      "position": "RE"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 4,
+      "mean_special_delta": -1.133563,
+      "position": "DT"
+    },
+    {
+      "attribute": "THA",
+      "cells": 7,
+      "mean_special_delta": 1.125999,
+      "position": "HB"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 4,
+      "mean_special_delta": -1.125874,
+      "position": "RG"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 6,
+      "mean_special_delta": 1.120272,
+      "position": "FS"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 3,
+      "mean_special_delta": 1.119798,
+      "position": "LT"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 4,
+      "mean_special_delta": -1.113636,
+      "position": "RG"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 3,
+      "mean_special_delta": -1.111111,
+      "position": "RT"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 5,
+      "mean_special_delta": 1.107013,
+      "position": "TE"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 5,
+      "mean_special_delta": -1.103511,
+      "position": "C"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 6,
+      "mean_special_delta": 1.100944,
+      "position": "QB"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 4,
+      "mean_special_delta": -1.100909,
+      "position": "LT"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 6,
+      "mean_special_delta": -1.068213,
+      "position": "FS"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 6,
+      "mean_special_delta": 1.067109,
+      "position": "LG"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 16,
+      "mean_special_delta": -1.063579,
+      "position": "WR"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 7,
+      "mean_special_delta": 1.062885,
+      "position": "RE"
+    },
+    {
+      "attribute": "THP",
+      "cells": 15,
+      "mean_special_delta": -1.062683,
+      "position": "CB"
+    },
+    {
+      "attribute": "POW",
+      "cells": 4,
+      "mean_special_delta": -1.059375,
+      "position": "LG"
+    },
+    {
+      "attribute": "THP",
+      "cells": 3,
+      "mean_special_delta": 1.055556,
+      "position": "LT"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 2,
+      "mean_special_delta": 1.055556,
+      "position": "P"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 3,
+      "mean_special_delta": -1.055556,
+      "position": "RT"
+    },
+    {
+      "attribute": "STA",
+      "cells": 3,
+      "mean_special_delta": -1.054343,
+      "position": "LT"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 5,
+      "mean_special_delta": -1.04816,
+      "position": "TE"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 4,
+      "mean_special_delta": -1.046117,
+      "position": "LG"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 3,
+      "mean_special_delta": -1.045051,
+      "position": "LT"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 6,
+      "mean_special_delta": -1.043917,
+      "position": "SS"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 7,
+      "mean_special_delta": -1.038213,
+      "position": "HB"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 5,
+      "mean_special_delta": -1.034639,
+      "position": "C"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 5,
+      "mean_special_delta": 1.030801,
+      "position": "TE"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 8,
+      "mean_special_delta": -1.020618,
+      "position": "C"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 8,
+      "mean_special_delta": 1.01931,
+      "position": "RE"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 1,
+      "mean_special_delta": -1,
+      "position": "FB"
+    },
+    {
+      "attribute": "RET",
+      "cells": 1,
+      "mean_special_delta": -1,
+      "position": "FB"
+    },
+    {
+      "attribute": "STA",
+      "cells": 1,
+      "mean_special_delta": 1,
+      "position": "FB"
+    },
+    {
+      "attribute": "STR",
+      "cells": 1,
+      "mean_special_delta": 1,
+      "position": "FB"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 4,
+      "mean_special_delta": -0.993182,
+      "position": "LG"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 4,
+      "mean_special_delta": 0.992424,
+      "position": "LT"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 6,
+      "mean_special_delta": 0.987371,
+      "position": "SS"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 6,
+      "mean_special_delta": -0.981041,
+      "position": "SS"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 3,
+      "mean_special_delta": 0.974545,
+      "position": "LT"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 16,
+      "mean_special_delta": -0.971966,
+      "position": "WR"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 3,
+      "mean_special_delta": 0.968254,
+      "position": "RT"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 15,
+      "mean_special_delta": -0.954921,
+      "position": "CB"
+    },
+    {
+      "attribute": "STR",
+      "cells": 15,
+      "mean_special_delta": 0.95225,
+      "position": "CB"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 8,
+      "mean_special_delta": 0.948599,
+      "position": "RE"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 15,
+      "mean_special_delta": 0.948041,
+      "position": "CB"
+    },
+    {
+      "attribute": "RET",
+      "cells": 4,
+      "mean_special_delta": -0.943627,
+      "position": "LE"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 6,
+      "mean_special_delta": 0.942361,
+      "position": "LG"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 4,
+      "mean_special_delta": -0.938811,
+      "position": "RG"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 7,
+      "mean_special_delta": 0.938475,
+      "position": "HB"
+    },
+    {
+      "attribute": "STA",
+      "cells": 6,
+      "mean_special_delta": 0.924638,
+      "position": "QB"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 1,
+      "mean_special_delta": 0.913043,
+      "position": "K"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 4,
+      "mean_special_delta": -0.90671,
+      "position": "DT"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 8,
+      "mean_special_delta": -0.905699,
+      "position": "HB"
+    },
+    {
+      "attribute": "THP",
+      "cells": 7,
+      "mean_special_delta": -0.903501,
+      "position": "QB"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 16,
+      "mean_special_delta": -0.89935,
+      "position": "WR"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 5,
+      "mean_special_delta": 0.894107,
+      "position": "C"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 16,
+      "mean_special_delta": 0.89281,
+      "position": "WR"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 7,
+      "mean_special_delta": 0.885109,
+      "position": "HB"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 3,
+      "mean_special_delta": 0.88404,
+      "position": "LT"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 7,
+      "mean_special_delta": 0.87827,
+      "position": "QB"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 5,
+      "mean_special_delta": -0.876471,
+      "position": "LE"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 4,
+      "mean_special_delta": -0.864394,
+      "position": "LG"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 4,
+      "mean_special_delta": 0.849716,
+      "position": "LG"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 8,
+      "mean_special_delta": -0.84909,
+      "position": "MLB"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 3,
+      "mean_special_delta": 0.845238,
+      "position": "RT"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 4,
+      "mean_special_delta": 0.839161,
+      "position": "RG"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 4,
+      "mean_special_delta": 0.828314,
+      "position": "LG"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 6,
+      "mean_special_delta": -0.821972,
+      "position": "SS"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 6,
+      "mean_special_delta": 0.812599,
+      "position": "FS"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 8,
+      "mean_special_delta": 0.809509,
+      "position": "C"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 4,
+      "mean_special_delta": -0.809441,
+      "position": "RG"
+    },
+    {
+      "attribute": "THA",
+      "cells": 5,
+      "mean_special_delta": 0.809113,
+      "position": "TE"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 3,
+      "mean_special_delta": 0.789495,
+      "position": "LT"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 6,
+      "mean_special_delta": 0.786869,
+      "position": "LG"
+    },
+    {
+      "attribute": "DAC",
+      "cells": 5,
+      "mean_special_delta": 0.780418,
+      "position": "C"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 7,
+      "mean_special_delta": 0.771298,
+      "position": "HB"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 7,
+      "mean_special_delta": 0.763879,
+      "position": "HB"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 8,
+      "mean_special_delta": -0.760854,
+      "position": "MLB"
+    },
+    {
+      "attribute": "SFA",
+      "cells": 7,
+      "mean_special_delta": 0.754433,
+      "position": "QB"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 5,
+      "mean_special_delta": 0.753723,
+      "position": "TE"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 4,
+      "mean_special_delta": -0.740495,
+      "position": "DT"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 8,
+      "mean_special_delta": 0.737601,
+      "position": "HB"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 7,
+      "mean_special_delta": 0.73644,
+      "position": "HB"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 4,
+      "mean_special_delta": 0.723039,
+      "position": "LE"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 6,
+      "mean_special_delta": 0.714205,
+      "position": "LG"
+    },
+    {
+      "attribute": "RBP",
+      "cells": 6,
+      "mean_special_delta": -0.709785,
+      "position": "LG"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 4,
+      "mean_special_delta": 0.699091,
+      "position": "LT"
+    },
+    {
+      "attribute": "POW",
+      "cells": 6,
+      "mean_special_delta": 0.697941,
+      "position": "FS"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 7,
+      "mean_special_delta": 0.688455,
+      "position": "RE"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 3,
+      "mean_special_delta": -0.686508,
+      "position": "RT"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 6,
+      "mean_special_delta": 0.686225,
+      "position": "SS"
+    },
+    {
+      "attribute": "THP",
+      "cells": 5,
+      "mean_special_delta": -0.678901,
+      "position": "FS"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 4,
+      "mean_special_delta": 0.676808,
+      "position": "DT"
+    },
+    {
+      "attribute": "BSH",
+      "cells": 15,
+      "mean_special_delta": -0.656496,
+      "position": "CB"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 5,
+      "mean_special_delta": -0.656147,
+      "position": "FS"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 5,
+      "mean_special_delta": 0.655779,
+      "position": "TE"
+    },
+    {
+      "attribute": "COD",
+      "cells": 4,
+      "mean_special_delta": 0.655379,
+      "position": "DT"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 9,
+      "mean_special_delta": -0.644958,
+      "position": "MLB"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 3,
+      "mean_special_delta": 0.626984,
+      "position": "RT"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 8,
+      "mean_special_delta": 0.625973,
+      "position": "C"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 15,
+      "mean_special_delta": 0.61032,
+      "position": "CB"
+    },
+    {
+      "attribute": "DRR",
+      "cells": 3,
+      "mean_special_delta": -0.602828,
+      "position": "LT"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 5,
+      "mean_special_delta": 0.583593,
+      "position": "TE"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 8,
+      "mean_special_delta": 0.580182,
+      "position": "MLB"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 4,
+      "mean_special_delta": 0.57205,
+      "position": "DT"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 8,
+      "mean_special_delta": 0.564433,
+      "position": "C"
+    },
+    {
+      "attribute": "RET",
+      "cells": 5,
+      "mean_special_delta": 0.562571,
+      "position": "C"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 5,
+      "mean_special_delta": 0.559314,
+      "position": "LE"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 4,
+      "mean_special_delta": -0.556985,
+      "position": "LE"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 4,
+      "mean_special_delta": -0.554848,
+      "position": "LT"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 6,
+      "mean_special_delta": 0.54508,
+      "position": "SS"
+    },
+    {
+      "attribute": "RET",
+      "cells": 3,
+      "mean_special_delta": -0.539683,
+      "position": "RT"
+    },
+    {
+      "attribute": "THA",
+      "cells": 8,
+      "mean_special_delta": 0.53764,
+      "position": "MLB"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 5,
+      "mean_special_delta": -0.535528,
+      "position": "C"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 8,
+      "mean_special_delta": 0.530852,
+      "position": "C"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 7,
+      "mean_special_delta": 0.530714,
+      "position": "HB"
+    },
+    {
+      "attribute": "POW",
+      "cells": 4,
+      "mean_special_delta": -0.526224,
+      "position": "RG"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 7,
+      "mean_special_delta": 0.52617,
+      "position": "RE"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 5,
+      "mean_special_delta": 0.525946,
+      "position": "C"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 1,
+      "mean_special_delta": -0.521739,
+      "position": "K"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 4,
+      "mean_special_delta": -0.50674,
+      "position": "LE"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 3,
+      "mean_special_delta": -0.506465,
+      "position": "LT"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 16,
+      "mean_special_delta": 0.505132,
+      "position": "WR"
+    },
+    {
+      "attribute": "RLS",
+      "cells": 4,
+      "mean_special_delta": 0.49326,
+      "position": "LE"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 4,
+      "mean_special_delta": -0.486579,
+      "position": "DT"
+    },
+    {
+      "attribute": "LBK",
+      "cells": 5,
+      "mean_special_delta": 0.481558,
+      "position": "TE"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 5,
+      "mean_special_delta": -0.473529,
+      "position": "LE"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 5,
+      "mean_special_delta": 0.471076,
+      "position": "C"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 3,
+      "mean_special_delta": -0.465253,
+      "position": "LT"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 5,
+      "mean_special_delta": 0.457843,
+      "position": "LE"
+    },
+    {
+      "attribute": "COD",
+      "cells": 16,
+      "mean_special_delta": 0.45647,
+      "position": "WR"
+    },
+    {
+      "attribute": "CTH",
+      "cells": 15,
+      "mean_special_delta": -0.454799,
+      "position": "CB"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 5,
+      "mean_special_delta": 0.447059,
+      "position": "LE"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 4,
+      "mean_special_delta": 0.447005,
+      "position": "DT"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 7,
+      "mean_special_delta": -0.442054,
+      "position": "HB"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 8,
+      "mean_special_delta": 0.440648,
+      "position": "C"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 1,
+      "mean_special_delta": -0.434783,
+      "position": "K"
+    },
+    {
+      "attribute": "SRR",
+      "cells": 4,
+      "mean_special_delta": 0.431818,
+      "position": "RG"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 16,
+      "mean_special_delta": -0.431275,
+      "position": "WR"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 15,
+      "mean_special_delta": -0.429613,
+      "position": "CB"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 15,
+      "mean_special_delta": 0.419124,
+      "position": "CB"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 6,
+      "mean_special_delta": -0.414738,
+      "position": "SS"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 5,
+      "mean_special_delta": 0.412999,
+      "position": "C"
+    },
+    {
+      "attribute": "RUN",
+      "cells": 7,
+      "mean_special_delta": 0.412422,
+      "position": "QB"
+    },
+    {
+      "attribute": "STR",
+      "cells": 8,
+      "mean_special_delta": -0.409862,
+      "position": "C"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 3,
+      "mean_special_delta": -0.400808,
+      "position": "LT"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 3,
+      "mean_special_delta": -0.400404,
+      "position": "LT"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 2,
+      "mean_special_delta": -0.398693,
+      "position": "P"
+    },
+    {
+      "attribute": "STR",
+      "cells": 5,
+      "mean_special_delta": -0.384314,
+      "position": "LE"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 5,
+      "mean_special_delta": 0.382013,
+      "position": "TE"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 7,
+      "mean_special_delta": -0.377499,
+      "position": "QB"
+    },
+    {
+      "attribute": "AGI",
+      "cells": 8,
+      "mean_special_delta": 0.376293,
+      "position": "C"
+    },
+    {
+      "attribute": "CIT",
+      "cells": 9,
+      "mean_special_delta": 0.375506,
+      "position": "MLB"
+    },
+    {
+      "attribute": "TRK",
+      "cells": 5,
+      "mean_special_delta": 0.371275,
+      "position": "C"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 4,
+      "mean_special_delta": 0.368855,
+      "position": "DT"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 8,
+      "mean_special_delta": -0.367875,
+      "position": "RE"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 5,
+      "mean_special_delta": -0.364091,
+      "position": "TE"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 7,
+      "mean_special_delta": -0.361605,
+      "position": "RE"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 16,
+      "mean_special_delta": -0.359692,
+      "position": "WR"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 3,
+      "mean_special_delta": 0.35596,
+      "position": "LT"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 7,
+      "mean_special_delta": -0.348119,
+      "position": "RE"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 4,
+      "mean_special_delta": 0.341299,
+      "position": "LE"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 7,
+      "mean_special_delta": 0.340156,
+      "position": "RE"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 8,
+      "mean_special_delta": -0.337272,
+      "position": "MLB"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 4,
+      "mean_special_delta": 0.332168,
+      "position": "RG"
+    },
+    {
+      "attribute": "ZCV",
+      "cells": 7,
+      "mean_special_delta": 0.331595,
+      "position": "HB"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 16,
+      "mean_special_delta": 0.327639,
+      "position": "WR"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 4,
+      "mean_special_delta": -0.323529,
+      "position": "LE"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 4,
+      "mean_special_delta": 0.318456,
+      "position": "DT"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 5,
+      "mean_special_delta": 0.29092,
+      "position": "C"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 6,
+      "mean_special_delta": 0.283026,
+      "position": "QB"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 8,
+      "mean_special_delta": -0.282713,
+      "position": "C"
+    },
+    {
+      "attribute": "PAC",
+      "cells": 7,
+      "mean_special_delta": -0.266582,
+      "position": "QB"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 8,
+      "mean_special_delta": 0.263604,
+      "position": "HB"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 16,
+      "mean_special_delta": 0.260478,
+      "position": "WR"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 4,
+      "mean_special_delta": 0.258741,
+      "position": "RG"
+    },
+    {
+      "attribute": "SPD",
+      "cells": 7,
+      "mean_special_delta": 0.257783,
+      "position": "QB"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 7,
+      "mean_special_delta": 0.255568,
+      "position": "HB"
+    },
+    {
+      "attribute": "STA",
+      "cells": 6,
+      "mean_special_delta": -0.251493,
+      "position": "SS"
+    },
+    {
+      "attribute": "STR",
+      "cells": 6,
+      "mean_special_delta": 0.237382,
+      "position": "SS"
+    },
+    {
+      "attribute": "CAR",
+      "cells": 6,
+      "mean_special_delta": -0.234396,
+      "position": "SS"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 4,
+      "mean_special_delta": 0.234375,
+      "position": "LG"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 8,
+      "mean_special_delta": -0.227066,
+      "position": "MLB"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 15,
+      "mean_special_delta": 0.226503,
+      "position": "CB"
+    },
+    {
+      "attribute": "RBF",
+      "cells": 6,
+      "mean_special_delta": 0.224811,
+      "position": "LG"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 2,
+      "mean_special_delta": -0.220588,
+      "position": "P"
+    },
+    {
+      "attribute": "STA",
+      "cells": 1,
+      "mean_special_delta": -0.217391,
+      "position": "K"
+    },
+    {
+      "attribute": "STA",
+      "cells": 16,
+      "mean_special_delta": -0.217284,
+      "position": "WR"
+    },
+    {
+      "attribute": "JMP",
+      "cells": 4,
+      "mean_special_delta": -0.215686,
+      "position": "LE"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 8,
+      "mean_special_delta": 0.215511,
+      "position": "MLB"
+    },
+    {
+      "attribute": "TAK",
+      "cells": 6,
+      "mean_special_delta": -0.214494,
+      "position": "SS"
+    },
+    {
+      "attribute": "RET",
+      "cells": 4,
+      "mean_special_delta": 0.208712,
+      "position": "LG"
+    },
+    {
+      "attribute": "RBK",
+      "cells": 5,
+      "mean_special_delta": -0.207792,
+      "position": "TE"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 4,
+      "mean_special_delta": 0.188636,
+      "position": "LG"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 3,
+      "mean_special_delta": -0.186508,
+      "position": "RT"
+    },
+    {
+      "attribute": "JKM",
+      "cells": 4,
+      "mean_special_delta": 0.184228,
+      "position": "DT"
+    },
+    {
+      "attribute": "INJ",
+      "cells": 15,
+      "mean_special_delta": 0.180348,
+      "position": "CB"
+    },
+    {
+      "attribute": "SPM",
+      "cells": 4,
+      "mean_special_delta": -0.175854,
+      "position": "DT"
+    },
+    {
+      "attribute": "KAC",
+      "cells": 4,
+      "mean_special_delta": 0.175699,
+      "position": "DT"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 8,
+      "mean_special_delta": -0.168599,
+      "position": "HB"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 4,
+      "mean_special_delta": 0.162121,
+      "position": "LT"
+    },
+    {
+      "attribute": "STA",
+      "cells": 5,
+      "mean_special_delta": 0.154846,
+      "position": "FS"
+    },
+    {
+      "attribute": "COD",
+      "cells": 7,
+      "mean_special_delta": 0.149793,
+      "position": "QB"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 4,
+      "mean_special_delta": 0.148958,
+      "position": "LG"
+    },
+    {
+      "attribute": "TGH",
+      "cells": 8,
+      "mean_special_delta": -0.147689,
+      "position": "RE"
+    },
+    {
+      "attribute": "COD",
+      "cells": 5,
+      "mean_special_delta": -0.145519,
+      "position": "TE"
+    },
+    {
+      "attribute": "KPW",
+      "cells": 15,
+      "mean_special_delta": 0.14516,
+      "position": "CB"
+    },
+    {
+      "attribute": "AWR",
+      "cells": 16,
+      "mean_special_delta": -0.14155,
+      "position": "WR"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 3,
+      "mean_special_delta": -0.138889,
+      "position": "RT"
+    },
+    {
+      "attribute": "PMV",
+      "cells": 9,
+      "mean_special_delta": 0.130486,
+      "position": "MLB"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 2,
+      "mean_special_delta": 0.124183,
+      "position": "P"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 4,
+      "mean_special_delta": 0.122471,
+      "position": "DT"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 4,
+      "mean_special_delta": -0.122378,
+      "position": "RG"
+    },
+    {
+      "attribute": "PUR",
+      "cells": 1,
+      "mean_special_delta": -0.115942,
+      "position": "K"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 5,
+      "mean_special_delta": 0.112414,
+      "position": "C"
+    },
+    {
+      "attribute": "FMV",
+      "cells": 9,
+      "mean_special_delta": -0.111345,
+      "position": "MLB"
+    },
+    {
+      "attribute": "PRC",
+      "cells": 5,
+      "mean_special_delta": 0.101385,
+      "position": "TE"
+    },
+    {
+      "attribute": "PRS",
+      "cells": 4,
+      "mean_special_delta": -0.092846,
+      "position": "DT"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 8,
+      "mean_special_delta": -0.090161,
+      "position": "MLB"
+    },
+    {
+      "attribute": "SPC",
+      "cells": 9,
+      "mean_special_delta": -0.083645,
+      "position": "MLB"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 9,
+      "mean_special_delta": -0.078976,
+      "position": "MLB"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 7,
+      "mean_special_delta": -0.061679,
+      "position": "QB"
+    },
+    {
+      "attribute": "BCV",
+      "cells": 5,
+      "mean_special_delta": -0.059822,
+      "position": "C"
+    },
+    {
+      "attribute": "MAC",
+      "cells": 4,
+      "mean_special_delta": 0.059716,
+      "position": "DT"
+    },
+    {
+      "attribute": "PBF",
+      "cells": 7,
+      "mean_special_delta": -0.0504,
+      "position": "RE"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 6,
+      "mean_special_delta": 0.049095,
+      "position": "SS"
+    },
+    {
+      "attribute": "PBP",
+      "cells": 7,
+      "mean_special_delta": -0.041253,
+      "position": "HB"
+    },
+    {
+      "attribute": "ACC",
+      "cells": 7,
+      "mean_special_delta": -0.020633,
+      "position": "QB"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 4,
+      "mean_special_delta": 0.018995,
+      "position": "LE"
+    },
+    {
+      "attribute": "IBL",
+      "cells": 4,
+      "mean_special_delta": 0.012238,
+      "position": "RG"
+    },
+    {
+      "attribute": "STA",
+      "cells": 15,
+      "mean_special_delta": 0.007858,
+      "position": "CB"
+    },
+    {
+      "attribute": "TUP",
+      "cells": 7,
+      "mean_special_delta": 0.007003,
+      "position": "RE"
+    },
+    {
+      "attribute": "MCV",
+      "cells": 5,
+      "mean_special_delta": 0.002184,
+      "position": "C"
+    },
+    {
+      "attribute": "BTK",
+      "cells": 8,
+      "mean_special_delta": -0.001648,
+      "position": "HB"
+    },
+    {
+      "attribute": "BSK",
+      "cells": 1,
+      "mean_special_delta": 0,
+      "position": "FB"
+    },
+    {
+      "attribute": "MRR",
+      "cells": 1,
+      "mean_special_delta": 0,
+      "position": "FB"
+    },
+    {
+      "attribute": "PBK",
+      "cells": 1,
+      "mean_special_delta": 0,
+      "position": "FB"
     },
     {
       "attribute": "SPD",
       "cells": 1,
       "mean_special_delta": 0,
-      "position": "QB"
+      "position": "FB"
     },
     {
       "attribute": "TAC",
       "cells": 1,
       "mean_special_delta": 0,
       "position": "QB"
-    },
-    {
-      "attribute": "TGH",
-      "cells": 1,
-      "mean_special_delta": 0,
-      "position": "QB"
-    },
-    {
-      "attribute": "THP",
-      "cells": 1,
-      "mean_special_delta": 0,
-      "position": "QB"
     }
   ],
   "causal_claim": false,
-  "matched_cells": 8
+  "matched_cells": 118
 }

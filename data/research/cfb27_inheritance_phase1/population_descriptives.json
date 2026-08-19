@@ -1,62 +1,27 @@
 {
   "C": {
     "archetype_distribution": {
-      "Agile": 3,
+      "Agile": 1,
       "Pass Protector": 6,
-      "Raw Strength": 8,
-      "Well Rounded": 1
+      "Raw Strength": 8
     },
     "attribute_means_by_ovr": {
-      "80": {
-        "ACC": 66,
-        "AGI": 65,
-        "AWR": 75,
-        "COD": 62,
-        "IBL": 74,
-        "LBK": 82,
-        "PBF": 82,
-        "PBK": 79,
-        "PBP": 73,
-        "RBF": 79,
-        "RBK": 79,
-        "RBP": 77,
-        "SPD": 58,
-        "STR": 79,
-        "TGH": 80
-      },
-      "81": {
-        "ACC": 70,
-        "AGI": 68,
-        "AWR": 80,
-        "COD": 68,
-        "IBL": 75,
-        "LBK": 74,
-        "PBF": 80,
-        "PBK": 80,
-        "PBP": 80,
-        "RBF": 80,
-        "RBK": 80,
-        "RBP": 80,
-        "SPD": 70,
-        "STR": 80,
-        "TGH": 90
-      },
       "84": {
-        "ACC": 67,
-        "AGI": 66.5,
-        "AWR": 81.1667,
-        "COD": 62.8333,
-        "IBL": 81,
-        "LBK": 82.1667,
-        "PBF": 81.6667,
-        "PBK": 81.8333,
-        "PBP": 81.6667,
-        "RBF": 83.6667,
-        "RBK": 83.8333,
-        "RBP": 82.8333,
-        "SPD": 67.8333,
-        "STR": 81.6667,
-        "TGH": 84.6667
+        "ACC": 66.8,
+        "AGI": 66.2,
+        "AWR": 81.2,
+        "COD": 61.8,
+        "IBL": 81.8,
+        "LBK": 82,
+        "PBF": 81.4,
+        "PBK": 81.8,
+        "PBP": 82,
+        "RBF": 83.4,
+        "RBK": 83.4,
+        "RBP": 82.8,
+        "SPD": 67.8,
+        "STR": 82.2,
+        "TGH": 84.8
       },
       "85": {
         "ACC": 67,
@@ -129,78 +94,76 @@
     },
     "attribute_relationships": {
       "ACC": {
-        "correlation_with_ovr": 0.136338,
-        "mean": 67.611111
+        "correlation_with_ovr": 0.296505,
+        "mean": 67.533333
       },
       "AGI": {
-        "correlation_with_ovr": 0.09822,
-        "mean": 66.166667
+        "correlation_with_ovr": 0.246808,
+        "mean": 66
       },
       "AWR": {
-        "correlation_with_ovr": 0.801525,
-        "mean": 81.777778
+        "correlation_with_ovr": 0.728591,
+        "mean": 82.4
       },
       "COD": {
-        "correlation_with_ovr": 0.046374,
-        "mean": 64
+        "correlation_with_ovr": 0.218662,
+        "mean": 63.6
       },
       "IBL": {
-        "correlation_with_ovr": 0.802579,
-        "mean": 81.555556
+        "correlation_with_ovr": 0.455326,
+        "mean": 82.8
       },
       "LBK": {
-        "correlation_with_ovr": 0.175672,
-        "mean": 80.166667
+        "correlation_with_ovr": 0.074297,
+        "mean": 80.266667
       },
       "PBF": {
-        "correlation_with_ovr": 0.187608,
-        "mean": 82.555556
+        "correlation_with_ovr": 0.074676,
+        "mean": 82.733333
       },
       "PBK": {
-        "correlation_with_ovr": 0.680116,
-        "mean": 82.722222
+        "correlation_with_ovr": 0.412017,
+        "mean": 83.2
       },
       "PBP": {
-        "correlation_with_ovr": 0.827905,
-        "mean": 83.277778
+        "correlation_with_ovr": 0.613969,
+        "mean": 84.4
       },
       "RBF": {
-        "correlation_with_ovr": 0.254537,
-        "mean": 81.777778
+        "correlation_with_ovr": 0.010923,
+        "mean": 81.866667
       },
       "RBK": {
-        "correlation_with_ovr": 0.469159,
-        "mean": 82.611111
+        "correlation_with_ovr": 0.327757,
+        "mean": 82.8
       },
       "RBP": {
-        "correlation_with_ovr": 0.574621,
-        "mean": 82.555556
+        "correlation_with_ovr": 0.410892,
+        "mean": 83.066667
       },
       "SPD": {
-        "correlation_with_ovr": 0.313355,
-        "mean": 67.555556
+        "correlation_with_ovr": 0.085749,
+        "mean": 68
       },
       "STR": {
-        "correlation_with_ovr": 0.856076,
-        "mean": 83.611111
+        "correlation_with_ovr": 0.862276,
+        "mean": 84.466667
       },
       "TGH": {
-        "correlation_with_ovr": 0.495145,
-        "mean": 86.777778
+        "correlation_with_ovr": 0.580062,
+        "mean": 87.2
       }
     },
-    "count": 18,
+    "count": 15,
     "ovr_distribution": {
-      "80": 1,
-      "81": 1,
-      "84": 6,
+      "84": 5,
       "85": 5,
       "86": 3,
       "87": 1,
       "88": 1
     },
     "ovr_range": [
-      80,
+      84,
       88
     ]
   },

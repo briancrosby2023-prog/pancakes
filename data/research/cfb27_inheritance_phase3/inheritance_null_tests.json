@@ -1,29 +1,19 @@
 {
   "equal": {
-    "correlation": 0.902562,
-    "exact_accuracy": 0.452381,
-    "mae": 0.547619,
+    "correlation": 0.896696,
+    "exact_accuracy": 0.45,
+    "mae": 0.55,
     "mean_same_ovr_score_width": 1.138889,
-    "n": 42,
-    "ordering_accuracy": 0.806167,
+    "n": 40,
+    "ordering_accuracy": 0.810458,
     "prediction_rows": [
-      {
-        "archetype": "Agile",
-        "card_id": "102026556",
-        "ovr": 80,
-        "player": "Kevin Mawae",
-        "prediction": 81,
-        "residual": -0.83983306,
-        "score": 74.08333333,
-        "special": false
-      },
       {
         "archetype": "Pass Protector",
         "card_id": "27-2000723",
         "ovr": 80,
         "player": "Joshua Bates",
         "prediction": 81,
-        "residual": -0.83983306,
+        "residual": -0.89420333,
         "score": 74.08333333,
         "special": false
       },
@@ -33,7 +23,7 @@
         "ovr": 81,
         "player": "Ashton Beers",
         "prediction": 81,
-        "residual": 0.28894191,
+        "residual": 0.23734884,
         "score": 74.0,
         "special": false
       },
@@ -43,7 +33,7 @@
         "ovr": 83,
         "player": "Drew Bobo",
         "prediction": 84,
-        "residual": -0.65051209,
+        "residual": -0.64555011,
         "score": 77.75,
         "special": false
       },
@@ -53,7 +43,7 @@
         "ovr": 82,
         "player": "Braelin Moore",
         "prediction": 83,
-        "residual": -0.7396033,
+        "residual": -0.75175711,
         "score": 76.58333333,
         "special": false
       },
@@ -63,7 +53,7 @@
         "ovr": 84,
         "player": "Brady Small",
         "prediction": 83,
-        "residual": 0.98854552,
+        "residual": 0.98556846,
         "score": 77.0,
         "special": false
       },
@@ -73,7 +63,7 @@
         "ovr": 81,
         "player": "Vincent Fiacable",
         "prediction": 80,
-        "residual": 0.56960999,
+        "residual": 0.51356189,
         "score": 73.66666667,
         "special": false
       },
@@ -83,7 +73,7 @@
         "ovr": 81,
         "player": "Dominick Giudice",
         "prediction": 82,
-        "residual": -0.90914631,
+        "residual": -0.93820786,
         "score": 75.5,
         "special": false
       },
@@ -93,7 +83,7 @@
         "ovr": 83,
         "player": "Carson Hinzman",
         "prediction": 84,
-        "residual": -0.51337314,
+        "residual": -0.51045011,
         "score": 77.58333333,
         "special": false
       },
@@ -103,7 +93,7 @@
         "ovr": 81,
         "player": "Tyson Ruffins",
         "prediction": 81,
-        "residual": 0.28894191,
+        "residual": 0.23734884,
         "score": 74.0,
         "special": false
       },
@@ -113,7 +103,7 @@
         "ovr": 82,
         "player": "Coleton Price",
         "prediction": 82,
-        "residual": -0.27721095,
+        "residual": -0.29758443,
         "score": 76.0,
         "special": false
       },
@@ -123,7 +113,7 @@
         "ovr": 84,
         "player": "Justin Evans",
         "prediction": 84,
-        "residual": -0.28420582,
+        "residual": -0.26503448,
         "score": 78.58333333,
         "special": false
       },
@@ -133,7 +123,7 @@
         "ovr": 82,
         "player": "Jake Guarnera",
         "prediction": 82,
-        "residual": 0.38384649,
+        "residual": 0.35145129,
         "score": 75.16666667,
         "special": false
       },
@@ -143,7 +133,7 @@
         "ovr": 84,
         "player": "Sheridan Wilson",
         "prediction": 83,
-        "residual": 0.85835521,
+        "residual": 0.85790057,
         "score": 77.16666667,
         "special": false
       },
@@ -153,7 +143,7 @@
         "ovr": 81,
         "player": "Lyndon Cooper",
         "prediction": 81,
-        "residual": -0.18587738,
+        "residual": -0.22896033,
         "score": 74.58333333,
         "special": false
       },
@@ -163,7 +153,7 @@
         "ovr": 84,
         "player": "Bruce Mitchell",
         "prediction": 84,
-        "residual": 0.46465529,
+        "residual": 0.47163389,
         "score": 77.66666667,
         "special": false
       },
@@ -173,7 +163,7 @@
         "ovr": 84,
         "player": "Kade Pieper",
         "prediction": 84,
-        "residual": 0.06212809,
+        "residual": 0.07609258,
         "score": 78.16666667,
         "special": false
       },
@@ -183,7 +173,7 @@
         "ovr": 83,
         "player": "Ezomo Oratokhai",
         "prediction": 83,
-        "residual": 0.2869527,
+        "residual": 0.27623451,
         "score": 76.58333333,
         "special": false
       },
@@ -193,7 +183,7 @@
         "ovr": 81,
         "player": "Jake Renfro",
         "prediction": 80,
-        "residual": 1.00854995,
+        "residual": 0.94675012,
         "score": 73.16666667,
         "special": false
       },
@@ -203,7 +193,7 @@
         "ovr": 85,
         "player": "Iapani Laloulu",
         "prediction": 84,
-        "residual": 0.86319174,
+        "residual": 0.88695589,
         "score": 78.5,
         "special": false
       },
@@ -213,7 +203,7 @@
         "ovr": 81,
         "player": "Anthony Boswell",
         "prediction": 82,
-        "residual": -1.17051797,
+        "residual": -1.19458083,
         "score": 75.83333333,
         "special": false
       },
@@ -223,7 +213,7 @@
         "ovr": 80,
         "player": "Joshua Bates",
         "prediction": 81,
-        "residual": -0.83983306,
+        "residual": -0.89420333,
         "score": 74.08333333,
         "special": false
       },
@@ -233,7 +223,7 @@
         "ovr": 81,
         "player": "Ashton Beers",
         "prediction": 81,
-        "residual": 0.28894191,
+        "residual": 0.23734884,
         "score": 74.0,
         "special": false
       },
@@ -243,7 +233,7 @@
         "ovr": 83,
         "player": "Drew Bobo",
         "prediction": 84,
-        "residual": -0.65051209,
+        "residual": -0.64555011,
         "score": 77.75,
         "special": false
       },
@@ -253,7 +243,7 @@
         "ovr": 82,
         "player": "Braelin Moore",
         "prediction": 83,
-        "residual": -0.7396033,
+        "residual": -0.75175711,
         "score": 76.58333333,
         "special": false
       },
@@ -263,7 +253,7 @@
         "ovr": 84,
         "player": "Brady Small",
         "prediction": 83,
-        "residual": 0.98854552,
+        "residual": 0.98556846,
         "score": 77.0,
         "special": false
       },
@@ -273,7 +263,7 @@
         "ovr": 81,
         "player": "Vincent Fiacable",
         "prediction": 80,
-        "residual": 0.56960999,
+        "residual": 0.51356189,
         "score": 73.66666667,
         "special": false
       },
@@ -283,7 +273,7 @@
         "ovr": 81,
         "player": "Dominick Giudice",
         "prediction": 82,
-        "residual": -0.90914631,
+        "residual": -0.93820786,
         "score": 75.5,
         "special": false
       },
@@ -293,7 +283,7 @@
         "ovr": 83,
         "player": "Carson Hinzman",
         "prediction": 84,
-        "residual": -0.51337314,
+        "residual": -0.51045011,
         "score": 77.58333333,
         "special": false
       },
@@ -303,7 +293,7 @@
         "ovr": 81,
         "player": "Tyson Ruffins",
         "prediction": 81,
-        "residual": 0.28894191,
+        "residual": 0.23734884,
         "score": 74.0,
         "special": false
       },
@@ -313,7 +303,7 @@
         "ovr": 82,
         "player": "Coleton Price",
         "prediction": 82,
-        "residual": -0.27721095,
+        "residual": -0.29758443,
         "score": 76.0,
         "special": false
       },
@@ -323,7 +313,7 @@
         "ovr": 84,
         "player": "Justin Evans",
         "prediction": 84,
-        "residual": -0.28420582,
+        "residual": -0.26503448,
         "score": 78.58333333,
         "special": false
       },
@@ -333,7 +323,7 @@
         "ovr": 82,
         "player": "Jake Guarnera",
         "prediction": 82,
-        "residual": 0.38384649,
+        "residual": 0.35145129,
         "score": 75.16666667,
         "special": false
       },
@@ -343,7 +333,7 @@
         "ovr": 84,
         "player": "Sheridan Wilson",
         "prediction": 83,
-        "residual": 0.85835521,
+        "residual": 0.85790057,
         "score": 77.16666667,
         "special": false
       },
@@ -353,7 +343,7 @@
         "ovr": 81,
         "player": "Lyndon Cooper",
         "prediction": 81,
-        "residual": -0.18587738,
+        "residual": -0.22896033,
         "score": 74.58333333,
         "special": false
       },
@@ -363,7 +353,7 @@
         "ovr": 84,
         "player": "Bruce Mitchell",
         "prediction": 84,
-        "residual": 0.46465529,
+        "residual": 0.47163389,
         "score": 77.66666667,
         "special": false
       },
@@ -373,7 +363,7 @@
         "ovr": 84,
         "player": "Kade Pieper",
         "prediction": 84,
-        "residual": 0.06212809,
+        "residual": 0.07609258,
         "score": 78.16666667,
         "special": false
       },
@@ -383,7 +373,7 @@
         "ovr": 83,
         "player": "Ezomo Oratokhai",
         "prediction": 83,
-        "residual": 0.2869527,
+        "residual": 0.27623451,
         "score": 76.58333333,
         "special": false
       },
@@ -393,7 +383,7 @@
         "ovr": 81,
         "player": "Jake Renfro",
         "prediction": 80,
-        "residual": 1.00854995,
+        "residual": 0.94675012,
         "score": 73.16666667,
         "special": false
       },
@@ -403,7 +393,7 @@
         "ovr": 85,
         "player": "Iapani Laloulu",
         "prediction": 84,
-        "residual": 0.86319174,
+        "residual": 0.88695589,
         "score": 78.5,
         "special": false
       },
@@ -413,48 +403,28 @@
         "ovr": 81,
         "player": "Anthony Boswell",
         "prediction": 82,
-        "residual": -1.17051797,
+        "residual": -1.19458083,
         "score": 75.83333333,
-        "special": false
-      },
-      {
-        "archetype": "Agile",
-        "card_id": "9021692",
-        "ovr": 84,
-        "player": "Kade Pieper",
-        "prediction": 84,
-        "residual": 0.06212809,
-        "score": 78.16666667,
         "special": false
       }
     ],
     "within_one_accuracy": 1.0
   },
   "historical": {
-    "correlation": 0.866005,
-    "exact_accuracy": 0.380952,
-    "mae": 0.666667,
-    "mean_same_ovr_score_width": 1.427469,
-    "n": 42,
-    "ordering_accuracy": 0.782673,
+    "correlation": 0.85742,
+    "exact_accuracy": 0.4,
+    "mae": 0.65,
+    "mean_same_ovr_score_width": 1.17284,
+    "n": 40,
+    "ordering_accuracy": 0.771242,
     "prediction_rows": [
-      {
-        "archetype": "Agile",
-        "card_id": "102026556",
-        "ovr": 80,
-        "player": "Kevin Mawae",
-        "prediction": 79,
-        "residual": 0.64094753,
-        "score": 76.03703704,
-        "special": false
-      },
       {
         "archetype": "Pass Protector",
         "card_id": "27-2000723",
         "ovr": 80,
         "player": "Joshua Bates",
         "prediction": 81,
-        "residual": -0.754709,
+        "residual": -0.69928743,
         "score": 77.56481481,
         "special": false
       },
@@ -464,7 +434,7 @@
         "ovr": 81,
         "player": "Ashton Beers",
         "prediction": 82,
-        "residual": -0.67716341,
+        "residual": -0.63464247,
         "score": 78.72222222,
         "special": false
       },
@@ -474,7 +444,7 @@
         "ovr": 83,
         "player": "Drew Bobo",
         "prediction": 83,
-        "residual": -0.45277492,
+        "residual": -0.43920762,
         "score": 80.88888889,
         "special": false
       },
@@ -484,7 +454,7 @@
         "ovr": 82,
         "player": "Braelin Moore",
         "prediction": 82,
-        "residual": 0.31503281,
+        "residual": 0.3603554,
         "score": 78.76851852,
         "special": false
       },
@@ -494,7 +464,7 @@
         "ovr": 84,
         "player": "Brady Small",
         "prediction": 83,
-        "residual": 1.24532301,
+        "residual": 1.2719668,
         "score": 80.10185185,
         "special": false
       },
@@ -504,7 +474,7 @@
         "ovr": 81,
         "player": "Vincent Fiacable",
         "prediction": 80,
-        "residual": 0.52943996,
+        "residual": 0.60478446,
         "score": 77.32407407,
         "special": false
       },
@@ -514,7 +484,7 @@
         "ovr": 81,
         "player": "Dominick Giudice",
         "prediction": 82,
-        "residual": -0.6075499,
+        "residual": -0.56374598,
         "score": 78.63888889,
         "special": false
       },
@@ -524,7 +494,7 @@
         "ovr": 83,
         "player": "Carson Hinzman",
         "prediction": 84,
-        "residual": -0.62291234,
+        "residual": -0.61286795,
         "score": 81.08333333,
         "special": false
       },
@@ -534,7 +504,7 @@
         "ovr": 81,
         "player": "Tyson Ruffins",
         "prediction": 81,
-        "residual": 0.32933704,
+        "residual": 0.39720477,
         "score": 77.5462963,
         "special": false
       },
@@ -544,7 +514,7 @@
         "ovr": 82,
         "player": "Coleton Price",
         "prediction": 83,
-        "residual": -0.78629796,
+        "residual": -0.76129316,
         "score": 80.07407407,
         "special": false
       },
@@ -554,7 +524,7 @@
         "ovr": 84,
         "player": "Justin Evans",
         "prediction": 84,
-        "residual": -0.20085779,
+        "residual": -0.2005427,
         "score": 81.80555556,
         "special": false
       },
@@ -564,7 +534,7 @@
         "ovr": 82,
         "player": "Jake Guarnera",
         "prediction": 81,
-        "residual": 0.67311058,
+        "residual": 0.72738984,
         "score": 78.35185185,
         "special": false
       },
@@ -574,7 +544,7 @@
         "ovr": 84,
         "player": "Sheridan Wilson",
         "prediction": 82,
-        "residual": 1.7238122,
+        "residual": 1.75935513,
         "score": 79.52777778,
         "special": false
       },
@@ -584,7 +554,7 @@
         "ovr": 81,
         "player": "Lyndon Cooper",
         "prediction": 82,
-        "residual": -1.46629488,
+        "residual": -1.43655041,
         "score": 79.66666667,
         "special": false
       },
@@ -594,7 +564,7 @@
         "ovr": 84,
         "player": "Bruce Mitchell",
         "prediction": 84,
-        "residual": -0.09356591,
+        "residual": -0.09067376,
         "score": 81.68518519,
         "special": false
       },
@@ -604,7 +574,7 @@
         "ovr": 84,
         "player": "Kade Pieper",
         "prediction": 83,
-        "residual": 0.73815681,
+        "residual": 0.756639,
         "score": 80.71296296,
         "special": false
       },
@@ -614,7 +584,7 @@
         "ovr": 83,
         "player": "Ezomo Oratokhai",
         "prediction": 83,
-        "residual": -0.02439497,
+        "residual": -0.00293679,
         "score": 80.38888889,
         "special": false
       },
@@ -624,7 +594,7 @@
         "ovr": 81,
         "player": "Jake Renfro",
         "prediction": 81,
-        "residual": -0.31180885,
+        "residual": -0.26195413,
         "score": 78.28703704,
         "special": false
       },
@@ -634,7 +604,7 @@
         "ovr": 85,
         "player": "Iapani Laloulu",
         "prediction": 85,
-        "residual": 0.44085794,
+        "residual": 0.43973843,
         "score": 82.31481481,
         "special": false
       },
@@ -644,7 +614,7 @@
         "ovr": 81,
         "player": "Anthony Boswell",
         "prediction": 82,
-        "residual": -0.63076749,
+        "residual": -0.58739656,
         "score": 78.66666667,
         "special": false
       },
@@ -654,7 +624,7 @@
         "ovr": 80,
         "player": "Joshua Bates",
         "prediction": 81,
-        "residual": -0.754709,
+        "residual": -0.69928743,
         "score": 77.56481481,
         "special": false
       },
@@ -664,7 +634,7 @@
         "ovr": 81,
         "player": "Ashton Beers",
         "prediction": 82,
-        "residual": -0.67716341,
+        "residual": -0.63464247,
         "score": 78.72222222,
         "special": false
       },
@@ -674,7 +644,7 @@
         "ovr": 83,
         "player": "Drew Bobo",
         "prediction": 83,
-        "residual": -0.45277492,
+        "residual": -0.43920762,
         "score": 80.88888889,
         "special": false
       },
@@ -684,7 +654,7 @@
         "ovr": 82,
         "player": "Braelin Moore",
         "prediction": 82,
-        "residual": 0.31503281,
+        "residual": 0.3603554,
         "score": 78.76851852,
         "special": false
       },
@@ -694,7 +664,7 @@
         "ovr": 84,
         "player": "Brady Small",
         "prediction": 83,
-        "residual": 1.24532301,
+        "residual": 1.2719668,
         "score": 80.10185185,
         "special": false
       },
@@ -704,7 +674,7 @@
         "ovr": 81,
         "player": "Vincent Fiacable",
         "prediction": 80,
-        "residual": 0.52943996,
+        "residual": 0.60478446,
         "score": 77.32407407,
         "special": false
       },
@@ -714,7 +684,7 @@
         "ovr": 81,
         "player": "Dominick Giudice",
         "prediction": 82,
-        "residual": -0.6075499,
+        "residual": -0.56374598,
         "score": 78.63888889,
         "special": false
       },
@@ -724,7 +694,7 @@
         "ovr": 83,
         "player": "Carson Hinzman",
         "prediction": 84,
-        "residual": -0.62291234,
+        "residual": -0.61286795,
         "score": 81.08333333,
         "special": false
       },
@@ -734,7 +704,7 @@
         "ovr": 81,
         "player": "Tyson Ruffins",
         "prediction": 81,
-        "residual": 0.32933704,
+        "residual": 0.39720477,
         "score": 77.5462963,
         "special": false
       },
@@ -744,7 +714,7 @@
         "ovr": 82,
         "player": "Coleton Price",
         "prediction": 83,
-        "residual": -0.78629796,
+        "residual": -0.76129316,
         "score": 80.07407407,
         "special": false
       },
@@ -754,7 +724,7 @@
         "ovr": 84,
         "player": "Justin Evans",
         "prediction": 84,
-        "residual": -0.20085779,
+        "residual": -0.2005427,
         "score": 81.80555556,
         "special": false
       },
@@ -764,7 +734,7 @@
         "ovr": 82,
         "player": "Jake Guarnera",
         "prediction": 81,
-        "residual": 0.67311058,
+        "residual": 0.72738984,
         "score": 78.35185185,
         "special": false
       },
@@ -774,7 +744,7 @@
         "ovr": 84,
         "player": "Sheridan Wilson",
         "prediction": 82,
-        "residual": 1.7238122,
+        "residual": 1.75935513,
         "score": 79.52777778,
         "special": false
       },
@@ -784,7 +754,7 @@
         "ovr": 81,
         "player": "Lyndon Cooper",
         "prediction": 82,
-        "residual": -1.46629488,
+        "residual": -1.43655041,
         "score": 79.66666667,
         "special": false
       },
@@ -794,7 +764,7 @@
         "ovr": 84,
         "player": "Bruce Mitchell",
         "prediction": 84,
-        "residual": -0.09356591,
+        "residual": -0.09067376,
         "score": 81.68518519,
         "special": false
       },
@@ -804,7 +774,7 @@
         "ovr": 84,
         "player": "Kade Pieper",
         "prediction": 83,
-        "residual": 0.73815681,
+        "residual": 0.756639,
         "score": 80.71296296,
         "special": false
       },
@@ -814,7 +784,7 @@
         "ovr": 83,
         "player": "Ezomo Oratokhai",
         "prediction": 83,
-        "residual": -0.02439497,
+        "residual": -0.00293679,
         "score": 80.38888889,
         "special": false
       },
@@ -824,7 +794,7 @@
         "ovr": 81,
         "player": "Jake Renfro",
         "prediction": 81,
-        "residual": -0.31180885,
+        "residual": -0.26195413,
         "score": 78.28703704,
         "special": false
       },
@@ -834,7 +804,7 @@
         "ovr": 85,
         "player": "Iapani Laloulu",
         "prediction": 85,
-        "residual": 0.44085794,
+        "residual": 0.43973843,
         "score": 82.31481481,
         "special": false
       },
@@ -844,49 +814,39 @@
         "ovr": 81,
         "player": "Anthony Boswell",
         "prediction": 82,
-        "residual": -0.63076749,
+        "residual": -0.58739656,
         "score": 78.66666667,
-        "special": false
-      },
-      {
-        "archetype": "Agile",
-        "card_id": "9021692",
-        "ovr": 84,
-        "player": "Kade Pieper",
-        "prediction": 83,
-        "residual": 0.73815681,
-        "score": 80.71296296,
         "special": false
       }
     ],
-    "within_one_accuracy": 0.952381
+    "within_one_accuracy": 0.95
   },
   "interpretation": "Null competitiveness weakens exact-weight identification even when the historical prior remains useful; calibration performance is not proof of inheritance.",
   "random_attribute_subsets": {
-    "beat_or_tie_historical_exact": 962,
-    "beat_or_tie_historical_mae": 875,
-    "beat_or_tie_historical_ordering": 433,
-    "beat_or_tie_historical_within_one": 435,
+    "beat_or_tie_historical_exact": 959,
+    "beat_or_tie_historical_mae": 874,
+    "beat_or_tie_historical_ordering": 518,
+    "beat_or_tie_historical_within_one": 507,
     "draws": 1000,
-    "historical_mae_percentile": 21.9,
-    "median_mae": 0.595238
+    "historical_mae_percentile": 26.6,
+    "median_mae": 0.6
   },
   "random_positive": {
-    "beat_or_tie_historical_exact": 952,
-    "beat_or_tie_historical_mae": 948,
-    "beat_or_tie_historical_ordering": 708,
-    "beat_or_tie_historical_within_one": 889,
+    "beat_or_tie_historical_exact": 935,
+    "beat_or_tie_historical_mae": 945,
+    "beat_or_tie_historical_ordering": 803,
+    "beat_or_tie_historical_within_one": 934,
     "draws": 1000,
-    "historical_mae_percentile": 7.6,
-    "median_mae": 0.547619
+    "historical_mae_percentile": 17.0,
+    "median_mae": 0.55
   },
   "shuffled_historical": {
-    "beat_or_tie_historical_exact": 829,
-    "beat_or_tie_historical_mae": 720,
-    "beat_or_tie_historical_ordering": 409,
-    "beat_or_tie_historical_within_one": 477,
+    "beat_or_tie_historical_exact": 803,
+    "beat_or_tie_historical_mae": 717,
+    "beat_or_tie_historical_ordering": 472,
+    "beat_or_tie_historical_within_one": 549,
     "draws": 1000,
-    "historical_mae_percentile": 36.2,
-    "median_mae": 0.619048
+    "historical_mae_percentile": 43.6,
+    "median_mae": 0.6
   }
 }

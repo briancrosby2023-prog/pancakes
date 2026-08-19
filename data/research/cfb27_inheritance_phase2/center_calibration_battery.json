@@ -1,26 +1,26 @@
 {
   "archetype_model_comparison": {
     "no_correction": {
-      "exact_accuracy": 0.380952,
-      "mae": 0.666667,
-      "n": 42,
-      "ordering_accuracy": 0.782673,
-      "within_one_accuracy": 0.952381
+      "exact_accuracy": 0.4,
+      "mae": 0.65,
+      "n": 40,
+      "ordering_accuracy": 0.771242,
+      "within_one_accuracy": 0.95
     },
     "separate_formula": {
-      "exact_accuracy": 0.380952,
-      "mae": 0.714286,
-      "n": 42,
-      "ordering_accuracy": 0.753304,
-      "within_one_accuracy": 0.904762
+      "exact_accuracy": 0.4,
+      "mae": 0.7,
+      "n": 40,
+      "ordering_accuracy": 0.738562,
+      "within_one_accuracy": 0.9
     },
     "separate_formula_eligible_holdouts": 38,
     "small_modifier": {
-      "exact_accuracy": 0.571429,
-      "mae": 0.52381,
-      "n": 42,
-      "ordering_accuracy": 0.785609,
-      "within_one_accuracy": 0.904762
+      "exact_accuracy": 0.5,
+      "mae": 0.6,
+      "n": 40,
+      "ordering_accuracy": 0.745098,
+      "within_one_accuracy": 0.9
     }
   },
   "best_calibration": "discrete_threshold",
@@ -28,7 +28,7 @@
     "by_archetype": {
       "Agile": {
         "mean_residual": 0.0,
-        "n": 4
+        "n": 2
       },
       "Pass Protector": {
         "mean_residual": 0.3,
@@ -50,36 +50,36 @@
   },
   "calibrations": {
     "affine": {
-      "exact_accuracy": 0.380952,
-      "mae": 0.666667,
-      "n": 42,
-      "ordering_accuracy": 0.782673,
-      "within_one_accuracy": 0.952381
+      "exact_accuracy": 0.4,
+      "mae": 0.65,
+      "n": 40,
+      "ordering_accuracy": 0.771242,
+      "within_one_accuracy": 0.95
     },
     "discrete_threshold": {
-      "exact_accuracy": 0.52381,
-      "mae": 0.571429,
-      "n": 42,
-      "ordering_accuracy": 0.84141,
-      "within_one_accuracy": 0.904762
+      "exact_accuracy": 0.5,
+      "mae": 0.6,
+      "n": 40,
+      "ordering_accuracy": 0.836601,
+      "within_one_accuracy": 0.9
     },
     "linear": {
-      "exact_accuracy": 0.380952,
-      "mae": 0.666667,
-      "n": 42,
-      "ordering_accuracy": 0.823789,
-      "within_one_accuracy": 0.952381
+      "exact_accuracy": 0.45,
+      "mae": 0.6,
+      "n": 40,
+      "ordering_accuracy": 0.830065,
+      "within_one_accuracy": 0.95
     }
   },
-  "correlation": 0.866005,
+  "correlation": 0.85742,
   "hidden_bands": [
     {
       "maximum": 77.564815,
-      "minimum": 76.037037,
-      "n": 3,
+      "minimum": 77.564815,
+      "n": 2,
       "ovr": 80,
       "supported_structure": false,
-      "width": 1.527778
+      "width": 0.0
     },
     {
       "maximum": 79.666667,
@@ -108,7 +108,7 @@
     {
       "maximum": 81.805556,
       "minimum": 79.527778,
-      "n": 11,
+      "n": 10,
       "ovr": 84,
       "supported_structure": true,
       "width": 2.277778
@@ -122,7 +122,7 @@
       "width": 0.0
     }
   ],
-  "ordinary_n": 42,
+  "ordinary_n": 40,
   "ovr_range": [
     80,
     88
@@ -131,18 +131,8 @@
     "reason": "Ordinary per-segment cells remain too small to justify extra knots over affine or discrete calibration.",
     "status": "NOT_JUSTIFIED"
   },
-  "population": 63,
+  "population": 60,
   "predictions": [
-    {
-      "archetype": "Agile",
-      "card_id": "102026556",
-      "ovr": 80,
-      "player": "Kevin Mawae",
-      "prediction": 80,
-      "residual": 0.0,
-      "score": 76.03703704,
-      "special": false
-    },
     {
       "archetype": "Pass Protector",
       "card_id": "27-2000723",
@@ -524,16 +514,6 @@
       "special": false
     },
     {
-      "archetype": "Agile",
-      "card_id": "9021692",
-      "ovr": 84,
-      "player": "Kade Pieper",
-      "prediction": 84,
-      "residual": 0.0,
-      "score": 80.71296296,
-      "special": false
-    },
-    {
       "archetype": "Pass Protector",
       "card_id": "27-2023669",
       "ovr": 85,
@@ -554,25 +534,25 @@
       "special": false
     }
   ],
-  "special_n": 21,
+  "special_n": 20,
   "weight_perturbation": {
     "baseline": {
-      "exact_accuracy": 0.380952,
-      "mae": 0.666667,
-      "n": 42,
-      "ordering_accuracy": 0.782673,
-      "within_one_accuracy": 0.952381
+      "exact_accuracy": 0.4,
+      "mae": 0.65,
+      "n": 40,
+      "ordering_accuracy": 0.771242,
+      "within_one_accuracy": 0.95
     },
     "best_single_change": {
       "attribute": "RBP",
       "factor": 0.75,
-      "mae_change": -0.095238,
+      "mae_change": -0.1,
       "metrics": {
-        "exact_accuracy": 0.428571,
-        "mae": 0.571429,
-        "n": 42,
-        "ordering_accuracy": 0.806167,
-        "within_one_accuracy": 1.0
+        "exact_accuracy": 0.5,
+        "mae": 0.55,
+        "n": 40,
+        "ordering_accuracy": 0.771242,
+        "within_one_accuracy": 0.95
       }
     },
     "large_change_required": true,
@@ -594,7 +574,7 @@
       "AWR": {
         "classification": "STABLE_HIGH_IMPORTANCE",
         "historical_weight": 15,
-        "local_mae_impact": 0.047619
+        "local_mae_impact": 0.05
       },
       "IBL": {
         "classification": "POORLY_IDENTIFIED",
@@ -602,9 +582,9 @@
         "local_mae_impact": 0.0
       },
       "LBK": {
-        "classification": "POORLY_IDENTIFIED",
+        "classification": "STABLE_LOW_IMPORTANCE",
         "historical_weight": 4,
-        "local_mae_impact": 0.047619
+        "local_mae_impact": 0.0
       },
       "PBF": {
         "classification": "POORLY_IDENTIFIED",
@@ -617,19 +597,19 @@
         "local_mae_impact": 0.0
       },
       "PBP": {
-        "classification": "STABLE_HIGH_IMPORTANCE",
+        "classification": "POORLY_IDENTIFIED",
         "historical_weight": 21,
-        "local_mae_impact": 0.047619
+        "local_mae_impact": 0.0
       },
       "RBK": {
-        "classification": "STABLE_HIGH_IMPORTANCE",
+        "classification": "POORLY_IDENTIFIED",
         "historical_weight": 10,
-        "local_mae_impact": 0.047619
+        "local_mae_impact": 0.0
       },
       "RBP": {
         "classification": "STABLE_HIGH_IMPORTANCE",
         "historical_weight": 22,
-        "local_mae_impact": 0.047619
+        "local_mae_impact": 0.05
       },
       "SPD": {
         "classification": "STABLE_LOW_IMPORTANCE",
@@ -642,7 +622,7 @@
         "local_mae_impact": 0.0
       }
     },
-    "equivalent_vectors": 187,
+    "equivalent_vectors": 191,
     "nearby_vectors_tested": 200
   }
 }

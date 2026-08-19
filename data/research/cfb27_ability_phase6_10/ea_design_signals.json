@@ -1,123 +1,147 @@
 [
   {
-    "attribute": "TGH",
+    "attribute": "CTH",
     "classification": "STRONG_EA_DESIGN_SIGNAL",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 65,
-    "special_near_observations": 65,
-    "tier_constraints": 72
+    "near_threshold_card_observations": 262,
+    "special_near_observations": 41,
+    "tier_constraints": 20
   },
   {
     "attribute": "BTK",
     "classification": "STRONG_EA_DESIGN_SIGNAL",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 61,
-    "special_near_observations": 45,
+    "near_threshold_card_observations": 211,
+    "special_near_observations": 72,
     "tier_constraints": 56
+  },
+  {
+    "attribute": "TGH",
+    "classification": "STRONG_EA_DESIGN_SIGNAL",
+    "gameplay_proof": false,
+    "near_threshold_card_observations": 177,
+    "special_near_observations": 177,
+    "tier_constraints": 72
   },
   {
     "attribute": "ACC",
     "classification": "STRONG_EA_DESIGN_SIGNAL",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 40,
-    "special_near_observations": 40,
+    "near_threshold_card_observations": 148,
+    "special_near_observations": 83,
     "tier_constraints": 60
   },
   {
     "attribute": "MCV",
-    "classification": "MODERATE",
+    "classification": "STRONG_EA_DESIGN_SIGNAL",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 52,
-    "special_near_observations": 52,
+    "near_threshold_card_observations": 175,
+    "special_near_observations": 93,
     "tier_constraints": 28
   },
   {
-    "attribute": "STR",
-    "classification": "MODERATE",
+    "attribute": "SPM",
+    "classification": "STRONG_EA_DESIGN_SIGNAL",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 28,
-    "special_near_observations": 24,
-    "tier_constraints": 52
+    "near_threshold_card_observations": 183,
+    "special_near_observations": 66,
+    "tier_constraints": 12
+  },
+  {
+    "attribute": "BSH",
+    "classification": "STRONG_EA_DESIGN_SIGNAL",
+    "gameplay_proof": false,
+    "near_threshold_card_observations": 137,
+    "special_near_observations": 29,
+    "tier_constraints": 20
   },
   {
     "attribute": "ZCV",
+    "classification": "STRONG_EA_DESIGN_SIGNAL",
+    "gameplay_proof": false,
+    "near_threshold_card_observations": 108,
+    "special_near_observations": 60,
+    "tier_constraints": 28
+  },
+  {
+    "attribute": "MRR",
+    "classification": "STRONG_EA_DESIGN_SIGNAL",
+    "gameplay_proof": false,
+    "near_threshold_card_observations": 94,
+    "special_near_observations": 12,
+    "tier_constraints": 24
+  },
+  {
+    "attribute": "STR",
+    "classification": "STRONG_EA_DESIGN_SIGNAL",
+    "gameplay_proof": false,
+    "near_threshold_card_observations": 52,
+    "special_near_observations": 41,
+    "tier_constraints": 52
+  },
+  {
+    "attribute": "DRR",
     "classification": "MODERATE",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 38,
-    "special_near_observations": 36,
-    "tier_constraints": 28
+    "near_threshold_card_observations": 85,
+    "special_near_observations": 28,
+    "tier_constraints": 12
   },
   {
     "attribute": "JKM",
     "classification": "MODERATE",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 28,
-    "special_near_observations": 28,
+    "near_threshold_card_observations": 66,
+    "special_near_observations": 42,
     "tier_constraints": 28
+  },
+  {
+    "attribute": "CIT",
+    "classification": "MODERATE",
+    "gameplay_proof": false,
+    "near_threshold_card_observations": 64,
+    "special_near_observations": 17,
+    "tier_constraints": 24
   },
   {
     "attribute": "POW",
     "classification": "MODERATE",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 22,
-    "special_near_observations": 18,
+    "near_threshold_card_observations": 56,
+    "special_near_observations": 25,
     "tier_constraints": 28
-  },
-  {
-    "attribute": "SPM",
-    "classification": "MODERATE",
-    "gameplay_proof": false,
-    "near_threshold_card_observations": 35,
-    "special_near_observations": 35,
-    "tier_constraints": 12
   },
   {
     "attribute": "SPC",
     "classification": "MODERATE",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 12,
-    "special_near_observations": 10,
+    "near_threshold_card_observations": 52,
+    "special_near_observations": 19,
     "tier_constraints": 32
   },
   {
+    "attribute": "RBK",
+    "classification": "MODERATE",
+    "gameplay_proof": false,
+    "near_threshold_card_observations": 33,
+    "special_near_observations": 17,
+    "tier_constraints": 16
+  },
+  {
     "attribute": "COD",
-    "classification": "WEAK",
+    "classification": "MODERATE",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 15,
-    "special_near_observations": 15,
+    "near_threshold_card_observations": 17,
+    "special_near_observations": 17,
     "tier_constraints": 24
   },
   {
-    "attribute": "CTH",
+    "attribute": "SFA",
     "classification": "WEAK",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 18,
-    "special_near_observations": 16,
-    "tier_constraints": 20
-  },
-  {
-    "attribute": "MRR",
-    "classification": "WEAK",
-    "gameplay_proof": false,
-    "near_threshold_card_observations": 13,
-    "special_near_observations": 7,
-    "tier_constraints": 24
-  },
-  {
-    "attribute": "BSH",
-    "classification": "WEAK",
-    "gameplay_proof": false,
-    "near_threshold_card_observations": 16,
-    "special_near_observations": 10,
-    "tier_constraints": 20
-  },
-  {
-    "attribute": "CIT",
-    "classification": "WEAK",
-    "gameplay_proof": false,
-    "near_threshold_card_observations": 8,
-    "special_near_observations": 6,
-    "tier_constraints": 24
+    "near_threshold_card_observations": 25,
+    "special_near_observations": 11,
+    "tier_constraints": 12
   },
   {
     "attribute": "TAC",
@@ -128,10 +152,10 @@
     "tier_constraints": 32
   },
   {
-    "attribute": "DRR",
+    "attribute": "FMV",
     "classification": "WEAK",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 14,
+    "near_threshold_card_observations": 18,
     "special_near_observations": 14,
     "tier_constraints": 12
   },
@@ -139,33 +163,49 @@
     "attribute": "SPD",
     "classification": "WEAK",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 7,
-    "special_near_observations": 3,
+    "near_threshold_card_observations": 14,
+    "special_near_observations": 4,
     "tier_constraints": 16
-  },
-  {
-    "attribute": "RBK",
-    "classification": "WEAK",
-    "gameplay_proof": false,
-    "near_threshold_card_observations": 5,
-    "special_near_observations": 5,
-    "tier_constraints": 16
-  },
-  {
-    "attribute": "SFA",
-    "classification": "WEAK",
-    "gameplay_proof": false,
-    "near_threshold_card_observations": 7,
-    "special_near_observations": 7,
-    "tier_constraints": 12
   },
   {
     "attribute": "TUP",
     "classification": "WEAK",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 10,
-    "special_near_observations": 10,
+    "near_threshold_card_observations": 21,
+    "special_near_observations": 11,
     "tier_constraints": 8
+  },
+  {
+    "attribute": "PMV",
+    "classification": "WEAK",
+    "gameplay_proof": false,
+    "near_threshold_card_observations": 9,
+    "special_near_observations": 5,
+    "tier_constraints": 16
+  },
+  {
+    "attribute": "BSK",
+    "classification": "WEAK",
+    "gameplay_proof": false,
+    "near_threshold_card_observations": 18,
+    "special_near_observations": 9,
+    "tier_constraints": 4
+  },
+  {
+    "attribute": "PBK",
+    "classification": "WEAK",
+    "gameplay_proof": false,
+    "near_threshold_card_observations": 7,
+    "special_near_observations": 3,
+    "tier_constraints": 12
+  },
+  {
+    "attribute": "CAR",
+    "classification": "WEAK",
+    "gameplay_proof": false,
+    "near_threshold_card_observations": 6,
+    "special_near_observations": 1,
+    "tier_constraints": 12
   },
   {
     "attribute": "TRK",
@@ -176,22 +216,6 @@
     "tier_constraints": 16
   },
   {
-    "attribute": "PMV",
-    "classification": "WEAK",
-    "gameplay_proof": false,
-    "near_threshold_card_observations": 0,
-    "special_near_observations": 0,
-    "tier_constraints": 16
-  },
-  {
-    "attribute": "CAR",
-    "classification": "WEAK",
-    "gameplay_proof": false,
-    "near_threshold_card_observations": 3,
-    "special_near_observations": 1,
-    "tier_constraints": 12
-  },
-  {
     "attribute": "SAC",
     "classification": "WEAK",
     "gameplay_proof": false,
@@ -200,10 +224,10 @@
     "tier_constraints": 12
   },
   {
-    "attribute": "BSK",
+    "attribute": "PUR",
     "classification": "WEAK",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 8,
+    "near_threshold_card_observations": 9,
     "special_near_observations": 8,
     "tier_constraints": 4
   },
@@ -216,43 +240,27 @@
     "tier_constraints": 8
   },
   {
-    "attribute": "FMV",
-    "classification": "WEAK",
-    "gameplay_proof": false,
-    "near_threshold_card_observations": 0,
-    "special_near_observations": 0,
-    "tier_constraints": 12
-  },
-  {
-    "attribute": "PBK",
-    "classification": "WEAK",
-    "gameplay_proof": false,
-    "near_threshold_card_observations": 0,
-    "special_near_observations": 0,
-    "tier_constraints": 12
-  },
-  {
-    "attribute": "PUR",
-    "classification": "WEAK",
-    "gameplay_proof": false,
-    "near_threshold_card_observations": 8,
-    "special_near_observations": 8,
-    "tier_constraints": 4
-  },
-  {
     "attribute": "IBL",
-    "classification": "INSUFFICIENT",
+    "classification": "WEAK",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 0,
-    "special_near_observations": 0,
+    "near_threshold_card_observations": 4,
+    "special_near_observations": 3,
     "tier_constraints": 8
   },
   {
     "attribute": "RUN",
+    "classification": "WEAK",
+    "gameplay_proof": false,
+    "near_threshold_card_observations": 7,
+    "special_near_observations": 3,
+    "tier_constraints": 4
+  },
+  {
+    "attribute": "PAC",
     "classification": "INSUFFICIENT",
     "gameplay_proof": false,
-    "near_threshold_card_observations": 4,
-    "special_near_observations": 2,
+    "near_threshold_card_observations": 1,
+    "special_near_observations": 1,
     "tier_constraints": 4
   },
   {
@@ -265,14 +273,6 @@
   },
   {
     "attribute": "MAC",
-    "classification": "INSUFFICIENT",
-    "gameplay_proof": false,
-    "near_threshold_card_observations": 0,
-    "special_near_observations": 0,
-    "tier_constraints": 4
-  },
-  {
-    "attribute": "PAC",
     "classification": "INSUFFICIENT",
     "gameplay_proof": false,
     "near_threshold_card_observations": 0,

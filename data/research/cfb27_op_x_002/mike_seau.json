@@ -1,94 +1,94 @@
 {
   "diagnostic_attributes": [
     {
-      "attribute": "MCV",
-      "comparison_ovr": 86,
-      "ovr_adjusted_archetype_spread": 6.3611
-    },
-    {
-      "attribute": "PRC",
-      "comparison_ovr": 86,
-      "ovr_adjusted_archetype_spread": 3.0435
-    },
-    {
       "attribute": "ZCV",
       "comparison_ovr": 86,
-      "ovr_adjusted_archetype_spread": 2.4833
+      "ovr_adjusted_archetype_spread": 13.6136
     },
     {
-      "attribute": "STR",
+      "attribute": "MCV",
       "comparison_ovr": 86,
-      "ovr_adjusted_archetype_spread": 2.2981
-    },
-    {
-      "attribute": "TAK",
-      "comparison_ovr": 86,
-      "ovr_adjusted_archetype_spread": 2.1583
-    },
-    {
-      "attribute": "COD",
-      "comparison_ovr": 86,
-      "ovr_adjusted_archetype_spread": 1.8194
-    },
-    {
-      "attribute": "AWR",
-      "comparison_ovr": 86,
-      "ovr_adjusted_archetype_spread": 1.4111
-    },
-    {
-      "attribute": "ACC",
-      "comparison_ovr": 86,
-      "ovr_adjusted_archetype_spread": 1.2037
-    },
-    {
-      "attribute": "SPD",
-      "comparison_ovr": 86,
-      "ovr_adjusted_archetype_spread": 1.0
+      "ovr_adjusted_archetype_spread": 13.3507
     },
     {
       "attribute": "BSH",
       "comparison_ovr": 86,
-      "ovr_adjusted_archetype_spread": 0.7556
+      "ovr_adjusted_archetype_spread": 12.6821
     },
     {
       "attribute": "POW",
       "comparison_ovr": 86,
-      "ovr_adjusted_archetype_spread": 0.5185
+      "ovr_adjusted_archetype_spread": 9.0852
+    },
+    {
+      "attribute": "STR",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 8.0097
+    },
+    {
+      "attribute": "AWR",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 5.7693
+    },
+    {
+      "attribute": "PRC",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 4.3389
+    },
+    {
+      "attribute": "TAK",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 3.5384
+    },
+    {
+      "attribute": "COD",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 3.4978
+    },
+    {
+      "attribute": "ACC",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 2.4812
     },
     {
       "attribute": "PUR",
       "comparison_ovr": 86,
-      "ovr_adjusted_archetype_spread": 0.4704
+      "ovr_adjusted_archetype_spread": 1.6073
+    },
+    {
+      "attribute": "SPD",
+      "comparison_ovr": 86,
+      "ovr_adjusted_archetype_spread": 0.7977
     }
   ],
   "normalized_signatures": {
     "Lurker": {
-      "ACC": 0.0,
+      "ACC": -0.0,
       "AWR": 0.0,
       "BSH": -0.0,
       "COD": 0.0,
-      "MCV": -0.0,
+      "MCV": 0.0,
       "POW": -0.0,
       "PRC": 0.0,
       "PUR": 0.0,
-      "SPD": 0.0,
-      "STR": -0.0,
+      "SPD": -0.0,
+      "STR": 0.0,
       "TAK": -0.0,
       "ZCV": -0.0
     },
     "Signal Caller": {
       "ACC": 0.0,
-      "AWR": 0.0,
+      "AWR": -0.0,
       "BSH": 0.0,
       "COD": 0.0,
-      "MCV": 0.0,
-      "POW": 0.0,
-      "PRC": 0.0,
-      "PUR": 0.0,
-      "SPD": 0.0,
+      "MCV": -0.0,
+      "POW": -0.0,
+      "PRC": -0.0,
+      "PUR": -0.0,
+      "SPD": -0.0,
       "STR": 0.0,
-      "TAK": 0.0,
-      "ZCV": 0.0
+      "TAK": -0.0,
+      "ZCV": -0.0
     },
     "Thumper": {
       "ACC": 0.0,
@@ -98,66 +98,1091 @@
       "MCV": 0.0,
       "POW": 0.0,
       "PRC": -0.0,
-      "PUR": -0.0,
+      "PUR": 0.0,
       "SPD": 0.0,
       "STR": 0.0,
-      "TAK": -0.0,
+      "TAK": 0.0,
       "ZCV": 0.0
     }
   },
-  "population": 23,
+  "population": 456,
   "seau_upgrade_decision_matrix": [
     {
       "attribute_contributions": {
         "Lurker": {
-          "ACC": -0.25,
-          "AWR": -1.0,
-          "BSH": 1.0,
-          "COD": -1.375,
-          "MCV": 1.75,
-          "POW": 0.25,
-          "PRC": -1.875,
-          "PUR": -0.5,
-          "SPD": 0.0,
-          "STR": 1.75,
-          "TAK": 1.375,
-          "ZCV": 0.25
+          "ACC": -2.218,
+          "AWR": -1.0521,
+          "BSH": 11.7974,
+          "COD": -2.9403,
+          "MCV": 1.4028,
+          "POW": 10.3658,
+          "PRC": -1.2021,
+          "PUR": -0.5212,
+          "SPD": 0.3513,
+          "STR": 5.569,
+          "TAK": 4.9926,
+          "ZCV": -1.1941
         },
         "Signal Caller": {
-          "ACC": -1.1667,
-          "AWR": -1.9444,
-          "BSH": 0.9444,
-          "COD": 0.4444,
-          "MCV": 8.1111,
-          "POW": 0.1111,
-          "PRC": -3.9444,
-          "PUR": -0.3889,
-          "SPD": 1.0,
-          "STR": 1.1667,
-          "TAK": 2.8333,
-          "ZCV": 2.3333
+          "ACC": -1.4242,
+          "AWR": -2.9882,
+          "BSH": 1.8104,
+          "COD": 0.1209,
+          "MCV": 4.718,
+          "POW": 4.4028,
+          "PRC": -3.9289,
+          "PUR": -0.5569,
+          "SPD": 0.6896,
+          "STR": 1.3886,
+          "TAK": 4.3934,
+          "ZCV": 1.1351
         },
         "Thumper": {
-          "ACC": 0.037,
-          "AWR": -0.5333,
-          "BSH": 0.2444,
-          "COD": -0.1852,
-          "MCV": 7.3111,
-          "POW": 0.6296,
-          "PRC": -4.9185,
-          "PUR": -0.0296,
-          "SPD": 0.5852,
-          "STR": -0.5481,
-          "TAK": 3.5333,
-          "ZCV": 2.7333
+          "ACC": -0.014,
+          "AWR": -6.1562,
+          "BSH": 0.7121,
+          "COD": 0.6468,
+          "MCV": 12.2563,
+          "POW": 3.124,
+          "PRC": -5.5514,
+          "PUR": -2.0276,
+          "SPD": 1.1013,
+          "STR": -0.8769,
+          "TAK": 2.2578,
+          "ZCV": 11.8475
+        }
+      },
+      "card_id": "27-113026550",
+      "gameplay_path_recommended": false,
+      "normalized_distance": {
+        "Lurker": 3.6339,
+        "Signal Caller": 2.2964,
+        "Thumper": 3.881
+      },
+      "overall": 81,
+      "threshold_interactions": [
+        {
+          "ability": "Bouncer",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-113026550",
+          "deficits": {
+            "ZCV": 1
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 81,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "2026-07-26T14:35:49.395143Z",
+          "requirements": [
+            {
+              "attribute": "ZCV",
+              "required_rating": 82
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 76,
+          "special": true,
+          "status": "1_BELOW",
+          "tier": "BRONZE",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        },
+        {
+          "ability": "Bouncer",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-113026550",
+          "deficits": {
+            "ZCV": 3
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 81,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "2026-07-26T14:35:49.395143Z",
+          "requirements": [
+            {
+              "attribute": "ZCV",
+              "required_rating": 84
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 76,
+          "special": true,
+          "status": "3_BELOW",
+          "tier": "SILVER",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        },
+        {
+          "ability": "House Call",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-113026550",
+          "deficits": {
+            "CTH": 1
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 81,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "2026-07-26T14:35:49.395143Z",
+          "requirements": [
+            {
+              "attribute": "CTH",
+              "required_rating": 71
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 77,
+          "special": true,
+          "status": "1_BELOW",
+          "tier": "BRONZE",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        },
+        {
+          "ability": "House Call",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-113026550",
+          "deficits": {
+            "CTH": 3
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 81,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "2026-07-26T14:35:49.395143Z",
+          "requirements": [
+            {
+              "attribute": "CTH",
+              "required_rating": 73
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 77,
+          "special": true,
+          "status": "3_BELOW",
+          "tier": "SILVER",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        }
+      ],
+      "upgrade_matrix": [
+        {
+          "attribute": "SPD",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "SPD",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "SPD",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "ACC",
+          "distance_delta": {
+            "Lurker": -0.0833,
+            "Signal Caller": -0.0833,
+            "Thumper": 0.081
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "ACC",
+          "distance_delta": {
+            "Lurker": -0.1667,
+            "Signal Caller": -0.0707,
+            "Thumper": 0.1643
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "ACC",
+          "distance_delta": {
+            "Lurker": -0.1197,
+            "Signal Caller": 0.0126,
+            "Thumper": 0.2477
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "COD",
+          "distance_delta": {
+            "Lurker": -0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "COD",
+          "distance_delta": {
+            "Lurker": -0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "COD",
+          "distance_delta": {
+            "Lurker": -0.2401,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "STR",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": -0.0628
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "STR",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.0205
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "STR",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.1038
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "BSH",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "BSH",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "BSH",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "TAK",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "TAK",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "TAK",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "POW",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "POW",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "POW",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "PUR",
+          "distance_delta": {
+            "Lurker": -0.0035,
+            "Signal Caller": -0.0095,
+            "Thumper": -0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "PUR",
+          "distance_delta": {
+            "Lurker": 0.0798,
+            "Signal Caller": 0.0739,
+            "Thumper": -0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "PUR",
+          "distance_delta": {
+            "Lurker": 0.1631,
+            "Signal Caller": 0.1572,
+            "Thumper": -0.0879
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "PRC",
+          "distance_delta": {
+            "Lurker": -0.0833,
+            "Signal Caller": -0.0833,
+            "Thumper": -0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "PRC",
+          "distance_delta": {
+            "Lurker": -0.0337,
+            "Signal Caller": -0.1667,
+            "Thumper": -0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "PRC",
+          "distance_delta": {
+            "Lurker": 0.0496,
+            "Signal Caller": -0.25,
+            "Thumper": -0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": -0.0833,
+            "Signal Caller": -0.0833,
+            "Thumper": -0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": -0.0087,
+            "Signal Caller": -0.1667,
+            "Thumper": -0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": 0.0747,
+            "Signal Caller": -0.248,
+            "Thumper": -0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "MCV",
+          "distance_delta": {
+            "Lurker": 0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "MCV",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "MCV",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "ZCV",
+          "distance_delta": {
+            "Lurker": -0.0833,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "ZCV",
+          "distance_delta": {
+            "Lurker": -0.0324,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "ZCV",
+          "distance_delta": {
+            "Lurker": 0.051,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        }
+      ]
+    },
+    {
+      "attribute_contributions": {
+        "Lurker": {
+          "ACC": -1.2067,
+          "AWR": -0.302,
+          "BSH": 12.1991,
+          "COD": -2.4614,
+          "MCV": -0.256,
+          "POW": 9.6029,
+          "PRC": -2.0274,
+          "PUR": -0.6156,
+          "SPD": 1.7827,
+          "STR": 7.2733,
+          "TAK": 5.691,
+          "ZCV": -2.5652
+        },
+        "Signal Caller": {
+          "ACC": -0.6775,
+          "AWR": -2.5168,
+          "BSH": 1.769,
+          "COD": 0.2697,
+          "MCV": 4.4369,
+          "POW": 1.7665,
+          "PRC": -4.6965,
+          "PUR": -1.0039,
+          "SPD": 1.7567,
+          "STR": 2.2941,
+          "TAK": 4.6182,
+          "ZCV": 1.0951
+        },
+        "Thumper": {
+          "ACC": 1.1636,
+          "AWR": -5.8052,
+          "BSH": 0.1557,
+          "COD": 1.0722,
+          "MCV": 12.0958,
+          "POW": 1.984,
+          "PRC": -6.3704,
+          "PUR": -2.1825,
+          "SPD": 2.4,
+          "STR": -0.1109,
+          "TAK": 2.474,
+          "ZCV": 10.8196
+        }
+      },
+      "card_id": "27-112026550",
+      "gameplay_path_recommended": false,
+      "normalized_distance": {
+        "Lurker": 3.8319,
+        "Signal Caller": 2.2417,
+        "Thumper": 3.8862
+      },
+      "overall": 84,
+      "threshold_interactions": [
+        {
+          "ability": "Bouncer",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-112026550",
+          "deficits": {
+            "ZCV": 0
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 84,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "2026-07-26T14:35:49.395172Z",
+          "requirements": [
+            {
+              "attribute": "ZCV",
+              "required_rating": 84
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 76,
+          "special": true,
+          "status": "AT_THRESHOLD",
+          "tier": "SILVER",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        },
+        {
+          "ability": "Bouncer",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-112026550",
+          "deficits": {
+            "ZCV": 2
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 84,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "2026-07-26T14:35:49.395172Z",
+          "requirements": [
+            {
+              "attribute": "ZCV",
+              "required_rating": 86
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 76,
+          "special": true,
+          "status": "2_BELOW",
+          "tier": "GOLD",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        },
+        {
+          "ability": "House Call",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-112026550",
+          "deficits": {
+            "CTH": 0
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 84,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "2026-07-26T14:35:49.395172Z",
+          "requirements": [
+            {
+              "attribute": "CTH",
+              "required_rating": 73
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 77,
+          "special": true,
+          "status": "AT_THRESHOLD",
+          "tier": "SILVER",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        },
+        {
+          "ability": "House Call",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-112026550",
+          "deficits": {
+            "CTH": 2
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 84,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "2026-07-26T14:35:49.395172Z",
+          "requirements": [
+            {
+              "attribute": "CTH",
+              "required_rating": 75
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 77,
+          "special": true,
+          "status": "2_BELOW",
+          "tier": "GOLD",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        },
+        {
+          "ability": "Knockout",
+          "ability_slot_requirement": null,
+          "archetype": "Lurker",
+          "card_id": "27-112026550",
+          "deficits": {
+            "POW": 2
+          },
+          "equip_eligibility_claimed": false,
+          "overall": 84,
+          "ovr_requirement": null,
+          "player": "Junior Seau",
+          "position": "MIKE",
+          "program": "Sunday Spotlight: Retro",
+          "release_date": "2026-07-26T14:35:49.395172Z",
+          "requirements": [
+            {
+              "attribute": "POW",
+              "required_rating": 84
+            }
+          ],
+          "source": "https://www.cfblabs.com/ability-requirements",
+          "source_id": "SRC-CFB27-ABILITY-001",
+          "source_row": 78,
+          "special": true,
+          "status": "2_BELOW",
+          "tier": "BRONZE",
+          "validation": "SINGLE_STRUCTURED_SOURCE"
+        }
+      ],
+      "upgrade_matrix": [
+        {
+          "attribute": "SPD",
+          "distance_delta": {
+            "Lurker": 0.0834,
+            "Signal Caller": 0.0834,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "SPD",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1666
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "SPD",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "ACC",
+          "distance_delta": {
+            "Lurker": -0.0833,
+            "Signal Caller": -0.0295,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "ACC",
+          "distance_delta": {
+            "Lurker": -0.0344,
+            "Signal Caller": 0.0538,
+            "Thumper": 0.1666
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "ACC",
+          "distance_delta": {
+            "Lurker": 0.0489,
+            "Signal Caller": 0.1371,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "COD",
+          "distance_delta": {
+            "Lurker": -0.0833,
+            "Signal Caller": 0.0834,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "COD",
+          "distance_delta": {
+            "Lurker": -0.1666,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1666
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "COD",
+          "distance_delta": {
+            "Lurker": -0.1602,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "STR",
+          "distance_delta": {
+            "Lurker": 0.0834,
+            "Signal Caller": 0.0834,
+            "Thumper": 0.0648
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "STR",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1482
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "STR",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.2315
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "BSH",
+          "distance_delta": {
+            "Lurker": 0.0834,
+            "Signal Caller": 0.0834,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "BSH",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1666
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "BSH",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "TAK",
+          "distance_delta": {
+            "Lurker": 0.0834,
+            "Signal Caller": 0.0834,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "TAK",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1666
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "TAK",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "POW",
+          "distance_delta": {
+            "Lurker": 0.0834,
+            "Signal Caller": 0.0834,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "POW",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1666
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "POW",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "PUR",
+          "distance_delta": {
+            "Lurker": -0.0192,
+            "Signal Caller": -0.0833,
+            "Thumper": -0.0834
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "PUR",
+          "distance_delta": {
+            "Lurker": 0.0641,
+            "Signal Caller": -0.0006,
+            "Thumper": -0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "PUR",
+          "distance_delta": {
+            "Lurker": 0.1474,
+            "Signal Caller": 0.0827,
+            "Thumper": -0.1138
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "PRC",
+          "distance_delta": {
+            "Lurker": -0.0833,
+            "Signal Caller": -0.0833,
+            "Thumper": -0.0834
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "PRC",
+          "distance_delta": {
+            "Lurker": -0.1666,
+            "Signal Caller": -0.1666,
+            "Thumper": -0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "PRC",
+          "distance_delta": {
+            "Lurker": -0.0879,
+            "Signal Caller": -0.25,
+            "Thumper": -0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": 0.033,
+            "Signal Caller": -0.0833,
+            "Thumper": -0.0834
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": 0.1164,
+            "Signal Caller": -0.1666,
+            "Thumper": -0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": 0.1997,
+            "Signal Caller": -0.1694,
+            "Thumper": -0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "MCV",
+          "distance_delta": {
+            "Lurker": 0.0407,
+            "Signal Caller": 0.0834,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "MCV",
+          "distance_delta": {
+            "Lurker": 0.124,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1666
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "MCV",
+          "distance_delta": {
+            "Lurker": 0.2074,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "ZCV",
+          "distance_delta": {
+            "Lurker": -0.0833,
+            "Signal Caller": 0.0834,
+            "Thumper": 0.0833
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "ZCV",
+          "distance_delta": {
+            "Lurker": -0.1666,
+            "Signal Caller": 0.1667,
+            "Thumper": 0.1666
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "ZCV",
+          "distance_delta": {
+            "Lurker": -0.1775,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
+          },
+          "increase": 3
+        }
+      ]
+    },
+    {
+      "attribute_contributions": {
+        "Lurker": {
+          "ACC": -0.5326,
+          "AWR": 0.1981,
+          "BSH": 12.4669,
+          "COD": -2.142,
+          "MCV": -1.3619,
+          "POW": 9.0942,
+          "PRC": -2.5776,
+          "PUR": -0.6785,
+          "SPD": 2.7369,
+          "STR": 8.4095,
+          "TAK": 6.1565,
+          "ZCV": -3.4793
+        },
+        "Signal Caller": {
+          "ACC": -0.1797,
+          "AWR": -2.2026,
+          "BSH": 1.7414,
+          "COD": 0.3689,
+          "MCV": 4.2496,
+          "POW": 0.009,
+          "PRC": -5.2082,
+          "PUR": -1.3018,
+          "SPD": 2.4681,
+          "STR": 2.8977,
+          "TAK": 4.7682,
+          "ZCV": 1.0684
+        },
+        "Thumper": {
+          "ACC": 1.9486,
+          "AWR": -5.5712,
+          "BSH": -0.2152,
+          "COD": 1.3558,
+          "MCV": 11.9888,
+          "POW": 1.2241,
+          "PRC": -6.9164,
+          "PUR": -2.2858,
+          "SPD": 3.2659,
+          "STR": 0.3998,
+          "TAK": 2.6181,
+          "ZCV": 10.1343
         }
       },
       "card_id": "27-111026550",
       "gameplay_path_recommended": false,
       "normalized_distance": {
-        "Lurker": 0.9479,
-        "Signal Caller": 2.0324,
-        "Thumper": 1.774
+        "Lurker": 4.1528,
+        "Signal Caller": 2.2053,
+        "Thumper": 3.9937
       },
       "overall": 86,
       "threshold_interactions": [
@@ -311,9 +1336,9 @@
         {
           "attribute": "SPD",
           "distance_delta": {
-            "Lurker": 0.0833,
+            "Lurker": 0.0834,
             "Signal Caller": 0.0833,
-            "Thumper": 0.0834
+            "Thumper": 0.0833
           },
           "increase": 1
         },
@@ -322,7 +1347,7 @@
           "distance_delta": {
             "Lurker": 0.1667,
             "Signal Caller": 0.1667,
-            "Thumper": 0.1667
+            "Thumper": 0.1666
           },
           "increase": 2
         },
@@ -331,34 +1356,34 @@
           "distance_delta": {
             "Lurker": 0.25,
             "Signal Caller": 0.25,
-            "Thumper": 0.2501
+            "Thumper": 0.25
           },
           "increase": 3
         },
         {
           "attribute": "ACC",
           "distance_delta": {
-            "Lurker": 0.0417,
-            "Signal Caller": -0.0833,
-            "Thumper": 0.0834
+            "Lurker": -0.0054,
+            "Signal Caller": 0.0534,
+            "Thumper": 0.0833
           },
           "increase": 1
         },
         {
           "attribute": "ACC",
           "distance_delta": {
-            "Lurker": 0.125,
-            "Signal Caller": -0.0278,
-            "Thumper": 0.1667
+            "Lurker": 0.0779,
+            "Signal Caller": 0.1367,
+            "Thumper": 0.1666
           },
           "increase": 2
         },
         {
           "attribute": "ACC",
           "distance_delta": {
-            "Lurker": 0.2083,
-            "Signal Caller": 0.0556,
-            "Thumper": 0.2501
+            "Lurker": 0.1613,
+            "Signal Caller": 0.2201,
+            "Thumper": 0.25
           },
           "increase": 3
         },
@@ -367,34 +1392,34 @@
           "distance_delta": {
             "Lurker": -0.0833,
             "Signal Caller": 0.0833,
-            "Thumper": 0.0525
+            "Thumper": 0.0833
           },
           "increase": 1
         },
         {
           "attribute": "COD",
           "distance_delta": {
-            "Lurker": -0.0625,
+            "Lurker": -0.1666,
             "Signal Caller": 0.1667,
-            "Thumper": 0.1359
+            "Thumper": 0.1666
           },
           "increase": 2
         },
         {
           "attribute": "COD",
           "distance_delta": {
-            "Lurker": 0.0208,
+            "Lurker": -0.107,
             "Signal Caller": 0.25,
-            "Thumper": 0.2192
+            "Thumper": 0.25
           },
           "increase": 3
         },
         {
           "attribute": "STR",
           "distance_delta": {
-            "Lurker": 0.0833,
+            "Lurker": 0.0834,
             "Signal Caller": 0.0833,
-            "Thumper": -0.008
+            "Thumper": 0.0833
           },
           "increase": 1
         },
@@ -403,7 +1428,7 @@
           "distance_delta": {
             "Lurker": 0.1667,
             "Signal Caller": 0.1667,
-            "Thumper": 0.0754
+            "Thumper": 0.1666
           },
           "increase": 2
         },
@@ -412,16 +1437,16 @@
           "distance_delta": {
             "Lurker": 0.25,
             "Signal Caller": 0.25,
-            "Thumper": 0.1587
+            "Thumper": 0.25
           },
           "increase": 3
         },
         {
           "attribute": "BSH",
           "distance_delta": {
-            "Lurker": 0.0833,
+            "Lurker": 0.0834,
             "Signal Caller": 0.0833,
-            "Thumper": 0.0834
+            "Thumper": 0.0474
           },
           "increase": 1
         },
@@ -430,7 +1455,7 @@
           "distance_delta": {
             "Lurker": 0.1667,
             "Signal Caller": 0.1667,
-            "Thumper": 0.1667
+            "Thumper": 0.1308
           },
           "increase": 2
         },
@@ -439,16 +1464,16 @@
           "distance_delta": {
             "Lurker": 0.25,
             "Signal Caller": 0.25,
-            "Thumper": 0.2501
+            "Thumper": 0.2141
           },
           "increase": 3
         },
         {
           "attribute": "TAK",
           "distance_delta": {
-            "Lurker": 0.0833,
+            "Lurker": 0.0834,
             "Signal Caller": 0.0833,
-            "Thumper": 0.0834
+            "Thumper": 0.0833
           },
           "increase": 1
         },
@@ -457,7 +1482,7 @@
           "distance_delta": {
             "Lurker": 0.1667,
             "Signal Caller": 0.1667,
-            "Thumper": 0.1667
+            "Thumper": 0.1666
           },
           "increase": 2
         },
@@ -466,16 +1491,16 @@
           "distance_delta": {
             "Lurker": 0.25,
             "Signal Caller": 0.25,
-            "Thumper": 0.2501
+            "Thumper": 0.25
           },
           "increase": 3
         },
         {
           "attribute": "POW",
           "distance_delta": {
-            "Lurker": 0.0833,
+            "Lurker": 0.0834,
             "Signal Caller": 0.0833,
-            "Thumper": 0.0834
+            "Thumper": 0.0833
           },
           "increase": 1
         },
@@ -484,7 +1509,7 @@
           "distance_delta": {
             "Lurker": 0.1667,
             "Signal Caller": 0.1667,
-            "Thumper": 0.1667
+            "Thumper": 0.1666
           },
           "increase": 2
         },
@@ -493,34 +1518,34 @@
           "distance_delta": {
             "Lurker": 0.25,
             "Signal Caller": 0.25,
-            "Thumper": 0.2501
+            "Thumper": 0.25
           },
           "increase": 3
         },
         {
           "attribute": "PUR",
           "distance_delta": {
-            "Lurker": 0.0,
-            "Signal Caller": 0.0185,
-            "Thumper": 0.0785
+            "Lurker": -0.0297,
+            "Signal Caller": -0.0833,
+            "Thumper": -0.0834
           },
           "increase": 1
         },
         {
           "attribute": "PUR",
           "distance_delta": {
-            "Lurker": 0.0833,
-            "Signal Caller": 0.1019,
-            "Thumper": 0.1618
+            "Lurker": 0.0536,
+            "Signal Caller": -0.0503,
+            "Thumper": -0.1667
           },
           "increase": 2
         },
         {
           "attribute": "PUR",
           "distance_delta": {
-            "Lurker": 0.1667,
-            "Signal Caller": 0.1852,
-            "Thumper": 0.2451
+            "Lurker": 0.1369,
+            "Signal Caller": 0.033,
+            "Thumper": -0.131
           },
           "increase": 3
         },
@@ -529,106 +1554,106 @@
           "distance_delta": {
             "Lurker": -0.0833,
             "Signal Caller": -0.0833,
-            "Thumper": -0.0833
+            "Thumper": -0.0834
           },
           "increase": 1
         },
         {
           "attribute": "PRC",
           "distance_delta": {
-            "Lurker": -0.1458,
+            "Lurker": -0.1666,
             "Signal Caller": -0.1667,
-            "Thumper": -0.1666
+            "Thumper": -0.1667
           },
           "increase": 2
         },
         {
           "attribute": "PRC",
           "distance_delta": {
-            "Lurker": -0.0625,
+            "Lurker": -0.1796,
             "Signal Caller": -0.25,
-            "Thumper": -0.2499
+            "Thumper": -0.25
           },
           "increase": 3
         },
         {
           "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": 0.0834,
+            "Signal Caller": -0.0833,
+            "Thumper": -0.0834
+          },
+          "increase": 1
+        },
+        {
+          "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": 0.1667,
+            "Signal Caller": -0.1667,
+            "Thumper": -0.1667
+          },
+          "increase": 2
+        },
+        {
+          "attribute": "AWR",
+          "distance_delta": {
+            "Lurker": 0.25,
+            "Signal Caller": -0.1171,
+            "Thumper": -0.25
+          },
+          "increase": 3
+        },
+        {
+          "attribute": "MCV",
           "distance_delta": {
             "Lurker": -0.0833,
-            "Signal Caller": -0.0833,
-            "Thumper": -0.0055
-          },
-          "increase": 1
-        },
-        {
-          "attribute": "AWR",
-          "distance_delta": {
-            "Lurker": 0.0,
-            "Signal Caller": -0.1574,
-            "Thumper": 0.0779
-          },
-          "increase": 2
-        },
-        {
-          "attribute": "AWR",
-          "distance_delta": {
-            "Lurker": 0.0833,
-            "Signal Caller": -0.0741,
-            "Thumper": 0.1612
-          },
-          "increase": 3
-        },
-        {
-          "attribute": "MCV",
-          "distance_delta": {
-            "Lurker": 0.0833,
             "Signal Caller": 0.0833,
-            "Thumper": 0.0834
+            "Thumper": 0.0833
           },
           "increase": 1
         },
         {
           "attribute": "MCV",
           "distance_delta": {
-            "Lurker": 0.1667,
+            "Lurker": -0.0603,
             "Signal Caller": 0.1667,
-            "Thumper": 0.1667
+            "Thumper": 0.1666
           },
           "increase": 2
         },
         {
           "attribute": "MCV",
           "distance_delta": {
-            "Lurker": 0.25,
+            "Lurker": 0.0231,
             "Signal Caller": 0.25,
-            "Thumper": 0.2501
+            "Thumper": 0.25
           },
           "increase": 3
         },
         {
           "attribute": "ZCV",
           "distance_delta": {
-            "Lurker": 0.0833,
+            "Lurker": -0.0833,
             "Signal Caller": 0.0833,
-            "Thumper": 0.0834
+            "Thumper": 0.0833
           },
           "increase": 1
         },
         {
           "attribute": "ZCV",
           "distance_delta": {
-            "Lurker": 0.1667,
+            "Lurker": -0.1666,
             "Signal Caller": 0.1667,
-            "Thumper": 0.1667
+            "Thumper": 0.1666
           },
           "increase": 2
         },
         {
           "attribute": "ZCV",
           "distance_delta": {
-            "Lurker": 0.25,
+            "Lurker": -0.25,
             "Signal Caller": 0.25,
-            "Thumper": 0.2501
+            "Thumper": 0.25
           },
           "increase": 3
         }
@@ -637,54 +1662,54 @@
     {
       "attribute_contributions": {
         "Lurker": {
-          "ACC": 0.125,
-          "AWR": 0.5,
-          "BSH": -0.5,
-          "COD": 0.6875,
-          "MCV": -0.875,
-          "POW": -0.125,
-          "PRC": 0.9375,
-          "PUR": 0.25,
-          "SPD": 0.0,
-          "STR": -0.875,
-          "TAK": -0.6875,
-          "ZCV": -0.125
+          "ACC": -0.1955,
+          "AWR": 0.4481,
+          "BSH": 12.6008,
+          "COD": -1.9824,
+          "MCV": -1.9148,
+          "POW": 8.8399,
+          "PRC": -2.8526,
+          "PUR": -0.71,
+          "SPD": 3.214,
+          "STR": 8.9776,
+          "TAK": 6.3893,
+          "ZCV": -3.9364
         },
         "Signal Caller": {
-          "ACC": -0.3333,
-          "AWR": -1.2222,
-          "BSH": 0.2222,
-          "COD": 1.2222,
-          "MCV": 5.5556,
-          "POW": -1.4444,
-          "PRC": -2.2222,
-          "PUR": -0.4444,
-          "SPD": 1.0,
-          "STR": 0.3333,
-          "TAK": 2.6667,
-          "ZCV": 2.6667
+          "ACC": 0.0692,
+          "AWR": -2.0455,
+          "BSH": 1.7276,
+          "COD": 0.4185,
+          "MCV": 4.1559,
+          "POW": -0.8697,
+          "PRC": -5.464,
+          "PUR": -1.4508,
+          "SPD": 2.8238,
+          "STR": 3.1995,
+          "TAK": 4.8431,
+          "ZCV": 1.0551
         },
         "Thumper": {
-          "ACC": -0.0926,
-          "AWR": 1.7333,
-          "BSH": -0.2111,
-          "COD": -1.037,
-          "MCV": 5.8222,
-          "POW": -0.0741,
-          "PRC": -4.4037,
-          "PUR": -0.1259,
-          "SPD": 0.237,
-          "STR": -0.3296,
-          "TAK": 3.2667,
-          "ZCV": 2.3667
+          "ACC": 2.3411,
+          "AWR": -5.4542,
+          "BSH": -0.4007,
+          "COD": 1.4976,
+          "MCV": 11.9353,
+          "POW": 0.8441,
+          "PRC": -7.1894,
+          "PUR": -2.3374,
+          "SPD": 3.6988,
+          "STR": 0.6552,
+          "TAK": 2.6902,
+          "ZCV": 9.7916
         }
       },
       "card_id": "27-110026550",
       "gameplay_path_recommended": false,
       "normalized_distance": {
-        "Lurker": 0.474,
-        "Signal Caller": 1.6111,
-        "Thumper": 1.6417
+        "Lurker": 4.3384,
+        "Signal Caller": 2.3436,
+        "Thumper": 4.0696
       },
       "overall": 87,
       "threshold_interactions": [
@@ -809,25 +1834,25 @@
         {
           "attribute": "SPD",
           "distance_delta": {
-            "Lurker": 0.0833,
+            "Lurker": 0.0834,
             "Signal Caller": 0.0833,
-            "Thumper": 0.0833
+            "Thumper": 0.0834
           },
           "increase": 1
         },
         {
           "attribute": "SPD",
           "distance_delta": {
-            "Lurker": 0.1666,
-            "Signal Caller": 0.1667,
-            "Thumper": 0.1666
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1666,
+            "Thumper": 0.1667
           },
           "increase": 2
         },
         {
           "attribute": "SPD",
           "distance_delta": {
-            "Lurker": 0.25,
+            "Lurker": 0.2501,
             "Signal Caller": 0.25,
             "Thumper": 0.25
           },
@@ -836,133 +1861,133 @@
         {
           "attribute": "ACC",
           "distance_delta": {
-            "Lurker": 0.0833,
-            "Signal Caller": 0.0278,
-            "Thumper": 0.0679
+            "Lurker": 0.0508,
+            "Signal Caller": 0.0833,
+            "Thumper": 0.0834
           },
           "increase": 1
         },
         {
           "attribute": "ACC",
           "distance_delta": {
-            "Lurker": 0.1666,
-            "Signal Caller": 0.1111,
-            "Thumper": 0.1512
+            "Lurker": 0.1341,
+            "Signal Caller": 0.1666,
+            "Thumper": 0.1667
           },
           "increase": 2
         },
         {
           "attribute": "ACC",
           "distance_delta": {
-            "Lurker": 0.25,
-            "Signal Caller": 0.1945,
-            "Thumper": 0.2345
+            "Lurker": 0.2175,
+            "Signal Caller": 0.25,
+            "Thumper": 0.25
           },
           "increase": 3
         },
         {
           "attribute": "COD",
           "distance_delta": {
-            "Lurker": 0.0833,
+            "Lurker": -0.0833,
             "Signal Caller": 0.0833,
-            "Thumper": -0.0834
+            "Thumper": 0.0834
           },
           "increase": 1
         },
         {
           "attribute": "COD",
           "distance_delta": {
-            "Lurker": 0.1666,
-            "Signal Caller": 0.1667,
-            "Thumper": -0.0062
+            "Lurker": -0.1637,
+            "Signal Caller": 0.1666,
+            "Thumper": 0.1667
           },
           "increase": 2
         },
         {
           "attribute": "COD",
           "distance_delta": {
-            "Lurker": 0.25,
+            "Lurker": -0.0803,
             "Signal Caller": 0.25,
-            "Thumper": 0.0771
+            "Thumper": 0.25
           },
           "increase": 3
         },
         {
           "attribute": "STR",
           "distance_delta": {
-            "Lurker": -0.0625,
+            "Lurker": 0.0834,
             "Signal Caller": 0.0833,
-            "Thumper": 0.0284
+            "Thumper": 0.0834
           },
           "increase": 1
         },
         {
           "attribute": "STR",
           "distance_delta": {
-            "Lurker": 0.0208,
-            "Signal Caller": 0.1667,
-            "Thumper": 0.1117
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1666,
+            "Thumper": 0.1667
           },
           "increase": 2
         },
         {
           "attribute": "STR",
           "distance_delta": {
-            "Lurker": 0.1041,
+            "Lurker": 0.2501,
             "Signal Caller": 0.25,
-            "Thumper": 0.195
+            "Thumper": 0.25
           },
           "increase": 3
         },
         {
           "attribute": "BSH",
           "distance_delta": {
-            "Lurker": 0.0,
+            "Lurker": 0.0834,
             "Signal Caller": 0.0833,
-            "Thumper": 0.0481
+            "Thumper": 0.0166
           },
           "increase": 1
         },
         {
           "attribute": "BSH",
           "distance_delta": {
-            "Lurker": 0.0833,
-            "Signal Caller": 0.1667,
-            "Thumper": 0.1314
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1666,
+            "Thumper": 0.0999
           },
           "increase": 2
         },
         {
           "attribute": "BSH",
           "distance_delta": {
-            "Lurker": 0.1666,
+            "Lurker": 0.2501,
             "Signal Caller": 0.25,
-            "Thumper": 0.2148
+            "Thumper": 0.1833
           },
           "increase": 3
         },
         {
           "attribute": "TAK",
           "distance_delta": {
-            "Lurker": -0.0313,
+            "Lurker": 0.0834,
             "Signal Caller": 0.0833,
-            "Thumper": 0.0833
+            "Thumper": 0.0834
           },
           "increase": 1
         },
         {
           "attribute": "TAK",
           "distance_delta": {
-            "Lurker": 0.052,
-            "Signal Caller": 0.1667,
-            "Thumper": 0.1666
+            "Lurker": 0.1667,
+            "Signal Caller": 0.1666,
+            "Thumper": 0.1667
           },
           "increase": 2
         },
         {
           "attribute": "TAK",
           "distance_delta": {
-            "Lurker": 0.1354,
+            "Lurker": 0.2501,
             "Signal Caller": 0.25,
             "Thumper": 0.25
           },
@@ -971,80 +1996,80 @@
         {
           "attribute": "POW",
           "distance_delta": {
-            "Lurker": 0.0625,
-            "Signal Caller": -0.0833,
-            "Thumper": 0.071
+            "Lurker": 0.0834,
+            "Signal Caller": -0.0616,
+            "Thumper": 0.0834
           },
           "increase": 1
         },
         {
           "attribute": "POW",
           "distance_delta": {
-            "Lurker": 0.1458,
-            "Signal Caller": -0.0741,
-            "Thumper": 0.1543
+            "Lurker": 0.1667,
+            "Signal Caller": 0.0217,
+            "Thumper": 0.1667
           },
           "increase": 2
         },
         {
           "attribute": "POW",
           "distance_delta": {
-            "Lurker": 0.2291,
-            "Signal Caller": 0.0093,
-            "Thumper": 0.2376
+            "Lurker": 0.2501,
+            "Signal Caller": 0.105,
+            "Thumper": 0.25
           },
           "increase": 3
         },
         {
           "attribute": "PUR",
           "distance_delta": {
-            "Lurker": 0.0833,
-            "Signal Caller": 0.0093,
-            "Thumper": 0.0623
+            "Lurker": -0.0349,
+            "Signal Caller": -0.0834,
+            "Thumper": -0.0833
           },
           "increase": 1
         },
         {
           "attribute": "PUR",
           "distance_delta": {
-            "Lurker": 0.1666,
-            "Signal Caller": 0.0926,
-            "Thumper": 0.1456
+            "Lurker": 0.0484,
+            "Signal Caller": -0.0752,
+            "Thumper": -0.1666
           },
           "increase": 2
         },
         {
           "attribute": "PUR",
           "distance_delta": {
-            "Lurker": 0.25,
-            "Signal Caller": 0.1759,
-            "Thumper": 0.229
+            "Lurker": 0.1317,
+            "Signal Caller": 0.0082,
+            "Thumper": -0.1395
           },
           "increase": 3
         },
         {
           "attribute": "PRC",
           "distance_delta": {
-            "Lurker": 0.0833,
-            "Signal Caller": -0.0833,
-            "Thumper": -0.0834
+            "Lurker": -0.0833,
+            "Signal Caller": -0.0834,
+            "Thumper": -0.0833
           },
           "increase": 1
         },
         {
           "attribute": "PRC",
           "distance_delta": {
-            "Lurker": 0.1666,
+            "Lurker": -0.1666,
             "Signal Caller": -0.1667,
-            "Thumper": -0.1667
+            "Thumper": -0.1666
           },
           "increase": 2
         },
         {
           "attribute": "PRC",
           "distance_delta": {
-            "Lurker": 0.25,
-            "Signal Caller": -0.1204,
+            "Lurker": -0.2254,
+            "Signal Caller": -0.25,
             "Thumper": -0.25
           },
           "increase": 3
@@ -1052,52 +2077,52 @@
         {
           "attribute": "AWR",
           "distance_delta": {
-            "Lurker": 0.0833,
-            "Signal Caller": -0.0833,
-            "Thumper": 0.0833
+            "Lurker": 0.0834,
+            "Signal Caller": -0.0834,
+            "Thumper": -0.0833
           },
           "increase": 1
         },
         {
           "attribute": "AWR",
           "distance_delta": {
-            "Lurker": 0.1666,
-            "Signal Caller": -0.037,
-            "Thumper": 0.1666
+            "Lurker": 0.1667,
+            "Signal Caller": -0.1667,
+            "Thumper": -0.1666
           },
           "increase": 2
         },
         {
           "attribute": "AWR",
           "distance_delta": {
-            "Lurker": 0.25,
-            "Signal Caller": 0.0463,
-            "Thumper": 0.25
+            "Lurker": 0.2501,
+            "Signal Caller": -0.0909,
+            "Thumper": -0.25
           },
           "increase": 3
         },
         {
           "attribute": "MCV",
           "distance_delta": {
-            "Lurker": -0.0625,
+            "Lurker": -0.0833,
             "Signal Caller": 0.0833,
-            "Thumper": 0.0833
+            "Thumper": 0.0834
           },
           "increase": 1
         },
         {
           "attribute": "MCV",
           "distance_delta": {
-            "Lurker": 0.0208,
-            "Signal Caller": 0.1667,
-            "Thumper": 0.1666
+            "Lurker": -0.1524,
+            "Signal Caller": 0.1666,
+            "Thumper": 0.1667
           },
           "increase": 2
         },
         {
           "attribute": "MCV",
           "distance_delta": {
-            "Lurker": 0.1041,
+            "Lurker": -0.0691,
             "Signal Caller": 0.25,
             "Thumper": 0.25
           },
@@ -1106,25 +2131,25 @@
         {
           "attribute": "ZCV",
           "distance_delta": {
-            "Lurker": 0.0625,
+            "Lurker": -0.0833,
             "Signal Caller": 0.0833,
-            "Thumper": 0.0833
+            "Thumper": 0.0834
           },
           "increase": 1
         },
         {
           "attribute": "ZCV",
           "distance_delta": {
-            "Lurker": 0.1458,
-            "Signal Caller": 0.1667,
-            "Thumper": 0.1666
+            "Lurker": -0.1666,
+            "Signal Caller": 0.1666,
+            "Thumper": 0.1667
           },
           "increase": 2
         },
         {
           "attribute": "ZCV",
           "distance_delta": {
-            "Lurker": 0.2291,
+            "Lurker": -0.2499,
             "Signal Caller": 0.25,
             "Thumper": 0.25
           },
@@ -1134,8 +2159,8 @@
     }
   ],
   "small_sample_warning": {
-    "Lurker": 5,
-    "Signal Caller": 5,
-    "Thumper": 13
+    "Lurker": 124,
+    "Signal Caller": 31,
+    "Thumper": 301
   }
 }

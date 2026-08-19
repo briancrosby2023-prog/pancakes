@@ -2,6 +2,1257 @@
   "seau": {
     "cards": [
       {
+        "archetype": "Signal Caller",
+        "card_id": "27-102026550",
+        "overall": 80,
+        "ratings": {
+          "BSH": 78,
+          "FMV": 75,
+          "PMV": 76,
+          "SPD": 78,
+          "TAK": 80
+        },
+        "thresholds": []
+      },
+      {
+        "archetype": "Lurker",
+        "card_id": "27-113026550",
+        "overall": 81,
+        "ratings": {
+          "ACC": 79,
+          "AGI": 73,
+          "AWR": 74,
+          "BCV": 51,
+          "BSH": 80,
+          "BSK": 42,
+          "BTK": 45,
+          "CAR": 52,
+          "CIT": 67,
+          "COD": 77,
+          "CTH": 70,
+          "DAC": 52,
+          "DRR": 50,
+          "FMV": 74,
+          "IBL": 74,
+          "INJ": 81,
+          "JKM": 56,
+          "JMP": 77,
+          "KAC": 58,
+          "KPW": 64,
+          "LBK": 47,
+          "MAC": 59,
+          "MCV": 78,
+          "MRR": 47,
+          "PAC": 61,
+          "PBF": 50,
+          "PBK": 63,
+          "PBP": 56,
+          "PMV": 74,
+          "POW": 79,
+          "PRC": 74,
+          "PRS": 75,
+          "PUR": 79,
+          "RBF": 48,
+          "RBK": 61,
+          "RBP": 54,
+          "RET": 58,
+          "RLS": 45,
+          "RUN": 47,
+          "SAC": 41,
+          "SFA": 49,
+          "SPC": 67,
+          "SPD": 79,
+          "SPM": 54,
+          "SRR": 65,
+          "STA": 81,
+          "STR": 79,
+          "TAK": 84,
+          "TGH": 81,
+          "THA": 49,
+          "THP": 62,
+          "TRK": 56,
+          "TUP": 46,
+          "ZCV": 81
+        },
+        "thresholds": [
+          {
+            "ability": "Bouncer",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "ZCV": 1
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "ZCV",
+                "required_rating": 82
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 76,
+            "special": true,
+            "status": "1_BELOW",
+            "tier": "BRONZE",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Bouncer",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "ZCV": 3
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "ZCV",
+                "required_rating": 84
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 76,
+            "special": true,
+            "status": "3_BELOW",
+            "tier": "SILVER",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Bouncer",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "ZCV": 5
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "ZCV",
+                "required_rating": 86
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 76,
+            "special": true,
+            "status": "4_TO_5_BELOW",
+            "tier": "GOLD",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Bouncer",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "ZCV": 9
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "ZCV",
+                "required_rating": 90
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 76,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "PLATINUM",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "House Call",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "CTH": 1
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "CTH",
+                "required_rating": 71
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 77,
+            "special": true,
+            "status": "1_BELOW",
+            "tier": "BRONZE",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "House Call",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "CTH": 3
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "CTH",
+                "required_rating": 73
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 77,
+            "special": true,
+            "status": "3_BELOW",
+            "tier": "SILVER",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "House Call",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "CTH": 5
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "CTH",
+                "required_rating": 75
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 77,
+            "special": true,
+            "status": "4_TO_5_BELOW",
+            "tier": "GOLD",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "House Call",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "CTH": 8
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "CTH",
+                "required_rating": 78
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 77,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "PLATINUM",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Knockout",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "POW": 5
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "POW",
+                "required_rating": 84
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 78,
+            "special": true,
+            "status": "4_TO_5_BELOW",
+            "tier": "BRONZE",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Knockout",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "POW": 7
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "POW",
+                "required_rating": 86
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 78,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "SILVER",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Knockout",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "POW": 9
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "POW",
+                "required_rating": 88
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 78,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "GOLD",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Knockout",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "POW": 13
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "POW",
+                "required_rating": 92
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 78,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "PLATINUM",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Robber",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "ACC": 12
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "ACC",
+                "required_rating": 91
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 79,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "BRONZE",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Robber",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "ACC": 13
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "ACC",
+                "required_rating": 92
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 79,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "SILVER",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Robber",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "ACC": 15
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "ACC",
+                "required_rating": 94
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 79,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "GOLD",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Robber",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "deficits": {
+              "ACC": 16
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 81,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395143Z",
+            "requirements": [
+              {
+                "attribute": "ACC",
+                "required_rating": 95
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 79,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "PLATINUM",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Wrap Up",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "missing_attributes": [
+              "TAC"
+            ],
+            "ovr_requirement": null,
+            "position": "MIKE",
+            "requirements": [
+              {
+                "attribute": "TAC",
+                "required_rating": 88
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 80,
+            "status": "INSUFFICIENT_REQUIREMENTS",
+            "tier": "BRONZE",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Wrap Up",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "missing_attributes": [
+              "TAC"
+            ],
+            "ovr_requirement": null,
+            "position": "MIKE",
+            "requirements": [
+              {
+                "attribute": "TAC",
+                "required_rating": 90
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 80,
+            "status": "INSUFFICIENT_REQUIREMENTS",
+            "tier": "SILVER",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Wrap Up",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "missing_attributes": [
+              "TAC"
+            ],
+            "ovr_requirement": null,
+            "position": "MIKE",
+            "requirements": [
+              {
+                "attribute": "TAC",
+                "required_rating": 92
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 80,
+            "status": "INSUFFICIENT_REQUIREMENTS",
+            "tier": "GOLD",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Wrap Up",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-113026550",
+            "missing_attributes": [
+              "TAC"
+            ],
+            "ovr_requirement": null,
+            "position": "MIKE",
+            "requirements": [
+              {
+                "attribute": "TAC",
+                "required_rating": 93
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 80,
+            "status": "INSUFFICIENT_REQUIREMENTS",
+            "tier": "PLATINUM",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          }
+        ]
+      },
+      {
+        "archetype": "Lurker",
+        "card_id": "27-112026550",
+        "overall": 84,
+        "ratings": {
+          "ACC": 82,
+          "AGI": 76,
+          "AWR": 77,
+          "BCV": 41,
+          "BSH": 83,
+          "BSK": 60,
+          "BTK": 50,
+          "CAR": 59,
+          "CIT": 70,
+          "COD": 80,
+          "CTH": 73,
+          "DAC": 63,
+          "DRR": 62,
+          "FMV": 77,
+          "IBL": 77,
+          "INJ": 84,
+          "JKM": 57,
+          "JMP": 80,
+          "KAC": 62,
+          "KPW": 45,
+          "LBK": 65,
+          "MAC": 61,
+          "MCV": 81,
+          "MRR": 55,
+          "PAC": 55,
+          "PBF": 58,
+          "PBK": 50,
+          "PBP": 65,
+          "PMV": 77,
+          "POW": 82,
+          "PRC": 77,
+          "PRS": 78,
+          "PUR": 82,
+          "RBF": 48,
+          "RBK": 40,
+          "RBP": 52,
+          "RET": 57,
+          "RLS": 53,
+          "RUN": 58,
+          "SAC": 59,
+          "SFA": 59,
+          "SPC": 70,
+          "SPD": 82,
+          "SPM": 55,
+          "SRR": 58,
+          "STA": 84,
+          "STR": 82,
+          "TAK": 87,
+          "TGH": 84,
+          "THA": 59,
+          "THP": 65,
+          "TRK": 62,
+          "TUP": 41,
+          "ZCV": 84
+        },
+        "thresholds": [
+          {
+            "ability": "Bouncer",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "ZCV": -2
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "ZCV",
+                "required_rating": 82
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 76,
+            "special": true,
+            "status": "ABOVE",
+            "tier": "BRONZE",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Bouncer",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "ZCV": 0
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "ZCV",
+                "required_rating": 84
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 76,
+            "special": true,
+            "status": "AT_THRESHOLD",
+            "tier": "SILVER",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Bouncer",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "ZCV": 2
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "ZCV",
+                "required_rating": 86
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 76,
+            "special": true,
+            "status": "2_BELOW",
+            "tier": "GOLD",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Bouncer",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "ZCV": 6
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "ZCV",
+                "required_rating": 90
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 76,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "PLATINUM",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "House Call",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "CTH": -2
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "CTH",
+                "required_rating": 71
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 77,
+            "special": true,
+            "status": "ABOVE",
+            "tier": "BRONZE",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "House Call",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "CTH": 0
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "CTH",
+                "required_rating": 73
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 77,
+            "special": true,
+            "status": "AT_THRESHOLD",
+            "tier": "SILVER",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "House Call",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "CTH": 2
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "CTH",
+                "required_rating": 75
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 77,
+            "special": true,
+            "status": "2_BELOW",
+            "tier": "GOLD",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "House Call",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "CTH": 5
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "CTH",
+                "required_rating": 78
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 77,
+            "special": true,
+            "status": "4_TO_5_BELOW",
+            "tier": "PLATINUM",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Knockout",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "POW": 2
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "POW",
+                "required_rating": 84
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 78,
+            "special": true,
+            "status": "2_BELOW",
+            "tier": "BRONZE",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Knockout",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "POW": 4
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "POW",
+                "required_rating": 86
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 78,
+            "special": true,
+            "status": "4_TO_5_BELOW",
+            "tier": "SILVER",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Knockout",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "POW": 6
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "POW",
+                "required_rating": 88
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 78,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "GOLD",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Knockout",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "POW": 10
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "POW",
+                "required_rating": 92
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 78,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "PLATINUM",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Robber",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "ACC": 9
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "ACC",
+                "required_rating": 91
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 79,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "BRONZE",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Robber",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "ACC": 10
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "ACC",
+                "required_rating": 92
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 79,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "SILVER",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Robber",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "ACC": 12
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "ACC",
+                "required_rating": 94
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 79,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "GOLD",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Robber",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "deficits": {
+              "ACC": 13
+            },
+            "equip_eligibility_claimed": false,
+            "overall": 84,
+            "ovr_requirement": null,
+            "player": "Junior Seau",
+            "position": "MIKE",
+            "program": "Sunday Spotlight: Retro",
+            "release_date": "2026-07-26T14:35:49.395172Z",
+            "requirements": [
+              {
+                "attribute": "ACC",
+                "required_rating": 95
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 79,
+            "special": true,
+            "status": "MORE_THAN_5_BELOW",
+            "tier": "PLATINUM",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Wrap Up",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "missing_attributes": [
+              "TAC"
+            ],
+            "ovr_requirement": null,
+            "position": "MIKE",
+            "requirements": [
+              {
+                "attribute": "TAC",
+                "required_rating": 88
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 80,
+            "status": "INSUFFICIENT_REQUIREMENTS",
+            "tier": "BRONZE",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Wrap Up",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "missing_attributes": [
+              "TAC"
+            ],
+            "ovr_requirement": null,
+            "position": "MIKE",
+            "requirements": [
+              {
+                "attribute": "TAC",
+                "required_rating": 90
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 80,
+            "status": "INSUFFICIENT_REQUIREMENTS",
+            "tier": "SILVER",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Wrap Up",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "missing_attributes": [
+              "TAC"
+            ],
+            "ovr_requirement": null,
+            "position": "MIKE",
+            "requirements": [
+              {
+                "attribute": "TAC",
+                "required_rating": 92
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 80,
+            "status": "INSUFFICIENT_REQUIREMENTS",
+            "tier": "GOLD",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          },
+          {
+            "ability": "Wrap Up",
+            "ability_slot_requirement": null,
+            "archetype": "Lurker",
+            "card_id": "27-112026550",
+            "missing_attributes": [
+              "TAC"
+            ],
+            "ovr_requirement": null,
+            "position": "MIKE",
+            "requirements": [
+              {
+                "attribute": "TAC",
+                "required_rating": 93
+              }
+            ],
+            "source": "https://www.cfblabs.com/ability-requirements",
+            "source_id": "SRC-CFB27-ABILITY-001",
+            "source_row": 80,
+            "status": "INSUFFICIENT_REQUIREMENTS",
+            "tier": "PLATINUM",
+            "validation": "SINGLE_STRUCTURED_SOURCE"
+          }
+        ]
+      },
+      {
         "archetype": "Lurker",
         "card_id": "27-111026550",
         "overall": 86,
@@ -1195,17 +2446,17 @@
   "te": {
     "Gritty Possession": {
       "ability_tier_groups": 20,
-      "cards": 7,
+      "cards": 51,
       "inheritance_status": "ARCHITECTURE_ONLY"
     },
     "Physical Route Runner": {
       "ability_tier_groups": 20,
-      "cards": 6,
+      "cards": 284,
       "inheritance_status": "RANKING_INHERITANCE_STRONG"
     },
     "Pure Blocker": {
       "ability_tier_groups": 20,
-      "cards": 0,
+      "cards": 11,
       "inheritance_status": "NO_HISTORICAL_RANKING_RESULT"
     },
     "Pure Possession": {
@@ -1215,7 +2466,7 @@
     },
     "Vertical Threat": {
       "ability_tier_groups": 20,
-      "cards": 10,
+      "cards": 166,
       "inheritance_status": "RANKING_INHERITANCE_STRONG"
     }
   }

@@ -1,24 +1,6 @@
 {
   "cards": [
     {
-      "archetype": "Agile",
-      "card_id": "102026556",
-      "madden19_weighted_score": 76.03703704,
-      "ovr": 80,
-      "player": "Kevin Mawae",
-      "program": "Core Legends Classic",
-      "special_card": false
-    },
-    {
-      "archetype": "Well Rounded",
-      "card_id": "240009242",
-      "madden19_weighted_score": 78.90740741,
-      "ovr": 81,
-      "player": "Cole Best",
-      "program": "Cornerstones",
-      "special_card": true
-    },
-    {
       "archetype": "Raw Strength",
       "card_id": "27-2018777",
       "madden19_weighted_score": 81.80555556,
@@ -60,15 +42,6 @@
       "madden19_weighted_score": 81.68518519,
       "ovr": 84,
       "player": "Bruce Mitchell",
-      "program": "Platinum Rare",
-      "special_card": false
-    },
-    {
-      "archetype": "Agile",
-      "card_id": "9021692",
-      "madden19_weighted_score": 80.71296296,
-      "ovr": 84,
-      "player": "Kade Pieper",
       "program": "Platinum Rare",
       "special_card": false
     },
@@ -165,13 +138,13 @@
   ],
   "classification": "STABLE_CORE_WITH_RECALIBRATION",
   "leave_one_out_minimal_archetype_adjustment": {
-    "exact_accuracy": 0.75,
-    "mae": 0.25,
+    "exact_accuracy": 1.0,
+    "mae": 0,
     "within_one_accuracy": 1.0
   },
   "leave_one_out_recalibration": {
-    "exact_accuracy": 0.75,
-    "mae": 0.25,
+    "exact_accuracy": 1.0,
+    "mae": 0,
     "within_one_accuracy": 1.0
   },
   "madden19_attribute_order": [
@@ -188,9 +161,9 @@
     "PBK",
     "SPD"
   ],
-  "madden19_score_ovr_correlation": 0.931272,
-  "ordinary_population": 8,
-  "population": 18,
+  "madden19_score_ovr_correlation": 0.84508,
+  "ordinary_population": 6,
+  "population": 15,
   "special_card_warning": "Legends and promotional cards are excluded from the primary ordinary-card validation when sample size permits.",
-  "special_population": 10
+  "special_population": 9
 }
