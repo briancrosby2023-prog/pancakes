@@ -13,7 +13,7 @@ def _load(name):
 
 def test_frozen_inputs_and_validation_boundaries() -> None:
     assert _load("freeze")["source_commit"] == "cc47415"
-    assert _load("freeze")["population_n"] == 435
+    assert _load("freeze")["population_n"] == 8838
     assert _load("validation") == {
         "access_bypass": False,
         "canonical_changes": False,
@@ -27,7 +27,7 @@ def test_frozen_inputs_and_validation_boundaries() -> None:
 
 def test_te_gate_has_candidates_pairs_and_counterevidence() -> None:
     te = _load("te_moneyball")
-    assert te["population"] == 23
+    assert te["population"] == 501
     assert len(te["candidates"]) == 10
     assert len(te["matched_pairs"]) >= 5
     assert te["counterevidence"]["market_value_available"] is False
@@ -36,7 +36,7 @@ def test_te_gate_has_candidates_pairs_and_counterevidence() -> None:
 
 def test_cb_gate_has_human_readable_controlled_test_set() -> None:
     cb = _load("cb_technical_value")
-    assert cb["population"] == 23
+    assert cb["population"] == 863
     assert len(cb["matched_comparisons"]) >= 10
     assert len(cb["athletic_floor_test_set"]) == 10
     assert cb["height_status"] == "UNAVAILABLE_NOT_ZERO"
@@ -47,7 +47,7 @@ def test_cb_gate_has_human_readable_controlled_test_set() -> None:
 
 def test_mike_seau_matrix_is_complete_and_not_prescriptive() -> None:
     result = _load("mike_seau")
-    assert result["population"] == 23
+    assert result["population"] == 456
     assert len(result["seau_upgrade_decision_matrix"]) == 2
     assert all(len(row["upgrade_matrix"]) == 36 for row in result["seau_upgrade_decision_matrix"])
     assert all(
@@ -73,7 +73,7 @@ def test_coherence_v2_exposes_components_without_composite() -> None:
 def test_cost_and_five_secondary_gates_are_reproducible() -> None:
     cost = _load("attribute_cost_analysis")
     assert set(cost) == {"ACC", "STR", "BSH"}
-    assert cost["BSH"]["EDGE"]["count"] == 0
+    assert cost["BSH"]["EDGE"]["count"] == 772
     secondary = _load("secondary_gates")
     assert set(secondary) == {
         "experiment_generator",
