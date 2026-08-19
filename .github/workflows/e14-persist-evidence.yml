@@ -19,9 +19,29 @@ jobs:
           python-version: '3.11'
       - name: Install project
         run: python -m pip install -e .
+      - name: Repair Phase 3 canonical release timestamps
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('src/operation_pancake/research/cfb27_phase3.py')
+          text = path.read_text(encoding='utf-8')
+          if 'def _parse_release_date' not in text:
+              marker = '\n\ndef _corr('
+              helper = '''\n\ndef _parse_release_date(value: str) -> datetime:\n    \"\"\"Accept legacy M/D/Y and canonical ISO-8601 release timestamps.\"\"\"\n    try:\n        return datetime.strptime(value, \"%m/%d/%Y\")\n    except ValueError:\n        return datetime.fromisoformat(value.replace(\"Z\", \"+00:00\")).replace(tzinfo=None)\n'''
+              if marker not in text:
+                  raise SystemExit('Phase 3 helper insertion marker not found')
+              text = text.replace(marker, helper + marker, 1)
+          legacy = 'datetime.strptime(row["release_date"], "%m/%d/%Y")'
+          text = text.replace(legacy, '_parse_release_date(row["release_date"])')
+          if legacy in text:
+              raise SystemExit('Legacy Phase 3 release-date parser remains')
+          path.write_text(text, encoding='utf-8')
+          PY
       - name: Execute canonical E.14
         run: python scripts/run_cfb27_e14.py
-      - name: Verify and persist evidence matrix
+      - name: Verify and persist repair plus evidence matrix
         shell: bash
         run: |
           python - <<'PY'
@@ -43,10 +63,10 @@ jobs:
           PY
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/research/cfb27_e14/evidence_matrix.json
+          git add src/operation_pancake/research/cfb27_phase3.py data/research/cfb27_e14/evidence_matrix.json
           if git diff --cached --quiet; then
-            echo 'Canonical E.14 evidence already durable.'
+            echo 'E.14 repair and evidence already durable.'
           else
-            git commit -m 'Persist canonical E.14 evidence matrix'
+            git commit -m 'Repair Phase 3 dates and persist E.14 evidence'
             git push
           fi
