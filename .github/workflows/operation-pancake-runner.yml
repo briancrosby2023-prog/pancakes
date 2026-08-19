@@ -52,12 +52,11 @@ jobs:
           python - <<'PY'
           from pathlib import Path
 
-          paths = [
+          helper = '''\n\ndef _parse_release_date(value: str) -> datetime:\n    \"\"\"Accept legacy M/D/Y and canonical ISO-8601 release timestamps.\"\"\"\n    try:\n        return datetime.strptime(value, \"%m/%d/%Y\")\n    except ValueError:\n        return datetime.fromisoformat(value.replace(\"Z\", \"+00:00\")).replace(tzinfo=None)\n'''
+          for path in [
               Path('src/operation_pancake/research/cfb27_op_x_002.py'),
               Path('src/operation_pancake/research/cfb27_op_x_003.py'),
-          ]
-          helper = '''\n\ndef _parse_release_date(value: str) -> datetime:\n    \"\"\"Accept legacy M/D/Y and canonical ISO-8601 release timestamps.\"\"\"\n    try:\n        return datetime.strptime(value, \"%m/%d/%Y\")\n    except ValueError:\n        return datetime.fromisoformat(value.replace(\"Z\", \"+00:00\")).replace(tzinfo=None)\n'''
-          for path in paths:
+          ]:
               text = path.read_text()
               if 'def _parse_release_date' not in text:
                   marker = '\n\ndef _mean(values)'
@@ -73,13 +72,26 @@ jobs:
                   '_parse_release_date(selected[0]["release_date"])',
               )
               path.write_text(text)
+
+          phase3 = Path('src/operation_pancake/research/cfb27_phase3.py')
+          text = phase3.read_text()
+          if 'def _parse_release_date' not in text:
+              marker = '\n\ndef _corr('
+              if marker not in text:
+                  raise SystemExit('Phase 3 helper insertion marker not found')
+              text = text.replace(marker, helper + marker, 1)
+          legacy = 'datetime.strptime(row["release_date"], "%m/%d/%Y")'
+          text = text.replace(legacy, '_parse_release_date(row["release_date"])')
+          if legacy in text:
+              raise SystemExit('Legacy Phase 3 release-date parser remains')
+          phase3.write_text(text)
           PY
           if [[ "$GITHUB_EVENT_NAME" == "push" && "$GITHUB_REF" == refs/heads/agent/* ]]; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add src/operation_pancake/research/cfb27_op_x_002.py src/operation_pancake/research/cfb27_op_x_003.py
+            git add src/operation_pancake/research/cfb27_op_x_002.py src/operation_pancake/research/cfb27_op_x_003.py src/operation_pancake/research/cfb27_phase3.py
             if ! git diff --cached --quiet; then
-              git commit -m 'Accept canonical ISO release dates in legacy research'
+              git commit -m 'Accept canonical release timestamps in legacy research'
               git push
             fi
           fi
@@ -132,6 +144,21 @@ jobs:
           if [ $rc -ne 0 ]; then sed -i "s/classification=.*/classification=ANALYSIS_FAILURE/; s/failed_component=.*/failed_component=E.14/" diagnostics/e14-status.txt; fi
           sed -i "s/phase=ALPHA_INPUT/phase=E14_ANALYSIS/; s#command=generate alpha readiness and inspect checkpoint#command=python scripts/run_cfb27_e14.py#; s/exit_code=.*/exit_code=$rc/" diagnostics/e14-status.txt
           exit $rc
+      - name: Persist canonical E.14 evidence
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/agent/')
+        shell: bash
+        run: |
+          if [ ! -s data/research/cfb27_e14/evidence_matrix.json ]; then
+            echo 'E.14 evidence matrix missing or empty' >&2
+            exit 1
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/cfb27_e14/evidence_matrix.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Persist canonical E.14 evidence matrix'
+            git push
+          fi
       - name: Refresh deterministic research artifacts
         shell: bash
         run: |
@@ -154,21 +181,6 @@ jobs:
               git commit -m 'Refresh deterministic CFB27 research artifacts'
               git push
             fi
-          fi
-      - name: Persist canonical E.14 evidence
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/agent/')
-        shell: bash
-        run: |
-          if [ ! -s data/research/cfb27_e14/evidence_matrix.json ]; then
-            echo 'E.14 evidence matrix missing or empty' >&2
-            exit 1
-          fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/research/cfb27_e14/evidence_matrix.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'Persist canonical E.14 evidence matrix'
-            git push
           fi
       - name: Publish research diagnostics
         if: always()
