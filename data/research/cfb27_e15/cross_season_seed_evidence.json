@@ -22,6 +22,50 @@
     },
     {
       "season": 26,
+      "player": "Grayson Barnes",
+      "version": "Core Rare",
+      "position": "TE",
+      "archetype": "Vertical Threat",
+      "overall": 81,
+      "ratings": {"SPD": 81, "CTH": 81, "SRR": 70, "MRR": 76, "RBK": 60, "DRR": 81, "CIT": 80, "STR": 72},
+      "source_url": "https://cfb.fan/players/706-grayson-barnes/26-2000706/",
+      "scientific_use": "CFB26 low-OVR Vertical Threat boundary seed"
+    },
+    {
+      "season": 26,
+      "player": "Trey Leckner",
+      "version": "Conference Tour",
+      "position": "TE",
+      "archetype": "Vertical Threat",
+      "overall": 91,
+      "ratings": {"SPD": 86, "CTH": 91, "SRR": 91, "MRR": 89, "RBK": 75, "DRR": 88, "CIT": 91, "STR": 85},
+      "source_url": "https://cfb.fan/players/21554-trey-leckner/26-240021554/",
+      "scientific_use": "CFB26 mid/high-OVR Vertical Threat external-validation seed"
+    },
+    {
+      "season": 26,
+      "player": "Elyiss Williams",
+      "version": "Signing Day",
+      "position": "TE",
+      "archetype": "Vertical Threat",
+      "overall": 98,
+      "ratings": {"SPD": 95, "CTH": 98, "SRR": 94, "MRR": 97, "RBK": 88, "DRR": 89, "CIT": 95, "STR": 85},
+      "source_url": "https://cfb.fan/players/24466-elyiss-williams/26-390024466/",
+      "scientific_use": "CFB26 high-OVR Vertical Threat external-validation seed"
+    },
+    {
+      "season": 26,
+      "player": "Jaren Kanak",
+      "version": "What If?",
+      "position": "TE",
+      "archetype": "Vertical Threat",
+      "overall": 99,
+      "ratings": {"SPD": 97, "CTH": 99, "SRR": 97, "MRR": 98, "RBK": 87, "DRR": 97, "CIT": 95, "STR": 94},
+      "source_url": "https://cfb.fan/players/10119-jaren-kanak/26-57010119/",
+      "scientific_use": "CFB26 top-end Vertical Threat external-validation seed"
+    },
+    {
+      "season": 26,
       "player": "Carter Miller",
       "version": "Core Rare",
       "position": "C",
@@ -68,6 +112,42 @@
     },
     {
       "season": 26,
+      "player": "Nolan Rucci",
+      "version": "Core Rare",
+      "position": "RT",
+      "archetype": "Pass Protector",
+      "overall": 80,
+      "ratings": {"SPD": 71, "ACC": 70, "AGI": 71, "COD": 51, "AWR": 73, "STR": 73, "RBK": 73, "RBF": 78, "RBP": 78, "PBK": 80, "PBF": 80, "PBP": 80, "LBK": 74, "IBL": 80},
+      "oop_ovr": {"TE": 78, "LT": 77, "LG": 75, "C": 74, "RG": 76},
+      "source_url": "https://cfb.fan/players/9812-nolan-rucci/",
+      "scientific_use": "same-rating-vector offensive-line position sensitivity"
+    },
+    {
+      "season": 26,
+      "player": "Tyler Brown",
+      "version": "Core Uncommon",
+      "position": "LG",
+      "archetype": "Pass Protector",
+      "overall": 73,
+      "ratings": {"SPD": 63, "ACC": 60, "AGI": 62, "COD": 48, "AWR": 73, "STR": 73, "RBK": 65, "RBF": 69, "RBP": 64, "PBK": 73, "PBF": 72, "PBP": 73, "LBK": 61, "IBL": 72},
+      "oop_ovr": {"LT": 70, "C": 70, "RG": 71, "RT": 71},
+      "source_url": "https://cfb.fan/players/998-tyler-brown/",
+      "scientific_use": "same-rating-vector offensive-line position sensitivity"
+    },
+    {
+      "season": 26,
+      "player": "Chris Davis",
+      "version": "Honor Society",
+      "position": "CB",
+      "archetype": "Zone",
+      "overall": 93,
+      "ratings": {"SPD": 93, "ACC": 93, "AGI": 88, "COD": 93, "AWR": 83, "STR": 83, "JMP": 93, "PRC": 87, "MCV": 92, "ZCV": 93, "PRS": 87, "CTH": 84, "TAK": 86, "POW": 83, "PUR": 85, "BSH": 87, "IBL": 83, "FMV": 76, "PMV": 75},
+      "oop_ovr": {"FS": 86, "SS": 87},
+      "source_url": "https://cfb.fan/players/26438-chris-davis/26-513026438/",
+      "scientific_use": "same-rating-vector secondary position sensitivity"
+    },
+    {
+      "season": 26,
       "player": "Vic Beasley",
       "version": "What If?",
       "position": "FS",
@@ -89,13 +169,28 @@
       "oop_ovr": {"REDG": 97, "DT": 97, "SAM": 95, "WILL": 95},
       "source_url": "https://cfb.fan/reveals/3119-valentines-rush-vic-beasley-ultd/",
       "scientific_use": "same-rating-vector front-seven position sensitivity"
+    },
+    {
+      "season": 26,
+      "player": "Jason Taylor",
+      "version": "Record Breakers",
+      "position": "REDG",
+      "archetype": "Speed Rusher",
+      "overall": 98,
+      "ratings": {"SPD": 95, "ACC": 96, "AGI": 93, "COD": 90, "AWR": 89, "STR": 94, "PRC": 92, "FMV": 98, "PMV": 89, "TAK": 95, "POW": 90, "PUR": 97, "BSH": 91, "IBL": 86},
+      "oop_ovr": {"LEDG": 96, "DT": 96, "SAM": 94, "WILL": 94},
+      "source_url": "https://cfb.fan/players/26891-jason-taylor/",
+      "scientific_use": "independent same-rating-vector front-seven position sensitivity"
     }
   ],
   "initial_inferences": [
     "CFB26 OOP OVRs provide unusually strong same-rating-vector evidence for position-specific valuation.",
     "Carter Miller 80-to-86 same-player progression supplies a controlled Pass Protector Center trajectory.",
     "Carter Miller and Chandler Strong both reach 86 C with materially different archetype-shaped rating profiles, supporting archetype/component discrimination over a single dominant attribute.",
-    "Vic Beasley front-seven OOP OVRs show LEDG/REDG/DT equivalence at 97 while SAM/WILL are 95 on the same item, direct evidence that position mapping changes valuation even without changing the item ratings.",
-    "These seed records are hypothesis evidence only; they are not sufficient for a season-wide accuracy claim."
+    "Offensive-line OOP experiments show that identical blocking ratings can map to materially different OVR by line position: Nolan Rucci is 80 RT but 74 C; Tyler Brown is 73 LG but 70 C.",
+    "Secondary OOP evidence is directionally asymmetric: a 99 FS Box Specialist maps to 95 CB, while a 93 Zone CB maps to only 86 FS and 87 SS. This is strong evidence against a universal secondary formula.",
+    "Front-seven OOP evidence replicates across independent Speed Rusher items: edge alignment is valued above SAM/WILL, while DT equivalence varies by item, supporting position-specific mapping rather than one universal front-seven weighted sum.",
+    "CFB26 Vertical Threat TE records span 81 to 99 OVR and preserve strong receiving emphasis while RBK varies from 60 to 88, reinforcing the prior that blocking is not a dominant universal VT-TE OVR driver.",
+    "These seed records are hypothesis evidence only; they are not sufficient for a season-wide exact-OVR accuracy claim."
   ]
 }
