@@ -19,6 +19,14 @@ NULL_DRAWS = 1000
 RATING_NAMES = tuple(sorted({*WEIGHTS, "COD", "TGH", "RBF"}))
 
 
+def _parse_release_date(value: str) -> datetime:
+    """Accept legacy M/D/Y and canonical ISO-8601 release timestamps."""
+    try:
+        return datetime.strptime(value, "%m/%d/%Y")
+    except ValueError:
+        return datetime.fromisoformat(value.replace("Z", "+00:00")).replace(tzinfo=None)
+
+
 def _corr(xs: list[float], ys: list[float]) -> float | None:
     if len(xs) < 2 or len(set(xs)) < 2 or len(set(ys)) < 2:
         return None
@@ -377,7 +385,7 @@ def _chronology(cards: list[dict[str, Any]]) -> dict[str, Any]:
     by_date = defaultdict(list)
     for row in cards:
         if row.get("release_date"):
-            date = datetime.strptime(row["release_date"], "%m/%d/%Y").date().isoformat()
+            date = _parse_release_date(row["release_date"]).date().isoformat()
             by_date[date].append(row)
     daily = []
     for date, rows in sorted(by_date.items()):
@@ -400,7 +408,7 @@ def _chronology(cards: list[dict[str, Any]]) -> dict[str, Any]:
         first = {}
         for level in range(80, 91):
             dates = [
-                datetime.strptime(row["release_date"], "%m/%d/%Y").date().isoformat()
+                _parse_release_date(row["release_date"]).date().isoformat()
                 for row in rows
                 if row.get("release_date") and row["overall"] >= level
             ]
@@ -415,9 +423,9 @@ def _scarcity(cards: list[dict[str, Any]]) -> dict[str, Any]:
     for position in sorted({row["position"] for row in cards}):
         rows = sorted(
             [row for row in cards if row["position"] == position and row.get("release_date")],
-            key=lambda row: (datetime.strptime(row["release_date"], "%m/%d/%Y"), row["overall"]),
+            key=lambda row: (_parse_release_date(row["release_date"]), row["overall"]),
         )
-        dates = sorted({datetime.strptime(row["release_date"], "%m/%d/%Y").date() for row in rows})
+        dates = sorted({_parse_release_date(row["release_date"]).date() for row in rows})
         gaps = [(right - left).days for left, right in zip(dates, dates[1:], strict=False)]
         ceiling, replacements = -1, []
         for row in rows:
@@ -531,7 +539,7 @@ def _matched(cards: list[dict[str, Any]]) -> dict[str, Any]:
     for row in cards:
         if not row.get("release_date"):
             continue
-        date = datetime.strptime(row["release_date"], "%m/%d/%Y").date()
+        date = _parse_release_date(row["release_date"]).date()
         week = date.isocalendar().week
         key = (row["position"], row["overall"], row.get("archetype"), week)
         cells[key]["special" if is_special(row) else "ordinary"].append(row)
