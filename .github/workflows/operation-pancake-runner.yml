@@ -135,6 +135,7 @@ jobs:
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/agent/')
         shell: bash
         run: |
+          python scripts/refresh_cfb27_inheritance_phase1.py
           python scripts/generate_cfb27_op_c_001.py
           python scripts/generate_cfb27_op_x_002.py
           python scripts/generate_cfb27_op_x_003.py
