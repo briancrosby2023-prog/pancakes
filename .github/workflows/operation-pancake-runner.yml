@@ -136,10 +136,18 @@ jobs:
         shell: bash
         run: |
           python scripts/generate_cfb27_op_c_001.py
+          python scripts/generate_cfb27_op_x_002.py
+          python scripts/generate_cfb27_op_x_003.py
           python scripts/generate_cfb27_op_x_012.py
+          python scripts/generate_cfb27_phase2_analysis.py
+          python scripts/generate_cfb27_phase3_analysis.py
+          python scripts/generate_cfb27_phase5_analysis.py
+          python scripts/generate_cfb27_phase6_10_analysis.py
+          python scripts/generate_evidence_index.py
+          python scripts/generate_qb_model_comparison.py
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/research/cfb27_op_c_001 data/research/cfb27_op_x_012
+          git add data/research
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh deterministic CFB27 research artifacts'
             git push
