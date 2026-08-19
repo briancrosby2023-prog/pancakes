@@ -1,0 +1,79 @@
+{
+  "phase": "OP-X-012E.15",
+  "as_of": "2026-08-19",
+  "head_before_update": "963d81a102738161afc37cbac296de103c9275f7",
+  "objective": "Multi-season formula architecture discrimination without pooling seasons before validation",
+  "accuracy_policy": {"GM_READY_exact_ovr": ">=0.95", "GM_USABLE_exact_ovr": ">=0.90 and <0.95", "ranking_is_separate": true},
+  "architecture_codes": {
+    "A": "independent position formulas",
+    "B": "shared football components with position-specific coefficients",
+    "C": "shared components with archetype-specific coefficients",
+    "D": "position + archetype coefficient layers on reusable components"
+  },
+  "families": {
+    "CENTER_OL": {
+      "preferred_architecture": "D",
+      "confidence": "HIGH_STRUCTURAL_LOW_EXACT",
+      "hypotheses": [
+        {"id":"one_universal_OL_formula","verdict":"REJECTED","evidence":"CFB26 identical rating vectors change OVR by line position: Carter Miller 80 C -> 76 LT/80 LG/77 RG/77 RT; Nolan Rucci 80 RT -> 74 C/77 LT/75 LG/76 RG; Tyler Brown 73 LG -> 70 C/70 LT/71 RG/71 RT."},
+        {"id":"one_dominant_blocking_rating","verdict":"REJECTED","evidence":"Carter Miller 80->86 C gains across STR/RBK/RBF/RBP/PBK/PBF/PBP/LBK rather than one isolated rating; CFB25 Federico Maranges 90 C has PBP93/PBF90 but RBP84/RBF83/RBK85."},
+        {"id":"shared_blocking_components_position_coefficients","verdict":"SURVIVES","evidence":"OOP deltas are deterministic on fixed vectors; guard/center equivalence differs from tackle valuation."},
+        {"id":"archetype_layer_on_OL_components","verdict":"SURVIVES","evidence":"CFB26 same-OVR C contrast: Carter Miller Pass Protector 86 and Chandler Strong Agile 86 reach the same OVR with materially different STR and run/pass profiles."}
+      ],
+      "cross_season": {"CFB25":"SUPPORTIVE_SEED","CFB26":"STRONG_NATURAL_EXPERIMENTS","CFB27":"E14_POPULATION_AVAILABLE_NO_EXACT_MODEL_YET"},
+      "gm_status": "NOT_EXACT_READY"
+    },
+    "TE": {
+      "preferred_architecture": "D",
+      "confidence": "HIGH_FOR_ARCHETYPE_SEPARATION",
+      "hypotheses": [
+        {"id":"one_universal_TE_formula","verdict":"REJECTED","evidence":"CFB26 Vertical Threat reaches 81 with RBK60 and 99 with RBK87 while Pure Blocker low cards track blocking near displayed OVR despite route-running ratings in the 50s; CFB27 Physical Route Runner examples likewise carry receiving ratings near OVR with much lower blocking."},
+        {"id":"receiving_only_all_TE","verdict":"REJECTED","evidence":"CFB26 Pure Blocker: Ja'Kavion Nonar 68 OVR has RBK/RBF/RBP/PBK/PBF/PBP/IBL all 68 while SRR56/MRR53/DRR50; Emeka Iloh 73 has RBK/RBF/RBP73, PBF/PBP73 with SRR57/MRR56/DRR54."},
+        {"id":"archetype_specific_receiving_blocking_mix","verdict":"SURVIVES","evidence":"Vertical Threat and Physical Route Runner tolerate low RBK relative to OVR; Pure Blocker tolerates very low route-running; Gritty Possession occupies a more balanced receiving/blocking profile."},
+        {"id":"small_shared_TE_competency_plus_archetype_layer","verdict":"SURVIVES","evidence":"Across archetypes, CTH/STR/physical competence co-move enough to support reusable components, but dominant component changes by archetype."}
+      ],
+      "measured_ranking_accuracy_CFB27": {"Gritty Possession":0.988,"Vertical Threat_later_model":0.986,"Physical Route Runner":1.0},
+      "exact_ovr_accuracy": null,
+      "cross_season": {"CFB25":"VERTICAL_THREAT_SEED_ONLY","CFB26":"VT_AND_PURE_BLOCKER_STRUCTURAL_SUPPORT","CFB27":"THREE_ARCHETYPE_RANKING_MODELS_VALIDATED"},
+      "gm_status": "GM_READY_RANKING_ONLY_FOR_GRITTY_VERTICAL_PHYSICAL"
+    },
+    "SECONDARY": {
+      "preferred_architecture": "D",
+      "confidence": "HIGH_STRUCTURAL",
+      "hypotheses": [
+        {"id":"universal_CB_FS_SS_formula","verdict":"REJECTED","evidence":"CFB26 fixed-vector OOP: Chris Davis 93 CB -> 86 FS/87 SS; Vic Beasley 99 FS -> 95 CB/97 SS; Tony Mitchell 72 SS -> 70 CB/70 FS; Javien Toviano 77 SS -> 76 CB/75 FS."},
+        {"id":"coverage_only_secondary_formula","verdict":"REJECTED","evidence":"CFB25 Zone CB progression and CFB26 Box/Hybrid safety evidence show role-specific slack; Box Specialist Isaiah Nwokobia is 93 SS with MCV89/PRS85 while maintaining TAK92/POW91; same OVR can tolerate large BSH/POW variation in E.14."},
+        {"id":"shared_coverage_athletic_components_position_coefficients","verdict":"SURVIVES","evidence":"E.14 classifies SPD as shared while PRC is position-scaled; CFB26 OOP vectors show large position penalties with ratings fixed."},
+        {"id":"archetype_layer_within_safety_CB","verdict":"SURVIVES","evidence":"Box Specialist, Hybrid, Zone/Field/Bump archetypes preserve visibly different tackling/coverage tradeoffs at comparable OVR."}
+      ],
+      "cross_season": {"CFB25":"ZONE_CB_AND_HYBRID_SAFETY_SUPPORT","CFB26":"STRONG_OOP_SUPPORT","CFB27":"E14_SPD_SHARED_PRC_POSITION_SCALED"},
+      "gm_status": "STRUCTURAL_GM_USABLE_NOT_EXACT_OVR"
+    },
+    "FRONT_SEVEN": {
+      "preferred_architecture": "D",
+      "confidence": "HIGH_STRUCTURAL",
+      "hypotheses": [
+        {"id":"universal_front_seven_weighted_sum","verdict":"REJECTED","evidence":"CFB26 fixed-vector Speed Rusher OOP repeats across players: Jimmori Robinson 90 EDGE -> 90 DT but 88 SAM/WILL; R Mason Thomas 95 EDGE -> 95 DT but 93 SAM/WILL; Patrick Payton 92 EDGE -> 91 DT and 88 SAM/WILL; Jason Taylor 98 REDG -> 96 LEDG/DT and 94 SAM/WILL."},
+        {"id":"edge_and_DT_always_equivalent","verdict":"REJECTED","evidence":"Some vectors tie EDGE/DT, others lose 1-2 OVR at DT or opposite edge; equivalence is item/component dependent."},
+        {"id":"shared_rush_run_defense_components_position_coefficients","verdict":"SURVIVES","evidence":"E.14: BSH and FMV are position-scaled; SPD is shared; PMV remains confounded. CFB26 OOP deltas reproduce edge > off-ball valuation on fixed vectors."},
+        {"id":"archetype_layer_on_front_seven_components","verdict":"SURVIVES","evidence":"Speed Rusher and Pure Power profiles emphasize different rush/strength components; CFB27 DT OOP varies by vector (e.g. 84 DT -> 83 EDGE, while 70 DT can -> 71 EDGE)."}
+      ],
+      "cross_season": {"CFB25":"NO_CLEAN_SEED_ADDED_THIS_SPRINT","CFB26":"STRONG_REPLICATED_OOP_SUPPORT","CFB27":"E14_COMPONENT_CLASSIFICATION_PLUS_OOP_SUPPORT"},
+      "gm_status": "STRUCTURAL_GM_USABLE_NOT_EXACT_OVR"
+    },
+    "QB": {
+      "preferred_architecture": "C_OR_D",
+      "confidence": "MODERATE",
+      "hypotheses": [
+        {"id":"one_universal_QB_sum","verdict":"WEAKENED","evidence":"CFB26 Pocket Passer and Dual Threat trajectories retain different mobility/playmaking slack."},
+        {"id":"PAC_dominant_universal","verdict":"REJECTED","evidence":"CFB26 elite examples reach 97-99 OVR with PAC 87-91."},
+        {"id":"shared_passing_plus_archetype_mobility","verdict":"SURVIVES","evidence":"Passing ratings remain central in both Pocket Passer and Dual Threat while SPD/RUN valuation differs by archetype."}
+      ],
+      "cross_season": {"CFB25":"NOT_TESTED_THIS_SPRINT","CFB26":"SEE_cfb26_qb_cross_season_seed","CFB27":"EARLIER_HELDOUT_ARCHITECTURE_WORK_EXISTS"},
+      "gm_status": "UNRESOLVED_EXACT"
+    }
+  },
+  "global_architecture_conclusion": "D is the strongest working description for OL, TE, Secondary, and Front Seven: reusable football components with both position and archetype valuation layers. QB currently supports at least an archetype layer but position layering is not applicable within native QB.",
+  "models_no_longer_worth_pursuing": ["single universal TE formula","single universal OL formula","single universal secondary formula","single universal front-seven formula","single dominant OL blocking rating","PAC-dominant universal QB formula","historical Madden Center absolute calibration transferred unchanged to CFB27"],
+  "next_highest_value_experiment": "Freeze the existing CFB27 TE archetype ranking candidates and blind-score a materially larger CFB26 sample separately for Gritty Possession, Vertical Threat, Physical Route Runner, and Pure Blocker; measure exact OVR, MAE, within-one, residual-by-OVR and rank accuracy without refitting. This directly tests coefficient portability and can promote or kill the most mature family before broader refits."
+}
