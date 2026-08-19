@@ -25,7 +25,7 @@ from operation_pancake.evidence.ingestion import (
 def main() -> None:
     parser = argparse.ArgumentParser(prog="operation-pancake")
     parser.add_argument("--root", type=Path, default=Path.cwd())
-    sub = parser.add_subparsers(dest="command", required=True)
+    sub = parser.add_subparsers(dest="command")
     search = sub.add_parser("search")
     search.add_argument("query", nargs="?", default="")
     search.add_argument("--position")
@@ -53,6 +53,9 @@ def main() -> None:
     acquire_sub.add_parser("status")
     acquire_sub.add_parser("conflicts")
     args = parser.parse_args()
+    if args.command is None:
+        parser.print_help()
+        return
     root = args.root.resolve()
     index = build_evidence_index(root)
     state_path = root / "data/evidence/ingestion_state.json"
