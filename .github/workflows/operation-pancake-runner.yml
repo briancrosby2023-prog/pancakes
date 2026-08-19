@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: read
@@ -36,7 +38,22 @@ jobs:
         run: python -m ruff check .
 
       - name: Run test suite
-        run: python -m pytest -ra -vv
+        run: |
+          set -o pipefail
+          python -m pytest -ra -vv 2>&1 | tee pytest-runner.log
+
+      - name: Persist pytest diagnostics
+        if: always()
+        run: |
+          {
+            echo '# Operation Pancake runner diagnostics'
+            echo
+            echo "Commit: $(git rev-parse HEAD)"
+            echo
+            echo '```text'
+            cat pytest-runner.log
+            echo '```'
+          } > runner-diagnostics.md
 
       - name: Verify Operation Pancake CLI
         run: operation-pancake --help
