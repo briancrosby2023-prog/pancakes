@@ -760,7 +760,11 @@ def replacement_pressure_v3(root: Path, cards: list[dict], chronology: dict, cat
     phase4 = _json(root / "data/research/cfb27_inheritance_phase4/release_intelligence.json")[
         "replacement_pressure"
     ]
-    latest = max(_parse_release_date(card["release_date"]).date() for card in cards)
+    latest = max(
+        _parse_release_date(card["release_date"]).date()
+        for card in cards
+        if card.get("release_date")
+    )
     last_capability = {}
     for row in chronology["first_access"]:
         date = datetime.fromisoformat(row["date"]).date()
