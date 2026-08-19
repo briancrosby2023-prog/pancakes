@@ -1,6 +1,6 @@
 """First OP-X-012E.15 calibration experiment: historical Center model vs CFB27 Alpha.
 
-The historical model is intentionally evaluated as a frozen prior.  This
+The historical model is intentionally evaluated as a frozen prior. This
 module does not refit its weights or calibration before scoring CFB27 cards.
 """
 
@@ -17,6 +17,7 @@ from operation_pancake.research.cfb27_alpha_population import build_alpha_popula
 from operation_pancake.research.cfb27_e15_formula import (
     LinearFormulaCandidate,
     classify_candidate,
+    classify_deployment,
     compare_rounding_rules,
     score_candidate,
 )
@@ -52,6 +53,7 @@ def build_center_calibration_assessment(root: Path) -> dict:
     for archetype in archetypes:
         result = score_candidate(candidate, centers, position="C", archetype=archetype)
         result["confidence"] = classify_candidate(result)
+        result["deployment"] = classify_deployment(result)
         result["rounding_comparison"] = [
             {
                 "rounding": row["rounding"],
@@ -59,6 +61,7 @@ def build_center_calibration_assessment(root: Path) -> dict:
                 "exact_match_rate": row["exact_match_rate"],
                 "mean_absolute_error": row["mean_absolute_error"],
                 "maximum_absolute_error": row["maximum_absolute_error"],
+                "deployment": classify_deployment(row),
             }
             for row in compare_rounding_rules(
                 candidate, centers, position="C", archetype=archetype
@@ -84,6 +87,7 @@ def build_center_calibration_assessment(root: Path) -> dict:
         "assessments": assessments,
         "interpretation_policy": (
             "A strong fit supports inheritance of the historical Center prior; a weak fit "
-            "rejects that frozen implementation for CFB27 but does not identify the replacement formula."
+            "rejects that frozen implementation for CFB27 but does not identify the replacement formula. "
+            "GM_READY or GM_USABLE models may advance without requiring perfect reconstruction."
         ),
     }
