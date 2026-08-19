@@ -53,6 +53,7 @@ jobs:
           from pathlib import Path
 
           helper = '''\n\ndef _parse_release_date(value: str) -> datetime:\n    \"\"\"Accept legacy M/D/Y and canonical ISO-8601 release timestamps.\"\"\"\n    try:\n        return datetime.strptime(value, \"%m/%d/%Y\")\n    except ValueError:\n        return datetime.fromisoformat(value.replace(\"Z\", \"+00:00\")).replace(tzinfo=None)\n'''
+
           for path in [
               Path('src/operation_pancake/research/cfb27_op_x_002.py'),
               Path('src/operation_pancake/research/cfb27_op_x_003.py'),
@@ -85,13 +86,48 @@ jobs:
           if legacy in text:
               raise SystemExit('Legacy Phase 3 release-date parser remains')
           phase3.write_text(text)
+
+          phase5 = Path('src/operation_pancake/research/cfb27_phase5.py')
+          text = phase5.read_text()
+          if 'def _parse_release_date' not in text:
+              marker = '\n\ndef load_inventories('
+              if marker not in text:
+                  raise SystemExit('Phase 5 helper insertion marker not found')
+              text = text.replace(marker, helper + marker, 1)
+          legacy = 'datetime.strptime(raw_date, "%m/%d/%Y")'
+          text = text.replace(legacy, '_parse_release_date(raw_date)')
+          if legacy in text:
+              raise SystemExit('Legacy Phase 5 release-date parser remains')
+          phase5.write_text(text)
+
+          phase6 = Path('src/operation_pancake/research/cfb27_phase6_10.py')
+          text = phase6.read_text()
+          if 'def _parse_release_date' not in text:
+              marker = '\n\ndef _json('
+              if marker not in text:
+                  raise SystemExit('Phase 6-10 helper insertion marker not found')
+              text = text.replace(marker, helper + marker, 1)
+          replacements = {
+              'datetime.strptime(card["release_date"], "%m/%d/%Y")': '_parse_release_date(card["release_date"])',
+              'datetime.strptime(row["release_date"], "%m/%d/%Y")': '_parse_release_date(row["release_date"])',
+          }
+          for legacy, replacement in replacements.items():
+              text = text.replace(legacy, replacement)
+              if legacy in text:
+                  raise SystemExit(f'Legacy Phase 6-10 parser remains: {legacy}')
+          phase6.write_text(text)
           PY
           if [[ "$GITHUB_EVENT_NAME" == "push" && "$GITHUB_REF" == refs/heads/agent/* ]]; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add src/operation_pancake/research/cfb27_op_x_002.py src/operation_pancake/research/cfb27_op_x_003.py src/operation_pancake/research/cfb27_phase3.py
+            git add \
+              src/operation_pancake/research/cfb27_op_x_002.py \
+              src/operation_pancake/research/cfb27_op_x_003.py \
+              src/operation_pancake/research/cfb27_phase3.py \
+              src/operation_pancake/research/cfb27_phase5.py \
+              src/operation_pancake/research/cfb27_phase6_10.py
             if ! git diff --cached --quiet; then
-              git commit -m 'Accept canonical release timestamps in legacy research'
+              git commit -m 'Accept canonical release timestamps across research phases'
               git push
             fi
           fi
