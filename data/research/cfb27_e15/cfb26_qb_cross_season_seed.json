@@ -1,0 +1,29 @@
+{
+  "phase": "OP-X-012E.15",
+  "source": "CFB.FAN",
+  "season": 26,
+  "family": "QB",
+  "purpose": "Cross-season QB archetype and progression discrimination",
+  "records": [
+    {"player":"Colton Joseph","overall":71,"archetype":"Pocket Passer","ratings":{"SPD":70,"THP":70,"SAC":70,"MAC":70,"DAC":70,"PAC":65,"RUN":67,"TUP":66},"source_url":"https://cfb.fan/players/1619-colton-joseph/26-2001619/social"},
+    {"player":"CJ Carr","overall":76,"archetype":"Pocket Passer","ratings":{"SPD":71,"THP":76,"SAC":75,"MAC":76,"DAC":76,"PAC":73,"RUN":66,"TUP":75},"source_url":"https://cfb.fan/players/21429-cj-carr/26-2021429/social/"},
+    {"player":"Drew Allar","overall":88,"archetype":"Pocket Passer","ratings":{"SPD":80,"THP":87,"SAC":85,"MAC":88,"DAC":83,"PAC":80,"RUN":78,"TUP":83},"source_url":"https://cfb.fan/players/123-drew-allar/26-170000123/social"},
+    {"player":"Danny Wuerffel","overall":93,"archetype":"Pocket Passer","ratings":{"SPD":87,"THP":90,"SAC":93,"MAC":93,"DAC":90,"PAC":93,"RUN":90,"TUP":90},"source_url":"https://cfb.fan/players/26511-danny-wuerffel/"},
+    {"player":"Rich Gannon","overall":94,"archetype":"Pocket Passer","ratings":{"SPD":88,"THP":94,"SAC":93,"MAC":94,"DAC":91,"PAC":94,"RUN":85,"TUP":88},"source_url":"https://cfb.fan/players/26900-rich-gannon/26-240026900/social"},
+    {"player":"Joe Fagnano","overall":97,"archetype":"Pocket Passer","ratings":{"SPD":93,"THP":97,"SAC":97,"MAC":96,"DAC":95,"PAC":88,"RUN":89,"TUP":99},"source_url":"https://cfb.fan/players/19713-joe-fagnano/26-320019713/social/"},
+    {"player":"Kordell Stewart","version":"Mainstays","overall":88,"archetype":"Dual Threat","ratings":{"SPD":87,"THP":88,"SAC":86,"MAC":85,"DAC":84,"PAC":81,"RUN":88,"TUP":82},"source_url":"https://cfb.fan/players/26042-kordell-stewart/26-170026042/social/"},
+    {"player":"Braxton Miller","version":"Ranksgiving","overall":93,"archetype":"Dual Threat","ratings":{"SPD":91,"THP":92,"SAC":93,"MAC":90,"DAC":90,"PAC":85,"RUN":90,"TUP":88},"source_url":"https://cfb.fan/players/26080-braxton-miller/26-260026080/social"},
+    {"player":"Marcel Reed","overall":95,"archetype":"Dual Threat","ratings":{"SPD":93,"THP":93,"SAC":95,"MAC":93,"DAC":92,"PAC":89,"RUN":92,"TUP":91},"source_url":"https://cfb.fan/players/10268-marcel-reed/26-290000065/social"},
+    {"player":"Braxton Miller","version":"Signing Day","overall":97,"archetype":"Dual Threat","ratings":{"SPD":95,"THP":96,"SAC":97,"MAC":94,"DAC":94,"PAC":87,"RUN":93,"TUP":90},"source_url":"https://cfb.fan/players/26080-braxton-miller/26-390026080/social"},
+    {"player":"Kordell Stewart","version":"Game Changers","overall":98,"archetype":"Dual Threat","ratings":{"SPD":97,"THP":98,"SAC":95,"MAC":95,"DAC":96,"PAC":92,"RUN":95,"TUP":94},"source_url":"https://cfb.fan/players/26042-kordell-stewart/26-370026042/social"},
+    {"player":"Terry Bussey","overall":99,"archetype":"Dual Threat","ratings":{"SPD":97,"THP":99,"SAC":97,"MAC":96,"DAC":97,"PAC":91,"RUN":93,"TUP":91},"source_url":"https://cfb.fan/players/18643-terry-bussey/26-57118643/social"}
+  ],
+  "inferences": [
+    "Pocket Passer OVR is not a simple minimum-passing-rating threshold: Danny Wuerffel reaches 93 with THP/DAC 90 while Rich Gannon reaches 94 with THP 94 and DAC 91, and Joe Fagnano reaches 97 despite PAC 88.",
+    "Dual Threat progression shows mobility rising with OVR, but passing remains central: Kordell Stewart 88-to-98 gains SPD +10 and THP +10 while SAC/MAC/DAC also rise materially.",
+    "PAC is unlikely to be a dominant universal QB coefficient because elite Pocket Passer and Dual Threat cards can retain PAC well below displayed OVR.",
+    "RUN and TUP also show archetype-sensitive slack; exact coefficients remain unmeasured.",
+    "The surviving hypothesis is shared passing components with archetype-specific valuation of mobility/playmaking, rather than one universal QB weighted sum."
+  ],
+  "accuracy_claim": "NONE; seed evidence only"
+}
