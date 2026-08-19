@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
@@ -98,6 +98,23 @@ jobs:
           if [ $rc -ne 0 ]; then sed -i "s/classification=.*/classification=ANALYSIS_FAILURE/; s/failed_component=.*/failed_component=E.14/" diagnostics/e14-status.txt; fi
           sed -i "s/phase=ALPHA_INPUT/phase=E14_ANALYSIS/; s#command=generate alpha readiness and inspect checkpoint#command=python scripts/run_cfb27_e14.py#; s/exit_code=.*/exit_code=$rc/" diagnostics/e14-status.txt
           exit $rc
+      - name: Persist canonical E.14 evidence
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/agent/')
+        shell: bash
+        run: |
+          if [ ! -s data/research/cfb27_e14/evidence_matrix.json ]; then
+            echo 'E.14 evidence matrix missing or empty' >&2
+            exit 1
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/cfb27_e14/evidence_matrix.json
+          if git diff --cached --quiet; then
+            echo 'Canonical E.14 evidence already durable.'
+          else
+            git commit -m 'Persist canonical E.14 evidence matrix'
+            git push
+          fi
       - name: Publish research diagnostics
         if: always()
         continue-on-error: true
