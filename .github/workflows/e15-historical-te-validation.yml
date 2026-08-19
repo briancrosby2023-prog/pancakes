@@ -1,0 +1,48 @@
+name: E15 Historical TE Population Validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/op-x-012-reconcile-artifacts
+    paths:
+      - scripts/e15_historical_te_population_validation.py
+      - .github/workflows/e15-historical-te-validation.yml
+
+permissions:
+  contents: write
+
+jobs:
+  acquire-score-persist:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/op-x-012-reconcile-artifacts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install acquisition dependencies
+        run: python -m pip install requests beautifulsoup4
+      - name: Enumerate CFB25/26 TE populations and blind-score frozen models
+        run: python scripts/e15_historical_te_population_validation.py --seasons 25 26 --pause 0.20
+      - name: Persist population datasets and measurements
+        shell: bash
+        run: |
+          git config user.name 'operation-pancake-bot'
+          git config user.email 'operation-pancake-bot@users.noreply.github.com'
+          git add data/research/cfb27_e15/historical_validation
+          if git diff --cached --quiet; then
+            echo 'No dataset changes to commit.'
+          else
+            git commit -m 'Persist E15 CFB25/26 TE population validation'
+            git push origin HEAD:agent/op-x-012-reconcile-artifacts
+          fi
+      - name: Upload validation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e15-historical-te-validation
+          path: data/research/cfb27_e15/historical_validation
+          if-no-files-found: warn
