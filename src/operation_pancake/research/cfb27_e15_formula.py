@@ -1,6 +1,6 @@
 """Deterministic candidate-model scoring for OP-X-012E.15.
 
-This module deliberately separates model evaluation from model discovery.  A
+This module deliberately separates model evaluation from model discovery. A
 candidate must be stated before it is scored; low error is evidence for a
 candidate, not proof that the candidate is EA's implementation.
 """
@@ -20,6 +20,7 @@ CONFIDENCE_LEVELS = (
     "UNDERDETERMINED",
     "REJECTED",
 )
+DEPLOYMENT_LEVELS = ("GM_READY", "GM_USABLE", "RESEARCH_REQUIRED")
 
 
 @dataclass(frozen=True, slots=True)
@@ -65,9 +66,7 @@ class LinearFormulaCandidate:
         return math.ceil(value)
 
 
-def _eligible_rows(
-    cards: Iterable[Mapping], position: str, archetype: str
-) -> list[Mapping]:
+def _eligible_rows(cards: Iterable[Mapping], position: str, archetype: str) -> list[Mapping]:
     rows = []
     for card in cards:
         if card.get("position") != position or card.get("archetype") != archetype:
@@ -165,7 +164,7 @@ def compare_rounding_rules(
 
 
 def classify_candidate(result: Mapping, *, contradictions: int = 0) -> str:
-    """Apply conservative evidence labels to a scored candidate."""
+    """Apply conservative scientific evidence labels to a scored candidate."""
     count = int(result.get("scored_cards") or 0)
     exact_rate = result.get("exact_match_rate")
     mae = result.get("mean_absolute_error")
@@ -182,18 +181,34 @@ def classify_candidate(result: Mapping, *, contradictions: int = 0) -> str:
     return "REJECTED"
 
 
+def classify_deployment(result: Mapping, *, systematic_failure: bool = False) -> str:
+    """Classify practical GM usefulness without requiring scientific perfection.
+
+    >=95% exact agreement is ready when residuals are small and non-systematic.
+    90-95% is usable when misses remain predominantly small. Anything lower
+    remains research-required. This intentionally lets useful models ship.
+    """
+    count = int(result.get("scored_cards") or 0)
+    exact_rate = result.get("exact_match_rate")
+    mae = result.get("mean_absolute_error")
+    max_error = result.get("maximum_absolute_error")
+    if count == 0 or exact_rate is None or mae is None or systematic_failure:
+        return "RESEARCH_REQUIRED"
+    if exact_rate >= 0.95 and mae <= 0.10 and (max_error is None or max_error <= 2):
+        return "GM_READY"
+    if exact_rate >= 0.90 and mae <= 0.20 and (max_error is None or max_error <= 2):
+        return "GM_USABLE"
+    return "RESEARCH_REQUIRED"
+
+
 def rank_candidates(results: Sequence[Mapping]) -> list[Mapping]:
     """Return deterministic best-first candidate ordering without declaring a winner."""
     return sorted(
         results,
         key=lambda row: (
             -(row.get("exact_match_rate") or 0),
-            row.get("mean_absolute_error")
-            if row.get("mean_absolute_error") is not None
-            else math.inf,
-            row.get("maximum_absolute_error")
-            if row.get("maximum_absolute_error") is not None
-            else math.inf,
+            row.get("mean_absolute_error") if row.get("mean_absolute_error") is not None else math.inf,
+            row.get("maximum_absolute_error") if row.get("maximum_absolute_error") is not None else math.inf,
             str(row.get("candidate", "")),
         ),
     )
