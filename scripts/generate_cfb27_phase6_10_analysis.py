@@ -8,26 +8,57 @@ from pathlib import Path
 
 
 def _repair_missing_release_date_handling(root: Path) -> bool:
-    """Ignore unknown release dates when deriving the latest known release.
+    """Exclude unknown dates from date-dependent Phase VI-X chronology.
 
-    Canonical CFB27 records may legitimately have no release date.  Unknown
-    dates must not be invented, and they must not make deterministic Phase
-    VI-X regeneration fail.
+    Canonical CFB27 records may legitimately have no release date. Unknown
+    dates must not be invented. Date-dependent chronology calculations should
+    therefore use only records with known release dates while preserving every
+    card for analyses that do not require chronology.
     """
     path = root / "src/operation_pancake/research/cfb27_phase6_10.py"
     text = path.read_text(encoding="utf-8")
-    legacy = 'latest = max(_parse_release_date(card["release_date"]).date() for card in cards)'
-    replacement = (
-        'latest = max(\n'
-        '        _parse_release_date(card["release_date"]).date()\n'
-        '        for card in cards\n'
-        '        if card.get("release_date")\n'
-        '    )'
-    )
-    if legacy not in text:
-        return False
-    path.write_text(text.replace(legacy, replacement, 1), encoding="utf-8")
-    return True
+    changed = False
+
+    replacements = [
+        (
+            'latest = max(_parse_release_date(card["release_date"]).date() for card in cards)',
+            (
+                'latest = max(\n'
+                '        _parse_release_date(card["release_date"]).date()\n'
+                '        for card in cards\n'
+                '        if card.get("release_date")\n'
+                '    )'
+            ),
+        ),
+        (
+            '        card = card_map[row["card_id"]]\n'
+            '        release = _parse_release_date(card["release_date"]).date().isoformat()',
+            '        card = card_map[row["card_id"]]\n'
+            '        if not card.get("release_date"):\n'
+            '            continue\n'
+            '        release = _parse_release_date(card["release_date"]).date().isoformat()',
+        ),
+        (
+            '        for card in sorted(\n'
+            '            position_cards,\n'
+            '            key=lambda row: (\n'
+            '                _parse_release_date(row["release_date"]).date(),',
+            '        dated_position_cards = [card for card in position_cards if card.get("release_date")]\n'
+            '        for card in sorted(\n'
+            '            dated_position_cards,\n'
+            '            key=lambda row: (\n'
+            '                _parse_release_date(row["release_date"]).date(),',
+        ),
+    ]
+
+    for legacy, replacement in replacements:
+        if legacy in text:
+            text = text.replace(legacy, replacement, 1)
+            changed = True
+
+    if changed:
+        path.write_text(text, encoding="utf-8")
+    return changed
 
 
 def _persist_repair(root: Path) -> None:
@@ -47,7 +78,7 @@ def _persist_repair(root: Path) -> None:
     )
     if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=root).returncode != 0:
         subprocess.run(
-            ["git", "commit", "-m", "Handle unknown release dates in Phase VI-X"],
+            ["git", "commit", "-m", "Handle unknown release dates across Phase VI-X chronology"],
             cwd=root,
             check=True,
         )
