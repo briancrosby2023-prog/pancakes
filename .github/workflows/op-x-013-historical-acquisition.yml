@@ -26,14 +26,28 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Run proven CFB27 population recipe for CFB26
-        run: python scripts/run_cfb27_population_v3.py --season 26 --last-page 676
-      - name: Persist CFB26 proven-path checkpoint
-        if: always()
-        shell: bash
+      - name: Configure durable checkpoint commits
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Run proven CFB27 population recipe for CFB26 with durable checkpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          for end_page in 50 100 150 200 250 300 350 400 450 500 550 600 650 676; do
+            python scripts/run_cfb27_population_v3.py --season 26 --last-page "$end_page"
+            git add data/external/cfb_fan_26_population_v3_checkpoint.json \
+                    data/external/cfb_fan_26_population_state.json \
+                    data/external/raw/cfb_fan_26_global_listings 2>/dev/null || true
+            if ! git diff --cached --quiet; then
+              git commit -m "Checkpoint CFB26 proven-path through page ${end_page}"
+              git push origin HEAD:agent/op-x-012-reconcile-artifacts
+            fi
+          done
+      - name: Persist any final CFB26 proven-path state
+        if: always()
+        shell: bash
+        run: |
           git add data/external/cfb_fan_26_population_v3_checkpoint.json \
                   data/external/cfb_fan_26_population_state.json \
                   data/external/raw/cfb_fan_26_global_listings 2>/dev/null || true
