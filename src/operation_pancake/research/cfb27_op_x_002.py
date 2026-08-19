@@ -31,6 +31,14 @@ def _load(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _parse_release_date(value: str) -> datetime:
+    """Accept legacy M/D/Y and canonical ISO-8601 release timestamps."""
+    try:
+        return datetime.strptime(value, "%m/%d/%Y")
+    except ValueError:
+        return datetime.fromisoformat(value.replace("Z", "+00:00")).replace(tzinfo=None)
+
+
 def _mean(values) -> float | None:
     values = list(values)
     return round(statistics.mean(values), 4) if values else None
@@ -453,7 +461,7 @@ def secondary(cards: list[dict], coherence: list[dict], experiments: dict) -> di
         if row and card.get("release_date"):
             dated.append(
                 (
-                    datetime.strptime(card["release_date"], "%m/%d/%Y").date().isoformat(),
+                    _parse_release_date(card["release_date"]).date().isoformat(),
                     card["overall"],
                     row["ability_threshold_leverage"],
                 )

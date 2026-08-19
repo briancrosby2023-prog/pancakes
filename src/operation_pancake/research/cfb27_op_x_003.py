@@ -38,6 +38,14 @@ def _load(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _parse_release_date(value: str) -> datetime:
+    """Accept legacy M/D/Y and canonical ISO-8601 release timestamps."""
+    try:
+        return datetime.strptime(value, "%m/%d/%Y")
+    except ValueError:
+        return datetime.fromisoformat(value.replace("Z", "+00:00")).replace(tzinfo=None)
+
+
 def _mean(values) -> float | None:
     values = list(values)
     return round(statistics.mean(values), 4) if values else None
@@ -298,19 +306,19 @@ def capability_creep(cards: list[dict]) -> dict:
         selected = sorted(
             (card for card in cards if _card_position(card) == position and card["release_date"]),
             key=lambda card: (
-                datetime.strptime(card["release_date"], "%m/%d/%Y"),
+                _parse_release_date(card["release_date"]),
                 card["overall"],
                 card["external_card_id"],
             ),
         )
         if not selected:
             continue
-        first = datetime.strptime(selected[0]["release_date"], "%m/%d/%Y").date()
+        first = _parse_release_date(selected[0]["release_date"]).date()
         ceiling = -1
         events = []
         for card in selected:
             if card["overall"] > ceiling:
-                observed = datetime.strptime(card["release_date"], "%m/%d/%Y").date()
+                observed = _parse_release_date(card["release_date"]).date()
                 events.append(
                     {
                         "date": observed.isoformat(),
@@ -341,7 +349,7 @@ def capability_creep(cards: list[dict]) -> dict:
 def _dated_slope(cards: list[dict], attribute: str):
     pairs = [
         (
-            datetime.strptime(card["release_date"], "%m/%d/%Y").date().toordinal(),
+            _parse_release_date(card["release_date"]).date().toordinal(),
             card["displayed_ratings"][attribute],
         )
         for card in cards
