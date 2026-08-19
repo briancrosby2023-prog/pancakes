@@ -1,0 +1,45 @@
+name: OP-X-013 Historical Database Acquisition
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: op-x-013-historical-acquisition
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/op-x-012-reconcile-artifacts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install acquisition dependencies
+        run: python -m pip install requests beautifulsoup4
+      - name: Acquire CFB26 all-position population
+        run: python scripts/op_x_013_historical_acquisition.py --seasons 26 --pause 0.12
+      - name: Persist OP-X-013 CFB26 acquisition checkpoint
+        if: always()
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/op_x_013 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m 'Checkpoint OP-X-013 CFB26 all-position acquisition'
+            git push origin HEAD:agent/op-x-012-reconcile-artifacts
+          fi
+      - name: Upload CFB26 acquisition evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: op-x-013-cfb26-acquisition
+          path: data/research/op_x_013
+          if-no-files-found: warn
