@@ -1,0 +1,101 @@
+{
+  "phase": "OP-X-012E.15",
+  "purpose": "Cross-season blind-validation seed evidence",
+  "source": "CFB.FAN",
+  "retrieved_date": "2026-08-19",
+  "rules": {
+    "pool_seasons_before_validation": false,
+    "freeze_candidate_before_blind_scoring": true,
+    "preserve_season_provenance": true,
+    "ranking_accuracy_distinct_from_exact_ovr_accuracy": true
+  },
+  "records": [
+    {
+      "season": 25,
+      "player": "Jace Amaro",
+      "position": "TE",
+      "archetype": "Vertical Threat",
+      "overall": 99,
+      "ratings": {"SPD": 97, "CTH": 97, "SRR": 92, "MRR": 95, "RBK": 90, "DRR": 90, "CIT": 97, "STR": 87},
+      "source_url": "https://cfb.fan/players/25822-jace-amaro/25-58025822/",
+      "scientific_use": "CFB25 TE external-validation seed"
+    },
+    {
+      "season": 26,
+      "player": "Carter Miller",
+      "version": "Core Rare",
+      "position": "C",
+      "archetype": "Pass Protector",
+      "overall": 80,
+      "ratings": {"SPD": 68, "ACC": 67, "AGI": 69, "COD": 57, "AWR": 79, "STR": 79, "RBK": 72, "RBF": 70, "RBP": 68, "PBK": 80, "PBF": 80, "PBP": 80, "LBK": 63, "IBL": 80},
+      "oop_ovr": {"LT": 76, "LG": 80, "RG": 77, "RT": 77},
+      "source_url": "https://cfb.fan/players/1770-carter-miller/26-2001770/",
+      "scientific_use": "same-player progression and position-coefficient evidence"
+    },
+    {
+      "season": 26,
+      "player": "Carter Miller",
+      "version": "Names of the Game",
+      "position": "C",
+      "archetype": "Pass Protector",
+      "overall": 86,
+      "ratings": {"SPD": 68, "ACC": 71, "AGI": 70, "COD": 72, "AWR": 82, "STR": 85, "RBK": 82, "RBF": 83, "RBP": 81, "PBK": 84, "PBF": 86, "PBP": 86, "LBK": 82, "IBL": 83},
+      "oop_ovr": {"LT": 81, "LG": 86, "RG": 83, "RT": 83},
+      "source_url": "https://cfb.fan/players/1770-carter-miller/",
+      "scientific_use": "same-player progression and position-coefficient evidence"
+    },
+    {
+      "season": 26,
+      "player": "Chandler Strong",
+      "position": "C",
+      "archetype": "Agile",
+      "overall": 86,
+      "ratings": {"SPD": 78, "ACC": 77, "AGI": 77, "COD": 68, "AWR": 86, "STR": 74, "RBK": 86, "RBF": 86, "RBP": 83, "PBK": 86, "PBF": 86, "PBP": 81, "LBK": 86, "IBL": 80},
+      "oop_ovr": {"LT": 81, "LG": 85, "RG": 83, "RT": 83},
+      "source_url": "https://cfb.fan/players/4302-chandler-strong/26-315004302/",
+      "scientific_use": "cross-archetype Center contrast"
+    },
+    {
+      "season": 26,
+      "player": "Jake Timm",
+      "position": "C",
+      "archetype": "Well Rounded",
+      "overall": 91,
+      "ratings": {"SPD": 80, "ACC": 81, "AGI": 79, "COD": 81, "AWR": 81, "STR": 91, "RBK": 91, "RBF": 89, "RBP": 88, "PBK": 89, "PBF": 91, "PBP": 89},
+      "oop_ovr": {"LT": 85, "LG": 90, "RG": 87, "RT": 88},
+      "source_url": "https://cfb.fan/players/29130-jake-timm/",
+      "scientific_use": "cross-archetype Center and OOP coefficient evidence"
+    },
+    {
+      "season": 26,
+      "player": "Vic Beasley",
+      "version": "What If?",
+      "position": "FS",
+      "archetype": "Box Specialist",
+      "overall": 99,
+      "ratings": {"SPD": 99, "ACC": 99, "AGI": 97, "COD": 99, "AWR": 86, "STR": 96, "JMP": 98, "PRC": 97, "MCV": 94, "ZCV": 99, "PRS": 87, "TAK": 97, "POW": 98, "PUR": 98, "BSH": 96, "IBL": 94, "FMV": 96, "PMV": 95},
+      "oop_ovr": {"CB": 95, "SS": 97},
+      "source_url": "https://cfb.fan/players/26007-vic-beasley/26-572026007/",
+      "scientific_use": "same-rating-vector secondary position sensitivity"
+    },
+    {
+      "season": 26,
+      "player": "Vic Beasley",
+      "version": "Valentine's Rush",
+      "position": "LEDG",
+      "archetype": "Speed Rusher",
+      "overall": 97,
+      "ratings": {"SPD": 96, "ACC": 96, "AGI": 89, "COD": 93, "AWR": 86, "STR": 93, "PRC": 95, "FMV": 98, "PMV": 95, "TAK": 94, "POW": 92, "PUR": 93, "BSH": 96, "IBL": 89},
+      "oop_ovr": {"REDG": 97, "DT": 97, "SAM": 95, "WILL": 95},
+      "source_url": "https://cfb.fan/reveals/3119-valentines-rush-vic-beasley-ultd/",
+      "scientific_use": "same-rating-vector front-seven position sensitivity"
+    }
+  ],
+  "initial_inferences": [
+    "CFB26 OOP OVRs provide unusually strong same-rating-vector evidence for position-specific valuation.",
+    "Carter Miller 80-to-86 same-player progression supplies a controlled Pass Protector Center trajectory.",
+    "Carter Miller and Chandler Strong both reach 86 C with materially different archetype-shaped rating profiles, supporting archetype/component discrimination over a single dominant attribute.",
+    "Vic Beasley front-seven OOP OVRs show LEDG/REDG/DT equivalence at 97 while SAM/WILL are 95 on the same item, direct evidence that position mapping changes valuation even without changing the item ratings.",
+    "These seed records are hypothesis evidence only; they are not sufficient for a season-wide accuracy claim."
+  ]
+}
