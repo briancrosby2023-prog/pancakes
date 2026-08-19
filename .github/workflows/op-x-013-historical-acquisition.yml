@@ -2,6 +2,10 @@ name: OP-X-013 Historical Database Acquisition
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/op-x-013-historical-acquisition.yml'
 
 concurrency:
   group: op-x-013-historical-acquisition
