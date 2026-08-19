@@ -1,0 +1,183 @@
+name: E.14 Resilient Diagnostic
+
+on:
+  push:
+    branches:
+      - 'agent/op-x-012-reconcile-artifacts'
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install project and development tools
+        id: install
+        continue-on-error: true
+        run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
+
+      - name: Run Ruff
+        id: ruff
+        if: always() && steps.install.outcome == 'success'
+        continue-on-error: true
+        run: python -m ruff check .
+
+      - name: Derive Alpha diagnostics
+        id: alpha
+        if: always() && steps.install.outcome == 'success'
+        continue-on-error: true
+        run: |
+          python scripts/generate_cfb27_alpha_readiness.py
+          python scripts/inspect_cfb27_v3_checkpoint.py
+
+      - name: Execute canonical E.14
+        id: e14
+        if: always() && steps.install.outcome == 'success'
+        continue-on-error: true
+        run: python scripts/run_cfb27_e14.py
+
+      - name: Verify canonical population and evidence matrix
+        id: evidence
+        if: always() && steps.e14.outcome == 'success'
+        continue-on-error: true
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path('data/research/cfb27_e14/evidence_matrix.json')
+          if not p.is_file() or not p.stat().st_size:
+              raise SystemExit('canonical evidence_matrix.json missing or empty')
+          d = json.loads(p.read_text())
+          pop = d.get('population', {})
+          if pop.get('input_records') != 8838:
+              raise SystemExit(f"canonical population mismatch: {pop.get('input_records')!r} != 8838")
+          text = p.read_text()
+          for attribute in ('BSH', 'PRC', 'SPD', 'PMV', 'FMV'):
+              if attribute not in text:
+                  raise SystemExit(f'required E.14 attribute missing: {attribute}')
+          PY
+
+      - name: Refresh deterministic research artifacts
+        id: refresh
+        if: always() && steps.install.outcome == 'success'
+        continue-on-error: true
+        run: |
+          python scripts/refresh_cfb27_inheritance_phase1.py
+          python scripts/generate_cfb27_op_c_001.py
+          python scripts/generate_cfb27_op_x_002.py
+          python scripts/generate_cfb27_op_x_003.py
+          python scripts/generate_cfb27_op_x_012.py
+          python scripts/generate_cfb27_phase2_analysis.py
+          python scripts/generate_cfb27_phase3_analysis.py
+          python scripts/generate_cfb27_phase5_analysis.py
+          python scripts/generate_cfb27_phase6_10_analysis.py
+          python scripts/generate_evidence_index.py
+          python scripts/generate_qb_model_comparison.py
+
+      - name: Run pytest
+        id: pytest
+        if: always() && steps.install.outcome == 'success'
+        continue-on-error: true
+        run: python -m pytest -ra -vv
+
+      - name: Verify Operation Pancake CLI
+        id: cli
+        if: always() && steps.install.outcome == 'success'
+        continue-on-error: true
+        run: operation-pancake --help
+
+      - name: Publish E.14 artifacts
+        id: artifacts
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: e14-resilient-diagnostic-${{ github.run_id }}
+          path: |
+            data/research/cfb27_alpha/readiness.json
+            data/research/cfb27_alpha/v3_checkpoint_summary.json
+            data/research/cfb27_e14/execution_discovery.json
+            data/research/cfb27_e14/evidence_matrix.json
+          if-no-files-found: error
+
+      - name: Persist durable E.14 status
+        if: always()
+        env:
+          INSTALL: ${{ steps.install.outcome }}
+          RUFF: ${{ steps.ruff.outcome }}
+          ALPHA: ${{ steps.alpha.outcome }}
+          E14: ${{ steps.e14.outcome }}
+          EVIDENCE: ${{ steps.evidence.outcome }}
+          REFRESH: ${{ steps.refresh.outcome }}
+          PYTEST: ${{ steps.pytest.outcome }}
+          CLI: ${{ steps.cli.outcome }}
+          ARTIFACTS: ${{ steps.artifacts.outcome }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          gates = {
+              'install': os.environ['INSTALL'],
+              'ruff': os.environ['RUFF'],
+              'alpha': os.environ['ALPHA'],
+              'e14': os.environ['E14'],
+              'evidence': os.environ['EVIDENCE'],
+              'refresh': os.environ['REFRESH'],
+              'pytest': os.environ['PYTEST'],
+              'cli': os.environ['CLI'],
+              'artifacts': os.environ['ARTIFACTS'],
+          }
+          order = ['install','ruff','alpha','e14','evidence','refresh','pytest','cli','artifacts']
+          first_failure = next((name for name in order if gates[name] != 'success'), None)
+          receipt = {
+              'section': 'OP-X-012E.14',
+              'run_id': int(os.environ['GITHUB_RUN_ID']),
+              'run_number': int(os.environ['GITHUB_RUN_NUMBER']),
+              'validated_head_sha': os.environ['GITHUB_SHA'],
+              'status': 'COMPLETE' if first_failure is None else 'INCOMPLETE',
+              'first_unresolved_failure': first_failure,
+              'gates': gates,
+              'canonical_count_required': 8838,
+              'required_attributes': ['BSH','PRC','SPD','PMV','FMV'],
+              'e15_started': False,
+          }
+          path = Path('data/research/cfb27_e14/quality_gate_status.json')
+          path.write_text(json.dumps(receipt, indent=2) + '\n')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/cfb27_e14/quality_gate_status.json
+          git commit -m 'Checkpoint E.14 quality gate status'
+          git push
+
+      - name: Enforce E.14 gate result
+        if: always()
+        env:
+          INSTALL: ${{ steps.install.outcome }}
+          RUFF: ${{ steps.ruff.outcome }}
+          ALPHA: ${{ steps.alpha.outcome }}
+          E14: ${{ steps.e14.outcome }}
+          EVIDENCE: ${{ steps.evidence.outcome }}
+          REFRESH: ${{ steps.refresh.outcome }}
+          PYTEST: ${{ steps.pytest.outcome }}
+          CLI: ${{ steps.cli.outcome }}
+          ARTIFACTS: ${{ steps.artifacts.outcome }}
+        run: |
+          for value in "$INSTALL" "$RUFF" "$ALPHA" "$E14" "$EVIDENCE" "$REFRESH" "$PYTEST" "$CLI" "$ARTIFACTS"; do
+            test "$value" = success || exit 1
+          done
