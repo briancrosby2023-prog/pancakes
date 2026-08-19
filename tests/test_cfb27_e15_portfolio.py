@@ -19,6 +19,24 @@ def test_portfolio_keeps_multiple_positions_moving():
     assert portfolio["priority_card_coverage"] == 4
 
 
+def test_portfolio_preserves_cfb27_native_defensive_positions():
+    cards = [
+        {"position": "MIKE", "archetype": "Field General"},
+        {"position": "LEDG", "archetype": "Power Rusher"},
+        {"position": "REDG", "archetype": "Speed Rusher"},
+    ]
+    portfolio = build_position_portfolio(cards)
+    rows = {row["position"]: row for row in portfolio["priority_positions"]}
+
+    assert rows["MIKE"]["cards"] == 1
+    assert rows["LEDG"]["cards"] == 1
+    assert rows["REDG"]["cards"] == 1
+    assert "MLB" not in rows
+    assert "LE" not in rows
+    assert "RE" not in rows
+    assert portfolio["priority_card_coverage"] == 3
+
+
 def test_gm_ready_position_deploys_and_advances():
     portfolio = build_position_portfolio([{"position": "C", "archetype": "Agile"}])
     updated = apply_position_result(
