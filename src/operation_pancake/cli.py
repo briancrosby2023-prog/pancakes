@@ -54,6 +54,8 @@ def main() -> None:
     acquire_sub.add_parser("conflicts")
     gm_run = sub.add_parser("gm-run")
     gm_run.add_argument("--output-dir", type=Path)
+    roster_run = sub.add_parser("roster-run")
+    roster_run.add_argument("--output-dir", type=Path)
     args = parser.parse_args()
     if args.command is None:
         parser.print_help()
@@ -63,6 +65,11 @@ def main() -> None:
         from operation_pancake.production import build_production_outputs
 
         print(json.dumps(build_production_outputs(root, args.output_dir), indent=2, sort_keys=True))
+        return
+    if args.command == "roster-run":
+        from operation_pancake.production import build_roster_outputs
+
+        print(json.dumps(build_roster_outputs(root, args.output_dir), indent=2, sort_keys=True))
         return
     index = build_evidence_index(root)
     state_path = root / "data/evidence/ingestion_state.json"

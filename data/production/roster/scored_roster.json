@@ -1,0 +1,1411 @@
+[
+  {
+    "acquisition_cost": null,
+    "archetype": "Pocket Passer",
+    "card_id": "card:fdcda4b9cfd9b920a58c",
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "QB1",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 88,
+    "native_overall": 87,
+    "pancake": {
+      "archetype": "Pocket Passer",
+      "attribute_coverage": 0.63,
+      "card_id": "card:fdcda4b9cfd9b920a58c",
+      "model_evidence_paths": [
+        "scripts/op_x_017_historical_qb_validation.py",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "Pure Runner is unsupported",
+        "ranking score only"
+      ],
+      "native_overall": 87,
+      "pancake_model_id": "QB-SHARED-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:3edf8dcf1c2e478d946b",
+      "player_name": "Dante Moore",
+      "position": "QB",
+      "position_family": "QB",
+      "program": "Phenoms",
+      "routing": {
+        "basis": "validated shared QB production model",
+        "confidence": "SUPPORTED",
+        "family": "QB",
+        "model_id": "QB-SHARED-001",
+        "profile": "Shared",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": null,
+      "score_confidence": "UNSCORED",
+      "score_status": "INSUFFICIENT_ATTRIBUTES",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/4136-dante-moore/27-260004136/",
+        "raw_snapshot": "data/external/raw/cfb_fan_global_listings/4c3c3f0e217cf263eb77ba8ba40e8964b131acbcdbc24c22430670dcc16d3301.html"
+      }
+    },
+    "player_name": "Dante Moore",
+    "position": "QB",
+    "position_family": "QB",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/4136-dante-moore/27-260004136/",
+          "raw_snapshot": "data/external/raw/cfb_fan_global_listings/4c3c3f0e217cf263eb77ba8ba40e8964b131acbcdbc24c22430670dcc16d3301.html"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:43fd7fc484b65ceaa9d4",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": null,
+    "card_id": null,
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "HB1",
+    "identity_confidence": "UNRESOLVED",
+    "lineup_display_ovr": 88,
+    "native_overall": null,
+    "pancake": null,
+    "player_name": "Jidah Baugh",
+    "position": "HB",
+    "position_family": "RB",
+    "program": null,
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        "canonical CFB27 population search"
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:2c7be525941b84a39aab",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": null,
+    "card_id": null,
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "FB1",
+    "identity_confidence": "UNRESOLVED",
+    "lineup_display_ovr": 86,
+    "native_overall": null,
+    "pancake": null,
+    "player_name": "Owen Allen",
+    "position": "FB",
+    "position_family": "FB",
+    "program": null,
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        "canonical CFB27 population search"
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:bc712bf86e4b1fd46130",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": null,
+    "card_id": null,
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "WR1",
+    "identity_confidence": "UNRESOLVED",
+    "lineup_display_ovr": 87,
+    "native_overall": null,
+    "pancake": null,
+    "player_name": "Kalik Lockett",
+    "position": "WR",
+    "position_family": "WR",
+    "program": null,
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        "canonical CFB27 population search"
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:ce6276066c080f56653d",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Elusive Route Runner",
+    "card_id": "card:a9071885a558bee8450e",
+    "current_market_price": null,
+    "depth_order": 2,
+    "depth_slot": "WR2",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 89,
+    "native_overall": 87,
+    "pancake": {
+      "archetype": "Elusive Route Runner",
+      "archetype_rank": 2,
+      "attribute_coverage": 0.51,
+      "card_id": "card:a9071885a558bee8450e",
+      "model_evidence_paths": [
+        "data/research/op_x_018/frozen_wr_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 87,
+      "pancake_model_id": "WR-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:12110e11b72963ed14fa",
+      "player_name": "Malachi Toney",
+      "position": "WR",
+      "position_family": "WR",
+      "position_rank": 5,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "short/intermediate route and elusiveness profile",
+        "confidence": "HYPOTHESIS",
+        "family": "WR",
+        "model_id": "WR-M19-ARCH-001",
+        "profile": "Slot",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 86.235294,
+      "score_confidence": "LOW",
+      "score_status": "SCORED_PARTIAL",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/25282-malachi-toney/27-260025282/",
+        "raw_snapshot": "data/external/raw/cfb_fan_global_listings/028681f175ee328967a8e51aefd7361074120ad6a6041d6660eb6287bdc34084.html"
+      }
+    },
+    "player_name": "Malachi Toney",
+    "position": "WR",
+    "position_family": "WR",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/25282-malachi-toney/27-260025282/",
+          "raw_snapshot": "data/external/raw/cfb_fan_global_listings/028681f175ee328967a8e51aefd7361074120ad6a6041d6660eb6287bdc34084.html"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:59e10cd49a14d72527b3",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": null,
+    "card_id": null,
+    "current_market_price": null,
+    "depth_order": 3,
+    "depth_slot": "WR3",
+    "identity_confidence": "UNRESOLVED",
+    "lineup_display_ovr": 86,
+    "native_overall": null,
+    "pancake": null,
+    "player_name": "Javon Nicholas",
+    "position": "WR",
+    "position_family": "WR",
+    "program": null,
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        "canonical CFB27 population search"
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:44ed02640d2f8871c219",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": null,
+    "card_id": null,
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "TE1",
+    "identity_confidence": "AMBIGUOUS",
+    "lineup_display_ovr": 85,
+    "native_overall": null,
+    "pancake": null,
+    "player_name": "Peter Clarke",
+    "position": "TE",
+    "position_family": "TE",
+    "program": null,
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        "canonical CFB27 population search"
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:9e2cf256071addb3395a",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Agile",
+    "card_id": "card:0dfef086dfd8d85794d6",
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "LT1",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 84,
+    "native_overall": 83,
+    "pancake": {
+      "archetype": "Agile",
+      "archetype_rank": 35,
+      "attribute_coverage": 1.0,
+      "card_id": "card:0dfef086dfd8d85794d6",
+      "model_evidence_paths": [
+        "data/research/op_x_020/tackle/frozen_tackle_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 83,
+      "pancake_model_id": "OT-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:94d3229b41b5848c80b3",
+      "player_name": "Samson Okunlola",
+      "position": "LT",
+      "position_family": "OT",
+      "position_rank": 70,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "family": "OT",
+        "model_id": "OT-M19-ARCH-001",
+        "profile": "Agile",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 81.37,
+      "score_confidence": "HIGH",
+      "score_status": "SCORED_COMPLETE",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/6225-samson-okunlola/27-260006225/",
+        "raw_snapshot": "data/external/raw/cfb_fan/4095dcb0d504d11965771cfaf40af73d509806967cb7b8023cc06222f8f88f84.bin"
+      }
+    },
+    "player_name": "Samson Okunlola",
+    "position": "LT",
+    "position_family": "OT",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/6225-samson-okunlola/27-260006225/",
+          "raw_snapshot": "data/external/raw/cfb_fan/4095dcb0d504d11965771cfaf40af73d509806967cb7b8023cc06222f8f88f84.bin"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:0bd202cb5cf096b686e4",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Raw Strength",
+    "card_id": "card:38d5dbb6bd21993e002b",
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "LG1",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 85,
+    "native_overall": 84,
+    "pancake": {
+      "archetype": "Raw Strength",
+      "archetype_rank": 13,
+      "attribute_coverage": 0.46,
+      "card_id": "card:38d5dbb6bd21993e002b",
+      "model_evidence_paths": [
+        "data/research/op_x_020/guard/frozen_guard_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 84,
+      "pancake_model_id": "OG-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:8883fb6c409e1f73c2c7",
+      "player_name": "Thomas Shrader",
+      "position": "LG",
+      "position_family": "G",
+      "position_rank": 21,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "power/strength blocking role",
+        "confidence": "SUPPORTED",
+        "family": "G",
+        "model_id": "OG-M19-ARCH-001",
+        "profile": "Power",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 83.217391,
+      "score_confidence": "LOW",
+      "score_status": "SCORED_PARTIAL",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/21328-thomas-shrader/27-260021328/",
+        "raw_snapshot": "data/external/raw/cfb_fan_global_listings/07de9a56e0d3df7ea1f30099e7d4d9bb78a4d036ec8214672339cf3b73ac21df.html"
+      }
+    },
+    "player_name": "Thomas Shrader",
+    "position": "LG",
+    "position_family": "G",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/21328-thomas-shrader/27-260021328/",
+          "raw_snapshot": "data/external/raw/cfb_fan_global_listings/07de9a56e0d3df7ea1f30099e7d4d9bb78a4d036ec8214672339cf3b73ac21df.html"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:3348957dd5767705e91a",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Raw Strength",
+    "card_id": "card:28c9e84b73a9edb8662a",
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "C1",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 87,
+    "native_overall": 86,
+    "pancake": {
+      "archetype": "Raw Strength",
+      "archetype_rank": 3,
+      "attribute_coverage": 1.0,
+      "card_id": "card:28c9e84b73a9edb8662a",
+      "model_evidence_paths": [
+        "data/research/center_exact_validation/madden_center_frozen_model.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "center ranking only; exact displayed overall is out of scope"
+      ],
+      "native_overall": 86,
+      "pancake_model_id": "C-M19-RANK-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:610ae8dd165c7acc6486",
+      "player_name": "Carson Hinzman",
+      "position": "C",
+      "position_family": "C",
+      "position_rank": 3,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "position-shared center ranking model",
+        "confidence": "EXACT_POSITION",
+        "family": "C",
+        "model_id": "C-M19-RANK-001",
+        "profile": "Center",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 83.888889,
+      "score_confidence": "HIGH",
+      "score_status": "SCORED_COMPLETE",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/8177-carson-hinzman/27-260008177/",
+        "raw_snapshot": "data/external/raw/cfb_fan/0ac0cfb5f1fd07f7ac0e378572c31c5862ccb9658ef6ce7677ee81b94ff21c81.bin"
+      }
+    },
+    "player_name": "Carson Hinzman",
+    "position": "C",
+    "position_family": "C",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/8177-carson-hinzman/27-260008177/",
+          "raw_snapshot": "data/external/raw/cfb_fan/0ac0cfb5f1fd07f7ac0e378572c31c5862ccb9658ef6ce7677ee81b94ff21c81.bin"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:26b2212cf8315ab384fd",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Raw Strength",
+    "card_id": "card:05b737e0828809d8a979",
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "RG1",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 84,
+    "native_overall": 83,
+    "pancake": {
+      "archetype": "Raw Strength",
+      "archetype_rank": 41,
+      "attribute_coverage": 1.0,
+      "card_id": "card:05b737e0828809d8a979",
+      "model_evidence_paths": [
+        "data/research/op_x_020/guard/frozen_guard_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 83,
+      "pancake_model_id": "OG-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:ba1b2a8e527e1142644a",
+      "player_name": "Anthony Donkoh",
+      "position": "RG",
+      "position_family": "G",
+      "position_rank": 67,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "power/strength blocking role",
+        "confidence": "SUPPORTED",
+        "family": "G",
+        "model_id": "OG-M19-ARCH-001",
+        "profile": "Power",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 81.14,
+      "score_confidence": "HIGH",
+      "score_status": "SCORED_COMPLETE",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/22892-anthony-donkoh/27-260022892/",
+        "raw_snapshot": "data/external/raw/cfb_fan/614b425a4220dff8510fc1c559c783a629dea3e180c540837bb599732fdaaab6.bin"
+      }
+    },
+    "player_name": "Anthony Donkoh",
+    "position": "RG",
+    "position_family": "G",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/22892-anthony-donkoh/27-260022892/",
+          "raw_snapshot": "data/external/raw/cfb_fan/614b425a4220dff8510fc1c559c783a629dea3e180c540837bb599732fdaaab6.bin"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:03d5ed8c5a932b1390f8",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Agile",
+    "card_id": "card:aabd2c5d508df4e1cabc",
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "RT1",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 86,
+    "native_overall": 85,
+    "pancake": {
+      "archetype": "Agile",
+      "archetype_rank": 9,
+      "attribute_coverage": 0.52,
+      "card_id": "card:aabd2c5d508df4e1cabc",
+      "model_evidence_paths": [
+        "data/research/op_x_020/tackle/frozen_tackle_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 85,
+      "pancake_model_id": "OT-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:a7ddd6723e7d8e359d80",
+      "player_name": "Cason Henry",
+      "position": "RT",
+      "position_family": "OT",
+      "position_rank": 22,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "family": "OT",
+        "model_id": "OT-M19-ARCH-001",
+        "profile": "Agile",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 84.115385,
+      "score_confidence": "LOW",
+      "score_status": "SCORED_PARTIAL",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/10612-cason-henry/27-260010612/",
+        "raw_snapshot": "data/external/raw/cfb_fan_global_listings/cc5278e033f5e7f918501cf5ad6e1b3fe8e7a6a2856d0d1ef06bc3b11f23f764.html"
+      }
+    },
+    "player_name": "Cason Henry",
+    "position": "RT",
+    "position_family": "OT",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/10612-cason-henry/27-260010612/",
+          "raw_snapshot": "data/external/raw/cfb_fan_global_listings/cc5278e033f5e7f918501cf5ad6e1b3fe8e7a6a2856d0d1ef06bc3b11f23f764.html"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:e24f867d7a1db924b680",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Hybrid",
+    "card_id": "card:4595176827b3dc5e510c",
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "FS1",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 85,
+    "native_overall": 84,
+    "pancake": {
+      "archetype": "Hybrid",
+      "archetype_rank": 16,
+      "attribute_coverage": 1.0,
+      "card_id": "card:4595176827b3dc5e510c",
+      "model_evidence_paths": [
+        "data/research/op_x_019/safety/frozen_safety_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 84,
+      "pancake_model_id": "S-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:765e2506797f9088dd6d",
+      "player_name": "Dashawn Spears",
+      "position": "FS",
+      "position_family": "S",
+      "position_rank": 62,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "family": "S",
+        "model_id": "S-M19-ARCH-001",
+        "profile": "Hybrid",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 81.73,
+      "score_confidence": "HIGH",
+      "score_status": "SCORED_COMPLETE",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/1731-dashawn-spears/27-260001731/",
+        "raw_snapshot": "data/external/raw/cfb_fan/56142a557467f6acd4bcd04bffc98833f1d40e7c352081a1b9769c8fa9ca5775.bin"
+      }
+    },
+    "player_name": "Dashawn Spears",
+    "position": "FS",
+    "position_family": "S",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/1731-dashawn-spears/27-260001731/",
+          "raw_snapshot": "data/external/raw/cfb_fan/56142a557467f6acd4bcd04bffc98833f1d40e7c352081a1b9769c8fa9ca5775.bin"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:beb44e40cc2cd5fd82c6",
+    "roster_tags": [
+      "PROTECTED_REROLLABLE"
+    ],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Lurker",
+    "card_id": "card:09e54a6775235476c252",
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "WILL1",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 87,
+    "native_overall": 86,
+    "pancake": {
+      "archetype": "Lurker",
+      "archetype_rank": 6,
+      "attribute_coverage": 0.247312,
+      "card_id": "card:09e54a6775235476c252",
+      "model_evidence_paths": [
+        "data/research/op_x_019/sam/frozen_sam_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 86,
+      "pancake_model_id": "SAM-M19-ROLE-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:a98a2923e1914c307517",
+      "player_name": "Chris Cole",
+      "position": "WILL",
+      "position_family": "SAM",
+      "position_rank": 48,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "coverage linebacker role",
+        "confidence": "SUPPORTED",
+        "family": "SAM",
+        "model_id": "SAM-M19-ROLE-001",
+        "profile": "OLB Pass Coverage",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 83.782609,
+      "score_confidence": "LOW",
+      "score_status": "SCORED_PARTIAL",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/18269-chris-cole/27-260018269/",
+        "raw_snapshot": "data/external/raw/cfb_fan_global_listings/90a074a6ce05d32eb46b47a0b67be5443108f62b28f84ea6f3736d4f71918585.html"
+      }
+    },
+    "player_name": "Chris Cole",
+    "position": "WILL",
+    "position_family": "SAM",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/18269-chris-cole/27-260018269/",
+          "raw_snapshot": "data/external/raw/cfb_fan_global_listings/90a074a6ce05d32eb46b47a0b67be5443108f62b28f84ea6f3736d4f71918585.html"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:db997e350c74e02683bd",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Thumper",
+    "card_id": "card:bd19b32b10b907c9708b",
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "MIKE1",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 89,
+    "native_overall": 87,
+    "pancake": {
+      "archetype": "Thumper",
+      "archetype_rank": 7,
+      "attribute_coverage": 1.0,
+      "card_id": "card:bd19b32b10b907c9708b",
+      "model_evidence_paths": [
+        "data/research/op_x_019/mike/frozen_mike_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 87,
+      "pancake_model_id": "MIKE-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:4c00ce79e062d2c13454",
+      "player_name": "Drayk Bowen",
+      "position": "MLB",
+      "position_family": "MIKE",
+      "position_rank": 13,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "physical run-stopping linebacker role",
+        "confidence": "SUPPORTED",
+        "family": "MIKE",
+        "model_id": "MIKE-M19-ARCH-001",
+        "profile": "Run Stopper",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 84.19,
+      "score_confidence": "HIGH",
+      "score_status": "SCORED_COMPLETE",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/5976-drayk-bowen/27-260005976/",
+        "raw_snapshot": "data/external/raw/cfb_fan/529e748d9bb15f02bc2d0623ace45721c3b99626df3ebdb1fe60236b07d7f64c.bin"
+      }
+    },
+    "player_name": "Drayk Bowen",
+    "position": "MLB",
+    "position_family": "MIKE",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/5976-drayk-bowen/27-260005976/",
+          "raw_snapshot": "data/external/raw/cfb_fan/529e748d9bb15f02bc2d0623ace45721c3b99626df3ebdb1fe60236b07d7f64c.bin"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:ab106dc7fca5ee02254d",
+    "roster_tags": [
+      "PROTECTED_REROLLABLE"
+    ],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Lurker",
+    "card_id": "card:f98e2e84e0ef37a646d8",
+    "current_market_price": null,
+    "depth_order": 2,
+    "depth_slot": "MIKE2",
+    "identity_confidence": "EXACT",
+    "lineup_display_ovr": 86,
+    "native_overall": 86,
+    "pancake": {
+      "archetype": "Lurker",
+      "archetype_rank": 3,
+      "attribute_coverage": 1.0,
+      "card_id": "card:f98e2e84e0ef37a646d8",
+      "model_evidence_paths": [
+        "data/research/op_x_019/mike/frozen_mike_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 86,
+      "pancake_model_id": "MIKE-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:3966d80f4370a369efd1",
+      "player_name": "Junior Seau",
+      "position": "MLB",
+      "position_family": "MIKE",
+      "position_rank": 15,
+      "program": "Sunday Spotlight: Retro",
+      "routing": {
+        "basis": "coverage linebacker role",
+        "confidence": "SUPPORTED",
+        "family": "MIKE",
+        "model_id": "MIKE-M19-ARCH-001",
+        "profile": "Pass Coverage",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 83.87,
+      "score_confidence": "HIGH",
+      "score_status": "SCORED_COMPLETE",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/26550-junior-seau/27-111026550/",
+        "raw_snapshot": "data/external/raw/cfb_fan/1d2a33baf3f9ba5d6fe06d508539c0f8971b9c72e393514405b69a449b7cf4c2.bin"
+      }
+    },
+    "player_name": "Junior Seau",
+    "position": "MLB",
+    "position_family": "MIKE",
+    "program": "Sunday Spotlight: Retro",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/26550-junior-seau/27-111026550/",
+          "raw_snapshot": "data/external/raw/cfb_fan/1d2a33baf3f9ba5d6fe06d508539c0f8971b9c72e393514405b69a449b7cf4c2.bin"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:8cdc2270c49341b8cf9f",
+    "roster_tags": [
+      "PROTECTED_REROLLABLE"
+    ],
+    "starter_status": "BACKUP"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Signal Caller",
+    "card_id": "card:94dbbba544de1b65478d",
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "SAM1",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 88,
+    "native_overall": 87,
+    "pancake": {
+      "archetype": "Signal Caller",
+      "archetype_rank": 1,
+      "attribute_coverage": 0.29,
+      "card_id": "card:94dbbba544de1b65478d",
+      "model_evidence_paths": [
+        "data/research/op_x_019/sam/frozen_sam_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 87,
+      "pancake_model_id": "SAM-M19-ROLE-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:6bd0705ff526aa3294d4",
+      "player_name": "Keaton Thomas",
+      "position": "SAM",
+      "position_family": "SAM",
+      "position_rank": 6,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "CFB26 unified linebacker taxonomy; exact historical field-command role exists at MLB, not OLB",
+        "confidence": "HYPOTHETICAL",
+        "family": "SAM",
+        "model_id": "SAM-M19-ROLE-001",
+        "profile": "MLB Field General",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 87.0,
+      "score_confidence": "LOW",
+      "score_status": "SCORED_PARTIAL",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/30797-keaton-thomas/27-260030797/",
+        "raw_snapshot": "data/external/raw/cfb_fan_global_listings/4c3c3f0e217cf263eb77ba8ba40e8964b131acbcdbc24c22430670dcc16d3301.html"
+      }
+    },
+    "player_name": "Keaton Thomas",
+    "position": "SAM",
+    "position_family": "SAM",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/30797-keaton-thomas/27-260030797/",
+          "raw_snapshot": "data/external/raw/cfb_fan_global_listings/4c3c3f0e217cf263eb77ba8ba40e8964b131acbcdbc24c22430670dcc16d3301.html"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:e9161256a9a5cd6c6214",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": null,
+    "card_id": null,
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "SS1",
+    "identity_confidence": "UNRESOLVED",
+    "lineup_display_ovr": 87,
+    "native_overall": null,
+    "pancake": null,
+    "player_name": "King Mack",
+    "position": "SS",
+    "position_family": "S",
+    "program": null,
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        "canonical CFB27 population search"
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:7e9d874be400ba408bef",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Field",
+    "card_id": "card:2a79a6e3f272a16ec712",
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "CB1",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 86,
+    "native_overall": 85,
+    "pancake": {
+      "archetype": "Field",
+      "archetype_rank": 22,
+      "attribute_coverage": 0.51,
+      "card_id": "card:2a79a6e3f272a16ec712",
+      "model_evidence_paths": [
+        "data/research/op_x_018/cb/frozen_cb_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 85,
+      "pancake_model_id": "CB-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:b39ab35cf79f5ade88f9",
+      "player_name": "Cormani McClain",
+      "position": "CB",
+      "position_family": "CB",
+      "position_rank": 38,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "space/field coverage role",
+        "confidence": "HYPOTHESIS",
+        "family": "CB",
+        "model_id": "CB-M19-ARCH-001",
+        "profile": "Zone",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 84.078431,
+      "score_confidence": "LOW",
+      "score_status": "SCORED_PARTIAL",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/1739-cormani-mcclain/27-260001739/",
+        "raw_snapshot": "data/external/raw/cfb_fan_global_listings/4138b85fa2a07541b6940a842ad7cc75908b003db6603eae5968f490e8d0a15f.html"
+      }
+    },
+    "player_name": "Cormani McClain",
+    "position": "CB",
+    "position_family": "CB",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/1739-cormani-mcclain/27-260001739/",
+          "raw_snapshot": "data/external/raw/cfb_fan_global_listings/4138b85fa2a07541b6940a842ad7cc75908b003db6603eae5968f490e8d0a15f.html"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:acd4f3fe797eca46a9a9",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Bump and Run",
+    "card_id": "card:82e224614ae152b34749",
+    "current_market_price": null,
+    "depth_order": 3,
+    "depth_slot": "CB3",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 87,
+    "native_overall": 85,
+    "pancake": {
+      "archetype": "Bump and Run",
+      "archetype_rank": 8,
+      "attribute_coverage": 0.55,
+      "card_id": "card:82e224614ae152b34749",
+      "model_evidence_paths": [
+        "data/research/op_x_018/cb/frozen_cb_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 85,
+      "pancake_model_id": "CB-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:d20d70fe5a68d1cf068d",
+      "player_name": "Devin Sanchez",
+      "position": "CB",
+      "position_family": "CB",
+      "position_rank": 22,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "press/man coverage role",
+        "confidence": "SUPPORTED",
+        "family": "CB",
+        "model_id": "CB-M19-ARCH-001",
+        "profile": "Man to Man",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 84.654545,
+      "score_confidence": "LOW",
+      "score_status": "SCORED_PARTIAL",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/24914-devin-sanchez/27-260024914/",
+        "raw_snapshot": "data/external/raw/cfb_fan_global_listings/cc5278e033f5e7f918501cf5ad6e1b3fe8e7a6a2856d0d1ef06bc3b11f23f764.html"
+      }
+    },
+    "player_name": "Devin Sanchez",
+    "position": "CB",
+    "position_family": "CB",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/24914-devin-sanchez/27-260024914/",
+          "raw_snapshot": "data/external/raw/cfb_fan_global_listings/cc5278e033f5e7f918501cf5ad6e1b3fe8e7a6a2856d0d1ef06bc3b11f23f764.html"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:25cd1fe5d16c463cc09e",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Speed Rusher",
+    "card_id": "card:694cbce7bfc14a1ea61a",
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "REDG1",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 86,
+    "native_overall": 85,
+    "pancake": {
+      "archetype": "Speed Rusher",
+      "archetype_rank": 12,
+      "attribute_coverage": 0.48,
+      "card_id": "card:694cbce7bfc14a1ea61a",
+      "model_evidence_paths": [
+        "data/research/op_x_019/edge/frozen_edge_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 85,
+      "pancake_model_id": "EDGE-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:8d3d088e439dfe5a836e",
+      "player_name": "Clayton Smith",
+      "position": "RE",
+      "position_family": "EDGE",
+      "position_rank": 27,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "family": "EDGE",
+        "model_id": "EDGE-M19-ARCH-001",
+        "profile": "Speed Rusher",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 83.5,
+      "score_confidence": "LOW",
+      "score_status": "SCORED_PARTIAL",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/21864-clayton-smith/27-260021864/",
+        "raw_snapshot": "data/external/raw/cfb_fan_global_listings/cc5278e033f5e7f918501cf5ad6e1b3fe8e7a6a2856d0d1ef06bc3b11f23f764.html"
+      }
+    },
+    "player_name": "Clayton Smith",
+    "position": "RE",
+    "position_family": "EDGE",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/21864-clayton-smith/27-260021864/",
+          "raw_snapshot": "data/external/raw/cfb_fan_global_listings/cc5278e033f5e7f918501cf5ad6e1b3fe8e7a6a2856d0d1ef06bc3b11f23f764.html"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:5f28f66f8083c27476c7",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Power Rusher",
+    "card_id": "card:759d0f58682372373c93",
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "DT1",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 86,
+    "native_overall": 85,
+    "pancake": {
+      "archetype": "Power Rusher",
+      "archetype_rank": 5,
+      "attribute_coverage": 0.44,
+      "card_id": "card:759d0f58682372373c93",
+      "model_evidence_paths": [
+        "data/research/op_x_019/dt/frozen_dt_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 85,
+      "pancake_model_id": "DT-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:66927153bca05d0c9d3c",
+      "player_name": "Amare Adams",
+      "position": "DT",
+      "position_family": "DT",
+      "position_rank": 8,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "family": "DT",
+        "model_id": "DT-M19-ARCH-001",
+        "profile": "Power Rusher",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 84.931818,
+      "score_confidence": "LOW",
+      "score_status": "SCORED_PARTIAL",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/25164-amare-adams/27-260025164/",
+        "raw_snapshot": "data/external/raw/cfb_fan_global_listings/cc5278e033f5e7f918501cf5ad6e1b3fe8e7a6a2856d0d1ef06bc3b11f23f764.html"
+      }
+    },
+    "player_name": "Amare Adams",
+    "position": "DT",
+    "position_family": "DT",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/25164-amare-adams/27-260025164/",
+          "raw_snapshot": "data/external/raw/cfb_fan_global_listings/cc5278e033f5e7f918501cf5ad6e1b3fe8e7a6a2856d0d1ef06bc3b11f23f764.html"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:0bc7f5f23827eb1fb8dd",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Power Rusher",
+    "card_id": "card:ef43c16371707d38c984",
+    "current_market_price": null,
+    "depth_order": 2,
+    "depth_slot": "DT2",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 86,
+    "native_overall": 85,
+    "pancake": {
+      "archetype": "Power Rusher",
+      "archetype_rank": 6,
+      "attribute_coverage": 0.44,
+      "card_id": "card:ef43c16371707d38c984",
+      "model_evidence_paths": [
+        "data/research/op_x_019/dt/frozen_dt_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 85,
+      "pancake_model_id": "DT-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:89fa54eaf19475b64e2f",
+      "player_name": "DJ Hicks",
+      "position": "DT",
+      "position_family": "DT",
+      "position_rank": 9,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "family": "DT",
+        "model_id": "DT-M19-ARCH-001",
+        "profile": "Power Rusher",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 84.772727,
+      "score_confidence": "LOW",
+      "score_status": "SCORED_PARTIAL",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/7070-dj-hicks/27-260007070/",
+        "raw_snapshot": "data/external/raw/cfb_fan_global_listings/cc5278e033f5e7f918501cf5ad6e1b3fe8e7a6a2856d0d1ef06bc3b11f23f764.html"
+      }
+    },
+    "player_name": "DJ Hicks",
+    "position": "DT",
+    "position_family": "DT",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/7070-dj-hicks/27-260007070/",
+          "raw_snapshot": "data/external/raw/cfb_fan_global_listings/cc5278e033f5e7f918501cf5ad6e1b3fe8e7a6a2856d0d1ef06bc3b11f23f764.html"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:31cbdc3f652055b949c0",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  },
+  {
+    "acquisition_cost": null,
+    "archetype": "Power Rusher",
+    "card_id": "card:b809bd14fe3b3c2144f6",
+    "current_market_price": null,
+    "depth_order": 1,
+    "depth_slot": "LEDG1",
+    "identity_confidence": "HIGH CONFIDENCE",
+    "lineup_display_ovr": 86,
+    "native_overall": 85,
+    "pancake": {
+      "archetype": "Power Rusher",
+      "archetype_rank": 8,
+      "attribute_coverage": 0.45,
+      "card_id": "card:b809bd14fe3b3c2144f6",
+      "model_evidence_paths": [
+        "data/research/op_x_019/edge/frozen_edge_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 85,
+      "pancake_model_id": "EDGE-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:cb4de47d5cd4691b9877",
+      "player_name": "Kelby Collins",
+      "position": "LE",
+      "position_family": "EDGE",
+      "position_rank": 19,
+      "program": "Phenoms",
+      "routing": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "family": "EDGE",
+        "model_id": "EDGE-M19-ARCH-001",
+        "profile": "Power Rusher",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 84.4,
+      "score_confidence": "LOW",
+      "score_status": "SCORED_PARTIAL",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/7639-kelby-collins/27-260007639/",
+        "raw_snapshot": "data/external/raw/cfb_fan_global_listings/cc5278e033f5e7f918501cf5ad6e1b3fe8e7a6a2856d0d1ef06bc3b11f23f764.html"
+      }
+    },
+    "player_name": "Kelby Collins",
+    "position": "LE",
+    "position_family": "EDGE",
+    "program": "Phenoms",
+    "provenance": {
+      "identity": [
+        "data/research/cfb27_op_x_010/canonical_exports_v2/roster_instances.json",
+        {
+          "card": "CFB_FAN",
+          "ratings": "https://cfb.fan/players/7639-kelby-collins/27-260007639/",
+          "raw_snapshot": "data/external/raw/cfb_fan_global_listings/cc5278e033f5e7f918501cf5ad6e1b3fe8e7a6a2856d0d1ef06bc3b11f23f764.html"
+        }
+      ],
+      "roster": "USER_SCREENSHOT_OP_X_008"
+    },
+    "roster_id": "roster:601f3f5e4cf2867908c6",
+    "roster_instance_id": "roster-instance:0dd560998996d9c7c3ec",
+    "roster_tags": [],
+    "starter_status": "STARTER"
+  }
+]
