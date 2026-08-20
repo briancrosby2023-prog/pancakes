@@ -28,20 +28,6 @@
     "version": null
   },
   {
-    "cfb25_population": 1305,
-    "cfb26_population": 1158,
-    "coefficient_provenance": null,
-    "executable": false,
-    "existing_model": null,
-    "frozen_status": "NO EXECUTABLE FROZEN COEFFICIENT VECTOR",
-    "historical_population_compatibility": "Population present; formula absent.",
-    "historical_source_label": "WR",
-    "missing_evidence": "Exact position/archetype coefficients frozen independently of CFB25/26.",
-    "position_family": "WR",
-    "prior_validation": "Structural/component evidence only; no exact ranking formula.",
-    "version": null
-  },
-  {
     "cfb25_population": 743,
     "cfb26_population": 719,
     "coefficient_provenance": null,
@@ -126,20 +112,6 @@
     "version": null
   },
   {
-    "cfb25_population": 1079,
-    "cfb26_population": 955,
-    "coefficient_provenance": null,
-    "executable": false,
-    "existing_model": null,
-    "frozen_status": "NO EXECUTABLE FROZEN COEFFICIENT VECTOR",
-    "historical_population_compatibility": "Population present; formula absent.",
-    "historical_source_label": "CB",
-    "missing_evidence": "Exact position/archetype coefficients frozen independently of CFB25/26.",
-    "position_family": "CB",
-    "prior_validation": "Structural/component evidence only; no exact ranking formula.",
-    "version": null
-  },
-  {
     "cfb25_population": 955,
     "cfb26_population": 949,
     "coefficient_provenance": null,
@@ -147,7 +119,7 @@
     "existing_model": null,
     "frozen_status": "NO EXECUTABLE FROZEN COEFFICIENT VECTOR",
     "historical_population_compatibility": "Population present; formula absent.",
-    "historical_source_label": "historical S aggregate",
+    "historical_source_label": "historical S aggregate (shared with SS; do not double-count)",
     "missing_evidence": "Exact position/archetype coefficients frozen independently of CFB25/26.",
     "position_family": "FS",
     "prior_validation": "Structural/component evidence only; no exact ranking formula.",
@@ -161,7 +133,7 @@
     "existing_model": null,
     "frozen_status": "NO EXECUTABLE FROZEN COEFFICIENT VECTOR",
     "historical_population_compatibility": "Population present; formula absent.",
-    "historical_source_label": "historical S aggregate",
+    "historical_source_label": "historical S aggregate (shared with FS; do not double-count)",
     "missing_evidence": "Exact position/archetype coefficients frozen independently of CFB25/26.",
     "position_family": "SS",
     "prior_validation": "Structural/component evidence only; no exact ranking formula.",
@@ -180,6 +152,26 @@
     "position_family": "K/P",
     "prior_validation": "Structural/component evidence only; no exact ranking formula.",
     "version": null
+  },
+  {
+    "coefficient_provenance": "SRC-M19-001 exact WR archetype vectors",
+    "executable": true,
+    "existing_model": "WR-M19-ARCH-001 v1.0",
+    "frozen_status": "EXECUTED AND LOCKED BY OP-X-018",
+    "historical_population_compatibility": "CFB25 1,305; CFB26 1,157 eligible of 1,158.",
+    "missing_evidence": "Prospective CFB27 validation only.",
+    "position_family": "WR",
+    "prior_validation": "CFB26 then unchanged CFB25 blind validation."
+  },
+  {
+    "coefficient_provenance": "SRC-M19-001 exact CB archetype vectors",
+    "executable": true,
+    "existing_model": "CB-M19-ARCH-001 v1.0",
+    "frozen_status": "EXECUTED AND LOCKED BY OP-X-018",
+    "historical_population_compatibility": "CFB25 1,079; CFB26 953 eligible of 955.",
+    "missing_evidence": "Prospective CFB27 validation only.",
+    "position_family": "CB",
+    "prior_validation": "CFB26 then unchanged CFB25 blind validation."
   },
   {
     "coefficient_provenance": "canonical_v1.9.xlsx QB model/reference sheets",

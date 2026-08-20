@@ -74,6 +74,8 @@ def main() -> None:
     center = load(ROOT / "data/research/op_x_016/center/validation_results.json")
     qb = load(OUTPUT / "qb_shared_001/validation_results.json")
     priors = load(OUTPUT / "qb_madden19_priors/validation_results.json")
+    wr = load(ROOT / "data/research/op_x_018/validation_results.json")
+    cb = load(ROOT / "data/research/op_x_018/cb/validation_results.json")
     rows = []
     te_models = {
         "Gritty Possession": ("TE-MODEL-001", "v1.1", True),
@@ -177,19 +179,40 @@ def main() -> None:
                 action="Retain for architecture comparison only.",
             )
         )
+    for position, model, validation in (
+        ("WR", "WR-M19-ARCH-001", wr),
+        ("CB", "CB-M19-ARCH-001", cb),
+    ):
+        cfb25 = validation["seasons"]["25"]
+        cfb26 = validation["seasons"]["26"]
+        rows.append(
+            model_row(
+                position=position,
+                model=model,
+                version="v1.0",
+                archetype="generation-mapped archetype vectors",
+                production=True,
+                cfb25_n=cfb25["eligible_n"],
+                cfb25_accuracy=cfb25["ranking_accuracy_excluding_ties"],
+                cfb26_n=cfb26["eligible_n"],
+                cfb26_accuracy=cfb26["ranking_accuracy_excluding_ties"],
+                verdict=validation["cross_season_verdict"],
+                locked=validation["locked"],
+                blocker="None." if validation["locked"] else "Historical gate not cleared.",
+                action="Prospective validation only." if validation["locked"] else "Investigate.",
+            )
+        )
     unresolved = [
         ("HB/RB", "HB", "783", "747"),
         ("FB", "FB", "58", "62"),
-        ("WR", "WR", "1305", "1158"),
         ("LT/RT", "OT", "743", "719"),
         ("LG/RG", "G", "702", "713"),
         ("EDGE/DE", "DE→EDGE terminology", "831", "898"),
         ("DT", "DT", "609", "633"),
         ("MIKE/MLB", "MLB→MIKE terminology", "708", "614"),
         ("SAM/OLB", "OLB→SAM terminology", "733", "778"),
-        ("CB", "CB", "1079", "955"),
-        ("FS", "historical S aggregate", "955", "949"),
-        ("SS", "historical S aggregate", "955", "949"),
+        ("FS", "historical S aggregate (shared with SS; do not double-count)", "955", "949"),
+        ("SS", "historical S aggregate (shared with FS; do not double-count)", "955", "949"),
         ("K/P", "KP aggregate", "336", "323"),
     ]
     inventory = [
@@ -213,6 +236,28 @@ def main() -> None:
     ]
     inventory.extend(
         [
+            {
+                "position_family": "WR",
+                "existing_model": "WR-M19-ARCH-001 v1.0",
+                "frozen_status": "EXECUTED AND LOCKED BY OP-X-018",
+                "coefficient_provenance": "SRC-M19-001 exact WR archetype vectors",
+                "executable": True,
+                "prior_validation": "CFB26 then unchanged CFB25 blind validation.",
+                "historical_population_compatibility": (
+                    "CFB25 1,305; CFB26 1,157 eligible of 1,158."
+                ),
+                "missing_evidence": "Prospective CFB27 validation only.",
+            },
+            {
+                "position_family": "CB",
+                "existing_model": "CB-M19-ARCH-001 v1.0",
+                "frozen_status": "EXECUTED AND LOCKED BY OP-X-018",
+                "coefficient_provenance": "SRC-M19-001 exact CB archetype vectors",
+                "executable": True,
+                "prior_validation": "CFB26 then unchanged CFB25 blind validation.",
+                "historical_population_compatibility": "CFB25 1,079; CFB26 953 eligible of 955.",
+                "missing_evidence": "Prospective CFB27 validation only.",
+            },
             {
                 "position_family": "QB",
                 "existing_model": "QB-SHARED-001 v1.0 plus Madden 19 priors",
@@ -257,10 +302,10 @@ def main() -> None:
                 if row["locked"] and row["production_status"] == "production"
             ],
             "currently_executable_frozen_models_exhausted": True,
-            "highest_value_remaining_position": "WR",
+            "highest_value_remaining_position": "S (historical FS/SS aggregate)",
             "reason": (
-                "Largest two-season population (1,305 CFB25; 1,158 CFB26) without an exact "
-                "frozen coefficient vector."
+                "Largest remaining distinct two-season population (955 CFB25; 949 CFB26) "
+                "without an executed frozen coefficient vector."
             ),
         },
     }
@@ -294,9 +339,9 @@ def main() -> None:
             "",
             "## Next highest-value model",
             "",
-            "WR. It is the largest unmodeled two-season family, but the repository does not "
-            "contain an exact frozen WR coefficient vector. Existing evidence supports "
-            "continued position/archetype component research, not coefficient invention.",
+            "S (historical FS/SS aggregate). It is the largest remaining distinct unmodeled "
+            "two-season family. The recovered SRC-M19-001 workbook contains exact safety "
+            "archetype vectors, but generation terminology must be frozen before validation.",
             "",
         ]
     )

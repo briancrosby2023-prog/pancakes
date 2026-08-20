@@ -196,6 +196,38 @@
       "production_status": "diagnostic/non-production",
       "remaining_blocker": "External diagnostic prior; not a production CFB model.",
       "version": "historical reference"
+    },
+    {
+      "archetype": "generation-mapped archetype vectors",
+      "at_or_above_95_percent": true,
+      "cfb25_accuracy": 0.9949339120336197,
+      "cfb25_n": 1305,
+      "cfb26_accuracy": 0.9883536328039858,
+      "cfb26_n": 1157,
+      "cross_season_verdict": "DURABLE PASS",
+      "locked": true,
+      "model": "WR-M19-ARCH-001",
+      "next_scientific_action": "Prospective validation only.",
+      "position": "WR",
+      "production_status": "production",
+      "remaining_blocker": "None.",
+      "version": "v1.0"
+    },
+    {
+      "archetype": "generation-mapped archetype vectors",
+      "at_or_above_95_percent": true,
+      "cfb25_accuracy": 0.9831884436654093,
+      "cfb25_n": 1079,
+      "cfb26_accuracy": 0.9980881194834281,
+      "cfb26_n": 953,
+      "cross_season_verdict": "DURABLE PASS",
+      "locked": true,
+      "model": "CB-M19-ARCH-001",
+      "next_scientific_action": "Prospective validation only.",
+      "position": "CB",
+      "production_status": "production",
+      "remaining_blocker": "None.",
+      "version": "v1.0"
     }
   ],
   "operation": "OP-X-017",
@@ -205,9 +237,11 @@
     "durable_production_locks": [
       "TE-MODEL-001 v1.1",
       "TE-MODEL-006 v1.3",
-      "QB-SHARED-001 v1.0"
+      "QB-SHARED-001 v1.0",
+      "WR-M19-ARCH-001 v1.0",
+      "CB-M19-ARCH-001 v1.0"
     ],
-    "highest_value_remaining_position": "WR",
-    "reason": "Largest two-season population (1,305 CFB25; 1,158 CFB26) without an exact frozen coefficient vector."
+    "highest_value_remaining_position": "S (historical FS/SS aggregate)",
+    "reason": "Largest remaining distinct two-season population (955 CFB25; 949 CFB26) without an executed frozen coefficient vector."
   }
 }
