@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """OP-X-016: execute frozen TE models against canonical CFB25/26 databases."""
+# Repository-side execution trigger: 2026-08-19
 from __future__ import annotations
 import itertools,json,math
 from collections import Counter
