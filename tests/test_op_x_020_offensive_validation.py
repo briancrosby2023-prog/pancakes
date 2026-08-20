@@ -9,6 +9,9 @@ from op_x_018_historical_wr_validation import score  # noqa: E402
 
 RB = json.loads((ROOT / "data/research/op_x_020/rb/frozen_rb_scoring_spec.json").read_text())
 FB = json.loads((ROOT / "data/research/op_x_020/fb/frozen_fb_scoring_spec.json").read_text())
+TACKLE = json.loads(
+    (ROOT / "data/research/op_x_020/tackle/frozen_tackle_scoring_spec.json").read_text()
+)
 
 
 def test_rb_vectors_total_100():
@@ -37,3 +40,14 @@ def test_fb_denominators_and_exact_mapping():
     )
     assert result["frozen_score"] == 76
     assert result["mapping_status"] == "EXACT"
+
+
+def test_tackle_vectors_and_raw_strength_mapping_are_position_specific():
+    assert all(sum(weights.values()) == 100 for weights in TACKLE["weights"].values())
+    attrs = {name: 80 for name in TACKLE["weights"]["Power"]}
+    result = score(
+        {"season": 26, "position": "OT", "archetype": "Raw Strength", "attributes": attrs},
+        TACKLE,
+    )
+    assert result["frozen_score"] == 80
+    assert result["model_archetype"] == "Power"

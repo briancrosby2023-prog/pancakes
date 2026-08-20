@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("family", choices=("rb", "fb"))
+    parser.add_argument("family", choices=("rb", "fb", "tackle"))
     args = parser.parse_args()
     if args.family == "rb":
         report = validate_family(
@@ -30,6 +30,14 @@ def main() -> None:
             spec_path=ROOT / "data/research/op_x_020/fb/frozen_fb_scoring_spec.json",
             positions={25: "FB", 26: "FB"},
             expected={25: 58, 26: 62},
+            control_commit="f1a7912f8e984e860ef8945131401507bebf56a2",
+        )
+    elif args.family == "tackle":
+        report = validate_family(
+            family="TACKLE",
+            spec_path=ROOT / "data/research/op_x_020/tackle/frozen_tackle_scoring_spec.json",
+            positions={25: "OT", 26: "OT"},
+            expected={25: 743, 26: 719},
             control_commit="PENDING_PRE_BLIND_COMMIT",
         )
     print(
