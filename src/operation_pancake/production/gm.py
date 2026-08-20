@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from .engine import ProductionEngine, load_population
-from .market import MoneyballEngine, normalize_observation
+from .market import MoneyballEngine, normalize_observation, resolve_observations
 from .registry import build_model_registry
 from .roster import normalize_name
 
@@ -225,7 +225,11 @@ def price_check_list(recommendations: list[dict[str, Any]]) -> list[dict[str, An
     return output
 
 
-def manual_price_payload(rows: list[dict[str, Any]], observed_at: str) -> dict[str, Any]:
+def manual_price_payload(
+    rows: list[dict[str, Any]],
+    observed_at: str,
+    population: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
     accepted, rejected = [], []
     for index, row in enumerate(rows):
         payload = {
@@ -236,7 +240,17 @@ def manual_price_payload(rows: list[dict[str, Any]], observed_at: str) -> dict[s
             "provenance": row.get("provenance") or "manual GM entry",
         }
         try:
-            accepted.append(asdict(normalize_observation(payload, f"manual#{index}")))
+            observation = normalize_observation(payload, f"manual#{index}")
+            observation_payload = asdict(observation)
+            if population is not None:
+                resolution = resolve_observations([observation], population)[0]
+                if resolution["classification"] not in {"EXACT", "HIGH CONFIDENCE"}:
+                    raise ValueError(
+                        "manual price identity must resolve exactly or uniquely; "
+                        f"got {resolution['classification']}"
+                    )
+                observation_payload["card_id"] = resolution["canonical_card_id"]
+            accepted.append(observation_payload)
         except (TypeError, ValueError, KeyError) as error:
             rejected.append({"row_index": index, "reason": str(error), "row": row})
     return {"accepted": accepted, "rejected": rejected}

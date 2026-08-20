@@ -244,6 +244,8 @@ def risk_flags(
 ) -> list[str]:
     flags = []
     age = (parse_timestamp(as_of) - parse_timestamp(observation.observed_at)).total_seconds() / 3600
+    if age < 0:
+        flags.append("FUTURE TIMESTAMP")
     if age > stale_hours:
         flags.append("STALE PRICE")
     if observation.sample_count == 1:
@@ -256,7 +258,7 @@ def risk_flags(
             flags.append("HIGH SPREAD")
     if is_ltd:
         flags.append("LTD")
-    if observation.sample_count < 2 or age > stale_hours:
+    if observation.sample_count < 2 or age > stale_hours or age < 0:
         flags.append("INSUFFICIENT DATA")
     return flags
 
@@ -311,6 +313,68 @@ class MoneyballEngine:
             "risk_flags": flags,
             "price_semantics": observation.observation_type,
         }
+
+
+def buy_wait_policy(
+    market: dict[str, Any] | None,
+    *,
+    identity_classification: str,
+    model_status: str,
+    evidence_source: str,
+    threshold_policy_id: str | None = None,
+) -> dict[str, Any]:
+    """Convert market evidence into a conservative executable action.
+
+    BUY is allowed only after a separate, identified valuation policy has classified
+    fresh multi-observation evidence. No universal improvement-per-coin threshold is
+    defined here.
+    """
+    if market is None or market.get("candidate_price") is None:
+        return {"action": "PRICE CHECK REQUIRED", "reason": "no candidate price"}
+    source = evidence_source.strip().casefold()
+    if "test" in source or "fixture" in source:
+        return {
+            "action": "INSUFFICIENT MARKET DATA",
+            "reason": "fixture/test evidence cannot authorize BUY",
+        }
+    if identity_classification != "EXACT":
+        return {
+            "action": "INSUFFICIENT MARKET DATA",
+            "reason": "card identity is not exact",
+        }
+    if model_status != "ROUTED":
+        return {
+            "action": "INSUFFICIENT MARKET DATA",
+            "reason": "football model is unsupported or diagnostic-only",
+        }
+    if market.get("score_improvement", 0) <= 0:
+        return {"action": "WAIT", "reason": "candidate is not a football upgrade"}
+    risk_flags = set(market.get("risk_flags") or [])
+    if risk_flags or market.get("market_confidence") == "LOW":
+        return {
+            "action": "INSUFFICIENT MARKET DATA",
+            "reason": "market evidence fails freshness/sample/risk controls",
+            "risk_flags": sorted(risk_flags),
+        }
+    if market.get("affordable") is False:
+        return {"action": "WAIT", "reason": "candidate is not affordable"}
+    classification = market.get("value_classification")
+    if classification in {"ELITE VALUE", "GOOD VALUE"} and threshold_policy_id:
+        return {
+            "action": "BUY",
+            "reason": "fresh qualified evidence passed an identified valuation policy",
+            "threshold_policy_id": threshold_policy_id,
+        }
+    if not threshold_policy_id:
+        return {
+            "action": "WAIT",
+            "reason": "no validated contextual valuation policy supplied",
+        }
+    return {
+        "action": "WAIT",
+        "reason": f"valuation classification is {classification or 'UNAVAILABLE'}",
+        "threshold_policy_id": threshold_policy_id,
+    }
 
 
 def training_economics(

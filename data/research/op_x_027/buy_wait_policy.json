@@ -1,0 +1,10 @@
+{
+  "BUY": {
+    "all_required": ["exact identity", "ROUTED production model", "positive football improvement", "non-fixture evidence", "fresh multi-observation evidence", "no risk flags", "affordable", "GOOD VALUE or ELITE VALUE under an identified contextual valuation policy"],
+    "universal_threshold": null
+  },
+  "INSUFFICIENT MARKET DATA": ["fixture/test source", "ambiguous identity", "unsupported or diagnostic model", "stale/single/high-risk evidence", "unproven source timestamp"],
+  "PRICE CHECK REQUIRED": ["missing candidate price"],
+  "WAIT": ["non-upgrade football candidate", "unaffordable", "poor/fair/unavailable valuation", "no validated contextual valuation policy"],
+  "implementation": "operation_pancake.production.market.buy_wait_policy"
+}

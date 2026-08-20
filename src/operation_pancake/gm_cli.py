@@ -54,7 +54,8 @@ def main() -> None:
         _dump(gm.compare(args.current_card_id, args.candidate_card_id, args.price, args.resale))
     elif args.command == "price":
         rows = json.loads(args.file.read_text(encoding="utf-8"))
-        _dump(manual_price_payload(rows, args.observed_at))
+        gm = GMProduct(root)
+        _dump(manual_price_payload(rows, args.observed_at, gm.population))
     elif args.command == "budget":
         rows = json.loads(args.file.read_text(encoding="utf-8"))
         _dump(optimize_budget(rows, args.coins))

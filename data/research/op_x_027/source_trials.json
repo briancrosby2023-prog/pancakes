@@ -1,0 +1,30 @@
+{
+  "capture_timestamp": "2026-08-20T02:35:50.1867402-07:00",
+  "trials": [
+    {
+      "method": "normal public browser page",
+      "result": "dashboard rendered training ratios, current price displays, percent changes, and daily sales",
+      "route_observed": "/api/cutdb/prices/dashboard/xbox-series-x/",
+      "status": "PASS"
+    },
+    {
+      "method": "direct unauthenticated local HTTP GET",
+      "result": "Cloudflare block page",
+      "route": "/api/cutdb/prices/dashboard/xbox-series-x/",
+      "status": "BLOCKED_NO_BYPASS_ATTEMPTED"
+    },
+    {
+      "card": "27-270019993",
+      "first_display": 55500,
+      "identity": "Brendan Black 85 OVR Prime Prospects RG Raw Strength",
+      "platform": "xbox-series-x",
+      "repeat_display": 55500,
+      "status": "REPEATABLE_UI_DISPLAY"
+    },
+    {
+      "endpoint": "/api/cutdb/prices/overall/playeritem/?external_ids=270019993,8019993,2019993",
+      "method": "resource observed during exact player-detail render",
+      "status": "PUBLIC_ROUTE_CONFIRMED"
+    }
+  ]
+}

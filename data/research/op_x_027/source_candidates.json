@@ -1,0 +1,45 @@
+{
+  "audit_date": "2026-08-20",
+  "candidates": [
+    {
+      "access_method": "public browser UI; public JSON routes disclosed by site bundle",
+      "card_identity": "exact external card ID and stable detail URL",
+      "coverage": "CUT 27 Xbox, PlayStation 5, and PC displays",
+      "freshness": "page claims real time; source observation timestamp absent from visible summary",
+      "limitations": ["direct scripted request Cloudflare-blocked", "price statistic not fully labeled", "no visible source timestamp"],
+      "name": "CFB.FAN",
+      "price_semantics": "platform-selected public market display; exact listing/sale aggregation unspecified",
+      "reproducibility": "repeatable in normal public UI; not reproducible as unattended local HTTP acquisition",
+      "status": "BEST_MANUAL_SOURCE_NOT_AUTOMATION_READY",
+      "timestamps": "OP-X-027 capture timestamp only"
+    },
+    {
+      "access_method": "public website",
+      "coverage": "quicksell/training reference tables",
+      "name": "CollegeFootball.gg",
+      "price_semantics": "reference values, not auction prices",
+      "status": "REJECTED_NO_CURRENT_CARD_PRICES"
+    },
+    {
+      "access_method": "official public pages",
+      "coverage": "product documentation",
+      "name": "EA",
+      "price_semantics": null,
+      "status": "NO_DOCUMENTED_PUBLIC_CUT_AUCTION_API_FOUND"
+    },
+    {
+      "access_method": "public website",
+      "coverage": "Madden Ultimate Team",
+      "name": "MUT.GG",
+      "price_semantics": "wrong game/product",
+      "status": "REJECTED_PRODUCT_MISMATCH"
+    },
+    {
+      "access_method": "public REST API",
+      "coverage": "college football games, teams, players, recruiting",
+      "name": "College Football Data API",
+      "price_semantics": null,
+      "status": "REJECTED_NO_ULTIMATE_TEAM_MARKET_DATA"
+    }
+  ]
+}
