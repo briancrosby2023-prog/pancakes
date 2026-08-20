@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Operation Pancake competitive evidence import",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["source_url", "publisher", "publication_timestamp", "evidence_type", "extraction"],
+    "properties": {
+      "source_url": {"type": "string", "minLength": 1},
+      "publisher": {"type": "string", "minLength": 1},
+      "publication_timestamp": {"type": "string", "minLength": 1},
+      "video_timestamp_or_frame": {"type": ["string", "null"]},
+      "evidence_type": {"enum": ["TRANSCRIPT", "VISUAL", "CREATOR STATEMENT", "OBSERVED GAMEPLAY", "LINEUP", "ROSTER", "PLAYBOOK", "FORMATION"]},
+      "extraction": {"type": "string", "minLength": 1},
+      "player": {"type": ["string", "null"]},
+      "card_id": {"type": ["string", "null"]},
+      "ovr": {"type": ["integer", "null"]},
+      "position": {"type": ["string", "null"]},
+      "program": {"type": ["string", "null"]},
+      "ability": {"type": ["string", "null"]},
+      "ability_status": {"enum": ["AVAILABLE", "EQUIPPED", "RECOMMENDED", "REQUIRED", "PREFERRED", "NOT USED", "UNKNOWN", null]},
+      "playbook": {"type": ["string", "null"]},
+      "playbook_status": {"enum": ["RECOMMENDED", "OBSERVED USED", "UNKNOWN", null]},
+      "formation": {"type": ["string", "null"]},
+      "roster_slot": {"type": ["string", "null"]},
+      "actual_role": {"type": ["string", "null"]},
+      "roster_completeness": {"enum": ["COMPLETE", "SUBSTANTIALLY COMPLETE", "PARTIAL", "FRAGMENT", null]},
+      "criterion": {"type": ["string", "null"]},
+      "criterion_type": {"type": ["string", "null"]},
+      "criterion_value": {},
+      "criterion_context": {"type": ["string", "null"]},
+      "confidence": {"type": ["string", "null"]}
+    },
+    "additionalProperties": false
+  }
+}

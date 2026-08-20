@@ -128,6 +128,10 @@ def main() -> None:
     sub.add_parser("meta-qb")
     sub.add_parser("meta-playbooks")
     sub.add_parser("threshold-cards")
+    evidence_import = sub.add_parser("evidence-import")
+    evidence_import.add_argument("file", type=Path, help="JSON competitive-evidence list")
+    evidence_import.add_argument("--dry-run", action="store_true")
+    sub.add_parser("meta-summary")
     budget = sub.add_parser("budget")
     hit_add = sub.add_parser("hit-list-add")
     hit_add.add_argument("card_id")
@@ -397,6 +401,31 @@ def main() -> None:
             if args.persist:
                 save_registry(path, merged, production=True)
             _dump({"accepted": len(incoming), "total": len(merged), "persisted": args.persist})
+    elif args.command in {"evidence-import", "meta-summary"}:
+        from operation_pancake.production.competitive_evidence import (
+            REGISTRY,
+            import_evidence,
+            meta_summary,
+            persist_import,
+        )
+
+        registry = root / REGISTRY
+        existing = json.loads(registry.read_text(encoding="utf-8")) if registry.exists() else []
+        if args.command == "meta-summary":
+            _dump(meta_summary(existing))
+        else:
+            rows = json.loads(args.file.read_text(encoding="utf-8"))
+            result = import_evidence(root, rows, existing)
+            if not args.dry_run:
+                persist_import(root, result)
+            _dump(
+                {
+                    "accepted": result["accepted_count"],
+                    "rejected": result["rejected"],
+                    "deduplicated_total": result["deduplicated_total"],
+                    "persisted": not args.dry_run,
+                }
+            )
     elif args.command in {
         "knowledge-search",
         "ask-pancake",
