@@ -11,6 +11,7 @@ SAFETY = json.loads(
     (ROOT / "data/research/op_x_019/safety/frozen_safety_scoring_spec.json").read_text()
 )
 EDGE = json.loads((ROOT / "data/research/op_x_019/edge/frozen_edge_scoring_spec.json").read_text())
+MIKE = json.loads((ROOT / "data/research/op_x_019/mike/frozen_mike_scoring_spec.json").read_text())
 
 
 def test_safety_source_denominators_are_preserved():
@@ -41,3 +42,14 @@ def test_edge_vectors_total_100_and_position_mapping_is_explicit():
     )
     assert result["frozen_score"] == 75
     assert result["model_archetype"] == "Run Stopper"
+
+
+def test_mike_vectors_and_signal_caller_mapping_are_frozen():
+    assert all(sum(weights.values()) == 100 for weights in MIKE["weights"].values())
+    attrs = {name: 79 for name in MIKE["weights"]["Field General"]}
+    result = score(
+        {"season": 26, "position": "MIKE", "archetype": "Signal Caller", "attributes": attrs},
+        MIKE,
+    )
+    assert result["frozen_score"] == 79
+    assert result["model_archetype"] == "Field General"
