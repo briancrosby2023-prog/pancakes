@@ -1,0 +1,40 @@
+{
+  "operation": "OP-X-025",
+  "statuses": {
+    "PLAYER DATABASE": "COMPLETE",
+    "MODEL EVIDENCE": "COMPLETE",
+    "MODEL REGISTRY": "COMPLETE",
+    "MODEL ROUTING": "COMPLETE",
+    "PLAYER SCORING": "COMPLETE",
+    "POSITION RANKINGS": "COMPLETE",
+    "PLAYER LOOKUP": "COMPLETE",
+    "PLAYER COMPARISON": "COMPLETE",
+    "ROSTER INGESTION": "COMPLETE",
+    "IDENTITY RESOLUTION": "PARTIAL",
+    "ROSTER SCORING": "COMPLETE",
+    "DEPTH EVALUATION": "COMPLETE",
+    "POSITIONAL STRENGTH": "COMPLETE",
+    "UPGRADE SEARCH": "COMPLETE",
+    "GM ACTIONS": "COMPLETE",
+    "MANUAL PRICE INGESTION": "COMPLETE",
+    "AUTOMATED MARKET INGESTION": "BLOCKED",
+    "PRICE HISTORY": "COMPLETE",
+    "MONEYBALL": "COMPLETE",
+    "BUDGET OPTIMIZATION": "COMPLETE",
+    "TRAINING/QUICKSELL": "COMPLETE",
+    "LTD INTELLIGENCE": "PARTIAL",
+    "MARKET RISK": "COMPLETE",
+    "REPORTING": "PARTIAL",
+    "USER WORKFLOW": "COMPLETE",
+    "TEST COVERAGE": "PARTIAL",
+    "PROVENANCE": "COMPLETE",
+    "OP-X-024 TE RESEARCH": "EXECUTION PENDING"
+  },
+  "known_limits": [
+    "six roster identities remain unresolved/ambiguous in controlling state",
+    "Dante Moore lacks complete QB vector for full scoring",
+    "fresh automated market feed is not established",
+    "OP-X-024 scientific execution pending",
+    "repository execution environment unavailable in this worker; new tests persisted but not claimed passed"
+  ]
+}
