@@ -1,0 +1,66 @@
+{
+  "method": "untouched-holdout residuals after observable universal attribute model; descriptive only",
+  "programs": {
+    "Core Common": {
+      "mae": 0.7028,
+      "mean_residual": 0.2497,
+      "n": 29
+    },
+    "Core Rare": {
+      "mae": 0.5362,
+      "mean_residual": -0.1928,
+      "n": 7
+    },
+    "Core Uncommon": {
+      "mae": 0.5492,
+      "mean_residual": -0.1567,
+      "n": 24
+    },
+    "Cornerstones": {
+      "mae": 0.5521,
+      "mean_residual": -0.5521,
+      "n": 2
+    },
+    "Orientation": {
+      "mae": 0.4612,
+      "mean_residual": -0.3289,
+      "n": 6
+    },
+    "Platinum Rare": {
+      "mae": 0.2597,
+      "mean_residual": -0.1141,
+      "n": 9
+    },
+    "Platinum Uncommon": {
+      "mae": 0.4369,
+      "mean_residual": 0.191,
+      "n": 14
+    },
+    "Prime Prospects": {
+      "mae": 2.0938,
+      "mean_residual": 2.0938,
+      "n": 2
+    },
+    "S1 Legends - Millenium": {
+      "mae": 0.1433,
+      "mean_residual": -0.1433,
+      "n": 1
+    },
+    "Starter Team Items": {
+      "mae": 0.0105,
+      "mean_residual": 0.0105,
+      "n": 1
+    },
+    "Sunday Spotlight: Retro": {
+      "mae": 0.1816,
+      "mean_residual": 0.1816,
+      "n": 1
+    },
+    "Supercharged": {
+      "mae": 0.3633,
+      "mean_residual": 0.3633,
+      "n": 1
+    }
+  },
+  "verdict": "INSUFFICIENT FOR CAUSAL PROGRAM MODIFIER"
+}
