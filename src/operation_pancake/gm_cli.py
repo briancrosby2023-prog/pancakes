@@ -48,6 +48,18 @@ def main() -> None:
     snapshot.add_argument("--type", default="DISPLAYED_MARKET_PRICE")
     snapshot.add_argument("--observed-at")
     snapshot.add_argument("--history", type=Path)
+    explain = sub.add_parser("explain")
+    explain.add_argument("card_id")
+    compare_explain = sub.add_parser("compare-explain")
+    compare_explain.add_argument("current_card_id")
+    compare_explain.add_argument("candidate_card_id")
+    alternatives = sub.add_parser("alternatives")
+    alternatives.add_argument("card_id")
+    alternatives.add_argument("--tolerance", type=float, default=0.5)
+    attribute_upgrades = sub.add_parser("attribute-upgrades")
+    attribute_upgrades.add_argument("card_id")
+    attribute_upgrades.add_argument("--attribute")
+    attribute_upgrades.add_argument("--min-score-gain", type=float, default=0)
     budget = sub.add_parser("budget")
     budget.add_argument("file", type=Path, help="JSON candidate list")
     budget.add_argument("coins", type=int)
@@ -93,6 +105,20 @@ def main() -> None:
             )
         history = args.history or root / REAL_HISTORY
         _dump({"observations": observations, "history": append_history(history, observations)})
+    elif args.command in {"explain", "compare-explain", "alternatives", "attribute-upgrades"}:
+        from operation_pancake.production.attributes import AttributeIntelligence
+
+        intelligence = AttributeIntelligence(root)
+        if args.command == "explain":
+            _dump(intelligence.contribution(args.card_id))
+        elif args.command == "compare-explain":
+            _dump(intelligence.compare(args.current_card_id, args.candidate_card_id))
+        elif args.command == "alternatives":
+            _dump(intelligence.alternatives(args.card_id, args.tolerance))
+        else:
+            _dump(
+                intelligence.attribute_upgrades(args.card_id, args.attribute, args.min_score_gain)
+            )
     elif args.command == "budget":
         rows = json.loads(args.file.read_text(encoding="utf-8"))
         _dump(optimize_budget(rows, args.coins))

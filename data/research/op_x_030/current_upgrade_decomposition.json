@@ -1,0 +1,804 @@
+[
+  {
+    "attributes": [
+      {
+        "attribute": "ACC",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": null,
+        "current_attribute_percentile": 52.0,
+        "current_effective_coefficient": 0.02,
+        "current_rating": 64,
+        "rating_delta": null,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -1.28,
+        "share_of_total_improvement_percent": -25.427535
+      },
+      {
+        "attribute": "AGI",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": null,
+        "current_attribute_percentile": 100.0,
+        "current_effective_coefficient": 0.02,
+        "current_rating": 69,
+        "rating_delta": null,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -1.38,
+        "share_of_total_improvement_percent": -27.414061
+      },
+      {
+        "attribute": "AWR",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": null,
+        "current_attribute_percentile": 52.0,
+        "current_effective_coefficient": 0.11,
+        "current_rating": 81,
+        "rating_delta": null,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -8.91,
+        "share_of_total_improvement_percent": -176.999483
+      },
+      {
+        "attribute": "IBL",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": null,
+        "current_attribute_percentile": 52.0,
+        "current_effective_coefficient": 0.07,
+        "current_rating": 82,
+        "rating_delta": null,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -5.74,
+        "share_of_total_improvement_percent": -114.026603
+      },
+      {
+        "attribute": "LBK",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": null,
+        "current_attribute_percentile": 68.0,
+        "current_effective_coefficient": 0.08,
+        "current_rating": 77,
+        "rating_delta": null,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -6.16,
+        "share_of_total_improvement_percent": -122.370013
+      },
+      {
+        "attribute": "PBK",
+        "candidate_attribute_percentile": 78.135048,
+        "candidate_count_at_or_above": 73,
+        "candidate_effective_coefficient": 0.043478260869565216,
+        "candidate_rating": 80,
+        "current_attribute_percentile": 86.495177,
+        "current_effective_coefficient": 0.02,
+        "current_rating": 82,
+        "rating_delta": -2,
+        "role": "SECONDARY GAIN",
+        "score_contribution_change": 1.83826087,
+        "share_of_total_improvement_percent": 36.517534
+      },
+      {
+        "attribute": "PBP",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": null,
+        "current_attribute_percentile": 76.0,
+        "current_effective_coefficient": 0.22,
+        "current_rating": 84,
+        "rating_delta": null,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -18.48,
+        "share_of_total_improvement_percent": -367.110039
+      },
+      {
+        "attribute": "RBK",
+        "candidate_attribute_percentile": 100.0,
+        "candidate_count_at_or_above": 2,
+        "candidate_effective_coefficient": 0.21739130434782608,
+        "candidate_rating": 85,
+        "current_attribute_percentile": 90.675241,
+        "current_effective_coefficient": 0.1,
+        "current_rating": 82,
+        "rating_delta": 3,
+        "role": "PRIMARY UPGRADE DRIVER",
+        "score_contribution_change": 10.27826087,
+        "share_of_total_improvement_percent": 204.180344
+      },
+      {
+        "attribute": "RBP",
+        "candidate_attribute_percentile": 99.678457,
+        "candidate_count_at_or_above": 9,
+        "candidate_effective_coefficient": 0.41304347826086957,
+        "candidate_rating": 86,
+        "current_attribute_percentile": 88.745981,
+        "current_effective_coefficient": 0.19,
+        "current_rating": 83,
+        "rating_delta": 3,
+        "role": "PRIMARY UPGRADE DRIVER",
+        "score_contribution_change": 19.75173913,
+        "share_of_total_improvement_percent": 392.37347
+      },
+      {
+        "attribute": "SPD",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": null,
+        "current_attribute_percentile": 52.0,
+        "current_effective_coefficient": 0.02,
+        "current_rating": 64,
+        "rating_delta": null,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -1.28,
+        "share_of_total_improvement_percent": -25.427535
+      },
+      {
+        "attribute": "STR",
+        "candidate_attribute_percentile": 100.0,
+        "candidate_count_at_or_above": 1,
+        "candidate_effective_coefficient": 0.32608695652173914,
+        "candidate_rating": 88,
+        "current_attribute_percentile": 86.495177,
+        "current_effective_coefficient": 0.15,
+        "current_rating": 82,
+        "rating_delta": 6,
+        "role": "PRIMARY UPGRADE DRIVER",
+        "score_contribution_change": 16.395652174,
+        "share_of_total_improvement_percent": 325.703924
+      }
+    ],
+    "candidate": "Brendan Black",
+    "contribution_delta_sum": 5.033913,
+    "coverage_changed": true,
+    "current": "Anthony Donkoh",
+    "decomposition_caveat": "profile or coverage changes reallocate normalized contribution; a positive contribution change need not imply a positive raw-rating delta",
+    "improvement_shape": "CONCENTRATED",
+    "low_model_value_inflation": [
+      {
+        "attribute": "RBF",
+        "rating_delta": 3
+      }
+    ],
+    "model_profile_changed": false,
+    "near_equivalent_alternatives": [
+      {
+        "archetype": "Pass Protector",
+        "card_id": "card:223972d9a434a9d9fb4c",
+        "overall": 87,
+        "player_name": "Addison Nichols",
+        "rank_difference": 1,
+        "score_difference": -0.910755
+      }
+    ],
+    "reconciliation_error": 4.4e-08,
+    "score_delta": 5.033913,
+    "status": "DECOMPOSED",
+    "top_three_gain_share_percent": 922.257738
+  },
+  {
+    "attributes": [
+      {
+        "attribute": "ACC",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": null,
+        "current_attribute_percentile": 50.0,
+        "current_effective_coefficient": 0.02,
+        "current_rating": 68,
+        "rating_delta": null,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -1.36,
+        "share_of_total_improvement_percent": -19.388092
+      },
+      {
+        "attribute": "AGI",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": null,
+        "current_attribute_percentile": 79.166667,
+        "current_effective_coefficient": 0.03,
+        "current_rating": 68,
+        "rating_delta": null,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -2.04,
+        "share_of_total_improvement_percent": -29.082138
+      },
+      {
+        "attribute": "AWR",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": null,
+        "current_attribute_percentile": 29.166667,
+        "current_effective_coefficient": 0.1,
+        "current_rating": 75,
+        "rating_delta": null,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -7.5,
+        "share_of_total_improvement_percent": -106.919624
+      },
+      {
+        "attribute": "IBL",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": null,
+        "current_attribute_percentile": 29.166667,
+        "current_effective_coefficient": 0.04,
+        "current_rating": 81,
+        "rating_delta": null,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -3.24,
+        "share_of_total_improvement_percent": -46.189278
+      },
+      {
+        "attribute": "LBK",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": null,
+        "current_attribute_percentile": 87.5,
+        "current_effective_coefficient": 0.02,
+        "current_rating": 84,
+        "rating_delta": null,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -1.68,
+        "share_of_total_improvement_percent": -23.949996
+      },
+      {
+        "attribute": "PBF",
+        "candidate_attribute_percentile": 100.0,
+        "candidate_count_at_or_above": 1,
+        "candidate_effective_coefficient": 0.4807692307692308,
+        "candidate_rating": 91,
+        "current_attribute_percentile": 95.238095,
+        "current_effective_coefficient": 0.25,
+        "current_rating": 84,
+        "rating_delta": 7,
+        "role": "PRIMARY UPGRADE DRIVER",
+        "score_contribution_change": 22.75,
+        "share_of_total_improvement_percent": 324.32286
+      },
+      {
+        "attribute": "PBK",
+        "candidate_attribute_percentile": 100.0,
+        "candidate_count_at_or_above": 1,
+        "candidate_effective_coefficient": 0.11538461538461539,
+        "candidate_rating": 89,
+        "current_attribute_percentile": 84.353741,
+        "current_effective_coefficient": 0.06,
+        "current_rating": 80,
+        "rating_delta": 9,
+        "role": "SECONDARY GAIN",
+        "score_contribution_change": 5.469230769,
+        "share_of_total_improvement_percent": 77.96908
+      },
+      {
+        "attribute": "RBF",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": null,
+        "current_attribute_percentile": 79.166667,
+        "current_effective_coefficient": 0.24,
+        "current_rating": 85,
+        "rating_delta": null,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -20.4,
+        "share_of_total_improvement_percent": -290.821378
+      },
+      {
+        "attribute": "RBK",
+        "candidate_attribute_percentile": 91.38322,
+        "candidate_count_at_or_above": 53,
+        "candidate_effective_coefficient": 0.15384615384615385,
+        "candidate_rating": 82,
+        "current_attribute_percentile": 99.773243,
+        "current_effective_coefficient": 0.08,
+        "current_rating": 85,
+        "rating_delta": -3,
+        "role": "PRIMARY UPGRADE DRIVER",
+        "score_contribution_change": 5.815384615,
+        "share_of_total_improvement_percent": 82.903832
+      },
+      {
+        "attribute": "SPD",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": null,
+        "current_attribute_percentile": 12.5,
+        "current_effective_coefficient": 0.03,
+        "current_rating": 63,
+        "rating_delta": null,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -1.89,
+        "share_of_total_improvement_percent": -26.943745
+      },
+      {
+        "attribute": "STR",
+        "candidate_attribute_percentile": 100.0,
+        "candidate_count_at_or_above": 1,
+        "candidate_effective_coefficient": 0.25,
+        "candidate_rating": 87,
+        "current_attribute_percentile": 94.557823,
+        "current_effective_coefficient": 0.13,
+        "current_rating": 82,
+        "rating_delta": 5,
+        "role": "PRIMARY UPGRADE DRIVER",
+        "score_contribution_change": 11.09,
+        "share_of_total_improvement_percent": 158.098484
+      }
+    ],
+    "candidate": "E'Marion Harris",
+    "contribution_delta_sum": 7.014615,
+    "coverage_changed": true,
+    "current": "Samson Okunlola",
+    "decomposition_caveat": "profile or coverage changes reallocate normalized contribution; a positive contribution change need not imply a positive raw-rating delta",
+    "improvement_shape": "CONCENTRATED",
+    "low_model_value_inflation": [
+      {
+        "attribute": "PBP",
+        "rating_delta": 9
+      }
+    ],
+    "model_profile_changed": false,
+    "near_equivalent_alternatives": [
+      {
+        "archetype": "Raw Strength",
+        "card_id": "card:1edf998eda9232b48690",
+        "overall": 87,
+        "player_name": "Drew Azzopardi",
+        "rank_difference": 1,
+        "score_difference": -0.950653
+      }
+    ],
+    "reconciliation_error": 3.84e-07,
+    "score_delta": 7.014615,
+    "status": "DECOMPOSED",
+    "top_three_gain_share_percent": 565.325176
+  },
+  {
+    "attributes": [
+      {
+        "attribute": "BSH",
+        "candidate_attribute_percentile": 100.0,
+        "candidate_count_at_or_above": 1,
+        "candidate_effective_coefficient": 0.42105263157894735,
+        "candidate_rating": 90,
+        "current_attribute_percentile": null,
+        "current_effective_coefficient": 0,
+        "current_rating": 82,
+        "rating_delta": 8,
+        "role": "PRIMARY UPGRADE DRIVER",
+        "score_contribution_change": 37.894736842,
+        "share_of_total_improvement_percent": 733.717427
+      },
+      {
+        "attribute": "SPD",
+        "candidate_attribute_percentile": 99.348534,
+        "candidate_count_at_or_above": 5,
+        "candidate_effective_coefficient": 0.15789473684210525,
+        "candidate_rating": 86,
+        "current_attribute_percentile": 98.958333,
+        "current_effective_coefficient": 0.391304347826087,
+        "current_rating": 85,
+        "rating_delta": 1,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -19.681922197,
+        "share_of_total_improvement_percent": -381.081135
+      },
+      {
+        "attribute": "TAK",
+        "candidate_attribute_percentile": 99.674267,
+        "candidate_count_at_or_above": 2,
+        "candidate_effective_coefficient": 0.42105263157894735,
+        "candidate_rating": 89,
+        "current_attribute_percentile": 97.395833,
+        "current_effective_coefficient": 0.6086956521739131,
+        "current_rating": 83,
+        "rating_delta": 6,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -13.048054919,
+        "share_of_total_improvement_percent": -252.636278
+      }
+    ],
+    "candidate": "Kip Lewis",
+    "contribution_delta_sum": 5.16476,
+    "coverage_changed": true,
+    "current": "Chris Cole",
+    "decomposition_caveat": "profile or coverage changes reallocate normalized contribution; a positive contribution change need not imply a positive raw-rating delta",
+    "improvement_shape": "CONCENTRATED",
+    "low_model_value_inflation": [
+      {
+        "attribute": "PMV",
+        "rating_delta": 1
+      }
+    ],
+    "model_profile_changed": true,
+    "near_equivalent_alternatives": [
+      {
+        "archetype": "Thumper",
+        "card_id": "card:9722de1cce1370c64d9c",
+        "overall": 87,
+        "player_name": "Isaiah Glasker",
+        "rank_difference": 1,
+        "score_difference": -1.0
+      }
+    ],
+    "reconciliation_error": 7.26e-07,
+    "score_delta": 5.164759,
+    "status": "DECOMPOSED",
+    "top_three_gain_share_percent": 733.717427
+  },
+  {
+    "attributes": [
+      {
+        "attribute": "ACC",
+        "candidate_attribute_percentile": 100.0,
+        "candidate_count_at_or_above": 1,
+        "candidate_effective_coefficient": 0.09615384615384616,
+        "candidate_rating": 89,
+        "current_attribute_percentile": 66.666667,
+        "current_effective_coefficient": 0.11,
+        "current_rating": 86,
+        "rating_delta": 3,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -0.902307692,
+        "share_of_total_improvement_percent": -16.724888
+      },
+      {
+        "attribute": "AGI",
+        "candidate_attribute_percentile": 90.0,
+        "candidate_count_at_or_above": 2,
+        "candidate_effective_coefficient": 0.07692307692307693,
+        "candidate_rating": 85,
+        "current_attribute_percentile": 50.0,
+        "current_effective_coefficient": 0.08,
+        "current_rating": 83,
+        "rating_delta": 2,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -0.101538462,
+        "share_of_total_improvement_percent": -1.882085
+      },
+      {
+        "attribute": "AWR",
+        "candidate_attribute_percentile": 100.0,
+        "candidate_count_at_or_above": 1,
+        "candidate_effective_coefficient": 0.10576923076923077,
+        "candidate_rating": 86,
+        "current_attribute_percentile": 44.444444,
+        "current_effective_coefficient": 0.1,
+        "current_rating": 78,
+        "rating_delta": 8,
+        "role": "PRIMARY UPGRADE DRIVER",
+        "score_contribution_change": 1.296153846,
+        "share_of_total_improvement_percent": 24.025094
+      },
+      {
+        "attribute": "JMP",
+        "candidate_attribute_percentile": 100.0,
+        "candidate_count_at_or_above": 2,
+        "candidate_effective_coefficient": 0.028846153846153848,
+        "candidate_rating": 84,
+        "current_attribute_percentile": 44.444444,
+        "current_effective_coefficient": 0.03,
+        "current_rating": 81,
+        "rating_delta": 3,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -0.006923077,
+        "share_of_total_improvement_percent": -0.128324
+      },
+      {
+        "attribute": "MCV",
+        "candidate_attribute_percentile": 100.0,
+        "candidate_count_at_or_above": 1,
+        "candidate_effective_coefficient": 0.057692307692307696,
+        "candidate_rating": 89,
+        "current_attribute_percentile": 95.256917,
+        "current_effective_coefficient": 0.15,
+        "current_rating": 84,
+        "rating_delta": 5,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -7.465384615,
+        "share_of_total_improvement_percent": -138.375989
+      },
+      {
+        "attribute": "PRC",
+        "candidate_attribute_percentile": 90.0,
+        "candidate_count_at_or_above": 2,
+        "candidate_effective_coefficient": 0.10576923076923077,
+        "candidate_rating": 87,
+        "current_attribute_percentile": 50.0,
+        "current_effective_coefficient": 0.1,
+        "current_rating": 83,
+        "rating_delta": 4,
+        "role": "SECONDARY GAIN",
+        "score_contribution_change": 0.901923077,
+        "share_of_total_improvement_percent": 16.717759
+      },
+      {
+        "attribute": "PRS",
+        "candidate_attribute_percentile": null,
+        "candidate_count_at_or_above": null,
+        "candidate_effective_coefficient": 0,
+        "candidate_rating": 76,
+        "current_attribute_percentile": 61.111111,
+        "current_effective_coefficient": 0.05,
+        "current_rating": 80,
+        "rating_delta": -4,
+        "role": "LOSS/OFFSET",
+        "score_contribution_change": -4.0,
+        "share_of_total_improvement_percent": -74.142725
+      },
+      {
+        "attribute": "PUR",
+        "candidate_attribute_percentile": 100.0,
+        "candidate_count_at_or_above": 1,
+        "candidate_effective_coefficient": 0.057692307692307696,
+        "candidate_rating": 86,
+        "current_attribute_percentile": 11.111111,
+        "current_effective_coefficient": 0.04,
+        "current_rating": 78,
+        "rating_delta": 8,
+        "role": "PRIMARY UPGRADE DRIVER",
+        "score_contribution_change": 1.841538462,
+        "share_of_total_improvement_percent": 34.13417
+      },
+      {
+        "attribute": "SPD",
+        "candidate_attribute_percentile": 100.0,
+        "candidate_count_at_or_above": 1,
+        "candidate_effective_coefficient": 0.1346153846153846,
+        "candidate_rating": 89,
+        "current_attribute_percentile": 96.442688,
+        "current_effective_coefficient": 0.14,
+        "current_rating": 85,
+        "rating_delta": 4,
+        "role": "SECONDARY GAIN",
+        "score_contribution_change": 0.080769231,
+        "share_of_total_improvement_percent": 1.497113
+      },
+      {
+        "attribute": "STR",
+        "candidate_attribute_percentile": 100.0,
+        "candidate_count_at_or_above": 2,
+        "candidate_effective_coefficient": 0.019230769230769232,
+        "candidate_rating": 79,
+        "current_attribute_percentile": 16.666667,
+        "current_effective_coefficient": 0.02,
+        "current_rating": 63,
+        "rating_delta": 16,
+        "role": "SECONDARY GAIN",
+        "score_contribution_change": 0.259230769,
+        "share_of_total_improvement_percent": 4.805019
+      },
+      {
+        "attribute": "TAK",
+        "candidate_attribute_percentile": 99.404762,
+        "candidate_count_at_or_above": 3,
+        "candidate_effective_coefficient": 0.10576923076923077,
+        "candidate_rating": 84,
+        "current_attribute_percentile": 88.537549,
+        "current_effective_coefficient": 0.11,
+        "current_rating": 79,
+        "rating_delta": 5,
+        "role": "SECONDARY GAIN",
+        "score_contribution_change": 0.194615385,
+        "share_of_total_improvement_percent": 3.607329
+      },
+      {
+        "attribute": "ZCV",
+        "candidate_attribute_percentile": 99.404762,
+        "candidate_count_at_or_above": 2,
+        "candidate_effective_coefficient": 0.21153846153846154,
+        "candidate_rating": 89,
+        "current_attribute_percentile": 87.747036,
+        "current_effective_coefficient": 0.07,
+        "current_rating": 79,
+        "rating_delta": 10,
+        "role": "PRIMARY UPGRADE DRIVER",
+        "score_contribution_change": 13.296923077,
+        "share_of_total_improvement_percent": 246.467527
+      }
+    ],
+    "candidate": "Bray Hubbard",
+    "contribution_delta_sum": 5.395,
+    "coverage_changed": false,
+    "current": "Dashawn Spears",
+    "decomposition_caveat": "profile or coverage changes reallocate normalized contribution; a positive contribution change need not imply a positive raw-rating delta",
+    "improvement_shape": "CONCENTRATED",
+    "low_model_value_inflation": [
+      {
+        "attribute": "BSH",
+        "rating_delta": 8
+      },
+      {
+        "attribute": "CIT",
+        "rating_delta": 16
+      },
+      {
+        "attribute": "COD",
+        "rating_delta": 3
+      },
+      {
+        "attribute": "CTH",
+        "rating_delta": 5
+      },
+      {
+        "attribute": "FMV",
+        "rating_delta": 12
+      },
+      {
+        "attribute": "IBL",
+        "rating_delta": 13
+      },
+      {
+        "attribute": "PMV",
+        "rating_delta": 6
+      },
+      {
+        "attribute": "POW",
+        "rating_delta": 1
+      },
+      {
+        "attribute": "RET",
+        "rating_delta": 13
+      },
+      {
+        "attribute": "SPC",
+        "rating_delta": 11
+      },
+      {
+        "attribute": "TGH",
+        "rating_delta": 5
+      }
+    ],
+    "model_profile_changed": true,
+    "near_equivalent_alternatives": [
+      {
+        "archetype": "Hybrid",
+        "card_id": "card:96dbd9e1a37747c6a19d",
+        "overall": 90,
+        "player_name": "Jay Green",
+        "rank_difference": 1,
+        "score_difference": -0.215
+      },
+      {
+        "archetype": "Coverage Specialist",
+        "card_id": "card:3d67a79208cbbe276b6f",
+        "overall": 86,
+        "player_name": "Bryce Thornton",
+        "rank_difference": 2,
+        "score_difference": -0.936321
+      }
+    ],
+    "reconciliation_error": 1e-09,
+    "score_delta": 5.395,
+    "status": "DECOMPOSED",
+    "top_three_gain_share_percent": 304.626791
+  },
+  {
+    "attributes": [
+      {
+        "attribute": "JMP",
+        "candidate_attribute_percentile": 99.352751,
+        "candidate_count_at_or_above": 5,
+        "candidate_effective_coefficient": 0.0784313725490196,
+        "candidate_rating": 87,
+        "current_attribute_percentile": 97.734628,
+        "current_effective_coefficient": 0.0784313725490196,
+        "current_rating": 85,
+        "rating_delta": 2,
+        "role": "SECONDARY GAIN",
+        "score_contribution_change": 0.156862745,
+        "share_of_total_improvement_percent": 4.0201
+      },
+      {
+        "attribute": "MCV",
+        "candidate_attribute_percentile": 99.676375,
+        "candidate_count_at_or_above": 3,
+        "candidate_effective_coefficient": 0.0784313725490196,
+        "candidate_rating": 88,
+        "current_attribute_percentile": 95.79288,
+        "current_effective_coefficient": 0.0784313725490196,
+        "current_rating": 85,
+        "rating_delta": 3,
+        "role": "SECONDARY GAIN",
+        "score_contribution_change": 0.235294117,
+        "share_of_total_improvement_percent": 6.03015
+      },
+      {
+        "attribute": "PRS",
+        "candidate_attribute_percentile": 99.676375,
+        "candidate_count_at_or_above": 7,
+        "candidate_effective_coefficient": 0.09803921568627451,
+        "candidate_rating": 85,
+        "current_attribute_percentile": 88.02589,
+        "current_effective_coefficient": 0.09803921568627451,
+        "current_rating": 80,
+        "rating_delta": 5,
+        "role": "PRIMARY UPGRADE DRIVER",
+        "score_contribution_change": 0.490196078,
+        "share_of_total_improvement_percent": 12.562813
+      },
+      {
+        "attribute": "SPD",
+        "candidate_attribute_percentile": 100.0,
+        "candidate_count_at_or_above": 4,
+        "candidate_effective_coefficient": 0.35294117647058826,
+        "candidate_rating": 89,
+        "current_attribute_percentile": 96.763754,
+        "current_effective_coefficient": 0.35294117647058826,
+        "current_rating": 86,
+        "rating_delta": 3,
+        "role": "PRIMARY UPGRADE DRIVER",
+        "score_contribution_change": 1.05882353,
+        "share_of_total_improvement_percent": 27.135677
+      },
+      {
+        "attribute": "ZCV",
+        "candidate_attribute_percentile": 99.352751,
+        "candidate_count_at_or_above": 5,
+        "candidate_effective_coefficient": 0.39215686274509803,
+        "candidate_rating": 88,
+        "current_attribute_percentile": 88.349515,
+        "current_effective_coefficient": 0.39215686274509803,
+        "current_rating": 83,
+        "rating_delta": 5,
+        "role": "PRIMARY UPGRADE DRIVER",
+        "score_contribution_change": 1.960784314,
+        "share_of_total_improvement_percent": 50.251254
+      }
+    ],
+    "candidate": "Kobe Black",
+    "contribution_delta_sum": 3.901961,
+    "coverage_changed": false,
+    "current": "Cormani McClain",
+    "decomposition_caveat": "profile or coverage changes reallocate normalized contribution; a positive contribution change need not imply a positive raw-rating delta",
+    "improvement_shape": "CONCENTRATED",
+    "low_model_value_inflation": [],
+    "model_profile_changed": false,
+    "near_equivalent_alternatives": [
+      {
+        "archetype": "Field",
+        "card_id": "card:7cd97d2fa34571827964",
+        "overall": 87,
+        "player_name": "Dontay Joyner",
+        "rank_difference": 1,
+        "score_difference": -0.529412
+      },
+      {
+        "archetype": "Bump and Run",
+        "card_id": "card:a6367f36369367f4c243",
+        "overall": 87,
+        "player_name": "Edwin Joseph",
+        "rank_difference": 2,
+        "score_difference": -0.816756
+      },
+      {
+        "archetype": "Field",
+        "card_id": "card:5da91e386d7350d109f8",
+        "overall": 88,
+        "player_name": "Xavier Scott",
+        "rank_difference": 3,
+        "score_difference": -0.820392
+      }
+    ],
+    "reconciliation_error": -2.16e-07,
+    "score_delta": 3.901961,
+    "status": "DECOMPOSED",
+    "top_three_gain_share_percent": 89.949744
+  }
+]

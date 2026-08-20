@@ -1,0 +1,14 @@
+{
+  "op_x_030_tests": {"passed": 6, "status": "PASS"},
+  "targeted_regression_suite": {"passed": 72, "status": "PASS"},
+  "broader_pytest": {
+    "status": "BLOCKED_DURING_COLLECTION",
+    "reason": "known E.15 acquisition test imports requests, absent from workspace environment",
+    "new_op_x_030_failure": false
+  },
+  "changed_file_ruff": "PASS",
+  "diff_check": "PASS",
+  "contribution_reconciliation": "PASS",
+  "frozen_production_coefficients_modified": false,
+  "market_price_used_in_attribute_value": false
+}

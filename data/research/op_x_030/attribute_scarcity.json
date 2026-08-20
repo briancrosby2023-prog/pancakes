@@ -1,0 +1,4386 @@
+{
+  "CB|Boundary|JMP": {
+    "elite_thresholds": {
+      "p90": 74.5,
+      "p95": 78.25,
+      "p98": 80.2
+    },
+    "n": 96
+  },
+  "CB|Boundary|MCV": {
+    "elite_thresholds": {
+      "p90": 73.5,
+      "p95": 77.0,
+      "p98": 79.1
+    },
+    "n": 96
+  },
+  "CB|Boundary|PRS": {
+    "elite_thresholds": {
+      "p90": 72.0,
+      "p95": 76.0,
+      "p98": 77.1
+    },
+    "n": 96
+  },
+  "CB|Boundary|SPD": {
+    "elite_thresholds": {
+      "p90": 79.0,
+      "p95": 80.0,
+      "p98": 81.0
+    },
+    "n": 96
+  },
+  "CB|Boundary|ZCV": {
+    "elite_thresholds": {
+      "p90": 75.0,
+      "p95": 75.0,
+      "p98": 76.5
+    },
+    "n": 96
+  },
+  "CB|Bump and Run|ACC": {
+    "elite_thresholds": {
+      "p90": 87.3,
+      "p95": 87.65,
+      "p98": 87.86
+    },
+    "n": 8
+  },
+  "CB|Bump and Run|AGI": {
+    "elite_thresholds": {
+      "p90": 85.3,
+      "p95": 85.65,
+      "p98": 85.86
+    },
+    "n": 8
+  },
+  "CB|Bump and Run|AWR": {
+    "elite_thresholds": {
+      "p90": 82.3,
+      "p95": 82.65,
+      "p98": 82.86
+    },
+    "n": 8
+  },
+  "CB|Bump and Run|CTH": {
+    "elite_thresholds": {
+      "p90": 84.6,
+      "p95": 85.3,
+      "p98": 85.72
+    },
+    "n": 8
+  },
+  "CB|Bump and Run|JMP": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 82.0,
+      "p98": 83.0
+    },
+    "n": 415
+  },
+  "CB|Bump and Run|MCV": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 85.0,
+      "p98": 86.0
+    },
+    "n": 415
+  },
+  "CB|Bump and Run|PRC": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 8
+  },
+  "CB|Bump and Run|PRS": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 81.0,
+      "p98": 83.72
+    },
+    "n": 415
+  },
+  "CB|Bump and Run|SPD": {
+    "elite_thresholds": {
+      "p90": 82.6,
+      "p95": 85.0,
+      "p98": 86.0
+    },
+    "n": 415
+  },
+  "CB|Bump and Run|TAK": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 80.0,
+      "p98": 80.0
+    },
+    "n": 8
+  },
+  "CB|Bump and Run|ZCV": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 82.0,
+      "p98": 83.0
+    },
+    "n": 415
+  },
+  "CB|Field|ACC": {
+    "elite_thresholds": {
+      "p90": 88.0,
+      "p95": 88.45,
+      "p98": 88.78
+    },
+    "n": 12
+  },
+  "CB|Field|AGI": {
+    "elite_thresholds": {
+      "p90": 87.0,
+      "p95": 87.0,
+      "p98": 87.0
+    },
+    "n": 12
+  },
+  "CB|Field|AWR": {
+    "elite_thresholds": {
+      "p90": 81.9,
+      "p95": 82.0,
+      "p98": 82.0
+    },
+    "n": 12
+  },
+  "CB|Field|CTH": {
+    "elite_thresholds": {
+      "p90": 84.8,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 12
+  },
+  "CB|Field|JMP": {
+    "elite_thresholds": {
+      "p90": 82.2,
+      "p95": 85.0,
+      "p98": 85.84
+    },
+    "n": 309
+  },
+  "CB|Field|MCV": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 86.84
+    },
+    "n": 309
+  },
+  "CB|Field|PRC": {
+    "elite_thresholds": {
+      "p90": 87.9,
+      "p95": 88.45,
+      "p98": 88.78
+    },
+    "n": 12
+  },
+  "CB|Field|PRS": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 82.6,
+      "p98": 84.84
+    },
+    "n": 309
+  },
+  "CB|Field|SPD": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.6,
+      "p98": 88.0
+    },
+    "n": 309
+  },
+  "CB|Field|TAK": {
+    "elite_thresholds": {
+      "p90": 87.6,
+      "p95": 88.45,
+      "p98": 88.78
+    },
+    "n": 12
+  },
+  "CB|Field|ZCV": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 86.0,
+      "p98": 87.0
+    },
+    "n": 309
+  },
+  "CB|Zone|ACC": {
+    "elite_thresholds": {
+      "p90": 85.8,
+      "p95": 85.9,
+      "p98": 85.96
+    },
+    "n": 3
+  },
+  "CB|Zone|AGI": {
+    "elite_thresholds": {
+      "p90": 82.4,
+      "p95": 82.7,
+      "p98": 82.88
+    },
+    "n": 3
+  },
+  "CB|Zone|AWR": {
+    "elite_thresholds": {
+      "p90": 79.4,
+      "p95": 79.7,
+      "p98": 79.88
+    },
+    "n": 3
+  },
+  "CB|Zone|CTH": {
+    "elite_thresholds": {
+      "p90": 79.4,
+      "p95": 79.7,
+      "p98": 79.88
+    },
+    "n": 3
+  },
+  "CB|Zone|JMP": {
+    "elite_thresholds": {
+      "p90": 82.4,
+      "p95": 85.9,
+      "p98": 88.16
+    },
+    "n": 43
+  },
+  "CB|Zone|MCV": {
+    "elite_thresholds": {
+      "p90": 81.6,
+      "p95": 83.0,
+      "p98": 83.16
+    },
+    "n": 43
+  },
+  "CB|Zone|PRC": {
+    "elite_thresholds": {
+      "p90": 79.6,
+      "p95": 79.8,
+      "p98": 79.92
+    },
+    "n": 3
+  },
+  "CB|Zone|PRS": {
+    "elite_thresholds": {
+      "p90": 81.8,
+      "p95": 83.0,
+      "p98": 85.16
+    },
+    "n": 43
+  },
+  "CB|Zone|SPD": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.8,
+      "p98": 86.16
+    },
+    "n": 43
+  },
+  "CB|Zone|TAK": {
+    "elite_thresholds": {
+      "p90": 83.8,
+      "p95": 83.9,
+      "p98": 83.96
+    },
+    "n": 3
+  },
+  "CB|Zone|ZCV": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 86.0,
+      "p98": 88.16
+    },
+    "n": 43
+  },
+  "C|Agile|ACC": {
+    "elite_thresholds": {
+      "p90": 68.0,
+      "p95": 68.6,
+      "p98": 69.44
+    },
+    "n": 15
+  },
+  "C|Agile|AGI": {
+    "elite_thresholds": {
+      "p90": 68.0,
+      "p95": 68.9,
+      "p98": 70.16
+    },
+    "n": 15
+  },
+  "C|Agile|AWR": {
+    "elite_thresholds": {
+      "p90": 82.6,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 15
+  },
+  "C|Agile|IBL": {
+    "elite_thresholds": {
+      "p90": 79.8,
+      "p95": 81.6,
+      "p98": 82.44
+    },
+    "n": 15
+  },
+  "C|Agile|LBK": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 15
+  },
+  "C|Agile|PBF": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.6,
+      "p98": 84.44
+    },
+    "n": 15
+  },
+  "C|Agile|PBK": {
+    "elite_thresholds": {
+      "p90": 81.6,
+      "p95": 82.0,
+      "p98": 82.0
+    },
+    "n": 15
+  },
+  "C|Agile|PBP": {
+    "elite_thresholds": {
+      "p90": 79.6,
+      "p95": 80.0,
+      "p98": 80.0
+    },
+    "n": 15
+  },
+  "C|Agile|RBK": {
+    "elite_thresholds": {
+      "p90": 84.8,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 15
+  },
+  "C|Agile|RBP": {
+    "elite_thresholds": {
+      "p90": 82.2,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 15
+  },
+  "C|Agile|SPD": {
+    "elite_thresholds": {
+      "p90": 69.0,
+      "p95": 72.0,
+      "p98": 76.2
+    },
+    "n": 15
+  },
+  "C|Agile|STR": {
+    "elite_thresholds": {
+      "p90": 80.2,
+      "p95": 81.9,
+      "p98": 83.16
+    },
+    "n": 15
+  },
+  "C|Pass Protector|ACC": {
+    "elite_thresholds": {
+      "p90": 68.0,
+      "p95": 69.1,
+      "p98": 71.24
+    },
+    "n": 70
+  },
+  "C|Pass Protector|AGI": {
+    "elite_thresholds": {
+      "p90": 68.0,
+      "p95": 70.0,
+      "p98": 70.0
+    },
+    "n": 70
+  },
+  "C|Pass Protector|AWR": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 70
+  },
+  "C|Pass Protector|IBL": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.55,
+      "p98": 84.0
+    },
+    "n": 70
+  },
+  "C|Pass Protector|LBK": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 82.0,
+      "p98": 83.24
+    },
+    "n": 70
+  },
+  "C|Pass Protector|PBF": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 70
+  },
+  "C|Pass Protector|PBK": {
+    "elite_thresholds": {
+      "p90": 84.1,
+      "p95": 85.55,
+      "p98": 86.0
+    },
+    "n": 70
+  },
+  "C|Pass Protector|PBP": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.55,
+      "p98": 86.0
+    },
+    "n": 70
+  },
+  "C|Pass Protector|RBK": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 83.55,
+      "p98": 84.0
+    },
+    "n": 70
+  },
+  "C|Pass Protector|RBP": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 83.55,
+      "p98": 84.62
+    },
+    "n": 70
+  },
+  "C|Pass Protector|SPD": {
+    "elite_thresholds": {
+      "p90": 68.0,
+      "p95": 68.55,
+      "p98": 72.0
+    },
+    "n": 70
+  },
+  "C|Pass Protector|STR": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 85.62
+    },
+    "n": 70
+  },
+  "C|Raw Strength|ACC": {
+    "elite_thresholds": {
+      "p90": 69.0,
+      "p95": 69.0,
+      "p98": 69.8
+    },
+    "n": 31
+  },
+  "C|Raw Strength|AGI": {
+    "elite_thresholds": {
+      "p90": 68.0,
+      "p95": 68.5,
+      "p98": 69.0
+    },
+    "n": 31
+  },
+  "C|Raw Strength|AWR": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 87.0
+    },
+    "n": 31
+  },
+  "C|Raw Strength|IBL": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 85.4
+    },
+    "n": 31
+  },
+  "C|Raw Strength|LBK": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.5,
+      "p98": 85.0
+    },
+    "n": 31
+  },
+  "C|Raw Strength|PBF": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 31
+  },
+  "C|Raw Strength|PBK": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 85.0,
+      "p98": 85.4
+    },
+    "n": 31
+  },
+  "C|Raw Strength|PBP": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.5,
+      "p98": 86.0
+    },
+    "n": 31
+  },
+  "C|Raw Strength|RBK": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.0,
+      "p98": 86.4
+    },
+    "n": 31
+  },
+  "C|Raw Strength|RBP": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 87.0,
+      "p98": 87.4
+    },
+    "n": 31
+  },
+  "C|Raw Strength|SPD": {
+    "elite_thresholds": {
+      "p90": 69.0,
+      "p95": 69.0,
+      "p98": 69.0
+    },
+    "n": 31
+  },
+  "C|Raw Strength|STR": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 87.0,
+      "p98": 88.0
+    },
+    "n": 31
+  },
+  "C|Well Rounded|ACC": {
+    "elite_thresholds": {
+      "p90": 68.4,
+      "p95": 69.2,
+      "p98": 69.68
+    },
+    "n": 3
+  },
+  "C|Well Rounded|AGI": {
+    "elite_thresholds": {
+      "p90": 67.4,
+      "p95": 67.7,
+      "p98": 67.88
+    },
+    "n": 3
+  },
+  "C|Well Rounded|AWR": {
+    "elite_thresholds": {
+      "p90": 78.0,
+      "p95": 79.0,
+      "p98": 79.6
+    },
+    "n": 3
+  },
+  "C|Well Rounded|IBL": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 80.5,
+      "p98": 80.8
+    },
+    "n": 3
+  },
+  "C|Well Rounded|LBK": {
+    "elite_thresholds": {
+      "p90": 79.4,
+      "p95": 79.7,
+      "p98": 79.88
+    },
+    "n": 3
+  },
+  "C|Well Rounded|PBF": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 80.0,
+      "p98": 80.0
+    },
+    "n": 3
+  },
+  "C|Well Rounded|PBK": {
+    "elite_thresholds": {
+      "p90": 80.8,
+      "p95": 80.9,
+      "p98": 80.96
+    },
+    "n": 3
+  },
+  "C|Well Rounded|PBP": {
+    "elite_thresholds": {
+      "p90": 82.8,
+      "p95": 82.9,
+      "p98": 82.96
+    },
+    "n": 3
+  },
+  "C|Well Rounded|RBK": {
+    "elite_thresholds": {
+      "p90": 79.8,
+      "p95": 79.9,
+      "p98": 79.96
+    },
+    "n": 3
+  },
+  "C|Well Rounded|RBP": {
+    "elite_thresholds": {
+      "p90": 80.8,
+      "p95": 80.9,
+      "p98": 80.96
+    },
+    "n": 3
+  },
+  "C|Well Rounded|SPD": {
+    "elite_thresholds": {
+      "p90": 68.0,
+      "p95": 69.0,
+      "p98": 69.6
+    },
+    "n": 3
+  },
+  "C|Well Rounded|STR": {
+    "elite_thresholds": {
+      "p90": 80.8,
+      "p95": 80.9,
+      "p98": 80.96
+    },
+    "n": 3
+  },
+  "DT|Gap Specialist|BSH": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 87.0,
+      "p98": 87.0
+    },
+    "n": 21
+  },
+  "DT|Gap Specialist|SPD": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 80.0,
+      "p98": 81.8
+    },
+    "n": 21
+  },
+  "DT|Gap Specialist|TAK": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 86.0,
+      "p98": 86.6
+    },
+    "n": 21
+  },
+  "DT|Power Rusher|ACC": {
+    "elite_thresholds": {
+      "p90": 75.9,
+      "p95": 75.95,
+      "p98": 75.98
+    },
+    "n": 2
+  },
+  "DT|Power Rusher|AGI": {
+    "elite_thresholds": {
+      "p90": 71.6,
+      "p95": 71.8,
+      "p98": 71.92
+    },
+    "n": 2
+  },
+  "DT|Power Rusher|AWR": {
+    "elite_thresholds": {
+      "p90": 82.7,
+      "p95": 82.85,
+      "p98": 82.94
+    },
+    "n": 2
+  },
+  "DT|Power Rusher|BSH": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 87.0,
+      "p98": 87.6
+    },
+    "n": 71
+  },
+  "DT|Power Rusher|PMV": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 87.0,
+      "p98": 87.6
+    },
+    "n": 71
+  },
+  "DT|Power Rusher|POW": {
+    "elite_thresholds": {
+      "p90": 83.6,
+      "p95": 83.8,
+      "p98": 83.92
+    },
+    "n": 2
+  },
+  "DT|Power Rusher|PRC": {
+    "elite_thresholds": {
+      "p90": 82.6,
+      "p95": 82.8,
+      "p98": 82.92
+    },
+    "n": 2
+  },
+  "DT|Power Rusher|PUR": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.5,
+      "p98": 82.8
+    },
+    "n": 2
+  },
+  "DT|Power Rusher|SPD": {
+    "elite_thresholds": {
+      "p90": 77.0,
+      "p95": 78.5,
+      "p98": 79.6
+    },
+    "n": 71
+  },
+  "DT|Power Rusher|STR": {
+    "elite_thresholds": {
+      "p90": 86.5,
+      "p95": 86.75,
+      "p98": 86.9
+    },
+    "n": 2
+  },
+  "DT|Power Rusher|TAK": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.5,
+      "p98": 87.0
+    },
+    "n": 71
+  },
+  "DT|Pure Power|ACC": {
+    "elite_thresholds": {
+      "p90": 76.9,
+      "p95": 77.0,
+      "p98": 77.0
+    },
+    "n": 12
+  },
+  "DT|Pure Power|AGI": {
+    "elite_thresholds": {
+      "p90": 71.9,
+      "p95": 72.0,
+      "p98": 72.0
+    },
+    "n": 12
+  },
+  "DT|Pure Power|AWR": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 12
+  },
+  "DT|Pure Power|BSH": {
+    "elite_thresholds": {
+      "p90": 82.4,
+      "p95": 83.0,
+      "p98": 84.0
+    },
+    "n": 517
+  },
+  "DT|Pure Power|PMV": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 83.0,
+      "p98": 84.0
+    },
+    "n": 517
+  },
+  "DT|Pure Power|POW": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.9,
+      "p98": 83.56
+    },
+    "n": 12
+  },
+  "DT|Pure Power|PRC": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.45,
+      "p98": 85.78
+    },
+    "n": 12
+  },
+  "DT|Pure Power|PUR": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 12
+  },
+  "DT|Pure Power|SPD": {
+    "elite_thresholds": {
+      "p90": 73.0,
+      "p95": 75.0,
+      "p98": 77.0
+    },
+    "n": 517
+  },
+  "DT|Pure Power|STR": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 12
+  },
+  "DT|Pure Power|TAK": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 517
+  },
+  "DT|Speed Rusher|ACC": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.0,
+      "p98": 82.0
+    },
+    "n": 1
+  },
+  "DT|Speed Rusher|AGI": {
+    "elite_thresholds": {
+      "p90": 78.0,
+      "p95": 78.0,
+      "p98": 78.0
+    },
+    "n": 1
+  },
+  "DT|Speed Rusher|AWR": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 80.0,
+      "p98": 80.0
+    },
+    "n": 1
+  },
+  "DT|Speed Rusher|BSH": {
+    "elite_thresholds": {
+      "p90": 80.5,
+      "p95": 81.0,
+      "p98": 81.0
+    },
+    "n": 26
+  },
+  "DT|Speed Rusher|FMV": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 26
+  },
+  "DT|Speed Rusher|POW": {
+    "elite_thresholds": {
+      "p90": 79.0,
+      "p95": 79.0,
+      "p98": 79.0
+    },
+    "n": 1
+  },
+  "DT|Speed Rusher|PRC": {
+    "elite_thresholds": {
+      "p90": 79.0,
+      "p95": 79.0,
+      "p98": 79.0
+    },
+    "n": 1
+  },
+  "DT|Speed Rusher|PUR": {
+    "elite_thresholds": {
+      "p90": 76.0,
+      "p95": 76.0,
+      "p98": 76.0
+    },
+    "n": 1
+  },
+  "DT|Speed Rusher|SPD": {
+    "elite_thresholds": {
+      "p90": 77.0,
+      "p95": 77.75,
+      "p98": 78.5
+    },
+    "n": 26
+  },
+  "DT|Speed Rusher|STR": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 81.0,
+      "p98": 81.0
+    },
+    "n": 1
+  },
+  "DT|Speed Rusher|TAK": {
+    "elite_thresholds": {
+      "p90": 73.0,
+      "p95": 78.5,
+      "p98": 81.5
+    },
+    "n": 26
+  },
+  "EDGE|Gap Specialist|ACC": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 81.0,
+      "p98": 81.0
+    },
+    "n": 4
+  },
+  "EDGE|Gap Specialist|AGI": {
+    "elite_thresholds": {
+      "p90": 76.7,
+      "p95": 76.85,
+      "p98": 76.94
+    },
+    "n": 4
+  },
+  "EDGE|Gap Specialist|AWR": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 4
+  },
+  "EDGE|Gap Specialist|BSH": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.05,
+      "p98": 85.82
+    },
+    "n": 60
+  },
+  "EDGE|Gap Specialist|FMV": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 83.0,
+      "p98": 84.64
+    },
+    "n": 60
+  },
+  "EDGE|Gap Specialist|PMV": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 85.82
+    },
+    "n": 60
+  },
+  "EDGE|Gap Specialist|POW": {
+    "elite_thresholds": {
+      "p90": 78.0,
+      "p95": 78.0,
+      "p98": 78.0
+    },
+    "n": 4
+  },
+  "EDGE|Gap Specialist|PRC": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.0,
+      "p98": 82.0
+    },
+    "n": 4
+  },
+  "EDGE|Gap Specialist|PUR": {
+    "elite_thresholds": {
+      "p90": 85.5,
+      "p95": 86.25,
+      "p98": 86.7
+    },
+    "n": 4
+  },
+  "EDGE|Gap Specialist|SPD": {
+    "elite_thresholds": {
+      "p90": 78.1,
+      "p95": 79.0,
+      "p98": 80.64
+    },
+    "n": 60
+  },
+  "EDGE|Gap Specialist|STR": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 4
+  },
+  "EDGE|Gap Specialist|TAK": {
+    "elite_thresholds": {
+      "p90": 83.1,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 60
+  },
+  "EDGE|Power Rusher|ACC": {
+    "elite_thresholds": {
+      "p90": 87.0,
+      "p95": 87.0,
+      "p98": 87.0
+    },
+    "n": 10
+  },
+  "EDGE|Power Rusher|AGI": {
+    "elite_thresholds": {
+      "p90": 81.2,
+      "p95": 82.1,
+      "p98": 82.64
+    },
+    "n": 10
+  },
+  "EDGE|Power Rusher|AWR": {
+    "elite_thresholds": {
+      "p90": 84.2,
+      "p95": 85.1,
+      "p98": 85.64
+    },
+    "n": 10
+  },
+  "EDGE|Power Rusher|PMV": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 86.0,
+      "p98": 87.36
+    },
+    "n": 183
+  },
+  "EDGE|Power Rusher|POW": {
+    "elite_thresholds": {
+      "p90": 86.2,
+      "p95": 87.1,
+      "p98": 87.64
+    },
+    "n": 10
+  },
+  "EDGE|Power Rusher|PRC": {
+    "elite_thresholds": {
+      "p90": 86.2,
+      "p95": 87.1,
+      "p98": 87.64
+    },
+    "n": 10
+  },
+  "EDGE|Power Rusher|PUR": {
+    "elite_thresholds": {
+      "p90": 85.1,
+      "p95": 85.55,
+      "p98": 85.82
+    },
+    "n": 10
+  },
+  "EDGE|Power Rusher|SPD": {
+    "elite_thresholds": {
+      "p90": 79.0,
+      "p95": 80.0,
+      "p98": 82.0
+    },
+    "n": 183
+  },
+  "EDGE|Power Rusher|STR": {
+    "elite_thresholds": {
+      "p90": 89.0,
+      "p95": 89.0,
+      "p98": 89.0
+    },
+    "n": 10
+  },
+  "EDGE|Power Rusher|TAK": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 86.0
+    },
+    "n": 183
+  },
+  "EDGE|Pure Power|ACC": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.0,
+      "p98": 82.0
+    },
+    "n": 8
+  },
+  "EDGE|Pure Power|AGI": {
+    "elite_thresholds": {
+      "p90": 75.0,
+      "p95": 75.0,
+      "p98": 75.0
+    },
+    "n": 8
+  },
+  "EDGE|Pure Power|AWR": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 8
+  },
+  "EDGE|Pure Power|PMV": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 84.1
+    },
+    "n": 196
+  },
+  "EDGE|Pure Power|POW": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 8
+  },
+  "EDGE|Pure Power|PRC": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.0,
+      "p98": 82.0
+    },
+    "n": 8
+  },
+  "EDGE|Pure Power|PUR": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 8
+  },
+  "EDGE|Pure Power|SPD": {
+    "elite_thresholds": {
+      "p90": 75.0,
+      "p95": 77.25,
+      "p98": 79.1
+    },
+    "n": 196
+  },
+  "EDGE|Pure Power|STR": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 8
+  },
+  "EDGE|Pure Power|TAK": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 85.0
+    },
+    "n": 196
+  },
+  "EDGE|Speed Rusher|ACC": {
+    "elite_thresholds": {
+      "p90": 88.0,
+      "p95": 88.25,
+      "p98": 88.7
+    },
+    "n": 16
+  },
+  "EDGE|Speed Rusher|AGI": {
+    "elite_thresholds": {
+      "p90": 83.5,
+      "p95": 84.25,
+      "p98": 84.7
+    },
+    "n": 16
+  },
+  "EDGE|Speed Rusher|AWR": {
+    "elite_thresholds": {
+      "p90": 83.5,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 16
+  },
+  "EDGE|Speed Rusher|FMV": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 87.0
+    },
+    "n": 371
+  },
+  "EDGE|Speed Rusher|POW": {
+    "elite_thresholds": {
+      "p90": 85.5,
+      "p95": 86.25,
+      "p98": 86.7
+    },
+    "n": 16
+  },
+  "EDGE|Speed Rusher|PRC": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.25,
+      "p98": 86.7
+    },
+    "n": 16
+  },
+  "EDGE|Speed Rusher|PUR": {
+    "elite_thresholds": {
+      "p90": 86.5,
+      "p95": 87.0,
+      "p98": 87.0
+    },
+    "n": 16
+  },
+  "EDGE|Speed Rusher|SPD": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 82.0,
+      "p98": 83.6
+    },
+    "n": 371
+  },
+  "EDGE|Speed Rusher|STR": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.25,
+      "p98": 84.7
+    },
+    "n": 16
+  },
+  "EDGE|Speed Rusher|TAK": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 82.0,
+      "p98": 84.0
+    },
+    "n": 371
+  },
+  "FB|Blocking|CAR": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.6,
+      "p98": 85.44
+    },
+    "n": 15
+  },
+  "FB|Blocking|IBL": {
+    "elite_thresholds": {
+      "p90": 81.6,
+      "p95": 82.6,
+      "p98": 83.44
+    },
+    "n": 15
+  },
+  "FB|Blocking|LBK": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.6,
+      "p98": 85.44
+    },
+    "n": 15
+  },
+  "FB|Blocking|RBK": {
+    "elite_thresholds": {
+      "p90": 81.6,
+      "p95": 82.3,
+      "p98": 82.72
+    },
+    "n": 15
+  },
+  "FB|Blocking|SPD": {
+    "elite_thresholds": {
+      "p90": 79.6,
+      "p95": 80.6,
+      "p98": 81.44
+    },
+    "n": 15
+  },
+  "FB|Utility|CAR": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 13
+  },
+  "FB|Utility|IBL": {
+    "elite_thresholds": {
+      "p90": 78.4,
+      "p95": 79.8,
+      "p98": 80.52
+    },
+    "n": 13
+  },
+  "FB|Utility|LBK": {
+    "elite_thresholds": {
+      "p90": 79.8,
+      "p95": 80.4,
+      "p98": 80.76
+    },
+    "n": 13
+  },
+  "FB|Utility|RBK": {
+    "elite_thresholds": {
+      "p90": 79.6,
+      "p95": 80.4,
+      "p98": 80.76
+    },
+    "n": 13
+  },
+  "FB|Utility|SPD": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.4,
+      "p98": 83.76
+    },
+    "n": 13
+  },
+  "G|Agile|ACC": {
+    "elite_thresholds": {
+      "p90": 70.0,
+      "p95": 70.0,
+      "p98": 70.0
+    },
+    "n": 6
+  },
+  "G|Agile|AGI": {
+    "elite_thresholds": {
+      "p90": 71.0,
+      "p95": 71.0,
+      "p98": 71.0
+    },
+    "n": 6
+  },
+  "G|Agile|AWR": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 6
+  },
+  "G|Agile|IBL": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 6
+  },
+  "G|Agile|LBK": {
+    "elite_thresholds": {
+      "p90": 82.5,
+      "p95": 82.75,
+      "p98": 82.9
+    },
+    "n": 6
+  },
+  "G|Agile|PBF": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 6
+  },
+  "G|Agile|PBK": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 83.0,
+      "p98": 85.0
+    },
+    "n": 270
+  },
+  "G|Agile|RBF": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.55,
+      "p98": 84.0
+    },
+    "n": 270
+  },
+  "G|Agile|RBK": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 83.0,
+      "p98": 84.0
+    },
+    "n": 270
+  },
+  "G|Agile|SPD": {
+    "elite_thresholds": {
+      "p90": 73.0,
+      "p95": 74.0,
+      "p98": 74.6
+    },
+    "n": 6
+  },
+  "G|Agile|STR": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 82.0,
+      "p98": 83.0
+    },
+    "n": 270
+  },
+  "G|Pass Protector|ACC": {
+    "elite_thresholds": {
+      "p90": 69.0,
+      "p95": 70.5,
+      "p98": 71.4
+    },
+    "n": 6
+  },
+  "G|Pass Protector|AGI": {
+    "elite_thresholds": {
+      "p90": 68.0,
+      "p95": 68.0,
+      "p98": 68.0
+    },
+    "n": 6
+  },
+  "G|Pass Protector|AWR": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 6
+  },
+  "G|Pass Protector|IBL": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 81.0,
+      "p98": 81.0
+    },
+    "n": 6
+  },
+  "G|Pass Protector|PBF": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 6
+  },
+  "G|Pass Protector|PBK": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.12
+    },
+    "n": 48
+  },
+  "G|Pass Protector|PBP": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 6
+  },
+  "G|Pass Protector|SPD": {
+    "elite_thresholds": {
+      "p90": 69.0,
+      "p95": 70.5,
+      "p98": 71.4
+    },
+    "n": 6
+  },
+  "G|Pass Protector|STR": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.65,
+      "p98": 86.0
+    },
+    "n": 48
+  },
+  "G|Raw Strength|ACC": {
+    "elite_thresholds": {
+      "p90": 67.6,
+      "p95": 68.0,
+      "p98": 69.04
+    },
+    "n": 25
+  },
+  "G|Raw Strength|AGI": {
+    "elite_thresholds": {
+      "p90": 68.0,
+      "p95": 68.8,
+      "p98": 69.0
+    },
+    "n": 25
+  },
+  "G|Raw Strength|AWR": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.6,
+      "p98": 86.56
+    },
+    "n": 25
+  },
+  "G|Raw Strength|IBL": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.8,
+      "p98": 86.0
+    },
+    "n": 25
+  },
+  "G|Raw Strength|LBK": {
+    "elite_thresholds": {
+      "p90": 83.2,
+      "p95": 84.0,
+      "p98": 84.52
+    },
+    "n": 25
+  },
+  "G|Raw Strength|PBK": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 85.0
+    },
+    "n": 311
+  },
+  "G|Raw Strength|PBP": {
+    "elite_thresholds": {
+      "p90": 85.6,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 25
+  },
+  "G|Raw Strength|RBK": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 83.0,
+      "p98": 84.0
+    },
+    "n": 311
+  },
+  "G|Raw Strength|RBP": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 86.0
+    },
+    "n": 311
+  },
+  "G|Raw Strength|SPD": {
+    "elite_thresholds": {
+      "p90": 66.6,
+      "p95": 67.8,
+      "p98": 70.6
+    },
+    "n": 25
+  },
+  "G|Raw Strength|STR": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 311
+  },
+  "G|Well Rounded|ACC": {
+    "elite_thresholds": {
+      "p90": 64.0,
+      "p95": 64.0,
+      "p98": 64.0
+    },
+    "n": 1
+  },
+  "G|Well Rounded|AGI": {
+    "elite_thresholds": {
+      "p90": 68.0,
+      "p95": 68.0,
+      "p98": 68.0
+    },
+    "n": 1
+  },
+  "G|Well Rounded|AWR": {
+    "elite_thresholds": {
+      "p90": 72.0,
+      "p95": 72.0,
+      "p98": 72.0
+    },
+    "n": 1
+  },
+  "G|Well Rounded|IBL": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 1
+  },
+  "G|Well Rounded|LBK": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 1
+  },
+  "G|Well Rounded|PBK": {
+    "elite_thresholds": {
+      "p90": 82.5,
+      "p95": 83.25,
+      "p98": 83.7
+    },
+    "n": 6
+  },
+  "G|Well Rounded|PBP": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 1
+  },
+  "G|Well Rounded|RBK": {
+    "elite_thresholds": {
+      "p90": 82.5,
+      "p95": 83.25,
+      "p98": 83.7
+    },
+    "n": 6
+  },
+  "G|Well Rounded|RBP": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.5,
+      "p98": 83.8
+    },
+    "n": 6
+  },
+  "G|Well Rounded|SPD": {
+    "elite_thresholds": {
+      "p90": 68.0,
+      "p95": 68.0,
+      "p98": 68.0
+    },
+    "n": 1
+  },
+  "G|Well Rounded|STR": {
+    "elite_thresholds": {
+      "p90": 83.5,
+      "p95": 83.75,
+      "p98": 83.9
+    },
+    "n": 6
+  },
+  "KP|Accurate|KAC": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 23
+  },
+  "KP|Power|KPW": {
+    "elite_thresholds": {
+      "p90": 80.8,
+      "p95": 82.4,
+      "p98": 83.96
+    },
+    "n": 153
+  },
+  "MIKE|Lurker|ACC": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 83.0,
+      "p98": 85.0
+    },
+    "n": 124
+  },
+  "MIKE|Lurker|AGI": {
+    "elite_thresholds": {
+      "p90": 82.8,
+      "p95": 83.4,
+      "p98": 83.76
+    },
+    "n": 5
+  },
+  "MIKE|Lurker|AWR": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 81.0,
+      "p98": 81.0
+    },
+    "n": 5
+  },
+  "MIKE|Lurker|MCV": {
+    "elite_thresholds": {
+      "p90": 83.6,
+      "p95": 83.8,
+      "p98": 83.92
+    },
+    "n": 5
+  },
+  "MIKE|Lurker|PRC": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 5
+  },
+  "MIKE|Lurker|PUR": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 5
+  },
+  "MIKE|Lurker|SPD": {
+    "elite_thresholds": {
+      "p90": 78.0,
+      "p95": 79.85,
+      "p98": 83.0
+    },
+    "n": 124
+  },
+  "MIKE|Lurker|STR": {
+    "elite_thresholds": {
+      "p90": 84.6,
+      "p95": 84.8,
+      "p98": 84.92
+    },
+    "n": 5
+  },
+  "MIKE|Lurker|TAK": {
+    "elite_thresholds": {
+      "p90": 79.0,
+      "p95": 82.85,
+      "p98": 86.08
+    },
+    "n": 124
+  },
+  "MIKE|Lurker|ZCV": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 81.0,
+      "p98": 85.0
+    },
+    "n": 124
+  },
+  "MIKE|Signal Caller|ACC": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.5,
+      "p98": 86.0
+    },
+    "n": 31
+  },
+  "MIKE|Signal Caller|AGI": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.0,
+      "p98": 82.0
+    },
+    "n": 5
+  },
+  "MIKE|Signal Caller|AWR": {
+    "elite_thresholds": {
+      "p90": 82.2,
+      "p95": 82.6,
+      "p98": 82.84
+    },
+    "n": 5
+  },
+  "MIKE|Signal Caller|BSH": {
+    "elite_thresholds": {
+      "p90": 88.0,
+      "p95": 89.0,
+      "p98": 89.6
+    },
+    "n": 5
+  },
+  "MIKE|Signal Caller|MCV": {
+    "elite_thresholds": {
+      "p90": 82.4,
+      "p95": 83.2,
+      "p98": 83.68
+    },
+    "n": 5
+  },
+  "MIKE|Signal Caller|PRC": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 5
+  },
+  "MIKE|Signal Caller|PUR": {
+    "elite_thresholds": {
+      "p90": 86.6,
+      "p95": 86.8,
+      "p98": 86.92
+    },
+    "n": 5
+  },
+  "MIKE|Signal Caller|SPD": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 84.8
+    },
+    "n": 31
+  },
+  "MIKE|Signal Caller|STR": {
+    "elite_thresholds": {
+      "p90": 86.6,
+      "p95": 86.8,
+      "p98": 86.92
+    },
+    "n": 5
+  },
+  "MIKE|Signal Caller|TAK": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 87.0,
+      "p98": 88.4
+    },
+    "n": 31
+  },
+  "MIKE|Signal Caller|ZCV": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 31
+  },
+  "MIKE|Thumper|ACC": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 83.0,
+      "p98": 85.0
+    },
+    "n": 301
+  },
+  "MIKE|Thumper|AGI": {
+    "elite_thresholds": {
+      "p90": 82.8,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 13
+  },
+  "MIKE|Thumper|AWR": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.8,
+      "p98": 83.52
+    },
+    "n": 13
+  },
+  "MIKE|Thumper|BSH": {
+    "elite_thresholds": {
+      "p90": 86.8,
+      "p95": 87.8,
+      "p98": 88.52
+    },
+    "n": 13
+  },
+  "MIKE|Thumper|FMV": {
+    "elite_thresholds": {
+      "p90": 83.6,
+      "p95": 84.4,
+      "p98": 84.76
+    },
+    "n": 13
+  },
+  "MIKE|Thumper|MCV": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 81.6,
+      "p98": 83.04
+    },
+    "n": 13
+  },
+  "MIKE|Thumper|PMV": {
+    "elite_thresholds": {
+      "p90": 87.8,
+      "p95": 88.4,
+      "p98": 88.76
+    },
+    "n": 13
+  },
+  "MIKE|Thumper|POW": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 83.0,
+      "p98": 84.0
+    },
+    "n": 301
+  },
+  "MIKE|Thumper|PRC": {
+    "elite_thresholds": {
+      "p90": 85.8,
+      "p95": 87.6,
+      "p98": 89.04
+    },
+    "n": 13
+  },
+  "MIKE|Thumper|PUR": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.8,
+      "p98": 87.52
+    },
+    "n": 13
+  },
+  "MIKE|Thumper|SPD": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 82.0,
+      "p98": 83.0
+    },
+    "n": 301
+  },
+  "MIKE|Thumper|STR": {
+    "elite_thresholds": {
+      "p90": 86.8,
+      "p95": 87.4,
+      "p98": 87.76
+    },
+    "n": 13
+  },
+  "MIKE|Thumper|TAK": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 86.0
+    },
+    "n": 301
+  },
+  "MIKE|Thumper|ZCV": {
+    "elite_thresholds": {
+      "p90": 79.0,
+      "p95": 82.0,
+      "p98": 85.0
+    },
+    "n": 301
+  },
+  "OT|Agile|ACC": {
+    "elite_thresholds": {
+      "p90": 70.0,
+      "p95": 70.85,
+      "p98": 71.54
+    },
+    "n": 24
+  },
+  "OT|Agile|AGI": {
+    "elite_thresholds": {
+      "p90": 69.0,
+      "p95": 69.0,
+      "p98": 69.54
+    },
+    "n": 24
+  },
+  "OT|Agile|AWR": {
+    "elite_thresholds": {
+      "p90": 84.7,
+      "p95": 85.0,
+      "p98": 85.54
+    },
+    "n": 24
+  },
+  "OT|Agile|IBL": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 24
+  },
+  "OT|Agile|LBK": {
+    "elite_thresholds": {
+      "p90": 84.7,
+      "p95": 85.85,
+      "p98": 86.0
+    },
+    "n": 24
+  },
+  "OT|Agile|PBF": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 84.0,
+      "p98": 85.2
+    },
+    "n": 441
+  },
+  "OT|Agile|PBK": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 83.0,
+      "p98": 84.2
+    },
+    "n": 441
+  },
+  "OT|Agile|RBF": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 24
+  },
+  "OT|Agile|RBK": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 83.0,
+      "p98": 85.0
+    },
+    "n": 441
+  },
+  "OT|Agile|SPD": {
+    "elite_thresholds": {
+      "p90": 69.4,
+      "p95": 70.85,
+      "p98": 72.62
+    },
+    "n": 24
+  },
+  "OT|Agile|STR": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 83.0,
+      "p98": 84.0
+    },
+    "n": 441
+  },
+  "OT|Pass Protector|ACC": {
+    "elite_thresholds": {
+      "p90": 69.7,
+      "p95": 69.85,
+      "p98": 69.94
+    },
+    "n": 2
+  },
+  "OT|Pass Protector|AGI": {
+    "elite_thresholds": {
+      "p90": 66.8,
+      "p95": 66.9,
+      "p98": 66.96
+    },
+    "n": 2
+  },
+  "OT|Pass Protector|AWR": {
+    "elite_thresholds": {
+      "p90": 83.9,
+      "p95": 83.95,
+      "p98": 83.98
+    },
+    "n": 2
+  },
+  "OT|Pass Protector|IBL": {
+    "elite_thresholds": {
+      "p90": 84.2,
+      "p95": 84.6,
+      "p98": 84.84
+    },
+    "n": 2
+  },
+  "OT|Pass Protector|PBF": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.05,
+      "p98": 86.44
+    },
+    "n": 40
+  },
+  "OT|Pass Protector|PBK": {
+    "elite_thresholds": {
+      "p90": 83.2,
+      "p95": 85.05,
+      "p98": 86.22
+    },
+    "n": 40
+  },
+  "OT|Pass Protector|PBP": {
+    "elite_thresholds": {
+      "p90": 83.2,
+      "p95": 85.0,
+      "p98": 85.66
+    },
+    "n": 40
+  },
+  "OT|Pass Protector|SPD": {
+    "elite_thresholds": {
+      "p90": 69.7,
+      "p95": 69.85,
+      "p98": 69.94
+    },
+    "n": 2
+  },
+  "OT|Pass Protector|STR": {
+    "elite_thresholds": {
+      "p90": 82.2,
+      "p95": 84.05,
+      "p98": 85.66
+    },
+    "n": 40
+  },
+  "OT|Raw Strength|ACC": {
+    "elite_thresholds": {
+      "p90": 63.0,
+      "p95": 64.0,
+      "p98": 64.6
+    },
+    "n": 11
+  },
+  "OT|Raw Strength|AGI": {
+    "elite_thresholds": {
+      "p90": 64.0,
+      "p95": 64.0,
+      "p98": 64.0
+    },
+    "n": 11
+  },
+  "OT|Raw Strength|AWR": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 11
+  },
+  "OT|Raw Strength|IBL": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.5,
+      "p98": 86.8
+    },
+    "n": 11
+  },
+  "OT|Raw Strength|LBK": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 11
+  },
+  "OT|Raw Strength|PBK": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 83.0,
+      "p98": 84.0
+    },
+    "n": 186
+  },
+  "OT|Raw Strength|PBP": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 86.0
+    },
+    "n": 186
+  },
+  "OT|Raw Strength|RBK": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 186
+  },
+  "OT|Raw Strength|RBP": {
+    "elite_thresholds": {
+      "p90": 87.0,
+      "p95": 87.5,
+      "p98": 87.8
+    },
+    "n": 11
+  },
+  "OT|Raw Strength|SPD": {
+    "elite_thresholds": {
+      "p90": 69.0,
+      "p95": 69.0,
+      "p98": 69.0
+    },
+    "n": 11
+  },
+  "OT|Raw Strength|STR": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 86.0
+    },
+    "n": 186
+  },
+  "OT|Well Rounded|ACC": {
+    "elite_thresholds": {
+      "p90": 70.0,
+      "p95": 70.0,
+      "p98": 70.0
+    },
+    "n": 1
+  },
+  "OT|Well Rounded|AGI": {
+    "elite_thresholds": {
+      "p90": 71.0,
+      "p95": 71.0,
+      "p98": 71.0
+    },
+    "n": 1
+  },
+  "OT|Well Rounded|AWR": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 80.0,
+      "p98": 80.0
+    },
+    "n": 1
+  },
+  "OT|Well Rounded|IBL": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.0,
+      "p98": 82.0
+    },
+    "n": 1
+  },
+  "OT|Well Rounded|LBK": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.0,
+      "p98": 82.0
+    },
+    "n": 1
+  },
+  "OT|Well Rounded|PBK": {
+    "elite_thresholds": {
+      "p90": 85.2,
+      "p95": 86.1,
+      "p98": 86.64
+    },
+    "n": 7
+  },
+  "OT|Well Rounded|PBP": {
+    "elite_thresholds": {
+      "p90": 85.4,
+      "p95": 85.7,
+      "p98": 85.88
+    },
+    "n": 7
+  },
+  "OT|Well Rounded|RBK": {
+    "elite_thresholds": {
+      "p90": 86.4,
+      "p95": 86.7,
+      "p98": 86.88
+    },
+    "n": 7
+  },
+  "OT|Well Rounded|RBP": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 1
+  },
+  "OT|Well Rounded|SPD": {
+    "elite_thresholds": {
+      "p90": 71.0,
+      "p95": 71.0,
+      "p98": 71.0
+    },
+    "n": 1
+  },
+  "OT|Well Rounded|STR": {
+    "elite_thresholds": {
+      "p90": 85.4,
+      "p95": 85.7,
+      "p98": 85.88
+    },
+    "n": 7
+  },
+  "QB|Backfield Creator|ACC": {
+    "elite_thresholds": {
+      "p90": 83.7,
+      "p95": 83.85,
+      "p98": 83.94
+    },
+    "n": 4
+  },
+  "QB|Backfield Creator|AGI": {
+    "elite_thresholds": {
+      "p90": 84.1,
+      "p95": 84.55,
+      "p98": 84.82
+    },
+    "n": 4
+  },
+  "QB|Backfield Creator|AWR": {
+    "elite_thresholds": {
+      "p90": 81.4,
+      "p95": 81.7,
+      "p98": 81.88
+    },
+    "n": 4
+  },
+  "QB|Backfield Creator|BSK": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 4
+  },
+  "QB|Backfield Creator|DAC": {
+    "elite_thresholds": {
+      "p90": 85.7,
+      "p95": 85.85,
+      "p98": 85.94
+    },
+    "n": 4
+  },
+  "QB|Backfield Creator|MAC": {
+    "elite_thresholds": {
+      "p90": 84.1,
+      "p95": 84.55,
+      "p98": 84.82
+    },
+    "n": 4
+  },
+  "QB|Backfield Creator|PAC": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 4
+  },
+  "QB|Backfield Creator|RUN": {
+    "elite_thresholds": {
+      "p90": 86.1,
+      "p95": 86.55,
+      "p98": 86.82
+    },
+    "n": 4
+  },
+  "QB|Backfield Creator|SAC": {
+    "elite_thresholds": {
+      "p90": 87.1,
+      "p95": 87.55,
+      "p98": 87.82
+    },
+    "n": 4
+  },
+  "QB|Backfield Creator|SPD": {
+    "elite_thresholds": {
+      "p90": 85.4,
+      "p95": 85.7,
+      "p98": 85.88
+    },
+    "n": 4
+  },
+  "QB|Backfield Creator|THP": {
+    "elite_thresholds": {
+      "p90": 87.7,
+      "p95": 87.85,
+      "p98": 87.94
+    },
+    "n": 4
+  },
+  "QB|Backfield Creator|TUP": {
+    "elite_thresholds": {
+      "p90": 83.7,
+      "p95": 83.85,
+      "p98": 83.94
+    },
+    "n": 4
+  },
+  "QB|Dual Threat|ACC": {
+    "elite_thresholds": {
+      "p90": 87.2,
+      "p95": 88.6,
+      "p98": 89.44
+    },
+    "n": 8
+  },
+  "QB|Dual Threat|AGI": {
+    "elite_thresholds": {
+      "p90": 89.0,
+      "p95": 89.0,
+      "p98": 89.0
+    },
+    "n": 8
+  },
+  "QB|Dual Threat|AWR": {
+    "elite_thresholds": {
+      "p90": 80.4,
+      "p95": 83.2,
+      "p98": 84.88
+    },
+    "n": 8
+  },
+  "QB|Dual Threat|BSK": {
+    "elite_thresholds": {
+      "p90": 88.3,
+      "p95": 88.65,
+      "p98": 88.86
+    },
+    "n": 8
+  },
+  "QB|Dual Threat|DAC": {
+    "elite_thresholds": {
+      "p90": 86.3,
+      "p95": 86.65,
+      "p98": 86.86
+    },
+    "n": 8
+  },
+  "QB|Dual Threat|MAC": {
+    "elite_thresholds": {
+      "p90": 88.0,
+      "p95": 88.0,
+      "p98": 88.0
+    },
+    "n": 8
+  },
+  "QB|Dual Threat|PAC": {
+    "elite_thresholds": {
+      "p90": 82.6,
+      "p95": 83.3,
+      "p98": 83.72
+    },
+    "n": 8
+  },
+  "QB|Dual Threat|RUN": {
+    "elite_thresholds": {
+      "p90": 87.3,
+      "p95": 87.65,
+      "p98": 87.86
+    },
+    "n": 8
+  },
+  "QB|Dual Threat|SAC": {
+    "elite_thresholds": {
+      "p90": 87.9,
+      "p95": 88.95,
+      "p98": 89.58
+    },
+    "n": 8
+  },
+  "QB|Dual Threat|SPD": {
+    "elite_thresholds": {
+      "p90": 87.6,
+      "p95": 88.3,
+      "p98": 88.72
+    },
+    "n": 8
+  },
+  "QB|Dual Threat|THP": {
+    "elite_thresholds": {
+      "p90": 90.3,
+      "p95": 90.65,
+      "p98": 90.86
+    },
+    "n": 8
+  },
+  "QB|Dual Threat|TUP": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 8
+  },
+  "QB|Pocket Passer|ACC": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 85.0,
+      "p98": 86.8
+    },
+    "n": 11
+  },
+  "QB|Pocket Passer|AGI": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 80.5,
+      "p98": 80.8
+    },
+    "n": 11
+  },
+  "QB|Pocket Passer|AWR": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 11
+  },
+  "QB|Pocket Passer|BSK": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 82.0,
+      "p98": 82.6
+    },
+    "n": 11
+  },
+  "QB|Pocket Passer|DAC": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 88.0,
+      "p98": 89.2
+    },
+    "n": 11
+  },
+  "QB|Pocket Passer|MAC": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 87.0,
+      "p98": 87.6
+    },
+    "n": 11
+  },
+  "QB|Pocket Passer|PAC": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 11
+  },
+  "QB|Pocket Passer|RUN": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 86.0,
+      "p98": 87.2
+    },
+    "n": 11
+  },
+  "QB|Pocket Passer|SAC": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.5,
+      "p98": 86.8
+    },
+    "n": 11
+  },
+  "QB|Pocket Passer|SPD": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 84.6
+    },
+    "n": 11
+  },
+  "QB|Pocket Passer|THP": {
+    "elite_thresholds": {
+      "p90": 88.0,
+      "p95": 89.0,
+      "p98": 89.6
+    },
+    "n": 11
+  },
+  "QB|Pocket Passer|TUP": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 85.6
+    },
+    "n": 11
+  },
+  "RB|Backfield Threat|ACC": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 2
+  },
+  "RB|Backfield Threat|AGI": {
+    "elite_thresholds": {
+      "p90": 83.6,
+      "p95": 83.8,
+      "p98": 83.92
+    },
+    "n": 2
+  },
+  "RB|Backfield Threat|AWR": {
+    "elite_thresholds": {
+      "p90": 79.5,
+      "p95": 79.75,
+      "p98": 79.9
+    },
+    "n": 2
+  },
+  "RB|Backfield Threat|BCV": {
+    "elite_thresholds": {
+      "p90": 84.5,
+      "p95": 84.75,
+      "p98": 84.9
+    },
+    "n": 2
+  },
+  "RB|Backfield Threat|CAR": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 81.9,
+      "p98": 83.16
+    },
+    "n": 22
+  },
+  "RB|Backfield Threat|CIT": {
+    "elite_thresholds": {
+      "p90": 78.7,
+      "p95": 78.85,
+      "p98": 78.94
+    },
+    "n": 2
+  },
+  "RB|Backfield Threat|CTH": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 2
+  },
+  "RB|Backfield Threat|JKM": {
+    "elite_thresholds": {
+      "p90": 85.3,
+      "p95": 85.65,
+      "p98": 85.86
+    },
+    "n": 2
+  },
+  "RB|Backfield Threat|RLS": {
+    "elite_thresholds": {
+      "p90": 81.9,
+      "p95": 81.95,
+      "p98": 81.98
+    },
+    "n": 2
+  },
+  "RB|Backfield Threat|SPD": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.58
+    },
+    "n": 22
+  },
+  "RB|Backfield Threat|SPM": {
+    "elite_thresholds": {
+      "p90": 83.9,
+      "p95": 83.95,
+      "p98": 83.98
+    },
+    "n": 2
+  },
+  "RB|Backfield Threat|SRR": {
+    "elite_thresholds": {
+      "p90": 84.7,
+      "p95": 84.85,
+      "p98": 84.94
+    },
+    "n": 2
+  },
+  "RB|Contact Seeker|ACC": {
+    "elite_thresholds": {
+      "p90": 87.7,
+      "p95": 87.85,
+      "p98": 87.94
+    },
+    "n": 4
+  },
+  "RB|Contact Seeker|AGI": {
+    "elite_thresholds": {
+      "p90": 85.7,
+      "p95": 85.85,
+      "p98": 85.94
+    },
+    "n": 4
+  },
+  "RB|Contact Seeker|AWR": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 80.0,
+      "p98": 80.0
+    },
+    "n": 4
+  },
+  "RB|Contact Seeker|BCV": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.0,
+      "p98": 82.0
+    },
+    "n": 4
+  },
+  "RB|Contact Seeker|BTK": {
+    "elite_thresholds": {
+      "p90": 84.1,
+      "p95": 86.0,
+      "p98": 87.64
+    },
+    "n": 110
+  },
+  "RB|Contact Seeker|CAR": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 86.0,
+      "p98": 87.0
+    },
+    "n": 110
+  },
+  "RB|Contact Seeker|SFA": {
+    "elite_thresholds": {
+      "p90": 89.4,
+      "p95": 89.7,
+      "p98": 89.88
+    },
+    "n": 4
+  },
+  "RB|Contact Seeker|SPD": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 84.1,
+      "p98": 86.82
+    },
+    "n": 110
+  },
+  "RB|Contact Seeker|STR": {
+    "elite_thresholds": {
+      "p90": 85.7,
+      "p95": 85.85,
+      "p98": 85.94
+    },
+    "n": 4
+  },
+  "RB|Contact Seeker|TRK": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 86.0,
+      "p98": 87.64
+    },
+    "n": 110
+  },
+  "RB|East/West Playmaker|ACC": {
+    "elite_thresholds": {
+      "p90": 88.8,
+      "p95": 90.0,
+      "p98": 90.0
+    },
+    "n": 17
+  },
+  "RB|East/West Playmaker|AGI": {
+    "elite_thresholds": {
+      "p90": 88.0,
+      "p95": 88.4,
+      "p98": 89.36
+    },
+    "n": 17
+  },
+  "RB|East/West Playmaker|AWR": {
+    "elite_thresholds": {
+      "p90": 82.6,
+      "p95": 85.2,
+      "p98": 85.68
+    },
+    "n": 17
+  },
+  "RB|East/West Playmaker|BCV": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.2,
+      "p98": 84.68
+    },
+    "n": 17
+  },
+  "RB|East/West Playmaker|BTK": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 83.0,
+      "p98": 85.0
+    },
+    "n": 621
+  },
+  "RB|East/West Playmaker|CAR": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 83.0,
+      "p98": 84.6
+    },
+    "n": 621
+  },
+  "RB|East/West Playmaker|JKM": {
+    "elite_thresholds": {
+      "p90": 89.4,
+      "p95": 90.0,
+      "p98": 90.0
+    },
+    "n": 17
+  },
+  "RB|East/West Playmaker|SPD": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 86.0
+    },
+    "n": 621
+  },
+  "RB|East/West Playmaker|SPM": {
+    "elite_thresholds": {
+      "p90": 88.4,
+      "p95": 89.0,
+      "p98": 89.0
+    },
+    "n": 17
+  },
+  "RB|Elusive Bruiser|BTK": {
+    "elite_thresholds": {
+      "p90": 77.0,
+      "p95": 78.9,
+      "p98": 79.0
+    },
+    "n": 22
+  },
+  "RB|Elusive Bruiser|CAR": {
+    "elite_thresholds": {
+      "p90": 74.0,
+      "p95": 82.55,
+      "p98": 83.0
+    },
+    "n": 22
+  },
+  "RB|Elusive Bruiser|SPD": {
+    "elite_thresholds": {
+      "p90": 76.0,
+      "p95": 80.75,
+      "p98": 81.0
+    },
+    "n": 22
+  },
+  "RB|North/South Blocker|BTK": {
+    "elite_thresholds": {
+      "p90": 78.0,
+      "p95": 78.0,
+      "p98": 78.0
+    },
+    "n": 1
+  },
+  "RB|North/South Blocker|CAR": {
+    "elite_thresholds": {
+      "p90": 75.0,
+      "p95": 75.0,
+      "p98": 75.0
+    },
+    "n": 1
+  },
+  "RB|North/South Blocker|SPD": {
+    "elite_thresholds": {
+      "p90": 77.0,
+      "p95": 77.0,
+      "p98": 77.0
+    },
+    "n": 1
+  },
+  "RB|North/South Blocker|TRK": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 80.0,
+      "p98": 80.0
+    },
+    "n": 1
+  },
+  "SAM|Lurker|SPD": {
+    "elite_thresholds": {
+      "p90": 79.9,
+      "p95": 81.0,
+      "p98": 84.0
+    },
+    "n": 192
+  },
+  "SAM|Lurker|TAK": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 83.0,
+      "p98": 85.18
+    },
+    "n": 192
+  },
+  "SAM|Signal Caller|BSH": {
+    "elite_thresholds": {
+      "p90": 84.1,
+      "p95": 85.0,
+      "p98": 85.42
+    },
+    "n": 30
+  },
+  "SAM|Signal Caller|SPD": {
+    "elite_thresholds": {
+      "p90": 81.1,
+      "p95": 83.65,
+      "p98": 85.0
+    },
+    "n": 30
+  },
+  "SAM|Signal Caller|TAK": {
+    "elite_thresholds": {
+      "p90": 85.1,
+      "p95": 86.55,
+      "p98": 87.42
+    },
+    "n": 30
+  },
+  "SAM|Thumper|BSH": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 86.0,
+      "p98": 87.0
+    },
+    "n": 307
+  },
+  "SAM|Thumper|SPD": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 84.0,
+      "p98": 85.0
+    },
+    "n": 307
+  },
+  "SAM|Thumper|TAK": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 86.0,
+      "p98": 86.88
+    },
+    "n": 307
+  },
+  "S|Box Specialist|ACC": {
+    "elite_thresholds": {
+      "p90": 87.3,
+      "p95": 88.0,
+      "p98": 88.0
+    },
+    "n": 18
+  },
+  "S|Box Specialist|AGI": {
+    "elite_thresholds": {
+      "p90": 84.6,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 18
+  },
+  "S|Box Specialist|AWR": {
+    "elite_thresholds": {
+      "p90": 84.3,
+      "p95": 85.15,
+      "p98": 85.66
+    },
+    "n": 18
+  },
+  "S|Box Specialist|BSH": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.15,
+      "p98": 83.66
+    },
+    "n": 18
+  },
+  "S|Box Specialist|JMP": {
+    "elite_thresholds": {
+      "p90": 85.6,
+      "p95": 87.0,
+      "p98": 87.0
+    },
+    "n": 18
+  },
+  "S|Box Specialist|MCV": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 82.8,
+      "p98": 84.0
+    },
+    "n": 385
+  },
+  "S|Box Specialist|POW": {
+    "elite_thresholds": {
+      "p90": 79.0,
+      "p95": 81.0,
+      "p98": 83.0
+    },
+    "n": 385
+  },
+  "S|Box Specialist|PRC": {
+    "elite_thresholds": {
+      "p90": 86.3,
+      "p95": 87.15,
+      "p98": 87.66
+    },
+    "n": 18
+  },
+  "S|Box Specialist|PRS": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.15,
+      "p98": 82.66
+    },
+    "n": 18
+  },
+  "S|Box Specialist|PUR": {
+    "elite_thresholds": {
+      "p90": 86.6,
+      "p95": 88.15,
+      "p98": 88.66
+    },
+    "n": 18
+  },
+  "S|Box Specialist|SPD": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 85.0
+    },
+    "n": 385
+  },
+  "S|Box Specialist|STR": {
+    "elite_thresholds": {
+      "p90": 74.6,
+      "p95": 76.9,
+      "p98": 79.96
+    },
+    "n": 18
+  },
+  "S|Box Specialist|TAK": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 85.0
+    },
+    "n": 385
+  },
+  "S|Box Specialist|ZCV": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.8,
+      "p98": 86.0
+    },
+    "n": 385
+  },
+  "S|Coverage Specialist|ACC": {
+    "elite_thresholds": {
+      "p90": 87.2,
+      "p95": 88.1,
+      "p98": 88.64
+    },
+    "n": 10
+  },
+  "S|Coverage Specialist|AGI": {
+    "elite_thresholds": {
+      "p90": 85.1,
+      "p95": 85.55,
+      "p98": 85.82
+    },
+    "n": 10
+  },
+  "S|Coverage Specialist|AWR": {
+    "elite_thresholds": {
+      "p90": 84.2,
+      "p95": 85.1,
+      "p98": 85.64
+    },
+    "n": 10
+  },
+  "S|Coverage Specialist|JMP": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 10
+  },
+  "S|Coverage Specialist|MCV": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 83.0,
+      "p98": 84.0
+    },
+    "n": 168
+  },
+  "S|Coverage Specialist|PRC": {
+    "elite_thresholds": {
+      "p90": 87.1,
+      "p95": 87.55,
+      "p98": 87.82
+    },
+    "n": 10
+  },
+  "S|Coverage Specialist|PUR": {
+    "elite_thresholds": {
+      "p90": 84.2,
+      "p95": 85.1,
+      "p98": 85.64
+    },
+    "n": 10
+  },
+  "S|Coverage Specialist|SPD": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 85.0,
+      "p98": 86.0
+    },
+    "n": 168
+  },
+  "S|Coverage Specialist|STR": {
+    "elite_thresholds": {
+      "p90": 79.0,
+      "p95": 79.0,
+      "p98": 79.0
+    },
+    "n": 10
+  },
+  "S|Coverage Specialist|TAK": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 82.0,
+      "p98": 83.0
+    },
+    "n": 168
+  },
+  "S|Coverage Specialist|ZCV": {
+    "elite_thresholds": {
+      "p90": 83.3,
+      "p95": 85.65,
+      "p98": 86.0
+    },
+    "n": 168
+  },
+  "S|Hybrid|ACC": {
+    "elite_thresholds": {
+      "p90": 88.3,
+      "p95": 89.15,
+      "p98": 89.66
+    },
+    "n": 18
+  },
+  "S|Hybrid|AGI": {
+    "elite_thresholds": {
+      "p90": 87.3,
+      "p95": 88.0,
+      "p98": 88.0
+    },
+    "n": 18
+  },
+  "S|Hybrid|AWR": {
+    "elite_thresholds": {
+      "p90": 83.3,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 18
+  },
+  "S|Hybrid|JMP": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.45,
+      "p98": 86.98
+    },
+    "n": 18
+  },
+  "S|Hybrid|MCV": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 84.0,
+      "p98": 86.96
+    },
+    "n": 253
+  },
+  "S|Hybrid|PRC": {
+    "elite_thresholds": {
+      "p90": 87.3,
+      "p95": 88.15,
+      "p98": 88.66
+    },
+    "n": 18
+  },
+  "S|Hybrid|PRS": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.15,
+      "p98": 83.66
+    },
+    "n": 18
+  },
+  "S|Hybrid|PUR": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.15,
+      "p98": 85.66
+    },
+    "n": 18
+  },
+  "S|Hybrid|SPD": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 85.0,
+      "p98": 86.96
+    },
+    "n": 253
+  },
+  "S|Hybrid|STR": {
+    "elite_thresholds": {
+      "p90": 74.3,
+      "p95": 75.75,
+      "p98": 78.3
+    },
+    "n": 18
+  },
+  "S|Hybrid|TAK": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 83.0,
+      "p98": 84.0
+    },
+    "n": 253
+  },
+  "S|Hybrid|ZCV": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 84.0,
+      "p98": 86.96
+    },
+    "n": 253
+  },
+  "TE|Gritty Possession|ACC": {
+    "elite_thresholds": {
+      "p90": 85.4,
+      "p95": 85.7,
+      "p98": 85.88
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|AGI": {
+    "elite_thresholds": {
+      "p90": 83.4,
+      "p95": 83.7,
+      "p98": 83.88
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|AWR": {
+    "elite_thresholds": {
+      "p90": 85.4,
+      "p95": 85.7,
+      "p98": 85.88
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|BCV": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|BTK": {
+    "elite_thresholds": {
+      "p90": 87.4,
+      "p95": 87.7,
+      "p98": 87.88
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|CIT": {
+    "elite_thresholds": {
+      "p90": 86.4,
+      "p95": 86.7,
+      "p98": 86.88
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|CTH": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 87.0,
+      "p98": 87.0
+    },
+    "n": 51
+  },
+  "TE|Gritty Possession|IBL": {
+    "elite_thresholds": {
+      "p90": 84.2,
+      "p95": 85.1,
+      "p98": 85.64
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|LBK": {
+    "elite_thresholds": {
+      "p90": 76.6,
+      "p95": 79.3,
+      "p98": 80.92
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|MRR": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 51
+  },
+  "TE|Gritty Possession|PBF": {
+    "elite_thresholds": {
+      "p90": 84.4,
+      "p95": 84.7,
+      "p98": 84.88
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|PBK": {
+    "elite_thresholds": {
+      "p90": 79.6,
+      "p95": 80.8,
+      "p98": 81.52
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|PBP": {
+    "elite_thresholds": {
+      "p90": 82.4,
+      "p95": 82.7,
+      "p98": 82.88
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|RBF": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|RBK": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 82.5,
+      "p98": 84.0
+    },
+    "n": 51
+  },
+  "TE|Gritty Possession|RBP": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|RLS": {
+    "elite_thresholds": {
+      "p90": 85.4,
+      "p95": 85.7,
+      "p98": 85.88
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|SFA": {
+    "elite_thresholds": {
+      "p90": 86.2,
+      "p95": 87.1,
+      "p98": 87.64
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|SPC": {
+    "elite_thresholds": {
+      "p90": 86.2,
+      "p95": 87.1,
+      "p98": 87.64
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|SPD": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.5,
+      "p98": 85.0
+    },
+    "n": 51
+  },
+  "TE|Gritty Possession|SRR": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 87.0
+    },
+    "n": 51
+  },
+  "TE|Gritty Possession|STR": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 7
+  },
+  "TE|Gritty Possession|TRK": {
+    "elite_thresholds": {
+      "p90": 84.6,
+      "p95": 85.8,
+      "p98": 86.52
+    },
+    "n": 7
+  },
+  "TE|Physical Route Runner|ACC": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|AGI": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|AWR": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|BCV": {
+    "elite_thresholds": {
+      "p90": 78.0,
+      "p95": 78.0,
+      "p98": 78.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|BTK": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|CIT": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|CTH": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 85.0
+    },
+    "n": 284
+  },
+  "TE|Physical Route Runner|DRR": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|IBL": {
+    "elite_thresholds": {
+      "p90": 78.0,
+      "p95": 78.0,
+      "p98": 78.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|JMP": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|LBK": {
+    "elite_thresholds": {
+      "p90": 76.0,
+      "p95": 76.0,
+      "p98": 76.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|MRR": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 84.0,
+      "p98": 85.0
+    },
+    "n": 284
+  },
+  "TE|Physical Route Runner|PBF": {
+    "elite_thresholds": {
+      "p90": 69.0,
+      "p95": 69.0,
+      "p98": 69.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|PBK": {
+    "elite_thresholds": {
+      "p90": 68.0,
+      "p95": 68.0,
+      "p98": 68.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|PBP": {
+    "elite_thresholds": {
+      "p90": 68.0,
+      "p95": 68.0,
+      "p98": 68.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|RBF": {
+    "elite_thresholds": {
+      "p90": 75.0,
+      "p95": 75.0,
+      "p98": 75.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|RBK": {
+    "elite_thresholds": {
+      "p90": 77.0,
+      "p95": 80.0,
+      "p98": 82.0
+    },
+    "n": 284
+  },
+  "TE|Physical Route Runner|RBP": {
+    "elite_thresholds": {
+      "p90": 75.0,
+      "p95": 75.0,
+      "p98": 75.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|RLS": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|SFA": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|SPC": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|SPD": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 82.0,
+      "p98": 83.0
+    },
+    "n": 284
+  },
+  "TE|Physical Route Runner|SRR": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 84.0,
+      "p98": 85.0
+    },
+    "n": 284
+  },
+  "TE|Physical Route Runner|STR": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 80.0,
+      "p98": 80.0
+    },
+    "n": 6
+  },
+  "TE|Physical Route Runner|TRK": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 6
+  },
+  "TE|Vertical Threat|ACC": {
+    "elite_thresholds": {
+      "p90": 88.1,
+      "p95": 88.55,
+      "p98": 88.82
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|AGI": {
+    "elite_thresholds": {
+      "p90": 88.0,
+      "p95": 88.0,
+      "p98": 88.0
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|AWR": {
+    "elite_thresholds": {
+      "p90": 80.7,
+      "p95": 83.85,
+      "p98": 85.74
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|BCV": {
+    "elite_thresholds": {
+      "p90": 81.1,
+      "p95": 81.55,
+      "p98": 81.82
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|BTK": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|CIT": {
+    "elite_thresholds": {
+      "p90": 88.1,
+      "p95": 88.55,
+      "p98": 88.82
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|CTH": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 87.0
+    },
+    "n": 166
+  },
+  "TE|Vertical Threat|DRR": {
+    "elite_thresholds": {
+      "p90": 88.1,
+      "p95": 88.55,
+      "p98": 88.82
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|IBL": {
+    "elite_thresholds": {
+      "p90": 80.2,
+      "p95": 81.1,
+      "p98": 81.64
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|JMP": {
+    "elite_thresholds": {
+      "p90": 87.2,
+      "p95": 88.1,
+      "p98": 88.64
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|LBK": {
+    "elite_thresholds": {
+      "p90": 78.1,
+      "p95": 78.55,
+      "p98": 78.82
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|MRR": {
+    "elite_thresholds": {
+      "p90": 83.5,
+      "p95": 85.75,
+      "p98": 86.0
+    },
+    "n": 166
+  },
+  "TE|Vertical Threat|PBF": {
+    "elite_thresholds": {
+      "p90": 72.6,
+      "p95": 75.3,
+      "p98": 76.92
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|PBK": {
+    "elite_thresholds": {
+      "p90": 71.1,
+      "p95": 71.55,
+      "p98": 71.82
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|PBP": {
+    "elite_thresholds": {
+      "p90": 76.1,
+      "p95": 76.55,
+      "p98": 76.82
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|RBF": {
+    "elite_thresholds": {
+      "p90": 79.1,
+      "p95": 79.55,
+      "p98": 79.82
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|RBK": {
+    "elite_thresholds": {
+      "p90": 75.5,
+      "p95": 77.75,
+      "p98": 79.7
+    },
+    "n": 166
+  },
+  "TE|Vertical Threat|RBP": {
+    "elite_thresholds": {
+      "p90": 78.1,
+      "p95": 78.55,
+      "p98": 78.82
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|RLS": {
+    "elite_thresholds": {
+      "p90": 85.4,
+      "p95": 87.2,
+      "p98": 88.28
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|SFA": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|SPC": {
+    "elite_thresholds": {
+      "p90": 86.3,
+      "p95": 87.65,
+      "p98": 88.46
+    },
+    "n": 10
+  },
+  "TE|Vertical Threat|SPD": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 87.7
+    },
+    "n": 166
+  },
+  "TE|Vertical Threat|SRR": {
+    "elite_thresholds": {
+      "p90": 83.5,
+      "p95": 85.0,
+      "p98": 87.7
+    },
+    "n": 166
+  },
+  "TE|Vertical Threat|TRK": {
+    "elite_thresholds": {
+      "p90": 85.2,
+      "p95": 86.1,
+      "p98": 86.64
+    },
+    "n": 10
+  },
+  "WR|Contested Specialist|ACC": {
+    "elite_thresholds": {
+      "p90": 88.9,
+      "p95": 89.45,
+      "p98": 89.78
+    },
+    "n": 12
+  },
+  "WR|Contested Specialist|AGI": {
+    "elite_thresholds": {
+      "p90": 87.9,
+      "p95": 88.0,
+      "p98": 88.0
+    },
+    "n": 12
+  },
+  "WR|Contested Specialist|AWR": {
+    "elite_thresholds": {
+      "p90": 83.7,
+      "p95": 84.45,
+      "p98": 84.78
+    },
+    "n": 12
+  },
+  "WR|Contested Specialist|BTK": {
+    "elite_thresholds": {
+      "p90": 84.9,
+      "p95": 85.9,
+      "p98": 86.56
+    },
+    "n": 12
+  },
+  "WR|Contested Specialist|CIT": {
+    "elite_thresholds": {
+      "p90": 87.0,
+      "p95": 87.45,
+      "p98": 87.78
+    },
+    "n": 12
+  },
+  "WR|Contested Specialist|CTH": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 86.0
+    },
+    "n": 194
+  },
+  "WR|Contested Specialist|JMP": {
+    "elite_thresholds": {
+      "p90": 87.8,
+      "p95": 88.0,
+      "p98": 88.0
+    },
+    "n": 12
+  },
+  "WR|Contested Specialist|MRR": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 85.0,
+      "p98": 87.0
+    },
+    "n": 194
+  },
+  "WR|Contested Specialist|RLS": {
+    "elite_thresholds": {
+      "p90": 87.8,
+      "p95": 88.9,
+      "p98": 89.56
+    },
+    "n": 12
+  },
+  "WR|Contested Specialist|SFA": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 82.7,
+      "p98": 84.68
+    },
+    "n": 12
+  },
+  "WR|Contested Specialist|SPC": {
+    "elite_thresholds": {
+      "p90": 87.9,
+      "p95": 88.0,
+      "p98": 88.0
+    },
+    "n": 12
+  },
+  "WR|Contested Specialist|SPD": {
+    "elite_thresholds": {
+      "p90": 84.0,
+      "p95": 86.0,
+      "p98": 87.14
+    },
+    "n": 194
+  },
+  "WR|Contested Specialist|SRR": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.35,
+      "p98": 86.14
+    },
+    "n": 194
+  },
+  "WR|Contested Specialist|STR": {
+    "elite_thresholds": {
+      "p90": 78.5,
+      "p95": 81.25,
+      "p98": 82.9
+    },
+    "n": 12
+  },
+  "WR|Contested Specialist|TRK": {
+    "elite_thresholds": {
+      "p90": 77.9,
+      "p95": 80.7,
+      "p98": 82.68
+    },
+    "n": 12
+  },
+  "WR|Elusive Route Runner|ACC": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 5
+  },
+  "WR|Elusive Route Runner|AGI": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 5
+  },
+  "WR|Elusive Route Runner|AWR": {
+    "elite_thresholds": {
+      "p90": 80.6,
+      "p95": 80.8,
+      "p98": 80.92
+    },
+    "n": 5
+  },
+  "WR|Elusive Route Runner|BTK": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 84.6
+    },
+    "n": 5
+  },
+  "WR|Elusive Route Runner|CAR": {
+    "elite_thresholds": {
+      "p90": 80.6,
+      "p95": 80.8,
+      "p98": 80.92
+    },
+    "n": 5
+  },
+  "WR|Elusive Route Runner|CIT": {
+    "elite_thresholds": {
+      "p90": 81.2,
+      "p95": 81.6,
+      "p98": 81.84
+    },
+    "n": 5
+  },
+  "WR|Elusive Route Runner|CTH": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.25,
+      "p98": 84.0
+    },
+    "n": 576
+  },
+  "WR|Elusive Route Runner|DRR": {
+    "elite_thresholds": {
+      "p90": 80.0,
+      "p95": 83.0,
+      "p98": 85.0
+    },
+    "n": 576
+  },
+  "WR|Elusive Route Runner|JKM": {
+    "elite_thresholds": {
+      "p90": 86.2,
+      "p95": 86.6,
+      "p98": 86.84
+    },
+    "n": 5
+  },
+  "WR|Elusive Route Runner|MRR": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 83.0,
+      "p98": 85.0
+    },
+    "n": 576
+  },
+  "WR|Elusive Route Runner|SPD": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 83.0,
+      "p98": 85.0
+    },
+    "n": 576
+  },
+  "WR|Elusive Route Runner|SPM": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 5
+  },
+  "WR|Elusive Route Runner|SRR": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 83.0,
+      "p98": 85.0
+    },
+    "n": 576
+  },
+  "WR|Gadget Receiver|ACC": {
+    "elite_thresholds": {
+      "p90": 86.0,
+      "p95": 86.0,
+      "p98": 86.0
+    },
+    "n": 1
+  },
+  "WR|Gadget Receiver|AGI": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 1
+  },
+  "WR|Gadget Receiver|AWR": {
+    "elite_thresholds": {
+      "p90": 76.0,
+      "p95": 76.0,
+      "p98": 76.0
+    },
+    "n": 1
+  },
+  "WR|Gadget Receiver|BTK": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 82.0,
+      "p98": 82.0
+    },
+    "n": 1
+  },
+  "WR|Gadget Receiver|CAR": {
+    "elite_thresholds": {
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 1
+  },
+  "WR|Gadget Receiver|CIT": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0
+    },
+    "n": 1
+  },
+  "WR|Gadget Receiver|CTH": {
+    "elite_thresholds": {
+      "p90": 70.0,
+      "p95": 76.7,
+      "p98": 79.0
+    },
+    "n": 102
+  },
+  "WR|Gadget Receiver|DRR": {
+    "elite_thresholds": {
+      "p90": 67.0,
+      "p95": 74.9,
+      "p98": 82.92
+    },
+    "n": 102
+  },
+  "WR|Gadget Receiver|JKM": {
+    "elite_thresholds": {
+      "p90": 78.0,
+      "p95": 78.0,
+      "p98": 78.0
+    },
+    "n": 1
+  },
+  "WR|Gadget Receiver|MRR": {
+    "elite_thresholds": {
+      "p90": 64.0,
+      "p95": 73.75,
+      "p98": 78.94
+    },
+    "n": 102
+  },
+  "WR|Gadget Receiver|SPD": {
+    "elite_thresholds": {
+      "p90": 79.0,
+      "p95": 80.0,
+      "p98": 85.0
+    },
+    "n": 102
+  },
+  "WR|Gadget Receiver|SPM": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 81.0,
+      "p98": 81.0
+    },
+    "n": 1
+  },
+  "WR|Gadget Receiver|SRR": {
+    "elite_thresholds": {
+      "p90": 63.0,
+      "p95": 70.85,
+      "p98": 82.96
+    },
+    "n": 102
+  },
+  "WR|Physical Route Runner|CTH": {
+    "elite_thresholds": {
+      "p90": 83.5,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 16
+  },
+  "WR|Physical Route Runner|MRR": {
+    "elite_thresholds": {
+      "p90": 83.5,
+      "p95": 84.0,
+      "p98": 84.0
+    },
+    "n": 16
+  },
+  "WR|Physical Route Runner|SPD": {
+    "elite_thresholds": {
+      "p90": 80.5,
+      "p95": 82.0,
+      "p98": 82.0
+    },
+    "n": 16
+  },
+  "WR|Physical Route Runner|SRR": {
+    "elite_thresholds": {
+      "p90": 83.5,
+      "p95": 85.0,
+      "p98": 85.0
+    },
+    "n": 16
+  },
+  "WR|Route Artist|CTH": {
+    "elite_thresholds": {
+      "p90": 72.0,
+      "p95": 72.0,
+      "p98": 72.0
+    },
+    "n": 4
+  },
+  "WR|Route Artist|MRR": {
+    "elite_thresholds": {
+      "p90": 70.4,
+      "p95": 70.7,
+      "p98": 70.88
+    },
+    "n": 4
+  },
+  "WR|Route Artist|SPD": {
+    "elite_thresholds": {
+      "p90": 67.0,
+      "p95": 67.0,
+      "p98": 67.0
+    },
+    "n": 4
+  },
+  "WR|Route Artist|SRR": {
+    "elite_thresholds": {
+      "p90": 71.4,
+      "p95": 71.7,
+      "p98": 71.88
+    },
+    "n": 4
+  },
+  "WR|Speedster|ACC": {
+    "elite_thresholds": {
+      "p90": 88.6,
+      "p95": 88.8,
+      "p98": 88.92
+    },
+    "n": 5
+  },
+  "WR|Speedster|AGI": {
+    "elite_thresholds": {
+      "p90": 87.2,
+      "p95": 87.6,
+      "p98": 87.84
+    },
+    "n": 5
+  },
+  "WR|Speedster|AWR": {
+    "elite_thresholds": {
+      "p90": 84.8,
+      "p95": 86.4,
+      "p98": 87.36
+    },
+    "n": 5
+  },
+  "WR|Speedster|CIT": {
+    "elite_thresholds": {
+      "p90": 85.4,
+      "p95": 86.2,
+      "p98": 86.68
+    },
+    "n": 5
+  },
+  "WR|Speedster|CTH": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 83.0,
+      "p98": 84.0
+    },
+    "n": 261
+  },
+  "WR|Speedster|DRR": {
+    "elite_thresholds": {
+      "p90": 81.0,
+      "p95": 83.0,
+      "p98": 87.0
+    },
+    "n": 261
+  },
+  "WR|Speedster|JKM": {
+    "elite_thresholds": {
+      "p90": 86.4,
+      "p95": 87.2,
+      "p98": 87.68
+    },
+    "n": 5
+  },
+  "WR|Speedster|JMP": {
+    "elite_thresholds": {
+      "p90": 87.6,
+      "p95": 87.8,
+      "p98": 87.92
+    },
+    "n": 5
+  },
+  "WR|Speedster|MRR": {
+    "elite_thresholds": {
+      "p90": 82.0,
+      "p95": 83.0,
+      "p98": 84.8
+    },
+    "n": 261
+  },
+  "WR|Speedster|RLS": {
+    "elite_thresholds": {
+      "p90": 87.2,
+      "p95": 87.6,
+      "p98": 87.84
+    },
+    "n": 5
+  },
+  "WR|Speedster|SPC": {
+    "elite_thresholds": {
+      "p90": 84.2,
+      "p95": 84.6,
+      "p98": 84.84
+    },
+    "n": 5
+  },
+  "WR|Speedster|SPD": {
+    "elite_thresholds": {
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 86.8
+    },
+    "n": 261
+  },
+  "WR|Speedster|SPM": {
+    "elite_thresholds": {
+      "p90": 86.8,
+      "p95": 87.4,
+      "p98": 87.76
+    },
+    "n": 5
+  }
+}
