@@ -255,6 +255,13 @@ def market() -> None:
                 "rank_gain_per_1000": round(
                     row["rank_gain"] * 1000 / observation["public_display_price"], 8
                 ),
+                "observed_price_sensitivity": price_sensitivity(
+                    row,
+                    [
+                        round(observation["public_display_price"] * multiplier)
+                        for multiplier in (0.75, 1.0, 1.25)
+                    ],
+                ),
             }
         )
     classified = relative_value_classes(evaluated)

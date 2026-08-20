@@ -1,0 +1,195 @@
+{
+  "allocations": {
+    "100000": {
+      "action": "UPGRADE",
+      "budget": 100000,
+      "remaining": 44500,
+      "score_improvement": 31.151124,
+      "selected": [
+        {
+          "candidate": "Brendan Black",
+          "net_cost": 55500,
+          "score_improvement": 31.151124
+        }
+      ],
+      "spent": 55500,
+      "status": "BUDGET_EVALUATED"
+    },
+    "1000000": {
+      "action": "BUDGET UPGRADE",
+      "budget": 1000000,
+      "remaining": 283500,
+      "score_improvement": 94.29751,
+      "selected": [
+        {
+          "candidate": "Brendan Black",
+          "net_cost": 55500,
+          "score_improvement": 31.151124
+        },
+        {
+          "candidate": "E'Marion Harris",
+          "net_cost": 129000,
+          "score_improvement": 33.804679
+        },
+        {
+          "candidate": "Kip Lewis",
+          "net_cost": 532000,
+          "score_improvement": 29.341707
+        }
+      ],
+      "spent": 716500,
+      "status": "BUDGET_EVALUATED"
+    },
+    "150000": {
+      "action": "UPGRADE",
+      "budget": 150000,
+      "remaining": 21000,
+      "score_improvement": 33.804679,
+      "selected": [
+        {
+          "candidate": "E'Marion Harris",
+          "net_cost": 129000,
+          "score_improvement": 33.804679
+        }
+      ],
+      "spent": 129000,
+      "status": "BUDGET_EVALUATED"
+    },
+    "2000000": {
+      "action": "BUDGET UPGRADE",
+      "budget": 2000000,
+      "remaining": 435500,
+      "score_improvement": 137.491991,
+      "selected": [
+        {
+          "candidate": "Brendan Black",
+          "net_cost": 55500,
+          "score_improvement": 31.151124
+        },
+        {
+          "candidate": "E'Marion Harris",
+          "net_cost": 129000,
+          "score_improvement": 33.804679
+        },
+        {
+          "candidate": "Kip Lewis",
+          "net_cost": 532000,
+          "score_improvement": 29.341707
+        },
+        {
+          "candidate": "Bray Hubbard",
+          "net_cost": 848000,
+          "score_improvement": 43.194481
+        }
+      ],
+      "spent": 1564500,
+      "status": "BUDGET_EVALUATED"
+    },
+    "250000": {
+      "action": "BUDGET UPGRADE",
+      "budget": 250000,
+      "remaining": 65500,
+      "score_improvement": 64.955803,
+      "selected": [
+        {
+          "candidate": "Brendan Black",
+          "net_cost": 55500,
+          "score_improvement": 31.151124
+        },
+        {
+          "candidate": "E'Marion Harris",
+          "net_cost": 129000,
+          "score_improvement": 33.804679
+        }
+      ],
+      "spent": 184500,
+      "status": "BUDGET_EVALUATED"
+    },
+    "50000": {
+      "action": "KEEP",
+      "budget": 50000,
+      "remaining": 50000,
+      "score_improvement": 0.0,
+      "selected": [],
+      "spent": 0,
+      "status": "BUDGET_EVALUATED"
+    },
+    "500000": {
+      "action": "BUDGET UPGRADE",
+      "budget": 500000,
+      "remaining": 315500,
+      "score_improvement": 64.955803,
+      "selected": [
+        {
+          "candidate": "Brendan Black",
+          "net_cost": 55500,
+          "score_improvement": 31.151124
+        },
+        {
+          "candidate": "E'Marion Harris",
+          "net_cost": 129000,
+          "score_improvement": 33.804679
+        }
+      ],
+      "spent": 184500,
+      "status": "BUDGET_EVALUATED"
+    },
+    "5000000": {
+      "action": "BUDGET UPGRADE",
+      "budget": 5000000,
+      "remaining": 3435500,
+      "score_improvement": 137.491991,
+      "selected": [
+        {
+          "candidate": "Brendan Black",
+          "net_cost": 55500,
+          "score_improvement": 31.151124
+        },
+        {
+          "candidate": "E'Marion Harris",
+          "net_cost": 129000,
+          "score_improvement": 33.804679
+        },
+        {
+          "candidate": "Kip Lewis",
+          "net_cost": 532000,
+          "score_improvement": 29.341707
+        },
+        {
+          "candidate": "Bray Hubbard",
+          "net_cost": 848000,
+          "score_improvement": 43.194481
+        }
+      ],
+      "spent": 1564500,
+      "status": "BUDGET_EVALUATED"
+    },
+    "750000": {
+      "action": "BUDGET UPGRADE",
+      "budget": 750000,
+      "remaining": 33500,
+      "score_improvement": 94.29751,
+      "selected": [
+        {
+          "candidate": "Brendan Black",
+          "net_cost": 55500,
+          "score_improvement": 31.151124
+        },
+        {
+          "candidate": "E'Marion Harris",
+          "net_cost": 129000,
+          "score_improvement": 33.804679
+        },
+        {
+          "candidate": "Kip Lewis",
+          "net_cost": 532000,
+          "score_improvement": 29.341707
+        }
+      ],
+      "spent": 716500,
+      "status": "BUDGET_EVALUATED"
+    }
+  },
+  "objective": "maximize frozen Pancake Value Index under observed-price budget",
+  "price_warning": "OP-X-027 public displays are low-confidence observations"
+}

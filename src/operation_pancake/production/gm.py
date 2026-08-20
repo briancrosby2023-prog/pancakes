@@ -14,6 +14,7 @@ from .engine import ProductionEngine, load_population
 from .market import MoneyballEngine, normalize_observation, resolve_observations
 from .registry import build_model_registry
 from .roster import normalize_name
+from .valuation import population_value_curves, price_sensitivity, upgrade_value
 
 ACTIONS = {
     "KEEP",
@@ -56,6 +57,7 @@ class GMProduct:
         self.ranked = self.engine.rank([self.engine.score(card) for card in self.population])
         self.rank_by_id = {row["card_id"]: row for row in self.ranked}
         self.cards = {row["card_id"]: row for row in self.population}
+        self.value_curves = population_value_curves(self.ranked)
 
     def lookup(
         self,
@@ -168,6 +170,17 @@ class GMProduct:
                 self.cards[candidate_id], comparison.get("candidate"), market
             ),
         }
+
+    def value(self, current_id: str, candidate_id: str) -> dict[str, Any]:
+        """Return price-independent intrinsic upgrade value and its hypothetical cost curve."""
+        if current_id not in self.cards or candidate_id not in self.cards:
+            return {"status": "UNRESOLVED IDENTITY"}
+        current = self.rank_by_id.get(current_id)
+        candidate = self.rank_by_id.get(candidate_id)
+        if current is None or candidate is None:
+            return {"status": "UNSUPPORTED MODEL", "value_index": None}
+        value = upgrade_value(current, candidate, self.ranked, self.value_curves)
+        return {**value, "price_sensitivity": price_sensitivity(value)}
 
 
 def optimize_budget(candidates: list[dict[str, Any]], budget: int) -> dict[str, Any]:

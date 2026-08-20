@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 from copy import deepcopy
+from pathlib import Path
 
+from operation_pancake.production.gm import GMProduct
 from operation_pancake.production.valuation import (
     percentile_of,
     population_value_curves,
@@ -100,3 +102,22 @@ def test_unsupported_and_incomparable_are_explicit():
     other = deepcopy(data[1])
     other["position_family"] = "QB"
     assert upgrade_value(data[0], other, data, curves)["status"] == "INCOMPARABLE"
+
+
+def test_gm_value_surface_handles_identity_and_keeps_price_downstream():
+    gm = GMProduct(Path(__file__).resolve().parents[1])
+    assert gm.value("unknown", "also-unknown")["status"] == "UNRESOLVED IDENTITY"
+    current = next(
+        row["card_id"]
+        for row in gm.ranked
+        if row["player_name"] == "Anthony Donkoh" and row["position_rank"] == 67
+    )
+    candidate = next(
+        row["card_id"]
+        for row in gm.ranked
+        if row["player_name"] == "Brendan Black" and row["position_rank"] == 1
+    )
+    result = gm.value(current, candidate)
+    assert result["status"] == "VALUED"
+    assert result["value_index"] > 0
+    assert result["price_sensitivity"][0]["net_cost"] == 10_000
