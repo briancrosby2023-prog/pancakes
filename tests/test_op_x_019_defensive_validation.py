@@ -13,6 +13,7 @@ SAFETY = json.loads(
 EDGE = json.loads((ROOT / "data/research/op_x_019/edge/frozen_edge_scoring_spec.json").read_text())
 MIKE = json.loads((ROOT / "data/research/op_x_019/mike/frozen_mike_scoring_spec.json").read_text())
 DT = json.loads((ROOT / "data/research/op_x_019/dt/frozen_dt_scoring_spec.json").read_text())
+SAM = json.loads((ROOT / "data/research/op_x_019/sam/frozen_sam_scoring_spec.json").read_text())
 
 
 def test_safety_source_denominators_are_preserved():
@@ -65,3 +66,20 @@ def test_dt_vectors_and_pure_power_mapping_are_frozen():
     )
     assert result["frozen_score"] == 77
     assert result["model_archetype"] == "Power Rusher"
+
+
+def test_sam_denominators_and_cross_position_bridge_are_explicit():
+    assert {name: sum(weights.values()) for name, weights in SAM["weights"].items()} == {
+        "OLB Pass Coverage": 93,
+        "OLB Power Rusher": 98,
+        "OLB Run Stopper": 100,
+        "OLB Speed Rusher": 96,
+        "MLB Field General": 100,
+    }
+    attrs = {name: 81 for name in SAM["weights"]["MLB Field General"]}
+    result = score(
+        {"season": 26, "position": "SAM", "archetype": "Signal Caller", "attributes": attrs},
+        SAM,
+    )
+    assert result["frozen_score"] == 81
+    assert result["mapping_status"] == "HYPOTHETICAL"

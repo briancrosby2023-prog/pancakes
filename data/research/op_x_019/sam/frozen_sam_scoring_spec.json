@@ -1,0 +1,29 @@
+{
+  "operation": "OP-X-019-SAM",
+  "freeze": {"blind_outcomes_observed": false, "repository_head": "5a526b8d8ef52dfe1c0cb34ee046e135e330ca65", "timestamp": "2026-08-20T00:05:13.5743567-07:00"},
+  "model": {"id": "SAM-M19-ROLE-001", "version": "v1.0", "applicability": "CFB25 OLB and CFB26 SAM populations", "formula": "sum(attribute * frozen historical role-vector weight) / sum(included weights)", "displayed_ovr_calibration": "none", "rounding": "none", "confidence": "exact CFB25 OLB vectors; supported CFB26 role mappings with a disclosed MLB Field General bridge for Signal Caller"},
+  "provenance": {"source_id": "SRC-M19-001", "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view", "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5", "workbook_sheet": "Data Version", "workbook_rows": "35, 48:51"},
+  "weights": {
+    "OLB Pass Coverage": {"ACC": 11, "AGI": 4, "AWR": 9, "MCV": 6, "PRC": 9, "PUR": 11, "SPD": 9, "STR": 2, "TAK": 14, "ZCV": 18},
+    "OLB Power Rusher": {"ACC": 10, "AGI": 2, "AWR": 7, "POW": 2, "MCV": 2, "PRC": 7, "PMV": 22, "PUR": 12, "SPD": 5, "STR": 8, "TAK": 15, "ZCV": 6},
+    "OLB Run Stopper": {"ACC": 9, "AGI": 2, "AWR": 7, "BSH": 16, "POW": 3, "MCV": 2, "PRC": 7, "PUR": 16, "SPD": 6, "STR": 10, "TAK": 16, "ZCV": 6},
+    "OLB Speed Rusher": {"ACC": 13, "AGI": 5, "AWR": 7, "FMV": 22, "MCV": 2, "PRC": 7, "PUR": 10, "SPD": 8, "STR": 6, "TAK": 10, "ZCV": 6},
+    "MLB Field General": {"ACC": 9, "AGI": 7, "AWR": 9, "BSH": 7, "MCV": 5, "PRC": 9, "PUR": 14, "SPD": 5, "STR": 8, "TAK": 17, "ZCV": 10}
+  },
+  "source_weight_totals": {"OLB Pass Coverage": 93, "OLB Power Rusher": 98, "OLB Run Stopper": 100, "OLB Speed Rusher": 96, "MLB Field General": 100},
+  "archetype_mappings": {
+    "CFB25": {
+      "Pass Coverage": {"model_archetype": "OLB Pass Coverage", "status": "EXACT", "basis": "exact OLB name"},
+      "Power rusher": {"model_archetype": "OLB Power Rusher", "status": "EXACT", "basis": "exact OLB name apart from capitalization"},
+      "Run Stopper": {"model_archetype": "OLB Run Stopper", "status": "EXACT", "basis": "exact OLB name"},
+      "Speed Rusher": {"model_archetype": "OLB Speed Rusher", "status": "EXACT", "basis": "exact OLB name"}
+    },
+    "CFB26": {
+      "Lurker": {"model_archetype": "OLB Pass Coverage", "status": "SUPPORTED", "basis": "coverage linebacker role"},
+      "Thumper": {"model_archetype": "OLB Run Stopper", "status": "SUPPORTED", "basis": "physical run-stopping linebacker role"},
+      "Signal Caller": {"model_archetype": "MLB Field General", "status": "HYPOTHETICAL", "basis": "CFB26 unified linebacker taxonomy; exact historical field-command role exists at MLB, not OLB"}
+    }
+  },
+  "exclusions": {},
+  "scientific_control": "Frozen before any CFB25 OLB or CFB26 SAM score, residual, or ranking outcome was calculated. The cross-position Signal Caller bridge is disclosed pre-blind."
+}

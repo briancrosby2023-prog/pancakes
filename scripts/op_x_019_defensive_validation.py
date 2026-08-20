@@ -92,7 +92,7 @@ def render(report: dict) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("family", choices=("safety", "edge", "mike", "dt"))
+    parser.add_argument("family", choices=("safety", "edge", "mike", "dt", "sam"))
     args = parser.parse_args()
     if args.family == "safety":
         report = validate_family(
@@ -124,6 +124,14 @@ def main() -> None:
             spec_path=ROOT / "data/research/op_x_019/dt/frozen_dt_scoring_spec.json",
             positions={25: "DT", 26: "DT"},
             expected={25: 609, 26: 633},
+            control_commit="5a526b8d8ef52dfe1c0cb34ee046e135e330ca65",
+        )
+    elif args.family == "sam":
+        report = validate_family(
+            family="SAM",
+            spec_path=ROOT / "data/research/op_x_019/sam/frozen_sam_scoring_spec.json",
+            positions={25: "OLB", 26: "SAM"},
+            expected={25: 733, 26: 778},
             control_commit="PENDING_PRE_BLIND_COMMIT",
         )
     print(
