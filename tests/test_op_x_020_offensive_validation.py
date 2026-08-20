@@ -15,6 +15,7 @@ TACKLE = json.loads(
 GUARD = json.loads(
     (ROOT / "data/research/op_x_020/guard/frozen_guard_scoring_spec.json").read_text()
 )
+KP = json.loads((ROOT / "data/research/op_x_020/kp/frozen_kp_scoring_spec.json").read_text())
 
 
 def test_rb_vectors_total_100():
@@ -66,3 +67,13 @@ def test_guard_vectors_are_distinct_and_well_rounded_is_disclosed():
     )
     assert result["frozen_score"] == 78
     assert result["mapping_status"] == "HYPOTHETICAL"
+
+
+def test_kp_missing_awareness_is_renormalized_without_substitution():
+    result = score(
+        {"season": 26, "position": "KP", "archetype": "Accurate", "attributes": {"KAC": 88}},
+        KP,
+    )
+    assert result["frozen_score"] == 88
+    assert result["weight_denominator"] == 60
+    assert result["missing_weighted_attributes"] == ["AWR"]
