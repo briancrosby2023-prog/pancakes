@@ -1,0 +1,42 @@
+{
+  "criteria": [
+    "ABILITY REQUIREMENT",
+    "ANIMATION/TRAIT REQUIREMENT",
+    "ARCHETYPE REQUIREMENT",
+    "FORMATION REQUIREMENT",
+    "HEIGHT/SIZE REQUIREMENT",
+    "LOW VALUE",
+    "MINIMUM THRESHOLD",
+    "MUST HAVE",
+    "NICE TO HAVE",
+    "PERSONAL PREFERENCE",
+    "PREFERRED THRESHOLD",
+    "PRICE/VALUE REQUIREMENT",
+    "ROLE REQUIREMENT",
+    "SCHEME REQUIREMENT",
+    "SPEED REQUIREMENT",
+    "UNKNOWN"
+  ],
+  "required": [
+    "claim_id",
+    "subject",
+    "predicate",
+    "value",
+    "game",
+    "source_id",
+    "evidence_timestamp",
+    "confidence",
+    "status",
+    "provenance"
+  ],
+  "statuses": [
+    "COMMUNITY REPORT",
+    "CONFLICTING",
+    "HYPOTHESIS",
+    "PROVISIONAL",
+    "STRONG EVIDENCE",
+    "SUPERSEDED",
+    "UNKNOWN",
+    "VERIFIED"
+  ]
+}

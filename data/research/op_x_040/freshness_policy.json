@@ -1,0 +1,11 @@
+{
+  "default_max_age_days": 90,
+  "historical_games_never_current": true,
+  "patch_sensitive": true,
+  "states": [
+    "CURRENT",
+    "STALE",
+    "SUPERSEDED",
+    "CONFLICTING"
+  ]
+}

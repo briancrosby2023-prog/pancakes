@@ -1,0 +1,38 @@
+{
+  "frozen_model_modified": false,
+  "position": "QB",
+  "profiles": {
+    "BALANCED": {
+      "criteria": [],
+      "supported_thresholds": []
+    },
+    "MOBILE": {
+      "criteria": [],
+      "supported_thresholds": []
+    },
+    "OPTION": {
+      "criteria": [],
+      "supported_thresholds": []
+    },
+    "POCKET": {
+      "criteria": [
+        "OPX040-CLAIM-003"
+      ],
+      "supported_thresholds": []
+    }
+  },
+  "supported_numerical_thresholds": [],
+  "unknown_thresholds": [
+    "THP",
+    "SAC",
+    "MAC",
+    "DAC",
+    "SPD",
+    "ACC",
+    "COD",
+    "release/animation",
+    "ability costs",
+    "pressure behavior",
+    "height"
+  ]
+}

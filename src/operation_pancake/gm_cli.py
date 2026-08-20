@@ -117,6 +117,17 @@ def main() -> None:
     reveal_import.add_argument("--ingested-at", required=True)
     reveal_import.add_argument("--persist", action="store_true")
     sub.add_parser("whats-coming")
+    knowledge_search = sub.add_parser("knowledge-search")
+    knowledge_search.add_argument("query")
+    ask = sub.add_parser("ask-pancake")
+    ask.add_argument("query")
+    sub.add_parser("research-queue")
+    sub.add_parser("meta")
+    meta_position = sub.add_parser("meta-position")
+    meta_position.add_argument("position")
+    sub.add_parser("meta-qb")
+    sub.add_parser("meta-playbooks")
+    sub.add_parser("threshold-cards")
     budget = sub.add_parser("budget")
     hit_add = sub.add_parser("hit-list-add")
     hit_add.add_argument("card_id")
@@ -386,6 +397,52 @@ def main() -> None:
             if args.persist:
                 save_registry(path, merged, production=True)
             _dump({"accepted": len(incoming), "total": len(merged), "persisted": args.persist})
+    elif args.command in {
+        "knowledge-search",
+        "ask-pancake",
+        "research-queue",
+        "meta",
+        "meta-position",
+        "meta-qb",
+        "meta-playbooks",
+        "threshold-cards",
+    }:
+        directory = root / "data/research/op_x_040"
+        if args.command in {"knowledge-search", "ask-pancake"}:
+            knowledge = json.loads((directory / "knowledge_base.json").read_text())
+            query = args.query.casefold()
+            matches = [
+                row
+                for row in knowledge["claims"]
+                if query in json.dumps(row, sort_keys=True).casefold()
+            ]
+            if args.command == "knowledge-search":
+                _dump(matches)
+            elif matches:
+                _dump(
+                    {
+                        "answer": matches[0]["value"],
+                        "status": matches[0]["status"],
+                        "confidence": matches[0]["confidence"],
+                        "claim_ids": [row["claim_id"] for row in matches],
+                        "sources": sorted({row["provenance"] for row in matches}),
+                    }
+                )
+            else:
+                _dump({"answer": "UNKNOWN", "research_request_required": True})
+        else:
+            filename = {
+                "research-queue": "research_queue.json",
+                "meta": "meta_consensus.json",
+                "meta-position": "position_meta_profiles.json",
+                "meta-qb": "qb_meta_profile.json",
+                "meta-playbooks": "playbook_intelligence.json",
+                "threshold-cards": "threshold_efficient_cards.json",
+            }[args.command]
+            payload = json.loads((directory / filename).read_text())
+            if args.command == "meta-position":
+                payload = payload.get(args.position.upper(), {"status": "UNKNOWN"})
+            _dump(payload)
     elif args.command.startswith("hit-list-"):
         from operation_pancake.production.monitor import (
             canonical_cards,
