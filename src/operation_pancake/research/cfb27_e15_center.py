@@ -63,9 +63,7 @@ def build_center_calibration_assessment(root: Path) -> dict:
                 "maximum_absolute_error": row["maximum_absolute_error"],
                 "deployment": classify_deployment(row),
             }
-            for row in compare_rounding_rules(
-                candidate, centers, position="C", archetype=archetype
-            )
+            for row in compare_rounding_rules(candidate, centers, position="C", archetype=archetype)
         ]
         assessments.append(result)
 
@@ -87,7 +85,8 @@ def build_center_calibration_assessment(root: Path) -> dict:
         "assessments": assessments,
         "interpretation_policy": (
             "A strong fit supports inheritance of the historical Center prior; a weak fit "
-            "rejects that frozen implementation for CFB27 but does not identify the replacement formula. "
+            "rejects that frozen implementation for CFB27 but does not identify the "
+            "replacement formula. "
             "GM_READY or GM_USABLE models may advance without requiring perfect reconstruction."
         ),
     }

@@ -65,6 +65,17 @@ def main() -> None:
     purchase_report.add_argument("candidate_card_id")
     purchase_report.add_argument("--budget", type=int)
     sub.add_parser("shopping-board")
+    discover = sub.add_parser("discover")
+    discover.add_argument("--position")
+    discover.add_argument("--ovr-max", type=int)
+    discover.add_argument("--limit", type=int, default=20)
+    value_alternatives = sub.add_parser("value-alternatives")
+    value_alternatives.add_argument("card_id")
+    ovr_savings = sub.add_parser("ovr-savings")
+    ovr_savings.add_argument("card_id")
+    moneyball_board = sub.add_parser("moneyball-board")
+    moneyball_board.add_argument("--position")
+    moneyball_board.add_argument("--limit", type=int, default=25)
     budget = sub.add_parser("budget")
     budget.add_argument("file", type=Path, help="JSON candidate list")
     budget.add_argument("coins", type=int)
@@ -135,6 +146,16 @@ def main() -> None:
             print(purchase.render(report), end="")
         else:
             _dump(purchase.shopping_board())
+    elif args.command in {"discover", "value-alternatives", "ovr-savings", "moneyball-board"}:
+        from operation_pancake.production.discovery import DiscoveryIntelligence
+
+        discovery = DiscoveryIntelligence(root)
+        if args.command in {"discover", "moneyball-board"}:
+            _dump(discovery.discover(args.position, getattr(args, "ovr_max", None), args.limit))
+        elif args.command == "value-alternatives":
+            _dump(discovery.alternatives(args.card_id))
+        else:
+            _dump(discovery.ovr_savings(args.card_id))
     elif args.command == "budget":
         rows = json.loads(args.file.read_text(encoding="utf-8"))
         _dump(optimize_budget(rows, args.coins))

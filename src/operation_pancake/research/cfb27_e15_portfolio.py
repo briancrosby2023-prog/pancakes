@@ -11,7 +11,6 @@ from typing import Iterable, Mapping
 
 from operation_pancake.research.cfb27_e15_formula import classify_deployment
 
-
 # CFB27-native taxonomy is canonical. Do not silently collapse these positions
 # to legacy Madden/NFL aliases such as MLB/LE/RE.
 PRIORITY_POSITIONS = (

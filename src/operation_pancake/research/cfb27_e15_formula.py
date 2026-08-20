@@ -11,7 +11,6 @@ import math
 from dataclasses import dataclass
 from typing import Iterable, Mapping, Sequence
 
-
 ROUNDING_RULES = ("HALF_UP", "FLOOR", "CEIL")
 CONFIDENCE_LEVELS = (
     "EXACT",
@@ -207,8 +206,12 @@ def rank_candidates(results: Sequence[Mapping]) -> list[Mapping]:
         results,
         key=lambda row: (
             -(row.get("exact_match_rate") or 0),
-            row.get("mean_absolute_error") if row.get("mean_absolute_error") is not None else math.inf,
-            row.get("maximum_absolute_error") if row.get("maximum_absolute_error") is not None else math.inf,
+            row.get("mean_absolute_error")
+            if row.get("mean_absolute_error") is not None
+            else math.inf,
+            row.get("maximum_absolute_error")
+            if row.get("maximum_absolute_error") is not None
+            else math.inf,
             str(row.get("candidate", "")),
         ),
     )

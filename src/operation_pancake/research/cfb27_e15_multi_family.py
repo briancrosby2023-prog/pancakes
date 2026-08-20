@@ -10,7 +10,6 @@ from collections import defaultdict
 from statistics import median
 from typing import Iterable, Mapping, Sequence
 
-
 FAMILIES: dict[str, tuple[str, ...]] = {
     "BLOCKING": ("C", "TE", "LG", "RG", "LT", "RT"),
     "COVERAGE": ("CB", "FS", "SS"),
@@ -31,7 +30,8 @@ def _complete_numeric_ratings(card: Mapping) -> dict[str, float]:
 
 def analyze_position(cards: Iterable[Mapping], position: str, *, min_cell: int = 4) -> dict:
     rows = [
-        card for card in cards
+        card
+        for card in cards
         if card.get("position") == position
         and card.get("overall") is not None
         and card.get("archetype")
@@ -65,7 +65,8 @@ def analyze_position(cards: Iterable[Mapping], position: str, *, min_cell: int =
     archetypes = sorted({str(card["archetype"]) for card in rows})
     for archetype in archetypes:
         by_ovr = {
-            ovr: cell for (cell_arch, ovr), cell in cells.items()
+            ovr: cell
+            for (cell_arch, ovr), cell in cells.items()
             if cell_arch == archetype and len(cell) >= min_cell
         }
         for low_ovr in sorted(by_ovr):
@@ -73,7 +74,9 @@ def analyze_position(cards: Iterable[Mapping], position: str, *, min_cell: int =
             if high_ovr not in by_ovr:
                 continue
             low, high = by_ovr[low_ovr], by_ovr[high_ovr]
-            common = set(_complete_numeric_ratings(low[0])) & set(_complete_numeric_ratings(high[0]))
+            common = set(_complete_numeric_ratings(low[0])) & set(
+                _complete_numeric_ratings(high[0])
+            )
             for card in low[1:] + high[1:]:
                 common &= set(_complete_numeric_ratings(card))
             for rating in common:
@@ -101,11 +104,13 @@ def analyze_position(cards: Iterable[Mapping], position: str, *, min_cell: int =
                 }
             )
         positive_arches = [
-            row for row in archetype_signals
+            row
+            for row in archetype_signals
             if row["boundaries"] >= 2 and row["positive_share"] >= 0.75 and row["median_delta"] > 0
         ]
         negative_arches = [
-            row for row in archetype_signals
+            row
+            for row in archetype_signals
             if row["boundaries"] >= 2 and row["positive_share"] <= 0.25 and row["median_delta"] < 0
         ]
         if positive_arches and negative_arches:
@@ -135,7 +140,8 @@ def analyze_position(cards: Iterable[Mapping], position: str, *, min_cell: int =
 
     likely_non_drivers = sorted(
         (
-            row for row in rating_rows
+            row
+            for row in rating_rows
             if row["same_ovr_cells"] >= 3
             and (row["median_same_ovr_spread"] or 0) >= 10
             and (row["positive_boundary_share"] is None or row["positive_boundary_share"] < 0.65)
@@ -144,7 +150,8 @@ def analyze_position(cards: Iterable[Mapping], position: str, *, min_cell: int =
     )
     candidate_drivers = sorted(
         (
-            row for row in rating_rows
+            row
+            for row in rating_rows
             if row["adjacent_boundaries"] >= 3
             and (row["positive_boundary_share"] or 0) >= 0.75
             and (row["median_adjacent_delta"] or 0) > 0

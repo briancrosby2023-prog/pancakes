@@ -10,33 +10,80 @@ from __future__ import annotations
 
 from typing import Mapping
 
-
 # Madden 19 XML-derived TE weights, preserved as historical priors. CFB27 uses
 # native archetype names, so the mappings below are hypotheses to test.
 M19_POSSESSION_WEIGHTS: tuple[tuple[str, float], ...] = (
-    ("SPD", 3), ("ACC", 4), ("AGI", 3), ("STR", 4), ("AWR", 9),
-    ("BCV", 1), ("BTK", 2), ("TRK", 1), ("SFA", 2), ("CTH", 10),
-    ("CIT", 14), ("SPC", 1), ("RLS", 2), ("SRR", 12), ("MRR", 6),
-    ("IBL", 4), ("LBK", 2), ("PBK", 3), ("PBF", 2), ("PBP", 2),
-    ("RBK", 5), ("RBF", 4), ("RBP", 4),
+    ("SPD", 3),
+    ("ACC", 4),
+    ("AGI", 3),
+    ("STR", 4),
+    ("AWR", 9),
+    ("BCV", 1),
+    ("BTK", 2),
+    ("TRK", 1),
+    ("SFA", 2),
+    ("CTH", 10),
+    ("CIT", 14),
+    ("SPC", 1),
+    ("RLS", 2),
+    ("SRR", 12),
+    ("MRR", 6),
+    ("IBL", 4),
+    ("LBK", 2),
+    ("PBK", 3),
+    ("PBF", 2),
+    ("PBP", 2),
+    ("RBK", 5),
+    ("RBF", 4),
+    ("RBP", 4),
 )
 
 # Historical ELU carried weight 2 for Vertical Threat, but ELU was unavailable
 # in the CFB27 TE evidence. The frozen Pancake v1.1 candidate omitted it and
 # renormalized the remaining weights; weighted_score naturally does that.
 M19_VERTICAL_WEIGHTS: tuple[tuple[str, float], ...] = (
-    ("SPD", 7), ("ACC", 7), ("AGI", 4), ("JMP", 3), ("AWR", 9),
-    ("BCV", 2), ("BTK", 3), ("TRK", 1), ("SFA", 2), ("CTH", 11),
-    ("CIT", 8), ("SPC", 4), ("RLS", 3), ("SRR", 7), ("MRR", 9),
-    ("DRR", 5), ("PBK", 2), ("PBF", 1), ("PBP", 1), ("RBK", 3),
-    ("RBF", 3), ("RBP", 3),
+    ("SPD", 7),
+    ("ACC", 7),
+    ("AGI", 4),
+    ("JMP", 3),
+    ("AWR", 9),
+    ("BCV", 2),
+    ("BTK", 3),
+    ("TRK", 1),
+    ("SFA", 2),
+    ("CTH", 11),
+    ("CIT", 8),
+    ("SPC", 4),
+    ("RLS", 3),
+    ("SRR", 7),
+    ("MRR", 9),
+    ("DRR", 5),
+    ("PBK", 2),
+    ("PBF", 1),
+    ("PBP", 1),
+    ("RBK", 3),
+    ("RBF", 3),
+    ("RBP", 3),
 )
 
 M19_BLOCKING_WEIGHTS: tuple[tuple[str, float], ...] = (
-    ("STR", 6), ("AWR", 9), ("BTK", 2), ("TRK", 1), ("SFA", 2),
-    ("CTH", 3), ("CIT", 3), ("SRR", 5), ("MRR", 4), ("IBL", 9),
-    ("LBK", 8), ("PBK", 8), ("PBF", 6), ("PBP", 6), ("RBK", 10),
-    ("RBF", 9), ("RBP", 9),
+    ("STR", 6),
+    ("AWR", 9),
+    ("BTK", 2),
+    ("TRK", 1),
+    ("SFA", 2),
+    ("CTH", 3),
+    ("CIT", 3),
+    ("SRR", 5),
+    ("MRR", 4),
+    ("IBL", 9),
+    ("LBK", 8),
+    ("PBK", 8),
+    ("PBF", 6),
+    ("PBP", 6),
+    ("RBK", 10),
+    ("RBF", 9),
+    ("RBP", 9),
 )
 
 PRR_VERTICAL_SHARE = 0.71
