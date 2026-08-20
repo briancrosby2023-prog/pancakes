@@ -12,6 +12,7 @@ SAFETY = json.loads(
 )
 EDGE = json.loads((ROOT / "data/research/op_x_019/edge/frozen_edge_scoring_spec.json").read_text())
 MIKE = json.loads((ROOT / "data/research/op_x_019/mike/frozen_mike_scoring_spec.json").read_text())
+DT = json.loads((ROOT / "data/research/op_x_019/dt/frozen_dt_scoring_spec.json").read_text())
 
 
 def test_safety_source_denominators_are_preserved():
@@ -53,3 +54,14 @@ def test_mike_vectors_and_signal_caller_mapping_are_frozen():
     )
     assert result["frozen_score"] == 79
     assert result["model_archetype"] == "Field General"
+
+
+def test_dt_vectors_and_pure_power_mapping_are_frozen():
+    assert all(sum(weights.values()) == 100 for weights in DT["weights"].values())
+    attrs = {name: 77 for name in DT["weights"]["Power Rusher"]}
+    result = score(
+        {"season": 26, "position": "DT", "archetype": "Pure Power", "attributes": attrs},
+        DT,
+    )
+    assert result["frozen_score"] == 77
+    assert result["model_archetype"] == "Power Rusher"
