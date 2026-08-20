@@ -1,0 +1,96 @@
+{
+  "attribute_deltas": {
+    "ACC": -4,
+    "AWR": 7,
+    "COD": -8,
+    "IBL": -1,
+    "LBK": 2,
+    "PBF": 7,
+    "PBK": 6,
+    "PBP": 1,
+    "RBF": -3,
+    "RBK": -1,
+    "RBP": -1,
+    "SPD": -1,
+    "TGH": -7
+  },
+  "candidate": {
+    "archetype": "Raw Strength",
+    "attribute_coverage": 1.0,
+    "card_id": "card:157d86d74e3e70c5a36b",
+    "model_evidence_paths": [
+      "data/research/center_exact_validation/madden_center_frozen_model.json",
+      "data/research/op_x_017/coverage_matrix.json"
+    ],
+    "model_limitations": [
+      "center ranking only; exact displayed overall is out of scope"
+    ],
+    "native_overall": 88,
+    "pancake_model_id": "C-M19-RANK-001",
+    "pancake_model_version": "v1.0",
+    "player_id": "player:896b8cbde265bfb114c4",
+    "player_name": "Coleton Price",
+    "position": "C",
+    "position_family": "C",
+    "program": "Prime Prospects",
+    "routing": {
+      "basis": "position-shared center ranking model",
+      "confidence": "EXACT_POSITION",
+      "family": "C",
+      "model_id": "C-M19-RANK-001",
+      "profile": "Center",
+      "status": "ROUTED",
+      "version": "v1.0"
+    },
+    "score": 85.722222,
+    "score_confidence": "HIGH",
+    "score_status": "SCORED_COMPLETE",
+    "source": {
+      "card": "CFB_FAN",
+      "ratings": "https://cfb.fan/players/14827-coleton-price/27-270014827/",
+      "raw_snapshot": "data/external/raw/cfb_fan/c799d09109f52f4b59da5e7ac1833085b6f928ee2772dd21b167d1ec136a9a16.bin"
+    }
+  },
+  "candidate_price": null,
+  "classification": "UPGRADE",
+  "current": {
+    "archetype": "Raw Strength",
+    "attribute_coverage": 1.0,
+    "card_id": "card:6ab0d8c7184fec894abd",
+    "model_evidence_paths": [
+      "data/research/center_exact_validation/madden_center_frozen_model.json",
+      "data/research/op_x_017/coverage_matrix.json"
+    ],
+    "model_limitations": [
+      "center ranking only; exact displayed overall is out of scope"
+    ],
+    "native_overall": 87,
+    "pancake_model_id": "C-M19-RANK-001",
+    "pancake_model_version": "v1.0",
+    "player_id": "player:d16704a4b520e110e92e",
+    "player_name": "Jake Guarnera",
+    "position": "C",
+    "position_family": "C",
+    "program": "Supercharged",
+    "routing": {
+      "basis": "position-shared center ranking model",
+      "confidence": "EXACT_POSITION",
+      "family": "C",
+      "model_id": "C-M19-RANK-001",
+      "profile": "Center",
+      "status": "ROUTED",
+      "version": "v1.0"
+    },
+    "score": 84.296296,
+    "score_confidence": "HIGH",
+    "score_status": "SCORED_COMPLETE",
+    "source": {
+      "card": "CFB_FAN",
+      "ratings": "https://cfb.fan/players/19722-jake-guarnera/27-280019722/",
+      "raw_snapshot": "data/external/raw/cfb_fan/64df61e0bbcd4bff05fcaf899a0bb3d3c8344c4371c7cbc54c7354eb883fc4ec.bin"
+    }
+  },
+  "score_delta": 1.425926,
+  "score_delta_percent": 1.691564,
+  "value": null
+}

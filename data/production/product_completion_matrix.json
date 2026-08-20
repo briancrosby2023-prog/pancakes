@@ -1,0 +1,138 @@
+{
+  "GM RECOMMENDATIONS": {
+    "blocker": "budget and roster-wide optimizer absent",
+    "evidence": "upgrade/sidegrade/downgrade classification implemented",
+    "executable_entry_point": "ProductionEngine.compare",
+    "next_action": "add position-group and budget optimizer",
+    "status": "PARTIAL",
+    "tests": "comparison test"
+  },
+  "LTD ENGINE": {
+    "blocker": "market data absent",
+    "evidence": "no production implementation",
+    "executable_entry_point": "none",
+    "next_action": "define only after source coverage",
+    "status": "NOT STARTED",
+    "tests": "none"
+  },
+  "MARKET INGESTION": {
+    "blocker": "no trustworthy source data",
+    "evidence": "market_instances.json contains zero rows",
+    "executable_entry_point": "canonical market export",
+    "next_action": "acquire licensed/reliable prices",
+    "status": "BLOCKED",
+    "tests": "not applicable"
+  },
+  "MARKET RISK": {
+    "blocker": "price history absent",
+    "evidence": "research artifacts do not provide executable current risk",
+    "executable_entry_point": "none",
+    "next_action": "build after longitudinal prices",
+    "status": "NOT STARTED",
+    "tests": "none"
+  },
+  "MODEL COVERAGE": {
+    "blocker": "QB Pure Runner intentionally unsupported",
+    "evidence": "15 named normalized families / 18 concrete model records",
+    "executable_entry_point": "build_model_registry",
+    "next_action": "prospective validation only",
+    "status": "COMPLETE",
+    "tests": "test_registry_covers_all_named_position_families_and_preserves_controls"
+  },
+  "MODEL ROUTING": {
+    "blocker": "none",
+    "evidence": "8,742 production routes; 85 unsupported; 11 diagnostic",
+    "executable_entry_point": "ProductionEngine.route",
+    "next_action": "add routes only when frozen evidence exists",
+    "status": "COMPLETE",
+    "tests": "test_router_has_explicit_unsupported_and_diagnostic_outcomes"
+  },
+  "PLAYER DATABASE": {
+    "blocker": "none",
+    "evidence": "8,838 unique canonical CFB27 cards loaded",
+    "executable_entry_point": "operation-pancake gm-run",
+    "next_action": "refresh through canonical acquisition pipeline",
+    "status": "COMPLETE",
+    "tests": "test_canonical_population_is_complete_and_identity_unique"
+  },
+  "PLAYER SCORING": {
+    "blocker": "654 records lack sufficient production evidence",
+    "evidence": "8184 current cards scored",
+    "executable_entry_point": "ProductionEngine.score",
+    "next_action": "improve canonical attribute completeness",
+    "status": "COMPLETE",
+    "tests": "test_score_is_deterministic_and_partial_coverage_is_disclosed"
+  },
+  "POSITION RANKINGS": {
+    "blocker": "cross-role interpretation requires disclosed context",
+    "evidence": "rankings for 15 families",
+    "executable_entry_point": "ProductionEngine.rank",
+    "next_action": "add role filters to UI",
+    "status": "COMPLETE",
+    "tests": "production GM tests"
+  },
+  "PRICE HISTORY": {
+    "blocker": "market ingestion absent",
+    "evidence": "no price observations",
+    "executable_entry_point": "none",
+    "next_action": "start after price acquisition",
+    "status": "NOT STARTED",
+    "tests": "none"
+  },
+  "PROVENANCE/EVIDENCE": {
+    "blocker": "none",
+    "evidence": "model and card evidence paths persisted",
+    "executable_entry_point": "model_registry.json and scored population",
+    "next_action": "retain on every refresh",
+    "status": "COMPLETE",
+    "tests": "registry controls test"
+  },
+  "ROSTER EVALUATION": {
+    "blocker": "roster identity coverage",
+    "evidence": "card and position comparison primitives complete",
+    "executable_entry_point": "ProductionEngine.compare",
+    "next_action": "build lineup evaluator after identity reconciliation",
+    "status": "PARTIAL",
+    "tests": "comparison test"
+  },
+  "ROSTER INGESTION": {
+    "blocker": "only 1/24 exact card identities",
+    "evidence": "24 roster instances exist",
+    "executable_entry_point": "canonical roster_instances.json",
+    "next_action": "reconcile roster card identities",
+    "status": "PARTIAL",
+    "tests": "canonical importer tests"
+  },
+  "TEST COVERAGE": {
+    "blocker": "no end-user UI tests",
+    "evidence": "targeted production suite",
+    "executable_entry_point": "pytest tests/test_production_gm.py",
+    "next_action": "extend with schema snapshots",
+    "status": "PARTIAL",
+    "tests": "five targeted tests"
+  },
+  "UPGRADE COMPARISON": {
+    "blocker": "none",
+    "evidence": "real-card persisted demonstration",
+    "executable_entry_point": "ProductionEngine.compare",
+    "next_action": "surface through user interface",
+    "status": "COMPLETE",
+    "tests": "test_comparison_and_optional_value_never_invent_price"
+  },
+  "USER-FACING INTERFACE": {
+    "blocker": "no interactive UI",
+    "evidence": "CLI generation command available",
+    "executable_entry_point": "operation-pancake gm-run",
+    "next_action": "add query/compare CLI commands",
+    "status": "PARTIAL",
+    "tests": "CLI exercised by generation"
+  },
+  "VALUE/MONEYBALL": {
+    "blocker": "canonical market export has zero rows",
+    "evidence": "caller-supplied price metric implemented",
+    "executable_entry_point": "ProductionEngine.compare(candidate_price=...)",
+    "next_action": "connect trustworthy market prices",
+    "status": "PARTIAL",
+    "tests": "optional value test"
+  }
+}
