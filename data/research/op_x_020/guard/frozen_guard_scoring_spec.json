@@ -1,0 +1,27 @@
+{
+  "operation": "OP-X-020-GUARD",
+  "freeze": {"blind_outcomes_observed": false, "repository_head": "6a5c717768d4f13f6296ef1fdb312ca77dbfd4a3", "timestamp": "2026-08-20T00:13:00.7939547-07:00"},
+  "model": {"id": "OG-M19-ARCH-001", "version": "v1.0", "applicability": "CFB25/26 aggregate LG/RG (G) populations", "formula": "sum(attribute * exact Madden 19 OG archetype weight) / sum(included weights)", "displayed_ovr_calibration": "none", "rounding": "none", "confidence": "position-specific exact vectors; one disclosed CFB26 Well Rounded hypothesis"},
+  "provenance": {"source_id": "SRC-M19-001", "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view", "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5", "workbook_sheet": "Data Version", "workbook_rows": "41:43"},
+  "weights": {
+    "Agile": {"ACC": 2, "AGI": 3, "AWR": 10, "IBL": 7, "LBK": 8, "PBK": 4, "PBF": 23, "RBK": 8, "RBF": 20, "SPD": 2, "STR": 13},
+    "Pass Protector": {"ACC": 2, "AGI": 2, "AWR": 14, "IBL": 5, "PBK": 5, "PBF": 28, "PBP": 28, "SPD": 2, "STR": 14},
+    "Power": {"ACC": 2, "AGI": 2, "AWR": 11, "IBL": 7, "LBK": 8, "PBK": 2, "PBP": 22, "RBK": 10, "RBP": 19, "SPD": 2, "STR": 15}
+  },
+  "source_weight_totals": {"Agile": 100, "Pass Protector": 100, "Power": 100},
+  "archetype_mappings": {
+    "CFB25": {
+      "Agile": {"model_archetype": "Agile", "status": "EXACT", "basis": "exact name"},
+      "Pass Protector": {"model_archetype": "Pass Protector", "status": "EXACT", "basis": "exact name"},
+      "Power": {"model_archetype": "Power", "status": "EXACT", "basis": "exact name"}
+    },
+    "CFB26": {
+      "Agile": {"model_archetype": "Agile", "status": "EXACT", "basis": "exact name"},
+      "Pass Protector": {"model_archetype": "Pass Protector", "status": "EXACT", "basis": "exact name"},
+      "Raw Strength": {"model_archetype": "Power", "status": "SUPPORTED", "basis": "power/strength blocking role"},
+      "Well Rounded": {"model_archetype": "Power", "status": "HYPOTHETICAL", "basis": "no historical balanced OG vector; Power retained as broad run/pass vector without fitting"}
+    }
+  },
+  "exclusions": {},
+  "scientific_control": "Frozen before any CFB25/26 G score, residual, or ranking outcome was calculated."
+}

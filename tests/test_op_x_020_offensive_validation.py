@@ -12,6 +12,9 @@ FB = json.loads((ROOT / "data/research/op_x_020/fb/frozen_fb_scoring_spec.json")
 TACKLE = json.loads(
     (ROOT / "data/research/op_x_020/tackle/frozen_tackle_scoring_spec.json").read_text()
 )
+GUARD = json.loads(
+    (ROOT / "data/research/op_x_020/guard/frozen_guard_scoring_spec.json").read_text()
+)
 
 
 def test_rb_vectors_total_100():
@@ -51,3 +54,15 @@ def test_tackle_vectors_and_raw_strength_mapping_are_position_specific():
     )
     assert result["frozen_score"] == 80
     assert result["model_archetype"] == "Power"
+
+
+def test_guard_vectors_are_distinct_and_well_rounded_is_disclosed():
+    assert all(sum(weights.values()) == 100 for weights in GUARD["weights"].values())
+    assert GUARD["weights"]["Agile"] != TACKLE["weights"]["Agile"]
+    attrs = {name: 78 for name in GUARD["weights"]["Power"]}
+    result = score(
+        {"season": 26, "position": "G", "archetype": "Well Rounded", "attributes": attrs},
+        GUARD,
+    )
+    assert result["frozen_score"] == 78
+    assert result["mapping_status"] == "HYPOTHETICAL"
