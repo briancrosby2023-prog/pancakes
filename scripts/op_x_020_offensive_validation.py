@@ -54,7 +54,7 @@ def main() -> None:
             spec_path=ROOT / "data/research/op_x_020/kp/frozen_kp_scoring_spec.json",
             positions={25: "KP", 26: "KP"},
             expected={25: 336, 26: 323},
-            control_commit="PENDING_PRE_BLIND_COMMIT",
+            control_commit="c43944cae5806100c2ac7b1b94901a3d786fe2b4",
         )
     print(
         json.dumps(

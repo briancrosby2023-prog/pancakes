@@ -108,14 +108,14 @@
       "cfb25_n": 356,
       "cfb26_accuracy": 0.9869921863305691,
       "cfb26_n": 372,
-      "cross_season_verdict": "DURABLE RANKING PASS; ABSOLUTE CALIBRATION REJECTED",
+      "cross_season_verdict": "DURABLE PASS (RANKING PRODUCTION ONLY)",
       "locked": true,
-      "model": "Historical Madden 19 Center",
-      "next_scientific_action": "Lock ranking prior; recover/derive production calibration separately.",
+      "model": "C-M19-RANK-001",
+      "next_scientific_action": "Use for ranking only; do not emit absolute predicted OVR.",
       "position": "C",
-      "production_status": "diagnostic/non-production",
-      "remaining_blocker": "No validated CFB production calibration or archetype layer.",
-      "version": "frozen historical hypothesis"
+      "production_status": "production",
+      "remaining_blocker": "Displayed-OVR calibration remains unvalidated and outside model scope.",
+      "version": "v1.0"
     },
     {
       "archetype": "shared; Pure Runner excluded",
@@ -308,6 +308,86 @@
       "production_status": "production",
       "remaining_blocker": "None.",
       "version": "v1.0"
+    },
+    {
+      "archetype": "generation-mapped archetype vectors",
+      "at_or_above_95_percent": true,
+      "cfb25_accuracy": 0.980767851225836,
+      "cfb25_n": 783,
+      "cfb26_accuracy": 0.9868312949486218,
+      "cfb26_n": 747,
+      "cross_season_verdict": "DURABLE PASS",
+      "locked": true,
+      "model": "RB-M19-ARCH-001",
+      "next_scientific_action": "Prospective validation only.",
+      "position": "RB",
+      "production_status": "production",
+      "remaining_blocker": "None.",
+      "version": "v1.0"
+    },
+    {
+      "archetype": "generation-mapped archetype vectors",
+      "at_or_above_95_percent": true,
+      "cfb25_accuracy": 0.983177570093458,
+      "cfb25_n": 58,
+      "cfb26_accuracy": 0.9884742041712404,
+      "cfb26_n": 62,
+      "cross_season_verdict": "DURABLE PASS",
+      "locked": true,
+      "model": "FB-M19-ARCH-001",
+      "next_scientific_action": "Prospective validation only.",
+      "position": "FB",
+      "production_status": "production",
+      "remaining_blocker": "None.",
+      "version": "v1.0"
+    },
+    {
+      "archetype": "generation-mapped archetype vectors",
+      "at_or_above_95_percent": true,
+      "cfb25_accuracy": 0.9977103713785144,
+      "cfb25_n": 743,
+      "cfb26_accuracy": 0.9920845809885444,
+      "cfb26_n": 719,
+      "cross_season_verdict": "DURABLE PASS",
+      "locked": true,
+      "model": "OT-M19-ARCH-001",
+      "next_scientific_action": "Prospective validation only.",
+      "position": "OT",
+      "production_status": "production",
+      "remaining_blocker": "None.",
+      "version": "v1.0"
+    },
+    {
+      "archetype": "generation-mapped archetype vectors",
+      "at_or_above_95_percent": true,
+      "cfb25_accuracy": 0.9974785869950838,
+      "cfb25_n": 702,
+      "cfb26_accuracy": 0.996478081065493,
+      "cfb26_n": 713,
+      "cross_season_verdict": "DURABLE PASS",
+      "locked": true,
+      "model": "OG-M19-ARCH-001",
+      "next_scientific_action": "Prospective validation only.",
+      "position": "G",
+      "production_status": "production",
+      "remaining_blocker": "None.",
+      "version": "v1.0"
+    },
+    {
+      "archetype": "generation-mapped archetype vectors",
+      "at_or_above_95_percent": true,
+      "cfb25_accuracy": 0.9873072921592736,
+      "cfb25_n": 336,
+      "cfb26_accuracy": 0.9919320392957145,
+      "cfb26_n": 323,
+      "cross_season_verdict": "DURABLE PASS",
+      "locked": true,
+      "model": "KP-M19-ARCH-001",
+      "next_scientific_action": "Prospective validation only.",
+      "position": "KP",
+      "production_status": "production",
+      "remaining_blocker": "None.",
+      "version": "v1.0"
     }
   ],
   "operation": "OP-X-017",
@@ -317,6 +397,7 @@
     "durable_production_locks": [
       "TE-MODEL-001 v1.1",
       "TE-MODEL-006 v1.3",
+      "C-M19-RANK-001 v1.0",
       "QB-SHARED-001 v1.0",
       "WR-M19-ARCH-001 v1.0",
       "CB-M19-ARCH-001 v1.0",
@@ -324,9 +405,14 @@
       "EDGE-M19-ARCH-001 v1.0",
       "MIKE-M19-ARCH-001 v1.0",
       "DT-M19-ARCH-001 v1.0",
-      "SAM-M19-ROLE-001 v1.0"
+      "SAM-M19-ROLE-001 v1.0",
+      "RB-M19-ARCH-001 v1.0",
+      "FB-M19-ARCH-001 v1.0",
+      "OT-M19-ARCH-001 v1.0",
+      "OG-M19-ARCH-001 v1.0",
+      "KP-M19-ARCH-001 v1.0"
     ],
-    "highest_value_remaining_position": "HB/RB",
-    "reason": "Largest remaining two-season population (783 CFB25; 747 CFB26) without an executed frozen coefficient vector."
+    "highest_value_remaining_position": "QB Pure Runner scoped gap",
+    "reason": "All full historical position families now have executed ranking models. QB Pure Runner remains outside QB-SHARED-001 production scope."
   }
 }

@@ -86,6 +86,16 @@ def main() -> None:
             ("SAM", "sam"),
         )
     }
+    offensive = {
+        family: load(ROOT / f"data/research/op_x_020/{directory}/validation_results.json")
+        for family, directory in (
+            ("RB", "rb"),
+            ("FB", "fb"),
+            ("OT", "tackle"),
+            ("G", "guard"),
+            ("KP", "kp"),
+        )
+    }
     rows = []
     te_models = {
         "Gritty Possession": ("TE-MODEL-001", "v1.1", True),
@@ -129,18 +139,18 @@ def main() -> None:
     rows.append(
         model_row(
             position="C",
-            model="Historical Madden 19 Center",
-            version="frozen historical hypothesis",
+            model="C-M19-RANK-001",
+            version="v1.0",
             archetype="all",
-            production=False,
+            production=True,
             cfb25_n=center25["eligible_n"],
             cfb25_accuracy=center25["ranking_accuracy_excluding_ties"],
             cfb26_n=center26["eligible_n"],
             cfb26_accuracy=center26["ranking_accuracy_excluding_ties"],
-            verdict="DURABLE RANKING PASS; ABSOLUTE CALIBRATION REJECTED",
+            verdict="DURABLE PASS (RANKING PRODUCTION ONLY)",
             locked=True,
-            blocker="No validated CFB production calibration or archetype layer.",
-            action="Lock ranking prior; recover/derive production calibration separately.",
+            blocker="Displayed-OVR calibration remains unvalidated and outside model scope.",
+            action="Use for ranking only; do not emit absolute predicted OVR.",
         )
     )
     qb25 = qb["seasons"]["25"]["production_scope"]
@@ -197,6 +207,11 @@ def main() -> None:
         ("MIKE", "MIKE-M19-ARCH-001", defensive["MIKE"]),
         ("DT", "DT-M19-ARCH-001", defensive["DT"]),
         ("SAM", "SAM-M19-ROLE-001", defensive["SAM"]),
+        ("RB", "RB-M19-ARCH-001", offensive["RB"]),
+        ("FB", "FB-M19-ARCH-001", offensive["FB"]),
+        ("OT", "OT-M19-ARCH-001", offensive["OT"]),
+        ("G", "OG-M19-ARCH-001", offensive["G"]),
+        ("KP", "KP-M19-ARCH-001", offensive["KP"]),
     ):
         cfb25 = validation["seasons"]["25"]
         cfb26 = validation["seasons"]["26"]
@@ -217,13 +232,7 @@ def main() -> None:
                 action="Prospective validation only." if validation["locked"] else "Investigate.",
             )
         )
-    unresolved = [
-        ("HB/RB", "HB", "783", "747"),
-        ("FB", "FB", "58", "62"),
-        ("LT/RT", "OT", "743", "719"),
-        ("LG/RG", "G", "702", "713"),
-        ("K/P", "KP aggregate", "336", "323"),
-    ]
+    unresolved = []
     inventory = [
         {
             "position_family": position,
@@ -243,6 +252,30 @@ def main() -> None:
         }
         for position, label, n25, n26 in unresolved
     ]
+    inventory.extend(
+        {
+            "position_family": family,
+            "existing_model": model,
+            "frozen_status": "EXECUTED AND LOCKED BY OP-X-020",
+            "coefficient_provenance": "SRC-M19-001 exact position/archetype vectors",
+            "executable": True,
+            "prior_validation": "CFB26 then unchanged CFB25 blind validation.",
+            "historical_population_compatibility": compatibility,
+            "missing_evidence": limitation,
+        }
+        for family, model, compatibility, limitation in (
+            ("HB/RB", "RB-M19-ARCH-001 v1.0", "CFB25 783; CFB26 747.", "None."),
+            ("FB", "FB-M19-ARCH-001 v1.0", "CFB25 58; CFB26 62.", "None."),
+            ("LT/RT", "OT-M19-ARCH-001 v1.0", "CFB25 743; CFB26 719.", "None."),
+            ("LG/RG", "OG-M19-ARCH-001 v1.0", "CFB25 702; CFB26 713.", "None."),
+            (
+                "K/P",
+                "KP-M19-ARCH-001 v1.0",
+                "CFB25 336; CFB26 323.",
+                "AWR unavailable; ranking uses disclosed observed 60-point denominator.",
+            ),
+        )
+    )
     inventory.extend(
         {
             "position_family": family,
@@ -309,13 +342,13 @@ def main() -> None:
             },
             {
                 "position_family": "C",
-                "existing_model": "Historical Madden 19 Center",
-                "frozen_status": "EXECUTED BY OP-X-016; RESEARCH ONLY",
+                "existing_model": "C-M19-RANK-001 v1.0",
+                "frozen_status": "RANKING PRODUCTION LOCK; ABSOLUTE OVR OUT OF SCOPE",
                 "coefficient_provenance": "HIST-M19-CENTER-MODEL-001",
                 "executable": True,
                 "prior_validation": "Historical ranking passes; absolute calibration rejected.",
                 "historical_population_compatibility": "CFB25 356; CFB26 372.",
-                "missing_evidence": "Production calibration and archetype layer.",
+                "missing_evidence": "Displayed-OVR calibration; ranking use is validated.",
             },
         ]
     )
@@ -331,10 +364,10 @@ def main() -> None:
                 if row["locked"] and row["production_status"] == "production"
             ],
             "currently_executable_frozen_models_exhausted": True,
-            "highest_value_remaining_position": "HB/RB",
+            "highest_value_remaining_position": "QB Pure Runner scoped gap",
             "reason": (
-                "Largest remaining two-season population (783 CFB25; 747 CFB26) "
-                "without an executed frozen coefficient vector."
+                "All full historical position families now have executed ranking models. "
+                "QB Pure Runner remains outside QB-SHARED-001 production scope."
             ),
         },
     }
@@ -368,9 +401,8 @@ def main() -> None:
             "",
             "## Next highest-value model",
             "",
-            "HB/RB. It is the largest remaining unmodeled two-season family (783 CFB25; "
-            "747 CFB26). Authoritative HB vectors are present in SRC-M19-001, but its "
-            "generation terminology must be frozen before blind validation.",
+            "No full historical position family remains unmodeled. The next scoped gap is "
+            "QB Pure Runner, which remains explicitly excluded from QB-SHARED-001.",
             "",
         ]
     )
