@@ -1,0 +1,1977 @@
+{
+  "archetype_behavior": {
+    "Backfield Threat": {
+      "classification": "PASS",
+      "correct_ordering_count": 415,
+      "cross_ovr_pair_count": 417,
+      "eligible_n": 30,
+      "excluded_n": 0,
+      "exclusion_reasons": {},
+      "inversions": 2,
+      "max_residual": -1.7083333333333286,
+      "mean_residual": -2.6694444444444434,
+      "median_residual": -2.65625,
+      "min_residual": -3.7395833333333286,
+      "missing_attribute_patterns": {
+        "ELU": 30
+      },
+      "ovr_band_performance": {
+        "65-69": {
+          "correct_ordering_count": 0,
+          "cross_ovr_pair_count": 0,
+          "inversions": 0,
+          "mae": 2.46875,
+          "n": 1,
+          "ranking_accuracy_excluding_ties": null,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "70-74": {
+          "correct_ordering_count": 0,
+          "cross_ovr_pair_count": 0,
+          "inversions": 0,
+          "mae": 2.75,
+          "n": 2,
+          "ranking_accuracy_excluding_ties": null,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "75-79": {
+          "correct_ordering_count": 0,
+          "cross_ovr_pair_count": 0,
+          "inversions": 0,
+          "mae": 2.1822916666666643,
+          "n": 2,
+          "ranking_accuracy_excluding_ties": null,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "80-84": {
+          "correct_ordering_count": 16,
+          "cross_ovr_pair_count": 16,
+          "inversions": 0,
+          "mae": 2.325892857142855,
+          "n": 7,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "85-89": {
+          "correct_ordering_count": 28,
+          "cross_ovr_pair_count": 28,
+          "inversions": 0,
+          "mae": 2.5462962962962954,
+          "n": 9,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "90-94": {
+          "correct_ordering_count": 3,
+          "cross_ovr_pair_count": 3,
+          "inversions": 0,
+          "mae": 2.6770833333333335,
+          "n": 3,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "95-99": {
+          "correct_ordering_count": 12,
+          "cross_ovr_pair_count": 12,
+          "inversions": 0,
+          "mae": 3.420138888888888,
+          "n": 6,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        }
+      },
+      "population_n": 30,
+      "rank_correlation_spearman": 0.9961000760629882,
+      "ranking_accuracy_excluding_ties": 0.9952038369304557,
+      "raw_score_ovr_mae": 2.6694444444444434,
+      "ties": 0,
+      "worst_inversions": [
+        {
+          "higher_ovr": {
+            "card_id": "26-290000030",
+            "frozen_score": 91.26041666666667,
+            "name": "M att Forte",
+            "ovr": 95,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-660025879",
+            "frozen_score": 91.41666666666667,
+            "name": "M arshall Faulk",
+            "ovr": 94,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.15625
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-240023567",
+            "frozen_score": 91.32291666666667,
+            "name": "Q uintrevion Wisner",
+            "ovr": 95,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-660025879",
+            "frozen_score": 91.41666666666667,
+            "name": "M arshall Faulk",
+            "ovr": 94,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.09375
+        }
+      ],
+      "worst_ovr_transition_clusters": [
+        {
+          "accuracy_excluding_ties": 0.0,
+          "comparisons": 2,
+          "inversions": 2,
+          "ovr_transition": "94->95",
+          "ties": 0
+        }
+      ]
+    },
+    "Contact Seeker": {
+      "classification": "PASS",
+      "correct_ordering_count": 596,
+      "cross_ovr_pair_count": 596,
+      "eligible_n": 36,
+      "excluded_n": 0,
+      "exclusion_reasons": {},
+      "inversions": 0,
+      "max_residual": -2.6299999999999955,
+      "mean_residual": -3.1458333333333326,
+      "median_residual": -3.1200000000000045,
+      "min_residual": -4.230000000000004,
+      "missing_attribute_patterns": {
+        "none": 36
+      },
+      "ovr_band_performance": {
+        "70-74": {
+          "correct_ordering_count": 0,
+          "cross_ovr_pair_count": 0,
+          "inversions": 0,
+          "mae": 3.239999999999995,
+          "n": 1,
+          "ranking_accuracy_excluding_ties": null,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "85-89": {
+          "correct_ordering_count": 44,
+          "cross_ovr_pair_count": 44,
+          "inversions": 0,
+          "mae": 2.9518181818181817,
+          "n": 11,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "90-94": {
+          "correct_ordering_count": 87,
+          "cross_ovr_pair_count": 87,
+          "inversions": 0,
+          "mae": 3.0379999999999985,
+          "n": 15,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "95-99": {
+          "correct_ordering_count": 31,
+          "cross_ovr_pair_count": 31,
+          "inversions": 0,
+          "mae": 3.552222222222222,
+          "n": 9,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        }
+      },
+      "population_n": 36,
+      "rank_correlation_spearman": 0.9966481793028036,
+      "ranking_accuracy_excluding_ties": 1.0,
+      "raw_score_ovr_mae": 3.1458333333333326,
+      "ties": 0,
+      "worst_inversions": [],
+      "worst_ovr_transition_clusters": []
+    },
+    "East/West Playmaker": {
+      "classification": "PASS",
+      "correct_ordering_count": 80684,
+      "cross_ovr_pair_count": 80729,
+      "eligible_n": 428,
+      "excluded_n": 0,
+      "exclusion_reasons": {},
+      "inversions": 42,
+      "max_residual": -1.1333333333333329,
+      "mean_residual": -2.3167705088265826,
+      "median_residual": -2.3888888888888857,
+      "min_residual": -3.37777777777778,
+      "missing_attribute_patterns": {
+        "ELU": 428
+      },
+      "ovr_band_performance": {
+        "60-64": {
+          "correct_ordering_count": 1,
+          "cross_ovr_pair_count": 1,
+          "inversions": 0,
+          "mae": 1.3222222222222229,
+          "n": 2,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "65-69": {
+          "correct_ordering_count": 0,
+          "cross_ovr_pair_count": 0,
+          "inversions": 0,
+          "mae": 1.6000000000000014,
+          "n": 1,
+          "ranking_accuracy_excluding_ties": null,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "70-74": {
+          "correct_ordering_count": 6771,
+          "cross_ovr_pair_count": 6771,
+          "inversions": 0,
+          "mae": 2.3343265052762234,
+          "n": 179,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "75-79": {
+          "correct_ordering_count": 511,
+          "cross_ovr_pair_count": 519,
+          "inversions": 8,
+          "mae": 2.084281842818428,
+          "n": 41,
+          "ranking_accuracy_excluding_ties": 0.9845857418111753,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": [
+            {
+              "accuracy_excluding_ties": 0.9191919191919192,
+              "comparisons": 99,
+              "inversions": 8,
+              "ovr_transition": "78->79",
+              "ties": 0
+            }
+          ]
+        },
+        "80-84": {
+          "correct_ordering_count": 587,
+          "cross_ovr_pair_count": 596,
+          "inversions": 9,
+          "mae": 2.073504273504274,
+          "n": 39,
+          "ranking_accuracy_excluding_ties": 0.9848993288590604,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": [
+            {
+              "accuracy_excluding_ties": 0.94,
+              "comparisons": 100,
+              "inversions": 6,
+              "ovr_transition": "81->82",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.9571428571428572,
+              "comparisons": 70,
+              "inversions": 3,
+              "ovr_transition": "80->81",
+              "ties": 0
+            }
+          ]
+        },
+        "85-89": {
+          "correct_ordering_count": 1006,
+          "cross_ovr_pair_count": 1010,
+          "inversions": 3,
+          "mae": 2.2111111111111112,
+          "n": 51,
+          "ranking_accuracy_excluding_ties": 0.9970267591674926,
+          "ties": 1,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": [
+            {
+              "accuracy_excluding_ties": 0.9875,
+              "comparisons": 80,
+              "inversions": 1,
+              "ovr_transition": "87->88",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.9910714285714286,
+              "comparisons": 112,
+              "inversions": 1,
+              "ovr_transition": "86->87",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.9928057553956835,
+              "comparisons": 140,
+              "inversions": 1,
+              "ovr_transition": "88->89",
+              "ties": 1
+            }
+          ]
+        },
+        "90-94": {
+          "correct_ordering_count": 1037,
+          "cross_ovr_pair_count": 1045,
+          "inversions": 7,
+          "mae": 2.4365384615384618,
+          "n": 52,
+          "ranking_accuracy_excluding_ties": 0.9932950191570882,
+          "ties": 1,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": [
+            {
+              "accuracy_excluding_ties": 0.9583333333333334,
+              "comparisons": 72,
+              "inversions": 3,
+              "ovr_transition": "92->93",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.9722222222222222,
+              "comparisons": 72,
+              "inversions": 2,
+              "ovr_transition": "90->91",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.986013986013986,
+              "comparisons": 144,
+              "inversions": 2,
+              "ovr_transition": "93->94",
+              "ties": 1
+            }
+          ]
+        },
+        "95-99": {
+          "correct_ordering_count": 1450,
+          "cross_ovr_pair_count": 1456,
+          "inversions": 5,
+          "mae": 2.598412698412698,
+          "n": 63,
+          "ranking_accuracy_excluding_ties": 0.9965635738831615,
+          "ties": 1,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": [
+            {
+              "accuracy_excluding_ties": 0.9747899159663865,
+              "comparisons": 120,
+              "inversions": 3,
+              "ovr_transition": "95->96",
+              "ties": 1
+            },
+            {
+              "accuracy_excluding_ties": 0.9818181818181818,
+              "comparisons": 110,
+              "inversions": 2,
+              "ovr_transition": "96->97",
+              "ties": 0
+            }
+          ]
+        }
+      },
+      "population_n": 428,
+      "rank_correlation_spearman": 0.9978132647623453,
+      "ranking_accuracy_excluding_ties": 0.9994797215271412,
+      "raw_score_ovr_mae": 2.3167705088265826,
+      "ties": 3,
+      "worst_inversions": [
+        {
+          "higher_ovr": {
+            "card_id": "26-2023650",
+            "frozen_score": 79.2,
+            "name": "J ahiem White",
+            "ovr": 82,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-2006329",
+            "frozen_score": 79.54444444444445,
+            "name": "E li Sanders",
+            "ovr": 81,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.34444444444444855
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-804021888",
+            "frozen_score": 91.76666666666667,
+            "name": "H ollywood Smothers",
+            "ovr": 95,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-280021586",
+            "frozen_score": 92.1,
+            "name": "D ylan Riley",
+            "ovr": 94,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.3333333333333286
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-620000178",
+            "frozen_score": 92.62222222222222,
+            "name": "K eyjuan Brown",
+            "ovr": 96,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-311020627",
+            "frozen_score": 92.94444444444444,
+            "name": "D ylan Edwards",
+            "ovr": 95,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.32222222222222285
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-805021888",
+            "frozen_score": 89.76666666666667,
+            "name": "H ollywood Smothers",
+            "ovr": 93,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-463026163",
+            "frozen_score": 90.08888888888889,
+            "name": "L aMichael James",
+            "ovr": 92,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.32222222222222285
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-2000707",
+            "frozen_score": 76.21111111111111,
+            "name": "J ovantae Barnes",
+            "ovr": 79,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-2005822",
+            "frozen_score": 76.52222222222223,
+            "name": "K amari Moulton",
+            "ovr": 78,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.3111111111111171
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-2000707",
+            "frozen_score": 76.21111111111111,
+            "name": "J ovantae Barnes",
+            "ovr": 79,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-2008107",
+            "frozen_score": 76.5111111111111,
+            "name": "J ay Haynes",
+            "ovr": 78,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.29999999999999716
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-380026270",
+            "frozen_score": 91.81111111111112,
+            "name": "R eggie Bush",
+            "ovr": 95,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-280021586",
+            "frozen_score": 92.1,
+            "name": "D ylan Riley",
+            "ovr": 94,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.2888888888888772
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-806021888",
+            "frozen_score": 87.76666666666667,
+            "name": "H ollywood Smothers",
+            "ovr": 91,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-202008616",
+            "frozen_score": 88.03333333333333,
+            "name": "F loyd Chalk IV",
+            "ovr": 90,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.2666666666666657
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-320004080",
+            "frozen_score": 90.73333333333333,
+            "name": "J eremiyah Love",
+            "ovr": 94,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-462026163",
+            "frozen_score": 91.0,
+            "name": "L aMichael James",
+            "ovr": 93,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.2666666666666657
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-2021686",
+            "frozen_score": 78.6,
+            "name": "G eorge Pettaway",
+            "ovr": 81,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-150021799",
+            "frozen_score": 78.85555555555555,
+            "name": "G avin Sawchuk",
+            "ovr": 80,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.25555555555556
+        }
+      ],
+      "worst_ovr_transition_clusters": [
+        {
+          "accuracy_excluding_ties": 0.9537037037037037,
+          "comparisons": 216,
+          "inversions": 10,
+          "ovr_transition": "94->95",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9191919191919192,
+          "comparisons": 99,
+          "inversions": 8,
+          "ovr_transition": "78->79",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.94,
+          "comparisons": 100,
+          "inversions": 6,
+          "ovr_transition": "81->82",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9571428571428572,
+          "comparisons": 70,
+          "inversions": 3,
+          "ovr_transition": "80->81",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9583333333333334,
+          "comparisons": 72,
+          "inversions": 3,
+          "ovr_transition": "92->93",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9747899159663865,
+          "comparisons": 120,
+          "inversions": 3,
+          "ovr_transition": "95->96",
+          "ties": 1
+        },
+        {
+          "accuracy_excluding_ties": 0.9722222222222222,
+          "comparisons": 72,
+          "inversions": 2,
+          "ovr_transition": "90->91",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9818181818181818,
+          "comparisons": 110,
+          "inversions": 2,
+          "ovr_transition": "96->97",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.986013986013986,
+          "comparisons": 144,
+          "inversions": 2,
+          "ovr_transition": "93->94",
+          "ties": 1
+        },
+        {
+          "accuracy_excluding_ties": 0.9875,
+          "comparisons": 80,
+          "inversions": 1,
+          "ovr_transition": "87->88",
+          "ties": 0
+        }
+      ]
+    },
+    "Elusive Bruiser": {
+      "classification": "PASS",
+      "correct_ordering_count": 22798,
+      "cross_ovr_pair_count": 23376,
+      "eligible_n": 222,
+      "excluded_n": 0,
+      "exclusion_reasons": {},
+      "inversions": 137,
+      "max_residual": 0.7888888888888914,
+      "mean_residual": -1.9830830830830821,
+      "median_residual": -2.299999999999997,
+      "min_residual": -4.188888888888883,
+      "missing_attribute_patterns": {
+        "ELU": 222
+      },
+      "ovr_band_performance": {
+        "65-69": {
+          "correct_ordering_count": 0,
+          "cross_ovr_pair_count": 0,
+          "inversions": 0,
+          "mae": 0.6191919191919223,
+          "n": 22,
+          "ranking_accuracy_excluding_ties": null,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "70-74": {
+          "correct_ordering_count": 1308,
+          "cross_ovr_pair_count": 1356,
+          "inversions": 29,
+          "mae": 1.2153005464480866,
+          "n": 61,
+          "ranking_accuracy_excluding_ties": 0.9783096484667165,
+          "ties": 19,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": [
+            {
+              "accuracy_excluding_ties": 0.90625,
+              "comparisons": 160,
+              "inversions": 15,
+              "ovr_transition": "73->74",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.9662921348314607,
+              "comparisons": 286,
+              "inversions": 9,
+              "ovr_transition": "70->71",
+              "ties": 19
+            },
+            {
+              "accuracy_excluding_ties": 0.9759615384615384,
+              "comparisons": 208,
+              "inversions": 5,
+              "ovr_transition": "71->73",
+              "ties": 0
+            }
+          ]
+        },
+        "75-79": {
+          "correct_ordering_count": 170,
+          "cross_ovr_pair_count": 183,
+          "inversions": 13,
+          "mae": 2.72824074074074,
+          "n": 24,
+          "ranking_accuracy_excluding_ties": 0.9289617486338798,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": [
+            {
+              "accuracy_excluding_ties": 0.7,
+              "comparisons": 40,
+              "inversions": 12,
+              "ovr_transition": "78->79",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.9886363636363636,
+              "comparisons": 88,
+              "inversions": 1,
+              "ovr_transition": "76->78",
+              "ties": 0
+            }
+          ]
+        },
+        "80-84": {
+          "correct_ordering_count": 150,
+          "cross_ovr_pair_count": 157,
+          "inversions": 7,
+          "mae": 2.5259259259259244,
+          "n": 21,
+          "ranking_accuracy_excluding_ties": 0.9554140127388535,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": [
+            {
+              "accuracy_excluding_ties": 0.9111111111111111,
+              "comparisons": 45,
+              "inversions": 4,
+              "ovr_transition": "80->81",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.75,
+              "comparisons": 4,
+              "inversions": 1,
+              "ovr_transition": "83->84",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.875,
+              "comparisons": 8,
+              "inversions": 1,
+              "ovr_transition": "82->83",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.9444444444444444,
+              "comparisons": 18,
+              "inversions": 1,
+              "ovr_transition": "81->82",
+              "ties": 0
+            }
+          ]
+        },
+        "85-89": {
+          "correct_ordering_count": 221,
+          "cross_ovr_pair_count": 239,
+          "inversions": 18,
+          "mae": 2.5733333333333324,
+          "n": 25,
+          "ranking_accuracy_excluding_ties": 0.9246861924686193,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": [
+            {
+              "accuracy_excluding_ties": 0.7755102040816326,
+              "comparisons": 49,
+              "inversions": 11,
+              "ovr_transition": "88->89",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.8571428571428571,
+              "comparisons": 14,
+              "inversions": 2,
+              "ovr_transition": "87->88",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.8888888888888888,
+              "comparisons": 18,
+              "inversions": 2,
+              "ovr_transition": "85->86",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.9523809523809523,
+              "comparisons": 42,
+              "inversions": 2,
+              "ovr_transition": "86->88",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.9166666666666666,
+              "comparisons": 12,
+              "inversions": 1,
+              "ovr_transition": "86->87",
+              "ties": 0
+            }
+          ]
+        },
+        "90-94": {
+          "correct_ordering_count": 363,
+          "cross_ovr_pair_count": 378,
+          "inversions": 14,
+          "mae": 2.7967741935483867,
+          "n": 31,
+          "ranking_accuracy_excluding_ties": 0.9628647214854111,
+          "ties": 1,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": [
+            {
+              "accuracy_excluding_ties": 0.7962962962962963,
+              "comparisons": 54,
+              "inversions": 11,
+              "ovr_transition": "92->93",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.9166666666666666,
+              "comparisons": 36,
+              "inversions": 3,
+              "ovr_transition": "93->94",
+              "ties": 0
+            }
+          ]
+        },
+        "95-99": {
+          "correct_ordering_count": 533,
+          "cross_ovr_pair_count": 547,
+          "inversions": 14,
+          "mae": 2.8994152046783626,
+          "n": 38,
+          "ranking_accuracy_excluding_ties": 0.9744058500914077,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": [
+            {
+              "accuracy_excluding_ties": 0.7,
+              "comparisons": 40,
+              "inversions": 12,
+              "ovr_transition": "97->98",
+              "ties": 0
+            },
+            {
+              "accuracy_excluding_ties": 0.9714285714285714,
+              "comparisons": 70,
+              "inversions": 2,
+              "ovr_transition": "98->99",
+              "ties": 0
+            }
+          ]
+        }
+      },
+      "population_n": 222,
+      "rank_correlation_spearman": 0.9941708590355939,
+      "ranking_accuracy_excluding_ties": 0.9940265969042947,
+      "raw_score_ovr_mae": 2.1058058058058053,
+      "ties": 441,
+      "worst_inversions": [
+        {
+          "higher_ovr": {
+            "card_id": "26-315030902",
+            "frozen_score": 85.45555555555555,
+            "name": "R ashad Amos",
+            "ovr": 89,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-240023731",
+            "frozen_score": 86.85555555555555,
+            "name": "N aquari Rogers",
+            "ovr": 88,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 1.4000000000000057
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-2009730",
+            "frozen_score": 75.07777777777778,
+            "name": "J osh McCray",
+            "ovr": 79,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-2004095",
+            "frozen_score": 76.42222222222222,
+            "name": "J ordan Marshall",
+            "ovr": 78,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 1.3444444444444343
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-2020926",
+            "frozen_score": 71.9888888888889,
+            "name": "R oderick Robinson II",
+            "ovr": 76,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-2008215",
+            "frozen_score": 73.0111111111111,
+            "name": "R ickey Hunt Jr.",
+            "ovr": 74,
+            "season": 26
+          },
+          "ovr_gap": 2,
+          "score_gap": 1.0222222222222115
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-431026474",
+            "frozen_score": 86.0111111111111,
+            "name": "A rian Foster",
+            "ovr": 89,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-240023731",
+            "frozen_score": 86.85555555555555,
+            "name": "N aquari Rogers",
+            "ovr": 88,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.8444444444444485
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-530000128",
+            "frozen_score": 94.18888888888888,
+            "name": "K aytron Allen",
+            "ovr": 98,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-610010022",
+            "frozen_score": 95.02222222222223,
+            "name": "J alen Buckley",
+            "ovr": 97,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.8333333333333428
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-2009730",
+            "frozen_score": 75.07777777777778,
+            "name": "J osh McCray",
+            "ovr": 79,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-2006042",
+            "frozen_score": 75.9,
+            "name": "C am Edwards",
+            "ovr": 78,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.8222222222222229
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-2007925",
+            "frozen_score": 72.21111111111111,
+            "name": "K aden Feagin",
+            "ovr": 76,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-2008215",
+            "frozen_score": 73.0111111111111,
+            "name": "R ickey Hunt Jr.",
+            "ovr": 74,
+            "season": 26
+          },
+          "ovr_gap": 2,
+          "score_gap": 0.7999999999999972
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-2009730",
+            "frozen_score": 75.07777777777778,
+            "name": "J osh McCray",
+            "ovr": 79,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-2031472",
+            "frozen_score": 75.82222222222222,
+            "name": "J ohn Emery Jr.",
+            "ovr": 78,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.74444444444444
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-2009730",
+            "frozen_score": 75.07777777777778,
+            "name": "J osh McCray",
+            "ovr": 79,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-2022516",
+            "frozen_score": 75.78888888888889,
+            "name": "C hip Trayanum",
+            "ovr": 78,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.7111111111111086
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-2021931",
+            "frozen_score": 77.46666666666667,
+            "name": "T erion Stewart",
+            "ovr": 81,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-2000725",
+            "frozen_score": 78.16666666666667,
+            "name": "C J Baxter",
+            "ovr": 80,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.7000000000000028
+        }
+      ],
+      "worst_ovr_transition_clusters": [
+        {
+          "accuracy_excluding_ties": 0.7529411764705882,
+          "comparisons": 484,
+          "inversions": 21,
+          "ovr_transition": "69->70",
+          "ties": 399
+        },
+        {
+          "accuracy_excluding_ties": 0.90625,
+          "comparisons": 160,
+          "inversions": 15,
+          "ovr_transition": "73->74",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.7,
+          "comparisons": 40,
+          "inversions": 12,
+          "ovr_transition": "78->79",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.7,
+          "comparisons": 40,
+          "inversions": 12,
+          "ovr_transition": "97->98",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.7755102040816326,
+          "comparisons": 49,
+          "inversions": 11,
+          "ovr_transition": "88->89",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.7962962962962963,
+          "comparisons": 54,
+          "inversions": 11,
+          "ovr_transition": "92->93",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9090909090909091,
+          "comparisons": 110,
+          "inversions": 10,
+          "ovr_transition": "74->76",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9662921348314607,
+          "comparisons": 286,
+          "inversions": 9,
+          "ovr_transition": "70->71",
+          "ties": 19
+        },
+        {
+          "accuracy_excluding_ties": 0.8214285714285714,
+          "comparisons": 28,
+          "inversions": 5,
+          "ovr_transition": "89->90",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9759615384615384,
+          "comparisons": 208,
+          "inversions": 5,
+          "ovr_transition": "71->73",
+          "ties": 0
+        }
+      ]
+    },
+    "North/South Blocker": {
+      "classification": "PASS",
+      "correct_ordering_count": 6,
+      "cross_ovr_pair_count": 6,
+      "eligible_n": 4,
+      "excluded_n": 0,
+      "exclusion_reasons": {},
+      "inversions": 0,
+      "max_residual": -1.9899999999999949,
+      "mean_residual": -1.9899999999999949,
+      "median_residual": -1.9899999999999949,
+      "min_residual": -1.9899999999999949,
+      "missing_attribute_patterns": {
+        "none": 4
+      },
+      "ovr_band_performance": {
+        "90-94": {
+          "correct_ordering_count": 3,
+          "cross_ovr_pair_count": 3,
+          "inversions": 0,
+          "mae": 1.9899999999999949,
+          "n": 3,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "95-99": {
+          "correct_ordering_count": 0,
+          "cross_ovr_pair_count": 0,
+          "inversions": 0,
+          "mae": 1.9899999999999949,
+          "n": 1,
+          "ranking_accuracy_excluding_ties": null,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        }
+      },
+      "population_n": 4,
+      "rank_correlation_spearman": 1.0,
+      "ranking_accuracy_excluding_ties": 1.0,
+      "raw_score_ovr_mae": 1.9899999999999949,
+      "ties": 0,
+      "worst_inversions": [],
+      "worst_ovr_transition_clusters": []
+    },
+    "North/South Receiver": {
+      "classification": "PASS",
+      "correct_ordering_count": 336,
+      "cross_ovr_pair_count": 340,
+      "eligible_n": 27,
+      "excluded_n": 0,
+      "exclusion_reasons": {},
+      "inversions": 4,
+      "max_residual": -1.3229166666666714,
+      "mean_residual": -2.930941358024691,
+      "median_residual": -2.9583333333333286,
+      "min_residual": -4.21875,
+      "missing_attribute_patterns": {
+        "ELU": 27
+      },
+      "ovr_band_performance": {
+        "65-69": {
+          "correct_ordering_count": 0,
+          "cross_ovr_pair_count": 0,
+          "inversions": 0,
+          "mae": 1.8177083333333286,
+          "n": 2,
+          "ranking_accuracy_excluding_ties": null,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "70-74": {
+          "correct_ordering_count": 5,
+          "cross_ovr_pair_count": 5,
+          "inversions": 0,
+          "mae": 2.088541666666668,
+          "n": 4,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "75-79": {
+          "correct_ordering_count": 3,
+          "cross_ovr_pair_count": 3,
+          "inversions": 0,
+          "mae": 2.596354166666668,
+          "n": 4,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "80-84": {
+          "correct_ordering_count": 4,
+          "cross_ovr_pair_count": 4,
+          "inversions": 0,
+          "mae": 3.083333333333332,
+          "n": 4,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "85-89": {
+          "correct_ordering_count": 19,
+          "cross_ovr_pair_count": 19,
+          "inversions": 0,
+          "mae": 3.3675595238095224,
+          "n": 7,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        },
+        "95-99": {
+          "correct_ordering_count": 13,
+          "cross_ovr_pair_count": 13,
+          "inversions": 0,
+          "mae": 3.475694444444445,
+          "n": 6,
+          "ranking_accuracy_excluding_ties": 1.0,
+          "ties": 0,
+          "worst_inversions": [],
+          "worst_ovr_transition_clusters": []
+        }
+      },
+      "population_n": 27,
+      "rank_correlation_spearman": 0.9932738432926733,
+      "ranking_accuracy_excluding_ties": 0.9882352941176471,
+      "raw_score_ovr_mae": 2.930941358024691,
+      "ties": 0,
+      "worst_inversions": [
+        {
+          "higher_ovr": {
+            "card_id": "26-2021849",
+            "frozen_score": 80.91666666666667,
+            "name": "N icholas Singleton",
+            "ovr": 85,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-2021009",
+            "frozen_score": 81.34375,
+            "name": "D arius Taylor",
+            "ovr": 84,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.4270833333333286
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-2018870",
+            "frozen_score": 76.48958333333333,
+            "name": "T .J. Harden",
+            "ovr": 80,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-2031420",
+            "frozen_score": 76.83333333333333,
+            "name": "S eth McGowan",
+            "ovr": 79,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.34375
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-2021849",
+            "frozen_score": 80.91666666666667,
+            "name": "N icholas Singleton",
+            "ovr": 85,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-170005770",
+            "frozen_score": 81.04166666666667,
+            "name": "M ark Fletcher Jr.",
+            "ovr": 84,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.125
+        },
+        {
+          "higher_ovr": {
+            "card_id": "26-2019987",
+            "frozen_score": 76.79166666666667,
+            "name": "B raydon Bennett",
+            "ovr": 80,
+            "season": 26
+          },
+          "lower_ovr": {
+            "card_id": "26-2031420",
+            "frozen_score": 76.83333333333333,
+            "name": "S eth McGowan",
+            "ovr": 79,
+            "season": 26
+          },
+          "ovr_gap": 1,
+          "score_gap": 0.04166666666665719
+        }
+      ],
+      "worst_ovr_transition_clusters": [
+        {
+          "accuracy_excluding_ties": 0.0,
+          "comparisons": 2,
+          "inversions": 2,
+          "ovr_transition": "84->85",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.6666666666666666,
+          "comparisons": 6,
+          "inversions": 2,
+          "ovr_transition": "79->80",
+          "ties": 0
+        }
+      ]
+    }
+  },
+  "candidate_n": 747,
+  "classification": "PASS",
+  "correct_ordering_count": 253439,
+  "cross_ovr_pair_count": 262525,
+  "eligible_n": 747,
+  "excluded_n": 0,
+  "exclusion_reasons": {},
+  "inversions": 3382,
+  "max_residual": 0.7888888888888914,
+  "mean_residual": -2.2921699762011,
+  "median_residual": -2.3888888888888857,
+  "min_residual": -4.230000000000004,
+  "missing_attribute_patterns": {
+    "ELU": 707,
+    "none": 40
+  },
+  "model_archetype_counts": {
+    "Elusive Back": 650,
+    "Power Back": 40,
+    "Receiving Back": 57
+  },
+  "ovr_band_performance": {
+    "60-64": {
+      "correct_ordering_count": 1,
+      "cross_ovr_pair_count": 1,
+      "inversions": 0,
+      "mae": 1.3222222222222229,
+      "n": 2,
+      "ranking_accuracy_excluding_ties": 1.0,
+      "ties": 0,
+      "worst_inversions": [],
+      "worst_ovr_transition_clusters": []
+    },
+    "65-69": {
+      "correct_ordering_count": 71,
+      "cross_ovr_pair_count": 71,
+      "inversions": 0,
+      "mae": 0.8202457264957288,
+      "n": 26,
+      "ranking_accuracy_excluding_ties": 1.0,
+      "ties": 0,
+      "worst_inversions": [],
+      "worst_ovr_transition_clusters": []
+    },
+    "70-74": {
+      "correct_ordering_count": 15051,
+      "cross_ovr_pair_count": 19962,
+      "inversions": 2327,
+      "mae": 2.0610200179937004,
+      "n": 247,
+      "ranking_accuracy_excluding_ties": 0.8660950627229831,
+      "ties": 2584,
+      "worst_inversions": [],
+      "worst_ovr_transition_clusters": [
+        {
+          "accuracy_excluding_ties": 0.35735735735735735,
+          "comparisons": 2793,
+          "inversions": 1712,
+          "ovr_transition": "71->72",
+          "ties": 129
+        },
+        {
+          "accuracy_excluding_ties": 0.5645342312008979,
+          "comparisons": 3325,
+          "inversions": 388,
+          "ovr_transition": "70->72",
+          "ties": 2434
+        },
+        {
+          "accuracy_excluding_ties": 0.6719367588932806,
+          "comparisons": 525,
+          "inversions": 166,
+          "ovr_transition": "70->71",
+          "ties": 19
+        },
+        {
+          "accuracy_excluding_ties": 0.9650655021834061,
+          "comparisons": 1147,
+          "inversions": 40,
+          "ovr_transition": "73->74",
+          "ties": 2
+        },
+        {
+          "accuracy_excluding_ties": 0.972972972972973,
+          "comparisons": 777,
+          "inversions": 21,
+          "ovr_transition": "71->73",
+          "ties": 0
+        }
+      ]
+    },
+    "75-79": {
+      "correct_ordering_count": 1553,
+      "cross_ovr_pair_count": 1611,
+      "inversions": 58,
+      "mae": 2.3335680751173706,
+      "n": 71,
+      "ranking_accuracy_excluding_ties": 0.9639975170701428,
+      "ties": 0,
+      "worst_inversions": [],
+      "worst_ovr_transition_clusters": [
+        {
+          "accuracy_excluding_ties": 0.8431372549019608,
+          "comparisons": 357,
+          "inversions": 56,
+          "ovr_transition": "78->79",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9964349376114082,
+          "comparisons": 561,
+          "inversions": 2,
+          "ovr_transition": "76->78",
+          "ties": 0
+        }
+      ]
+    },
+    "80-84": {
+      "correct_ordering_count": 1914,
+      "cross_ovr_pair_count": 1974,
+      "inversions": 58,
+      "mae": 2.289094287949921,
+      "n": 71,
+      "ranking_accuracy_excluding_ties": 0.9705882352941176,
+      "ties": 2,
+      "worst_inversions": [],
+      "worst_ovr_transition_clusters": [
+        {
+          "accuracy_excluding_ties": 0.9153094462540716,
+          "comparisons": 308,
+          "inversions": 26,
+          "ovr_transition": "80->81",
+          "ties": 1
+        },
+        {
+          "accuracy_excluding_ties": 0.9507575757575758,
+          "comparisons": 264,
+          "inversions": 13,
+          "ovr_transition": "81->82",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9166666666666666,
+          "comparisons": 120,
+          "inversions": 10,
+          "ovr_transition": "82->83",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9302325581395349,
+          "comparisons": 130,
+          "inversions": 9,
+          "ovr_transition": "83->84",
+          "ties": 1
+        }
+      ]
+    },
+    "85-89": {
+      "correct_ordering_count": 3956,
+      "cross_ovr_pair_count": 4097,
+      "inversions": 140,
+      "mae": 2.4860153721682847,
+      "n": 103,
+      "ranking_accuracy_excluding_ties": 0.9658203125,
+      "ties": 1,
+      "worst_inversions": [],
+      "worst_ovr_transition_clusters": [
+        {
+          "accuracy_excluding_ties": 0.9093525179856116,
+          "comparisons": 696,
+          "inversions": 63,
+          "ovr_transition": "88->89",
+          "ties": 1
+        },
+        {
+          "accuracy_excluding_ties": 0.9038461538461539,
+          "comparisons": 312,
+          "inversions": 30,
+          "ovr_transition": "87->88",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9344729344729344,
+          "comparisons": 351,
+          "inversions": 23,
+          "ovr_transition": "86->87",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9444444444444444,
+          "comparisons": 270,
+          "inversions": 15,
+          "ovr_transition": "85->86",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9861111111111112,
+          "comparisons": 648,
+          "inversions": 9,
+          "ovr_transition": "86->88",
+          "ties": 0
+        }
+      ]
+    },
+    "90-94": {
+      "correct_ordering_count": 4161,
+      "cross_ovr_pair_count": 4268,
+      "inversions": 101,
+      "mae": 2.624723557692307,
+      "n": 104,
+      "ranking_accuracy_excluding_ties": 0.9763022055373064,
+      "ties": 6,
+      "worst_inversions": [],
+      "worst_ovr_transition_clusters": [
+        {
+          "accuracy_excluding_ties": 0.9023255813953488,
+          "comparisons": 432,
+          "inversions": 42,
+          "ovr_transition": "92->93",
+          "ties": 2
+        },
+        {
+          "accuracy_excluding_ties": 0.9393305439330544,
+          "comparisons": 480,
+          "inversions": 29,
+          "ovr_transition": "91->92",
+          "ties": 2
+        },
+        {
+          "accuracy_excluding_ties": 0.954183266932271,
+          "comparisons": 504,
+          "inversions": 23,
+          "ovr_transition": "93->94",
+          "ties": 2
+        },
+        {
+          "accuracy_excluding_ties": 0.975,
+          "comparisons": 280,
+          "inversions": 7,
+          "ovr_transition": "90->91",
+          "ties": 0
+        }
+      ]
+    },
+    "95-99": {
+      "correct_ordering_count": 5558,
+      "cross_ovr_pair_count": 5699,
+      "inversions": 140,
+      "mae": 2.8391282746160793,
+      "n": 123,
+      "ranking_accuracy_excluding_ties": 0.9754299754299754,
+      "ties": 1,
+      "worst_inversions": [],
+      "worst_ovr_transition_clusters": [
+        {
+          "accuracy_excluding_ties": 0.8221343873517787,
+          "comparisons": 253,
+          "inversions": 45,
+          "ovr_transition": "97->98",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9028132992327366,
+          "comparisons": 391,
+          "inversions": 38,
+          "ovr_transition": "96->97",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9251700680272109,
+          "comparisons": 442,
+          "inversions": 33,
+          "ovr_transition": "95->96",
+          "ties": 1
+        },
+        {
+          "accuracy_excluding_ties": 0.9683794466403162,
+          "comparisons": 506,
+          "inversions": 16,
+          "ovr_transition": "98->99",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9916387959866221,
+          "comparisons": 598,
+          "inversions": 5,
+          "ovr_transition": "95->97",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.998109640831758,
+          "comparisons": 1058,
+          "inversions": 2,
+          "ovr_transition": "97->99",
+          "ties": 0
+        },
+        {
+          "accuracy_excluding_ties": 0.9946524064171123,
+          "comparisons": 187,
+          "inversions": 1,
+          "ovr_transition": "96->98",
+          "ties": 0
+        }
+      ]
+    }
+  },
+  "population_n": 747,
+  "program_card_type_behavior": {
+    "available_fields": [
+      "archetype",
+      "attributes",
+      "card_id",
+      "exclusion_reason",
+      "frozen_model",
+      "frozen_score",
+      "mapping_status",
+      "missing_weighted_attributes",
+      "model_archetype",
+      "name",
+      "ovr",
+      "player_id",
+      "position",
+      "scoring_eligible",
+      "season",
+      "source_archetype",
+      "url",
+      "weight_denominator"
+    ],
+    "note": "Records contain no program or card-type field; no proxy was invented.",
+    "status": "UNAVAILABLE_IN_HISTORICAL_RECORD_SCHEMA"
+  },
+  "rank_correlation_spearman": 0.9874081167193437,
+  "ranking_accuracy_excluding_ties": 0.9868312949486218,
+  "raw_score_ovr_mae": 2.3286417893797404,
+  "source_archetype_counts": {
+    "Backfield Threat": 30,
+    "Contact Seeker": 36,
+    "East/West Playmaker": 428,
+    "Elusive Bruiser": 222,
+    "North/South Blocker": 4,
+    "North/South Receiver": 27
+  },
+  "source_position": "HB",
+  "ties": 5704,
+  "worst_inversions": [
+    {
+      "higher_ovr": {
+        "card_id": "26-2023777",
+        "frozen_score": 66.76,
+        "name": "J ake Reichle",
+        "ovr": 70,
+        "season": 26
+      },
+      "lower_ovr": {
+        "card_id": "26-2021302",
+        "frozen_score": 69.78888888888889,
+        "name": "C ameron Davis",
+        "ovr": 69,
+        "season": 26
+      },
+      "ovr_gap": 1,
+      "score_gap": 3.0288888888888863
+    },
+    {
+      "higher_ovr": {
+        "card_id": "26-2023777",
+        "frozen_score": 66.76,
+        "name": "J ake Reichle",
+        "ovr": 70,
+        "season": 26
+      },
+      "lower_ovr": {
+        "card_id": "26-2000696",
+        "frozen_score": 69.61111111111111,
+        "name": "C ookie Desiderio",
+        "ovr": 69,
+        "season": 26
+      },
+      "ovr_gap": 1,
+      "score_gap": 2.851111111111109
+    },
+    {
+      "higher_ovr": {
+        "card_id": "26-2023777",
+        "frozen_score": 66.76,
+        "name": "J ake Reichle",
+        "ovr": 70,
+        "season": 26
+      },
+      "lower_ovr": {
+        "card_id": "26-2001131",
+        "frozen_score": 69.61111111111111,
+        "name": "J oseph Dodds",
+        "ovr": 69,
+        "season": 26
+      },
+      "ovr_gap": 1,
+      "score_gap": 2.851111111111109
+    },
+    {
+      "higher_ovr": {
+        "card_id": "26-2023777",
+        "frozen_score": 66.76,
+        "name": "J ake Reichle",
+        "ovr": 70,
+        "season": 26
+      },
+      "lower_ovr": {
+        "card_id": "26-2001735",
+        "frozen_score": 69.61111111111111,
+        "name": "K aden Shields-Dutton",
+        "ovr": 69,
+        "season": 26
+      },
+      "ovr_gap": 1,
+      "score_gap": 2.851111111111109
+    },
+    {
+      "higher_ovr": {
+        "card_id": "26-2023777",
+        "frozen_score": 66.76,
+        "name": "J ake Reichle",
+        "ovr": 70,
+        "season": 26
+      },
+      "lower_ovr": {
+        "card_id": "26-2001767",
+        "frozen_score": 69.61111111111111,
+        "name": "J aheim Merriweather",
+        "ovr": 69,
+        "season": 26
+      },
+      "ovr_gap": 1,
+      "score_gap": 2.851111111111109
+    },
+    {
+      "higher_ovr": {
+        "card_id": "26-2023777",
+        "frozen_score": 66.76,
+        "name": "J ake Reichle",
+        "ovr": 70,
+        "season": 26
+      },
+      "lower_ovr": {
+        "card_id": "26-2004162",
+        "frozen_score": 69.61111111111111,
+        "name": "J ordan Nubin",
+        "ovr": 69,
+        "season": 26
+      },
+      "ovr_gap": 1,
+      "score_gap": 2.851111111111109
+    },
+    {
+      "higher_ovr": {
+        "card_id": "26-2023777",
+        "frozen_score": 66.76,
+        "name": "J ake Reichle",
+        "ovr": 70,
+        "season": 26
+      },
+      "lower_ovr": {
+        "card_id": "26-2004619",
+        "frozen_score": 69.61111111111111,
+        "name": "J ayden Scott",
+        "ovr": 69,
+        "season": 26
+      },
+      "ovr_gap": 1,
+      "score_gap": 2.851111111111109
+    },
+    {
+      "higher_ovr": {
+        "card_id": "26-2023777",
+        "frozen_score": 66.76,
+        "name": "J ake Reichle",
+        "ovr": 70,
+        "season": 26
+      },
+      "lower_ovr": {
+        "card_id": "26-2008095",
+        "frozen_score": 69.61111111111111,
+        "name": "G eorge Hart III",
+        "ovr": 69,
+        "season": 26
+      },
+      "ovr_gap": 1,
+      "score_gap": 2.851111111111109
+    },
+    {
+      "higher_ovr": {
+        "card_id": "26-2023777",
+        "frozen_score": 66.76,
+        "name": "J ake Reichle",
+        "ovr": 70,
+        "season": 26
+      },
+      "lower_ovr": {
+        "card_id": "26-2010291",
+        "frozen_score": 69.61111111111111,
+        "name": "L ucky Sutton",
+        "ovr": 69,
+        "season": 26
+      },
+      "ovr_gap": 1,
+      "score_gap": 2.851111111111109
+    },
+    {
+      "higher_ovr": {
+        "card_id": "26-2023777",
+        "frozen_score": 66.76,
+        "name": "J ake Reichle",
+        "ovr": 70,
+        "season": 26
+      },
+      "lower_ovr": {
+        "card_id": "26-2014520",
+        "frozen_score": 69.61111111111111,
+        "name": "T relain Maddox",
+        "ovr": 69,
+        "season": 26
+      },
+      "ovr_gap": 1,
+      "score_gap": 2.851111111111109
+    }
+  ],
+  "worst_ovr_transition_clusters": [
+    {
+      "accuracy_excluding_ties": 0.35735735735735735,
+      "comparisons": 2793,
+      "inversions": 1712,
+      "ovr_transition": "71->72",
+      "ties": 129
+    },
+    {
+      "accuracy_excluding_ties": 0.5645342312008979,
+      "comparisons": 3325,
+      "inversions": 388,
+      "ovr_transition": "70->72",
+      "ties": 2434
+    },
+    {
+      "accuracy_excluding_ties": 0.6719367588932806,
+      "comparisons": 525,
+      "inversions": 166,
+      "ovr_transition": "70->71",
+      "ties": 19
+    },
+    {
+      "accuracy_excluding_ties": 0.6572668112798264,
+      "comparisons": 483,
+      "inversions": 158,
+      "ovr_transition": "69->71",
+      "ties": 22
+    },
+    {
+      "accuracy_excluding_ties": 0.6486486486486487,
+      "comparisons": 3059,
+      "inversions": 130,
+      "ovr_transition": "69->72",
+      "ties": 2689
+    },
+    {
+      "accuracy_excluding_ties": 0.5056818181818182,
+      "comparisons": 575,
+      "inversions": 87,
+      "ovr_transition": "69->70",
+      "ties": 399
+    },
+    {
+      "accuracy_excluding_ties": 0.9120879120879121,
+      "comparisons": 728,
+      "inversions": 64,
+      "ovr_transition": "94->95",
+      "ties": 0
+    },
+    {
+      "accuracy_excluding_ties": 0.9093525179856116,
+      "comparisons": 696,
+      "inversions": 63,
+      "ovr_transition": "88->89",
+      "ties": 1
+    },
+    {
+      "accuracy_excluding_ties": 0.8431372549019608,
+      "comparisons": 357,
+      "inversions": 56,
+      "ovr_transition": "78->79",
+      "ties": 0
+    },
+    {
+      "accuracy_excluding_ties": 0.8817733990147784,
+      "comparisons": 406,
+      "inversions": 48,
+      "ovr_transition": "89->90",
+      "ties": 0
+    }
+  ]
+}
