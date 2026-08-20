@@ -1,0 +1,32 @@
+{
+  "attributes": {
+    "HIGH": "100% weighted coverage",
+    "LOW": "positive coverage below 75%",
+    "MEDIUM": "75%-99.999%",
+    "UNSCORED": "strict vector incomplete"
+  },
+  "combined_score_prohibited": true,
+  "identity": {
+    "EXACT": "canonical card_id",
+    "UNRESOLVED": "no proven card identity"
+  },
+  "market": {
+    "EARLY": "OP-X-029 thresholds",
+    "INSUFFICIENT": "OP-X-029 thresholds",
+    "STRONG": "OP-X-029 thresholds",
+    "USABLE": "OP-X-029 thresholds"
+  },
+  "model": {
+    "DIAGNOSTIC_ONLY": "non-production research model",
+    "ROUTED": "frozen production route",
+    "UNSUPPORTED": "no frozen route"
+  },
+  "moneyball": {
+    "AVAILABLE": "qualified price and football gain",
+    "UNAVAILABLE": "missing independent layer"
+  },
+  "ranking": {
+    "AVAILABLE": "non-null production score",
+    "UNAVAILABLE": "no production score"
+  }
+}

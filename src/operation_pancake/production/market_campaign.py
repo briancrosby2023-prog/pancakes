@@ -39,6 +39,8 @@ def enrich_observation(
 ) -> dict[str, Any]:
     if not card.get("card_id"):
         raise ValueError("exact canonical card identity is required")
+    if isinstance(price, bool) or not isinstance(price, int):
+        raise TypeError("observed price must be an integer")
     if price <= 0:
         raise ValueError("observed price must be positive")
     if observation_type not in OBSERVATION_TYPES:

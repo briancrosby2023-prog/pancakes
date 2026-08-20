@@ -1,0 +1,171 @@
+[
+  {
+    "accepted": true,
+    "arguments": [
+      "--card-id",
+      "card:05b737e0828809d8a979"
+    ],
+    "command": "player",
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_prefix": "{\n  \"card\": {\n    \"archetype\": \"Raw Strength\",\n    \"card_id\": \"card:05b737e0828809d8a979\",\n    \"native_overall\": 83,\n    \"player_name\": \"Anthony Donkoh\",\n    \"position\": \"RG\",\n    \"program\": \"Phenoms\"",
+    "stdout_sha256": "523b03ee2cf042c2f7da246621dfd3c33c71b880c4852d49fcd886aff4b06a58"
+  },
+  {
+    "accepted": true,
+    "arguments": [
+      "card:05b737e0828809d8a979",
+      "card:f35e84cba0d56c4270c3"
+    ],
+    "command": "compare",
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_prefix": "{\n  \"comparison\": {\n    \"attribute_deltas\": {\n      \"PBK\": -2,\n      \"RBF\": 3,\n      \"RBK\": 3,\n      \"RBP\": 3,\n      \"STR\": 6\n    },\n    \"candidate\": {\n      \"archetype\": \"Raw Strength\",\n      \"attrib",
+    "stdout_sha256": "f762f9fdff062bdc23ae6c2605139002da863159596c9808e446bd9ed70a3fc9"
+  },
+  {
+    "accepted": true,
+    "arguments": [
+      "data/research/op_x_026/cli_price_fixture.json",
+      "--observed-at",
+      "2026-08-20T12:00:00-07:00"
+    ],
+    "command": "price",
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_prefix": "{\n  \"accepted\": [\n    {\n      \"card_id\": \"card:0019ea9287fbfa27f3d4\",\n      \"confidence\": \"OBSERVED\",\n      \"currency\": \"CUT_COINS\",\n      \"external_card_id\": null,\n      \"high\": null,\n      \"liquidit",
+    "stdout_sha256": "3e49b0c886ba164bc67cd6cc022e5f1dd7892e8b93a5b865c848a8313ab841e3"
+  },
+  {
+    "accepted": true,
+    "arguments": [
+      "data/research/op_x_026/cli_budget_fixture.json",
+      "100000"
+    ],
+    "command": "budget",
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_prefix": "{\n  \"action\": \"BUDGET UPGRADE\",\n  \"budget\": 100000,\n  \"remaining\": 10000,\n  \"score_improvement\": 6.0,\n  \"selected\": [\n    {\n      \"card_id\": \"budget-test-candidate-a\",\n      \"net_cost\": 45000,\n      \"",
+    "stdout_sha256": "204ab371a2c455335a682bc180def335ad16d00000455f1b48ed76521dd4f28e"
+  },
+  {
+    "accepted": true,
+    "arguments": [],
+    "command": "roster",
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_prefix": "{\n  \"entries\": 24,\n  \"failures\": 0,\n  \"identity_counts\": {\n    \"AMBIGUOUS\": 1,\n    \"EXACT\": 1,\n    \"HIGH CONFIDENCE\": 17,\n    \"UNRESOLVED\": 5\n  },\n  \"resolved\": 18,\n  \"score_counts\": {\n    \"INSUFFICIE",
+    "stdout_sha256": "985c35ed4308d190c7a30746d95f47a2c2c94eb1037cfcc1a782e56371ec0014"
+  },
+  {
+    "accepted": true,
+    "arguments": [],
+    "command": "price-check",
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_prefix": "[\n  {\n    \"archetype\": \"Elusive Route Runner\",\n    \"card_id\": \"card:5f9ece08d6a168dc46f3\",\n    \"native_overall\": 87,\n    \"player_name\": \"Jacory Barney Jr.\",\n    \"position\": \"WR\",\n    \"program\": \"Super",
+    "stdout_sha256": "abe2e335f58c7406aa900c9b13116beb5e6f740debea345adeaa45ced84d659a"
+  },
+  {
+    "accepted": true,
+    "arguments": [
+      "card:f35e84cba0d56c4270c3"
+    ],
+    "command": "explain",
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_prefix": "{\n  \"archetype\": \"Raw Strength\",\n  \"card_id\": \"card:f35e84cba0d56c4270c3\",\n  \"confidence\": \"LOW\",\n  \"contribution_sum\": 86.173913,\n  \"contributions\": [\n    {\n      \"attribute\": \"RBP\",\n      \"attribute",
+    "stdout_sha256": "18f2b6fd466a692f871d2d39bb5381ae1ac21c4bf15b02d2f9df5a4ec98b8d01"
+  },
+  {
+    "accepted": true,
+    "arguments": [
+      "card:05b737e0828809d8a979",
+      "card:f35e84cba0d56c4270c3"
+    ],
+    "command": "compare-explain",
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_prefix": "{\n  \"attributes\": [\n    {\n      \"attribute\": \"ACC\",\n      \"candidate_attribute_percentile\": null,\n      \"candidate_count_at_or_above\": null,\n      \"candidate_effective_coefficient\": 0,\n      \"candidat",
+    "stdout_sha256": "00f2bec97135b6c2d95e9b9a2227dae47cfaade368721974d11a57c866625673"
+  },
+  {
+    "accepted": true,
+    "arguments": [
+      "card:f35e84cba0d56c4270c3"
+    ],
+    "command": "alternatives",
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_prefix": "[]\n",
+    "stdout_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  },
+  {
+    "accepted": true,
+    "arguments": [
+      "card:05b737e0828809d8a979",
+      "--attribute",
+      "RBK"
+    ],
+    "command": "attribute-upgrades",
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_prefix": "[\n  {\n    \"attribute\": \"RBK\",\n    \"attribute_gain\": 3,\n    \"card_id\": \"card:f35e84cba0d56c4270c3\",\n    \"player_name\": \"Brendan Black\",\n    \"score_gain\": 5.033913\n  },\n  {\n    \"attribute\": \"RBK\",\n    \"",
+    "stdout_sha256": "b3579944b384187b8c77dc85a0526ea3a8ed16a7e2d6081aabb111187792ac65"
+  },
+  {
+    "accepted": true,
+    "arguments": [
+      "card:05b737e0828809d8a979",
+      "card:f35e84cba0d56c4270c3"
+    ],
+    "command": "purchase-report",
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_prefix": "PANCAKE GM - PURCHASE REPORT\n\nCURRENT: Anthony Donkoh\nTARGET: Brendan Black\n\nFOOTBALL: +5.033913 Pancake, +66 ranks, +10.393701 percentile; TRANSFORMATIVE\nWHY: RBP, STR, RBK; offsets: PBP, AWR, LBK\nAL",
+    "stdout_sha256": "394159a5bbade81281153d137d04028d75ead562415392c4a57dac28c12f68a3"
+  },
+  {
+    "accepted": true,
+    "arguments": [],
+    "command": "shopping-board",
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_prefix": "[\n  {\n    \"best_alternative\": {\n      \"archetype\": \"Raw Strength\",\n      \"attribute_coverage\": 0.53,\n      \"card_id\": \"card:1edf998eda9232b48690\",\n      \"different_archetype\": true,\n      \"market_evid",
+    "stdout_sha256": "47f7ef9e451072b239af94bbb88eb6c7a0a15777155e0b12cbccb85eb7c681cf"
+  },
+  {
+    "accepted": true,
+    "arguments": [
+      "card:f35e84cba0d56c4270c3",
+      "55500",
+      "DISPLAYED_MARKET_PRICE",
+      "--observed-at",
+      "2026-08-20T12:00:00-07:00",
+      "--history",
+      "C:\\Users\\TRASHP~1\\AppData\\Local\\Temp\\tmpdbokfmcq\\isolated_history.json"
+    ],
+    "command": "market-observe",
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_prefix": "{\n  \"history\": {\n    \"appended\": 1,\n    \"existing\": 0,\n    \"total\": 1\n  },\n  \"observations\": [\n    {\n      \"archetype\": \"Raw Strength\",\n      \"card_id\": \"card:f35e84cba0d56c4270c3\",\n      \"currency\": ",
+    "stdout_sha256": "77afd263722ae1aeaa3b4d27cb6c47c45e8234e974428e7ac53c8d84e996be63"
+  },
+  {
+    "accepted": true,
+    "arguments": [
+      "C:\\Users\\TRASHP~1\\AppData\\Local\\Temp\\tmpdbokfmcq\\snapshot.json",
+      "--type",
+      "DISPLAYED_MARKET_PRICE",
+      "--observed-at",
+      "2026-08-20T13:00:00-07:00",
+      "--history",
+      "C:\\Users\\TRASHP~1\\AppData\\Local\\Temp\\tmpdbokfmcq\\isolated_history.json"
+    ],
+    "command": "market-snapshot",
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_prefix": "{\n  \"history\": {\n    \"appended\": 1,\n    \"existing\": 1,\n    \"total\": 2\n  },\n  \"observations\": [\n    {\n      \"archetype\": \"Raw Strength\",\n      \"card_id\": \"card:f35e84cba0d56c4270c3\",\n      \"currency\": ",
+    "stdout_sha256": "76f333ddf17e64d4aeb43262b9d32090fc2a2c6bb39cfbc39f4a875b9026f1be"
+  }
+]

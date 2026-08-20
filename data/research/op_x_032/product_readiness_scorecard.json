@@ -1,0 +1,77 @@
+{
+  "cli_acceptance": {
+    "passed": 14,
+    "total": 14
+  },
+  "denominator": 8838,
+  "overall_percentage": null,
+  "population_dimensions": {
+    "alternative": {
+      "count": 8184,
+      "percent": 92.600136
+    },
+    "explanation": {
+      "count": 8184,
+      "percent": 92.600136
+    },
+    "market_workflow": {
+      "count": 8838,
+      "percent": 100.0
+    },
+    "population_scoring": {
+      "count": 8184,
+      "percent": 92.600136
+    },
+    "ranking": {
+      "count": 8184,
+      "percent": 92.600136
+    }
+  },
+  "reason_no_overall": "dimensions have no validated common weighting",
+  "roster_dimensions": {
+    "alternative_search": {
+      "count": 17,
+      "percent": 70.833333
+    },
+    "explanation": {
+      "count": 17,
+      "percent": 70.833333
+    },
+    "identity": {
+      "count": 18,
+      "percent": 75.0
+    },
+    "intrinsic_valuation": {
+      "count": 17,
+      "percent": 70.833333
+    },
+    "market_request": {
+      "count": 18,
+      "percent": 75.0
+    },
+    "purchase_report": {
+      "count": 17,
+      "percent": 70.833333
+    },
+    "rank": {
+      "count": 17,
+      "percent": 70.833333
+    },
+    "replacement_search": {
+      "count": 17,
+      "percent": 70.833333
+    },
+    "score": {
+      "count": 17,
+      "percent": 70.833333
+    },
+    "starter_depth_evaluation": {
+      "count": 24,
+      "percent": 100.0
+    }
+  },
+  "scientific_model_coverage": {
+    "intentional_unsupported": 96,
+    "routed": 8742
+  }
+}

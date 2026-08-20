@@ -18,8 +18,10 @@ operation-pancake-gm = "operation_pancake.gm_cli:main"
 
 [project.optional-dependencies]
 dev = [
+    "beautifulsoup4>=4.12",
     "pytest>=8.0",
     "pytest-cov>=5.0",
+    "requests>=2.31",
     "ruff>=0.6",
 ]
 

@@ -275,6 +275,24 @@ class AttributeIntelligence:
                 "archetype": row["archetype"],
                 "score_difference": round(row["score"] - target["score"], 6),
                 "rank_difference": row["position_rank"] - target["position_rank"],
+                "score_confidence": row["score_confidence"],
+                "attribute_coverage": row["attribute_coverage"],
+                "different_archetype": row["archetype"] != target["archetype"],
+                "profile_challenges": [
+                    label
+                    for condition, label in (
+                        (row["archetype"] != target["archetype"], "DIFFERENT ARCHETYPE"),
+                        (
+                            row["score_confidence"] != target["score_confidence"],
+                            "DIFFERENT SCORE CONFIDENCE",
+                        ),
+                        (
+                            abs(row["attribute_coverage"] - target["attribute_coverage"]) > 0.1,
+                            "MATERIAL COVERAGE DIFFERENCE",
+                        ),
+                    )
+                    if condition
+                ],
             }
             for row in rows[:limit]
         ]
