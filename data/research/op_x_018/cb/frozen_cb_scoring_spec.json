@@ -1,0 +1,44 @@
+{
+  "operation": "OP-X-018-CB",
+  "freeze": {
+    "blind_outcomes_observed": false,
+    "repository_head": "f13e8eaae473d2939372090f7e773e2b8ddc4738",
+    "timestamp": "2026-08-19T23:54:33.5725409-07:00"
+  },
+  "model": {
+    "id": "CB-M19-ARCH-001",
+    "version": "v1.0",
+    "formula": "sum(attribute * exact Madden 19 archetype weight) / sum(included weights)",
+    "displayed_ovr_calibration": "none",
+    "rounding": "none"
+  },
+  "provenance": {
+    "source_id": "SRC-M19-001",
+    "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view",
+    "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+    "workbook_sheet": "Data Version",
+    "workbook_rows": "3, 6:7"
+  },
+  "weights": {
+    "Man to Man": {"ACC": 18, "AGI": 4, "AWR": 9, "CTH": 2, "JMP": 4, "MCV": 22, "PRC": 9, "PRS": 7, "SPD": 20, "TAK": 3, "ZCV": 2},
+    "Slot": {"ACC": 14, "AGI": 10, "AWR": 9, "BSH": 2, "CTH": 2, "JMP": 4, "MCV": 14, "PRC": 9, "PRS": 3, "PUR": 4, "SPD": 12, "TAK": 12, "ZCV": 5},
+    "Zone": {"ACC": 20, "AGI": 4, "AWR": 9, "CTH": 2, "JMP": 4, "MCV": 4, "PRC": 9, "PRS": 5, "SPD": 18, "TAK": 5, "ZCV": 20}
+  },
+  "source_weight_totals": {"Man to Man": 100, "Slot": 100, "Zone": 100},
+  "archetype_mappings": {
+    "CFB25": {
+      "Man to man": {"model_archetype": "Man to Man", "status": "PROVEN", "basis": "exact label apart from capitalization"},
+      "Slot": {"model_archetype": "Slot", "status": "PROVEN", "basis": "exact name"},
+      "Zone": {"model_archetype": "Zone", "status": "PROVEN", "basis": "exact name"}
+    },
+    "CFB26": {
+      "Bump and Run": {"model_archetype": "Man to Man", "status": "SUPPORTED", "basis": "press/man coverage role"},
+      "Zone": {"model_archetype": "Zone", "status": "PROVEN", "basis": "exact name"},
+      "Boundary": {"model_archetype": "Man to Man", "status": "HYPOTHESIS", "basis": "outside/boundary man-corner role"},
+      "Field": {"model_archetype": "Zone", "status": "HYPOTHESIS", "basis": "space/field coverage role"},
+      "ratings boosts To see all possible ratings boosts, click here Description Season 5: Charles Woodson General SPD 87 ACC 87 AGI 88 COD 88 AWR 80 STR 70 JMP 85 PRC 85 RET 83 TGH 90 Coverage MCV 84 ZCV 86 PRS 85 CTH 76 CIT 73 SPC 73 Tackling TAK 72 POW 74 PUR 80 BSH 79 IBL 74 Pass Rush FMV 55 PMV 61 Team Michigan Height 6'1\" Weight 210 lbs. Archetype Field": {"model_archetype": null, "status": "UNSUPPORTED", "basis": "malformed scraped archetype label"},
+      "Legacy Corner": {"model_archetype": null, "status": "UNSUPPORTED", "basis": "single special archetype"}
+    }
+  },
+  "scientific_control": "Frozen after WR validation but before any CFB25/CFB26 CB scoring or residual inspection."
+}
