@@ -1,0 +1,37 @@
+{
+  "availability_rule": "observed_at and available_at must both be at or before decision time",
+  "checkpoints": [
+    "T-14",
+    "T-10",
+    "T-7",
+    "T-5",
+    "T-3",
+    "T-2",
+    "T-1",
+    "T0",
+    "T+6h",
+    "T+12h",
+    "T+24h",
+    "T+48h",
+    "T+72h",
+    "T+7d"
+  ],
+  "fields": [
+    "listing_price",
+    "completed_sale_price",
+    "median_sale_price",
+    "sale_count",
+    "active_supply",
+    "spread",
+    "volatility",
+    "training_economics",
+    "collection_eligibility",
+    "overall",
+    "program",
+    "position",
+    "archetype",
+    "scarcity",
+    "pancake_football_quality"
+  ],
+  "finer_observations_allowed": true
+}

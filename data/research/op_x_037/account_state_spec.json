@@ -1,0 +1,12 @@
+{
+  "account_value_rule": "training excluded from coin total unless qualified coins-per-training exists",
+  "components": [
+    "coins",
+    "roster",
+    "inventory",
+    "training",
+    "protected_assets",
+    "collection_pieces"
+  ],
+  "identical_initial_resources_required": true
+}
