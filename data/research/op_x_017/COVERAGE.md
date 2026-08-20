@@ -14,6 +14,11 @@
 | QB | Madden 19 West Coast prior historical reference | West Coast | diagnostic/non-production | 0 | n/a | 60 | 96.0445% | SINGLE-SEASON DIAGNOSTIC PASS | NO |
 | WR | WR-M19-ARCH-001 v1.0 | generation-mapped archetype vectors | production | 1305 | 99.4934% | 1157 | 98.8354% | DURABLE PASS | YES |
 | CB | CB-M19-ARCH-001 v1.0 | generation-mapped archetype vectors | production | 1079 | 98.3188% | 953 | 99.8088% | DURABLE PASS | YES |
+| S | S-M19-ARCH-001 v1.0 | generation-mapped archetype vectors | production | 955 | 99.7610% | 949 | 99.4680% | DURABLE PASS | YES |
+| EDGE | EDGE-M19-ARCH-001 v1.0 | generation-mapped archetype vectors | production | 831 | 99.7634% | 898 | 98.9275% | DURABLE PASS | YES |
+| MIKE | MIKE-M19-ARCH-001 v1.0 | generation-mapped archetype vectors | production | 708 | 99.5998% | 614 | 99.7689% | DURABLE PASS | YES |
+| DT | DT-M19-ARCH-001 v1.0 | generation-mapped archetype vectors | production | 609 | 99.7887% | 633 | 98.9334% | DURABLE PASS | YES |
+| SAM | SAM-M19-ROLE-001 v1.0 | generation-mapped archetype vectors | production | 733 | 99.7429% | 778 | 99.1545% | DURABLE PASS | YES |
 
 ## Non-executable families
 
@@ -21,14 +26,8 @@
 - FB: CFB25 N=58; CFB26 N=62; Exact position/archetype coefficients frozen independently of CFB25/26.
 - LT/RT: CFB25 N=743; CFB26 N=719; Exact position/archetype coefficients frozen independently of CFB25/26.
 - LG/RG: CFB25 N=702; CFB26 N=713; Exact position/archetype coefficients frozen independently of CFB25/26.
-- EDGE/DE: CFB25 N=831; CFB26 N=898; Exact position/archetype coefficients frozen independently of CFB25/26.
-- DT: CFB25 N=609; CFB26 N=633; Exact position/archetype coefficients frozen independently of CFB25/26.
-- MIKE/MLB: CFB25 N=708; CFB26 N=614; Exact position/archetype coefficients frozen independently of CFB25/26.
-- SAM/OLB: CFB25 N=733; CFB26 N=778; Exact position/archetype coefficients frozen independently of CFB25/26.
-- FS: CFB25 N=955; CFB26 N=949; Exact position/archetype coefficients frozen independently of CFB25/26.
-- SS: CFB25 N=955; CFB26 N=949; Exact position/archetype coefficients frozen independently of CFB25/26.
 - K/P: CFB25 N=336; CFB26 N=323; Exact position/archetype coefficients frozen independently of CFB25/26.
 
 ## Next highest-value model
 
-S (historical FS/SS aggregate). It is the largest remaining distinct unmodeled two-season family. The recovered SRC-M19-001 workbook contains exact safety archetype vectors, but generation terminology must be frozen before validation.
+HB/RB. It is the largest remaining unmodeled two-season family (783 CFB25; 747 CFB26). Authoritative HB vectors are present in SRC-M19-001, but its generation terminology must be frozen before blind validation.

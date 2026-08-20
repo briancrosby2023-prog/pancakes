@@ -76,6 +76,16 @@ def main() -> None:
     priors = load(OUTPUT / "qb_madden19_priors/validation_results.json")
     wr = load(ROOT / "data/research/op_x_018/validation_results.json")
     cb = load(ROOT / "data/research/op_x_018/cb/validation_results.json")
+    defensive = {
+        family: load(ROOT / f"data/research/op_x_019/{directory}/validation_results.json")
+        for family, directory in (
+            ("S", "safety"),
+            ("EDGE", "edge"),
+            ("MIKE", "mike"),
+            ("DT", "dt"),
+            ("SAM", "sam"),
+        )
+    }
     rows = []
     te_models = {
         "Gritty Possession": ("TE-MODEL-001", "v1.1", True),
@@ -182,6 +192,11 @@ def main() -> None:
     for position, model, validation in (
         ("WR", "WR-M19-ARCH-001", wr),
         ("CB", "CB-M19-ARCH-001", cb),
+        ("S", "S-M19-ARCH-001", defensive["S"]),
+        ("EDGE", "EDGE-M19-ARCH-001", defensive["EDGE"]),
+        ("MIKE", "MIKE-M19-ARCH-001", defensive["MIKE"]),
+        ("DT", "DT-M19-ARCH-001", defensive["DT"]),
+        ("SAM", "SAM-M19-ROLE-001", defensive["SAM"]),
     ):
         cfb25 = validation["seasons"]["25"]
         cfb26 = validation["seasons"]["26"]
@@ -207,12 +222,6 @@ def main() -> None:
         ("FB", "FB", "58", "62"),
         ("LT/RT", "OT", "743", "719"),
         ("LG/RG", "G", "702", "713"),
-        ("EDGE/DE", "DE→EDGE terminology", "831", "898"),
-        ("DT", "DT", "609", "633"),
-        ("MIKE/MLB", "MLB→MIKE terminology", "708", "614"),
-        ("SAM/OLB", "OLB→SAM terminology", "733", "778"),
-        ("FS", "historical S aggregate (shared with SS; do not double-count)", "955", "949"),
-        ("SS", "historical S aggregate (shared with FS; do not double-count)", "955", "949"),
         ("K/P", "KP aggregate", "336", "323"),
     ]
     inventory = [
@@ -234,6 +243,26 @@ def main() -> None:
         }
         for position, label, n25, n26 in unresolved
     ]
+    inventory.extend(
+        {
+            "position_family": family,
+            "existing_model": model,
+            "frozen_status": "EXECUTED AND LOCKED BY OP-X-019",
+            "coefficient_provenance": "SRC-M19-001 exact historical archetype vectors",
+            "executable": True,
+            "prior_validation": "CFB26 then unchanged CFB25 blind validation.",
+            "historical_population_compatibility": compatibility,
+            "missing_evidence": "Prospective CFB27 validation only.",
+        }
+        for family, model, compatibility in (
+            ("FS", "S-M19-ARCH-001 v1.0", "Shared S aggregate: CFB25 955; CFB26 949."),
+            ("SS", "S-M19-ARCH-001 v1.0", "Shared S aggregate: CFB25 955; CFB26 949."),
+            ("EDGE/DE", "EDGE-M19-ARCH-001 v1.0", "CFB25 831; CFB26 898."),
+            ("MIKE/MLB", "MIKE-M19-ARCH-001 v1.0", "CFB25 708; CFB26 614."),
+            ("DT", "DT-M19-ARCH-001 v1.0", "CFB25 609; CFB26 633."),
+            ("SAM/OLB", "SAM-M19-ROLE-001 v1.0", "CFB25 733; CFB26 778."),
+        )
+    )
     inventory.extend(
         [
             {
@@ -302,9 +331,9 @@ def main() -> None:
                 if row["locked"] and row["production_status"] == "production"
             ],
             "currently_executable_frozen_models_exhausted": True,
-            "highest_value_remaining_position": "S (historical FS/SS aggregate)",
+            "highest_value_remaining_position": "HB/RB",
             "reason": (
-                "Largest remaining distinct two-season population (955 CFB25; 949 CFB26) "
+                "Largest remaining two-season population (783 CFB25; 747 CFB26) "
                 "without an executed frozen coefficient vector."
             ),
         },
@@ -339,9 +368,9 @@ def main() -> None:
             "",
             "## Next highest-value model",
             "",
-            "S (historical FS/SS aggregate). It is the largest remaining distinct unmodeled "
-            "two-season family. The recovered SRC-M19-001 workbook contains exact safety "
-            "archetype vectors, but generation terminology must be frozen before validation.",
+            "HB/RB. It is the largest remaining unmodeled two-season family (783 CFB25; "
+            "747 CFB26). Authoritative HB vectors are present in SRC-M19-001, but its "
+            "generation terminology must be frozen before blind validation.",
             "",
         ]
     )

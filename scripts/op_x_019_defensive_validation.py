@@ -132,7 +132,7 @@ def main() -> None:
             spec_path=ROOT / "data/research/op_x_019/sam/frozen_sam_scoring_spec.json",
             positions={25: "OLB", 26: "SAM"},
             expected={25: 733, 26: 778},
-            control_commit="PENDING_PRE_BLIND_COMMIT",
+            control_commit="6c34cb5bdc87cb68e4289e1817701f2d11a44d1d",
         )
     print(
         json.dumps(
