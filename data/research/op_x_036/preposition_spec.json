@@ -1,0 +1,33 @@
+{
+  "actions": [
+    "ACCUMULATE",
+    "WATCH",
+    "HOLD",
+    "SELL INTO DEMAND",
+    "USE IN COLLECTION",
+    "PASS"
+  ],
+  "forecasting": "NOT IMPLEMENTED; no guaranteed-profit claim",
+  "future_t14_fields": [
+    "prices",
+    "completed_sales",
+    "supply_listings",
+    "volume",
+    "training_economics",
+    "collection_eligibility"
+  ],
+  "timeline": [
+    "T-14",
+    "T-10",
+    "T-7",
+    "T-5",
+    "T-3",
+    "T-1",
+    "release",
+    "+6h",
+    "+12h",
+    "+24h",
+    "+48h",
+    "+7d"
+  ]
+}

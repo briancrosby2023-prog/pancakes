@@ -88,6 +88,33 @@ def main() -> None:
     sub.add_parser("arbitrage")
     sub.add_parser("purchase-frontier")
     budget = sub.add_parser("budget")
+    hit_add = sub.add_parser("hit-list-add")
+    hit_add.add_argument("card_id")
+    hit_add.add_argument("--target", type=int)
+    hit_add.add_argument("--watch", type=int)
+    hit_add.add_argument("--priority", type=int, default=3)
+    hit_add.add_argument("--reason")
+    hit_remove = sub.add_parser("hit-list-remove")
+    hit_remove.add_argument("card_id")
+    hit_update = sub.add_parser("hit-list-update")
+    hit_update.add_argument("card_id")
+    hit_update.add_argument("--target", type=int)
+    hit_update.add_argument("--watch", type=int)
+    hit_update.add_argument("--priority", type=int)
+    sub.add_parser("hit-list-show")
+    top = sub.add_parser("top-targets")
+    top.add_argument("--limit", type=int, default=25)
+    sub.add_parser("monitor-universe")
+    sub.add_parser("monitor-run")
+    sub.add_parser("alerts")
+    flip = sub.add_parser("flip-check")
+    flip.add_argument("file", type=Path)
+    training = sub.add_parser("training-check")
+    training.add_argument("file", type=Path)
+    collection = sub.add_parser("collection-evaluate")
+    collection.add_argument("file", type=Path)
+    collection_watch = sub.add_parser("collection-watch")
+    collection_watch.add_argument("file", type=Path)
     budget.add_argument("file", type=Path, help="JSON candidate list")
     budget.add_argument("coins", type=int)
     sub.add_parser("roster")
@@ -214,6 +241,88 @@ def main() -> None:
                 "purchase-frontier": "frontiers",
             }[args.command]
             _dump(analysis[key])
+    elif args.command.startswith("hit-list-"):
+        from operation_pancake.production.monitor import (
+            canonical_cards,
+            hit_list_mutation,
+            load_json,
+            save_json,
+        )
+
+        path = root / "data/production/monitor/hit_list.json"
+        entries = load_json(path, [])
+        if args.command == "hit-list-show":
+            _dump(entries)
+        else:
+            operation = {
+                "hit-list-add": "ADD",
+                "hit-list-remove": "REMOVE",
+                "hit-list-update": "UPDATE",
+            }[args.command]
+            changes = {
+                "target_buy_price": getattr(args, "target", None),
+                "watch_price": getattr(args, "watch", None),
+                "priority": getattr(args, "priority", None),
+                "reason": getattr(args, "reason", None),
+            }
+            entries = hit_list_mutation(
+                entries,
+                operation,
+                args.card_id,
+                canonical_cards(root),
+                now=datetime.now().astimezone().isoformat(),
+                **{key: value for key, value in changes.items() if value is not None},
+            )
+            save_json(path, entries)
+            _dump(entries)
+    elif args.command in {"top-targets", "monitor-universe", "monitor-run", "alerts"}:
+        from operation_pancake.production.monitor import (
+            load_json,
+            monitor_run,
+            monitored_universe,
+            save_json,
+            top_targets,
+        )
+
+        hit_path = root / "data/production/monitor/hit_list.json"
+        state_path = root / "data/production/monitor/alert_state.json"
+        hit_list = load_json(hit_path, [])
+        state = load_json(state_path, {})
+        history = load_json(root / REAL_HISTORY, [])
+        now = datetime.now().astimezone().isoformat()
+        if args.command == "top-targets":
+            _dump(top_targets(root, args.limit))
+        elif args.command == "monitor-universe":
+            _dump(monitored_universe(root, hit_list, history, now))
+        elif args.command == "alerts":
+            _dump(list(state.get("events", {}).values()))
+        else:
+            result = monitor_run(root, hit_list, history, state, now)
+            save_json(hit_path, result["hit_list"])
+            save_json(state_path, result["alert_state"])
+            _dump({"events": result["events"], "monitored_universe": result["monitored_universe"]})
+    elif args.command in {
+        "flip-check",
+        "training-check",
+        "collection-evaluate",
+        "collection-watch",
+    }:
+        from operation_pancake.production.monitor import (
+            collection_evaluate,
+            flip_check,
+            preposition_evaluate,
+            training_check,
+        )
+
+        payload = json.loads(args.file.read_text(encoding="utf-8"))
+        if args.command == "flip-check":
+            _dump(flip_check(**payload))
+        elif args.command == "training-check":
+            _dump(training_check(**payload))
+        elif args.command == "collection-evaluate":
+            _dump(collection_evaluate(payload["definition"], payload["inputs"]))
+        else:
+            _dump(preposition_evaluate(payload))
     elif args.command == "budget":
         rows = json.loads(args.file.read_text(encoding="utf-8"))
         _dump(optimize_budget(rows, args.coins))

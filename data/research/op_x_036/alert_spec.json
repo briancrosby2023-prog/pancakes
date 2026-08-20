@@ -1,0 +1,24 @@
+{
+  "deduplication": "stable material-event fingerprint; identical monitor runs emit nothing",
+  "delivery_implemented": false,
+  "destination_interface": "AlertDestination.deliver(events)",
+  "material_fields": [
+    "card_id",
+    "opportunity_type",
+    "observed_price",
+    "threshold",
+    "reason"
+  ],
+  "types": [
+    "BUY TARGET",
+    "WATCH TARGET",
+    "FLIP",
+    "TRAINING VALUE",
+    "MONEYBALL",
+    "COLLECTION PIECE",
+    "COLLECTION ECONOMICS",
+    "COLLECTION PRE-POSITION",
+    "TOP-25 ENTRY",
+    "TOP-10 ENTRY"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "fields": [
+    "card_id",
+    "player",
+    "position",
+    "overall",
+    "program",
+    "archetype",
+    "target_buy_price",
+    "watch_price",
+    "priority",
+    "reason",
+    "roster_context",
+    "date_added",
+    "enabled",
+    "latest_qualified_market_evidence",
+    "latest_live_listing_evidence",
+    "alert_state",
+    "last_evaluated_at"
+  ],
+  "identity": "exact canonical card ID only",
+  "operations": [
+    "ADD",
+    "REMOVE",
+    "ENABLE",
+    "DISABLE",
+    "UPDATE",
+    "LIST",
+    "EVALUATE"
+  ],
+  "path": "data/production/monitor/hit_list.json"
+}
