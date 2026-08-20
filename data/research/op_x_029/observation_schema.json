@@ -1,0 +1,27 @@
+{
+  "automatic_fields": [
+    "canonical identity fields",
+    "user_observed_at",
+    "ingested_at",
+    "source",
+    "source_confidence",
+    "identity_confidence"
+  ],
+  "observation_types": [
+    "COMPLETED_SALE",
+    "DISPLAYED_MARKET_PRICE",
+    "LOWEST_VISIBLE_LISTING",
+    "RECENT_SALE",
+    "USER_REPORTED_OTHER",
+    "VISIBLE_LISTING"
+  ],
+  "required_user_input": [
+    "exact card or unambiguous campaign card",
+    "observed_price",
+    "observation_type"
+  ],
+  "timestamp_semantics": {
+    "source_published_at": "null unless source explicitly supplies it",
+    "user_observed_at": "time user saw display"
+  }
+}

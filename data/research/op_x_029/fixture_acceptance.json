@@ -1,0 +1,265 @@
+{
+  "decision_evolution": [
+    {
+      "decision": "PRICE CHECK REQUIRED",
+      "reason": "another qualified observation is required"
+    },
+    {
+      "decision": "INSUFFICIENT MARKET DATA",
+      "reason": "evidence quality is EARLY"
+    },
+    {
+      "decision": "BUY",
+      "net_cost": 78000,
+      "reason": "all independent evidence layers passed"
+    }
+  ],
+  "falling": {
+    "history_persisted": false,
+    "statistics": {
+      "dispersion_ratio": 0.106479,
+      "distinct_observation_times": 4,
+      "first_observed": "2026-08-20T00:00:00-07:00",
+      "latest_age_hours": 1.0,
+      "latest_observed": "2026-08-23T00:00:00-07:00",
+      "longer_window_change": -0.25,
+      "maximum": 120000,
+      "median": 105000.0,
+      "minimum": 90000,
+      "observation_count": 4,
+      "observation_type_counts": {
+        "DISPLAYED_MARKET_PRICE": 4
+      },
+      "quality": "USABLE",
+      "range": 30000,
+      "short_window_change": -0.1,
+      "time_span_hours": 72.0,
+      "volatility": 0.106479
+    },
+    "watch": {
+      "re_evaluate_at_observed_floor": 90000,
+      "re_evaluate_at_or_below_median": 105000.0,
+      "status": "WATCH",
+      "warning": "re-evaluation triggers are not BUY commands"
+    }
+  },
+  "high_volatility": {
+    "history_persisted": false,
+    "statistics": {
+      "dispersion_ratio": 0.492167,
+      "distinct_observation_times": 4,
+      "first_observed": "2026-08-20T00:00:00-07:00",
+      "latest_age_hours": 1.0,
+      "latest_observed": "2026-08-23T00:00:00-07:00",
+      "longer_window_change": 1.2,
+      "maximum": 220000,
+      "median": 150000.0,
+      "minimum": 50000,
+      "observation_count": 4,
+      "observation_type_counts": {
+        "DISPLAYED_MARKET_PRICE": 4
+      },
+      "quality": "USABLE",
+      "range": 170000,
+      "short_window_change": 3.4,
+      "time_span_hours": 72.0,
+      "volatility": 0.492167
+    },
+    "watch": {
+      "re_evaluate_at_observed_floor": 50000,
+      "re_evaluate_at_or_below_median": 150000.0,
+      "status": "WATCH",
+      "warning": "re-evaluation triggers are not BUY commands"
+    }
+  },
+  "listing_sale_disagreement": {
+    "history_persisted": false,
+    "statistics": {
+      "dispersion_ratio": 0.122527,
+      "distinct_observation_times": 4,
+      "first_observed": "2026-08-20T00:00:00-07:00",
+      "latest_age_hours": 37.0,
+      "latest_observed": "2026-08-21T12:00:00-07:00",
+      "longer_window_change": -0.191667,
+      "maximum": 125000,
+      "median": 108500.0,
+      "minimum": 95000,
+      "observation_count": 4,
+      "observation_type_counts": {
+        "COMPLETED_SALE": 2,
+        "VISIBLE_LISTING": 2
+      },
+      "quality": "EARLY",
+      "range": 30000,
+      "short_window_change": -0.224,
+      "time_span_hours": 36.0,
+      "volatility": 0.122527
+    },
+    "watch": {
+      "reason": "usable longitudinal evidence required",
+      "status": "UNAVAILABLE"
+    }
+  },
+  "multi_day_stable": {
+    "history_persisted": false,
+    "statistics": {
+      "dispersion_ratio": 0.007071,
+      "distinct_observation_times": 4,
+      "first_observed": "2026-08-20T00:00:00-07:00",
+      "latest_age_hours": 37.0,
+      "latest_observed": "2026-08-21T12:00:00-07:00",
+      "longer_window_change": 0.0,
+      "maximum": 101000,
+      "median": 100000.0,
+      "minimum": 99000,
+      "observation_count": 4,
+      "observation_type_counts": {
+        "DISPLAYED_MARKET_PRICE": 4
+      },
+      "quality": "EARLY",
+      "range": 2000,
+      "short_window_change": 0.010101,
+      "time_span_hours": 36.0,
+      "volatility": 0.007071
+    },
+    "watch": {
+      "reason": "usable longitudinal evidence required",
+      "status": "UNAVAILABLE"
+    }
+  },
+  "one_observation": {
+    "history_persisted": false,
+    "statistics": {
+      "dispersion_ratio": 0.0,
+      "distinct_observation_times": 1,
+      "first_observed": "2026-08-20T00:00:00-07:00",
+      "latest_age_hours": 73.0,
+      "latest_observed": "2026-08-20T00:00:00-07:00",
+      "longer_window_change": null,
+      "maximum": 100000,
+      "median": 100000,
+      "minimum": 100000,
+      "observation_count": 1,
+      "observation_type_counts": {
+        "DISPLAYED_MARKET_PRICE": 1
+      },
+      "quality": "INSUFFICIENT",
+      "range": 0,
+      "short_window_change": null,
+      "time_span_hours": 0.0,
+      "volatility": null
+    },
+    "watch": {
+      "reason": "usable longitudinal evidence required",
+      "status": "UNAVAILABLE"
+    }
+  },
+  "rising": {
+    "history_persisted": false,
+    "statistics": {
+      "dispersion_ratio": 0.106479,
+      "distinct_observation_times": 4,
+      "first_observed": "2026-08-20T00:00:00-07:00",
+      "latest_age_hours": 1.0,
+      "latest_observed": "2026-08-23T00:00:00-07:00",
+      "longer_window_change": 0.333333,
+      "maximum": 120000,
+      "median": 105000.0,
+      "minimum": 90000,
+      "observation_count": 4,
+      "observation_type_counts": {
+        "DISPLAYED_MARKET_PRICE": 4
+      },
+      "quality": "USABLE",
+      "range": 30000,
+      "short_window_change": 0.090909,
+      "time_span_hours": 72.0,
+      "volatility": 0.106479
+    },
+    "watch": {
+      "re_evaluate_at_observed_floor": 90000,
+      "re_evaluate_at_or_below_median": 105000.0,
+      "status": "WATCH",
+      "warning": "re-evaluation triggers are not BUY commands"
+    }
+  },
+  "same_day": {
+    "history_persisted": false,
+    "statistics": {
+      "dispersion_ratio": 0.008165,
+      "distinct_observation_times": 3,
+      "first_observed": "2026-08-20T00:00:00-07:00",
+      "latest_age_hours": 69.0,
+      "latest_observed": "2026-08-20T04:00:00-07:00",
+      "longer_window_change": null,
+      "maximum": 101000,
+      "median": 100000,
+      "minimum": 99000,
+      "observation_count": 3,
+      "observation_type_counts": {
+        "DISPLAYED_MARKET_PRICE": 3
+      },
+      "quality": "EARLY",
+      "range": 2000,
+      "short_window_change": 0.020202,
+      "time_span_hours": 4.0,
+      "volatility": 0.008165
+    },
+    "watch": {
+      "reason": "usable longitudinal evidence required",
+      "status": "UNAVAILABLE"
+    }
+  },
+  "stale": {
+    "history_persisted": false,
+    "statistics": {
+      "dispersion_ratio": 0.007071,
+      "distinct_observation_times": 4,
+      "first_observed": "2026-08-20T00:00:00-07:00",
+      "latest_age_hours": 168.0,
+      "latest_observed": "2026-08-23T00:00:00-07:00",
+      "longer_window_change": 0.0,
+      "maximum": 101000,
+      "median": 100000.0,
+      "minimum": 99000,
+      "observation_count": 4,
+      "observation_type_counts": {
+        "DISPLAYED_MARKET_PRICE": 4
+      },
+      "quality": "EARLY",
+      "range": 2000,
+      "short_window_change": 0.010101,
+      "time_span_hours": 72.0,
+      "volatility": 0.007071
+    },
+    "watch": {
+      "reason": "usable longitudinal evidence required",
+      "status": "UNAVAILABLE"
+    }
+  },
+  "strong_with_resale": {
+    "gross_cost": 98000,
+    "net_cost": 78000,
+    "resale": 20000,
+    "statistics": {
+      "dispersion_ratio": 0.012371,
+      "distinct_observation_times": 8,
+      "first_observed": "2026-08-20T00:00:00-07:00",
+      "latest_age_hours": 1.0,
+      "latest_observed": "2026-08-23T12:00:00-07:00",
+      "longer_window_change": -0.02,
+      "maximum": 101000,
+      "median": 99000.0,
+      "minimum": 97000,
+      "observation_count": 8,
+      "observation_type_counts": {
+        "COMPLETED_SALE": 8
+      },
+      "quality": "STRONG",
+      "range": 4000,
+      "short_window_change": 0.010309,
+      "time_span_hours": 84.0,
+      "volatility": 0.012371
+    }
+  }
+}

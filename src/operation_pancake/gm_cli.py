@@ -4,9 +4,15 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import datetime
 from pathlib import Path
 
 from operation_pancake.production.gm import GMProduct, manual_price_payload, optimize_budget
+from operation_pancake.production.market_campaign import (
+    REAL_HISTORY,
+    append_history,
+    enrich_observation,
+)
 
 
 def _dump(value: object) -> None:
@@ -31,6 +37,17 @@ def main() -> None:
     price = sub.add_parser("price")
     price.add_argument("file", type=Path, help="JSON list of manual current-price observations")
     price.add_argument("--observed-at", required=True)
+    observe = sub.add_parser("market-observe")
+    observe.add_argument("card_id")
+    observe.add_argument("price", type=int)
+    observe.add_argument("observation_type")
+    observe.add_argument("--observed-at")
+    observe.add_argument("--history", type=Path)
+    snapshot = sub.add_parser("market-snapshot")
+    snapshot.add_argument("file", type=Path, help="JSON object of canonical card IDs to prices")
+    snapshot.add_argument("--type", default="DISPLAYED_MARKET_PRICE")
+    snapshot.add_argument("--observed-at")
+    snapshot.add_argument("--history", type=Path)
     budget = sub.add_parser("budget")
     budget.add_argument("file", type=Path, help="JSON candidate list")
     budget.add_argument("coins", type=int)
@@ -56,6 +73,26 @@ def main() -> None:
         rows = json.loads(args.file.read_text(encoding="utf-8"))
         gm = GMProduct(root)
         _dump(manual_price_payload(rows, args.observed_at, gm.population))
+    elif args.command in {"market-observe", "market-snapshot"}:
+        gm = GMProduct(root)
+        observed_at = args.observed_at or datetime.now().astimezone().isoformat()
+        values = (
+            {args.card_id: args.price}
+            if args.command == "market-observe"
+            else json.loads(args.file.read_text(encoding="utf-8"))
+        )
+        observation_type = args.observation_type if args.command == "market-observe" else args.type
+        observations = []
+        for card_id, amount in values.items():
+            if card_id not in gm.cards:
+                raise SystemExit(f"unresolved canonical card ID: {card_id}")
+            observations.append(
+                enrich_observation(
+                    gm.cards[card_id], int(amount), observation_type, observed_at=observed_at
+                )
+            )
+        history = args.history or root / REAL_HISTORY
+        _dump({"observations": observations, "history": append_history(history, observations)})
     elif args.command == "budget":
         rows = json.loads(args.file.read_text(encoding="utf-8"))
         _dump(optimize_budget(rows, args.coins))
