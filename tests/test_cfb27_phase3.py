@@ -51,10 +51,9 @@ def test_prospective_validation_never_refits_or_reuses_training_ids() -> None:
 
 def test_release_and_moneyball_outputs_are_noncausal_and_complete() -> None:
     summary = _load("data/research/cfb27_inheritance_phase3/phase3_summary.json")
-    assert (
-        sum(row["new_cards"] for row in summary["release_chronology"]["daily"])
-        == summary["population"]["total"]
-    )
+    chronology = summary["release_chronology"]
+    dated = sum(row["new_cards"] for row in chronology["daily"])
+    assert dated + chronology["cards_without_release_date"] == summary["population"]["total"]
     assert summary["same_ovr_variance_and_cost"]["rows"]
     assert summary["gameplay_evidence_join_schema"]["claims_populated"] is False
     assert all("warning" in row for row in summary["same_ovr_variance_and_cost"]["rows"])

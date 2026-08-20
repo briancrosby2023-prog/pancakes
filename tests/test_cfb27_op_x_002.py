@@ -48,7 +48,7 @@ def test_cb_gate_has_human_readable_controlled_test_set() -> None:
 def test_mike_seau_matrix_is_complete_and_not_prescriptive() -> None:
     result = _load("mike_seau")
     assert result["population"] == 456
-    assert len(result["seau_upgrade_decision_matrix"]) == 2
+    assert [row["overall"] for row in result["seau_upgrade_decision_matrix"]] == [81, 84, 86, 87]
     assert all(len(row["upgrade_matrix"]) == 36 for row in result["seau_upgrade_decision_matrix"])
     assert all(
         row["gameplay_path_recommended"] is False for row in result["seau_upgrade_decision_matrix"]

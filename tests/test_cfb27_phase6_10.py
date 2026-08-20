@@ -76,8 +76,8 @@ def test_spline_graph_is_structural_and_rows_remain_unavailable() -> None:
 
 def test_card_proximity_handles_missing_and_not_applicable_without_guessing() -> None:
     proximity = _load("card_threshold_proximity.json")
-    assert proximity["cards_evaluated"] == 435
-    assert len(proximity["card_summaries"]) == 435
+    assert proximity["cards_evaluated"] == 8838
+    assert len(proximity["card_summaries"]) == 8838
     assert "NOT_APPLICABLE" in proximity["counts"]
     assert all(
         observation.get("equip_eligibility_claimed") is False
@@ -89,10 +89,10 @@ def test_card_proximity_handles_missing_and_not_applicable_without_guessing() ->
 def test_seau_case_uses_only_validated_vectors() -> None:
     seau = _load("position_case_maps.json")["seau"]
     assert seau["known_progression_states"] == [81, 84, 86, 87]
-    assert seau["validated_vectors_available"] == [86, 87]
-    assert seau["missing_states"] == [81, 84]
+    assert seau["validated_vectors_available"] == [81, 84, 86, 87]
+    assert seau["missing_states"] == []
     assert seau["final_ratings_inferred"] is False
-    assert [card["overall"] for card in seau["cards"]] == [86, 87]
+    assert [card["overall"] for card in seau["cards"]] == [80, 81, 84, 86, 87]
 
 
 def test_progression_unknowns_are_not_zero_or_path_membership() -> None:
@@ -111,7 +111,8 @@ def test_progression_unknowns_are_not_zero_or_path_membership() -> None:
 def test_gm_layers_cover_every_card_and_remain_research_only() -> None:
     ability = _load("gm_ability_layer.json")
     replacement = _load("gm_replacement_layer.json")
-    assert len(ability) == len(replacement) == 435
+    assert len(ability) == len(replacement) == 8838
+    assert len({row["card_id"] for row in ability}) == 8838
     assert all(row["actual_equip_availability_claimed"] is False for row in ability)
     assert all(row["gameplay_value_claimed"] is False for row in ability)
     assert len(_load("chatgpt_research_targets.json")) == 20
@@ -154,7 +155,7 @@ def test_phase6_10_is_deterministic_and_frozen() -> None:
     second = build_phase6_10(ROOT)
     assert first == second
     assert first["frozen_input"]["source_commit"] == "8555000"
-    assert first["frozen_input"]["population_n"] == 435
+    assert first["frozen_input"]["population_n"] == 8838
     assert first["data_validation"] == {
         "access_bypass": False,
         "canonical_modified": False,

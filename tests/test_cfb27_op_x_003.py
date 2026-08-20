@@ -22,14 +22,15 @@ def test_registry_and_acquisition_are_truthful() -> None:
         "Madden 27",
     }
     manifest = _load("acquisition_manifest")
-    assert manifest["populations"]["CFB27_CUT"] == 435
+    assert manifest["populations"]["CFB27_CUT"] == 8838
     assert manifest["populations"]["CFB25"] == manifest["populations"]["CFB26"] == 0
     assert manifest["rate_limit_bypassed"] is False
 
 
 def test_cross_year_model_and_crosswalk_do_not_force_unknowns() -> None:
     model = _load("ea_cross_year_card_model")
-    assert len(model) == 435
+    assert len(model) == 8838
+    assert len({row["source_card_id"] for row in model}) == 8838
     assert all(row["game"] == "CFB27" and row["external_staged"] for row in model)
     assert all(row["height"] is None and row["weight"] is None for row in model)
     crosswalk = _load("attribute_crosswalk")

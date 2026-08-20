@@ -415,7 +415,11 @@ def _chronology(cards: list[dict[str, Any]]) -> dict[str, Any]:
             if dates:
                 first[str(level)] = min(dates)
         escalation[position] = first
-    return {"daily": daily, "escalation": escalation}
+    return {
+        "daily": daily,
+        "escalation": escalation,
+        "cards_without_release_date": sum(not row.get("release_date") for row in cards),
+    }
 
 
 def _scarcity(cards: list[dict[str, Any]]) -> dict[str, Any]:

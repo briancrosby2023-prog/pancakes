@@ -438,8 +438,17 @@ def case_maps(cards: list[dict], groups: list[dict], proximity: dict) -> dict:
             for card in sorted(seau_cards, key=lambda row: row["overall"])
         ],
         "known_progression_states": [81, 84, 86, 87],
-        "validated_vectors_available": [86, 87],
-        "missing_states": [81, 84],
+        "validated_vectors_available": sorted(
+            card["overall"] for card in seau_cards if card.get("extraction_status") == "COMPLETE"
+        ),
+        "missing_states": sorted(
+            state
+            for state in (81, 84, 86, 87)
+            if not any(
+                card["overall"] == state and card.get("extraction_status") == "COMPLETE"
+                for card in seau_cards
+            )
+        ),
         "final_ratings_inferred": False,
     }
     te = {}

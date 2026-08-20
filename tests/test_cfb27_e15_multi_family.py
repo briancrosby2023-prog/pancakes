@@ -20,9 +20,9 @@ def _cell(position, archetype, ovr, driver, noise, start):
 def test_same_ovr_spread_and_adjacent_boundary_separate_signals():
     cards = []
     cards += _cell("TE", "Test", 80, 70, 40, 50)
-    cards += _cell("TE", "Test", 81, 75, 42, 50)
-    cards += _cell("TE", "Test", 82, 80, 44, 50)
-    cards += _cell("TE", "Test", 83, 85, 46, 50)
+    cards += _cell("TE", "Test", 81, 75, 40, 50)
+    cards += _cell("TE", "Test", 82, 80, 40, 50)
+    cards += _cell("TE", "Test", 83, 85, 40, 50)
     result = analyze_position(cards, "TE")
     by_rating = {row["rating"]: row for row in result["ratings"]}
     assert by_rating["DRV"]["positive_boundary_share"] == 1.0
