@@ -1,0 +1,53 @@
+{
+  "claims": [
+    {
+      "claim_id": "OPX041-CLAIM-008",
+      "confidence": "MEDIUM",
+      "contradictions": [],
+      "criterion_type": "PERSONAL PREFERENCE",
+      "evidence_timestamp": "2026-08-20T12:00:00+00:00",
+      "extraction": "indexed video title plus contemporaneous structured report; exact timestamp unavailable",
+      "fact_type": "CREATOR OPINION",
+      "formation": null,
+      "game": "CFB27",
+      "position": null,
+      "predicate": "competitive_recommendation",
+      "provenance": "https://www.youtube.com/watch?v=YWsnsJZ7alw",
+      "publication_date": "2026-07-07",
+      "role": null,
+      "scheme": null,
+      "scope": "GENERAL COMPETITIVE META",
+      "season": null,
+      "source_id": "OPX041-ERIC-PLAYBOOK-VIDEO",
+      "source_tier": 3,
+      "source_type": "VIDEO",
+      "status": "PROVISIONAL",
+      "subject": "CUT27 offensive playbooks",
+      "superseded_by": null,
+      "threshold": null,
+      "valid_from": null,
+      "valid_until": null,
+      "value": [
+        "Ohio State",
+        "Cal"
+      ],
+      "video_timestamp": null
+    }
+  ],
+  "sources": [
+    {
+      "current": true,
+      "name": "The Best Playbooks to Win in College Football 27",
+      "publication_date": "2026-07-07",
+      "publisher_id": "Eric Rayweather",
+      "source_id": "OPX041-ERIC-PLAYBOOK-VIDEO",
+      "source_type": "VIDEO",
+      "tier": 3,
+      "tier_name": "COMPETITIVE / EXPERT",
+      "timestamp_availability": "NOT EXPOSED BY ACCESSIBLE INDEX",
+      "url": "https://www.youtube.com/watch?v=YWsnsJZ7alw"
+    }
+  ],
+  "timestamp_rule": "preserve when available; never fabricate",
+  "timestamped_current_claims": 0
+}

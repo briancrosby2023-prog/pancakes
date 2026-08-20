@@ -1,0 +1,158 @@
+{
+  "new_questions": [
+    {
+      "impact": "ROSTER",
+      "predicate": "THP",
+      "priority": "HIGH",
+      "question": "Does an independent current competitive source corroborate 85+ THP?",
+      "question_id": "OPX041-Q-001",
+      "status": "OPEN",
+      "subject": "CUT27 QB"
+    },
+    {
+      "impact": "ROSTER",
+      "predicate": "MAC",
+      "priority": "HIGH",
+      "question": "Does an independent current competitive source corroborate 85+ MAC?",
+      "question_id": "OPX041-Q-002",
+      "status": "OPEN",
+      "subject": "CUT27 QB"
+    },
+    {
+      "impact": "ROSTER",
+      "predicate": "exact cards",
+      "priority": "HIGH",
+      "question": "Which exact current CUT27 cards recur on skilled-player rosters?",
+      "question_id": "OPX041-Q-003",
+      "status": "OPEN",
+      "subject": "CUT27 meta rosters"
+    },
+    {
+      "impact": "META",
+      "predicate": "release animation",
+      "priority": "MEDIUM",
+      "question": "What exact QB release animation names are preferred?",
+      "question_id": "OPX041-Q-004",
+      "status": "OPEN",
+      "subject": "CUT27 QB"
+    }
+  ],
+  "open_queue": [
+    {
+      "answer": "UNKNOWN",
+      "claim_ids": [],
+      "impact": "RELEASE",
+      "predicate": "release_method",
+      "priority": "HIGH",
+      "question": "How are current unknown reveal cards obtained?",
+      "question_id": "OPX040-Q-003",
+      "status": "OPEN",
+      "subject": "unknown reveal"
+    },
+    {
+      "answer": "UNKNOWN",
+      "claim_ids": [],
+      "confidence": "HIGH",
+      "impact": "COLLECTION",
+      "predicate": "acquisition_path",
+      "priority": "MEDIUM",
+      "question": "How can CUT27 users earn rewards?",
+      "question_id": "OPX040-Q-004",
+      "status": "OPEN",
+      "subject": "CFB27 Ultimate Team rewards"
+    },
+    {
+      "impact": "ROSTER",
+      "predicate": "THP",
+      "priority": "HIGH",
+      "question": "Does an independent current competitive source corroborate 85+ THP?",
+      "question_id": "OPX041-Q-001",
+      "status": "OPEN",
+      "subject": "CUT27 QB"
+    },
+    {
+      "impact": "ROSTER",
+      "predicate": "MAC",
+      "priority": "HIGH",
+      "question": "Does an independent current competitive source corroborate 85+ MAC?",
+      "question_id": "OPX041-Q-002",
+      "status": "OPEN",
+      "subject": "CUT27 QB"
+    },
+    {
+      "impact": "ROSTER",
+      "predicate": "exact cards",
+      "priority": "HIGH",
+      "question": "Which exact current CUT27 cards recur on skilled-player rosters?",
+      "question_id": "OPX041-Q-003",
+      "status": "OPEN",
+      "subject": "CUT27 meta rosters"
+    },
+    {
+      "impact": "META",
+      "predicate": "release animation",
+      "priority": "MEDIUM",
+      "question": "What exact QB release animation names are preferred?",
+      "question_id": "OPX041-Q-004",
+      "status": "OPEN",
+      "subject": "CUT27 QB"
+    }
+  ],
+  "partially_resolved": 2,
+  "questions": [
+    {
+      "answer": "One source-specific 85+ THP threshold; no supported meta threshold",
+      "claim_ids": [
+        "OPX041-CLAIM-001"
+      ],
+      "impact": "ROSTER",
+      "predicate": "THP threshold",
+      "priority": "HIGH",
+      "question": "What numerical THP threshold is supported for current CUT27 QBs?",
+      "question_id": "OPX040-Q-001",
+      "status": "PARTIALLY RESOLVED",
+      "subject": "CFB27 QB"
+    },
+    {
+      "answer": "Current creator/analyst playbook evidence recovered; consensus remains limited",
+      "claim_ids": [
+        "OPX041-CLAIM-008",
+        "OPX041-CLAIM-010",
+        "OPX041-CLAIM-011",
+        "OPX041-CLAIM-012",
+        "OPX041-CLAIM-013"
+      ],
+      "impact": "META",
+      "predicate": "competitive_consensus",
+      "priority": "MEDIUM",
+      "question": "Which current offensive playbooks have independent competitive support?",
+      "question_id": "OPX040-Q-002",
+      "status": "PARTIALLY RESOLVED",
+      "subject": "CFB27 playbooks"
+    },
+    {
+      "answer": "UNKNOWN",
+      "claim_ids": [],
+      "impact": "RELEASE",
+      "predicate": "release_method",
+      "priority": "HIGH",
+      "question": "How are current unknown reveal cards obtained?",
+      "question_id": "OPX040-Q-003",
+      "status": "OPEN",
+      "subject": "unknown reveal"
+    },
+    {
+      "answer": "UNKNOWN",
+      "claim_ids": [],
+      "confidence": "HIGH",
+      "impact": "COLLECTION",
+      "predicate": "acquisition_path",
+      "priority": "MEDIUM",
+      "question": "How can CUT27 users earn rewards?",
+      "question_id": "OPX040-Q-004",
+      "status": "OPEN",
+      "subject": "CFB27 Ultimate Team rewards"
+    }
+  ],
+  "resolved": 0
+}

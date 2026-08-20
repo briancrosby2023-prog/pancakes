@@ -133,7 +133,9 @@ def detect_conflicts(claims: list[dict[str, Any]]) -> list[dict[str, Any]]:
         key = (claim["subject"], claim["predicate"], claim["game"], claim.get("scheme"))
         grouped.setdefault(key, []).append(claim)
     conflicts = []
-    for key, rows in sorted(grouped.items()):
+    for key, rows in sorted(
+        grouped.items(), key=lambda item: tuple(str(value) for value in item[0])
+    ):
         values = {json.dumps(row["value"], sort_keys=True) for row in rows}
         publishers = {row["source_id"] for row in rows}
         if len(values) > 1 and len(publishers) > 1:
