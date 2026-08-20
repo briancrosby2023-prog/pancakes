@@ -1,0 +1,17 @@
+{
+  "fields": [
+    "round_id",
+    "observation_time",
+    "cards_requested",
+    "cards_observed",
+    "cards_missing",
+    "changes_from_prior"
+  ],
+  "partial_rounds_valid": true,
+  "rounds": {
+    "ROUND 1": "baseline",
+    "ROUND 2": "short-term confirmation",
+    "ROUND 3": "multi-time confirmation",
+    "ROUND 4+": "qualification / volatility monitoring"
+  }
+}

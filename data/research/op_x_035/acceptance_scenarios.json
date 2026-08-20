@@ -1,0 +1,152 @@
+{
+  "alternative_dominates": "MARKET VALUE CANDIDATE; BUY gates remain independent",
+  "both_sides_priced": "fixture-covered by premium unit test",
+  "falling_market": {
+    "absolute_change": -10,
+    "direction": "FALLING",
+    "dispersion": 0.09722,
+    "dispersion_ratio": 0.09722,
+    "distinct_observation_times": 4,
+    "first_observed": "2026-08-17T20:00:00+00:00",
+    "latest": 100,
+    "latest_age_hours": 0.0,
+    "latest_observed": "2026-08-20T20:00:00+00:00",
+    "longer_window_change": -0.230769,
+    "maximum": 130,
+    "median": 115.0,
+    "minimum": 100,
+    "observation_count": 4,
+    "observation_type_counts": {
+      "LOWEST_VISIBLE_LISTING": 4
+    },
+    "percentage_change": -0.090909,
+    "quality": "USABLE",
+    "range": 30,
+    "short_window_change": -0.090909,
+    "time_span_hours": 72.0,
+    "volatility": 0.09722
+  },
+  "fixture_contamination": false,
+  "legitimate_buy": "existing calibrate_decision STRONG + VALUE gates retained",
+  "one_observation": {
+    "dispersion_ratio": 0.0,
+    "distinct_observation_times": 1,
+    "first_observed": "2026-08-20T20:00:00+00:00",
+    "latest": 100,
+    "latest_age_hours": 0.0,
+    "latest_observed": "2026-08-20T20:00:00+00:00",
+    "longer_window_change": null,
+    "maximum": 100,
+    "median": 100,
+    "minimum": 100,
+    "observation_count": 1,
+    "observation_type_counts": {
+      "LOWEST_VISIBLE_LISTING": 1
+    },
+    "quality": "INSUFFICIENT",
+    "range": 0,
+    "short_window_change": null,
+    "time_span_hours": 0.0,
+    "volatility": null
+  },
+  "portfolio_keeps_coins": {
+    "action": "KEEP",
+    "budget": 50000,
+    "remaining": 50000,
+    "score_improvement": 0.0,
+    "selected": [],
+    "spent": 0,
+    "status": "BUDGET_EVALUATED"
+  },
+  "portfolio_multiple": {
+    "action": "KEEP",
+    "budget": 150000,
+    "remaining": 150000,
+    "score_improvement": 0.0,
+    "selected": [],
+    "spent": 0,
+    "status": "BUDGET_EVALUATED"
+  },
+  "repeated_stable": {
+    "absolute_change": 0,
+    "direction": "STABLE",
+    "dispersion": 0.004319,
+    "dispersion_ratio": 0.004319,
+    "distinct_observation_times": 4,
+    "first_observed": "2026-08-17T20:00:00+00:00",
+    "latest": 100,
+    "latest_age_hours": 0.0,
+    "latest_observed": "2026-08-20T20:00:00+00:00",
+    "longer_window_change": 0.0,
+    "maximum": 101,
+    "median": 100.0,
+    "minimum": 100,
+    "observation_count": 4,
+    "observation_type_counts": {
+      "LOWEST_VISIBLE_LISTING": 4
+    },
+    "percentage_change": 0.0,
+    "quality": "USABLE",
+    "range": 1,
+    "short_window_change": 0.0,
+    "time_span_hours": 72.0,
+    "volatility": 0.004319
+  },
+  "resale_available": "fixture-covered by frontier unit test",
+  "rising_market": {
+    "absolute_change": 10,
+    "direction": "RISING",
+    "dispersion": 0.09722,
+    "dispersion_ratio": 0.09722,
+    "distinct_observation_times": 4,
+    "first_observed": "2026-08-17T20:00:00+00:00",
+    "latest": 130,
+    "latest_age_hours": 0.0,
+    "latest_observed": "2026-08-20T20:00:00+00:00",
+    "longer_window_change": 0.3,
+    "maximum": 130,
+    "median": 115.0,
+    "minimum": 100,
+    "observation_count": 4,
+    "observation_type_counts": {
+      "LOWEST_VISIBLE_LISTING": 4
+    },
+    "percentage_change": 0.083333,
+    "quality": "USABLE",
+    "range": 30,
+    "short_window_change": 0.083333,
+    "time_span_hours": 72.0,
+    "volatility": 0.09722
+  },
+  "stale_downgrade": "EARLY/WAIT",
+  "strong_football_buy_blocked": true,
+  "volatile_market": {
+    "absolute_change": 120,
+    "direction": "VOLATILE",
+    "dispersion": 0.368179,
+    "dispersion_ratio": 0.368179,
+    "distinct_observation_times": 4,
+    "first_observed": "2026-08-17T20:00:00+00:00",
+    "latest": 210,
+    "latest_age_hours": 0.0,
+    "latest_observed": "2026-08-20T20:00:00+00:00",
+    "longer_window_change": 1.1,
+    "maximum": 210,
+    "median": 150.0,
+    "minimum": 90,
+    "observation_count": 4,
+    "observation_type_counts": {
+      "LOWEST_VISIBLE_LISTING": 4
+    },
+    "percentage_change": 1.333333,
+    "quality": "USABLE",
+    "range": 120,
+    "short_window_change": 1.333333,
+    "time_span_hours": 72.0,
+    "volatility": 0.368179
+  },
+  "zero_observations": {
+    "observation_count": 0,
+    "quality": "INSUFFICIENT"
+  }
+}

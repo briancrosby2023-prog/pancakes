@@ -36,6 +36,7 @@ def enrich_observation(
     ingested_at: str | None = None,
     source: str = "USER_OBSERVED_CFB_FAN",
     fixture: bool = False,
+    reject_future: bool = False,
 ) -> dict[str, Any]:
     if not card.get("card_id"):
         raise ValueError("exact canonical card identity is required")
@@ -49,6 +50,8 @@ def enrich_observation(
     ingested_at = ingested_at or _now()
     parse_timestamp(observed_at)
     parse_timestamp(ingested_at)
+    if reject_future and parse_timestamp(observed_at) > parse_timestamp(ingested_at):
+        raise ValueError("observed_at cannot be in the future relative to ingestion")
     identity = {
         "card_id": card["card_id"],
         "player_name": card.get("player_name"),
@@ -120,6 +123,7 @@ def history_statistics(rows: list[dict[str, Any]], as_of: str | None = None) -> 
         "first_observed": ordered[0]["user_observed_at"],
         "latest_observed": ordered[-1]["user_observed_at"],
         "minimum": min(prices),
+        "latest": prices[-1],
         "median": statistics.median(prices),
         "maximum": max(prices),
         "range": max(prices) - min(prices),
@@ -134,6 +138,7 @@ def history_statistics(rows: list[dict[str, Any]], as_of: str | None = None) -> 
     }
     if len(prices) >= 2:
         result["short_window_change"] = round((prices[-1] - prices[-2]) / prices[-2], 6)
+        result["absolute_change"] = prices[-1] - prices[-2]
     if span_hours >= 24 and len(prices) >= 3:
         result["longer_window_change"] = round((prices[-1] - prices[0]) / prices[0], 6)
     return result

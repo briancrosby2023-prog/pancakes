@@ -76,6 +76,17 @@ def main() -> None:
     moneyball_board = sub.add_parser("moneyball-board")
     moneyball_board.add_argument("--position")
     moneyball_board.add_argument("--limit", type=int, default=25)
+    sub.add_parser("market-campaign")
+    market_round = sub.add_parser("market-round")
+    market_round.add_argument("file", type=Path, help="newline-separated CARD_ID PRICE entries")
+    market_round.add_argument("--round-id", required=True)
+    market_round.add_argument("--observed-at", required=True)
+    market_round.add_argument("--type", default="LOWEST_VISIBLE_LISTING")
+    market_round.add_argument("--history", type=Path)
+    sub.add_parser("market-watch")
+    sub.add_parser("market-board")
+    sub.add_parser("arbitrage")
+    sub.add_parser("purchase-frontier")
     budget = sub.add_parser("budget")
     budget.add_argument("file", type=Path, help="JSON candidate list")
     budget.add_argument("coins", type=int)
@@ -156,6 +167,53 @@ def main() -> None:
             _dump(discovery.alternatives(args.card_id))
         else:
             _dump(discovery.ovr_savings(args.card_id))
+    elif args.command in {
+        "market-campaign",
+        "market-round",
+        "market-watch",
+        "market-board",
+        "arbitrage",
+        "purchase-frontier",
+    }:
+        from operation_pancake.production.campaign import (
+            build_campaign,
+            campaign_round,
+            parse_compact_snapshot,
+        )
+
+        gm = GMProduct(root)
+        history_path = getattr(args, "history", None) or root / REAL_HISTORY
+        history = json.loads(history_path.read_text()) if history_path.exists() else []
+        if args.command == "market-round":
+            ingested_at = datetime.now().astimezone().isoformat()
+            observations = parse_compact_snapshot(
+                args.file.read_text(encoding="utf-8"),
+                gm.cards,
+                observed_at=args.observed_at,
+                ingested_at=ingested_at,
+                observation_type=args.type,
+            )
+            analysis = build_campaign(root, [*history, *observations], ingested_at)
+            appended = append_history(history_path, observations)
+            _dump(
+                {
+                    "round": campaign_round(
+                        args.round_id, analysis["unique_targets"], observations
+                    ),
+                    "history": appended,
+                    "next": analysis["adaptive_priority"],
+                }
+            )
+        else:
+            analysis = build_campaign(root, history, datetime.now().astimezone().isoformat())
+            key = {
+                "market-campaign": "adaptive_priority",
+                "market-watch": "adaptive_priority",
+                "market-board": "market_board",
+                "arbitrage": "arbitrage",
+                "purchase-frontier": "frontiers",
+            }[args.command]
+            _dump(analysis[key])
     elif args.command == "budget":
         rows = json.loads(args.file.read_text(encoding="utf-8"))
         _dump(optimize_budget(rows, args.coins))
