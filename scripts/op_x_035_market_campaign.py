@@ -150,11 +150,11 @@ def main() -> None:
             "candidate_card_id": f"fixture:{index}",
             "current_card_id": f"current:{index}",
             "net_cost": cost,
-            "football_gain": gain,
+            "score_improvement": gain,
             "protected": False,
         }
         for index, (cost, gain) in enumerate(
-            ((25000, 2.0), (40000, 4.0), (80000, 7.0), (160000, 11.0), (500000, 15.0))
+            ((60000, 3.0), (70000, 4.0), (90000, 5.0), (160000, 11.0), (500000, 15.0))
         )
     ]
     portfolios = {}

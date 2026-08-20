@@ -14,6 +14,7 @@ from operation_pancake.production.campaign import (
     parse_compact_snapshot,
 )
 from operation_pancake.production.engine import load_population
+from operation_pancake.production.gm import optimize_budget
 from operation_pancake.production.market_campaign import (
     append_history,
     calibrate_decision,
@@ -171,6 +172,20 @@ def test_real_campaign_is_evidence_limited_and_deduplicated() -> None:
     assert len(result["unique_targets"]) == 16
     assert not result["arbitrage"]
     assert all(row["gm_action"] == "PRICE CHECK REQUIRED" for row in result["market_board"])
+
+
+def test_budget_fixture_selects_multiple_efficient_upgrades() -> None:
+    candidates = [
+        {"net_cost": 60_000, "score_improvement": 3.0, "protected": False},
+        {"net_cost": 70_000, "score_improvement": 4.0, "protected": False},
+        {"net_cost": 90_000, "score_improvement": 5.0, "protected": False},
+    ]
+
+    result = optimize_budget(candidates, 150_000)
+
+    assert result["action"] == "BUDGET UPGRADE"
+    assert len(result["selected"]) == 2
+    assert result["spent"] == 150_000
 
 
 def test_durable_outputs_do_not_promote_context_prices() -> None:

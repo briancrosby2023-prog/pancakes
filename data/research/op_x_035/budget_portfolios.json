@@ -1,12 +1,20 @@
 {
   "100000": {
     "context_only_scenario": {
-      "action": "KEEP",
+      "action": "UPGRADE",
       "budget": 100000,
-      "remaining": 100000,
-      "score_improvement": 0.0,
-      "selected": [],
-      "spent": 0,
+      "remaining": 10000,
+      "score_improvement": 5.0,
+      "selected": [
+        {
+          "candidate_card_id": "fixture:2",
+          "current_card_id": "current:2",
+          "net_cost": 90000,
+          "protected": false,
+          "score_improvement": 5.0
+        }
+      ],
+      "spent": 90000,
       "status": "BUDGET_EVALUATED"
     },
     "qualified": {
@@ -16,12 +24,48 @@
   },
   "1000000": {
     "context_only_scenario": {
-      "action": "KEEP",
+      "action": "BUDGET UPGRADE",
       "budget": 1000000,
-      "remaining": 1000000,
-      "score_improvement": 0.0,
-      "selected": [],
-      "spent": 0,
+      "remaining": 120000,
+      "score_improvement": 38.0,
+      "selected": [
+        {
+          "candidate_card_id": "fixture:0",
+          "current_card_id": "current:0",
+          "net_cost": 60000,
+          "protected": false,
+          "score_improvement": 3.0
+        },
+        {
+          "candidate_card_id": "fixture:1",
+          "current_card_id": "current:1",
+          "net_cost": 70000,
+          "protected": false,
+          "score_improvement": 4.0
+        },
+        {
+          "candidate_card_id": "fixture:2",
+          "current_card_id": "current:2",
+          "net_cost": 90000,
+          "protected": false,
+          "score_improvement": 5.0
+        },
+        {
+          "candidate_card_id": "fixture:3",
+          "current_card_id": "current:3",
+          "net_cost": 160000,
+          "protected": false,
+          "score_improvement": 11.0
+        },
+        {
+          "candidate_card_id": "fixture:4",
+          "current_card_id": "current:4",
+          "net_cost": 500000,
+          "protected": false,
+          "score_improvement": 15.0
+        }
+      ],
+      "spent": 880000,
       "status": "BUDGET_EVALUATED"
     },
     "qualified": {
@@ -31,12 +75,27 @@
   },
   "150000": {
     "context_only_scenario": {
-      "action": "KEEP",
+      "action": "BUDGET UPGRADE",
       "budget": 150000,
-      "remaining": 150000,
-      "score_improvement": 0.0,
-      "selected": [],
-      "spent": 0,
+      "remaining": 0,
+      "score_improvement": 8.0,
+      "selected": [
+        {
+          "candidate_card_id": "fixture:0",
+          "current_card_id": "current:0",
+          "net_cost": 60000,
+          "protected": false,
+          "score_improvement": 3.0
+        },
+        {
+          "candidate_card_id": "fixture:2",
+          "current_card_id": "current:2",
+          "net_cost": 90000,
+          "protected": false,
+          "score_improvement": 5.0
+        }
+      ],
+      "spent": 150000,
       "status": "BUDGET_EVALUATED"
     },
     "qualified": {
@@ -46,12 +105,48 @@
   },
   "2000000": {
     "context_only_scenario": {
-      "action": "KEEP",
+      "action": "BUDGET UPGRADE",
       "budget": 2000000,
-      "remaining": 2000000,
-      "score_improvement": 0.0,
-      "selected": [],
-      "spent": 0,
+      "remaining": 1120000,
+      "score_improvement": 38.0,
+      "selected": [
+        {
+          "candidate_card_id": "fixture:0",
+          "current_card_id": "current:0",
+          "net_cost": 60000,
+          "protected": false,
+          "score_improvement": 3.0
+        },
+        {
+          "candidate_card_id": "fixture:1",
+          "current_card_id": "current:1",
+          "net_cost": 70000,
+          "protected": false,
+          "score_improvement": 4.0
+        },
+        {
+          "candidate_card_id": "fixture:2",
+          "current_card_id": "current:2",
+          "net_cost": 90000,
+          "protected": false,
+          "score_improvement": 5.0
+        },
+        {
+          "candidate_card_id": "fixture:3",
+          "current_card_id": "current:3",
+          "net_cost": 160000,
+          "protected": false,
+          "score_improvement": 11.0
+        },
+        {
+          "candidate_card_id": "fixture:4",
+          "current_card_id": "current:4",
+          "net_cost": 500000,
+          "protected": false,
+          "score_improvement": 15.0
+        }
+      ],
+      "spent": 880000,
       "status": "BUDGET_EVALUATED"
     },
     "qualified": {
@@ -61,12 +156,27 @@
   },
   "250000": {
     "context_only_scenario": {
-      "action": "KEEP",
+      "action": "BUDGET UPGRADE",
       "budget": 250000,
-      "remaining": 250000,
-      "score_improvement": 0.0,
-      "selected": [],
-      "spent": 0,
+      "remaining": 0,
+      "score_improvement": 16.0,
+      "selected": [
+        {
+          "candidate_card_id": "fixture:2",
+          "current_card_id": "current:2",
+          "net_cost": 90000,
+          "protected": false,
+          "score_improvement": 5.0
+        },
+        {
+          "candidate_card_id": "fixture:3",
+          "current_card_id": "current:3",
+          "net_cost": 160000,
+          "protected": false,
+          "score_improvement": 11.0
+        }
+      ],
+      "spent": 250000,
       "status": "BUDGET_EVALUATED"
     },
     "qualified": {
@@ -91,12 +201,41 @@
   },
   "500000": {
     "context_only_scenario": {
-      "action": "KEEP",
+      "action": "BUDGET UPGRADE",
       "budget": 500000,
-      "remaining": 500000,
-      "score_improvement": 0.0,
-      "selected": [],
-      "spent": 0,
+      "remaining": 120000,
+      "score_improvement": 23.0,
+      "selected": [
+        {
+          "candidate_card_id": "fixture:0",
+          "current_card_id": "current:0",
+          "net_cost": 60000,
+          "protected": false,
+          "score_improvement": 3.0
+        },
+        {
+          "candidate_card_id": "fixture:1",
+          "current_card_id": "current:1",
+          "net_cost": 70000,
+          "protected": false,
+          "score_improvement": 4.0
+        },
+        {
+          "candidate_card_id": "fixture:2",
+          "current_card_id": "current:2",
+          "net_cost": 90000,
+          "protected": false,
+          "score_improvement": 5.0
+        },
+        {
+          "candidate_card_id": "fixture:3",
+          "current_card_id": "current:3",
+          "net_cost": 160000,
+          "protected": false,
+          "score_improvement": 11.0
+        }
+      ],
+      "spent": 380000,
       "status": "BUDGET_EVALUATED"
     },
     "qualified": {
@@ -106,12 +245,48 @@
   },
   "5000000": {
     "context_only_scenario": {
-      "action": "KEEP",
+      "action": "BUDGET UPGRADE",
       "budget": 5000000,
-      "remaining": 5000000,
-      "score_improvement": 0.0,
-      "selected": [],
-      "spent": 0,
+      "remaining": 4120000,
+      "score_improvement": 38.0,
+      "selected": [
+        {
+          "candidate_card_id": "fixture:0",
+          "current_card_id": "current:0",
+          "net_cost": 60000,
+          "protected": false,
+          "score_improvement": 3.0
+        },
+        {
+          "candidate_card_id": "fixture:1",
+          "current_card_id": "current:1",
+          "net_cost": 70000,
+          "protected": false,
+          "score_improvement": 4.0
+        },
+        {
+          "candidate_card_id": "fixture:2",
+          "current_card_id": "current:2",
+          "net_cost": 90000,
+          "protected": false,
+          "score_improvement": 5.0
+        },
+        {
+          "candidate_card_id": "fixture:3",
+          "current_card_id": "current:3",
+          "net_cost": 160000,
+          "protected": false,
+          "score_improvement": 11.0
+        },
+        {
+          "candidate_card_id": "fixture:4",
+          "current_card_id": "current:4",
+          "net_cost": 500000,
+          "protected": false,
+          "score_improvement": 15.0
+        }
+      ],
+      "spent": 880000,
       "status": "BUDGET_EVALUATED"
     },
     "qualified": {
@@ -121,12 +296,34 @@
   },
   "750000": {
     "context_only_scenario": {
-      "action": "KEEP",
+      "action": "BUDGET UPGRADE",
       "budget": 750000,
-      "remaining": 750000,
-      "score_improvement": 0.0,
-      "selected": [],
-      "spent": 0,
+      "remaining": 0,
+      "score_improvement": 31.0,
+      "selected": [
+        {
+          "candidate_card_id": "fixture:2",
+          "current_card_id": "current:2",
+          "net_cost": 90000,
+          "protected": false,
+          "score_improvement": 5.0
+        },
+        {
+          "candidate_card_id": "fixture:3",
+          "current_card_id": "current:3",
+          "net_cost": 160000,
+          "protected": false,
+          "score_improvement": 11.0
+        },
+        {
+          "candidate_card_id": "fixture:4",
+          "current_card_id": "current:4",
+          "net_cost": 500000,
+          "protected": false,
+          "score_improvement": 15.0
+        }
+      ],
+      "spent": 750000,
       "status": "BUDGET_EVALUATED"
     },
     "qualified": {
