@@ -1,0 +1,74 @@
+{
+  "generic_price_allowed": false,
+  "price_types": [
+    "COLLECTION_COMPONENT",
+    "COMPLETED_SALE",
+    "CURRENT_PLAYER_RESALE",
+    "DISPLAYED_MARKET_PRICE",
+    "LIVE_LISTING",
+    "LOWEST_VISIBLE_LISTING",
+    "MEDIAN_COMPLETED_SALE",
+    "PRICE_TRACKER_VALUE",
+    "TRAINING_BASKET"
+  ],
+  "required_fields": [
+    "card_id",
+    "value",
+    "observation_type",
+    "source",
+    "observed_at",
+    "ingested_at",
+    "available_at",
+    "platform",
+    "provenance",
+    "confidence",
+    "campaign_id",
+    "event_id"
+  ],
+  "types": {
+    "COLLECTION_COMPONENT": {
+      "class": "COLLECTION",
+      "unit": "CUT_COINS"
+    },
+    "COMPLETED_SALE": {
+      "class": "SALE",
+      "unit": "CUT_COINS"
+    },
+    "CURRENT_PLAYER_RESALE": {
+      "class": "RESALE",
+      "unit": "CUT_COINS"
+    },
+    "DISPLAYED_MARKET_PRICE": {
+      "class": "DISPLAY",
+      "unit": "CUT_COINS"
+    },
+    "LIVE_LISTING": {
+      "class": "LISTING",
+      "unit": "CUT_COINS"
+    },
+    "LOWEST_VISIBLE_LISTING": {
+      "class": "LISTING",
+      "unit": "CUT_COINS"
+    },
+    "MEDIAN_COMPLETED_SALE": {
+      "class": "SALE_STATISTIC",
+      "unit": "CUT_COINS"
+    },
+    "PRICE_TRACKER_VALUE": {
+      "class": "TRACKER",
+      "unit": "CUT_COINS"
+    },
+    "SALE_VOLUME": {
+      "class": "VOLUME",
+      "unit": "COUNT"
+    },
+    "SUPPLY_COUNT": {
+      "class": "SUPPLY",
+      "unit": "COUNT"
+    },
+    "TRAINING_BASKET": {
+      "class": "TRAINING",
+      "unit": "CUT_COINS"
+    }
+  }
+}

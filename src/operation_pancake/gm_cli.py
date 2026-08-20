@@ -87,6 +87,29 @@ def main() -> None:
     sub.add_parser("market-board")
     sub.add_parser("arbitrage")
     sub.add_parser("purchase-frontier")
+    sub.add_parser("campaigns")
+    campaign_create = sub.add_parser("campaign-create")
+    campaign_create.add_argument("file", type=Path)
+    campaign_show = sub.add_parser("campaign-show")
+    campaign_show.add_argument("campaign_id")
+    campaign_start = sub.add_parser("campaign-start")
+    campaign_start.add_argument("campaign_id")
+    campaign_stop = sub.add_parser("campaign-stop")
+    campaign_stop.add_argument("campaign_id")
+    market_import = sub.add_parser("market-import")
+    market_import.add_argument("file", type=Path)
+    market_import.add_argument("--format", choices=("json", "csv"), default="json")
+    market_import.add_argument("--ingested-at", required=True)
+    market_import.add_argument("--persist", action="store_true")
+    sub.add_parser("market-status")
+    event_register = sub.add_parser("event-register")
+    event_register.add_argument("file", type=Path)
+    sub.add_parser("event-status")
+    training_basket_command = sub.add_parser("training-basket")
+    training_basket_command.add_argument("file", type=Path)
+    training_basket_command.add_argument("--version", required=True)
+    collection_campaign = sub.add_parser("collection-campaign")
+    collection_campaign.add_argument("file", type=Path)
     budget = sub.add_parser("budget")
     hit_add = sub.add_parser("hit-list-add")
     hit_add.add_argument("card_id")
@@ -241,6 +264,90 @@ def main() -> None:
                 "purchase-frontier": "frontiers",
             }[args.command]
             _dump(analysis[key])
+    elif args.command in {
+        "campaigns",
+        "campaign-create",
+        "campaign-show",
+        "campaign-start",
+        "campaign-stop",
+        "market-import",
+        "market-status",
+        "event-register",
+        "event-status",
+        "training-basket",
+        "collection-campaign",
+    }:
+        from operation_pancake.production.recorder import (
+            CAMPAIGN_STATE,
+            RECORDER_HISTORY,
+            default_campaign,
+            load_json,
+            parse_browser_export,
+            register_event,
+            run_snapshot,
+            sample_sufficiency,
+            save_json,
+            training_basket,
+        )
+
+        campaign_path = root / CAMPAIGN_STATE
+        campaigns = load_json(
+            campaign_path, [default_campaign(root, datetime.now().astimezone().isoformat())]
+        )
+        event_path = root / "data/production/market/events.json"
+        if args.command == "campaigns":
+            _dump(campaigns)
+        elif args.command == "campaign-show":
+            match = next((row for row in campaigns if row["campaign_id"] == args.campaign_id), None)
+            if match is None:
+                raise SystemExit("unknown campaign")
+            _dump(match)
+        elif args.command in {"campaign-start", "campaign-stop"}:
+            found = False
+            for row in campaigns:
+                if row["campaign_id"] == args.campaign_id:
+                    row["active"] = args.command == "campaign-start"
+                    found = True
+            if not found:
+                raise SystemExit("unknown campaign")
+            save_json(campaign_path, campaigns)
+            _dump(campaigns)
+        elif args.command in {"campaign-create", "collection-campaign"}:
+            value = json.loads(args.file.read_text(encoding="utf-8"))
+            if args.command == "collection-campaign":
+                value["campaign_type"] = "SCHEME / COLLECTION"
+            if any(row["campaign_id"] == value.get("campaign_id") for row in campaigns):
+                raise SystemExit("campaign already exists")
+            campaigns.append(value)
+            save_json(campaign_path, campaigns)
+            _dump(value)
+        elif args.command == "market-import":
+            rows = parse_browser_export(args.file.read_text(encoding="utf-8"), args.format)
+            result = run_snapshot(
+                root,
+                rows,
+                campaigns,
+                load_json(root / "data/production/market/recorder_state.json", {}),
+                ingested_at=args.ingested_at,
+                persist=args.persist,
+            )
+            _dump(result)
+        elif args.command == "market-status":
+            rows = load_json(root / RECORDER_HISTORY, [])
+            _dump(sample_sufficiency(rows, datetime.now().astimezone().isoformat()))
+        elif args.command == "event-register":
+            event = register_event(json.loads(args.file.read_text(encoding="utf-8")))
+            events = load_json(event_path, [])
+            if any(row["event_id"] == event["event_id"] for row in events):
+                raise SystemExit("event already exists")
+            events.append(event)
+            save_json(event_path, events)
+            _dump(event)
+        elif args.command == "event-status":
+            _dump(load_json(event_path, []))
+        else:
+            rows = json.loads(args.file.read_text(encoding="utf-8"))
+            _dump(training_basket(rows, args.version))
     elif args.command.startswith("hit-list-"):
         from operation_pancake.production.monitor import (
             canonical_cards,

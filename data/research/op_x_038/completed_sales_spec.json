@@ -1,0 +1,28 @@
+{
+  "fields": [
+    "exact card",
+    "sale price",
+    "sale time",
+    "source",
+    "platform",
+    "sequence",
+    "sample window"
+  ],
+  "listing_inference_forbidden": true,
+  "observation_types": [
+    "COMPLETED_SALE",
+    "MEDIAN_COMPLETED_SALE"
+  ],
+  "statistics": [
+    "count",
+    "median",
+    "mean",
+    "min",
+    "max",
+    "range",
+    "dispersion",
+    "trend",
+    "time between sales",
+    "sale velocity"
+  ]
+}

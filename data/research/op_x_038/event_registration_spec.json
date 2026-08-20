@@ -1,0 +1,29 @@
+{
+  "checkpoints": [
+    "T-14",
+    "T-10",
+    "T-7",
+    "T-5",
+    "T-3",
+    "T-2",
+    "T-1",
+    "T0",
+    "T+6h",
+    "T+12h",
+    "T+24h",
+    "T+48h",
+    "T+72h",
+    "T+7d"
+  ],
+  "date_inference": false,
+  "priority_escalation": "configurable as verified release approaches",
+  "required": [
+    "event_id",
+    "event name",
+    "event type",
+    "release time",
+    "source",
+    "confidence"
+  ],
+  "unknown_rules": "explicit unknown_fields"
+}

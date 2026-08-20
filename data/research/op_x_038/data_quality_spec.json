@@ -1,0 +1,18 @@
+{
+  "deduplicate": "stable semantic observation ID",
+  "listing_sale_confusion": "rejected by explicit semantics",
+  "quarantine": [
+    "stale export",
+    "partial source failure"
+  ],
+  "reject": [
+    "future timestamps",
+    "impossible values",
+    "ambiguous identity",
+    "platform mismatch",
+    "unsupported semantics",
+    "timestamp reversal",
+    "campaign/card mismatch"
+  ],
+  "silent_repair": false
+}
