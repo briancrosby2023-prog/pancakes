@@ -1,0 +1,230 @@
+[
+  {
+    "card_id": "card:5b5946e048b9eea90517",
+    "observation_type": "PUBLIC_DISPLAY_PRICE",
+    "observed_price": 992000,
+    "pancake_score": 84.757282,
+    "player_name": "Trey'Dez Green",
+    "position_family": "TE",
+    "position_rank": 3,
+    "relative_market_value": null,
+    "relative_value_reason": "fewer than two priced cards in position family",
+    "risk_flags": [
+      "STALE PRICE",
+      "SINGLE OBSERVATION",
+      "INSUFFICIENT DATA"
+    ],
+    "training_economics": {
+      "coin_quicksell_floor": null,
+      "coins_per_training": null,
+      "effective_downside": null,
+      "overall": 89,
+      "program": "Season 1",
+      "source": "src/operation_pancake/research/cfb27_op_x_012.py",
+      "status": "UNSUPPORTED",
+      "training_value": null
+    }
+  },
+  {
+    "card_id": "card:33d187be2d653b639b4e",
+    "observation_type": "PUBLIC_DISPLAY_PRICE",
+    "observed_price": 782000,
+    "pancake_score": 87.266667,
+    "player_name": "Raleek Brown",
+    "position_family": "RB",
+    "position_rank": 4,
+    "relative_market_value": {
+      "comparison_count": 2,
+      "score_per_1000_coins": 0.1115942,
+      "within_observed_family_percentile": 100.0
+    },
+    "relative_value_reason": "descriptive within sparse stale observed family only",
+    "risk_flags": [
+      "STALE PRICE",
+      "SINGLE OBSERVATION",
+      "INSUFFICIENT DATA"
+    ],
+    "training_economics": {
+      "coin_quicksell_floor": null,
+      "coins_per_training": null,
+      "effective_downside": null,
+      "overall": 89,
+      "program": "Prime Prospects",
+      "source": "src/operation_pancake/research/cfb27_op_x_012.py",
+      "status": "UNSUPPORTED",
+      "training_value": null
+    }
+  },
+  {
+    "card_id": "card:f26cd7a4829a431b0af5",
+    "observation_type": "PUBLIC_DISPLAY_PRICE",
+    "observed_price": 888000,
+    "pancake_score": 87.125,
+    "player_name": "Bray Hubbard",
+    "position_family": "S",
+    "position_rank": 1,
+    "relative_market_value": null,
+    "relative_value_reason": "fewer than two priced cards in position family",
+    "risk_flags": [
+      "STALE PRICE",
+      "SINGLE OBSERVATION",
+      "INSUFFICIENT DATA"
+    ],
+    "training_economics": {
+      "coin_quicksell_floor": null,
+      "coins_per_training": null,
+      "effective_downside": null,
+      "overall": 89,
+      "program": "Season 1",
+      "source": "src/operation_pancake/research/cfb27_op_x_012.py",
+      "status": "UNSUPPORTED",
+      "training_value": null
+    }
+  },
+  {
+    "card_id": "card:f1b035e32950bde984b8",
+    "observation_type": "PUBLIC_DISPLAY_PRICE",
+    "observed_price": 1630000,
+    "pancake_score": 88.666667,
+    "player_name": "Ahmad Hardy",
+    "position_family": "RB",
+    "position_rank": 1,
+    "relative_market_value": {
+      "comparison_count": 2,
+      "score_per_1000_coins": 0.05439673,
+      "within_observed_family_percentile": 50.0
+    },
+    "relative_value_reason": "descriptive within sparse stale observed family only",
+    "risk_flags": [
+      "STALE PRICE",
+      "SINGLE OBSERVATION",
+      "INSUFFICIENT DATA"
+    ],
+    "training_economics": {
+      "coin_quicksell_floor": null,
+      "coins_per_training": null,
+      "effective_downside": null,
+      "overall": 90,
+      "program": "Season 1",
+      "source": "src/operation_pancake/research/cfb27_op_x_012.py",
+      "status": "UNSUPPORTED",
+      "training_value": null
+    }
+  },
+  {
+    "card_id": "card:57a337a3b626c22e7743",
+    "observation_type": "PUBLIC_DISPLAY_PRICE",
+    "observed_price": 2030000,
+    "pancake_score": 86.87,
+    "player_name": "Matayo Uiagalelei",
+    "position_family": "EDGE",
+    "position_rank": 2,
+    "relative_market_value": null,
+    "relative_value_reason": "fewer than two priced cards in position family",
+    "risk_flags": [
+      "STALE PRICE",
+      "SINGLE OBSERVATION",
+      "INSUFFICIENT DATA"
+    ],
+    "training_economics": {
+      "coin_quicksell_floor": null,
+      "coins_per_training": null,
+      "effective_downside": null,
+      "overall": 89,
+      "program": "Season 1",
+      "source": "src/operation_pancake/research/cfb27_op_x_012.py",
+      "status": "UNSUPPORTED",
+      "training_value": null
+    }
+  },
+  {
+    "card_id": "card:70f4623a94f4742f56d8",
+    "observation_type": "PUBLIC_DISPLAY_PRICE",
+    "observed_price": 798000,
+    "pancake_score": 85.54,
+    "player_name": "Michael Vick",
+    "position_family": "QB",
+    "position_rank": 3,
+    "relative_market_value": {
+      "comparison_count": 3,
+      "score_per_1000_coins": 0.10719298,
+      "within_observed_family_percentile": 66.6667
+    },
+    "relative_value_reason": "descriptive within sparse stale observed family only",
+    "risk_flags": [
+      "STALE PRICE",
+      "SINGLE OBSERVATION",
+      "INSUFFICIENT DATA"
+    ],
+    "training_economics": {
+      "coin_quicksell_floor": null,
+      "coins_per_training": null,
+      "effective_downside": null,
+      "overall": 89,
+      "program": "Summer Rush",
+      "source": "src/operation_pancake/research/cfb27_op_x_012.py",
+      "status": "UNSUPPORTED",
+      "training_value": null
+    }
+  },
+  {
+    "card_id": "card:a84b6f1dbd9fd1084554",
+    "observation_type": "PUBLIC_DISPLAY_PRICE",
+    "observed_price": 512000,
+    "pancake_score": 85.31,
+    "player_name": "Warren Moon",
+    "position_family": "QB",
+    "position_rank": 4,
+    "relative_market_value": {
+      "comparison_count": 3,
+      "score_per_1000_coins": 0.16662109,
+      "within_observed_family_percentile": 100.0
+    },
+    "relative_value_reason": "descriptive within sparse stale observed family only",
+    "risk_flags": [
+      "STALE PRICE",
+      "SINGLE OBSERVATION",
+      "INSUFFICIENT DATA"
+    ],
+    "training_economics": {
+      "coin_quicksell_floor": null,
+      "coins_per_training": null,
+      "effective_downside": null,
+      "overall": 89,
+      "program": "S1 Legends - Classic",
+      "source": "src/operation_pancake/research/cfb27_op_x_012.py",
+      "status": "UNSUPPORTED",
+      "training_value": null
+    }
+  },
+  {
+    "card_id": "card:3761f875bebf6806a79c",
+    "observation_type": "PUBLIC_DISPLAY_PRICE",
+    "observed_price": 982000,
+    "pancake_score": 85.99,
+    "player_name": "DJ Lagway",
+    "position_family": "QB",
+    "position_rank": 1,
+    "relative_market_value": {
+      "comparison_count": 3,
+      "score_per_1000_coins": 0.08756619,
+      "within_observed_family_percentile": 33.3333
+    },
+    "relative_value_reason": "descriptive within sparse stale observed family only",
+    "risk_flags": [
+      "STALE PRICE",
+      "SINGLE OBSERVATION",
+      "INSUFFICIENT DATA"
+    ],
+    "training_economics": {
+      "coin_quicksell_floor": null,
+      "coins_per_training": null,
+      "effective_downside": null,
+      "overall": 89,
+      "program": "Prime Prospects",
+      "source": "src/operation_pancake/research/cfb27_op_x_012.py",
+      "status": "UNSUPPORTED",
+      "training_value": null
+    }
+  }
+]

@@ -56,6 +56,10 @@ def main() -> None:
     gm_run.add_argument("--output-dir", type=Path)
     roster_run = sub.add_parser("roster-run")
     roster_run.add_argument("--output-dir", type=Path)
+    market_run = sub.add_parser("market-run")
+    market_run.add_argument("--output-dir", type=Path)
+    market_run.add_argument("--as-of", default="2026-08-20T00:00:00-07:00")
+    market_run.add_argument("--input", type=Path, action="append", default=[])
     args = parser.parse_args()
     if args.command is None:
         parser.print_help()
@@ -70,6 +74,17 @@ def main() -> None:
         from operation_pancake.production import build_roster_outputs
 
         print(json.dumps(build_roster_outputs(root, args.output_dir), indent=2, sort_keys=True))
+        return
+    if args.command == "market-run":
+        from operation_pancake.production import build_market_outputs
+
+        print(
+            json.dumps(
+                build_market_outputs(root, args.output_dir, args.as_of, args.input),
+                indent=2,
+                sort_keys=True,
+            )
+        )
         return
     index = build_evidence_index(root)
     state_path = root / "data/evidence/ingestion_state.json"

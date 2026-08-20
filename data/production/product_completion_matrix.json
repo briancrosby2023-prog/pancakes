@@ -9,27 +9,27 @@
   },
   "LTD ENGINE": {
     "blocker": "market data absent",
-    "evidence": "no production implementation",
-    "executable_entry_point": "none",
+    "evidence": "supported downside/current-state interface; prediction withheld",
+    "executable_entry_point": "operation-pancake market-run",
     "next_action": "define only after source coverage",
-    "status": "NOT STARTED",
-    "tests": "none"
+    "status": "PARTIAL",
+    "tests": "OP-X-023 targeted market production tests"
   },
   "MARKET INGESTION": {
     "blocker": "no trustworthy source data",
-    "evidence": "market_instances.json contains zero rows",
-    "executable_entry_point": "canonical market export",
+    "evidence": "8 real observations ingested; no live structured acquisition",
+    "executable_entry_point": "operation-pancake market-run",
     "next_action": "acquire licensed/reliable prices",
-    "status": "BLOCKED",
-    "tests": "not applicable"
+    "status": "PARTIAL",
+    "tests": "OP-X-023 targeted market production tests"
   },
   "MARKET RISK": {
     "blocker": "price history absent",
-    "evidence": "research artifacts do not provide executable current risk",
-    "executable_entry_point": "none",
+    "evidence": "staleness, sample, liquidity, spread, LTD, and insufficient-data flags implemented",
+    "executable_entry_point": "operation-pancake market-run",
     "next_action": "build after longitudinal prices",
-    "status": "NOT STARTED",
-    "tests": "none"
+    "status": "PARTIAL",
+    "tests": "OP-X-023 targeted market production tests"
   },
   "MODEL COVERAGE": {
     "blocker": "QB Pure Runner intentionally unsupported",
@@ -73,11 +73,11 @@
   },
   "PRICE HISTORY": {
     "blocker": "market ingestion absent",
-    "evidence": "no price observations",
-    "executable_entry_point": "none",
+    "evidence": "8 timestamped observations persisted",
+    "executable_entry_point": "operation-pancake market-run",
     "next_action": "start after price acquisition",
-    "status": "NOT STARTED",
-    "tests": "none"
+    "status": "PARTIAL",
+    "tests": "OP-X-023 targeted market production tests"
   },
   "PROVENANCE/EVIDENCE": {
     "blocker": "none",
@@ -129,10 +129,10 @@
   },
   "VALUE/MONEYBALL": {
     "blocker": "canonical market export has zero rows",
-    "evidence": "caller-supplied price metric implemented",
-    "executable_entry_point": "ProductionEngine.compare(candidate_price=...)",
+    "evidence": "production calculations executed; all current prices stale",
+    "executable_entry_point": "operation-pancake market-run",
     "next_action": "connect trustworthy market prices",
     "status": "PARTIAL",
-    "tests": "optional value test"
+    "tests": "OP-X-023 targeted market production tests"
   }
 }

@@ -1,0 +1,39 @@
+{
+  "formats": {
+    "card_id": "str | None",
+    "confidence": "str",
+    "currency": "str",
+    "external_card_id": "str | None",
+    "high": "int | None",
+    "liquidity_proxy": "float | None",
+    "low": "int | None",
+    "median": "int | None",
+    "observation_id": "str",
+    "observation_type": "str",
+    "observed_at": "str",
+    "observed_price": "int",
+    "overall": "int | None",
+    "platform": "str",
+    "player_name": "str | None",
+    "position": "str | None",
+    "program": "str | None",
+    "provenance": "str",
+    "sample_count": "int",
+    "source": "str",
+    "source_url": "str | None"
+  },
+  "identity_priority": [
+    "canonical card_id",
+    "external_card_id",
+    "player+position+overall+program"
+  ],
+  "required": [
+    "observed_price",
+    "currency",
+    "source",
+    "observed_at",
+    "observation_type",
+    "provenance"
+  ],
+  "schema_version": "1.0"
+}
