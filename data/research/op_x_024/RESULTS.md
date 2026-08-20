@@ -1,6 +1,6 @@
-# OP-X-024 — CFB27 TE OVR Economics + Archetype Validation
+# OP-X-024 - CFB27 TE OVR Economics + Archetype Validation
 
-403–405 EXACT HISTORICAL RETEST: **BLOCKED — EXACT LEGACY SPECIFICATION UNRECOVERED.** No substitute formula was used.
+403-405 EXACT HISTORICAL RETEST: **BLOCKED - EXACT LEGACY SPECIFICATION UNRECOVERED.** No substitute formula was used.
 
 Population: 512 TE records; static eligible 512; excluded 0. Archetypes: {'Physical Route Runner': 284, 'Vertical Threat': 166, 'Pure Blocker': 11, 'Gritty Possession': 51}.
 

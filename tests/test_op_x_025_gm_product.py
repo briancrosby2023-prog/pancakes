@@ -1,4 +1,9 @@
-from operation_pancake.production.gm import ACTIONS, manual_price_payload, optimize_budget, price_check_list
+from operation_pancake.production.gm import (
+    ACTIONS,
+    manual_price_payload,
+    optimize_budget,
+    price_check_list,
+)
 
 
 def test_action_vocabulary_separates_market_and_football_states():
@@ -25,18 +30,30 @@ def test_budget_optimizer_does_not_force_spending():
 
 
 def test_price_check_list_contains_card_identity():
-    rows = [{"card_id": "x", "player_name": "Player", "position": "TE", "native_overall": 85,
-             "program": "Core", "archetype": "Vertical Threat", "reason": "upgrade candidate"}]
+    rows = [
+        {
+            "card_id": "x",
+            "player_name": "Player",
+            "position": "TE",
+            "native_overall": 85,
+            "program": "Core",
+            "archetype": "Vertical Threat",
+            "reason": "upgrade candidate",
+        }
+    ]
     result = price_check_list(rows)
     assert result[0]["card_id"] == "x"
     assert result[0]["reason"] == "upgrade candidate"
 
 
 def test_manual_price_entry_accepts_and_rejects_without_overwrite_semantics():
-    result = manual_price_payload([
-        {"canonical_card_id": "x", "observed_price": 10000},
-        {"canonical_card_id": "y", "observed_price": -1},
-    ], "2026-08-20T08:00:00-07:00")
+    result = manual_price_payload(
+        [
+            {"canonical_card_id": "x", "observed_price": 10000},
+            {"canonical_card_id": "y", "observed_price": -1},
+        ],
+        "2026-08-20T08:00:00-07:00",
+    )
     assert len(result["accepted"]) == 1
     assert len(result["rejected"]) == 1
     assert result["accepted"][0]["source"] == "USER_SUPPLIED"

@@ -1,4 +1,5 @@
 """Single user-facing Operation Pancake GM command surface."""
+
 from __future__ import annotations
 
 import argparse
@@ -39,8 +40,15 @@ def main() -> None:
     root = args.root.resolve()
     if args.command == "player":
         gm = GMProduct(root)
-        _dump(gm.lookup(card_id=args.card_id, player_name=args.name, position=args.position,
-                        overall=args.overall, program=args.program))
+        _dump(
+            gm.lookup(
+                card_id=args.card_id,
+                player_name=args.name,
+                position=args.position,
+                overall=args.overall,
+                program=args.program,
+            )
+        )
     elif args.command == "compare":
         gm = GMProduct(root)
         _dump(gm.compare(args.current_card_id, args.candidate_card_id, args.price, args.resale))
@@ -52,6 +60,7 @@ def main() -> None:
         _dump(optimize_budget(rows, args.coins))
     elif args.command == "roster":
         from operation_pancake.production import build_roster_outputs
+
         _dump(build_roster_outputs(root))
     else:
         path = root / "data/production/roster/replacement_candidates.json"
@@ -62,9 +71,15 @@ def main() -> None:
                 continue
             for candidate in replacement.get("candidates", {}).values():
                 if candidate:
-                    checks.append({**candidate, "position": replacement.get("position_family"),
-                                   "reason": f"upgrade for {replacement.get('current')}"})
+                    checks.append(
+                        {
+                            **candidate,
+                            "position": replacement.get("position_family"),
+                            "reason": f"upgrade for {replacement.get('current')}",
+                        }
+                    )
         from operation_pancake.production.gm import price_check_list
+
         _dump(price_check_list(checks))
 
 

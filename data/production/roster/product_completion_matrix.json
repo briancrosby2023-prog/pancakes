@@ -9,27 +9,27 @@
   },
   "LTD ENGINE": {
     "blocker": "market data absent",
-    "evidence": "no production implementation",
-    "executable_entry_point": "none",
+    "evidence": "supported downside/current-state interface; prediction withheld",
+    "executable_entry_point": "operation-pancake market-run",
     "next_action": "define only after source coverage",
-    "status": "NOT STARTED",
-    "tests": "none"
+    "status": "PARTIAL",
+    "tests": "OP-X-023 targeted market production tests"
   },
   "MARKET INGESTION": {
     "blocker": "no trustworthy source data",
-    "evidence": "market_instances.json contains zero rows",
-    "executable_entry_point": "canonical market export",
+    "evidence": "8 real observations ingested; no live structured acquisition",
+    "executable_entry_point": "operation-pancake market-run",
     "next_action": "acquire licensed/reliable prices",
-    "status": "BLOCKED",
-    "tests": "not applicable"
+    "status": "PARTIAL",
+    "tests": "OP-X-023 targeted market production tests"
   },
   "MARKET RISK": {
     "blocker": "price history absent",
-    "evidence": "research artifacts do not provide executable current risk",
-    "executable_entry_point": "none",
+    "evidence": "staleness, sample, liquidity, spread, LTD, and insufficient-data flags implemented",
+    "executable_entry_point": "operation-pancake market-run",
     "next_action": "build after longitudinal prices",
-    "status": "NOT STARTED",
-    "tests": "none"
+    "status": "PARTIAL",
+    "tests": "OP-X-023 targeted market production tests"
   },
   "MODEL COVERAGE": {
     "blocker": "QB Pure Runner intentionally unsupported",
@@ -73,11 +73,11 @@
   },
   "PRICE HISTORY": {
     "blocker": "market ingestion absent",
-    "evidence": "no price observations",
-    "executable_entry_point": "none",
+    "evidence": "8 timestamped observations persisted",
+    "executable_entry_point": "operation-pancake market-run",
     "next_action": "start after price acquisition",
-    "status": "NOT STARTED",
-    "tests": "none"
+    "status": "PARTIAL",
+    "tests": "OP-X-023 targeted market production tests"
   },
   "PROVENANCE/EVIDENCE": {
     "blocker": "none",
@@ -104,12 +104,12 @@
     "tests": "identity matching and ambiguity rejection tests"
   },
   "TEST COVERAGE": {
-    "blocker": "no end-user UI tests",
-    "evidence": "OP-X-021 and OP-X-022 targeted suites",
-    "executable_entry_point": "pytest tests/test_production_gm.py",
-    "next_action": "extend with schema snapshots",
+    "blocker": "automated live-market acquisition remains unavailable",
+    "evidence": "OP-X-026 acceptance plus production, registry, roster, market, and integration suites: 70 passed",
+    "executable_entry_point": "pytest tests/test_op_x_026_acceptance.py tests/test_op_x_025_gm_product.py",
+    "next_action": "retain acceptance coverage as product surfaces evolve",
     "status": "PARTIAL",
-    "tests": "five targeted tests"
+    "tests": "OP-X-026 targeted acceptance and relevant production suites"
   },
   "UPGRADE COMPARISON": {
     "blocker": "none",
@@ -120,19 +120,19 @@
     "tests": "test_comparison_and_optional_value_never_invent_price"
   },
   "USER-FACING INTERFACE": {
-    "blocker": "no interactive roster editor/query surface",
-    "evidence": "gm-run plus persisted human-readable roster report",
-    "executable_entry_point": "operation-pancake roster-run",
-    "next_action": "add roster input and interactive recommendation queries",
-    "status": "PARTIAL",
-    "tests": "CLI executed against real roster"
+    "blocker": "no interactive roster editor; CLI is the accepted surface",
+    "evidence": "installed operation-pancake-gm entry point accepted for help, failures, player, compare, price, budget, roster, and price-check",
+    "executable_entry_point": "operation-pancake-gm",
+    "next_action": "add interactive editing only when product requirements justify it",
+    "status": "COMPLETE",
+    "tests": "OP-X-026 installed CLI acceptance"
   },
   "VALUE/MONEYBALL": {
     "blocker": "canonical market export has zero rows",
-    "evidence": "caller-supplied price metric implemented",
-    "executable_entry_point": "ProductionEngine.compare(candidate_price=...)",
+    "evidence": "production calculations executed; all current prices stale",
+    "executable_entry_point": "operation-pancake market-run",
     "next_action": "connect trustworthy market prices",
     "status": "PARTIAL",
-    "tests": "optional value test"
+    "tests": "OP-X-023 targeted market production tests"
   }
 }

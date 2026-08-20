@@ -1,0 +1,10 @@
+{
+  "defects": [
+    {"classification": "OP-X-024 DEFECT", "finding": "Targeted implementation and test failed Ruff with 131 findings.", "resolution": "Mechanically formatted and corrected strict zip/unused bindings; tests rerun.", "status": "FIXED"},
+    {"classification": "OP-X-025 DEFECT", "finding": "GM implementation, CLI, and test failed targeted Ruff with 11 findings.", "resolution": "Mechanically formatted and removed unused import; tests rerun.", "status": "FIXED"},
+    {"classification": "ENVIRONMENT/DEPENDENCY", "finding": "Default pytest temp root denied access.", "resolution": "Used verified workspace-local basetemp and removed it after execution.", "status": "WORKAROUND_VERIFIED"},
+    {"classification": "ENVIRONMENT/DEPENDENCY", "finding": "Actual CLI console script was absent from the virtual environment.", "resolution": "Installed the local project editable without changing repository dependency declarations.", "status": "FIXED"},
+    {"classification": "PRE-EXISTING DEPENDENCY", "finding": "Full pytest collection requires requests, absent from the verified environment.", "resolution": "Documented; targeted and relevant suites remain green.", "status": "OPEN_UNRELATED"},
+    {"classification": "PRE-EXISTING LINT", "finding": "Repository-wide Ruff reports 245 findings outside changed operation files.", "resolution": "Documented; unrelated historical files not modified.", "status": "OPEN_UNRELATED"}
+  ]
+}

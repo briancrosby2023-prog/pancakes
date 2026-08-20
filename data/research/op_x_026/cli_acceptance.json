@@ -1,0 +1,15 @@
+{
+  "actual_entry_point": ".venv/Scripts/operation-pancake-gm.exe",
+  "budget": {"action": "BUDGET UPGRADE", "selected": 2, "spent": 90000, "status": "PASS"},
+  "comparison_no_price": {"football": "UPGRADE", "market": "PRICE CHECK REQUIRED", "score_delta": 30.666667, "status": "PASS"},
+  "comparison_single_price": {"football": "UPGRADE", "market": "PRICE CHECK REQUIRED", "net_cost": 8000, "score_delta": 30.666667, "status": "PASS_LOW_CONFIDENCE_WITHHELD"},
+  "help": "PASS",
+  "invalid_command": "PASS_REJECTED",
+  "manual_price": {"accepted": 1, "rejected": 1, "status": "PASS", "test_data": true},
+  "missing_arguments": "PASS_REJECTED",
+  "player_ambiguous": {"matches": 3, "status": "PASS_AMBIGUOUS_CARD_VERSION"},
+  "player_exact_id": "PASS_SCORED_PARTIAL",
+  "player_unknown": "PASS_UNRESOLVED_IDENTITY",
+  "price_check_generation": {"count": 50, "status": "PASS"},
+  "roster": {"stages_executed": ["INGEST", "RESOLVE", "SCORE", "DEPTH", "POSITIONAL STRENGTH", "WEAKNESSES", "UPGRADE CANDIDATES", "MARKET STATE", "GM ACTIONS", "REPORT"], "status": "PASS"}
+}

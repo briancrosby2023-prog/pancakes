@@ -1,0 +1,10 @@
+{
+  "fixture_policy": "TEST DATA; not current purchase advice",
+  "scenarios": [
+    {"id": 1, "name": "NO MARKET DATA", "football": "UPGRADE", "market": "PRICE CHECK REQUIRED", "status": "PASS"},
+    {"id": 2, "name": "GOOD CURRENT PRICE", "football": "UPGRADE", "market": "VALUE EVALUATED", "note": "Three-observation deterministic TEST DATA fixture; no unvalidated BUY threshold asserted.", "status": "PASS"},
+    {"id": 3, "name": "BAD CURRENT PRICE", "football": "UPGRADE", "market": "NON-BUY", "note": "Football score is unchanged by market evidence.", "status": "PASS"},
+    {"id": 4, "name": "BUDGET PORTFOLIO", "market": "BUDGET UPGRADE", "selected": ["budget-test-candidate-a", "budget-test-candidate-b"], "spent": 90000, "status": "PASS_BRUTE_FORCE_EQUAL"},
+    {"id": 5, "name": "INCOMPLETE DATA", "outcomes": ["UNRESOLVED IDENTITY", "SCORED_PARTIAL", "UNSUPPORTED MODEL", "PRICE CHECK REQUIRED"], "status": "PASS_CONTINUED_DEFENSIBLE_ANALYSIS"}
+  ]
+}
