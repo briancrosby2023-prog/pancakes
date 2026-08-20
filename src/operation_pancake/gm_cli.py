@@ -110,6 +110,13 @@ def main() -> None:
     training_basket_command.add_argument("--version", required=True)
     collection_campaign = sub.add_parser("collection-campaign")
     collection_campaign.add_argument("file", type=Path)
+    sub.add_parser("reveals")
+    reveal_import = sub.add_parser("reveal-import")
+    reveal_import.add_argument("file", type=Path)
+    reveal_import.add_argument("--first-seen-at", required=True)
+    reveal_import.add_argument("--ingested-at", required=True)
+    reveal_import.add_argument("--persist", action="store_true")
+    sub.add_parser("whats-coming")
     budget = sub.add_parser("budget")
     hit_add = sub.add_parser("hit-list-add")
     hit_add.add_argument("card_id")
@@ -348,6 +355,37 @@ def main() -> None:
         else:
             rows = json.loads(args.file.read_text(encoding="utf-8"))
             _dump(training_basket(rows, args.version))
+    elif args.command in {"reveals", "reveal-import", "whats-coming"}:
+        from operation_pancake.production.reveals import (
+            REVEAL_REGISTRY,
+            merge_registry,
+            normalize_reveal,
+            render_whats_coming,
+            save_registry,
+        )
+
+        path = root / REVEAL_REGISTRY
+        existing = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+        if args.command == "reveals":
+            _dump(existing)
+        elif args.command == "whats-coming":
+            print(render_whats_coming(existing), end="")
+        else:
+            payload = json.loads(args.file.read_text(encoding="utf-8"))
+            if not isinstance(payload, list):
+                raise SystemExit("reveal import must be a JSON list")
+            incoming = [
+                normalize_reveal(
+                    row,
+                    first_seen_at=args.first_seen_at,
+                    ingested_at=args.ingested_at,
+                )
+                for row in payload
+            ]
+            merged = merge_registry(existing, incoming)
+            if args.persist:
+                save_registry(path, merged, production=True)
+            _dump({"accepted": len(incoming), "total": len(merged), "persisted": args.persist})
     elif args.command.startswith("hit-list-"):
         from operation_pancake.production.monitor import (
             canonical_cards,
