@@ -1,0 +1,37 @@
+{
+  "operation": "OP-X-025",
+  "scope": "product integration + completion",
+  "audit_basis": "repository-level static audit on agent/op-x-012-reconcile-artifacts",
+  "existing_surfaces": {
+    "legacy_cli": "src/operation_pancake/cli.py",
+    "production_engine": "src/operation_pancake/production/engine.py",
+    "model_registry_router": "src/operation_pancake/production/registry.py",
+    "roster_engine": "src/operation_pancake/production/roster.py",
+    "market_moneyball": "src/operation_pancake/production/market.py"
+  },
+  "findings": [
+    "production engines existed but user workflow was split across gm-run, roster-run and market-run",
+    "market layer already degrades to PRICE CHECK REQUIRED when price evidence is absent",
+    "roster layer resolves conservatively and can analyze resolved entries despite unresolved identities",
+    "no repository-indexed unified budget optimizer was found before OP-X-025",
+    "OP-X-024 implementation exists but scientific execution remains pending",
+    "automated fresh market acquisition remains partial/blocked and must not be presented as current pricing"
+  ],
+  "implemented": [
+    "unified GM service",
+    "single product-facing GM CLI",
+    "explicit ambiguous-version handling",
+    "football-versus-market verdict separation",
+    "manual price normalization using OP-X-023 schema",
+    "price-check list generation",
+    "exact 0/1 budget optimizer that may retain unspent coins",
+    "decomposed confidence surface",
+    "practical GM workflow guide"
+  ],
+  "research_production_separation": {
+    "op_x_024": "IMPLEMENTED — EXECUTION PENDING; no production routing change",
+    "production_te_coefficients_modified": false,
+    "unsupported_qb_fallback_added": false,
+    "exploratory_artifacts_promoted": false
+  }
+}
