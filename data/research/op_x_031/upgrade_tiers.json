@@ -1,0 +1,24 @@
+{
+  "labels": [
+    "MARGINAL",
+    "MODEST",
+    "MEANINGFUL",
+    "MAJOR",
+    "TRANSFORMATIVE"
+  ],
+  "method": "quintile of mean empirical score-gain and rank-gain percentiles",
+  "price_included": false,
+  "rank_gain_quintiles": {
+    "20": 1.0,
+    "40": 4.0,
+    "60": 15.2,
+    "80": 28.2
+  },
+  "reference_opportunities": 50,
+  "score_gain_quintiles": {
+    "20": 0.053725,
+    "40": 1.345216,
+    "60": 2.874849,
+    "80": 3.930264
+  }
+}

@@ -60,6 +60,11 @@ def main() -> None:
     attribute_upgrades.add_argument("card_id")
     attribute_upgrades.add_argument("--attribute")
     attribute_upgrades.add_argument("--min-score-gain", type=float, default=0)
+    purchase_report = sub.add_parser("purchase-report")
+    purchase_report.add_argument("current_card_id")
+    purchase_report.add_argument("candidate_card_id")
+    purchase_report.add_argument("--budget", type=int)
+    sub.add_parser("shopping-board")
     budget = sub.add_parser("budget")
     budget.add_argument("file", type=Path, help="JSON candidate list")
     budget.add_argument("coins", type=int)
@@ -119,6 +124,17 @@ def main() -> None:
             _dump(
                 intelligence.attribute_upgrades(args.card_id, args.attribute, args.min_score_gain)
             )
+    elif args.command in {"purchase-report", "shopping-board"}:
+        from operation_pancake.production.purchase import PurchaseIntelligence
+
+        purchase = PurchaseIntelligence(root)
+        if args.command == "purchase-report":
+            report = purchase.report(
+                args.current_card_id, args.candidate_card_id, budget=args.budget
+            )
+            print(purchase.render(report), end="")
+        else:
+            _dump(purchase.shopping_board())
     elif args.command == "budget":
         rows = json.loads(args.file.read_text(encoding="utf-8"))
         _dump(optimize_budget(rows, args.coins))

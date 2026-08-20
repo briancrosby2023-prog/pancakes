@@ -1,0 +1,17 @@
+{
+  "op_x_031_tests": {"passed": 11, "status": "PASS"},
+  "targeted_regression_suite": {"passed": 83, "status": "PASS"},
+  "broader_pytest": {
+    "status": "BLOCKED_DURING_COLLECTION",
+    "reason": "known E.15 acquisition test imports requests, absent from workspace environment",
+    "new_op_x_031_failure": false
+  },
+  "installed_cli_purchase_report": "PASS",
+  "installed_cli_shopping_board": "PASS",
+  "changed_file_ruff": "PASS",
+  "diff_check": "PASS",
+  "frozen_ranking_coefficients_modified": false,
+  "op_x_028_definition_modified": false,
+  "op_x_029_sufficiency_rules_modified": false,
+  "live_buy_recommendations": 0
+}
