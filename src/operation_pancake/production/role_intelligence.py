@@ -112,7 +112,9 @@ def card_role_candidates(card: dict[str, Any]) -> list[dict[str, Any]]:
                 "position_family": fam,
                 "attribute_coverage": round(coverage, 3),
                 "known_attributes": known,
-                "missing_attributes": [attribute for attribute in required if attribute not in known],
+                "missing_attributes": [
+                    attribute for attribute in required if attribute not in known
+                ],
                 "classification": "ROLE CANDIDATE" if coverage else "UNKNOWN",
                 "verified_role_fit": False,
             }
