@@ -1,0 +1,76 @@
+{
+  "captured_at": "2026-08-21T04:15:15Z",
+  "reproduction": {
+    "chromium_executable": "/usr/bin/chromium",
+    "chromium_version": "Chromium 144.0.7559.96 built on Debian GNU/Linux 13 (trixie)",
+    "launch_mode": "Playwright headless with executable_path=/usr/bin/chromium",
+    "target_url": "https://cfb.fan/prices/",
+    "exact_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://cfb.fan/prices/"
+  },
+  "control_navigation": [
+    {"url":"https://example.com/","result":"FAIL","error":"net::ERR_BLOCKED_BY_ADMINISTRATOR"},
+    {"url":"https://github.com/","result":"FAIL","error":"net::ERR_BLOCKED_BY_ADMINISTRATOR"},
+    {"url":"https://cfb.fan/","result":"FAIL","error":"net::ERR_BLOCKED_BY_ADMINISTRATOR"},
+    {"url":"https://cfb.fan/prices/","result":"FAIL","error":"net::ERR_BLOCKED_BY_ADMINISTRATOR"}
+  ],
+  "chromium_policy": {
+    "policy_files_observed": [
+      "/etc/chromium/policies/managed/.policy_merge/001_base_url_blocklist.json",
+      "/etc/chromium/policies/managed/000_policy_merge.json"
+    ],
+    "relevant_policy_values": {
+      "URLBlocklist": ["*"],
+      "BrowserSignin": 0,
+      "DefaultDirectSocketsSetting": 2,
+      "WebRtcIPHandling": "disable_non_proxied_udp"
+    },
+    "chrome_policy_page_test": "chrome://policy/ navigation itself returned net::ERR_BLOCKED_BY_ADMINISTRATOR under Playwright; filesystem-managed policy files therefore provide the authoritative observed policy evidence."
+  },
+  "launch_configuration": {
+    "playwright_chromium_command_line_observed": "/usr/lib/chromium/chromium ... --enable-automation ... --headless ... --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-<random> --remote-debugging-pipe --no-startup-window",
+    "relevant_flags": ["--headless","--no-sandbox","--enable-automation","--remote-debugging-pipe","--user-data-dir=<temporary profile>"],
+    "proxy_flags_present": false,
+    "managed_policy_flag_present": false,
+    "note": "No Playwright proxy or host-resolver override was observed."
+  },
+  "direct_chromium_test": {
+    "root_invocation": "Direct headless Chromium as root failed before navigation because Chromium refuses root execution without --no-sandbox; no security-disabling flag was added for this diagnostic.",
+    "nonroot_invocation": "A direct Chromium attempt under nobody with an isolated HOME/XDG runtime did not produce a useful navigation result before timeout, so it is inconclusive rather than evidence against the managed-policy finding."
+  },
+  "proxy_environment": {
+    "HTTP_PROXY": null,
+    "HTTPS_PROXY": null,
+    "ALL_PROXY": null,
+    "NO_PROXY": "localhost,127.0.0.1",
+    "note": "No external proxy environment variables were set; no proxy credentials were exposed. This does not match the failure signature as strongly as URLBlocklist=* does."
+  },
+  "alternative_browsers": {
+    "google_chrome": false,
+    "microsoft_edge": false,
+    "other_chromium": false,
+    "available": ["/usr/bin/chromium"]
+  },
+  "root_cause": "A. CHROMIUM MANAGED URL POLICY",
+  "root_cause_evidence": [
+    "Managed Chromium policy explicitly sets URLBlocklist to [\"*\"].",
+    "Playwright Chromium returns the same administrator block for unrelated public HTTPS sites (example.com, github.com, cfb.fan, cfb.fan/prices), proving the block is not CFB.FAN-specific.",
+    "No Playwright proxy flags or external proxy environment variables were observed.",
+    "The browser error net::ERR_BLOCKED_BY_ADMINISTRATOR is consistent with URL blocking by managed browser policy."
+  ],
+  "safe_remediation": "Use a browser execution surface that is already authorized by the environment for external navigation, or request an administrator-managed allow policy for the required public domains through the normal platform mechanism. Do not remove URL filtering or weaken system security. In practical terms, the environment must provide a rendered-browser path whose managed URL policy allows external web navigation (at minimum cfb.fan and any needed dependencies).",
+  "remediation_attempted": false,
+  "retest": {
+    "attempted": false,
+    "reason": "No alternate authorized browser executable/path was present, and modifying managed URLBlocklist policy would violate the user's security constraints."
+  },
+  "live_cpt_if_recovered": null,
+  "market_row_if_recovered": null,
+  "acceptance_tests": {
+    "root_cause_identified": true,
+    "safe_remediation_identified": true,
+    "safe_remediation_applied": false,
+    "cfb_fan_prices_rendered": false
+  },
+  "final_verdict": "PASS",
+  "notes": "Acceptance path A satisfied: root cause and safe remediation identified."
+}
