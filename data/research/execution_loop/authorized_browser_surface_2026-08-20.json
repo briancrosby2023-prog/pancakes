@@ -1,0 +1,60 @@
+{
+  "captured_at": "2026-08-20T21:00:00-07:00",
+  "tool_inventory": {
+    "current_invokable_rendered_browser_or_desktop_control": false,
+    "native_web_retrieval": "available but not an interactive user-facing browser/desktop surface",
+    "github_connector": "available; unrelated to browser rendering",
+    "plugin_management": "available and used to search official supported integrations"
+  },
+  "invokable_surfaces": [],
+  "environment_boundaries": {
+    "managed_worker_container": "Previously established local Chromium is managed and externally URL-blocked; per controlling instruction this path was not retested or modified.",
+    "brian_windows_desktop": "No currently installed connector/tool in this chat can control Brian's Windows desktop or browser.",
+    "platform_remote_browser": "No currently invokable interactive rendered-browser tool is exposed in this execution environment."
+  },
+  "candidates_tested": [],
+  "cfb_fan_render_results": {
+    "prices_page_rendered": false,
+    "reason": "No legitimate rendered browser/desktop-control surface is currently installed and invokable."
+  },
+  "live_cpt": null,
+  "market_row": null,
+  "existing_user_session_access": {
+    "available": false,
+    "cfb_fan_open_state": "UNKNOWN",
+    "reason": "No supported control surface can inspect Brian's existing browser session."
+  },
+  "supported_connectors": [
+    {
+      "name": "Opera Browser Connector",
+      "plugin_id": "plugin_asdk_app_69d669e1d5c88191957786fbcd38b411",
+      "status": "AVAILABLE_NOT_INSTALLED",
+      "what_it_controls": "Opera Browser",
+      "capabilities_reported_by_official_plugin_directory": ["see open tabs", "read page content", "take screenshots of the page", "navigate to the page"],
+      "installation_required": true,
+      "user_authorization_required": true,
+      "existing_browser_session": "Opera session after connector installation/connection",
+      "suitability_for_cfb_fan": "HIGH: its advertised rendered-page reading, screenshot, open-tab and navigation capabilities directly match the missing Pancake market-visibility layer.",
+      "installation_note": "Plugin directory states the Opera Browser Connector must first be enabled/installed in Opera under AI Services, after which the connector appears in Opera's toolbar and can be connected to ChatGPT."
+    },
+    {
+      "name": "Remote Desktop Commander",
+      "plugin_id": "plugin_asdk_app_6a057d268ebc81919918d37eec718425",
+      "status": "AVAILABLE_NOT_INSTALLED",
+      "what_it_controls": "authorized computer filesystem and terminal via Desktop Commander's Remote MCP",
+      "installation_required": true,
+      "user_authorization_required": true,
+      "suitability_for_cfb_fan": "LOWER than Opera Browser Connector for this requirement because its directory description emphasizes filesystem/terminal/process control rather than rendered browser page inspection."
+    }
+  ],
+  "authorization_required": true,
+  "recommended_path": "Install/connect the officially listed Opera Browser Connector, then in a subsequent Pancake worker run use its normal page-navigation/read/screenshot capabilities to open https://cfb.fan/prices/ and perform the two-value micro acceptance test. This is an authorized user-facing browser path and does not require changing Chromium URLBlocklist, copying profiles, extracting cookies/tokens, or bypassing authentication. The plugin installation suggestion was surfaced to the user during this run; it was not silently installed.",
+  "acceptance_tests": {
+    "AUTHORIZED_RENDERED_SURFACE_FOUND": "SUPPORTED_CANDIDATE_FOUND_BUT_NOT_CONNECTED",
+    "CFB_FAN_PRICES_RENDERED": false,
+    "LIVE_CPT_OBSERVED": false,
+    "CURRENT_MARKET_ROW_OBSERVED": false
+  },
+  "final_verdict": "PARTIAL",
+  "stop_reason": "A legitimate supported browser connector exists, but Brian must install/authorize/connect it before this worker can invoke it. No credentials, cookies, tokens, profiles, policies, or security controls were accessed or altered."
+}
