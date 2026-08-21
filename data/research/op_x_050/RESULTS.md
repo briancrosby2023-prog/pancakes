@@ -1,20 +1,25 @@
 # OP-X-050 Results
 
-Implemented a separate contextual football-value layer without modifying frozen position models or purchase gates.
+Implemented and verified the contextual football-value layer by extending, not duplicating, OP-X-043A.
 
 ## Implemented
-- Canonical versus deployment position and specialist slot.
-- Conservative role and assignment registries.
-- Provenance-bearing behavior evidence states: UNKNOWN/POSITIVE/NEUTRAL/NEGATIVE/MIXED.
-- Realized-build records with THEORETICAL versus OBSERVED state.
-- Ability availability/equipped/tier/AP/relevance separation.
-- Structured contextual evaluation preserving frozen score/rank/percentile.
-- Residual classification that never automatically claims model error.
-- Functional-floor and adoption/rejection research schemas.
-- Acceptance fixtures for Green, RGIII, Benkert, Bo Jackson, Sherman, A'Mauri Washington, Sammy Brown, and UNKNOWN context.
 
-## Intentionally not implemented
-No arithmetic context bonus; no universal height/speed/release adjustment; no coefficient refit; no BUY-gate change; no market-semantic change.
+- OP-X-043A evidence import now accepts contextual evidence kind, deployment, role, assignment, behavior, fit, realized-build status, functional risks, and functional advantages.
+- Existing validation, deduplication, provenance, canonical card resolution, usage/testimony firewall, ability semantics, source-family independence, and Pancake/discovery links remain authoritative.
+- `operation-pancake-gm context` now exposes frozen score, rank, percentile, contextual fit/risk/advantage evidence, source families, and UNKNOWN fields.
+- Canonical and deployment positions remain distinct.
+- Ability availability/equipped/recommended/required/preferred/not-used semantics reuse OP-X-043A.
+- Residual classification never automatically claims model error.
 
-## Execution limitation
-Repository writes were performed through the GitHub connector. This environment did not provide a repository shell, so pytest, Ruff, and git diff --check were not represented as executed. The focused test file is persisted for the next executable CI/local run.
+## Scientific result
+
+Context is explanatory and non-numeric. No arithmetic context bonus, universal physical adjustment, coefficient refit, BUY-gate change, or market-semantic change was introduced. No evidence was invented.
+
+## Executed quality gates
+
+- Focused OP-X-043A/050: 26 passed.
+- OP-X-025–050 regression: 256 passed.
+- Deterministic artifact checks: 25 passed after regeneration.
+- Full pytest: 806 passed, 4 existing openpyxl warnings.
+- Changed-file Ruff: passed.
+- `git diff --check`: passed.

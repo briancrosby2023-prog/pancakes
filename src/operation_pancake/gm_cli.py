@@ -29,6 +29,12 @@ def main() -> None:
     lookup.add_argument("--position")
     lookup.add_argument("--overall", type=int)
     lookup.add_argument("--program")
+    context = sub.add_parser("context")
+    context.add_argument("card_id")
+    context.add_argument("--role")
+    context.add_argument("--deployment")
+    context.add_argument("--assignment", action="append", default=[])
+    context.add_argument("--build")
     compare = sub.add_parser("compare")
     compare.add_argument("current_card_id")
     compare.add_argument("candidate_card_id")
@@ -175,6 +181,19 @@ def main() -> None:
                 position=args.position,
                 overall=args.overall,
                 program=args.program,
+            )
+        )
+    elif args.command == "context":
+        from operation_pancake.production.contextual_value import contextual_report
+
+        _dump(
+            contextual_report(
+                root,
+                args.card_id,
+                deployment_position=args.deployment,
+                role=args.role,
+                assignments=tuple(value.upper() for value in args.assignment),
+                build_id=args.build,
             )
         )
     elif args.command == "compare":

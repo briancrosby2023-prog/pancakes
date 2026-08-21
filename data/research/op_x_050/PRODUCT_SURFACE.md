@@ -1,7 +1,9 @@
 # Product Surface
 
-Target command: `operation-pancake-gm context <card> [--role ...] [--deployment ...] [--scheme ...] [--assignment ...] [--build ...]`.
+Implemented command:
 
-The output should concisely answer: what the card is good at; what job it should play; which weaknesses matter for that job; which evidence is numerical versus contextual; and what remains UNKNOWN.
+`operation-pancake-gm context <card-id> [--role ...] [--deployment ...] [--assignment ...] [--build ...]`
 
-Purchase intelligence may expose explanatory labels such as `CONTEXT RISK - QB RELEASE`, `SPECIALIST FIT - ZONE ONLY`, or `ROLE ADVANTAGE - RECEIVING HB`. These labels MUST NOT change BUY gates or coin-value arithmetic in OP-X-050.
+The output reports frozen numerical value separately from contextual role, scheme, behavior, risk, advantage, source-family, and UNKNOWN evidence. It exposes `score_modified: false`, `market_semantics_modified: false`, and `buy_gates_modified: false` invariants.
+
+Context evidence is imported through the existing `operation-pancake-gm evidence-import` command and OP-X-043A registry.

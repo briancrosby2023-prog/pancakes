@@ -66,6 +66,25 @@ ABILITY_STATUSES = {
 }
 PLAYBOOK_STATUSES = {"RECOMMENDED", "OBSERVED USED", "UNKNOWN"}
 ROSTER_COMPLETENESS = {"COMPLETE", "SUBSTANTIALLY COMPLETE", "PARTIAL", "FRAGMENT"}
+CONTEXT_EVIDENCE_KINDS = {"OBSERVED_USAGE", "RECOMMENDATION", "REJECTION", "LIMITATION", "UNKNOWN"}
+CONTEXT_STATES = {"UNKNOWN", "POSITIVE", "NEUTRAL", "NEGATIVE", "MIXED"}
+CONTEXT_FIT_STATES = {"SUPPORTED", "PARTIAL", "CONFLICT", "UNKNOWN"}
+CONTEXT_ASSIGNMENTS = {
+    "MAN",
+    "ZONE",
+    "PRESS",
+    "DEEP",
+    "BOX",
+    "CONTAIN",
+    "PASS_RUSH",
+    "RUN_DEFENSE",
+    "RECEIVING",
+    "BLOCKING",
+    "OPTION",
+    "POCKET",
+    "RPO",
+}
+BUILD_STATUSES = {"THEORETICAL", "OBSERVED", "UNKNOWN"}
 TESTIMONY_TYPES = {"GAMEPLAY THRESHOLD", "PERSONAL MINIMUM", "PREFERRED TARGET", "UNIVERSAL CLAIM"}
 REGISTRY = Path("data/production/evidence/competitive_evidence.json")
 KB = Path("data/research/op_x_040/knowledge_base.json")
@@ -137,6 +156,15 @@ def _validate(row: dict[str, Any]) -> dict[str, Any]:
     ability_status = str(_unknown(row.get("ability_status"))).upper()
     playbook_status = str(_unknown(row.get("playbook_status"))).upper()
     completeness = str(_unknown(row.get("roster_completeness"))).upper()
+    context_kind = str(_unknown(row.get("context_evidence_kind"))).upper()
+    behavior_state = str(_unknown(row.get("behavior_state"))).upper()
+    role_fit = str(_unknown(row.get("role_fit"))).upper()
+    scheme_fit = str(_unknown(row.get("scheme_fit"))).upper()
+    build_status = str(_unknown(row.get("build_status"))).upper()
+    for list_field in ("assignments", "functional_risks", "functional_advantages"):
+        if not isinstance(row.get(list_field, []), list):
+            raise ValueError(f"{list_field} must be a list")
+    assignments = tuple(str(value).upper() for value in row.get("assignments", []))
     if criterion not in CRITERIA or criterion_type not in CRITERION_TYPES:
         raise ValueError("unsupported criterion or criterion_type")
     if ability_status not in ABILITY_STATUSES:
@@ -145,6 +173,16 @@ def _validate(row: dict[str, Any]) -> dict[str, Any]:
         raise ValueError("unsupported playbook_status")
     if completeness != "UNKNOWN" and completeness not in ROSTER_COMPLETENESS:
         raise ValueError("unsupported roster_completeness")
+    if context_kind not in CONTEXT_EVIDENCE_KINDS:
+        raise ValueError("unsupported context_evidence_kind")
+    if behavior_state not in CONTEXT_STATES:
+        raise ValueError("unsupported behavior_state")
+    if role_fit not in CONTEXT_FIT_STATES or scheme_fit not in CONTEXT_FIT_STATES:
+        raise ValueError("unsupported contextual fit state")
+    if build_status not in BUILD_STATUSES:
+        raise ValueError("unsupported build_status")
+    if set(assignments) - CONTEXT_ASSIGNMENTS:
+        raise ValueError("unsupported contextual assignment")
     return {
         "source_url": row["source_url"],
         "publisher": row["publisher"],
@@ -171,6 +209,18 @@ def _validate(row: dict[str, Any]) -> dict[str, Any]:
         "criterion_value": _unknown(row.get("criterion_value")),
         "criterion_context": _unknown(row.get("criterion_context")),
         "confidence": str(_unknown(row.get("confidence"))).upper(),
+        "context_evidence_kind": context_kind,
+        "behavior_state": behavior_state,
+        "role_fit": role_fit,
+        "scheme_fit": scheme_fit,
+        "deployment_position": _unknown(row.get("deployment_position")),
+        "specialist_slot": _unknown(row.get("specialist_slot")),
+        "deployment_role": _unknown(row.get("deployment_role")),
+        "assignments": assignments,
+        "build_id": _unknown(row.get("build_id")),
+        "build_status": build_status,
+        "functional_risks": tuple(row.get("functional_risks", [])),
+        "functional_advantages": tuple(row.get("functional_advantages", [])),
     }
 
 

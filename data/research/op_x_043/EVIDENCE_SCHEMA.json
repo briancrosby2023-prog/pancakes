@@ -29,7 +29,19 @@
       "criterion_type": {"type": ["string", "null"]},
       "criterion_value": {},
       "criterion_context": {"type": ["string", "null"]},
-      "confidence": {"type": ["string", "null"]}
+      "confidence": {"type": ["string", "null"]},
+      "context_evidence_kind": {"enum": ["OBSERVED_USAGE", "RECOMMENDATION", "REJECTION", "LIMITATION", "UNKNOWN", null]},
+      "behavior_state": {"enum": ["UNKNOWN", "POSITIVE", "NEUTRAL", "NEGATIVE", "MIXED", null]},
+      "role_fit": {"enum": ["SUPPORTED", "PARTIAL", "CONFLICT", "UNKNOWN", null]},
+      "scheme_fit": {"enum": ["SUPPORTED", "PARTIAL", "CONFLICT", "UNKNOWN", null]},
+      "deployment_position": {"type": ["string", "null"]},
+      "specialist_slot": {"type": ["string", "null"]},
+      "deployment_role": {"type": ["string", "null"]},
+      "assignments": {"type": "array", "items": {"type": "string"}},
+      "build_id": {"type": ["string", "null"]},
+      "build_status": {"enum": ["THEORETICAL", "OBSERVED", "UNKNOWN", null]},
+      "functional_risks": {"type": "array", "items": {"type": "string"}},
+      "functional_advantages": {"type": "array", "items": {"type": "string"}}
     },
     "additionalProperties": false
   }
