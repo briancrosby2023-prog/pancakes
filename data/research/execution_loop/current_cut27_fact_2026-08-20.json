@@ -1,0 +1,27 @@
+{
+  "operation": "execution-result-loop-recovery",
+  "captured_at": "2026-08-20T21:01:00-07:00",
+  "fact": {
+    "statement": "In CUT27, a standard 83 OVR player quicksells for 800 Training.",
+    "confidence": "high",
+    "scope": "standard CUT27 83 OVR player training quicksell value"
+  },
+  "sources": [
+    {
+      "name": "CFB.FAN — [CUT 27] Player Training Quicksell Values",
+      "url": "https://cfb.fan/forums/forum/ultimate-team-4/topic/cut-27-training-player-quicksell-coin-values-7207/",
+      "evidence": "The CUT27 quicksell table lists 83 OVR = 800 Training."
+    },
+    {
+      "name": "CFB.FAN — Bear Bachmeier Phenoms 83 OVR",
+      "url": "https://cfb.fan/players/25386-bear-bachmeier/",
+      "evidence": "The 83 OVR Bear Bachmeier player page displays Quicksell Value: 800 Training."
+    },
+    {
+      "name": "CFB.FAN — Jacory Barney Jr. Core Rare 83 OVR",
+      "url": "https://cfb.fan/players/5959-jacory-barney-jr/27-2005959/",
+      "evidence": "The 83 OVR Jacory Barney Jr. player page displays Quicksell Value: 800 Training."
+    }
+  ],
+  "result": "SUPPORTED"
+}
