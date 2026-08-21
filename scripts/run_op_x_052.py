@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+# OP-X-052A executes only contextual evidence resolution; OP-X-051 science stays frozen.
 ROOT = Path(__file__).resolve().parents[1]
 IN = ROOT / "data/research/op_x_051"
 OUT = ROOT / "data/research/op_x_052"
@@ -37,35 +38,18 @@ def main() -> None:
     unresolved = []
     for row in entries:
         resolved = bool(row.get("resolved") and row.get("card_id"))
-        identities.append({
-            "display_name": row.get("input_name"),
-            "canonical_identifier": row.get("card_id"),
-            "resolution_status": "RESOLVED" if resolved else "UNRESOLVED IDENTITY",
-            "evidence_source": "data/research/op_x_051/ROSTER_ROLE_MAP.json",
-            "ambiguity_notes": None if resolved else "No exact canonical card identity proven by frozen OP-X-051 evidence",
-        })
+        identities.append({"display_name": row.get("input_name"), "canonical_identifier": row.get("card_id"), "resolution_status": "RESOLVED" if resolved else "UNRESOLVED IDENTITY", "evidence_source": "data/research/op_x_051/ROSTER_ROLE_MAP.json", "ambiguity_notes": None if resolved else "No exact canonical card identity proven by frozen OP-X-051 evidence"})
         deployment.append({"display_name": row.get("input_name"), "canonical_identifier": row.get("card_id"), "canonical_position": "UNKNOWN", "roster_slot": row.get("slot"), "actual_deployment": "UNKNOWN", "evidence_status": "UNKNOWN", "source": None})
         builds.append({"display_name": row.get("input_name"), "canonical_identifier": row.get("card_id"), "available_abilities": "UNKNOWN", "equipped_abilities": "UNKNOWN", "ap_cost": "UNKNOWN", "total_equipped_ap": "UNKNOWN", "realized_build": "UNKNOWN", "source": None})
         usage.append({"display_name": row.get("input_name"), "canonical_identifier": row.get("card_id"), "observed_usage": "UNKNOWN", "model_recommendation_separate": True, "source": None})
         acquisition.append({"display_name": row.get("input_name"), "canonical_identifier": row.get("card_id"), "acquisition_state": "UNKNOWN", "source": None})
         if not resolved:
             unresolved.append({"subject": row.get("input_name"), "field": "exact_card_identity", "status": "UNRESOLVED IDENTITY", "request": "specific card/version evidence"})
-        unresolved.extend([
-            {"subject": row.get("input_name"), "field": "deployment", "status": "UNKNOWN", "request": "deployment confirmation"},
-            {"subject": row.get("input_name"), "field": "equipped_abilities_ap", "status": "UNKNOWN", "request": "ability/AP screen"},
-            {"subject": row.get("input_name"), "field": "observed_usage", "status": "UNKNOWN", "request": "observed deployment/usage evidence"},
-            {"subject": row.get("input_name"), "field": "acquisition_state", "status": "UNKNOWN", "request": "acquisition-state confirmation"},
-        ])
+        unresolved.extend([{"subject": row.get("input_name"), "field": "deployment", "status": "UNKNOWN", "request": "deployment confirmation"}, {"subject": row.get("input_name"), "field": "equipped_abilities_ap", "status": "UNKNOWN", "request": "ability/AP screen"}, {"subject": row.get("input_name"), "field": "observed_usage", "status": "UNKNOWN", "request": "observed deployment/usage evidence"}, {"subject": row.get("input_name"), "field": "acquisition_state", "status": "UNKNOWN", "request": "acquisition-state confirmation"}])
 
     target_rows = []
     for t in targets:
-        target_rows.append({
-            "current_name": t["current_name"], "candidate_name": t["candidate_name"],
-            "before_status": t["status"], "new_evidence": [], "after_status": t["status"],
-            "reason": "No additional durable exact-version evidence promoted by OP-X-052",
-            "remaining_unknowns": ["exact card version/identity", "deployment", "equipped abilities/AP", "acquisition state", "market evidence"],
-            "market_conclusion": t["market_conclusion"], "purchase_action": t["purchase_action"],
-        })
+        target_rows.append({"current_name": t["current_name"], "candidate_name": t["candidate_name"], "before_status": t["status"], "new_evidence": [], "after_status": t["status"], "reason": "No additional durable exact-version evidence promoted by OP-X-052", "remaining_unknowns": ["exact card version/identity", "deployment", "equipped abilities/AP", "acquisition state", "market evidence"], "market_conclusion": t["market_conclusion"], "purchase_action": t["purchase_action"]})
         unresolved.append({"subject": f"{t['current_name']} -> {t['candidate_name']}", "field": "target_identity", "status": t["status"], "request": "specific current and candidate card/version evidence"})
 
     reassessment = {
