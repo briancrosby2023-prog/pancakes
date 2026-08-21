@@ -274,9 +274,19 @@ def main() -> None:
             for role in roles
         },
     )
-    dump("ROLE_BOARDS.json", {"summary": {"supported": supported, "blocked": blocked}, "boards": boards})
+    dump(
+        "ROLE_BOARDS.json",
+        {"summary": {"supported": supported, "blocked": blocked}, "boards": boards},
+    )
     dump("ROLE_ALTERNATIVES.json", {"target_challenge_alternatives": targets})
-    dump("ROLE_MONEYBALL.json", {"case_count": len(money), "cases": money[:1000], "truncated": len(money) > 1000})
+    dump(
+        "ROLE_MONEYBALL.json",
+        {
+            "case_count": len(money),
+            "cases": money[:1000],
+            "truncated": len(money) > 1000,
+        },
+    )
     dump(
         "OVR_WASTE.json",
         {
