@@ -1,71 +1,26 @@
 {
-  "operation": "OP-X-051 execution closure resumption",
-  "status": "PARTIAL — implementation hardened; population execution still not routed to OP-X-051 workflow",
-  "remote_baseline_before_resumption": "e079338f5ae3212e141c8bdd072905ae3818396b",
-  "resumption_commit": "f29aa15e705cf9f4d549283d11fe7802b647ee40",
-  "observed_remote_head_after_existing_runner": "878072f5f545490876647bb979ff0c9290cb2d38",
-  "canonical_population_control": 8838,
-  "scoreable_population_control": 8184,
-  "population_execution": {
-    "op_x_051_full_population_executed_this_resumption": false,
-    "reason": "The connector-created push did not surface the branch-only OP-X-051B workflow. Reopening PR #2 successfully invoked the existing base-branch Operation Pancake Runner and proved repository-side execution, but that main/base workflow does not contain the OP-X-051 closure job. GitHub pull_request events load workflows from the base branch, while the OP-X-051B PR bridge and execution-closure workflows currently exist only on agent/op-x-012-reconcile-artifacts.",
-    "do_not_claim": [
-      "role-board population counts",
-      "Moneyball case counts",
-      "roster mismatch counts",
-      "zero-coin improvement counts",
-      "purchase-avoidance counts",
-      "five-target numerical closure"
-    ]
-  },
-  "verified_durable_state": {
-    "canonical_attribute_role_alternatives_fix_present": true,
-    "canonical_attribute_regression_guard_present": true,
-    "scientific_firewall_preserved": true,
-    "role_candidate_distinct_from_verified_role_fit": true,
-    "op_x_043a_usage_testimony_firewall_preserved": true,
-    "runner_population_invariants_added": true
-  },
-  "runner_population_invariants": {
-    "canonical_population_must_equal": 8838,
-    "scoreable_population_must_equal": 8184,
-    "behavior": "scripts/run_op_x_051b.py now fails closed on population drift before materializing OP-X-051 results"
-  },
-  "cli": {
-    "role_board": "NOT WIRED on current branch gm_cli.py",
-    "role_alternatives": "NOT WIRED on current branch gm_cli.py",
-    "roster_roles": "NOT WIRED on current branch gm_cli.py",
-    "zero_coin_upgrades": "NOT WIRED on current branch gm_cli.py",
-    "target_challenge": "NOT WIRED on current branch gm_cli.py",
-    "closure_workflow_contains_wiring_logic": true,
-    "smoke_tested": false
-  },
-  "quality_gates": {
-    "focused_op_x_051_tests": "NOT EXECUTED",
-    "op_x_regressions": "NOT EXECUTED",
-    "full_pytest": "NOT EXECUTED",
-    "ruff": "NOT EXECUTED",
-    "git_diff_check": "NOT EXECUTED",
-    "deterministic_artifact_check": "NOT EXECUTED"
-  },
-  "artifacts": {
-    "existing_role_boards_are_runtime_contract_only": true,
-    "existing_quality_gates_are_stale_connector_only_status": true,
-    "execution_summary_json_present": false,
-    "population_derived_results_updated_this_resumption": false
-  },
-  "execution_bridge_observation": {
-    "pr_2_closed_then_reopened": true,
-    "repository_side_execution_proven": true,
-    "observed_side_effect": "existing Operation Pancake Runner pushed deterministic E.14 evidence as 878072f5f545490876647bb979ff0c9290cb2d38",
-    "op_x_051_job_reached": false
-  },
-  "remaining_gaps": [
-    "Route one authorized execution event to .github/workflows/op-x-051b-execution-closure.yml or equivalent existing OP-X-051 job without modifying main.",
-    "Execute scripts/run_op_x_051b.py over all 8,184 scoreable cards and persist execution_summary.json plus generated role/roster/target artifacts.",
-    "Wire the five requested commands into the existing operation-pancake-gm CLI and smoke-test them.",
-    "Run focused tests, OP-X regressions, deterministic artifact check, full pytest, Ruff, and git diff --check.",
-    "Only after those gates succeed, replace stale QUALITY_GATES.md and RESULTS.md execution-limitation text with actual repository-side results."
-  ],
-  "next_highest_value_operation": "OP-X-051 repository-side execution routing closure; do not start OP-X-052"
+  "operation": "OP-X-051",
+  "status": "COMPLETE",
+  "supersedes_stale_partial_state": true,
+  "authoritative_closure_artifact": "data/research/op_x_051/EXECUTION_CLOSURE_STATUS.md",
+  "authoritative_closure_commit": "6dd2acb9c1aeb6513703fe68a65af8923f3d1ca3",
+  "canonical_population": 8838,
+  "scoreable_population": 8184,
+  "role_candidate_records": 26901,
+  "unknown_role_candidate_records": 433,
+  "supported_role_boards": 34,
+  "blocked_role_boards": 0,
+  "role_moneyball_cases": 2252,
+  "population_execution": "PASS",
+  "focused_tests": "PASS — 14 passed",
+  "op_x_025_through_op_x_051_regressions": "PASS",
+  "deterministic_artifact_check": "PASS",
+  "op_x_051_scoped_ruff": "PASS",
+  "git_diff_check": "PASS",
+  "full_pytest_residual": "819 passed, 1 unrelated pre-existing evidence-index failure, 4 warnings",
+  "global_ruff_residual": "pre-existing repository-wide debt outside OP-X-051 scope",
+  "scientific_firewall_preserved": true,
+  "role_candidate_distinct_from_verified_role_fit": true,
+  "unknown_context_preserved": true,
+  "op_x_052_may_start": true
 }
