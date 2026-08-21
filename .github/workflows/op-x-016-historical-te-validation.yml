@@ -125,7 +125,7 @@ jobs:
       - name: Full pytest
         id: fullpytest
         continue-on-error: true
-        run: python -m pytest -q --tb=short > /tmp/fullpytest.log 2>&1
+        run: python -m pytest -q --tb=no > /tmp/fullpytest.log 2>&1
       - name: Ruff OP-X-051 files
         id: focusedruff
         continue-on-error: true
