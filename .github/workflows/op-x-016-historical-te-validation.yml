@@ -16,6 +16,8 @@ on:
       - scripts/run_op_x_052.py
       - tests/test_op_x_052.py
       - data/research/op_x_052/**
+      - scripts/run_op_x_053.py
+      - tests/test_op_x_053.py
       - data/research/op_x_053/**
       - .github/workflows/op-x-016-historical-te-validation.yml
 permissions:
@@ -199,5 +201,127 @@ jobs:
         with:
           ref: agent/op-x-012-reconcile-artifacts
           fetch-depth: 0
-      - name: OP-X-053 activation placeholder
-        run: echo 'OP-X-053 activation guard passed; scientific execution is not installed by OP-X-053B.'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install project and dev dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
+      - name: Execute OP-X-053 evidence triage
+        id: execute
+        continue-on-error: true
+        run: python scripts/run_op_x_053.py > /tmp/op_x_053.log 2>&1
+      - name: Validate frozen handoff invariants
+        id: invariants
+        continue-on-error: true
+        run: |
+          python - <<'PY'
+          import json
+          b=json.load(open('data/research/op_x_053/BASELINE.json'))
+          assert b['canonical_population']==8838
+          assert b['scoreable_population']==8184
+          assert b['role_candidate_records']==26901
+          assert b['unknown_role_candidates']==433
+          assert b['supported_role_boards']==34
+          assert b['moneyball_relationships']==2252
+          assert b['op_x_051_science_regenerated'] is False
+          assert b['op_x_052_unknown_context_preserved'] is True
+          PY
+      - name: Verify OP-X-052 closure
+        id: closure052
+        continue-on-error: true
+        run: grep -q 'COMPLETE' data/research/op_x_052/EXECUTION_CLOSURE_STATUS.md
+      - name: Focused OP-X-053 tests
+        id: focused
+        continue-on-error: true
+        run: python -m pytest -q tests/test_op_x_053.py > /tmp/focused053.log 2>&1
+      - name: OP-X-025 through OP-X-053 regressions
+        id: regressions
+        continue-on-error: true
+        shell: bash
+        run: |
+          files=$(python - <<'PY'
+          from pathlib import Path
+          import re
+          selected=[]
+          for p in sorted(Path('tests').glob('test_op_x_*.py')):
+              m=re.search(r'test_op_x_(\d+)', p.name)
+              if m and 25 <= int(m.group(1)) <= 53:
+                  selected.append(str(p))
+          print(' '.join(selected))
+          PY
+          )
+          test -n "$files"
+          python -m pytest -q $files > /tmp/regressions053.log 2>&1
+      - name: Deterministic artifact check
+        id: deterministic
+        continue-on-error: true
+        run: |
+          cp -a data/research/op_x_053 /tmp/opx053_before
+          python scripts/run_op_x_053.py >/tmp/determinism053.log 2>&1
+          diff -ru /tmp/opx053_before data/research/op_x_053 > /tmp/determinism053.diff
+          test ! -s /tmp/determinism053.diff
+      - name: Ruff OP-X-053 scope
+        id: ruff
+        continue-on-error: true
+        run: python -m ruff check scripts/run_op_x_053.py tests/test_op_x_053.py > /tmp/ruff053.log 2>&1
+      - name: Diff check
+        id: diffcheck
+        continue-on-error: true
+        run: git diff --check > /tmp/diff053.log 2>&1
+      - name: Persist OP-X-053 execution evidence
+        if: always()
+        env:
+          EXECUTE: ${{ steps.execute.outcome }}
+          INVARIANTS: ${{ steps.invariants.outcome }}
+          CLOSURE052: ${{ steps.closure052.outcome }}
+          FOCUSED: ${{ steps.focused.outcome }}
+          REGRESSIONS: ${{ steps.regressions.outcome }}
+          DETERMINISTIC: ${{ steps.deterministic.outcome }}
+          RUFF: ${{ steps.ruff.outcome }}
+          DIFFCHECK: ${{ steps.diffcheck.outcome }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          out=Path('data/research/op_x_053'); out.mkdir(parents=True,exist_ok=True)
+          keys=['EXECUTE','INVARIANTS','CLOSURE052','FOCUSED','REGRESSIONS','DETERMINISTIC','RUFF','DIFFCHECK']
+          status={k.lower():os.environ[k] for k in keys}
+          (out/'ACTIONS_EXECUTION_STATUS.json').write_text(json.dumps(status,indent=2,sort_keys=True)+'\n')
+          PY
+          git config user.name 'operation-pancake-bot'
+          git config user.email 'operation-pancake-bot@users.noreply.github.com'
+          git add -- data/research/op_x_053
+          if ! git diff --cached --quiet; then
+            git commit -m 'Persist OP-X-053 executed evidence triage'
+            git fetch origin agent/op-x-012-reconcile-artifacts
+            git rebase origin/agent/op-x-012-reconcile-artifacts
+            git push origin HEAD:agent/op-x-012-reconcile-artifacts
+          fi
+      - name: Upload OP-X-053 evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: op-x-053-execution
+          path: data/research/op_x_053
+          if-no-files-found: error
+      - name: Enforce OP-X-053 closure gates
+        if: always()
+        env:
+          EXECUTE: ${{ steps.execute.outcome }}
+          INVARIANTS: ${{ steps.invariants.outcome }}
+          CLOSURE052: ${{ steps.closure052.outcome }}
+          FOCUSED: ${{ steps.focused.outcome }}
+          REGRESSIONS: ${{ steps.regressions.outcome }}
+          DETERMINISTIC: ${{ steps.deterministic.outcome }}
+          RUFF: ${{ steps.ruff.outcome }}
+          DIFFCHECK: ${{ steps.diffcheck.outcome }}
+        run: |
+          test "$EXECUTE" = success
+          test "$INVARIANTS" = success
+          test "$CLOSURE052" = success
+          test "$FOCUSED" = success
+          test "$REGRESSIONS" = success
+          test "$DETERMINISTIC" = success
+          test "$RUFF" = success
+          test "$DIFFCHECK" = success
