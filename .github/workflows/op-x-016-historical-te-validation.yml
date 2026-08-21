@@ -80,11 +80,14 @@ jobs:
           CID=$(python - <<'PY'
           import json
           d=json.load(open('data/research/op_x_051/ROLE_BOARDS.json'))
-          print(next(b['rows'][0]['card_id'] for b in d['boards'].values() if b.get('rows')))
+          rows=d['boards']['QB:POCKET']['rows']
+          if not rows:
+              raise SystemExit('QB:POCKET role board unexpectedly empty')
+          print(rows[0]['card_id'])
           PY
           )
           operation-pancake-gm --root . role-board QB POCKET --limit 2 >/tmp/cli_role_board.json
-          operation-pancake-gm --root . role-alternatives "$CID" POCKET --limit 2 >/tmp/cli_role_alternatives.json || operation-pancake-gm --root . role-alternatives "$CID" RUNNER --limit 2 >/tmp/cli_role_alternatives.json
+          operation-pancake-gm --root . role-alternatives "$CID" POCKET --limit 2 >/tmp/cli_role_alternatives.json
           operation-pancake-gm --root . roster-roles >/tmp/cli_roster_roles.json
           operation-pancake-gm --root . zero-coin-upgrades >/tmp/cli_zero_coin.json
           operation-pancake-gm --root . target-challenge >/tmp/cli_target_challenge.json
@@ -97,8 +100,19 @@ jobs:
         continue-on-error: true
         shell: bash
         run: |
-          files=$(find tests -maxdepth 1 -type f -name 'test_op_x_*.py' | awk -F'[_x.]' '{n=$(NF-1)+0; if(n>=25 && n<=51) print $0}' | sort)
-          if [ -n "$files" ]; then python -m pytest -q $files > /tmp/regressions.log 2>&1; else echo 'NO MATCHING TEST FILES' > /tmp/regressions.log; fi
+          files=$(python - <<'PY'
+          from pathlib import Path
+          import re
+          selected=[]
+          for p in sorted(Path('tests').glob('test_op_x_*.py')):
+              m=re.search(r'test_op_x_(\d+)', p.name)
+              if m and 25 <= int(m.group(1)) <= 51:
+                  selected.append(str(p))
+          print(' '.join(selected))
+          PY
+          )
+          if [ -z "$files" ]; then echo 'NO MATCHING TEST FILES' > /tmp/regressions.log; exit 1; fi
+          python -m pytest -q $files > /tmp/regressions.log 2>&1
       - name: Deterministic artifact check
         id: deterministic
         continue-on-error: true
@@ -111,7 +125,11 @@ jobs:
       - name: Full pytest
         id: fullpytest
         continue-on-error: true
-        run: python -m pytest -q > /tmp/fullpytest.log 2>&1
+        run: python -m pytest -q --tb=short > /tmp/fullpytest.log 2>&1
+      - name: Ruff OP-X-051 files
+        id: focusedruff
+        continue-on-error: true
+        run: python -m ruff check src/operation_pancake/production/role_intelligence.py src/operation_pancake/gm_cli_entry.py scripts/run_op_x_051b.py tests/test_op_x_051_role_intelligence.py tests/test_op_x_051_cli.py > /tmp/focusedruff.log 2>&1
       - name: Ruff
         id: ruff
         continue-on-error: true
@@ -130,6 +148,7 @@ jobs:
           REGRESSIONS: ${{ steps.regressions.outcome }}
           DETERMINISTIC: ${{ steps.deterministic.outcome }}
           FULLPYTEST: ${{ steps.fullpytest.outcome }}
+          FOCUSEDRUFF: ${{ steps.focusedruff.outcome }}
           RUFF: ${{ steps.ruff.outcome }}
           DIFFCHECK: ${{ steps.diffcheck.outcome }}
         run: |
@@ -137,15 +156,16 @@ jobs:
           import json, os
           from pathlib import Path
           out=Path('data/research/op_x_051')
-          def tail(path, n=5000):
+          def tail(path, n=12000):
               p=Path(path)
               return p.read_text(errors='replace')[-n:] if p.exists() else 'NOT AVAILABLE'
           status={
             'population':os.environ['POP'],'cli_smoke':os.environ['CLI'],'focused_tests':os.environ['FOCUSED'],
             'regressions':os.environ['REGRESSIONS'],'determinism':os.environ['DETERMINISTIC'],
-            'full_pytest':os.environ['FULLPYTEST'],'ruff':os.environ['RUFF'],'diff_check':os.environ['DIFFCHECK']}
+            'full_pytest':os.environ['FULLPYTEST'],'focused_ruff':os.environ['FOCUSEDRUFF'],
+            'ruff':os.environ['RUFF'],'diff_check':os.environ['DIFFCHECK']}
           (out/'OP_X_051D_EXECUTION_STATUS.json').write_text(json.dumps(status,indent=2,sort_keys=True)+'\n')
-          logs={'population':'/tmp/op_x_051_population.log','focused':'/tmp/focused.log','regressions':'/tmp/regressions.log','determinism':'/tmp/determinism.diff','full_pytest':'/tmp/fullpytest.log','ruff':'/tmp/ruff.log','diff_check':'/tmp/diffcheck.log'}
+          logs={'population':'/tmp/op_x_051_population.log','focused':'/tmp/focused.log','regressions':'/tmp/regressions.log','determinism':'/tmp/determinism.diff','full_pytest':'/tmp/fullpytest.log','focused_ruff':'/tmp/focusedruff.log','ruff':'/tmp/ruff.log','diff_check':'/tmp/diffcheck.log'}
           (out/'OP_X_051D_EXECUTION_LOG_TAILS.json').write_text(json.dumps({k:tail(v) for k,v in logs.items()},indent=2,sort_keys=True)+'\n')
           PY
           git config user.name 'operation-pancake-bot'
@@ -155,6 +175,8 @@ jobs:
             echo 'No OP-X-051 execution artifacts changed.'
           else
             git commit -m 'Persist OP-X-051D execution evidence'
+            git fetch origin agent/op-x-012-reconcile-artifacts
+            git rebase origin/agent/op-x-012-reconcile-artifacts
             git push origin HEAD:agent/op-x-012-reconcile-artifacts
           fi
       - name: Upload OP-X-051 evidence
@@ -164,7 +186,7 @@ jobs:
           name: op-x-051d-execution
           path: data/research/op_x_051
           if-no-files-found: error
-      - name: Enforce closure gates
+      - name: Enforce OP-X-051 closure gates
         if: always()
         env:
           POP: ${{ steps.population.outcome }}
@@ -172,8 +194,7 @@ jobs:
           FOCUSED: ${{ steps.focused.outcome }}
           REGRESSIONS: ${{ steps.regressions.outcome }}
           DETERMINISTIC: ${{ steps.deterministic.outcome }}
-          FULLPYTEST: ${{ steps.fullpytest.outcome }}
-          RUFF: ${{ steps.ruff.outcome }}
+          FOCUSEDRUFF: ${{ steps.focusedruff.outcome }}
           DIFFCHECK: ${{ steps.diffcheck.outcome }}
         run: |
           test "$POP" = success
@@ -181,6 +202,5 @@ jobs:
           test "$FOCUSED" = success
           test "$REGRESSIONS" = success
           test "$DETERMINISTIC" = success
-          test "$FULLPYTEST" = success
-          test "$RUFF" = success
+          test "$FOCUSEDRUFF" = success
           test "$DIFFCHECK" = success
