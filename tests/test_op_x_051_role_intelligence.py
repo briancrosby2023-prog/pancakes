@@ -35,3 +35,26 @@ def test_lower_ovr_specialist_is_semantically_allowed():
     p=role_profile("DT","RUN_STOPPER")
     assert "STR" in p["modeled_attributes"] and "BSH" in p["modeled_attributes"]
     assert "OVR" not in p["modeled_attributes"]
+
+
+def test_role_alternatives_reads_canonical_population_attributes():
+    from pathlib import Path
+    import operation_pancake.production.role_intelligence as ri
+
+    class FakeProduct:
+        def __init__(self, root):
+            self.cards={"target":{"card_id":"target","position":"QB","attributes":{"THP":90,"SAC":90,"MAC":90,"DAC":90,"TUP":90}}}
+            self.population=[self.cards["target"],{"card_id":"alt","position":"QB","native_overall":80,"player_name":"Alt","attributes":{"THP":89,"SAC":90,"MAC":90,"DAC":90,"TUP":90}}]
+        def lookup(self, card_id):
+            # Deliberately identity-only: regression proves role_alternatives does not require attributes here.
+            return {"card":{"card_id":card_id,"position":"QB"}}
+
+    original=ri.GMProduct
+    ri.GMProduct=FakeProduct
+    try:
+        result=ri.role_alternatives(Path('.'),"target","POCKET",10)
+    finally:
+        ri.GMProduct=original
+    assert result["status"]=="CANDIDATES"
+    assert result["alternatives"][0]["card_id"]=="alt"
+    assert result["alternatives"][0]["trait_distance"]==1.0
