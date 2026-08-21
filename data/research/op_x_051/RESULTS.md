@@ -1,3 +1,3 @@
 # OP-X-051B
 
-Execution trigger prepared. Generated repository-side results will replace this marker.
+Execution trigger active. Generated repository-side results will replace this marker.
