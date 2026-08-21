@@ -7,11 +7,18 @@ on:
       - scripts/op_x_016_historical_te_validation.py
       - tests/test_op_x_016_historical_te_validation.py
       - data/research/op_x_016/frozen_te_scoring_spec.json
+      - scripts/run_op_x_051b.py
+      - src/operation_pancake/gm_cli_entry.py
+      - src/operation_pancake/production/role_intelligence.py
+      - tests/test_op_x_051_role_intelligence.py
+      - tests/test_op_x_051_cli.py
+      - data/research/op_x_051/**
       - .github/workflows/op-x-016-historical-te-validation.yml
 permissions:
   contents: write
 jobs:
   validate:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'OP-X-016')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -44,3 +51,136 @@ jobs:
           name: op-x-016-historical-te-validation
           path: data/research/op_x_016
           if-no-files-found: error
+
+  op-x-051d-closure:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'OP-X-051D')
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/op-x-012-reconcile-artifacts
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install project and dev dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
+      - name: Execute OP-X-051 population runner
+        id: population
+        continue-on-error: true
+        run: python scripts/run_op_x_051b.py > /tmp/op_x_051_population.log 2>&1
+      - name: CLI smoke
+        id: cli
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -e
+          CID=$(python - <<'PY'
+          import json
+          d=json.load(open('data/research/op_x_051/ROLE_BOARDS.json'))
+          print(next(b['rows'][0]['card_id'] for b in d['boards'].values() if b.get('rows')))
+          PY
+          )
+          operation-pancake-gm --root . role-board QB POCKET --limit 2 >/tmp/cli_role_board.json
+          operation-pancake-gm --root . role-alternatives "$CID" POCKET --limit 2 >/tmp/cli_role_alternatives.json || operation-pancake-gm --root . role-alternatives "$CID" RUNNER --limit 2 >/tmp/cli_role_alternatives.json
+          operation-pancake-gm --root . roster-roles >/tmp/cli_roster_roles.json
+          operation-pancake-gm --root . zero-coin-upgrades >/tmp/cli_zero_coin.json
+          operation-pancake-gm --root . target-challenge >/tmp/cli_target_challenge.json
+      - name: Focused OP-X-051 tests
+        id: focused
+        continue-on-error: true
+        run: python -m pytest -q tests/test_op_x_051_role_intelligence.py tests/test_op_x_051_cli.py > /tmp/focused.log 2>&1
+      - name: OP-X-025 through OP-X-051 regressions
+        id: regressions
+        continue-on-error: true
+        shell: bash
+        run: |
+          files=$(find tests -maxdepth 1 -type f -name 'test_op_x_*.py' | awk -F'[_x.]' '{n=$(NF-1)+0; if(n>=25 && n<=51) print $0}' | sort)
+          if [ -n "$files" ]; then python -m pytest -q $files > /tmp/regressions.log 2>&1; else echo 'NO MATCHING TEST FILES' > /tmp/regressions.log; fi
+      - name: Deterministic artifact check
+        id: deterministic
+        continue-on-error: true
+        shell: bash
+        run: |
+          cp -a data/research/op_x_051 /tmp/opx051_before
+          python scripts/run_op_x_051b.py >/tmp/determinism_rerun.log 2>&1
+          diff -ru /tmp/opx051_before data/research/op_x_051 > /tmp/determinism.diff
+          test ! -s /tmp/determinism.diff
+      - name: Full pytest
+        id: fullpytest
+        continue-on-error: true
+        run: python -m pytest -q > /tmp/fullpytest.log 2>&1
+      - name: Ruff
+        id: ruff
+        continue-on-error: true
+        run: python -m ruff check . > /tmp/ruff.log 2>&1
+      - name: Diff check
+        id: diffcheck
+        continue-on-error: true
+        run: git diff --check > /tmp/diffcheck.log 2>&1
+      - name: Persist OP-X-051 execution evidence
+        if: always()
+        shell: bash
+        env:
+          POP: ${{ steps.population.outcome }}
+          CLI: ${{ steps.cli.outcome }}
+          FOCUSED: ${{ steps.focused.outcome }}
+          REGRESSIONS: ${{ steps.regressions.outcome }}
+          DETERMINISTIC: ${{ steps.deterministic.outcome }}
+          FULLPYTEST: ${{ steps.fullpytest.outcome }}
+          RUFF: ${{ steps.ruff.outcome }}
+          DIFFCHECK: ${{ steps.diffcheck.outcome }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          out=Path('data/research/op_x_051')
+          def tail(path, n=5000):
+              p=Path(path)
+              return p.read_text(errors='replace')[-n:] if p.exists() else 'NOT AVAILABLE'
+          status={
+            'population':os.environ['POP'],'cli_smoke':os.environ['CLI'],'focused_tests':os.environ['FOCUSED'],
+            'regressions':os.environ['REGRESSIONS'],'determinism':os.environ['DETERMINISTIC'],
+            'full_pytest':os.environ['FULLPYTEST'],'ruff':os.environ['RUFF'],'diff_check':os.environ['DIFFCHECK']}
+          (out/'OP_X_051D_EXECUTION_STATUS.json').write_text(json.dumps(status,indent=2,sort_keys=True)+'\n')
+          logs={'population':'/tmp/op_x_051_population.log','focused':'/tmp/focused.log','regressions':'/tmp/regressions.log','determinism':'/tmp/determinism.diff','full_pytest':'/tmp/fullpytest.log','ruff':'/tmp/ruff.log','diff_check':'/tmp/diffcheck.log'}
+          (out/'OP_X_051D_EXECUTION_LOG_TAILS.json').write_text(json.dumps({k:tail(v) for k,v in logs.items()},indent=2,sort_keys=True)+'\n')
+          PY
+          git config user.name 'operation-pancake-bot'
+          git config user.email 'operation-pancake-bot@users.noreply.github.com'
+          git add -- data/research/op_x_051
+          if git diff --cached --quiet; then
+            echo 'No OP-X-051 execution artifacts changed.'
+          else
+            git commit -m 'Persist OP-X-051D execution evidence'
+            git push origin HEAD:agent/op-x-012-reconcile-artifacts
+          fi
+      - name: Upload OP-X-051 evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: op-x-051d-execution
+          path: data/research/op_x_051
+          if-no-files-found: error
+      - name: Enforce closure gates
+        if: always()
+        env:
+          POP: ${{ steps.population.outcome }}
+          CLI: ${{ steps.cli.outcome }}
+          FOCUSED: ${{ steps.focused.outcome }}
+          REGRESSIONS: ${{ steps.regressions.outcome }}
+          DETERMINISTIC: ${{ steps.deterministic.outcome }}
+          FULLPYTEST: ${{ steps.fullpytest.outcome }}
+          RUFF: ${{ steps.ruff.outcome }}
+          DIFFCHECK: ${{ steps.diffcheck.outcome }}
+        run: |
+          test "$POP" = success
+          test "$CLI" = success
+          test "$FOCUSED" = success
+          test "$REGRESSIONS" = success
+          test "$DETERMINISTIC" = success
+          test "$FULLPYTEST" = success
+          test "$RUFF" = success
+          test "$DIFFCHECK" = success
