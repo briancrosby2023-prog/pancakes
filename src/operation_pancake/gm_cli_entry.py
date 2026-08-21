@@ -73,9 +73,8 @@ def _op_x_051_main(argv: list[str]) -> None:
 
 def main() -> None:
     # Preserve every pre-existing gm_cli command unchanged. Only intercept the five
-    # OP-X-051 command names (allowing --root before the subcommand).
-    command = next((arg for arg in sys.argv[1:] if not arg.startswith("-")), None)
-    if command in OP_X_051_COMMANDS:
+    # OP-X-051 command names; --root may appear before the command.
+    if any(arg in OP_X_051_COMMANDS for arg in sys.argv[1:]):
         _op_x_051_main(sys.argv[1:])
     else:
         gm_cli.main()
