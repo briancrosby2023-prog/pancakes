@@ -65,7 +65,10 @@ def role_alternatives(root: Path, card_id: str, role: str, limit:int=10) -> dict
     if "card" not in target: return target
     pos=target["card"]["position"]; profile=role_profile(pos,role)
     if profile["status"]=="UNSUPPORTED": return {"status":"UNKNOWN","reason":"unsupported role"}
-    required=profile["modeled_attributes"]; ta=target["card"].get("attributes") or target["card"].get("stats") or {}
+    required=profile["modeled_attributes"]
+    canonical=product.cards.get(card_id)
+    if canonical is None: return {"status":"UNKNOWN","reason":"canonical population card missing"}
+    ta=canonical.get("attributes") or canonical.get("stats") or {}
     if any(ta.get(a) is None for a in required): return {"status":"UNKNOWN","reason":"target lacks binding modeled traits"}
     rows=[]
     for card in product.population:
