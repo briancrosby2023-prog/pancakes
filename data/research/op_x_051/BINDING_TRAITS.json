@@ -1,1 +1,221 @@
-{"modeled_binding":"ROLE_PROFILES.json attribute presence requirements","functional_floor":"Use existing OP-X-043A/050 evidence; UNKNOWN when absent","ability_requirement":"Use existing evidence only; UNKNOWN when absent","behavior_unknown":"Explicit binding uncertainty, never a penalty","physical_unknown":"Explicit binding uncertainty, never a penalty","purpose":"Explain why numerical excellence can remain contextually uncertain without altering frozen score."}
+{
+  "finding_count": 34,
+  "profiles": {
+    "CB:HYBRID": [
+      "SPD",
+      "ACC",
+      "MCV",
+      "ZCV",
+      "PRS"
+    ],
+    "CB:MAN": [
+      "SPD",
+      "ACC",
+      "MCV",
+      "PRC"
+    ],
+    "CB:PRESS": [
+      "SPD",
+      "ACC",
+      "PRS",
+      "MCV"
+    ],
+    "CB:ZONE": [
+      "SPD",
+      "ACC",
+      "ZCV",
+      "PRC"
+    ],
+    "DT:BALANCED": [
+      "STR",
+      "BSH",
+      "PMV",
+      "FMV"
+    ],
+    "DT:INTERIOR_PRESSURE": [
+      "PMV",
+      "FMV",
+      "STR",
+      "PUR"
+    ],
+    "DT:RUN_STOPPER": [
+      "STR",
+      "BSH",
+      "PUR",
+      "TAK"
+    ],
+    "EDGE:CONTAIN_RUN": [
+      "BSH",
+      "PUR",
+      "STR",
+      "TAK"
+    ],
+    "EDGE:FINESSE_RUSH": [
+      "FMV",
+      "ACC",
+      "PUR",
+      "BSH"
+    ],
+    "EDGE:POWER_RUSH": [
+      "PMV",
+      "STR",
+      "PUR",
+      "BSH"
+    ],
+    "EDGE:RUSH_SPECIALIST": [
+      "FMV",
+      "PMV",
+      "ACC",
+      "PUR"
+    ],
+    "LB:COVERAGE_USER": [
+      "SPD",
+      "ACC",
+      "COD",
+      "ZCV",
+      "MCV"
+    ],
+    "LB:HYBRID": [
+      "SPD",
+      "BSH",
+      "PUR",
+      "ZCV"
+    ],
+    "LB:RUN": [
+      "BSH",
+      "PUR",
+      "TAK",
+      "STR"
+    ],
+    "LB:RUSH": [
+      "PMV",
+      "FMV",
+      "BSH",
+      "PUR"
+    ],
+    "OL:BALANCED": [
+      "STR",
+      "RBK",
+      "PBK"
+    ],
+    "OL:PASS": [
+      "STR",
+      "PBK",
+      "PBP",
+      "PBF"
+    ],
+    "OL:RUN": [
+      "STR",
+      "RBK",
+      "RBP",
+      "RBF",
+      "IBL"
+    ],
+    "QB:MOBILE_OFF_PLATFORM": [
+      "SPD",
+      "ACC",
+      "COD",
+      "THP",
+      "RUN"
+    ],
+    "QB:OPTION_RPO": [
+      "SPD",
+      "ACC",
+      "COD",
+      "THP"
+    ],
+    "QB:POCKET": [
+      "THP",
+      "SAC",
+      "MAC",
+      "DAC",
+      "TUP"
+    ],
+    "RB:POWER_MOVEMENT": [
+      "TRK",
+      "BTK",
+      "STR",
+      "CAR"
+    ],
+    "RB:RECEIVING": [
+      "SPD",
+      "ACC",
+      "COD",
+      "CTH",
+      "SRR"
+    ],
+    "RB:RUNNER": [
+      "SPD",
+      "ACC",
+      "COD",
+      "CAR",
+      "BTK"
+    ],
+    "S:BOX": [
+      "SPD",
+      "TAK",
+      "POW",
+      "BSH"
+    ],
+    "S:DEEP_RANGE": [
+      "SPD",
+      "ACC",
+      "ZCV",
+      "PRC"
+    ],
+    "S:MAN_HYBRID": [
+      "SPD",
+      "ACC",
+      "MCV",
+      "ZCV"
+    ],
+    "S:USER": [
+      "SPD",
+      "ACC",
+      "COD",
+      "TAK"
+    ],
+    "TE:BLOCKING": [
+      "STR",
+      "RBK",
+      "PBK",
+      "IBL"
+    ],
+    "TE:HYBRID": [
+      "CTH",
+      "CIT",
+      "RBK",
+      "PBK",
+      "STR"
+    ],
+    "TE:RECEIVING_MISMATCH": [
+      "SPD",
+      "ACC",
+      "CTH",
+      "CIT",
+      "SRR",
+      "MRR"
+    ],
+    "WR:POSSESSION_MISMATCH": [
+      "CTH",
+      "CIT",
+      "SPC",
+      "SRR",
+      "MRR"
+    ],
+    "WR:SEPARATOR": [
+      "SPD",
+      "ACC",
+      "COD",
+      "SRR",
+      "MRR"
+    ],
+    "WR:VERTICAL": [
+      "SPD",
+      "ACC",
+      "DRR",
+      "RLS",
+      "CTH"
+    ]
+  }
+}

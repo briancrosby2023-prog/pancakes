@@ -1,1 +1,660 @@
-{"policy":"Attribute membership is deterministic and unweighted; relative importance remains UNKNOWN absent scientific support.","profiles":{"QB":{"POCKET":["THP","SAC","MAC","DAC","TUP"],"MOBILE_OFF_PLATFORM":["SPD","ACC","COD","THP","RUN"],"OPTION_RPO":["SPD","ACC","COD","THP"]},"RB":{"RUNNER":["SPD","ACC","COD","CAR","BTK"],"RECEIVING":["SPD","ACC","COD","CTH","SRR"],"POWER_MOVEMENT":["TRK","BTK","STR","CAR"]},"WR":{"SEPARATOR":["SPD","ACC","COD","SRR","MRR"],"VERTICAL":["SPD","ACC","DRR","RLS","CTH"],"POSSESSION_MISMATCH":["CTH","CIT","SPC","SRR","MRR"]},"TE":{"RECEIVING_MISMATCH":["SPD","ACC","CTH","CIT","SRR","MRR"],"BLOCKING":["STR","RBK","PBK","IBL"],"HYBRID":["CTH","CIT","RBK","PBK","STR"]},"OL":{"RUN":["STR","RBK","RBP","RBF","IBL"],"PASS":["STR","PBK","PBP","PBF"],"BALANCED":["STR","RBK","PBK"]},"EDGE":{"FINESSE_RUSH":["FMV","ACC","PUR","BSH"],"POWER_RUSH":["PMV","STR","PUR","BSH"],"CONTAIN_RUN":["BSH","PUR","STR","TAK"],"RUSH_SPECIALIST":["FMV","PMV","ACC","PUR"]},"DT":{"RUN_STOPPER":["STR","BSH","PUR","TAK"],"INTERIOR_PRESSURE":["PMV","FMV","STR","PUR"],"BALANCED":["STR","BSH","PMV","FMV"]},"LB":{"COVERAGE_USER":["SPD","ACC","COD","ZCV","MCV"],"RUSH":["PMV","FMV","BSH","PUR"],"RUN":["BSH","PUR","TAK","STR"],"HYBRID":["SPD","BSH","PUR","ZCV"]},"CB":{"MAN":["SPD","ACC","MCV","PRC"],"ZONE":["SPD","ACC","ZCV","PRC"],"PRESS":["SPD","ACC","PRS","MCV"],"HYBRID":["SPD","ACC","MCV","ZCV","PRS"]},"S":{"DEEP_RANGE":["SPD","ACC","ZCV","PRC"],"BOX":["SPD","TAK","POW","BSH"],"MAN_HYBRID":["SPD","ACC","MCV","ZCV"],"USER":["SPD","ACC","COD","TAK"]}},"unmodeled_contextual_variables":["behavior/animation","physical geometry","ability/AP relevance","scheme/assignment interaction"],"functional_floors":"Use existing evidence only; otherwise UNKNOWN."}
+{
+  "CB:HYBRID": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "MCV",
+      "ZCV",
+      "PRS"
+    ],
+    "position_family": "CB",
+    "relative_importance": "UNKNOWN",
+    "role": "HYBRID",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "CB:MAN": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "MCV",
+      "PRC"
+    ],
+    "position_family": "CB",
+    "relative_importance": "UNKNOWN",
+    "role": "MAN",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "CB:PRESS": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "PRS",
+      "MCV"
+    ],
+    "position_family": "CB",
+    "relative_importance": "UNKNOWN",
+    "role": "PRESS",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "CB:ZONE": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "ZCV",
+      "PRC"
+    ],
+    "position_family": "CB",
+    "relative_importance": "UNKNOWN",
+    "role": "ZONE",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "DT:BALANCED": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "STR",
+      "BSH",
+      "PMV",
+      "FMV"
+    ],
+    "position_family": "DT",
+    "relative_importance": "UNKNOWN",
+    "role": "BALANCED",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "DT:INTERIOR_PRESSURE": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "PMV",
+      "FMV",
+      "STR",
+      "PUR"
+    ],
+    "position_family": "DT",
+    "relative_importance": "UNKNOWN",
+    "role": "INTERIOR_PRESSURE",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "DT:RUN_STOPPER": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "STR",
+      "BSH",
+      "PUR",
+      "TAK"
+    ],
+    "position_family": "DT",
+    "relative_importance": "UNKNOWN",
+    "role": "RUN_STOPPER",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "EDGE:CONTAIN_RUN": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "BSH",
+      "PUR",
+      "STR",
+      "TAK"
+    ],
+    "position_family": "EDGE",
+    "relative_importance": "UNKNOWN",
+    "role": "CONTAIN_RUN",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "EDGE:FINESSE_RUSH": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "FMV",
+      "ACC",
+      "PUR",
+      "BSH"
+    ],
+    "position_family": "EDGE",
+    "relative_importance": "UNKNOWN",
+    "role": "FINESSE_RUSH",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "EDGE:POWER_RUSH": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "PMV",
+      "STR",
+      "PUR",
+      "BSH"
+    ],
+    "position_family": "EDGE",
+    "relative_importance": "UNKNOWN",
+    "role": "POWER_RUSH",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "EDGE:RUSH_SPECIALIST": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "FMV",
+      "PMV",
+      "ACC",
+      "PUR"
+    ],
+    "position_family": "EDGE",
+    "relative_importance": "UNKNOWN",
+    "role": "RUSH_SPECIALIST",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "LB:COVERAGE_USER": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "COD",
+      "ZCV",
+      "MCV"
+    ],
+    "position_family": "LB",
+    "relative_importance": "UNKNOWN",
+    "role": "COVERAGE_USER",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "LB:HYBRID": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "BSH",
+      "PUR",
+      "ZCV"
+    ],
+    "position_family": "LB",
+    "relative_importance": "UNKNOWN",
+    "role": "HYBRID",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "LB:RUN": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "BSH",
+      "PUR",
+      "TAK",
+      "STR"
+    ],
+    "position_family": "LB",
+    "relative_importance": "UNKNOWN",
+    "role": "RUN",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "LB:RUSH": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "PMV",
+      "FMV",
+      "BSH",
+      "PUR"
+    ],
+    "position_family": "LB",
+    "relative_importance": "UNKNOWN",
+    "role": "RUSH",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "OL:BALANCED": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "STR",
+      "RBK",
+      "PBK"
+    ],
+    "position_family": "OL",
+    "relative_importance": "UNKNOWN",
+    "role": "BALANCED",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "OL:PASS": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "STR",
+      "PBK",
+      "PBP",
+      "PBF"
+    ],
+    "position_family": "OL",
+    "relative_importance": "UNKNOWN",
+    "role": "PASS",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "OL:RUN": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "STR",
+      "RBK",
+      "RBP",
+      "RBF",
+      "IBL"
+    ],
+    "position_family": "OL",
+    "relative_importance": "UNKNOWN",
+    "role": "RUN",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "QB:MOBILE_OFF_PLATFORM": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "COD",
+      "THP",
+      "RUN"
+    ],
+    "position_family": "QB",
+    "relative_importance": "UNKNOWN",
+    "role": "MOBILE_OFF_PLATFORM",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "QB:OPTION_RPO": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "COD",
+      "THP"
+    ],
+    "position_family": "QB",
+    "relative_importance": "UNKNOWN",
+    "role": "OPTION_RPO",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "QB:POCKET": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "THP",
+      "SAC",
+      "MAC",
+      "DAC",
+      "TUP"
+    ],
+    "position_family": "QB",
+    "relative_importance": "UNKNOWN",
+    "role": "POCKET",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "RB:POWER_MOVEMENT": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "TRK",
+      "BTK",
+      "STR",
+      "CAR"
+    ],
+    "position_family": "RB",
+    "relative_importance": "UNKNOWN",
+    "role": "POWER_MOVEMENT",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "RB:RECEIVING": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "COD",
+      "CTH",
+      "SRR"
+    ],
+    "position_family": "RB",
+    "relative_importance": "UNKNOWN",
+    "role": "RECEIVING",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "RB:RUNNER": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "COD",
+      "CAR",
+      "BTK"
+    ],
+    "position_family": "RB",
+    "relative_importance": "UNKNOWN",
+    "role": "RUNNER",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "S:BOX": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "TAK",
+      "POW",
+      "BSH"
+    ],
+    "position_family": "S",
+    "relative_importance": "UNKNOWN",
+    "role": "BOX",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "S:DEEP_RANGE": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "ZCV",
+      "PRC"
+    ],
+    "position_family": "S",
+    "relative_importance": "UNKNOWN",
+    "role": "DEEP_RANGE",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "S:MAN_HYBRID": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "MCV",
+      "ZCV"
+    ],
+    "position_family": "S",
+    "relative_importance": "UNKNOWN",
+    "role": "MAN_HYBRID",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "S:USER": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "COD",
+      "TAK"
+    ],
+    "position_family": "S",
+    "relative_importance": "UNKNOWN",
+    "role": "USER",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "TE:BLOCKING": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "STR",
+      "RBK",
+      "PBK",
+      "IBL"
+    ],
+    "position_family": "TE",
+    "relative_importance": "UNKNOWN",
+    "role": "BLOCKING",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "TE:HYBRID": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "CTH",
+      "CIT",
+      "RBK",
+      "PBK",
+      "STR"
+    ],
+    "position_family": "TE",
+    "relative_importance": "UNKNOWN",
+    "role": "HYBRID",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "TE:RECEIVING_MISMATCH": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "CTH",
+      "CIT",
+      "SRR",
+      "MRR"
+    ],
+    "position_family": "TE",
+    "relative_importance": "UNKNOWN",
+    "role": "RECEIVING_MISMATCH",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "WR:POSSESSION_MISMATCH": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "CTH",
+      "CIT",
+      "SPC",
+      "SRR",
+      "MRR"
+    ],
+    "position_family": "WR",
+    "relative_importance": "UNKNOWN",
+    "role": "POSSESSION_MISMATCH",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "WR:SEPARATOR": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "COD",
+      "SRR",
+      "MRR"
+    ],
+    "position_family": "WR",
+    "relative_importance": "UNKNOWN",
+    "role": "SEPARATOR",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  },
+  "WR:VERTICAL": {
+    "functional_floors": "USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT",
+    "modeled_attributes": [
+      "SPD",
+      "ACC",
+      "DRR",
+      "RLS",
+      "CTH"
+    ],
+    "position_family": "WR",
+    "relative_importance": "UNKNOWN",
+    "role": "VERTICAL",
+    "status": "CANDIDATE_SUPPORTED",
+    "unmodeled_contextual_variables": [
+      "behavior/animation",
+      "physical geometry",
+      "ability/AP relevance",
+      "scheme/assignment interaction"
+    ]
+  }
+}

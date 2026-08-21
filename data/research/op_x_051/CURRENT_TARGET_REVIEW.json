@@ -1,1 +1,87 @@
-{"targets":[["Anthony Donkoh","Brendan Black"],["Samson Okunlola","E'Marion Harris"],["Dashawn Spears","Bray Hubbard"],["Cole","Kip Lewis"],["McClain","Kobe Black"]],"frozen_scores":"RETAINED; no OP-X-051 coefficient or score mutation","contextual_review":"Role relevance requires actual deployment/role evidence. Where absent, return DEPLOYMENT REQUIRED/UNKNOWN rather than infer.","challengers_seed":["Addison Nichols","Drew Azzopardi","Jay Green","Isaiah Glasker","Dontay Joyner"],"purchase_actions":"UNCHANGED; existing market safety gates remain authoritative","price_value_conclusions":"BLOCKED without qualified market evidence"}
+{
+  "targets": [
+    {
+      "candidate_matches": [
+        "card:32bd2833c54de3c377e9",
+        "card:76dfcd0789f5e1eb1e41",
+        "card:f35e84cba0d56c4270c3"
+      ],
+      "candidate_name": "Brendan Black",
+      "current_matches": [
+        "card:05b737e0828809d8a979",
+        "card:1ddccc4fc395e9e283de",
+        "card:ae4adeafbf238ad65203",
+        "card:d3415652056ea3202ef0"
+      ],
+      "current_name": "Anthony Donkoh",
+      "market_conclusion": "PRICE CHECK REQUIRED",
+      "purchase_action": "UNCHANGED",
+      "status": "AMBIGUOUS CARD VERSION"
+    },
+    {
+      "candidate_matches": [
+        "card:4bd7645117856f967450",
+        "card:b5430a88cae07d7cc83b"
+      ],
+      "candidate_name": "E'Marion Harris",
+      "current_matches": [
+        "card:0dfef086dfd8d85794d6",
+        "card:1150dc59d46f5e018c68",
+        "card:407ebcea66a23cbed607"
+      ],
+      "current_name": "Samson Okunlola",
+      "market_conclusion": "PRICE CHECK REQUIRED",
+      "purchase_action": "UNCHANGED",
+      "status": "AMBIGUOUS CARD VERSION"
+    },
+    {
+      "candidate_matches": [
+        "card:0bcff7a3942d7c71827c",
+        "card:47b3fb794b6e45b39e36",
+        "card:d5f930a13d6f69c2d2fb",
+        "card:f26cd7a4829a431b0af5"
+      ],
+      "candidate_name": "Bray Hubbard",
+      "current_matches": [
+        "card:1440ce94da5f3d927279",
+        "card:4595176827b3dc5e510c",
+        "card:bb20293b8c55b7c676f5"
+      ],
+      "current_name": "Dashawn Spears",
+      "market_conclusion": "PRICE CHECK REQUIRED",
+      "purchase_action": "UNCHANGED",
+      "status": "AMBIGUOUS CARD VERSION"
+    },
+    {
+      "candidate_matches": [
+        "card:9430d9abcad8b50c4d36",
+        "card:9f8f2f950341466d6b31",
+        "card:f093049f3f59d1f230cf",
+        "card:f1fbe9e32ecf34eaaaf3"
+      ],
+      "candidate_name": "Kip Lewis",
+      "current_matches": [],
+      "current_name": "Cole",
+      "market_conclusion": "PRICE CHECK REQUIRED",
+      "purchase_action": "UNCHANGED",
+      "status": "UNRESOLVED IDENTITY"
+    },
+    {
+      "candidate_matches": [
+        "card:1866054833a6d2dc3c72",
+        "card:7084891b08e603666bea",
+        "card:b1c5cab65c11dd3b9efc",
+        "card:b2603d39dd45536cb611",
+        "card:bfb9ad962a7f90e34181",
+        "card:c4fa2a53ed17100e7399",
+        "card:f52dea6c835877a536a8"
+      ],
+      "candidate_name": "Kobe Black",
+      "current_matches": [],
+      "current_name": "McClain",
+      "market_conclusion": "PRICE CHECK REQUIRED",
+      "purchase_action": "UNCHANGED",
+      "status": "UNRESOLVED IDENTITY"
+    }
+  ]
+}

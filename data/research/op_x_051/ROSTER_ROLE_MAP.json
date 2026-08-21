@@ -1,1 +1,1052 @@
-{"population":{"entries":24,"resolved":18,"scored":17},"status":"CONSERVATIVE_BASELINE","rule":"No deployment is inferred from canonical position alone.","resolved_cards":"Use data/production/roster/canonical_roster.json identities; each resolved card receives numerical ROLE CANDIDATE records from role_intelligence.py.","deployment":"DEPLOYMENT REQUIRED when no OP-X-043A/roster evidence supplies actual deployment.","role_fit":"UNKNOWN unless contextual evidence supports it.","zero_coin_policy":"No zero-coin improvement may be emitted from unsupported deployment or ability assumptions."}
+{
+  "entries": [
+    {
+      "card_id": "card:fdcda4b9cfd9b920a58c",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Dante Moore",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 0.8,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "THP",
+            "SAC",
+            "MAC",
+            "DAC"
+          ],
+          "missing_attributes": [
+            "TUP"
+          ],
+          "position_family": "QB",
+          "role": "POCKET",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.4,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "THP"
+          ],
+          "missing_attributes": [
+            "ACC",
+            "COD",
+            "RUN"
+          ],
+          "position_family": "QB",
+          "role": "MOBILE_OFF_PLATFORM",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "THP"
+          ],
+          "missing_attributes": [
+            "ACC",
+            "COD"
+          ],
+          "position_family": "QB",
+          "role": "OPTION_RPO",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": false,
+      "slot": null
+    },
+    {
+      "card_id": null,
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Jidah Baugh",
+      "resolved": false,
+      "role_candidates": [],
+      "scored": false,
+      "slot": null
+    },
+    {
+      "card_id": null,
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Owen Allen",
+      "resolved": false,
+      "role_candidates": [],
+      "scored": false,
+      "slot": null
+    },
+    {
+      "card_id": null,
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Kalik Lockett",
+      "resolved": false,
+      "role_candidates": [],
+      "scored": false,
+      "slot": null
+    },
+    {
+      "card_id": "card:a9071885a558bee8450e",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Malachi Toney",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 0.6,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "SRR",
+            "MRR"
+          ],
+          "missing_attributes": [
+            "ACC",
+            "COD"
+          ],
+          "position_family": "WR",
+          "role": "SEPARATOR",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.6,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "DRR",
+            "CTH"
+          ],
+          "missing_attributes": [
+            "ACC",
+            "RLS"
+          ],
+          "position_family": "WR",
+          "role": "VERTICAL",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.6,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "CTH",
+            "SRR",
+            "MRR"
+          ],
+          "missing_attributes": [
+            "CIT",
+            "SPC"
+          ],
+          "position_family": "WR",
+          "role": "POSSESSION_MISMATCH",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": null,
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Javon Nicholas",
+      "resolved": false,
+      "role_candidates": [],
+      "scored": false,
+      "slot": null
+    },
+    {
+      "card_id": null,
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Peter Clarke",
+      "resolved": false,
+      "role_candidates": [],
+      "scored": false,
+      "slot": null
+    },
+    {
+      "card_id": "card:0dfef086dfd8d85794d6",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Samson Okunlola",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "RBK",
+            "RBP",
+            "RBF",
+            "IBL"
+          ],
+          "missing_attributes": [],
+          "position_family": "OL",
+          "role": "RUN",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "PBK",
+            "PBP",
+            "PBF"
+          ],
+          "missing_attributes": [],
+          "position_family": "OL",
+          "role": "PASS",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "RBK",
+            "PBK"
+          ],
+          "missing_attributes": [],
+          "position_family": "OL",
+          "role": "BALANCED",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": "card:38d5dbb6bd21993e002b",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Thomas Shrader",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 0.8,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "RBK",
+            "RBP",
+            "RBF"
+          ],
+          "missing_attributes": [
+            "IBL"
+          ],
+          "position_family": "OL",
+          "role": "RUN",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "PBK"
+          ],
+          "missing_attributes": [
+            "PBP",
+            "PBF"
+          ],
+          "position_family": "OL",
+          "role": "PASS",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "RBK",
+            "PBK"
+          ],
+          "missing_attributes": [],
+          "position_family": "OL",
+          "role": "BALANCED",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": "card:28c9e84b73a9edb8662a",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Carson Hinzman",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "RBK",
+            "RBP",
+            "RBF",
+            "IBL"
+          ],
+          "missing_attributes": [],
+          "position_family": "OL",
+          "role": "RUN",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "PBK",
+            "PBP",
+            "PBF"
+          ],
+          "missing_attributes": [],
+          "position_family": "OL",
+          "role": "PASS",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "RBK",
+            "PBK"
+          ],
+          "missing_attributes": [],
+          "position_family": "OL",
+          "role": "BALANCED",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": "card:05b737e0828809d8a979",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Anthony Donkoh",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "RBK",
+            "RBP",
+            "RBF",
+            "IBL"
+          ],
+          "missing_attributes": [],
+          "position_family": "OL",
+          "role": "RUN",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "PBK",
+            "PBP",
+            "PBF"
+          ],
+          "missing_attributes": [],
+          "position_family": "OL",
+          "role": "PASS",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "RBK",
+            "PBK"
+          ],
+          "missing_attributes": [],
+          "position_family": "OL",
+          "role": "BALANCED",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": "card:aabd2c5d508df4e1cabc",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Cason Henry",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 0.4,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "RBK"
+          ],
+          "missing_attributes": [
+            "RBP",
+            "RBF",
+            "IBL"
+          ],
+          "position_family": "OL",
+          "role": "RUN",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "PBK",
+            "PBP",
+            "PBF"
+          ],
+          "missing_attributes": [],
+          "position_family": "OL",
+          "role": "PASS",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "STR",
+            "RBK",
+            "PBK"
+          ],
+          "missing_attributes": [],
+          "position_family": "OL",
+          "role": "BALANCED",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": "card:4595176827b3dc5e510c",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Dashawn Spears",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "ACC",
+            "ZCV",
+            "PRC"
+          ],
+          "missing_attributes": [],
+          "position_family": "S",
+          "role": "DEEP_RANGE",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "TAK",
+            "POW",
+            "BSH"
+          ],
+          "missing_attributes": [],
+          "position_family": "S",
+          "role": "BOX",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "ACC",
+            "MCV",
+            "ZCV"
+          ],
+          "missing_attributes": [],
+          "position_family": "S",
+          "role": "MAN_HYBRID",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "ACC",
+            "COD",
+            "TAK"
+          ],
+          "missing_attributes": [],
+          "position_family": "S",
+          "role": "USER",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": "card:09e54a6775235476c252",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Chris Cole",
+      "resolved": true,
+      "role_candidates": [],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": "card:bd19b32b10b907c9708b",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Drayk Bowen",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "ACC",
+            "COD",
+            "ZCV",
+            "MCV"
+          ],
+          "missing_attributes": [],
+          "position_family": "LB",
+          "role": "COVERAGE_USER",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "PMV",
+            "FMV",
+            "BSH",
+            "PUR"
+          ],
+          "missing_attributes": [],
+          "position_family": "LB",
+          "role": "RUSH",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "BSH",
+            "PUR",
+            "TAK",
+            "STR"
+          ],
+          "missing_attributes": [],
+          "position_family": "LB",
+          "role": "RUN",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "BSH",
+            "PUR",
+            "ZCV"
+          ],
+          "missing_attributes": [],
+          "position_family": "LB",
+          "role": "HYBRID",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": "card:f98e2e84e0ef37a646d8",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Junior Seau",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "ACC",
+            "COD",
+            "ZCV",
+            "MCV"
+          ],
+          "missing_attributes": [],
+          "position_family": "LB",
+          "role": "COVERAGE_USER",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "PMV",
+            "FMV",
+            "BSH",
+            "PUR"
+          ],
+          "missing_attributes": [],
+          "position_family": "LB",
+          "role": "RUSH",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "BSH",
+            "PUR",
+            "TAK",
+            "STR"
+          ],
+          "missing_attributes": [],
+          "position_family": "LB",
+          "role": "RUN",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 1.0,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "BSH",
+            "PUR",
+            "ZCV"
+          ],
+          "missing_attributes": [],
+          "position_family": "LB",
+          "role": "HYBRID",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": "card:94dbbba544de1b65478d",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Keaton Thomas",
+      "resolved": true,
+      "role_candidates": [],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": null,
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "King Mack",
+      "resolved": false,
+      "role_candidates": [],
+      "scored": false,
+      "slot": null
+    },
+    {
+      "card_id": "card:2a79a6e3f272a16ec712",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Cormani McClain",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "MCV"
+          ],
+          "missing_attributes": [
+            "ACC",
+            "PRC"
+          ],
+          "position_family": "CB",
+          "role": "MAN",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "ZCV"
+          ],
+          "missing_attributes": [
+            "ACC",
+            "PRC"
+          ],
+          "position_family": "CB",
+          "role": "ZONE",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.75,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "PRS",
+            "MCV"
+          ],
+          "missing_attributes": [
+            "ACC"
+          ],
+          "position_family": "CB",
+          "role": "PRESS",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.8,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "MCV",
+            "ZCV",
+            "PRS"
+          ],
+          "missing_attributes": [
+            "ACC"
+          ],
+          "position_family": "CB",
+          "role": "HYBRID",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": "card:82e224614ae152b34749",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Devin Sanchez",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "MCV"
+          ],
+          "missing_attributes": [
+            "ACC",
+            "PRC"
+          ],
+          "position_family": "CB",
+          "role": "MAN",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "ZCV"
+          ],
+          "missing_attributes": [
+            "ACC",
+            "PRC"
+          ],
+          "position_family": "CB",
+          "role": "ZONE",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.75,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "PRS",
+            "MCV"
+          ],
+          "missing_attributes": [
+            "ACC"
+          ],
+          "position_family": "CB",
+          "role": "PRESS",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.8,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "SPD",
+            "MCV",
+            "ZCV",
+            "PRS"
+          ],
+          "missing_attributes": [
+            "ACC"
+          ],
+          "position_family": "CB",
+          "role": "HYBRID",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": "card:694cbce7bfc14a1ea61a",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Clayton Smith",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "FMV",
+            "BSH"
+          ],
+          "missing_attributes": [
+            "ACC",
+            "PUR"
+          ],
+          "position_family": "EDGE",
+          "role": "FINESSE_RUSH",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "PMV",
+            "BSH"
+          ],
+          "missing_attributes": [
+            "STR",
+            "PUR"
+          ],
+          "position_family": "EDGE",
+          "role": "POWER_RUSH",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "BSH",
+            "TAK"
+          ],
+          "missing_attributes": [
+            "PUR",
+            "STR"
+          ],
+          "position_family": "EDGE",
+          "role": "CONTAIN_RUN",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "FMV",
+            "PMV"
+          ],
+          "missing_attributes": [
+            "ACC",
+            "PUR"
+          ],
+          "position_family": "EDGE",
+          "role": "RUSH_SPECIALIST",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": "card:759d0f58682372373c93",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Amare Adams",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "BSH",
+            "TAK"
+          ],
+          "missing_attributes": [
+            "STR",
+            "PUR"
+          ],
+          "position_family": "DT",
+          "role": "RUN_STOPPER",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "PMV",
+            "FMV"
+          ],
+          "missing_attributes": [
+            "STR",
+            "PUR"
+          ],
+          "position_family": "DT",
+          "role": "INTERIOR_PRESSURE",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.75,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "BSH",
+            "PMV",
+            "FMV"
+          ],
+          "missing_attributes": [
+            "STR"
+          ],
+          "position_family": "DT",
+          "role": "BALANCED",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": "card:ef43c16371707d38c984",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "DJ Hicks",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "BSH",
+            "TAK"
+          ],
+          "missing_attributes": [
+            "STR",
+            "PUR"
+          ],
+          "position_family": "DT",
+          "role": "RUN_STOPPER",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "PMV",
+            "FMV"
+          ],
+          "missing_attributes": [
+            "STR",
+            "PUR"
+          ],
+          "position_family": "DT",
+          "role": "INTERIOR_PRESSURE",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.75,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "BSH",
+            "PMV",
+            "FMV"
+          ],
+          "missing_attributes": [
+            "STR"
+          ],
+          "position_family": "DT",
+          "role": "BALANCED",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    },
+    {
+      "card_id": "card:b809bd14fe3b3c2144f6",
+      "deployment": "DEPLOYMENT REQUIRED",
+      "input_name": "Kelby Collins",
+      "resolved": true,
+      "role_candidates": [
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "FMV",
+            "BSH"
+          ],
+          "missing_attributes": [
+            "ACC",
+            "PUR"
+          ],
+          "position_family": "EDGE",
+          "role": "FINESSE_RUSH",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "PMV",
+            "BSH"
+          ],
+          "missing_attributes": [
+            "STR",
+            "PUR"
+          ],
+          "position_family": "EDGE",
+          "role": "POWER_RUSH",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "BSH",
+            "TAK"
+          ],
+          "missing_attributes": [
+            "PUR",
+            "STR"
+          ],
+          "position_family": "EDGE",
+          "role": "CONTAIN_RUN",
+          "verified_role_fit": false
+        },
+        {
+          "attribute_coverage": 0.5,
+          "classification": "ROLE CANDIDATE",
+          "known_attributes": [
+            "FMV",
+            "PMV"
+          ],
+          "missing_attributes": [
+            "ACC",
+            "PUR"
+          ],
+          "position_family": "EDGE",
+          "role": "RUSH_SPECIALIST",
+          "verified_role_fit": false
+        }
+      ],
+      "scored": true,
+      "slot": null
+    }
+  ],
+  "summary": {
+    "deployment_required": 18,
+    "entries": 24,
+    "resolved": 18,
+    "scored": 17
+  }
+}

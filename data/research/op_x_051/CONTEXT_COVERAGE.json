@@ -1,17 +1,11 @@
 {
+  "blocked_role_boards": 0,
   "canonical_population": 8838,
+  "role_candidate_records": 26901,
+  "roster_entries": 24,
+  "roster_resolved": 18,
+  "roster_scored": 17,
   "scoreable_population": 8184,
-  "population_source": "data/production/run_summary.json",
-  "canonical_context_overlay": {
-    "deployment": "UNKNOWN unless OP-X-043A evidence or roster evidence supplies it",
-    "role": "PARTIAL: deterministic ROLE CANDIDATE can be generated from numerical attributes; VERIFIED ROLE FIT requires contextual evidence",
-    "assignment": "UNKNOWN unless evidence supplies it",
-    "behavior": "UNKNOWN unless evidence supplies it",
-    "physical_context": "UNKNOWN unless evidence supplies it",
-    "ability_ap_context": "UNKNOWN unless evidence supplies it",
-    "realized_build": "UNKNOWN unless OBSERVED build evidence supplies it",
-    "functional_floor_evidence": "PARTIAL; only existing supported/source-specific/contested floors may be used"
-  },
-  "roster": {"entries":24,"resolved":18,"scored":17,"exact":1,"high_confidence":17,"ambiguous":1,"unresolved":5},
-  "rule": "UNKNOWN creates neither bonus nor penalty; numerical role candidacy is not verified gameplay fit."
+  "supported_role_boards": 34,
+  "unknown_role_candidate_records": 433
 }

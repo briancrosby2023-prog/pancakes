@@ -1,11 +1,27 @@
 {
-  "seeded_challengers": [
-    "Addison Nichols",
-    "Drew Azzopardi",
-    "Jay Green",
-    "Isaiah Glasker",
-    "Dontay Joyner"
-  ],
+  "counts": {
+    "blocked_role_boards": 0,
+    "canonical_population": 8838,
+    "role_candidate_records": 26901,
+    "roster_entries": 24,
+    "roster_resolved": 18,
+    "roster_scored": 17,
+    "scoreable_population": 8184,
+    "supported_role_boards": 34,
+    "unknown_role_candidate_records": 433
+  },
+  "ovr_waste_supported": 0,
+  "purchase_avoidance_supported": 0,
+  "role_moneyball_cases": 2252,
+  "roster_mismatches_supported": 0,
+  "scientific_firewall": {
+    "buy_gates_modified": false,
+    "context_numeric_score_created": false,
+    "market_semantics_modified": false,
+    "op_x_028_modified": false,
+    "production_coefficients_modified": false
+  },
+  "status": "EXECUTED",
   "targets": [
     {
       "candidate_matches": [
@@ -90,5 +106,6 @@
       "purchase_action": "UNCHANGED",
       "status": "UNRESOLVED IDENTITY"
     }
-  ]
+  ],
+  "zero_coin_supported": 0
 }
