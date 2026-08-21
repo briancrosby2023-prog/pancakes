@@ -16,6 +16,7 @@ on:
       - scripts/run_op_x_052.py
       - tests/test_op_x_052.py
       - data/research/op_x_052/**
+      - data/research/op_x_053/**
       - .github/workflows/op-x-016-historical-te-validation.yml
 permissions:
   contents: write
@@ -188,3 +189,15 @@ jobs:
           test "$DETERMINISTIC" = success
           test "$RUFF" = success
           test "$DIFFCHECK" = success
+
+  op-x-053-closure:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'OP-X-053-ACTIVATE')
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/op-x-012-reconcile-artifacts
+          fetch-depth: 0
+      - name: OP-X-053 activation placeholder
+        run: echo 'OP-X-053 activation guard passed; scientific execution is not installed by OP-X-053B.'
