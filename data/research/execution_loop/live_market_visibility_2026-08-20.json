@@ -1,0 +1,234 @@
+{
+  "captured_at": "2026-08-20T21:01:00-07:00",
+  "operation": "LIVE MARKET VISIBILITY RECOVERY",
+  "browser_access": {
+    "edge_browser_control_available": false,
+    "public_web_access_available": true,
+    "cfb_fan_public_pages_reachable": true,
+    "cfb_fan_prices_dashboard_reachable": true,
+    "price_tracker_reachable_without_authentication": false,
+    "observation": "The public Prices Dashboard page is reachable and states that it shows the CUT27 market in real time, but the text surface exposed to this worker does not render the dynamic price rows. Clicking Tracker redirects to the CFB.FAN sign-in page. This worker has no Edge/DOM/browser-session control surface and therefore cannot reuse Brian's authenticated browser session."
+  },
+  "authentication_state": {
+    "worker_web_session": "NOT AUTHENTICATED",
+    "existing_brian_edge_session": "UNOBSERVABLE FROM AVAILABLE TOOLS",
+    "credentials_requested": false,
+    "cookies_tokens_extracted": false,
+    "access_controls_bypassed": false
+  },
+  "discovery_surfaces": [
+    {
+      "surface": "CFB.FAN Players database",
+      "status": "WORKING",
+      "capability": "Independently discovers exact current CUT27 player identities, OVR, position, program and card metadata."
+    },
+    {
+      "surface": "CFB.FAN Prices Dashboard",
+      "status": "PARTIAL",
+      "capability": "Public page reachable; page identifies itself as real-time CUT27 market dashboard, but current dynamic price rows/CPT are not present in worker-readable page text."
+    },
+    {
+      "surface": "CFB.FAN Price Tracker",
+      "status": "AUTH REQUIRED",
+      "capability": "Normal navigation redirects to /accounts/login/?next=/price-tracker/. No bypass attempted."
+    },
+    {
+      "surface": "CFB.FAN theme-team/ability/player pages",
+      "status": "WORKING",
+      "capability": "Useful for candidate discovery and exact identity, not sufficient for actionable current listing + completed-sale distribution."
+    }
+  ],
+  "cards_tested": 5,
+  "per_card_market_data": [
+    {
+      "exact_card": "Sam Leavitt 88 OVR QB Prime Prospects",
+      "ovr": 88,
+      "program": "Prime Prospects",
+      "timestamp": "2026-08-20T21:01:00-07:00",
+      "identity_observed": true,
+      "lowest_listing": "UNKNOWN",
+      "completed_sales": "UNKNOWN",
+      "median_25": "UNKNOWN",
+      "q1": "UNKNOWN",
+      "q3": "UNKNOWN",
+      "daily_sales": "UNKNOWN",
+      "acquisition_method": "Public indexed CFB.FAN player/database page",
+      "success": "IDENTITY ONLY"
+    },
+    {
+      "exact_card": "Owen Long 88 OVR MIKE Prime Prospects",
+      "ovr": 88,
+      "program": "Prime Prospects",
+      "timestamp": "2026-08-20T21:01:00-07:00",
+      "identity_observed": true,
+      "lowest_listing": "UNKNOWN",
+      "completed_sales": "UNKNOWN",
+      "median_25": "UNKNOWN",
+      "q1": "UNKNOWN",
+      "q3": "UNKNOWN",
+      "daily_sales": "UNKNOWN",
+      "acquisition_method": "Public indexed CFB.FAN player/database page",
+      "success": "IDENTITY ONLY"
+    },
+    {
+      "exact_card": "Koi Perich 88 OVR FS Prime Prospects",
+      "ovr": 88,
+      "program": "Prime Prospects",
+      "timestamp": "2026-08-20T21:01:00-07:00",
+      "identity_observed": true,
+      "lowest_listing": "UNKNOWN",
+      "completed_sales": "UNKNOWN",
+      "median_25": "UNKNOWN",
+      "q1": "UNKNOWN",
+      "q3": "UNKNOWN",
+      "daily_sales": "UNKNOWN",
+      "acquisition_method": "Public CFB.FAN Players database discovery",
+      "success": "IDENTITY ONLY"
+    },
+    {
+      "exact_card": "Colin Simmons 88 OVR REDG Season 1",
+      "ovr": 88,
+      "program": "Season 1",
+      "timestamp": "2026-08-20T21:01:00-07:00",
+      "identity_observed": true,
+      "lowest_listing": "UNKNOWN",
+      "completed_sales": "UNKNOWN",
+      "median_25": "UNKNOWN",
+      "q1": "UNKNOWN",
+      "q3": "UNKNOWN",
+      "daily_sales": "UNKNOWN",
+      "acquisition_method": "Public indexed CFB.FAN player/database page",
+      "success": "IDENTITY ONLY"
+    },
+    {
+      "exact_card": "Trinidad Chambliss 88 OVR QB Season 1",
+      "ovr": 88,
+      "program": "Season 1",
+      "timestamp": "2026-08-20T21:01:00-07:00",
+      "identity_observed": true,
+      "lowest_listing": "UNKNOWN",
+      "completed_sales": "UNKNOWN",
+      "median_25": "UNKNOWN",
+      "q1": "UNKNOWN",
+      "q3": "UNKNOWN",
+      "daily_sales": "UNKNOWN",
+      "acquisition_method": "Public indexed CFB.FAN player/database page",
+      "success": "IDENTITY ONLY"
+    }
+  ],
+  "training_market": {
+    "current_overall_cpt": "UNKNOWN FROM WORKER-READABLE LIVE SURFACE",
+    "current_cheapest_training_ovr": "UNKNOWN",
+    "current_target_price_by_ovr": "UNKNOWN",
+    "verified_static_quicksell_values": {
+      "83": 800,
+      "84": 1160,
+      "85": 1680,
+      "86": 2400,
+      "87": 3500,
+      "88": 5100
+    },
+    "note": "CFB.FAN's public moderator-posted CUT27 quicksell table is independently readable. Live CPT values that Brian sees in the Prices UI are not rendered into the web text surface available to this worker."
+  },
+  "acquisition_method": {
+    "legitimate_methods_tested": [
+      "normal public CFB.FAN page navigation",
+      "public web indexing/search",
+      "CFB.FAN Players database",
+      "CFB.FAN Prices Dashboard",
+      "normal Price Tracker navigation"
+    ],
+    "result": "Exact card discovery works. Current actionable BIN, completed-sale quartiles/median and sales velocity do not. Price Tracker requires sign-in and this worker cannot access or control Brian's existing authenticated Edge session."
+  },
+  "repeatability": {
+    "exact_identity": "YES",
+    "five_card_identity_test": "YES",
+    "five_card_actionable_market_test": "NO",
+    "reason": "Market fields are behind a dynamic/authenticated browser surface not exposed through this worker's web tool."
+  },
+  "estimated_cards_per_run": {
+    "identity_discovery": "25-50 targeted cards is reasonable using public pages/search without abusive request rates.",
+    "full_actionable_market_inspection": "0 with current worker interfaces because the required live sale/listing fields are unavailable, not because of throughput."
+  },
+  "mispricing_results": [
+    {
+      "card": "Sam Leavitt 88 Prime Prospects",
+      "discount_to_median": "UNKNOWN",
+      "discount_to_q1": "UNKNOWN",
+      "conservative_exit": "UNKNOWN",
+      "after_tax": "UNKNOWN",
+      "net_profit": "UNKNOWN",
+      "classification": "UNRATABLE"
+    },
+    {
+      "card": "Owen Long 88 Prime Prospects",
+      "classification": "UNRATABLE"
+    },
+    {
+      "card": "Koi Perich 88 Prime Prospects",
+      "classification": "UNRATABLE"
+    },
+    {
+      "card": "Colin Simmons 88 Season 1",
+      "classification": "UNRATABLE"
+    },
+    {
+      "card": "Trinidad Chambliss 88 Season 1",
+      "classification": "UNRATABLE"
+    }
+  ],
+  "access_limitations": [
+    "No browser/Edge control capability is exposed to this worker session.",
+    "No access to Brian's existing authenticated CFB.FAN browser session.",
+    "Public Prices Dashboard dynamic market rows are absent from worker-readable text.",
+    "Price Tracker redirects to normal sign-in when accessed by the worker's unauthenticated web session.",
+    "No private API endpoints were guessed or reverse-engineered; no credentials/cookies/tokens were requested or extracted."
+  ],
+  "acceptance_tests": {
+    "EDGE_DISCOVERS_CURRENT_CARD": "YES",
+    "EXACT_CUT27_IDENTITY": "YES",
+    "CURRENT_LISTING_OBSERVED": "NO",
+    "COMPLETED_SALES_OBSERVED": "NO",
+    "MEDIAN_OBSERVED": "NO",
+    "LIQUIDITY_OBSERVED": "NO",
+    "AT_LEAST_5_CARDS_TESTED": "YES",
+    "TRAINING_CPT_OBSERVED": "NO",
+    "BRIAN_SCREENSHOT_REQUIRED": "YES under current interfaces for the unavailable live fields",
+    "BRIAN_MANUAL_CARD_SELECTION_REQUIRED": "NO for candidate discovery",
+    "LEGITIMATE_ACCESS_ONLY": "YES",
+    "RESULT_PERSISTED": "YES"
+  },
+  "recommended_worker_workflow": "PARTIAL path only: worker can independently DISCOVER and resolve exact CUT27 candidates through public CFB.FAN Players/theme/ability pages, but cannot complete INSPECT -> COMPARE -> RANK because the decisive live listing, completed-sale distribution and velocity fields are not exposed. A future worker environment must expose legitimate normal-browser DOM/accessibility/screenshot access to Brian's already-authenticated CFB.FAN session (without credential/token extraction) before this can become the required no-screenshot workflow. Do not build a scanner or infer private endpoints as a substitute.",
+  "sources": [
+    {
+      "url": "https://cfb.fan/prices/",
+      "observation": "Public Prices Dashboard reachable; page says it shows CUT27 market in real time, but dynamic rows are not present in worker-readable text."
+    },
+    {
+      "url": "https://cfb.fan/price-tracker/",
+      "observation": "Normal navigation redirected worker to CFB.FAN sign-in page."
+    },
+    {
+      "url": "https://cfb.fan/players/",
+      "observation": "Public CUT27 player database supports independent candidate discovery; includes 88 OVR Sam Leavitt, Owen Long, Koi Perich, Colin Simmons, Trinidad Chambliss and others."
+    },
+    {
+      "url": "https://cfb.fan/players/4056-sam-leavitt/",
+      "observation": "Exact 88 OVR Prime Prospects Sam Leavitt identity verified."
+    },
+    {
+      "url": "https://cfb.fan/players/6335-colin-simmons/",
+      "observation": "Exact 88 OVR Season 1 Colin Simmons identity verified."
+    },
+    {
+      "url": "https://cfb.fan/players/33236-trinidad-chambliss/",
+      "observation": "Exact 88 OVR Season 1 Trinidad Chambliss identity verified."
+    },
+    {
+      "url": "https://cfb.fan/forums/forum/ultimate-team-4/topic/cut-27-training-player-quicksell-coin-values-7207/",
+      "observation": "Static CUT27 training quicksell ladder independently verified, including 83=800 through 88=5100."
+    }
+  ],
+  "final_verdict": "PARTIAL",
+  "verdict_reason": "The worker proved legitimate independent discovery and exact identity resolution across at least five CUT27 cards, and verified static training quicksell values. It did NOT establish the required no-manual-input path to current BIN + completed-sale distribution + liquidity or live CPT. The missing boundary is legitimate authenticated/dynamic browser visibility, not candidate discovery."
+}
