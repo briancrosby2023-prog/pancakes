@@ -1,50 +1,55 @@
 # OP-X-051 Execution Closure Status
 
-Status: PARTIAL — five requested CLI surfaces are now wired with regression coverage; population execution and executable quality-gate evidence remain pending.
+Status: COMPLETE — OP-X-051 executed successfully and all closure criteria attributable to OP-X-051 passed.
 
-## Verified durable state
+## Final executed scientific state
 
-- Canonical role-intelligence implementation remains in `src/operation_pancake/production/role_intelligence.py`.
-- The known `role_alternatives` defect remains fixed: binding traits are read from `GMProduct.cards[card_id]`, not the identity-only `lookup()` payload.
-- Regression guard `test_role_alternatives_reads_canonical_population_attributes` remains present.
-- `scripts/run_op_x_051b.py` remains fail-closed at exactly 8,838 canonical cards and 8,184 scoreable cards.
-- No production coefficients, OP-X-028 conclusions, BUY gates, market semantics, or canonical historical populations were changed.
+- Canonical population: 8,838 — invariant passed.
+- Scoreable population: 8,184 — invariant passed.
+- ROLE CANDIDATE records: 26,901.
+- UNKNOWN role-candidate records: 433.
+- Supported role boards: 34.
+- Blocked role boards: 0.
+- Moneyball role relationships: 2,252.
+- ROLE CANDIDATE remains distinct from VERIFIED ROLE FIT; UNKNOWN context remains preserved.
+- No market evidence, BUY conclusion, free/BND acquisition state, or deployment evidence was manufactured.
 
-## CLI closure completed
+## Final execution gates
 
-The installed `operation-pancake-gm` console entry now preserves the existing `gm_cli.main()` command surface and adds these OP-X-051 commands through `operation_pancake.gm_cli_entry`:
+Final post-fix workflow evidence was recovered from GitHub Actions run 32464832818 at head `e209d172a635a1c0a80e01bfe4810e47487bd9ce`.
 
-- `role-board POSITION ROLE [--limit N]`
-- `role-alternatives CARD_ID ROLE [--limit N]`
-- `roster-roles`
-- `zero-coin-upgrades`
-- `target-challenge [--index 1..5]`
+- Population runner: PASS.
+- Five CLI smokes (`role-board`, `role-alternatives`, `roster-roles`, `zero-coin-upgrades`, `target-challenge`): PASS.
+- Focused OP-X-051 tests: PASS — 14 passed.
+- Genuine OP-X-025 through OP-X-051 regressions: PASS.
+- Deterministic artifact check: PASS.
+- OP-X-051 scoped Ruff: PASS after formatting-only corrections in `cdfe586cb3c90628b5419daaba10eb4269083df5` and `8d52c0dc4ee341a57517010d16c5d5a291de402b`.
+- `git diff --check`: PASS.
+- Closure-gate enforcement: PASS.
 
-The two live role commands call `role_intelligence.role_board` / `role_alternatives`. Artifact-backed commands fail closed if the population runner has not materialized their OP-X-051 JSON. Legacy GM commands delegate unchanged to the existing `gm_cli.main()` implementation.
+The workflow's overall conclusion was FAILURE only because the evidence-persistence step encountered a concurrent-branch rebase conflict after the gates had executed; the evidence artifact was nevertheless uploaded successfully as artifact 9440448354. This persistence race is not a scientific failure.
 
-Targeted CLI regression coverage verifies artifact reads, UNKNOWN preservation, exact target selection, fail-closed missing artifacts, legacy delegation, and role-intelligence dispatch.
+## Full-pytest residual debt
 
-## Execution evidence
+Full pytest executed as 819 passed, 1 failed, 4 warnings. The failing assertion is in the pre-existing evidence-index committed-artifact consistency surface (`tests/test_evidence_index.py::test_committed_artifacts_match_generator`): generated source-index records differ from the committed `data/evidence/source_index.json` representation (for example legacy recovery-queue records versus the current source-record schema). The failure concerns repository evidence-index serialization and is outside OP-X-051 role intelligence, population science, CLI, and OP-X-025–051 regressions. Classification: C — unrelated pre-existing repository defect. It was not mutated to manufacture a green repository-wide count.
 
-The current tool environment has GitHub repository read/write access but no repository shell. A direct shell clone attempt failed on outbound DNS (`Could not resolve host: github.com`). The existing base-branch `Operation Pancake Runner` was inspected: its PR validation job runs Ruff and the full pytest suite, but it does not invoke `scripts/run_op_x_051b.py`. No pull-request workflow run/status surfaced for the final CLI commits through the available Actions connector.
+## Repository-wide Ruff residual debt
 
-Therefore the following are **not claimed as executed**:
+Repository-wide `ruff check .` remains failing with pre-existing debt outside the OP-X-051 scoped files. The observed run reported 160 errors, including historical acquisition formatting/semicolon violations, CFB27 population-runner line-length violations, and older E.15 test line-length violations. OP-X-051 scoped Ruff is clean. Global Ruff debt is recorded and does not invalidate OP-X-051 closure.
 
-- full 8,184-card OP-X-051 population run
-- generated `execution_summary.json`
-- population-derived role/Moneyball/roster/target counts
-- CLI runtime smoke test in an installed checkout
-- focused OP-X-051 pytest
-- OP-X-025–051 regressions
-- deterministic artifact checks
-- full pytest
-- Ruff
-- `git diff --check`
+## Defects discovered and fixed during execution
 
-Population-derived values remain UNKNOWN/unpromoted rather than inferred from runner source.
+- Canonical role intelligence was initially reading legacy `attributes`/`stats` instead of canonical `native_ratings`; corrected without changing model coefficients or canonical data.
+- `role_alternatives` canonical-card attribute access was preserved/fixed with regression coverage.
+- CLI smoke selection was corrected to use a role-compatible canonical card.
+- The OP-X-025–051 regression selector was corrected so a zero-match selection cannot falsely pass.
+- OP-X-051 scoped Ruff formatting violations were corrected.
+- Evidence persistence was hardened with fetch/rebase, although concurrent result runs still demonstrated a rebase conflict on the same generated log artifact.
 
-## Remaining closure action
+## Durable artifacts
 
-Use one repository-capable execution event to run `scripts/run_op_x_051b.py`, verify 8,838/8,184 invariants, inspect every generated OP-X-051 artifact, execute focused/regression/full quality gates, repair only actionable OP-X-051 defects, and replace PARTIAL only when that evidence is durable.
+Generated OP-X-051 science remains persisted under `data/research/op_x_051/`, including `execution_summary.json`, role boards, Moneyball relationships, roster/target/free-BND outputs, residuals, and research queue. GitHub Actions run 32464832818 also uploaded `op-x-051d-execution` artifact 9440448354 with SHA-256 `010264889fa0c391fa2ec7b161dd379083766420cca4108baa26a146dd6060f7`.
 
-Do not start OP-X-052 until those execution gates close.
+## Closure decision
+
+OP-X-051 satisfies its closure rule. The unrelated full-pytest evidence-index mismatch and repository-wide Ruff debt remain explicit repository debt but are not attributable to OP-X-051. OP-X-051 is therefore COMPLETE and may be treated as scientifically closed. OP-X-052 was not started by this closure operation.
