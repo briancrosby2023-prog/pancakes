@@ -20,8 +20,12 @@ def scoreable(ev): return ev.get('score') is not None
 def main():
     gm=GMProduct(ROOT)
     population=gm.population
+    if len(population) != 8838:
+        raise RuntimeError(f'canonical CFB27 population drift: expected 8838, found {len(population)}')
     evaluations={c['card_id']:gm.lookup(card_id=c['card_id']) for c in population}
     scoreable_ids={cid for cid,x in evaluations.items() if scoreable(x.get('evaluation',{}))}
+    if len(scoreable_ids) != 8184:
+        raise RuntimeError(f'OP-X-051 scoreable population drift: expected 8184, found {len(scoreable_ids)}')
     role_candidates=[]; complete=defaultdict(list)
     for card in population:
         for rc in card_role_candidates(card):
