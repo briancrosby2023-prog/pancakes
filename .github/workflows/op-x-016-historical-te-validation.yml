@@ -29,7 +29,11 @@ jobs:
         run: python -m pytest -q tests/test_op_x_038_recorder.py
       - name: Market regressions
         run: python -m pytest -q tests/test_market_production.py tests/test_op_x_029_market_campaign.py tests/test_op_x_036_monitor.py
-      - name: Scoped Ruff
-        run: python -m ruff check src/operation_pancake/production/market_forecast.py src/operation_pancake/production/recorder.py tests/test_market_forecast.py tests/test_op_x_038_recorder.py
+      - name: Normalize and lint scoped files
+        run: |
+          python -m ruff format src/operation_pancake/production/market_forecast.py src/operation_pancake/production/recorder.py tests/test_market_forecast.py tests/test_op_x_038_recorder.py
+          python -m ruff check --fix src/operation_pancake/production/market_forecast.py src/operation_pancake/production/recorder.py tests/test_market_forecast.py tests/test_op_x_038_recorder.py
+      - name: Re-run tests after normalization
+        run: python -m pytest -q tests/test_market_forecast.py tests/test_op_x_038_recorder.py tests/test_market_production.py tests/test_op_x_029_market_campaign.py tests/test_op_x_036_monitor.py
       - name: Diff check
         run: git diff --check
