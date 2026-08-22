@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from operation_pancake.production.market_campaign import calibrate_decision, history_statistics
 from operation_pancake.production.monitor import reconcile_events
-from operation_pancake.production.recorder import append_records, canonical_cards, completed_sale_statistics, default_campaign, listing_statistics, normalize_record, parse_browser_export, run_snapshot, sample_sufficiency, scheduler_state
+from operation_pancake.production.recorder import append_records, canonical_cards, completed_sale_statistics, dataset_readiness, default_campaign, listing_statistics, normalize_record, parse_browser_export, rendered_observations, run_snapshot, sample_sufficiency, scheduler_state
 ROOT=Path(__file__).resolve().parents[1];NOW="2026-08-20T21:00:00+00:00";OBSERVED="2026-08-20T20:00:00+00:00"
 @pytest.fixture(scope="module")
 def cards():return canonical_cards(ROOT)
@@ -24,6 +24,15 @@ def test_sale_velocity_uses_real_completed_sale_timestamps(cards,campaign):
  a=normalized(cards,campaign,observation_type="COMPLETED_SALE",observed_at="2026-08-20T18:00:00+00:00");b=normalized(cards,campaign,observation_type="COMPLETED_SALE",observed_at="2026-08-20T20:00:00+00:00",value=110);assert completed_sale_statistics([a,b])["sale_velocity_per_day"]==12.0
 def test_unknown_fields_are_not_fabricated(cards,campaign):
  r=normalized(cards,campaign);assert r["second_lowest_listing"] is None;assert r["listing_age_minutes"] is None
+def test_rendered_bridge_only_emits_visible_fields(campaign):
+ rows=rendered_observations(campaign["cards"][0]["card_id"],campaign["campaign_id"],OBSERVED,"https://cfb.fan/example",live_floor=100,additional_listings=[110,120],supply_count=3)
+ assert [r["observation_type"] for r in rows]==["LOWEST_VISIBLE_LISTING","LIVE_LISTING","LIVE_LISTING","SUPPLY_COUNT"]
+ assert all(r["platform"]=="PS5" and r["source"]=="OPERA_RENDERED_CFB_FAN" for r in rows)
+def test_rendered_bridge_does_not_fabricate_sales(campaign):
+ rows=rendered_observations(campaign["cards"][0]["card_id"],campaign["campaign_id"],OBSERVED,"https://cfb.fan/example",live_floor=100)
+ assert not any(r["observation_type"]=="COMPLETED_SALE" for r in rows)
+def test_readiness_is_explicit(cards,campaign):
+ rows=[normalized(cards,campaign)];r=dataset_readiness(rows,NOW);assert r["status"]=="INSUFFICIENT DATA" and r["observation_count"]==1 and r["cards_with_sufficient_history_for_forecasting"]==0
 def test_platform_mismatch_is_rejected(cards,campaign):
  with pytest.raises(ValueError,match="platform mismatch"):normalize_record(raw(campaign["cards"][0]["card_id"],campaign["campaign_id"],platform="XBOX"),cards,{campaign["campaign_id"]:campaign},ingested_at=NOW)
 def test_fixture_firewall_and_append_only(cards,campaign,tmp_path):
