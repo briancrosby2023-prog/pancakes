@@ -1,0 +1,48 @@
+{
+  "accepted": 4,
+  "after": 9,
+  "before": 5,
+  "capture_timestamp": null,
+  "capture_timestamp_status": "EXACT WORKER CAPTURE TIMESTAMP UNAVAILABLE; preserved as null rather than fabricated",
+  "failures": [],
+  "identity_reconciliation": [
+    {
+      "archetype": "Power Rusher",
+      "card_id": "card:01be68aa7f168746bf62",
+      "external_card_id": "27-700900008",
+      "overall": 88,
+      "player_name": "Ed Too Tall Jones",
+      "position": "RE",
+      "program": "Summer Rush"
+    },
+    {
+      "archetype": "East/West Playmaker",
+      "card_id": "card:32010b1235376897d5b2",
+      "external_card_id": "27-260007128",
+      "overall": 88,
+      "player_name": "Kewan Lacy",
+      "position": "HB",
+      "program": "Phenoms"
+    },
+    {
+      "archetype": "Box Specialist",
+      "card_id": "card:4b70bc0dd20057d4fad1",
+      "external_card_id": "27-700026895",
+      "overall": 88,
+      "player_name": "Brandon Meriweather",
+      "position": "SS",
+      "program": "Summer Rush"
+    },
+    {
+      "archetype": "East/West Playmaker",
+      "card_id": "card:2c38c3c4bbbab36c7c44",
+      "external_card_id": "27-280008728",
+      "overall": 87,
+      "player_name": "Sutton Smith",
+      "position": "HB",
+      "program": "Supercharged"
+    }
+  ],
+  "input": "data/research/execution_loop/ps5_tracker_sample2_input.json",
+  "status": "PASS"
+}
