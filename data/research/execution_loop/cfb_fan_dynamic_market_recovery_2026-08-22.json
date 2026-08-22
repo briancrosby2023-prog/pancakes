@@ -1,0 +1,56 @@
+{
+  "operation": "CFB.FAN DYNAMIC MARKET DATA RECOVERY",
+  "captured_at": "2026-08-22",
+  "validated_baseline": "OP-X-016 Run #39 GREEN; complete market slice 77/77 PASS",
+  "target": {
+    "player_name": "Donnie Smith",
+    "exact_version": "27-202027809",
+    "ovr": 89,
+    "position": "REDG",
+    "program": "Season 2",
+    "url": "https://cfb.fan/players/27809-donnie-smith/27-202027809/"
+  },
+  "donnie_observation": {
+    "initial": "Loading placeholders present for PlayStation Live Auctions, PlayStation Recent Sales, Sales Volume, Last Updated, and Price History.",
+    "5s": "Loading",
+    "15s": "Loading",
+    "30s": "Loading",
+    "later_recheck": "Loading",
+    "javascript_functional_elsewhere": true,
+    "evidence": "Exact identity, navigation, abilities, stats, comments shell, and other card content render while the market components remain Loading."
+  },
+  "connector_visibility": {
+    "page_text": true,
+    "accessibility_tree": true,
+    "screenshots": true,
+    "navigation": true,
+    "browser_console": false,
+    "network_request_log": false,
+    "arbitrary_dom_or_js_execution": false
+  },
+  "observed_errors": [],
+  "authentication_or_challenge_observed_on_card_page": false,
+  "prior_repository_evidence": {
+    "prices_dashboard": "Public dashboard shell reachable, dynamic rows absent from text extraction.",
+    "price_tracker": "Normal unauthenticated navigation previously redirected to sign-in.",
+    "local_chromium": "Administrative URLBlocklist blocked local Chromium; not modified or bypassed.",
+    "existing_market_observations": "8 PUBLIC_DISPLAY_PRICE records are platform UNSPECIFIED and are not PS5 completed-sale/live-listing evidence."
+  },
+  "control_cards": [
+    "Sam Leavitt 88 OVR QB Prime Prospects",
+    "Owen Long 88 OVR MIKE Prime Prospects",
+    "Koi Perich 88 OVR FS Prime Prospects"
+  ],
+  "control_result": "Prior durable acquisition evidence for multiple exact cards likewise recovered identity but no actionable listing/completed-sale fields. No evidence supports a Donnie-only failure.",
+  "other_cfb_fan_surface": {
+    "surface": "Prices Dashboard / Price Tracker",
+    "result": "Dashboard is client-rendered and the detailed tracker has previously required authentication in the worker session. No legitimate PS5 value was exposed through current authorized connector-readable state."
+  },
+  "root_cause_classification": "OPERA CONNECTOR VISIBILITY LIMITATION",
+  "root_cause_detail": "The authorized Opera connector proves the user-facing CFB.FAN card page is loaded and JavaScript-driven non-market content is functional, but it exposes only rendered accessibility/page state and screenshots, not console/network diagnostics. The PS5 market widgets remain indefinitely at Loading and no user-visible error identifies the underlying request failure. Therefore the deepest network/application cause is UNKNOWN; the acquisition blocker from this worker is connector visibility into the failed dynamic market component.",
+  "market_value_recovered": null,
+  "observation_persisted": false,
+  "ps5_observation_count": 0,
+  "next_legitimate_surface": "An authorized browser surface that exposes the same user-visible page plus ordinary developer-console/network diagnostics, or an authenticated CFB.FAN Price Tracker/dashboard session exposed through a supported connector. Do not infer hidden APIs or extract credentials/tokens.",
+  "final_verdict": "BLOCKED"
+}
