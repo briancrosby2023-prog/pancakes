@@ -56,6 +56,14 @@ def history(live=90000, card_id="card:x"):
     return rows
 
 
+def probability_history(live=90000, card_id="card:x"):
+    """History with legitimate <=2-hour sale pairs, sufficient for exit trials."""
+    rows = history(live, card_id)
+    for day in range(1, 9):
+        rows.append(sale(day, 21, 124000 + day * 500, card_id))
+    return rows
+
+
 def test_forecast_wires_to_buy_ceiling_and_tax():
     result = forecast_watch(CARD, history(90000), AS_OF, minimum_net_profit=5000)
     assert result["forecast_state"] == "FORECAST"
@@ -139,7 +147,7 @@ def test_prioritization_excludes_unknown_exit_probability():
 
 
 def test_prioritization_accepts_supported_exit_probability():
-    supported = forecast_watch(CARD, history(90000), "2026-08-08T23:00:00-07:00")
+    supported = forecast_watch(CARD, probability_history(90000), AS_OF)
     assert supported["forecast_state"] == "FORECAST"
     assert supported["exit_probability"] is not None
     assert supported["priority_score"] is not None
@@ -165,7 +173,7 @@ def test_search_queue_unknown_probability_stays_explore():
 
 
 def test_search_queue_supported_probability_can_exploit():
-    queue = search_queue([(CARD, history(90000))], "2026-08-08T23:00:00-07:00")
+    queue = search_queue([(CARD, probability_history(90000))], AS_OF)
     assert queue[0]["queue_class"] == "EXPLOIT"
     assert queue[0]["exit_probability"] is not None
 
