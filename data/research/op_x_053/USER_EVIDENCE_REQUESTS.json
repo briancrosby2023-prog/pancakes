@@ -1,29 +1,9 @@
 {
-  "construction": "grouped minimum packet after autonomous repository triage",
+  "construction": "database-first minimum packet: fixed cards autonomous; user evidence only for realized configurable/account-specific state",
+  "realized_state_required": [
+    "Peter Clarke"
+  ],
   "requests": [
-    {
-      "affected_records": [
-        "Javon Nicholas",
-        "Jidah Baugh",
-        "Kalik Lockett",
-        "King Mack",
-        "Owen Allen",
-        "Peter Clarke",
-        "Anthony Donkoh -> Brendan Black",
-        "Samson Okunlola -> E'Marion Harris",
-        "Dashawn Spears -> Bray Hubbard",
-        "Cole -> Kip Lewis",
-        "McClain -> Kobe Black"
-      ],
-      "class": "REQUEST FIRST",
-      "decision_unlocked": [
-        "identity-dependent roster-role coverage",
-        "target comparison prerequisites"
-      ],
-      "evidence_needed": "Grouped lineup/depth-chart screenshots plus exact card/version views for the six unresolved roster identities and five target challenges.",
-      "preferred_evidence_form": "screenshots showing player name, program/version/OVR and lineup slot/deployment",
-      "reason": "Identity and actual deployment have the highest leverage on roster-role and target reassessment."
-    },
     {
       "affected_records": [
         "Dante Moore",
@@ -51,6 +31,19 @@
         "DJ Hicks",
         "Kelby Collins"
       ],
+      "class": "REQUEST FIRST",
+      "decision_unlocked": [
+        "roster role coverage",
+        "roster mismatch reassessment"
+      ],
+      "evidence_needed": "Account-specific lineup/deployment evidence only for decision-relevant roster slots after canonical fixed-card identity recovery is exhausted.",
+      "preferred_evidence_form": "grouped lineup/depth-chart screenshots; no duplicate fixed-card detail views",
+      "reason": "Deployment is personal-team state and cannot be recovered from canonical card attributes."
+    },
+    {
+      "affected_records": [
+        "Peter Clarke"
+      ],
       "class": "REQUEST SECOND",
       "decision_unlocked": [
         "realized build fit",
@@ -58,9 +51,9 @@
         "free/BND role coverage",
         "purchase avoidance"
       ],
-      "evidence_needed": "Grouped item-detail/team screenshots showing equipped abilities/AP and acquisition state (owned/free/BND/EVO/rerollable) for decision-relevant roster cards.",
-      "preferred_evidence_form": "batched screenshots; no per-player narrative required",
-      "reason": "These fields can unlock realized-fit, zero-coin and free/BND coverage decisions after identity/deployment is established."
+      "evidence_needed": "Realized configuration evidence only for proven upgradable/configurable cards, plus account-specific acquisition state when it can change a decision.",
+      "preferred_evidence_form": "item-detail screenshot for configurable card state; grouped account-state evidence where decision-relevant",
+      "reason": "Canonical data already supplies fixed-card attributes; only realized configurable state and owned/free/BND/EVO/rerollable facts require user evidence."
     },
     {
       "affected_records": [
@@ -93,7 +86,7 @@
       "decision_unlocked": [
         "usage-context description"
       ],
-      "evidence_needed": "Observed usage notes/screens only where actual usage differs from lineup/deployment.",
+      "evidence_needed": "Observed usage notes/screens only where actual usage differs materially from lineup/deployment.",
       "preferred_evidence_form": "grouped usage notes or screenshots",
       "reason": "Observed usage is descriptive and lower priority than identity, deployment and ownership state."
     }
