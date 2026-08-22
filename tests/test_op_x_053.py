@@ -60,13 +60,20 @@ def test_no_unsupported_verified_role_fit_promotion():
     assert moneyball["status"] == "ROLE CANDIDATE"
 
 
-def test_minimal_grouped_user_evidence_packet():
+def test_database_first_minimal_user_evidence_packet():
     run()
-    requests = load("USER_EVIDENCE_REQUESTS.json")["requests"]
+    payload = load("USER_EVIDENCE_REQUESTS.json")
+    requests = payload["requests"]
     assert [r["class"] for r in requests] == ["REQUEST FIRST", "REQUEST SECOND", "OPTIONAL"]
     assert len(requests) == 3
-    assert "Grouped" in requests[0]["evidence_needed"]
-    assert "Grouped" in requests[1]["evidence_needed"]
+    assert payload["realized_state_required"] == ["Peter Clarke"]
+    assert requests[1]["affected_records"] == ["Peter Clarke"]
+    combined = " ".join(r["evidence_needed"] for r in requests)
+    assert "six unresolved roster identities" not in combined
+    assert "five target challenges" not in combined
+    assert "fixed-card detail" in requests[0]["preferred_evidence_form"]
+    assert load("EXECUTION_SUMMARY.json")["database_first_evidence_requests"] is True
+    assert "autonomous" in load("TARGET_TRIAGE.json")["identity_rule"]
 
 
 def test_deterministic_output():
