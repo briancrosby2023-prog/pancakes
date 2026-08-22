@@ -2,14 +2,12 @@ name: First PS5 Market Observation
 on:
   push:
     branches: ['agent/op-x-012-reconcile-artifacts']
-    paths:
-      - 'scripts/record_first_ps5_tracker_observation.py'
-      - '.github/workflows/first-ps5-market-observation.yml'
   workflow_dispatch:
 permissions:
   contents: write
 jobs:
   execute:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'PS5-FIRST-OBSERVATION-ACTIVATE')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
