@@ -38,6 +38,6 @@ jobs:
       - name: Re-run market slice
         run: python -m pytest -q tests/test_market_forecast.py tests/test_op_x_038_recorder.py tests/test_market_watch.py tests/test_market_production.py tests/test_op_x_029_market_campaign.py tests/test_op_x_036_monitor.py
       - name: Deterministic queue dry run
-        run: python -m pytest -q tests/test_market_watch.py -k deterministic
+        run: python -m pytest -q tests/test_market_watch.py -k search_queue_unknown_probability_stays_explore
       - name: Diff check
         run: git diff --check
