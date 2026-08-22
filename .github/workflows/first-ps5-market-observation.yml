@@ -21,7 +21,7 @@ jobs:
       - name: Execute validated production recorder
         run: python scripts/record_first_ps5_tracker_observation.py
       - name: Verify recorder tests
-        run: python -m pytest -q tests/test_production_recorder.py
+        run: python -m pytest -q tests/test_op_x_038_recorder.py
       - name: Ruff wrapper
         run: python -m ruff check scripts/record_first_ps5_tracker_observation.py
       - name: Persist recorder output
