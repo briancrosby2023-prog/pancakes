@@ -6,8 +6,10 @@ on:
     paths:
       - src/operation_pancake/production/market_forecast.py
       - src/operation_pancake/production/recorder.py
+      - src/operation_pancake/production/market_watch.py
       - tests/test_market_forecast.py
       - tests/test_op_x_038_recorder.py
+      - tests/test_market_watch.py
       - .github/workflows/op-x-016-historical-te-validation.yml
 permissions:
   contents: write
@@ -27,13 +29,15 @@ jobs:
         run: python -m pytest -q tests/test_market_forecast.py
       - name: PS5 recorder tests
         run: python -m pytest -q tests/test_op_x_038_recorder.py
+      - name: Watcher and search queue tests
+        run: python -m pytest -q tests/test_market_watch.py
       - name: Market regressions
         run: python -m pytest -q tests/test_market_production.py tests/test_op_x_029_market_campaign.py tests/test_op_x_036_monitor.py
-      - name: Normalize and lint scoped files
-        run: |
-          python -m ruff format src/operation_pancake/production/market_forecast.py src/operation_pancake/production/recorder.py tests/test_market_forecast.py tests/test_op_x_038_recorder.py
-          python -m ruff check --fix src/operation_pancake/production/market_forecast.py src/operation_pancake/production/recorder.py tests/test_market_forecast.py tests/test_op_x_038_recorder.py
-      - name: Re-run tests after normalization
-        run: python -m pytest -q tests/test_market_forecast.py tests/test_op_x_038_recorder.py tests/test_market_production.py tests/test_op_x_029_market_campaign.py tests/test_op_x_036_monitor.py
+      - name: Scoped market lint
+        run: python -m ruff check src/operation_pancake/production/market_forecast.py src/operation_pancake/production/recorder.py src/operation_pancake/production/market_watch.py tests/test_market_forecast.py tests/test_op_x_038_recorder.py tests/test_market_watch.py
+      - name: Re-run market slice
+        run: python -m pytest -q tests/test_market_forecast.py tests/test_op_x_038_recorder.py tests/test_market_watch.py tests/test_market_production.py tests/test_op_x_029_market_campaign.py tests/test_op_x_036_monitor.py
+      - name: Deterministic queue dry run
+        run: python -m pytest -q tests/test_market_watch.py -k deterministic
       - name: Diff check
         run: git diff --check
