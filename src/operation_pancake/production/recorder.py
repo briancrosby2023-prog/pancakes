@@ -7,30 +7,19 @@ from pathlib import Path
 from typing import Any
 from .market import CORE_TRAINING_QUICKSELL, parse_timestamp
 from .market_campaign import history_statistics
-from .monitor import canonical_cards, load_json, monitor_run, save_json
+from .monitor import canonical_cards, load_json, save_json
 from .transition import WINDOW_LABELS, checkpoint_time
 RECORDER_HISTORY="data/production/market/longitudinal_observations.json"
 CAMPAIGN_STATE="data/production/market/campaigns.json"
 RECORDER_STATE="data/production/market/recorder_state.json"
 SEMANTICS={"LIVE_LISTING":{"unit":"CUT_COINS","class":"LISTING"},"LOWEST_VISIBLE_LISTING":{"unit":"CUT_COINS","class":"LISTING"},"DISPLAYED_MARKET_PRICE":{"unit":"CUT_COINS","class":"DISPLAY"},"COMPLETED_SALE":{"unit":"CUT_COINS","class":"SALE"},"MEDIAN_COMPLETED_SALE":{"unit":"CUT_COINS","class":"SALE_STATISTIC"},"PRICE_TRACKER_VALUE":{"unit":"CUT_COINS","class":"TRACKER"},"SUPPLY_COUNT":{"unit":"COUNT","class":"SUPPLY"},"SALE_VOLUME":{"unit":"COUNT","class":"VOLUME"},"TRAINING_BASKET":{"unit":"CUT_COINS","class":"TRAINING"},"COLLECTION_COMPONENT":{"unit":"CUT_COINS","class":"COLLECTION"},"CURRENT_PLAYER_RESALE":{"unit":"CUT_COINS","class":"RESALE"}}
 PRICE_TYPES={k for k,v in SEMANTICS.items() if v["unit"]=="CUT_COINS"}
-CAMPAIGN_TYPES={"PERSONAL HIT LIST","PANCAKE TOP 10","PANCAKE TOP 25","ROSTER UPGRADES","NEAR-EQUIVALENT ALTERNATIVES","SCHEME / COLLECTION","TRAINING BASKET","EVENT WINDOW","SEASON TRANSITION"}
 def stable_id(parts:list[Any])->str:return "recorder:"+hashlib.sha256(json.dumps(parts,sort_keys=True,separators=(",",":")).encode()).hexdigest()[:20]
 def default_campaign(root:Path,now:str)->dict[str,Any]:
  u=load_json(root/"data/research/op_x_036/monitored_universe.json",{"cards":[]});t=[]
  for r in u["cards"]:
   s=r["sources"];p,ti=(1,"TIER 1") if ("PERSONAL HIT LIST" in s or "TOP 10" in s or "ROSTER BUY TARGET" in s) else ((2,"TIER 2") if ("TOP 25" in s or "NEAR-EQUIVALENT ALTERNATIVE" in s) else (3,"TIER 3"));t.append({"card_id":r["card_id"],"priority":p,"tier":ti,"reasons":r["reasons"],"sources":s})
- return {"campaign_id":"pancake-default-monitored-universe-v1","campaign_type":"PANCAKE TOP 25","schema_version":2,"platform":"PS5","cards":sorted(t,key=lambda r:(r["priority"],r["card_id"])),"reason":"deduplicated OP-X-036 monitored universe; PS5 longitudinal market history","start_time":now,"end_time":None,"desired_cadence_minutes":{"1":60,"2":240,"3":720},"observation_types_requested":["LOWEST_VISIBLE_LISTING","LIVE_LISTING","COMPLETED_SALE","SUPPLY_COUNT","SALE_VOLUME"],"event_id":None,"priority":1,"active":True,"last_successful_observation":None,"next_due_observation":now,"sample_sufficiency":"NO DATA"}
-def deduplicated_targets(campaigns):
- m={}
- for c in campaigns:
-  if not c.get("active",True):continue
-  for t in c.get("cards",[]):
-   r=m.setdefault(t["card_id"],{"card_id":t["card_id"],"campaign_ids":[],"reasons":[],"sources":[],"priority":99});r["campaign_ids"].append(c["campaign_id"]);r["priority"]=min(r["priority"],t.get("priority",c.get("priority",99)))
-   for k in ("reasons","sources"):
-    for v in t.get(k,[]):
-     if v not in r[k]:r[k].append(v)
- return sorted(m.values(),key=lambda r:(r["priority"],r["card_id"]))
+ return {"campaign_id":"pancake-default-monitored-universe-v1","campaign_type":"PANCAKE TOP 25","schema_version":3,"platform":"PS5","cards":sorted(t,key=lambda r:(r["priority"],r["card_id"])),"reason":"deduplicated OP-X-036 monitored universe; PS5 longitudinal market history","start_time":now,"end_time":None,"desired_cadence_minutes":{"1":60,"2":240,"3":720},"observation_types_requested":["LOWEST_VISIBLE_LISTING","LIVE_LISTING","COMPLETED_SALE","SUPPLY_COUNT","SALE_VOLUME"],"event_id":None,"priority":1,"active":True,"last_successful_observation":None,"next_due_observation":now,"sample_sufficiency":"NO DATA"}
 def normalize_record(raw,cards,campaigns,*,ingested_at,fixture=False):
  cid=raw.get("card_id");typ=raw.get("observation_type");val=raw.get("value")
  if cid not in cards:raise ValueError("ambiguous or unresolved canonical card identity")
@@ -48,7 +37,17 @@ def normalize_record(raw,cards,campaigns,*,ingested_at,fixture=False):
  if expected and expected!=platform:raise ValueError("platform mismatch")
  card=cards[cid];identity={"card_id":cid,"player_name":card.get("player_name"),"position":card.get("position"),"overall":card.get("native_overall"),"program":card.get("program"),"archetype":card.get("archetype")}
  rid=stable_id([cid,val,typ,at,avail_at,raw.get("source"),platform,camp])
- return {"observation_id":rid,**identity,"value":val,"observed_price":val if typ in PRICE_TYPES else None,"observation_type":typ,"source_semantics":SEMANTICS[typ],"source":raw.get("source","USER_BROWSER_ASSISTED"),"observed_at":at,"user_observed_at":at,"ingested_at":ingested_at,"available_at":avail_at,"platform":platform,"provenance":raw.get("provenance","USER_EXPORT"),"confidence":raw.get("confidence","USER_ATTESTED"),"identity_confidence":"EXACT","campaign_id":camp,"event_id":campaigns[camp].get("event_id"),"evidence_scope":"FIXTURE" if fixture else "REAL","sequence":raw.get("sequence"),"listing_age_minutes":raw.get("listing_age_minutes"),"second_lowest_listing":raw.get("second_lowest_listing")}
+ return {"observation_id":rid,**identity,"value":val,"observed_price":val if typ in PRICE_TYPES else None,"observation_type":typ,"source_semantics":SEMANTICS[typ],"source":raw.get("source","OPERA_RENDERED_CFB_FAN"),"source_url":raw.get("source_url"),"observed_at":at,"user_observed_at":at,"ingested_at":ingested_at,"available_at":avail_at,"platform":platform,"provenance":raw.get("provenance","AUTHORIZED_RENDERED_SURFACE"),"confidence":raw.get("confidence","DIRECTLY_RENDERED"),"identity_confidence":"EXACT","campaign_id":camp,"event_id":campaigns[camp].get("event_id"),"evidence_scope":"FIXTURE" if fixture else "REAL","sequence":raw.get("sequence"),"listing_age_minutes":raw.get("listing_age_minutes"),"second_lowest_listing":raw.get("second_lowest_listing")}
+def rendered_observations(card_id,campaign_id,observed_at,source_url,*,live_floor=None,additional_listings=None,completed_sales=None,supply_count=None,sale_volume=None):
+ base={"card_id":card_id,"observed_at":observed_at,"source":"OPERA_RENDERED_CFB_FAN","source_url":source_url,"platform":"PS5","campaign_id":campaign_id,"provenance":"AUTHORIZED_RENDERED_SURFACE","confidence":"DIRECTLY_RENDERED"};rows=[]
+ listings=[v for v in ([live_floor]+list(additional_listings or [])) if isinstance(v,int) and v>0]
+ if listings:rows.append({**base,"observation_type":"LOWEST_VISIBLE_LISTING","value":listings[0],"second_lowest_listing":listings[1] if len(listings)>1 else None})
+ for seq,value in enumerate(listings[1:],2):rows.append({**base,"observation_type":"LIVE_LISTING","value":value,"sequence":seq})
+ for sale in completed_sales or []:
+  if isinstance(sale,dict) and isinstance(sale.get("price"),int) and sale.get("observed_at"):rows.append({**base,"observation_type":"COMPLETED_SALE","value":sale["price"],"observed_at":sale["observed_at"]})
+ if isinstance(supply_count,int) and supply_count>0:rows.append({**base,"observation_type":"SUPPLY_COUNT","value":supply_count})
+ if isinstance(sale_volume,int) and sale_volume>0:rows.append({**base,"observation_type":"SALE_VOLUME","value":sale_volume})
+ return rows
 def parse_browser_export(text,format_name):
  if format_name=="json":
   p=json.loads(text)
@@ -72,6 +71,12 @@ def listing_statistics(rows):
 def sample_sufficiency(rows,as_of,event=None):
  pr=[r for r in rows if r["observation_type"] in PRICE_TYPES];comp=[{**r,"observed_price":r["value"],"user_observed_at":r["observed_at"]} for r in pr];st=history_statistics(comp,as_of);types=Counter(r["observation_type"] for r in rows);cov=event_checkpoint_coverage(event,rows) if event else None
  return {"state":"NO DATA" if not rows else st.get("quality","INSUFFICIENT"),"observations":len(rows),"distinct_times":len({r["observed_at"] for r in rows}),"timespan_hours":st.get("time_span_hours",0),"freshness_hours":st.get("latest_age_hours"),"sale_samples":types["COMPLETED_SALE"]+types["MEDIAN_COMPLETED_SALE"],"listing_samples":types["LIVE_LISTING"]+types["LOWEST_VISIBLE_LISTING"],"supply_samples":types["SUPPLY_COUNT"],"volume_samples":types["SALE_VOLUME"],"event_checkpoint_coverage":cov}
+def dataset_readiness(rows,as_of):
+ if not rows:return {"status":"INSUFFICIENT DATA","observation_count":0,"unique_cards":0,"completed_sale_count":0,"hours_represented":0,"days_represented":0,"hour_of_day_coverage":[],"cards_with_sufficient_history_for_forecasting":0}
+ stamps=[parse_timestamp(r["observed_at"]) for r in rows];by_card={cid:[r for r in rows if r["card_id"]==cid] for cid in {r["card_id"] for r in rows}}
+ sufficient=sum(1 for card_rows in by_card.values() if len([r for r in card_rows if r["observation_type"]=="COMPLETED_SALE"])>=8 and len({r["observed_at"] for r in card_rows if r["observation_type"]=="COMPLETED_SALE"})>=5)
+ hours=max(0,(max(stamps)-min(stamps)).total_seconds()/3600)
+ return {"status":"READY" if sufficient else "INSUFFICIENT DATA","observation_count":len(rows),"unique_cards":len(by_card),"completed_sale_count":sum(r["observation_type"]=="COMPLETED_SALE" for r in rows),"hours_represented":round(hours,3),"days_represented":round(hours/24,3),"hour_of_day_coverage":sorted({stamp.hour for stamp in stamps}),"cards_with_sufficient_history_for_forecasting":sufficient,"as_of":as_of}
 def register_event(raw):
  if not raw.get("release_time"):raise ValueError("verified release_time is required")
  parse_timestamp(raw["release_time"])
@@ -80,12 +85,6 @@ def register_event(raw):
 def event_checkpoint_coverage(event,rows):
  if not event:return None
  obs={r.get("checkpoint") for r in rows if r.get("checkpoint")};return {"observed":[label for label in event["checkpoints"] if label in obs],"missing":[label for label in event["checkpoints"] if label not in obs]}
-def training_basket(card_rows,version):
- unsupported=[r["card_id"] for r in card_rows if r["overall"] not in CORE_TRAINING_QUICKSELL]
- if unsupported:raise ValueError(f"unsupported training quicksell tiers: {unsupported}")
- return {"basket_version":version,"composition_frozen":True,"cards":[{**r,"training":CORE_TRAINING_QUICKSELL[r["overall"]]} for r in card_rows]}
-def longitudinal_export(rows,events):
- return [{"observation_id":r["observation_id"],"card_id":r["card_id"],"observation_type":r["observation_type"],"value":r["value"],"observed_at":r["observed_at"],"available_at":r["available_at"],"event_time":events.get(r.get("event_id"),{}).get("release_time"),"platform":r["platform"]} for r in rows]
 def scheduler_state(campaign,now,*,success,failure_reason=None):
  cadence=campaign.get("desired_cadence_minutes",60);cadence=min(cadence.values()) if isinstance(cadence,dict) else cadence;state=dict(campaign)
  if success:state.update({"last_success":now,"consecutive_failures":0,"last_failure":None})
