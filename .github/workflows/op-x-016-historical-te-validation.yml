@@ -4,69 +4,32 @@ on:
   push:
     branches: [agent/op-x-012-reconcile-artifacts]
     paths:
-      - scripts/op_x_016_historical_te_validation.py
-      - tests/test_op_x_016_historical_te_validation.py
-      - data/research/op_x_016/frozen_te_scoring_spec.json
-      - scripts/run_op_x_051b.py
-      - src/operation_pancake/gm_cli_entry.py
-      - src/operation_pancake/production/role_intelligence.py
-      - tests/test_op_x_051_role_intelligence.py
-      - tests/test_op_x_051_cli.py
-      - data/research/op_x_051/**
-      - scripts/run_op_x_052.py
-      - tests/test_op_x_052.py
-      - data/research/op_x_052/**
-      - scripts/run_op_x_053.py
-      - tests/test_op_x_053.py
-      - data/research/op_x_053/**
       - src/operation_pancake/production/market_forecast.py
+      - src/operation_pancake/production/recorder.py
       - tests/test_market_forecast.py
+      - tests/test_op_x_038_recorder.py
       - .github/workflows/op-x-016-historical-te-validation.yml
 permissions:
   contents: write
 jobs:
-  validate:
-    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'OP-X-016')
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with: {ref: agent/op-x-012-reconcile-artifacts}
-      - uses: actions/setup-python@v5
-        with: {python-version: '3.11'}
-      - run: python -m pytest -q tests/test_op_x_016_historical_te_validation.py
-  op-x-053-closure:
-    if: contains(github.event.head_commit.message, 'OP-X-053-ACTIVATE')
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with: {ref: agent/op-x-012-reconcile-artifacts, fetch-depth: 0}
-      - uses: actions/setup-python@v5
-        with: {python-version: '3.11'}
-      - run: python -m pip install -e '.[dev]'
-      - run: python scripts/run_op_x_053.py
-      - run: python -m pytest -q tests/test_op_x_053.py
-      - run: python -m ruff check scripts/run_op_x_053.py tests/test_op_x_053.py
-      - run: git diff --check
   market-forecast-slice:
-    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'MARKET-FORECAST-ACTIVATE')
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'MARKET-FORECAST-ACTIVATE') || contains(github.event.head_commit.message, 'PS5-MARKET-COLLECTOR-ACTIVATE')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: agent/op-x-012-reconcile-artifacts
-          fetch-depth: 0
+        with: {ref: agent/op-x-012-reconcile-artifacts, fetch-depth: 0}
       - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          cache: pip
+        with: {python-version: '3.11', cache: pip}
       - name: Install project
         run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
-      - name: Focused market forecaster tests
+      - name: Focused forecaster tests
         run: python -m pytest -q tests/test_market_forecast.py
+      - name: PS5 recorder tests
+        run: python -m pytest -q tests/test_op_x_038_recorder.py
       - name: Market regressions
-        run: python -m pytest -q tests/test_market_production.py tests/test_op_x_029_market_campaign.py tests/test_op_x_036_monitor.py tests/test_op_x_038_recorder.py
+        run: python -m pytest -q tests/test_market_production.py tests/test_op_x_029_market_campaign.py tests/test_op_x_036_monitor.py
       - name: Scoped Ruff
-        run: python -m ruff check src/operation_pancake/production/market_forecast.py tests/test_market_forecast.py
+        run: python -m ruff check src/operation_pancake/production/market_forecast.py src/operation_pancake/production/recorder.py tests/test_market_forecast.py tests/test_op_x_038_recorder.py
       - name: Diff check
         run: git diff --check
