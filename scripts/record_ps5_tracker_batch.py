@@ -1,6 +1,7 @@
 """Record a reusable batch of authenticated PS5 Price Tracker observations."""
 
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -13,13 +14,14 @@ from operation_pancake.production.recorder import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-INPUT = ROOT / "data/research/execution_loop/ps5_tracker_batch_input.json"
-REPORT = ROOT / "data/research/execution_loop/ps5_tracker_batch_execution.json"
+DEFAULT_INPUT = ROOT / "data/research/execution_loop/ps5_tracker_batch_input.json"
 CAMPAIGN_ID = "pancake-default-monitored-universe-v1"
 
 
 def main():
-    payload = json.loads(INPUT.read_text())
+    input_path = ROOT / sys.argv[1] if len(sys.argv) > 1 else DEFAULT_INPUT
+    payload = json.loads(input_path.read_text())
+    report_path = input_path.with_name(input_path.stem.replace("_input", "_execution") + ".json")
     population = load_population(ROOT)
     campaigns = load_json(ROOT / CAMPAIGN_STATE, [])
     if isinstance(campaigns, dict):
@@ -61,14 +63,14 @@ def main():
         r.get("platform") == "PS5" and r.get("evidence_scope") == "REAL"
         for r in history
     )
-    raw = [
-        {
+    raw = []
+    for item, card in resolved:
+        row = {
             "card_id": card["card_id"],
             "external_card_id": item["external_card_id"],
             "observation_type": payload["observation_type"],
             "value": item["value"],
             "observed_at": item["source_last_updated"],
-            "available_at": payload["capture_timestamp"],
             "source": payload["source"],
             "source_url": payload["source_url"],
             "platform": payload["platform"],
@@ -76,8 +78,10 @@ def main():
             "provenance": payload["provenance"],
             "confidence": payload["confidence"],
         }
-        for item, card in resolved
-    ]
+        capture = item.get("capture_timestamp", payload.get("capture_timestamp"))
+        if capture:
+            row["available_at"] = capture
+        raw.append(row)
     now = datetime.now(timezone.utc).isoformat()
     result = run_snapshot(
         ROOT, raw, campaigns, {}, ingested_at=now, fixture=False, persist=True
@@ -105,14 +109,16 @@ def main():
             if result["accepted"] == len(raw) and not result["failures"]
             else "FAIL"
         ),
+        "input": str(input_path.relative_to(ROOT)),
         "before": before,
         "after": after,
         "accepted": result["accepted"],
         "failures": result["failures"],
-        "capture_timestamp": payload["capture_timestamp"],
+        "capture_timestamp": payload.get("capture_timestamp"),
+        "capture_timestamp_status": payload.get("capture_timestamp_status", "EXACT"),
         "identity_reconciliation": identities,
     }
-    save_json(REPORT, report)
+    save_json(report_path, report)
     print(json.dumps(report, indent=2))
     if report["status"] != "PASS":
         raise SystemExit(1)
