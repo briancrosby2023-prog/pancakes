@@ -241,6 +241,25 @@ def prioritize(results: list[dict[str, Any]]) -> list[dict[str, Any]]:
     )
 
 
+def _explore_evidence_needed(result: dict[str, Any]) -> list[str]:
+    """Request only evidence needed for the candidate's next supported transition."""
+    evidence = result["buy_window_evidence"]
+    if result["forecast_state"] == "FORECAST":
+        # Forecast-ready but not rankable (for example UNKNOWN exit probability):
+        # refresh the executable market side without pretending historical gaps exist.
+        return ["live listings"]
+
+    needed = []
+    if int(evidence["completed_sale_count"]) < 8:
+        needed.append("completed sales")
+    needed.append("live listings")
+    if evidence["latest_sale_volume"] is None:
+        needed.append("sales volume")
+    if int(evidence["completed_sale_count"]) == 0:
+        needed.append("price history")
+    return needed
+
+
 def search_queue(
     card_histories: list[tuple[dict[str, Any], list[dict[str, Any]]]],
     as_of: str,
@@ -262,13 +281,11 @@ def search_queue(
             evidence_needed = ["live listings"]
         else:
             queue_class = "EXPLORE"
-            # Information value rises as legitimate completed-sale history approaches readiness,
-            # and with staleness. Capital size is deliberately absent from this score.
             progress = min(len(sales), 8) / 8
             freshness_need = 1.0 if age_minutes is None else min(max(age_minutes, 0) / 1440, 1.0)
             priority = round(progress * 100 + freshness_need * 10, 6)
             reason = "another legitimate observation can improve forecast readiness or freshness"
-            evidence_needed = ["completed sales", "live listings", "sales volume", "price history"]
+            evidence_needed = _explore_evidence_needed(result)
         queue.append(
             {
                 "queue_class": queue_class,
