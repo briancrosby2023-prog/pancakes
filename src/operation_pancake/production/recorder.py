@@ -64,7 +64,7 @@ def append_records(path,rows,*,production):
 def completed_sale_statistics(rows):
  s=sorted((r for r in rows if r["observation_type"] in {"COMPLETED_SALE","MEDIAN_COMPLETED_SALE"}),key=lambda r:r["observed_at"]);v=[r["value"] for r in s]
  if not v:return {"count":0,"status":"NO DATA"}
- ts=[parse_timestamp(r["observed_at"]) for r in s];ints=[(b-a).total_seconds()/3600 for a,b in zip(ts,ts[1:])]
+ ts=[parse_timestamp(r["observed_at"]) for r in s];ints=[(b-a).total_seconds()/3600 for a,b in zip(ts,ts[1:],strict=False)]
  return {"count":len(v),"median":statistics.median(v),"mean":round(statistics.mean(v),6),"minimum":min(v),"maximum":max(v),"range":max(v)-min(v),"dispersion":0.0 if len(v)<2 else round(statistics.pstdev(v)/statistics.mean(v),6),"trend":None if len(v)<2 else round((v[-1]-v[0])/v[0],6),"mean_hours_between_sales":None if not ints else round(statistics.mean(ints),6),"sale_velocity_per_day":None if not ints or sum(ints)==0 else round((len(v)-1)*24/sum(ints),6)}
 def listing_statistics(rows):
  ls=[r for r in rows if SEMANTICS[r["observation_type"]]["class"]=="LISTING"];sup=[r["value"] for r in rows if r["observation_type"]=="SUPPLY_COUNT"];p=[r["value"] for r in ls]
@@ -76,10 +76,10 @@ def register_event(raw):
  if not raw.get("release_time"):raise ValueError("verified release_time is required")
  parse_timestamp(raw["release_time"])
  if not raw.get("source") or not raw.get("confidence"):raise ValueError("event source and confidence are required")
- return {**raw,"checkpoints":{l:checkpoint_time(raw["release_time"],l).isoformat() for l in WINDOW_LABELS},"unknown_fields":raw.get("unknown_fields",[])}
+ return {**raw,"checkpoints":{label:checkpoint_time(raw["release_time"],label).isoformat() for label in WINDOW_LABELS},"unknown_fields":raw.get("unknown_fields",[])}
 def event_checkpoint_coverage(event,rows):
  if not event:return None
- obs={r.get("checkpoint") for r in rows if r.get("checkpoint")};return {"observed":[l for l in event["checkpoints"] if l in obs],"missing":[l for l in event["checkpoints"] if l not in obs]}
+ obs={r.get("checkpoint") for r in rows if r.get("checkpoint")};return {"observed":[label for label in event["checkpoints"] if label in obs],"missing":[label for label in event["checkpoints"] if label not in obs]}
 def training_basket(card_rows,version):
  unsupported=[r["card_id"] for r in card_rows if r["overall"] not in CORE_TRAINING_QUICKSELL]
  if unsupported:raise ValueError(f"unsupported training quicksell tiers: {unsupported}")
