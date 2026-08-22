@@ -130,10 +130,20 @@ def test_event_deduplication_reuses_existing_watcher():
     assert second == []
 
 
-def test_prioritization_excludes_unsupported_values():
-    good = forecast_watch(CARD, history(90000), AS_OF)
-    bad = forecast_watch({**CARD, "card_id": "card:y"}, [listing(90000)], AS_OF)
-    assert prioritize([bad, good]) == [good]
+def test_prioritization_excludes_unknown_exit_probability():
+    result = forecast_watch(CARD, history(90000), AS_OF)
+    assert result["forecast_state"] == "FORECAST"
+    assert result["exit_probability"] is None
+    assert result["priority_score"] is None
+    assert prioritize([result]) == []
+
+
+def test_prioritization_accepts_supported_exit_probability():
+    supported = forecast_watch(CARD, history(90000), "2026-08-08T23:00:00-07:00")
+    assert supported["forecast_state"] == "FORECAST"
+    assert supported["exit_probability"] is not None
+    assert supported["priority_score"] is not None
+    assert prioritize([supported]) == [supported]
 
 
 def test_scientific_firewall_no_sales_means_no_buy():
@@ -142,13 +152,22 @@ def test_scientific_firewall_no_sales_means_no_buy():
     assert result["buy_ceiling"] is None
 
 
-def test_search_queue_exploit_and_explore_are_deterministic():
+def test_search_queue_unknown_probability_stays_explore():
     sparse = {**CARD, "card_id": "card:y", "player_name": "Sparse"}
     inputs = [(sparse, [listing(30000, "card:y")]), (CARD, history(90000))]
     first = search_queue(inputs, AS_OF)
     second = search_queue(list(reversed(inputs)), AS_OF)
     assert first == second
-    assert [item["queue_class"] for item in first] == ["EXPLOIT", "EXPLORE"]
+    assert all(item["queue_class"] == "EXPLORE" for item in first)
+    ready = next(item for item in first if item["exact_version"]["card_id"] == "card:x")
+    assert ready["forecast_state"] == "FORECAST"
+    assert ready["exit_probability"] is None
+
+
+def test_search_queue_supported_probability_can_exploit():
+    queue = search_queue([(CARD, history(90000))], "2026-08-08T23:00:00-07:00")
+    assert queue[0]["queue_class"] == "EXPLOIT"
+    assert queue[0]["exit_probability"] is not None
 
 
 def test_queue_profit_objective_is_capital_neutral():
@@ -176,7 +195,7 @@ def test_explore_never_fabricates_economics_and_values_more_evidence():
     assert near_item["buy_ceiling"] is None
 
 
-def test_opera_contract_is_read_only_and_requests_evidence():
+def test_opera_contract_is_read_only_and_requests_only_current_gap():
     queue = search_queue([(CARD, history())], AS_OF)
     target = next_opera_inspection(queue)
     assert target["collector_mode"] == "READ ONLY"
