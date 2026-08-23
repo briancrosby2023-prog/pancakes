@@ -18,8 +18,14 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m pip install -e '.[dev]'
-      - name: Execute validated production recorder batch
-        run: python scripts/record_ps5_tracker_batch.py data/research/execution_loop/ps5_tracker_sample2_input.json
+      - name: Execute Sutton live floor
+        run: python scripts/record_ps5_tracker_batch.py data/research/execution_loop/sutton_live_floor_input.json
+      - name: Execute Sutton live listings
+        run: python scripts/record_ps5_tracker_batch.py data/research/execution_loop/sutton_live_listings_input.json
+      - name: Execute Sutton completed sales
+        run: python scripts/record_ps5_tracker_batch.py data/research/execution_loop/sutton_completed_sales_input.json
+      - name: Execute Sutton displayed market price
+        run: python scripts/record_ps5_tracker_batch.py data/research/execution_loop/sutton_display_price_input.json
       - name: Verify recorder tests
         run: python -m pytest -q tests/test_op_x_038_recorder.py
       - name: Ruff batch wrapper
@@ -29,8 +35,8 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/production/market/longitudinal_observations.json data/production/market/campaigns.json data/research/execution_loop/ps5_tracker_sample2_execution.json
+          git add data/production/market/longitudinal_observations.json data/production/market/campaigns.json data/research/execution_loop/sutton_*_execution.json
           if ! git diff --cached --quiet; then
-            git commit -m 'Persist PS5 tracker sample 2'
+            git commit -m 'Persist Sutton rendered transaction evidence'
             git push origin HEAD:agent/op-x-012-reconcile-artifacts
           fi
