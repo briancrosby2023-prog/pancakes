@@ -16,7 +16,7 @@ from operation_pancake.acquisition.cfb_fan_bulk import (
     rating_conflicts,
     ratings_from_record,
 )
-from scripts.run_cfb27_population_v3 import parse_listing
+from run_cfb27_population_v3 import parse_listing
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE = ROOT / "data/external/cfb_fan_population_state.json"
@@ -120,7 +120,6 @@ def main() -> None:
         listing = current[external_id]
         identity = identity_conflicts(listing, record)
         ratings = rating_conflicts(listing, ratings_from_record(record))
-        # Listing position aliases are legacy; compare all other identity fields strictly.
         identity.pop("position", None)
         if identity or ratings:
             rejected[external_id] = json.dumps({"identity": identity, "ratings": ratings}, sort_keys=True)
