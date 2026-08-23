@@ -1,0 +1,77 @@
+name: CFB27 Canonical Delta Refresh
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/op-x-012-reconcile-artifacts
+    paths:
+      - scripts/refresh_cfb27_canonical_delta.py
+      - .github/workflows/cfb27-canonical-delta-refresh.yml
+
+concurrency:
+  group: cfb27-canonical-delta-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/op-x-012-reconcile-artifacts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install project
+        run: python -m pip install -e '.[dev]'
+      - name: Enumerate current universe and acquire exact delta
+        run: python scripts/refresh_cfb27_canonical_delta.py
+      - name: Run unchanged production scorer
+        run: python scripts/generate_op_x_021_production.py
+      - name: Run focused tests
+        run: python -m pytest tests/test_cfb_fan_bulk.py tests/test_op_x_021_production.py -q
+      - name: Scoped Ruff
+        run: python -m ruff check scripts/refresh_cfb27_canonical_delta.py src/operation_pancake/acquisition/cfb_fan_bulk.py scripts/generate_op_x_021_production.py
+      - name: Determinism check
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp data/research/cfb27_delta_refresh/report.json /tmp/report.json
+          cp data/production/op_x_021/production_scores.json /tmp/production_scores.json
+          python scripts/generate_op_x_021_production.py
+          cmp /tmp/production_scores.json data/production/op_x_021/production_scores.json
+          test -s /tmp/report.json
+      - name: Diff check
+        run: git diff --check
+      - name: Persist canonical refresh
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/external/cfb_fan_population_state.json \
+                  data/external/cfb_fan_current_discovery.json \
+                  data/external/cfb_fan_full_vector_checkpoint.json \
+                  data/external/raw/cfb_fan_current_listings \
+                  data/external/raw/cfb_fan_player_items \
+                  data/research/cfb27_delta_refresh \
+                  data/production/op_x_021 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh canonical CFB27 population delta'
+            git push origin HEAD:agent/op-x-012-reconcile-artifacts
+          fi
+      - name: Upload refresh report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cfb27-canonical-delta-refresh
+          path: |
+            data/research/cfb27_delta_refresh/report.json
+            data/external/cfb_fan_current_discovery.json
+          if-no-files-found: warn
