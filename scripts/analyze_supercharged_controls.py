@@ -29,11 +29,13 @@ def main() -> None:
             by_family[row["position_family"]].append(float(row["score"]))
     results = []
     for name, external in TARGETS.items():
+        external_values = {external, external.removeprefix("27-")}
         matches = [
             r
             for r in rows
             if r.get("player_name") == name
-            and str(r.get("source_card_id", r.get("external_card_id", ""))) in {external, external.removeprefix("27-")}
+            and str(r.get("source_card_id", r.get("external_card_id", "")))
+            in external_values
         ]
         if not matches:
             matches = [
@@ -44,11 +46,21 @@ def main() -> None:
                 and r.get("program") == "Supercharged"
             ]
         if len(matches) != 1:
-            results.append({"player_name": name, "external_card_id": external, "status": "UNRESOLVED", "matches": len(matches)})
+            results.append(
+                {
+                    "player_name": name,
+                    "external_card_id": external,
+                    "status": "UNRESOLVED",
+                    "matches": len(matches),
+                }
+            )
             continue
         row = matches[0]
         score = row.get("score")
         family = row.get("position_family")
+        position_percentile = (
+            None if score is None else percentile(float(score), by_family[family])
+        )
         results.append(
             {
                 "player_name": name,
@@ -63,7 +75,7 @@ def main() -> None:
                 "score_confidence": row.get("score_confidence"),
                 "attribute_coverage": row.get("attribute_coverage"),
                 "position_rank": row.get("position_rank"),
-                "position_percentile": None if score is None else percentile(float(score), by_family[family]),
+                "position_percentile": position_percentile,
                 "status": "SCORED" if score is not None else "UNSCORED",
             }
         )
