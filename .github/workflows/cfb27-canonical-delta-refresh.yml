@@ -75,3 +75,5 @@ jobs:
             data/research/cfb27_delta_refresh/report.json
             data/external/cfb_fan_current_discovery.json
           if-no-files-found: warn
+
+# No-op trigger for the 2026-08-23 canonical delta refresh; acquisition/scoring logic unchanged.
