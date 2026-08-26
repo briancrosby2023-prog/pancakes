@@ -15,5 +15,5 @@ def test_op_x_026_product_acceptance_runner() -> None:
     completed = _run("python", "scripts/op_x_026_product_acceptance.py")
     assert completed.returncode == 0, completed.stdout + "\n" + completed.stderr
     payload = json.loads((ROOT / "data/research/op_x_026/acceptance_results.json").read_text())
-    assert payload["all_required_successes"] is True
-    assert payload["bad_input_safe"] is True
+    assert payload["acceptance_pass"] is True
+    assert all(payload["checks"].values())
