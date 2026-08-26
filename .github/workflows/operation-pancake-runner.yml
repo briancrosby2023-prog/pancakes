@@ -16,6 +16,101 @@ permissions:
   contents: write
 
 jobs:
+  op-x-026-ruff-cleanup:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/agent/op-x-012-reconcile-artifacts' && github.event.head_commit.message == 'OP-X-026G execute staged Ruff cleanup'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install project and development tools
+        run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
+      - name: Execute staged behavior-preserving Ruff cleanup
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p data/research/op_x_026
+          python -m ruff check . --output-format=json > /tmp/ruff-before.json || true
+          python -m ruff check . > data/research/op_x_026/ruff_cleanup_baseline.txt 2>&1 || true
+          python -m ruff format .
+          if git diff --name-only | grep -E '^data/' > /tmp/formatted-data-files.txt; then
+            echo 'Ruff formatter changed generated/scientific data output; refusing cleanup.' >&2
+            cat /tmp/formatted-data-files.txt >&2
+            exit 20
+          fi
+          # F401 is deliberately retained for manual review because imports can have import-time side effects.
+          python -m ruff check . --fix --ignore F401 > data/research/op_x_026/ruff_cleanup_autofix.txt 2>&1 || true
+          python -m ruff check . --output-format=json > /tmp/ruff-after.json || true
+          python -m ruff check . > data/research/op_x_026/ruff_cleanup_residual.txt 2>&1 || true
+          git status --short > data/research/op_x_026/ruff_cleanup_status.txt
+          git diff --stat > data/research/op_x_026/ruff_cleanup_diffstat.txt
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+
+          before = json.loads(Path('/tmp/ruff-before.json').read_text() or '[]')
+          after = json.loads(Path('/tmp/ruff-after.json').read_text() or '[]')
+          payload = {
+              'starting_ruff_count': len(before),
+              'residual_ruff_count': len(after),
+              'starting_rules': dict(sorted(Counter(x['code'] for x in before).items())),
+              'residual_rules': dict(sorted(Counter(x['code'] for x in after).items())),
+              'residual_files': dict(sorted(Counter(x['filename'] for x in after).items())),
+              'f401_autofix_withheld_for_side_effect_review': True,
+          }
+          Path('data/research/op_x_026/ruff_cleanup_pass.json').write_text(
+              json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          )
+          print(json.dumps(payload, indent=2, sort_keys=True))
+          PY
+      - name: Run focused production and science tests
+        run: python -m pytest -ra tests -k 'gm or roster or budget or market or role or knowledge or canonical or production or routing or router or confidence or unsupported or coefficient'
+      - name: Run full pytest
+        run: python -m pytest -ra
+      - name: Verify clean diff
+        run: git diff --check
+      - name: Run required scientific validation
+        run: python -m pytest -ra tests -k 'canonical or production or routing or router or confidence or unsupported or coefficient'
+      - name: Persist cleanup pass with safe remote advancement handling
+        shell: bash
+        env:
+          BRANCH: agent/op-x-012-reconcile-artifacts
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'OP-X-026 staged Ruff cleanup pass'
+          for attempt in 1 2 3; do
+            git fetch origin "$BRANCH"
+            remote_head="$(git rev-parse "origin/$BRANCH")"
+            parent_head="$(git rev-parse HEAD^)"
+            if [ "$remote_head" != "$parent_head" ]; then
+              git rebase "origin/$BRANCH"
+              python -m pytest -ra tests -k 'gm or roster or budget or market or role or knowledge or canonical or production or routing or router or confidence or unsupported or coefficient'
+              python -m pytest -ra
+              git diff --check HEAD^
+              python -m pytest -ra tests -k 'canonical or production or routing or router or confidence or unsupported or coefficient'
+            fi
+            if git push origin "HEAD:$BRANCH"; then exit 0; fi
+          done
+          exit 1
+      - name: Upload Ruff cleanup evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: op-x-026-ruff-cleanup
+          path: data/research/op_x_026/ruff_cleanup_*
+          if-no-files-found: warn
+
   op-x-026-product-acceptance:
     if: github.event_name == 'push' && github.ref == 'refs/heads/agent/op-x-012-reconcile-artifacts'
     runs-on: ubuntu-latest
