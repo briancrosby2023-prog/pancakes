@@ -1,8 +1,8 @@
 {
   "section": "OP-X-012E.14",
-  "run_id": 32336107719,
-  "run_number": 90,
-  "validated_head_sha": "def14c0fbb80040d9335169bedb17bc98e839615",
+  "run_id": 32964696132,
+  "run_number": 293,
+  "validated_head_sha": "a905e561294dcaa0ac1eff8a879d47ab9e7e8db6",
   "status": "INCOMPLETE",
   "first_unresolved_failure": "ruff",
   "gates": {
@@ -12,7 +12,7 @@
     "e14": "success",
     "evidence": "success",
     "refresh": "success",
-    "pytest": "failure",
+    "pytest": "success",
     "cli": "success",
     "artifacts": "success"
   },
