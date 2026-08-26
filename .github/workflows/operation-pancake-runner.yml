@@ -16,43 +16,8 @@ permissions:
   contents: write
 
 jobs:
-  e15-historical-validation:
-    if: github.event_name == 'pull_request' && github.head_ref == 'agent/op-x-012-reconcile-artifacts'
-    runs-on: ubuntu-latest
-    timeout-minutes: 90
-    steps:
-      - name: Check out E.15 branch
-        uses: actions/checkout@v4
-        with:
-          ref: agent/op-x-012-reconcile-artifacts
-      - name: Set up Python for E.15
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Install E.15 acquisition dependencies
-        run: python -m pip install requests beautifulsoup4
-      - name: Execute E.15 historical TE population validation
-        run: python scripts/e15_historical_te_population_validation.py --seasons 25 26 --pause 0.20
-      - name: Persist E.15 historical validation
-        if: always()
-        shell: bash
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/research/cfb27_e15/historical_validation 2>/dev/null || true
-          if ! git diff --cached --quiet; then
-            git commit -m 'Persist E15 CFB25/26 TE population validation'
-            git push origin HEAD:agent/op-x-012-reconcile-artifacts
-          fi
-      - name: Upload E.15 validation evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: e15-historical-te-validation
-          path: data/research/cfb27_e15/historical_validation
-          if-no-files-found: warn
-
-  validate:
+  op-x-026-product-acceptance:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/agent/op-x-012-reconcile-artifacts'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -63,243 +28,33 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Initialize diagnostics
-        if: always()
-        shell: bash
-        run: |
-          mkdir -p diagnostics
-          cat > diagnostics/e14-status.txt <<EOF
-          classification=UNKNOWN
-          phase=INITIALIZATION
-          command=not-started
-          exit_code=not-run
-          canonical_input_path=data/canonical/cfb27
-          input_record_count=unknown
-          formula_eligible_count=unknown
-          failed_component=none
-          pytest_result=not-reached
-          ruff_result=not-reached
-          EOF
       - name: Install project and development tools
         run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
-      - name: Repair legacy release-date parsing
-        shell: bash
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          helper = '''\n\ndef _parse_release_date(value: str) -> datetime:\n    \"\"\"Accept legacy M/D/Y and canonical ISO-8601 release timestamps.\"\"\"\n    try:\n        return datetime.strptime(value, \"%m/%d/%Y\")\n    except ValueError:\n        return datetime.fromisoformat(value.replace(\"Z\", \"+00:00\")).replace(tzinfo=None)\n'''
-
-          for path in [
-              Path('src/operation_pancake/research/cfb27_op_x_002.py'),
-              Path('src/operation_pancake/research/cfb27_op_x_003.py'),
-          ]:
-              text = path.read_text()
-              if 'def _parse_release_date' not in text:
-                  marker = '\n\ndef _mean(values)'
-                  if marker not in text:
-                      raise SystemExit(f'helper insertion marker not found in {path}')
-                  text = text.replace(marker, helper + marker, 1)
-              text = text.replace(
-                  'datetime.strptime(card["release_date"], "%m/%d/%Y")',
-                  '_parse_release_date(card["release_date"])',
-              )
-              text = text.replace(
-                  'datetime.strptime(selected[0]["release_date"], "%m/%d/%Y")',
-                  '_parse_release_date(selected[0]["release_date"])',
-              )
-              path.write_text(text)
-
-          phase3 = Path('src/operation_pancake/research/cfb27_phase3.py')
-          text = phase3.read_text()
-          if 'def _parse_release_date' not in text:
-              marker = '\n\ndef _corr('
-              if marker not in text:
-                  raise SystemExit('Phase 3 helper insertion marker not found')
-              text = text.replace(marker, helper + marker, 1)
-          legacy = 'datetime.strptime(row["release_date"], "%m/%d/%Y")'
-          text = text.replace(legacy, '_parse_release_date(row["release_date"])')
-          if legacy in text:
-              raise SystemExit('Legacy Phase 3 release-date parser remains')
-          phase3.write_text(text)
-
-          phase5 = Path('src/operation_pancake/research/cfb27_phase5.py')
-          text = phase5.read_text()
-          if 'def _parse_release_date' not in text:
-              marker = '\n\ndef load_inventories('
-              if marker not in text:
-                  raise SystemExit('Phase 5 helper insertion marker not found')
-              text = text.replace(marker, helper + marker, 1)
-          legacy = 'datetime.strptime(raw_date, "%m/%d/%Y")'
-          text = text.replace(legacy, '_parse_release_date(raw_date)')
-          if legacy in text:
-              raise SystemExit('Legacy Phase 5 release-date parser remains')
-          phase5.write_text(text)
-
-          phase6 = Path('src/operation_pancake/research/cfb27_phase6_10.py')
-          text = phase6.read_text()
-          if 'def _parse_release_date' not in text:
-              marker = '\n\ndef _json('
-              if marker not in text:
-                  raise SystemExit('Phase 6-10 helper insertion marker not found')
-              text = text.replace(marker, helper + marker, 1)
-          replacements = {
-              'datetime.strptime(card["release_date"], "%m/%d/%Y")': '_parse_release_date(card["release_date"])',
-              'datetime.strptime(row["release_date"], "%m/%d/%Y")': '_parse_release_date(row["release_date"])',
-          }
-          for legacy, replacement in replacements.items():
-              text = text.replace(legacy, replacement)
-              if legacy in text:
-                  raise SystemExit(f'Legacy Phase 6-10 parser remains: {legacy}')
-          phase6.write_text(text)
-          PY
-          if [[ "$GITHUB_EVENT_NAME" == "push" && "$GITHUB_REF" == refs/heads/agent/* ]]; then
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add \
-              src/operation_pancake/research/cfb27_op_x_002.py \
-              src/operation_pancake/research/cfb27_op_x_003.py \
-              src/operation_pancake/research/cfb27_phase3.py \
-              src/operation_pancake/research/cfb27_phase5.py \
-              src/operation_pancake/research/cfb27_phase6_10.py
-            if ! git diff --cached --quiet; then
-              git commit -m 'Accept canonical release timestamps across research phases'
-              git push
-            fi
-          fi
-      - name: Show runner state
-        run: |
-          python --version
-          git rev-parse HEAD
-          git status --short
-          python -m pip show operation-pancake pytest ruff
+      - name: Execute OP-X-026 product acceptance
+        run: python scripts/run_op_x_026_product_acceptance.py
+      - name: Run focused product tests
+        run: python -m pytest -ra tests -k 'gm or roster or budget or market or role or knowledge'
+      - name: Run full regression suite
+        run: python -m pytest -ra
       - name: Run Ruff
-        id: ruff
-        continue-on-error: true
+        run: python -m ruff check .
+      - name: Verify clean diff
+        run: git diff --check
+      - name: Persist OP-X-026 evidence
+        if: always()
         shell: bash
         run: |
-          set +e
-          python -m ruff check . 2>&1 | tee diagnostics/ruff.log
-          rc=${PIPESTATUS[0]}
-          sed -i "s/classification=UNKNOWN/classification=$([ $rc -eq 0 ] && echo UNKNOWN || echo RUFF_FAILURE)/; s/phase=INITIALIZATION/phase=RUFF/; s/command=not-started/command=python -m ruff check ./; s/exit_code=not-run/exit_code=$rc/; s/ruff_result=not-reached/ruff_result=$([ $rc -eq 0 ] && echo passed || echo failed)/" diagnostics/e14-status.txt
-          exit $rc
-      - name: Derive Alpha diagnostics
-        id: alpha
-        shell: bash
-        run: |
-          set +e
-          python scripts/generate_cfb27_alpha_readiness.py 2>&1 | tee diagnostics/alpha-readiness.log
-          rc=${PIPESTATUS[0]}
-          if [ $rc -eq 0 ]; then python scripts/inspect_cfb27_v3_checkpoint.py 2>&1 | tee diagnostics/alpha-checkpoint.log; rc=${PIPESTATUS[0]}; fi
-          if [ $rc -ne 0 ]; then sed -i "s/classification=.*/classification=INPUT_FAILURE/; s/failed_component=.*/failed_component=Alpha input/" diagnostics/e14-status.txt; fi
-          sed -i "s/phase=RUFF/phase=ALPHA_INPUT/; s#command=python -m ruff check .#command=generate alpha readiness and inspect checkpoint#; s/exit_code=.*/exit_code=$rc/" diagnostics/e14-status.txt
-          exit $rc
-      - name: Execute E.14 evidence matrix
-        id: e14
-        shell: bash
-        run: |
-          set +e
-          python scripts/run_cfb27_e14.py 2>&1 | tee diagnostics/e14-analysis.log
-          rc=${PIPESTATUS[0]}
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          p=Path('data/research/cfb27_e14/evidence_matrix.json')
-          if p.exists():
-              d=json.loads(p.read_text())
-              pop=d.get('population',{})
-              Path('diagnostics/e14-counts.txt').write_text(
-                  f"input_record_count={pop.get('input_records','unknown')}\n"
-                  f"formula_eligible_count={pop.get('eligible_records','unknown')}\n"
-              )
-          PY
-          if [ $rc -ne 0 ]; then sed -i "s/classification=.*/classification=ANALYSIS_FAILURE/; s/failed_component=.*/failed_component=E.14/" diagnostics/e14-status.txt; fi
-          sed -i "s/phase=ALPHA_INPUT/phase=E14_ANALYSIS/; s#command=generate alpha readiness and inspect checkpoint#command=python scripts/run_cfb27_e14.py#; s/exit_code=.*/exit_code=$rc/" diagnostics/e14-status.txt
-          exit $rc
-      - name: Persist canonical E.14 evidence
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/agent/')
-        shell: bash
-        run: |
-          if [ ! -s data/research/cfb27_e14/evidence_matrix.json ]; then
-            echo 'E.14 evidence matrix missing or empty' >&2
-            exit 1
-          fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/research/cfb27_e14/evidence_matrix.json
+          git add data/research/op_x_026 2>/dev/null || true
           if ! git diff --cached --quiet; then
-            git commit -m 'Persist canonical E.14 evidence matrix'
-            git push
+            git commit -m 'Persist OP-X-026 product acceptance evidence'
+            git push origin HEAD:agent/op-x-012-reconcile-artifacts
           fi
-      - name: Refresh deterministic research artifacts
-        shell: bash
-        run: |
-          python scripts/refresh_cfb27_inheritance_phase1.py
-          python scripts/generate_cfb27_op_c_001.py
-          python scripts/generate_cfb27_op_x_002.py
-          python scripts/generate_cfb27_op_x_003.py
-          python scripts/generate_cfb27_op_x_012.py
-          python scripts/generate_cfb27_phase2_analysis.py
-          python scripts/generate_cfb27_phase3_analysis.py
-          python scripts/generate_cfb27_phase5_analysis.py
-          python scripts/generate_cfb27_phase6_10_analysis.py
-          python scripts/generate_evidence_index.py
-          python scripts/generate_qb_model_comparison.py
-          if [[ "$GITHUB_EVENT_NAME" == "push" && "$GITHUB_REF" == refs/heads/agent/* ]]; then
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add data/research
-            if ! git diff --cached --quiet; then
-              git commit -m 'Refresh deterministic CFB27 research artifacts'
-              git push
-            fi
-          fi
-      - name: Publish research diagnostics
+      - name: Upload OP-X-026 evidence
         if: always()
-        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
-          name: cfb27-research-diagnostics
-          path: |
-            data/research/cfb27_alpha/readiness.json
-            data/research/cfb27_alpha/v3_checkpoint_summary.json
-            data/research/cfb27_e14/execution_discovery.json
-            data/research/cfb27_e14/evidence_matrix.json
+          name: op-x-026-product-acceptance
+          path: data/research/op_x_026
           if-no-files-found: warn
-      - name: Run test suite
-        id: pytest
-        shell: bash
-        run: |
-          set +e
-          python -m pytest -ra -vv 2>&1 | tee diagnostics/pytest.log
-          rc=${PIPESTATUS[0]}
-          if [ $rc -ne 0 ]; then sed -i "s/classification=.*/classification=TEST_FAILURE/; s/failed_component=.*/failed_component=pytest/" diagnostics/e14-status.txt; fi
-          sed -i "s/pytest_result=not-reached/pytest_result=$([ $rc -eq 0 ] && echo passed || echo failed)/" diagnostics/e14-status.txt
-          exit $rc
-      - name: Verify Operation Pancake CLI
-        run: operation-pancake --help
-      - name: Finalize diagnostic status
-        if: always()
-        shell: bash
-        run: |
-          if [ -f diagnostics/e14-counts.txt ]; then
-            while IFS= read -r line; do
-              key=${line%%=*}; value=${line#*=}
-              case "$key" in input_record_count|formula_eligible_count) sed -i "s/^$key=.*/$key=$value/" diagnostics/e14-status.txt;; esac
-            done < diagnostics/e14-counts.txt
-          fi
-          echo '## OP-X-012E.14 remote diagnostic' >> "$GITHUB_STEP_SUMMARY"
-          echo '```text' >> "$GITHUB_STEP_SUMMARY"
-          cat diagnostics/e14-status.txt >> "$GITHUB_STEP_SUMMARY"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
-          echo '### E.14 output tail' >> "$GITHUB_STEP_SUMMARY"
-          echo '```text' >> "$GITHUB_STEP_SUMMARY"
-          tail -n 80 diagnostics/e14-analysis.log 2>/dev/null >> "$GITHUB_STEP_SUMMARY" || true
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
-      - name: Publish self-diagnostics
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: e14-self-diagnostics
-          path: diagnostics/
-          if-no-files-found: error
