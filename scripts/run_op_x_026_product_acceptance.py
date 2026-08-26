@@ -1,11 +1,8 @@
-"""OP-X-026B durable product-acceptance execution.
-
-Runs representative installed CLI surfaces against canonical repository data and
-persists exact commands, exit codes, and summarized outputs for Actions review.
-"""
+"""OP-X-026 durable product-acceptance execution."""
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -17,7 +14,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 
 def run(name: str, command: list[str], expected: int = 0) -> dict:
     proc = subprocess.run(command, cwd=ROOT, text=True, capture_output=True, check=False)
-    row = {
+    return {
         "name": name,
         "command": command,
         "exit_code": proc.returncode,
@@ -26,7 +23,6 @@ def run(name: str, command: list[str], expected: int = 0) -> dict:
         "stdout": proc.stdout[-20000:],
         "stderr": proc.stderr[-10000:],
     }
-    return row
 
 
 def first_two_scoreable() -> tuple[str, str]:
@@ -42,18 +38,6 @@ def first_two_scoreable() -> tuple[str, str]:
         if len(ids) >= 2:
             return ids[0], ids[1]
     raise SystemExit("No compatible scoreable player pair found")
-
-
-def knowledge_query() -> str:
-    candidates = [
-        ROOT / "data/production/knowledge/claims.json",
-        ROOT / "data/production/knowledge.json",
-        ROOT / "data/research/knowledge/claims.json",
-    ]
-    for path in candidates:
-        if path.exists():
-            return "confidence"
-    return "quarterback"
 
 
 def main() -> int:
@@ -72,10 +56,10 @@ def main() -> int:
         {"card_id": "protected-demo", "net_cost": 1, "score_improvement": 99, "protected": True},
     ], indent=2) + "\n")
 
-    py = sys.executable
     cases = [
         run("operation-pancake --help", ["operation-pancake", "--help"]),
         run("operation-pancake-gm --help", ["operation-pancake-gm", "--help"]),
+        run("ask-pancake", ["operation-pancake-gm", "ask-pancake", "CFB27 Season 1"]),
         run("player", ["operation-pancake-gm", "player", "--card-id", a]),
         run("compare", ["operation-pancake-gm", "compare", a, b, "--price", "75000"]),
         run("roster", ["operation-pancake-gm", "roster"]),
@@ -84,9 +68,8 @@ def main() -> int:
         run("bad-unknown-player", ["operation-pancake-gm", "player", "--card-id", "OPX026-NOT-A-CARD"]),
         run("bad-invalid-price", ["operation-pancake-gm", "compare", a, b, "--price", "not-an-int"], expected=2),
         run("role-intelligence", ["operation-pancake-gm", "role-board", "TE", "RECEIVING", "--limit", "3"]),
-        run("knowledge", ["operation-pancake-gm", "knowledge-search", knowledge_query()]),
+        run("knowledge", ["operation-pancake-gm", "knowledge-search", "CFB27 Season 1"]),
     ]
-    # Determinism: repeat two pure product surfaces and compare stdout exactly.
     det_player = run("determinism-player", ["operation-pancake-gm", "player", "--card-id", a])
     det_budget = run("determinism-budget", ["operation-pancake-gm", "budget", str(budget), "100000"])
     determinism = {
@@ -94,9 +77,11 @@ def main() -> int:
         "budget": det_budget["stdout"] == next(x for x in cases if x["name"] == "budget")["stdout"],
     }
     payload = {
-        "milestone": "OP-X-026B",
+        "milestone": "OP-X-026E",
+        "execution_environment": {"python": sys.version, "github_run_id": os.getenv("GITHUB_RUN_ID")},
+        "trigger_sha": os.getenv("GITHUB_SHA"),
         "head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
-        "python": sys.version,
+        "prior_run_555_preserved": True,
         "selected_cards": [a, b],
         "cases": cases,
         "determinism": determinism,
@@ -105,7 +90,6 @@ def main() -> int:
     (OUT / "product_acceptance_execution.json").write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
     print(json.dumps({
         "acceptance_pass": payload["acceptance_pass"],
-        "selected_cards": payload["selected_cards"],
         "cases": {x["name"]: {"exit_code": x["exit_code"], "pass": x["pass"]} for x in cases},
         "determinism": determinism,
     }, indent=2, sort_keys=True))

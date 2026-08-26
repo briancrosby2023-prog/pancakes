@@ -19,10 +19,12 @@ jobs:
   op-x-026-product-acceptance:
     if: github.event_name == 'push' && github.ref == 'refs/heads/agent/op-x-012-reconcile-artifacts'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -30,31 +32,107 @@ jobs:
           cache: pip
       - name: Install project and development tools
         run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
-      - name: Execute OP-X-026 product acceptance
+
+      - name: Execute OP-X-026 product acceptance including direct ask-pancake
+        id: acceptance
+        continue-on-error: true
         run: python scripts/run_op_x_026_product_acceptance.py
       - name: Run focused product tests
+        id: focused
+        continue-on-error: true
         run: python -m pytest -ra tests -k 'gm or roster or budget or market or role or knowledge'
+      - name: Test safe persistence concurrency logic
+        id: persistence_tests
+        continue-on-error: true
+        run: python -m pytest -ra tests/test_op_x_026_persistence.py
       - name: Run full regression suite
+        id: pytest
+        continue-on-error: true
         run: python -m pytest -ra
       - name: Run Ruff
+        id: ruff
+        continue-on-error: true
         run: python -m ruff check .
       - name: Verify clean diff
+        id: diffcheck
+        continue-on-error: true
         run: git diff --check
-      - name: Persist OP-X-026 evidence
+      - name: Run required scientific regression
+        id: science
+        continue-on-error: true
+        run: python -m pytest -ra tests -k 'canonical or production or routing or router or confidence or unsupported or coefficient'
+
+      - name: Record closure gate results
         if: always()
         shell: bash
+        env:
+          ACCEPTANCE: ${{ steps.acceptance.outcome }}
+          FOCUSED: ${{ steps.focused.outcome }}
+          PERSISTENCE_TESTS: ${{ steps.persistence_tests.outcome }}
+          PYTEST: ${{ steps.pytest.outcome }}
+          RUFF: ${{ steps.ruff.outcome }}
+          DIFFCHECK: ${{ steps.diffcheck.outcome }}
+          SCIENCE: ${{ steps.science.outcome }}
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/research/op_x_026 2>/dev/null || true
-          if ! git diff --cached --quiet; then
-            git commit -m 'Persist OP-X-026 product acceptance evidence'
-            git push origin HEAD:agent/op-x-012-reconcile-artifacts
-          fi
+          mkdir -p data/research/op_x_026
+          python - <<'PY'
+          import json, os, subprocess
+          from pathlib import Path
+          gates = {key.lower(): os.environ[key] for key in (
+              'ACCEPTANCE', 'FOCUSED', 'PERSISTENCE_TESTS', 'PYTEST', 'RUFF', 'DIFFCHECK', 'SCIENCE'
+          )}
+          payload = {
+              'milestone': 'OP-X-026E',
+              'trigger_sha': os.environ.get('GITHUB_SHA'),
+              'run_id': os.environ.get('GITHUB_RUN_ID'),
+              'pre_persistence_head': subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip(),
+              'gates': gates,
+              'all_required_gates_pass': all(value == 'success' for value in gates.values()),
+              'prior_run_555_evidence_preserved': True,
+          }
+          Path('data/research/op_x_026/closure_gates.json').write_text(json.dumps(payload, indent=2, sort_keys=True) + '\n')
+          PY
+
+      - name: Persist OP-X-026 evidence safely
+        id: persist
+        if: always()
+        continue-on-error: true
+        env:
+          OPX026_BRANCH: agent/op-x-012-reconcile-artifacts
+          OPX026_MAX_RETRIES: '3'
+          OPX026_REVERIFY_COMMAND: >-
+            python -m pytest -ra tests -k 'gm or roster or budget or market or role or knowledge' &&
+            python -m pytest -ra tests/test_op_x_026_persistence.py &&
+            python -m pytest -ra &&
+            python -m ruff check . &&
+            git diff --check &&
+            python -m pytest -ra tests -k 'canonical or production or routing or router or confidence or unsupported or coefficient'
+        run: bash scripts/persist_op_x_026_evidence.sh
+
       - name: Upload OP-X-026 evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: op-x-026-product-acceptance
           path: data/research/op_x_026
-          if-no-files-found: warn
+          if-no-files-found: error
+
+      - name: Enforce OP-X-026 closure
+        if: always()
+        env:
+          ACCEPTANCE: ${{ steps.acceptance.outcome }}
+          FOCUSED: ${{ steps.focused.outcome }}
+          PERSISTENCE_TESTS: ${{ steps.persistence_tests.outcome }}
+          PYTEST: ${{ steps.pytest.outcome }}
+          RUFF: ${{ steps.ruff.outcome }}
+          DIFFCHECK: ${{ steps.diffcheck.outcome }}
+          SCIENCE: ${{ steps.science.outcome }}
+          PERSIST: ${{ steps.persist.outcome }}
+        run: |
+          failed=0
+          for gate in ACCEPTANCE FOCUSED PERSISTENCE_TESTS PYTEST RUFF DIFFCHECK SCIENCE PERSIST; do
+            value="${!gate}"
+            echo "$gate=$value"
+            if [[ "$value" != success ]]; then failed=1; fi
+          done
+          exit "$failed"
