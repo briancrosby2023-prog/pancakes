@@ -1,0 +1,326 @@
+{
+  "acceptance_pass": true,
+  "canonical_selection": {
+    "player_a": {
+      "archetype": "Raw Strength",
+      "card_id": "card:157d86d74e3e70c5a36b",
+      "extraction_status": "COMPLETE",
+      "native_overall": 88,
+      "native_ratings": {
+        "ACC": 67,
+        "AGI": 68,
+        "AWR": 90,
+        "COD": 60,
+        "IBL": 85,
+        "LBK": 84,
+        "PBF": 84,
+        "PBK": 86,
+        "PBP": 86,
+        "RBF": 82,
+        "RBK": 86,
+        "RBP": 87,
+        "SPD": 68,
+        "STR": 88,
+        "TGH": 88
+      },
+      "player_id": "player:896b8cbde265bfb114c4",
+      "player_name": "Coleton Price",
+      "position": "C",
+      "program": "Prime Prospects",
+      "release_date": "08/12/2026",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/14827-coleton-price/27-270014827/",
+        "raw_snapshot": "data/external/raw/cfb_fan/c799d09109f52f4b59da5e7ac1833085b6f928ee2772dd21b167d1ec136a9a16.bin"
+      },
+      "source_card_id": "27-270014827",
+      "team": null,
+      "upgradeability": "UNKNOWN"
+    },
+    "player_b": {
+      "archetype": "Raw Strength",
+      "card_id": "card:6ab0d8c7184fec894abd",
+      "extraction_status": "COMPLETE",
+      "native_overall": 87,
+      "native_ratings": {
+        "ACC": 71,
+        "AGI": 68,
+        "AWR": 83,
+        "COD": 68,
+        "IBL": 86,
+        "LBK": 82,
+        "PBF": 77,
+        "PBK": 80,
+        "PBP": 85,
+        "RBF": 85,
+        "RBK": 87,
+        "RBP": 88,
+        "SPD": 69,
+        "STR": 88,
+        "TGH": 95
+      },
+      "player_id": "player:d16704a4b520e110e92e",
+      "player_name": "Jake Guarnera",
+      "position": "C",
+      "program": "Supercharged",
+      "release_date": "08/07/2026",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/19722-jake-guarnera/27-280019722/",
+        "raw_snapshot": "data/external/raw/cfb_fan/64df61e0bbcd4bff05fcaf899a0bb3d3c8344c4371c7cbc54c7354eb883fc4ec.bin"
+      },
+      "source_card_id": "27-280019722",
+      "team": null,
+      "upgradeability": "UNKNOWN"
+    },
+    "position": "C"
+  },
+  "checks": {
+    "bad_input": true,
+    "budget": true,
+    "cli_help": true,
+    "compare": true,
+    "git_diff_check": true,
+    "gm_help": true,
+    "knowledge": true,
+    "player": true,
+    "price_value": true,
+    "role_intelligence": true,
+    "roster": true
+  },
+  "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
+  "results": [
+    {
+      "command": [
+        "operation-pancake",
+        "--help"
+      ],
+      "exit_code": 0,
+      "name": "cli_help",
+      "stderr": "",
+      "stdout": "usage: operation-pancake [-h] [--root ROOT]\n                         {search,sources,unresolved,source,card,ingest,reconcile,coverage,conflicts,incomplete,acquire,gm-run,roster-run,market-run}\n                         ...\n\npositional arguments:\n  {search,sources,unresolved,source,card,ingest,reconcile,coverage,conflicts,incomplete,acquire,gm-run,roster-run,market-run}\n\noptions:\n  -h, --help            show this help message and exit\n  --root ROOT\n"
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--help"
+      ],
+      "exit_code": 0,
+      "name": "gm_help",
+      "stderr": "",
+      "stdout": "usage: operation-pancake-gm [-h] [--root ROOT]\n                            {player,context,compare,price,market-observe,market-snapshot,explain,compare-explain,alternatives,attribute-upgrades,purchase-report,shopping-board,discover,value-alternatives,ovr-savings,moneyball-board,market-campaign,market-round,market-watch,market-board,arbitrage,purchase-frontier,campaigns,campaign-create,campaign-show,campaign-start,campaign-stop,market-import,market-status,event-register,event-status,training-basket,collection-campaign,reveals,reveal-import,whats-coming,knowledge-search,ask-pancake,research-queue,meta,meta-position,meta-qb,meta-playbooks,threshold-cards,evidence-import,meta-summary,budget,hit-list-add,hit-list-remove,hit-list-update,hit-list-show,top-targets,monitor-universe,monitor-run,alerts,flip-check,training-check,collection-evaluate,collection-watch,roster,price-check}\n                            ...\n\npositional arguments:\n  {player,context,compare,price,market-observe,market-snapshot,explain,compare-explain,alternatives,attribute-upgrades,purchase-report,shopping-board,discover,value-alternatives,ovr-savings,moneyball-board,market-campaign,market-round,market-watch,market-board,arbitrage,purchase-frontier,campaigns,campaign-create,campaign-show,campaign-start,campaign-stop,market-import,market-status,event-register,event-status,training-basket,collection-campaign,reveals,reveal-import,whats-coming,knowledge-search,ask-pancake,research-queue,meta,meta-position,meta-qb,meta-playbooks,threshold-cards,evidence-import,meta-summary,budget,hit-list-add,hit-list-remove,hit-list-update,hit-list-show,top-targets,monitor-universe,monitor-run,alerts,flip-check,training-check,collection-evaluate,collection-watch,roster,price-check}\n\noptions:\n  -h, --help            show this help message and exit\n  --root ROOT\n"
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--root",
+        "/home/runner/work/pancakes/pancakes",
+        "player",
+        "--card-id",
+        "card:157d86d74e3e70c5a36b"
+      ],
+      "exit_code": 0,
+      "name": "player",
+      "stderr": "",
+      "stdout": "{\n  \"card\": {\n    \"archetype\": \"Raw Strength\",\n    \"card_id\": \"card:157d86d74e3e70c5a36b\",\n    \"native_overall\": 88,\n    \"player_name\": \"Coleton Price\",\n    \"position\": \"C\",\n    \"program\": \"Prime Prospects\"\n  },\n  \"confidence\": {\n    \"attributes\": 1.0,\n    \"identity\": \"EXACT\",\n    \"market\": \"NO CURRENT PRICE\",\n    \"model\": \"HIGH\",\n    \"moneyball\": \"UNAVAILABLE\",\n    \"ranking\": \"AVAILABLE\"\n  },\n  \"evaluation\": {\n    \"archetype\": \"Raw Strength\",\n    \"archetype_rank\": 1,\n    \"attribute_coverage\": 1.0,\n    \"card_id\": \"card:157d86d74e3e70c5a36b\",\n    \"model_evidence_paths\": [\n      \"data/research/center_exact_validation/madden_center_frozen_model.json\",\n      \"data/research/op_x_017/coverage_matrix.json\"\n    ],\n    \"model_limitations\": [\n      \"center ranking only; exact displayed overall is out of scope\"\n    ],\n    \"native_overall\": 88,\n    \"pancake_model_id\": \"C-M19-RANK-001\",\n    \"pancake_model_version\": \"v1.0\",\n    \"player_id\": \"player:896b8cbde265bfb114c4\",\n    \"player_name\": \"Coleton Price\",\n    \"position\": \"C\",\n    \"position_family\": \"C\",\n    \"position_rank\": 1,\n    \"program\": \"Prime Prospects\",\n    \"routing\": {\n      \"basis\": \"position-shared center ranking model\",\n      \"confidence\": \"EXACT_POSITION\",\n      \"family\": \"C\",\n      \"model_id\": \"C-M19-RANK-001\",\n      \"profile\": \"Center\",\n      \"status\": \"ROUTED\",\n      \"version\": \"v1.0\"\n    },\n    \"score\": 85.722222,\n    \"score_confidence\": \"HIGH\",\n    \"score_status\": \"SCORED_COMPLETE\",\n    \"source\": {\n      \"card\": \"CFB_FAN\",\n      \"ratings\": \"https://cfb.fan/players/14827-coleton-price/27-270014827/\",\n      \"raw_snapshot\": \"data/external/raw/cfb_fan/c799d09109f52f4b59da5e7ac1833085b6f928ee2772dd21b167d1ec136a9a16.bin\"\n    }\n  },\n  \"limitations\": [\n    \"center ranking only; exact displayed overall is out of scope\"\n  ],\n  \"status\": \"SCORED_COMPLETE\"\n}\n"
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--root",
+        "/home/runner/work/pancakes/pancakes",
+        "compare",
+        "card:157d86d74e3e70c5a36b",
+        "card:6ab0d8c7184fec894abd"
+      ],
+      "exit_code": 0,
+      "name": "compare",
+      "stderr": "",
+      "stdout": "{\n  \"comparison\": {\n    \"attribute_deltas\": {\n      \"ACC\": 4,\n      \"AWR\": -7,\n      \"COD\": 8,\n      \"IBL\": 1,\n      \"LBK\": -2,\n      \"PBF\": -7,\n      \"PBK\": -6,\n      \"PBP\": -1,\n      \"RBF\": 3,\n      \"RBK\": 1,\n      \"RBP\": 1,\n      \"SPD\": 1,\n      \"TGH\": 7\n    },\n    \"candidate\": {\n      \"archetype\": \"Raw Strength\",\n      \"attribute_coverage\": 1.0,\n      \"card_id\": \"card:6ab0d8c7184fec894abd\",\n      \"model_evidence_paths\": [\n        \"data/research/center_exact_validation/madden_center_frozen_model.json\",\n        \"data/research/op_x_017/coverage_matrix.json\"\n      ],\n      \"model_limitations\": [\n        \"center ranking only; exact displayed overall is out of scope\"\n      ],\n      \"native_overall\": 87,\n      \"pancake_model_id\": \"C-M19-RANK-001\",\n      \"pancake_model_version\": \"v1.0\",\n      \"player_id\": \"player:d16704a4b520e110e92e\",\n      \"player_name\": \"Jake Guarnera\",\n      \"position\": \"C\",\n      \"position_family\": \"C\",\n      \"program\": \"Supercharged\",\n      \"routing\": {\n        \"basis\": \"position-shared center ranking model\",\n        \"confidence\": \"EXACT_POSITION\",\n        \"family\": \"C\",\n        \"model_id\": \"C-M19-RANK-001\",\n        \"profile\": \"Center\",\n        \"status\": \"ROUTED\",\n        \"version\": \"v1.0\"\n      },\n      \"score\": 84.296296,\n      \"score_confidence\": \"HIGH\",\n      \"score_status\": \"SCORED_COMPLETE\",\n      \"source\": {\n        \"card\": \"CFB_FAN\",\n        \"ratings\": \"https://cfb.fan/players/19722-jake-guarnera/27-280019722/\",\n        \"raw_snapshot\": \"data/external/raw/cfb_fan/64df61e0bbcd4bff05fcaf899a0bb3d3c8344c4371c7cbc54c7354eb883fc4ec.bin\"\n      }\n    },\n    \"candidate_price\": null,\n    \"classification\": \"DOWNGRADE\",\n    \"current\": {\n      \"archetype\": \"Raw Strength\",\n      \"attribute_coverage\": 1.0,\n      \"card_id\": \"card:157d86d74e3e70c5a36b\",\n      \"model_evidence_paths\": [\n        \"data/research/center_exact_validation/madden_center_frozen_model.json\",\n        \"data/research/op_x_017/coverage_matrix.json\"\n      ],\n      \"model_limitations\": [\n        \"center ranking only; exact displayed overall is out of scope\"\n      ],\n      \"native_overall\": 88,\n      \"pancake_model_id\": \"C-M19-RANK-001\",\n      \"pancake_model_version\": \"v1.0\",\n      \"player_id\": \"player:896b8cbde265bfb114c4\",\n      \"player_name\": \"Coleton Price\",\n      \"position\": \"C\",\n      \"position_family\": \"C\",\n      \"program\": \"Prime Prospects\",\n      \"routing\": {\n        \"basis\": \"position-shared center ranking model\",\n        \"confidence\": \"EXACT_POSITION\",\n        \"family\": \"C\",\n        \"model_id\": \"C-M19-RANK-001\",\n        \"profile\": \"Center\",\n        \"status\": \"ROUTED\",\n        \"version\": \"v1.0\"\n      },\n      \"score\": 85.722222,\n      \"score_confidence\": \"HIGH\",\n      \"score_status\": \"SCORED_COMPLETE\",\n      \"source\": {\n        \"card\": \"CFB_FAN\",\n        \"ratings\": \"https://cfb.fan/players/14827-coleton-price/27-270014827/\",\n        \"raw_snapshot\": \"data/external/raw/cfb_fan/c799d09109f52f4b59da5e7ac1833085b6f928ee2772dd21b167d1ec136a9a16.bin\"\n      }\n    },\n    \"score_delta\": -1.425926,\n    \"score_delta_percent\": -1.663426,\n    \"value\": null\n  },\n  \"confidence\": {\n    \"attributes\": 1.0,\n    \"identity\": \"EXACT\",\n    \"market\": \"OBSERVED\",\n    \"model\": \"HIGH\",\n    \"moneyball\": null,\n    \"ranking\": \"UNAVAILABLE\"\n  },\n  \"football_verdict\": \"DOWNGRADE\",\n  \"market\": {\n    \"status\": \"PRICE CHECK REQUIRED\"\n  },\n  \"market_verdict\": \"PRICE CHECK REQUIRED\",\n  \"status\": \"OK\"\n}\n"
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--root",
+        "/home/runner/work/pancakes/pancakes",
+        "compare",
+        "card:157d86d74e3e70c5a36b",
+        "card:6ab0d8c7184fec894abd"
+      ],
+      "exit_code": 0,
+      "name": "compare_repeat",
+      "stderr": "",
+      "stdout": "{\n  \"comparison\": {\n    \"attribute_deltas\": {\n      \"ACC\": 4,\n      \"AWR\": -7,\n      \"COD\": 8,\n      \"IBL\": 1,\n      \"LBK\": -2,\n      \"PBF\": -7,\n      \"PBK\": -6,\n      \"PBP\": -1,\n      \"RBF\": 3,\n      \"RBK\": 1,\n      \"RBP\": 1,\n      \"SPD\": 1,\n      \"TGH\": 7\n    },\n    \"candidate\": {\n      \"archetype\": \"Raw Strength\",\n      \"attribute_coverage\": 1.0,\n      \"card_id\": \"card:6ab0d8c7184fec894abd\",\n      \"model_evidence_paths\": [\n        \"data/research/center_exact_validation/madden_center_frozen_model.json\",\n        \"data/research/op_x_017/coverage_matrix.json\"\n      ],\n      \"model_limitations\": [\n        \"center ranking only; exact displayed overall is out of scope\"\n      ],\n      \"native_overall\": 87,\n      \"pancake_model_id\": \"C-M19-RANK-001\",\n      \"pancake_model_version\": \"v1.0\",\n      \"player_id\": \"player:d16704a4b520e110e92e\",\n      \"player_name\": \"Jake Guarnera\",\n      \"position\": \"C\",\n      \"position_family\": \"C\",\n      \"program\": \"Supercharged\",\n      \"routing\": {\n        \"basis\": \"position-shared center ranking model\",\n        \"confidence\": \"EXACT_POSITION\",\n        \"family\": \"C\",\n        \"model_id\": \"C-M19-RANK-001\",\n        \"profile\": \"Center\",\n        \"status\": \"ROUTED\",\n        \"version\": \"v1.0\"\n      },\n      \"score\": 84.296296,\n      \"score_confidence\": \"HIGH\",\n      \"score_status\": \"SCORED_COMPLETE\",\n      \"source\": {\n        \"card\": \"CFB_FAN\",\n        \"ratings\": \"https://cfb.fan/players/19722-jake-guarnera/27-280019722/\",\n        \"raw_snapshot\": \"data/external/raw/cfb_fan/64df61e0bbcd4bff05fcaf899a0bb3d3c8344c4371c7cbc54c7354eb883fc4ec.bin\"\n      }\n    },\n    \"candidate_price\": null,\n    \"classification\": \"DOWNGRADE\",\n    \"current\": {\n      \"archetype\": \"Raw Strength\",\n      \"attribute_coverage\": 1.0,\n      \"card_id\": \"card:157d86d74e3e70c5a36b\",\n      \"model_evidence_paths\": [\n        \"data/research/center_exact_validation/madden_center_frozen_model.json\",\n        \"data/research/op_x_017/coverage_matrix.json\"\n      ],\n      \"model_limitations\": [\n        \"center ranking only; exact displayed overall is out of scope\"\n      ],\n      \"native_overall\": 88,\n      \"pancake_model_id\": \"C-M19-RANK-001\",\n      \"pancake_model_version\": \"v1.0\",\n      \"player_id\": \"player:896b8cbde265bfb114c4\",\n      \"player_name\": \"Coleton Price\",\n      \"position\": \"C\",\n      \"position_family\": \"C\",\n      \"program\": \"Prime Prospects\",\n      \"routing\": {\n        \"basis\": \"position-shared center ranking model\",\n        \"confidence\": \"EXACT_POSITION\",\n        \"family\": \"C\",\n        \"model_id\": \"C-M19-RANK-001\",\n        \"profile\": \"Center\",\n        \"status\": \"ROUTED\",\n        \"version\": \"v1.0\"\n      },\n      \"score\": 85.722222,\n      \"score_confidence\": \"HIGH\",\n      \"score_status\": \"SCORED_COMPLETE\",\n      \"source\": {\n        \"card\": \"CFB_FAN\",\n        \"ratings\": \"https://cfb.fan/players/14827-coleton-price/27-270014827/\",\n        \"raw_snapshot\": \"data/external/raw/cfb_fan/c799d09109f52f4b59da5e7ac1833085b6f928ee2772dd21b167d1ec136a9a16.bin\"\n      }\n    },\n    \"score_delta\": -1.425926,\n    \"score_delta_percent\": -1.663426,\n    \"value\": null\n  },\n  \"confidence\": {\n    \"attributes\": 1.0,\n    \"identity\": \"EXACT\",\n    \"market\": \"OBSERVED\",\n    \"model\": \"HIGH\",\n    \"moneyball\": null,\n    \"ranking\": \"UNAVAILABLE\"\n  },\n  \"football_verdict\": \"DOWNGRADE\",\n  \"market\": {\n    \"status\": \"PRICE CHECK REQUIRED\"\n  },\n  \"market_verdict\": \"PRICE CHECK REQUIRED\",\n  \"status\": \"OK\"\n}\n"
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--root",
+        "/home/runner/work/pancakes/pancakes",
+        "roster"
+      ],
+      "exit_code": 0,
+      "name": "roster",
+      "stderr": "",
+      "stdout": "{\n  \"entries\": 24,\n  \"failures\": 0,\n  \"identity_counts\": {\n    \"AMBIGUOUS\": 1,\n    \"EXACT\": 1,\n    \"HIGH CONFIDENCE\": 17,\n    \"UNRESOLVED\": 5\n  },\n  \"resolved\": 18,\n  \"score_counts\": {\n    \"INSUFFICIENT_ATTRIBUTES\": 1,\n    \"SCORED_COMPLETE\": 6,\n    \"SCORED_PARTIAL\": 11,\n    \"UNRESOLVED\": 6\n  },\n  \"scored\": 17,\n  \"snapshot\": \"USER_SCREENSHOT_OP_X_008 normalized by OP-X-010\"\n}\n"
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--root",
+        "/home/runner/work/pancakes/pancakes",
+        "price",
+        "/home/runner/work/pancakes/pancakes/data/research/op_x_026/manual_prices.json",
+        "--observed-at",
+        "2026-08-26T03:25:00-07:00"
+      ],
+      "exit_code": 0,
+      "name": "price",
+      "stderr": "",
+      "stdout": "{\n  \"accepted\": [\n    {\n      \"card_id\": \"card:157d86d74e3e70c5a36b\",\n      \"confidence\": \"OBSERVED\",\n      \"currency\": \"CUT_COINS\",\n      \"external_card_id\": null,\n      \"high\": null,\n      \"liquidity_proxy\": null,\n      \"low\": null,\n      \"median\": null,\n      \"observation_id\": \"market:72ae85effd06af21d078\",\n      \"observation_type\": \"USER_SUPPLIED_OBSERVATION\",\n      \"observed_at\": \"2026-08-26T03:25:00-07:00\",\n      \"observed_price\": 25000,\n      \"overall\": null,\n      \"platform\": \"UNSPECIFIED\",\n      \"player_name\": null,\n      \"position\": null,\n      \"program\": null,\n      \"provenance\": \"manual GM entry\",\n      \"sample_count\": 1,\n      \"source\": \"USER_SUPPLIED\",\n      \"source_url\": null\n    },\n    {\n      \"card_id\": \"card:6ab0d8c7184fec894abd\",\n      \"confidence\": \"OBSERVED\",\n      \"currency\": \"CUT_COINS\",\n      \"external_card_id\": null,\n      \"high\": null,\n      \"liquidity_proxy\": null,\n      \"low\": null,\n      \"median\": null,\n      \"observation_id\": \"market:ee19ff4365213f818544\",\n      \"observation_type\": \"USER_SUPPLIED_OBSERVATION\",\n      \"observed_at\": \"2026-08-26T03:25:00-07:00\",\n      \"observed_price\": 40000,\n      \"overall\": null,\n      \"platform\": \"UNSPECIFIED\",\n      \"player_name\": null,\n      \"position\": null,\n      \"program\": null,\n      \"provenance\": \"manual GM entry\",\n      \"sample_count\": 1,\n      \"source\": \"USER_SUPPLIED\",\n      \"source_url\": null\n    }\n  ],\n  \"rejected\": []\n}\n"
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--root",
+        "/home/runner/work/pancakes/pancakes",
+        "compare",
+        "card:157d86d74e3e70c5a36b",
+        "card:6ab0d8c7184fec894abd",
+        "--price",
+        "40000",
+        "--resale",
+        "15000"
+      ],
+      "exit_code": 0,
+      "name": "compare_priced",
+      "stderr": "",
+      "stdout": "{\n  \"comparison\": {\n    \"attribute_deltas\": {\n      \"ACC\": 4,\n      \"AWR\": -7,\n      \"COD\": 8,\n      \"IBL\": 1,\n      \"LBK\": -2,\n      \"PBF\": -7,\n      \"PBK\": -6,\n      \"PBP\": -1,\n      \"RBF\": 3,\n      \"RBK\": 1,\n      \"RBP\": 1,\n      \"SPD\": 1,\n      \"TGH\": 7\n    },\n    \"candidate\": {\n      \"archetype\": \"Raw Strength\",\n      \"attribute_coverage\": 1.0,\n      \"card_id\": \"card:6ab0d8c7184fec894abd\",\n      \"model_evidence_paths\": [\n        \"data/research/center_exact_validation/madden_center_frozen_model.json\",\n        \"data/research/op_x_017/coverage_matrix.json\"\n      ],\n      \"model_limitations\": [\n        \"center ranking only; exact displayed overall is out of scope\"\n      ],\n      \"native_overall\": 87,\n      \"pancake_model_id\": \"C-M19-RANK-001\",\n      \"pancake_model_version\": \"v1.0\",\n      \"player_id\": \"player:d16704a4b520e110e92e\",\n      \"player_name\": \"Jake Guarnera\",\n      \"position\": \"C\",\n      \"position_family\": \"C\",\n      \"program\": \"Supercharged\",\n      \"routing\": {\n        \"basis\": \"position-shared center ranking model\",\n        \"confidence\": \"EXACT_POSITION\",\n        \"family\": \"C\",\n        \"model_id\": \"C-M19-RANK-001\",\n        \"profile\": \"Center\",\n        \"status\": \"ROUTED\",\n        \"version\": \"v1.0\"\n      },\n      \"score\": 84.296296,\n      \"score_confidence\": \"HIGH\",\n      \"score_status\": \"SCORED_COMPLETE\",\n      \"source\": {\n        \"card\": \"CFB_FAN\",\n        \"ratings\": \"https://cfb.fan/players/19722-jake-guarnera/27-280019722/\",\n        \"raw_snapshot\": \"data/external/raw/cfb_fan/64df61e0bbcd4bff05fcaf899a0bb3d3c8344c4371c7cbc54c7354eb883fc4ec.bin\"\n      }\n    },\n    \"candidate_price\": 40000,\n    \"classification\": \"DOWNGRADE\",\n    \"current\": {\n      \"archetype\": \"Raw Strength\",\n      \"attribute_coverage\": 1.0,\n      \"card_id\": \"card:157d86d74e3e70c5a36b\",\n      \"model_evidence_paths\": [\n        \"data/research/center_exact_validation/madden_center_frozen_model.json\",\n        \"data/research/op_x_017/coverage_matrix.json\"\n      ],\n      \"model_limitations\": [\n        \"center ranking only; exact displayed overall is out of scope\"\n      ],\n      \"native_overall\": 88,\n      \"pancake_model_id\": \"C-M19-RANK-001\",\n      \"pancake_model_version\": \"v1.0\",\n      \"player_id\": \"player:896b8cbde265bfb114c4\",\n      \"player_name\": \"Coleton Price\",\n      \"position\": \"C\",\n      \"position_family\": \"C\",\n      \"program\": \"Prime Prospects\",\n      \"routing\": {\n        \"basis\": \"position-shared center ranking model\",\n        \"confidence\": \"EXACT_POSITION\",\n        \"family\": \"C\",\n        \"model_id\": \"C-M19-RANK-001\",\n        \"profile\": \"Center\",\n        \"status\": \"ROUTED\",\n        \"version\": \"v1.0\"\n      },\n      \"score\": 85.722222,\n      \"score_confidence\": \"HIGH\",\n      \"score_status\": \"SCORED_COMPLETE\",\n      \"source\": {\n        \"card\": \"CFB_FAN\",\n        \"ratings\": \"https://cfb.fan/players/14827-coleton-price/27-270014827/\",\n        \"raw_snapshot\": \"data/external/raw/cfb_fan/c799d09109f52f4b59da5e7ac1833085b6f928ee2772dd21b167d1ec136a9a16.bin\"\n      }\n    },\n    \"score_delta\": -1.425926,\n    \"score_delta_percent\": -1.663426,\n    \"value\": {\n      \"price_source\": \"caller-supplied\",\n      \"score_gain_per_coin\": -3.564815e-05\n    }\n  },\n  \"confidence\": {\n    \"attributes\": 1.0,\n    \"identity\": \"EXACT\",\n    \"market\": \"LOW\",\n    \"model\": \"HIGH\",\n    \"moneyball\": \"INSUFFICIENT MARKET DATA\",\n    \"ranking\": \"UNAVAILABLE\"\n  },\n  \"football_verdict\": \"DOWNGRADE\",\n  \"market\": {\n    \"affordable\": null,\n    \"candidate_price\": 40000,\n    \"current_player_resale_value\": 15000,\n    \"improvement_per_1000_coins\": -0.05703704,\n    \"market_confidence\": \"LOW\",\n    \"net_upgrade_cost\": 25000,\n    \"position_rank_improvement\": -1,\n    \"price_semantics\": \"USER_SUPPLIED_OBSERVATION\",\n    \"rank_improvement_per_1000_coins\": -0.04,\n    \"risk_flags\": [\n      \"SINGLE OBSERVATION\",\n      \"INSUFFICIENT DATA\"\n    ],\n    \"score_improvement\": -1.425926,\n    \"score_improvement_percent\": -1.663426,\n    \"status\": \"PRICE CHECK REQUIRED\",\n    \"value_classification\": \"INSUFFICIENT MARKET DATA\"\n  },\n  \"market_verdict\": \"PRICE CHECK REQUIRED\",\n  \"status\": \"OK\"\n}\n"
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--root",
+        "/home/runner/work/pancakes/pancakes",
+        "budget",
+        "/home/runner/work/pancakes/pancakes/data/research/op_x_026/budget_candidates.json",
+        "60000"
+      ],
+      "exit_code": 0,
+      "name": "budget",
+      "stderr": "",
+      "stdout": "{\n  \"action\": \"BUDGET UPGRADE\",\n  \"budget\": 60000,\n  \"remaining\": 15000,\n  \"score_improvement\": 44.473995,\n  \"selected\": [\n    {\n      \"card_id\": \"card:157d86d74e3e70c5a36b\",\n      \"current_card_id\": \"card:89863f97e749b4f18a14\",\n      \"net_cost\": 20000,\n      \"position\": \"C\",\n      \"protected\": false,\n      \"score_improvement\": 16.148148\n    },\n    {\n      \"card_id\": \"card:7084891b08e603666bea\",\n      \"current_card_id\": \"card:e02a1823aff446a8a83a\",\n      \"net_cost\": 25000,\n      \"position\": \"CB\",\n      \"protected\": false,\n      \"score_improvement\": 28.325847\n    }\n  ],\n  \"spent\": 45000,\n  \"status\": \"BUDGET_EVALUATED\"\n}\n"
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--root",
+        "/home/runner/work/pancakes/pancakes",
+        "budget",
+        "/home/runner/work/pancakes/pancakes/data/research/op_x_026/budget_candidates.json",
+        "60000"
+      ],
+      "exit_code": 0,
+      "name": "budget_repeat",
+      "stderr": "",
+      "stdout": "{\n  \"action\": \"BUDGET UPGRADE\",\n  \"budget\": 60000,\n  \"remaining\": 15000,\n  \"score_improvement\": 44.473995,\n  \"selected\": [\n    {\n      \"card_id\": \"card:157d86d74e3e70c5a36b\",\n      \"current_card_id\": \"card:89863f97e749b4f18a14\",\n      \"net_cost\": 20000,\n      \"position\": \"C\",\n      \"protected\": false,\n      \"score_improvement\": 16.148148\n    },\n    {\n      \"card_id\": \"card:7084891b08e603666bea\",\n      \"current_card_id\": \"card:e02a1823aff446a8a83a\",\n      \"net_cost\": 25000,\n      \"position\": \"CB\",\n      \"protected\": false,\n      \"score_improvement\": 28.325847\n    }\n  ],\n  \"spent\": 45000,\n  \"status\": \"BUDGET_EVALUATED\"\n}\n"
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--root",
+        "/home/runner/work/pancakes/pancakes",
+        "role-board",
+        "TE",
+        "HYBRID",
+        "--limit",
+        "3"
+      ],
+      "exit_code": 0,
+      "name": "role_board",
+      "stderr": "",
+      "stdout": "{\n  \"profile\": {\n    \"functional_floors\": \"USE_EVIDENCE_REGISTRY; UNKNOWN WHEN ABSENT\",\n    \"modeled_attributes\": [\n      \"CTH\",\n      \"CIT\",\n      \"RBK\",\n      \"PBK\",\n      \"STR\"\n    ],\n    \"position_family\": \"TE\",\n    \"relative_importance\": \"UNKNOWN\",\n    \"role\": \"HYBRID\",\n    \"status\": \"CANDIDATE_SUPPORTED\",\n    \"unmodeled_contextual_variables\": [\n      \"behavior/animation\",\n      \"physical geometry\",\n      \"ability/AP relevance\",\n      \"scheme/assignment interaction\"\n    ]\n  },\n  \"rows\": [\n    {\n      \"base_pancake_score\": 84.834951,\n      \"card_id\": \"card:427557ff3f210a6ebce5\",\n      \"football_role_ranking_basis\": \"frozen score among complete role-attribute candidates\",\n      \"market_used\": false,\n      \"ovr\": 90,\n      \"player\": \"Elyiss Williams\",\n      \"position_percentile\": 99.800399,\n      \"position_rank\": 2,\n      \"role\": \"HYBRID\",\n      \"role_fit\": \"UNKNOWN\"\n    },\n    {\n      \"base_pancake_score\": 84.757282,\n      \"card_id\": \"card:5b5946e048b9eea90517\",\n      \"football_role_ranking_basis\": \"frozen score among complete role-attribute candidates\",\n      \"market_used\": false,\n      \"ovr\": 89,\n      \"player\": \"Trey'Dez Green\",\n      \"position_percentile\": 99.600798,\n      \"position_rank\": 3,\n      \"role\": \"HYBRID\",\n      \"role_fit\": \"UNKNOWN\"\n    },\n    {\n      \"base_pancake_score\": 83.737864,\n      \"card_id\": \"card:343a29fa5f39e7c265cf\",\n      \"football_role_ranking_basis\": \"frozen score among complete role-attribute candidates\",\n      \"market_used\": false,\n      \"ovr\": 89,\n      \"player\": \"Elyiss Williams\",\n      \"position_percentile\": 98.602794,\n      \"position_rank\": 8,\n      \"role\": \"HYBRID\",\n      \"role_fit\": \"UNKNOWN\"\n    }\n  ],\n  \"status\": \"SUPPORTED\",\n  \"warning\": \"Candidate board, not verified gameplay fit.\"\n}\n"
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--root",
+        "/home/runner/work/pancakes/pancakes",
+        "ask-pancake",
+        "OPX040-CLAIM-001"
+      ],
+      "exit_code": 0,
+      "name": "knowledge",
+      "stderr": "",
+      "stdout": "{\n  \"answer\": [\n    \"Legends\",\n    \"Cornerstones\",\n    \"Sunday Spotlight\"\n  ],\n  \"claim_ids\": [\n    \"OPX040-CLAIM-001\"\n  ],\n  \"confidence\": \"HIGH\",\n  \"sources\": [\n    \"https://www.ea.com/games/ea-sports-college-football/college-football-27/news/cfb27-season-1\"\n  ],\n  \"status\": \"VERIFIED\"\n}\n"
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--root",
+        "/home/runner/work/pancakes/pancakes",
+        "ask-pancake",
+        "__OP_X_026_NO_MATCH__"
+      ],
+      "exit_code": 0,
+      "name": "knowledge_unknown",
+      "stderr": "",
+      "stdout": "{\n  \"answer\": \"UNKNOWN\",\n  \"research_request_required\": true\n}\n"
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--root",
+        "/home/runner/work/pancakes/pancakes",
+        "player",
+        "--name",
+        "__OP_X_026_UNKNOWN_PLAYER__"
+      ],
+      "exit_code": 0,
+      "name": "bad_unknown_player",
+      "stderr": "",
+      "stdout": "{\n  \"matches\": [],\n  \"status\": \"UNRESOLVED IDENTITY\"\n}\n"
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--root",
+        "/home/runner/work/pancakes/pancakes",
+        "price",
+        "/home/runner/work/pancakes/pancakes/data/research/op_x_026/invalid_prices.json",
+        "--observed-at",
+        "2026-08-26T03:25:00-07:00"
+      ],
+      "exit_code": 0,
+      "name": "bad_invalid_prices",
+      "stderr": "",
+      "stdout": "{\n  \"accepted\": [],\n  \"rejected\": [\n    {\n      \"reason\": \"observed price must be a positive integer\",\n      \"row\": {\n        \"canonical_card_id\": \"card:157d86d74e3e70c5a36b\",\n        \"observed_price\": -1\n      },\n      \"row_index\": 0\n    },\n    {\n      \"reason\": \"price must be a positive whole number\",\n      \"row\": {\n        \"canonical_card_id\": \"card:6ab0d8c7184fec894abd\"\n      },\n      \"row_index\": 1\n    }\n  ]\n}\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "name": "git_diff_check",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "operation-pancake-gm",
+        "--root",
+        "/home/runner/work/pancakes/pancakes",
+        "player",
+        "--card-id",
+        "card:000cc37d4b1f81a797d6"
+      ],
+      "exit_code": 0,
+      "name": "partial_or_unsupported",
+      "stderr": "",
+      "stdout": "{\n  \"card\": {\n    \"archetype\": \"Hybrid\",\n    \"card_id\": \"card:000cc37d4b1f81a797d6\",\n    \"native_overall\": 78,\n    \"player_name\": \"Nikai Martinez\",\n    \"position\": \"FS\",\n    \"program\": \"Core Uncommon\"\n  },\n  \"confidence\": {\n    \"attributes\": 0.47,\n    \"identity\": \"EXACT\",\n    \"market\": \"NO CURRENT PRICE\",\n    \"model\": \"LOW\",\n    \"moneyball\": \"UNAVAILABLE\",\n    \"ranking\": \"AVAILABLE\"\n  },\n  \"evaluation\": {\n    \"archetype\": \"Hybrid\",\n    \"archetype_rank\": 63,\n    \"attribute_coverage\": 0.47,\n    \"card_id\": \"card:000cc37d4b1f81a797d6\",\n    \"model_evidence_paths\": [\n      \"data/research/op_x_019/safety/frozen_safety_scoring_spec.json\",\n      \"data/research/op_x_017/coverage_matrix.json\"\n    ],\n    \"model_limitations\": [\n      \"ranking score only; not a displayed-overall prediction\"\n    ],\n    \"native_overall\": 78,\n    \"pancake_model_id\": \"S-M19-ARCH-001\",\n    \"pancake_model_version\": \"v1.0\",\n    \"player_id\": \"player:0cb30a360aec77d0c6dc\",\n    \"player_name\": \"Nikai Martinez\",\n    \"position\": \"FS\",\n    \"position_family\": \"S\",\n    \"position_rank\": 272,\n    \"program\": \"Core Uncommon\",\n    \"routing\": {\n      \"basis\": \"exact name\",\n      \"confidence\": \"EXACT\",\n      \"family\": \"S\",\n      \"model_id\": \"S-M19-ARCH-001\",\n      \"profile\": \"Hybrid\",\n      \"status\": \"ROUTED\",\n      \"version\": \"v1.0\"\n    },\n    \"score\": 75.617021,\n    \"score_confidence\": \"LOW\",\n    \"score_status\": \"SCORED_PARTIAL\",\n    \"source\": {\n      \"card\": \"CFB_FAN\",\n      \"ratings\": \"https://cfb.fan/players/6192-nikai-martinez/27-2006192/\",\n      \"raw_snapshot\": \"data/external/raw/cfb_fan_global_listings/53e646567db72cf947ed66975fc5e6ad85754cb2d78ff0797e3bc87b970cbcb3.html\"\n    }\n  },\n  \"limitations\": [\n    \"ranking score only; not a displayed-overall prediction\"\n  ],\n  \"status\": \"SCORED_PARTIAL\"\n}\n"
+    }
+  ],
+  "root": "/home/runner/work/pancakes/pancakes"
+}
