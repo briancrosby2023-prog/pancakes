@@ -41,7 +41,13 @@ scoreable = [
     for row in product.ranked
     if row.get("score") is not None and row.get("card_id") in product.cards
 ]
-scoreable.sort(key=lambda row: (row.get("position") or "", row.get("position_rank") or 99999, row["card_id"]))
+scoreable.sort(
+    key=lambda row: (
+        row.get("position") or "",
+        row.get("position_rank") or 99999,
+        row["card_id"],
+    )
+)
 
 by_position: dict[str, list[dict[str, Any]]] = {}
 for row in scoreable:
@@ -72,7 +78,17 @@ price_file.write_text(
     ),
     encoding="utf-8",
 )
-results.append(run("price", command("price", str(price_file), "--observed-at", "2026-08-26T03:25:00-07:00")))
+results.append(
+    run(
+        "price",
+        command(
+            "price",
+            str(price_file),
+            "--observed-at",
+            "2026-08-26T03:25:00-07:00",
+        ),
+    )
+)
 results.append(
     run(
         "compare_priced",
@@ -81,7 +97,7 @@ results.append(
 )
 
 budget_candidates: list[dict[str, Any]] = []
-for index, (position, rows) in enumerate(sorted(by_position.items())):
+for position, rows in sorted(by_position.items()):
     if len(rows) < 2:
         continue
     best = rows[0]
@@ -109,13 +125,18 @@ results.append(run("budget_repeat", command("budget", str(budget_file), "60000")
 role_result = run("role_board", command("role-board", "TE", "HYBRID", "--limit", "3"))
 results.append(role_result)
 
-knowledge = json.loads((ROOT / "data/research/op_x_040/knowledge_base.json").read_text(encoding="utf-8"))
+knowledge_path = ROOT / "data/research/op_x_040/knowledge_base.json"
+knowledge = json.loads(knowledge_path.read_text(encoding="utf-8"))
 claims = knowledge.get("claims", []) if isinstance(knowledge, dict) else []
 knowledge_query = str(claims[0].get("claim_id")) if claims else "quarterback"
 results.append(run("knowledge", command("ask-pancake", knowledge_query)))
 results.append(run("knowledge_unknown", command("ask-pancake", "__OP_X_026_NO_MATCH__")))
-
-results.append(run("bad_unknown_player", command("player", "--name", "__OP_X_026_UNKNOWN_PLAYER__")))
+results.append(
+    run(
+        "bad_unknown_player",
+        command("player", "--name", "__OP_X_026_UNKNOWN_PLAYER__"),
+    )
+)
 invalid_price_file = OUT / "invalid_prices.json"
 invalid_price_file.write_text(
     json.dumps(
@@ -130,12 +151,16 @@ invalid_price_file.write_text(
 results.append(
     run(
         "bad_invalid_prices",
-        command("price", str(invalid_price_file), "--observed-at", "2026-08-26T03:25:00-07:00"),
+        command(
+            "price",
+            str(invalid_price_file),
+            "--observed-at",
+            "2026-08-26T03:25:00-07:00",
+        ),
     )
 )
 results.append(run("git_diff_check", ["git", "diff", "--check"]))
 
-# Exercise one stable non-scoreable record when the current population contains one.
 non_scoreable = []
 for card in product.population:
     lookup = product.lookup(card_id=card["card_id"])
@@ -179,7 +204,10 @@ checks = {
         and compare_payload.get("status") == "OK"
         and compare_payload == compare_repeat_payload
     ),
-    "roster": next(row for row in results if row["name"] == "roster")["exit_code"] == 0 and roster_payload is not None,
+    "roster": (
+        next(row for row in results if row["name"] == "roster")["exit_code"] == 0
+        and roster_payload is not None
+    ),
     "price_value": (
         next(row for row in results if row["name"] == "price")["exit_code"] == 0
         and len(price_payload.get("accepted", [])) == 2
@@ -213,7 +241,9 @@ checks = {
         and knowledge_payload.get("confidence") is not None
         and knowledge_payload.get("sources") is not None
     ),
-    "git_diff_check": next(row for row in results if row["name"] == "git_diff_check")["exit_code"] == 0,
+    "git_diff_check": (
+        next(row for row in results if row["name"] == "git_diff_check")["exit_code"] == 0
+    ),
 }
 
 summary = {
