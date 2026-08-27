@@ -4,14 +4,15 @@
     "acceptance": "success",
     "diffcheck": "success",
     "focused": "success",
-    "persistence_tests": "success",
+    "persistence": "failure",
+    "persistence_tests": "failure",
     "pytest": "failure",
     "ruff": "failure",
     "science": "success"
   },
   "milestone": "OP-X-026E",
-  "pre_persistence_head": "045f99909b89a432b26283ab0a6ce277edab5c4e",
+  "pre_persistence_head": "b375bcc42cc9d5900bb5c53108391e2551872cfc",
   "prior_run_555_evidence_preserved": true,
-  "run_id": "33028872465",
-  "trigger_sha": "045f99909b89a432b26283ab0a6ce277edab5c4e"
+  "run_id": "33039195659",
+  "trigger_sha": "b375bcc42cc9d5900bb5c53108391e2551872cfc"
 }
