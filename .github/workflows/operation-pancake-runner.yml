@@ -36,9 +36,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p data/research/op_x_026
+          mkdir -p /tmp/op_x_026_ruff_cleanup
           python -m ruff check . --output-format=json > /tmp/ruff-before.json || true
-          python -m ruff check . > data/research/op_x_026/ruff_cleanup_baseline.txt 2>&1 || true
+          python -m ruff check . > /tmp/op_x_026_ruff_cleanup/ruff_cleanup_baseline.txt 2>&1 || true
           python -m ruff format .
           if git diff --name-only | grep -E '^data/' > /tmp/formatted-data-files.txt; then
             echo 'Ruff formatter changed generated/scientific data output; refusing cleanup.' >&2
@@ -46,11 +46,11 @@ jobs:
             exit 20
           fi
           # F401 is deliberately retained for manual review because imports can have import-time side effects.
-          python -m ruff check . --fix --ignore F401 > data/research/op_x_026/ruff_cleanup_autofix.txt 2>&1 || true
+          python -m ruff check . --fix --ignore F401 > /tmp/op_x_026_ruff_cleanup/ruff_cleanup_autofix.txt 2>&1 || true
           python -m ruff check . --output-format=json > /tmp/ruff-after.json || true
-          python -m ruff check . > data/research/op_x_026/ruff_cleanup_residual.txt 2>&1 || true
-          git status --short > data/research/op_x_026/ruff_cleanup_status.txt
-          git diff --stat > data/research/op_x_026/ruff_cleanup_diffstat.txt
+          python -m ruff check . > /tmp/op_x_026_ruff_cleanup/ruff_cleanup_residual.txt 2>&1 || true
+          git status --short > /tmp/op_x_026_ruff_cleanup/ruff_cleanup_status.txt
+          git diff --stat > /tmp/op_x_026_ruff_cleanup/ruff_cleanup_diffstat.txt
           python - <<'PY'
           import json
           from collections import Counter
@@ -66,7 +66,7 @@ jobs:
               'residual_files': dict(sorted(Counter(x['filename'] for x in after).items())),
               'f401_autofix_withheld_for_side_effect_review': True,
           }
-          Path('data/research/op_x_026/ruff_cleanup_pass.json').write_text(
+          Path('/tmp/op_x_026_ruff_cleanup/ruff_cleanup_pass.json').write_text(
               json.dumps(payload, indent=2, sort_keys=True) + '\n'
           )
           print(json.dumps(payload, indent=2, sort_keys=True))
@@ -108,7 +108,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: op-x-026-ruff-cleanup
-          path: data/research/op_x_026/ruff_cleanup_*
+          path: /tmp/op_x_026_ruff_cleanup/ruff_cleanup_*
           if-no-files-found: warn
 
   op-x-026-product-acceptance:
