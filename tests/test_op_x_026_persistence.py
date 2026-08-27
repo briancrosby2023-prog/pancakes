@@ -37,6 +37,9 @@ def setup_repos(tmp_path: Path) -> tuple[Path, Path, Path]:
     subprocess.check_call(["git", "init", "--bare", str(bare)])
     subprocess.check_call(["git", "clone", str(bare), str(seed)])
     git(seed, "checkout", "-b", BRANCH)
+    closure = seed / "data/research/op_x_026/closure_gates.json"
+    closure.parent.mkdir(parents=True, exist_ok=True)
+    closure.write_text('{"gates":{"persistence":"failure"}}\n')
     commit(seed, "base", "base")
     git(seed, "push", "-u", "origin", "HEAD")
     subprocess.check_call(["git", "clone", "-b", BRANCH, str(bare), str(work)])
