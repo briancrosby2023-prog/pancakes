@@ -14,9 +14,16 @@ def test_page_has_product_navigation():
 
 def test_roster_persistence_add_edit_remove(tmp_path):
     path=tmp_path/"roster.json"; store=RosterStore(path,{"card-1","card-2"}); row=RosterAssignment("card-1","MIKE","MIKE1",protected=True,rerollable=True); store.add(row)
-    assert RosterStore(path,{"card-1","card-2"}).load()==[row]; assert json.loads(path.read_text())["version"]==1
+    assert RosterStore(path,{"card-1","card-2"}).load()==[row]; assert json.loads(path.read_text())["version"]==2
     updated=store.update("MIKE1",slot="MIKE2",starter=False,notes="sub package"); assert updated.slot=="MIKE2" and not updated.starter and updated.protected and updated.rerollable
     assert store.remove("MIKE2").card_id=="card-1" and store.load()==[]
+
+
+def test_roster_v1_backward_compatibility(tmp_path):
+    path=tmp_path/"roster.json"
+    path.write_text(json.dumps({"version":1,"assignments":[{"card_id":"card-1","position":"FS","slot":"FS1","rerollable":True}]}))
+    row=RosterStore(path,{"card-1"}).load()[0]
+    assert row.card_id=="card-1" and row.rerollable and row.current_level is None
 
 
 def test_roster_rejects_unknown_or_duplicate_canonical_card(tmp_path):
