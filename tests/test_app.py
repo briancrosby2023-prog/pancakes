@@ -58,3 +58,10 @@ def test_compare_preselection_link_contract():
 def test_player_search_row_renders_pancake_score_and_rank():
     row=_player_search_row({"card_id":"c1","player_name":"Test Player","position":"CB","native_overall":85},{"score":75.5,"position_rank":12})
     assert "Pancake score 75.5" in row and "Position rank 12" in row
+
+
+def test_replacement_routes_are_registered():
+    import inspect
+    from operation_pancake.app import create_handler
+    src=inspect.getsource(create_handler)
+    assert 'p.path=="/replacements"' in src and 'p.path=="/api/replacements"' in src

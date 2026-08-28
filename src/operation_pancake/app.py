@@ -44,6 +44,10 @@ def create_handler(root:Path, roster_path:Path|None=None, gm_state_path:Path|Non
             if p.path=="/api/player": self._json(gm.lookup(card_id=q.get("card_id",[None])[0],player_name=q.get("name",[None])[0],position=q.get("position",[None])[0])); return
             if p.path=="/api/roster": self._json({"assignments":[asdict(a)|{"card":gm._identity(c),"pancake_score":s.get("score"),"position_rank":s.get("position_rank"),"gm":d} for a,c,s,d in enriched_roster()]}); return
             if p.path=="/api/gm": self._json({"budget":state.as_dict(),"decisions":[decisions.decision(a) for a in assignments()],"upgrades":decisions.opportunities(assignments(),state.prices,state.spendable_budget)}); return
+            if p.path=="/api/replacements":
+                a=assignment_by_slot(q.get("slot",[""])[0])
+                if not a: self._json({"error":"assignment not found"},404); return
+                self._json(decisions.detail(a,state.prices,state.spendable_budget)); return
             if p.path=="/api/gm/decision":
                 a=assignment_by_slot(q.get("slot",[""])[0])
                 if not a: self._json({"error":"assignment not found"},404); return
@@ -88,6 +92,19 @@ def create_handler(root:Path, roster_path:Path|None=None, gm_state_path:Path|Non
                 l=q.get("current",[""])[0]; r=q.get("candidate",[""])[0]; price=state.prices.get(r); body=f'<h1>Compare players</h1><form><input name="current" value="{html.escape(l)}" placeholder="Current card ID"><input name="candidate" value="{html.escape(r)}" placeholder="Candidate card ID"><button>Compare</button></form>'
                 if l and r: body+=f'<div class="card"><code>{html.escape(json.dumps(gm.compare(l,r,price),indent=2))}</code><p>{"PRICE UNKNOWN" if price is None else f"Price {price:,} coins"}</p></div>'
                 self._send(_page("Compare",body)); return
+            if p.path=="/replacements":
+                a=assignment_by_slot(q.get("slot",[""])[0])
+                if not a: self._send(_page("Replacements","<h1>Assignment not found</h1>"),404); return
+                d=decisions.detail(a,state.prices,state.spendable_budget); body=f'<h1>{html.escape(a.slot)} — replacements</h1><div class="card"><p>Current: {html.escape(d["current"]["player_name"])}</p><p>{html.escape(d["key_reason"])}</p></div>'
+                if not d["candidates"]: body+='<div class="card">No compatible higher-scored replacement candidates found.</div>'
+                else:
+                    body+='<table><tr><th>Candidate</th><th>Score gain</th><th>Rank gain</th><th>Price</th><th>Compare</th></tr>'
+                    for c in d["candidates"]:
+                        price_text="PRICE UNKNOWN" if c.get("price") is None else str(c["price"])+" coins"
+                        link=urlencode({"current":a.card_id,"candidate":c["card_id"]})
+                        body+=f'<tr><td>{html.escape(c["player_name"])}</td><td>{_unknown(c.get("score_improvement"))}</td><td>{_unknown(c.get("position_rank_improvement"))}</td><td>{html.escape(price_text)}</td><td><a href="/compare?{link}">Compare</a></td></tr>'
+                    body+='</table>'
+                self._send(_page("Replacements",body)); return
             if p.path=="/decision":
                 a=assignment_by_slot(q.get("slot",[""])[0])
                 if not a: self._send(_page("Decision","<h1>Assignment not found</h1>"),404); return
