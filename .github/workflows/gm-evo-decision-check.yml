@@ -1,0 +1,33 @@
+name: GM Three-Way EVO Acceptance Check
+on:
+  push:
+    branches: [product/gm-app-mvp]
+permissions: {contents: read}
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install -e '.[dev]'
+      - name: Exercise browser and API EVO decision
+        run: |
+          operation-pancake-app >/tmp/app.log 2>&1 &
+          python - <<'PY'
+          import json,pathlib,time,urllib.parse,urllib.request
+          from operation_pancake.production.gm import GMProduct
+          B='http://127.0.0.1:8765'; gm=GMProduct(pathlib.Path.cwd()); c=next(x for x in gm.population if gm.rank_by_id.get(x['card_id'],{}).get('score') is not None); cid=c['card_id']; pos=c.get('position') or ''
+          for _ in range(60):
+            try: urllib.request.urlopen(B,timeout=2); break
+            except Exception: time.sleep(1)
+          def post(path,d): return urllib.request.urlopen(urllib.request.Request(B+path,data=urllib.parse.urlencode(d).encode(),method='POST'),timeout=20).read()
+          post('/api/roster',{'card_id':cid,'position':pos,'slot':'TEST1','starter':'on'})
+          post('/api/gm/budget',{'current_coins':300000,'reserve_coins':50000})
+          post('/evo',{'name':'ACCEPTANCE TEST ONLY','target_ovr':99,'positions':pos,'ovr_min':0,'ovr_max':99,'notes':'synthetic software acceptance fixture'})
+          q=urllib.parse.urlencode({'evo_id':'evo-1','slot':'TEST1','card_id':cid})
+          api=json.load(urllib.request.urlopen(B+'/api/evo/decision?'+q,timeout=20)); assert api['decision']['decision'] in {'USE EVO','BUY REPLACEMENT','KEEP CURRENT PLAYER','SAVE EVO','REVIEW'}
+          page=urllib.request.urlopen(B+'/evo/decision?'+q,timeout=20).read().decode(); assert 'three-way EVO decision' in page and api['decision']['decision'] in page
+          print('THREE-WAY EVO PASS',api['decision']['decision'])
+          PY
