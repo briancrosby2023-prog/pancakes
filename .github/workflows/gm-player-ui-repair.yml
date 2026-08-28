@@ -15,29 +15,28 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: '3.11', cache: pip}
       - run: python -m pip install -e '.[dev]'
-      - name: Apply smallest confirmed product repair
+      - name: Apply confirmed acceptance repairs
         run: |
           python - <<'PY'
           from pathlib import Path
-          p=Path('src/operation_pancake/app.py'); s=p.read_text()
-          anchor='def _unknown(v): return "UNKNOWN" if v is None else str(v)\n'
+          r=Path('src/operation_pancake/roster_state.py'); z=r.read_text()
+          old='''    def update(self, slot: str, **changes: Any) -> RosterAssignment:\n        rows = self.load(); index = next((i for i, row in enumerate(rows) if row.slot == slot.upper()), None)\n        if index is None: raise KeyError(slot)\n        updated = replace(rows[index], **changes)\n        updated = RosterAssignment.from_dict(asdict(updated))\n        self._validate(updated, rows, old_slot=slot.upper()); rows[index] = updated; self.save(rows); return updated\n'''
+          new='''    def update(self, old_slot: str, **changes: Any) -> RosterAssignment:\n        rows = self.load(); index = next((i for i, row in enumerate(rows) if row.slot == old_slot.upper()), None)\n        if index is None: raise KeyError(old_slot)\n        updated = replace(rows[index], **changes)\n        updated = RosterAssignment.from_dict(asdict(updated))\n        self._validate(updated, rows, old_slot=old_slot.upper()); rows[index] = updated; self.save(rows); return updated\n'''
+          assert old in z; r.write_text(z.replace(old,new))
+          p=Path('src/operation_pancake/app.py'); s=p.read_text(); anchor='def _unknown(v): return "UNKNOWN" if v is None else str(v)\n'
           helper='''def _player_search_row(c,s):\n    return f'<tr><td>{html.escape(c.get("player_name") or "")}</td><td>{html.escape(c.get("position") or "")}</td><td>{c.get("native_overall") or "—"}</td><td>Pancake score {_unknown(s.get("score"))}<br>Position rank {_unknown(s.get("position_rank"))}</td><td><form method="post" action="/roster/add"><input type="hidden" name="card_id" value="{html.escape(c["card_id"])}"><input type="hidden" name="position" value="{html.escape(c.get("position") or "")}"><input name="slot" placeholder="{html.escape(c.get("position") or "")}1" required><label><input type="checkbox" name="starter" checked>Starter</label><label><input type="checkbox" name="protected">Protected</label><label><input type="checkbox" name="rerollable">Rerollable</label><button>Add</button></form></td></tr>'\n'''
-          assert anchor in s and '_player_search_row' not in s
-          s=s.replace(anchor,anchor+helper)
-          old='''                for c in cs[:100]: rows.append(f'<tr><td>{html.escape(c.get("player_name") or "")}</td><td>{html.escape(c.get("position") or "")}</td><td>{c.get("native_overall") or "—"}</td><td><form method="post" action="/roster/add"><input type="hidden" name="card_id" value="{html.escape(c["card_id"])}"><input type="hidden" name="position" value="{html.escape(c.get("position") or "")}"><input name="slot" placeholder="{html.escape(c.get("position") or "")}1" required><label><input type="checkbox" name="starter" checked>Starter</label><label><input type="checkbox" name="protected">Protected</label><label><input type="checkbox" name="rerollable">Rerollable</label><button>Add</button></form></td></tr>')\n'''
-          new='''                for c in cs[:100]: rows.append(_player_search_row(c,gm.rank_by_id.get(c["card_id"],{})))\n'''
-          assert old in s
-          p.write_text(s.replace(old,new))
-          t=Path('tests/test_app.py'); x=t.read_text(); x=x.replace('from operation_pancake.app import _page','from operation_pancake.app import _page, _player_search_row')
-          x+='''\n\ndef test_player_search_row_renders_pancake_score_and_rank():\n    row=_player_search_row({"card_id":"c1","player_name":"Test Player","position":"CB","native_overall":85},{"score":75.5,"position_rank":12})\n    assert "Pancake score 75.5" in row\n    assert "Position rank 12" in row\n'''
-          t.write_text(x)
+          assert anchor in s and '_player_search_row' not in s; s=s.replace(anchor,anchor+helper)
+          oldrow='''                for c in cs[:100]: rows.append(f'<tr><td>{html.escape(c.get("player_name") or "")}</td><td>{html.escape(c.get("position") or "")}</td><td>{c.get("native_overall") or "—"}</td><td><form method="post" action="/roster/add"><input type="hidden" name="card_id" value="{html.escape(c["card_id"])}"><input type="hidden" name="position" value="{html.escape(c.get("position") or "")}"><input name="slot" placeholder="{html.escape(c.get("position") or "")}1" required><label><input type="checkbox" name="starter" checked>Starter</label><label><input type="checkbox" name="protected">Protected</label><label><input type="checkbox" name="rerollable">Rerollable</label><button>Add</button></form></td></tr>')\n'''
+          newrow='''                for c in cs[:100]: rows.append(_player_search_row(c,gm.rank_by_id.get(c["card_id"],{})))\n'''
+          assert oldrow in s; p.write_text(s.replace(oldrow,newrow))
+          t=Path('tests/test_app.py'); x=t.read_text().replace('from operation_pancake.app import _page','from operation_pancake.app import _page, _player_search_row')
+          x+='''\n\ndef test_player_search_row_renders_pancake_score_and_rank():\n    row=_player_search_row({"card_id":"c1","player_name":"Test Player","position":"CB","native_overall":85},{"score":75.5,"position_rank":12})\n    assert "Pancake score 75.5" in row and "Position rank 12" in row\n'''; t.write_text(x)
           PY
       - name: Regression test
         run: python -m pytest -ra tests/test_app.py tests/test_evo.py
-      - name: Commit confirmed acceptance repair
+      - name: Commit confirmed acceptance repairs
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add src/operation_pancake/app.py tests/test_app.py
-          git commit -m 'Render Pancake score and rank in player search'
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/operation_pancake/app.py src/operation_pancake/roster_state.py tests/test_app.py
+          git commit -m 'Fix roster edits and player search intelligence'
           git push origin HEAD:product/gm-app-mvp
