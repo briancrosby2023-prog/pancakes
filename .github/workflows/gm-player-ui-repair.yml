@@ -1,42 +1,37 @@
-name: GM Player UI Acceptance Repair
+name: GM Acceptance Repair
 on:
   push:
     branches: [product/gm-app-mvp]
-permissions:
-  contents: write
+permissions: {contents: write}
 jobs:
   repair:
-    if: github.event.head_commit.message == 'Run GM player UI acceptance repair'
+    if: github.event.head_commit.message == 'Run GM replacement acceptance repair'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with: {fetch-depth: 0}
       - uses: actions/setup-python@v5
-        with: {python-version: '3.11', cache: pip}
+        with: {python-version: '3.11'}
       - run: python -m pip install -e '.[dev]'
-      - name: Apply confirmed acceptance repairs
+      - name: Add confirmed replacement surfaces
         run: |
           python - <<'PY'
           from pathlib import Path
-          r=Path('src/operation_pancake/roster_state.py'); z=r.read_text()
-          old='''    def update(self, slot: str, **changes: Any) -> RosterAssignment:\n        rows = self.load(); index = next((i for i, row in enumerate(rows) if row.slot == slot.upper()), None)\n        if index is None: raise KeyError(slot)\n        updated = replace(rows[index], **changes)\n        updated = RosterAssignment.from_dict(asdict(updated))\n        self._validate(updated, rows, old_slot=slot.upper()); rows[index] = updated; self.save(rows); return updated\n'''
-          new='''    def update(self, old_slot: str, **changes: Any) -> RosterAssignment:\n        rows = self.load(); index = next((i for i, row in enumerate(rows) if row.slot == old_slot.upper()), None)\n        if index is None: raise KeyError(old_slot)\n        updated = replace(rows[index], **changes)\n        updated = RosterAssignment.from_dict(asdict(updated))\n        self._validate(updated, rows, old_slot=old_slot.upper()); rows[index] = updated; self.save(rows); return updated\n'''
-          assert old in z; r.write_text(z.replace(old,new))
-          p=Path('src/operation_pancake/app.py'); s=p.read_text(); anchor='def _unknown(v): return "UNKNOWN" if v is None else str(v)\n'
-          helper='''def _player_search_row(c,s):\n    return f'<tr><td>{html.escape(c.get("player_name") or "")}</td><td>{html.escape(c.get("position") or "")}</td><td>{c.get("native_overall") or "—"}</td><td>Pancake score {_unknown(s.get("score"))}<br>Position rank {_unknown(s.get("position_rank"))}</td><td><form method="post" action="/roster/add"><input type="hidden" name="card_id" value="{html.escape(c["card_id"])}"><input type="hidden" name="position" value="{html.escape(c.get("position") or "")}"><input name="slot" placeholder="{html.escape(c.get("position") or "")}1" required><label><input type="checkbox" name="starter" checked>Starter</label><label><input type="checkbox" name="protected">Protected</label><label><input type="checkbox" name="rerollable">Rerollable</label><button>Add</button></form></td></tr>'\n'''
-          assert anchor in s and '_player_search_row' not in s; s=s.replace(anchor,anchor+helper)
-          oldrow='''                for c in cs[:100]: rows.append(f'<tr><td>{html.escape(c.get("player_name") or "")}</td><td>{html.escape(c.get("position") or "")}</td><td>{c.get("native_overall") or "—"}</td><td><form method="post" action="/roster/add"><input type="hidden" name="card_id" value="{html.escape(c["card_id"])}"><input type="hidden" name="position" value="{html.escape(c.get("position") or "")}"><input name="slot" placeholder="{html.escape(c.get("position") or "")}1" required><label><input type="checkbox" name="starter" checked>Starter</label><label><input type="checkbox" name="protected">Protected</label><label><input type="checkbox" name="rerollable">Rerollable</label><button>Add</button></form></td></tr>')\n'''
-          newrow='''                for c in cs[:100]: rows.append(_player_search_row(c,gm.rank_by_id.get(c["card_id"],{})))\n'''
-          assert oldrow in s; p.write_text(s.replace(oldrow,newrow))
-          t=Path('tests/test_app.py'); x=t.read_text().replace('from operation_pancake.app import _page','from operation_pancake.app import _page, _player_search_row')
-          x+='''\n\ndef test_player_search_row_renders_pancake_score_and_rank():\n    row=_player_search_row({"card_id":"c1","player_name":"Test Player","position":"CB","native_overall":85},{"score":75.5,"position_rank":12})\n    assert "Pancake score 75.5" in row and "Position rank 12" in row\n'''; t.write_text(x)
+          p=Path('src/operation_pancake/app.py'); s=p.read_text()
+          api='''            if p.path=="/api/gm": self._json({"budget":state.as_dict(),"decisions":[decisions.decision(a) for a in assignments()],"upgrades":decisions.opportunities(assignments(),state.prices,state.spendable_budget)}); return\n'''
+          api_new=api+'''            if p.path=="/api/replacements":\n                a=assignment_by_slot(q.get("slot",[""])[0])\n                if not a: self._json({"error":"assignment not found"},404); return\n                self._json(decisions.detail(a,state.prices,state.spendable_budget)); return\n'''
+          assert api in s and 'p.path=="/api/replacements"' not in s; s=s.replace(api,api_new)
+          browser='''            if p.path=="/decision":\n'''
+          repl='''            if p.path=="/replacements":\n                a=assignment_by_slot(q.get("slot",[""])[0])\n                if not a: self._send(_page("Replacements","<h1>Assignment not found</h1>"),404); return\n                d=decisions.detail(a,state.prices,state.spendable_budget); body=f'<h1>{html.escape(a.slot)} — replacements</h1><div class="card"><p>Current: {html.escape(d["current"]["player_name"])}</p><p>{html.escape(d["key_reason"])}</p></div>'\n                if not d["candidates"]: body+='<div class="card">No compatible higher-scored replacement candidates found.</div>'\n                else:\n                    body+='<table><tr><th>Candidate</th><th>Score gain</th><th>Rank gain</th><th>Price</th><th>Compare</th></tr>'\n                    for c in d["candidates"]: body+=f'<tr><td>{html.escape(c["player_name"])}</td><td>{_unknown(c.get("score_improvement"))}</td><td>{_unknown(c.get("position_rank_improvement"))}</td><td>{"PRICE UNKNOWN" if c.get("price") is None else f"{c["price"]:,} coins"}</td><td><a href="/compare?{urlencode({"current":a.card_id,"candidate":c["card_id"]})}">Compare</a></td></tr>'\n                    body+='</table>'\n                self._send(_page("Replacements",body)); return\n'''
+          assert browser in s and 'p.path=="/replacements"' not in s; s=s.replace(browser,repl+browser); p.write_text(s)
+          t=Path('tests/test_app.py'); x=t.read_text(); x+='''\n\ndef test_replacement_routes_are_registered():\n    import inspect\n    from operation_pancake.app import create_handler\n    src=inspect.getsource(create_handler)\n    assert 'p.path=="/replacements"' in src\n    assert 'p.path=="/api/replacements"' in src\n'''; t.write_text(x)
           PY
-      - name: Regression test
+      - name: Regression tests
         run: python -m pytest -ra tests/test_app.py tests/test_evo.py
-      - name: Commit confirmed acceptance repairs
+      - name: Commit repair
         run: |
           git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add src/operation_pancake/app.py src/operation_pancake/roster_state.py tests/test_app.py
-          git commit -m 'Fix roster edits and player search intelligence'
+          git add src/operation_pancake/app.py tests/test_app.py
+          git commit -m 'Add replacement browser and API surfaces'
           git push origin HEAD:product/gm-app-mvp
