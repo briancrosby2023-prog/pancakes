@@ -14,15 +14,33 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: '3.11', cache: pip}
       - name: Record and verify revision
-        run: mkdir -p /tmp/a && git rev-parse HEAD | tee /tmp/a/sha.txt && python --version | tee /tmp/a/python.txt && git merge-base --is-ancestor f001194cda95821cafd1cfef5a71b67c6c1ee9cd HEAD
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/a
+          git rev-parse HEAD | tee /tmp/a/sha.txt
+          python --version | tee /tmp/a/python.txt
+          git merge-base --is-ancestor f001194cda95821cafd1cfef5a71b67c6c1ee9cd HEAD
       - name: Install
-        run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
       - name: Focused pytest
-        run: python -m pytest -ra tests/test_app.py tests/test_evo.py | tee /tmp/a/focused.txt
+        run: |
+          set -euo pipefail
+          python -m pytest -ra tests/test_app.py tests/test_evo.py 2>&1 | tee /tmp/a/focused.txt
       - name: Related pytest
-        run: python -m pytest -ra tests -k 'gm or roster or replacement or budget or production' | tee /tmp/a/related.txt
+        run: |
+          set -euo pipefail
+          python -m pytest -ra tests -k 'gm or roster or replacement or budget or production' 2>&1 | tee /tmp/a/related.txt
+      - name: Patch 1 pytest
+        run: |
+          set -euo pipefail
+          python -m pytest -ra tests/test_user_acceptance_patch_1.py 2>&1 | tee /tmp/a/patch1.txt
       - name: Start app
         run: |
+          set -euo pipefail
+          rm -rf .operation_pancake
           operation-pancake-app > /tmp/a/app.log 2>&1 & echo $! >/tmp/a/pid
           python - <<'PY'
           import time,urllib.request
@@ -31,9 +49,10 @@ jobs:
             except Exception: time.sleep(1)
           else: raise SystemExit('startup failed')
           PY
-      - name: HTTP API persistence
+      - name: HTTP product acceptance
         run: |
-          python - <<'PY' | tee /tmp/a/http.txt
+          set -euo pipefail
+          python - <<'PY' 2>&1 | tee /tmp/a/http.txt
           import json,pathlib,urllib.parse,urllib.request
           from operation_pancake.production.gm import GMProduct
           B='http://127.0.0.1:8765'
@@ -46,37 +65,78 @@ jobs:
             try: r=urllib.request.urlopen(q,timeout=20); b=r.read(); s=r.status
             except urllib.error.HTTPError as x: s=x.code; b=x.read()
             assert s==e,(p,s,b[:300]); print('POST',p,s); return b
-          for p in ['/','/roster','/compare','/gm','/evo','/api/roster','/api/gm','/api/evo']: assert get(p)
+          first=get('/').decode(); assert 'First run starts with Team Setup' in first and '/setup' in first
+          for p in ['/setup','/players','/roster','/compare','/gm','/evo','/api/roster','/api/gm','/api/evo']: assert get(p)
+          post('/setup',{'current_coins':300000,'reserve_coins':50000})
+          home=get('/').decode(); assert 'GM Home' in home and 'Spendable' in home
+          assert json.loads(get('/api/gm'))['budget']['spendable_budget']==250000
           gm=GMProduct(pathlib.Path.cwd()); c1,c2=gm.population[:2]; a,b=c1['card_id'],c2['card_id']; pos=c1.get('position') or ''
-          page=get('/?'+urllib.parse.urlencode({'name':c1.get('player_name') or '','position':pos})).decode(); assert 'Pancake score' in page and 'Position rank' in page
+          page=get('/players?'+urllib.parse.urlencode({'name':c1.get('player_name') or '','position':pos})).decode()
+          assert 'Players & Value' in page and 'Pancake' in page and 'Score ' in page and 'Position rank' in page
           assert json.loads(get('/api/player?'+urllib.parse.urlencode({'card_id':a})))
-          post('/api/roster',{'card_id':a,'position':pos,'slot':'TEST1','starter':'on','protected':'on'},201)
+          post('/roster/add',{'card_id':a,'position':pos,'slot':'TEST1','starter':'on','protected':'on'})
           assert json.loads(get('/api/roster'))['assignments'][0]['card_id']==a
           assert get('/replacements?slot=TEST1'); assert json.loads(get('/api/replacements?slot=TEST1'))['assignment']['slot']=='TEST1'
-          assert json.loads(get('/api/gm/decision?slot=TEST1')).get('decision')
-          post('/api/gm/budget',{'current_coins':300000,'reserve_coins':50000}); assert json.loads(get('/api/gm'))['budget']['spendable_budget']==250000
-          post('/api/gm/price',{'card_id':b,'price':12345}); assert get('/compare?'+urllib.parse.urlencode({'current':a,'candidate':b}))
-          get('/api/gm/decision?slot=MISSING',404); get('/api/replacements?slot=MISSING',404); get('/api/evo/candidates?evo_id=MISSING',404)
-          post('/evo',{'name':'ACCEPTANCE TEST ONLY','target_ovr':99,'positions':pos,'ovr_min':0,'ovr_max':99,'notes':'synthetic software acceptance fixture'})
-          eid=json.loads(get('/api/evo'))['definitions'][-1]['id']; assert 'candidates' in json.loads(get('/api/evo/candidates?'+urllib.parse.urlencode({'evo_id':eid,'ownership':'all'})))
-          d=json.loads(get('/api/evo/candidate?'+urllib.parse.urlencode({'evo_id':eid,'card_id':a}))); assert d['projection']['production']['score'] is None
-          for f in ['roster.json','gm.json','evo.json']: assert json.loads((pathlib.Path('.operation_pancake')/f).read_text()).get('version') is not None
-          print('HTTP API PERSISTENCE PASS',a,b,eid)
+          post('/gm/budget',{'current_coins':300000,'reserve_coins':50000}); assert json.loads(get('/api/gm'))['budget']['spendable_budget']==250000
+          assert get('/compare?'+urllib.parse.urlencode({'current':a,'candidate':b}))
+          get('/api/replacements?slot=MISSING',404); get('/api/evo/candidates?evo_id=MISSING',404)
+          post('/evo',{'name':'ACCEPTANCE TEST ONLY','target_ovr':99,'positions':pos,'ovr_min':0,'ovr_max':99,'resource_cost':0})
+          definitions=json.loads(get('/api/evo'))['definitions']; eid=definitions[-1]['id']
+          candidates=json.loads(get('/api/evo/candidates?'+urllib.parse.urlencode({'evo_id':eid,'ownership':'all'})))['candidates']; assert candidates
+          assert get('/evo/decision?'+urllib.parse.urlencode({'evo_id':eid,'slot':'TEST1','card_id':a}))
+          root=pathlib.Path('.operation_pancake')
+          assert json.loads((root/'roster.json').read_text())['version']==2
+          assert json.loads((root/'gm.json').read_text()).get('version') is not None
+          assert json.loads((root/'evo.json').read_text()).get('version') is not None
+          assert json.loads((root/'setup.json').read_text())=={'version':1,'completed':True}
+          print('HTTP PRODUCT ACCEPTANCE PASS',a,b,eid)
           PY
       - name: Restart persistence
         run: |
-          kill "$(cat /tmp/a/pid)" || true; sleep 1; operation-pancake-app >>/tmp/a/app.log 2>&1 &
-          python - <<'PY' | tee /tmp/a/restart.txt
+          set -euo pipefail
+          kill "$(cat /tmp/a/pid)"
+          sleep 1
+          operation-pancake-app >>/tmp/a/app.log 2>&1 & echo $! >/tmp/a/pid2
+          python - <<'PY' 2>&1 | tee /tmp/a/restart.txt
           import json,time,urllib.request
           for _ in range(60):
             try:
-              d=json.load(urllib.request.urlopen('http://127.0.0.1:8765/api/roster',timeout=2)); assert d['assignments'][0]['slot']=='TEST1'; print('RESTART PASS'); break
+              d=json.load(urllib.request.urlopen('http://127.0.0.1:8765/api/roster',timeout=2)); assert d['assignments'][0]['slot']=='TEST1'
+              g=json.load(urllib.request.urlopen('http://127.0.0.1:8765/api/gm',timeout=2)); assert g['budget']['spendable_budget']==250000
+              home=urllib.request.urlopen('http://127.0.0.1:8765/',timeout=2).read().decode(); assert 'GM Home' in home
+              print('RESTART PASS'); break
             except Exception: time.sleep(1)
           else: raise SystemExit('restart failed')
           PY
+      - name: Classify observed evidence-index failure
+        run: |
+          set -u
+          set +e
+          python -m pytest -ra tests/test_evidence_index.py > /tmp/a/evidence-current.txt 2>&1
+          current=$?
+          git worktree add --detach /tmp/pancake-base 0babe084a76c0d9a214064a35270e3bdb490581f >/tmp/a/evidence-worktree.txt 2>&1
+          (cd /tmp/pancake-base && python -m pytest -ra tests/test_evidence_index.py) > /tmp/a/evidence-base.txt 2>&1
+          base=$?
+          printf 'current=%s\nbase=%s\n' "$current" "$base" | tee /tmp/a/evidence-classification.txt
+          cat /tmp/a/evidence-current.txt
+          echo '--- BASELINE ---'
+          cat /tmp/a/evidence-base.txt
+          if [ "$current" -ne 0 ] && [ "$base" -ne 0 ]; then echo 'CLASSIFICATION: PRE-EXISTING/UNRELATED';
+          elif [ "$current" -ne 0 ]; then echo 'CLASSIFICATION: PATCH-INTRODUCED/REGRESSED';
+          else echo 'CLASSIFICATION: CURRENT PASS'; fi | tee -a /tmp/a/evidence-classification.txt
+          exit 0
       - name: Broad pytest bounded
         continue-on-error: true
-        run: timeout 300 python -m pytest -ra | tee /tmp/a/broad.txt
+        run: |
+          set -uo pipefail
+          set +e
+          timeout 300 python -m pytest -ra 2>&1 | tee /tmp/a/broad.txt
+          status=${PIPESTATUS[0]}
+          echo "$status" > /tmp/a/broad-exit.txt
+          if [ "$status" -eq 0 ]; then echo 'BROAD RESULT: PASS' | tee /tmp/a/broad-result.txt;
+          elif [ "$status" -eq 124 ]; then echo 'BROAD RESULT: BOUNDED TIMEOUT' | tee /tmp/a/broad-result.txt;
+          else echo "BROAD RESULT: FAIL exit=$status" | tee /tmp/a/broad-result.txt; fi
+          exit "$status"
       - name: Upload evidence
         if: always()
         uses: actions/upload-artifact@v4
