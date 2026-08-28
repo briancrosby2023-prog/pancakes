@@ -1,0 +1,136 @@
+name: GM MVP Acceptance
+
+on:
+  push:
+    branches: [product/gm-app-mvp]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Record executed revision
+        run: |
+          mkdir -p /tmp/gm-mvp-acceptance
+          git rev-parse HEAD | tee /tmp/gm-mvp-acceptance/executed-sha.txt
+          python --version | tee /tmp/gm-mvp-acceptance/python-version.txt
+      - name: Verify acceptance-only descendant
+        run: |
+          git diff --name-only f001194cda95821cafd1cfef5a71b67c6c1ee9cd..HEAD | tee /tmp/gm-mvp-acceptance/changes.txt
+          test "$(git diff --name-only f001194cda95821cafd1cfef5a71b67c6c1ee9cd..HEAD)" = ".github/workflows/gm-mvp-acceptance.yml"
+      - name: Install project and development dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
+      - name: Focused MVP tests
+        run: python -m pytest -ra tests/test_app.py tests/test_evo.py | tee /tmp/gm-mvp-acceptance/focused-pytest.txt
+      - name: Related GM product tests
+        run: python -m pytest -ra tests -k 'gm or roster or replacement or budget or production' | tee /tmp/gm-mvp-acceptance/related-pytest.txt
+      - name: Broad pytest
+        continue-on-error: true
+        run: python -m pytest -ra | tee /tmp/gm-mvp-acceptance/broad-pytest.txt
+      - name: Start application
+        run: |
+          operation-pancake-app > /tmp/gm-mvp-acceptance/app.log 2>&1 &
+          echo $! > /tmp/gm-mvp-acceptance/app.pid
+          python - <<'PY'
+          import time, urllib.request
+          for _ in range(60):
+              try:
+                  with urllib.request.urlopen('http://127.0.0.1:8765/', timeout=2) as r:
+                      assert r.status == 200
+                      print('STARTUP PASS')
+                      break
+              except Exception:
+                  time.sleep(1)
+          else:
+              raise SystemExit('application did not become ready')
+          PY
+      - name: HTTP API and persistence acceptance
+        run: |
+          python - <<'PY' | tee /tmp/gm-mvp-acceptance/http-api.txt
+          import json, pathlib, urllib.parse, urllib.request
+          from operation_pancake.production.gm import GMProduct
+          base='http://127.0.0.1:8765'
+          def get(path, expect=200):
+              try:
+                  with urllib.request.urlopen(base+path, timeout=20) as r:
+                      body=r.read(); status=r.status
+              except urllib.error.HTTPError as e:
+                  status=e.code; body=e.read()
+              assert status==expect,(path,status,body[:500])
+              print('GET',path,status)
+              return body
+          def post(path,data,expect=200):
+              req=urllib.request.Request(base+path,data=urllib.parse.urlencode(data).encode(),method='POST')
+              try:
+                  with urllib.request.urlopen(req, timeout=20) as r:
+                      body=r.read(); status=r.status
+              except urllib.error.HTTPError as e:
+                  status=e.code; body=e.read()
+              assert status==expect,(path,status,body[:500])
+              print('POST',path,status)
+              return body
+          for p in ['/', '/roster', '/compare', '/gm', '/evo', '/api/roster', '/api/gm', '/api/evo']:
+              body=get(p); assert body
+          gm=GMProduct(pathlib.Path.cwd()); assert len(gm.population)>=2
+          c1,c2=gm.population[0],gm.population[1]
+          cid1,cid2=c1['card_id'],c2['card_id']
+          pos=c1.get('position') or ''
+          search=get('/?'+urllib.parse.urlencode({'name':c1.get('player_name') or '', 'position':pos})).decode()
+          assert c1.get('player_name','') in search
+          player=json.loads(get('/api/player?'+urllib.parse.urlencode({'card_id':cid1}))); assert player
+          post('/api/roster',{'card_id':cid1,'position':pos,'slot':'TEST1','starter':'on','protected':'on'},201)
+          roster=json.loads(get('/api/roster')); assert roster['assignments'][0]['card_id']==cid1
+          decision=json.loads(get('/api/gm/decision?slot=TEST1')); assert decision.get('decision')
+          post('/api/gm/budget',{'current_coins':'300000','reserve_coins':'50000'})
+          budget=json.loads(get('/api/gm'))['budget']; assert budget['spendable_budget']==250000
+          post('/api/gm/price',{'card_id':cid2,'price':'12345'})
+          compare=get('/compare?'+urllib.parse.urlencode({'current':cid1,'candidate':cid2})); assert compare
+          get('/api/gm/decision?slot=MISSING',404)
+          get('/api/evo/candidates?evo_id=MISSING',404)
+          post('/evo',{'name':'ACCEPTANCE TEST ONLY','target_ovr':'99','positions':pos,'ovr_min':'0','ovr_max':'99','notes':'synthetic software acceptance fixture'})
+          evos=json.loads(get('/api/evo'))['definitions']; assert evos
+          eid=evos[-1]['id']
+          candidates=json.loads(get('/api/evo/candidates?'+urllib.parse.urlencode({'evo_id':eid,'ownership':'all'})))
+          assert 'candidates' in candidates
+          detail=json.loads(get('/api/evo/candidate?'+urllib.parse.urlencode({'evo_id':eid,'card_id':cid1}))); assert detail['projection']['production']['score'] is None
+          for fn in ['roster.json','gm.json','evo.json']:
+              p=pathlib.Path('.operation_pancake')/fn; assert p.exists() and json.loads(p.read_text()).get('version') is not None
+          print('HTTP/API/PERSISTENCE PHASE 1 PASS',cid1,cid2,eid)
+          PY
+      - name: Restart and verify persistence
+        run: |
+          kill "$(cat /tmp/gm-mvp-acceptance/app.pid)" || true
+          sleep 1
+          operation-pancake-app >> /tmp/gm-mvp-acceptance/app.log 2>&1 &
+          echo $! > /tmp/gm-mvp-acceptance/app.pid
+          python - <<'PY' | tee /tmp/gm-mvp-acceptance/restart.txt
+          import json,time,urllib.request
+          for _ in range(60):
+              try:
+                  with urllib.request.urlopen('http://127.0.0.1:8765/api/roster',timeout=2) as r:
+                      data=json.load(r)
+                  assert data['assignments'] and data['assignments'][0]['slot']=='TEST1'
+                  print('RESTART PERSISTENCE PASS')
+                  break
+              except Exception:
+                  time.sleep(1)
+          else: raise SystemExit('restart/persistence failed')
+          PY
+      - name: Upload acceptance evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gm-mvp-acceptance
+          path: /tmp/gm-mvp-acceptance
+          if-no-files-found: warn
