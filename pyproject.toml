@@ -15,6 +15,7 @@ dependencies = [
 [project.scripts]
 operation-pancake = "operation_pancake.cli:main"
 operation-pancake-gm = "operation_pancake.gm_cli_entry:main"
+operation-pancake-app = "operation_pancake.app:main"
 
 [project.optional-dependencies]
 dev = [
