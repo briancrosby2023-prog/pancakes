@@ -1,6 +1,6 @@
 import json
 import pytest
-from operation_pancake.app import _page
+from operation_pancake.app import _page, _player_search_row
 from operation_pancake.roster_state import RosterAssignment, RosterStore
 from operation_pancake.gm_state import GMStateStore
 
@@ -53,3 +53,8 @@ def test_protected_and_rerollable_are_distinct_roster_semantics():
 
 def test_compare_preselection_link_contract():
     assert "/compare?current=canonical-card-id"==f'/compare?current={"canonical-card-id"}'
+
+
+def test_player_search_row_renders_pancake_score_and_rank():
+    row=_player_search_row({"card_id":"c1","player_name":"Test Player","position":"CB","native_overall":85},{"score":75.5,"position_rank":12})
+    assert "Pancake score 75.5" in row and "Position rank 12" in row

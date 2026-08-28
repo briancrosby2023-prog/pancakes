@@ -64,12 +64,12 @@ class RosterStore:
     def add(self, row: RosterAssignment) -> RosterAssignment:
         rows = self.load(); self._validate(row, rows); rows.append(row); self.save(rows); return row
 
-    def update(self, slot: str, **changes: Any) -> RosterAssignment:
-        rows = self.load(); index = next((i for i, row in enumerate(rows) if row.slot == slot.upper()), None)
-        if index is None: raise KeyError(slot)
+    def update(self, old_slot: str, **changes: Any) -> RosterAssignment:
+        rows = self.load(); index = next((i for i, row in enumerate(rows) if row.slot == old_slot.upper()), None)
+        if index is None: raise KeyError(old_slot)
         updated = replace(rows[index], **changes)
         updated = RosterAssignment.from_dict(asdict(updated))
-        self._validate(updated, rows, old_slot=slot.upper()); rows[index] = updated; self.save(rows); return updated
+        self._validate(updated, rows, old_slot=old_slot.upper()); rows[index] = updated; self.save(rows); return updated
 
     def remove(self, slot: str) -> RosterAssignment:
         rows = self.load(); index = next((i for i, row in enumerate(rows) if row.slot == slot.upper()), None)
