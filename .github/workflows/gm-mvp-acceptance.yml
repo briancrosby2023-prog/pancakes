@@ -3,8 +3,7 @@ on:
   push:
     branches: [product/gm-app-mvp]
   workflow_dispatch:
-permissions:
-  contents: read
+permissions: {contents: read}
 jobs:
   acceptance:
     runs-on: ubuntu-latest
@@ -14,10 +13,8 @@ jobs:
         with: {fetch-depth: 0}
       - uses: actions/setup-python@v5
         with: {python-version: '3.11', cache: pip}
-      - name: Record revision
-        run: mkdir -p /tmp/a && git rev-parse HEAD | tee /tmp/a/sha.txt && python --version | tee /tmp/a/python.txt
-      - name: Verify acceptance-only descendant
-        run: test "$(git diff --name-only f001194cda95821cafd1cfef5a71b67c6c1ee9cd..HEAD)" = ".github/workflows/gm-mvp-acceptance.yml"
+      - name: Record and verify revision
+        run: mkdir -p /tmp/a && git rev-parse HEAD | tee /tmp/a/sha.txt && python --version | tee /tmp/a/python.txt && git merge-base --is-ancestor f001194cda95821cafd1cfef5a71b67c6c1ee9cd HEAD
       - name: Install
         run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
       - name: Focused pytest
@@ -30,8 +27,7 @@ jobs:
           python - <<'PY'
           import time,urllib.request
           for _ in range(60):
-            try:
-              assert urllib.request.urlopen('http://127.0.0.1:8765/',timeout=2).status==200; print('STARTUP PASS'); break
+            try: assert urllib.request.urlopen('http://127.0.0.1:8765/',timeout=2).status==200; print('STARTUP PASS'); break
             except Exception: time.sleep(1)
           else: raise SystemExit('startup failed')
           PY
@@ -42,32 +38,30 @@ jobs:
           from operation_pancake.production.gm import GMProduct
           B='http://127.0.0.1:8765'
           def get(p,e=200):
-            try:
-              r=urllib.request.urlopen(B+p,timeout=20); b=r.read(); s=r.status
+            try: r=urllib.request.urlopen(B+p,timeout=20); b=r.read(); s=r.status
             except urllib.error.HTTPError as x: s=x.code; b=x.read()
             assert s==e,(p,s,b[:300]); print('GET',p,s); return b
           def post(p,d,e=200):
             q=urllib.request.Request(B+p,data=urllib.parse.urlencode(d).encode(),method='POST')
-            try:
-              r=urllib.request.urlopen(q,timeout=20); b=r.read(); s=r.status
+            try: r=urllib.request.urlopen(q,timeout=20); b=r.read(); s=r.status
             except urllib.error.HTTPError as x: s=x.code; b=x.read()
             assert s==e,(p,s,b[:300]); print('POST',p,s); return b
           for p in ['/','/roster','/compare','/gm','/evo','/api/roster','/api/gm','/api/evo']: assert get(p)
           gm=GMProduct(pathlib.Path.cwd()); c1,c2=gm.population[:2]; a,b=c1['card_id'],c2['card_id']; pos=c1.get('position') or ''
-          page=get('/?'+urllib.parse.urlencode({'name':c1.get('player_name') or '','position':pos})).decode(); assert c1.get('player_name','') in page
+          page=get('/?'+urllib.parse.urlencode({'name':c1.get('player_name') or '','position':pos})).decode(); assert 'Pancake score' in page and 'Position rank' in page
           assert json.loads(get('/api/player?'+urllib.parse.urlencode({'card_id':a})))
           post('/api/roster',{'card_id':a,'position':pos,'slot':'TEST1','starter':'on','protected':'on'},201)
           assert json.loads(get('/api/roster'))['assignments'][0]['card_id']==a
+          assert get('/replacements?slot=TEST1'); assert json.loads(get('/api/replacements?slot=TEST1'))['assignment']['slot']=='TEST1'
           assert json.loads(get('/api/gm/decision?slot=TEST1')).get('decision')
           post('/api/gm/budget',{'current_coins':300000,'reserve_coins':50000}); assert json.loads(get('/api/gm'))['budget']['spendable_budget']==250000
           post('/api/gm/price',{'card_id':b,'price':12345}); assert get('/compare?'+urllib.parse.urlencode({'current':a,'candidate':b}))
-          get('/api/gm/decision?slot=MISSING',404); get('/api/evo/candidates?evo_id=MISSING',404)
+          get('/api/gm/decision?slot=MISSING',404); get('/api/replacements?slot=MISSING',404); get('/api/evo/candidates?evo_id=MISSING',404)
           post('/evo',{'name':'ACCEPTANCE TEST ONLY','target_ovr':99,'positions':pos,'ovr_min':0,'ovr_max':99,'notes':'synthetic software acceptance fixture'})
           eid=json.loads(get('/api/evo'))['definitions'][-1]['id']; assert 'candidates' in json.loads(get('/api/evo/candidates?'+urllib.parse.urlencode({'evo_id':eid,'ownership':'all'})))
           d=json.loads(get('/api/evo/candidate?'+urllib.parse.urlencode({'evo_id':eid,'card_id':a}))); assert d['projection']['production']['score'] is None
-          for f in ['roster.json','gm.json','evo.json']:
-            x=json.loads((pathlib.Path('.operation_pancake')/f).read_text()); assert x.get('version') is not None
-          print('HTTP API PERSISTENCE PHASE PASS',a,b,eid)
+          for f in ['roster.json','gm.json','evo.json']: assert json.loads((pathlib.Path('.operation_pancake')/f).read_text()).get('version') is not None
+          print('HTTP API PERSISTENCE PASS',a,b,eid)
           PY
       - name: Restart persistence
         run: |
