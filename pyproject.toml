@@ -8,23 +8,15 @@ version = "0.1.0"
 description = "Research and decision-support platform for EA Sports College Football Ultimate Team."
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = [
-    "openpyxl>=3.1",
-]
+dependencies = ["openpyxl>=3.1"]
 
 [project.scripts]
 operation-pancake = "operation_pancake.cli:main"
 operation-pancake-gm = "operation_pancake.gm_cli_entry:main"
-operation-pancake-app = "operation_pancake.product_app:main"
+operation-pancake-app = "operation_pancake.team_app:main"
 
 [project.optional-dependencies]
-dev = [
-    "beautifulsoup4>=4.12",
-    "pytest>=8.0",
-    "pytest-cov>=5.0",
-    "requests>=2.31",
-    "ruff>=0.6",
-]
+dev = ["beautifulsoup4>=4.12","pytest>=8.0","pytest-cov>=5.0","requests>=2.31","ruff>=0.6"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
