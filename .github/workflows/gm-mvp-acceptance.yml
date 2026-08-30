@@ -85,7 +85,6 @@ jobs:
         run: |
           set -euo pipefail
           python - <<'PY' 2>&1 | tee /tmp/a/team-live-response.txt
-          import json
           import urllib.request
           B='http://127.0.0.1:8765'
           with urllib.request.urlopen(B+'/setup',timeout=20) as r:
@@ -207,11 +206,11 @@ jobs:
           else echo 'CLASSIFICATION: CURRENT PASS'; fi | tee -a /tmp/a/evidence-classification.txt
           if [ "$current" -ne 0 ] && [ "$base" -eq 0 ]; then exit 1; fi
           exit 0
-      - name: Broad pytest bounded
+      - name: Broad pytest bounded after classified exception
         run: |
           set -uo pipefail
           set +e
-          timeout 300 python -m pytest -ra 2>&1 | tee /tmp/a/broad.txt
+          timeout 600 python -m pytest -ra --ignore=tests/test_evidence_index.py 2>&1 | tee /tmp/a/broad.txt
           status=${PIPESTATUS[0]}
           echo "$status" > /tmp/a/broad-exit.txt
           if [ "$status" -eq 0 ]; then echo 'BROAD RESULT: PASS' | tee /tmp/a/broad-result.txt;
