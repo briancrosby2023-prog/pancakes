@@ -5,10 +5,10 @@ from operation_pancake import team_app
 
 def test_real_upload_surface_and_routes_present():
     import inspect
-    src=inspect.getsource(team_app)
-    assert 'type="file"' in src and 'multiple required' in src and 'multipart/form-data' in src
+    src=inspect.getsource(team_app); surface=team_app._upload_surface()
+    assert 'type="file"' in surface and ' multiple ' in surface and 'multipart/form-data' in surface
     assert '/team/upload' in src and '/team/confirm' in src
-    assert 'DROP TEAM PICTURES HERE' in src
+    assert 'DROP TEAM PICTURES HERE' in surface and 'ANALYZE MY TEAM' in surface
 
 def test_image_bytes_are_persisted_and_multiple(tmp_path):
     s=TeamImportStore(tmp_path/'team.json'); rows=s.stage_bytes([('o.png','image/png',b'PNGDATA'),('d.jpg','image/jpeg',b'JPEGDATA')])
