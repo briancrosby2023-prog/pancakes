@@ -25,6 +25,29 @@ jobs:
           set -euo pipefail
           python -m pip install --upgrade pip
           python -m pip install -e '.[dev]'
+      - name: Resolve executable identity
+        run: |
+          set -euo pipefail
+          command -v operation-pancake-app | tee /tmp/a/executable-path.txt
+          python - <<'PY' 2>&1 | tee /tmp/a/runtime-identity.txt
+          import importlib.metadata
+          import pathlib
+          import sys
+          import operation_pancake
+          from operation_pancake import team_app
+          eps=[ep for ep in importlib.metadata.entry_points(group='console_scripts') if ep.name=='operation-pancake-app']
+          assert len(eps)==1,eps
+          ep=eps[0]
+          print('PYTHON',sys.executable)
+          print('ENTRYPOINT',ep.value)
+          print('PACKAGE',operation_pancake.__file__)
+          print('TEAM_APP',team_app.__file__)
+          print('BUILD',team_app.TEAM_SETUP_BUILD)
+          assert ep.value=='operation_pancake.team_app:main'
+          repo=pathlib.Path.cwd().resolve()
+          assert pathlib.Path(team_app.__file__).resolve().is_relative_to(repo)
+          assert team_app.TEAM_SETUP_BUILD=='DROP-ZONE-PATCH-3'
+          PY
       - name: Focused pytest
         run: |
           set -euo pipefail
@@ -40,8 +63,8 @@ jobs:
       - name: Team Setup pytest
         run: |
           set -euo pipefail
-          python -m pytest -ra tests/test_team_setup_dropzone.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py 2>&1 | tee /tmp/a/team-setup.txt
-      - name: Start app
+          python -m pytest -ra tests/test_team_setup_dropzone.py tests/test_team_setup_runtime_identity.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py 2>&1 | tee /tmp/a/team-setup.txt
+      - name: Start app exactly like user
         run: |
           set -euo pipefail
           rm -rf .operation_pancake
@@ -49,9 +72,60 @@ jobs:
           python - <<'PY'
           import time,urllib.request
           for _ in range(60):
-            try: assert urllib.request.urlopen('http://127.0.0.1:8765/',timeout=2).status==200; print('STARTUP PASS'); break
-            except Exception: time.sleep(1)
-          else: raise SystemExit('startup failed')
+            try:
+              assert urllib.request.urlopen('http://127.0.0.1:8765/',timeout=2).status==200
+              print('STARTUP PASS')
+              break
+            except Exception:
+              time.sleep(1)
+          else:
+            raise SystemExit('startup failed')
+          PY
+      - name: Live Team Setup response contract
+        run: |
+          set -euo pipefail
+          python - <<'PY' 2>&1 | tee /tmp/a/team-live-response.txt
+          import json
+          import urllib.request
+          B='http://127.0.0.1:8765'
+          with urllib.request.urlopen(B+'/setup',timeout=20) as r:
+              body=r.read().decode()
+              cache=r.headers.get('Cache-Control','')
+              pragma=r.headers.get('Pragma','')
+              print('STATUS',r.status)
+              print('CACHE',cache)
+              print('PRAGMA',pragma)
+          assert 'TEAM SETUP BUILD: DROP-ZONE-PATCH-3' in body
+          assert 'DROP HANDLER: NOT READY' in body
+          assert "setStatus('DROP HANDLER: READY')" in body
+          assert "window.addEventListener(type,pageGuard,{capture:true,passive:false})" in body
+          assert 'addFiles(e.dataTransfer.files)' in body
+          assert 'DROP HANDLER: FILE DRAG' in body
+          assert 'no-store' in cache and 'no-cache' in cache
+          assert pragma.lower()=='no-cache'
+          print('LIVE TEAM SETUP RESPONSE PASS')
+          PY
+      - name: Four-file executable upload staging
+        run: |
+          set -euo pipefail
+          python - <<'PY' 2>&1 | tee /tmp/a/team-four-file.txt
+          import json
+          import urllib.request
+          B='http://127.0.0.1:8765'
+          boundary='PANCAKE-PATCH3'
+          chunks=[]
+          for i,ctype in enumerate(('image/png','image/jpeg','image/webp','image/heic'),1):
+              chunks.append((f'--{boundary}\r\nContent-Disposition: form-data; name="images"; filename="team-{i}.img"\r\nContent-Type: {ctype}\r\n\r\n').encode()+f'IMAGE-{i}'.encode()+b'\r\n')
+          body=b''.join(chunks)+f'--{boundary}--\r\n'.encode()
+          req=urllib.request.Request(B+'/team/upload',data=body,method='POST',headers={'Content-Type':f'multipart/form-data; boundary={boundary}'})
+          with urllib.request.urlopen(req,timeout=45) as r:
+              assert r.status==200
+              page=r.read().decode()
+          assert 'TEAM SETUP BUILD: DROP-ZONE-PATCH-3' in page
+          state=json.load(urllib.request.urlopen(B+'/api/team-import',timeout=20))['state']
+          assert len(state['screenshots'])==4,state
+          assert [x['filename'] for x in state['screenshots']]==[f'team-{i}.img' for i in range(1,5)]
+          print('FOUR FILE STAGING PASS')
           PY
       - name: HTTP product acceptance
         run: |
@@ -71,6 +145,7 @@ jobs:
             assert s==e,(p,s,b[:300]); print('POST',p,s); return b
           first=get('/').decode(); assert 'First run starts with Team Setup' in first and '/setup' in first
           setup=get('/setup').decode(); assert 'DROP TEAM PICTURES HERE' in setup and 'ANALYZE MY TEAM' in setup and 'multiple' in setup
+          assert 'TEAM SETUP BUILD: DROP-ZONE-PATCH-3' in setup and 'DROP HANDLER: NOT READY' in setup
           for p in ['/players','/roster','/compare','/gm','/evo','/api/roster','/api/gm','/api/evo']: assert get(p)
           post('/setup',{'current_coins':300000,'reserve_coins':50000})
           home=get('/').decode(); assert 'GM Home' in home and 'Spendable' in home
@@ -109,6 +184,7 @@ jobs:
               d=json.load(urllib.request.urlopen('http://127.0.0.1:8765/api/roster',timeout=2)); assert d['assignments'][0]['slot']=='TEST1'
               g=json.load(urllib.request.urlopen('http://127.0.0.1:8765/api/gm',timeout=2)); assert g['budget']['spendable_budget']==250000
               home=urllib.request.urlopen('http://127.0.0.1:8765/',timeout=2).read().decode(); assert 'GM Home' in home
+              setup=urllib.request.urlopen('http://127.0.0.1:8765/setup',timeout=2).read().decode(); assert 'TEAM SETUP BUILD: DROP-ZONE-PATCH-3' in setup
               print('RESTART PASS'); break
             except Exception: time.sleep(1)
           else: raise SystemExit('restart failed')
@@ -129,9 +205,9 @@ jobs:
           if [ "$current" -ne 0 ] && [ "$base" -ne 0 ]; then echo 'CLASSIFICATION: PRE-EXISTING/UNRELATED';
           elif [ "$current" -ne 0 ]; then echo 'CLASSIFICATION: PATCH-INTRODUCED/REGRESSED';
           else echo 'CLASSIFICATION: CURRENT PASS'; fi | tee -a /tmp/a/evidence-classification.txt
+          if [ "$current" -ne 0 ] && [ "$base" -eq 0 ]; then exit 1; fi
           exit 0
       - name: Broad pytest bounded
-        continue-on-error: true
         run: |
           set -uo pipefail
           set +e
