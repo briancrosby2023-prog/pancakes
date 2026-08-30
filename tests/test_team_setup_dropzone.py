@@ -11,7 +11,18 @@ def test_dropzone_is_real_multi_file_interaction():
         assert event in page
     assert 'e.preventDefault()' in page
     assert 'e.stopPropagation()' in page
-    assert "document.addEventListener('drop',e=>e.preventDefault())" in page
+
+
+def test_page_level_file_drag_guard_blocks_native_navigation_and_preserves_target_drop():
+    page=team_app._upload_surface()
+    assert "const isFileDrag=e=>" in page
+    assert "['dragenter','dragover','drop'].forEach(type=>window.addEventListener(type,pageGuard,{capture:true,passive:false}))" in page
+    assert "if(!zone.contains(e.target)){e.stopPropagation();" in page
+    assert "e.dataTransfer.dropEffect='none'" in page
+    assert "zone.addEventListener('drop',e=>" in page
+    assert 'addFiles(e.dataTransfer.files)' in page
+    assert "document.addEventListener('DOMContentLoaded',initTeamDrop,{once:true})" in page
+    assert "zone.dataset.dropReady='1'" in page
 
 
 def test_selection_state_and_primary_action_contract():
@@ -24,7 +35,7 @@ def test_selection_state_and_primary_action_contract():
     assert 'ANALYZING ' in page
     assert 'input.click()' in page
     assert 'input.files=dt.files' in page
-    assert 'Array.from(files)' in page
+    assert 'Array.from(files||[])' in page
 
 
 def test_invalid_files_are_named_without_discarding_valid_staged_files():
@@ -41,9 +52,7 @@ def test_multipart_parser_retains_four_images_together():
     expected=[]
     for i,ctype in enumerate(('image/png','image/jpeg','image/webp','image/heic'),1):
         name=f'team-{i}.img'; data=f'IMAGE-{i}'.encode(); expected.append((name,ctype,data))
-        chunks.append(
-            f'--{boundary}\r\nContent-Disposition: form-data; name="images"; filename="{name}"\r\nContent-Type: {ctype}\r\n\r\n'.encode()+data+b'\r\n'
-        )
+        chunks.append(f'--{boundary}\r\nContent-Disposition: form-data; name="images"; filename="{name}"\r\nContent-Type: {ctype}\r\n\r\n'.encode()+data+b'\r\n')
     body=b''.join(chunks)+f'--{boundary}--\r\n'.encode()
     parts=team_app._multipart({'Content-Type':f'multipart/form-data; boundary={boundary}'},body)
     files=[(fn,ct,data) for field,fn,ct,data in parts if field=='images']
