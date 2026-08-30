@@ -37,6 +37,10 @@ jobs:
         run: |
           set -euo pipefail
           python -m pytest -ra tests/test_user_acceptance_patch_1.py 2>&1 | tee /tmp/a/patch1.txt
+      - name: Team Setup pytest
+        run: |
+          set -euo pipefail
+          python -m pytest -ra tests/test_team_setup_dropzone.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py 2>&1 | tee /tmp/a/team-setup.txt
       - name: Start app
         run: |
           set -euo pipefail
@@ -66,7 +70,8 @@ jobs:
             except urllib.error.HTTPError as x: s=x.code; b=x.read()
             assert s==e,(p,s,b[:300]); print('POST',p,s); return b
           first=get('/').decode(); assert 'First run starts with Team Setup' in first and '/setup' in first
-          for p in ['/setup','/players','/roster','/compare','/gm','/evo','/api/roster','/api/gm','/api/evo']: assert get(p)
+          setup=get('/setup').decode(); assert 'DROP TEAM PICTURES HERE' in setup and 'ANALYZE MY TEAM' in setup and 'multiple' in setup
+          for p in ['/players','/roster','/compare','/gm','/evo','/api/roster','/api/gm','/api/evo']: assert get(p)
           post('/setup',{'current_coins':300000,'reserve_coins':50000})
           home=get('/').decode(); assert 'GM Home' in home and 'Spendable' in home
           assert json.loads(get('/api/gm'))['budget']['spendable_budget']==250000
