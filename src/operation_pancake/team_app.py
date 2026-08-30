@@ -10,7 +10,7 @@ from urllib.parse import parse_qs, urlparse
 from operation_pancake import product_app
 from operation_pancake.production.gm import GMProduct
 from operation_pancake.roster_state import RosterAssignment, RosterStore
-from operation_pancake.team_import import (Candidate, OCRObservation, SlotRegion, SPECIALIST_SLOTS,
+from operation_pancake.team_import import (Candidate, IMAGE_TYPES, OCRObservation, SlotRegion, SPECIALIST_SLOTS,
     TeamImportStore, VIEW_SLOTS, extract_structured, match_candidate, to_candidate)
 
 # Conservative normalized regions. These encode stable Team Manager card ordering, not user players.
@@ -31,6 +31,50 @@ def _multipart(headers,body):
         name=part.get_param('name',header='content-disposition'); filename=part.get_filename()
         if filename: out.append((name,filename,part.get_content_type(),part.get_payload(decode=True) or b''))
     return out
+
+def _upload_surface():
+    accept=','.join(IMAGE_TYPES)
+    return f'''<div class="card" id="team-upload-card">
+<form id="team-upload-form" method="post" action="/team/upload" enctype="multipart/form-data" style="display:block">
+<input id="teamfiles" name="images" type="file" accept="{accept}" multiple hidden>
+<div id="team-dropzone" role="button" tabindex="0" aria-controls="teamfiles" style="display:block;border:2px dashed #79c8ff;border-radius:18px;padding:42px 24px;text-align:center;cursor:pointer">
+<strong style="font-size:24px">DROP TEAM PICTURES HERE</strong><br><span class="muted">OFFENSE · DEFENSE · SPECIAL TEAMS · SPECIALISTS</span><br><span>or click to choose all four</span>
+</div>
+<div id="team-errors" class="error" role="alert" hidden></div>
+<div id="team-selection" style="margin-top:16px" hidden><strong id="team-count">0 TEAM SCREENSHOTS READY</strong><ul id="team-file-list"></ul><button id="team-add" type="button">ADD ANOTHER IMAGE</button></div>
+<button id="team-analyze" type="submit" disabled style="margin-top:16px;font-weight:800">ANALYZE MY TEAM</button>
+<div id="team-processing" role="status" aria-live="polite" style="margin-top:12px;font-weight:700"></div>
+</form></div>
+<script>
+(()=>{{
+ const form=document.getElementById('team-upload-form'), input=document.getElementById('teamfiles'), zone=document.getElementById('team-dropzone');
+ const selection=document.getElementById('team-selection'), count=document.getElementById('team-count'), list=document.getElementById('team-file-list');
+ const add=document.getElementById('team-add'), analyze=document.getElementById('team-analyze'), processing=document.getElementById('team-processing'), errors=document.getElementById('team-errors');
+ const accepted=new Set({json.dumps(list(IMAGE_TYPES))}); let staged=[]; let dragDepth=0;
+ const key=f=>`${{f.name}}:${{f.size}}:${{f.lastModified}}`;
+ function syncInput(){{const dt=new DataTransfer(); staged.forEach(f=>dt.items.add(f)); input.files=dt.files;}}
+ function render(){{
+   syncInput(); selection.hidden=staged.length===0; analyze.disabled=staged.length===0;
+   count.textContent=`${{staged.length}} TEAM SCREENSHOT${{staged.length===1?'':'S'}} READY`;
+   list.replaceChildren(); staged.forEach((f,i)=>{{const li=document.createElement('li'); li.append(document.createTextNode(f.name+' ')); const b=document.createElement('button'); b.type='button'; b.textContent='REMOVE'; b.dataset.index=String(i); b.addEventListener('click',()=>{{staged.splice(i,1); render();}}); li.append(b); list.append(li);}});
+ }}
+ function addFiles(files){{
+   const bad=[]; const seen=new Set(staged.map(key));
+   Array.from(files).forEach(f=>{{if(!accepted.has(f.type)) bad.push(f.name); else if(!seen.has(key(f))){{staged.push(f); seen.add(key(f));}}}});
+   if(bad.length){{errors.hidden=false; errors.textContent=`Unsupported image file${{bad.length===1?'':'s'}}: ${{bad.join(', ')}}. Use PNG, JPEG, WEBP, HEIC, or HEIF.`;}} else {{errors.hidden=true; errors.textContent='';}}
+   render();
+ }}
+ ['dragenter','dragover','dragleave','drop'].forEach(type=>zone.addEventListener(type,e=>{{e.preventDefault(); e.stopPropagation();}}));
+ zone.addEventListener('dragenter',()=>{{dragDepth++; zone.style.borderStyle='solid';}});
+ zone.addEventListener('dragover',e=>{{if(e.dataTransfer)e.dataTransfer.dropEffect='copy';}});
+ zone.addEventListener('dragleave',()=>{{dragDepth=Math.max(0,dragDepth-1); if(!dragDepth)zone.style.borderStyle='dashed';}});
+ zone.addEventListener('drop',e=>{{dragDepth=0; zone.style.borderStyle='dashed'; addFiles(e.dataTransfer.files);}});
+ document.addEventListener('dragover',e=>e.preventDefault()); document.addEventListener('drop',e=>e.preventDefault());
+ zone.addEventListener('click',()=>input.click()); zone.addEventListener('keydown',e=>{{if(e.key==='Enter'||e.key===' '){{e.preventDefault(); input.click();}}}});
+ add.addEventListener('click',()=>input.click()); input.addEventListener('change',()=>addFiles(input.files));
+ form.addEventListener('submit',e=>{{if(!staged.length){{e.preventDefault(); return;}} analyze.disabled=true; add.disabled=true; zone.setAttribute('aria-disabled','true'); processing.textContent=`ANALYZING ${{staged.length}} TEAM SCREENSHOT${{staged.length===1?'':'S'}}...`;}});
+}})();
+</script>'''
 
 def _ocr(path:Path)->list[OCRObservation]|None:
     """Return normalized word boxes; OCR quality is separate from layout extraction."""
@@ -72,8 +116,8 @@ def create_handler(root:Path,**kwargs):
                 options=''.join(f'<option value="{html.escape(x["card_id"])}" {"selected" if x["card_id"]==c.canonical_card_id else ""}>{html.escape(x.get("player_name") or "")} — {html.escape(x.get("position") or "")} {x.get("native_overall") or ""}</option>' for x in gm.population if not c.player_name or (x.get('player_name') or '').casefold()==c.player_name.casefold())
                 rows+=f'<tr><td>{html.escape(c.group)}</td><td>{html.escape(c.slot)}</td><td>{html.escape(c.player_name or "UNKNOWN")}</td><td>{c.displayed_ovr or "UNKNOWN"}</td><td><select name="card__{c.id}"><option value="">UNMATCHED</option>{options}</select></td><td>{html.escape(c.match_status)}</td></tr>'
             shots=''.join(f'<li>{html.escape(x["filename"])} — {html.escape(x["extraction_status"])}</li>' for x in state.screenshots) or '<li>No images uploaded yet.</li>'
-            body='<div class="hero"><h1>Team Setup</h1><p>Structure first. Identity second. Upload Team Manager views for spatial slot extraction and conservative canonical matching.</p></div>'
-            body+='<div class="card"><form method="post" action="/team/upload" enctype="multipart/form-data"><input name="images" type="file" accept="image/png,image/jpeg,image/webp,image/heic,image/heif" multiple required><button>READ TEAM</button></form></div>'
+            body='<div class="hero"><h1>Team Setup</h1><p>Give Pancake your Team Manager screenshots. Add all four together, then analyze once.</p></div>'
+            body+=_upload_surface()
             body+=f'<div class="card"><h2>Image evidence</h2><ul>{shots}</ul></div>'
             if state.candidates: body+=f'<form method="post" action="/team/confirm"><div class="card"><h2>Review Team</h2><table><tr><th>View</th><th>Slot</th><th>Player</th><th>Observed OVR</th><th>Canonical match</th><th>Status</th></tr>{rows}</table><button>IMPORT TEAM</button></div></form>'
             return product_app.page('Team Setup',body)
@@ -88,6 +132,8 @@ def create_handler(root:Path,**kwargs):
                 if p=='/team/upload':
                     body=self.rfile.read(int(self.headers.get('Content-Length','0'))); parts=_multipart(self.headers,body); files=[(fn,ct,data) for name,fn,ct,data in parts if name=='images']
                     if not files: raise ValueError('Choose at least one image')
+                    bad=[fn for fn,ct,data in files if ct not in IMAGE_TYPES or not data]
+                    if bad: raise ValueError('Unsupported or empty image file: '+', '.join(Path(x).name for x in bad)+'. Use PNG, JPEG, WEBP, HEIC, or HEIF.')
                     imports.stage_bytes(files); _extract(imports,gm); self.redir('/setup'); return
                 if p=='/team/confirm':
                     f=parse_qs(self.rfile.read(int(self.headers.get('Content-Length','0'))).decode()); state=imports.load(); byslot={x.slot:x for x in roster.load()}
