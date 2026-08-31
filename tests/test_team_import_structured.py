@@ -32,10 +32,13 @@ def test_cb_ss_and_specialist_labels_remain_distinct():
     _,spec,_=extract_structured('s.png',[o('One',.01,.4),o('Two',.21,.4),o('Three',.41,.4),o('Four',.61,.4)],{'SPECIALISTS':sr},view='SPECIALISTS')
     assert [x.slot for x in spec]==['SUBLB1','SUBLB2','RDT1','RDT2']
 
-def test_empty_slot_not_invented_and_partial_is_reviewable():
+def test_unread_slot_is_preserved_as_unresolved_not_invented():
     rs=regions('QB1','HB1')
     _,found,_=extract_structured('x.png',[o('Partial Player',.01,.4)],{'OFFENSE':rs},view='OFFENSE')
-    assert len(found)==1 and found[0].slot=='QB1' and found[0].raw_player_name=='Partial Player'
+    assert len(found)==2
+    assert found[0].slot=='QB1' and found[0].raw_player_name=='Partial Player'
+    assert found[1].slot=='HB1' and found[1].raw_player_name is None and found[1].displayed_ovr is None
+    assert 'starter-name:unresolved' in found[1].provenance
 
 def test_matching_exact_ambiguous_unmatched_and_observed_ovr_separate():
     cards=[{'card_id':'a','player_name':'Jaylen Lewis','position':'CB','native_overall':83},
@@ -59,7 +62,7 @@ def test_observed_to_candidate_preserves_structure():
     _,found,_=extract_structured('o.png',[o('86',.01,.3),o('Quarter Back',.01,.4)],{'OFFENSE':rs},view='OFFENSE')
     c=to_candidate(found[0]); assert c.group=='OFFENSE' and c.slot=='QB1' and c.displayed_ovr==86 and c.bounding_region is not None
 
-def test_v1_and_v2_state_are_readable(tmp_path):
+def test_v1_state_is_readable_and_saves_as_current_v3(tmp_path):
     p=tmp_path/'team.json'; p.write_text(json.dumps({'version':1,'screenshots':[],'candidates':[{'id':'x','group':'OFFENSE','slot':'QB1','player_name':'Old'}]}))
     s=TeamImportStore(p).load(); assert s.version==1 and s.candidates[0].player_name=='Old'
-    TeamImportStore(p).save(s); d=json.loads(p.read_text()); assert d['version']==2 and d['candidates'][0]['slot']=='QB1'
+    TeamImportStore(p).save(s); d=json.loads(p.read_text()); assert d['version']==3 and d['candidates'][0]['slot']=='QB1'
