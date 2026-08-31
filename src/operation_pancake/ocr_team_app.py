@@ -6,7 +6,7 @@ from pathlib import Path
 from operation_pancake import team_app
 from operation_pancake.ocr_runtime import discover_tesseract
 from operation_pancake.team_import import OCRObservation,SlotRegion,VIEW_SLOTS,classify_view,extract_structured,match_candidate,to_candidate
-TEAM_SETUP_BUILD="OCR-LAYOUT-PATCH-3";_ORIGINAL_UPLOAD_SURFACE=team_app._upload_surface
+TEAM_SETUP_BUILD="OCR-LAYOUT-PATCH-4";_ORIGINAL_UPLOAD_SURFACE=team_app._upload_surface
 def _r(slot,cx,y1,y2,width=.095,backup_depth=.105):return SlotRegion(slot,(cx-width/2,y1,cx+width/2,min(.965,y2+backup_depth)))
 REAL_TEAM_MANAGER_REGIONS={
 "OFFENSE":[_r("LT1",.320,.405,.449),_r("LG1",.431,.405,.449),_r("C1",.544,.405,.449),_r("RG1",.656,.405,.449),_r("RT1",.768,.405,.449),_r("TE1",.880,.405,.449),_r("WR1",.320,.704,.752),_r("WR3",.431,.704,.752),_r("HB1",.544,.704,.752),_r("QB1",.656,.704,.752),_r("FB1",.768,.704,.752),_r("WR2",.880,.704,.752)],
