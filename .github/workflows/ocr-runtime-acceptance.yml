@@ -31,26 +31,21 @@ jobs:
       - name: OCR runtime and Team Setup regression
         run: |
           set -euo pipefail
-          python -m pytest -ra tests/test_ocr_runtime.py tests/test_team_setup_dropzone.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py
+          python -m pytest -ra tests/test_ocr_runtime.py tests/test_team_setup_dropzone.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py tests/test_real_team_manager_layout.py tests/test_ocr_layout_patch3.py
       - name: Exercise real Tesseract through production extractor
         run: |
           set -euo pipefail
           python - <<'PY'
-          import pathlib
-          import subprocess
-          import tempfile
+          import pathlib, subprocess, tempfile
           from operation_pancake import ocr_team_app
           from operation_pancake.ocr_runtime import discover_tesseract
-          runtime=discover_tesseract()
-          assert runtime.ready and runtime.executable, runtime
+          runtime=discover_tesseract(); assert runtime.ready and runtime.executable, runtime
+          assert ocr_team_app.TEAM_SETUP_BUILD=='OCR-LAYOUT-PATCH-3'
           with tempfile.TemporaryDirectory() as d:
-              p=pathlib.Path(d)/'proof.pgm'
-              p.write_text('P2\n120 40\n255\n' + ' '.join(['255']*(120*40)))
-              # The production path must invoke the verified executable successfully even if blank proof has no words.
+              p=pathlib.Path(d)/'proof.pgm'; p.write_text('P2\n120 40\n255\n' + ' '.join(['255']*(120*40)))
               result=subprocess.run([runtime.executable,str(p),'stdout','--psm','11','tsv'],capture_output=True,text=True,timeout=30)
               assert result.returncode==0,(result.returncode,result.stderr)
-              observations=ocr_team_app._ocr(p)
-              assert observations is not None
+              assert ocr_team_app._ocr(p) is not None
           print('REAL HOSTED TESSERACT PRODUCTION PATH PASS',runtime.executable,runtime.version)
           PY
       - name: Bounded broad suite
