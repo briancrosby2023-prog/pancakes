@@ -72,6 +72,11 @@ def discover_tesseract(*, platform: str | None = None, env: dict[str, str] | Non
     )
 
 
-def diagnostic_line() -> str:
+def diagnostic_line() -> int:
     runtime = discover_tesseract()
-    return runtime.message
+    print(f"READY={runtime.ready}")
+    print(f"SOURCE={runtime.source}")
+    print(f"EXECUTABLE={runtime.executable or 'NOT FOUND'}")
+    print(f"VERSION={runtime.version or 'UNAVAILABLE'}")
+    print(runtime.message)
+    return 0 if runtime.ready else 1
