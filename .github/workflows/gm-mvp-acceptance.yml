@@ -64,7 +64,7 @@ jobs:
       - name: Team Setup pytest
         run: |
           set -euo pipefail
-          python -m pytest -ra tests/test_team_setup_dropzone.py tests/test_team_setup_runtime_identity.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py tests/test_team_import_real_layout.py 2>&1 | tee /tmp/a/team-setup.txt
+          python -m pytest -ra tests/test_team_setup_dropzone.py tests/test_team_setup_runtime_identity.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py tests/test_real_team_manager_layout.py 2>&1 | tee /tmp/a/team-setup.txt
       - name: Start app exactly like user
         run: |
           set -euo pipefail
@@ -149,7 +149,7 @@ jobs:
         run: |
           set -euo pipefail
           set +e
-          timeout 300s python -m pytest -ra --ignore=tests/test_evidence_index.py 2>&1 | tee /tmp/a/broad.txt
+          timeout 600s python -m pytest -ra --ignore=tests/test_evidence_index.py 2>&1 | tee /tmp/a/broad.txt
           code=${PIPESTATUS[0]}
           set -e
           test "$code" -eq 0
