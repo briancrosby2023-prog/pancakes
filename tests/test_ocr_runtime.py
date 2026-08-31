@@ -54,8 +54,9 @@ def test_production_extractor_invokes_discovered_engine(monkeypatch, tmp_path):
     assert words and words[0].text == "QB"
 
 
-def test_supported_runtime_patches_existing_dropzone_without_regression():
-    assert team_app._ocr is ocr_team_app._ocr
-    page = team_app._upload_surface()
+def test_supported_runtime_preserves_patch3_dropzone(monkeypatch):
+    ready = ocr_runtime.OCRRuntime(True, "/usr/bin/tesseract", "tesseract 5", "test", "OCR ENGINE: READY")
+    monkeypatch.setattr(ocr_team_app, "discover_tesseract", lambda: ready)
+    page = ocr_team_app._upload_surface()
     assert "window.addEventListener(type,pageGuard,{capture:true,passive:false})" in page
     assert "addFiles(e.dataTransfer.files)" in page
