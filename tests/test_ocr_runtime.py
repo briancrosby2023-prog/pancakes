@@ -33,7 +33,7 @@ def test_ready_ui_means_version_probe_succeeded(monkeypatch):
     ready = ocr_runtime.OCRRuntime(True, "C:/Tesseract-OCR/tesseract.exe", "tesseract 5.4.1", "test", "OCR ENGINE: READY — tesseract 5.4.1 — C:/Tesseract-OCR/tesseract.exe")
     monkeypatch.setattr(ocr_team_app, "discover_tesseract", lambda: ready)
     page = ocr_team_app._upload_surface()
-    assert "TEAM SETUP BUILD: OCR-RUNTIME-PATCH-1" in page
+    assert f"TEAM SETUP BUILD: {ocr_team_app.TEAM_SETUP_BUILD}" in page
     assert "DROP HANDLER: NOT READY" in page
     assert "OCR ENGINE: READY" in page and "tesseract.exe" in page
 
