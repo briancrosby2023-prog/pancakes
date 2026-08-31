@@ -6,7 +6,7 @@ from operation_pancake import team_app
 
 def test_operation_pancake_app_entrypoint_is_team_runtime():
     config = tomllib.loads(Path("pyproject.toml").read_text())
-    assert config["project"]["scripts"]["operation-pancake-app"] == "operation_pancake.team_app:main"
+    assert config["project"]["scripts"]["operation-pancake-app"] == "operation_pancake.ocr_team_app:main"
 
 
 def test_team_runtime_marker_is_code_identity_not_checkout_identity():
