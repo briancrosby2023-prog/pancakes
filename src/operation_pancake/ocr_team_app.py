@@ -10,7 +10,7 @@ from operation_pancake import team_app
 from operation_pancake.ocr_runtime import discover_tesseract
 from operation_pancake.team_import import OCRObservation, SlotRegion
 
-TEAM_SETUP_BUILD = "OCR-LAYOUT-PATCH-1"
+TEAM_SETUP_BUILD = "OCR-LAYOUT-PATCH-2"
 _ORIGINAL_UPLOAD_SURFACE = team_app._upload_surface
 
 
@@ -19,10 +19,8 @@ def _r(slot: str, cx: float, y1: float, y2: float, width: float = 0.095) -> Slot
     return SlotRegion(slot, (cx - width / 2, y1, cx + width / 2, y2))
 
 
-# These regions intentionally cover only the starter name/OVR nameplate, not the
-# player-card artwork or backup rows.  The previous generic five-column grid
-# included the left navigation and card art, which is why menu text became QB1
-# and other slots in the real Opera run.
+# Each region is an independent EA Team Manager starter container.  Text outside
+# these rectangles can never become part of that slot's player record.
 REAL_TEAM_MANAGER_REGIONS = {
     "OFFENSE": [
         _r("LT1", .320, .405, .449), _r("LG1", .431, .405, .449),
@@ -88,6 +86,25 @@ def _ocr(path: Path) -> list[OCRObservation] | None:
         return None
 
 
+_VISUAL_LINEUP = r'''
+<style>
+.pancake-lineup{display:grid;gap:22px;margin:18px 0}.lineup-view{border:1px solid #334155;border-radius:18px;padding:16px}.lineup-view h3{margin:0 0 12px}.lineup-grid{display:grid;grid-template-columns:repeat(6,minmax(135px,1fr));gap:10px}.lineup-slot{border:1px solid #475569;border-radius:14px;padding:11px;min-height:150px;background:rgba(15,23,42,.28)}.lineup-slot strong{font-size:18px}.lineup-player{font-weight:800;margin-top:10px}.lineup-ovr,.lineup-match,.lineup-backups{font-size:13px;margin-top:6px}.lineup-unresolved{opacity:.72}.lineup-slot select{max-width:100%;margin-top:8px}@media(max-width:900px){.lineup-grid{grid-template-columns:repeat(2,minmax(135px,1fr))}}
+</style>
+<script>
+(()=>{function buildVisualLineup(){
+ const heading=Array.from(document.querySelectorAll('h2')).find(x=>x.textContent.trim()==='Review Team'); if(!heading)return;
+ const table=heading.parentElement.querySelector('table'); if(!table||table.dataset.visualized==='1')return; table.dataset.visualized='1';
+ const rows=Array.from(table.querySelectorAll('tr')).slice(1), order=['OFFENSE','DEFENSE','SPECIAL TEAMS','SPECIALISTS']; const groups=new Map(order.map(x=>[x,[]]));
+ rows.forEach(row=>{const td=Array.from(row.querySelectorAll('td'));if(td.length<6)return;const view=td[0].textContent.trim(),slot=td[1].textContent.trim(),raw=td[2].textContent.trim(),ovr=td[3].textContent.trim(),status=td[5].textContent.trim();const select=td[4].querySelector('select');
+  const card=document.createElement('div');card.className='lineup-slot';const unresolved=!raw||raw==='UNKNOWN';card.innerHTML=`<strong>${slot}</strong><div class="lineup-player ${unresolved?'lineup-unresolved':''}">${unresolved?'[UNRESOLVED PLAYER]':raw}</div><div class="lineup-ovr">OVR: ${!ovr||ovr==='UNKNOWN'?'?':ovr}</div><div class="lineup-match">CANONICAL PANCAKE MATCH: ${status||'UNRESOLVED'}</div><div class="lineup-backups">BACKUPS: none observed</div>`;if(select)card.append(select);(groups.get(view)||groups.get('SPECIALISTS')).push(card);
+ });
+ const shell=document.createElement('div');shell.className='pancake-lineup';order.forEach(view=>{const section=document.createElement('section');section.className='lineup-view';const h=document.createElement('h3');h.textContent=view;const grid=document.createElement('div');grid.className='lineup-grid';(groups.get(view)||[]).forEach(x=>grid.append(x));section.append(h,grid);shell.append(section)});heading.textContent='Visual Lineup';table.replaceWith(shell);
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',buildVisualLineup,{once:true});else buildVisualLineup();})();
+</script>
+'''
+
+
 def _upload_surface():
     runtime = discover_tesseract()
     original = _ORIGINAL_UPLOAD_SURFACE()
@@ -95,7 +112,7 @@ def _upload_surface():
     readiness = f'<br><span id="team-ocr-status" role="status">{runtime.message}</span>\n'
     return original.replace(marker, readiness + marker, 1).replace(
         "TEAM SETUP BUILD: DROP-ZONE-PATCH-3", f"TEAM SETUP BUILD: {TEAM_SETUP_BUILD}", 1
-    )
+    ) + _VISUAL_LINEUP
 
 
 def install_runtime():
