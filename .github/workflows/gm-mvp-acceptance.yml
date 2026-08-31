@@ -47,7 +47,7 @@ jobs:
           repo=pathlib.Path.cwd().resolve()
           assert pathlib.Path(team_app.__file__).resolve().is_relative_to(repo)
           assert pathlib.Path(ocr_team_app.__file__).resolve().is_relative_to(repo)
-          assert ocr_team_app.TEAM_SETUP_BUILD=='OCR-RUNTIME-PATCH-1'
+          assert ocr_team_app.TEAM_SETUP_BUILD=='OCR-LAYOUT-PATCH-1'
           PY
       - name: Focused pytest
         run: |
@@ -95,7 +95,7 @@ jobs:
               print('STATUS',r.status)
               print('CACHE',cache)
               print('PRAGMA',pragma)
-          assert 'TEAM SETUP BUILD: OCR-RUNTIME-PATCH-1' in body
+          assert 'TEAM SETUP BUILD: OCR-LAYOUT-PATCH-1' in body
           assert 'OCR ENGINE:' in body
           assert 'DROP HANDLER: NOT READY' in body
           assert "setStatus('DROP HANDLER: READY')" in body
