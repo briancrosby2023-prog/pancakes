@@ -40,7 +40,7 @@ jobs:
           repo=pathlib.Path.cwd().resolve()
           assert pathlib.Path(team_app.__file__).resolve().is_relative_to(repo)
           assert pathlib.Path(ocr_team_app.__file__).resolve().is_relative_to(repo)
-          assert ocr_team_app.TEAM_SETUP_BUILD=='OCR-LAYOUT-PATCH-1'
+          assert ocr_team_app.TEAM_SETUP_BUILD=='OCR-LAYOUT-PATCH-2'
           PY
       - name: Focused pytest
         run: |
@@ -80,13 +80,16 @@ jobs:
           B='http://127.0.0.1:8765'
           with urllib.request.urlopen(B+'/setup',timeout=20) as r:
               body=r.read().decode(); cache=r.headers.get('Cache-Control',''); pragma=r.headers.get('Pragma',''); print('STATUS',r.status); print('CACHE',cache); print('PRAGMA',pragma)
-          assert 'TEAM SETUP BUILD: OCR-LAYOUT-PATCH-1' in body
+          assert 'TEAM SETUP BUILD: OCR-LAYOUT-PATCH-2' in body
           assert 'OCR ENGINE:' in body
           assert 'DROP HANDLER: NOT READY' in body
           assert "setStatus('DROP HANDLER: READY')" in body
           assert "window.addEventListener(type,pageGuard,{capture:true,passive:false})" in body
           assert 'addFiles(e.dataTransfer.files)' in body
           assert 'DROP HANDLER: FILE DRAG' in body
+          assert 'pancake-lineup' in body and '[UNRESOLVED PLAYER]' in body
+          assert "['OFFENSE','DEFENSE','SPECIAL TEAMS','SPECIALISTS']" in body
+          assert 'BACKUPS: none observed' in body
           assert 'no-store' in cache and 'no-cache' in cache
           assert pragma.lower()=='no-cache'
           print('LIVE TEAM SETUP RESPONSE PASS')
