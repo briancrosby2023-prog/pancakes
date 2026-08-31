@@ -11,6 +11,7 @@ from operation_pancake.ocr_runtime import discover_tesseract
 from operation_pancake.team_import import OCRObservation
 
 TEAM_SETUP_BUILD = "OCR-RUNTIME-PATCH-1"
+_ORIGINAL_UPLOAD_SURFACE = team_app._upload_surface
 
 
 def _ocr(path: Path) -> list[OCRObservation] | None:
@@ -18,13 +19,7 @@ def _ocr(path: Path) -> list[OCRObservation] | None:
     if not runtime.ready or not runtime.executable:
         return None
     try:
-        p = subprocess.run(
-            [runtime.executable, str(path), "stdout", "--psm", "11", "tsv"],
-            capture_output=True,
-            text=True,
-            timeout=45,
-            check=False,
-        )
+        p = subprocess.run([runtime.executable, str(path), "stdout", "--psm", "11", "tsv"], capture_output=True, text=True, timeout=45, check=False)
         if p.returncode != 0:
             return None
         rows = list(csv.DictReader(io.StringIO(p.stdout), delimiter="\t"))
@@ -48,18 +43,17 @@ def _upload_surface():
     original = _ORIGINAL_UPLOAD_SURFACE()
     marker = '<span id="team-drop-status"'
     readiness = f'<br><span id="team-ocr-status" role="status">{runtime.message}</span>\n'
-    return original.replace(marker, readiness + marker, 1).replace(
-        f"TEAM SETUP BUILD: {team_app.TEAM_SETUP_BUILD}", f"TEAM SETUP BUILD: {TEAM_SETUP_BUILD}", 1
-    )
+    return original.replace(marker, readiness + marker, 1).replace("TEAM SETUP BUILD: DROP-ZONE-PATCH-3", f"TEAM SETUP BUILD: {TEAM_SETUP_BUILD}", 1)
 
 
-_ORIGINAL_UPLOAD_SURFACE = team_app._upload_surface
-team_app.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
-team_app._ocr = _ocr
-team_app._upload_surface = _upload_surface
+def install_runtime():
+    team_app.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
+    team_app._ocr = _ocr
+    team_app._upload_surface = _upload_surface
 
 
 def main():
+    install_runtime()
     runtime = discover_tesseract()
     print(runtime.message)
     team_app.main()
