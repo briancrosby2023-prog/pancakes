@@ -13,7 +13,8 @@ dependencies = ["openpyxl>=3.1"]
 [project.scripts]
 operation-pancake = "operation_pancake.cli:main"
 operation-pancake-gm = "operation_pancake.gm_cli_entry:main"
-operation-pancake-app = "operation_pancake.team_app:main"
+operation-pancake-app = "operation_pancake.ocr_team_app:main"
+operation-pancake-ocr = "operation_pancake.ocr_runtime:diagnostic_line"
 
 [project.optional-dependencies]
 dev = ["beautifulsoup4>=4.12","pytest>=8.0","pytest-cov>=5.0","requests>=2.31","ruff>=0.6"]
