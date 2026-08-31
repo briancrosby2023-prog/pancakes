@@ -1,0 +1,54 @@
+name: OCR Runtime Acceptance
+on:
+  push:
+    branches: [product/gm-app-mvp]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  ocr-runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11', cache: pip}
+      - name: Install Pancake
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+      - name: Verify actual hosted OCR executable
+        run: |
+          set -euo pipefail
+          command -v tesseract
+          tesseract --version
+          operation-pancake-ocr
+      - name: OCR runtime and Team Setup regression
+        run: |
+          set -euo pipefail
+          python -m pytest -ra tests/test_ocr_runtime.py tests/test_team_setup_dropzone.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py
+      - name: Exercise real Tesseract through production extractor
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import pathlib
+          import subprocess
+          import tempfile
+          from operation_pancake import ocr_team_app
+          from operation_pancake.ocr_runtime import discover_tesseract
+          runtime=discover_tesseract()
+          assert runtime.ready and runtime.executable, runtime
+          with tempfile.TemporaryDirectory() as d:
+              p=pathlib.Path(d)/'proof.pgm'
+              p.write_text('P2\n120 40\n255\n' + ' '.join(['255']*(120*40)))
+              # The production path must invoke the verified executable successfully even if blank proof has no words.
+              result=subprocess.run([runtime.executable,str(p),'stdout','--psm','11','tsv'],capture_output=True,text=True,timeout=30)
+              assert result.returncode==0,(result.returncode,result.stderr)
+              observations=ocr_team_app._ocr(p)
+              assert observations is not None
+          print('REAL HOSTED TESSERACT PRODUCTION PATH PASS',runtime.executable,runtime.version)
+          PY
+      - name: Bounded broad suite
+        run: |
+          set -euo pipefail
+          timeout 600 python -m pytest -ra --ignore=tests/test_evidence_index.py
