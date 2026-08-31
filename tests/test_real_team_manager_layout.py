@@ -19,7 +19,10 @@ def test_real_offense_layout_maps_nameplates_not_left_menu():
     assert by_slot["C1"].displayed_ovr == 87
     assert by_slot["QB1"].raw_player_name == "Dante MOORE"
     assert by_slot["QB1"].displayed_ovr == 88
-    assert "LT1" not in by_slot
+    assert by_slot["LT1"].raw_player_name is None
+    assert by_slot["LT1"].displayed_ovr is None
+    assert "starter-name:unresolved" in by_slot["LT1"].provenance
+    assert all("OVR" not in (c.raw_player_name or "") and "Improvements" not in (c.raw_player_name or "") for c in found)
 
 
 def test_real_defense_special_teams_and_specialists_layouts():
