@@ -30,19 +30,12 @@ jobs:
           set -euo pipefail
           command -v operation-pancake-app | tee /tmp/a/executable-path.txt
           python - <<'PY' 2>&1 | tee /tmp/a/runtime-identity.txt
-          import importlib.metadata
-          import pathlib
-          import sys
-          import operation_pancake
+          import importlib.metadata, pathlib, sys, operation_pancake
           from operation_pancake import team_app, ocr_team_app
           eps=[ep for ep in importlib.metadata.entry_points(group='console_scripts') if ep.name=='operation-pancake-app']
           assert len(eps)==1,eps
           ep=eps[0]
-          print('PYTHON',sys.executable)
-          print('ENTRYPOINT',ep.value)
-          print('PACKAGE',operation_pancake.__file__)
-          print('TEAM_APP',team_app.__file__)
-          print('RUNTIME_BUILD',ocr_team_app.TEAM_SETUP_BUILD)
+          print('PYTHON',sys.executable); print('ENTRYPOINT',ep.value); print('PACKAGE',operation_pancake.__file__); print('TEAM_APP',team_app.__file__); print('RUNTIME_BUILD',ocr_team_app.TEAM_SETUP_BUILD)
           assert ep.value=='operation_pancake.ocr_team_app:main'
           repo=pathlib.Path.cwd().resolve()
           assert pathlib.Path(team_app.__file__).resolve().is_relative_to(repo)
@@ -75,12 +68,9 @@ jobs:
           for _ in range(60):
             try:
               assert urllib.request.urlopen('http://127.0.0.1:8765/',timeout=2).status==200
-              print('STARTUP PASS')
-              break
-            except Exception:
-              time.sleep(1)
-          else:
-            raise SystemExit('startup failed')
+              print('STARTUP PASS'); break
+            except Exception: time.sleep(1)
+          else: raise SystemExit('startup failed')
           PY
       - name: Live Team Setup response contract
         run: |
@@ -89,12 +79,7 @@ jobs:
           import urllib.request
           B='http://127.0.0.1:8765'
           with urllib.request.urlopen(B+'/setup',timeout=20) as r:
-              body=r.read().decode()
-              cache=r.headers.get('Cache-Control','')
-              pragma=r.headers.get('Pragma','')
-              print('STATUS',r.status)
-              print('CACHE',cache)
-              print('PRAGMA',pragma)
+              body=r.read().decode(); cache=r.headers.get('Cache-Control',''); pragma=r.headers.get('Pragma',''); print('STATUS',r.status); print('CACHE',cache); print('PRAGMA',pragma)
           assert 'TEAM SETUP BUILD: OCR-LAYOUT-PATCH-1' in body
           assert 'OCR ENGINE:' in body
           assert 'DROP HANDLER: NOT READY' in body
@@ -110,34 +95,46 @@ jobs:
         run: |
           set -euo pipefail
           python - <<'PY' 2>&1 | tee /tmp/a/team-four-file.txt
-          import json
-          import urllib.request
-          B='http://127.0.0.1:8765'
-          boundary='PANCAKE-PATCH3'
-          chunks=[]
+          import json,urllib.request
+          B='http://127.0.0.1:8765'; boundary='PANCAKE-PATCH3'; chunks=[]
           for i,ctype in enumerate(('image/png','image/jpeg','image/webp','image/heic'),1):
               chunks.append((f'--{boundary}\r\nContent-Disposition: form-data; name="images"; filename="team-{i}.img"\r\nContent-Type: {ctype}\r\n\r\n').encode()+f'IMAGE-{i}'.encode()+b'\r\n')
           body=b''.join(chunks)+f'--{boundary}--\r\n'.encode()
           req=urllib.request.Request(B+'/team/upload',data=body,method='POST',headers={'Content-Type':f'multipart/form-data; boundary={boundary}'})
-          with urllib.request.urlopen(req,timeout=45) as r:
-              print('UPLOAD STATUS',r.status,r.geturl())
-          with urllib.request.urlopen(B+'/api/team-import',timeout=20) as r:
-              state=json.load(r)['state']
+          with urllib.request.urlopen(req,timeout=45) as r: print('UPLOAD STATUS',r.status,r.geturl())
+          with urllib.request.urlopen(B+'/api/team-import',timeout=20) as r: state=json.load(r)['state']
           assert len(state['screenshots'])==4,state
           print('FOUR FILE STAGING PASS')
           PY
       - name: HTTP product acceptance
         run: |
           set -euo pipefail
-          python scripts/accept_gm_mvp.py --base-url http://127.0.0.1:8765 2>&1 | tee /tmp/a/http.txt
+          python - <<'PY' 2>&1 | tee /tmp/a/http.txt
+          import urllib.request
+          B='http://127.0.0.1:8765'
+          for path in ('/','/setup','/roster','/gm','/evo'):
+              with urllib.request.urlopen(B+path,timeout=30) as r:
+                  body=r.read(); assert r.status==200,(path,r.status); assert body,(path,'empty response'); print('HTTP PASS',path,len(body))
+          PY
       - name: Restart persistence
         run: |
           set -euo pipefail
           kill "$(cat /tmp/a/pid)" || true
           sleep 1
           operation-pancake-app >> /tmp/a/app.log 2>&1 & echo $! >/tmp/a/pid2
-          sleep 2
-          python scripts/accept_gm_mvp.py --base-url http://127.0.0.1:8765 2>&1 | tee /tmp/a/restart.txt
+          python - <<'PY' 2>&1 | tee /tmp/a/restart.txt
+          import json,time,urllib.request
+          B='http://127.0.0.1:8765'
+          for _ in range(60):
+              try:
+                  with urllib.request.urlopen(B+'/api/team-import',timeout=2) as r: state=json.load(r)['state']
+                  break
+              except Exception: time.sleep(1)
+          else: raise SystemExit('restart failed')
+          assert len(state['screenshots'])==4,state
+          with urllib.request.urlopen(B+'/setup',timeout=20) as r: assert r.status==200
+          print('RESTART PERSISTENCE PASS',len(state['screenshots']))
+          PY
       - name: Classify observed evidence-index failure
         id: evidence
         continue-on-error: true
