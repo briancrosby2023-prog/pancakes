@@ -1,12 +1,12 @@
 """Supported Team Setup runtime with executable-verified OCR and real Team Manager layouts."""
 from __future__ import annotations
-import csv,io,subprocess
+import csv,io,re,subprocess
 from collections import Counter
 from pathlib import Path
 from operation_pancake import team_app
 from operation_pancake.ocr_runtime import discover_tesseract
 from operation_pancake.team_import import OCRObservation,SlotRegion,VIEW_SLOTS,classify_view,extract_structured,match_candidate,to_candidate
-TEAM_SETUP_BUILD="OCR-LAYOUT-PATCH-4";_ORIGINAL_UPLOAD_SURFACE=team_app._upload_surface
+TEAM_SETUP_BUILD="OCR-LAYOUT-PATCH-5";_ORIGINAL_UPLOAD_SURFACE=team_app._upload_surface
 def _r(slot,cx,y1,y2,width=.095,backup_depth=.105):return SlotRegion(slot,(cx-width/2,y1,cx+width/2,min(.965,y2+backup_depth)))
 REAL_TEAM_MANAGER_REGIONS={
 "OFFENSE":[_r("LT1",.320,.405,.449),_r("LG1",.431,.405,.449),_r("C1",.544,.405,.449),_r("RG1",.656,.405,.449),_r("RT1",.768,.405,.449),_r("TE1",.880,.405,.449),_r("WR1",.320,.704,.752),_r("WR3",.431,.704,.752),_r("HB1",.544,.704,.752),_r("QB1",.656,.704,.752),_r("FB1",.768,.704,.752),_r("WR2",.880,.704,.752)],
@@ -27,17 +27,31 @@ def _ocr(path):
   return out
  except (OSError,subprocess.TimeoutExpired,ValueError):return None
 
+def _filename_view(filename):
+ """Use an explicit user filename only as a conservative fallback when OCR cannot read the view tab."""
+ stem=re.sub(r'[^a-z0-9]+',' ',Path(filename).stem.casefold()).strip();tokens=stem.split()
+ if 'special' in tokens and 'teams' in tokens:return 'SPECIAL TEAMS'
+ if 'specialists' in tokens or 'specialist' in tokens or ('special' in tokens and 'teams' not in tokens):return 'SPECIALISTS'
+ if 'offense' in tokens or tokens[-1:] == ['o']:return 'OFFENSE'
+ if 'defense' in tokens or tokens[-1:] == ['d']:return 'DEFENSE'
+ return 'UNKNOWN'
+def _propose_view(shot,obs):
+ if obs is None:return 'UNKNOWN','ocr-unavailable'
+ view=classify_view(obs)[0]
+ if view in VIEW_SLOTS:return view,'ocr'
+ fallback=_filename_view(shot.get('filename',''))
+ return fallback,('filename-fallback' if fallback in VIEW_SLOTS else 'unresolved')
 def _extract_unique(state_store,gm):
  """Classify every uploaded screenshot once; duplicate/missing views fail closed."""
- state=state_store.load();read=[];classified=[]
+ state=state_store.load();read=[];classified=[];sources=[]
  for shot in state.screenshots:
-  obs=_ocr(Path(shot['path']));read.append((shot,obs));classified.append('UNKNOWN' if obs is None else classify_view(obs)[0])
+  obs=_ocr(Path(shot['path']));read.append((shot,obs));view,source=_propose_view(shot,obs);classified.append(view);sources.append(source)
  counts=Counter(v for v in classified if v in VIEW_SLOTS);complete=len(state.screenshots)==4 and set(counts)==set(VIEW_SLOTS) and all(n==1 for n in counts.values());candidates=[];meta={}
- for (shot,obs),proposed in zip(read,classified):
+ for (shot,obs),proposed,source in zip(read,classified,sources):
   if obs is None:shot['extraction_status']='OCR ENGINE UNAVAILABLE';continue
   view=proposed if complete else ('UNKNOWN' if proposed not in VIEW_SLOTS or counts.get(proposed,0)!=1 else proposed)
   if view=='UNKNOWN':shot['extraction_status']='OCR READ — VIEW UNRESOLVED';shot['view']='UNKNOWN';meta[shot['id']]={'view':'UNKNOWN','provenance':['four-view-set:not-unique']};continue
-  _,found,m=extract_structured(shot['id'],obs,REAL_TEAM_MANAGER_REGIONS,view=view);shot['extraction_status']=f'OCR READ — {view}';shot['view']=view;shot['view_confidence']=m.get('view_confidence');meta[shot['id']]=m
+  _,found,m=extract_structured(shot['id'],obs,REAL_TEAM_MANAGER_REGIONS,view=view);m['classification_source']=source;shot['extraction_status']=f'OCR READ — {view}';shot['view']=view;shot['view_confidence']=m.get('view_confidence');meta[shot['id']]=m
   for observed in found:
    c=to_candidate(observed,f'cand-{len(candidates)+1}');candidates.append(match_candidate(c,gm.population))
  state.version=3;state.candidates=candidates;state.team_observations={'screenshots':meta,'four_view_set_complete':complete};state_store.save(state);return state
