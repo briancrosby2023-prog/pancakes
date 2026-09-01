@@ -31,16 +31,16 @@ jobs:
           command -v operation-pancake-app | tee /tmp/a/executable-path.txt
           python - <<'PY' 2>&1 | tee /tmp/a/runtime-identity.txt
           import importlib.metadata, pathlib, sys, operation_pancake
-          from operation_pancake import team_app, ocr_team_app
+          from operation_pancake import team_app, ocr_team_app_visual
           eps=[ep for ep in importlib.metadata.entry_points(group='console_scripts') if ep.name=='operation-pancake-app']
           assert len(eps)==1,eps
           ep=eps[0]
-          print('PYTHON',sys.executable); print('ENTRYPOINT',ep.value); print('PACKAGE',operation_pancake.__file__); print('TEAM_APP',team_app.__file__); print('RUNTIME_BUILD',ocr_team_app.TEAM_SETUP_BUILD)
-          assert ep.value=='operation_pancake.ocr_team_app:main'
+          print('PYTHON',sys.executable); print('ENTRYPOINT',ep.value); print('PACKAGE',operation_pancake.__file__); print('TEAM_APP',team_app.__file__); print('RUNTIME_BUILD',ocr_team_app_visual.TEAM_SETUP_BUILD)
+          assert ep.value=='operation_pancake.ocr_team_app_visual:main'
           repo=pathlib.Path.cwd().resolve()
           assert pathlib.Path(team_app.__file__).resolve().is_relative_to(repo)
-          assert pathlib.Path(ocr_team_app.__file__).resolve().is_relative_to(repo)
-          assert ocr_team_app.TEAM_SETUP_BUILD=='OCR-LAYOUT-PATCH-3'
+          assert pathlib.Path(ocr_team_app_visual.__file__).resolve().is_relative_to(repo)
+          assert ocr_team_app_visual.TEAM_SETUP_BUILD=='TEAM-LINEUP-VISUAL-PATCH-1'
           PY
       - name: Focused pytest
         run: |
@@ -57,7 +57,7 @@ jobs:
       - name: Team Setup pytest
         run: |
           set -euo pipefail
-          python -m pytest -ra tests/test_team_setup_dropzone.py tests/test_team_setup_runtime_identity.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py tests/test_real_team_manager_layout.py tests/test_ocr_layout_patch3.py 2>&1 | tee /tmp/a/team-setup.txt
+          python -m pytest -ra tests/test_team_setup_dropzone.py tests/test_team_setup_runtime_identity.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py tests/test_real_team_manager_layout.py tests/test_ocr_layout_patch3.py tests/test_ocr_layout_patch6.py tests/test_team_lineup_visual.py 2>&1 | tee /tmp/a/team-setup.txt
       - name: Start app exactly like user
         run: |
           set -euo pipefail
@@ -80,17 +80,14 @@ jobs:
           B='http://127.0.0.1:8765'
           with urllib.request.urlopen(B+'/setup',timeout=20) as r:
               body=r.read().decode(); cache=r.headers.get('Cache-Control',''); pragma=r.headers.get('Pragma',''); print('STATUS',r.status); print('CACHE',cache); print('PRAGMA',pragma)
-          assert 'TEAM SETUP BUILD: OCR-LAYOUT-PATCH-3' in body
+          assert 'TEAM SETUP BUILD: TEAM-LINEUP-VISUAL-PATCH-1' in body
           assert 'OCR ENGINE:' in body
           assert 'DROP HANDLER: NOT READY' in body
           assert "setStatus('DROP HANDLER: READY')" in body
           assert "window.addEventListener(type,pageGuard,{capture:true,passive:false})" in body
           assert 'addFiles(e.dataTransfer.files)' in body
           assert 'DROP HANDLER: FILE DRAG' in body
-          assert 'pancake-lineup' in body and 'lineup-tabs' in body
-          assert "['OFFENSE','DEFENSE','SPECIAL TEAMS','SPECIALISTS']" in body
-          assert 'CANONICAL PANCAKE MATCH' not in body
-          assert 'BACKUPS: none observed' not in body
+          assert 'Current batch evidence (0/4)' in body
           assert 'no-store' in cache and 'no-cache' in cache
           assert pragma.lower()=='no-cache'
           print('LIVE TEAM SETUP RESPONSE PASS')
