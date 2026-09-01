@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from operation_pancake import ocr_team_app_patch6 as patch6
 from operation_pancake import product_app, team_app
+from operation_pancake.cfb27_ocr_match import match_candidate_cfb27
 from operation_pancake.production.gm import GMProduct
 from operation_pancake.team_import import TeamImportStore
 from operation_pancake.team_lineup_visual import render_lineup
@@ -26,6 +27,9 @@ def install_runtime():
     patch6.install_runtime()
     patch6.patch5.REAL_TEAM_MANAGER_REGIONS = REAL_TEAM_MANAGER_SLOT_REGIONS
     team_app.DEFAULT_REGIONS = REAL_TEAM_MANAGER_SLOT_REGIONS
+    # OCR text is evidence only. Identity resolution is constrained to the
+    # production CFB27 population loaded by GMProduct.
+    team_app.match_candidate = match_candidate_cfb27
     patch6.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
     patch6.patch5.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
     team_app.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
