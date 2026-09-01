@@ -9,7 +9,7 @@ from operation_pancake.team_import import TeamImportStore
 from operation_pancake.team_lineup_visual import render_lineup
 from operation_pancake.team_slot_extraction import REAL_TEAM_MANAGER_SLOT_REGIONS
 
-TEAM_SETUP_BUILD = "TEAM-SLOT-EXTRACTION-PATCH-1"
+TEAM_SETUP_BUILD = "CFB27-REAL-IMAGE-MATCH-PATCH-1"
 
 
 def _closure_value(fn, cls):
@@ -27,8 +27,11 @@ def install_runtime():
     patch6.install_runtime()
     patch6.patch5.REAL_TEAM_MANAGER_REGIONS = REAL_TEAM_MANAGER_SLOT_REGIONS
     team_app.DEFAULT_REGIONS = REAL_TEAM_MANAGER_SLOT_REGIONS
-    # OCR text is evidence only. Identity resolution is constrained to the
-    # production CFB27 population loaded by GMProduct.
+    # _extract_unique lives in patch5 and imported match_candidate into that
+    # module at import time. Patch the binding it actually calls, not only the
+    # similarly named team_app attribute. This is the production image -> OCR
+    # -> structured slot -> CFB27 matching path used by operation-pancake-app.
+    patch6.patch5.match_candidate = match_candidate_cfb27
     team_app.match_candidate = match_candidate_cfb27
     patch6.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
     patch6.patch5.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
