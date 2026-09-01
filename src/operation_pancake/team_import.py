@@ -61,6 +61,7 @@ def _name_tokens(observations,expected):
  good=[];other=[]
  for o in observations:
   text=o.text.strip();upper=text.upper().strip();compact=re.sub(r'[^A-Z0-9]','',upper)
+  if o.confidence is not None and o.confidence < .45:other.append(text);continue
   if compact in NOISE_WORDS or compact in {expected,_slot_base(expected)} or re.fullmatch(r'OVR\d*',compact) or any(w in upper.split() for w in NOISE_WORDS):other.append(text);continue
   parts=text.split();alpha=re.sub(r'[^A-Za-z]','',text)
   if 1<=len(parts)<=4 and len(alpha)>=2 and all(re.fullmatch(r"[A-Za-z][A-Za-z.\-']*",p) for p in parts):good.append(o)
@@ -79,6 +80,7 @@ def _name_from_box(observations,box,expected):
  return (' '.join(parts).strip() or None),other
 def _ovr_from_box(observations,box):
  for o in sorted((x for x in observations if _inside(_center(x.box),box)),key=lambda x:(x.box[0],_center(x.box)[1])):
+  if o.confidence is not None and o.confidence < .45:continue
   compact=re.sub(r'[^A-Z0-9]','',o.text.upper());m=re.fullmatch(r'(?:OVR)?(\d{2})',compact)
   if m and 40<=int(m.group(1))<=99:return int(m.group(1))
  return None
