@@ -1,4 +1,5 @@
-from operation_pancake.ocr_team_app import REAL_TEAM_MANAGER_REGIONS, _VISUAL_LINEUP
+from operation_pancake.ocr_team_app import _VISUAL_LINEUP
+from operation_pancake.team_slot_extraction import REAL_TEAM_MANAGER_SLOT_REGIONS as REAL_TEAM_MANAGER_REGIONS
 from operation_pancake.team_import import OCRObservation, VIEW_SLOTS, classify_view, extract_structured
 
 
