@@ -13,7 +13,8 @@ def normalize_name(value:str)->str:return re.sub(r"[^a-z0-9]","",value.casefold(
 @dataclass(frozen=True)
 class OCRObservation:text:str;box:tuple[float,float,float,float];confidence:float|None=None
 @dataclass(frozen=True)
-class SlotRegion:slot:str;box:tuple[float,float,float,float]
+class SlotRegion:
+ slot:str;box:tuple[float,float,float,float];starter_name_box:tuple[float,float,float,float]|None=None;starter_ovr_box:tuple[float,float,float,float]|None=None;backup_boxes:tuple[tuple[float,float,float,float],...] = ()
 @dataclass
 class ObservedLineupCandidate:
  source_screenshot:str;view:str;slot:str;slot_index:int;raw_player_name:str|None=None;normalized_player_name:str|None=None;displayed_ovr:int|None=None;visible_position:str|None=None;other_observed_text:list[str]=field(default_factory=list);observed_ratings:dict[str,int]=field(default_factory=dict);bounding_region:tuple[float,float,float,float]|None=None;extraction_confidence:float|None=None;provenance:list[str]=field(default_factory=list);backups:list[dict[str,Any]]=field(default_factory=list)
@@ -56,36 +57,41 @@ def associate_observations(observations,regions):
   if matches:
    r=min(matches,key=lambda x:(x.box[2]-x.box[0])*(x.box[3]-x.box[1]));out[r.slot].append(o)
  return out
-def _clean_tokens(observations,expected):
- ordered=sorted(observations,key=lambda o:(_center(o.box)[1],o.box[0]));ovr=None;names=[];other=[]
- for o in ordered:
-  text=o.text.strip();upper=text.upper().strip();compact=re.sub(r'[^A-Z0-9]','',upper);m=re.fullmatch(r'(?:OVR)?(\d{2})',compact)
-  if m and 40<=int(m.group(1))<=99 and ovr is None:ovr=int(m.group(1));continue
-  if compact in NOISE_WORDS or compact in {expected,_slot_base(expected)} or re.fullmatch(r'OVR\d*',compact) or (compact.startswith('OV') and len(compact)<=4):other.append(text);continue
-  if any(w in upper.split() for w in NOISE_WORDS):other.append(text);continue
-  parts=text.split()
-  if 1<=len(parts)<=4 and all(re.fullmatch(r"[A-Za-z][A-Za-z.\-']*",p) for p in parts) and len(re.sub(r'[^A-Za-z]','',text))>=2:names.append(o)
+def _name_tokens(observations,expected):
+ good=[];other=[]
+ for o in observations:
+  text=o.text.strip();upper=text.upper().strip();compact=re.sub(r'[^A-Z0-9]','',upper)
+  if compact in NOISE_WORDS or compact in {expected,_slot_base(expected)} or re.fullmatch(r'OVR\d*',compact) or any(w in upper.split() for w in NOISE_WORDS):other.append(text);continue
+  parts=text.split();alpha=re.sub(r'[^A-Za-z]','',text)
+  if 1<=len(parts)<=4 and len(alpha)>=2 and all(re.fullmatch(r"[A-Za-z][A-Za-z.\-']*",p) for p in parts):good.append(o)
   else:other.append(text)
- return names,ovr,other
-def _parse_region(source,view,region,observations):
- expected=SLOT_POSITION.get(region.slot,_slot_base(region.slot));names,ovr,other=_clean_tokens(observations,expected);rows=[]
+ return good,other
+def _name_from_box(observations,box,expected):
+ selected=[o for o in observations if _inside(_center(o.box),box)];names,other=_name_tokens(selected,expected);rows=[]
  for o in names:
   cy=_center(o.box)[1];target=next((r for r in rows if abs(r[0]-cy)<.022),None)
   if target:target[1].append(o);target[0]=(target[0]+cy)/2
   else:rows.append([cy,[o]])
- rows.sort(key=lambda r:r[0]);parsed=[]
- for cy,words in rows:
-  words.sort(key=lambda o:o.box[0]);text=' '.join(o.text.strip() for o in words).strip();alpha=re.sub(r'[^A-Za-z]','',text)
-  if len(alpha)>=4 and len(text.split())<=4:parsed.append((cy,text))
- name=parsed[0][1] if parsed else None;backups=[]
- for cy,text in parsed[1:]:
-  nums=[]
-  for o in observations:
-   if abs(_center(o.box)[1]-cy)<.024:
-    m=re.fullmatch(r'(?:OVR\s*)?(\d{2})',o.text.upper().strip())
-    if m and 40<=int(m.group(1))<=99:nums.append(int(m.group(1)))
-  backups.append({'player_name':text,'displayed_ovr':nums[0] if nums else None})
- confs=[o.confidence for o in observations if o.confidence is not None];prov=[f'view:{view}',f'slot-region:{region.slot}','spatial-association','deterministic-slot-container','name-row-isolation']
+ rows.sort(key=lambda r:r[0]);parts=[]
+ for _,words in rows:
+  words.sort(key=lambda o:o.box[0]);text=' '.join(o.text.strip() for o in words).strip()
+  if len(re.sub(r'[^A-Za-z]','',text))>=4:parts.append(text)
+ return (' '.join(parts).strip() or None),other
+def _ovr_from_box(observations,box):
+ for o in sorted((x for x in observations if _inside(_center(x.box),box)),key=lambda x:(x.box[0],_center(x.box)[1])):
+  compact=re.sub(r'[^A-Z0-9]','',o.text.upper());m=re.fullmatch(r'(?:OVR)?(\d{2})',compact)
+  if m and 40<=int(m.group(1))<=99:return int(m.group(1))
+ return None
+def _parse_region(source,view,region,observations):
+ expected=SLOT_POSITION.get(region.slot,_slot_base(region.slot));name_box=region.starter_name_box or region.box;ovr_box=region.starter_ovr_box or region.box
+ name,other=_name_from_box(observations,name_box,expected);ovr=_ovr_from_box(observations,ovr_box);backups=[]
+ for box in region.backup_boxes:
+  backup_name,_=_name_from_box(observations,box,expected)
+  if backup_name:backups.append({'player_name':backup_name,'displayed_ovr':_ovr_from_box(observations,box)})
+ used_boxes=(name_box,ovr_box,*region.backup_boxes)
+ for o in observations:
+  if not any(_inside(_center(o.box),b) for b in used_boxes):other.append(o.text.strip())
+ confs=[o.confidence for o in observations if o.confidence is not None];prov=[f'view:{view}',f'slot-region:{region.slot}','spatial-association','deterministic-slot-container','starter-name-subregion','starter-ovr-subregion','backup-subregions']
  if not name:prov.append('starter-name:unresolved')
  if ovr is None:prov.append('starter-ovr:unresolved')
  idx=re.search(r'\d+$',region.slot);return ObservedLineupCandidate(source,view,region.slot,int(idx.group()) if idx else 1,name,normalize_name(name) if name else None,ovr,expected,other,{},region.box,sum(confs)/len(confs) if confs else None,prov,backups)
