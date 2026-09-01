@@ -2,10 +2,23 @@
 from __future__ import annotations
 
 from operation_pancake import ocr_team_app_patch6 as patch6
-from operation_pancake import team_app
+from operation_pancake import product_app, team_app
+from operation_pancake.production.gm import GMProduct
+from operation_pancake.team_import import TeamImportStore
 from operation_pancake.team_lineup_visual import render_lineup
 
 TEAM_SETUP_BUILD = "TEAM-LINEUP-VISUAL-PATCH-1"
+
+
+def _closure_value(fn, cls):
+    for cell in fn.__closure__ or ():
+        try:
+            value = cell.cell_contents
+        except ValueError:
+            continue
+        if isinstance(value, cls):
+            return value
+    raise RuntimeError(f"Team Setup renderer missing {cls.__name__} closure")
 
 
 def install_runtime():
@@ -16,20 +29,29 @@ def install_runtime():
 
     def create_handler(root, **kwargs):
         Base = original_create_handler(root, **kwargs)
-        original_team_page = Base._team_page
+        imports = _closure_value(Base._team_page, TeamImportStore)
+        gm = _closure_value(Base._team_page, GMProduct)
 
-        def _team_page(self):
-            page = original_team_page(self)
-            state = self.__class__.__closure__ if False else None
-            return page
+        class VisualHandler(Base):
+            def _team_page(self):
+                state = imports.load()
+                current = state.screenshots[-4:]
+                evidence = "".join(
+                    f'<li>{team_app.html.escape(x["filename"])} — {team_app.html.escape(x["extraction_status"])}</li>'
+                    for x in current
+                ) or "<li>No current batch yet.</li>"
+                body = (
+                    '<div class="hero"><h1>Team Setup</h1><p>Scan the lineup first. Review unresolved matches only where needed.</p></div>'
+                    + team_app._upload_surface()
+                )
+                if state.candidates:
+                    body += '<form method="post" action="/team/confirm">' + render_lineup(state.candidates, gm.cards) + '</form>'
+                body += f'<details class="card" id="current-batch-evidence"><summary>Current batch evidence ({len(current)}/4)</summary><ul>{evidence}</ul></details>'
+                return product_app.page("Team Setup", body)
 
-        # The base renderer owns its import store in closure, so replace only the
-        # rendered Review Team fragment using the stable API state embedded by a
-        # small subclass hook installed below.
-        return Base
+        return VisualHandler
 
-    # Renderer integration is implemented directly by a narrow helper hook in team_app.
-    team_app._lineup_renderer = render_lineup
+    team_app.create_handler = create_handler
 
 
 def main():
