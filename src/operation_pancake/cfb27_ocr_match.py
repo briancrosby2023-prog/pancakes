@@ -9,9 +9,9 @@ from operation_pancake.team_import import Candidate, SLOT_POSITION, normalize_na
 ROLE_POSITIONS = {
     "WILL": {"LOLB", "MLB"}, "MIKE": {"MLB"}, "SAM": {"ROLB", "MLB"},
     "REDG": {"RE", "LE"}, "LEDG": {"LE", "RE"},
-    "KR": {"WR", "HB", "CB"}, "PR": {"WR", "HB", "CB"},
-    "KOS": {"K"}, "3DRB": {"HB"}, "PWHB": {"HB", "FB"},
-    "SLWR": {"WR"}, "GAD": {"FB", "TE", "HB"}, "NT": {"DT"},
+    "KR": {"WR", "HB", "RB", "CB"}, "PR": {"WR", "HB", "RB", "CB"},
+    "KOS": {"K"}, "3DRB": {"HB", "RB"}, "PWHB": {"HB", "RB", "FB"},
+    "SLWR": {"WR"}, "GAD": {"FB", "TE", "HB", "RB"}, "NT": {"DT"},
     "SUBLB": {"MLB", "LOLB", "ROLB", "SS"}, "RRE": {"RE", "LE"},
     "RDT": {"DT"}, "RLE": {"LE", "RE"}, "SLCB": {"CB"},
 }
@@ -32,6 +32,18 @@ def _is_cfb27(card) -> bool:
     return "27" in text or "CFB27" in text or "CFB 27" in text
 
 
+def _candidate_pool(positions, cards):
+    return [
+        x for x in cards
+        if _is_cfb27(x) and (x.get("position") or "").upper() in positions
+    ]
+
+
+def candidate_pool_count(candidate: Candidate, cards) -> int:
+    """Return the real CFB27 eligible population size for runtime diagnostics/tests."""
+    return len(_candidate_pool(_positions(candidate), cards))
+
+
 def _name_score(observed: str, canonical: str) -> float:
     a, b = normalize_name(observed), normalize_name(canonical)
     if not a or not b:
@@ -47,9 +59,11 @@ def _name_score(observed: str, canonical: str) -> float:
 
 
 def _best_match(observed_name, displayed_ovr, positions, cards):
-    if not observed_name or not positions:
-        return None, 0.0
-    pool = [x for x in cards if _is_cfb27(x) and (x.get("position") or "").upper() in positions]
+    if not positions:
+        return None, 0.0, {"candidate_count": 0, "scored_count": 0, "rejection": "no-eligible-position"}
+    pool = _candidate_pool(positions, cards)
+    if not observed_name:
+        return None, 0.0, {"candidate_count": len(pool), "scored_count": 0, "rejection": "no-name-observation"}
     scored = []
     for card in pool:
         name_score = _name_score(observed_name, card.get("player_name") or "")
@@ -65,19 +79,42 @@ def _best_match(observed_name, displayed_ovr, positions, cards):
         scored.append((score, name_score, card))
     scored.sort(key=lambda x: (x[0], x[1]), reverse=True)
     if not scored:
-        return None, 0.0
+        return None, 0.0, {"candidate_count": len(pool), "scored_count": 0, "rejection": "no-name-score-above-floor"}
     best = scored[0]
     second = scored[1][0] if len(scored) > 1 else 0.0
-    if best[0] < 0.76 or best[1] < 0.70 or best[0] - second < 0.055:
-        return None, best[0]
-    return best[2], best[0]
+    diagnostic = {
+        "candidate_count": len(pool),
+        "scored_count": len(scored),
+        "best_score": round(best[0], 4),
+        "best_name_score": round(best[1], 4),
+        "margin": round(best[0] - second, 4),
+    }
+    if best[0] < 0.76:
+        return None, best[0], diagnostic | {"rejection": "combined-score-below-threshold"}
+    if best[1] < 0.70:
+        return None, best[0], diagnostic | {"rejection": "name-score-below-threshold"}
+    if best[0] - second < 0.055:
+        return None, best[0], diagnostic | {"rejection": "ambiguous-margin"}
+    return best[2], best[0], diagnostic | {"rejection": "none"}
+
+
+def _append_diagnostic(provenance, diagnostic):
+    provenance.append(f"cfb27-candidate-count:{diagnostic.get('candidate_count', 0)}")
+    provenance.append(f"cfb27-scored-count:{diagnostic.get('scored_count', 0)}")
+    if "best_score" in diagnostic:
+        provenance.append(f"identity-best-score:{diagnostic['best_score']}")
+        provenance.append(f"identity-best-name-score:{diagnostic['best_name_score']}")
+        provenance.append(f"identity-score-margin:{diagnostic['margin']}")
+    provenance.append(f"identity-rejection:{diagnostic.get('rejection', 'unknown')}")
 
 
 def _match_backup(row, positions, cards):
     raw = row.get("raw_player_name") or row.get("player_name")
-    matched, confidence = _best_match(raw, row.get("displayed_ovr"), positions, cards)
+    matched, confidence, diagnostic = _best_match(raw, row.get("displayed_ovr"), positions, cards)
     out = dict(row)
     out["raw_player_name"] = raw
+    out["candidate_count"] = diagnostic.get("candidate_count", 0)
+    out["rejection_reason"] = diagnostic.get("rejection")
     if matched is None:
         out.update(player_name=None, canonical_card_id=None, match_status="UNRESOLVED", confidence=None)
     else:
@@ -89,9 +126,10 @@ def match_candidate_cfb27(candidate: Candidate, cards):
     """Resolve one slot only against the supplied CFB27 production population."""
     positions = _positions(candidate)
     raw = candidate.player_name
-    matched, confidence = _best_match(raw, candidate.displayed_ovr, positions, cards)
+    matched, confidence, diagnostic = _best_match(raw, candidate.displayed_ovr, positions, cards)
     candidate.provenance.append("identity-vocabulary:cfb27-only")
     candidate.provenance.append("identity-match:position+fuzzy-name+ovr")
+    _append_diagnostic(candidate.provenance, diagnostic)
     candidate.canonical_card_id = None
     candidate.confidence = None
     if matched is None:
