@@ -6,8 +6,6 @@ import re
 
 from operation_pancake.team_import import Candidate, SLOT_POSITION, normalize_name
 
-# Team Manager role labels are deterministic. Some roles map to native card
-# positions in the CFB27 corpus rather than existing as card positions themselves.
 ROLE_POSITIONS = {
     "WILL": {"LOLB", "MLB"}, "MIKE": {"MLB"}, "SAM": {"ROLB", "MLB"},
     "REDG": {"RE", "LE"}, "LEDG": {"LE", "RE"},
@@ -24,6 +22,16 @@ def _positions(candidate: Candidate) -> set[str]:
     return ROLE_POSITIONS.get(role, {role} if role else set())
 
 
+def _is_cfb27(card) -> bool:
+    markers = [card.get(k) for k in ("game", "season", "title", "dataset") if card.get(k) is not None]
+    if not markers:
+        return True  # GMProduct.population is itself the CFB27 production corpus.
+    text = " ".join(str(x).upper() for x in markers)
+    if "CFB25" in text or "CFB 25" in text or "CFB26" in text or "CFB 26" in text:
+        return False
+    return "27" in text or "CFB27" in text or "CFB 27" in text
+
+
 def _name_score(observed: str, canonical: str) -> float:
     a, b = normalize_name(observed), normalize_name(canonical)
     if not a or not b:
@@ -31,8 +39,6 @@ def _name_score(observed: str, canonical: str) -> float:
     if a == b:
         return 1.0
     ratio = SequenceMatcher(None, a, b).ratio()
-    # Reward a readable surname/name fragment, but never enough by itself to
-    # cross the acceptance threshold without substantial character agreement.
     at = {normalize_name(x) for x in re.findall(r"[A-Za-z]+", observed) if len(x) >= 3}
     bt = {normalize_name(x) for x in re.findall(r"[A-Za-z]+", canonical) if len(x) >= 3}
     if at and bt and at & bt:
@@ -43,7 +49,7 @@ def _name_score(observed: str, canonical: str) -> float:
 def _best_match(observed_name, displayed_ovr, positions, cards):
     if not observed_name or not positions:
         return None, 0.0
-    pool = [x for x in cards if (x.get("position") or "").upper() in positions]
+    pool = [x for x in cards if _is_cfb27(x) and (x.get("position") or "").upper() in positions]
     scored = []
     for card in pool:
         name_score = _name_score(observed_name, card.get("player_name") or "")
@@ -62,8 +68,6 @@ def _best_match(observed_name, displayed_ovr, positions, cards):
         return None, 0.0
     best = scored[0]
     second = scored[1][0] if len(scored) > 1 else 0.0
-    # Fail closed on weak or non-unique OCR. OVR may corroborate a fuzzy name,
-    # but cannot rescue unrelated Tesseract garbage into a player identity.
     if best[0] < 0.76 or best[1] < 0.70 or best[0] - second < 0.055:
         return None, best[0]
     return best[2], best[0]
