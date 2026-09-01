@@ -33,7 +33,9 @@ def install_runtime():
     # -> structured slot -> CFB27 matching path used by operation-pancake-app.
     patch6.patch5.match_candidate = match_candidate_cfb27
     team_app.match_candidate = match_candidate_cfb27
-    patch6.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
+    # Preserve PATCH-6's own module identity so its isolated regression tests
+    # remain meaningful. Only the live lower-level/runtime surface receives the
+    # visual layer's build marker.
     patch6.patch5.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
     team_app.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
     original_create_handler = team_app.create_handler
