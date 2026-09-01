@@ -1,18 +1,20 @@
 import tomllib
 from pathlib import Path
 
-from operation_pancake import team_app
+from operation_pancake import ocr_team_app_patch6, team_app
 
 
 def test_operation_pancake_app_entrypoint_is_team_runtime():
     config = tomllib.loads(Path("pyproject.toml").read_text())
-    assert config["project"]["scripts"]["operation-pancake-app"] == "operation_pancake.ocr_team_app:main"
+    assert config["project"]["scripts"]["operation-pancake-app"] == "operation_pancake.ocr_team_app_patch6:main"
 
 
 def test_team_runtime_marker_is_code_identity_not_checkout_identity():
-    assert team_app.TEAM_SETUP_BUILD == "DROP-ZONE-PATCH-3"
+    ocr_team_app_patch6.install_runtime()
+    assert ocr_team_app_patch6.TEAM_SETUP_BUILD == "OCR-LAYOUT-PATCH-6"
+    assert team_app.TEAM_SETUP_BUILD == "OCR-LAYOUT-PATCH-6"
     surface = team_app._upload_surface()
-    assert "TEAM SETUP BUILD: DROP-ZONE-PATCH-3" in surface
+    assert "TEAM SETUP BUILD: OCR-LAYOUT-PATCH-6" in surface
     assert "DROP HANDLER: NOT READY" in surface
     assert "setStatus('DROP HANDLER: READY')" in surface
 
