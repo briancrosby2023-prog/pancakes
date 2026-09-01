@@ -34,11 +34,12 @@ jobs:
           python - <<'PY'
           import importlib.metadata
           import operation_pancake.ocr_team_app as patch5
-          import operation_pancake.ocr_team_app_patch6 as app
+          import operation_pancake.ocr_team_app_patch6 as patch6
+          import operation_pancake.ocr_team_app_visual as app
           ep = next(ep for ep in importlib.metadata.entry_points(group='console_scripts') if ep.name == 'operation-pancake-app')
-          assert ep.value == 'operation_pancake.ocr_team_app_patch6:main', ep.value
+          assert ep.value == 'operation_pancake.ocr_team_app_visual:main', ep.value
           assert ep.load() is app.main
-          assert app.TEAM_SETUP_BUILD == 'OCR-LAYOUT-PATCH-6', app.TEAM_SETUP_BUILD
+          assert app.TEAM_SETUP_BUILD == 'TEAM-LINEUP-VISUAL-PATCH-1', app.TEAM_SETUP_BUILD
           assert patch5._filename_view('0 import o.jpg') == 'OFFENSE'
           assert patch5._filename_view('0 import d.jpg') == 'DEFENSE'
           assert patch5._filename_view('0 import special teams.jpg') == 'SPECIAL TEAMS'
@@ -46,26 +47,26 @@ jobs:
           assert patch5._filename_view('random.jpg') == 'UNKNOWN'
           app.install_runtime()
           surface = app.team_app._upload_surface()
-          assert 'TEAM SETUP BUILD: OCR-LAYOUT-PATCH-6' in surface
-          assert app.team_app._extract is app._extract_current_batch
-          print('TEAM SETUP BUILD: OCR-LAYOUT-PATCH-6')
+          assert 'TEAM SETUP BUILD: TEAM-LINEUP-VISUAL-PATCH-1' in surface
+          assert app.team_app._extract is patch6._extract_current_batch
+          print('TEAM SETUP BUILD: TEAM-LINEUP-VISUAL-PATCH-1')
           print('CURRENT FOUR-IMAGE BATCH RUNTIME PASS')
           print('PRODUCTION ENTRYPOINT:', ep.value)
           PY
       - name: OCR runtime and Team Setup regression
         run: |
           set -euo pipefail
-          python -m pytest -ra tests/test_ocr_runtime.py tests/test_team_setup_dropzone.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py tests/test_real_team_manager_layout.py tests/test_ocr_layout_patch3.py tests/test_ocr_layout_patch6.py
+          python -m pytest -ra tests/test_ocr_runtime.py tests/test_team_setup_dropzone.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py tests/test_real_team_manager_layout.py tests/test_ocr_layout_patch3.py tests/test_ocr_layout_patch6.py tests/test_team_lineup_visual.py tests/test_team_setup_runtime_identity.py
       - name: Exercise real Tesseract through production extractor
         run: |
           set -euo pipefail
           python - <<'PY'
           import pathlib, subprocess, tempfile
           from operation_pancake import ocr_team_app as patch5
-          from operation_pancake import ocr_team_app_patch6 as app
+          from operation_pancake import ocr_team_app_visual as app
           from operation_pancake.ocr_runtime import discover_tesseract
           runtime=discover_tesseract(); assert runtime.ready and runtime.executable, runtime
-          assert app.TEAM_SETUP_BUILD=='OCR-LAYOUT-PATCH-6'
+          assert app.TEAM_SETUP_BUILD=='TEAM-LINEUP-VISUAL-PATCH-1'
           with tempfile.TemporaryDirectory() as d:
               p=pathlib.Path(d)/'proof.pgm'; p.write_text('P2\n120 40\n255\n' + ' '.join(['255']*(120*40)))
               result=subprocess.run([runtime.executable,str(p),'stdout','--psm','11','tsv'],capture_output=True,text=True,timeout=30)
