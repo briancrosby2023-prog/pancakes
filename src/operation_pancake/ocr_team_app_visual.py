@@ -6,8 +6,9 @@ from operation_pancake import product_app, team_app
 from operation_pancake.production.gm import GMProduct
 from operation_pancake.team_import import TeamImportStore
 from operation_pancake.team_lineup_visual import render_lineup
+from operation_pancake.team_slot_extraction import REAL_TEAM_MANAGER_SLOT_REGIONS
 
-TEAM_SETUP_BUILD = "TEAM-LINEUP-VISUAL-PATCH-1"
+TEAM_SETUP_BUILD = "TEAM-SLOT-EXTRACTION-PATCH-1"
 
 
 def _closure_value(fn, cls):
@@ -23,7 +24,10 @@ def _closure_value(fn, cls):
 
 def install_runtime():
     patch6.install_runtime()
+    patch6.patch5.REAL_TEAM_MANAGER_REGIONS = REAL_TEAM_MANAGER_SLOT_REGIONS
+    team_app.DEFAULT_REGIONS = REAL_TEAM_MANAGER_SLOT_REGIONS
     patch6.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
+    patch6.patch5.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
     team_app.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
     original_create_handler = team_app.create_handler
 
