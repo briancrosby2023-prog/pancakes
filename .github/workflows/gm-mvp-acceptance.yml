@@ -40,7 +40,7 @@ jobs:
           repo=pathlib.Path.cwd().resolve()
           assert pathlib.Path(team_app.__file__).resolve().is_relative_to(repo)
           assert pathlib.Path(ocr_team_app_visual.__file__).resolve().is_relative_to(repo)
-          assert ocr_team_app_visual.TEAM_SETUP_BUILD=='TEAM-LINEUP-VISUAL-PATCH-1'
+          assert ocr_team_app_visual.TEAM_SETUP_BUILD=='TEAM-SLOT-EXTRACTION-PATCH-1'
           PY
       - name: Focused pytest
         run: |
@@ -57,7 +57,7 @@ jobs:
       - name: Team Setup pytest
         run: |
           set -euo pipefail
-          python -m pytest -ra tests/test_team_setup_dropzone.py tests/test_team_setup_runtime_identity.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py tests/test_real_team_manager_layout.py tests/test_ocr_layout_patch3.py tests/test_ocr_layout_patch6.py tests/test_team_lineup_visual.py 2>&1 | tee /tmp/a/team-setup.txt
+          python -m pytest -ra tests/test_team_setup_dropzone.py tests/test_team_setup_runtime_identity.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py tests/test_real_team_manager_layout.py tests/test_ocr_layout_patch3.py tests/test_ocr_layout_patch6.py tests/test_team_lineup_visual.py tests/test_team_slot_extraction_patch.py 2>&1 | tee /tmp/a/team-setup.txt
       - name: Start app exactly like user
         run: |
           set -euo pipefail
@@ -80,7 +80,7 @@ jobs:
           B='http://127.0.0.1:8765'
           with urllib.request.urlopen(B+'/setup',timeout=20) as r:
               body=r.read().decode(); cache=r.headers.get('Cache-Control',''); pragma=r.headers.get('Pragma',''); print('STATUS',r.status); print('CACHE',cache); print('PRAGMA',pragma)
-          assert 'TEAM SETUP BUILD: TEAM-LINEUP-VISUAL-PATCH-1' in body
+          assert 'TEAM SETUP BUILD: TEAM-SLOT-EXTRACTION-PATCH-1' in body
           assert 'OCR ENGINE:' in body
           assert 'DROP HANDLER: NOT READY' in body
           assert "setStatus('DROP HANDLER: READY')" in body
