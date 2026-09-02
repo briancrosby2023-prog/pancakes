@@ -37,7 +37,9 @@ class TackleScreenObservation:
 
 
 class ScreenshotTranslator(Protocol):
-    def translate_offense_tackles(self, screenshot: Path) -> TackleScreenObservation: ...
+    def translate_offense_tackles(
+        self, screenshot: Path
+    ) -> TackleScreenObservation: ...
 
 
 TRANSLATOR_SCHEMA = {
@@ -49,7 +51,13 @@ TRANSLATOR_SCHEMA = {
             "properties": {
                 slot: {
                     "type": "object",
-                    "properties": {"starter": {"$ref": "#/$defs/player"}, "backups": {"type": "array", "items": {"$ref": "#/$defs/player"}}},
+                    "properties": {
+                        "starter": {"$ref": "#/$defs/player"},
+                        "backups": {
+                            "type": "array",
+                            "items": {"$ref": "#/$defs/player"},
+                        },
+                    },
                     "required": ["starter", "backups"],
                     "additionalProperties": False,
                 }
@@ -64,26 +72,43 @@ TRANSLATOR_SCHEMA = {
     "$defs": {
         "player": {
             "type": "object",
-            "properties": {"observed_name": {"type": ["string", "null"]}, "displayed_ovr": {"type": ["integer", "null"], "minimum": 40, "maximum": 99}},
+            "properties": {
+                "observed_name": {"type": ["string", "null"]},
+                "displayed_ovr": {
+                    "type": ["integer", "null"],
+                    "minimum": 40,
+                    "maximum": 99,
+                },
+            },
             "required": ["observed_name", "displayed_ovr"],
             "additionalProperties": False,
         }
     },
 }
 
-PROMPT = """You are C-3PO, a literal screen translator for an EA SPORTS COLLEGE FOOTBALL 27 Team Manager OFFENSE screenshot.
-Read ONLY the LT1 and RT1 tackle containers, including their visible backup rows.
-Return what is visibly present, not database knowledge. observed_name is the visible player name. displayed_ovr is the number displayed in the lineup UI, which may include boosts and is NOT necessarily the native card overall.
-Do not search or infer any CFB database identity, card id, program, theme-team boost, chemistry, strategy, EVO, or GM decision.
+PROMPT = """You are C-3PO, a literal screen translator for an EA SPORTS
+COLLEGE FOOTBALL 27 Team Manager OFFENSE screenshot.
+Read ONLY the LT1 and RT1 tackle containers, including visible backup rows.
+Return what is visibly present, not database knowledge. observed_name is the
+visible player name. displayed_ovr is the number displayed in the lineup UI.
+It may include boosts and is NOT necessarily the native card overall.
+Do not search or infer any CFB database identity, card id, program, theme-team
+boost, chemistry, strategy, EVO, or GM decision.
 Do not correct a displayed overall to a value you think belongs to a card.
-If a name or overall is genuinely unreadable, return null for that field. Never manufacture unreadable text.
+If a name or overall is genuinely unreadable, return null for that field.
+Never manufacture unreadable text.
 Return only the schema-constrained observation."""
 
 
 class GeminiScreenshotTranslator:
     """Official Gemini API implementation using Google's google-genai SDK."""
 
-    def __init__(self, api_key: str | None = None, model: str | None = None, timeout_ms: int = GEMINI_REQUEST_TIMEOUT_MS):
+    def __init__(
+        self,
+        api_key: str | None = None,
+        model: str | None = None,
+        timeout_ms: int = GEMINI_REQUEST_TIMEOUT_MS,
+    ):
         self.api_key = api_key or os.getenv("GEMINI_API_KEY")
         self.model = model or os.getenv("PANCAKE_GEMINI_MODEL", "gemini-3.7-flash")
         self.timeout_ms = timeout_ms
@@ -95,15 +120,29 @@ class GeminiScreenshotTranslator:
             from google import genai
             from google.genai import types
         except ImportError as exc:
-            raise RuntimeError("Install the 'google-genai' package for Gemini translation") from exc
+            raise RuntimeError(
+                "Install the 'google-genai' package for Gemini translation"
+            ) from exc
 
         data = screenshot.read_bytes()
         mime = mimetypes.guess_type(screenshot.name)[0] or "image/png"
-        with genai.Client(api_key=self.api_key, http_options=types.HttpOptions(timeout=self.timeout_ms)) as client:
+        http_options = types.HttpOptions(timeout=self.timeout_ms)
+        with genai.Client(api_key=self.api_key, http_options=http_options) as client:
             interaction = client.interactions.create(
                 model=self.model,
-                input=[{"type": "text", "text": PROMPT}, {"type": "image", "data": base64.b64encode(data).decode("ascii"), "mime_type": mime}],
-                response_format={"type": "text", "mime_type": "application/json", "schema": TRANSLATOR_SCHEMA},
+                input=[
+                    {"type": "text", "text": PROMPT},
+                    {
+                        "type": "image",
+                        "data": base64.b64encode(data).decode("ascii"),
+                        "mime_type": mime,
+                    },
+                ],
+                response_format={
+                    "type": "text",
+                    "mime_type": "application/json",
+                    "schema": TRANSLATOR_SCHEMA,
+                },
             )
         payload = json.loads(interaction.output_text)
         slots = {}
