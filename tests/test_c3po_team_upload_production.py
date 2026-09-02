@@ -44,6 +44,7 @@ def _multipart():
 def test_actual_team_upload_invokes_configured_c3po_and_persists(
     monkeypatch, tmp_path
 ):
+    ConfiguredTranslator.calls = 0
     store = TeamImportStore(tmp_path / "team-import.json", tmp_path / "uploads")
     monkeypatch.setattr(team_app, "TeamImportStore", lambda *args, **kwargs: store)
     monkeypatch.setenv("GEMINI_API_KEY", "configured-without-network")
@@ -90,8 +91,12 @@ def test_actual_team_upload_invokes_configured_c3po_and_persists(
     assert ConfiguredTranslator.calls == 1
     rt = next(c for c in state["candidates"] if c["slot"] == "RT1")
     assert rt["player_name"] == "Cason Henry" and rt["canonical_card_id"]
-    assert rt["backups"][0]["player_name"] == "Juan Gaston"
-    assert rt["backups"][0]["displayed_ovr"] == 81
+    backup = rt["backups"][0]
+    assert backup["player_name"] == "Juan Gaston"
+    assert backup["displayed_ovr"] == 81
+    assert backup["native_card_ovr"] == 80
+    assert backup["display_ovr_delta"] == 1
+    assert backup["display_modifier_classification"] == "TEAM_LINEUP_MODIFIER"
     qb = next(c for c in state["candidates"] if c["slot"] == "QB1")
     assert qb["player_name"] == "KEEP QB"
     restarted = TeamImportStore(
@@ -99,6 +104,11 @@ def test_actual_team_upload_invokes_configured_c3po_and_persists(
     ).load()
     rt_restarted = next(c for c in restarted.candidates if c.slot == "RT1")
     assert rt_restarted.player_name == "Cason Henry"
+    restarted_backup = rt_restarted.backups[0]
+    assert restarted_backup["player_name"] == "Juan Gaston"
+    assert restarted_backup["native_card_ovr"] == 80
+    assert restarted_backup["displayed_ovr"] == 81
+    assert restarted_backup["display_ovr_delta"] == 1
     assert restarted.team_observations["c3po_tackles"]["provider"] == (
         "configured-fixture"
     )
