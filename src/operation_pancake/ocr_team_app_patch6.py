@@ -9,6 +9,7 @@ from operation_pancake.c3po_team_setup import integrate_offense_tackles
 from operation_pancake.c3po_vision import GeminiScreenshotTranslator
 
 TEAM_SETUP_BUILD = "OCR-LAYOUT-PATCH-6"
+C3PO_TRANSLATOR_FACTORY = GeminiScreenshotTranslator
 
 
 def _extract_current_batch(state_store, gm):
@@ -20,11 +21,8 @@ def _extract_current_batch(state_store, gm):
         state.team_observations = {}
         state_store.save(state)
     state = patch5._extract_unique(state_store, gm)
-    # C-3PO is opt-in by environment. Missing configuration leaves the accepted
-    # four-image OCR workflow intact; configured translator failures are isolated
-    # inside the bridge and cannot crash Team Setup.
     if os.getenv("GEMINI_API_KEY"):
-        return integrate_offense_tackles(state_store, gm.population, GeminiScreenshotTranslator())
+        return integrate_offense_tackles(state_store, gm.population, C3PO_TRANSLATOR_FACTORY())
     return state
 
 
