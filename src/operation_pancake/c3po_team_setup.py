@@ -27,6 +27,8 @@ def _backup(row: TackleResolution) -> dict:
         "player_name": row.canonical_player_identity,
         "displayed_ovr": row.displayed_lineup_ovr,
         "native_card_ovr": row.native_card_ovr,
+        "display_ovr_delta": row.display_ovr_delta,
+        "display_modifier_classification": row.display_modifier_classification,
         "program": row.program,
         "canonical_card_id": row.canonical_card_id,
         "match_status": "MATCHED" if row.status == "MATCHED" else "UNMATCHED",
@@ -45,14 +47,16 @@ def _apply(candidate: Candidate, rows: list[TackleResolution]) -> None:
     candidate.backups = [_backup(row) for row in rows[1:]]
     old = [p for p in candidate.provenance if not p.startswith("c3po:")]
     candidate.provenance = old + [
-        "c3po:google-gemini-screen-translation",
-        "c3po:cfb27-position-isolated-resolution",
+        "c3po:google-gemini-screen-transcription",
+        "c3po:pancake-cfb27-position-isolated-resolution",
     ]
     candidate.match_diagnostics = dict(candidate.match_diagnostics)
     candidate.match_diagnostics["c3po"] = {
         "observed_player_name": starter.observed_player_name,
         "displayed_lineup_ovr": starter.displayed_lineup_ovr,
         "native_card_ovr": starter.native_card_ovr,
+        "display_ovr_delta": starter.display_ovr_delta,
+        "display_modifier_classification": starter.display_modifier_classification,
         "canonical_player_identity": starter.canonical_player_identity,
         "program": starter.program,
         "canonical_card_id": starter.canonical_card_id,
@@ -61,7 +65,7 @@ def _apply(candidate: Candidate, rows: list[TackleResolution]) -> None:
 
 
 def integrate_offense_tackles(state_store, cards: list[dict], translator) -> object:
-    """Translate the current OFFENSE image and replace only LT1/RT1 resolution."""
+    """Transcribe the current OFFENSE image and resolve only LT1/RT1 in Pancake."""
     state = state_store.load()
     offense = next(
         (shot for shot in state.screenshots if shot.get("view") == "OFFENSE"),
@@ -78,7 +82,7 @@ def integrate_offense_tackles(state_store, cards: list[dict], translator) -> obj
         observation = translator.translate_offense_tackles(Path(offense["path"]))
         resolutions = resolve_tackles(observation, cards)
     except Exception as exc:
-        # External observation boundary: fail closed and retain prior identities.
+        # External transcription boundary: fail closed and retain prior identities.
         state.team_observations["c3po_tackles"] = {
             "status": "ERROR",
             "error_type": type(exc).__name__,
