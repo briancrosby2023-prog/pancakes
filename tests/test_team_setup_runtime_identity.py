@@ -1,7 +1,10 @@
+import runpy
 import subprocess
 import sys
 import tomllib
 from pathlib import Path
+
+import pytest
 
 from operation_pancake import team_app
 
@@ -12,6 +15,18 @@ def test_operation_pancake_app_entrypoint_is_team_runtime():
         config["project"]["scripts"]["operation-pancake-app"]
         == "operation_pancake.ocr_team_app_visual:main"
     )
+
+
+def test_visual_runtime_module_launch_reaches_blocking_server(monkeypatch):
+    class ServerStarted(Exception):
+        pass
+
+    def blocking_server_startup():
+        raise ServerStarted
+
+    monkeypatch.setattr(team_app, "main", blocking_server_startup)
+    with pytest.raises(ServerStarted):
+        runpy.run_module("operation_pancake.ocr_team_app_visual", run_name="__main__")
 
 
 def test_team_runtime_marker_is_code_identity_not_checkout_identity():

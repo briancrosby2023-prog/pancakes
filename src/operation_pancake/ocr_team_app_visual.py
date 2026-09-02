@@ -158,3 +158,7 @@ def main():
     install_runtime()
     print(patch6.patch5.discover_tesseract().message)
     team_app.main()
+
+
+if __name__ == "__main__":
+    main()
