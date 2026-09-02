@@ -5,6 +5,7 @@ from collections import Counter
 from pathlib import Path
 from operation_pancake import team_app
 from operation_pancake.ocr_runtime import discover_tesseract
+from operation_pancake.slot_crop_ocr import ocr_slot_crops
 from operation_pancake.team_import import OCRObservation,SlotRegion,VIEW_SLOTS,classify_view,extract_structured,match_candidate,to_candidate
 TEAM_SETUP_BUILD="OCR-LAYOUT-PATCH-5";_ORIGINAL_UPLOAD_SURFACE=team_app._upload_surface
 def _r(slot,cx,y1,y2,width=.095,backup_depth=.105):return SlotRegion(slot,(cx-width/2,y1,cx+width/2,min(.965,y2+backup_depth)))
@@ -51,7 +52,11 @@ def _extract_unique(state_store,gm):
   if obs is None:shot['extraction_status']='OCR ENGINE UNAVAILABLE';continue
   view=proposed if complete else ('UNKNOWN' if proposed not in VIEW_SLOTS or counts.get(proposed,0)!=1 else proposed)
   if view=='UNKNOWN':shot['extraction_status']='OCR READ — VIEW UNRESOLVED';shot['view']='UNKNOWN';meta[shot['id']]={'view':'UNKNOWN','provenance':['four-view-set:not-unique']};continue
-  _,found,m=extract_structured(shot['id'],obs,REAL_TEAM_MANAGER_REGIONS,view=view);m['classification_source']=source;shot['extraction_status']=f'OCR READ — {view}';shot['view']=view;shot['view_confidence']=m.get('view_confidence');meta[shot['id']]=m
+  runtime=discover_tesseract();slot_obs=obs;crop_diagnostics={}
+  if runtime.ready and runtime.executable:
+   try:slot_obs,crop_diagnostics=ocr_slot_crops(Path(shot['path']),REAL_TEAM_MANAGER_REGIONS[view],runtime.executable)
+   except (OSError,ValueError,subprocess.TimeoutExpired):crop_diagnostics={'error':'slot-crop-ocr-failed'}
+  _,found,m=extract_structured(shot['id'],slot_obs,REAL_TEAM_MANAGER_REGIONS,view=view);m['classification_source']=source;m['slot_crop_ocr']=crop_diagnostics;shot['extraction_status']=f'OCR READ — {view}';shot['view']=view;shot['view_confidence']=m.get('view_confidence');meta[shot['id']]=m
   for observed in found:
    c=to_candidate(observed,f'cand-{len(candidates)+1}');candidates.append(match_candidate(c,gm.population))
  state.version=3;state.candidates=candidates;state.team_observations={'screenshots':meta,'four_view_set_complete':complete};state_store.save(state);return state

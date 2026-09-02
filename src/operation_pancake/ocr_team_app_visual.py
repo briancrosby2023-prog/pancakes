@@ -1,15 +1,16 @@
 """Visual-lineup runtime layered on accepted OCR-LAYOUT-PATCH-6."""
+
 from __future__ import annotations
 
 from operation_pancake import ocr_team_app_patch6 as patch6
 from operation_pancake import product_app, team_app
-from operation_pancake.cfb27_ocr_match import match_candidate_cfb27
+from operation_pancake.cfb27_ocr_match import candidate_diagnostics, match_candidate_cfb27
 from operation_pancake.production.gm import GMProduct
 from operation_pancake.team_import import TeamImportStore
 from operation_pancake.team_lineup_visual import render_lineup
 from operation_pancake.team_slot_extraction import REAL_TEAM_MANAGER_SLOT_REGIONS
 
-TEAM_SETUP_BUILD = "CFB27-REAL-IMAGE-MATCH-PATCH-1"
+TEAM_SETUP_BUILD = "CFB27-REAL-IMAGE-MATCH-PATCH-2"
 
 
 def _closure_value(fn, cls):
@@ -33,6 +34,26 @@ def install_runtime():
     # -> structured slot -> CFB27 matching path used by operation-pancake-app.
     patch6.patch5.match_candidate = match_candidate_cfb27
     team_app.match_candidate = match_candidate_cfb27
+
+    original_extract = patch6._extract_current_batch
+
+    def extract_with_match_evidence(state_store, gm):
+        state = original_extract(state_store, gm)
+        by_shot = state.team_observations.get("screenshots", {})
+        for candidate in state.candidates:
+            shot = by_shot.get(candidate.id.split(":", 1)[0])
+            if shot is None:
+                # Runtime IDs are sequential; source identity is retained in crop metadata by view.
+                shot = next(
+                    (row for row in by_shot.values() if row.get("view") == candidate.group), None
+                )
+            if shot is not None:
+                slot = shot.get("slot_crop_ocr", {}).get(candidate.slot, {})
+                slot["match"] = candidate_diagnostics(candidate, gm.population)
+        state_store.save(state)
+        return state
+
+    team_app._extract = extract_with_match_evidence
     # Preserve PATCH-6's own module identity so its isolated regression tests
     # remain meaningful. Only the live lower-level/runtime surface receives the
     # visual layer's build marker.
@@ -49,16 +70,23 @@ def install_runtime():
             def _team_page(self):
                 state = imports.load()
                 current = state.screenshots[-4:]
-                evidence = "".join(
-                    f'<li>{team_app.html.escape(x["filename"])} — {team_app.html.escape(x["extraction_status"])}</li>'
-                    for x in current
-                ) or "<li>No current batch yet.</li>"
+                evidence = (
+                    "".join(
+                        f"<li>{team_app.html.escape(x['filename'])} — {team_app.html.escape(x['extraction_status'])}</li>"
+                        for x in current
+                    )
+                    or "<li>No current batch yet.</li>"
+                )
                 body = (
                     '<div class="hero"><h1>Team Setup</h1><p>Scan the lineup first. Review unresolved matches only where needed.</p></div>'
                     + team_app._upload_surface()
                 )
                 if state.candidates:
-                    body += '<form method="post" action="/team/confirm">' + render_lineup(state.candidates, gm.cards) + '</form>'
+                    body += (
+                        '<form method="post" action="/team/confirm">'
+                        + render_lineup(state.candidates, gm.cards)
+                        + "</form>"
+                    )
                 body += f'<details class="card" id="current-batch-evidence"><summary>Current batch evidence ({len(current)}/4)</summary><ul>{evidence}</ul></details>'
                 return product_app.page("Team Setup", body)
 

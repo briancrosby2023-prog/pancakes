@@ -14,6 +14,7 @@ def test_installed_production_runtime_loads_nonempty_cfb27_corpus_and_role_pools
         "WR1": "WR",
         "MIKE1": "MIKE",
         "K1": "K",
+        "LS1": "LS",
         "3DRB1": "3DRB",
         "PWHB1": "PWHB",
         "SLWR1": "SLWR",
