@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Research and decision-support platform for EA Sports College Football Ultimate Team."
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = ["openpyxl>=3.1", "Pillow>=10.0"]
+dependencies = ["openpyxl>=3.1", "Pillow>=10.0", "google-genai>=1.0"]
 
 [project.scripts]
 operation-pancake = "operation_pancake.cli:main"
