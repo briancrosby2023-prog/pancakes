@@ -2,20 +2,40 @@ from pathlib import Path
 
 import pytest
 
-from operation_pancake.c3po_tackle_resolver import TackleResolutionStore, resolve_tackles
-from operation_pancake.c3po_vision import PlayerObservation, TackleScreenObservation, TackleSlotObservation
+from operation_pancake.c3po_tackle_resolver import (
+    TackleResolutionStore,
+    resolve_tackles,
+)
+from operation_pancake.c3po_vision import (
+    PlayerObservation,
+    TackleScreenObservation,
+    TackleSlotObservation,
+)
 
 
 def card(cid, name, position, ovr, program="Phenoms", season="CFB27"):
-    return {"card_id": cid, "player_name": name, "position": position, "native_overall": ovr, "program": program, "season": season}
+    return {
+        "card_id": cid,
+        "player_name": name,
+        "position": position,
+        "native_overall": ovr,
+        "program": program,
+        "season": season,
+    }
 
 
 def observation(rt_name="Juan Gaston", rt_ovr=81):
     return TackleScreenObservation(
         view="OFFENSE",
         slots={
-            "LT1": TackleSlotObservation(PlayerObservation(None, None), (PlayerObservation("Josh Petty", None),)),
-            "RT1": TackleSlotObservation(PlayerObservation("Cason Henry", 85), (PlayerObservation(rt_name, rt_ovr),)),
+            "LT1": TackleSlotObservation(
+                PlayerObservation(None, None),
+                (PlayerObservation("Josh Petty", None),),
+            ),
+            "RT1": TackleSlotObservation(
+                PlayerObservation("Cason Henry", 85),
+                (PlayerObservation(rt_name, rt_ovr),),
+            ),
         },
         provider="fixture",
         model="fixture",
@@ -32,17 +52,28 @@ def tackle_cards():
 
 @pytest.mark.parametrize(
     ("observed", "position", "canonical"),
-    [("John Petty", "LT", "Josh Petty"), ("Jason Henry", "RT", "Cason Henry"), ("Juan Easton", "RT", "Juan Gaston")],
+    [
+        ("John Petty", "LT", "Josh Petty"),
+        ("Jason Henry", "RT", "Cason Henry"),
+        ("Juan Easton", "RT", "Juan Gaston"),
+    ],
 )
 def test_materially_different_names_fail_closed(observed, position, canonical):
     slots = {
-        "LT1": TackleSlotObservation(PlayerObservation(observed if position == "LT" else None, 80), ()),
-        "RT1": TackleSlotObservation(PlayerObservation(observed if position == "RT" else None, 85), ()),
+        "LT1": TackleSlotObservation(
+            PlayerObservation(observed if position == "LT" else None, 80), ()
+        ),
+        "RT1": TackleSlotObservation(
+            PlayerObservation(observed if position == "RT" else None, 85), ()
+        ),
     }
-    rows = resolve_tackles(TackleScreenObservation("OFFENSE", slots, "fixture", "fixture"), tackle_cards())
+    translated = TackleScreenObservation("OFFENSE", slots, "fixture", "fixture")
+    rows = resolve_tackles(translated, tackle_cards())
     row = next(row for row in rows if row.observed_player_name == observed)
     assert row.status == "UNRESOLVED"
-    assert row.canonical_player_identity is None, f"{observed} must not resolve to {canonical}"
+    assert row.canonical_player_identity is None, (
+        f"{observed} must not resolve to {canonical}"
+    )
     assert row.canonical_card_id is None
 
 
@@ -69,7 +100,9 @@ def test_displayed_lineup_ovr_is_not_native_card_identity_key():
 
 def test_unrecognized_translated_name_fails_closed():
     rows = resolve_tackles(observation("Definitely Not A Tackle", 99), tackle_cards())
-    bad = next(row for row in rows if row.observed_player_name == "Definitely Not A Tackle")
+    bad = next(
+        row for row in rows if row.observed_player_name == "Definitely Not A Tackle"
+    )
     assert bad.status == "UNRESOLVED"
     assert bad.canonical_player_identity is None
     assert bad.canonical_card_id is None
@@ -78,7 +111,11 @@ def test_unrecognized_translated_name_fails_closed():
 def test_cfb25_and_cfb26_are_excluded_even_for_exact_name():
     rows = resolve_tackles(
         observation(),
-        [card("old25", "Juan Gaston", "RT", 81, season="CFB25"), card("old26", "Juan Gaston", "RT", 81, season="CFB26"), *tackle_cards()],
+        [
+            card("old25", "Juan Gaston", "RT", 81, season="CFB25"),
+            card("old26", "Juan Gaston", "RT", 81, season="CFB26"),
+            *tackle_cards(),
+        ],
     )
     gaston = next(row for row in rows if row.observed_player_name == "Juan Gaston")
     assert gaston.canonical_card_id == "gaston-80"
@@ -90,7 +127,12 @@ def test_observed_and_native_ovr_survive_persistence_restart(tmp_path: Path):
     path = tmp_path / "c3po-tackles.json"
     TackleResolutionStore(path).save(observation(), rows)
     restarted = TackleResolutionStore(path).load()
-    gaston = next(row for row in restarted["resolutions"] if row["observed_player_name"] == "Juan Gaston")
+    gaston = next(
+        row
+        for row in restarted["resolutions"]
+        if row["observed_player_name"] == "Juan Gaston"
+    )
     assert gaston["displayed_lineup_ovr"] == 81
     assert gaston["native_card_ovr"] == 80
-    assert restarted["translator_observation"]["slots"]["RT1"]["backups"][0]["displayed_ovr"] == 81
+    backup = restarted["translator_observation"]["slots"]["RT1"]["backups"][0]
+    assert backup["displayed_ovr"] == 81
