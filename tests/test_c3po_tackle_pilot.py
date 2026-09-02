@@ -45,6 +45,7 @@ def observation(rt_name="Juan Gaston", rt_ovr=81):
 def tackle_cards():
     return [
         card("henry-85", "Cason Henry", "RT", 85),
+        card("gaston-75", "Juan Gaston", "RT", 75, program="Core"),
         card("gaston-80", "Juan Gaston", "RT", 80),
         card("petty-80", "Josh Petty", "LT", 80),
     ]
@@ -85,17 +86,30 @@ def test_legitimate_real_observations_still_resolve():
     assert by_name["Juan Gaston"].canonical_card_id == "gaston-80"
     assert by_name["Juan Gaston"].displayed_lineup_ovr == 81
     assert by_name["Juan Gaston"].native_card_ovr == 80
+    assert by_name["Juan Gaston"].display_ovr_delta == 1
+    assert by_name["Juan Gaston"].display_modifier_classification == "TEAM_LINEUP_MODIFIER"
     assert by_name["Josh Petty"].canonical_card_id == "petty-80"
 
 
-def test_displayed_lineup_ovr_is_not_native_card_identity_key():
-    rows = resolve_tackles(observation(), tackle_cards())
+def test_displayed_lineup_ovr_is_context_not_card_selection_or_identity_veto():
+    rows = resolve_tackles(observation(rt_ovr=75), tackle_cards())
     gaston = next(row for row in rows if row.observed_player_name == "Juan Gaston")
     assert gaston.status == "MATCHED"
     assert gaston.canonical_player_identity == "Juan Gaston"
     assert gaston.canonical_card_id == "gaston-80"
-    assert gaston.displayed_lineup_ovr == 81
+    assert gaston.displayed_lineup_ovr == 75
     assert gaston.native_card_ovr == 80
+    assert gaston.display_ovr_delta == -5
+
+
+def test_large_displayed_ovr_mismatch_alone_cannot_reject_valid_identity():
+    rows = resolve_tackles(observation(rt_ovr=99), tackle_cards())
+    gaston = next(row for row in rows if row.observed_player_name == "Juan Gaston")
+    assert gaston.status == "MATCHED"
+    assert gaston.canonical_card_id == "gaston-80"
+    assert gaston.native_card_ovr == 80
+    assert gaston.displayed_lineup_ovr == 99
+    assert gaston.display_ovr_delta == 19
 
 
 def test_unrecognized_translated_name_fails_closed():
@@ -112,8 +126,8 @@ def test_cfb25_and_cfb26_are_excluded_even_for_exact_name():
     rows = resolve_tackles(
         observation(),
         [
-            card("old25", "Juan Gaston", "RT", 81, season="CFB25"),
-            card("old26", "Juan Gaston", "RT", 81, season="CFB26"),
+            card("old25", "Juan Gaston", "RT", 99, season="CFB25"),
+            card("old26", "Juan Gaston", "RT", 98, season="CFB26"),
             *tackle_cards(),
         ],
     )
@@ -134,5 +148,7 @@ def test_observed_and_native_ovr_survive_persistence_restart(tmp_path: Path):
     )
     assert gaston["displayed_lineup_ovr"] == 81
     assert gaston["native_card_ovr"] == 80
+    assert gaston["display_ovr_delta"] == 1
+    assert gaston["display_modifier_classification"] == "TEAM_LINEUP_MODIFIER"
     backup = restarted["translator_observation"]["slots"]["RT1"]["backups"][0]
     assert backup["displayed_ovr"] == 81
