@@ -7,11 +7,14 @@ real card-art and portrait pixels as an independent ranking signal.
 
 from __future__ import annotations
 
+import base64
+import gzip
 import hashlib
 import io
 import json
 import math
 import re
+import struct
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
@@ -177,7 +180,8 @@ def _bits(image: Image.Image, edge: bool = False) -> int:
     if edge:
         gray = gray.filter(ImageFilter.FIND_EDGES)
     gray = gray.resize((17, 16), Image.Resampling.LANCZOS)
-    pixels = list(gray.getdata())
+    get_pixels = getattr(gray, "get_flattened_data", gray.getdata)
+    pixels = list(get_pixels())
     value = 0
     for y in range(16):
         for x in range(16):
@@ -281,6 +285,88 @@ def _name_score(observed: str | None, card: TackleCard) -> float:
     return max(SequenceMatcher(None, value, alias).ratio() for alias in card.aliases)
 
 
+def index_to_payload(index: list[IndexedTackle]) -> dict:
+    """Serialize the runtime index without retaining copyrighted image bytes."""
+    def feature_bytes(values):
+        quantized = [max(0, min(65535, round(value * 65535))) for value in values]
+        return base64.b64encode(struct.pack(f">{len(quantized)}H", *quantized)).decode()
+
+    return {
+        "schema_version": 2,
+        "season": "CFB27",
+        "positions": ["LT", "RT"],
+        "feature_contract": "card+portrait+border+program+team / color+spatial+dhash+edge",
+        "canonical_card_image_template": "https://media.cfb.fan/27/cutdb/playeritem/{external_id}.png",
+        "cards": [
+            {
+                "card": {
+                    "external_id": item.card.external_id,
+                    "canonical_card_id": item.card.canonical_card_id,
+                    "player_name": item.card.player_name,
+                    "position": item.card.position,
+                    "overall": item.card.overall,
+                    "program": item.card.program,
+                    "season": item.card.season,
+                    "aliases": list(item.card.aliases),
+                },
+                "fingerprint": {
+                    "color_q16": feature_bytes(item.fingerprint.color),
+                    "spatial_q16": feature_bytes(item.fingerprint.spatial),
+                    "dhash": format(item.fingerprint.dhash, "064x"),
+                    "edge_hash": format(item.fingerprint.edge_hash, "064x"),
+                },
+                "image_sha256": item.image_sha256,
+                "portrait_sha256": item.portrait_sha256,
+            }
+            for item in index
+        ],
+    }
+
+
+def index_from_payload(payload: dict) -> list[IndexedTackle]:
+    if payload.get("schema_version") != 2 or payload.get("season") != "CFB27":
+        raise ValueError("Unsupported tackle visual index")
+
+    def feature_values(value):
+        raw = base64.b64decode(value)
+        return tuple(item / 65535 for item in struct.unpack(f">{len(raw) // 2}H", raw))
+
+    output = []
+    for row in payload.get("cards", []):
+        card = dict(row["card"])
+        card["aliases"] = tuple(card.get("aliases", ()))
+        external_id = card["external_id"]
+        card["card_image_url"] = payload["canonical_card_image_template"].format(
+            external_id=external_id
+        )
+        card.update(
+            portrait_url=None,
+            border_url=None,
+            program_image_url=None,
+            team_image_url=None,
+        )
+        feature = row["fingerprint"]
+        output.append(
+            IndexedTackle(
+                TackleCard(**card),
+                VisualFingerprint(
+                    feature_values(feature["color_q16"]),
+                    feature_values(feature["spatial_q16"]),
+                    int(feature["dhash"], 16),
+                    int(feature["edge_hash"], 16),
+                ),
+                row["image_sha256"],
+                row.get("portrait_sha256"),
+            )
+        )
+    return output
+
+
+def load_index(path: Path) -> list[IndexedTackle]:
+    raw = gzip.decompress(path.read_bytes()) if path.suffix == ".gz" else path.read_bytes()
+    return index_from_payload(json.loads(raw.decode("utf-8")))
+
+
 def rank(
     index: list[IndexedTackle],
     query: VisualFingerprint | None,
@@ -298,8 +384,20 @@ def rank(
         if observed_ovr is None:
             ovr = 0.0
         else:
-            delta = abs(item.card.overall - observed_ovr)
-            ovr = 1.0 if delta == 0 else 0.55 if delta == 1 else 0.15 if delta == 2 else 0.0
+            # Team chemistry can boost displayed lineup OVR above native card OVR.
+            delta = int(observed_ovr) - item.card.overall
+            if delta == 0:
+                ovr = 1.0
+            elif delta == 1:
+                ovr = 0.8
+            elif delta == 2:
+                ovr = 0.55
+            elif delta == 3:
+                ovr = 0.2
+            elif delta == -1:
+                ovr = 0.35
+            else:
+                ovr = 0.0
         # Visual remains the largest single signal and can retrieve without OCR.
         final = 0.52 * visual + 0.26 * name + 0.14 * ovr + 0.08 * position_score
         output.append(

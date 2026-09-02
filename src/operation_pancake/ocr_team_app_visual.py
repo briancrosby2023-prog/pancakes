@@ -2,15 +2,22 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 from operation_pancake import ocr_team_app_patch6 as patch6
 from operation_pancake import product_app, team_app
 from operation_pancake.cfb27_ocr_match import candidate_diagnostics, match_candidate_cfb27
 from operation_pancake.production.gm import GMProduct
+from operation_pancake.tackle_screenshot_recognition import (
+    TACKLE_SLOTS,
+    recognize_tackle_candidate,
+)
+from operation_pancake.tackle_visual_pilot import load_index
 from operation_pancake.team_import import TeamImportStore
 from operation_pancake.team_lineup_visual import render_lineup
 from operation_pancake.team_slot_extraction import REAL_TEAM_MANAGER_SLOT_REGIONS
 
-TEAM_SETUP_BUILD = "CFB27-REAL-IMAGE-MATCH-PATCH-2"
+TEAM_SETUP_BUILD = "CFB27-TACKLE-VISUAL-PATH-1"
 
 
 def _closure_value(fn, cls):
@@ -40,16 +47,43 @@ def install_runtime():
     def extract_with_match_evidence(state_store, gm):
         state = original_extract(state_store, gm)
         by_shot = state.team_observations.get("screenshots", {})
+        tackle_index_path = gm.root / "data/production/cfb27_tackle_visual_index.json.gz"
+        tackle_index = load_index(tackle_index_path)
+        offense_regions = {
+            region.slot: region for region in REAL_TEAM_MANAGER_SLOT_REGIONS["OFFENSE"]
+        }
         for candidate in state.candidates:
-            shot = by_shot.get(candidate.id.split(":", 1)[0])
+            # Runtime candidate IDs are sequential. Resolve the source through
+            # the unique classified view retained by the accepted four-image path.
+            shot_id, shot = next(
+                (
+                    (key, row)
+                    for key, row in by_shot.items()
+                    if row.get("view") == candidate.group
+                ),
+                (None, None),
+            )
             if shot is None:
-                # Runtime IDs are sequential; source identity is retained in crop metadata by view.
-                shot = next(
-                    (row for row in by_shot.values() if row.get("view") == candidate.group), None
-                )
-            if shot is not None:
-                slot = shot.get("slot_crop_ocr", {}).get(candidate.slot, {})
-                slot["match"] = candidate_diagnostics(candidate, gm.population)
+                continue
+            slot = shot.get("slot_crop_ocr", {}).get(candidate.slot, {})
+            slot["match"] = candidate_diagnostics(candidate, gm.population)
+            if candidate.slot not in TACKLE_SLOTS:
+                continue
+            source = next((row for row in state.screenshots if row.get("id") == shot_id), None)
+            region = offense_regions.get(candidate.slot)
+            if source is None or region is None:
+                slot["visual_recognition"] = {
+                    "decision": "UNRESOLVED",
+                    "reason": "source-screenshot-or-region-missing",
+                }
+                candidate.player_name = None
+                candidate.canonical_card_id = None
+                candidate.confidence = None
+                candidate.match_status = "UNRESOLVED"
+                continue
+            slot["visual_recognition"] = recognize_tackle_candidate(
+                Path(source["path"]), candidate, region, slot, tackle_index
+            )
         state_store.save(state)
         return state
 
@@ -72,13 +106,19 @@ def install_runtime():
                 current = state.screenshots[-4:]
                 evidence = (
                     "".join(
-                        f"<li>{team_app.html.escape(x['filename'])} — {team_app.html.escape(x['extraction_status'])}</li>"
+                        "<li>"
+                        + team_app.html.escape(x["filename"])
+                        + " — "
+                        + team_app.html.escape(x["extraction_status"])
+                        + "</li>"
                         for x in current
                     )
                     or "<li>No current batch yet.</li>"
                 )
                 body = (
-                    '<div class="hero"><h1>Team Setup</h1><p>Scan the lineup first. Review unresolved matches only where needed.</p></div>'
+                    '<div class="hero"><h1>Team Setup</h1>'
+                    "<p>Scan the lineup first. Review unresolved matches only where needed.</p>"
+                    "</div>"
                     + team_app._upload_surface()
                 )
                 if state.candidates:
@@ -87,7 +127,26 @@ def install_runtime():
                         + render_lineup(state.candidates, gm.cards)
                         + "</form>"
                     )
-                body += f'<details class="card" id="current-batch-evidence"><summary>Current batch evidence ({len(current)}/4)</summary><ul>{evidence}</ul></details>'
+                tackle_diagnostics = {
+                    candidate.slot: candidate.match_diagnostics
+                    for candidate in state.candidates
+                    if candidate.slot in TACKLE_SLOTS
+                }
+                body += (
+                    '<details class="card" id="tackle-visual-diagnostics">'
+                    "<summary>CFB27 tackle visual diagnostics</summary>"
+                    "<p>LT/RT only · real uploaded pixels · 638-card CFB27 index</p>"
+                    "<pre style=\"white-space:pre-wrap;overflow-wrap:anywhere\">"
+                    + team_app.html.escape(
+                        team_app.json.dumps(tackle_diagnostics, indent=2, sort_keys=True)
+                    )
+                    + "</pre></details>"
+                )
+                body += (
+                    '<details class="card" id="current-batch-evidence">'
+                    f"<summary>Current batch evidence ({len(current)}/4)</summary>"
+                    f"<ul>{evidence}</ul></details>"
+                )
                 return product_app.page("Team Setup", body)
 
         return VisualHandler

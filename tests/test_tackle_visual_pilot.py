@@ -8,6 +8,8 @@ from operation_pancake.tackle_visual_pilot import (
     IndexedTackle,
     TackleCard,
     fingerprint,
+    index_from_payload,
+    index_to_payload,
     load_cards,
     rank,
     resolve,
@@ -66,3 +68,24 @@ def test_perceptual_signal_tolerates_resize_and_jpeg_like_degradation():
     image = Image.new("RGB", (240, 321), (30, 80, 170))
     transformed = image.resize((80, 107), Image.Resampling.LANCZOS)
     assert visual_score(fingerprint(image), fingerprint(transformed)) > 0.9
+
+
+def test_checked_in_index_covers_all_tackles_and_round_trips():
+    from operation_pancake.tackle_visual_pilot import load_index
+
+    index = load_index(ROOT / "data/production/cfb27_tackle_visual_index.json.gz")
+    assert len(index) == 638
+    assert sum(item.card.position == "LT" for item in index) == 317
+    assert sum(item.card.position == "RT" for item in index) == 321
+    rebuilt = index_from_payload(index_to_payload(index))
+    assert [item.card.canonical_card_id for item in rebuilt] == [
+        item.card.canonical_card_id for item in index
+    ]
+    assert visual_score(rebuilt[0].fingerprint, index[0].fingerprint) > 0.99999
+
+
+def test_displayed_ovr_allows_bounded_positive_lineup_boost():
+    red = fingerprint(Image.new("RGB", (240, 321), "red"))
+    native_80 = IndexedTackle(_card("1", "Juan Gaston", "RT", 80), red, "a", None)
+    result = rank([native_80], red, "Gaston", 81, "RT")[0]
+    assert result["ovr"] == 0.8

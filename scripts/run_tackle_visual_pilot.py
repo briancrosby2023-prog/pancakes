@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import gzip
 import io
 import json
 import random
@@ -17,6 +18,7 @@ from operation_pancake.tackle_visual_pilot import (
     build_index,
     compose_card,
     fingerprint,
+    index_to_payload,
     load_cards,
     rank,
     resolve,
@@ -80,6 +82,11 @@ def main() -> None:
         root / "data/production/cfb27_scored_population.json",
     )
     index = build_index(cards, args.cache)
+    production_index = root / "data/production/cfb27_tackle_visual_index.json.gz"
+    production_payload = (
+        json.dumps(index_to_payload(index), separators=(",", ":")) + "\n"
+    )
+    production_index.write_bytes(gzip.compress(production_payload.encode(), mtime=0))
     duplicate_players = Counter((item.card.player_name, item.card.position) for item in index)
     same_ovr = Counter((item.card.position, item.card.overall) for item in index)
     clean_results, degraded_results, text_only_results = [], [], []

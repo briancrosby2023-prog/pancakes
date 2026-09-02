@@ -42,7 +42,7 @@ jobs:
           repo=pathlib.Path.cwd().resolve()
           assert pathlib.Path(team_app.__file__).resolve().is_relative_to(repo)
           assert pathlib.Path(ocr_team_app_visual.__file__).resolve().is_relative_to(repo)
-          assert ocr_team_app_visual.TEAM_SETUP_BUILD=='CFB27-REAL-IMAGE-MATCH-PATCH-2'
+          assert ocr_team_app_visual.TEAM_SETUP_BUILD=='CFB27-TACKLE-VISUAL-PATH-1'
           assert ocr_team_app_visual.patch6.patch5.match_candidate is match_candidate_cfb27
           PY
       - name: Focused pytest
@@ -60,7 +60,7 @@ jobs:
       - name: Team Setup pytest
         run: |
           set -euo pipefail
-          python -m pytest -ra tests/test_team_setup_dropzone.py tests/test_team_setup_runtime_identity.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py tests/test_real_team_manager_layout.py tests/test_ocr_layout_patch3.py tests/test_ocr_layout_patch6.py tests/test_team_lineup_visual.py tests/test_team_slot_extraction_patch.py tests/test_real_slot_crop_ocr.py tests/test_cfb27_ocr_match.py tests/test_cfb27_production_match_path.py 2>&1 | tee /tmp/a/team-setup.txt
+          python -m pytest -ra tests/test_team_setup_dropzone.py tests/test_team_setup_runtime_identity.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py tests/test_real_team_manager_layout.py tests/test_ocr_layout_patch3.py tests/test_ocr_layout_patch6.py tests/test_team_lineup_visual.py tests/test_team_slot_extraction_patch.py tests/test_real_slot_crop_ocr.py tests/test_cfb27_ocr_match.py tests/test_cfb27_production_match_path.py tests/test_tackle_visual_pilot.py tests/test_tackle_screenshot_production_path.py 2>&1 | tee /tmp/a/team-setup.txt
       - name: Start app exactly like user
         run: |
           set -euo pipefail
@@ -83,7 +83,7 @@ jobs:
           B='http://127.0.0.1:8765'
           with urllib.request.urlopen(B+'/setup',timeout=20) as r:
               body=r.read().decode(); cache=r.headers.get('Cache-Control',''); pragma=r.headers.get('Pragma',''); print('STATUS',r.status); print('CACHE',cache); print('PRAGMA',pragma)
-          assert 'TEAM SETUP BUILD: CFB27-REAL-IMAGE-MATCH-PATCH-2' in body
+          assert 'TEAM SETUP BUILD: CFB27-TACKLE-VISUAL-PATH-1' in body
           assert 'OCR ENGINE:' in body
           assert 'DROP HANDLER: NOT READY' in body
           assert "setStatus('DROP HANDLER: READY')" in body
@@ -91,6 +91,7 @@ jobs:
           assert 'addFiles(e.dataTransfer.files)' in body
           assert 'DROP HANDLER: FILE DRAG' in body
           assert 'Current batch evidence (0/4)' in body
+          assert 'CFB27 tackle visual diagnostics' in body
           assert 'no-store' in cache and 'no-cache' in cache
           assert pragma.lower()=='no-cache'
           print('LIVE TEAM SETUP RESPONSE PASS')

@@ -12,43 +12,43 @@
     "cases": 638,
     "top_1_accuracy": 1.0,
     "top_3_accuracy": 1.0,
-    "identification_accuracy": 0.648903,
-    "unresolved_rate": 0.351097,
+    "identification_accuracy": 0.641066,
+    "unresolved_rate": 0.358934,
     "false_positive_rate": 0.0
   },
   "degraded_screenshot_like": {
     "cases": 638,
     "top_1_accuracy": 0.95768,
     "top_3_accuracy": 0.995298,
-    "identification_accuracy": 0.557994,
-    "unresolved_rate": 0.440439,
+    "identification_accuracy": 0.551724,
+    "unresolved_rate": 0.446708,
     "false_positive_rate": 0.001567
   },
   "degraded_same_ovr_cases": {
     "cases": 634,
     "top_1_accuracy": 0.957413,
     "top_3_accuracy": 0.995268,
-    "identification_accuracy": 0.556782,
-    "unresolved_rate": 0.44164,
+    "identification_accuracy": 0.550473,
+    "unresolved_rate": 0.44795,
     "false_positive_rate": 0.001577
   },
   "degraded_multiple_card_player_cases": {
     "cases": 348,
     "top_1_accuracy": 0.945402,
     "top_3_accuracy": 1.0,
-    "identification_accuracy": 0.25,
-    "unresolved_rate": 0.75,
+    "identification_accuracy": 0.241379,
+    "unresolved_rate": 0.758621,
     "false_positive_rate": 0.0
   },
   "ocr_only_control_on_same_degraded_observations": {
     "cases": 638,
-    "top_1_accuracy": 0.695925,
+    "top_1_accuracy": 0.69279,
     "top_3_accuracy": 0.937304,
     "identification_accuracy": 0.0,
     "unresolved_rate": 1.0,
     "false_positive_rate": 0.0
   },
-  "visual_top1_lift": 0.261755,
+  "visual_top1_lift": 0.26489,
   "ambiguous_no_evidence_fails_closed": true,
   "wrong_position_fails_closed": true,
   "non_tackle_negatives": {
@@ -367,17 +367,17 @@
           "final": 0.825733
         },
         {
-          "external_id": "2112900009",
-          "canonical_card_id": "card:eae3c0cd0348ad991fe8",
+          "external_id": "2111900009",
+          "canonical_card_id": "card:238826a9b0b15a23ac07",
           "player_name": "Forrest Gregg",
           "position": "RT",
-          "overall": 82,
+          "overall": 85,
           "program": "S1 Legends - Classic",
           "visual": 0.905043,
           "name": 0.75,
-          "ovr": 0.15,
+          "ovr": 0.0,
           "position_score": 1.0,
-          "final": 0.766622
+          "final": 0.745622
         }
       ]
     }
