@@ -24,7 +24,6 @@ def visual_boxes(region):
     left, _, right, _ = region.box
     name_top = (region.starter_name_box or region.box)[1]
     starter_bottom = (region.starter_name_box or region.box)[3]
-    # The item art occupies the vertical tile immediately above its nameplate.
     starter = (left, max(0.0, name_top - 0.205), right, starter_bottom)
     return (starter, *region.backup_boxes)
 
@@ -44,40 +43,35 @@ def _norm(value):
 
 
 def _resolve_real_observation(ranking, observed_name, observed_ovr):
-    """Resolve real LT/RT observations without letting a bad art crop veto strong identity.
-
-    The generic visual pilot deliberately uses one global threshold.  Real Team Manager
-    backup rows are much shallower than the composed corpus card and therefore can have
-    weak visual similarity even when OCR recovered an exact full player name.  For the
-    production tackle path, exact multi-token name evidence is allowed to narrow the
-    already position-isolated CFB27 pool.  A displayed OVR may be the native value or a
-    +1/+2 lineup boost; it is evidence, never an exact-card exclusion.  Ambiguous same-
-    player cards still require OVR or visual separation and otherwise fail closed.
-    """
-    selected = resolve(ranking)
-    if selected or not ranking or not observed_name:
-        return selected, "global-visual-text-gate" if selected else "global-gate-unresolved"
+    """Use exact full-name evidence before a mismatched shallow-row visual can override it."""
+    if not ranking:
+        return None, "global-gate-unresolved"
     normalized = _norm(observed_name)
-    if len(observed_name.split()) < 2 or not normalized:
+    exact = []
+    if observed_name and len(observed_name.split()) >= 2 and normalized:
+        exact = [row for row in ranking if _norm(row.get("player_name")) == normalized]
+    if exact:
+        if observed_ovr is not None:
+            plausible = [
+                row for row in exact
+                if 0 <= int(observed_ovr) - int(row.get("overall") or 0) <= 2
+            ]
+            if len(plausible) == 1:
+                return plausible[0], "exact-full-name+boost-tolerant-ovr"
+            if plausible:
+                exact = plausible
+        if len(exact) == 1:
+            return exact[0], "unique-exact-full-name-in-position-pool"
+        exact = sorted(exact, key=lambda row: (row["visual"], row["final"]), reverse=True)
+        if exact[0]["visual"] - exact[1]["visual"] >= 0.035:
+            return exact[0], "exact-full-name+visual-card-disambiguation"
+        return None, "same-player-card-ambiguity"
+    selected = resolve(ranking)
+    if selected:
+        return selected, "global-visual-text-gate"
+    if observed_name and len(observed_name.split()) < 2:
         return None, "insufficient-name-evidence"
-    exact = [row for row in ranking if _norm(row.get("player_name")) == normalized]
-    if not exact:
-        return None, "no-exact-full-name-in-position-pool"
-    if observed_ovr is not None:
-        plausible = [
-            row for row in exact
-            if 0 <= int(observed_ovr) - int(row.get("overall") or 0) <= 2
-        ]
-        if len(plausible) == 1:
-            return plausible[0], "exact-full-name+boost-tolerant-ovr"
-        if plausible:
-            exact = plausible
-    if len(exact) == 1:
-        return exact[0], "unique-exact-full-name-in-position-pool"
-    exact = sorted(exact, key=lambda row: (row["visual"], row["final"]), reverse=True)
-    if len(exact) > 1 and exact[0]["visual"] - exact[1]["visual"] >= 0.035:
-        return exact[0], "exact-full-name+visual-card-disambiguation"
-    return None, "same-player-card-ambiguity"
+    return None, "no-exact-full-name-in-position-pool" if observed_name else "global-gate-unresolved"
 
 
 def _ranking_diagnostic(ranking, selected, reason):
@@ -90,9 +84,7 @@ def _ranking_diagnostic(ranking, selected, reason):
         "ovr_compatibility": best.get("ovr") if best else None,
         "position_compatibility": best.get("position_score") if best else None,
         "final_score": best.get("final") if best else None,
-        "ambiguity_margin": (
-            round(best["final"] - second["final"], 6) if best and second else None
-        ),
+        "ambiguity_margin": round(best["final"] - second["final"], 6) if best and second else None,
         "decision": "ACCEPTED" if selected else "UNRESOLVED",
         "decision_reason": reason,
         "accepted_card_id": selected.get("canonical_card_id") if selected else None,
@@ -116,11 +108,7 @@ def recognize_tackle_candidate(path, candidate, region, slot_crop, index):
             else:
                 name, ovr, raw = _raw_backup_observation(slot_crop, crop_index)
                 backup_position = crop_index - 1
-                target = (
-                    candidate.backups[backup_position]
-                    if backup_position < len(candidate.backups)
-                    else None
-                )
+                target = candidate.backups[backup_position] if backup_position < len(candidate.backups) else None
                 if target:
                     name = target.get("raw_player_name") or target.get("player_name") or name
                     if target.get("displayed_ovr") is not None:
@@ -131,9 +119,7 @@ def recognize_tackle_candidate(path, candidate, region, slot_crop, index):
                 "source_screenshot": str(path),
                 "slot": candidate.slot,
                 "deterministic_position": candidate.position,
-                "candidate_pool_size": sum(
-                    1 for item in index if item.card.position == (candidate.position or "").upper()
-                ),
+                "candidate_pool_size": sum(1 for item in index if item.card.position == (candidate.position or "").upper()),
                 "starter_backup_index": crop_index,
                 "crop_dimensions": [crop.width, crop.height],
                 "normalized_crop": list(box),
