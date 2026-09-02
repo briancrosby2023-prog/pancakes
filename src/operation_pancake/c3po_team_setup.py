@@ -10,7 +10,10 @@ TACKLE_SLOTS = ("LT1", "RT1")
 
 
 def _candidate(state, slot: str) -> Candidate:
-    found = next((c for c in state.candidates if c.group == "OFFENSE" and c.slot == slot), None)
+    found = next(
+        (c for c in state.candidates if c.group == "OFFENSE" and c.slot == slot),
+        None,
+    )
     if found is not None:
         return found
     found = Candidate(id=f"c3po-{slot.lower()}", group="OFFENSE", slot=slot)
@@ -40,7 +43,11 @@ def _apply(candidate: Candidate, rows: list[TackleResolution]) -> None:
     candidate.match_status = "MATCHED" if starter.status == "MATCHED" else "UNMATCHED"
     candidate.confidence = 1.0 if starter.status == "MATCHED" else None
     candidate.backups = [_backup(row) for row in rows[1:]]
-    candidate.provenance = [p for p in candidate.provenance if not p.startswith("c3po:")] + ["c3po:google-gemini-screen-translation", "c3po:cfb27-position-isolated-resolution"]
+    old = [p for p in candidate.provenance if not p.startswith("c3po:")]
+    candidate.provenance = old + [
+        "c3po:google-gemini-screen-translation",
+        "c3po:cfb27-position-isolated-resolution",
+    ]
     candidate.match_diagnostics = dict(candidate.match_diagnostics)
     candidate.match_diagnostics["c3po"] = {
         "observed_player_name": starter.observed_player_name,
@@ -56,18 +63,26 @@ def _apply(candidate: Candidate, rows: list[TackleResolution]) -> None:
 def integrate_offense_tackles(state_store, cards: list[dict], translator) -> object:
     """Translate the current OFFENSE image and replace only LT1/RT1 resolution."""
     state = state_store.load()
-    offense = next((shot for shot in state.screenshots if shot.get("view") == "OFFENSE"), None)
+    offense = next(
+        (shot for shot in state.screenshots if shot.get("view") == "OFFENSE"),
+        None,
+    )
     if offense is None:
-        state.team_observations["c3po_tackles"] = {"status": "SKIPPED", "reason": "offense-screenshot-unavailable"}
+        state.team_observations["c3po_tackles"] = {
+            "status": "SKIPPED",
+            "reason": "offense-screenshot-unavailable",
+        }
         state_store.save(state)
         return state
     try:
         observation = translator.translate_offense_tackles(Path(offense["path"]))
         resolutions = resolve_tackles(observation, cards)
     except Exception as exc:
-        # The translator is an external observation boundary. Fail closed without
-        # mutating any previously extracted candidate identity or other position.
-        state.team_observations["c3po_tackles"] = {"status": "ERROR", "error_type": type(exc).__name__}
+        # External observation boundary: fail closed and retain prior identities.
+        state.team_observations["c3po_tackles"] = {
+            "status": "ERROR",
+            "error_type": type(exc).__name__,
+        }
         state_store.save(state)
         return state
     for slot in TACKLE_SLOTS:
