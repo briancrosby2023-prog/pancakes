@@ -1,0 +1,385 @@
+{
+  "scope": "CFB27 LT/RT only",
+  "index": {
+    "lt_cards": 317,
+    "rt_cards": 321,
+    "total_tackle_images": 638,
+    "metadata_linked": 638,
+    "portraits_available": 585,
+    "multiple_card_players": 144
+  },
+  "clean": {
+    "cases": 638,
+    "top_1_accuracy": 1.0,
+    "top_3_accuracy": 1.0,
+    "identification_accuracy": 0.648903,
+    "unresolved_rate": 0.351097,
+    "false_positive_rate": 0.0
+  },
+  "degraded_screenshot_like": {
+    "cases": 638,
+    "top_1_accuracy": 0.95768,
+    "top_3_accuracy": 0.995298,
+    "identification_accuracy": 0.557994,
+    "unresolved_rate": 0.440439,
+    "false_positive_rate": 0.001567
+  },
+  "degraded_same_ovr_cases": {
+    "cases": 634,
+    "top_1_accuracy": 0.957413,
+    "top_3_accuracy": 0.995268,
+    "identification_accuracy": 0.556782,
+    "unresolved_rate": 0.44164,
+    "false_positive_rate": 0.001577
+  },
+  "degraded_multiple_card_player_cases": {
+    "cases": 348,
+    "top_1_accuracy": 0.945402,
+    "top_3_accuracy": 1.0,
+    "identification_accuracy": 0.25,
+    "unresolved_rate": 0.75,
+    "false_positive_rate": 0.0
+  },
+  "ocr_only_control_on_same_degraded_observations": {
+    "cases": 638,
+    "top_1_accuracy": 0.695925,
+    "top_3_accuracy": 0.937304,
+    "identification_accuracy": 0.0,
+    "unresolved_rate": 1.0,
+    "false_positive_rate": 0.0
+  },
+  "visual_top1_lift": 0.261755,
+  "ambiguous_no_evidence_fails_closed": true,
+  "wrong_position_fails_closed": true,
+  "non_tackle_negatives": {
+    "cases": 32,
+    "unresolved_rate": 1.0,
+    "false_positive_rate": 0.0
+  },
+  "examples": [
+    {
+      "expected": {
+        "external_id": "1001757",
+        "name": "Connor McLaughlin",
+        "position": "LT",
+        "overall": 59,
+        "program": "Starter Team Items"
+      },
+      "observations": {
+        "name": "cLughlin",
+        "ovr": null
+      },
+      "top_candidates": [
+        {
+          "external_id": "1001757",
+          "canonical_card_id": "card:93be75b3cf330ce6ad4b",
+          "player_name": "Connor McLaughlin",
+          "position": "LT",
+          "overall": 59,
+          "program": "Starter Team Items",
+          "visual": 0.916869,
+          "name": 0.888889,
+          "ovr": 0.0,
+          "position_score": 1.0,
+          "final": 0.787883
+        },
+        {
+          "external_id": "2020557",
+          "canonical_card_id": "card:01eafcec9861225fed3f",
+          "player_name": "Xavier Chaplin",
+          "position": "LT",
+          "overall": 82,
+          "program": "Core Rare",
+          "visual": 0.849701,
+          "name": 0.666667,
+          "ovr": 0.0,
+          "position_score": 1.0,
+          "final": 0.695178
+        },
+        {
+          "external_id": "9020557",
+          "canonical_card_id": "card:402dac5c66e859d68086",
+          "player_name": "Xavier Chaplin",
+          "position": "LT",
+          "overall": 82,
+          "program": "Platinum Rare",
+          "visual": 0.84472,
+          "name": 0.666667,
+          "ovr": 0.0,
+          "position_score": 1.0,
+          "final": 0.692588
+        }
+      ]
+    },
+    {
+      "expected": {
+        "external_id": "2000742",
+        "name": "Champ Westbrooks",
+        "position": "RT",
+        "overall": 66,
+        "program": "Core Common"
+      },
+      "observations": {
+        "name": "estbrook",
+        "ovr": 66
+      },
+      "top_candidates": [
+        {
+          "external_id": "2000742",
+          "canonical_card_id": "card:7cbe9de1ff207765aa99",
+          "player_name": "Champ Westbrooks",
+          "position": "RT",
+          "overall": 66,
+          "program": "Core Common",
+          "visual": 0.916519,
+          "name": 0.888889,
+          "ovr": 1.0,
+          "position_score": 1.0,
+          "final": 0.927701
+        },
+        {
+          "external_id": "2000676",
+          "canonical_card_id": "card:44c25aa3547907b40fcd",
+          "player_name": "Austin Anderson",
+          "position": "RT",
+          "overall": 66,
+          "program": "Core Common",
+          "visual": 0.836289,
+          "name": 0.375,
+          "ovr": 1.0,
+          "position_score": 1.0,
+          "final": 0.75237
+        },
+        {
+          "external_id": "2000538",
+          "canonical_card_id": "card:9f14865ac637f3ddb1e2",
+          "player_name": "Charlie Symonds",
+          "position": "RT",
+          "overall": 66,
+          "program": "Core Common",
+          "visual": 0.857069,
+          "name": 0.272727,
+          "ovr": 1.0,
+          "position_score": 1.0,
+          "final": 0.736585
+        }
+      ]
+    },
+    {
+      "expected": {
+        "external_id": "2007666",
+        "name": "Nick Del Grande",
+        "position": "LT",
+        "overall": 82,
+        "program": "Core Rare"
+      },
+      "observations": {
+        "name": "Grand",
+        "ovr": 82
+      },
+      "top_candidates": [
+        {
+          "external_id": "2007666",
+          "canonical_card_id": "card:f8f36009936d14498d00",
+          "player_name": "Nick Del Grande",
+          "position": "LT",
+          "overall": 82,
+          "program": "Core Rare",
+          "visual": 0.891629,
+          "name": 0.714286,
+          "ovr": 1.0,
+          "position_score": 1.0,
+          "final": 0.869362
+        },
+        {
+          "external_id": "9007666",
+          "canonical_card_id": "card:0d48c8c7078a049218b5",
+          "player_name": "Nick Del Grande",
+          "position": "LT",
+          "overall": 82,
+          "program": "Platinum Rare",
+          "visual": 0.889347,
+          "name": 0.714286,
+          "ovr": 1.0,
+          "position_score": 1.0,
+          "final": 0.868175
+        },
+        {
+          "external_id": "2008111",
+          "canonical_card_id": "card:a6738258cb176069e7ad",
+          "player_name": "Lance Heard",
+          "position": "LT",
+          "overall": 82,
+          "program": "Core Rare",
+          "visual": 0.850197,
+          "name": 0.4,
+          "ovr": 1.0,
+          "position_score": 1.0,
+          "final": 0.766103
+        }
+      ]
+    },
+    {
+      "expected": {
+        "external_id": "2028552",
+        "name": "Graceson Spann",
+        "position": "RT",
+        "overall": 62,
+        "program": "Core Common"
+      },
+      "observations": {
+        "name": "pan",
+        "ovr": 62
+      },
+      "top_candidates": [
+        {
+          "external_id": "2028552",
+          "canonical_card_id": "card:99bd71f5803f0487f28f",
+          "player_name": "Graceson Spann",
+          "position": "RT",
+          "overall": 62,
+          "program": "Core Common",
+          "visual": 0.900518,
+          "name": 0.75,
+          "ovr": 1.0,
+          "position_score": 1.0,
+          "final": 0.883269
+        },
+        {
+          "external_id": "2034038",
+          "canonical_card_id": "card:795002fb582925712a9f",
+          "player_name": "Lautaimi Manuma",
+          "position": "RT",
+          "overall": 62,
+          "program": "Core Common",
+          "visual": 0.851625,
+          "name": 0.444444,
+          "ovr": 1.0,
+          "position_score": 1.0,
+          "final": 0.778401
+        },
+        {
+          "external_id": "2028829",
+          "canonical_card_id": "card:fec18677c6cc1d8f40bb",
+          "player_name": "Spencer Beckeman",
+          "position": "RT",
+          "overall": 62,
+          "program": "Core Common",
+          "visual": 0.848709,
+          "name": 0.363636,
+          "ovr": 1.0,
+          "position_score": 1.0,
+          "final": 0.755874
+        }
+      ]
+    },
+    {
+      "expected": {
+        "external_id": "8004120",
+        "name": "Fox Crader",
+        "position": "LT",
+        "overall": 77,
+        "program": "Platinum Uncommon"
+      },
+      "observations": {
+        "name": "rade",
+        "ovr": 77
+      },
+      "top_candidates": [
+        {
+          "external_id": "8004120",
+          "canonical_card_id": "card:48758b4d26f323efbdce",
+          "player_name": "Fox Crader",
+          "position": "LT",
+          "overall": 77,
+          "program": "Platinum Uncommon",
+          "visual": 0.904854,
+          "name": 0.8,
+          "ovr": 1.0,
+          "position_score": 1.0,
+          "final": 0.898524
+        },
+        {
+          "external_id": "2004120",
+          "canonical_card_id": "card:1a1fe28de763b411fb65",
+          "player_name": "Fox Crader",
+          "position": "LT",
+          "overall": 77,
+          "program": "Core Uncommon",
+          "visual": 0.897238,
+          "name": 0.8,
+          "ovr": 1.0,
+          "position_score": 1.0,
+          "final": 0.894564
+        },
+        {
+          "external_id": "2029017",
+          "canonical_card_id": "card:567c4a31964af629d9c9",
+          "player_name": "Brandon Sneh",
+          "position": "LT",
+          "overall": 77,
+          "program": "Core Uncommon",
+          "visual": 0.859827,
+          "name": 0.533333,
+          "ovr": 1.0,
+          "position_score": 1.0,
+          "final": 0.805777
+        }
+      ]
+    },
+    {
+      "expected": {
+        "external_id": "2113900009",
+        "name": "Forrest Gregg",
+        "position": "RT",
+        "overall": 80,
+        "program": "S1 Legends - Classic"
+      },
+      "observations": {
+        "name": "reg",
+        "ovr": 80
+      },
+      "top_candidates": [
+        {
+          "external_id": "2113900009",
+          "canonical_card_id": "card:da2e8d067e0e7548f30c",
+          "player_name": "Forrest Gregg",
+          "position": "RT",
+          "overall": 80,
+          "program": "S1 Legends - Classic",
+          "visual": 0.905043,
+          "name": 0.75,
+          "ovr": 1.0,
+          "position_score": 1.0,
+          "final": 0.885622
+        },
+        {
+          "external_id": "102900009",
+          "canonical_card_id": "card:cb955982c467eb8c5bed",
+          "player_name": "Forrest Gregg",
+          "position": "RT",
+          "overall": 80,
+          "program": "Core Legends Classic",
+          "visual": 0.78987,
+          "name": 0.75,
+          "ovr": 1.0,
+          "position_score": 1.0,
+          "final": 0.825733
+        },
+        {
+          "external_id": "2112900009",
+          "canonical_card_id": "card:eae3c0cd0348ad991fe8",
+          "player_name": "Forrest Gregg",
+          "position": "RT",
+          "overall": 82,
+          "program": "S1 Legends - Classic",
+          "visual": 0.905043,
+          "name": 0.75,
+          "ovr": 0.15,
+          "position_score": 1.0,
+          "final": 0.766622
+        }
+      ]
+    }
+  ]
+}

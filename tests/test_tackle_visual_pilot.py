@@ -1,0 +1,68 @@
+from __future__ import annotations
+
+from pathlib import Path
+
+from PIL import Image
+
+from operation_pancake.tackle_visual_pilot import (
+    IndexedTackle,
+    TackleCard,
+    fingerprint,
+    load_cards,
+    rank,
+    resolve,
+    visual_score,
+)
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def _card(external_id: str, name: str, position: str, overall: int) -> TackleCard:
+    return TackleCard(
+        external_id,
+        f"card:{external_id}",
+        name,
+        position,
+        overall,
+        "Test Program",
+        "CFB27",
+        "https://example.invalid/card.png",
+        None,
+        None,
+        None,
+        None,
+        (name.casefold().replace(" ", ""), name.split()[-1].casefold()),
+    )
+
+
+def test_all_cfb27_tackles_link_to_unique_production_metadata():
+    cards = load_cards(
+        ROOT / "data/external/raw/cfb_fan_player_items",
+        ROOT / "data/production/cfb27_scored_population.json",
+    )
+    assert sum(card.position == "LT" for card in cards) == 317
+    assert sum(card.position == "RT" for card in cards) == 321
+    assert all(card.season == "CFB27" and card.canonical_card_id for card in cards)
+
+
+def test_visual_signal_changes_ranking_independently_of_text_and_ovr():
+    red = fingerprint(Image.new("RGB", (240, 321), "red"))
+    blue = fingerprint(Image.new("RGB", (240, 321), "blue"))
+    first = IndexedTackle(_card("1", "Alpha One", "LT", 80), red, "a", None)
+    second = IndexedTackle(_card("2", "Beta Two", "LT", 80), blue, "b", None)
+    ranking = rank([first, second], blue, None, None, "LT")
+    assert ranking[0]["external_id"] == "2"
+    assert ranking[0]["visual"] > ranking[1]["visual"]
+
+
+def test_wrong_position_and_ambiguous_queries_fail_closed():
+    red = fingerprint(Image.new("RGB", (240, 321), "red"))
+    item = IndexedTackle(_card("1", "Alpha One", "LT", 80), red, "a", None)
+    assert rank([item], red, "Alpha One", 80, "QB") == []
+    assert resolve(rank([item], None, None, None, "LT")) is None
+
+
+def test_perceptual_signal_tolerates_resize_and_jpeg_like_degradation():
+    image = Image.new("RGB", (240, 321), (30, 80, 170))
+    transformed = image.resize((80, 107), Image.Resampling.LANCZOS)
+    assert visual_score(fingerprint(image), fingerprint(transformed)) > 0.9
