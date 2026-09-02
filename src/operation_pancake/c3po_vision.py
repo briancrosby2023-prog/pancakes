@@ -1,8 +1,4 @@
-"""C-3PO screenshot translation boundary for the bounded LT/RT pilot.
-
-Google/Gemini is used only as a screen translator. Pancake remains responsible
-for deterministic slot topology and all CFB27 canonical resolution.
-"""
+"""C-3PO screenshot translation boundary for the bounded LT/RT pilot."""
 from __future__ import annotations
 
 import base64
@@ -14,6 +10,7 @@ from pathlib import Path
 from typing import Protocol
 
 TACKLE_SLOTS = ("LT1", "RT1")
+GEMINI_REQUEST_TIMEOUT_MS = 15_000
 
 
 @dataclass(frozen=True)
@@ -52,10 +49,7 @@ TRANSLATOR_SCHEMA = {
             "properties": {
                 slot: {
                     "type": "object",
-                    "properties": {
-                        "starter": {"$ref": "#/$defs/player"},
-                        "backups": {"type": "array", "items": {"$ref": "#/$defs/player"}},
-                    },
+                    "properties": {"starter": {"$ref": "#/$defs/player"}, "backups": {"type": "array", "items": {"$ref": "#/$defs/player"}}},
                     "required": ["starter", "backups"],
                     "additionalProperties": False,
                 }
@@ -70,10 +64,7 @@ TRANSLATOR_SCHEMA = {
     "$defs": {
         "player": {
             "type": "object",
-            "properties": {
-                "observed_name": {"type": ["string", "null"]},
-                "displayed_ovr": {"type": ["integer", "null"], "minimum": 40, "maximum": 99},
-            },
+            "properties": {"observed_name": {"type": ["string", "null"]}, "displayed_ovr": {"type": ["integer", "null"], "minimum": 40, "maximum": 99}},
             "required": ["observed_name", "displayed_ovr"],
             "additionalProperties": False,
         }
@@ -92,37 +83,28 @@ Return only the schema-constrained observation."""
 class GeminiScreenshotTranslator:
     """Official Gemini API implementation using Google's google-genai SDK."""
 
-    def __init__(self, api_key: str | None = None, model: str | None = None):
+    def __init__(self, api_key: str | None = None, model: str | None = None, timeout_ms: int = GEMINI_REQUEST_TIMEOUT_MS):
         self.api_key = api_key or os.getenv("GEMINI_API_KEY")
         self.model = model or os.getenv("PANCAKE_GEMINI_MODEL", "gemini-3.7-flash")
+        self.timeout_ms = timeout_ms
         if not self.api_key:
             raise RuntimeError("GEMINI_API_KEY is required for the Gemini C-3PO translator")
 
     def translate_offense_tackles(self, screenshot: Path) -> TackleScreenObservation:
         try:
             from google import genai
+            from google.genai import types
         except ImportError as exc:
             raise RuntimeError("Install the 'google-genai' package for Gemini translation") from exc
 
         data = screenshot.read_bytes()
         mime = mimetypes.guess_type(screenshot.name)[0] or "image/png"
-        client = genai.Client(api_key=self.api_key)
-        interaction = client.interactions.create(
-            model=self.model,
-            input=[
-                {"type": "text", "text": PROMPT},
-                {
-                    "type": "image",
-                    "data": base64.b64encode(data).decode("ascii"),
-                    "mime_type": mime,
-                },
-            ],
-            response_format={
-                "type": "text",
-                "mime_type": "application/json",
-                "schema": TRANSLATOR_SCHEMA,
-            },
-        )
+        with genai.Client(api_key=self.api_key, http_options=types.HttpOptions(timeout=self.timeout_ms)) as client:
+            interaction = client.interactions.create(
+                model=self.model,
+                input=[{"type": "text", "text": PROMPT}, {"type": "image", "data": base64.b64encode(data).decode("ascii"), "mime_type": mime}],
+                response_format={"type": "text", "mime_type": "application/json", "schema": TRANSLATOR_SCHEMA},
+            )
         payload = json.loads(interaction.output_text)
         slots = {}
         for slot in TACKLE_SLOTS:
