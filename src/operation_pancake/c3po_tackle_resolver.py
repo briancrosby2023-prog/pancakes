@@ -1,4 +1,4 @@
-"""Resolve C-3PO tackle observations while preserving observed/native fields."""
+"""Resolve C-3PO tackle transcriptions against Pancake's CFB27 corpus."""
 from __future__ import annotations
 
 import json
@@ -21,6 +21,8 @@ class TackleResolution:
     canonical_card_id: str | None
     native_card_ovr: int | None
     program: str | None
+    display_ovr_delta: int | None
+    display_modifier_classification: str | None
     status: str
 
 
@@ -50,19 +52,16 @@ def _identity_score(observed: str, canonical: str) -> float:
 def _identity_gate(observed: str, canonical: str) -> bool:
     """Require every visible name token to remain recognizably the same token.
 
-    Position/OVR may rank card variants, but cannot rescue a materially different
-    first or last name. Normalization still accepts punctuation/case noise, and
-    long-token OCR imperfections remain eligible when token similarity is high.
+    Slot/position narrows the CFB27 lookup, but displayed OVR never rescues a
+    materially different first or last name. Normalization accepts punctuation
+    and case noise; long-token transcription imperfections remain eligible only
+    when their token similarity is high.
     """
     observed_tokens = [
-        normalize_name(token)
-        for token in observed.split()
-        if normalize_name(token)
+        normalize_name(token) for token in observed.split() if normalize_name(token)
     ]
     canonical_tokens = [
-        normalize_name(token)
-        for token in canonical.split()
-        if normalize_name(token)
+        normalize_name(token) for token in canonical.split() if normalize_name(token)
     ]
     if len(observed_tokens) != len(canonical_tokens) or not observed_tokens:
         return False
@@ -83,7 +82,20 @@ def _unresolved(base: dict) -> TackleResolution:
         canonical_card_id=None,
         native_card_ovr=None,
         program=None,
+        display_ovr_delta=None,
+        display_modifier_classification=None,
         status="UNRESOLVED",
+    )
+
+
+def _canonical_variant(variants: list[dict]) -> dict:
+    """Choose Pancake's strongest CFB27 card without consulting display OVR."""
+    return min(
+        variants,
+        key=lambda card: (
+            -(int(card["native_overall"]) if card.get("native_overall") is not None else -1),
+            str(card.get("card_id") or ""),
+        ),
     )
 
 
@@ -128,25 +140,19 @@ def resolve_player(
     if not _identity_gate(observation.observed_name, identity):
         return _unresolved(base)
 
-    def variant_key(card: dict):
-        native = card.get("native_overall")
-        if observation.displayed_ovr is None or native is None:
-            delta = 99
-        else:
-            delta = abs(int(native) - int(observation.displayed_ovr))
-        return (
-            delta,
-            -(int(native) if native is not None else 0),
-            str(card.get("card_id") or ""),
-        )
-
-    card = min(variants, key=variant_key)
+    card = _canonical_variant(variants)
+    native = card.get("native_overall")
+    displayed = observation.displayed_ovr
+    delta = None if displayed is None or native is None else int(displayed) - int(native)
+    modifier = "TEAM_LINEUP_MODIFIER" if delta not in (None, 0) else None
     return TackleResolution(
         **base,
         canonical_player_identity=identity,
         canonical_card_id=card.get("card_id"),
-        native_card_ovr=card.get("native_overall"),
+        native_card_ovr=native,
         program=card.get("program"),
+        display_ovr_delta=delta,
+        display_modifier_classification=modifier,
         status="MATCHED",
     )
 
