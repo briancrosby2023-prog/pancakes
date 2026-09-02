@@ -39,7 +39,48 @@ def _raw_backup_observation(slot_crop, index):
     return name, ovr, raw
 
 
-def _ranking_diagnostic(ranking, selected):
+def _norm(value):
+    return re.sub(r"[^a-z0-9]", "", (value or "").casefold())
+
+
+def _resolve_real_observation(ranking, observed_name, observed_ovr):
+    """Resolve real LT/RT observations without letting a bad art crop veto strong identity.
+
+    The generic visual pilot deliberately uses one global threshold.  Real Team Manager
+    backup rows are much shallower than the composed corpus card and therefore can have
+    weak visual similarity even when OCR recovered an exact full player name.  For the
+    production tackle path, exact multi-token name evidence is allowed to narrow the
+    already position-isolated CFB27 pool.  A displayed OVR may be the native value or a
+    +1/+2 lineup boost; it is evidence, never an exact-card exclusion.  Ambiguous same-
+    player cards still require OVR or visual separation and otherwise fail closed.
+    """
+    selected = resolve(ranking)
+    if selected or not ranking or not observed_name:
+        return selected, "global-visual-text-gate" if selected else "global-gate-unresolved"
+    normalized = _norm(observed_name)
+    if len(observed_name.split()) < 2 or not normalized:
+        return None, "insufficient-name-evidence"
+    exact = [row for row in ranking if _norm(row.get("player_name")) == normalized]
+    if not exact:
+        return None, "no-exact-full-name-in-position-pool"
+    if observed_ovr is not None:
+        plausible = [
+            row for row in exact
+            if 0 <= int(observed_ovr) - int(row.get("overall") or 0) <= 2
+        ]
+        if len(plausible) == 1:
+            return plausible[0], "exact-full-name+boost-tolerant-ovr"
+        if plausible:
+            exact = plausible
+    if len(exact) == 1:
+        return exact[0], "unique-exact-full-name-in-position-pool"
+    exact = sorted(exact, key=lambda row: (row["visual"], row["final"]), reverse=True)
+    if len(exact) > 1 and exact[0]["visual"] - exact[1]["visual"] >= 0.035:
+        return exact[0], "exact-full-name+visual-card-disambiguation"
+    return None, "same-player-card-ambiguity"
+
+
+def _ranking_diagnostic(ranking, selected, reason):
     best = ranking[0] if ranking else None
     second = ranking[1] if len(ranking) > 1 else None
     return {
@@ -53,6 +94,7 @@ def _ranking_diagnostic(ranking, selected):
             round(best["final"] - second["final"], 6) if best and second else None
         ),
         "decision": "ACCEPTED" if selected else "UNRESOLVED",
+        "decision_reason": reason,
         "accepted_card_id": selected.get("canonical_card_id") if selected else None,
     }
 
@@ -84,9 +126,14 @@ def recognize_tackle_candidate(path, candidate, region, slot_crop, index):
                     if target.get("displayed_ovr") is not None:
                         ovr = target["displayed_ovr"]
             ranking = rank(index, fingerprint(crop), name, ovr, candidate.position or "")
-            selected = resolve(ranking)
+            selected, reason = _resolve_real_observation(ranking, name, ovr)
             diagnostic = {
+                "source_screenshot": str(path),
                 "slot": candidate.slot,
+                "deterministic_position": candidate.position,
+                "candidate_pool_size": sum(
+                    1 for item in index if item.card.position == (candidate.position or "").upper()
+                ),
                 "starter_backup_index": crop_index,
                 "crop_dimensions": [crop.width, crop.height],
                 "normalized_crop": list(box),
@@ -94,7 +141,7 @@ def recognize_tackle_candidate(path, candidate, region, slot_crop, index):
                 "ocr_name_observation": name,
                 "raw_ocr_observation": raw,
                 "displayed_ovr_observation": ovr,
-                **_ranking_diagnostic(ranking, selected),
+                **_ranking_diagnostic(ranking, selected, reason),
             }
             diagnostics.append(diagnostic)
             if crop_index == 0:
@@ -115,6 +162,7 @@ def recognize_tackle_candidate(path, candidate, region, slot_crop, index):
                 if selected:
                     target["player_name"] = selected["player_name"]
                     target["canonical_card_id"] = selected["canonical_card_id"]
+                    target["program"] = selected["program"]
                     target["confidence"] = selected["final"]
                     target["match_status"] = "MATCHED"
                 else:
@@ -122,7 +170,7 @@ def recognize_tackle_candidate(path, candidate, region, slot_crop, index):
                     target["match_status"] = "UNRESOLVED"
     candidate.match_diagnostics = {
         **candidate.match_diagnostics,
-        "recognizer": "CFB27_LT_RT_VISUAL_TEXT_V1",
+        "recognizer": "CFB27_LT_RT_VISUAL_TEXT_V2",
         "index_card_count": len(index),
         "real_uploaded_pixels": True,
         "crops": diagnostics,
