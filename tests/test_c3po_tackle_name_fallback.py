@@ -1,5 +1,9 @@
-from operation_pancake.c3po_team_setup import search_tackle_cards
-from operation_pancake.team_import import Candidate
+from operation_pancake.c3po_team_setup import (
+    apply_user_tackle_name,
+    search_tackle_cards,
+    select_user_tackle_card,
+)
+from operation_pancake.team_import import Candidate, TeamImportState, TeamImportStore
 from operation_pancake.team_lineup_visual import render_lineup
 
 
@@ -35,3 +39,46 @@ def test_non_tackle_does_not_get_name_fallback():
     candidate = Candidate("qb", "OFFENSE", "QB1", position="QB", match_status="UNMATCHED")
     page = render_lineup([candidate], {})
     assert 'name="player_name__qb"' not in page
+
+
+def test_user_exact_name_with_multiple_variants_requires_explicit_card_selection():
+    candidate = Candidate("lt", "OFFENSE", "LT1", position="LT", match_status="UNMATCHED")
+    outcome = apply_user_tackle_name(candidate, "Josh Petty", _cards())
+    assert outcome == "CHOICE_REQUIRED"
+    assert candidate.canonical_card_id is None
+    fallback = candidate.match_diagnostics["user_name_fallback"]
+    assert fallback["query"] == "Josh Petty"
+    assert fallback["result_card_ids"] == ["josh-80", "josh-75"]
+
+
+def test_user_exact_name_with_one_card_can_resolve_directly():
+    candidate = Candidate("rt", "OFFENSE", "RT1", position="RT", match_status="UNMATCHED")
+    outcome = apply_user_tackle_name(candidate, "Juan Gaston", _cards())
+    assert outcome == "MATCHED"
+    assert candidate.player_name == "Juan Gaston"
+    assert candidate.canonical_card_id == "juan-80"
+
+
+def test_user_selected_variant_persists_through_team_import_store(tmp_path):
+    candidate = Candidate("lt", "OFFENSE", "LT1", position="LT", match_status="UNMATCHED")
+    apply_user_tackle_name(candidate, "Josh Petty", _cards())
+    assert select_user_tackle_card(candidate, "josh-80", _cards())
+    path = tmp_path / "team-import.json"
+    store = TeamImportStore(path)
+    store.save(TeamImportState(candidates=[candidate]))
+    restarted = TeamImportStore(path).load().candidates[0]
+    assert restarted.player_name == "Josh Petty"
+    assert restarted.canonical_card_id == "josh-80"
+    assert restarted.match_status == "MATCHED"
+    assert "user-confirmed:cfb27-name-search" in restarted.provenance
+
+
+def test_choice_required_renders_only_safe_cfb27_variant_options():
+    candidate = Candidate("lt", "OFFENSE", "LT1", position="LT", match_status="UNMATCHED")
+    apply_user_tackle_name(candidate, "Josh Petty", _cards())
+    cards_by_id = {row["card_id"]: row for row in _cards()}
+    page = render_lineup([candidate], cards_by_id)
+    assert 'value="josh-80"' in page
+    assert 'value="josh-75"' in page
+    assert "wrong-pos" not in page
+    assert "wrong-season" not in page
