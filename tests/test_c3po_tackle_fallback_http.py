@@ -1,4 +1,3 @@
-import json
 import subprocess
 import sys
 import textwrap
@@ -27,10 +26,10 @@ def test_real_visual_handler_name_fallback_search_select_and_restart(tmp_path):
             TeamImportState(
                 candidates=[
                     Candidate(
-                        "lt-fallback",
+                        "rt-fallback",
                         "OFFENSE",
-                        "LT1",
-                        position="LT",
+                        "RT1",
+                        position="RT",
                         match_status="UNMATCHED",
                     )
                 ]
@@ -50,7 +49,7 @@ def test_real_visual_handler_name_fallback_search_select_and_restart(tmp_path):
 
         try:
             search = urllib.parse.urlencode(
-                {"player_name__lt-fallback": "Josh Petty"}
+                {"player_name__rt-fallback": "Juan Gaston"}
             ).encode()
             req = urllib.request.Request(
                 base + "/team/tackle-search",
@@ -65,20 +64,20 @@ def test_real_visual_handler_name_fallback_search_select_and_restart(tmp_path):
                 state = json.load(response)["state"]
             candidate = state["candidates"][0]
             fallback = candidate["match_diagnostics"]["user_name_fallback"]
-            assert fallback["query"] == "Josh Petty"
-            assert fallback["result_card_ids"]
+            assert fallback["query"] == "Juan Gaston"
+            assert len(fallback["result_card_ids"]) >= 2
 
             gm = GMProduct(root)
             offered = [gm.cards[card_id] for card_id in fallback["result_card_ids"]]
-            assert all(card.get("position") == "LT" for card in offered)
-            assert all(card.get("player_name") == "Josh Petty" for card in offered)
+            assert all(card.get("position") == "RT" for card in offered)
+            assert all(card.get("player_name") == "Juan Gaston" for card in offered)
             selected = max(
                 offered,
                 key=lambda card: int(card.get("native_overall") or 0),
             )["card_id"]
 
             confirm = urllib.parse.urlencode(
-                {"card__lt-fallback": selected}
+                {"card__rt-fallback": selected}
             ).encode()
             req = urllib.request.Request(
                 base + "/team/confirm",
@@ -90,7 +89,7 @@ def test_real_visual_handler_name_fallback_search_select_and_restart(tmp_path):
                 assert response.status == 200
 
             restarted = TeamImportStore(state_path).load().candidates[0]
-            assert restarted.player_name == "Josh Petty"
+            assert restarted.player_name == "Juan Gaston"
             assert restarted.canonical_card_id == selected
             assert restarted.match_status == "MATCHED"
             assert "user-confirmed:cfb27-name-search" in restarted.provenance
