@@ -7,7 +7,6 @@ from dataclasses import asdict, dataclass
 from difflib import SequenceMatcher
 from pathlib import Path
 
-from operation_pancake.c3po_vision import PlayerObservation, TackleScreenObservation
 from operation_pancake.team_import import normalize_name
 
 
@@ -103,7 +102,11 @@ def resolve_player(observation, position, cards, slot, depth):
 
     query = normalize_name(observation.observed_name)
     exact = next(
-        ((name, variants) for name, variants in identities.items() if normalize_name(name) == query),
+        (
+            (name, variants)
+            for name, variants in identities.items()
+            if normalize_name(name) == query
+        ),
         None,
     )
     if exact is not None:
