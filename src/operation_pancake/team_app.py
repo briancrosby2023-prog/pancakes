@@ -128,10 +128,12 @@ def _extract(state_store: TeamImportStore, gm: GMProduct):
 
 
 def create_handler(root: Path, **kwargs):
+    # Team Setup owns these paths; the accepted base product handler does not.
+    team_import_path = kwargs.pop("team_import_path", None)
+    roster_path = kwargs.get("roster_path") or root / ".operation_pancake/roster.json"
     Base = product_app.create_handler(root, **kwargs); gm = GMProduct(root)
-    roster_path = kwargs.get("roster_path") or root / ".operation_pancake/roster.json"; roster = RosterStore(roster_path, set(gm.cards))
-    team_import_path = kwargs.get("team_import_path") or root / ".operation_pancake/team_import.json"
-    imports = TeamImportStore(team_import_path)
+    roster = RosterStore(roster_path, set(gm.cards))
+    imports = TeamImportStore(team_import_path or root / ".operation_pancake/team_import.json")
 
     class H(Base):
         def send(self, data, status=200, ct="text/html; charset=utf-8"):
