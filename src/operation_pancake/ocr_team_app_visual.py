@@ -42,7 +42,7 @@ def install_runtime():
         try:
             translator = GeminiTeamTranslator()
             observations = [translator.translate(team_app.Path(row["path"])) for row in current]
-        except (RuntimeError, OSError, ValueError, KeyError, team_app.json.JSONDecodeError):
+        except Exception:  # Google SDK errors are not limited to built-in exception types.
             return fallback_extract(state_store, gm)
         views = [observation.view for observation in observations]
         if len(set(views)) != 4 or set(views) != set(VIEW_SLOTS):
