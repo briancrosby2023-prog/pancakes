@@ -48,11 +48,11 @@ jobs:
       - name: C-3PO focused and configured production boundary
         run: |
           set -euo pipefail
-          python -m pytest -ra tests/test_c3po_tackle_pilot.py tests/test_c3po_gemini_timeout.py tests/test_c3po_team_setup_integration.py tests/test_c3po_team_upload_production.py 2>&1 | tee /tmp/a/c3po.txt
+          python -m pytest -ra tests/test_c3po_tackle_pilot.py tests/test_c3po_gemini_timeout.py tests/test_c3po_team_setup_integration.py tests/test_c3po_team_upload_production.py tests/test_c3po_tackle_name_fallback.py 2>&1 | tee /tmp/a/c3po.txt
       - name: Scoped C-3PO Ruff
         run: |
           set -euo pipefail
-          python -m ruff check src/operation_pancake/c3po_vision.py src/operation_pancake/c3po_tackle_resolver.py src/operation_pancake/c3po_team_setup.py src/operation_pancake/ocr_team_app_patch6.py tests/test_c3po_tackle_pilot.py tests/test_c3po_gemini_timeout.py tests/test_c3po_team_setup_integration.py tests/test_c3po_team_upload_production.py 2>&1 | tee /tmp/a/c3po-ruff.txt
+          python -m ruff check src/operation_pancake/c3po_vision.py src/operation_pancake/c3po_tackle_resolver.py src/operation_pancake/c3po_team_setup.py src/operation_pancake/ocr_team_app_patch6.py src/operation_pancake/ocr_team_app_visual.py src/operation_pancake/team_lineup_visual.py tests/test_c3po_tackle_pilot.py tests/test_c3po_gemini_timeout.py tests/test_c3po_team_setup_integration.py tests/test_c3po_team_upload_production.py tests/test_c3po_tackle_name_fallback.py 2>&1 | tee /tmp/a/c3po-ruff.txt
       - name: Focused pytest
         run: |
           set -euo pipefail
@@ -68,7 +68,7 @@ jobs:
       - name: Team Setup pytest
         run: |
           set -euo pipefail
-          python -m pytest -ra tests/test_team_setup_dropzone.py tests/test_team_setup_runtime_identity.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py tests/test_real_team_manager_layout.py tests/test_ocr_layout_patch3.py tests/test_ocr_layout_patch6.py tests/test_team_lineup_visual.py tests/test_team_slot_extraction_patch.py tests/test_real_slot_crop_ocr.py tests/test_cfb27_ocr_match.py tests/test_cfb27_production_match_path.py tests/test_tackle_visual_pilot.py tests/test_tackle_screenshot_production_path.py tests/test_c3po_team_setup_integration.py tests/test_c3po_team_upload_production.py 2>&1 | tee /tmp/a/team-setup.txt
+          python -m pytest -ra tests/test_team_setup_dropzone.py tests/test_team_setup_runtime_identity.py tests/test_team_setup_recovery.py tests/test_team_import_structured.py tests/test_real_team_manager_layout.py tests/test_ocr_layout_patch3.py tests/test_ocr_layout_patch6.py tests/test_team_lineup_visual.py tests/test_team_slot_extraction_patch.py tests/test_real_slot_crop_ocr.py tests/test_cfb27_ocr_match.py tests/test_cfb27_production_match_path.py tests/test_tackle_visual_pilot.py tests/test_tackle_screenshot_production_path.py tests/test_c3po_team_setup_integration.py tests/test_c3po_team_upload_production.py tests/test_c3po_tackle_name_fallback.py 2>&1 | tee /tmp/a/team-setup.txt
       - name: Start app exactly like user
         run: |
           set -euo pipefail
