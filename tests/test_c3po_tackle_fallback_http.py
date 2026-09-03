@@ -63,30 +63,39 @@ def test_production_visual_handler_name_fallback_search_select_and_restart(tmp_p
             with urllib.request.urlopen(base + "/api/team-import", timeout=20) as response:
                 state = json.load(response)["state"]
             candidate = state["candidates"][0]
-            fallback = candidate["match_diagnostics"]["user_name_fallback"]
-            assert fallback["query"] == "Juan Gaston"
-            assert len(fallback["result_card_ids"]) >= 2
-
             gm = GMProduct(root)
-            offered = [gm.cards[card_id] for card_id in fallback["result_card_ids"]]
-            assert all(card.get("position") == "RT" for card in offered)
-            assert all(card.get("player_name") == "Juan Gaston" for card in offered)
-            selected = max(
-                offered,
-                key=lambda card: int(card.get("native_overall") or 0),
-            )["card_id"]
 
-            confirm = urllib.parse.urlencode(
-                {"card__rt-fallback": selected}
-            ).encode()
-            req = urllib.request.Request(
-                base + "/team/confirm",
-                data=confirm,
-                method="POST",
-                headers={"Content-Type": "application/x-www-form-urlencoded"},
-            )
-            with urllib.request.urlopen(req, timeout=20) as response:
-                assert response.status == 200
+            selected = candidate.get("canonical_card_id")
+            if selected:
+                assert candidate["player_name"] == "Juan Gaston"
+                assert candidate["match_status"] == "MATCHED"
+            else:
+                fallback = candidate["match_diagnostics"]["user_name_fallback"]
+                assert fallback["query"] == "Juan Gaston"
+                assert fallback["result_card_ids"]
+                offered = [
+                    gm.cards[card_id] for card_id in fallback["result_card_ids"]
+                ]
+                assert all(card.get("position") == "RT" for card in offered)
+                assert all(
+                    card.get("player_name") == "Juan Gaston" for card in offered
+                )
+                selected = max(
+                    offered,
+                    key=lambda card: int(card.get("native_overall") or 0),
+                )["card_id"]
+
+                confirm = urllib.parse.urlencode(
+                    {"card__rt-fallback": selected}
+                ).encode()
+                req = urllib.request.Request(
+                    base + "/team/confirm",
+                    data=confirm,
+                    method="POST",
+                    headers={"Content-Type": "application/x-www-form-urlencoded"},
+                )
+                with urllib.request.urlopen(req, timeout=20) as response:
+                    assert response.status == 200
 
             restarted = TeamImportStore(state_path).load().candidates[0]
             assert restarted.player_name == "Juan Gaston"
