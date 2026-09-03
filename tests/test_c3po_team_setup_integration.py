@@ -62,7 +62,7 @@ def cards():
         },
         {
             "game": "CFB27",
-            "position": "RT",
+            "position": "LT",
             "player_name": "Juan Gaston",
             "native_overall": 80,
             "program": "Phenoms",
@@ -119,8 +119,10 @@ def test_c3po_team_setup_resolves_real_tackle_shapes_and_preserves_display_nativ
     )
     assert rt.backups[0]["player_name"] == "Juan Gaston"
     assert rt.backups[0]["native_card_ovr"] == 80
+    assert rt.backups[0]["native_position"] == "LT"
     lt = next(c for c in st.candidates if c.slot == "LT1")
     assert lt.backups[0]["player_name"] == "Josh Petty"
+    assert lt.backups[0]["native_position"] == "LT"
 
 
 def test_partial_observation_fails_only_unreadable_identity(tmp_path):
@@ -172,4 +174,8 @@ def test_non_tackles_preserved_and_real_store_survives_restart(tmp_path):
     rt = next(c for c in restarted.candidates if c.slot == "RT1")
     assert rt.player_name == "Cason Henry"
     assert rt.backups[0]["player_name"] == "Juan Gaston"
+    assert rt.backups[0]["native_position"] == "LT"
+    assert rt.backups[0]["native_card_ovr"] == 80
+    assert rt.backups[0]["program"] == "Phenoms"
+    assert rt.backups[0]["canonical_card_id"] == "juan-80"
     assert restarted.team_observations["c3po_tackles"]["status"] == "APPLIED"
