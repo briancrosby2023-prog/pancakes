@@ -16,7 +16,7 @@ def _safe_name_match(observed,canonical):
  if len(a)!=len(b) or not a:return False
  for seen,expected in zip(a,b,strict=True):
   if seen==expected:continue
-  if min(len(seen),len(expected))<6 or SequenceMatcher(None,seen,expected).ratio()<.86:return False
+  if min(len(seen),len(expected))<4 or SequenceMatcher(None,seen,expected).ratio()<.86:return False
  return True
 def search_tackle_cards(name,position,cards):
  query=normalize_name(name or '')
