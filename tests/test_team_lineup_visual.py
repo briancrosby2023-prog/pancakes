@@ -13,6 +13,22 @@ def test_visual_lineup_has_four_tabs_and_deterministic_offense_topology():
     assert "Quarter Back" in page and "88" in page and "Backup QB" in page and "82" in page
 
 
+def test_visual_lineup_keeps_name_search_bounded_to_unresolved_tackles():
+    lt = Candidate("lt", "OFFENSE", "LT1", None, None, "LT")
+    lg = Candidate("lg", "OFFENSE", "LG1", None, 85, "LG")
+    rt = Candidate("rt", "OFFENSE", "RT1", "Cason Henry", 85, "RT", canonical_card_id="rt-cason", match_status="MATCHED")
+    cards = {"rt-cason": {"player_name": "Cason Henry", "native_overall": 85, "program": "Phenoms"}}
+    page = render_lineup([lt, lg, rt], cards)
+    assert page.count("WHO IS THIS PLAYER?") == 1
+    assert page.count("SEARCH CFB27") == 1
+    assert 'player_name__lt' in page
+    assert 'player_name__lg' not in page
+    assert 'name="card__lg"' not in page
+    assert 'name="card__rt"' not in page
+    assert "UNMATCHED — enter player name" not in page
+    assert "Cason Henry · 85 · Phenoms" in page
+
+
 def test_visual_runtime_preserves_patch6_and_limits_evidence_to_current_batch():
     src = open(ocr_team_app_visual.__file__, encoding="utf-8").read()
     assert "patch6.install_runtime()" in src
