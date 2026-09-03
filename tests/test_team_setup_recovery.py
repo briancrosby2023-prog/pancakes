@@ -26,10 +26,10 @@ def test_invalid_non_image_fails_safely(tmp_path):
 def test_partial_extraction_does_not_invent():
     c=Candidate('1','OFFENSE','QB'); assert match_candidate(c,[{'card_id':'x','player_name':'Somebody','position':'QB'}]).canonical_card_id is None
 
-def test_exact_and_ambiguous_matching():
+def test_exact_name_resolves_without_display_ovr_veto():
     cards=[{'card_id':'a','player_name':'Jay Doe','position':'SS','native_overall':85},{'card_id':'b','player_name':'Jay Doe','position':'SS','native_overall':86}]
-    exact=match_candidate(Candidate('1','DEFENSE','SS1','Jay Doe',85,'SS'),cards); assert exact.match_status=='MATCHED' and exact.canonical_card_id=='a'
-    amb=match_candidate(Candidate('2','DEFENSE','SS1','Jay Doe',position='SS'),cards); assert amb.match_status=='AMBIGUOUS' and amb.canonical_card_id is None
+    exact=match_candidate(Candidate('1','DEFENSE','SS1','Jay Doe',85,'SS'),cards); assert exact.match_status=='MATCHED' and exact.canonical_card_id=='b'
+    no_display=match_candidate(Candidate('2','DEFENSE','SS1','Jay Doe',position='SS'),cards); assert no_display.match_status=='MATCHED' and no_display.canonical_card_id=='b'
 
 def test_observed_effective_state_distinct_and_restart_safe(tmp_path):
     p=tmp_path/'roster.json'; s=RosterStore(p,{'c1'}); s.add(RosterAssignment('c1','SS','SS1',observed_overall=85,observed_ratings={'SPD':89,'MCV':91},evidence=['shot-1']))
