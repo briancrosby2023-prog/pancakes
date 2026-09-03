@@ -6,8 +6,13 @@ from pathlib import Path
 
 from operation_pancake import ocr_team_app_patch6 as patch6
 from operation_pancake import product_app, team_app
+from operation_pancake.c3po_team_setup import (
+    apply_user_tackle_name,
+    select_user_tackle_card,
+)
 from operation_pancake.cfb27_ocr_match import candidate_diagnostics, match_candidate_cfb27
 from operation_pancake.production.gm import GMProduct
+from operation_pancake.roster_state import RosterStore
 from operation_pancake.tackle_screenshot_recognition import (
     TACKLE_SLOTS,
     recognize_tackle_candidate,
@@ -35,10 +40,6 @@ def install_runtime():
     patch6.install_runtime()
     patch6.patch5.REAL_TEAM_MANAGER_REGIONS = REAL_TEAM_MANAGER_SLOT_REGIONS
     team_app.DEFAULT_REGIONS = REAL_TEAM_MANAGER_SLOT_REGIONS
-    # _extract_unique lives in patch5 and imported match_candidate into that
-    # module at import time. Patch the binding it actually calls, not only the
-    # similarly named team_app attribute. This is the production image -> OCR
-    # -> structured slot -> CFB27 matching path used by operation-pancake-app.
     patch6.patch5.match_candidate = match_candidate_cfb27
     team_app.match_candidate = match_candidate_cfb27
 
@@ -53,8 +54,6 @@ def install_runtime():
             region.slot: region for region in REAL_TEAM_MANAGER_SLOT_REGIONS["OFFENSE"]
         }
         for candidate in state.candidates:
-            # Runtime candidate IDs are sequential. Resolve the source through
-            # the unique classified view retained by the accepted four-image path.
             shot_id, shot = next(
                 (
                     (key, row)
@@ -69,7 +68,9 @@ def install_runtime():
             slot["match"] = candidate_diagnostics(candidate, gm.population)
             if candidate.slot not in TACKLE_SLOTS:
                 continue
-            source = next((row for row in state.screenshots if row.get("id") == shot_id), None)
+            source = next(
+                (row for row in state.screenshots if row.get("id") == shot_id), None
+            )
             region = offense_regions.get(candidate.slot)
             if source is None or region is None:
                 slot["visual_recognition"] = {
@@ -88,9 +89,6 @@ def install_runtime():
         return state
 
     team_app._extract = extract_with_match_evidence
-    # Preserve PATCH-6's own module identity so its isolated regression tests
-    # remain meaningful. Only the live lower-level/runtime surface receives the
-    # visual layer's build marker.
     patch6.patch5.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
     team_app.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
     original_create_handler = team_app.create_handler
@@ -99,6 +97,7 @@ def install_runtime():
         Base = original_create_handler(root, **kwargs)
         imports = _closure_value(Base._team_page, TeamImportStore)
         gm = _closure_value(Base._team_page, GMProduct)
+        roster = _closure_value(Base.do_POST, RosterStore)
 
         class VisualHandler(Base):
             def _team_page(self):
@@ -148,6 +147,76 @@ def install_runtime():
                     f"<ul>{evidence}</ul></details>"
                 )
                 return product_app.page("Team Setup", body)
+
+            def do_POST(self):
+                path = team_app.urlparse(self.path).path
+                if path == "/team/tackle-search":
+                    form = team_app.parse_qs(
+                        self.rfile.read(int(self.headers.get("Content-Length", "0"))).decode()
+                    )
+                    state = imports.load()
+                    changed = False
+                    for candidate in state.candidates:
+                        if candidate.slot not in TACKLE_SLOTS:
+                            continue
+                        query = form.get("player_name__" + candidate.id, [""])[0].strip()
+                        if not query:
+                            continue
+                        apply_user_tackle_name(candidate, query, gm.population)
+                        changed = True
+                    if changed:
+                        imports.save(state)
+                    self.redir("/setup")
+                    return
+                if path == "/team/confirm":
+                    form = team_app.parse_qs(
+                        self.rfile.read(int(self.headers.get("Content-Length", "0"))).decode()
+                    )
+                    state = imports.load()
+                    fallback_changed = False
+                    for candidate in state.candidates:
+                        selected = form.get("card__" + candidate.id, [""])[0]
+                        if (
+                            candidate.slot in TACKLE_SLOTS
+                            and selected
+                            and candidate.match_diagnostics.get("user_name_fallback")
+                        ):
+                            fallback_changed = (
+                                select_user_tackle_card(candidate, selected, gm.population)
+                                or fallback_changed
+                            )
+                    if fallback_changed:
+                        imports.save(state)
+                    byslot = {row.slot: row for row in roster.load()}
+                    for candidate in state.candidates:
+                        card_id = form.get("card__" + candidate.id, [""])[0]
+                        slot = candidate.slot.upper().strip()
+                        if not card_id or not slot:
+                            continue
+                        card = gm.cards.get(card_id)
+                        if not card:
+                            continue
+                        base = "".join(ch for ch in slot if not ch.isdigit())
+                        kind = (
+                            "SPECIALIST"
+                            if base in team_app.SPECIALIST_SLOTS
+                            else "ROSTER"
+                        )
+                        byslot[slot] = team_app.RosterAssignment(
+                            card_id,
+                            card.get("position") or candidate.position or base,
+                            slot,
+                            True,
+                            True,
+                            observed_overall=candidate.displayed_ovr,
+                            observed_ratings=candidate.observed_ratings,
+                            evidence=candidate.provenance,
+                            assignment_kind=kind,
+                        )
+                    roster.save(list(byslot.values()))
+                    self.redir("/roster")
+                    return
+                super().do_POST()
 
         return VisualHandler
 
