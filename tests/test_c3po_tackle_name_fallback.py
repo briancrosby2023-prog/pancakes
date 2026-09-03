@@ -1,8 +1,10 @@
+from operation_pancake.c3po_tackle_resolver import resolve_player
 from operation_pancake.c3po_team_setup import (
     apply_user_tackle_name,
     search_tackle_cards,
     select_user_tackle_card,
 )
+from operation_pancake.c3po_vision import PlayerObservation
 from operation_pancake.team_import import Candidate, TeamImportState, TeamImportStore
 from operation_pancake.team_lineup_visual import render_lineup
 
@@ -15,6 +17,16 @@ def _cards():
         {"game": "CFB26", "position": "LT", "player_name": "Josh Petty", "native_overall": 99, "program": "Wrong Season", "card_id": "wrong-season"},
         {"game": "CFB27", "position": "RT", "player_name": "Juan Gaston", "native_overall": 80, "program": "Phenoms", "card_id": "juan-80"},
     ]
+
+
+def test_clean_exact_c3po_name_beats_nearby_identity_without_ovr_help():
+    crowded = _cards() + [
+        {"game": "CFB27", "position": "LT", "player_name": "Josh Pettyy", "native_overall": 99, "program": "Distractor", "card_id": "distractor"}
+    ]
+    result = resolve_player(PlayerObservation("Josh Petty", 99), "LT", crowded, "LT1", 0)
+    assert result.status == "MATCHED"
+    assert result.canonical_player_identity == "Josh Petty"
+    assert result.canonical_card_id == "josh-80"
 
 
 def test_user_name_fallback_searches_cfb27_and_position_only():
@@ -33,6 +45,7 @@ def test_unresolved_tackle_renders_simple_player_name_entry():
     page = render_lineup([candidate], {})
     assert 'name="player_name__lt"' in page
     assert "WHO IS THIS PLAYER?" in page
+    assert 'formaction="/team/tackle-search"' in page
 
 
 def test_non_tackle_does_not_get_name_fallback():
