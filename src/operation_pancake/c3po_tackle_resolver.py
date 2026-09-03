@@ -50,13 +50,7 @@ def _identity_score(observed: str, canonical: str) -> float:
 
 
 def _identity_gate(observed: str, canonical: str) -> bool:
-    """Require every visible name token to remain recognizably the same token.
-
-    Slot/position narrows the CFB27 lookup, but displayed OVR never rescues a
-    materially different first or last name. Normalization accepts punctuation
-    and case noise; long-token transcription imperfections remain eligible only
-    when their token similarity is high.
-    """
+    """Require every visible name token to remain recognizably the same token."""
     observed_tokens = [
         normalize_name(token) for token in observed.split() if normalize_name(token)
     ]
@@ -93,7 +87,11 @@ def _canonical_variant(variants: list[dict]) -> dict:
     return min(
         variants,
         key=lambda card: (
-            -(int(card["native_overall"]) if card.get("native_overall") is not None else -1),
+            -(
+                int(card["native_overall"])
+                if card.get("native_overall") is not None
+                else -1
+            ),
             str(card.get("card_id") or ""),
         ),
     )
@@ -125,20 +123,32 @@ def resolve_player(
     for card in pool:
         name = card.get("player_name") or ""
         identities.setdefault(name, []).append(card)
-    ranked = sorted(
-        (
-            (_identity_score(observation.observed_name, name), name, variants)
-            for name, variants in identities.items()
-        ),
-        reverse=True,
-    )
-    ambiguous = len(ranked) > 1 and ranked[0][0] - ranked[1][0] < 0.08
-    if not ranked or ranked[0][0] < 0.78 or ambiguous:
-        return _unresolved(base)
 
-    _, identity, variants = ranked[0]
-    if not _identity_gate(observation.observed_name, identity):
-        return _unresolved(base)
+    observed_normalized = normalize_name(observation.observed_name)
+    exact = next(
+        (
+            (name, variants)
+            for name, variants in identities.items()
+            if normalize_name(name) == observed_normalized
+        ),
+        None,
+    )
+    if exact is not None:
+        identity, variants = exact
+    else:
+        ranked = sorted(
+            (
+                (_identity_score(observation.observed_name, name), name, variants)
+                for name, variants in identities.items()
+            ),
+            reverse=True,
+        )
+        ambiguous = len(ranked) > 1 and ranked[0][0] - ranked[1][0] < 0.08
+        if not ranked or ranked[0][0] < 0.78 or ambiguous:
+            return _unresolved(base)
+        _, identity, variants = ranked[0]
+        if not _identity_gate(observation.observed_name, identity):
+            return _unresolved(base)
 
     card = _canonical_variant(variants)
     native = card.get("native_overall")
