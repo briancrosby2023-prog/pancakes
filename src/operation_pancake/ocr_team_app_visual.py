@@ -32,7 +32,7 @@ def install_runtime():
     team_app.match_candidate = match_candidate_cfb27
     fallback_extract = patch6._extract_current_batch
 
-    def extract_simple(state_store, gm):
+    def extract_with_match_evidence(state_store, gm):
         """C-3PO is the normal data-entry path; legacy OCR is only an availability fallback."""
         state = state_store.load()
         current = state.screenshots[-4:]
@@ -74,7 +74,7 @@ def install_runtime():
         state_store.save(state)
         return state
 
-    team_app._extract = extract_simple
+    team_app._extract = extract_with_match_evidence
     patch6.patch5.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
     team_app.TEAM_SETUP_BUILD = TEAM_SETUP_BUILD
     original_create_handler = team_app.create_handler
