@@ -4,6 +4,7 @@ from __future__ import annotations
 from operation_pancake import ocr_team_app_patch6 as patch6
 from operation_pancake import product_app, team_app
 from operation_pancake.c3po_team import GeminiTeamTranslator, candidates_from_observation
+from operation_pancake.c3po_team_setup import apply_user_tackle_name
 from operation_pancake.cfb27_ocr_match import match_candidate_cfb27
 from operation_pancake.production.gm import GMProduct
 from operation_pancake.team_import import TeamImportStore, VIEW_SLOTS
@@ -121,6 +122,26 @@ def install_runtime():
                     'the normal My Team path uses C-3PO transcription.</p></details>'
                 )
                 return product_app.page("My Team", body)
+
+            def do_POST(self):
+                path = team_app.urlparse(self.path).path
+                if path == "/team/tackle-search":
+                    form = team_app.parse_qs(
+                        self.rfile.read(int(self.headers.get("Content-Length", "0"))).decode()
+                    )
+                    state = imports.load()
+                    changed = False
+                    for candidate in state.candidates:
+                        query = form.get("player_name__" + candidate.id, [""])[0].strip()
+                        if not query:
+                            continue
+                        apply_user_tackle_name(candidate, query, gm.population)
+                        changed = True
+                    if changed:
+                        imports.save(state)
+                    self.redir("/setup")
+                    return
+                super().do_POST()
 
         return MyTeamHandler
 
