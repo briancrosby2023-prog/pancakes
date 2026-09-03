@@ -10,6 +10,12 @@ VIEW_SLOTS={"OFFENSE":("LT1","LG1","C1","RG1","RT1","TE1","WR1","WR3","HB1","QB1
 SLOT_POSITION={"LT1":"LT","LG1":"LG","C1":"C","RG1":"RG","RT1":"RT","TE1":"TE","WR1":"WR","WR2":"WR","WR3":"WR","HB1":"HB","QB1":"QB","FB1":"FB","FS1":"FS","WILL1":"WILL","MIKE1":"MIKE","MIKE2":"MIKE","SAM1":"SAM","SS1":"SS","CB1":"CB","CB2":"CB","CB3":"CB","REDG1":"REDG","LEDG1":"LEDG","DT1":"DT","DT2":"DT","P1":"P","K1":"K","KR1":"KR","PR1":"PR","LS1":"LS","KOS1":"KOS","3DRB1":"3DRB","PWHB1":"PWHB","SLWR1":"SLWR","GAD1":"GAD","NT1":"NT","SUBLB1":"SUBLB","RRE1":"RRE","RDT1":"RDT","RLE1":"RLE","SLCB1":"SLCB"}
 NOISE_WORDS={"OVR","TEAM","CHEM","CHEMISTRY","BONUS","OFFENSE","DEFENSE","SPECIAL","TEAMS","SPECIALISTS","IMPROVEMENTS","LINEUP","MANAGE","ITEM","ITEMS","PLAYER","PLAYERS"}
 def normalize_name(value:str)->str:return re.sub(r"[^a-z0-9]","",value.casefold())
+def _is_cfb27(card:dict)->bool:
+ markers=[card.get(k) for k in ("game","season","title","dataset") if card.get(k)]
+ if not markers:return True
+ text=" ".join(str(v).upper() for v in markers)
+ if "CFB25" in text or "CFB 25" in text or "CFB26" in text or "CFB 26" in text:return False
+ return "27" in text
 @dataclass(frozen=True)
 class OCRObservation:text:str;box:tuple[float,float,float,float];confidence:float|None=None
 @dataclass(frozen=True)
@@ -102,16 +108,27 @@ def extract_structured(source_screenshot,observations,regions_by_view,view=None)
  if classified not in VIEW_SLOTS or classified not in regions_by_view:return'UNKNOWN',[],{'view':'UNKNOWN','view_confidence':0.0,'provenance':prov}
  regions=regions_by_view[classified];grouped=associate_observations(observations,regions);found=[_parse_region(source_screenshot,classified,r,grouped.get(r.slot,[])) for r in regions];return classified,found,{'view':classified,'view_confidence':confidence,'provenance':prov,'topology':'deterministic-slot-containers','slot_count':len(found)}
 def to_candidate(o,candidate_id=None):return Candidate(candidate_id or f'{o.source_screenshot}:{o.slot}',o.view,o.slot,o.raw_player_name,o.displayed_ovr,o.visible_position,match_status='UNMATCHED',observed_ratings=dict(o.observed_ratings),provenance=list(o.provenance),slot_index=o.slot_index,bounding_region=o.bounding_region,backups=list(o.backups))
+def _variant_key(card):
+ native=card.get('native_overall');return (-(int(native) if native is not None else -1),str(card.get('card_id') or ''))
 def match_candidate(c,cards):
+ """Resolve a clean observed name in CFB27; slot and display OVR are observations, never identity vetoes."""
  c.canonical_card_id=None;c.match_status='UNRESOLVED' if not c.player_name else'UNMATCHED';c.confidence=None
  if not c.player_name:return c
- pool=[x for x in cards if normalize_name(x.get('player_name') or '')==normalize_name(c.player_name)];expected=SLOT_POSITION.get(c.slot,c.position)
- if expected:pool=[x for x in pool if (x.get('position') or '').upper()==expected.upper()]
- if c.program:pool=[x for x in pool if (x.get('program') or '').casefold()==c.program.casefold()]
- if c.displayed_ovr is not None:
-  exact=[x for x in pool if x.get('native_overall')==c.displayed_ovr]
-  if exact:pool=exact
- if len(pool)==1:c.canonical_card_id=pool[0]['card_id'];c.match_status='MATCHED';c.confidence=1.0
- elif len(pool)>1:c.match_status='AMBIGUOUS'
+ pool=[x for x in cards if _is_cfb27(x) and normalize_name(x.get('player_name') or '')==normalize_name(c.player_name)]
+ if c.program:
+  narrowed=[x for x in pool if (x.get('program') or '').casefold()==c.program.casefold()]
+  if narrowed:pool=narrowed
+ if not pool:return c
+ identities={normalize_name(x.get('player_name') or '') for x in pool}
+ if len(identities)!=1:return c
+ if len(pool)>1:
+  # Multiple versions require real version evidence. A unique highest native OVR is a deterministic
+  # canonical default; ties stay ambiguous rather than manufacturing certainty from lineup OVR/slot.
+  ranked=sorted(pool,key=_variant_key);top=ranked[0].get('native_overall');ties=[x for x in ranked if x.get('native_overall')==top]
+  if len(ties)>1:c.match_status='AMBIGUOUS';return c
+  pool=[ranked[0]]
+ card=pool[0];c.player_name=card.get('player_name') or c.player_name;c.program=card.get('program');c.canonical_card_id=card.get('card_id');c.match_status='MATCHED';c.confidence=1.0
+ native=card.get('native_overall');delta=None if native is None or c.displayed_ovr is None else int(c.displayed_ovr)-int(native)
+ c.match_diagnostics=dict(c.match_diagnostics);c.match_diagnostics['canonical']={'native_position':card.get('position'),'native_card_ovr':native,'program':card.get('program'),'display_ovr_delta':delta}
  return c
 def ownership_key(c):return c.canonical_card_id or c.id
