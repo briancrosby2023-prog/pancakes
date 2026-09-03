@@ -113,9 +113,13 @@ class GeminiScreenshotTranslator:
         self.model = model or os.getenv("PANCAKE_GEMINI_MODEL", "gemini-3.7-flash")
         self.timeout_ms = timeout_ms
         if not self.api_key:
-            raise RuntimeError("GEMINI_API_KEY is required for the Gemini C-3PO translator")
+            raise RuntimeError(
+                "GEMINI_API_KEY is required for the Gemini C-3PO translator"
+            )
 
-    def translate_offense_tackles(self, screenshot: Path) -> TackleScreenObservation:
+    def translate_offense_tackles(
+        self, screenshot: Path
+    ) -> TackleScreenObservation:
         try:
             from google import genai
             from google.genai import types
