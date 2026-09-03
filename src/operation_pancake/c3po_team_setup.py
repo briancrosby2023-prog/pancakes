@@ -1,12 +1,78 @@
 """Bounded C-3PO -> Team Setup bridge for OFFENSE LT/RT only."""
 from __future__ import annotations
 
+from difflib import SequenceMatcher
 from pathlib import Path
 
 from operation_pancake.c3po_tackle_resolver import TackleResolution, resolve_tackles
-from operation_pancake.team_import import Candidate
+from operation_pancake.team_import import Candidate, normalize_name
 
 TACKLE_SLOTS = ("LT1", "RT1")
+
+
+def _is_cfb27(card: dict) -> bool:
+    markers = [
+        card.get(key)
+        for key in ("game", "season", "title", "dataset")
+        if card.get(key)
+    ]
+    if not markers:
+        return True
+    text = " ".join(str(value).upper() for value in markers)
+    if "CFB25" in text or "CFB 25" in text or "CFB26" in text or "CFB 26" in text:
+        return False
+    return "27" in text
+
+
+def search_tackle_cards(name: str, position: str, cards: list[dict]) -> list[dict]:
+    """Return safe CFB27 tackle candidates for user-entered identity text.
+
+    This is a user-confirmed fallback, not automatic identity assignment. Exact
+    normalized identity wins; otherwise a small set of high-similarity identity
+    suggestions is returned for explicit user selection. Displayed lineup OVR is
+    intentionally not part of this search.
+    """
+    query = normalize_name(name or "")
+    position = (position or "").upper()
+    if not query or position not in {"LT", "RT"}:
+        return []
+    pool = [
+        card
+        for card in cards
+        if _is_cfb27(card) and (card.get("position") or "").upper() == position
+    ]
+    identities: dict[str, list[dict]] = {}
+    for card in pool:
+        player_name = card.get("player_name") or ""
+        if player_name:
+            identities.setdefault(player_name, []).append(card)
+
+    exact = [player_name for player_name in identities if normalize_name(player_name) == query]
+    if exact:
+        chosen = exact
+    else:
+        scored = sorted(
+            (
+                SequenceMatcher(None, query, normalize_name(player_name)).ratio(),
+                player_name,
+            )
+            for player_name in identities
+        )
+        scored.reverse()
+        if not scored or scored[0][0] < 0.72:
+            return []
+        best = scored[0][0]
+        chosen = [player_name for score, player_name in scored if score >= max(0.72, best - 0.08)]
+
+    rows = [card for player_name in chosen for card in identities[player_name]]
+    return sorted(
+        rows,
+        key=lambda card: (
+            card.get("player_name") or "",
+            -(int(card["native_overall"]) if card.get("native_overall") is not None else -1),
+            str(card.get("card_id") or ""),
+        ),
+    )
 
 
 def _candidate(state, slot: str) -> Candidate:
