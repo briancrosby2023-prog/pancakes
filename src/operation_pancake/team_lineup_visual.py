@@ -24,6 +24,24 @@ def _card_label(candidate, cards):
     return " · ".join(bits)
 
 
+def _fallback_options(candidate, cards):
+    fallback = candidate.match_diagnostics.get("user_name_fallback", {})
+    out = []
+    for card_id in fallback.get("result_card_ids") or []:
+        card = cards.get(card_id) or {}
+        name = card.get("player_name") or card_id
+        position = card.get("position") or candidate.position or ""
+        ovr = card.get("native_overall")
+        program = card.get("program") or ""
+        label = " · ".join(
+            bit
+            for bit in (str(name), str(position), str(ovr) if ovr is not None else "", str(program))
+            if bit
+        )
+        out.append((card_id, label))
+    return out
+
+
 def _slot(candidate, cards):
     name = html.escape(candidate.player_name or "UNRESOLVED")
     ovr = str(candidate.displayed_ovr) if candidate.displayed_ovr is not None else "—"
@@ -42,19 +60,34 @@ def _slot(candidate, cards):
     )
     fallback = ""
     if candidate.slot in TACKLE_SLOTS and not candidate.canonical_card_id:
+        query = candidate.match_diagnostics.get("user_name_fallback", {}).get("query", "")
         fallback = (
             '<label class="lineup-fallback">WHO IS THIS PLAYER?'
             f'<input name="player_name__{html.escape(candidate.id)}" '
-            'autocomplete="off" placeholder="Type player name"></label>'
+            f'value="{html.escape(query)}" autocomplete="off" '
+            'placeholder="Type player name"></label>'
         )
+    option_rows = _fallback_options(candidate, cards)
+    if match:
+        select_options = (
+            f'<option value="{html.escape(candidate.canonical_card_id or "")}">'
+            f'{html.escape(match)}</option>'
+        )
+    elif option_rows:
+        select_options = '<option value="">SELECT CFB27 CARD</option>' + "".join(
+            f'<option value="{html.escape(card_id)}">{html.escape(label)}</option>'
+            for card_id, label in option_rows
+        )
+    else:
+        select_options = '<option value="">UNMATCHED — enter player name</option>'
     return (
         f'<div class="lineup-slot" data-slot="{html.escape(candidate.slot)}">'
         f'<div class="lineup-position">{html.escape(candidate.slot)}</div>'
         f'<div class="lineup-starter"><strong>{name}</strong><span class="lineup-ovr">{ovr}</span></div>'
         f'{match_html}{status}{backups}{fallback}'
-        f'<select class="lineup-select" name="card__{html.escape(candidate.id)}" aria-label="Canonical match for {html.escape(candidate.slot)}">'
-        f'<option value="{html.escape(candidate.canonical_card_id or "")}">{html.escape(match or "UNMATCHED — review if needed")}</option></select>'
-        '</div>'
+        f'<select class="lineup-select" name="card__{html.escape(candidate.id)}" '
+        f'aria-label="Canonical match for {html.escape(candidate.slot)}">'
+        f'{select_options}</select></div>'
     )
 
 
