@@ -47,7 +47,11 @@ def search_tackle_cards(name: str, position: str, cards: list[dict]) -> list[dic
         if player_name:
             identities.setdefault(player_name, []).append(card)
 
-    exact = [player_name for player_name in identities if normalize_name(player_name) == query]
+    exact = [
+        player_name
+        for player_name in identities
+        if normalize_name(player_name) == query
+    ]
     if exact:
         chosen = exact
     else:
@@ -62,17 +66,79 @@ def search_tackle_cards(name: str, position: str, cards: list[dict]) -> list[dic
         if not scored or scored[0][0] < 0.72:
             return []
         best = scored[0][0]
-        chosen = [player_name for score, player_name in scored if score >= max(0.72, best - 0.08)]
+        chosen = [
+            player_name
+            for score, player_name in scored
+            if score >= max(0.72, best - 0.08)
+        ]
 
     rows = [card for player_name in chosen for card in identities[player_name]]
     return sorted(
         rows,
         key=lambda card: (
             card.get("player_name") or "",
-            -(int(card["native_overall"]) if card.get("native_overall") is not None else -1),
+            -(
+                int(card["native_overall"])
+                if card.get("native_overall") is not None
+                else -1
+            ),
             str(card.get("card_id") or ""),
         ),
     )
+
+
+def _set_candidate_card(candidate: Candidate, card: dict, provenance: str) -> None:
+    candidate.player_name = card.get("player_name")
+    candidate.position = card.get("position") or candidate.position
+    candidate.program = card.get("program")
+    candidate.canonical_card_id = card.get("card_id")
+    candidate.match_status = "MATCHED"
+    candidate.confidence = 1.0
+    if provenance not in candidate.provenance:
+        candidate.provenance.append(provenance)
+    diagnostics = dict(candidate.match_diagnostics)
+    diagnostics.pop("user_name_fallback", None)
+    candidate.match_diagnostics = diagnostics
+
+
+def apply_user_tackle_name(candidate: Candidate, name: str, cards: list[dict]) -> str:
+    """Apply user-entered tackle identity, requiring card choice when ambiguous."""
+    if candidate.slot not in TACKLE_SLOTS:
+        return "UNSUPPORTED"
+    position = candidate.position or candidate.slot.rstrip("1234567890")
+    results = search_tackle_cards(name, position, cards)
+    diagnostics = dict(candidate.match_diagnostics)
+    diagnostics["user_name_fallback"] = {
+        "query": name.strip(),
+        "result_card_ids": [row.get("card_id") for row in results],
+    }
+    candidate.match_diagnostics = diagnostics
+    if not results:
+        candidate.match_status = "UNMATCHED"
+        return "UNRESOLVED"
+    if len(results) == 1:
+        _set_candidate_card(candidate, results[0], "user-confirmed:cfb27-name-search")
+        return "MATCHED"
+    candidate.canonical_card_id = None
+    candidate.match_status = "AMBIGUOUS"
+    candidate.confidence = None
+    return "CHOICE_REQUIRED"
+
+
+def select_user_tackle_card(candidate: Candidate, card_id: str, cards: list[dict]) -> bool:
+    """Persist an explicit user selection only when it is in the offered safe set."""
+    fallback = candidate.match_diagnostics.get("user_name_fallback", {})
+    offered = set(fallback.get("result_card_ids") or [])
+    if card_id not in offered:
+        return False
+    card = next((row for row in cards if row.get("card_id") == card_id), None)
+    if card is None or not _is_cfb27(card):
+        return False
+    position = (candidate.position or candidate.slot.rstrip("1234567890")).upper()
+    if (card.get("position") or "").upper() != position:
+        return False
+    _set_candidate_card(candidate, card, "user-confirmed:cfb27-name-search")
+    return True
 
 
 def _candidate(state, slot: str) -> Candidate:
@@ -148,7 +214,6 @@ def integrate_offense_tackles(state_store, cards: list[dict], translator) -> obj
         observation = translator.translate_offense_tackles(Path(offense["path"]))
         resolutions = resolve_tackles(observation, cards)
     except Exception as exc:
-        # External transcription boundary: fail closed and retain prior identities.
         state.team_observations["c3po_tackles"] = {
             "status": "ERROR",
             "error_type": type(exc).__name__,
