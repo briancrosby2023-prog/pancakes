@@ -4,12 +4,13 @@ from __future__ import annotations
 from operation_pancake import ocr_team_app_patch6 as patch6
 from operation_pancake import product_app, team_app
 from operation_pancake.c3po_team import GeminiTeamTranslator, candidates_from_observation
+from operation_pancake.cfb27_ocr_match import match_candidate_cfb27
 from operation_pancake.production.gm import GMProduct
 from operation_pancake.team_import import TeamImportStore, VIEW_SLOTS
 from operation_pancake.team_lineup_visual import render_lineup
 from operation_pancake.team_slot_extraction import REAL_TEAM_MANAGER_SLOT_REGIONS
 
-TEAM_SETUP_BUILD = "MY-TEAM-C3PO-SIMPLE-1"
+TEAM_SETUP_BUILD = "CFB27-TACKLE-VISUAL-PATH-1"
 
 
 def _closure_value(fn, cls):
@@ -27,6 +28,8 @@ def install_runtime():
     patch6.install_runtime()
     patch6.patch5.REAL_TEAM_MANAGER_REGIONS = REAL_TEAM_MANAGER_SLOT_REGIONS
     team_app.DEFAULT_REGIONS = REAL_TEAM_MANAGER_SLOT_REGIONS
+    patch6.patch5.match_candidate = match_candidate_cfb27
+    team_app.match_candidate = match_candidate_cfb27
     fallback_extract = patch6._extract_current_batch
 
     def extract_simple(state_store, gm):
@@ -100,16 +103,23 @@ def install_runtime():
                         + render_lineup(state.candidates, gm.cards)
                         + "</div></form>"
                     )
-                if current:
-                    evidence = "".join(
+                evidence = (
+                    "".join(
                         "<li>" + team_app.html.escape(row["filename"]) + " — "
                         + team_app.html.escape(row["extraction_status"]) + "</li>"
                         for row in current
                     )
-                    body += (
-                        '<details class="card"><summary>Import details</summary>'
-                        f"<ul>{evidence}</ul></details>"
-                    )
+                    or "<li>No current batch yet.</li>"
+                )
+                body += (
+                    '<details class="card" id="current-batch-evidence">'
+                    f"<summary>Current batch evidence ({len(current)}/4)</summary>"
+                    f"<ul>{evidence}</ul></details>"
+                    '<details class="card" id="tackle-visual-diagnostics">'
+                    '<summary>CFB27 tackle visual diagnostics</summary>'
+                    '<p>Legacy diagnostics retained for developer compatibility; '
+                    'the normal My Team path uses C-3PO transcription.</p></details>'
+                )
                 return product_app.page("My Team", body)
 
         return MyTeamHandler
