@@ -8,7 +8,7 @@ from operation_pancake.c3po_vision import PlayerObservation,TackleScreenObservat
 from operation_pancake.team_import import normalize_name
 @dataclass(frozen=True)
 class TackleResolution:
- slot:str;depth:int;observed_player_name:str|None;observed_position:str;displayed_lineup_ovr:int|None;canonical_player_identity:str|None;canonical_card_id:str|None;native_card_ovr:int|None;program:str|None;display_ovr_delta:int|None;display_modifier_classification:str|None;status:str
+ slot:str;depth:int;observed_player_name:str|None;observed_position:str;displayed_lineup_ovr:int|None;canonical_player_identity:str|None;canonical_card_id:str|None;native_card_ovr:int|None;native_position:str|None;program:str|None;display_ovr_delta:int|None;display_modifier_classification:str|None;status:str
 def _is_cfb27(card):
  markers=[card.get(k) for k in ('game','season','title','dataset') if card.get(k)]
  if not markers:return True
@@ -24,7 +24,7 @@ def _identity_gate(observed,canonical):
   if seen==expected:continue
   if min(len(seen),len(expected))<6 or SequenceMatcher(None,seen,expected).ratio()<.86:return False
  return True
-def _unresolved(base):return TackleResolution(**base,canonical_player_identity=None,canonical_card_id=None,native_card_ovr=None,program=None,display_ovr_delta=None,display_modifier_classification=None,status='UNRESOLVED')
+def _unresolved(base):return TackleResolution(**base,canonical_player_identity=None,canonical_card_id=None,native_card_ovr=None,native_position=None,program=None,display_ovr_delta=None,display_modifier_classification=None,status='UNRESOLVED')
 def _canonical_variant(variants):return min(variants,key=lambda c:(-(int(c['native_overall']) if c.get('native_overall') is not None else -1),str(c.get('card_id') or '')))
 def resolve_player(observation,position,cards,slot,depth):
  """Resolve identity by clean C-3PO name; position/slot and displayed OVR never veto it."""
@@ -46,7 +46,7 @@ def resolve_player(observation,position,cards,slot,depth):
   same_position=[c for c in variants if (c.get('position') or '').upper()==position.upper()]
   if same_position:variants=same_position
  card=_canonical_variant(variants);native=card.get('native_overall');displayed=observation.displayed_ovr;delta=None if displayed is None or native is None else int(displayed)-int(native);modifier='TEAM_LINEUP_MODIFIER' if delta not in (None,0) else None
- return TackleResolution(**base,canonical_player_identity=identity,canonical_card_id=card.get('card_id'),native_card_ovr=native,program=card.get('program'),display_ovr_delta=delta,display_modifier_classification=modifier,status='MATCHED')
+ return TackleResolution(**base,canonical_player_identity=identity,canonical_card_id=card.get('card_id'),native_card_ovr=native,native_position=card.get('position'),program=card.get('program'),display_ovr_delta=delta,display_modifier_classification=modifier,status='MATCHED')
 def resolve_tackles(observation,cards):
  if observation.view!='OFFENSE':raise ValueError('C-3PO pilot accepts OFFENSE only')
  out=[]
