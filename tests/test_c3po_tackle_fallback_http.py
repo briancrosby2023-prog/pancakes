@@ -3,7 +3,7 @@ import sys
 import textwrap
 
 
-def test_real_visual_handler_name_fallback_search_select_and_restart(tmp_path):
+def test_production_visual_handler_name_fallback_search_select_and_restart(tmp_path):
     script = textwrap.dedent(
         r'''
         import json
