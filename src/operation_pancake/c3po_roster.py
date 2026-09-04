@@ -335,11 +335,24 @@ class C3PORosterService:
 
         updated_choices = dict(stored_choices)
         changed = False
+        work: dict[tuple[Any, ...], list[Any]] = {}
+        for row in ambiguous:
+            observation = row.observation
+            evidence_key = (
+                observation.view,
+                observation.slot,
+                observation.name,
+                observation.displayed_ovr,
+                json.dumps(observation.backups, sort_keys=True),
+                tuple(card.card_id for card in row.choices),
+            )
+            work.setdefault(evidence_key, []).append(row)
+        work_groups = tuple(work.values())
         requests = tuple(
             CardVersionAnalysisRequest(
-                row.fingerprint, row.observation, row.choices
+                rows[0].fingerprint, rows[0].observation, rows[0].choices
             )
-            for row in ambiguous
+            for rows in work_groups
         )
         try:
             batch_result = self.version_analyzer.analyze_batch(requests, evidence)
@@ -352,37 +365,52 @@ class C3PORosterService:
             result_state = (
                 "RATE_LIMITED" if batch_result.rate_limited else "PROVIDER_FAILURE"
             )
-            for row in ambiguous:
-                LOGGER.info(
-                    "VERSION ANALYZER INVOKED player=%s candidates=%d "
-                    "source_evidence_compatible=yes source_images=%d result=%s",
-                    row.observation.name,
-                    len(row.choices),
-                    len(evidence.images),
-                    result_state,
-                )
-            return CardVersionAnalysisOutcome(
+            LOGGER.info(
+                "VERSION ANALYZER BATCH request_count=1 work_items=%d "
+                "roster_observations=%d source_evidence_compatible=yes "
+                "source_images=%d result=%s",
+                len(requests),
                 len(ambiguous),
+                len(evidence.images),
+                result_state,
+            )
+            return CardVersionAnalysisOutcome(
+                len(requests),
                 request_succeeded=False,
                 provider_failed=True,
                 rate_limited=batch_result.rate_limited,
             )
 
-        for row in ambiguous:
-            decision = batch_result.decisions.get(row.fingerprint)
+        LOGGER.info(
+            "VERSION ANALYZER BATCH request_count=1 work_items=%d "
+            "roster_observations=%d source_evidence_compatible=yes "
+            "source_images=%d result=SUCCEEDED",
+            len(requests),
+            len(ambiguous),
+            len(evidence.images),
+        )
+        for rows in work_groups:
+            representative = rows[0]
+            decision = batch_result.decisions.get(representative.fingerprint)
             decision_state = getattr(decision, "state", "NO_EVIDENCE")
             decision_card_id = getattr(decision, "card_id", None)
-            valid_cards = {card.card_id: card for card in row.choices}
+            valid_cards = {card.card_id: card for card in representative.choices}
             selected = valid_cards.get(decision_card_id)
             if decision_state == "UNIQUE_VERSION" and selected is not None:
-                updated_choices[row.fingerprint] = decision_card_id
+                for row in rows:
+                    updated_choices[row.fingerprint] = decision_card_id
                 changed = True
                 LOGGER.info(
-                    "VERSION ANALYZER INVOKED player=%s candidates=%d "
+                    "VERSION ANALYZER RESULT player=%s fingerprint=%s "
+                    "view=%s slot=%s candidates=%d duplicates=%d "
                     "source_evidence_compatible=yes source_images=%d "
                     "result=UNIQUE_VERSION card_id=%s program=%s native_ovr=%s",
-                    row.observation.name,
-                    len(row.choices),
+                    representative.observation.name,
+                    representative.fingerprint[:12],
+                    representative.observation.view,
+                    representative.observation.slot,
+                    len(representative.choices),
+                    len(rows) - 1,
                     len(evidence.images),
                     selected.card_id,
                     selected.program,
@@ -390,10 +418,15 @@ class C3PORosterService:
                 )
             else:
                 LOGGER.info(
-                    "VERSION ANALYZER INVOKED player=%s candidates=%d "
+                    "VERSION ANALYZER RESULT player=%s fingerprint=%s "
+                    "view=%s slot=%s candidates=%d duplicates=%d "
                     "source_evidence_compatible=yes source_images=%d result=%s",
-                    row.observation.name,
-                    len(row.choices),
+                    representative.observation.name,
+                    representative.fingerprint[:12],
+                    representative.observation.view,
+                    representative.observation.slot,
+                    len(representative.choices),
+                    len(rows) - 1,
                     len(evidence.images),
                     decision_state,
                 )
@@ -403,7 +436,7 @@ class C3PORosterService:
             except (OSError, ValueError, TypeError):
                 LOGGER.exception("Automatic card-version choice could not be persisted")
         return CardVersionAnalysisOutcome(
-            len(ambiguous), request_succeeded=True
+            len(requests), request_succeeded=True
         )
 
     def select_card_version(self, fingerprint: str, card_id: str) -> bool:

@@ -7,6 +7,7 @@ from operation_pancake import c3po_roster_app
 from operation_pancake.c3po_card_version import (
     CardVersionBatchResult,
     CardVersionDecision,
+    GeminiCardVersionAnalyzer,
 )
 from operation_pancake.c3po_roster import (
     C3POPlayer,
@@ -359,7 +360,8 @@ def test_version_diagnostics_are_bounded_and_exclude_sensitive_payloads(
     service.import_four(_screenshots(tmp_path))
 
     messages = "\n".join(record.getMessage() for record in caplog.records)
-    assert "VERSION ANALYZER INVOKED" in messages
+    assert "VERSION ANALYZER BATCH request_count=1" in messages
+    assert "VERSION ANALYZER RESULT" in messages
     assert "player=Thomas Shrader" in messages
     assert "candidates=2" in messages
     assert "source_evidence_compatible=yes" in messages
@@ -488,3 +490,204 @@ def test_omitted_player_result_remains_select_card(tmp_path):
 
     assert "Thomas Shrader" in service.my_team_html()
     assert "SELECT CARD" in service.my_team_html()
+
+
+def test_real_provider_boundary_batches_and_deduplicates_identical_work(tmp_path):
+    class Interaction:
+        output_text = (
+            '{"results":[{"observation_fingerprint":"FIRST",'
+            '"result":"UNIQUE_VERSION","card_id":"thomas-phenoms",'
+            '"confidence":"HIGH","positive_visual_evidence":'
+            '["Visible Phenoms card treatment"]}]}'
+        )
+
+    class Interactions:
+        def __init__(self):
+            self.calls = []
+
+        def create(self, **kwargs):
+            self.calls.append(kwargs)
+            prompt = kwargs["input"][0]["text"]
+            fingerprints = tuple(
+                block.splitlines()[0]
+                for block in prompt.split("OBSERVATION ")[1:]
+            )
+            Interaction.output_text = (
+                '{"results":[{"observation_fingerprint":"'
+                + fingerprints[0]
+                + '","result":"UNIQUE_VERSION","card_id":"thomas-phenoms",'
+                '"confidence":"HIGH","positive_visual_evidence":'
+                '["Visible Phenoms card treatment"]},{"observation_fingerprint":"'
+                + fingerprints[1]
+                + '","result":"AMBIGUOUS"}]}'
+            )
+            return Interaction()
+
+    class Client:
+        def __init__(self):
+            self.interactions = Interactions()
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return None
+
+    client = Client()
+    analyzer = GeminiCardVersionAnalyzer(
+        api_key="not-a-real-key", client_factory=lambda: client
+    )
+    repeated = C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85)
+    juan = C3POPlayer("OFFENSE", "RT 2", "Juan Gaston", 81)
+    roster = C3PORoster(
+        (repeated, repeated, juan), "google-gemini", "gemini-3.7-flash"
+    )
+    cards = _cards() + (
+        {
+            "player_name": "Juan Gaston",
+            "card_id": "juan-core",
+            "native_overall": 75,
+            "position": "RT",
+            "program": "Core Uncommon",
+        },
+        {
+            "player_name": "Juan Gaston",
+            "card_id": "juan-phenoms",
+            "native_overall": 80,
+            "position": "RT",
+            "program": "Phenoms",
+        },
+    )
+    service = C3PORosterService(
+        C3PORosterStore(tmp_path / "roster.json"),
+        _Provider(),
+        enrichment_cards=cards,
+        card_choice_store=CFB27CardChoiceStore(tmp_path / "choices.json"),
+        source_evidence_store=C3POSourceEvidenceStore(tmp_path / "evidence.zip"),
+        version_analyzer=analyzer,
+    )
+    service.store.save(roster)
+    service.source_evidence_store.save(roster, _screenshots(tmp_path))
+    roster_bytes = service.store.path.read_bytes()
+
+    outcome = service.analyze_card_versions(roster)
+
+    assert outcome.request_succeeded
+    assert outcome.requested == 2
+    assert len(client.interactions.calls) == 1
+    provider_input = client.interactions.calls[0]["input"]
+    assert len(provider_input) == 5
+    prompt = provider_input[0]["text"]
+    assert prompt.count("OBSERVATION ") == 2
+    assert prompt.count("Thomas Shrader") >= 1
+    assert prompt.count("card_id=thomas-core") == 1
+    assert prompt.count("card_id=thomas-phenoms") == 1
+    assert service.store.path.read_bytes() == roster_bytes
+    assert service.store.load().players == (repeated, repeated, juan)
+    assert service.my_team_html().count("CFB27: LG · 84 OVR · Phenoms") == 2
+    assert "Juan Gaston" in service.my_team_html()
+    assert "SELECT CARD" in service.my_team_html()
+
+
+def test_same_name_with_different_immutable_evidence_is_not_deduplicated(tmp_path):
+    analyzer = _RecordingAnalyzer(CardVersionDecision.ambiguous())
+    service = _service(tmp_path, _Provider(), analyzer)
+    roster = C3PORoster(
+        (
+            C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85),
+            C3POPlayer("OFFENSE", "LG 2", "Thomas Shrader", 85),
+        ),
+        "google-gemini",
+        "gemini-3.7-flash",
+    )
+    service.store.save(roster)
+    service.source_evidence_store.save(roster, _screenshots(tmp_path))
+
+    outcome = service.analyze_card_versions(roster)
+
+    assert outcome.requested == 2
+    assert len(analyzer.calls) == 1
+    assert len(analyzer.calls[0][0]) == 2
+
+
+def test_rate_limit_diagnostics_report_one_batch_not_per_player_invocations(
+    tmp_path, caplog
+):
+    class RateLimitedAnalyzer:
+        def analyze_batch(self, requests, evidence):
+            return CardVersionBatchResult(
+                {}, request_succeeded=False, rate_limited=True
+            )
+
+    caplog.set_level("INFO")
+    service = _service(tmp_path, _Provider(), RateLimitedAnalyzer())
+    repeated = C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85)
+    roster = C3PORoster(
+        (repeated, repeated), "google-gemini", "gemini-3.7-flash"
+    )
+    service.store.save(roster)
+    service.source_evidence_store.save(roster, _screenshots(tmp_path))
+
+    outcome = service.analyze_card_versions(roster)
+
+    assert outcome.rate_limited
+    assert outcome.requested == 1
+    assert caplog.text.count("VERSION ANALYZER BATCH") == 1
+    assert "request_count=1" in caplog.text
+    assert "work_items=1" in caplog.text
+    assert "roster_observations=2" in caplog.text
+    assert "result=RATE_LIMITED" in caplog.text
+    assert "VERSION ANALYZER INVOKED player=" not in caplog.text
+
+
+def test_real_provider_boundary_429_calls_once_and_changes_no_state(
+    tmp_path, caplog
+):
+    class RateLimitedInteractions:
+        def __init__(self):
+            self.calls = []
+
+        def create(self, **kwargs):
+            self.calls.append(kwargs)
+            error = RuntimeError("RESOURCE_EXHAUSTED: quota denied for key=secret")
+            error.code = 429
+            error.status = "RESOURCE_EXHAUSTED"
+            raise error
+
+    class Client:
+        def __init__(self):
+            self.interactions = RateLimitedInteractions()
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return None
+
+    client = Client()
+    analyzer = GeminiCardVersionAnalyzer(
+        api_key="secret", client_factory=lambda: client
+    )
+    service = _service(tmp_path, _Provider(), analyzer)
+    roster = _roster()
+    service.store.save(roster)
+    service.source_evidence_store.save(roster, _screenshots(tmp_path))
+    service.card_choice_store.path.write_text('{"choices": {}}\n', encoding="utf-8")
+    before = (
+        service.store.path.read_bytes(),
+        service.source_evidence_store.path.read_bytes(),
+        service.card_choice_store.path.read_bytes(),
+    )
+    caplog.set_level("INFO")
+
+    outcome = service.analyze_card_versions(roster)
+
+    assert len(client.interactions.calls) == 1
+    assert outcome.rate_limited and not outcome.request_succeeded
+    assert (
+        service.store.path.read_bytes(),
+        service.source_evidence_store.path.read_bytes(),
+        service.card_choice_store.path.read_bytes(),
+    ) == before
+    assert "RATE_LIMITED" in caplog.text
+    assert "secret" not in caplog.text

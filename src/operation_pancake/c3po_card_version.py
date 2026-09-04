@@ -156,7 +156,7 @@ def _decision(payload: Any) -> CardVersionDecision:
     return CardVersionDecision.no_evidence()
 
 
-def _rate_limit_metadata(exc: Exception) -> tuple[bool, str | None]:
+def _rate_limit_metadata(exc: Exception) -> tuple[bool, str | None, str, str]:
     code = getattr(exc, "code", None)
     status = str(getattr(exc, "status", "")).upper()
     response = getattr(exc, "response", None)
@@ -169,7 +169,21 @@ def _rate_limit_metadata(exc: Exception) -> tuple[bool, str | None]:
         or "RESOURCE_EXHAUSTED" in status
         or "RATELIMIT" in type(exc).__name__.upper()
     )
-    return limited, str(retry_after) if retry_after is not None else None
+    provider_status = status or (str(code) if code is not None else "unavailable")
+    detail = str(getattr(exc, "message", None) or exc)
+    detail = re.sub(
+        r"(?i)(api[_-]?key|key)\s*[=:]\s*[^\s,;}]+",
+        r"\1=[REDACTED]",
+        detail,
+    )
+    detail = re.sub(r"data:[^\s,;}]+", "data:[REDACTED]", detail)
+    detail = " ".join(detail.split())[:240] or type(exc).__name__
+    return (
+        limited,
+        str(retry_after) if retry_after is not None else None,
+        provider_status,
+        detail,
+    )
 
 
 class GeminiCardVersionAnalyzer:
@@ -245,11 +259,16 @@ class GeminiCardVersionAnalyzer:
                     model=self.model, input=request_input
                 )
         except Exception as exc:  # provider SDK/network failures are fail-open
-            rate_limited, retry_after = _rate_limit_metadata(exc)
+            rate_limited, retry_after, provider_status, detail = (
+                _rate_limit_metadata(exc)
+            )
             if rate_limited:
                 LOGGER.error(
-                    "CFB27 version provider failure: RATE_LIMITED retry_after=%s",
+                    "CFB27 version provider failure: RATE_LIMITED status=%s "
+                    "retry_after=%s detail=%s",
+                    provider_status,
                     retry_after or "unavailable",
+                    detail,
                 )
             else:
                 LOGGER.error("CFB27 version provider failure: %s", type(exc).__name__)
