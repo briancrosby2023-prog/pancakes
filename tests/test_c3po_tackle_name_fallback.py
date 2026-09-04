@@ -105,12 +105,13 @@ def test_user_name_fallback_rejects_unsafe_near_names(typed):
     assert search_tackle_cards(typed, "LT", _cards()) == []
 
 
-def test_unresolved_tackle_renders_simple_player_name_entry():
+def test_missing_name_renders_unresolved_without_identity_adjudication():
     candidate = _candidate("lt", "LT1", "LT")
     page = render_lineup([candidate], {})
-    assert 'name="player_name__lt"' in page
-    assert "WHO IS THIS PLAYER?" in page
-    assert 'formaction="/team/tackle-search"' in page
+    assert "PLAYER UNRESOLVED" in page
+    assert 'name="player_name__lt"' not in page
+    assert "WHO IS THIS PLAYER?" not in page
+    assert 'formaction="/team/tackle-search"' not in page
 
 
 def test_non_tackle_does_not_get_name_fallback():
@@ -153,12 +154,13 @@ def test_user_selected_oop_variant_persists_through_team_import_store(tmp_path):
     assert "user-confirmed:cfb27-name-search" in restarted.provenance
 
 
-def test_choice_required_renders_all_safe_cfb27_variant_options():
+def test_legacy_choice_state_does_not_reopen_identity_adjudication():
     candidate = _candidate("lt", "LT1", "LT")
     apply_user_tackle_name(candidate, "Josh Petty", _cards())
     cards_by_id = {row["card_id"]: row for row in _cards()}
     page = render_lineup([candidate], cards_by_id)
-    assert 'value="josh-80"' in page
-    assert 'value="josh-75"' in page
-    assert 'value="wrong-pos"' in page
-    assert "wrong-season" not in page
+    assert 'value="josh-80"' not in page
+    assert 'value="josh-75"' not in page
+    assert 'value="wrong-pos"' not in page
+    assert "WHO IS THIS PLAYER?" not in page
+    assert "SEARCH CFB27" not in page
