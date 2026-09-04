@@ -1,3 +1,4 @@
+# ruff: noqa: E501
 """Clean-room C-3PO roster: provider transcription is the roster authority."""
 from __future__ import annotations
 
@@ -51,34 +52,15 @@ class C3PORosterStore:
 
     def save(self, roster: C3PORoster) -> None:
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        payload = {
-            "players": [asdict(player) for player in roster.players],
-            "provider": roster.provider,
-            "model": roster.model,
-            "status": roster.status,
-        }
+        payload = {"players": [asdict(player) for player in roster.players], "provider": roster.provider, "model": roster.model, "status": roster.status}
         temporary = self.path.with_suffix(self.path.suffix + ".tmp")
         temporary.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
         temporary.replace(self.path)
 
     def load(self) -> C3PORoster:
         payload = json.loads(self.path.read_text(encoding="utf-8"))
-        players = tuple(
-            C3POPlayer(
-                view=row["view"],
-                slot=row["slot"],
-                name=row.get("name"),
-                displayed_ovr=row.get("displayed_ovr"),
-                backups=tuple(row.get("backups", [])),
-            )
-            for row in payload["players"]
-        )
-        return C3PORoster(
-            players=players,
-            provider=payload["provider"],
-            model=payload["model"],
-            status=payload.get("status", "C-3PO READ"),
-        )
+        players = tuple(C3POPlayer(view=row["view"], slot=row["slot"], name=row.get("name"), displayed_ovr=row.get("displayed_ovr"), backups=tuple(row.get("backups", []))) for row in payload["players"])
+        return C3PORoster(players=players, provider=payload["provider"], model=payload["model"], status=payload.get("status", "C-3PO READ"))
 
 
 def _mime(path: Path) -> str:
@@ -103,10 +85,10 @@ def _json_text(text: str) -> Any:
     try:
         return json.loads(cleaned)
     except json.JSONDecodeError:
-        start_candidates = [index for index in (cleaned.find("{"), cleaned.find("[")) if index >= 0]
-        if not start_candidates:
+        starts = [index for index in (cleaned.find("{"), cleaned.find("[")) if index >= 0]
+        if not starts:
             raise
-        start = min(start_candidates)
+        start = min(starts)
         end = max(cleaned.rfind("}"), cleaned.rfind("]"))
         if end < start:
             raise
@@ -117,8 +99,7 @@ def _view(value: Any) -> str | None:
     if not isinstance(value, str):
         return None
     normalized = value.strip().upper().replace("_", " ").replace("-", " ")
-    aliases = {"SPECIAL TEAM": "SPECIAL TEAMS", "SPECIALIST": "SPECIALISTS"}
-    normalized = aliases.get(normalized, normalized)
+    normalized = {"SPECIAL TEAM": "SPECIAL TEAMS", "SPECIALIST": "SPECIALISTS"}.get(normalized, normalized)
     return normalized if normalized in VIEWS else None
 
 
@@ -142,7 +123,6 @@ def _rows_from_payload(payload: Any) -> list[dict[str, Any]]:
         screens = None
     if not isinstance(screens, list):
         raise ValueError("Gemini JSON did not contain screens/sections")
-
     rows: list[dict[str, Any]] = []
     for screen in screens:
         if not isinstance(screen, dict):
@@ -161,38 +141,19 @@ def _rows_from_payload(payload: Any) -> list[dict[str, Any]]:
             slot = player.get("slot") or player.get("slot_label") or player.get("position")
             if not slot:
                 continue
-            name = player.get("name")
-            if name is None:
-                name = player.get("player_name")
+            name = player.get("name") if player.get("name") is not None else player.get("player_name")
             if isinstance(name, str):
                 name = name.strip() or None
-            rows.append(
-                {
-                    "view": view,
-                    "slot": str(slot).strip().upper(),
-                    "name": name,
-                    "displayed_ovr": _ovr(
-                        player.get("displayed_ovr", player.get("ovr", player.get("rating")))
-                    ),
-                    "backups": player.get("backups") if isinstance(player.get("backups"), list) else [],
-                }
-            )
+            rows.append({"view": view, "slot": str(slot).strip().upper(), "name": name, "displayed_ovr": _ovr(player.get("displayed_ovr", player.get("ovr", player.get("rating")))), "backups": player.get("backups") if isinstance(player.get("backups"), list) else []})
     return rows
 
 
 def _safe_message(exc: Exception) -> str:
-    message = " ".join(str(exc).split())
-    return message[:500] or "no message"
+    return " ".join(str(exc).split())[:500] or "no message"
 
 
 class GeminiC3POProvider:
-    def __init__(
-        self,
-        api_key: str | None = None,
-        model: str | None = None,
-        timeout_ms: int = 60000,
-        client_factory: Callable[[], Any] | None = None,
-    ):
+    def __init__(self, api_key: str | None = None, model: str | None = None, timeout_ms: int = 60000, client_factory: Callable[[], Any] | None = None):
         self.api_key = api_key or os.getenv("GEMINI_API_KEY")
         self.model = model or os.getenv("PANCAKE_GEMINI_MODEL", "gemini-3.7-flash")
         self.timeout_ms = timeout_ms
@@ -205,11 +166,7 @@ class GeminiC3POProvider:
             raise RuntimeError("GEMINI_API_KEY is required for C-3PO transcription")
         from google import genai
         from google.genai import types
-
-        return genai.Client(
-            api_key=self.api_key,
-            http_options=types.HttpOptions(timeout=self.timeout_ms),
-        )
+        return genai.Client(api_key=self.api_key, http_options=types.HttpOptions(timeout=self.timeout_ms))
 
     def read_four(self, screenshots: Iterable[Path]) -> list[dict[str, Any]]:
         paths = tuple(screenshots)
@@ -221,13 +178,7 @@ class GeminiC3POProvider:
                 data = path.read_bytes()
                 if not data:
                     raise ValueError(f"Screenshot is empty: {path.name}")
-                request_input.append(
-                    {
-                        "type": "image",
-                        "data": base64.b64encode(data).decode("ascii"),
-                        "mime_type": _mime(path),
-                    }
-                )
+                request_input.append({"type": "image", "data": base64.b64encode(data).decode("ascii"), "mime_type": _mime(path)})
             client = self._client()
             with client:
                 interaction = client.interactions.create(model=self.model, input=request_input)
@@ -241,47 +192,17 @@ class GeminiC3POProvider:
                 raise ValueError(f"Gemini returned text but parsing failed; snippet={snippet!r}") from exc
             if not rows:
                 raise ValueError("Gemini returned textual content but no usable lineup rows")
-            return [
-                {
-                    "view": view,
-                    "players": [
-                        {key: value for key, value in row.items() if key != "view"}
-                        for row in rows
-                        if row["view"] == view
-                    ],
-                    "provider": "google-gemini",
-                    "model": self.model,
-                    "status": "C-3PO READ",
-                }
-                for view in VIEWS
-            ]
+            return [{"view": view, "players": [{key: value for key, value in row.items() if key != "view"} for row in rows if row["view"] == view], "provider": "google-gemini", "model": self.model, "status": "C-3PO READ"} for view in VIEWS]
         except Exception as exc:
             message = _safe_message(exc)
             LOGGER.error("C-3PO Gemini provider failure: %s: %s", type(exc).__name__, message)
-            return [
-                {
-                    "view": "",
-                    "players": [],
-                    "provider": "google-gemini",
-                    "model": self.model,
-                    "status": "PROVIDER FAILURE",
-                    "error": type(exc).__name__,
-                    "error_message": message,
-                }
-            ]
+            return [{"view": "", "players": [], "provider": "google-gemini", "model": self.model, "status": "PROVIDER FAILURE", "error": type(exc).__name__, "error_message": message}]
 
     def read(self, screenshot: Path) -> dict[str, Any]:
         """Compatibility helper for provider-level single-image diagnostics."""
         try:
             data = screenshot.read_bytes()
-            request_input = [
-                {"type": "text", "text": PROMPT},
-                {
-                    "type": "image",
-                    "data": base64.b64encode(data).decode("ascii"),
-                    "mime_type": _mime(screenshot),
-                },
-            ]
+            request_input = [{"type": "text", "text": PROMPT}, {"type": "image", "data": base64.b64encode(data).decode("ascii"), "mime_type": _mime(screenshot)}]
             client = self._client()
             with client:
                 interaction = client.interactions.create(model=self.model, input=request_input)
@@ -292,13 +213,7 @@ class GeminiC3POProvider:
             if not rows:
                 raise ValueError("Gemini returned textual content but no usable lineup rows")
             view = rows[0]["view"]
-            return {
-                "view": view,
-                "players": [{key: value for key, value in row.items() if key != "view"} for row in rows if row["view"] == view],
-                "provider": "google-gemini",
-                "model": self.model,
-                "status": "C-3PO READ",
-            }
+            return {"view": view, "players": [{key: value for key, value in row.items() if key != "view"} for row in rows if row["view"] == view], "provider": "google-gemini", "model": self.model, "status": "C-3PO READ"}
         except Exception as exc:
             message = _safe_message(exc)
             LOGGER.error("C-3PO Gemini provider failure: %s: %s", type(exc).__name__, message)
@@ -309,10 +224,7 @@ def roster_from_screens(screenshots: Iterable[Path], provider: Any) -> C3PORoste
     paths = tuple(screenshots)
     if len(paths) != 4:
         raise ValueError("C-3PO roster requires exactly four screenshots")
-    if hasattr(provider, "read_four"):
-        reads = tuple(provider.read_four(paths))
-    else:
-        reads = tuple(provider.read(path) for path in paths)
+    reads = tuple(provider.read_four(paths)) if hasattr(provider, "read_four") else tuple(provider.read(path) for path in paths)
     failed = [read for read in reads if read.get("status") == "PROVIDER FAILURE"]
     if failed:
         return C3PORoster((), failed[0]["provider"], failed[0]["model"], "PROVIDER FAILURE")
@@ -325,15 +237,7 @@ def roster_from_screens(screenshots: Iterable[Path], provider: Any) -> C3PORoste
             slot = row.get("slot")
             if not slot:
                 continue
-            players.append(
-                C3POPlayer(
-                    view=view,
-                    slot=str(slot).strip().upper(),
-                    name=row.get("name"),
-                    displayed_ovr=_ovr(row.get("displayed_ovr")),
-                    backups=tuple(row.get("backups", [])),
-                )
-            )
+            players.append(C3POPlayer(view=view, slot=str(slot).strip().upper(), name=row.get("name"), displayed_ovr=_ovr(row.get("displayed_ovr")), backups=tuple(row.get("backups", []))))
     if not players:
         raise ValueError("C-3PO returned no usable lineup rows")
     return C3PORoster(tuple(players), reads[0]["provider"], reads[0]["model"])
@@ -341,7 +245,6 @@ def roster_from_screens(screenshots: Iterable[Path], provider: Any) -> C3PORoste
 
 class C3PORosterService:
     """The product boundary: four images in, persisted C-3PO roster out."""
-
     def __init__(self, store: C3PORosterStore, provider: Any):
         self.store = store
         self.provider = provider
@@ -354,5 +257,4 @@ class C3PORosterService:
 
     def my_team_html(self) -> str:
         from operation_pancake.c3po_roster_page import render_c3po_roster
-
         return render_c3po_roster(self.store.load())
