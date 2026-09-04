@@ -227,6 +227,36 @@ def test_manual_card_ui_contains_only_the_exact_player_family(tmp_path):
     assert page.count("Thomas Shrader") == 1
 
 
+def test_manual_card_ui_requires_an_explicit_choice_and_links_real_card_details(
+    tmp_path,
+):
+    roster = C3PORoster(
+        (C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85),),
+        "google-gemini",
+        "gemini-3.7-flash",
+    )
+    service = c3po_roster_app.create_service(
+        ROOT,
+        provider=NoGemini(),
+        roster_path=tmp_path / "roster.json",
+        choice_path=tmp_path / "choices.json",
+    )
+    service.store.save(roster)
+
+    page = service.my_team_html()
+
+    assert '<input type="radio" name="card_id"' in page
+    assert 'name="card_id" required' in page
+    assert " checked" not in page
+    assert "84 OVR · LG · Phenoms" in page
+    assert "81 OVR · LG · Core Rare" in page
+    assert (
+        'href="https://cfb.fan/players/21328-thomas-shrader/27-260021328/"'
+        in page
+    )
+    assert 'target="_blank" rel="noopener noreferrer">VIEW CARD</a>' in page
+
+
 def test_manual_choice_persists_across_restart_and_raw_roster_is_immutable(tmp_path):
     roster = C3PORoster(
         (C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85),),

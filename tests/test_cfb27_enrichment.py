@@ -103,3 +103,28 @@ def test_enrichment_source_has_no_legacy_identity_dependencies():
     )
     for token in forbidden:
         assert token not in source
+
+
+def test_manual_card_detail_link_rejects_non_cfb_fan_source():
+    roster = C3PORoster((C3POPlayer("OFFENSE", "RT 2", "Juan Gaston", 81),), "p", "m")
+    cards = [
+        {
+            "player_name": "Juan Gaston",
+            "position": "RT",
+            "native_overall": 80,
+            "program": "Phenoms",
+            "source": {"ratings": "javascript:alert(1)"},
+        },
+        {
+            "player_name": "Juan Gaston",
+            "position": "RT",
+            "native_overall": 75,
+            "program": "Core Uncommon",
+        },
+    ]
+
+    result = cfb27_enrichment.enrich_c3po_roster(roster, cards)
+    page = render_c3po_roster(roster, result)
+
+    assert "javascript:" not in page
+    assert "VIEW CARD" not in page

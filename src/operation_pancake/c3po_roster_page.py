@@ -10,29 +10,38 @@ def _enrichment_copy(enrichment) -> str:
     if enrichment is None:
         return ""
     if enrichment.state == "SELECT CARD":
-        options = "".join(
-            '<option value="'
-            + html.escape(str(card.card_id or ""))
-            + '">'
-            + html.escape(
-                " · ".join(
-                    value
-                    for value in (
-                        f"{card.card_ovr} OVR" if card.card_ovr is not None else "OVR —",
-                        str(card.native_position or "POSITION —"),
-                        str(card.program or "PROGRAM —"),
-                    )
+        choices = []
+        for card in enrichment.choices:
+            detail = " · ".join(
+                value
+                for value in (
+                    f"{card.card_ovr} OVR" if card.card_ovr is not None else "OVR —",
+                    str(card.native_position or "POSITION —"),
+                    str(card.program or "PROGRAM —"),
                 )
             )
-            + "</option>"
-            for card in enrichment.choices
-        )
+            source = ""
+            if card.source_url:
+                source = (
+                    f'<a href="{html.escape(card.source_url)}" target="_blank" '
+                    'rel="noopener noreferrer">VIEW CARD</a>'
+                )
+            choices.append(
+                '<div class="card-version-choice"><label>'
+                '<input type="radio" name="card_id" required value="'
+                + html.escape(str(card.card_id or ""))
+                + '"><span>'
+                + html.escape(detail)
+                + "</span></label>"
+                + source
+                + "</div>"
+            )
         return (
             '<form class="card-version" method="post" action="/team/card-version">'
-            '<span class="enrichment">SELECT CARD</span>'
+            '<fieldset><legend class="enrichment">SELECT CARD</legend>'
             f'<input type="hidden" name="observation" value="{html.escape(enrichment.fingerprint)}">'
-            f'<select name="card_id">{options}</select>'
-            "<button>USE CARD</button></form>"
+            + "".join(choices)
+            + "<button>USE CARD</button></fieldset></form>"
         )
     if enrichment.state != "LINKED" or enrichment.card is None:
         return f'<span class="enrichment">{html.escape(enrichment.state)}</span>'

@@ -7,6 +7,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable, Mapping
+from urllib.parse import urlparse
 
 from operation_pancake.c3po_roster import C3POPlayer, C3PORoster
 
@@ -37,6 +38,7 @@ class CFB27CardData:
     program: str | None = None
     card_id: str | None = None
     ratings: dict[str, Any] | None = None
+    source_url: str | None = None
 
 
 @dataclass(frozen=True)
@@ -100,6 +102,15 @@ def observation_fingerprint(observation: C3POPlayer, occurrence: int) -> str:
 
 
 def _card(row: dict[str, Any]) -> CFB27CardData:
+    source = row.get("source")
+    source_url = source.get("ratings") if isinstance(source, dict) else None
+    parsed_source = urlparse(source_url) if isinstance(source_url, str) else None
+    if (
+        parsed_source is None
+        or parsed_source.scheme != "https"
+        or parsed_source.netloc != "cfb.fan"
+    ):
+        source_url = None
     return CFB27CardData(
         canonical_name=str(row.get("player_name") or row.get("name") or ""),
         native_position=row.get("position") or row.get("native_position"),
@@ -107,6 +118,7 @@ def _card(row: dict[str, Any]) -> CFB27CardData:
         program=row.get("program") or row.get("card_type"),
         card_id=row.get("card_id") or row.get("id"),
         ratings=row.get("ratings") if isinstance(row.get("ratings"), dict) else None,
+        source_url=source_url,
     )
 
 

@@ -34,7 +34,11 @@ color:#f5b642}.player-grid{display:grid;grid-template-columns:repeat(auto-fill,m
 gap:13px;align-items:center;padding:14px;background:#0d141c;border:1px solid #26313d;border-radius:12px}.slot{min-width:48px;
 font-size:12px;font-weight:900;color:#91a0b0}.player-copy{display:grid;gap:3px}.name{font-size:16px}.ovr{font-size:12px;
 color:#f5b642;font-weight:800}.empty-view{color:#697888}.provider-failure,.upload-error{padding:14px;border-radius:10px;
-background:#29181a;color:#ffc2c2}@media(max-width:700px){.nav{display:none}.upload-panel{align-items:stretch;flex-direction:column}}
+background:#29181a;color:#ffc2c2}.card-version fieldset{border:0;margin:6px 0 0;padding:0;display:grid;gap:6px}
+.card-version-choice{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 8px;border:1px solid #344253;
+border-radius:8px;background:#111a24}.card-version-choice label{display:flex;align-items:center;gap:7px;cursor:pointer}
+.card-version-choice a{color:#f5b642;font-size:10px;font-weight:900;white-space:nowrap}.card-version button{padding:8px 12px;
+margin-top:2px;font-size:11px}@media(max-width:700px){.nav{display:none}.upload-panel{align-items:stretch;flex-direction:column}}
 """
 
 
