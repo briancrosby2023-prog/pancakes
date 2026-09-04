@@ -3,43 +3,29 @@ from __future__ import annotations
 
 import base64
 import json
+import logging
 import mimetypes
 import os
+import re
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Callable, Iterable
 
 VIEWS = ("OFFENSE", "DEFENSE", "SPECIAL TEAMS", "SPECIALISTS")
+LOGGER = logging.getLogger(__name__)
 
-PROMPT = """You are C-3PO, a literal data-entry clerk reading one EA SPORTS
-COLLEGE FOOTBALL 27 Team Manager screenshot. Identify the visible lineup view.
-For every visible lineup slot, transcribe the slot label, player name, displayed
-OVR, and visible backups. Report only what the pixels say. Do not search for,
-infer, correct, reconcile, or replace player identity. If a name cannot be read,
-return null. Return only the requested JSON structure."""
-
-SCHEMA = {
-    "type": "object",
-    "properties": {
-        "view": {"type": "string", "enum": list(VIEWS)},
-        "players": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "slot": {"type": "string"},
-                    "name": {"type": ["string", "null"]},
-                    "displayed_ovr": {"type": ["integer", "null"]},
-                    "backups": {"type": "array"},
-                },
-                "required": ["slot", "name", "displayed_ovr", "backups"],
-                "additionalProperties": False,
-            },
-        },
-    },
-    "required": ["view", "players"],
-    "additionalProperties": False,
-}
+PROMPT = """You are C-3PO, a literal data-entry clerk. Read the four attached
+EA SPORTS COLLEGE FOOTBALL 27 Team Manager screenshots. The four sections are
+OFFENSE, DEFENSE, SPECIAL TEAMS, and SPECIALISTS. For every visible lineup slot,
+transcribe only what the pixels show: section, slot label, visible player name,
+and displayed OVR when readable. Include visible backups as additional player
+rows using their visible slot label when present. Do not search, infer, correct,
+reconcile, or replace a player name. If a name cannot be read, use null.
+Return JSON only, preferably as:
+{"screens":[{"view":"OFFENSE","players":[{"slot":"LT1","name":"...",
+"displayed_ovr":80}]}]}
+One screen object per attached screenshot. Partial readable transcription is
+useful; never omit a readable named player because another field is missing."""
 
 
 @dataclass(frozen=True)
@@ -95,12 +81,116 @@ class C3PORosterStore:
         )
 
 
+def _mime(path: Path) -> str:
+    guessed = mimetypes.guess_type(path.name)[0]
+    if guessed in {"image/jpeg", "image/png", "image/webp"}:
+        return guessed
+    suffix = path.suffix.lower()
+    if suffix in {".jpg", ".jpeg"}:
+        return "image/jpeg"
+    if suffix == ".png":
+        return "image/png"
+    if suffix == ".webp":
+        return "image/webp"
+    raise ValueError(f"Unsupported screenshot image type: {suffix or 'unknown'}")
+
+
+def _json_text(text: str) -> Any:
+    cleaned = text.strip()
+    if cleaned.startswith("```"):
+        cleaned = re.sub(r"^```(?:json)?\s*", "", cleaned, flags=re.IGNORECASE)
+        cleaned = re.sub(r"\s*```$", "", cleaned)
+    try:
+        return json.loads(cleaned)
+    except json.JSONDecodeError:
+        start_candidates = [index for index in (cleaned.find("{"), cleaned.find("[")) if index >= 0]
+        if not start_candidates:
+            raise
+        start = min(start_candidates)
+        end = max(cleaned.rfind("}"), cleaned.rfind("]"))
+        if end < start:
+            raise
+        return json.loads(cleaned[start : end + 1])
+
+
+def _view(value: Any) -> str | None:
+    if not isinstance(value, str):
+        return None
+    normalized = value.strip().upper().replace("_", " ").replace("-", " ")
+    aliases = {"SPECIAL TEAM": "SPECIAL TEAMS", "SPECIALIST": "SPECIALISTS"}
+    normalized = aliases.get(normalized, normalized)
+    return normalized if normalized in VIEWS else None
+
+
+def _ovr(value: Any) -> int | None:
+    if value is None or value == "":
+        return None
+    if isinstance(value, int):
+        return value
+    match = re.search(r"\b(\d{2,3})\b", str(value))
+    return int(match.group(1)) if match else None
+
+
+def _rows_from_payload(payload: Any) -> list[dict[str, Any]]:
+    if isinstance(payload, list):
+        screens = payload
+    elif isinstance(payload, dict):
+        screens = payload.get("screens") or payload.get("views") or payload.get("sections")
+        if screens is None and payload.get("players") is not None:
+            screens = [payload]
+    else:
+        screens = None
+    if not isinstance(screens, list):
+        raise ValueError("Gemini JSON did not contain screens/sections")
+
+    rows: list[dict[str, Any]] = []
+    for screen in screens:
+        if not isinstance(screen, dict):
+            continue
+        view = _view(screen.get("view") or screen.get("section") or screen.get("screen"))
+        if view is None:
+            continue
+        players = screen.get("players") or screen.get("slots") or screen.get("lineup") or []
+        if isinstance(players, dict):
+            players = [dict(value, slot=key) if isinstance(value, dict) else {"slot": key, "name": value} for key, value in players.items()]
+        if not isinstance(players, list):
+            continue
+        for player in players:
+            if not isinstance(player, dict):
+                continue
+            slot = player.get("slot") or player.get("slot_label") or player.get("position")
+            if not slot:
+                continue
+            name = player.get("name")
+            if name is None:
+                name = player.get("player_name")
+            if isinstance(name, str):
+                name = name.strip() or None
+            rows.append(
+                {
+                    "view": view,
+                    "slot": str(slot).strip().upper(),
+                    "name": name,
+                    "displayed_ovr": _ovr(
+                        player.get("displayed_ovr", player.get("ovr", player.get("rating")))
+                    ),
+                    "backups": player.get("backups") if isinstance(player.get("backups"), list) else [],
+                }
+            )
+    return rows
+
+
+def _safe_message(exc: Exception) -> str:
+    message = " ".join(str(exc).split())
+    return message[:500] or "no message"
+
+
 class GeminiC3POProvider:
     def __init__(
         self,
         api_key: str | None = None,
         model: str | None = None,
-        timeout_ms: int = 15000,
+        timeout_ms: int = 60000,
         client_factory: Callable[[], Any] | None = None,
     ):
         self.api_key = api_key or os.getenv("GEMINI_API_KEY")
@@ -121,65 +211,131 @@ class GeminiC3POProvider:
             http_options=types.HttpOptions(timeout=self.timeout_ms),
         )
 
-    def read(self, screenshot: Path) -> dict[str, Any]:
+    def read_four(self, screenshots: Iterable[Path]) -> list[dict[str, Any]]:
+        paths = tuple(screenshots)
+        if len(paths) != 4:
+            raise ValueError("C-3PO provider requires exactly four screenshots")
         try:
-            data = screenshot.read_bytes()
-            mime = mimetypes.guess_type(screenshot.name)[0] or "image/png"
+            request_input: list[dict[str, str]] = [{"type": "text", "text": PROMPT}]
+            for path in paths:
+                data = path.read_bytes()
+                if not data:
+                    raise ValueError(f"Screenshot is empty: {path.name}")
+                request_input.append(
+                    {
+                        "type": "image",
+                        "data": base64.b64encode(data).decode("ascii"),
+                        "mime_type": _mime(path),
+                    }
+                )
             client = self._client()
             with client:
-                interaction = client.interactions.create(
-                    model=self.model,
-                    input=[
-                        {"type": "text", "text": PROMPT},
-                        {
-                            "type": "image",
-                            "data": base64.b64encode(data).decode("ascii"),
-                            "mime_type": mime,
-                        },
+                interaction = client.interactions.create(model=self.model, input=request_input)
+            text = getattr(interaction, "output_text", None)
+            if not isinstance(text, str) or not text.strip():
+                raise RuntimeError("Gemini returned no textual content")
+            try:
+                rows = _rows_from_payload(_json_text(text))
+            except Exception as exc:
+                snippet = " ".join(text.split())[:500]
+                raise ValueError(f"Gemini returned text but parsing failed; snippet={snippet!r}") from exc
+            if not rows:
+                raise ValueError("Gemini returned textual content but no usable lineup rows")
+            return [
+                {
+                    "view": view,
+                    "players": [
+                        {key: value for key, value in row.items() if key != "view"}
+                        for row in rows
+                        if row["view"] == view
                     ],
-                    response_format={
-                        "type": "text",
-                        "mime_type": "application/json",
-                        "schema": SCHEMA,
-                    },
-                )
-            payload = json.loads(interaction.output_text)
-            payload.update(provider="google-gemini", model=self.model, status="C-3PO READ")
-            return payload
+                    "provider": "google-gemini",
+                    "model": self.model,
+                    "status": "C-3PO READ",
+                }
+                for view in VIEWS
+            ]
         except Exception as exc:
+            message = _safe_message(exc)
+            LOGGER.error("C-3PO Gemini provider failure: %s: %s", type(exc).__name__, message)
+            return [
+                {
+                    "view": "",
+                    "players": [],
+                    "provider": "google-gemini",
+                    "model": self.model,
+                    "status": "PROVIDER FAILURE",
+                    "error": type(exc).__name__,
+                    "error_message": message,
+                }
+            ]
+
+    def read(self, screenshot: Path) -> dict[str, Any]:
+        """Compatibility helper for provider-level single-image diagnostics."""
+        try:
+            data = screenshot.read_bytes()
+            request_input = [
+                {"type": "text", "text": PROMPT},
+                {
+                    "type": "image",
+                    "data": base64.b64encode(data).decode("ascii"),
+                    "mime_type": _mime(screenshot),
+                },
+            ]
+            client = self._client()
+            with client:
+                interaction = client.interactions.create(model=self.model, input=request_input)
+            text = getattr(interaction, "output_text", None)
+            if not text:
+                raise RuntimeError("Gemini returned no textual content")
+            rows = _rows_from_payload(_json_text(text))
+            if not rows:
+                raise ValueError("Gemini returned textual content but no usable lineup rows")
+            view = rows[0]["view"]
             return {
-                "view": "",
-                "players": [],
+                "view": view,
+                "players": [{key: value for key, value in row.items() if key != "view"} for row in rows if row["view"] == view],
                 "provider": "google-gemini",
                 "model": self.model,
-                "status": "PROVIDER FAILURE",
-                "error": type(exc).__name__,
+                "status": "C-3PO READ",
             }
+        except Exception as exc:
+            message = _safe_message(exc)
+            LOGGER.error("C-3PO Gemini provider failure: %s: %s", type(exc).__name__, message)
+            return {"view": "", "players": [], "provider": "google-gemini", "model": self.model, "status": "PROVIDER FAILURE", "error": type(exc).__name__, "error_message": message}
 
 
 def roster_from_screens(screenshots: Iterable[Path], provider: Any) -> C3PORoster:
     paths = tuple(screenshots)
     if len(paths) != 4:
         raise ValueError("C-3PO roster requires exactly four screenshots")
-    reads = tuple(provider.read(path) for path in paths)
+    if hasattr(provider, "read_four"):
+        reads = tuple(provider.read_four(paths))
+    else:
+        reads = tuple(provider.read(path) for path in paths)
     failed = [read for read in reads if read.get("status") == "PROVIDER FAILURE"]
     if failed:
         return C3PORoster((), failed[0]["provider"], failed[0]["model"], "PROVIDER FAILURE")
-    views = tuple(read["view"] for read in reads)
-    if len(set(views)) != 4 or set(views) != set(VIEWS):
-        raise ValueError("C-3PO must return one of each Team Manager view")
     players = []
     for read in reads:
-        for row in read["players"]:
+        view = _view(read.get("view"))
+        if view is None:
+            continue
+        for row in read.get("players", []):
+            slot = row.get("slot")
+            if not slot:
+                continue
             players.append(
                 C3POPlayer(
-                    view=read["view"],
-                    slot=str(row["slot"]).strip().upper(),
+                    view=view,
+                    slot=str(slot).strip().upper(),
                     name=row.get("name"),
-                    displayed_ovr=row.get("displayed_ovr"),
+                    displayed_ovr=_ovr(row.get("displayed_ovr")),
                     backups=tuple(row.get("backups", [])),
                 )
             )
+    if not players:
+        raise ValueError("C-3PO returned no usable lineup rows")
     return C3PORoster(tuple(players), reads[0]["provider"], reads[0]["model"])
 
 
