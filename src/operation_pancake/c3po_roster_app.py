@@ -11,7 +11,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from operation_pancake.c3po_roster import C3PORosterService, C3PORosterStore, GeminiC3POProvider
-from operation_pancake.c3po_roster_page import render_c3po_roster
+from operation_pancake.cfb27_enrichment import load_cfb27_production_cards
 
 MAX_UPLOAD_BYTES = 64 * 1024 * 1024
 STYLE = """
@@ -106,7 +106,11 @@ def create_handler(service: C3PORosterService, upload_root: Path):
                 with tempfile.TemporaryDirectory(dir=upload_root) as temporary:
                     screenshots = _uploaded_files(self.headers.get("Content-Type", ""), body, Path(temporary))
                     roster = service.import_four(screenshots)
-                rendered = self._saved_roster() if roster.status == "PROVIDER FAILURE" else render_c3po_roster(roster)
+                rendered = (
+                    self._saved_roster()
+                    if roster.status == "PROVIDER FAILURE"
+                    else service.render_html(roster)
+                )
                 self._send(_page(rendered))
             except ValueError as exc:
                 self._send(_page(f'<p class="upload-error">{html.escape(str(exc))}</p>'), 400)
@@ -117,11 +121,37 @@ def create_handler(service: C3PORosterService, upload_root: Path):
     return Handler
 
 
+def production_root() -> Path:
+    configured = os.getenv("PANCAKE_ROOT")
+    if configured:
+        return Path(configured).resolve()
+    return Path(__file__).resolve().parents[2]
+
+
+def create_service(
+    root: Path,
+    provider=None,
+    roster_path: Path | None = None,
+) -> C3PORosterService:
+    resolved_root = root.resolve()
+    store_path = roster_path or Path(
+        os.getenv(
+            "PANCAKE_C3PO_ROSTER",
+            resolved_root / ".operation_pancake/c3po-roster.json",
+        )
+    )
+    cards = load_cfb27_production_cards(resolved_root)
+    return C3PORosterService(
+        C3PORosterStore(store_path),
+        provider or GeminiC3POProvider(),
+        enrichment_cards=cards,
+    )
+
+
 def main() -> None:
-    root = Path(os.getenv("PANCAKE_ROOT", Path.cwd()))
-    roster_path = Path(os.getenv("PANCAKE_C3PO_ROSTER", root / ".operation_pancake/c3po-roster.json"))
+    root = production_root()
     upload_root = root / ".operation_pancake/c3po-uploads"
-    service = C3PORosterService(C3PORosterStore(roster_path), GeminiC3POProvider())
+    service = create_service(root)
     server = ThreadingHTTPServer(("127.0.0.1", int(os.getenv("PANCAKE_PORT", "8765"))), create_handler(service, upload_root))
     print(f"Operation Pancake My Team: http://127.0.0.1:{server.server_port}/my-team")
     server.serve_forever()

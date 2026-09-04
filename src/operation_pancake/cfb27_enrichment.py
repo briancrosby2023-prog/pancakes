@@ -1,16 +1,31 @@
 """Optional CFB27 card enrichment layered after authoritative C-3PO observations."""
 from __future__ import annotations
 
+import json
 import re
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any, Iterable
 
 from operation_pancake.c3po_roster import C3POPlayer, C3PORoster
+
+PRODUCTION_CARDS_PATH = Path("data/production/cfb27_scored_population.json")
 
 
 def normalize_c3po_name(value: str | None) -> str:
     """Normalize only enough for exact-name lookup; never infer another identity."""
     return re.sub(r"[^a-z0-9]+", "", (value or "").casefold())
+
+
+def load_cfb27_production_cards(root: Path) -> tuple[dict[str, Any], ...]:
+    """Load the existing scored CFB27 population, or fail open with no cards."""
+    try:
+        payload = json.loads((root / PRODUCTION_CARDS_PATH).read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError):
+        return ()
+    if not isinstance(payload, list) or not all(isinstance(row, dict) for row in payload):
+        return ()
+    return tuple(payload)
 
 
 @dataclass(frozen=True)

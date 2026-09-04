@@ -245,9 +245,17 @@ def roster_from_screens(screenshots: Iterable[Path], provider: Any) -> C3PORoste
 
 class C3PORosterService:
     """The product boundary: four images in, persisted C-3PO roster out."""
-    def __init__(self, store: C3PORosterStore, provider: Any):
+    def __init__(
+        self,
+        store: C3PORosterStore,
+        provider: Any,
+        enrichment_cards: Iterable[dict[str, Any]] | None = None,
+    ):
         self.store = store
         self.provider = provider
+        self.enrichment_cards = (
+            None if enrichment_cards is None else tuple(enrichment_cards)
+        )
 
     def import_four(self, screenshots: Iterable[Path]) -> C3PORoster:
         roster = roster_from_screens(screenshots, self.provider)
@@ -256,5 +264,13 @@ class C3PORosterService:
         return roster
 
     def my_team_html(self) -> str:
+        return self.render_html(self.store.load())
+
+    def render_html(self, roster: C3PORoster) -> str:
         from operation_pancake.c3po_roster_page import render_c3po_roster
-        return render_c3po_roster(self.store.load())
+        from operation_pancake.cfb27_enrichment import enrich_c3po_roster
+
+        enrichment = None
+        if self.enrichment_cards is not None:
+            enrichment = enrich_c3po_roster(roster, self.enrichment_cards)
+        return render_c3po_roster(roster, enrichment)
