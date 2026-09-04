@@ -15,6 +15,7 @@ operation-pancake = "operation_pancake.cli:main"
 operation-pancake-gm = "operation_pancake.gm_cli_entry:main"
 operation-pancake-app = "operation_pancake.c3po_roster_app:main"
 operation-pancake-card-versions = "operation_pancake.c3po_roster_app:analyze_persisted_card_versions"
+operation-pancake-runtime-diagnostic = "operation_pancake.c3po_roster_app:runtime_diagnostic"
 operation-pancake-ocr = "operation_pancake.ocr_runtime:diagnostic_line"
 
 [project.optional-dependencies]

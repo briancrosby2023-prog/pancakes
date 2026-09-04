@@ -156,7 +156,41 @@ def _decision(payload: Any) -> CardVersionDecision:
     return CardVersionDecision.no_evidence()
 
 
-def _rate_limit_metadata(exc: Exception) -> tuple[bool, str | None, str, str]:
+def _safe_quota_metadata(details: Any) -> tuple[str, str]:
+    allowed = {"reason", "quotaMetric", "quotaId", "quotaValue", "retryDelay"}
+    fields: list[tuple[str, str]] = []
+
+    def visit(value: Any) -> None:
+        if isinstance(value, dict):
+            for key, child in value.items():
+                if key in allowed and isinstance(child, (str, int, float)):
+                    safe_value = re.sub(r"[^a-zA-Z0-9_.:/+-]", "_", str(child))[:160]
+                    fields.append((key, safe_value))
+                else:
+                    visit(child)
+        elif isinstance(value, list):
+            for child in value:
+                visit(child)
+
+    visit(details)
+    rendered = " ".join(f"{key}={value}" for key, value in fields)
+    evidence = rendered.casefold()
+    if "perday" in evidence or "per_day" in evidence or "per day" in evidence:
+        classification = "DAILY_QUOTA"
+    elif "perminute" in evidence or "per_minute" in evidence or "rpm" in evidence:
+        classification = "RATE_QUOTA"
+    elif "request_too_large" in evidence or "payload_too_large" in evidence:
+        classification = "REQUEST_SIZE"
+    elif "model" in evidence and ("unavailable" in evidence or "quotavalue=0" in evidence):
+        classification = "MODEL_QUOTA_UNAVAILABLE"
+    else:
+        classification = "RESOURCE_EXHAUSTED_UNCLASSIFIED"
+    return classification, rendered or "unavailable"
+
+
+def _rate_limit_metadata(
+    exc: Exception,
+) -> tuple[bool, str | None, str, str, int | None, str, str]:
     code = getattr(exc, "code", None)
     status = str(getattr(exc, "status", "")).upper()
     response = getattr(exc, "response", None)
@@ -178,11 +212,15 @@ def _rate_limit_metadata(exc: Exception) -> tuple[bool, str | None, str, str]:
     )
     detail = re.sub(r"data:[^\s,;}]+", "data:[REDACTED]", detail)
     detail = " ".join(detail.split())[:240] or type(exc).__name__
+    classification, quota = _safe_quota_metadata(getattr(exc, "details", None))
     return (
         limited,
         str(retry_after) if retry_after is not None else None,
         provider_status,
         detail,
+        code if isinstance(code, int) else status_code,
+        classification,
+        quota,
     )
 
 
@@ -259,15 +297,31 @@ class GeminiCardVersionAnalyzer:
                     model=self.model, input=request_input
                 )
         except Exception as exc:  # provider SDK/network failures are fail-open
-            rate_limited, retry_after, provider_status, detail = (
-                _rate_limit_metadata(exc)
-            )
+            (
+                rate_limited,
+                retry_after,
+                provider_status,
+                detail,
+                http_status,
+                classification,
+                quota,
+            ) = _rate_limit_metadata(exc)
             if rate_limited:
                 LOGGER.error(
-                    "CFB27 version provider failure: RATE_LIMITED status=%s "
-                    "retry_after=%s detail=%s",
+                    "CFB27 version provider failure: RATE_LIMITED exception=%s "
+                    "http_status=%s google_status=%s classification=%s "
+                    "retry_after=%s model=%s source_images=%d source_bytes=%d "
+                    "work_items=%d quota=%s detail=%s",
+                    type(exc).__name__,
+                    http_status or "unavailable",
                     provider_status,
+                    classification,
                     retry_after or "unavailable",
+                    self.model,
+                    len(evidence.images),
+                    sum(len(image.payload) for image in evidence.images),
+                    len(bounded),
+                    quota,
                     detail,
                 )
             else:

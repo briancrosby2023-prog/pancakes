@@ -185,6 +185,9 @@ def test_explicit_persisted_analysis_command_is_wired():
     assert config["project"]["scripts"]["operation-pancake-card-versions"] == (
         "operation_pancake.c3po_roster_app:analyze_persisted_card_versions"
     )
+    assert config["project"]["scripts"]["operation-pancake-runtime-diagnostic"] == (
+        "operation_pancake.c3po_roster_app:runtime_diagnostic"
+    )
 
 
 def test_multiple_players_share_one_provider_request_and_one_image_set():
@@ -296,3 +299,58 @@ def test_rate_limit_is_structurally_classified_without_retry():
         {}, request_succeeded=False, rate_limited=True
     )
     assert client.interactions.calls == 1
+
+
+def test_rate_limit_logs_sanitized_google_quota_details(caplog):
+    class RateLimitedInteractions:
+        def create(self, **kwargs):
+            error = RuntimeError("quota failed for key=top-secret")
+            error.code = 429
+            error.status = "RESOURCE_EXHAUSTED"
+            error.message = "Free tier requests per day exhausted; key=top-secret"
+            error.details = {
+                "error": {
+                    "details": [
+                        {
+                            "reason": "RATE_LIMIT_EXCEEDED",
+                            "quotaMetric": "generate_content_free_tier_requests",
+                            "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+                            "quotaValue": "20",
+                        },
+                        {"retryDelay": "17s"},
+                    ]
+                }
+            }
+            raise error
+
+    client = _Client(None)
+    client.interactions = RateLimitedInteractions()
+    analyzer = GeminiCardVersionAnalyzer(
+        api_key="top-secret", client_factory=lambda: client
+    )
+    caplog.set_level("ERROR")
+
+    analyzer.analyze_batch(
+        (
+            CardVersionAnalysisRequest(
+                "known",
+                C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85),
+                _cards(),
+            ),
+        ),
+        _evidence(),
+    )
+
+    assert "exception=RuntimeError" in caplog.text
+    assert "http_status=429" in caplog.text
+    assert "google_status=RESOURCE_EXHAUSTED" in caplog.text
+    assert "classification=DAILY_QUOTA" in caplog.text
+    assert "quotaMetric=generate_content_free_tier_requests" in caplog.text
+    assert "quotaId=GenerateRequestsPerDayPerProjectPerModel-FreeTier" in caplog.text
+    assert "quotaValue=20" in caplog.text
+    assert "retryDelay=17s" in caplog.text
+    assert "model=gemini-3.7-flash" in caplog.text
+    assert "source_images=4" in caplog.text
+    assert "source_bytes=28" in caplog.text
+    assert "work_items=1" in caplog.text
+    assert "top-secret" not in caplog.text

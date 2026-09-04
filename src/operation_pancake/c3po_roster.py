@@ -243,6 +243,23 @@ def roster_from_screens(screenshots: Iterable[Path], provider: Any) -> C3PORoste
     return C3PORoster(tuple(players), reads[0]["provider"], reads[0]["model"])
 
 
+def card_version_work_groups(rows: Iterable[Any]) -> tuple[tuple[Any, ...], ...]:
+    """Group only byte-for-byte equivalent immutable version questions."""
+    work: dict[tuple[Any, ...], list[Any]] = {}
+    for row in rows:
+        observation = row.observation
+        evidence_key = (
+            observation.view,
+            observation.slot,
+            observation.name,
+            observation.displayed_ovr,
+            json.dumps(observation.backups, sort_keys=True),
+            tuple(card.card_id for card in row.choices),
+        )
+        work.setdefault(evidence_key, []).append(row)
+    return tuple(tuple(group) for group in work.values())
+
+
 class C3PORosterService:
     """The product boundary: four images in, persisted C-3PO roster out."""
     def __init__(
@@ -335,19 +352,7 @@ class C3PORosterService:
 
         updated_choices = dict(stored_choices)
         changed = False
-        work: dict[tuple[Any, ...], list[Any]] = {}
-        for row in ambiguous:
-            observation = row.observation
-            evidence_key = (
-                observation.view,
-                observation.slot,
-                observation.name,
-                observation.displayed_ovr,
-                json.dumps(observation.backups, sort_keys=True),
-                tuple(card.card_id for card in row.choices),
-            )
-            work.setdefault(evidence_key, []).append(row)
-        work_groups = tuple(work.values())
+        work_groups = card_version_work_groups(ambiguous)
         requests = tuple(
             CardVersionAnalysisRequest(
                 rows[0].fingerprint, rows[0].observation, rows[0].choices

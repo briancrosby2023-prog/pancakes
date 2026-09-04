@@ -691,3 +691,47 @@ def test_real_provider_boundary_429_calls_once_and_changes_no_state(
     ) == before
     assert "RATE_LIMITED" in caplog.text
     assert "secret" not in caplog.text
+
+
+def test_runtime_diagnostic_identifies_modules_and_makes_zero_provider_calls(
+    tmp_path, monkeypatch, capsys
+):
+    class NoNetworkAnalyzer:
+        model = "diagnostic-model"
+
+        def analyze_batch(self, requests, evidence):
+            raise AssertionError("runtime diagnostic must not invoke Gemini")
+
+    service = _service(tmp_path, _Provider(), NoNetworkAnalyzer())
+    roster = _roster()
+    service.store.save(roster)
+    service.source_evidence_store.save(roster, _screenshots(tmp_path))
+    monkeypatch.setattr(c3po_roster_app, "production_root", lambda: tmp_path)
+    monkeypatch.setattr(c3po_roster_app, "create_service", lambda root: service)
+    monkeypatch.setattr(c3po_roster_app, "_git_head", lambda root: "test-head")
+    monkeypatch.setenv("GEMINI_API_KEY", "must-not-be-printed")
+    monkeypatch.setenv("PANCAKE_GEMINI_VERSION_MODEL", "diagnostic-model")
+
+    status = c3po_roster_app.runtime_diagnostic()
+
+    output = capsys.readouterr().out
+    assert status == 0
+    assert "DIAGNOSTIC_MARKER=C3PO-RUNTIME-IDENTITY-1" in output
+    assert "GIT_HEAD=test-head" in output
+    assert "PACKAGE_PATH=" in output
+    assert "C3PO_ROSTER_APP_PATH=" in output
+    assert "C3PO_CARD_VERSION_PATH=" in output
+    assert "PYTHON_EXECUTABLE=" in output
+    assert "PYTHON_VERSION=" in output
+    assert "VERSION_MODEL=diagnostic-model" in output
+    assert "PANCAKE_GEMINI_VERSION_MODEL_SET=yes" in output
+    assert "PANCAKE_GEMINI_MODEL_SET=no" in output
+    assert "GEMINI_API_KEY_PRESENT=yes" in output
+    assert f"PERSISTED_ROSTER_PATH={service.store.path}" in output
+    assert f"SOURCE_EVIDENCE_PATH={service.source_evidence_store.path}" in output
+    assert "SOURCE_EVIDENCE_COMPATIBLE=yes" in output
+    assert f"AUTOMATIC_CHOICE_STORE_PATH={service.card_choice_store.path}" in output
+    assert f"MANUAL_CHOICE_STORE_PATH={service.card_choice_store.path}" in output
+    assert "AMBIGUOUS_OBSERVATIONS=1" in output
+    assert "DISTINCT_BATCHED_QUESTIONS=1" in output
+    assert "must-not-be-printed" not in output

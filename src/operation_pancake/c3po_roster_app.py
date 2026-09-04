@@ -4,10 +4,13 @@ from __future__ import annotations
 import html
 import logging
 import os
+import subprocess
+import sys
 import tempfile
 from email.parser import BytesParser
 from email.policy import default
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
@@ -18,6 +21,8 @@ from operation_pancake.cfb27_enrichment import (
     CFB27CardChoiceStore,
     load_cfb27_production_cards,
 )
+
+RUNTIME_DIAGNOSTIC_MARKER = "C3PO-RUNTIME-IDENTITY-1"
 
 MAX_UPLOAD_BYTES = 64 * 1024 * 1024
 STYLE = """
@@ -211,6 +216,91 @@ def analyze_persisted_card_versions() -> int:
         print("VERSION ANALYZER FAILED: PROVIDER_FAILURE")
         return 1
     print("VERSION ANALYZER COMPLETE")
+    return 0
+
+
+def _git_head(root: Path) -> str:
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(root), "rev-parse", "HEAD"],
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return "unavailable"
+    return result.stdout.strip() or "unavailable"
+
+
+def runtime_diagnostic() -> int:
+    """Describe the installed runtime and persisted analysis inputs without HTTP."""
+    import operation_pancake
+    from operation_pancake import c3po_card_version
+    from operation_pancake.c3po_roster import card_version_work_groups
+    from operation_pancake.cfb27_enrichment import enrich_c3po_roster
+
+    root = production_root()
+    service = create_service(root)
+    try:
+        release = version("operation-pancake")
+    except PackageNotFoundError:
+        release = "unavailable"
+    analyzer = service.version_analyzer
+    model = getattr(analyzer, "model", "unavailable")
+    print(f"DIAGNOSTIC_MARKER={RUNTIME_DIAGNOSTIC_MARKER}")
+    print(f"GIT_HEAD={_git_head(root)}")
+    print(f"PACKAGE_RELEASE={release}")
+    print(f"PACKAGE_PATH={Path(operation_pancake.__file__).resolve()}")
+    print(f"C3PO_ROSTER_APP_PATH={Path(__file__).resolve()}")
+    print(f"C3PO_CARD_VERSION_PATH={Path(c3po_card_version.__file__).resolve()}")
+    print(f"PYTHON_EXECUTABLE={Path(sys.executable).resolve()}")
+    print(f"PYTHON_VERSION={sys.version.split()[0]}")
+    print(f"VERSION_MODEL={model}")
+    print(
+        "PANCAKE_GEMINI_VERSION_MODEL_SET="
+        + ("yes" if os.getenv("PANCAKE_GEMINI_VERSION_MODEL") else "no")
+    )
+    print(
+        "PANCAKE_GEMINI_MODEL_SET="
+        + ("yes" if os.getenv("PANCAKE_GEMINI_MODEL") else "no")
+    )
+    print("GEMINI_API_KEY_PRESENT=" + ("yes" if os.getenv("GEMINI_API_KEY") else "no"))
+    print(f"PERSISTED_ROSTER_PATH={service.store.path.resolve()}")
+    evidence_path = service.source_evidence_store.path.resolve()
+    choice_path = service.card_choice_store.path.resolve()
+    print(f"SOURCE_EVIDENCE_PATH={evidence_path}")
+    print(f"AUTOMATIC_CHOICE_STORE_PATH={choice_path}")
+    print(f"MANUAL_CHOICE_STORE_PATH={choice_path}")
+    print("CHOICE_STORE_MODE=shared-explicit-and-automatic")
+    try:
+        roster = service.store.load()
+        stored_choices = service.card_choice_store.load()
+        enrichment = enrich_c3po_roster(
+            roster, service.enrichment_cards, stored_choices
+        )
+        ambiguous = tuple(
+            row for row in enrichment.players if row.state == "SELECT CARD"
+        )
+        distinct = card_version_work_groups(ambiguous)
+        evidence = service.source_evidence_store.load_for(roster)
+    except (OSError, ValueError, TypeError):
+        print("SOURCE_EVIDENCE_COMPATIBLE=no")
+        print("SOURCE_IMAGE_COUNT=0")
+        print("SOURCE_IMAGE_BYTES=0")
+        print("AMBIGUOUS_OBSERVATIONS=0")
+        print("DISTINCT_BATCHED_QUESTIONS=0")
+        print("RUNTIME_DIAGNOSTIC_STATUS=FAILED_ROSTER_STATE")
+        return 1
+    print("SOURCE_EVIDENCE_COMPATIBLE=" + ("yes" if evidence is not None else "no"))
+    print(f"SOURCE_IMAGE_COUNT={len(evidence.images) if evidence else 0}")
+    print(
+        "SOURCE_IMAGE_BYTES="
+        + str(sum(len(image.payload) for image in evidence.images) if evidence else 0)
+    )
+    print(f"AMBIGUOUS_OBSERVATIONS={len(ambiguous)}")
+    print(f"DISTINCT_BATCHED_QUESTIONS={len(distinct)}")
+    print("RUNTIME_DIAGNOSTIC_STATUS=PASS")
     return 0
 
 
