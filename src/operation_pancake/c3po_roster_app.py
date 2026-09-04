@@ -10,30 +10,45 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
 
-from operation_pancake.c3po_roster import (
-    C3PORosterService,
-    C3PORosterStore,
-    GeminiC3POProvider,
-)
+from operation_pancake.c3po_roster import C3PORosterService, C3PORosterStore, GeminiC3POProvider
 from operation_pancake.c3po_roster_page import render_c3po_roster
 
 MAX_UPLOAD_BYTES = 64 * 1024 * 1024
+STYLE = """
+:root{font-family:Inter,ui-sans-serif,system-ui;background:#0b0f14;color:#f5f7fa;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#111821,#080b10);min-height:100vh}
+.shell{max-width:1280px;margin:auto;padding:0 28px 64px}.topbar{height:72px;display:flex;align-items:center;
+justify-content:space-between;border-bottom:1px solid #26303b}.brand{font-weight:900;letter-spacing:.08em}
+.brand span,.eyebrow{color:#f5b642}.nav{display:flex;gap:24px}.nav a{color:#aeb8c4;text-decoration:none;font-weight:700}
+.nav .active{color:#fff}.upload-panel,.team-panel{margin-top:28px;background:#121923;border:1px solid #273241;
+border-radius:18px;padding:24px;box-shadow:0 18px 60px #0005}.upload-panel{display:flex;align-items:end;gap:18px}
+.upload-panel label{display:grid;gap:8px;flex:1;color:#c4ccd5;font-weight:700}.upload-panel input{padding:13px;
+border:1px dashed #445264;border-radius:10px;background:#0c1219}button{border:0;border-radius:10px;padding:14px 22px;
+font-weight:900;background:#f5b642;color:#17120a;cursor:pointer}.eyebrow{font-size:12px;font-weight:900;letter-spacing:.16em;
+margin:0 0 4px}.team-header h1{font-size:34px;margin:0}.team-subtitle{color:#9ba8b6;margin:8px 0 0}.roster-view{margin-top:30px}
+.section-heading{border-bottom:1px solid #2c3744;margin-bottom:14px}.section-heading h2{font-size:14px;letter-spacing:.12em;
+color:#f5b642}.player-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}.player{display:flex;
+gap:13px;align-items:center;padding:14px;background:#0d141c;border:1px solid #26313d;border-radius:12px}.slot{min-width:48px;
+font-size:12px;font-weight:900;color:#91a0b0}.player-copy{display:grid;gap:3px}.name{font-size:16px}.ovr{font-size:12px;
+color:#f5b642;font-weight:800}.empty-view{color:#697888}.provider-failure,.upload-error{padding:14px;border-radius:10px;
+background:#29181a;color:#ffc2c2}@media(max-width:700px){.nav{display:none}.upload-panel{align-items:stretch;flex-direction:column}}
+"""
 
 
 def _page(content: str) -> bytes:
     upload = (
-        '<form method="post" action="/team/upload" enctype="multipart/form-data">'
-        '<label>Four Team Manager screenshots'
-        '<input type="file" name="screenshots" accept="image/*" multiple required>'
-        "</label><button>ANALYZE MY TEAM</button></form>"
+        '<section class="upload-panel"><form method="post" action="/team/upload" '
+        'enctype="multipart/form-data" style="display:contents"><label>Four Team Manager screenshots'
+        '<input type="file" name="screenshots" accept="image/jpeg,image/png,image/webp" multiple required>'
+        "</label><button>ANALYZE MY TEAM</button></form></section>"
     )
     return (
-        "<!doctype html><html><head><meta charset=\"utf-8\">"
-        "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
-        "<title>Pancake — My Team</title></head><body><main>"
-        + upload
-        + content
-        + "</main></body></html>"
+        '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" '
+        'content="width=device-width,initial-scale=1"><title>Operation Pancake — My Team</title>'
+        f"<style>{STYLE}</style></head><body><div class=\"shell\"><header class=\"topbar\">"
+        '<div class="brand">🥞 OPERATION PANCAKE</div><nav class="nav"><a class="active" href="/my-team">'
+        'MY TEAM</a><a href="#">MARKET</a><a href="#">UPGRADES</a></nav></header><main>'
+        + upload + content + "</main></div></body></html>"
     ).encode("utf-8")
 
 
@@ -48,11 +63,10 @@ def _uploaded_files(content_type: str, body: bytes, directory: Path) -> tuple[Pa
         if part.get_content_disposition() != "form-data" or not part.get_filename():
             continue
         filename = Path(part.get_filename()).name
-        if not filename:
-            continue
-        path = directory / filename
-        path.write_bytes(part.get_payload(decode=True) or b"")
-        files.append(path)
+        if filename:
+            path = directory / filename
+            path.write_bytes(part.get_payload(decode=True) or b"")
+            files.append(path)
     if len(files) != 4:
         raise ValueError("Exactly four Team Manager screenshots are required")
     return tuple(files)
@@ -70,10 +84,7 @@ def create_handler(service: C3PORosterService, upload_root: Path):
 
         def _saved_roster(self) -> str:
             if not service.store.path.exists():
-                return (
-                    '<section id="my-team"><h1>My Team</h1>'
-                    "<p>Upload four screenshots.</p></section>"
-                )
+                return '<section id="my-team" class="team-panel"><h1>My Team</h1><p>Upload four screenshots.</p></section>'
             return service.my_team_html()
 
         def do_GET(self) -> None:  # noqa: N802
@@ -93,11 +104,10 @@ def create_handler(service: C3PORosterService, upload_root: Path):
                 body = self.rfile.read(length)
                 upload_root.mkdir(parents=True, exist_ok=True)
                 with tempfile.TemporaryDirectory(dir=upload_root) as temporary:
-                    screenshots = _uploaded_files(
-                        self.headers.get("Content-Type", ""), body, Path(temporary)
-                    )
+                    screenshots = _uploaded_files(self.headers.get("Content-Type", ""), body, Path(temporary))
                     roster = service.import_four(screenshots)
-                self._send(_page(render_c3po_roster(roster)))
+                rendered = self._saved_roster() if roster.status == "PROVIDER FAILURE" else render_c3po_roster(roster)
+                self._send(_page(rendered))
             except ValueError as exc:
                 self._send(_page(f'<p class="upload-error">{html.escape(str(exc))}</p>'), 400)
 
@@ -109,16 +119,11 @@ def create_handler(service: C3PORosterService, upload_root: Path):
 
 def main() -> None:
     root = Path(os.getenv("PANCAKE_ROOT", Path.cwd()))
-    roster_path = Path(
-        os.getenv("PANCAKE_C3PO_ROSTER", root / ".operation_pancake/c3po-roster.json")
-    )
+    roster_path = Path(os.getenv("PANCAKE_C3PO_ROSTER", root / ".operation_pancake/c3po-roster.json"))
     upload_root = root / ".operation_pancake/c3po-uploads"
     service = C3PORosterService(C3PORosterStore(roster_path), GeminiC3POProvider())
-    server = ThreadingHTTPServer(
-        ("127.0.0.1", int(os.getenv("PANCAKE_PORT", "8765"))),
-        create_handler(service, upload_root),
-    )
-    print(f"Pancake clean-room My Team: http://127.0.0.1:{server.server_port}/setup")
+    server = ThreadingHTTPServer(("127.0.0.1", int(os.getenv("PANCAKE_PORT", "8765"))), create_handler(service, upload_root))
+    print(f"Operation Pancake My Team: http://127.0.0.1:{server.server_port}/my-team")
     server.serve_forever()
 
 
