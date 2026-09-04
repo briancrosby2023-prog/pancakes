@@ -1,9 +1,12 @@
 from __future__ import annotations
 
 import inspect
+import threading
+import urllib.request
+from http.server import ThreadingHTTPServer
 from pathlib import Path
 
-from operation_pancake import c3po_roster, c3po_roster_page
+from operation_pancake import c3po_roster, c3po_roster_app, c3po_roster_page
 
 NAMES = (
     "Josh Petty",
@@ -49,6 +52,33 @@ def _shots(tmp_path):
     return shots
 
 
+def _multipart(shots):
+    boundary = "C3PO-CLEAN-ROOM"
+    parts = []
+    for shot in shots:
+        parts.extend(
+            [
+                f"--{boundary}\r\n".encode(),
+                (
+                    'Content-Disposition: form-data; name="screenshots"; '
+                    f'filename="{shot.name}"\r\n'
+                ).encode(),
+                b"Content-Type: image/png\r\n\r\n",
+                shot.read_bytes(),
+                b"\r\n",
+            ]
+        )
+    parts.append(f"--{boundary}--\r\n".encode())
+    return b"".join(parts), f"multipart/form-data; boundary={boundary}"
+
+
+def _serve(handler):
+    server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    return server, f"http://127.0.0.1:{server.server_port}"
+
+
 def test_provider_to_roster_to_persistence_to_html_preserves_c3po_names(tmp_path):
     shots = _shots(tmp_path)
     provider = FakeProvider()
@@ -81,6 +111,37 @@ def test_service_is_the_four_screenshot_to_persisted_my_team_boundary(tmp_path):
         assert name in page
 
 
+def test_four_image_production_post_uses_clean_room_service_and_html(tmp_path):
+    provider = FakeProvider()
+    store = c3po_roster.C3PORosterStore(tmp_path / "c3po-roster.json")
+    service = c3po_roster.C3PORosterService(store, provider)
+    handler = c3po_roster_app.create_handler(service, tmp_path / "uploads")
+    server, base = _serve(handler)
+    body, content_type = _multipart(_shots(tmp_path))
+    try:
+        request = urllib.request.Request(
+            base + "/team/upload",
+            data=body,
+            method="POST",
+            headers={"Content-Type": content_type},
+        )
+        with urllib.request.urlopen(request, timeout=10) as response:
+            page = response.read().decode()
+        with urllib.request.urlopen(base + "/my-team", timeout=10) as response:
+            persisted_page = response.read().decode()
+    finally:
+        server.shutdown()
+        server.server_close()
+
+    assert provider.calls == [f"screen-{index}.png" for index in range(4)]
+    assert store.load().players
+    for name in NAMES:
+        assert name in page
+        assert name in persisted_page
+    for token in ("UNRESOLVED", "UNKNOWN", "UNASSIGNED", "WHO IS THIS PLAYER?"):
+        assert token not in page
+
+
 def test_missing_provider_name_is_name_not_read():
     roster = c3po_roster.C3PORoster(
         players=(
@@ -95,7 +156,10 @@ def test_missing_provider_name_is_name_not_read():
 
 
 def test_clean_room_modules_have_no_identity_reconciliation_dependencies():
-    source = inspect.getsource(c3po_roster) + inspect.getsource(c3po_roster_page)
+    source = "".join(
+        inspect.getsource(module)
+        for module in (c3po_roster, c3po_roster_app, c3po_roster_page)
+    )
     forbidden = (
         "Candidate",
         "match_candidate",
@@ -106,6 +170,10 @@ def test_clean_room_modules_have_no_identity_reconciliation_dependencies():
         "canonical_card",
         "UNRESOLVED",
         "UNASSIGNED",
+        "GeminiTeamTranslator",
+        "team_import",
+        "ocr_team_app",
+        "typed-name",
     )
     for token in forbidden:
         assert token not in source
@@ -127,3 +195,11 @@ def test_gemini_provider_failure_is_controlled_and_does_not_replace_roster(tmp_p
     failed = service.import_four(_shots(tmp_path))
     assert failed.status == "PROVIDER FAILURE"
     assert store.load() == existing
+
+
+def test_production_launcher_targets_clean_room_app():
+    pyproject = (Path(__file__).parents[1] / "pyproject.toml").read_text(encoding="utf-8")
+    assert (
+        'operation-pancake-app = "operation_pancake.c3po_roster_app:main"'
+        in pyproject
+    )
