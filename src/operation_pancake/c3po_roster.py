@@ -273,6 +273,7 @@ class C3PORosterService:
                 except (OSError, ValueError, TypeError):
                     LOGGER.exception("C-3PO source evidence could not be persisted")
             self.store.save(roster)
+            self.analyze_card_versions(roster)
         return roster
 
     def my_team_html(self) -> str:
@@ -290,45 +291,85 @@ class C3PORosterService:
             enrichment = enrich_c3po_roster(
                 roster, self.enrichment_cards, stored_choices
             )
-            if (
-                self.version_analyzer is not None
-                and self.source_evidence_store is not None
-                and self.card_choice_store is not None
-            ):
-                try:
-                    evidence = self.source_evidence_store.load_for(roster)
-                except (OSError, ValueError, TypeError):
-                    LOGGER.exception("C-3PO source evidence could not be loaded")
-                    evidence = None
-                if evidence is not None:
-                    updated_choices = dict(stored_choices)
-                    changed = False
-                    for row in enrichment.players:
-                        if row.state != "SELECT CARD":
-                            continue
-                        try:
-                            decision = self.version_analyzer.analyze(
-                                row.observation, evidence, row.choices
-                            )
-                        except Exception:  # analyzer failures must never hide the roster
-                            LOGGER.exception("CFB27 card-version analysis failed")
-                            continue
-                        valid_ids = {card.card_id for card in row.choices}
-                        if (
-                            getattr(decision, "state", None) == "UNIQUE_VERSION"
-                            and getattr(decision, "card_id", None) in valid_ids
-                        ):
-                            updated_choices[row.fingerprint] = decision.card_id
-                            changed = True
-                    if changed:
-                        try:
-                            self.card_choice_store.save(updated_choices)
-                            enrichment = enrich_c3po_roster(
-                                roster, self.enrichment_cards, updated_choices
-                            )
-                        except (OSError, ValueError, TypeError):
-                            LOGGER.exception("Automatic card-version choice could not be persisted")
         return render_c3po_roster(roster, enrichment)
+
+    def analyze_card_versions(self, roster: C3PORoster) -> None:
+        """Analyze unresolved card versions once, at the successful import event."""
+        from operation_pancake.cfb27_enrichment import enrich_c3po_roster
+
+        if (
+            self.enrichment_cards is None
+            or self.card_choice_store is None
+            or self.source_evidence_store is None
+            or self.version_analyzer is None
+        ):
+            return
+        stored_choices = self.card_choice_store.load()
+        enrichment = enrich_c3po_roster(
+            roster, self.enrichment_cards, stored_choices
+        )
+        ambiguous = tuple(row for row in enrichment.players if row.state == "SELECT CARD")
+        if not ambiguous:
+            return
+        try:
+            evidence = self.source_evidence_store.load_for(roster)
+        except (OSError, ValueError, TypeError):
+            LOGGER.exception("C-3PO source evidence could not be loaded")
+            evidence = None
+        if evidence is None:
+            for row in ambiguous:
+                LOGGER.info(
+                    "VERSION ANALYZER NOT INVOKED player=%s candidates=%d "
+                    "source_evidence_compatible=no source_images=0 result=NO_EVIDENCE",
+                    row.observation.name,
+                    len(row.choices),
+                )
+            return
+
+        updated_choices = dict(stored_choices)
+        changed = False
+        for row in ambiguous:
+            try:
+                decision = self.version_analyzer.analyze(
+                    row.observation, evidence, row.choices
+                )
+            except Exception:  # analyzer failures must never hide the roster
+                LOGGER.exception("CFB27 card-version analysis failed")
+                decision_state = "PROVIDER_FAILURE"
+                decision_card_id = None
+            else:
+                decision_state = getattr(decision, "state", "NO_EVIDENCE")
+                decision_card_id = getattr(decision, "card_id", None)
+            valid_cards = {card.card_id: card for card in row.choices}
+            selected = valid_cards.get(decision_card_id)
+            if decision_state == "UNIQUE_VERSION" and selected is not None:
+                updated_choices[row.fingerprint] = decision_card_id
+                changed = True
+                LOGGER.info(
+                    "VERSION ANALYZER INVOKED player=%s candidates=%d "
+                    "source_evidence_compatible=yes source_images=%d "
+                    "result=UNIQUE_VERSION card_id=%s program=%s native_ovr=%s",
+                    row.observation.name,
+                    len(row.choices),
+                    len(evidence.images),
+                    selected.card_id,
+                    selected.program,
+                    selected.card_ovr,
+                )
+            else:
+                LOGGER.info(
+                    "VERSION ANALYZER INVOKED player=%s candidates=%d "
+                    "source_evidence_compatible=yes source_images=%d result=%s",
+                    row.observation.name,
+                    len(row.choices),
+                    len(evidence.images),
+                    decision_state,
+                )
+        if changed:
+            try:
+                self.card_choice_store.save(updated_choices)
+            except (OSError, ValueError, TypeError):
+                LOGGER.exception("Automatic card-version choice could not be persisted")
 
     def select_card_version(self, fingerprint: str, card_id: str) -> bool:
         from operation_pancake.cfb27_enrichment import enrich_c3po_roster

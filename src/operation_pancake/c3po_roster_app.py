@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import html
+import logging
 import os
 import tempfile
 from email.parser import BytesParser
@@ -10,6 +11,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
+from operation_pancake.c3po_card_version import GeminiCardVersionAnalyzer
 from operation_pancake.c3po_roster import C3PORosterService, C3PORosterStore, GeminiC3POProvider
 from operation_pancake.c3po_source_evidence import C3POSourceEvidenceStore
 from operation_pancake.cfb27_enrichment import (
@@ -179,7 +181,7 @@ def create_service(
         source_evidence_store=C3POSourceEvidenceStore(
             evidence_path or store_path.parent / "c3po-source-evidence.zip"
         ),
-        version_analyzer=version_analyzer,
+        version_analyzer=version_analyzer or GeminiCardVersionAnalyzer(),
     )
 
 
@@ -190,6 +192,20 @@ def main() -> None:
     server = ThreadingHTTPServer(("127.0.0.1", int(os.getenv("PANCAKE_PORT", "8765"))), create_handler(service, upload_root))
     print(f"Operation Pancake My Team: http://127.0.0.1:{server.server_port}/my-team")
     server.serve_forever()
+
+
+def analyze_persisted_card_versions() -> int:
+    """Explicitly analyze the already-persisted roster evidence once."""
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
+    service = create_service(production_root())
+    try:
+        roster = service.store.load()
+    except (OSError, ValueError, TypeError):
+        print("VERSION ANALYZER FAILED: persisted C-3PO roster is unavailable")
+        return 1
+    service.analyze_card_versions(roster)
+    print("VERSION ANALYZER COMPLETE")
+    return 0
 
 
 if __name__ == "__main__":

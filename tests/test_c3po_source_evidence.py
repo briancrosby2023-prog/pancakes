@@ -11,7 +11,10 @@ from operation_pancake.c3po_roster import (
     C3PORosterStore,
 )
 from operation_pancake.c3po_source_evidence import C3POSourceEvidenceStore
-from operation_pancake.cfb27_enrichment import CFB27CardChoiceStore
+from operation_pancake.cfb27_enrichment import (
+    CFB27CardChoiceStore,
+    observation_fingerprint,
+)
 
 
 def _roster(ovr: int = 85) -> C3PORoster:
@@ -194,9 +197,12 @@ def test_unique_same_player_version_persists_without_mutating_roster(tmp_path):
     service = _service(tmp_path, _Provider(), analyzer)
     roster = service.import_four(_screenshots(tmp_path))
     roster_bytes = service.store.path.read_bytes()
+    assert len(analyzer.calls) == 1
 
     page = service.my_team_html()
-    restarted = _service(tmp_path, _Provider(failure=True))
+    service.my_team_html()
+    restart_analyzer = _RecordingAnalyzer(CardVersionDecision.provider_failure())
+    restarted = _service(tmp_path, _Provider(failure=True), restart_analyzer)
 
     assert "CFB27: LG · 84 OVR · Phenoms" in page
     assert "SELECT CARD" not in page
@@ -209,6 +215,7 @@ def test_unique_same_player_version_persists_without_mutating_roster(tmp_path):
     assert service.store.path.read_bytes() == roster_bytes
     assert restarted.store.load() == roster
     assert "CFB27: LG · 84 OVR · Phenoms" in restarted.my_team_html()
+    assert restart_analyzer.calls == []
 
 
 def test_analyzer_cannot_choose_outside_exact_player_family(tmp_path):
@@ -231,9 +238,12 @@ def test_non_unique_or_failed_analysis_keeps_select_card(tmp_path):
     ):
         case = tmp_path / decision.state.lower()
         case.mkdir()
-        service = _service(case, _Provider(), _RecordingAnalyzer(decision))
+        analyzer = _RecordingAnalyzer(decision)
+        service = _service(case, _Provider(), analyzer)
         service.import_four(_screenshots(case))
+        assert len(analyzer.calls) == 1
         assert "SELECT CARD" in service.my_team_html()
+        assert len(analyzer.calls) == 1
 
 
 def test_unexpected_analyzer_failure_keeps_select_card(tmp_path):
@@ -252,6 +262,7 @@ def test_missing_source_evidence_keeps_select_card_and_skips_analyzer(tmp_path):
     service = _service(tmp_path, _Provider(), analyzer)
     service.store.save(_roster())
 
+    service.analyze_card_versions(service.store.load())
     assert "SELECT CARD" in service.my_team_html()
     assert analyzer.calls == []
 
@@ -266,6 +277,7 @@ def test_evidence_store_failure_keeps_select_card(tmp_path):
     service.store.save(_roster())
     service.source_evidence_store = BrokenEvidenceStore()
 
+    service.analyze_card_versions(service.store.load())
     assert "SELECT CARD" in service.my_team_html()
     assert analyzer.calls == []
 
@@ -281,6 +293,7 @@ def test_singleton_family_bypasses_version_analyzer(tmp_path):
     service.store.save(singleton)
     service.source_evidence_store.save(singleton, _screenshots(tmp_path))
 
+    service.analyze_card_versions(singleton)
     page = service.my_team_html()
 
     assert "CFB27: RG · 81 OVR · Phenoms" in page
@@ -304,3 +317,43 @@ def test_stale_automatic_choice_fails_open_after_new_observation(tmp_path):
     assert "EA OVR 86" in page
     assert "SELECT CARD" in page
     assert "CFB27: LG · 84 OVR · Phenoms" not in page
+
+
+def test_manual_choice_wins_and_bypasses_version_analyzer(tmp_path):
+    analyzer = _RecordingAnalyzer(CardVersionDecision.unique("thomas-phenoms"))
+    service = _service(tmp_path, _Provider(), analyzer)
+    roster = _roster()
+    service.store.save(roster)
+    service.source_evidence_store.save(roster, _screenshots(tmp_path))
+    fingerprint = observation_fingerprint(roster.players[0], 0)
+    assert service.select_card_version(fingerprint, "thomas-core")
+
+    service.analyze_card_versions(roster)
+
+    assert analyzer.calls == []
+    page = service.my_team_html()
+    assert "CFB27: LG · 81 OVR · Core Rare" in page
+    assert "Phenoms" not in page
+
+
+def test_version_diagnostics_are_bounded_and_exclude_sensitive_payloads(
+    tmp_path, caplog
+):
+    caplog.set_level("INFO")
+    analyzer = _RecordingAnalyzer(CardVersionDecision.unique("thomas-phenoms"))
+    service = _service(tmp_path, _Provider(), analyzer)
+
+    service.import_four(_screenshots(tmp_path))
+
+    messages = "\n".join(record.getMessage() for record in caplog.records)
+    assert "VERSION ANALYZER INVOKED" in messages
+    assert "player=Thomas Shrader" in messages
+    assert "candidates=2" in messages
+    assert "source_evidence_compatible=yes" in messages
+    assert "source_images=4" in messages
+    assert "result=UNIQUE_VERSION" in messages
+    assert "card_id=thomas-phenoms" in messages
+    assert "program=Phenoms" in messages
+    assert "native_ovr=84" in messages
+    assert "not-a-real-key" not in messages
+    assert "image-0" not in messages
