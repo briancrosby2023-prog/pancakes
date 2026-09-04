@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import html
 
-from operation_pancake.c3po_roster import C3PORoster, VIEWS
+from operation_pancake.c3po_roster import VIEWS, C3PORoster
 
 
 def _player_card(player) -> str:
