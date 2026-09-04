@@ -181,3 +181,22 @@ def roster_from_screens(screenshots: Iterable[Path], provider: Any) -> C3PORoste
                 )
             )
     return C3PORoster(tuple(players), reads[0]["provider"], reads[0]["model"])
+
+
+class C3PORosterService:
+    """The product boundary: four images in, persisted C-3PO roster out."""
+
+    def __init__(self, store: C3PORosterStore, provider: Any):
+        self.store = store
+        self.provider = provider
+
+    def import_four(self, screenshots: Iterable[Path]) -> C3PORoster:
+        roster = roster_from_screens(screenshots, self.provider)
+        if roster.status != "PROVIDER FAILURE":
+            self.store.save(roster)
+        return roster
+
+    def my_team_html(self) -> str:
+        from operation_pancake.c3po_roster_page import render_c3po_roster
+
+        return render_c3po_roster(self.store.load())
