@@ -175,6 +175,11 @@ def test_successful_four_image_post_renders_real_enrichment(tmp_path):
     assert page.count("CFB27: ") == 2
     assert page.count("SELECT CARD") == 4
     assert "UNRESOLVED" not in page
+    evidence = service.source_evidence_store.load_for(service.store.load())
+    assert evidence is not None
+    assert tuple(image.order for image in evidence.images) == (0, 1, 2, 3)
+    assert all(image.mime_type == "image/png" for image in evidence.images)
+    assert all(image.payload == b"image" for image in evidence.images)
 
 
 def test_missing_canonical_source_is_visible_and_never_hides_roster(tmp_path):

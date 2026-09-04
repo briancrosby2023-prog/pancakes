@@ -3,7 +3,13 @@ from __future__ import annotations
 import inspect
 from pathlib import Path
 
-from operation_pancake import c3po_roster, c3po_roster_app, c3po_roster_page
+from operation_pancake import (
+    c3po_card_version,
+    c3po_roster,
+    c3po_roster_app,
+    c3po_roster_page,
+    c3po_source_evidence,
+)
 
 REAL = (
     ("OFFENSE", "LT 1", "Josh Petty", 81),
@@ -100,7 +106,13 @@ def test_product_shell_has_navigation_and_simple_four_image_reimport():
 
 
 def test_styled_production_route_is_direct_clean_room_dependency_only():
-    modules = (c3po_roster, c3po_roster_page, c3po_roster_app)
+    modules = (
+        c3po_roster,
+        c3po_roster_page,
+        c3po_roster_app,
+        c3po_card_version,
+        c3po_source_evidence,
+    )
     source = "\n".join(inspect.getsource(module) for module in modules)
     required = ("C3PORoster", "C3PORosterStore", "render_c3po_roster")
     forbidden = (

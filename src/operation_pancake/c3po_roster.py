@@ -251,6 +251,8 @@ class C3PORosterService:
         provider: Any,
         enrichment_cards: Iterable[dict[str, Any]] | None = None,
         card_choice_store: Any | None = None,
+        source_evidence_store: Any | None = None,
+        version_analyzer: Any | None = None,
     ):
         self.store = store
         self.provider = provider
@@ -258,10 +260,18 @@ class C3PORosterService:
             None if enrichment_cards is None else tuple(enrichment_cards)
         )
         self.card_choice_store = card_choice_store
+        self.source_evidence_store = source_evidence_store
+        self.version_analyzer = version_analyzer
 
     def import_four(self, screenshots: Iterable[Path]) -> C3PORoster:
-        roster = roster_from_screens(screenshots, self.provider)
+        paths = tuple(screenshots)
+        roster = roster_from_screens(paths, self.provider)
         if roster.status != "PROVIDER FAILURE":
+            if self.source_evidence_store is not None:
+                try:
+                    self.source_evidence_store.save(roster, paths)
+                except (OSError, ValueError, TypeError):
+                    LOGGER.exception("C-3PO source evidence could not be persisted")
             self.store.save(roster)
         return roster
 
@@ -280,6 +290,44 @@ class C3PORosterService:
             enrichment = enrich_c3po_roster(
                 roster, self.enrichment_cards, stored_choices
             )
+            if (
+                self.version_analyzer is not None
+                and self.source_evidence_store is not None
+                and self.card_choice_store is not None
+            ):
+                try:
+                    evidence = self.source_evidence_store.load_for(roster)
+                except (OSError, ValueError, TypeError):
+                    LOGGER.exception("C-3PO source evidence could not be loaded")
+                    evidence = None
+                if evidence is not None:
+                    updated_choices = dict(stored_choices)
+                    changed = False
+                    for row in enrichment.players:
+                        if row.state != "SELECT CARD":
+                            continue
+                        try:
+                            decision = self.version_analyzer.analyze(
+                                row.observation, evidence, row.choices
+                            )
+                        except Exception:  # analyzer failures must never hide the roster
+                            LOGGER.exception("CFB27 card-version analysis failed")
+                            continue
+                        valid_ids = {card.card_id for card in row.choices}
+                        if (
+                            getattr(decision, "state", None) == "UNIQUE_VERSION"
+                            and getattr(decision, "card_id", None) in valid_ids
+                        ):
+                            updated_choices[row.fingerprint] = decision.card_id
+                            changed = True
+                    if changed:
+                        try:
+                            self.card_choice_store.save(updated_choices)
+                            enrichment = enrich_c3po_roster(
+                                roster, self.enrichment_cards, updated_choices
+                            )
+                        except (OSError, ValueError, TypeError):
+                            LOGGER.exception("Automatic card-version choice could not be persisted")
         return render_c3po_roster(roster, enrichment)
 
     def select_card_version(self, fingerprint: str, card_id: str) -> bool:

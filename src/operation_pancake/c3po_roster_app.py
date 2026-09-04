@@ -11,6 +11,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 from operation_pancake.c3po_roster import C3PORosterService, C3PORosterStore, GeminiC3POProvider
+from operation_pancake.c3po_source_evidence import C3POSourceEvidenceStore
 from operation_pancake.cfb27_enrichment import (
     CFB27CardChoiceStore,
     load_cfb27_production_cards,
@@ -155,6 +156,8 @@ def create_service(
     provider=None,
     roster_path: Path | None = None,
     choice_path: Path | None = None,
+    evidence_path: Path | None = None,
+    version_analyzer=None,
 ) -> C3PORosterService:
     resolved_root = root.resolve()
     store_path = roster_path or Path(
@@ -173,6 +176,10 @@ def create_service(
         provider or GeminiC3POProvider(),
         enrichment_cards=cards,
         card_choice_store=choices,
+        source_evidence_store=C3POSourceEvidenceStore(
+            evidence_path or store_path.parent / "c3po-source-evidence.zip"
+        ),
+        version_analyzer=version_analyzer,
     )
 
 
