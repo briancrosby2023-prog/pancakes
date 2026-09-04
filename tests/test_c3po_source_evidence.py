@@ -3,7 +3,11 @@ from __future__ import annotations
 import zipfile
 from pathlib import Path
 
-from operation_pancake.c3po_card_version import CardVersionDecision
+from operation_pancake import c3po_roster_app
+from operation_pancake.c3po_card_version import (
+    CardVersionBatchResult,
+    CardVersionDecision,
+)
 from operation_pancake.c3po_roster import (
     C3POPlayer,
     C3PORoster,
@@ -187,9 +191,13 @@ class _RecordingAnalyzer:
         self.decision = decision
         self.calls = []
 
-    def analyze(self, observation, evidence, cards):
-        self.calls.append((observation, evidence, cards))
-        return self.decision
+    def analyze_batch(self, requests, evidence):
+        requests = tuple(requests)
+        self.calls.append((requests, evidence))
+        return CardVersionBatchResult(
+            {request.fingerprint: self.decision for request in requests},
+            request_succeeded=True,
+        )
 
 
 def test_unique_same_player_version_persists_without_mutating_roster(tmp_path):
@@ -207,11 +215,16 @@ def test_unique_same_player_version_persists_without_mutating_roster(tmp_path):
     assert "CFB27: LG · 84 OVR · Phenoms" in page
     assert "SELECT CARD" not in page
     assert len(analyzer.calls) == 1
-    observation, evidence, cards = analyzer.calls[0]
-    assert observation == roster.players[0]
+    requests, evidence = analyzer.calls[0]
+    assert len(requests) == 1
+    request = requests[0]
+    assert request.observation == roster.players[0]
     assert len(evidence.images) == 4
-    assert {card.card_id for card in cards} == {"thomas-core", "thomas-phenoms"}
-    assert {card.canonical_name for card in cards} == {"Thomas Shrader"}
+    assert {card.card_id for card in request.cards} == {
+        "thomas-core",
+        "thomas-phenoms",
+    }
+    assert {card.canonical_name for card in request.cards} == {"Thomas Shrader"}
     assert service.store.path.read_bytes() == roster_bytes
     assert restarted.store.load() == roster
     assert "CFB27: LG · 84 OVR · Phenoms" in restarted.my_team_html()
@@ -248,7 +261,7 @@ def test_non_unique_or_failed_analysis_keeps_select_card(tmp_path):
 
 def test_unexpected_analyzer_failure_keeps_select_card(tmp_path):
     class BrokenAnalyzer:
-        def analyze(self, observation, evidence, cards):
+        def analyze_batch(self, requests, evidence):
             raise RuntimeError("secondary provider unavailable")
 
     service = _service(tmp_path, _Provider(), BrokenAnalyzer())
@@ -357,3 +370,121 @@ def test_version_diagnostics_are_bounded_and_exclude_sensitive_payloads(
     assert "native_ovr=84" in messages
     assert "not-a-real-key" not in messages
     assert "image-0" not in messages
+
+
+def test_multiple_ambiguous_players_invoke_one_batch_and_validate_each_family(
+    tmp_path,
+):
+    class BatchAnalyzer:
+        def __init__(self):
+            self.calls = []
+
+        def analyze_batch(self, requests, evidence):
+            requests = tuple(requests)
+            self.calls.append((requests, evidence))
+            return CardVersionBatchResult(
+                {
+                    requests[0].fingerprint: CardVersionDecision.unique(
+                        "thomas-phenoms"
+                    ),
+                    requests[1].fingerprint: CardVersionDecision.unique(
+                        "thomas-core"
+                    ),
+                },
+                request_succeeded=True,
+            )
+
+    cards = _cards() + (
+        {
+            "player_name": "Juan Gaston",
+            "card_id": "juan-core",
+            "native_overall": 75,
+            "position": "RT",
+            "program": "Core Uncommon",
+        },
+        {
+            "player_name": "Juan Gaston",
+            "card_id": "juan-phenoms",
+            "native_overall": 80,
+            "position": "RT",
+            "program": "Phenoms",
+        },
+    )
+    roster = C3PORoster(
+        (
+            C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85),
+            C3POPlayer("OFFENSE", "RT 2", "Juan Gaston", 81),
+        ),
+        "google-gemini",
+        "gemini-3.7-flash",
+    )
+    analyzer = BatchAnalyzer()
+    service = C3PORosterService(
+        C3PORosterStore(tmp_path / "roster.json"),
+        _Provider(),
+        enrichment_cards=cards,
+        card_choice_store=CFB27CardChoiceStore(tmp_path / "choices.json"),
+        source_evidence_store=C3POSourceEvidenceStore(tmp_path / "evidence.zip"),
+        version_analyzer=analyzer,
+    )
+    service.store.save(roster)
+    service.source_evidence_store.save(roster, _screenshots(tmp_path))
+
+    outcome = service.analyze_card_versions(roster)
+
+    assert len(analyzer.calls) == 1
+    requests, evidence = analyzer.calls[0]
+    assert len(requests) == 2
+    assert len(evidence.images) == 4
+    assert {card.canonical_name for card in requests[0].cards} == {
+        "Thomas Shrader"
+    }
+    assert {card.canonical_name for card in requests[1].cards} == {"Juan Gaston"}
+    assert outcome.request_succeeded
+    page = service.my_team_html()
+    assert "CFB27: LG · 84 OVR · Phenoms" in page
+    assert "Juan Gaston" in page and "SELECT CARD" in page
+
+
+def test_total_rate_limit_preserves_roster_choices_and_reports_failure(
+    tmp_path, monkeypatch, capsys, caplog
+):
+    class RateLimitedAnalyzer:
+        def analyze_batch(self, requests, evidence):
+            return CardVersionBatchResult(
+                {}, request_succeeded=False, rate_limited=True
+            )
+
+    service = _service(tmp_path, _Provider(), RateLimitedAnalyzer())
+    roster = _roster()
+    service.store.save(roster)
+    service.source_evidence_store.save(roster, _screenshots(tmp_path))
+    roster_bytes = service.store.path.read_bytes()
+    choice_bytes = b'{"choices": {}}\n'
+    service.card_choice_store.path.write_bytes(choice_bytes)
+    monkeypatch.setattr(c3po_roster_app, "create_service", lambda root: service)
+    caplog.set_level("INFO")
+
+    status = c3po_roster_app.analyze_persisted_card_versions()
+
+    output = capsys.readouterr().out
+    assert status != 0
+    assert "VERSION ANALYZER FAILED: RATE_LIMITED" in output
+    assert "VERSION ANALYZER COMPLETE" not in output
+    assert "result=RATE_LIMITED" in caplog.text
+    assert service.store.path.read_bytes() == roster_bytes
+    assert service.card_choice_store.path.read_bytes() == choice_bytes
+    assert service.store.load() == roster
+
+
+def test_omitted_player_result_remains_select_card(tmp_path):
+    class OmittedResultAnalyzer:
+        def analyze_batch(self, requests, evidence):
+            return CardVersionBatchResult({}, request_succeeded=True)
+
+    service = _service(tmp_path, _Provider(), OmittedResultAnalyzer())
+
+    service.import_four(_screenshots(tmp_path))
+
+    assert "Thomas Shrader" in service.my_team_html()
+    assert "SELECT CARD" in service.my_team_html()

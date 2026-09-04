@@ -293,8 +293,13 @@ class C3PORosterService:
             )
         return render_c3po_roster(roster, enrichment)
 
-    def analyze_card_versions(self, roster: C3PORoster) -> None:
+    def analyze_card_versions(self, roster: C3PORoster):
         """Analyze unresolved card versions once, at the successful import event."""
+        from operation_pancake.c3po_card_version import (
+            CardVersionAnalysisOutcome,
+            CardVersionAnalysisRequest,
+            CardVersionBatchResult,
+        )
         from operation_pancake.cfb27_enrichment import enrich_c3po_roster
 
         if (
@@ -303,14 +308,14 @@ class C3PORosterService:
             or self.source_evidence_store is None
             or self.version_analyzer is None
         ):
-            return
+            return CardVersionAnalysisOutcome(0, request_succeeded=False)
         stored_choices = self.card_choice_store.load()
         enrichment = enrich_c3po_roster(
             roster, self.enrichment_cards, stored_choices
         )
         ambiguous = tuple(row for row in enrichment.players if row.state == "SELECT CARD")
         if not ambiguous:
-            return
+            return CardVersionAnalysisOutcome(0, request_succeeded=True)
         try:
             evidence = self.source_evidence_store.load_for(roster)
         except (OSError, ValueError, TypeError):
@@ -324,22 +329,49 @@ class C3PORosterService:
                     row.observation.name,
                     len(row.choices),
                 )
-            return
+            return CardVersionAnalysisOutcome(
+                len(ambiguous), request_succeeded=False
+            )
 
         updated_choices = dict(stored_choices)
         changed = False
-        for row in ambiguous:
-            try:
-                decision = self.version_analyzer.analyze(
-                    row.observation, evidence, row.choices
+        requests = tuple(
+            CardVersionAnalysisRequest(
+                row.fingerprint, row.observation, row.choices
+            )
+            for row in ambiguous
+        )
+        try:
+            batch_result = self.version_analyzer.analyze_batch(requests, evidence)
+        except Exception:  # analyzer failures must never hide the roster
+            LOGGER.exception("CFB27 card-version batch analysis failed")
+            batch_result = CardVersionBatchResult(
+                {}, request_succeeded=False
+            )
+        if not batch_result.request_succeeded:
+            result_state = (
+                "RATE_LIMITED" if batch_result.rate_limited else "PROVIDER_FAILURE"
+            )
+            for row in ambiguous:
+                LOGGER.info(
+                    "VERSION ANALYZER INVOKED player=%s candidates=%d "
+                    "source_evidence_compatible=yes source_images=%d result=%s",
+                    row.observation.name,
+                    len(row.choices),
+                    len(evidence.images),
+                    result_state,
                 )
-            except Exception:  # analyzer failures must never hide the roster
-                LOGGER.exception("CFB27 card-version analysis failed")
-                decision_state = "PROVIDER_FAILURE"
-                decision_card_id = None
-            else:
-                decision_state = getattr(decision, "state", "NO_EVIDENCE")
-                decision_card_id = getattr(decision, "card_id", None)
+            return CardVersionAnalysisOutcome(
+                len(ambiguous),
+                request_succeeded=False,
+                provider_failed=True,
+                rate_limited=batch_result.rate_limited,
+            )
+
+        for row in ambiguous:
+            decision = batch_result.decisions.get(row.fingerprint)
+            decision_state = getattr(decision, "state", "NO_EVIDENCE")
+            decision_card_id = getattr(decision, "card_id", None)
             valid_cards = {card.card_id: card for card in row.choices}
             selected = valid_cards.get(decision_card_id)
             if decision_state == "UNIQUE_VERSION" and selected is not None:
@@ -370,6 +402,9 @@ class C3PORosterService:
                 self.card_choice_store.save(updated_choices)
             except (OSError, ValueError, TypeError):
                 LOGGER.exception("Automatic card-version choice could not be persisted")
+        return CardVersionAnalysisOutcome(
+            len(ambiguous), request_succeeded=True
+        )
 
     def select_card_version(self, fingerprint: str, card_id: str) -> bool:
         from operation_pancake.cfb27_enrichment import enrich_c3po_roster

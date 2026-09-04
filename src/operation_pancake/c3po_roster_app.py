@@ -203,7 +203,13 @@ def analyze_persisted_card_versions() -> int:
     except (OSError, ValueError, TypeError):
         print("VERSION ANALYZER FAILED: persisted C-3PO roster is unavailable")
         return 1
-    service.analyze_card_versions(roster)
+    outcome = service.analyze_card_versions(roster)
+    if outcome.rate_limited:
+        print("VERSION ANALYZER FAILED: RATE_LIMITED")
+        return 2
+    if outcome.provider_failed:
+        print("VERSION ANALYZER FAILED: PROVIDER_FAILURE")
+        return 1
     print("VERSION ANALYZER COMPLETE")
     return 0
 

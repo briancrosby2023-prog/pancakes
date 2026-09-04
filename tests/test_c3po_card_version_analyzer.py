@@ -6,6 +6,8 @@ from pathlib import Path
 
 from operation_pancake import c3po_roster_app
 from operation_pancake.c3po_card_version import (
+    CardVersionAnalysisRequest,
+    CardVersionBatchResult,
     CardVersionDecision,
     GeminiCardVersionAnalyzer,
 )
@@ -69,7 +71,8 @@ def _analyzer(output_text):
 
 def test_targeted_request_preserves_identity_and_supplies_original_images():
     analyzer, client = _analyzer(
-        '{"result":"AMBIGUOUS","positive_visual_evidence":[]}'
+        '{"results":[{"observation_fingerprint":"single-observation",'
+        '"result":"AMBIGUOUS","positive_visual_evidence":[]}]}'
     )
     observation = C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85)
 
@@ -94,8 +97,9 @@ def test_targeted_request_preserves_identity_and_supplies_original_images():
 
 def test_unique_version_requires_high_confidence_positive_visual_evidence():
     analyzer, _ = _analyzer(
-        '{"result":"UNIQUE_VERSION","card_id":"phenoms","confidence":"HIGH",'
-        '"positive_visual_evidence":["Visible Phenoms program treatment"]}'
+        '{"results":[{"observation_fingerprint":"single-observation",'
+        '"result":"UNIQUE_VERSION","card_id":"phenoms","confidence":"HIGH",'
+        '"positive_visual_evidence":["Visible Phenoms program treatment"]}]}'
     )
 
     assert analyzer.analyze(
@@ -107,14 +111,18 @@ def test_unique_version_requires_high_confidence_positive_visual_evidence():
 
 def test_weak_or_malformed_unique_response_never_selects_a_card():
     outputs = (
-        '{"result":"UNIQUE_VERSION","card_id":"phenoms","confidence":"LOW",'
-        '"positive_visual_evidence":["maybe"]}',
-        '{"result":"UNIQUE_VERSION","card_id":"phenoms","confidence":"HIGH",'
-        '"positive_visual_evidence":[]}',
-        '{"result":"UNIQUE_VERSION","card_id":"phenoms","confidence":"HIGH",'
-        '"positive_visual_evidence":["Probably the Phenoms treatment"]}',
+        '{"results":[{"observation_fingerprint":"single-observation",'
+        '"result":"UNIQUE_VERSION","card_id":"phenoms","confidence":"LOW",'
+        '"positive_visual_evidence":["maybe"]}]}',
+        '{"results":[{"observation_fingerprint":"single-observation",'
+        '"result":"UNIQUE_VERSION","card_id":"phenoms","confidence":"HIGH",'
+        '"positive_visual_evidence":[]}]}',
+        '{"results":[{"observation_fingerprint":"single-observation",'
+        '"result":"UNIQUE_VERSION","card_id":"phenoms","confidence":"HIGH",'
+        '"positive_visual_evidence":["Probably the Phenoms treatment"]}]}',
         "not json",
-        '{"result":"UNIQUE_VERSION"}',
+        '{"results":[{"observation_fingerprint":"single-observation",'
+        '"result":"UNIQUE_VERSION"}]}',
     )
     for output in outputs:
         analyzer, _ = _analyzer(output)
@@ -129,9 +137,11 @@ def test_declared_non_unique_results_remain_non_unique():
     for state, expected in (
         ("AMBIGUOUS", CardVersionDecision.ambiguous()),
         ("NO_EVIDENCE", CardVersionDecision.no_evidence()),
-        ("PROVIDER_FAILURE", CardVersionDecision.provider_failure()),
     ):
-        analyzer, _ = _analyzer(f'{{"result":"{state}"}}')
+        analyzer, _ = _analyzer(
+            '{"results":[{"observation_fingerprint":"single-observation",'
+            f'"result":"{state}"}}]}}'
+        )
         assert analyzer.analyze(
             C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85),
             _evidence(),
@@ -175,3 +185,114 @@ def test_explicit_persisted_analysis_command_is_wired():
     assert config["project"]["scripts"]["operation-pancake-card-versions"] == (
         "operation_pancake.c3po_roster_app:analyze_persisted_card_versions"
     )
+
+
+def test_multiple_players_share_one_provider_request_and_one_image_set():
+    client = _Client(
+        '{"results":['
+        '{"observation_fingerprint":"thomas-fp","result":"UNIQUE_VERSION",'
+        '"card_id":"phenoms","confidence":"HIGH",'
+        '"positive_visual_evidence":["Visible Phenoms treatment"]},'
+        '{"observation_fingerprint":"juan-fp","result":"AMBIGUOUS"}'
+        ']}'
+    )
+    analyzer = GeminiCardVersionAnalyzer(
+        api_key="not-a-real-key",
+        model="gemini-version-test",
+        client_factory=lambda: client,
+    )
+    juan_cards = (
+        CFB27CardData("Juan Gaston", "RT", 75, "Core Uncommon", "juan-core"),
+        CFB27CardData("Juan Gaston", "RT", 80, "Phenoms", "juan-phenoms"),
+    )
+    requests = (
+        CardVersionAnalysisRequest(
+            "thomas-fp",
+            C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85),
+            _cards(),
+        ),
+        CardVersionAnalysisRequest(
+            "juan-fp",
+            C3POPlayer("OFFENSE", "RT 2", "Juan Gaston", 81),
+            juan_cards,
+        ),
+    )
+
+    result = analyzer.analyze_batch(requests, _evidence())
+
+    assert len(client.interactions.calls) == 1
+    call = client.interactions.calls[0]
+    assert len(call["input"]) == 5
+    assert [base64.b64decode(item["data"]) for item in call["input"][1:]] == [
+        image.payload for image in _evidence().images
+    ]
+    prompt = call["input"][0]["text"]
+    thomas_block, juan_block = prompt.split("OBSERVATION juan-fp")
+    assert "Thomas Shrader" in thomas_block
+    assert "Juan Gaston" not in thomas_block
+    assert "Juan Gaston" in juan_block
+    assert "Thomas Shrader" not in juan_block
+    assert "Every player's identity is already established" in prompt
+    assert result == CardVersionBatchResult(
+        {
+            "thomas-fp": CardVersionDecision.unique("phenoms"),
+            "juan-fp": CardVersionDecision.ambiguous(),
+        },
+        request_succeeded=True,
+    )
+
+
+def test_batch_omits_malformed_or_unknown_observation_results():
+    analyzer, _ = _analyzer(
+        '{"results":['
+        '{"observation_fingerprint":"known","result":"UNIQUE_VERSION",'
+        '"card_id":"phenoms","confidence":"LOW",'
+        '"positive_visual_evidence":["probably Phenoms"]},'
+        '{"observation_fingerprint":"foreign","result":"AMBIGUOUS"}'
+        ']}'
+    )
+    requests = (
+        CardVersionAnalysisRequest(
+            "known",
+            C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85),
+            _cards(),
+        ),
+    )
+
+    result = analyzer.analyze_batch(requests, _evidence())
+
+    assert result.request_succeeded
+    assert result.decisions == {"known": CardVersionDecision.no_evidence()}
+
+
+def test_rate_limit_is_structurally_classified_without_retry():
+    class RateLimitedInteractions:
+        def __init__(self):
+            self.calls = 0
+
+        def create(self, **kwargs):
+            self.calls += 1
+            error = RuntimeError("Too Many Requests")
+            error.code = 429
+            error.status = "RESOURCE_EXHAUSTED"
+            raise error
+
+    client = _Client(None)
+    client.interactions = RateLimitedInteractions()
+    analyzer = GeminiCardVersionAnalyzer(
+        api_key="not-a-real-key", client_factory=lambda: client
+    )
+    requests = (
+        CardVersionAnalysisRequest(
+            "known",
+            C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85),
+            _cards(),
+        ),
+    )
+
+    result = analyzer.analyze_batch(requests, _evidence())
+
+    assert result == CardVersionBatchResult(
+        {}, request_succeeded=False, rate_limited=True
+    )
+    assert client.interactions.calls == 1
