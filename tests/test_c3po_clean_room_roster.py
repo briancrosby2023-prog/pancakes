@@ -5,7 +5,6 @@ from pathlib import Path
 
 from operation_pancake import c3po_roster, c3po_roster_page
 
-
 NAMES = (
     "Josh Petty",
     "Thomas Shrader",
