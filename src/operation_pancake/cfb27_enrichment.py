@@ -1,11 +1,12 @@
 """Optional CFB27 card enrichment layered after authoritative C-3PO observations."""
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Iterable, Mapping
 
 from operation_pancake.c3po_roster import C3POPlayer, C3PORoster
 
@@ -42,6 +43,7 @@ class CFB27CardData:
 class CFB27PlayerEnrichment:
     observation: C3POPlayer
     state: str
+    fingerprint: str
     card: CFB27CardData | None = None
     choices: tuple[CFB27CardData, ...] = ()
 
@@ -50,6 +52,51 @@ class CFB27PlayerEnrichment:
 class CFB27RosterEnrichment:
     roster: C3PORoster
     players: tuple[CFB27PlayerEnrichment, ...]
+
+
+class CFB27CardChoiceStore:
+    """Persistence for explicit card-version choices, separate from C3PORoster."""
+
+    def __init__(self, path: Path):
+        self.path = path
+
+    def load(self) -> dict[str, str]:
+        try:
+            payload = json.loads(self.path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, json.JSONDecodeError):
+            return {}
+        choices = payload.get("choices") if isinstance(payload, dict) else None
+        if not isinstance(choices, dict):
+            return {}
+        return {
+            str(fingerprint): str(card_id)
+            for fingerprint, card_id in choices.items()
+            if isinstance(fingerprint, str) and isinstance(card_id, str)
+        }
+
+    def save(self, choices: Mapping[str, str]) -> None:
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        temporary = self.path.with_suffix(self.path.suffix + ".tmp")
+        temporary.write_text(
+            json.dumps({"choices": dict(choices)}, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        temporary.replace(self.path)
+
+
+def observation_fingerprint(observation: C3POPlayer, occurrence: int) -> str:
+    """Bind a choice to one immutable observed roster row."""
+    evidence = json.dumps(
+        [
+            normalize_c3po_name(observation.name),
+            observation.view,
+            observation.slot,
+            observation.displayed_ovr,
+            occurrence,
+        ],
+        separators=(",", ":"),
+    )
+    return hashlib.sha256(evidence.encode("utf-8")).hexdigest()
 
 
 def _card(row: dict[str, Any]) -> CFB27CardData:
@@ -64,7 +111,9 @@ def _card(row: dict[str, Any]) -> CFB27CardData:
 
 
 def enrich_c3po_roster(
-    roster: C3PORoster, cards: Iterable[dict[str, Any]] | None
+    roster: C3PORoster,
+    cards: Iterable[dict[str, Any]] | None,
+    stored_choices: Mapping[str, str] | None = None,
 ) -> CFB27RosterEnrichment:
     """Attach exact normalized-name card data without changing C-3PO evidence."""
     index: dict[str, list[CFB27CardData]] = {}
@@ -75,14 +124,32 @@ def enrich_c3po_roster(
             index.setdefault(key, []).append(card)
 
     enriched = []
-    for observation in roster.players:
+    for occurrence, observation in enumerate(roster.players):
+        fingerprint = observation_fingerprint(observation, occurrence)
         matches = index.get(normalize_c3po_name(observation.name), [])
-        if len(matches) == 1:
-            enriched.append(CFB27PlayerEnrichment(observation, "LINKED", matches[0]))
+        selected_id = (stored_choices or {}).get(fingerprint)
+        selected = [card for card in matches if card.card_id == selected_id]
+        if len(selected) == 1:
+            enriched.append(
+                CFB27PlayerEnrichment(observation, "LINKED", fingerprint, selected[0])
+            )
+        elif len(matches) == 1:
+            enriched.append(
+                CFB27PlayerEnrichment(observation, "LINKED", fingerprint, matches[0])
+            )
         elif len(matches) > 1:
             enriched.append(
-                CFB27PlayerEnrichment(observation, "SELECT CARD", choices=tuple(matches))
+                CFB27PlayerEnrichment(
+                    observation,
+                    "SELECT CARD",
+                    fingerprint,
+                    choices=tuple(matches),
+                )
             )
         else:
-            enriched.append(CFB27PlayerEnrichment(observation, "CFB27 DATA NOT LINKED"))
+            enriched.append(
+                CFB27PlayerEnrichment(
+                    observation, "CFB27 DATA NOT LINKED", fingerprint
+                )
+            )
     return CFB27RosterEnrichment(roster, tuple(enriched))

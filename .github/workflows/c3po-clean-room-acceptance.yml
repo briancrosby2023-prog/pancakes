@@ -19,7 +19,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install -e '.[dev]'
-      - name: Structural boundary and provider-roster-render preservation
+      - name: Real enrichment, card selection, restart, and structural boundary
         run: python -m pytest -q tests/test_c3po_clean_room_roster.py tests/test_cfb27_enrichment.py tests/test_cfb27_production_enrichment.py
       - name: Scoped Ruff
         run: python -m ruff check --ignore E501 src/operation_pancake/c3po_roster.py src/operation_pancake/c3po_roster_app.py src/operation_pancake/c3po_roster_page.py src/operation_pancake/cfb27_enrichment.py tests/test_c3po_clean_room_roster.py tests/test_cfb27_enrichment.py tests/test_cfb27_production_enrichment.py

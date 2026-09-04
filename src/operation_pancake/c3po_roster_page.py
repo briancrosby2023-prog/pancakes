@@ -9,6 +9,31 @@ from operation_pancake.c3po_roster import VIEWS, C3PORoster
 def _enrichment_copy(enrichment) -> str:
     if enrichment is None:
         return ""
+    if enrichment.state == "SELECT CARD":
+        options = "".join(
+            '<option value="'
+            + html.escape(str(card.card_id or ""))
+            + '">'
+            + html.escape(
+                " · ".join(
+                    value
+                    for value in (
+                        f"{card.card_ovr} OVR" if card.card_ovr is not None else "OVR —",
+                        str(card.native_position or "POSITION —"),
+                        str(card.program or "PROGRAM —"),
+                    )
+                )
+            )
+            + "</option>"
+            for card in enrichment.choices
+        )
+        return (
+            '<form class="card-version" method="post" action="/team/card-version">'
+            '<span class="enrichment">SELECT CARD</span>'
+            f'<input type="hidden" name="observation" value="{html.escape(enrichment.fingerprint)}">'
+            f'<select name="card_id">{options}</select>'
+            "<button>USE CARD</button></form>"
+        )
     if enrichment.state != "LINKED" or enrichment.card is None:
         return f'<span class="enrichment">{html.escape(enrichment.state)}</span>'
     card = enrichment.card

@@ -8,10 +8,13 @@ from email.parser import BytesParser
 from email.policy import default
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 from operation_pancake.c3po_roster import C3PORosterService, C3PORosterStore, GeminiC3POProvider
-from operation_pancake.cfb27_enrichment import load_cfb27_production_cards
+from operation_pancake.cfb27_enrichment import (
+    CFB27CardChoiceStore,
+    load_cfb27_production_cards,
+)
 
 MAX_UPLOAD_BYTES = 64 * 1024 * 1024
 STYLE = """
@@ -94,7 +97,22 @@ def create_handler(service: C3PORosterService, upload_root: Path):
             self._send(_page(self._saved_roster()))
 
         def do_POST(self) -> None:  # noqa: N802
-            if urlparse(self.path).path != "/team/upload":
+            path = urlparse(self.path).path
+            if path == "/team/card-version":
+                try:
+                    length = int(self.headers.get("Content-Length", "0"))
+                    if length <= 0 or length > 8192:
+                        raise ValueError("Card selection size is invalid")
+                    fields = parse_qs(self.rfile.read(length).decode("utf-8"))
+                    service.select_card_version(
+                        fields.get("observation", [""])[0],
+                        fields.get("card_id", [""])[0],
+                    )
+                    self._send(_page(self._saved_roster()))
+                except (UnicodeError, ValueError):
+                    self._send(_page(self._saved_roster()), 400)
+                return
+            if path != "/team/upload":
                 self._send(_page("<h1>Not found</h1>"), 404)
                 return
             try:
@@ -132,6 +150,7 @@ def create_service(
     root: Path,
     provider=None,
     roster_path: Path | None = None,
+    choice_path: Path | None = None,
 ) -> C3PORosterService:
     resolved_root = root.resolve()
     store_path = roster_path or Path(
@@ -141,10 +160,15 @@ def create_service(
         )
     )
     cards = load_cfb27_production_cards(resolved_root)
+    choices = CFB27CardChoiceStore(
+        choice_path
+        or resolved_root / ".operation_pancake/cfb27-card-version-choices.json"
+    )
     return C3PORosterService(
         C3PORosterStore(store_path),
         provider or GeminiC3POProvider(),
         enrichment_cards=cards,
+        card_choice_store=choices,
     )
 
 

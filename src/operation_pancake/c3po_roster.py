@@ -250,12 +250,14 @@ class C3PORosterService:
         store: C3PORosterStore,
         provider: Any,
         enrichment_cards: Iterable[dict[str, Any]] | None = None,
+        card_choice_store: Any | None = None,
     ):
         self.store = store
         self.provider = provider
         self.enrichment_cards = (
             None if enrichment_cards is None else tuple(enrichment_cards)
         )
+        self.card_choice_store = card_choice_store
 
     def import_four(self, screenshots: Iterable[Path]) -> C3PORoster:
         roster = roster_from_screens(screenshots, self.provider)
@@ -272,5 +274,33 @@ class C3PORosterService:
 
         enrichment = None
         if self.enrichment_cards is not None:
-            enrichment = enrich_c3po_roster(roster, self.enrichment_cards)
+            stored_choices = (
+                self.card_choice_store.load() if self.card_choice_store is not None else {}
+            )
+            enrichment = enrich_c3po_roster(
+                roster, self.enrichment_cards, stored_choices
+            )
         return render_c3po_roster(roster, enrichment)
+
+    def select_card_version(self, fingerprint: str, card_id: str) -> bool:
+        from operation_pancake.cfb27_enrichment import enrich_c3po_roster
+
+        if self.enrichment_cards is None or self.card_choice_store is None:
+            return False
+        try:
+            roster = self.store.load()
+            enrichment = enrich_c3po_roster(roster, self.enrichment_cards)
+            target = next(
+                (row for row in enrichment.players if row.fingerprint == fingerprint),
+                None,
+            )
+            if target is None or target.state != "SELECT CARD":
+                return False
+            if card_id not in {card.card_id for card in target.choices}:
+                return False
+            choices = self.card_choice_store.load()
+            choices[fingerprint] = card_id
+            self.card_choice_store.save(choices)
+            return True
+        except (OSError, ValueError, TypeError):
+            return False
