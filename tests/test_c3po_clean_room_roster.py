@@ -3,15 +3,7 @@ from __future__ import annotations
 import inspect
 from pathlib import Path
 
-from operation_pancake.c3po_roster import (
-    C3POPlayer,
-    C3PORoster,
-    C3PORosterService,
-    C3PORosterStore,
-    GeminiC3POProvider,
-    roster_from_screens,
-)
-from operation_pancake.c3po_roster_page import render_c3po_roster
+from operation_pancake import c3po_roster, c3po_roster_page
 
 
 NAMES = (
@@ -61,17 +53,17 @@ def _shots(tmp_path):
 def test_provider_to_roster_to_persistence_to_html_preserves_c3po_names(tmp_path):
     shots = _shots(tmp_path)
     provider = FakeProvider()
-    roster = roster_from_screens(shots, provider)
+    roster = c3po_roster.roster_from_screens(shots, provider)
     assert provider.calls == [shot.name for shot in shots]
-    assert isinstance(roster, C3PORoster)
+    assert isinstance(roster, c3po_roster.C3PORoster)
     assert {player.name for player in roster.players} == set(NAMES)
 
-    store = C3PORosterStore(tmp_path / "c3po-roster.json")
+    store = c3po_roster.C3PORosterStore(tmp_path / "c3po-roster.json")
     store.save(roster)
     restarted = store.load()
     assert restarted == roster
 
-    page = render_c3po_roster(restarted)
+    page = c3po_roster_page.render_c3po_roster(restarted)
     for name in NAMES:
         assert name in page
     assert "Candidate" not in page
@@ -81,8 +73,8 @@ def test_provider_to_roster_to_persistence_to_html_preserves_c3po_names(tmp_path
 
 
 def test_service_is_the_four_screenshot_to_persisted_my_team_boundary(tmp_path):
-    store = C3PORosterStore(tmp_path / "c3po-roster.json")
-    service = C3PORosterService(store, FakeProvider())
+    store = c3po_roster.C3PORosterStore(tmp_path / "c3po-roster.json")
+    service = c3po_roster.C3PORosterService(store, FakeProvider())
     roster = service.import_four(_shots(tmp_path))
     assert store.load() == roster
     page = service.my_team_html()
@@ -91,19 +83,20 @@ def test_service_is_the_four_screenshot_to_persisted_my_team_boundary(tmp_path):
 
 
 def test_missing_provider_name_is_name_not_read():
-    roster = C3PORoster(
-        players=(C3POPlayer(view="OFFENSE", slot="LT1", name=None, displayed_ovr=80),),
+    roster = c3po_roster.C3PORoster(
+        players=(
+            c3po_roster.C3POPlayer(
+                view="OFFENSE", slot="LT1", name=None, displayed_ovr=80
+            ),
+        ),
         provider="fake-c3po",
         model="fixture",
     )
-    assert "NAME NOT READ" in render_c3po_roster(roster)
+    assert "NAME NOT READ" in c3po_roster_page.render_c3po_roster(roster)
 
 
 def test_clean_room_modules_have_no_identity_reconciliation_dependencies():
-    import operation_pancake.c3po_roster as roster_module
-    import operation_pancake.c3po_roster_page as page_module
-
-    source = inspect.getsource(roster_module) + inspect.getsource(page_module)
+    source = inspect.getsource(c3po_roster) + inspect.getsource(c3po_roster_page)
     forbidden = (
         "Candidate",
         "match_candidate",
@@ -120,10 +113,10 @@ def test_clean_room_modules_have_no_identity_reconciliation_dependencies():
 
 
 def test_gemini_provider_failure_is_controlled_and_does_not_replace_roster(tmp_path):
-    store = C3PORosterStore(tmp_path / "c3po-roster.json")
-    existing = roster_from_screens(_shots(tmp_path), FakeProvider())
+    store = c3po_roster.C3PORosterStore(tmp_path / "c3po-roster.json")
+    existing = c3po_roster.roster_from_screens(_shots(tmp_path), FakeProvider())
     store.save(existing)
-    provider = GeminiC3POProvider(
+    provider = c3po_roster.GeminiC3POProvider(
         api_key="test",
         client_factory=lambda: (_ for _ in ()).throw(RuntimeError("provider down")),
     )
@@ -131,7 +124,7 @@ def test_gemini_provider_failure_is_controlled_and_does_not_replace_roster(tmp_p
     assert result["status"] == "PROVIDER FAILURE"
     assert result["players"] == []
 
-    service = C3PORosterService(store, provider)
+    service = c3po_roster.C3PORosterService(store, provider)
     failed = service.import_four(_shots(tmp_path))
     assert failed.status == "PROVIDER FAILURE"
     assert store.load() == existing
