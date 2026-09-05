@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 import pytest
@@ -101,8 +102,14 @@ def test_comparison_and_optional_value_never_invent_price():
 
 def test_canonical_population_is_complete_and_identity_unique():
     population = load_population(ROOT)
-    assert len(population) == 8838
-    assert len({row["card_id"] for row in population}) == 8838
+    canonical_cards = json.loads(
+        (
+            ROOT
+            / "data/research/cfb27_op_x_010/canonical_exports_v2/cards.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert len(population) == len(canonical_cards)
+    assert len({row["card_id"] for row in population}) == len(canonical_cards)
 
 
 def test_registry_schema_exposes_capability_validation_and_provenance():

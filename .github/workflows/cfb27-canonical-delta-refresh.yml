@@ -4,9 +4,11 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - agent/op-x-012-reconcile-artifacts
+      - product/c3po-clean-room-roster
     paths:
       - scripts/refresh_cfb27_canonical_delta.py
+      - scripts/materialize_cfb27_canonical_population.py
+      - src/operation_pancake/research/cfb27_canonical_population.py
       - .github/workflows/cfb27-canonical-delta-refresh.yml
 
 concurrency:
@@ -23,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: agent/op-x-012-reconcile-artifacts
+          ref: product/c3po-clean-room-roster
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -32,21 +34,41 @@ jobs:
         run: python -m pip install -e '.[dev]'
       - name: Enumerate current universe and acquire exact delta
         run: python scripts/refresh_cfb27_canonical_delta.py
+      - name: Materialize refreshed canonical population
+        run: python scripts/materialize_cfb27_canonical_population.py
       - name: Run unchanged production scorer
         run: python scripts/generate_op_x_021_production.py
       - name: Run focused tests
-        run: python -m pytest tests/test_cfb_fan_bulk.py tests/test_op_x_021_production.py -q
+        run: >-
+          python -m pytest
+          tests/test_cfb_fan_bulk.py
+          tests/test_cfb27_canonical_population_materialization.py
+          tests/test_production_gm.py
+          -q
       - name: Scoped Ruff
-        run: python -m ruff check scripts/refresh_cfb27_canonical_delta.py src/operation_pancake/acquisition/cfb_fan_bulk.py scripts/generate_op_x_021_production.py
+        run: >-
+          python -m ruff check
+          scripts/refresh_cfb27_canonical_delta.py
+          scripts/materialize_cfb27_canonical_population.py
+          scripts/generate_op_x_021_production.py
+          src/operation_pancake/acquisition/cfb_fan_bulk.py
+          src/operation_pancake/research/cfb27_canonical_population.py
+          tests/test_cfb27_canonical_population_materialization.py
+          tests/test_production_gm.py
       - name: Determinism check
         shell: bash
         run: |
           set -euo pipefail
-          cp data/research/cfb27_delta_refresh/report.json /tmp/report.json
-          cp data/production/op_x_021/production_scores.json /tmp/production_scores.json
+          cp data/research/cfb27_op_x_010/canonical_exports_v2/players.json /tmp/players.json
+          cp data/research/cfb27_op_x_010/canonical_exports_v2/cards.json /tmp/cards.json
+          cp data/research/cfb27_op_x_010/canonical_exports_v2/card_native_states.json /tmp/card_native_states.json
+          cp data/production/cfb27_scored_population.json /tmp/cfb27_scored_population.json
+          python scripts/materialize_cfb27_canonical_population.py
           python scripts/generate_op_x_021_production.py
-          cmp /tmp/production_scores.json data/production/op_x_021/production_scores.json
-          test -s /tmp/report.json
+          cmp /tmp/players.json data/research/cfb27_op_x_010/canonical_exports_v2/players.json
+          cmp /tmp/cards.json data/research/cfb27_op_x_010/canonical_exports_v2/cards.json
+          cmp /tmp/card_native_states.json data/research/cfb27_op_x_010/canonical_exports_v2/card_native_states.json
+          cmp /tmp/cfb27_scored_population.json data/production/cfb27_scored_population.json
       - name: Diff check
         run: git diff --check
       - name: Persist canonical refresh
@@ -61,10 +83,18 @@ jobs:
                   data/external/raw/cfb_fan_current_listings \
                   data/external/raw/cfb_fan_player_items \
                   data/research/cfb27_delta_refresh \
-                  data/production/op_x_021 2>/dev/null || true
+                  data/research/cfb27_op_x_010/canonical_exports_v2/players.json \
+                  data/research/cfb27_op_x_010/canonical_exports_v2/cards.json \
+                  data/research/cfb27_op_x_010/canonical_exports_v2/card_native_states.json \
+                  data/production/model_registry.json \
+                  data/production/cfb27_scored_population.json \
+                  data/production/position_rankings.json \
+                  data/production/run_summary.json \
+                  data/production/gm_demo.json \
+                  data/production/product_completion_matrix.json
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh canonical CFB27 population delta'
-            git push origin HEAD:agent/op-x-012-reconcile-artifacts
+            git push origin HEAD:product/c3po-clean-room-roster
           fi
       - name: Upload refresh report
         if: always()

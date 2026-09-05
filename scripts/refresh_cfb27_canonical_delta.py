@@ -9,6 +9,8 @@ from pathlib import Path
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
+from run_cfb27_population_v3 import parse_listing
+
 from operation_pancake.acquisition.cfb_fan_bulk import (
     CfbFanBulkAdapter,
     cfb27_position,
@@ -16,7 +18,6 @@ from operation_pancake.acquisition.cfb_fan_bulk import (
     rating_conflicts,
     ratings_from_record,
 )
-from run_cfb27_population_v3 import parse_listing
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE = ROOT / "data/external/cfb_fan_population_state.json"
@@ -58,7 +59,12 @@ def discover_current() -> dict[str, dict]:
         if not target.exists():
             target.write_bytes(content)
         parsed = parse_listing(content.decode("utf-8"), rel.as_posix(), 27)
-        pages[str(page)] = {"url": url, "sha256": digest, "snapshot": rel.as_posix(), "cards": len(parsed)}
+        pages[str(page)] = {
+            "url": url,
+            "sha256": digest,
+            "snapshot": rel.as_posix(),
+            "cards": len(parsed),
+        }
         for card in parsed:
             cards[card["external_card_id"]] = card
         empty_streak = empty_streak + 1 if not parsed else 0
@@ -102,7 +108,12 @@ def structured_card(listing: dict, record: dict, snapshot: str, retrieved_at: st
 
 
 def main() -> None:
-    retrieved_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    retrieved_at = (
+        datetime.now(timezone.utc)
+        .replace(microsecond=0)
+        .isoformat()
+        .replace("+00:00", "Z")
+    )
     state = json.loads(STATE.read_text(encoding="utf-8"))
     old_ids = {card["external_card_id"] for card in state["cards"].values()}
     current = discover_current()
@@ -122,9 +133,18 @@ def main() -> None:
         ratings = rating_conflicts(listing, ratings_from_record(record))
         identity.pop("position", None)
         if identity or ratings:
-            rejected[external_id] = json.dumps({"identity": identity, "ratings": ratings}, sort_keys=True)
+            rejected[external_id] = json.dumps(
+                {"identity": identity, "ratings": ratings}, sort_keys=True
+            )
             continue
-        batch = next((v for v in checkpoint["batches"].values() if external_id in v["returned_ids"]), None)
+        batch = next(
+            (
+                value
+                for value in checkpoint["batches"].values()
+                if external_id in value["returned_ids"]
+            ),
+            None,
+        )
         if batch is None:
             rejected[external_id] = "NO_PROVENANCE_BATCH"
             continue
