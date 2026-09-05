@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import os
+import subprocess
+import sys
 import zipfile
 from pathlib import Path
 
@@ -735,3 +738,83 @@ def test_runtime_diagnostic_identifies_modules_and_makes_zero_provider_calls(
     assert "AMBIGUOUS_OBSERVATIONS=1" in output
     assert "DISTINCT_BATCHED_QUESTIONS=1" in output
     assert "must-not-be-printed" not in output
+
+
+def test_runtime_diagnostic_subprocess_contract_is_stdout_only(tmp_path):
+    root = tmp_path / "runtime-root"
+    state = root / ".operation_pancake"
+    data = root / "data" / "production"
+    data.mkdir(parents=True)
+    data.joinpath("cfb27_scored_population.json").write_text(
+        '[{"player_name":"Thomas Shrader","card_id":"core"},'
+        '{"player_name":"Thomas Shrader","card_id":"phenoms"}]',
+        encoding="utf-8",
+    )
+    roster = _roster()
+    C3PORosterStore(state / "c3po-roster.json").save(roster)
+    C3POSourceEvidenceStore(state / "c3po-source-evidence.zip").save(
+        roster, _screenshots(tmp_path)
+    )
+    environment = dict(os.environ)
+    environment["PANCAKE_ROOT"] = str(root)
+    environment["PYTHONPATH"] = str(Path(__file__).parents[1] / "src")
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-c",
+            "from operation_pancake.c3po_roster_app import runtime_diagnostic; "
+            "raise SystemExit(runtime_diagnostic())",
+        ],
+        capture_output=True,
+        text=True,
+        env=environment,
+        check=False,
+    )
+
+    assert result.returncode == 0
+    assert result.stderr == ""
+    assert result.stdout.splitlines()[0] == (
+        "DIAGNOSTIC_MARKER=C3PO-RUNTIME-IDENTITY-1"
+    )
+    assert "SOURCE_EVIDENCE_COMPATIBLE=yes" in result.stdout.splitlines()
+    assert "RUNTIME_DIAGNOSTIC_STATUS=PASS" in result.stdout.splitlines()
+
+
+def test_runtime_diagnostic_flushes_one_atomic_stdout_report(tmp_path, monkeypatch):
+    class NoNetworkAnalyzer:
+        model = "diagnostic-model"
+
+        def analyze_batch(self, requests, evidence):
+            raise AssertionError("runtime diagnostic must not invoke Gemini")
+
+    class Stream:
+        def __init__(self):
+            self.writes = []
+            self.flushes = 0
+
+        def write(self, value):
+            self.writes.append(value)
+
+        def flush(self):
+            self.flushes += 1
+
+    service = _service(tmp_path, _Provider(), NoNetworkAnalyzer())
+    roster = _roster()
+    service.store.save(roster)
+    service.source_evidence_store.save(roster, _screenshots(tmp_path))
+    stream = Stream()
+    with monkeypatch.context() as patch:
+        patch.setattr(c3po_roster_app, "production_root", lambda: tmp_path)
+        patch.setattr(c3po_roster_app, "create_service", lambda root: service)
+        patch.setattr(c3po_roster_app, "_git_head", lambda root: "test-head")
+        patch.setattr(c3po_roster_app.sys, "stdout", stream)
+        status = c3po_roster_app.runtime_diagnostic()
+
+    assert status == 0
+    assert len(stream.writes) == 1
+    assert stream.flushes == 1
+    assert stream.writes[0].startswith(
+        "DIAGNOSTIC_MARKER=C3PO-RUNTIME-IDENTITY-1\n"
+    )
+    assert stream.writes[0].endswith("RUNTIME_DIAGNOSTIC_STATUS=PASS\n")

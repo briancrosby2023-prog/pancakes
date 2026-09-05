@@ -2,11 +2,13 @@
 from __future__ import annotations
 
 import html
+import io
 import logging
 import os
 import subprocess
 import sys
 import tempfile
+from contextlib import redirect_stdout
 from email.parser import BytesParser
 from email.policy import default
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -233,8 +235,7 @@ def _git_head(root: Path) -> str:
     return result.stdout.strip() or "unavailable"
 
 
-def runtime_diagnostic() -> int:
-    """Describe the installed runtime and persisted analysis inputs without HTTP."""
+def _runtime_diagnostic_body() -> int:
     import operation_pancake
     from operation_pancake import c3po_card_version
     from operation_pancake.c3po_roster import card_version_work_groups
@@ -302,6 +303,16 @@ def runtime_diagnostic() -> int:
     print(f"DISTINCT_BATCHED_QUESTIONS={len(distinct)}")
     print("RUNTIME_DIAGNOSTIC_STATUS=PASS")
     return 0
+
+
+def runtime_diagnostic() -> int:
+    """Emit one flushed stdout report without contacting any provider."""
+    report = io.StringIO()
+    with redirect_stdout(report):
+        status = _runtime_diagnostic_body()
+    sys.stdout.write(report.getvalue())
+    sys.stdout.flush()
+    return status
 
 
 if __name__ == "__main__":
