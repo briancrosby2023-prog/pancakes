@@ -777,6 +777,13 @@ def test_runtime_diagnostic_subprocess_contract_is_stdout_only(tmp_path):
     assert result.stdout.splitlines()[0] == (
         "DIAGNOSTIC_MARKER=C3PO-RUNTIME-IDENTITY-1"
     )
+    expected_app = (
+        Path(__file__).parents[1]
+        / "src"
+        / "operation_pancake"
+        / "c3po_roster_app.py"
+    ).resolve()
+    assert f"C3PO_ROSTER_APP_PATH={expected_app}" in result.stdout.splitlines()
     assert "SOURCE_EVIDENCE_COMPATIBLE=yes" in result.stdout.splitlines()
     assert "RUNTIME_DIAGNOSTIC_STATUS=PASS" in result.stdout.splitlines()
 
