@@ -1,35 +1,35 @@
 {
   "GM RECOMMENDATIONS": {
-    "blocker": "prices absent for value-qualified recommendations",
-    "evidence": "quality priorities and replacements generated from real roster",
-    "executable_entry_point": "RosterGMEngine.replacements/strength_and_priorities",
-    "next_action": "supply candidate price/resale/budget or connect market ingestion",
-    "status": "COMPLETE",
-    "tests": "replacement, role tradeoff, grouping, and budget tests"
+    "blocker": "budget and roster-wide optimizer absent",
+    "evidence": "upgrade/sidegrade/downgrade classification implemented",
+    "executable_entry_point": "ProductionEngine.compare",
+    "next_action": "add position-group and budget optimizer",
+    "status": "PARTIAL",
+    "tests": "comparison test"
   },
   "LTD ENGINE": {
     "blocker": "market data absent",
-    "evidence": "supported downside/current-state interface; prediction withheld",
-    "executable_entry_point": "operation-pancake market-run",
+    "evidence": "no production implementation",
+    "executable_entry_point": "none",
     "next_action": "define only after source coverage",
-    "status": "PARTIAL",
-    "tests": "OP-X-023 targeted market production tests"
+    "status": "NOT STARTED",
+    "tests": "none"
   },
   "MARKET INGESTION": {
     "blocker": "no trustworthy source data",
-    "evidence": "8 real observations ingested; no live structured acquisition",
-    "executable_entry_point": "operation-pancake market-run",
+    "evidence": "market_instances.json contains zero rows",
+    "executable_entry_point": "canonical market export",
     "next_action": "acquire licensed/reliable prices",
-    "status": "PARTIAL",
-    "tests": "OP-X-023 targeted market production tests"
+    "status": "BLOCKED",
+    "tests": "not applicable"
   },
   "MARKET RISK": {
     "blocker": "price history absent",
-    "evidence": "staleness, sample, liquidity, spread, LTD, and insufficient-data flags implemented",
-    "executable_entry_point": "operation-pancake market-run",
+    "evidence": "research artifacts do not provide executable current risk",
+    "executable_entry_point": "none",
     "next_action": "build after longitudinal prices",
-    "status": "PARTIAL",
-    "tests": "OP-X-023 targeted market production tests"
+    "status": "NOT STARTED",
+    "tests": "none"
   },
   "MODEL COVERAGE": {
     "blocker": "QB Pure Runner intentionally unsupported",
@@ -57,7 +57,7 @@
   },
   "PLAYER SCORING": {
     "blocker": "654 records lack sufficient production evidence",
-    "evidence": "8184 current cards scored",
+    "evidence": "9074 current cards scored",
     "executable_entry_point": "ProductionEngine.score",
     "next_action": "improve canonical attribute completeness",
     "status": "COMPLETE",
@@ -73,11 +73,11 @@
   },
   "PRICE HISTORY": {
     "blocker": "market ingestion absent",
-    "evidence": "8 timestamped observations persisted",
-    "executable_entry_point": "operation-pancake market-run",
+    "evidence": "no price observations",
+    "executable_entry_point": "none",
     "next_action": "start after price acquisition",
-    "status": "PARTIAL",
-    "tests": "OP-X-023 targeted market production tests"
+    "status": "NOT STARTED",
+    "tests": "none"
   },
   "PROVENANCE/EVIDENCE": {
     "blocker": "none",
@@ -88,24 +88,24 @@
     "tests": "registry controls test"
   },
   "ROSTER EVALUATION": {
-    "blocker": "none for resolved roster; unresolved slots are explicitly excluded",
-    "evidence": "scoring, depth, strength, and starter evaluation executed",
-    "executable_entry_point": "RosterGMEngine and operation-pancake roster-run",
-    "next_action": "rerun automatically when roster identities change",
-    "status": "COMPLETE",
-    "tests": "roster scoring, depth, starter, percentile, and priority tests"
+    "blocker": "roster identity coverage",
+    "evidence": "card and position comparison primitives complete",
+    "executable_entry_point": "ProductionEngine.compare",
+    "next_action": "build lineup evaluator after identity reconciliation",
+    "status": "PARTIAL",
+    "tests": "comparison test"
   },
   "ROSTER INGESTION": {
-    "blocker": "six identities need card-detail evidence",
-    "evidence": "18/24 identities defensibly resolved",
-    "executable_entry_point": "operation-pancake roster-run",
-    "next_action": "collect native OVR/program or external card ID for unresolved slots",
+    "blocker": "only 1/24 exact card identities",
+    "evidence": "24 roster instances exist",
+    "executable_entry_point": "canonical roster_instances.json",
+    "next_action": "reconcile roster card identities",
     "status": "PARTIAL",
-    "tests": "identity matching and ambiguity rejection tests"
+    "tests": "canonical importer tests"
   },
   "TEST COVERAGE": {
     "blocker": "no end-user UI tests",
-    "evidence": "OP-X-021 and OP-X-022 targeted suites",
+    "evidence": "targeted production suite",
     "executable_entry_point": "pytest tests/test_production_gm.py",
     "next_action": "extend with schema snapshots",
     "status": "PARTIAL",
@@ -120,19 +120,19 @@
     "tests": "test_comparison_and_optional_value_never_invent_price"
   },
   "USER-FACING INTERFACE": {
-    "blocker": "no interactive roster editor/query surface",
-    "evidence": "gm-run plus persisted human-readable roster report",
-    "executable_entry_point": "operation-pancake roster-run",
-    "next_action": "add roster input and interactive recommendation queries",
+    "blocker": "no interactive UI",
+    "evidence": "CLI generation command available",
+    "executable_entry_point": "operation-pancake gm-run",
+    "next_action": "add query/compare CLI commands",
     "status": "PARTIAL",
-    "tests": "CLI executed against real roster"
+    "tests": "CLI exercised by generation"
   },
   "VALUE/MONEYBALL": {
     "blocker": "canonical market export has zero rows",
-    "evidence": "production calculations executed; all current prices stale",
-    "executable_entry_point": "operation-pancake market-run",
+    "evidence": "caller-supplied price metric implemented",
+    "executable_entry_point": "ProductionEngine.compare(candidate_price=...)",
     "next_action": "connect trustworthy market prices",
     "status": "PARTIAL",
-    "tests": "OP-X-023 targeted market production tests"
+    "tests": "optional value test"
   }
 }
