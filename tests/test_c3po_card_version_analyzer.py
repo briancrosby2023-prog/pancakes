@@ -6,6 +6,7 @@ from pathlib import Path
 
 from operation_pancake import c3po_roster_app
 from operation_pancake.c3po_card_version import (
+    DEFAULT_CARD_VERSION_TIMEOUT_MS,
     CardVersionAnalysisRequest,
     CardVersionBatchResult,
     CardVersionDecision,
@@ -245,6 +246,26 @@ def test_multiple_players_share_one_provider_request_and_one_image_set():
     )
 
 
+def test_seventy_one_work_items_still_use_one_provider_request():
+    analyzer, client = _analyzer('{"results":[]}')
+    requests = tuple(
+        CardVersionAnalysisRequest(
+            f"observation-{index}",
+            C3POPlayer("OFFENSE", f"SLOT {index}", "Thomas Shrader", 85),
+            _cards(),
+        )
+        for index in range(71)
+    )
+
+    result = analyzer.analyze_batch(requests, _evidence())
+
+    assert result.request_succeeded
+    assert len(client.interactions.calls) == 1
+    provider_input = client.interactions.calls[0]["input"]
+    assert provider_input[0]["text"].count("OBSERVATION ") == 71
+    assert len(provider_input[1:]) == 4
+
+
 def test_batch_omits_malformed_or_unknown_observation_results():
     analyzer, _ = _analyzer(
         '{"results":['
@@ -354,3 +375,115 @@ def test_rate_limit_logs_sanitized_google_quota_details(caplog):
     assert "source_bytes=28" in caplog.text
     assert "work_items=1" in caplog.text
     assert "top-secret" not in caplog.text
+
+
+def test_production_client_uses_explicit_three_minute_timeout(monkeypatch):
+    from google import genai
+
+    captured = {}
+
+    def fake_client(**kwargs):
+        captured.update(kwargs)
+        return object()
+
+    monkeypatch.setattr(genai, "Client", fake_client)
+
+    GeminiCardVersionAnalyzer(api_key="not-a-real-key")._client()
+
+    assert DEFAULT_CARD_VERSION_TIMEOUT_MS == 180_000
+    assert captured["http_options"].timeout == DEFAULT_CARD_VERSION_TIMEOUT_MS
+    assert captured["http_options"].retry_options.attempts == 1
+
+
+def test_version_timeout_remains_explicitly_configurable(monkeypatch):
+    monkeypatch.setenv("PANCAKE_GEMINI_VERSION_TIMEOUT_MS", "240000")
+
+    analyzer = GeminiCardVersionAnalyzer(api_key="not-a-real-key")
+
+    assert analyzer.timeout_ms == 240_000
+
+
+def test_timeout_is_distinct_sanitized_and_never_retried(caplog, monkeypatch):
+    class APITimeoutError(RuntimeError):
+        pass
+
+    class TimedOutInteractions:
+        def __init__(self):
+            self.calls = 0
+
+        def create(self, **kwargs):
+            self.calls += 1
+            raise APITimeoutError("client timeout; key=top-secret")
+
+    client = _Client(None)
+    client.interactions = TimedOutInteractions()
+    analyzer = GeminiCardVersionAnalyzer(
+        api_key="top-secret",
+        model="gemini-version-test",
+        timeout_ms=180_000,
+        client_factory=lambda: client,
+    )
+    ticks = iter((10.0, 71.25))
+    monkeypatch.setattr(
+        "operation_pancake.c3po_card_version.time.monotonic", lambda: next(ticks)
+    )
+    caplog.set_level("ERROR")
+
+    requests = tuple(
+        CardVersionAnalysisRequest(
+            f"observation-{index}",
+            C3POPlayer("SPECIAL TEAMS", f"SLOT {index}", "Thomas Shrader", 85),
+            _cards(),
+        )
+        for index in range(71)
+    )
+
+    result = analyzer.analyze_batch(
+        requests,
+        _evidence(),
+    )
+
+    assert result == CardVersionBatchResult(
+        {}, request_succeeded=False, timed_out=True
+    )
+    assert client.interactions.calls == 1
+    assert "TIMEOUT exception=APITimeoutError" in caplog.text
+    assert "configured_timeout_ms=180000" in caplog.text
+    assert "effective_timeout_seconds=180.000" in caplog.text
+    assert "elapsed_ms=61250" in caplog.text
+    assert "model=gemini-version-test" in caplog.text
+    assert "source_images=4" in caplog.text
+    assert "source_bytes=28" in caplog.text
+    assert "work_items=71" in caplog.text
+    assert "detail=client_side_timeout" in caplog.text
+    assert "top-secret" not in caplog.text
+
+
+def test_timeout_wins_over_rate_limit_metadata():
+    class APITimeoutError(RuntimeError):
+        code = 429
+        status = "RESOURCE_EXHAUSTED"
+
+    class TimedOutInteractions:
+        def create(self, **kwargs):
+            raise APITimeoutError("key=secret")
+
+    client = _Client(None)
+    client.interactions = TimedOutInteractions()
+    analyzer = GeminiCardVersionAnalyzer(
+        api_key="secret", client_factory=lambda: client
+    )
+
+    result = analyzer.analyze_batch(
+        (
+            CardVersionAnalysisRequest(
+                "known",
+                C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85),
+                _cards(),
+            ),
+        ),
+        _evidence(),
+    )
+
+    assert result.timed_out
+    assert not result.rate_limited

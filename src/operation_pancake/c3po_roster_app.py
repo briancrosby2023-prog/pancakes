@@ -211,6 +211,9 @@ def analyze_persisted_card_versions() -> int:
         print("VERSION ANALYZER FAILED: persisted C-3PO roster is unavailable")
         return 1
     outcome = service.analyze_card_versions(roster)
+    if outcome.timed_out:
+        print("VERSION ANALYZER FAILED: TIMEOUT")
+        return 3
     if outcome.rate_limited:
         print("VERSION ANALYZER FAILED: RATE_LIMITED")
         return 2
@@ -249,6 +252,7 @@ def _runtime_diagnostic_body() -> int:
         release = "unavailable"
     analyzer = service.version_analyzer
     model = getattr(analyzer, "model", "unavailable")
+    timeout_ms = getattr(analyzer, "timeout_ms", "unavailable")
     print(f"DIAGNOSTIC_MARKER={RUNTIME_DIAGNOSTIC_MARKER}")
     print(f"GIT_HEAD={_git_head(root)}")
     print(f"PACKAGE_RELEASE={release}")
@@ -258,6 +262,11 @@ def _runtime_diagnostic_body() -> int:
     print(f"PYTHON_EXECUTABLE={Path(sys.executable).resolve()}")
     print(f"PYTHON_VERSION={sys.version.split()[0]}")
     print(f"VERSION_MODEL={model}")
+    print(f"VERSION_TIMEOUT_MS={timeout_ms}")
+    print(
+        "PANCAKE_GEMINI_VERSION_TIMEOUT_MS_SET="
+        + ("yes" if os.getenv("PANCAKE_GEMINI_VERSION_TIMEOUT_MS") else "no")
+    )
     print(
         "PANCAKE_GEMINI_VERSION_MODEL_SET="
         + ("yes" if os.getenv("PANCAKE_GEMINI_VERSION_MODEL") else "no")

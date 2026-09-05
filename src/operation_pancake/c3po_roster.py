@@ -367,9 +367,12 @@ class C3PORosterService:
                 {}, request_succeeded=False
             )
         if not batch_result.request_succeeded:
-            result_state = (
-                "RATE_LIMITED" if batch_result.rate_limited else "PROVIDER_FAILURE"
-            )
+            if batch_result.timed_out:
+                result_state = "TIMEOUT"
+            elif batch_result.rate_limited:
+                result_state = "RATE_LIMITED"
+            else:
+                result_state = "PROVIDER_FAILURE"
             LOGGER.info(
                 "VERSION ANALYZER BATCH request_count=1 work_items=%d "
                 "roster_observations=%d source_evidence_compatible=yes "
@@ -384,6 +387,7 @@ class C3PORosterService:
                 request_succeeded=False,
                 provider_failed=True,
                 rate_limited=batch_result.rate_limited,
+                timed_out=batch_result.timed_out,
             )
 
         LOGGER.info(

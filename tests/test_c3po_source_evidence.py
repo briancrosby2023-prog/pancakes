@@ -482,6 +482,46 @@ def test_total_rate_limit_preserves_roster_choices_and_reports_failure(
     assert service.store.load() == roster
 
 
+def test_total_timeout_preserves_all_state_and_reports_distinct_failure(
+    tmp_path, monkeypatch, capsys, caplog
+):
+    class TimedOutAnalyzer:
+        def analyze_batch(self, requests, evidence):
+            return CardVersionBatchResult(
+                {}, request_succeeded=False, timed_out=True
+            )
+
+    service = _service(tmp_path, _Provider(), TimedOutAnalyzer())
+    roster = _roster()
+    service.store.save(roster)
+    service.source_evidence_store.save(roster, _screenshots(tmp_path))
+    service.card_choice_store.path.write_text(
+        '{"choices": {"existing": "manual-card"}}\n', encoding="utf-8"
+    )
+    before = (
+        service.store.path.read_bytes(),
+        service.source_evidence_store.path.read_bytes(),
+        service.card_choice_store.path.read_bytes(),
+    )
+    monkeypatch.setattr(c3po_roster_app, "create_service", lambda root: service)
+    caplog.set_level("INFO")
+
+    status = c3po_roster_app.analyze_persisted_card_versions()
+
+    output = capsys.readouterr().out
+    assert status != 0
+    assert "VERSION ANALYZER FAILED: TIMEOUT" in output
+    assert "RATE_LIMITED" not in output
+    assert "VERSION ANALYZER COMPLETE" not in output
+    assert "result=TIMEOUT" in caplog.text
+    assert (
+        service.store.path.read_bytes(),
+        service.source_evidence_store.path.read_bytes(),
+        service.card_choice_store.path.read_bytes(),
+    ) == before
+    assert service.store.load() == roster
+
+
 def test_omitted_player_result_remains_select_card(tmp_path):
     class OmittedResultAnalyzer:
         def analyze_batch(self, requests, evidence):
@@ -696,6 +736,62 @@ def test_real_provider_boundary_429_calls_once_and_changes_no_state(
     assert "secret" not in caplog.text
 
 
+def test_real_provider_boundary_timeout_calls_once_and_changes_no_state(
+    tmp_path, caplog
+):
+    class APITimeoutError(RuntimeError):
+        pass
+
+    class TimedOutInteractions:
+        def __init__(self):
+            self.calls = []
+
+        def create(self, **kwargs):
+            self.calls.append(kwargs)
+            raise APITimeoutError("request timed out for key=secret")
+
+    class Client:
+        def __init__(self):
+            self.interactions = TimedOutInteractions()
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return None
+
+    client = Client()
+    analyzer = GeminiCardVersionAnalyzer(
+        api_key="secret", timeout_ms=180_000, client_factory=lambda: client
+    )
+    service = _service(tmp_path, _Provider(), analyzer)
+    roster = _roster()
+    service.store.save(roster)
+    service.source_evidence_store.save(roster, _screenshots(tmp_path))
+    service.card_choice_store.path.write_text(
+        '{"choices": {"existing": "manual-card"}}\n', encoding="utf-8"
+    )
+    before = (
+        service.store.path.read_bytes(),
+        service.source_evidence_store.path.read_bytes(),
+        service.card_choice_store.path.read_bytes(),
+    )
+    caplog.set_level("INFO")
+
+    outcome = service.analyze_card_versions(roster)
+
+    assert len(client.interactions.calls) == 1
+    assert outcome.timed_out and not outcome.rate_limited
+    assert not outcome.request_succeeded
+    assert (
+        service.store.path.read_bytes(),
+        service.source_evidence_store.path.read_bytes(),
+        service.card_choice_store.path.read_bytes(),
+    ) == before
+    assert "result=TIMEOUT" in caplog.text
+    assert "secret" not in caplog.text
+
+
 def test_runtime_diagnostic_identifies_modules_and_makes_zero_provider_calls(
     tmp_path, monkeypatch, capsys
 ):
@@ -727,8 +823,10 @@ def test_runtime_diagnostic_identifies_modules_and_makes_zero_provider_calls(
     assert "PYTHON_EXECUTABLE=" in output
     assert "PYTHON_VERSION=" in output
     assert "VERSION_MODEL=diagnostic-model" in output
+    assert "VERSION_TIMEOUT_MS=unavailable" in output
     assert "PANCAKE_GEMINI_VERSION_MODEL_SET=yes" in output
     assert "PANCAKE_GEMINI_MODEL_SET=no" in output
+    assert "PANCAKE_GEMINI_VERSION_TIMEOUT_MS_SET=no" in output
     assert "GEMINI_API_KEY_PRESENT=yes" in output
     assert f"PERSISTED_ROSTER_PATH={service.store.path}" in output
     assert f"SOURCE_EVIDENCE_PATH={service.source_evidence_store.path}" in output
@@ -785,6 +883,7 @@ def test_runtime_diagnostic_subprocess_contract_is_stdout_only(tmp_path):
     ).resolve()
     assert f"C3PO_ROSTER_APP_PATH={expected_app}" in result.stdout.splitlines()
     assert "SOURCE_EVIDENCE_COMPATIBLE=yes" in result.stdout.splitlines()
+    assert "VERSION_TIMEOUT_MS=180000" in result.stdout.splitlines()
     assert "RUNTIME_DIAGNOSTIC_STATUS=PASS" in result.stdout.splitlines()
 
 

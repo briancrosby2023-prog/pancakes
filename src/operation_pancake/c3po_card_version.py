@@ -6,6 +6,7 @@ import json
 import logging
 import os
 import re
+import time
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any, Callable, Mapping, Protocol
 
@@ -15,6 +16,9 @@ if TYPE_CHECKING:
     from operation_pancake.cfb27_enrichment import CFB27CardData
 
 LOGGER = logging.getLogger(__name__)
+# A full-roster multimodal analysis exceeded the former 60-second client cap.
+# Keep one request and give that client-side operation a bounded three minutes.
+DEFAULT_CARD_VERSION_TIMEOUT_MS = 180_000
 WEAK_EVIDENCE = re.compile(
     r"\b(maybe|likely|probably|possibly|uncertain|appears|seems)\b",
     re.IGNORECASE,
@@ -55,6 +59,7 @@ class CardVersionBatchResult:
     decisions: Mapping[str, CardVersionDecision]
     request_succeeded: bool
     rate_limited: bool = False
+    timed_out: bool = False
 
 
 @dataclass(frozen=True)
@@ -63,6 +68,7 @@ class CardVersionAnalysisOutcome:
     request_succeeded: bool
     provider_failed: bool = False
     rate_limited: bool = False
+    timed_out: bool = False
 
 
 class CardVersionAnalyzer(Protocol):
@@ -231,7 +237,7 @@ class GeminiCardVersionAnalyzer:
         self,
         api_key: str | None = None,
         model: str | None = None,
-        timeout_ms: int = 60000,
+        timeout_ms: int | None = None,
         client_factory: Callable[[], Any] | None = None,
     ):
         self.api_key = api_key or os.getenv("GEMINI_API_KEY")
@@ -239,7 +245,21 @@ class GeminiCardVersionAnalyzer:
             "PANCAKE_GEMINI_VERSION_MODEL",
             os.getenv("PANCAKE_GEMINI_MODEL", "gemini-3.7-flash"),
         )
-        self.timeout_ms = timeout_ms
+        configured_timeout = os.getenv("PANCAKE_GEMINI_VERSION_TIMEOUT_MS")
+        if timeout_ms is not None:
+            self.timeout_ms = timeout_ms
+        elif configured_timeout:
+            try:
+                parsed_timeout = int(configured_timeout)
+                self.timeout_ms = (
+                    parsed_timeout
+                    if parsed_timeout > 0
+                    else DEFAULT_CARD_VERSION_TIMEOUT_MS
+                )
+            except ValueError:
+                self.timeout_ms = DEFAULT_CARD_VERSION_TIMEOUT_MS
+        else:
+            self.timeout_ms = DEFAULT_CARD_VERSION_TIMEOUT_MS
         self.client_factory = client_factory
 
     def _client(self):
@@ -252,7 +272,10 @@ class GeminiCardVersionAnalyzer:
 
         return genai.Client(
             api_key=self.api_key,
-            http_options=types.HttpOptions(timeout=self.timeout_ms),
+            http_options=types.HttpOptions(
+                timeout=self.timeout_ms,
+                retry_options=types.HttpRetryOptions(attempts=1),
+            ),
         )
 
     def analyze_batch(
@@ -290,6 +313,7 @@ class GeminiCardVersionAnalyzer:
                     "mime_type": image.mime_type,
                 }
             )
+        started_at = time.monotonic()
         try:
             client = self._client()
             with client:
@@ -297,6 +321,7 @@ class GeminiCardVersionAnalyzer:
                     model=self.model, input=request_input
                 )
         except Exception as exc:  # provider SDK/network failures are fail-open
+            elapsed_ms = round((time.monotonic() - started_at) * 1000)
             (
                 rate_limited,
                 retry_after,
@@ -306,7 +331,29 @@ class GeminiCardVersionAnalyzer:
                 classification,
                 quota,
             ) = _rate_limit_metadata(exc)
-            if rate_limited:
+            timed_out = "TIMEOUT" in type(exc).__name__.upper()
+            if timed_out:
+                rate_limited = False
+                detail = "client_side_timeout"
+            if timed_out:
+                LOGGER.error(
+                    "CFB27 version provider failure: TIMEOUT exception=%s "
+                    "configured_timeout_ms=%d effective_timeout_seconds=%.3f "
+                    "http_status=%s google_status=%s model=%s source_images=%d "
+                    "source_bytes=%d work_items=%d elapsed_ms=%d detail=%s",
+                    type(exc).__name__,
+                    self.timeout_ms,
+                    self.timeout_ms / 1000,
+                    http_status or "unavailable",
+                    provider_status,
+                    self.model,
+                    len(evidence.images),
+                    sum(len(image.payload) for image in evidence.images),
+                    len(bounded),
+                    elapsed_ms,
+                    detail,
+                )
+            elif rate_limited:
                 LOGGER.error(
                     "CFB27 version provider failure: RATE_LIMITED exception=%s "
                     "http_status=%s google_status=%s classification=%s "
@@ -327,7 +374,10 @@ class GeminiCardVersionAnalyzer:
             else:
                 LOGGER.error("CFB27 version provider failure: %s", type(exc).__name__)
             return CardVersionBatchResult(
-                {}, request_succeeded=False, rate_limited=rate_limited
+                {},
+                request_succeeded=False,
+                rate_limited=rate_limited,
+                timed_out=timed_out,
             )
 
         text = getattr(interaction, "output_text", None)
