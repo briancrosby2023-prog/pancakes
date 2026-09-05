@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import threading
+import urllib.error
 import urllib.parse
 import urllib.request
 from collections import Counter
@@ -139,9 +140,9 @@ def test_restart_loads_real_canonical_data_and_renders_without_gemini(tmp_path, 
     for _, _, name, ovr in REAL:
         assert name in page
         assert f"EA OVR {ovr}" in page
-    assert page.count("CFB27: ") == 2
-    assert page.count("SELECT CARD") == 4
-    assert "CFB27 DATA NOT LINKED" not in page
+    assert page.count("CARD NOT READ") == len(REAL)
+    assert "CFB27" not in page
+    assert "SELECT CARD" not in page
     assert "UNRESOLVED" not in page
 
 
@@ -165,6 +166,7 @@ def test_successful_four_image_post_renders_real_enrichment(tmp_path):
     try:
         with urllib.request.urlopen(request, timeout=10) as response:
             page = response.read().decode()
+            destination = response.geturl()
     finally:
         server.shutdown()
         server.server_close()
@@ -172,8 +174,11 @@ def test_successful_four_image_post_renders_real_enrichment(tmp_path):
     for _, _, name, ovr in REAL:
         assert name in page
         assert f"EA OVR {ovr}" in page
-    assert page.count("CFB27: ") == 2
-    assert page.count("SELECT CARD") == 4
+    assert page.count("CARD NOT READ") == len(REAL)
+    assert "CFB27" not in page
+    assert "SELECT CARD" not in page
+    assert destination.endswith("/my-team")
+    assert 'action="/team/upload"' not in page
     assert "UNRESOLVED" not in page
     evidence = service.source_evidence_store.load_for(service.store.load())
     assert evidence is not None
@@ -194,11 +199,12 @@ def test_missing_canonical_source_is_visible_and_never_hides_roster(tmp_path):
     for _, _, name, ovr in REAL:
         assert name in page
         assert f"EA OVR {ovr}" in page
-    assert page.count("CFB27 DATA NOT LINKED") == len(REAL)
+    assert page.count("CARD NOT READ") == len(REAL)
+    assert "CFB27" not in page
     assert "UNRESOLVED" not in page
 
 
-def test_manual_card_ui_contains_only_the_exact_player_family(tmp_path):
+def test_my_team_contains_no_manual_card_ui_or_database_family(tmp_path):
     roster = C3PORoster(
         (C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85),),
         "google-gemini",
@@ -214,25 +220,14 @@ def test_manual_card_ui_contains_only_the_exact_player_family(tmp_path):
 
     page = service.my_team_html()
 
-    cards = cfb27_enrichment.load_cfb27_production_cards(ROOT)
-    thomas_ids = {
-        row["card_id"]
-        for row in cards
-        if cfb27_enrichment.normalize_c3po_name(row.get("player_name"))
-        == "thomasshrader"
-    }
-    other_ids = {
-        row["card_id"]
-        for row in cards
-        if cfb27_enrichment.normalize_c3po_name(row.get("player_name")) == "zachrice"
-    }
-    assert 'action="/team/card-version"' in page
-    assert all(f'value="{card_id}"' in page for card_id in thomas_ids)
-    assert all(f'value="{card_id}"' not in page for card_id in other_ids)
+    assert 'action="/team/card-version"' not in page
+    assert 'name="card_id"' not in page
+    assert "SELECT CARD" not in page
+    assert "CFB27" not in page
     assert page.count("Thomas Shrader") == 1
 
 
-def test_manual_card_ui_requires_an_explicit_choice_and_links_real_card_details(
+def test_my_team_never_links_database_card_details(
     tmp_path,
 ):
     roster = C3PORoster(
@@ -250,19 +245,14 @@ def test_manual_card_ui_requires_an_explicit_choice_and_links_real_card_details(
 
     page = service.my_team_html()
 
-    assert '<input type="radio" name="card_id"' in page
-    assert 'name="card_id" required' in page
-    assert " checked" not in page
-    assert "84 OVR · LG · Phenoms" in page
-    assert "81 OVR · LG · Core Rare" in page
-    assert (
-        'href="https://cfb.fan/players/21328-thomas-shrader/27-260021328/"'
-        in page
-    )
-    assert 'target="_blank" rel="noopener noreferrer">VIEW CARD</a>' in page
+    assert '<input type="radio" name="card_id"' not in page
+    assert "Phenoms" not in page
+    assert "Core Rare" not in page
+    assert "cfb.fan" not in page
+    assert "CARD NOT READ" in page
 
 
-def test_manual_choice_persists_across_restart_and_raw_roster_is_immutable(tmp_path):
+def test_legacy_manual_choice_route_is_removed_and_raw_roster_is_immutable(tmp_path):
     roster = C3PORoster(
         (C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85),),
         "google-gemini",
@@ -293,8 +283,10 @@ def test_manual_choice_persists_across_restart_and_raw_roster_is_immutable(tmp_p
         headers={"Content-Type": "application/x-www-form-urlencoded"},
     )
     try:
-        with urllib.request.urlopen(request, timeout=10) as response:
-            selected_page = response.read().decode()
+        try:
+            urllib.request.urlopen(request, timeout=10)
+        except urllib.error.HTTPError as exc:
+            assert exc.code == 404
     finally:
         server.shutdown()
         server.server_close()
@@ -306,14 +298,14 @@ def test_manual_choice_persists_across_restart_and_raw_roster_is_immutable(tmp_p
         choice_path=choice_path,
     )
     restart_page = restarted.my_team_html()
-    assert "CFB27: LG · 84 OVR · Phenoms" in selected_page
-    assert "CFB27: LG · 84 OVR · Phenoms" in restart_page
+    assert "CFB27" not in restart_page
     assert "SELECT CARD" not in restart_page
+    assert "CARD NOT READ" in restart_page
     assert roster_path.read_bytes() == before
     assert restarted.store.load() == roster
 
 
-def test_incompatible_stale_choice_fails_open_to_select_card(tmp_path):
+def test_legacy_choice_file_is_irrelevant_after_new_observation(tmp_path):
     class ChangedRosterProvider:
         def read_four(self, screenshots):
             assert len(tuple(screenshots)) == 4
@@ -343,9 +335,7 @@ def test_incompatible_stale_choice_fails_open_to_select_card(tmp_path):
         choice_path=choice_path,
     )
     service.store.save(original)
-    fingerprint = cfb27_enrichment.observation_fingerprint(original.players[0], 0)
-    assert not service.select_card_version(fingerprint, "card:4a964d14b782d8c7c325")
-    assert service.select_card_version(fingerprint, "card:38d5dbb6bd21993e002b")
+    assert not hasattr(service, "select_card_version")
 
     restarted = c3po_roster_app.create_service(
         ROOT,
@@ -363,12 +353,13 @@ def test_incompatible_stale_choice_fails_open_to_select_card(tmp_path):
 
     assert "Thomas Shrader" in page
     assert "EA OVR 86" in page
-    assert "SELECT CARD" in page
-    assert "CFB27: LG · 84 OVR · Phenoms" not in page
+    assert "SELECT CARD" not in page
+    assert "CFB27" not in page
+    assert "CARD NOT READ" in page
     assert restarted.store.load() == changed
 
 
-def test_manual_card_choice_ignores_lineup_position_as_identity_veto(tmp_path):
+def test_legacy_manual_card_choice_is_disabled(tmp_path):
     roster = C3PORoster(
         (C3POPlayer("DEFENSE", "RRE 1", "Keyan Burnett", 83),), "p", "m"
     )
@@ -379,13 +370,11 @@ def test_manual_card_choice_ignores_lineup_position_as_identity_veto(tmp_path):
         choice_path=tmp_path / "choices.json",
     )
     service.store.save(roster)
-    fingerprint = cfb27_enrichment.observation_fingerprint(roster.players[0], 0)
-
-    assert service.select_card_version(fingerprint, "card:8bfb91f78594f2e4a227")
+    assert not hasattr(service, "select_card_version")
     page = service.my_team_html()
     assert "Keyan Burnett" in page
     assert "EA OVR 83" in page
-    assert "CFB27: TE · 82 OVR · Phenoms" in page
+    assert "CARD NOT READ" in page
 
 
 def test_application_root_is_module_resolved_not_working_directory(tmp_path, monkeypatch):

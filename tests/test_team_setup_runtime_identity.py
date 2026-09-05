@@ -13,7 +13,7 @@ def test_operation_pancake_app_entrypoint_is_team_runtime():
     config = tomllib.loads(Path("pyproject.toml").read_text())
     assert (
         config["project"]["scripts"]["operation-pancake-app"]
-        == "operation_pancake.ocr_team_app_visual:main"
+        == "operation_pancake.c3po_roster_app:main"
     )
 
 

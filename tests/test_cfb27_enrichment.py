@@ -36,25 +36,26 @@ def test_real_observations_survive_persistence_enrichment_and_html(tmp_path):
     result = cfb27_enrichment.enrich_c3po_roster(persisted, cards)
     assert result.roster == original
     assert tuple(row.observation for row in result.players) == original.players
-    page = render_c3po_roster(persisted, result)
+    page = render_c3po_roster(persisted)
     for _, slot, name, ovr in REAL:
         assert f'data-slot="{slot}"' in page
         assert name in page
         assert f"EA OVR {ovr}" in page
     assert "UNRESOLVED" not in page
-    assert "CFB27: RT · 80 OVR · Phenoms" in page
-    assert "CFB27: LT · 80 OVR · Phenoms" in page
+    assert "CFB27:" not in page
+    assert page.count("CARD NOT READ") == len(REAL)
 
 
 def test_zero_exact_match_keeps_player_visible():
     roster = _roster()
     result = cfb27_enrichment.enrich_c3po_roster(roster, [])
-    page = render_c3po_roster(roster, result)
+    page = render_c3po_roster(roster)
     assert len(result.players) == len(roster.players)
     assert all(row.state == "CFB27 DATA NOT LINKED" for row in result.players)
     assert all(row.observation in roster.players for row in result.players)
     assert "Juan Gaston" in page and "EA OVR 81" in page
-    assert "CFB27 DATA NOT LINKED" in page
+    assert "CFB27 DATA NOT LINKED" not in page
+    assert "CARD NOT READ" in page
 
 
 def test_multiple_exact_cards_are_card_ambiguity_not_identity_ambiguity():
@@ -69,8 +70,9 @@ def test_multiple_exact_cards_are_card_ambiguity_not_identity_ambiguity():
     assert row.observation.name == "Juan Gaston"
     assert row.observation.displayed_ovr == 81
     assert len(row.choices) == 2
-    page = render_c3po_roster(roster, result)
-    assert "Juan Gaston" in page and "EA OVR 81" in page and "SELECT CARD" in page
+    page = render_c3po_roster(roster)
+    assert "Juan Gaston" in page and "EA OVR 81" in page
+    assert "SELECT CARD" not in page
 
 
 def test_oop_and_ovr_mismatch_never_veto_exact_name():
@@ -84,9 +86,10 @@ def test_oop_and_ovr_mismatch_never_veto_exact_name():
     assert row.observation.displayed_ovr == 83
     assert row.card.native_position == "CB"
     assert row.card.card_ovr == 79
-    page = render_c3po_roster(roster, result)
+    page = render_c3po_roster(roster)
     assert "Keyan Burnett" in page and "EA OVR 83" in page
-    assert "CFB27: CB · 79 OVR · Test" in page
+    assert "CFB27:" not in page
+    assert "CARD NOT READ" in page
 
 
 def test_enrichment_source_has_no_legacy_identity_dependencies():

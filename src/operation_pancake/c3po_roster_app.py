@@ -14,15 +14,14 @@ from email.policy import default
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import urlparse
 
-from operation_pancake.c3po_card_version import GeminiCardVersionAnalyzer
+from operation_pancake.c3po_card_version import (
+    C3POCardObservationStore,
+    GeminiCardVersionAnalyzer,
+)
 from operation_pancake.c3po_roster import C3PORosterService, C3PORosterStore, GeminiC3POProvider
 from operation_pancake.c3po_source_evidence import C3POSourceEvidenceStore
-from operation_pancake.cfb27_enrichment import (
-    CFB27CardChoiceStore,
-    load_cfb27_production_cards,
-)
 
 RUNTIME_DIAGNOSTIC_MARKER = "C3PO-RUNTIME-IDENTITY-1"
 
@@ -30,7 +29,7 @@ MAX_UPLOAD_BYTES = 64 * 1024 * 1024
 STYLE = """
 :root{font-family:Inter,ui-sans-serif,system-ui;background:#0b0f14;color:#f5f7fa;color-scheme:dark}
 *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#111821,#080b10);min-height:100vh}
-.shell{max-width:1280px;margin:auto;padding:0 28px 64px}.topbar{height:72px;display:flex;align-items:center;
+.shell{max-width:1200px;margin:auto;padding:0 28px 64px}.topbar{height:72px;display:flex;align-items:center;
 justify-content:space-between;border-bottom:1px solid #26303b}.brand{font-weight:900;letter-spacing:.08em}
 .brand span,.eyebrow{color:#f5b642}.nav{display:flex;gap:24px}.nav a{color:#aeb8c4;text-decoration:none;font-weight:700}
 .nav .active{color:#fff}.upload-panel,.team-panel{margin-top:28px;background:#121923;border:1px solid #273241;
@@ -38,34 +37,30 @@ border-radius:18px;padding:24px;box-shadow:0 18px 60px #0005}.upload-panel{displ
 .upload-panel label{display:grid;gap:8px;flex:1;color:#c4ccd5;font-weight:700}.upload-panel input{padding:13px;
 border:1px dashed #445264;border-radius:10px;background:#0c1219}button{border:0;border-radius:10px;padding:14px 22px;
 font-weight:900;background:#f5b642;color:#17120a;cursor:pointer}.eyebrow{font-size:12px;font-weight:900;letter-spacing:.16em;
-margin:0 0 4px}.team-header h1{font-size:34px;margin:0}.team-subtitle{color:#9ba8b6;margin:8px 0 0}.roster-view{margin-top:30px}
+margin:0 0 4px}.setup-intro{margin-top:44px}.setup-intro h1,.team-header h1{font-size:34px;margin:0}.team-subtitle,.setup-intro p{color:#9ba8b6;margin:8px 0 0}.team-header{position:relative}.update-team{position:absolute;right:0;top:8px;color:#17120a;background:#f5b642;border-radius:9px;padding:10px 14px;text-decoration:none;font-size:12px;font-weight:900}.roster-view{margin-top:34px}
 .section-heading{border-bottom:1px solid #2c3744;margin-bottom:14px}.section-heading h2{font-size:14px;letter-spacing:.12em;
-color:#f5b642}.player-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}.player{display:flex;
-gap:13px;align-items:center;padding:14px;background:#0d141c;border:1px solid #26313d;border-radius:12px}.slot{min-width:48px;
-font-size:12px;font-weight:900;color:#91a0b0}.player-copy{display:grid;gap:3px}.name{font-size:16px}.ovr{font-size:12px;
-color:#f5b642;font-weight:800}.empty-view{color:#697888}.provider-failure,.upload-error{padding:14px;border-radius:10px;
-background:#29181a;color:#ffc2c2}.card-version fieldset{border:0;margin:6px 0 0;padding:0;display:grid;gap:6px}
-.card-version-choice{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 8px;border:1px solid #344253;
-border-radius:8px;background:#111a24}.card-version-choice label{display:flex;align-items:center;gap:7px;cursor:pointer}
-.card-version-choice a{color:#f5b642;font-size:10px;font-weight:900;white-space:nowrap}.card-version button{padding:8px 12px;
-margin-top:2px;font-size:11px}@media(max-width:700px){.nav{display:none}.upload-panel{align-items:stretch;flex-direction:column}}
+color:#f5b642}.position-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.position-group{background:#0d141c;border:1px solid #26313d;border-radius:14px;padding:13px}.position-group h3{margin:0 0 9px;font-size:12px;color:#91a0b0;letter-spacing:.12em}.depth-stack{display:grid;gap:7px}.player{display:flex;gap:12px;align-items:center;padding:13px;background:#121b25;border:1px solid #2a3745;border-radius:10px}.player.backup{margin-left:16px;background:#0f1720;border-color:#222f3c}.slot{min-width:48px;font-size:11px;font-weight:900;color:#91a0b0}.player-copy{display:grid;gap:2px;min-width:0}.name{font-size:16px;overflow-wrap:anywhere}.ovr{font-size:14px;color:#f5b642;font-weight:900}.program{font-size:11px;color:#c7d0da;text-transform:uppercase;letter-spacing:.05em}.program-missing{color:#768493}.empty-view{color:#697888}.provider-failure,.upload-error{padding:14px;border-radius:10px;background:#29181a;color:#ffc2c2}@media(max-width:900px){.position-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.shell{padding:0 16px 40px}.nav{gap:12px}.position-grid{grid-template-columns:1fr}.upload-panel{align-items:stretch;flex-direction:column}.update-team{position:static;display:inline-block;margin-top:14px}}
 """
 
 
-def _page(content: str) -> bytes:
-    upload = (
+def _upload_form() -> str:
+    return (
         '<section class="upload-panel"><form method="post" action="/team/upload" '
         'enctype="multipart/form-data" style="display:contents"><label>Four Team Manager screenshots'
         '<input type="file" name="screenshots" accept="image/jpeg,image/png,image/webp" multiple required>'
         "</label><button>ANALYZE MY TEAM</button></form></section>"
     )
+
+
+def _page(content: str, *, active: str) -> bytes:
     return (
         '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" '
         'content="width=device-width,initial-scale=1"><title>Operation Pancake — My Team</title>'
         f"<style>{STYLE}</style></head><body><div class=\"shell\"><header class=\"topbar\">"
-        '<div class="brand">🥞 OPERATION PANCAKE</div><nav class="nav"><a class="active" href="/my-team">'
-        'MY TEAM</a><a href="#">MARKET</a><a href="#">UPGRADES</a></nav></header><main>'
-        + upload + content + "</main></div></body></html>"
+        '<div class="brand">🥞 OPERATION PANCAKE</div><nav class="nav">'
+        f'<a class="{"active" if active == "team" else ""}" href="/my-team">MY TEAM</a>'
+        f'<a class="{"active" if active == "setup" else ""}" href="/setup">UPDATE TEAM</a>'
+        '</nav></header><main>' + content + "</main></div></body></html>"
     ).encode("utf-8")
 
 
@@ -81,7 +76,7 @@ def _uploaded_files(content_type: str, body: bytes, directory: Path) -> tuple[Pa
             continue
         filename = Path(part.get_filename()).name
         if filename:
-            path = directory / filename
+            path = directory / f"{len(files):02d}-{filename}"
             path.write_bytes(part.get_payload(decode=True) or b"")
             files.append(path)
     if len(files) != 4:
@@ -105,29 +100,24 @@ def create_handler(service: C3PORosterService, upload_root: Path):
             return service.my_team_html()
 
         def do_GET(self) -> None:  # noqa: N802
-            if urlparse(self.path).path not in {"/", "/setup", "/my-team"}:
-                self._send(_page("<h1>Not found</h1>"), 404)
+            path = urlparse(self.path).path
+            if path in {"/", "/setup"}:
+                setup = (
+                    '<section class="setup-intro"><p class="eyebrow">TEAM SETUP</p>'
+                    '<h1>Update Team</h1><p>Upload all four EA Team Manager views.</p></section>'
+                    + _upload_form()
+                )
+                self._send(_page(setup, active="setup"))
                 return
-            self._send(_page(self._saved_roster()))
+            if path == "/my-team":
+                self._send(_page(self._saved_roster(), active="team"))
+                return
+            self._send(_page("<h1>Not found</h1>", active=""), 404)
 
         def do_POST(self) -> None:  # noqa: N802
             path = urlparse(self.path).path
-            if path == "/team/card-version":
-                try:
-                    length = int(self.headers.get("Content-Length", "0"))
-                    if length <= 0 or length > 8192:
-                        raise ValueError("Card selection size is invalid")
-                    fields = parse_qs(self.rfile.read(length).decode("utf-8"))
-                    service.select_card_version(
-                        fields.get("observation", [""])[0],
-                        fields.get("card_id", [""])[0],
-                    )
-                    self._send(_page(self._saved_roster()))
-                except (UnicodeError, ValueError):
-                    self._send(_page(self._saved_roster()), 400)
-                return
             if path != "/team/upload":
-                self._send(_page("<h1>Not found</h1>"), 404)
+                self._send(_page("<h1>Not found</h1>", active=""), 404)
                 return
             try:
                 length = int(self.headers.get("Content-Length", "0"))
@@ -137,15 +127,13 @@ def create_handler(service: C3PORosterService, upload_root: Path):
                 upload_root.mkdir(parents=True, exist_ok=True)
                 with tempfile.TemporaryDirectory(dir=upload_root) as temporary:
                     screenshots = _uploaded_files(self.headers.get("Content-Type", ""), body, Path(temporary))
-                    roster = service.import_four(screenshots)
-                rendered = (
-                    self._saved_roster()
-                    if roster.status == "PROVIDER FAILURE"
-                    else service.render_html(roster)
-                )
-                self._send(_page(rendered))
+                    service.import_four(screenshots)
+                self.send_response(303)
+                self.send_header("Location", "/my-team")
+                self.send_header("Content-Length", "0")
+                self.end_headers()
             except ValueError as exc:
-                self._send(_page(f'<p class="upload-error">{html.escape(str(exc))}</p>'), 400)
+                self._send(_page(f'<p class="upload-error">{html.escape(str(exc))}</p>', active="setup"), 400)
 
         def log_message(self, format: str, *args) -> None:
             return
@@ -166,6 +154,7 @@ def create_service(
     roster_path: Path | None = None,
     choice_path: Path | None = None,
     evidence_path: Path | None = None,
+    card_observation_path: Path | None = None,
     version_analyzer=None,
 ) -> C3PORosterService:
     resolved_root = root.resolve()
@@ -175,20 +164,19 @@ def create_service(
             resolved_root / ".operation_pancake/c3po-roster.json",
         )
     )
-    cards = load_cfb27_production_cards(resolved_root)
-    choices = CFB27CardChoiceStore(
-        choice_path
-        or resolved_root / ".operation_pancake/cfb27-card-version-choices.json"
-    )
     return C3PORosterService(
         C3PORosterStore(store_path),
         provider or GeminiC3POProvider(),
-        enrichment_cards=cards,
-        card_choice_store=choices,
+        enrichment_cards=None,
+        card_choice_store=None,
         source_evidence_store=C3POSourceEvidenceStore(
             evidence_path or store_path.parent / "c3po-source-evidence.zip"
         ),
         version_analyzer=version_analyzer or GeminiCardVersionAnalyzer(),
+        card_observation_store=C3POCardObservationStore(
+            card_observation_path
+            or resolved_root / ".operation_pancake/c3po-programs.json"
+        ),
     )
 
 
@@ -242,7 +230,6 @@ def _runtime_diagnostic_body() -> int:
     import operation_pancake
     from operation_pancake import c3po_card_version
     from operation_pancake.c3po_roster import card_version_work_groups
-    from operation_pancake.cfb27_enrichment import enrich_c3po_roster
 
     root = production_root()
     service = create_service(root)
@@ -278,21 +265,20 @@ def _runtime_diagnostic_body() -> int:
     print("GEMINI_API_KEY_PRESENT=" + ("yes" if os.getenv("GEMINI_API_KEY") else "no"))
     print(f"PERSISTED_ROSTER_PATH={service.store.path.resolve()}")
     evidence_path = service.source_evidence_store.path.resolve()
-    choice_path = service.card_choice_store.path.resolve()
+    card_observation_path = service.card_observation_store.path.resolve()
     print(f"SOURCE_EVIDENCE_PATH={evidence_path}")
-    print(f"AUTOMATIC_CHOICE_STORE_PATH={choice_path}")
-    print(f"MANUAL_CHOICE_STORE_PATH={choice_path}")
-    print("CHOICE_STORE_MODE=shared-explicit-and-automatic")
+    print("AUTOMATIC_CHOICE_STORE_PATH=unused")
+    print("MANUAL_CHOICE_STORE_PATH=unused")
+    print(f"C3PO_PROGRAM_STORE_PATH={card_observation_path}")
+    print("CHOICE_STORE_MODE=program-observations-only")
     try:
         roster = service.store.load()
-        stored_choices = service.card_choice_store.load()
-        enrichment = enrich_c3po_roster(
-            roster, service.enrichment_cards, stored_choices
+        analyzable = tuple(
+            observation
+            for observation in roster.players
+            if observation.name and observation.name.strip()
         )
-        ambiguous = tuple(
-            row for row in enrichment.players if row.state == "SELECT CARD"
-        )
-        distinct = card_version_work_groups(ambiguous)
+        distinct = card_version_work_groups(roster)
         evidence = service.source_evidence_store.load_for(roster)
     except (OSError, ValueError, TypeError):
         print("SOURCE_EVIDENCE_COMPATIBLE=no")
@@ -308,7 +294,8 @@ def _runtime_diagnostic_body() -> int:
         "SOURCE_IMAGE_BYTES="
         + str(sum(len(image.payload) for image in evidence.images) if evidence else 0)
     )
-    print(f"AMBIGUOUS_OBSERVATIONS={len(ambiguous)}")
+    print(f"AMBIGUOUS_OBSERVATIONS={len(analyzable)}")
+    print(f"CARD_OBSERVATIONS_TO_ANALYZE={len(analyzable)}")
     print(f"DISTINCT_BATCHED_QUESTIONS={len(distinct)}")
     print("RUNTIME_DIAGNOSTIC_STATUS=PASS")
     return 0

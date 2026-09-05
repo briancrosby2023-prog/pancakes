@@ -1,4 +1,4 @@
-"""Narrow result contract for optional CFB27 card-version analysis."""
+"""Unrestricted C-3PO program observation from persisted lineup pixels."""
 from __future__ import annotations
 
 import base64
@@ -8,12 +8,12 @@ import os
 import re
 import time
 from dataclasses import dataclass
+from pathlib import Path
 from typing import TYPE_CHECKING, Any, Callable, Mapping, Protocol
 
 if TYPE_CHECKING:
     from operation_pancake.c3po_roster import C3POPlayer
     from operation_pancake.c3po_source_evidence import C3POSourceEvidence
-    from operation_pancake.cfb27_enrichment import CFB27CardData
 
 LOGGER = logging.getLogger(__name__)
 # A full-roster multimodal analysis exceeded the former 60-second client cap.
@@ -28,11 +28,9 @@ WEAK_EVIDENCE = re.compile(
 @dataclass(frozen=True)
 class CardVersionDecision:
     state: str
-    card_id: str | None = None
-
-    @classmethod
-    def unique(cls, card_id: str) -> CardVersionDecision:
-        return cls("UNIQUE_VERSION", card_id)
+    program: str | None = None
+    confidence: str | None = None
+    positive_visual_evidence: tuple[str, ...] = ()
 
     @classmethod
     def ambiguous(cls) -> CardVersionDecision:
@@ -46,12 +44,100 @@ class CardVersionDecision:
     def provider_failure(cls) -> CardVersionDecision:
         return cls("PROVIDER_FAILURE")
 
+    @classmethod
+    def identified(
+        cls, program: str, evidence: tuple[str, ...]
+    ) -> CardVersionDecision:
+        return cls(
+            "IDENTIFIED",
+            program=program,
+            confidence="HIGH",
+            positive_visual_evidence=evidence,
+        )
+
+
+@dataclass(frozen=True)
+class C3POCardObservation:
+    fingerprint: str
+    player_name: str
+    displayed_ovr: int | None
+    program: str | None
+    state: str
+    confidence: str | None = None
+    positive_visual_evidence: tuple[str, ...] = ()
+
+
+class C3POCardObservationStore:
+    """Persist C-3PO program observations independently of the roster."""
+
+    def __init__(self, path: Path):
+        self.path = path
+
+    def load(self) -> dict[str, C3POCardObservation]:
+        try:
+            payload = json.loads(self.path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, json.JSONDecodeError):
+            return {}
+        rows = payload.get("observations") if isinstance(payload, dict) else None
+        if not isinstance(rows, list):
+            return {}
+        observations = {}
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            fingerprint = row.get("fingerprint")
+            player_name = row.get("player_name")
+            if not isinstance(fingerprint, str) or not isinstance(player_name, str):
+                continue
+            evidence = row.get("positive_visual_evidence", [])
+            observations[fingerprint] = C3POCardObservation(
+                fingerprint=fingerprint,
+                player_name=player_name,
+                displayed_ovr=row.get("displayed_ovr"),
+                program=row.get("program") if isinstance(row.get("program"), str) else None,
+                state=str(row.get("state") or "UNCERTAIN"),
+                confidence=(
+                    row.get("confidence")
+                    if isinstance(row.get("confidence"), str)
+                    else None
+                ),
+                positive_visual_evidence=tuple(
+                    item for item in evidence if isinstance(item, str) and item.strip()
+                )
+                if isinstance(evidence, list)
+                else (),
+            )
+        return observations
+
+    def save(self, observations: Mapping[str, C3POCardObservation]) -> None:
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        rows = []
+        for fingerprint in sorted(observations):
+            observation = observations[fingerprint]
+            rows.append(
+                {
+                    "fingerprint": observation.fingerprint,
+                    "player_name": observation.player_name,
+                    "displayed_ovr": observation.displayed_ovr,
+                    "program": observation.program,
+                    "state": observation.state,
+                    "confidence": observation.confidence,
+                    "positive_visual_evidence": list(
+                        observation.positive_visual_evidence
+                    ),
+                }
+            )
+        temporary = self.path.with_suffix(self.path.suffix + ".tmp")
+        temporary.write_text(
+            json.dumps({"observations": rows}, indent=2) + "\n", encoding="utf-8"
+        )
+        temporary.replace(self.path)
+
 
 @dataclass(frozen=True)
 class CardVersionAnalysisRequest:
     fingerprint: str
     observation: C3POPlayer
-    cards: tuple[CFB27CardData, ...]
 
 
 @dataclass(frozen=True)
@@ -72,7 +158,7 @@ class CardVersionAnalysisOutcome:
 
 
 class CardVersionAnalyzer(Protocol):
-    """Optional downstream analyzer; it can select only a supplied card ID."""
+    """Optional downstream analyzer that observes a program, never identity."""
 
     def analyze_batch(
         self,
@@ -89,41 +175,34 @@ def _batch_prompt(requests: tuple[CardVersionAnalysisRequest, ...]) -> str:
     blocks = []
     for request in requests:
         observation = request.observation
-        supplied_versions = "\n".join(
-            f"  - card_id={card.card_id}; native OVR={card.card_ovr}; "
-            f"position={card.native_position}; program={card.program}"
-            for card in request.cards
-        )
         blocks.append(
             f"""OBSERVATION {request.fingerprint}
 The player's identity is already established as {observation.name}.
 Do not identify, rename, reject, or substitute this player.
+Team Manager view: {observation.view}
 Observed lineup slot: {observation.slot}
-EA displayed OVR: {observation.displayed_ovr}
-Supplied card versions for {observation.name} only:
-{supplied_versions}"""
+EA displayed OVR: {observation.displayed_ovr}"""
         )
     observations = "\n\n".join(blocks)
     return f"""Every player's identity is already established by C-3PO.
 Do not identify, rename, reject, or substitute any player.
 
-Inspect the supplied original EA Team Manager screenshot pixels only to determine,
-independently for each observation below, whether positive visual evidence
-distinguishes exactly one supplied card version. Never compare or combine card
-versions across observation blocks.
+Inspect the supplied original EA Team Manager screenshot pixels and your knowledge
+to report the visible card program/version for each observation below. No database
+is supplied and no database constrains what you may report.
 
 {observations}
 
-Use visible card/program treatment, card design, rarity or program indicators, or
-other version-specific presentation only when actually visible. EA displayed OVR
-may be reported as evidence but is not sufficient by itself to choose a version.
-Do not guess. Weak, likely, probable, or uncertain evidence means AMBIGUOUS.
+Use visible card/program treatment, card design, rarity or program indicators, and
+the immutable lineup context. EA displayed OVR is context, not sufficient by itself.
+Do not guess. Weak, likely, probable, or uncertain evidence means UNCERTAIN. A
+program absent from Pancake's data is still permitted.
 
 Return JSON only as {{"results":[...]}} with at most one item per observation.
 Each item must contain "observation_fingerprint" and "result". Result may be
-"UNIQUE_VERSION", "AMBIGUOUS", or "NO_EVIDENCE". UNIQUE_VERSION also requires
-"card_id", "confidence":"HIGH", and a nonempty
-"positive_visual_evidence" list of visible facts.
+"IDENTIFIED", "UNCERTAIN", or "NO_EVIDENCE". IDENTIFIED also requires an
+unrestricted "program_version", "confidence":"HIGH", and a nonempty
+"positive_visual_evidence" list of supporting facts. Never return a database card ID.
 """
 
 
@@ -139,7 +218,7 @@ def _decision(payload: Any) -> CardVersionDecision:
     if not isinstance(payload, dict):
         return CardVersionDecision.no_evidence()
     result = payload.get("result")
-    if result == "AMBIGUOUS":
+    if result in {"AMBIGUOUS", "UNCERTAIN"}:
         return CardVersionDecision.ambiguous()
     if result == "NO_EVIDENCE":
         return CardVersionDecision.no_evidence()
@@ -152,13 +231,17 @@ def _decision(payload: Any) -> CardVersionDecision:
         and all(isinstance(item, str) and item.strip() for item in visual_evidence)
         and not any(WEAK_EVIDENCE.search(item) for item in visual_evidence)
     )
+    program = payload.get("program_version")
     if (
-        result == "UNIQUE_VERSION"
+        result == "IDENTIFIED"
         and payload.get("confidence") == "HIGH"
-        and isinstance(payload.get("card_id"), str)
+        and isinstance(program, str)
+        and program.strip()
         and evidence_is_positive
     ):
-        return CardVersionDecision.unique(payload["card_id"])
+        return CardVersionDecision.identified(
+            program.strip(), tuple(item.strip() for item in visual_evidence)
+        )
     return CardVersionDecision.no_evidence()
 
 
@@ -283,23 +366,11 @@ class GeminiCardVersionAnalyzer:
         requests: tuple[CardVersionAnalysisRequest, ...],
         evidence: C3POSourceEvidence,
     ) -> CardVersionBatchResult:
-        bounded_requests = []
-        for request in requests:
-            identity = _normalized_name(request.observation.name)
-            exact_cards = tuple(
-                card
-                for card in request.cards
-                if identity
-                and _normalized_name(card.canonical_name) == identity
-                and card.card_id
-            )
-            if len(exact_cards) >= 2:
-                bounded_requests.append(
-                    CardVersionAnalysisRequest(
-                        request.fingerprint, request.observation, exact_cards
-                    )
-                )
-        bounded = tuple(bounded_requests)
+        bounded = tuple(
+            CardVersionAnalysisRequest(request.fingerprint, request.observation)
+            for request in requests
+            if request.fingerprint and _normalized_name(request.observation.name)
+        )
         if not bounded or len(evidence.images) != 4:
             return CardVersionBatchResult({}, request_succeeded=True)
         request_input: list[dict[str, str]] = [
@@ -337,7 +408,7 @@ class GeminiCardVersionAnalyzer:
                 detail = "client_side_timeout"
             if timed_out:
                 LOGGER.error(
-                    "CFB27 version provider failure: TIMEOUT exception=%s "
+                    "C-3PO program provider failure: TIMEOUT exception=%s "
                     "configured_timeout_ms=%d effective_timeout_seconds=%.3f "
                     "http_status=%s google_status=%s model=%s source_images=%d "
                     "source_bytes=%d work_items=%d elapsed_ms=%d detail=%s",
@@ -355,7 +426,7 @@ class GeminiCardVersionAnalyzer:
                 )
             elif rate_limited:
                 LOGGER.error(
-                    "CFB27 version provider failure: RATE_LIMITED exception=%s "
+                    "C-3PO program provider failure: RATE_LIMITED exception=%s "
                     "http_status=%s google_status=%s classification=%s "
                     "retry_after=%s model=%s source_images=%d source_bytes=%d "
                     "work_items=%d quota=%s detail=%s",
@@ -372,7 +443,7 @@ class GeminiCardVersionAnalyzer:
                     detail,
                 )
             else:
-                LOGGER.error("CFB27 version provider failure: %s", type(exc).__name__)
+                LOGGER.error("C-3PO program provider failure: %s", type(exc).__name__)
             return CardVersionBatchResult(
                 {},
                 request_succeeded=False,
@@ -411,12 +482,11 @@ class GeminiCardVersionAnalyzer:
         self,
         observation: C3POPlayer,
         evidence: C3POSourceEvidence,
-        cards: tuple[CFB27CardData, ...],
     ) -> CardVersionDecision:
         """Compatibility helper for focused single-observation diagnostics."""
         fingerprint = "single-observation"
         result = self.analyze_batch(
-            (CardVersionAnalysisRequest(fingerprint, observation, cards),), evidence
+            (CardVersionAnalysisRequest(fingerprint, observation),), evidence
         )
         if not result.request_succeeded:
             return CardVersionDecision.provider_failure()

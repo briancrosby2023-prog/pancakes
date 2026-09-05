@@ -99,10 +99,13 @@ def test_product_shell_has_navigation_and_simple_four_image_reimport():
     source = inspect.getsource(c3po_roster_app)
     assert "OPERATION PANCAKE" in source
     assert "MY TEAM" in source
-    assert "MARKET" in source
-    assert "UPGRADES" in source
+    assert "UPDATE TEAM" in source
+    assert 'path in {"/", "/setup"}' in source
     assert "ANALYZE MY TEAM" in source
     assert 'name=\\"screenshots\\"' in source or 'name="screenshots"' in source
+    assert "repeat(3,minmax(0,1fr))" in source
+    assert "@media(max-width:900px)" in source
+    assert "@media(max-width:620px)" in source
 
 
 def test_styled_production_route_is_direct_clean_room_dependency_only():

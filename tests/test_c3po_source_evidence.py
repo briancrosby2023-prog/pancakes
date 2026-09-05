@@ -8,6 +8,7 @@ from pathlib import Path
 
 from operation_pancake import c3po_roster_app
 from operation_pancake.c3po_card_version import (
+    C3POCardObservation,
     CardVersionBatchResult,
     CardVersionDecision,
     GeminiCardVersionAnalyzer,
@@ -19,10 +20,7 @@ from operation_pancake.c3po_roster import (
     C3PORosterStore,
 )
 from operation_pancake.c3po_source_evidence import C3POSourceEvidenceStore
-from operation_pancake.cfb27_enrichment import (
-    CFB27CardChoiceStore,
-    observation_fingerprint,
-)
+from operation_pancake.cfb27_enrichment import CFB27CardChoiceStore
 
 
 def _roster(ovr: int = 85) -> C3PORoster:
@@ -204,8 +202,10 @@ class _RecordingAnalyzer:
         )
 
 
-def test_unique_same_player_version_persists_without_mutating_roster(tmp_path):
-    analyzer = _RecordingAnalyzer(CardVersionDecision.unique("thomas-phenoms"))
+def test_identified_program_persists_without_mutating_roster(tmp_path):
+    analyzer = _RecordingAnalyzer(
+        CardVersionDecision.identified("PHENOMS", ("Visible Phenoms treatment",))
+    )
     service = _service(tmp_path, _Provider(), analyzer)
     roster = service.import_four(_screenshots(tmp_path))
     roster_bytes = service.store.path.read_bytes()
@@ -216,7 +216,7 @@ def test_unique_same_player_version_persists_without_mutating_roster(tmp_path):
     restart_analyzer = _RecordingAnalyzer(CardVersionDecision.provider_failure())
     restarted = _service(tmp_path, _Provider(failure=True), restart_analyzer)
 
-    assert "CFB27: LG · 84 OVR · Phenoms" in page
+    assert "PHENOMS" in page
     assert "SELECT CARD" not in page
     assert len(analyzer.calls) == 1
     requests, evidence = analyzer.calls[0]
@@ -224,30 +224,29 @@ def test_unique_same_player_version_persists_without_mutating_roster(tmp_path):
     request = requests[0]
     assert request.observation == roster.players[0]
     assert len(evidence.images) == 4
-    assert {card.card_id for card in request.cards} == {
-        "thomas-core",
-        "thomas-phenoms",
-    }
-    assert {card.canonical_name for card in request.cards} == {"Thomas Shrader"}
+    assert not hasattr(request, "cards")
     assert service.store.path.read_bytes() == roster_bytes
     assert restarted.store.load() == roster
-    assert "CFB27: LG · 84 OVR · Phenoms" in restarted.my_team_html()
+    assert "PHENOMS" in restarted.my_team_html()
     assert restart_analyzer.calls == []
 
 
-def test_analyzer_cannot_choose_outside_exact_player_family(tmp_path):
-    analyzer = _RecordingAnalyzer(CardVersionDecision.unique("zach-phenoms"))
+def test_analyzer_can_report_program_absent_from_database(tmp_path):
+    analyzer = _RecordingAnalyzer(
+        CardVersionDecision.identified("SEASON 2", ("Visible Season 2 badge",))
+    )
     service = _service(tmp_path, _Provider(), analyzer)
     service.import_four(_screenshots(tmp_path))
 
     page = service.my_team_html()
 
     assert "Thomas Shrader" in page
-    assert "SELECT CARD" in page
+    assert "SEASON 2" in page
+    assert "CFB27" not in page
     assert "Zach Rice" not in page
 
 
-def test_non_unique_or_failed_analysis_keeps_select_card(tmp_path):
+def test_non_unique_or_failed_analysis_renders_card_not_read(tmp_path):
     for decision in (
         CardVersionDecision.ambiguous(),
         CardVersionDecision.no_evidence(),
@@ -259,11 +258,11 @@ def test_non_unique_or_failed_analysis_keeps_select_card(tmp_path):
         service = _service(case, _Provider(), analyzer)
         service.import_four(_screenshots(case))
         assert len(analyzer.calls) == 1
-        assert "SELECT CARD" in service.my_team_html()
+        assert "CARD NOT READ" in service.my_team_html()
         assert len(analyzer.calls) == 1
 
 
-def test_unexpected_analyzer_failure_keeps_select_card(tmp_path):
+def test_unexpected_analyzer_failure_keeps_card_not_read(tmp_path):
     class BrokenAnalyzer:
         def analyze_batch(self, requests, evidence):
             raise RuntimeError("secondary provider unavailable")
@@ -271,35 +270,35 @@ def test_unexpected_analyzer_failure_keeps_select_card(tmp_path):
     service = _service(tmp_path, _Provider(), BrokenAnalyzer())
     service.import_four(_screenshots(tmp_path))
 
-    assert "SELECT CARD" in service.my_team_html()
+    assert "CARD NOT READ" in service.my_team_html()
 
 
-def test_missing_source_evidence_keeps_select_card_and_skips_analyzer(tmp_path):
-    analyzer = _RecordingAnalyzer(CardVersionDecision.unique("thomas-phenoms"))
+def test_missing_source_evidence_keeps_card_not_read_and_skips_analyzer(tmp_path):
+    analyzer = _RecordingAnalyzer(CardVersionDecision.no_evidence())
     service = _service(tmp_path, _Provider(), analyzer)
     service.store.save(_roster())
 
     service.analyze_card_versions(service.store.load())
-    assert "SELECT CARD" in service.my_team_html()
+    assert "CARD NOT READ" in service.my_team_html()
     assert analyzer.calls == []
 
 
-def test_evidence_store_failure_keeps_select_card(tmp_path):
+def test_evidence_store_failure_keeps_card_not_read(tmp_path):
     class BrokenEvidenceStore:
         def load_for(self, roster):
             raise OSError("evidence volume unavailable")
 
-    analyzer = _RecordingAnalyzer(CardVersionDecision.unique("thomas-phenoms"))
+    analyzer = _RecordingAnalyzer(CardVersionDecision.no_evidence())
     service = _service(tmp_path, _Provider(), analyzer)
     service.store.save(_roster())
     service.source_evidence_store = BrokenEvidenceStore()
 
     service.analyze_card_versions(service.store.load())
-    assert "SELECT CARD" in service.my_team_html()
+    assert "CARD NOT READ" in service.my_team_html()
     assert analyzer.calls == []
 
 
-def test_singleton_family_bypasses_version_analyzer(tmp_path):
+def test_singleton_database_family_does_not_bypass_c3po_observation(tmp_path):
     analyzer = _RecordingAnalyzer(CardVersionDecision.provider_failure())
     service = _service(tmp_path, _Provider(), analyzer)
     singleton = C3PORoster(
@@ -313,12 +312,15 @@ def test_singleton_family_bypasses_version_analyzer(tmp_path):
     service.analyze_card_versions(singleton)
     page = service.my_team_html()
 
-    assert "CFB27: RG · 81 OVR · Phenoms" in page
-    assert analyzer.calls == []
+    assert "CARD NOT READ" in page
+    assert len(analyzer.calls) == 1
+    assert not hasattr(analyzer.calls[0][0][0], "cards")
 
 
 def test_stale_automatic_choice_fails_open_after_new_observation(tmp_path):
-    analyzer = _RecordingAnalyzer(CardVersionDecision.unique("thomas-phenoms"))
+    analyzer = _RecordingAnalyzer(
+        CardVersionDecision.identified("PHENOMS", ("Visible Phenoms treatment",))
+    )
     service = _service(tmp_path, _Provider(85), analyzer)
     screenshots = _screenshots(tmp_path)
     service.import_four(screenshots)
@@ -332,32 +334,35 @@ def test_stale_automatic_choice_fails_open_after_new_observation(tmp_path):
     page = service.my_team_html()
     assert "Thomas Shrader" in page
     assert "EA OVR 86" in page
-    assert "SELECT CARD" in page
-    assert "CFB27: LG · 84 OVR · Phenoms" not in page
+    assert "CARD NOT READ" in page
+    assert "PHENOMS" not in page
 
 
-def test_manual_choice_wins_and_bypasses_version_analyzer(tmp_path):
-    analyzer = _RecordingAnalyzer(CardVersionDecision.unique("thomas-phenoms"))
+def test_legacy_manual_choice_is_ignored_without_erasing_c3po_program(tmp_path):
+    analyzer = _RecordingAnalyzer(
+        CardVersionDecision.identified("PHENOMS", ("Visible Phenoms treatment",))
+    )
     service = _service(tmp_path, _Provider(), analyzer)
     roster = _roster()
     service.store.save(roster)
     service.source_evidence_store.save(roster, _screenshots(tmp_path))
-    fingerprint = observation_fingerprint(roster.players[0], 0)
-    assert service.select_card_version(fingerprint, "thomas-core")
+    assert not hasattr(service, "select_card_version")
 
     service.analyze_card_versions(roster)
 
-    assert analyzer.calls == []
+    assert len(analyzer.calls) == 1
     page = service.my_team_html()
-    assert "CFB27: LG · 81 OVR · Core Rare" in page
-    assert "Phenoms" not in page
+    assert "PHENOMS" in page
+    assert "Core Rare" not in page
 
 
 def test_version_diagnostics_are_bounded_and_exclude_sensitive_payloads(
     tmp_path, caplog
 ):
     caplog.set_level("INFO")
-    analyzer = _RecordingAnalyzer(CardVersionDecision.unique("thomas-phenoms"))
+    analyzer = _RecordingAnalyzer(
+        CardVersionDecision.identified("PHENOMS", ("Visible Phenoms treatment",))
+    )
     service = _service(tmp_path, _Provider(), analyzer)
 
     service.import_four(_screenshots(tmp_path))
@@ -366,13 +371,12 @@ def test_version_diagnostics_are_bounded_and_exclude_sensitive_payloads(
     assert "VERSION ANALYZER BATCH request_count=1" in messages
     assert "VERSION ANALYZER RESULT" in messages
     assert "player=Thomas Shrader" in messages
-    assert "candidates=2" in messages
+    assert "candidates=" not in messages
     assert "source_evidence_compatible=yes" in messages
     assert "source_images=4" in messages
-    assert "result=UNIQUE_VERSION" in messages
-    assert "card_id=thomas-phenoms" in messages
-    assert "program=Phenoms" in messages
-    assert "native_ovr=84" in messages
+    assert "result=IDENTIFIED" in messages
+    assert "card_id=" not in messages
+    assert "program=PHENOMS" in messages
     assert "not-a-real-key" not in messages
     assert "image-0" not in messages
 
@@ -389,11 +393,11 @@ def test_multiple_ambiguous_players_invoke_one_batch_and_validate_each_family(
             self.calls.append((requests, evidence))
             return CardVersionBatchResult(
                 {
-                    requests[0].fingerprint: CardVersionDecision.unique(
-                        "thomas-phenoms"
+                    requests[0].fingerprint: CardVersionDecision.identified(
+                        "PHENOMS", ("Visible Phenoms treatment",)
                     ),
-                    requests[1].fingerprint: CardVersionDecision.unique(
-                        "thomas-core"
+                    requests[1].fingerprint: CardVersionDecision.identified(
+                        "CORE", ("Visible Core treatment",)
                     ),
                 },
                 request_succeeded=True,
@@ -441,14 +445,13 @@ def test_multiple_ambiguous_players_invoke_one_batch_and_validate_each_family(
     requests, evidence = analyzer.calls[0]
     assert len(requests) == 2
     assert len(evidence.images) == 4
-    assert {card.canonical_name for card in requests[0].cards} == {
-        "Thomas Shrader"
-    }
-    assert {card.canonical_name for card in requests[1].cards} == {"Juan Gaston"}
+    assert all(not hasattr(request, "cards") for request in requests)
     assert outcome.request_succeeded
     page = service.my_team_html()
-    assert "CFB27: LG · 84 OVR · Phenoms" in page
-    assert "Juan Gaston" in page and "SELECT CARD" in page
+    assert "PHENOMS" in page
+    assert "Juan Gaston" in page
+    assert "CORE" in page
+    assert "CFB27" not in page
 
 
 def test_total_rate_limit_preserves_roster_choices_and_reports_failure(
@@ -522,7 +525,7 @@ def test_total_timeout_preserves_all_state_and_reports_distinct_failure(
     assert service.store.load() == roster
 
 
-def test_omitted_player_result_remains_select_card(tmp_path):
+def test_omitted_player_result_remains_card_not_read(tmp_path):
     class OmittedResultAnalyzer:
         def analyze_batch(self, requests, evidence):
             return CardVersionBatchResult({}, request_succeeded=True)
@@ -532,14 +535,14 @@ def test_omitted_player_result_remains_select_card(tmp_path):
     service.import_four(_screenshots(tmp_path))
 
     assert "Thomas Shrader" in service.my_team_html()
-    assert "SELECT CARD" in service.my_team_html()
+    assert "CARD NOT READ" in service.my_team_html()
 
 
 def test_real_provider_boundary_batches_and_deduplicates_identical_work(tmp_path):
     class Interaction:
         output_text = (
             '{"results":[{"observation_fingerprint":"FIRST",'
-            '"result":"UNIQUE_VERSION","card_id":"thomas-phenoms",'
+            '"result":"IDENTIFIED","program_version":"PHENOMS",'
             '"confidence":"HIGH","positive_visual_evidence":'
             '["Visible Phenoms card treatment"]}]}'
         )
@@ -558,7 +561,7 @@ def test_real_provider_boundary_batches_and_deduplicates_identical_work(tmp_path
             Interaction.output_text = (
                 '{"results":[{"observation_fingerprint":"'
                 + fingerprints[0]
-                + '","result":"UNIQUE_VERSION","card_id":"thomas-phenoms",'
+                + '","result":"IDENTIFIED","program_version":"PHENOMS",'
                 '"confidence":"HIGH","positive_visual_evidence":'
                 '["Visible Phenoms card treatment"]},{"observation_fingerprint":"'
                 + fingerprints[1]
@@ -623,13 +626,14 @@ def test_real_provider_boundary_batches_and_deduplicates_identical_work(tmp_path
     prompt = provider_input[0]["text"]
     assert prompt.count("OBSERVATION ") == 2
     assert prompt.count("Thomas Shrader") >= 1
-    assert prompt.count("card_id=thomas-core") == 1
-    assert prompt.count("card_id=thomas-phenoms") == 1
+    assert "card_id=" not in prompt
+    assert "Core Rare" not in prompt
+    assert "Phenoms" not in prompt
     assert service.store.path.read_bytes() == roster_bytes
     assert service.store.load().players == (repeated, repeated, juan)
-    assert service.my_team_html().count("CFB27: LG · 84 OVR · Phenoms") == 2
+    assert service.my_team_html().count("PHENOMS") == 2
     assert "Juan Gaston" in service.my_team_html()
-    assert "SELECT CARD" in service.my_team_html()
+    assert "CARD NOT READ" in service.my_team_html()
 
 
 def test_same_name_with_different_immutable_evidence_is_not_deduplicated(tmp_path):
@@ -716,10 +720,14 @@ def test_real_provider_boundary_429_calls_once_and_changes_no_state(
     service.store.save(roster)
     service.source_evidence_store.save(roster, _screenshots(tmp_path))
     service.card_choice_store.path.write_text('{"choices": {}}\n', encoding="utf-8")
+    service.card_observation_store.save(
+        {"existing": C3POCardObservation("existing", "Existing", 90, "SEASON 2", "IDENTIFIED")}
+    )
     before = (
         service.store.path.read_bytes(),
         service.source_evidence_store.path.read_bytes(),
         service.card_choice_store.path.read_bytes(),
+        service.card_observation_store.path.read_bytes(),
     )
     caplog.set_level("INFO")
 
@@ -731,6 +739,7 @@ def test_real_provider_boundary_429_calls_once_and_changes_no_state(
         service.store.path.read_bytes(),
         service.source_evidence_store.path.read_bytes(),
         service.card_choice_store.path.read_bytes(),
+        service.card_observation_store.path.read_bytes(),
     ) == before
     assert "RATE_LIMITED" in caplog.text
     assert "secret" not in caplog.text
@@ -771,10 +780,14 @@ def test_real_provider_boundary_timeout_calls_once_and_changes_no_state(
     service.card_choice_store.path.write_text(
         '{"choices": {"existing": "manual-card"}}\n', encoding="utf-8"
     )
+    service.card_observation_store.save(
+        {"existing": C3POCardObservation("existing", "Existing", 90, "SEASON 2", "IDENTIFIED")}
+    )
     before = (
         service.store.path.read_bytes(),
         service.source_evidence_store.path.read_bytes(),
         service.card_choice_store.path.read_bytes(),
+        service.card_observation_store.path.read_bytes(),
     )
     caplog.set_level("INFO")
 
@@ -787,6 +800,7 @@ def test_real_provider_boundary_timeout_calls_once_and_changes_no_state(
         service.store.path.read_bytes(),
         service.source_evidence_store.path.read_bytes(),
         service.card_choice_store.path.read_bytes(),
+        service.card_observation_store.path.read_bytes(),
     ) == before
     assert "result=TIMEOUT" in caplog.text
     assert "secret" not in caplog.text
@@ -831,8 +845,9 @@ def test_runtime_diagnostic_identifies_modules_and_makes_zero_provider_calls(
     assert f"PERSISTED_ROSTER_PATH={service.store.path}" in output
     assert f"SOURCE_EVIDENCE_PATH={service.source_evidence_store.path}" in output
     assert "SOURCE_EVIDENCE_COMPATIBLE=yes" in output
-    assert f"AUTOMATIC_CHOICE_STORE_PATH={service.card_choice_store.path}" in output
-    assert f"MANUAL_CHOICE_STORE_PATH={service.card_choice_store.path}" in output
+    assert "AUTOMATIC_CHOICE_STORE_PATH=unused" in output
+    assert "MANUAL_CHOICE_STORE_PATH=unused" in output
+    assert f"C3PO_PROGRAM_STORE_PATH={service.card_observation_store.path}" in output
     assert "AMBIGUOUS_OBSERVATIONS=1" in output
     assert "DISTINCT_BATCHED_QUESTIONS=1" in output
     assert "must-not-be-printed" not in output

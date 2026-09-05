@@ -2,77 +2,49 @@
 from __future__ import annotations
 
 import html
+import re
 
-from operation_pancake.c3po_roster import VIEWS, C3PORoster
-
-
-def _enrichment_copy(enrichment) -> str:
-    if enrichment is None:
-        return ""
-    if enrichment.state == "SELECT CARD":
-        choices = []
-        for card in enrichment.choices:
-            detail = " · ".join(
-                value
-                for value in (
-                    f"{card.card_ovr} OVR" if card.card_ovr is not None else "OVR —",
-                    str(card.native_position or "POSITION —"),
-                    str(card.program or "PROGRAM —"),
-                )
-            )
-            source = ""
-            if card.source_url:
-                source = (
-                    f'<a href="{html.escape(card.source_url)}" target="_blank" '
-                    'rel="noopener noreferrer">VIEW CARD</a>'
-                )
-            choices.append(
-                '<div class="card-version-choice"><label>'
-                '<input type="radio" name="card_id" required value="'
-                + html.escape(str(card.card_id or ""))
-                + '"><span>'
-                + html.escape(detail)
-                + "</span></label>"
-                + source
-                + "</div>"
-            )
-        return (
-            '<form class="card-version" method="post" action="/team/card-version">'
-            '<fieldset><legend class="enrichment">SELECT CARD</legend>'
-            f'<input type="hidden" name="observation" value="{html.escape(enrichment.fingerprint)}">'
-            + "".join(choices)
-            + "<button>USE CARD</button></fieldset></form>"
-        )
-    if enrichment.state != "LINKED" or enrichment.card is None:
-        return f'<span class="enrichment">{html.escape(enrichment.state)}</span>'
-    card = enrichment.card
-    facts = []
-    if card.native_position:
-        facts.append(str(card.native_position))
-    if card.card_ovr is not None:
-        facts.append(f"{card.card_ovr} OVR")
-    if card.program:
-        facts.append(str(card.program))
-    detail = " · ".join(facts) or card.canonical_name
-    return f'<span class="enrichment">CFB27: {html.escape(detail)}</span>'
+from operation_pancake.c3po_roster import (
+    VIEWS,
+    C3PORoster,
+    observation_fingerprint,
+    roster_observations,
+)
 
 
-def _player_card(player, enrichment=None) -> str:
+def _program_copy(card_observation) -> str:
+    if (
+        card_observation is not None
+        and getattr(card_observation, "state", None) == "IDENTIFIED"
+        and getattr(card_observation, "program", None)
+    ):
+        return '<span class="program">' + html.escape(card_observation.program) + "</span>"
+    return '<span class="program program-missing">CARD NOT READ</span>'
+
+
+def _player_card(player, card_observation=None, *, starter: bool) -> str:
     name = player.name if player.name and player.name.strip() else "NAME NOT READ"
     ovr = "—" if player.displayed_ovr is None else str(player.displayed_ovr)
     return (
-        f'<article class="player" data-slot="{html.escape(player.slot)}">'
+        f'<article class="player {"starter" if starter else "backup"}" data-slot="{html.escape(player.slot)}">'
         f'<span class="slot">{html.escape(player.slot)}</span>'
         '<div class="player-copy">'
         f'<strong class="name">{html.escape(name)}</strong>'
         f'<span class="ovr">EA OVR {html.escape(ovr)}</span>'
-        f"{_enrichment_copy(enrichment)}"
+        f"{_program_copy(card_observation)}"
         "</div></article>"
     )
 
 
-def render_c3po_roster(roster: C3PORoster, enrichment=None) -> str:
-    """Render provider observations first; optional canonical data is secondary."""
+def _position_group(slot: str) -> tuple[str, int]:
+    match = re.match(r"^(.*?)(?:\s*(\d+))?$", slot.strip())
+    if match is None:
+        return slot, 1
+    return (match.group(1) or slot), int(match.group(2) or 1)
+
+
+def render_c3po_roster(roster: C3PORoster, programs=None) -> str:
+    """Render the saved C-3PO roster and independently persisted programs."""
     if roster.status == "PROVIDER FAILURE":
         return (
             '<section id="my-team" class="team-panel"><header class="team-header">'
@@ -80,25 +52,43 @@ def render_c3po_roster(roster: C3PORoster, enrichment=None) -> str:
             '<p class="provider-failure">C-3PO could not read the screenshots. '
             "Your previous roster was not replaced.</p></section>"
         )
-    by_observation = {}
-    if enrichment is not None:
-        by_observation = {id(row.observation): row for row in enrichment.players}
+    programs = programs if hasattr(programs, "get") else {}
     sections = []
     for view in VIEWS:
+        groups: dict[str, list[tuple[int, object, object]]] = {}
+        for occurrence, player in roster_observations(roster):
+            if player.view != view:
+                continue
+            position, depth = _position_group(player.slot)
+            fingerprint = observation_fingerprint(player, occurrence)
+            program = programs.get(fingerprint)
+            if program is not None and (
+                getattr(program, "player_name", None) != (player.name or "")
+                or getattr(program, "displayed_ovr", None) != player.displayed_ovr
+            ):
+                program = None
+            groups.setdefault(position, []).append((depth, player, program))
         cards = "".join(
-            _player_card(player, by_observation.get(id(player)))
-            for player in roster.players
-            if player.view == view
+            '<section class="position-group"><h3>' + html.escape(position) + "</h3>"
+            + '<div class="depth-stack">'
+            + "".join(
+                _player_card(player, program, starter=depth == 1)
+                for depth, player, program in sorted(rows, key=lambda row: row[0])
+            )
+            + "</div></section>"
+            for position, rows in groups.items()
         )
         empty = '<p class="empty-view">No observations reported.</p>' if not cards else ""
         sections.append(
             f'<section class="roster-view" data-view="{html.escape(view)}">'
             f'<div class="section-heading"><h2>{html.escape(view)}</h2></div>'
-            f'<div class="player-grid">{cards}{empty}</div></section>'
+            f'<div class="position-grid">{cards}{empty}</div></section>'
         )
     return (
         '<section id="my-team" class="team-panel"><header class="team-header">'
         '<p class="eyebrow">OPERATION PANCAKE</p><h1>My Team</h1>'
         '<p class="team-subtitle">Your lineup, read directly from EA Team Manager.</p>'
-        "</header>" + "".join(sections) + "</section>"
+        '<a class="update-team" href="/setup">UPDATE TEAM</a></header>'
+        + "".join(sections)
+        + "</section>"
     )
