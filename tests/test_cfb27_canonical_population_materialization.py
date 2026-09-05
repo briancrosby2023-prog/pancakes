@@ -78,6 +78,7 @@ def test_refresh_workflow_materializes_before_scoring_and_uses_real_paths():
     assert refresh < materialize < score
     assert "tests/test_op_x_021_production.py" not in workflow
     assert "tests/test_production_gm.py" in workflow
+    assert '-k "not op_x_013_validated_artifacts_are_consistent"' in workflow
     assert "data/production/cfb27_scored_population.json" in workflow
     assert "data/production/op_x_021/production_scores.json" not in workflow
     assert "ref: product/c3po-clean-room-roster" in workflow

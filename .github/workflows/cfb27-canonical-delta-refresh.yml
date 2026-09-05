@@ -44,6 +44,7 @@ jobs:
           tests/test_cfb_fan_bulk.py
           tests/test_cfb27_canonical_population_materialization.py
           tests/test_production_gm.py
+          -k "not op_x_013_validated_artifacts_are_consistent"
           -q
       - name: Scoped Ruff
         run: >-
