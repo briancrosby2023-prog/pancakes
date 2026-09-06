@@ -73,3 +73,27 @@ def test_position_groups_stretch_to_align_each_six_column_lineup_row():
 
     assert "align-items:stretch" in page
     assert "align-items:start" not in page
+
+
+def test_special_teams_uses_one_six_position_row_in_cfbfan_order():
+    roster = C3PORoster(
+        (
+            C3POPlayer("SPECIAL TEAMS", "P 1", "Punter", 82),
+            C3POPlayer("SPECIAL TEAMS", "K 1", "Kicker", 83),
+            C3POPlayer("SPECIAL TEAMS", "KR 1", "Kick Returner", 87),
+            C3POPlayer("SPECIAL TEAMS", "PR 1", "Punt Returner", 86),
+            C3POPlayer("SPECIAL TEAMS", "LS 1", "Long Snapper", 85),
+            C3POPlayer("SPECIAL TEAMS", "KOS 1", "Kickoff Specialist", 84),
+        ),
+        "google-gemini",
+        "gemini-3.7-flash",
+    )
+
+    page = render_c3po_roster(roster)
+    special = page[page.index('id="special-teams"'):page.index('id="specialists"')]
+
+    assert special.index("<h3>P</h3>") < special.index("<h3>K</h3>")
+    assert special.index("<h3>K</h3>") < special.index("<h3>KR</h3>")
+    assert special.index("<h3>KR</h3>") < special.index("<h3>PR</h3>")
+    assert special.index("<h3>PR</h3>") < special.index("<h3>LS</h3>")
+    assert special.index("<h3>LS</h3>") < special.index("<h3>KOS</h3>")
