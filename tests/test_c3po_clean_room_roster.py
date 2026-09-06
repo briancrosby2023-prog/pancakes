@@ -45,7 +45,7 @@ def test_real_windows_observations_survive_persistence_restart_and_styled_html(t
         assert view in page
         assert f'data-slot="{slot}"' in page
         assert name in page
-        assert f"EA OVR {ovr}" in page
+        assert f'<span class="choice-ovr">{ovr}</span>' in page
     assert "UNRESOLVED" not in page
 
 
@@ -152,7 +152,7 @@ def test_nested_gemini_slot_players_survive_parse_persistence_and_render(tmp_pat
     ]
     for player in observations[:-1]:
         assert player.name in page
-        assert f"EA OVR {player.displayed_ovr}" in page
+        assert f'<span class="choice-ovr">{player.displayed_ovr}</span>' in page
     assert "NAME NOT READ" in page
 
 
@@ -221,7 +221,8 @@ def test_provider_failure_keeps_saved_roster_and_product_route_renders_it(tmp_pa
     assert store.load() == existing
     page = service.my_team_html()
     for _, _, name, ovr in REAL:
-        assert name in page and f"EA OVR {ovr}" in page
+        assert name in page
+        assert f'<span class="choice-ovr">{ovr}</span>' in page
 
 
 def test_product_shell_has_navigation_and_simple_four_image_reimport():
