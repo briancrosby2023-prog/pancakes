@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import inspect
+import json
 from pathlib import Path
 
 from operation_pancake import (
@@ -62,6 +63,93 @@ def test_duplicate_slot_observations_are_preserved_exactly():
     assert "Josh Petty" in page and "Sampson Okunlola" in page
 
 
+def test_nested_gemini_slot_players_survive_parse_persistence_and_render(tmp_path):
+    payload = {
+        "screens": [
+            {
+                "view": "OFFENSE",
+                "players": [
+                    {
+                        "slot": "LG",
+                        "starter": {
+                            "observed_name": "Luke Montgomery",
+                            "displayed_ovr": 87,
+                        },
+                        "backups": [
+                            {
+                                "slot": "LG2",
+                                "observed_name": "Player Missing From CFB27",
+                                "displayed_ovr": 79,
+                            },
+                            {
+                                "slot": "LG3",
+                                "observed_name": "Second Nested Backup",
+                                "displayed_ovr": 77,
+                            },
+                        ],
+                    },
+                    {
+                        "slot": "C1",
+                        "name": "Flat Name Player",
+                        "displayed_ovr": 82,
+                    },
+                    {
+                        "slot": "RG1",
+                        "player_name": "Flat Player Name",
+                        "displayed_ovr": 81,
+                    },
+                    {"slot": "RT1", "name": None, "displayed_ovr": 80},
+                ],
+            }
+        ]
+    }
+
+    class Interaction:
+        output_text = json.dumps(payload)
+
+    class Client:
+        interactions = type(
+            "Interactions", (), {"create": lambda self, **kwargs: Interaction()}
+        )()
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return None
+
+    screenshots = []
+    for index in range(4):
+        path = tmp_path / f"screen-{index}.png"
+        path.write_bytes(b"pixels")
+        screenshots.append(path)
+
+    provider = c3po_roster.GeminiC3POProvider(
+        api_key="not-real", client_factory=Client
+    )
+    roster = c3po_roster.roster_from_screens(screenshots, provider)
+    store = c3po_roster.C3PORosterStore(tmp_path / "c3po-roster.json")
+    store.save(roster)
+    restarted = store.load()
+    page = c3po_roster_page.render_c3po_roster(restarted)
+
+    observations = [
+        player for _, player in c3po_roster.roster_observations(restarted)
+    ]
+    assert [(player.name, player.displayed_ovr) for player in observations] == [
+        ("Luke Montgomery", 87),
+        ("Player Missing From CFB27", 79),
+        ("Second Nested Backup", 77),
+        ("Flat Name Player", 82),
+        ("Flat Player Name", 81),
+        (None, 80),
+    ]
+    for player in observations[:-1]:
+        assert player.name in page
+        assert f"EA OVR {player.displayed_ovr}" in page
+    assert "NAME NOT READ" in page
+
+
 def test_missing_name_has_only_product_missing_name_presentation():
     roster = c3po_roster.C3PORoster(
         players=(c3po_roster.C3POPlayer("SPECIALISTS", "KR 2", None, 79),),
@@ -76,7 +164,13 @@ def test_missing_name_has_only_product_missing_name_presentation():
 def test_provider_failure_keeps_saved_roster_and_product_route_renders_it(tmp_path):
     class FailureProvider:
         def read_four(self, screenshots):
-            return [{"status": "PROVIDER FAILURE", "provider": "google-gemini", "model": "gemini-3.7-flash"}]
+            return [
+                {
+                    "status": "PROVIDER FAILURE",
+                    "provider": "google-gemini",
+                    "model": "gemini-3.7-flash",
+                }
+            ]
 
     store = c3po_roster.C3PORosterStore(tmp_path / "c3po-roster.json")
     existing = _real_roster()

@@ -142,10 +142,14 @@ def _rows_from_payload(payload: Any) -> list[dict[str, Any]]:
             slot = player.get("slot") or player.get("slot_label") or player.get("position")
             if not slot:
                 continue
-            name = player.get("name") if player.get("name") is not None else player.get("player_name")
+            starter = player.get("starter")
+            observation = starter if isinstance(starter, dict) else player
+            name = observation.get("name")
+            if name is None:
+                name = observation.get("player_name", observation.get("observed_name"))
             if isinstance(name, str):
                 name = name.strip() or None
-            rows.append({"view": view, "slot": str(slot).strip().upper(), "name": name, "displayed_ovr": _ovr(player.get("displayed_ovr", player.get("ovr", player.get("rating")))), "backups": player.get("backups") if isinstance(player.get("backups"), list) else []})
+            rows.append({"view": view, "slot": str(slot).strip().upper(), "name": name, "displayed_ovr": _ovr(observation.get("displayed_ovr", observation.get("ovr", observation.get("rating")))), "backups": player.get("backups") if isinstance(player.get("backups"), list) else []})
     return rows
 
 
@@ -289,7 +293,9 @@ def roster_observations(roster: C3PORoster) -> tuple[tuple[int | str, C3POPlayer
             slot = backup.get("slot") or backup.get("slot_label")
             if not slot:
                 slot = f"{parent_position}{backup_index + 2}"
-            name = backup.get("name", backup.get("player_name"))
+            name = backup.get(
+                "name", backup.get("player_name", backup.get("observed_name"))
+            )
             if isinstance(name, str):
                 name = name.strip() or None
             rows.append(
