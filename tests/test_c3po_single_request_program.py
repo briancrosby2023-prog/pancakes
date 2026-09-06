@@ -72,6 +72,6 @@ def test_import_persists_program_from_same_roster_request_without_second_analysi
 
     page = service.my_team_html()
     assert "Luke Montgomery" in page
-    assert "87 OVR" in page
+    assert '<span class="choice-ovr">87</span>' in page
     assert "Season 2" in page
     assert "202019231.png" in page
