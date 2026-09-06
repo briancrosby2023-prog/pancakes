@@ -14,25 +14,25 @@ from operation_pancake.c3po_roster import (
 
 LINEUP_STYLE = """
 <style>
-.team-panel{background:transparent;border:0;box-shadow:none;padding:0;margin-top:16px}
-.team-header{display:grid;grid-template-columns:1fr auto;align-items:end;gap:12px;padding:12px 0 14px;border-bottom:1px solid #26303b}
-.team-header .eyebrow{grid-column:1}.team-header h1{grid-column:1;font-size:28px}.team-subtitle{grid-column:1;margin-top:0}
+.team-panel{background:transparent;border:0;box-shadow:none;padding:0;margin-top:12px}
+.team-header{display:grid;grid-template-columns:1fr auto;align-items:end;gap:10px;padding:8px 0 10px;border-bottom:1px solid #26303b}
+.team-header .eyebrow{grid-column:1}.team-header h1{grid-column:1;font-size:26px}.team-subtitle{grid-column:1;margin-top:0}
 .team-header .update-team{grid-column:2;grid-row:1/4;position:static;align-self:center}
-.lineup-tabs{display:flex;gap:34px;border-bottom:1px solid #26303b;margin:0 0 18px;padding:0 2px}
-.lineup-tabs button{appearance:none;background:none;border:0;position:relative;padding:14px 0 12px;color:#91a0b0;font:inherit;font-size:13px;font-weight:900;letter-spacing:.05em;white-space:nowrap;cursor:pointer}
+.lineup-tabs{display:flex;gap:32px;border-bottom:1px solid #26303b;margin:0 0 12px;padding:0 2px}
+.lineup-tabs button{appearance:none;background:none;border:0;position:relative;padding:11px 0 9px;color:#91a0b0;font:inherit;font-size:12px;font-weight:900;letter-spacing:.05em;white-space:nowrap;cursor:pointer}
 .lineup-tabs button.active{color:#f5f7fa}.lineup-tabs button.active:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#f5b642}
-.roster-view{display:none;margin:0 0 24px}.roster-view.active{display:block}.section-heading{margin:0 0 12px;border:0}.section-heading h2{font-size:13px;margin:0;color:#f5b642;letter-spacing:.12em}
-.position-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px 14px;align-items:start}
-.position-group{min-width:0;background:transparent;border:0;border-radius:0;padding:0}.position-group h3{height:22px;margin:0 0 6px;color:#91a0b0;font-size:12px;font-weight:700;letter-spacing:0;text-transform:none}
-.depth-stack{display:grid;gap:5px}.player{position:relative;display:block;min-width:0;padding:10px;background:#171f2a;border:1px solid #303b48;border-radius:4px}
-.player.starter{aspect-ratio:4/5;min-height:150px;padding:11px;background:linear-gradient(155deg,#1d2937 0%,#111820 58%,#0d131a 100%);border-color:#3a4654;box-shadow:0 6px 18px #0003}
-.player.starter .slot{display:block;margin-bottom:12px;font-size:10px;color:#9ba8b6}.player.starter .player-copy{position:absolute;left:11px;right:11px;bottom:10px;display:grid;gap:3px}
-.player.starter .name{font-size:14px;line-height:1.05;text-transform:uppercase;overflow-wrap:anywhere}.player.starter .ovr{font-size:18px;line-height:1;color:#f5b642}
-.player.starter .program{font-size:9px;line-height:1.15}.player.backup{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 7px;margin:0;padding:7px 8px;background:#333b45;border:0;border-radius:2px}
-.player.backup .slot{display:none}.player.backup .player-copy{display:contents}.player.backup .name{grid-column:1;font-size:11px;line-height:1.05;text-transform:uppercase;overflow-wrap:anywhere}.player.backup .ovr{grid-column:2;grid-row:1;font-size:12px;line-height:1;color:#fff;white-space:nowrap}.player.backup .program{grid-column:1/3;font-size:8px;color:#b5bec8}.program-missing{color:#768493!important}.empty-view{grid-column:1/-1;color:#697888}
-@media(max-width:1100px){.position-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.player.starter{min-height:170px}}
-@media(max-width:720px){.position-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lineup-tabs{gap:20px;overflow-x:auto}.team-header{grid-template-columns:1fr}.team-header .update-team{grid-column:1;grid-row:auto;justify-self:start}.player.starter{min-height:160px}}
-@media(max-width:460px){.position-grid{grid-template-columns:1fr}.player.starter{aspect-ratio:auto;min-height:150px}.lineup-tabs{gap:16px}}
+.roster-view{display:none;margin:0 0 18px}.roster-view.active{display:block}.section-heading{margin:0 0 8px;border:0}.section-heading h2{font-size:12px;margin:0;color:#f5b642;letter-spacing:.12em}
+.position-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px 12px;align-items:start}
+.position-group{min-width:0;background:transparent;border:0;border-radius:0;padding:0}.position-group h3{height:18px;margin:0 0 4px;color:#91a0b0;font-size:11px;font-weight:700;letter-spacing:0;text-transform:none}
+.depth-stack{display:grid;gap:4px}.player{position:relative;display:block;min-width:0;padding:8px;background:#171f2a;border:1px solid #303b48;border-radius:3px}
+.player.starter{height:158px;min-height:0;padding:9px;background:linear-gradient(155deg,#1d2937 0%,#111820 58%,#0d131a 100%);border-color:#3a4654;box-shadow:0 5px 14px #0003}
+.player.starter .slot{display:block;margin-bottom:8px;font-size:9px;color:#9ba8b6}.player.starter .player-copy{position:absolute;left:9px;right:9px;bottom:8px;display:grid;gap:2px}
+.player.starter .name{font-size:12px;line-height:1.02;text-transform:uppercase;overflow-wrap:anywhere}.player.starter .ovr{font-size:16px;line-height:1;color:#f5b642}
+.player.starter .program{font-size:8px;line-height:1.1}.player.backup{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 6px;margin:0;padding:6px 7px;background:#333b45;border:0;border-radius:2px}
+.player.backup .slot{display:none}.player.backup .player-copy{display:contents}.player.backup .name{grid-column:1;font-size:10px;line-height:1.02;text-transform:uppercase;overflow-wrap:anywhere}.player.backup .ovr{grid-column:2;grid-row:1;font-size:11px;line-height:1;color:#fff;white-space:nowrap}.player.backup .program{grid-column:1/3;font-size:7px;color:#b5bec8}.program-missing{color:#768493!important}.empty-view{grid-column:1/-1;color:#697888}
+@media(max-width:820px){.position-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.player.starter{height:165px}}
+@media(max-width:620px){.position-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lineup-tabs{gap:18px;overflow-x:auto}.team-header{grid-template-columns:1fr}.team-header .update-team{grid-column:1;grid-row:auto;justify-self:start}.player.starter{height:155px}}
+@media(max-width:420px){.position-grid{grid-template-columns:1fr}.player.starter{height:145px}.lineup-tabs{gap:14px}}
 </style>
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
