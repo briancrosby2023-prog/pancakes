@@ -99,7 +99,7 @@ def render_c3po_roster(roster: C3PORoster, programs=None) -> str:
                 program = None
             groups.setdefault(position, []).append((depth, player, program))
         cards = "".join(
-            '<section class="position-group"><h3>' + html.escape(position.title()) + "</h3>"
+            '<section class="position-group"><h3>' + html.escape(position) + "</h3>"
             + '<div class="depth-stack">'
             + "".join(
                 _player_card(player, program, starter=depth == 1)
