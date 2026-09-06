@@ -102,8 +102,10 @@ def render_c3po_roster(roster: C3PORoster, programs=None) -> str:
             '<section class="position-group"><h3>' + html.escape(position) + "</h3>"
             + '<div class="depth-stack">'
             + "".join(
-                _player_card(player, program, starter=depth == 1)
-                for depth, player, program in sorted(rows, key=lambda row: row[0])
+                _player_card(player, program, starter=index == 0)
+                for index, (_depth, player, program) in enumerate(
+                    sorted(rows, key=lambda row: row[0])
+                )
             )
             + "</div></section>"
             for position, rows in groups.items()
