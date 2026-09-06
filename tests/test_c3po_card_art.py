@@ -54,3 +54,22 @@ def test_long_player_name_gets_compact_name_style_without_changing_ovr():
 
     assert '<strong class="choice-name choice-name-long">Martellus Bennett</strong>' in page
     assert '<span class="choice-ovr">82</span>' in page
+
+
+def test_position_groups_stretch_to_align_each_six_column_lineup_row():
+    roster = C3PORoster(
+        (
+            C3POPlayer("OFFENSE", "LT 1", "Starter", 87),
+            C3POPlayer("OFFENSE", "TE 1", "Tight End One", 86),
+            C3POPlayer("OFFENSE", "TE 2", "Tight End Two", 83),
+            C3POPlayer("OFFENSE", "TE 3", "Tight End Three", 82),
+            C3POPlayer("OFFENSE", "WR 1", "Receiver", 87),
+        ),
+        "google-gemini",
+        "gemini-3.7-flash",
+    )
+
+    page = render_c3po_roster(roster)
+
+    assert "align-items:stretch" in page
+    assert "align-items:start" not in page
