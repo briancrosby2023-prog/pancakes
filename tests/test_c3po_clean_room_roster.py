@@ -150,6 +150,35 @@ def test_nested_gemini_slot_players_survive_parse_persistence_and_render(tmp_pat
     assert "NAME NOT READ" in page
 
 
+def test_top_level_gemini_slots_object_preserves_named_starters():
+    payload = {
+        "view": "OFFENSE",
+        "slots": {
+            "LT1": {
+                "starter": {
+                    "observed_name": "Josh Petty",
+                    "displayed_ovr": 81,
+                },
+                "backups": [],
+            },
+            "RT1": {
+                "starter": {
+                    "observed_name": "Cason Henry",
+                    "displayed_ovr": 86,
+                },
+                "backups": [],
+            },
+        },
+    }
+
+    rows = c3po_roster._rows_from_payload(payload)
+
+    assert [(row["slot"], row["name"], row["displayed_ovr"]) for row in rows] == [
+        ("LT1", "Josh Petty", 81),
+        ("RT1", "Cason Henry", 86),
+    ]
+
+
 def test_missing_name_has_only_product_missing_name_presentation():
     roster = c3po_roster.C3PORoster(
         players=(c3po_roster.C3POPlayer("SPECIALISTS", "KR 2", None, 79),),

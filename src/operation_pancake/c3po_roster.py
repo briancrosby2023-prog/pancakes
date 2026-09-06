@@ -118,7 +118,9 @@ def _rows_from_payload(payload: Any) -> list[dict[str, Any]]:
         screens = payload
     elif isinstance(payload, dict):
         screens = payload.get("screens") or payload.get("views") or payload.get("sections")
-        if screens is None and payload.get("players") is not None:
+        if screens is None and any(
+            payload.get(key) is not None for key in ("players", "slots", "lineup")
+        ):
             screens = [payload]
     else:
         screens = None
