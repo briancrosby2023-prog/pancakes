@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 """
 
 OFFENSE_POSITION_ORDER = ("LT", "LG", "C", "RG", "RT", "TE", "WR1", "WR3", "HB", "QB", "FB", "WR2")
+DEFENSE_POSITION_ORDER = ("FS", "WILL", "MIKE1", "MIKE2", "SAM", "SS", "CB1", "CB2", "REDG", "DT", "LEDG", "CB3")
 SPECIAL_TEAMS_POSITION_ORDER = ("P", "K", "KR", "PR", "LS", "KOS")
 
 
@@ -71,8 +72,21 @@ def _player_choice(player, card_observation=None, *, selected: bool) -> str:
     )
 
 
-def _position_group(slot: str) -> tuple[str, int]:
+def _position_group(slot: str, view: str | None = None) -> tuple[str, int]:
     clean_slot = slot.strip().upper()
+    if view == "DEFENSE":
+        mike_match = re.fullmatch(r"MIKE\s*(\d+)", clean_slot)
+        if mike_match:
+            depth = int(mike_match.group(1))
+            if depth <= 2:
+                return f"MIKE{depth}", 1
+            return "MIKE2", depth - 1
+        cb_match = re.fullmatch(r"CB\s*(\d+)", clean_slot)
+        if cb_match:
+            depth = int(cb_match.group(1))
+            if depth <= 3:
+                return f"CB{depth}", 1
+            return "CB3", depth - 2
     wr_match = re.fullmatch(r"WR\s*(\d+)", clean_slot)
     if wr_match:
         wr_depth = int(wr_match.group(1))
@@ -88,6 +102,8 @@ def _position_group(slot: str) -> tuple[str, int]:
 def _ordered_groups(view: str, groups: dict[str, list[tuple[int, object, object]]]):
     if view == "OFFENSE":
         order = OFFENSE_POSITION_ORDER
+    elif view == "DEFENSE":
+        order = DEFENSE_POSITION_ORDER
     elif view == "SPECIAL TEAMS":
         order = SPECIAL_TEAMS_POSITION_ORDER
     else:
@@ -111,7 +127,7 @@ def render_c3po_roster(roster: C3PORoster, programs=None) -> str:
         for occurrence, player in roster_observations(roster):
             if player.view != view:
                 continue
-            position, depth = _position_group(player.slot)
+            position, depth = _position_group(player.slot, view)
             fingerprint = observation_fingerprint(player, occurrence)
             program = programs.get(fingerprint)
             if program is not None and (getattr(program, "player_name", None) != (player.name or "") or getattr(program, "displayed_ovr", None) != player.displayed_ovr):
