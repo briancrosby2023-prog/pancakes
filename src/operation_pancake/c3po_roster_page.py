@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 </script>
 """
 
-OFFENSE_POSITION_ORDER = ("LT", "LG", "C", "RG", "RT", "TE", "WR1", "WR2", "HB", "QB", "FB", "WR3")
+OFFENSE_POSITION_ORDER = ("LT", "LG", "C", "RG", "RT", "TE", "WR1", "WR3", "HB", "QB", "FB", "WR2")
 
 
 def _program_copy(card_observation) -> str:
