@@ -44,3 +44,13 @@ def test_unknown_art_keeps_placeholder_instead_of_substituting_a_card():
 
     assert 'class="feature-art"' not in page
     assert '<span class="choice-ovr">87</span>' in page
+
+
+def test_long_player_name_gets_compact_name_style_without_changing_ovr():
+    player = C3POPlayer("OFFENSE", "TE 3", "Martellus Bennett", 82)
+    roster = C3PORoster((player,), "google-gemini", "gemini-3.7-flash")
+
+    page = render_c3po_roster(roster)
+
+    assert '<strong class="choice-name choice-name-long">Martellus Bennett</strong>' in page
+    assert '<span class="choice-ovr">82</span>' in page
