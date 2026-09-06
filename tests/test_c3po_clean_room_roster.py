@@ -83,7 +83,7 @@ def test_nested_gemini_slot_players_survive_parse_persistence_and_render(tmp_pat
                             },
                             {
                                 "slot": "LG3",
-                                "observed_name": "Second Nested Backup",
+                                "player_name": "Second Nested Backup",
                                 "displayed_ovr": 77,
                             },
                         ],
@@ -97,6 +97,11 @@ def test_nested_gemini_slot_players_survive_parse_persistence_and_render(tmp_pat
                         "slot": "RG1",
                         "player_name": "Flat Player Name",
                         "displayed_ovr": 81,
+                    },
+                    {
+                        "slot": "TE1",
+                        "observed_name": "Flat Observed Name",
+                        "displayed_ovr": 84,
                     },
                     {"slot": "RT1", "name": None, "displayed_ovr": 80},
                 ],
@@ -142,6 +147,7 @@ def test_nested_gemini_slot_players_survive_parse_persistence_and_render(tmp_pat
         ("Second Nested Backup", 77),
         ("Flat Name Player", 82),
         ("Flat Player Name", 81),
+        ("Flat Observed Name", 84),
         (None, 80),
     ]
     for player in observations[:-1]:
