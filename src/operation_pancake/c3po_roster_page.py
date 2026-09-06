@@ -74,8 +74,9 @@ def _player_card(player, card_observation=None, *, starter: bool) -> str:
 
 def _position_group(slot: str) -> tuple[str, int]:
     clean_slot = slot.strip().upper()
-    if re.fullmatch(r"WR[123]", clean_slot):
-        return clean_slot, 1
+    wr_match = re.fullmatch(r"WR([123])(?:\s*(\d+))?", clean_slot)
+    if wr_match:
+        return f"WR{wr_match.group(1)}", int(wr_match.group(2) or 1)
     match = re.match(r"^(.*?)(?:\s*(\d+))?$", clean_slot)
     if match is None:
         return clean_slot, 1
