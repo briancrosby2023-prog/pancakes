@@ -12,6 +12,10 @@ from operation_pancake.c3po_roster import (
 )
 
 
+CARD_ART = {
+    ("luke montgomery", "season 2"): "https://media.cfb.fan/cdn-cgi/image/format%3Dauto%2Cwidth%3D300%2Cheight%3D401%2Cquality%3D80%2Cfit%3Dcover%2Cgravity%3Dtop/27/cutdb/playeritem/202019231.png",
+}
+
 LINEUP_STYLE = """
 <style>
 .team-panel{background:transparent;border:0;box-shadow:none;padding:0;margin-top:12px}
@@ -20,7 +24,7 @@ LINEUP_STYLE = """
 .lineup-tabs{display:flex;gap:32px;border-bottom:1px solid #26303b;margin:0 0 12px;padding:0 2px}.lineup-tabs button{appearance:none;background:none;border:0;position:relative;padding:11px 0 9px;color:#91a0b0;font:inherit;font-size:12px;font-weight:900;letter-spacing:.05em;white-space:nowrap;cursor:pointer}.lineup-tabs button.active{color:#f5f7fa}.lineup-tabs button.active:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#f5b642}
 .roster-view{display:none;margin:0 0 18px}.roster-view.active{display:block}.section-heading{margin:0 0 8px;border:0}.section-heading h2{font-size:12px;margin:0;color:#f5b642;letter-spacing:.12em}
 .position-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:26px 12px;align-items:start}.position-group{min-width:0}.position-group h3{height:18px;margin:0 0 5px;color:#91a0b0;font-size:11px;font-weight:500;line-height:18px;text-align:center}
-.feature-card{height:158px;position:relative;overflow:hidden;padding:9px;background:linear-gradient(145deg,#243246 0%,#15202d 48%,#0d141d 100%);border:1px solid #3b495a;border-radius:3px;box-shadow:0 5px 14px #0004}.feature-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 48%,#f5b64212 49%,transparent 52%);pointer-events:none}.feature-slot{position:relative;z-index:1;font-size:9px;line-height:12px;color:#a9b7c7}.feature-copy{position:absolute;z-index:1;left:9px;right:9px;bottom:10px;display:grid;gap:3px}.feature-program{font-size:8px;line-height:10px;color:#9eabb9;text-transform:uppercase}.feature-program.program-missing{color:#718091}
+.feature-card{height:158px;position:relative;overflow:hidden;padding:9px;background:linear-gradient(145deg,#243246 0%,#15202d 48%,#0d141d 100%);border:1px solid #3b495a;border-radius:3px;box-shadow:0 5px 14px #0004}.feature-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 48%,#f5b64212 49%,transparent 52%);pointer-events:none}.feature-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center}.feature-slot{position:relative;z-index:2;font-size:9px;line-height:12px;color:#a9b7c7;text-shadow:0 1px 3px #000}.feature-copy{position:absolute;z-index:2;left:9px;right:9px;bottom:10px;display:grid;gap:3px}.feature-program{font-size:8px;line-height:10px;color:#9eabb9;text-transform:uppercase;text-shadow:0 1px 3px #000}.feature-program.program-missing{color:#718091}
 .player-list{display:grid;gap:5px;margin-top:7px}.player-choice{appearance:none;width:100%;border:1px solid transparent;border-radius:2px;background:#3a4149;color:#fff;padding:7px 8px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 7px;text-align:left;cursor:pointer;font:inherit}.player-choice:hover{background:#444d57}.player-choice.selected{border-color:#f5b642;background:#454b52}.choice-name{grid-column:1;grid-row:1;font-size:10px;line-height:12px;font-weight:900;text-transform:uppercase;overflow-wrap:normal}.choice-ovr{grid-column:2;grid-row:1;font-size:13px;line-height:13px;font-weight:900;text-align:right;white-space:nowrap}.choice-program{grid-column:1/3;grid-row:2;font-size:7px;line-height:8px;color:#b1bbc6;text-transform:uppercase}.choice-program.program-missing{color:#778593}.empty-view{grid-column:1/-1;color:#697888}
 @media(max-width:820px){.position-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-card{height:165px}}@media(max-width:620px){.position-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lineup-tabs{gap:18px;overflow-x:auto}.team-header{grid-template-columns:1fr}.team-header .update-team{grid-column:1;grid-row:auto;justify-self:start}.feature-card{height:155px}}@media(max-width:420px){.position-grid{grid-template-columns:1fr}.feature-card{height:145px}.lineup-tabs{gap:14px}}
 </style>
@@ -30,7 +34,7 @@ document.addEventListener("DOMContentLoaded",()=>{
  const tabs=[...root.querySelectorAll(".lineup-tabs button")],views=[...root.querySelectorAll(".roster-view")];
  const show=id=>{tabs.forEach(t=>{const on=t.dataset.target===id;t.classList.toggle("active",on);t.setAttribute("aria-selected",on?"true":"false")});views.forEach(v=>v.classList.toggle("active",v.id===id))};
  tabs.forEach(t=>t.addEventListener("click",()=>show(t.dataset.target)));if(tabs.length)show(tabs[0].dataset.target);
- root.querySelectorAll(".position-group").forEach(group=>{const card=group.querySelector(".feature-card"),choices=[...group.querySelectorAll(".player-choice")];if(!card||!choices.length)return;const select=choice=>{choices.forEach(c=>c.classList.toggle("selected",c===choice));card.querySelector(".feature-slot").textContent=choice.dataset.slot;const program=card.querySelector(".feature-program");program.textContent=choice.dataset.program;program.classList.toggle("program-missing",choice.dataset.missing==="1")};choices.forEach(choice=>choice.addEventListener("click",()=>select(choice)));select(choices[0])});
+ root.querySelectorAll(".position-group").forEach(group=>{const card=group.querySelector(".feature-card"),choices=[...group.querySelectorAll(".player-choice")];if(!card||!choices.length)return;const select=choice=>{choices.forEach(c=>c.classList.toggle("selected",c===choice));card.querySelector(".feature-slot").textContent=choice.dataset.slot;const program=card.querySelector(".feature-program");program.textContent=choice.dataset.program;program.classList.toggle("program-missing",choice.dataset.missing==="1");let art=card.querySelector(".feature-art");if(choice.dataset.art){if(!art){art=document.createElement("img");art.className="feature-art";art.alt="";card.prepend(art)}art.src=choice.dataset.art}else if(art){art.remove()}};choices.forEach(choice=>choice.addEventListener("click",()=>select(choice)));select(choices[0])});
 });
 </script>
 """
@@ -44,14 +48,22 @@ def _program_value(card_observation) -> tuple[str, bool]:
     return "CARD NOT READ", True
 
 
+def _card_art(player, card_observation) -> str | None:
+    program, missing = _program_value(card_observation)
+    if missing or not player.name:
+        return None
+    return CARD_ART.get((player.name.strip().casefold(), program.strip().casefold()))
+
+
 def _player_choice(player, card_observation=None, *, selected: bool) -> str:
     name = player.name if player.name and player.name.strip() else "NAME NOT READ"
     ovr = "—" if player.displayed_ovr is None else str(player.displayed_ovr)
     program, missing = _program_value(card_observation)
+    art = _card_art(player, card_observation) or ""
     selected_class = " selected" if selected else ""
     return (
         f'<button type="button" class="player-choice{selected_class}" data-slot="{html.escape(player.slot)}" '
-        f'data-program="{html.escape(program)}" data-missing="{1 if missing else 0}">'
+        f'data-program="{html.escape(program)}" data-missing="{1 if missing else 0}" data-art="{html.escape(art)}">'
         f'<strong class="choice-name">{html.escape(name)}</strong><span class="choice-ovr">{html.escape(ovr)}</span>'
         f'<span class="choice-program{" program-missing" if missing else ""}">{html.escape(program)}</span></button>'
     )
@@ -104,10 +116,12 @@ def render_c3po_roster(roster: C3PORoster, programs=None) -> str:
             ordered = sorted(rows, key=lambda row: row[0])
             first_player, first_program = ordered[0][1], ordered[0][2]
             first_program_text, first_missing = _program_value(first_program)
+            first_art = _card_art(first_player, first_program)
             choices = "".join(_player_choice(player, program, selected=index == 0) for index, (_depth, player, program) in enumerate(ordered))
+            art_html = f'<img class="feature-art" src="{html.escape(first_art)}" alt="">' if first_art else ""
             cards.append(
                 f'<section class="position-group"><h3>{html.escape(position)}</h3>'
-                f'<div class="feature-card"><span class="feature-slot">{html.escape(first_player.slot)}</span>'
+                f'<div class="feature-card">{art_html}<span class="feature-slot">{html.escape(first_player.slot)}</span>'
                 f'<div class="feature-copy"><span class="feature-program{" program-missing" if first_missing else ""}">{html.escape(first_program_text)}</span></div></div>'
                 f'<div class="player-list">{choices}</div></section>'
             )
