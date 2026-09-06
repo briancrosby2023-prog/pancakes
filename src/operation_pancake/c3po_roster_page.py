@@ -27,9 +27,9 @@ LINEUP_STYLE = """
 .depth-stack{display:grid;gap:4px}.player{position:relative;display:block;min-width:0;padding:8px;background:#171f2a;border:1px solid #303b48;border-radius:3px;text-align:left}
 .player.starter{height:158px;min-height:0;padding:9px;background:linear-gradient(155deg,#1d2937 0%,#111820 58%,#0d131a 100%);border-color:#3a4654;box-shadow:0 5px 14px #0003}
 .player.starter .slot{display:block;margin:0;font-size:9px;line-height:12px;color:#9ba8b6;text-align:left}.player.starter .player-copy{position:absolute;left:9px;right:9px;bottom:9px;display:grid;grid-template-columns:1fr;gap:3px;align-items:end;text-align:left}
-.player.starter .name{display:block;font-size:12px;line-height:14px;text-transform:uppercase;overflow-wrap:anywhere}.player.starter .ovr{display:block;font-size:16px;line-height:18px;color:#f5b642}.player.starter .program{display:block;min-height:9px;font-size:8px;line-height:9px}
+.player.starter .name{display:block;font-size:12px;line-height:14px;text-transform:uppercase;overflow-wrap:anywhere}.player.starter .ovr{display:block;font-size:18px;line-height:20px;color:#f5b642}.player.starter .program{display:block;min-height:9px;font-size:8px;line-height:9px}
 .player.backup{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;gap:2px 6px;margin:0;padding:6px 7px;background:#333b45;border:0;border-radius:2px;align-items:baseline;text-align:left}
-.player.backup .slot{display:none}.player.backup .player-copy{display:contents}.player.backup .name{grid-column:1;grid-row:1;display:block;font-size:10px;line-height:12px;text-transform:uppercase;overflow-wrap:anywhere}.player.backup .ovr{grid-column:2;grid-row:1;display:block;font-size:11px;line-height:12px;color:#fff;white-space:nowrap;text-align:right}.player.backup .program{grid-column:1/3;grid-row:2;display:block;min-height:8px;font-size:7px;line-height:8px;color:#b5bec8}.program-missing{color:#768493!important}.empty-view{grid-column:1/-1;color:#697888}
+.player.backup .slot{display:none}.player.backup .player-copy{display:contents}.player.backup .name{grid-column:1;grid-row:1;display:block;font-size:10px;line-height:12px;text-transform:uppercase;overflow-wrap:anywhere}.player.backup .ovr{grid-column:2;grid-row:1;display:block;font-size:12px;line-height:12px;color:#fff;white-space:nowrap;text-align:right}.player.backup .program{grid-column:1/3;grid-row:2;display:block;min-height:8px;font-size:7px;line-height:8px;color:#b5bec8}.program-missing{color:#768493!important}.empty-view{grid-column:1/-1;color:#697888}
 @media(max-width:820px){.position-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.player.starter{height:165px}}
 @media(max-width:620px){.position-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lineup-tabs{gap:18px;overflow-x:auto}.team-header{grid-template-columns:1fr}.team-header .update-team{grid-column:1;grid-row:auto;justify-self:start}.player.starter{height:155px}}
 @media(max-width:420px){.position-grid{grid-template-columns:1fr}.player.starter{height:145px}.lineup-tabs{gap:14px}}
@@ -67,7 +67,7 @@ def _player_card(player, card_observation=None, *, starter: bool) -> str:
         f'<span class="slot">{html.escape(player.slot)}</span>'
         '<div class="player-copy">'
         f'<strong class="name">{html.escape(name)}</strong>'
-        f'<span class="ovr">EA OVR {html.escape(ovr)}</span>'
+        f'<span class="ovr">{html.escape(ovr)} OVR</span>'
         f"{_program_copy(card_observation)}"
         "</div></article>"
     )
