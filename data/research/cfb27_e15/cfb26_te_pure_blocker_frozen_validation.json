@@ -1,0 +1,33 @@
+{
+  "phase": "OP-X-012E.15",
+  "season": 26,
+  "source": "CFB.FAN",
+  "model": "TE-MODEL-004 v1.1",
+  "model_status": "frozen Madden 19 Blocking prior",
+  "freeze_commit": "5c7a9d88b711fed19374d170712e3acec5e4ed1b",
+  "measurement_scope": "expanded historical seed; population acquisition remains in progress",
+  "weight_source": "Operation_Pancake_Master_Database_v1.1_TE_Analysis.xlsx / Madden19_TE_Weights",
+  "records": [
+    {"player":"Gabe Landers","overall":67,"score":64.79,"residual_score_minus_ovr":-2.21,"source_url":"https://cfb.fan/players/33197-gabe-landers/26-2033197/"},
+    {"player":"Ja'Kavion Nonar","overall":68,"score":65.08,"residual_score_minus_ovr":-2.92,"source_url":"https://cfb.fan/players/23236-jakavion-nonar/"},
+    {"player":"Andreas Paaske","overall":68,"score":65.91,"residual_score_minus_ovr":-2.09,"source_url":"https://cfb.fan/players/20478-andreas-paaske/"},
+    {"player":"Alex Honig","overall":70,"score":67.84,"residual_score_minus_ovr":-2.16,"source_url":"https://cfb.fan/players/8189-alex-honig/"},
+    {"player":"Quinton Stewart","overall":71,"score":68.07,"residual_score_minus_ovr":-2.93,"source_url":"https://cfb.fan/players/2872-quinton-stewart/"},
+    {"player":"Emeka Iloh","overall":73,"score":69.91,"residual_score_minus_ovr":-3.09,"source_url":"https://cfb.fan/players/24548-emeka-iloh/"},
+    {"player":"Dorian Thomas","program":"Conference Tour","overall":89,"score":83.12,"residual_score_minus_ovr":-5.88,"source_url":"https://cfb.fan/players/21011-dorian-thomas/26-240021011/"},
+    {"player":"Dorian Thomas","program":"Record Breakers","overall":96,"score":90.18,"residual_score_minus_ovr":-5.82,"source_url":"https://cfb.fan/players/21011-dorian-thomas/26-560021011/"}
+  ],
+  "metrics": {
+    "N": 8,
+    "unique_displayed_ovr_levels": 7,
+    "cross_ovr_pairs": 27,
+    "ranking_correct": 27,
+    "ranking_accuracy": 1.0,
+    "ranking_ties": 0,
+    "raw_weighted_score_mae_vs_displayed_ovr": 3.3875,
+    "exact_ovr_accuracy": null,
+    "exact_ovr_accuracy_note": "Not applicable: TE-MODEL-004 v1.1 is a ranking prior and has no frozen displayed-OVR conversion curve."
+  },
+  "residual_observation": "All eight raw weighted scores are below displayed OVR. Absolute residual expands at the two high-OVR Dorian Thomas versions, so ranking survives this seed while a direct score=OVR interpretation is falsified.",
+  "scientific_control": "No weights were fit or altered after observing CFB26 records."
+}

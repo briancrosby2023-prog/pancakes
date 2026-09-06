@@ -32,9 +32,9 @@ def test_listing_parser_preserves_partial_status_and_source_id():
 
 
 def test_incremental_refresh_targets_newest_pages():
-    assert list(pages_to_fetch(3)) == [588, 589, 590]
-    assert pages_to_fetch(0).start == 1
-    assert pages_to_fetch(0).stop == 591
+    assert list(pages_to_fetch(590, 3)) == [588, 589, 590]
+    assert pages_to_fetch(590, 0).start == 1
+    assert pages_to_fetch(590, 0).stop == 591
 
 
 def test_new_cards_are_added_and_conflicts_preserve_existing_detail():
@@ -99,6 +99,6 @@ def test_listing_id_normalization_deduplicates_against_complete_detail():
             },
         }
     }
-    normalize_listing_ids(checkpoint, state)
+    normalize_listing_ids(checkpoint, state, 27)
     assert list(checkpoint["cards"]) == ["27-123"]
     assert state["cards"] == {"CFB_FAN:27-123": complete}

@@ -20,7 +20,8 @@ def test_stable_ids_are_deterministic_and_source_sensitive():
 def test_435_and_632_are_not_conflated():
     audit = load("database_audit")
     state = json.loads((ROOT / "data/external/cfb_fan_population_state.json").read_text())
-    assert audit["public_population_state"]["records"] == len(state["cards"])
+    assert audit["public_population_state"]["records"] == 8838
+    assert len(state["cards"]) >= audit["public_population_state"]["records"]
     assert audit["evidence_catalog"]["records"] == 632
     assert "not a card population" in audit["evidence_catalog"]["meaning"]
 

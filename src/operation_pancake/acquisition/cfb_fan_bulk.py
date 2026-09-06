@@ -11,64 +11,26 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 ENDPOINT = "https://cfb.fan/api/27/player-items/"
-PARSER_VERSION = "cfb-fan-player-items-v1"
+PARSER_VERSION = "cfb-fan-player-items-v2-cfb27-game-positions"
 REQUESTS_PER_MINUTE = 12
 
 ATTRIBUTE_ABBREVIATIONS = {
-    "acceleration": "ACC",
-    "agility": "AGI",
-    "awareness": "AWR",
-    "ballCarrierVision": "BCV",
-    "blockShedding": "BSH",
-    "breakSack": "BSK",
-    "breakTackle": "BTK",
-    "carrying": "CAR",
-    "catchInTraffic": "CIT",
-    "catching": "CTH",
-    "changeOfDirection": "COD",
-    "deepRouteRunning": "DRR",
-    "deepThrowAccuracy": "DAC",
-    "finesseMoves": "FMV",
-    "hitPower": "POW",
-    "impactBlocking": "IBL",
-    "injury": "INJ",
-    "jukeMove": "JKM",
-    "jumping": "JMP",
-    "kickAccuracy": "KAC",
-    "kickPower": "KPW",
-    "kickReturn": "RET",
-    "leadBlock": "LBK",
-    "manCoverage": "MCV",
-    "mediumRouteRunning": "MRR",
-    "mediumThrowAccuracy": "MAC",
-    "passBlock": "PBK",
-    "passBlockFinesse": "PBF",
-    "passBlockPower": "PBP",
-    "playAction": "PAC",
-    "playRecognition": "PRC",
-    "powerMoves": "PMV",
-    "press": "PRS",
-    "pursuit": "PUR",
-    "release": "RLS",
-    "runBlock": "RBK",
-    "runBlockFinesse": "RBF",
-    "runBlockPower": "RBP",
-    "shortRouteRunning": "SRR",
-    "shortThrowAccuracy": "SAC",
-    "spectacularCatch": "SPC",
-    "speed": "SPD",
-    "spinMove": "SPM",
-    "stamina": "STA",
-    "stiffArm": "SFA",
-    "strength": "STR",
-    "tackle": "TAK",
-    "throwAccuracy": "THA",
-    "throwPower": "THP",
-    "throwUnderPressure": "TUP",
-    "throwingOnTheRun": "RUN",
-    "toughness": "TGH",
-    "trucking": "TRK",
-    "zoneCoverage": "ZCV",
+    "acceleration": "ACC", "agility": "AGI", "awareness": "AWR", "ballCarrierVision": "BCV",
+    "blockShedding": "BSH", "breakSack": "BSK", "breakTackle": "BTK", "carrying": "CAR",
+    "catchInTraffic": "CIT", "catching": "CTH", "changeOfDirection": "COD",
+    "deepRouteRunning": "DRR", "deepThrowAccuracy": "DAC", "finesseMoves": "FMV",
+    "hitPower": "POW", "impactBlocking": "IBL", "injury": "INJ", "jukeMove": "JKM",
+    "jumping": "JMP", "kickAccuracy": "KAC", "kickPower": "KPW", "kickReturn": "RET",
+    "leadBlock": "LBK", "manCoverage": "MCV", "mediumRouteRunning": "MRR",
+    "mediumThrowAccuracy": "MAC", "passBlock": "PBK", "passBlockFinesse": "PBF",
+    "passBlockPower": "PBP", "playAction": "PAC", "playRecognition": "PRC",
+    "powerMoves": "PMV", "press": "PRS", "pursuit": "PUR", "release": "RLS",
+    "runBlock": "RBK", "runBlockFinesse": "RBF", "runBlockPower": "RBP",
+    "shortRouteRunning": "SRR", "shortThrowAccuracy": "SAC", "spectacularCatch": "SPC",
+    "speed": "SPD", "spinMove": "SPM", "stamina": "STA", "stiffArm": "SFA",
+    "strength": "STR", "tackle": "TAK", "throwAccuracy": "THA", "throwPower": "THP",
+    "throwUnderPressure": "TUP", "throwingOnTheRun": "RUN", "toughness": "TGH",
+    "trucking": "TRK", "zoneCoverage": "ZCV",
 }
 
 
@@ -86,6 +48,13 @@ def parse_bulk_payload(content: bytes) -> dict[str, dict]:
     return records
 
 
+def cfb27_position(record: dict) -> str | None:
+    """Return the game-facing CFB27 position, falling back for older payloads."""
+    return (record.get("gamePosition") or {}).get("abbreviation") or (
+        record.get("position") or {}
+    ).get("abbreviation")
+
+
 def ratings_from_record(record: dict) -> dict[str, int]:
     """Extract observed ratings; absent fields stay absent and zero is retained."""
     ratings = {}
@@ -97,10 +66,9 @@ def ratings_from_record(record: dict) -> dict[str, int]:
 
 
 def identity_conflicts(existing: dict, record: dict) -> dict[str, dict]:
-    position = (record.get("position") or {}).get("abbreviation")
     expected = {
         "player_name": " ".join(filter(None, (record.get("firstName"), record.get("lastName")))),
-        "position": position,
+        "position": cfb27_position(record),
         "overall": record.get("overall"),
         "program": (record.get("program") or {}).get("name"),
         "archetype": (record.get("archetype") or {}).get("nameWithoutPosition"),
@@ -136,6 +104,7 @@ def promote_record(existing: dict, record: dict, snapshot: str, retrieved_at: st
         retrieval_timestamp=retrieved_at,
         team_school=(record.get("team") or {}).get("school"),
         release_date=record.get("releaseDate"),
+        position=cfb27_position(record) or existing.get("position"),
     )
     promoted["metadata"] = {
         **existing.get("metadata", {}),
@@ -147,30 +116,13 @@ def promote_record(existing: dict, record: dict, snapshot: str, retrieved_at: st
 
 
 def priority_key(card: dict) -> tuple:
-    """Implement the packet's acquisition order without excluding any card."""
+    """Implement the packet's acquisition order using CFB27 terminology."""
     position = card.get("position")
     group = {
-        "LT": 3,
-        "LG": 3,
-        "C": 3,
-        "RG": 3,
-        "RT": 3,
-        "MLB": 4,
-        "MIKE": 4,
-        "LOLB": 4,
-        "ROLB": 4,
-        "LE": 5,
-        "RE": 5,
-        "LEDG": 5,
-        "REDG": 5,
-        "DT": 6,
-        "TE": 7,
-        "CB": 8,
-        "FS": 8,
-        "SS": 8,
-        "QB": 9,
-        "WR": 10,
-        "HB": 10,
+        "LT": 3, "LG": 3, "C": 3, "RG": 3, "RT": 3,
+        "SAM": 4, "MIKE": 4, "WILL": 4,
+        "LEDG": 5, "REDG": 5, "DT": 6, "TE": 7,
+        "CB": 8, "FS": 8, "SS": 8, "QB": 9, "WR": 10, "HB": 10,
     }.get(position, 11)
     high_ovr = 0 if (card.get("overall") or 0) >= 85 else 1
     upgradeable = 0 if card.get("metadata", {}).get("has_power_up") else 1

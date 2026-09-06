@@ -1,0 +1,14 @@
+{
+  "changed_file_ruff": "PASS",
+  "diff_check": "PASS",
+  "op_x_028_tests": {"passed": 7, "status": "PASS"},
+  "relevant_regression_suite": {"passed": 52, "status": "PASS"},
+  "broader_pytest": {
+    "status": "BLOCKED_DURING_COLLECTION",
+    "reason": "pre-existing test_e15_historical_te_acquisition_v2 imports requests, which is not installed in the workspace environment",
+    "new_op_x_028_failure": false
+  },
+  "intrinsic_market_separation": "PASS",
+  "pre_price_freeze_commit": "1efe088731c9844b43d99373579794e22ab2dbfa",
+  "pre_price_artifact_sha256": "55ab8e89d5f42ba38ba558968452eb6f00eb22f63876d678d2564eb8fab3c889"
+}

@@ -1,0 +1,21 @@
+{
+  "installed_entry_point": ".venv/Scripts/operation-pancake-gm.exe",
+  "purchase_report": {
+    "command": "operation-pancake-gm --root . purchase-report card:05b737e0828809d8a979 card:f35e84cba0d56c4270c3",
+    "exit_code": 0,
+    "verified": [
+      "Anthony Donkoh to Brendan Black",
+      "+5.033913 Pancake",
+      "TRANSFORMATIVE",
+      "RBP, STR, RBK",
+      "Addison Nichols -0.910755",
+      "PRICE CHECK REQUIRED"
+    ]
+  },
+  "shopping_board": {
+    "command": "operation-pancake-gm --root . shopping-board",
+    "exit_code": 0,
+    "rows": 17,
+    "verified": "canonical JSON board with alternative challenges and safe actions"
+  }
+}

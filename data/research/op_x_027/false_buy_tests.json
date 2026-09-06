@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "scenarios": [
+    "missing price -> PRICE CHECK REQUIRED",
+    "TEST DATA -> INSUFFICIENT MARKET DATA",
+    "ambiguous identity -> INSUFFICIENT MARKET DATA",
+    "diagnostic model -> INSUFFICIENT MARKET DATA",
+    "worse football player -> WAIT",
+    "stale price -> INSUFFICIENT MARKET DATA",
+    "no validated contextual valuation policy -> WAIT",
+    "unaffordable -> WAIT",
+    "qualified fresh exact routed evidence with identified policy -> BUY"
+  ],
+  "tests": "tests/test_op_x_027_market_policy.py"
+}

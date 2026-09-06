@@ -1,0 +1,23 @@
+{
+  "buy_gate_not_bypassed": true,
+  "chronological_order": "PASS",
+  "deterministic": "PASS",
+  "fixture_firewall": "PASS",
+  "future_leakage_blocked": true,
+  "future_prices_blocked": true,
+  "identical_baseline_capital": "PASS",
+  "keep_reward": "PASS",
+  "losing_preposition_trade": "PASS",
+  "low_liquidity_rejected": "PASS",
+  "no_action_valid": "PASS",
+  "poor_collection_pass": "PASS",
+  "returned_training": "PASS",
+  "scenario_count": 20,
+  "scorecard_reconciles": "PASS",
+  "sell_reward_after_cost": "PASS",
+  "single_sale_rejected": "PASS",
+  "training_separate": "PASS",
+  "transaction_costs": "PASS",
+  "unknown_collection_rules": "UNKNOWN",
+  "volume_less_spike_rejected": "PASS"
+}

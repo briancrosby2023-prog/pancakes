@@ -1,0 +1,20 @@
+{
+  "phase":"OP-X-012E.15","season":25,"source":"CFB.FAN","family":"Secondary","purpose":"Out-of-season structural validation; no pooled fit",
+  "records":[
+    {"player":"NuNu Campbell","overall":66,"position":"CB","archetype":"Zone","ratings":{"SPD":65,"PRS":57,"MCV":59,"ZCV":65,"TAK":60,"ACC":65,"COD":65,"CTH":60},"source_url":"https://cfb.fan/players/7608-nunu-campbell/25-107608/social/"},
+    {"player":"Cobee Bryant","overall":69,"position":"CB","archetype":"Zone","ratings":{"SPD":67,"PRS":67,"MCV":67,"ZCV":67,"TAK":60,"ACC":67,"COD":67,"CTH":67},"source_url":"https://cfb.fan/players/5988-cobee-bryant/25-105988/social/"},
+    {"player":"DeAngelo Hall","version":"Legends 87","overall":87,"position":"CB","archetype":"Zone","ratings":{"SPD":87,"PRS":82,"MCV":83,"ZCV":86,"TAK":75,"ACC":87,"COD":86,"CTH":82},"source_url":"https://cfb.fan/players/26006-deangelo-hall/25-26126006/social"},
+    {"player":"DeAngelo Hall","version":"Legends 89","overall":89,"position":"CB","archetype":"Zone","ratings":{"SPD":89,"PRS":84,"MCV":84,"ZCV":89,"TAK":76,"ACC":89,"COD":90,"CTH":83},"source_url":"https://cfb.fan/players/26006-deangelo-hall/25-26026006/social"},
+    {"player":"Jacob Parrish","overall":92,"position":"CB","archetype":"Zone","ratings":{"SPD":92,"PRS":92,"MCV":92,"ZCV":93,"TAK":75,"ACC":91,"COD":92,"CTH":85},"source_url":"https://cfb.fan/players/23259-jacob-parrish/25-33023259/social/"},
+    {"player":"Sauce Gardner","version":"Rewind","overall":94,"position":"CB","archetype":"Zone","ratings":{"SPD":94,"PRS":90,"MCV":91,"ZCV":94,"TAK":80,"ACC":94,"COD":89,"CTH":80},"source_url":"https://cfb.fan/players/25816-sauce-gardner/25-37025816/social"},
+    {"player":"Cody Jones","overall":69,"position":"SS","archetype":"Hybrid","ratings":{"SPD":69,"ZCV":65,"MCV":61,"TAK":63,"COD":69,"ACC":69,"PRC":65,"POW":63},"source_url":"https://cfb.fan/players/9506-cody-jones/25-209506/social"},
+    {"player":"Rabbit Evans","overall":93,"position":"SS","archetype":"Hybrid","ratings":{"SPD":93,"ZCV":89,"MCV":89,"TAK":90,"COD":90,"ACC":91,"PRC":90,"POW":89},"source_url":"https://cfb.fan/players/1638-rabbit-evans/25-43001638/social"},
+    {"player":"Xe'ree Alexander","overall":97,"position":"SS","archetype":"Hybrid","ratings":{"SPD":97,"ZCV":94,"MCV":97,"TAK":95,"COD":92,"ACC":98,"PRC":91,"POW":86},"source_url":"https://cfb.fan/players/18521-xeree-alexander/25-47018521/social"}
+  ],
+  "inferences":[
+    "Zone CB permits substantial TAK slack across the OVR range, while coverage/athletic ratings remain closer to OVR.",
+    "Hybrid SS maintains a different tackling/coverage balance than Zone CB, supporting an archetype/position layer rather than one secondary sum.",
+    "DeAngelo Hall 87->89 is a same-player upgrade natural experiment: OVR +2 accompanies ZCV +3, SPD/ACC +2, COD +4, while TAK +1 and MCV +1, weakening equal-weight models.",
+    "Exact coefficients are not claimed."
+  ],"accuracy_claim":"NONE"
+}

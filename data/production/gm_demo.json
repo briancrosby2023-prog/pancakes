@@ -1,0 +1,97 @@
+{
+  "attribute_deltas": {
+    "ACC": 5,
+    "AGI": -1,
+    "AWR": -9,
+    "COD": 8,
+    "IBL": 2,
+    "LBK": -1,
+    "PBF": 6,
+    "PBK": 2,
+    "PBP": 5,
+    "RBF": 2,
+    "RBK": 1,
+    "RBP": 2,
+    "SPD": -4,
+    "TGH": 7
+  },
+  "candidate": {
+    "archetype": "Pass Protector",
+    "attribute_coverage": 1.0,
+    "card_id": "card:f131b20e1dc2f5a99ddb",
+    "model_evidence_paths": [
+      "data/research/center_exact_validation/madden_center_frozen_model.json",
+      "data/research/op_x_017/coverage_matrix.json"
+    ],
+    "model_limitations": [
+      "center ranking only; exact displayed overall is out of scope"
+    ],
+    "native_overall": 89,
+    "pancake_model_id": "C-M19-RANK-001",
+    "pancake_model_version": "v1.0",
+    "player_id": "player:85d9cc442cdca43a153b",
+    "player_name": "Drew Bobo",
+    "position": "C",
+    "position_family": "C",
+    "program": "College Kickoff",
+    "routing": {
+      "basis": "position-shared center ranking model",
+      "confidence": "EXACT_POSITION",
+      "family": "C",
+      "model_id": "C-M19-RANK-001",
+      "profile": "Center",
+      "status": "ROUTED",
+      "version": "v1.0"
+    },
+    "score": 86.5,
+    "score_confidence": "HIGH",
+    "score_status": "SCORED_COMPLETE",
+    "source": {
+      "card": "CFB_FAN",
+      "ratings": "https://cfb.fan/players/912-drew-bobo/27-290000912/",
+      "raw_snapshot": "data/external/raw/cfb_fan_player_items/59855014e2785e3dc344cec2514ba55874918d12e717dacfa7d509fe739087fb.json"
+    }
+  },
+  "candidate_price": null,
+  "classification": "UPGRADE",
+  "current": {
+    "archetype": "Raw Strength",
+    "attribute_coverage": 1.0,
+    "card_id": "card:157d86d74e3e70c5a36b",
+    "model_evidence_paths": [
+      "data/research/center_exact_validation/madden_center_frozen_model.json",
+      "data/research/op_x_017/coverage_matrix.json"
+    ],
+    "model_limitations": [
+      "center ranking only; exact displayed overall is out of scope"
+    ],
+    "native_overall": 88,
+    "pancake_model_id": "C-M19-RANK-001",
+    "pancake_model_version": "v1.0",
+    "player_id": "player:896b8cbde265bfb114c4",
+    "player_name": "Coleton Price",
+    "position": "C",
+    "position_family": "C",
+    "program": "Prime Prospects",
+    "routing": {
+      "basis": "position-shared center ranking model",
+      "confidence": "EXACT_POSITION",
+      "family": "C",
+      "model_id": "C-M19-RANK-001",
+      "profile": "Center",
+      "status": "ROUTED",
+      "version": "v1.0"
+    },
+    "score": 85.722222,
+    "score_confidence": "HIGH",
+    "score_status": "SCORED_COMPLETE",
+    "source": {
+      "card": "CFB_FAN",
+      "ratings": "https://cfb.fan/players/14827-coleton-price/27-270014827/",
+      "raw_snapshot": "data/external/raw/cfb_fan/c799d09109f52f4b59da5e7ac1833085b6f928ee2772dd21b167d1ec136a9a16.bin"
+    }
+  },
+  "score_delta": 0.777778,
+  "score_delta_percent": 0.907324,
+  "value": null
+}

@@ -1,0 +1,64 @@
+{
+  "captured_at": "2026-08-21T04:12:40Z",
+  "runtime_inventory": {
+    "chromium": "/usr/bin/chromium",
+    "chromium_version": "144.0.7559.96",
+    "playwright_python": true,
+    "selenium_python": false,
+    "pyppeteer_python": false,
+    "display": ":0",
+    "web_text_surface": true
+  },
+  "browser_found": true,
+  "browser_method": "Local Chromium controlled through installed Python Playwright; direct Chromium headless invocation also inspected.",
+  "prices_page_rendered": false,
+  "javascript_executed": false,
+  "live_cpt": null,
+  "market_entry": null,
+  "observation_method": {
+    "rendered_attempt": "Playwright page.goto('https://cfb.fan/prices/') using /usr/bin/chromium",
+    "result": "Navigation blocked before page load with net::ERR_BLOCKED_BY_ADMINISTRATOR.",
+    "independent_public_web_check": "The normal web retrieval surface reached https://cfb.fan/prices/ during this run and confirmed the Prices Dashboard shell and its statement that it shows the CUT27 market in real time, but dynamic rows/CPT were absent from extracted text. This was not substituted for rendered evidence."
+  },
+  "screenshot_evidence": {
+    "generated": false,
+    "reason": "Navigation was blocked before CFB.FAN rendered, so no truthful market screenshot could be captured."
+  },
+  "scale_estimate": {
+    "10_cards": "not testable",
+    "25_cards": "not testable",
+    "50_cards": "not testable",
+    "reason": "Rendered CFB.FAN navigation is blocked in the local browser environment."
+  },
+  "failures": [
+    {
+      "classification": "BROWSER INSTALLED AND CONTROLLABLE, BUT TARGET NETWORK NAVIGATION BLOCKED BY ADMINISTRATIVE POLICY",
+      "evidence": "Playwright successfully launched installed Chromium, but Page.goto returned net::ERR_BLOCKED_BY_ADMINISTRATOR for https://cfb.fan/prices/.",
+      "implication": "The missing capability is not browser installation or Playwright control. It is the local rendered-browser network/policy path to CFB.FAN."
+    },
+    {
+      "classification": "WEB TEXT SURFACE DOES NOT EXPOSE DYNAMIC MARKET ROWS",
+      "evidence": "A fresh retrieval of https://cfb.fan/prices/ reached the public Prices Dashboard during this run, but exposed only the page shell/navigation and no current CPT or market rows.",
+      "implication": "Static/text retrieval cannot satisfy the live rendered-market acceptance test."
+    }
+  ],
+  "acceptance_tests": {
+    "RENDERED BROWSER AVAILABLE": "YES",
+    "CFB.FAN PRICES RENDERED": "NO",
+    "LIVE CPT OBSERVED": "NO",
+    "CURRENT MARKET ENTRY OBSERVED": "NO",
+    "BRIAN SCREENSHOT REQUIRED": "NO for this diagnostic; live values remain unavailable",
+    "BRIAN INTERACTION REQUIRED": "NO for this diagnostic",
+    "VALUES OBSERVED DURING THIS RUN": "NO",
+    "LEGITIMATE ACCESS ONLY": "YES"
+  },
+  "next_step": "Engineering target is now precise: provide/authorize a normal rendered-browser network path in the worker environment that permits public https://cfb.fan/prices/ navigation. Chromium and Playwright already exist and are controllable; do not build a scraper or authentication bypass. Once that policy/network restriction is removed, rerun the same Playwright rendering micro-test and capture CPT plus one visible market row.",
+  "sources": [
+    {
+      "url": "https://cfb.fan/prices/",
+      "observed_during_run": true,
+      "role": "Target public Prices Dashboard; reachable through web-text retrieval, blocked in local Chromium by administrator policy."
+    }
+  ],
+  "final_verdict": "PARTIAL"
+}

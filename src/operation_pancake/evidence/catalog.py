@@ -376,6 +376,13 @@ def build_evidence_index(root: Path) -> EvidenceIndex:
                     resolved_at="2026-08-13" if resolved_center_alias else None,
                 )
             )
+    knowledge_path = root / "data/research/op_x_040/knowledge_base.json"
+    if knowledge_path.exists():
+        from operation_pancake.evidence.knowledge import register_with_evidence_index
+
+        knowledge = json.loads(knowledge_path.read_text(encoding="utf-8"))
+        register_with_evidence_index(index, knowledge["sources"], knowledge["claims"])
+
     return index
 
 

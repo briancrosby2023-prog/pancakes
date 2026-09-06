@@ -1,0 +1,10 @@
+{
+  "broader_pytest": {"classification": "PRE_EXISTING_DEPENDENCY", "error": "ModuleNotFoundError: requests", "test": "tests/test_e15_historical_te_acquisition_v2.py", "status": "BLOCKED_AT_COLLECTION"},
+  "changed_file_ruff": {"status": "PASS"},
+  "diff_check": {"status": "PASS"},
+  "op_x_024_pytest": {"passed": 4, "status": "PASS"},
+  "op_x_024_ruff": {"status": "PASS"},
+  "op_x_026_acceptance_pytest": {"passed": 18, "status": "PASS"},
+  "relevant_product_pytest": {"passed": 57, "status": "PASS"},
+  "repository_ruff": {"classification": "PRE_EXISTING", "errors": 245, "status": "FAIL"}
+}

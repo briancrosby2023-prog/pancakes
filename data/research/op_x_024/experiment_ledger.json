@@ -1,0 +1,371 @@
+[
+  {
+    "category": "OP-TE-001 named same-cell replication",
+    "expected_names": [
+      "DeGraaf",
+      "Beers",
+      "Foley",
+      "Norfleet",
+      "Payne",
+      "Shockey"
+    ],
+    "id": "PRR-83",
+    "sample": [
+      "Brett Norfleet",
+      "Toby Payne",
+      "Rocky Beers",
+      "Decker DeGraaf",
+      "Brody Foley",
+      "Jeremy Shockey",
+      "Brett Norfleet",
+      "Toby Payne",
+      "Rocky Beers",
+      "Decker DeGraaf",
+      "Brody Foley"
+    ],
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-TE-001 named same-cell replication",
+    "expected_names": [
+      "Fleming",
+      "Oakley",
+      "Clarke"
+    ],
+    "id": "PRR-84",
+    "sample": [
+      "Garrett Oakley",
+      "Dorian Fleming",
+      "Peter Clarke",
+      "Garrett Oakley",
+      "Dorian Fleming",
+      "Peter Clarke"
+    ],
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-TE-001 named same-cell replication",
+    "expected_names": [
+      "Green",
+      "Carter",
+      "Thomas",
+      "Jamari Johnson"
+    ],
+    "id": "PRR-85",
+    "sample": [
+      "Terrance Carter Jr.",
+      "Trey'Dez Green",
+      "Dorian Thomas",
+      "Jamari Johnson",
+      "Terrance Carter Jr.",
+      "Trey'Dez Green",
+      "Dorian Thomas",
+      "Jamari Johnson"
+    ],
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-TE-001 named same-cell replication",
+    "expected_names": [
+      "Lindenmeyer",
+      "Helms",
+      "Finley"
+    ],
+    "id": "PRR-82",
+    "sample": [
+      "River Helms",
+      "Eli Finley",
+      "Luke Lindenmeyer",
+      "River Helms",
+      "Eli Finley",
+      "Luke Lindenmeyer"
+    ],
+    "status": "SUPPORT"
+  },
+  {
+    "category": "reported controlled spread",
+    "id": "PRR83-SPREAD-LBK",
+    "observed": 35.0,
+    "reported_approx": 35,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "reported controlled spread",
+    "id": "PRR83-SPREAD-RBK",
+    "observed": 16.0,
+    "reported_approx": 23,
+    "status": "CONTRADICTED"
+  },
+  {
+    "category": "reported controlled spread",
+    "id": "PRR83-SPREAD-IBL",
+    "observed": 22.0,
+    "reported_approx": 22,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "reported controlled spread",
+    "id": "PRR83-SPREAD-PBK",
+    "observed": 10.0,
+    "reported_approx": 18,
+    "status": "CONTRADICTED"
+  },
+  {
+    "category": "reported controlled spread",
+    "id": "PRR83-SPREAD-PBP",
+    "observed": 27.0,
+    "reported_approx": 16,
+    "status": "CONTRADICTED"
+  },
+  {
+    "category": "reported controlled spread",
+    "id": "PRR83-SPREAD-STR",
+    "observed": 11.0,
+    "reported_approx": 15,
+    "status": "CONTRADICTED"
+  },
+  {
+    "category": "reported controlled spread",
+    "id": "PRR83-SPREAD-DRR",
+    "observed": 12.0,
+    "reported_approx": 12,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "reported controlled spread",
+    "id": "PRR83-SPREAD-CIT",
+    "observed": 7.0,
+    "reported_approx": 7,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "reported controlled spread",
+    "id": "PRR83-SPREAD-SPD",
+    "observed": 3.0,
+    "reported_approx": 6,
+    "status": "CONTRADICTED"
+  },
+  {
+    "category": "reported controlled spread",
+    "id": "PRR83-SPREAD-CTH",
+    "observed": 5.0,
+    "reported_approx": 5,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-SPD",
+    "median_same_cell_range": 5.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-ACC",
+    "median_same_cell_range": 6.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-AGI",
+    "median_same_cell_range": 5.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-COD",
+    "median_same_cell_range": 13.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-STR",
+    "median_same_cell_range": 11.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-AWR",
+    "median_same_cell_range": 9.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-CTH",
+    "median_same_cell_range": 4.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-CIT",
+    "median_same_cell_range": 18.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-SPC",
+    "median_same_cell_range": 6.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-SRR",
+    "median_same_cell_range": 9.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-MRR",
+    "median_same_cell_range": 9.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-DRR",
+    "median_same_cell_range": 16.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-RLS",
+    "median_same_cell_range": 22.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-RBK",
+    "median_same_cell_range": 16.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-RBF",
+    "median_same_cell_range": 13.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-RBP",
+    "median_same_cell_range": 14.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-PBK",
+    "median_same_cell_range": 18.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-PBF",
+    "median_same_cell_range": 13.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-PBP",
+    "median_same_cell_range": 15.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-IBL",
+    "median_same_cell_range": 14.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-LBK",
+    "median_same_cell_range": 29.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-CAR",
+    "median_same_cell_range": 11.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-BTK",
+    "median_same_cell_range": 17.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-TRK",
+    "median_same_cell_range": 25.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Phy-SFA",
+    "median_same_cell_range": 12.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Ver-SPD",
+    "median_same_cell_range": 3.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Ver-ACC",
+    "median_same_cell_range": 2.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Ver-AGI",
+    "median_same_cell_range": 3.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Ver-COD",
+    "median_same_cell_range": 7.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Ver-STR",
+    "median_same_cell_range": 12.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Ver-AWR",
+    "median_same_cell_range": 9.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Ver-CTH",
+    "median_same_cell_range": 4.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Ver-CIT",
+    "median_same_cell_range": 10.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "OP-X-024 population extension of OP-TE-001 hypothesis",
+    "id": "SLACK-Ver-SPC",
+    "median_same_cell_range": 8.0,
+    "status": "SUPPORT"
+  },
+  {
+    "category": "legacy threshold",
+    "id": "LEGACY-403-405-1",
+    "reason": "LEGACY SPECIFICATION UNRECOVERED",
+    "status": "NOT EXECUTABLE"
+  },
+  {
+    "category": "legacy threshold archetype split",
+    "id": "LEGACY-403-405-2",
+    "reason": "LEGACY SPECIFICATION UNRECOVERED",
+    "status": "NOT EXECUTABLE"
+  }
+]

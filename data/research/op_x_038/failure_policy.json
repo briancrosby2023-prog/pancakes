@@ -1,0 +1,15 @@
+{
+  "granularity": [
+    "per-card",
+    "per-source"
+  ],
+  "preserve_last_known_good": true,
+  "required_failure_fields": [
+    "reason",
+    "retry eligibility",
+    "last known good evidence"
+  ],
+  "retry_eligibility": true,
+  "run_behavior": "partial success",
+  "stale_relabelled_fresh": false
+}

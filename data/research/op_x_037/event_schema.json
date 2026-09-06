@@ -1,0 +1,31 @@
+{
+  "event_types": [
+    "LTD RELEASE",
+    "MAJOR COLLECTION RELEASE",
+    "OTHER DOCUMENTED MARKET CATALYST",
+    "OVR-TIER CHANGE",
+    "PACK/OFFER CHANGE",
+    "PROGRAM RELEASE",
+    "SCHEME COLLECTION",
+    "SEASON TRANSITION",
+    "TRAINING-RELATED EVENT"
+  ],
+  "optional_unknown_fields": [
+    "game_year",
+    "season",
+    "event_name",
+    "announcement_time",
+    "release_time",
+    "collection_requirements",
+    "reward",
+    "returned_card_behavior",
+    "pack_offer_context"
+  ],
+  "required_fields": [
+    "event_id",
+    "event_type",
+    "source",
+    "confidence"
+  ],
+  "unknown_policy": "UNKNOWN; never inferred"
+}

@@ -1,0 +1,53 @@
+{
+  "coefficients_modified": false,
+  "comparisons": [
+    {
+      "attribute": "ability_effect",
+      "claim_id": "OPX040-CLAIM-003",
+      "classification": "INSUFFICIENT EVIDENCE",
+      "coefficient_changed": false
+    },
+    {
+      "attribute": "creator_recommendation",
+      "claim_id": "OPX040-CLAIM-005",
+      "classification": "INSUFFICIENT EVIDENCE",
+      "coefficient_changed": false
+    },
+    {
+      "attribute": "creator_recommendation",
+      "claim_id": "OPX040-CLAIM-006",
+      "classification": "INSUFFICIENT EVIDENCE",
+      "coefficient_changed": false
+    },
+    {
+      "attribute": "analyst_recommendation",
+      "claim_id": "OPX040-CLAIM-007",
+      "classification": "INSUFFICIENT EVIDENCE",
+      "coefficient_changed": false
+    }
+  ],
+  "research_questions": [
+    {
+      "answer": "UNKNOWN",
+      "claim_ids": [],
+      "impact": "ROSTER",
+      "predicate": "THP threshold",
+      "priority": "HIGH",
+      "question": "What numerical THP threshold is supported for current CUT27 QBs?",
+      "question_id": "OPX040-Q-001",
+      "status": "OPEN",
+      "subject": "CFB27 QB"
+    },
+    {
+      "answer": "UNKNOWN",
+      "claim_ids": [],
+      "impact": "META",
+      "predicate": "competitive_consensus",
+      "priority": "MEDIUM",
+      "question": "Which current offensive playbooks have independent competitive support?",
+      "question_id": "OPX040-Q-002",
+      "status": "OPEN",
+      "subject": "CFB27 playbooks"
+    }
+  ]
+}

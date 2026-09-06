@@ -1,0 +1,18 @@
+{
+  "covered": [
+    "unknown card",
+    "unsupported model",
+    "missing/partial attributes",
+    "negative/zero/fractional price",
+    "future/stale/single/conflicting/extreme-spread observations",
+    "missing resale",
+    "downgrade/zero gain",
+    "near-equivalent",
+    "unaffordable/exact budget",
+    "protected asset",
+    "no purchase",
+    "ties"
+  ],
+  "fixture_history_contamination": false,
+  "result": "PASS - safe explicit state or validation error"
+}

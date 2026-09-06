@@ -20,7 +20,7 @@ def _load(name: str):
 def test_phase5_freezes_phase4_population_and_inputs() -> None:
     frozen = _load("phase5_frozen_snapshot.json")
     assert frozen["source_commit"] == "49acdda"
-    assert frozen["population_n"] == 435
+    assert frozen["population_n"] == 8838
     assert frozen["no_retrospective_leakage"] is True
     assert all(len(value) == 64 for value in frozen["input_sha256"].values())
 
@@ -138,7 +138,8 @@ def test_replacement_pressure_v2_does_not_overstate_partial_capability_data() ->
 
 def test_gm_output_covers_population_without_claiming_eligibility() -> None:
     evaluator = _load("pc_evaluator_phase5.json")
-    assert len(evaluator) == 435
+    assert len(evaluator) == 8838
+    assert len({row["card_id"] for row in evaluator}) == 8838
     assert all(row["ability_eligibility_confirmed"] is False for row in evaluator)
     assert len(_load("chatgpt_research_queue.json")) == 20
 

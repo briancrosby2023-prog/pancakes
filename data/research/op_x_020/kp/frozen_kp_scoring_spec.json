@@ -1,0 +1,24 @@
+{
+  "operation": "OP-X-020-KP",
+  "freeze": {"blind_outcomes_observed": false, "repository_head": "fb320d746bf1120b4dd9a09ebd2a0480760877fa", "timestamp": "2026-08-20T00:14:21.5927463-07:00"},
+  "model": {"id": "KP-M19-ARCH-001", "version": "v1.0", "applicability": "historical aggregate K/P population", "formula": "sum(available attribute * exact Madden 19 K/P archetype weight) / sum(available weights)", "missing_attribute_rule": "AWR is uniformly unavailable; omit and renormalize without substitution", "displayed_ovr_calibration": "none", "rounding": "none", "confidence": "exact names and identical historical K/P vectors; reduced observed denominator disclosed"},
+  "provenance": {"source_id": "SRC-M19-001", "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view", "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5", "workbook_sheet": "Data Version", "workbook_rows": "27, 30, 79:80"},
+  "weights": {
+    "Accurate": {"AWR": 40, "KAC": 60},
+    "Power": {"AWR": 40, "KPW": 60}
+  },
+  "source_weight_totals": {"Accurate": 100, "Power": 100},
+  "observed_weight_denominators": {"Accurate": 60, "Power": 60},
+  "archetype_mappings": {
+    "CFB25": {
+      "Accurate": {"model_archetype": "Accurate", "status": "EXACT", "basis": "exact name"},
+      "Power": {"model_archetype": "Power", "status": "EXACT", "basis": "exact name"}
+    },
+    "CFB26": {
+      "Accurate": {"model_archetype": "Accurate", "status": "EXACT", "basis": "exact name"},
+      "Power": {"model_archetype": "Power", "status": "EXACT", "basis": "exact name"}
+    }
+  },
+  "exclusions": {},
+  "scientific_control": "Frozen before any CFB25/26 KP score, residual, or ranking outcome was calculated."
+}

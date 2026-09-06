@@ -1,0 +1,17 @@
+{
+  "background_execution": false,
+  "configurable_cadence_minutes": {
+    "event_T-3_to_T+1": 30,
+    "tier_1": 60,
+    "tier_2": 240,
+    "tier_3": 720
+  },
+  "scheduler_ready": true,
+  "state": [
+    "last run",
+    "next due",
+    "last success",
+    "last failure",
+    "consecutive failures"
+  ]
+}

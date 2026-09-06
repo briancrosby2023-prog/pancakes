@@ -1,0 +1,14 @@
+{
+  "ability_statuses": ["AVAILABLE", "EQUIPPED", "RECOMMENDED", "REQUIRED", "PREFERRED", "NOT USED", "UNKNOWN"],
+  "card_resolution": ["EXACT", "HIGH CONFIDENCE", "AMBIGUOUS", "UNRESOLVED"],
+  "criteria": ["THROW POWER", "SHORT ACCURACY", "MEDIUM ACCURACY", "DEEP ACCURACY", "SPEED", "ACCELERATION", "COD", "HEIGHT", "RELEASE", "ANIMATION", "ABILITY ACCESS", "ABILITY COST", "PRESSURE PERFORMANCE", "SCRAMBLING", "OPTION FIT", "PLAYBOOK FIT", "FORMATION FIT", "PRICE/VALUE", "OTHER", "UNKNOWN"],
+  "criterion_types": ["GAMEPLAY THRESHOLD", "PERSONAL MINIMUM", "PREFERRED TARGET", "ABILITY REQUIREMENT", "SCHEME REQUIREMENT", "UNIVERSAL CLAIM", "GENERAL PREFERENCE", "UNKNOWN"],
+  "playbook_statuses": ["RECOMMENDED", "OBSERVED USED", "UNKNOWN"],
+  "roster_completeness": ["COMPLETE", "SUBSTANTIALLY COMPLETE", "PARTIAL", "FRAGMENT"],
+  "threshold_verdicts": ["SUPPORTED", "CONTESTED", "CONTRADICTED", "SOURCE-SPECIFIC", "INSUFFICIENT"],
+  "firewalls": {
+    "observed_usage_is_threshold_testimony": false,
+    "personal_minimum_is_universal": false,
+    "same_publisher_documents_are_independent": false
+  }
+}

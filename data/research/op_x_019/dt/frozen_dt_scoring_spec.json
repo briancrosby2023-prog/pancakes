@@ -1,0 +1,27 @@
+{
+  "operation": "OP-X-019-DT",
+  "freeze": {"blind_outcomes_observed": false, "repository_head": "9279ebb3ba6c95ed3e7e33ac398b77bebc54693b", "timestamp": "2026-08-20T00:04:06.3509151-07:00"},
+  "model": {"id": "DT-M19-ARCH-001", "version": "v1.0", "applicability": "CFB25 and CFB26 DT populations", "formula": "sum(attribute * exact Madden 19 DT archetype weight) / sum(included weights)", "displayed_ovr_calibration": "none", "rounding": "none", "confidence": "strong historical prior with exact/supported role mappings"},
+  "provenance": {"source_id": "SRC-M19-001", "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view", "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5", "workbook_sheet": "Data Version", "workbook_rows": "15:17"},
+  "weights": {
+    "Power Rusher": {"ACC": 6, "AGI": 3, "AWR": 9, "BSH": 6, "POW": 3, "PRC": 9, "PMV": 22, "PUR": 6, "SPD": 3, "STR": 20, "TAK": 13},
+    "Run Stopper": {"ACC": 6, "AGI": 3, "AWR": 8, "BSH": 22, "POW": 3, "PRC": 8, "PUR": 8, "SPD": 4, "STR": 21, "TAK": 17},
+    "Speed Rusher": {"ACC": 8, "AGI": 4, "AWR": 8, "BSH": 4, "FMV": 22, "POW": 3, "PRC": 8, "PUR": 7, "SPD": 6, "STR": 17, "TAK": 13}
+  },
+  "source_weight_totals": {"Power Rusher": 100, "Run Stopper": 100, "Speed Rusher": 100},
+  "archetype_mappings": {
+    "CFB25": {
+      "Power Rusher": {"model_archetype": "Power Rusher", "status": "EXACT", "basis": "exact name"},
+      "Run Stopper": {"model_archetype": "Run Stopper", "status": "EXACT", "basis": "exact name"},
+      "Speed Rusher": {"model_archetype": "Speed Rusher", "status": "EXACT", "basis": "exact name"}
+    },
+    "CFB26": {
+      "Power Rusher": {"model_archetype": "Power Rusher", "status": "EXACT", "basis": "exact name"},
+      "Speed Rusher": {"model_archetype": "Speed Rusher", "status": "EXACT", "basis": "exact name"},
+      "Gap Specialist": {"model_archetype": "Run Stopper", "status": "SUPPORTED", "basis": "gap-control/run-stopping role"},
+      "Pure Power": {"model_archetype": "Power Rusher", "status": "SUPPORTED", "basis": "power-rush role"}
+    }
+  },
+  "exclusions": {},
+  "scientific_control": "Frozen before any CFB25/CFB26 DT score, residual, or ranking outcome was calculated."
+}

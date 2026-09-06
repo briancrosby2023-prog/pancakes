@@ -1,0 +1,18 @@
+{
+  "analysis_example_without_invented_values": {
+    "acquisition_price": null,
+    "current_price": null,
+    "depreciation_prediction": null,
+    "downside_to_floor": null,
+    "limitations": [
+      "no predictive depreciation without longitudinal completed-sale evidence"
+    ],
+    "observed_at": null,
+    "quicksell_floor": null,
+    "release_date": null,
+    "status": "SUPPORTED_FIELDS_ONLY",
+    "unrealized_change": null
+  },
+  "inventory_source": "data/research/cfb27_op_x_012/ltd_inventory_v3.json",
+  "status": "PARTIAL_SUPPORTED_INTERFACE"
+}

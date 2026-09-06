@@ -1,0 +1,37 @@
+name: OP-X-024 TE OVR Economics
+on:
+  push:
+    branches: ['agent/op-x-012-reconcile-artifacts']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/op-x-012-reconcile-artifacts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
+      - name: Execute OP-X-024 science
+        run: python scripts/op_x_024_te_ovr_economics.py
+      - name: Targeted pytest
+        run: python -m pytest -q tests/test_op_x_024_te_ovr_economics.py
+      - name: Ruff changed OP-X-024 code
+        run: python -m ruff check scripts/op_x_024_te_ovr_economics.py tests/test_op_x_024_te_ovr_economics.py
+      - name: Diff check
+        run: git diff --check
+      - name: Persist OP-X-024 results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/op_x_024
+          if ! git diff --cached --quiet; then
+            git commit -m 'Persist OP-X-024 TE OVR economics results'
+            git push origin HEAD:agent/op-x-012-reconcile-artifacts
+          fi

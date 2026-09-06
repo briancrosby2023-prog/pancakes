@@ -1,0 +1,26 @@
+{
+  "operation": "OP-X-019-MIKE",
+  "freeze": {"blind_outcomes_observed": false, "repository_head": "0142f301f0a526f83ef76c1b2d608b1f6350d536", "timestamp": "2026-08-20T00:02:34.4991050-07:00"},
+  "model": {"id": "MIKE-M19-ARCH-001", "version": "v1.0", "applicability": "CFB25 MLB and CFB26 MIKE populations", "formula": "sum(attribute * exact Madden 19 MLB archetype weight) / sum(included weights)", "displayed_ovr_calibration": "none", "rounding": "none", "confidence": "strong historical prior with one-to-one supported role mappings"},
+  "provenance": {"source_id": "SRC-M19-001", "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view", "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5", "workbook_sheet": "Data Version", "workbook_rows": "35:37"},
+  "weights": {
+    "Field General": {"ACC": 9, "AGI": 7, "AWR": 9, "BSH": 7, "MCV": 5, "PRC": 9, "PUR": 14, "SPD": 5, "STR": 8, "TAK": 17, "ZCV": 10},
+    "Pass Coverage": {"ACC": 10, "AGI": 8, "AWR": 7, "MCV": 10, "PRC": 7, "PUR": 12, "SPD": 7, "STR": 4, "TAK": 15, "ZCV": 20},
+    "Run Stopper": {"ACC": 8, "AGI": 7, "AWR": 7, "BSH": 9, "FMV": 2, "POW": 2, "MCV": 2, "PRC": 7, "PMV": 2, "PUR": 15, "SPD": 4, "STR": 10, "TAK": 20, "ZCV": 5}
+  },
+  "source_weight_totals": {"Field General": 100, "Pass Coverage": 100, "Run Stopper": 100},
+  "archetype_mappings": {
+    "CFB25": {
+      "Field General": {"model_archetype": "Field General", "status": "EXACT", "basis": "exact name"},
+      "Pass Coverage": {"model_archetype": "Pass Coverage", "status": "EXACT", "basis": "exact name"},
+      "Run Stopper": {"model_archetype": "Run Stopper", "status": "EXACT", "basis": "exact name"}
+    },
+    "CFB26": {
+      "Signal Caller": {"model_archetype": "Field General", "status": "SUPPORTED", "basis": "diagnostic/field-command linebacker role"},
+      "Lurker": {"model_archetype": "Pass Coverage", "status": "SUPPORTED", "basis": "coverage linebacker role"},
+      "Thumper": {"model_archetype": "Run Stopper", "status": "SUPPORTED", "basis": "physical run-stopping linebacker role"}
+    }
+  },
+  "exclusions": {},
+  "scientific_control": "Frozen before any CFB25 MLB or CFB26 MIKE score, residual, or ranking outcome was calculated."
+}

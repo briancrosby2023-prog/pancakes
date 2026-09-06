@@ -1,145 +1,10 @@
 [
   {
     "attribute": "ACC",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": 4,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "AGI",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": 3,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "AWR",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": 5,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "COD",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": 6,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "IBL",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": 1,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "LBK",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": -8,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "PBF",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": -2,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "PBK",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": 1,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "PBP",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": 7,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "RBF",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": 1,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "RBK",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": 1,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "RBP",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": 3,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "SPD",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": 12,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "STR",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": 1,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "TGH",
-    "boundary": "80->81",
-    "classification": "INSUFFICIENT",
-    "lower_n": 1,
-    "mean_difference": 10,
-    "position": "C",
-    "upper_n": 1
-  },
-  {
-    "attribute": "ACC",
     "boundary": "84->85",
     "classification": "INSUFFICIENT",
-    "lower_n": 6,
-    "mean_difference": 0,
+    "lower_n": 5,
+    "mean_difference": 0.2,
     "position": "C",
     "upper_n": 5
   },
@@ -147,8 +12,8 @@
     "attribute": "AGI",
     "boundary": "84->85",
     "classification": "INSUFFICIENT",
-    "lower_n": 6,
-    "mean_difference": -2.3,
+    "lower_n": 5,
+    "mean_difference": -2.0,
     "position": "C",
     "upper_n": 5
   },
@@ -156,8 +21,8 @@
     "attribute": "AWR",
     "boundary": "84->85",
     "classification": "INSUFFICIENT",
-    "lower_n": 6,
-    "mean_difference": 0.6333,
+    "lower_n": 5,
+    "mean_difference": 0.6,
     "position": "C",
     "upper_n": 5
   },
@@ -165,17 +30,17 @@
     "attribute": "COD",
     "boundary": "84->85",
     "classification": "INSUFFICIENT",
-    "lower_n": 6,
-    "mean_difference": 0.1667,
+    "lower_n": 5,
+    "mean_difference": 1.2,
     "position": "C",
     "upper_n": 5
   },
   {
     "attribute": "IBL",
     "boundary": "84->85",
-    "classification": "CANDIDATE_THRESHOLD",
-    "lower_n": 6,
-    "mean_difference": 2.4,
+    "classification": "INSUFFICIENT",
+    "lower_n": 5,
+    "mean_difference": 1.6,
     "position": "C",
     "upper_n": 5
   },
@@ -183,8 +48,8 @@
     "attribute": "LBK",
     "boundary": "84->85",
     "classification": "INSUFFICIENT",
-    "lower_n": 6,
-    "mean_difference": -4.1667,
+    "lower_n": 5,
+    "mean_difference": -4,
     "position": "C",
     "upper_n": 5
   },
@@ -192,8 +57,8 @@
     "attribute": "PBF",
     "boundary": "84->85",
     "classification": "CANDIDATE_THRESHOLD",
-    "lower_n": 6,
-    "mean_difference": 2.3333,
+    "lower_n": 5,
+    "mean_difference": 2.6,
     "position": "C",
     "upper_n": 5
   },
@@ -201,8 +66,8 @@
     "attribute": "PBK",
     "boundary": "84->85",
     "classification": "CANDIDATE_THRESHOLD",
-    "lower_n": 6,
-    "mean_difference": 2.1667,
+    "lower_n": 5,
+    "mean_difference": 2.2,
     "position": "C",
     "upper_n": 5
   },
@@ -210,8 +75,8 @@
     "attribute": "PBP",
     "boundary": "84->85",
     "classification": "CANDIDATE_THRESHOLD",
-    "lower_n": 6,
-    "mean_difference": 3.7333,
+    "lower_n": 5,
+    "mean_difference": 3.4,
     "position": "C",
     "upper_n": 5
   },
@@ -219,8 +84,8 @@
     "attribute": "RBF",
     "boundary": "84->85",
     "classification": "INSUFFICIENT",
-    "lower_n": 6,
-    "mean_difference": -4.2667,
+    "lower_n": 5,
+    "mean_difference": -4.0,
     "position": "C",
     "upper_n": 5
   },
@@ -228,8 +93,8 @@
     "attribute": "RBK",
     "boundary": "84->85",
     "classification": "INSUFFICIENT",
-    "lower_n": 6,
-    "mean_difference": -2.8333,
+    "lower_n": 5,
+    "mean_difference": -2.4,
     "position": "C",
     "upper_n": 5
   },
@@ -237,8 +102,8 @@
     "attribute": "RBP",
     "boundary": "84->85",
     "classification": "INSUFFICIENT",
-    "lower_n": 6,
-    "mean_difference": -1.2333,
+    "lower_n": 5,
+    "mean_difference": -1.2,
     "position": "C",
     "upper_n": 5
   },
@@ -246,8 +111,8 @@
     "attribute": "SPD",
     "boundary": "84->85",
     "classification": "INSUFFICIENT",
-    "lower_n": 6,
-    "mean_difference": -0.4333,
+    "lower_n": 5,
+    "mean_difference": -0.4,
     "position": "C",
     "upper_n": 5
   },
@@ -255,8 +120,8 @@
     "attribute": "STR",
     "boundary": "84->85",
     "classification": "CANDIDATE_THRESHOLD",
-    "lower_n": 6,
-    "mean_difference": 3.3333,
+    "lower_n": 5,
+    "mean_difference": 2.8,
     "position": "C",
     "upper_n": 5
   },
@@ -264,8 +129,8 @@
     "attribute": "TGH",
     "boundary": "84->85",
     "classification": "CANDIDATE_THRESHOLD",
-    "lower_n": 6,
-    "mean_difference": 2.3333,
+    "lower_n": 5,
+    "mean_difference": 2.2,
     "position": "C",
     "upper_n": 5
   },

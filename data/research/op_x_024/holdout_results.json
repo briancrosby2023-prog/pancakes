@@ -1,0 +1,120 @@
+{
+  "best_supported": "B",
+  "models": {
+    "A": {
+      "mae": 0.5622,
+      "n": 97,
+      "rmse": 0.7246,
+      "within_0_5": 0.5567,
+      "within_1": 0.8247
+    },
+    "B": {
+      "Gritty Possession": {
+        "holdout": {
+          "mae": 0.4397,
+          "n": 8,
+          "rmse": 0.5161,
+          "within_0_5": 0.625,
+          "within_1": 1.0
+        },
+        "train": {
+          "mae": 0.1098,
+          "n": 43,
+          "rmse": 0.1498,
+          "within_0_5": 0.9767,
+          "within_1": 1.0
+        }
+      },
+      "Physical Route Runner": {
+        "holdout": {
+          "mae": 0.2161,
+          "n": 59,
+          "rmse": 0.2642,
+          "within_0_5": 0.9661,
+          "within_1": 1.0
+        },
+        "train": {
+          "mae": 0.1891,
+          "n": 225,
+          "rmse": 0.2344,
+          "within_0_5": 0.9733,
+          "within_1": 1.0
+        }
+      },
+      "Vertical Threat": {
+        "holdout": {
+          "mae": 0.2753,
+          "n": 29,
+          "rmse": 0.3363,
+          "within_0_5": 0.8276,
+          "within_1": 1.0
+        },
+        "train": {
+          "mae": 0.1876,
+          "n": 137,
+          "rmse": 0.2342,
+          "within_0_5": 0.9562,
+          "within_1": 1.0
+        }
+      }
+    },
+    "C": {
+      "mae": 0.6453,
+      "n": 97,
+      "rmse": 0.8204,
+      "within_0_5": 0.4433,
+      "within_1": 0.7732
+    },
+    "D": {
+      "Gritty Possession": {
+        "holdout": {
+          "mae": 0.4465,
+          "n": 8,
+          "rmse": 0.4928,
+          "within_0_5": 0.375,
+          "within_1": 1.0
+        },
+        "train": {
+          "mae": 0.2986,
+          "n": 43,
+          "rmse": 0.3577,
+          "within_0_5": 0.7674,
+          "within_1": 1.0
+        }
+      },
+      "Physical Route Runner": {
+        "holdout": {
+          "mae": 0.4161,
+          "n": 59,
+          "rmse": 0.5115,
+          "within_0_5": 0.6271,
+          "within_1": 0.9661
+        },
+        "train": {
+          "mae": 0.4741,
+          "n": 225,
+          "rmse": 0.6049,
+          "within_0_5": 0.5956,
+          "within_1": 0.9022
+        }
+      },
+      "Vertical Threat": {
+        "holdout": {
+          "mae": 0.4259,
+          "n": 29,
+          "rmse": 0.57,
+          "within_0_5": 0.6552,
+          "within_1": 0.8966
+        },
+        "train": {
+          "mae": 0.3848,
+          "n": 137,
+          "rmse": 0.4902,
+          "within_0_5": 0.7226,
+          "within_1": 0.9562
+        }
+      }
+    }
+  },
+  "size": 97
+}

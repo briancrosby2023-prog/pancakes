@@ -1,0 +1,25 @@
+{
+  "controlling_commit": "69e3d64b2a5d8202e12ee36610ae43eb9c4b5a85",
+  "errors": 0,
+  "failed": 15,
+  "fixture": "complete repository suite with workspace-local basetemp",
+  "passed": 612,
+  "failures": [
+    {"test": "tests/test_cfb27_e15_multi_family.py::test_same_ovr_spread_and_adjacent_boundary_separate_signals", "assertion": "NOISE is a likely non-driver", "expected": "NOISE present", "actual": "empty set", "artifact": "in-memory synthetic TE fixture"},
+    {"test": "tests/test_cfb27_op_x_002.py::test_mike_seau_matrix_is_complete_and_not_prescriptive", "assertion": "Seau matrix length", "expected": 2, "actual": 4, "artifact": "OP-X-002 generated output"},
+    {"test": "tests/test_cfb27_op_x_003.py::test_registry_and_acquisition_are_truthful", "assertion": "CFB27_CUT manifest population", "expected": 435, "actual": 8838, "artifact": "source registry manifest"},
+    {"test": "tests/test_cfb27_op_x_003.py::test_cross_year_model_and_crosswalk_do_not_force_unknowns", "assertion": "cross-year model length", "expected": 435, "actual": 8838, "artifact": "cross-year model"},
+    {"test": "tests/test_cfb27_phase3.py::test_release_and_moneyball_outputs_are_noncausal_and_complete", "assertion": "release-category total", "expected": 8838, "actual": 8309, "artifact": "phase-3 release output"},
+    {"test": "tests/test_cfb27_phase5.py::test_phase5_freezes_phase4_population_and_inputs", "assertion": "frozen population", "expected": 435, "actual": 8838, "artifact": "phase-5 frozen input"},
+    {"test": "tests/test_cfb27_phase5.py::test_gm_output_covers_population_without_claiming_eligibility", "assertion": "GM evaluator length", "expected": 435, "actual": 8838, "artifact": "phase-5 evaluator"},
+    {"test": "tests/test_cfb27_phase6_10.py::test_card_proximity_handles_missing_and_not_applicable_without_guessing", "assertion": "cards evaluated", "expected": 435, "actual": 8838, "artifact": "phase-6 proximity"},
+    {"test": "tests/test_cfb27_phase6_10.py::test_seau_case_uses_only_validated_vectors", "assertion": "Seau OVR list", "expected": [86, 87], "actual": [80, 81, 84, 86, 87], "artifact": "phase-6 Seau case"},
+    {"test": "tests/test_cfb27_phase6_10.py::test_gm_layers_cover_every_card_and_remain_research_only", "assertion": "GM layer lengths", "expected": 435, "actual": 8838, "artifact": "phase-6 GM layers"},
+    {"test": "tests/test_cfb27_phase6_10.py::test_phase6_10_is_deterministic_and_frozen", "assertion": "frozen population", "expected": 435, "actual": 8838, "artifact": "phase-6 frozen input"},
+    {"test": "tests/test_cfb27_population_v3.py::test_incremental_refresh_targets_newest_pages", "assertion": "pages_to_fetch invocation", "expected": [588, 589, 590], "actual": "TypeError: missing refresh_pages", "artifact": "synthetic paging fixture"},
+    {"test": "tests/test_cfb27_population_v3.py::test_listing_id_normalization_deduplicates_against_complete_detail", "assertion": "normalize_listing_ids invocation", "expected": "successful normalization", "actual": "TypeError: missing season", "artifact": "synthetic checkpoint fixture"},
+    {"test": "tests/test_evidence_index.py::test_committed_artifacts_match_generator", "assertion": "committed evidence artifacts equal generator", "expected": "current generator output", "actual": "stale committed links/records", "artifact": "data/evidence source index"},
+    {"test": "tests/test_qb_model_comparison.py::test_checked_in_artifacts_match_current_analysis", "assertion": "checked-in QB artifacts byte-equal generator", "expected": "current generator bytes", "actual": "stale qb_model_comparison.json", "artifact": "QB model comparison artifact"}
+  ],
+  "warnings": 4
+}

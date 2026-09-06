@@ -1,0 +1,116 @@
+{
+  "buy_gates_intact": "PASS",
+  "collection_keep": {
+    "cost_per_pancake_point": 100.0,
+    "decision": "KEEP REWARD",
+    "effective_collection_cost": 200,
+    "expected_profit": null,
+    "football_score_improvement": 2,
+    "gross_collection_cost": 200,
+    "nominal_returned_training": 0,
+    "returned_resale_value": 0,
+    "reward_net_sale_proceeds": null,
+    "roi": null,
+    "training_market_replacement_value": null,
+    "warning": "training is reported separately from coins; replacement value requires qualified coins-per-training evidence"
+  },
+  "collection_pass": {
+    "decision": "PASS",
+    "status": "UNKNOWN RULES OR INCOMPLETE INPUTS"
+  },
+  "collection_sell_with_recovery": {
+    "cost_per_pancake_point": null,
+    "decision": "SELL REWARD",
+    "effective_collection_cost": 700,
+    "expected_profit": 20,
+    "football_score_improvement": null,
+    "gross_collection_cost": 1400,
+    "nominal_returned_training": 140,
+    "returned_resale_value": 0,
+    "reward_net_sale_proceeds": 720,
+    "roi": 0.028571,
+    "training_market_replacement_value": 700,
+    "warning": "training is reported separately from coins; replacement value requires qualified coins-per-training evidence"
+  },
+  "deduplicated_hit_and_top25": "PASS",
+  "duplicate_run_no_spam": "PASS",
+  "fixture_history_isolation": "PASS",
+  "fourteen_returned_cards": {
+    "nominal_training": 140,
+    "replacement_value": 700
+  },
+  "hit_list_buy_target": "PASS",
+  "hit_list_survives_top25": "PASS",
+  "identity_firewall": "PASS",
+  "material_change_new_event": "PASS",
+  "partial_evidence_no_buy": "PASS",
+  "preposition_non_predictive": {
+    "action": "WATCH",
+    "forecast": null,
+    "guaranteed_profit": false,
+    "timeline_fields": [
+      "T-14",
+      "T-10",
+      "T-7",
+      "T-5",
+      "T-3",
+      "T-1",
+      "release",
+      "+6h",
+      "+12h",
+      "+24h",
+      "+48h",
+      "+7d"
+    ]
+  },
+  "qualified_flip": {
+    "alert": true,
+    "expected_resale_basis": 200,
+    "margin_of_safety": 0.444444,
+    "market_quality": "USABLE",
+    "net_proceeds": 180,
+    "projected_profit": 80,
+    "purchase_price": 100,
+    "risk_flags": [],
+    "roi": 0.8,
+    "status": "FLIP",
+    "tax_rate": 0.1,
+    "volatility": 0.0
+  },
+  "scenario_count": 20,
+  "top25_deterministic": true,
+  "training_comparison": {
+    "alert": true,
+    "coin_quicksell_floor": null,
+    "coins_per_training": 100.0,
+    "comparison_count": 2,
+    "effective_downside": null,
+    "overall": 84,
+    "percentile": 100.0,
+    "program": "Core Rare",
+    "rank": 1,
+    "reason": "best verified coins-per-training among supplied monitored listings",
+    "source": "src/operation_pancake/research/cfb27_op_x_012.py",
+    "status": "SUPPORTED_CURRENT_TABLE",
+    "training_value": 1160
+  },
+  "unqualified_listing_not_flip": {
+    "alert": false,
+    "market_quality": "INSUFFICIENT",
+    "reason": "qualified completed-sale history and explicit fee rule required",
+    "status": "INSUFFICIENT EVIDENCE"
+  },
+  "unsupported_training": {
+    "alert": false,
+    "coin_quicksell_floor": null,
+    "coins_per_training": null,
+    "effective_downside": null,
+    "overall": 99,
+    "program": "Core Rare",
+    "reason": "verified quicksell value unavailable",
+    "source": "src/operation_pancake/research/cfb27_op_x_012.py",
+    "status": "UNSUPPORTED",
+    "training_value": null
+  },
+  "watch_without_buy": "PASS"
+}

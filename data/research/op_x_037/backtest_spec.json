@@ -1,0 +1,17 @@
+{
+  "actions": [
+    "ACCUMULATE",
+    "BUY",
+    "COMPLETE COLLECTION",
+    "CONVERT TO TRAINING",
+    "HOLD",
+    "KEEP REWARD",
+    "PASS",
+    "SELL",
+    "SELL REWARD"
+  ],
+  "deterministic": true,
+  "fixture_only_until_historical_windows_exist": true,
+  "future_leakage_rule": "decision sees only observed_at <= decision_time AND available_at <= decision_time",
+  "transaction_costs": "explicit per run; never silently assumed"
+}

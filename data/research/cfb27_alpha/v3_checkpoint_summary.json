@@ -1,0 +1,206 @@
+{
+  "cards": {
+    "positions": {
+      "C": 315,
+      "CB": 863,
+      "DT": 635,
+      "FB": 28,
+      "FS": 400,
+      "HB": 776,
+      "K": 97,
+      "LE": 401,
+      "LG": 314,
+      "LT": 339,
+      "MLB": 456,
+      "P": 79,
+      "QB": 470,
+      "RE": 409,
+      "RG": 321,
+      "RT": 335,
+      "SAM": 165,
+      "SS": 406,
+      "TE": 512,
+      "WILL": 364,
+      "WR": 1153
+    },
+    "samples": [
+      {
+        "id": "27-100000105",
+        "keys": [
+          "archetype",
+          "card_type",
+          "displayed_ratings",
+          "external_card_id",
+          "external_player_id",
+          "external_source",
+          "extraction_status",
+          "market_observations",
+          "metadata",
+          "overall",
+          "player_name",
+          "position",
+          "program",
+          "raw_snapshot_reference",
+          "release_date",
+          "retrieval_timestamp",
+          "source_reference",
+          "team_school",
+          "validation_status"
+        ],
+        "metadata_keys": [
+          "listing_derived"
+        ],
+        "position": "HB",
+        "status": "PARTIAL_LISTING_VECTOR"
+      },
+      {
+        "id": "27-100000110",
+        "keys": [
+          "archetype",
+          "card_type",
+          "displayed_ratings",
+          "external_card_id",
+          "external_player_id",
+          "external_source",
+          "extraction_status",
+          "market_observations",
+          "metadata",
+          "overall",
+          "player_name",
+          "position",
+          "program",
+          "raw_snapshot_reference",
+          "release_date",
+          "retrieval_timestamp",
+          "source_reference",
+          "team_school",
+          "validation_status"
+        ],
+        "metadata_keys": [
+          "listing_derived"
+        ],
+        "position": "RT",
+        "status": "PARTIAL_LISTING_VECTOR"
+      },
+      {
+        "id": "27-100000116",
+        "keys": [
+          "archetype",
+          "card_type",
+          "displayed_ratings",
+          "external_card_id",
+          "external_player_id",
+          "external_source",
+          "extraction_status",
+          "market_observations",
+          "metadata",
+          "overall",
+          "player_name",
+          "position",
+          "program",
+          "raw_snapshot_reference",
+          "release_date",
+          "retrieval_timestamp",
+          "source_reference",
+          "team_school",
+          "validation_status"
+        ],
+        "metadata_keys": [
+          "listing_derived"
+        ],
+        "position": "DT",
+        "status": "PARTIAL_LISTING_VECTOR"
+      }
+    ],
+    "statuses": {
+      "PARTIAL_LISTING_VECTOR": 8838
+    }
+  },
+  "sections": {
+    "cards": {
+      "count": 8838,
+      "keys": [
+        "27-100000105",
+        "27-100000110",
+        "27-100000116",
+        "27-100000127",
+        "27-100000137",
+        "27-100000141",
+        "27-100000146",
+        "27-100000155",
+        "27-100000160",
+        "27-100000175",
+        "27-100000178",
+        "27-100000180",
+        "27-100000278",
+        "27-100000281",
+        "27-100000329",
+        "27-100000342",
+        "27-100000345",
+        "27-100000346",
+        "27-100000357",
+        "27-100000358",
+        "27-100000376",
+        "27-100000384",
+        "27-100000416",
+        "27-100000496",
+        "27-100000507",
+        "27-100000520",
+        "27-100000526",
+        "27-100000529",
+        "27-100000548",
+        "27-100000552"
+      ],
+      "type": "dict"
+    },
+    "failures": {
+      "count": 0,
+      "type": "list"
+    },
+    "pages": {
+      "count": 590,
+      "keys": [
+        "1",
+        "10",
+        "100",
+        "101",
+        "102",
+        "103",
+        "104",
+        "105",
+        "106",
+        "107",
+        "108",
+        "109",
+        "11",
+        "110",
+        "111",
+        "112",
+        "113",
+        "114",
+        "115",
+        "116",
+        "117",
+        "118",
+        "119",
+        "12",
+        "120",
+        "121",
+        "122",
+        "123",
+        "124",
+        "125"
+      ],
+      "type": "dict"
+    }
+  },
+  "top_level": {
+    "count": 3,
+    "keys": [
+      "cards",
+      "failures",
+      "pages"
+    ],
+    "type": "dict"
+  }
+}

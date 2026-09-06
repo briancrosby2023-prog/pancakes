@@ -1,0 +1,755 @@
+{
+  "attribute_economics_status": "HYPOTHESIS",
+  "legacy_403_405_status": "BLOCKED",
+  "mean_same_ovr_ranges": {
+    "ACC": 3.896552,
+    "AGI": 3.758621,
+    "AWR": 8.396552,
+    "BTK": 12.327586,
+    "CAR": 9.413793,
+    "CIT": 11.637931,
+    "COD": 9.534483,
+    "CTH": 3.413793,
+    "DRR": 10.603448,
+    "IBL": 9.896552,
+    "LBK": 20.327586,
+    "MRR": 7.603448,
+    "PBF": 10.913793,
+    "PBK": 12.310345,
+    "PBP": 11.017241,
+    "RBF": 10.655172,
+    "RBK": 12.155172,
+    "RBP": 9.931034,
+    "RLS": 15.224138,
+    "SFA": 10.103448,
+    "SPC": 6.482759,
+    "SPD": 3.810345,
+    "SRR": 8.758621,
+    "STR": 10.448276,
+    "TRK": 18.844828
+  },
+  "production_coefficients_modified": false,
+  "same_ovr_slack_status": "SUPPORTED DESCRIPTIVE EVIDENCE",
+  "te_model_stats": {
+    "TE|Gritty Possession|ACC": {
+      "differentiation_index": 0.059384599,
+      "effective_coefficient": 0.04,
+      "mean": 83.285714,
+      "n": 7,
+      "p90": 85.4,
+      "p95": 85.7,
+      "p98": 85.88,
+      "stddev": 1.484615
+    },
+    "TE|Gritty Possession|AGI": {
+      "differentiation_index": 0.049979588,
+      "effective_coefficient": 0.03,
+      "mean": 81.285714,
+      "n": 7,
+      "p90": 83.4,
+      "p95": 83.7,
+      "p98": 83.88,
+      "stddev": 1.665986
+    },
+    "TE|Gritty Possession|AWR": {
+      "differentiation_index": 0.271526298,
+      "effective_coefficient": 0.09,
+      "mean": 81.428571,
+      "n": 7,
+      "p90": 85.4,
+      "p95": 85.7,
+      "p98": 85.88,
+      "stddev": 3.016959
+    },
+    "TE|Gritty Possession|BCV": {
+      "differentiation_index": 0.072252392,
+      "effective_coefficient": 0.01,
+      "mean": 76.285714,
+      "n": 7,
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0,
+      "stddev": 7.225239
+    },
+    "TE|Gritty Possession|BTK": {
+      "differentiation_index": 0.066761837,
+      "effective_coefficient": 0.02,
+      "mean": 83.0,
+      "n": 7,
+      "p90": 87.4,
+      "p95": 87.7,
+      "p98": 87.88,
+      "stddev": 3.338092
+    },
+    "TE|Gritty Possession|CIT": {
+      "differentiation_index": 0.277128129,
+      "effective_coefficient": 0.14,
+      "mean": 84.285714,
+      "n": 7,
+      "p90": 86.4,
+      "p95": 86.7,
+      "p98": 86.88,
+      "stddev": 1.979487
+    },
+    "TE|Gritty Possession|CTH": {
+      "differentiation_index": 1.955202388,
+      "effective_coefficient": 0.253376906,
+      "mean": 76.058824,
+      "n": 51,
+      "p90": 86.0,
+      "p95": 87.0,
+      "p98": 87.0,
+      "stddev": 7.716577
+    },
+    "TE|Gritty Possession|IBL": {
+      "differentiation_index": 0.162027964,
+      "effective_coefficient": 0.04,
+      "mean": 79.857143,
+      "n": 7,
+      "p90": 84.2,
+      "p95": 85.1,
+      "p98": 85.64,
+      "stddev": 4.050699
+    },
+    "TE|Gritty Possession|LBK": {
+      "differentiation_index": 0.144786965,
+      "effective_coefficient": 0.02,
+      "mean": 70.142857,
+      "n": 7,
+      "p90": 76.6,
+      "p95": 79.3,
+      "p98": 80.92,
+      "stddev": 7.239348
+    },
+    "TE|Gritty Possession|MRR": {
+      "differentiation_index": 2.041382271,
+      "effective_coefficient": 0.152026144,
+      "mean": 67.352941,
+      "n": 51,
+      "p90": 85.0,
+      "p95": 86.0,
+      "p98": 86.0,
+      "stddev": 13.427837
+    },
+    "TE|Gritty Possession|PBF": {
+      "differentiation_index": 0.075592895,
+      "effective_coefficient": 0.02,
+      "mean": 79.0,
+      "n": 7,
+      "p90": 84.4,
+      "p95": 84.7,
+      "p98": 84.88,
+      "stddev": 3.779645
+    },
+    "TE|Gritty Possession|PBK": {
+      "differentiation_index": 0.140581881,
+      "effective_coefficient": 0.03,
+      "mean": 75.571429,
+      "n": 7,
+      "p90": 79.6,
+      "p95": 80.8,
+      "p98": 81.52,
+      "stddev": 4.686063
+    },
+    "TE|Gritty Possession|PBP": {
+      "differentiation_index": 0.096721776,
+      "effective_coefficient": 0.02,
+      "mean": 77.428571,
+      "n": 7,
+      "p90": 82.4,
+      "p95": 82.7,
+      "p98": 82.88,
+      "stddev": 4.836089
+    },
+    "TE|Gritty Possession|RBF": {
+      "differentiation_index": 0.160611078,
+      "effective_coefficient": 0.04,
+      "mean": 80.142857,
+      "n": 7,
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0,
+      "stddev": 4.015277
+    },
+    "TE|Gritty Possession|RBK": {
+      "differentiation_index": 0.988997492,
+      "effective_coefficient": 0.126688453,
+      "mean": 71.196078,
+      "n": 51,
+      "p90": 80.0,
+      "p95": 82.5,
+      "p98": 84.0,
+      "stddev": 7.806532
+    },
+    "TE|Gritty Possession|RBP": {
+      "differentiation_index": 0.120678355,
+      "effective_coefficient": 0.04,
+      "mean": 79.571429,
+      "n": 7,
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0,
+      "stddev": 3.016959
+    },
+    "TE|Gritty Possession|RLS": {
+      "differentiation_index": 0.104040808,
+      "effective_coefficient": 0.02,
+      "mean": 79.714286,
+      "n": 7,
+      "p90": 85.4,
+      "p95": 85.7,
+      "p98": 85.88,
+      "stddev": 5.20204
+    },
+    "TE|Gritty Possession|SFA": {
+      "differentiation_index": 0.081716284,
+      "effective_coefficient": 0.02,
+      "mean": 82.142857,
+      "n": 7,
+      "p90": 86.2,
+      "p95": 87.1,
+      "p98": 87.64,
+      "stddev": 4.085814
+    },
+    "TE|Gritty Possession|SPC": {
+      "differentiation_index": 0.032007652,
+      "effective_coefficient": 0.01,
+      "mean": 82.571429,
+      "n": 7,
+      "p90": 86.2,
+      "p95": 87.1,
+      "p98": 87.64,
+      "stddev": 3.200765
+    },
+    "TE|Gritty Possession|SPD": {
+      "differentiation_index": 0.480517782,
+      "effective_coefficient": 0.076013072,
+      "mean": 74.803922,
+      "n": 51,
+      "p90": 83.0,
+      "p95": 84.5,
+      "p98": 85.0,
+      "stddev": 6.321515
+    },
+    "TE|Gritty Possession|SRR": {
+      "differentiation_index": 4.058017692,
+      "effective_coefficient": 0.304052288,
+      "mean": 68.098039,
+      "n": 51,
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 87.0,
+      "stddev": 13.346447
+    },
+    "TE|Gritty Possession|STR": {
+      "differentiation_index": 0.13926923,
+      "effective_coefficient": 0.04,
+      "mean": 81.142857,
+      "n": 7,
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0,
+      "stddev": 3.481731
+    },
+    "TE|Gritty Possession|TRK": {
+      "differentiation_index": 0.042039826,
+      "effective_coefficient": 0.01,
+      "mean": 80.571429,
+      "n": 7,
+      "p90": 84.6,
+      "p95": 85.8,
+      "p98": 86.52,
+      "stddev": 4.203983
+    },
+    "TE|Physical Route Runner|ACC": {
+      "differentiation_index": 0.050879401,
+      "effective_coefficient": 0.062314286,
+      "mean": 83.0,
+      "n": 6,
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0,
+      "stddev": 0.816497
+    },
+    "TE|Physical Route Runner|AGI": {
+      "differentiation_index": 0.03552466,
+      "effective_coefficient": 0.037679592,
+      "mean": 82.666667,
+      "n": 6,
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0,
+      "stddev": 0.942809
+    },
+    "TE|Physical Route Runner|AWR": {
+      "differentiation_index": 0.172164627,
+      "effective_coefficient": 0.091304082,
+      "mean": 82.666667,
+      "n": 6,
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0,
+      "stddev": 1.885618
+    },
+    "TE|Physical Route Runner|BCV": {
+      "differentiation_index": 0.014198709,
+      "effective_coefficient": 0.017389796,
+      "mean": 77.0,
+      "n": 6,
+      "p90": 78.0,
+      "p95": 78.0,
+      "p98": 78.0,
+      "stddev": 0.816497
+    },
+    "TE|Physical Route Runner|BTK": {
+      "differentiation_index": 0.022481983,
+      "effective_coefficient": 0.027534694,
+      "mean": 82.0,
+      "n": 6,
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0,
+      "stddev": 0.816497
+    },
+    "TE|Physical Route Runner|CIT": {
+      "differentiation_index": 0.185844979,
+      "effective_coefficient": 0.098559184,
+      "mean": 83.666667,
+      "n": 6,
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0,
+      "stddev": 1.885618
+    },
+    "TE|Physical Route Runner|CTH": {
+      "differentiation_index": 1.624754369,
+      "effective_coefficient": 0.287771649,
+      "mean": 74.81338,
+      "n": 284,
+      "p90": 83.0,
+      "p95": 84.0,
+      "p98": 85.0,
+      "stddev": 5.645985
+    },
+    "TE|Physical Route Runner|DRR": {
+      "differentiation_index": 0.045179877,
+      "effective_coefficient": 0.03622449,
+      "mean": 82.666667,
+      "n": 6,
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0,
+      "stddev": 1.247219
+    },
+    "TE|Physical Route Runner|IBL": {
+      "differentiation_index": 0.027341462,
+      "effective_coefficient": 0.0116,
+      "mean": 74.666667,
+      "n": 6,
+      "p90": 78.0,
+      "p95": 78.0,
+      "p98": 78.0,
+      "stddev": 2.357023
+    },
+    "TE|Physical Route Runner|JMP": {
+      "differentiation_index": 0.04466055,
+      "effective_coefficient": 0.021734694,
+      "mean": 82.666667,
+      "n": 6,
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0,
+      "stddev": 2.054805
+    },
+    "TE|Physical Route Runner|LBK": {
+      "differentiation_index": 0.037983973,
+      "effective_coefficient": 0.0058,
+      "mean": 68.333333,
+      "n": 6,
+      "p90": 76.0,
+      "p95": 76.0,
+      "p98": 76.0,
+      "stddev": 6.548961
+    },
+    "TE|Physical Route Runner|MRR": {
+      "differentiation_index": 2.018917324,
+      "effective_coefficient": 0.218111417,
+      "mean": 68.616197,
+      "n": 284,
+      "p90": 82.0,
+      "p95": 84.0,
+      "p98": 85.0,
+      "stddev": 9.256358
+    },
+    "TE|Physical Route Runner|PBF": {
+      "differentiation_index": 0.022172063,
+      "effective_coefficient": 0.013044898,
+      "mean": 67.333333,
+      "n": 6,
+      "p90": 69.0,
+      "p95": 69.0,
+      "p98": 69.0,
+      "stddev": 1.699673
+    },
+    "TE|Physical Route Runner|PBK": {
+      "differentiation_index": 0.07168444,
+      "effective_coefficient": 0.023189796,
+      "mean": 65.333333,
+      "n": 6,
+      "p90": 68.0,
+      "p95": 68.0,
+      "p98": 68.0,
+      "stddev": 3.091206
+    },
+    "TE|Physical Route Runner|PBP": {
+      "differentiation_index": 0.024597695,
+      "effective_coefficient": 0.013044898,
+      "mean": 66.666667,
+      "n": 6,
+      "p90": 68.0,
+      "p95": 68.0,
+      "p98": 68.0,
+      "stddev": 1.885618
+    },
+    "TE|Physical Route Runner|RBF": {
+      "differentiation_index": 0.118639045,
+      "effective_coefficient": 0.033334694,
+      "mean": 72.0,
+      "n": 6,
+      "p90": 75.0,
+      "p95": 75.0,
+      "p98": 75.0,
+      "stddev": 3.559026
+    },
+    "TE|Physical Route Runner|RBK": {
+      "differentiation_index": 0.785018405,
+      "effective_coefficient": 0.096543712,
+      "mean": 66.883803,
+      "n": 284,
+      "p90": 77.0,
+      "p95": 80.0,
+      "p98": 82.0,
+      "stddev": 8.131223
+    },
+    "TE|Physical Route Runner|RBP": {
+      "differentiation_index": 0.108870654,
+      "effective_coefficient": 0.033334694,
+      "mean": 71.0,
+      "n": 6,
+      "p90": 75.0,
+      "p95": 75.0,
+      "p98": 75.0,
+      "stddev": 3.265986
+    },
+    "TE|Physical Route Runner|RLS": {
+      "differentiation_index": 0.059481737,
+      "effective_coefficient": 0.027534694,
+      "mean": 82.0,
+      "n": 6,
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0,
+      "stddev": 2.160247
+    },
+    "TE|Physical Route Runner|SFA": {
+      "differentiation_index": 0.038258806,
+      "effective_coefficient": 0.020289796,
+      "mean": 81.333333,
+      "n": 6,
+      "p90": 84.0,
+      "p95": 84.0,
+      "p98": 84.0,
+      "stddev": 1.885618
+    },
+    "TE|Physical Route Runner|SPC": {
+      "differentiation_index": 0.045084551,
+      "effective_coefficient": 0.031879592,
+      "mean": 83.0,
+      "n": 6,
+      "p90": 85.0,
+      "p95": 85.0,
+      "p98": 85.0,
+      "stddev": 1.414214
+    },
+    "TE|Physical Route Runner|SPD": {
+      "differentiation_index": 0.787920917,
+      "effective_coefficient": 0.156397821,
+      "mean": 73.728873,
+      "n": 284,
+      "p90": 81.0,
+      "p95": 82.0,
+      "p98": 83.0,
+      "stddev": 5.037928
+    },
+    "TE|Physical Route Runner|SRR": {
+      "differentiation_index": 2.221480461,
+      "effective_coefficient": 0.227917539,
+      "mean": 69.140845,
+      "n": 284,
+      "p90": 82.0,
+      "p95": 84.0,
+      "p98": 85.0,
+      "stddev": 9.74686
+    },
+    "TE|Physical Route Runner|STR": {
+      "differentiation_index": 0.010936585,
+      "effective_coefficient": 0.0116,
+      "mean": 79.333333,
+      "n": 6,
+      "p90": 80.0,
+      "p95": 80.0,
+      "p98": 80.0,
+      "stddev": 0.942809
+    },
+    "TE|Physical Route Runner|TRK": {
+      "differentiation_index": 0.012652911,
+      "effective_coefficient": 0.010144898,
+      "mean": 81.333333,
+      "n": 6,
+      "p90": 83.0,
+      "p95": 83.0,
+      "p98": 83.0,
+      "stddev": 1.247219
+    },
+    "TE|Vertical Threat|ACC": {
+      "differentiation_index": 0.115533981,
+      "effective_coefficient": 0.067961165,
+      "mean": 85.9,
+      "n": 10,
+      "p90": 88.1,
+      "p95": 88.55,
+      "p98": 88.82,
+      "stddev": 1.7
+    },
+    "TE|Vertical Threat|AGI": {
+      "differentiation_index": 0.090577894,
+      "effective_coefficient": 0.038834951,
+      "mean": 84.4,
+      "n": 10,
+      "p90": 88.0,
+      "p95": 88.0,
+      "p98": 88.0,
+      "stddev": 2.332381
+    },
+    "TE|Vertical Threat|AWR": {
+      "differentiation_index": 0.300663796,
+      "effective_coefficient": 0.087378641,
+      "mean": 78.6,
+      "n": 10,
+      "p90": 80.7,
+      "p95": 83.85,
+      "p98": 85.74,
+      "stddev": 3.44093
+    },
+    "TE|Vertical Threat|BCV": {
+      "differentiation_index": 0.103770013,
+      "effective_coefficient": 0.019417476,
+      "mean": 75.2,
+      "n": 10,
+      "p90": 81.1,
+      "p95": 81.55,
+      "p98": 81.82,
+      "stddev": 5.344156
+    },
+    "TE|Vertical Threat|BTK": {
+      "differentiation_index": 0.105177496,
+      "effective_coefficient": 0.029126214,
+      "mean": 82.4,
+      "n": 10,
+      "p90": 86.0,
+      "p95": 86.0,
+      "p98": 86.0,
+      "stddev": 3.611094
+    },
+    "TE|Vertical Threat|CIT": {
+      "differentiation_index": 0.127388112,
+      "effective_coefficient": 0.077669903,
+      "mean": 85.9,
+      "n": 10,
+      "p90": 88.1,
+      "p95": 88.55,
+      "p98": 88.82,
+      "stddev": 1.640122
+    },
+    "TE|Vertical Threat|CTH": {
+      "differentiation_index": 1.582039932,
+      "effective_coefficient": 0.285821323,
+      "mean": 76.650602,
+      "n": 166,
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 87.0,
+      "stddev": 5.535066
+    },
+    "TE|Vertical Threat|DRR": {
+      "differentiation_index": 0.075982892,
+      "effective_coefficient": 0.048543689,
+      "mean": 86.5,
+      "n": 10,
+      "p90": 88.1,
+      "p95": 88.55,
+      "p98": 88.82,
+      "stddev": 1.565248
+    },
+    "TE|Vertical Threat|IBL": {
+      "differentiation_index": 0.05177589,
+      "effective_coefficient": 0.029126214,
+      "mean": 78.2,
+      "n": 10,
+      "p90": 80.2,
+      "p95": 81.1,
+      "p98": 81.64,
+      "stddev": 1.777639
+    },
+    "TE|Vertical Threat|JMP": {
+      "differentiation_index": 0.0875726,
+      "effective_coefficient": 0.029126214,
+      "mean": 83.6,
+      "n": 10,
+      "p90": 87.2,
+      "p95": 88.1,
+      "p98": 88.64,
+      "stddev": 3.006659
+    },
+    "TE|Vertical Threat|LBK": {
+      "differentiation_index": 0.087464898,
+      "effective_coefficient": 0.019417476,
+      "mean": 73.9,
+      "n": 10,
+      "p90": 78.1,
+      "p95": 78.55,
+      "p98": 78.82,
+      "stddev": 4.504442
+    },
+    "TE|Vertical Threat|MRR": {
+      "differentiation_index": 2.207659807,
+      "effective_coefficient": 0.233853809,
+      "mean": 71.156627,
+      "n": 166,
+      "p90": 83.5,
+      "p95": 85.75,
+      "p98": 86.0,
+      "stddev": 9.440341
+    },
+    "TE|Vertical Threat|PBF": {
+      "differentiation_index": 0.040323417,
+      "effective_coefficient": 0.009708738,
+      "mean": 69.5,
+      "n": 10,
+      "p90": 72.6,
+      "p95": 75.3,
+      "p98": 76.92,
+      "stddev": 4.153312
+    },
+    "TE|Vertical Threat|PBK": {
+      "differentiation_index": 0.090327793,
+      "effective_coefficient": 0.019417476,
+      "mean": 67.6,
+      "n": 10,
+      "p90": 71.1,
+      "p95": 71.55,
+      "p98": 71.82,
+      "stddev": 4.651881
+    },
+    "TE|Vertical Threat|PBP": {
+      "differentiation_index": 0.046773551,
+      "effective_coefficient": 0.009708738,
+      "mean": 70.3,
+      "n": 10,
+      "p90": 76.1,
+      "p95": 76.55,
+      "p98": 76.82,
+      "stddev": 4.817676
+    },
+    "TE|Vertical Threat|RBF": {
+      "differentiation_index": 0.09593982,
+      "effective_coefficient": 0.029126214,
+      "mean": 75.5,
+      "n": 10,
+      "p90": 79.1,
+      "p95": 79.55,
+      "p98": 79.82,
+      "stddev": 3.293934
+    },
+    "TE|Vertical Threat|RBK": {
+      "differentiation_index": 0.623536604,
+      "effective_coefficient": 0.07795127,
+      "mean": 64.506024,
+      "n": 166,
+      "p90": 75.5,
+      "p95": 77.75,
+      "p98": 79.7,
+      "stddev": 7.999056
+    },
+    "TE|Vertical Threat|RBP": {
+      "differentiation_index": 0.075951873,
+      "effective_coefficient": 0.029126214,
+      "mean": 75.0,
+      "n": 10,
+      "p90": 78.1,
+      "p95": 78.55,
+      "p98": 78.82,
+      "stddev": 2.607681
+    },
+    "TE|Vertical Threat|RLS": {
+      "differentiation_index": 0.134612272,
+      "effective_coefficient": 0.029126214,
+      "mean": 81.8,
+      "n": 10,
+      "p90": 85.4,
+      "p95": 87.2,
+      "p98": 88.28,
+      "stddev": 4.621688
+    },
+    "TE|Vertical Threat|SFA": {
+      "differentiation_index": 0.031847028,
+      "effective_coefficient": 0.019417476,
+      "mean": 84.1,
+      "n": 10,
+      "p90": 86.0,
+      "p95": 86.0,
+      "p98": 86.0,
+      "stddev": 1.640122
+    },
+    "TE|Vertical Threat|SPC": {
+      "differentiation_index": 0.097009678,
+      "effective_coefficient": 0.038834951,
+      "mean": 83.6,
+      "n": 10,
+      "p90": 86.3,
+      "p95": 87.65,
+      "p98": 88.46,
+      "stddev": 2.497999
+    },
+    "TE|Vertical Threat|SPD": {
+      "differentiation_index": 1.024371638,
+      "effective_coefficient": 0.181886296,
+      "mean": 77.228916,
+      "n": 166,
+      "p90": 84.0,
+      "p95": 85.0,
+      "p98": 87.7,
+      "stddev": 5.631934
+    },
+    "TE|Vertical Threat|SRR": {
+      "differentiation_index": 1.733309661,
+      "effective_coefficient": 0.181886296,
+      "mean": 70.337349,
+      "n": 166,
+      "p90": 83.5,
+      "p95": 85.0,
+      "p98": 87.7,
+      "stddev": 9.529633
+    },
+    "TE|Vertical Threat|TRK": {
+      "differentiation_index": 0.018649876,
+      "effective_coefficient": 0.009708738,
+      "mean": 83.1,
+      "n": 10,
+      "p90": 85.2,
+      "p95": 86.1,
+      "p98": 86.64,
+      "stddev": 1.920937
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "comparable_distinct_ovr_pairs": 1798,
+  "correct_rankings": 1794,
+  "inversion_records": [
+    {
+      "higher_name": "Dorian Thomas",
+      "higher_ovr": 96,
+      "higher_score": 90.18,
+      "higher_url": "https://cfb.fan/players/21011-dorian-thomas/26-560021011/",
+      "lower_name": "Josh Phifer",
+      "lower_ovr": 95,
+      "lower_score": 90.43,
+      "lower_url": "https://cfb.fan/players/10260-josh-phifer/26-390010260/",
+      "ovr_gap": 1,
+      "score_delta": -0.25
+    },
+    {
+      "higher_name": "Dorian Thomas",
+      "higher_ovr": 96,
+      "higher_score": 90.18,
+      "higher_url": "https://cfb.fan/players/21011-dorian-thomas/26-560021011/",
+      "lower_name": "Isaac Schoenfeld",
+      "lower_ovr": 95,
+      "lower_score": 90.41,
+      "lower_url": "https://cfb.fan/players/23357-isaac-schoenfeld/26-550023357/",
+      "ovr_gap": 1,
+      "score_delta": -0.22999999999998977
+    },
+    {
+      "higher_name": "Brett Seither",
+      "higher_ovr": 88,
+      "higher_score": 82.51,
+      "higher_url": "https://cfb.fan/players/21811-brett-seither/26-230021811/",
+      "lower_name": "Triston O'Brien",
+      "lower_ovr": 86,
+      "lower_score": 82.7,
+      "lower_url": "https://cfb.fan/players/28955-triston-obrien/26-315028955/",
+      "ovr_gap": 2,
+      "score_delta": -0.18999999999999773
+    },
+    {
+      "higher_name": "Peyton Warford",
+      "higher_ovr": 70,
+      "higher_score": 66.71,
+      "higher_url": "https://cfb.fan/players/3035-peyton-warford/26-2003035/",
+      "lower_name": "Tyson Chavez",
+      "lower_ovr": 69,
+      "lower_score": 66.73,
+      "lower_url": "https://cfb.fan/players/33015-tyson-chavez/26-2033015/",
+      "ovr_gap": 1,
+      "score_delta": -0.020000000000010232
+    }
+  ],
+  "inversions": 4,
+  "mean_residual": -2.9352380952380948,
+  "n": 63,
+  "ovr_bands": {
+    "65": {
+      "mae": 3.168000000000002,
+      "mean_residual": -3.168000000000002,
+      "mean_score": 61.831999999999994,
+      "n": 5
+    },
+    "66": {
+      "mae": 2.73,
+      "mean_residual": -2.73,
+      "mean_score": 63.27,
+      "n": 7
+    },
+    "67": {
+      "mae": 2.6772727272727255,
+      "mean_residual": -2.6772727272727255,
+      "mean_score": 64.32272727272726,
+      "n": 11
+    },
+    "68": {
+      "mae": 2.516250000000001,
+      "mean_residual": -2.516250000000001,
+      "mean_score": 65.48375,
+      "n": 8
+    },
+    "69": {
+      "mae": 2.634999999999998,
+      "mean_residual": -2.634999999999998,
+      "mean_score": 66.365,
+      "n": 6
+    },
+    "70": {
+      "mae": 2.4640000000000013,
+      "mean_residual": -2.4640000000000013,
+      "mean_score": 67.536,
+      "n": 5
+    },
+    "71": {
+      "mae": 2.762500000000003,
+      "mean_residual": -2.762500000000003,
+      "mean_score": 68.2375,
+      "n": 4
+    },
+    "73": {
+      "mae": 2.7633333333333354,
+      "mean_residual": -2.7633333333333354,
+      "mean_score": 70.23666666666666,
+      "n": 3
+    },
+    "74": {
+      "mae": 2.8575000000000017,
+      "mean_residual": -2.8575000000000017,
+      "mean_score": 71.1425,
+      "n": 4
+    },
+    "75": {
+      "mae": 2.9000000000000057,
+      "mean_residual": -2.9000000000000057,
+      "mean_score": 72.1,
+      "n": 1
+    },
+    "77": {
+      "mae": 3.450000000000003,
+      "mean_residual": -3.450000000000003,
+      "mean_score": 73.55,
+      "n": 1
+    },
+    "78": {
+      "mae": 2.799999999999997,
+      "mean_residual": -2.799999999999997,
+      "mean_score": 75.2,
+      "n": 1
+    },
+    "80": {
+      "mae": 2.6899999999999977,
+      "mean_residual": -2.6899999999999977,
+      "mean_score": 77.31,
+      "n": 1
+    },
+    "86": {
+      "mae": 3.299999999999997,
+      "mean_residual": -3.299999999999997,
+      "mean_score": 82.7,
+      "n": 1
+    },
+    "88": {
+      "mae": 5.489999999999995,
+      "mean_residual": -5.489999999999995,
+      "mean_score": 82.51,
+      "n": 1
+    },
+    "89": {
+      "mae": 5.8799999999999955,
+      "mean_residual": -5.8799999999999955,
+      "mean_score": 83.12,
+      "n": 1
+    },
+    "95": {
+      "mae": 4.579999999999998,
+      "mean_residual": -4.579999999999998,
+      "mean_score": 90.42,
+      "n": 2
+    },
+    "96": {
+      "mae": 5.819999999999993,
+      "mean_residual": -5.819999999999993,
+      "mean_score": 90.18,
+      "n": 1
+    }
+  },
+  "ranking_accuracy_excluding_ties": 0.9977753058954394,
+  "ranking_accuracy_ties_as_incorrect": 0.9977753058954394,
+  "raw_score_ovr_mae": 2.9352380952380948,
+  "ties": 0
+}

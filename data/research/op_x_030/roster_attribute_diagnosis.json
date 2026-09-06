@@ -1,0 +1,2244 @@
+{
+  "largest_normalized_weaknesses": [
+    {
+      "mean_percentile": 7.692308,
+      "position_attribute": "MIKE|AWR",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 11.111111,
+      "position_attribute": "S|PUR",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 12.5,
+      "position_attribute": "OT|SPD",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 16.666667,
+      "position_attribute": "S|STR",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 29.166667,
+      "position_attribute": "OT|AWR",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 29.166667,
+      "position_attribute": "OT|IBL",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 44.444444,
+      "position_attribute": "S|AWR",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 44.444444,
+      "position_attribute": "S|JMP",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 50.0,
+      "position_attribute": "OT|ACC",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 50.0,
+      "position_attribute": "S|AGI",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 50.0,
+      "position_attribute": "S|PRC",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 52.0,
+      "position_attribute": "G|ACC",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 52.0,
+      "position_attribute": "G|AWR",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 52.0,
+      "position_attribute": "G|IBL",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 52.0,
+      "position_attribute": "G|SPD",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 61.111111,
+      "position_attribute": "S|PRS",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 66.666667,
+      "position_attribute": "S|ACC",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 68.0,
+      "position_attribute": "G|LBK",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 69.230769,
+      "position_attribute": "MIKE|FMV",
+      "starter_observations": 1
+    },
+    {
+      "mean_percentile": 69.230769,
+      "position_attribute": "MIKE|MCV",
+      "starter_observations": 1
+    }
+  ],
+  "starters": [
+    {
+      "player_name": "Dante Moore",
+      "status": "INSUFFICIENT_ATTRIBUTES"
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "SRR",
+          "attribute_percentile": 99.652778,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 5,
+          "effective_coefficient": 0.3137254901960784,
+          "elite_tail_scarcity": 0.991319,
+          "local_density_within_one": 7,
+          "marginal_pancake_value": {
+            "1": 0.31372549,
+            "2": 0.62745098,
+            "3": 0.941176471,
+            "5": 1.568627451
+          },
+          "peer_count": 576,
+          "raw_rating": 87.0,
+          "score_share_percent": 31.65075,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 27.294117647
+        },
+        {
+          "attribute": "CTH",
+          "attribute_percentile": 98.4375,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 14,
+          "effective_coefficient": 0.2549019607843137,
+          "elite_tail_scarcity": 0.975694,
+          "local_density_within_one": 24,
+          "marginal_pancake_value": {
+            "1": 0.254901961,
+            "2": 0.509803922,
+            "3": 0.764705882,
+            "5": 1.274509804
+          },
+          "peer_count": 576,
+          "raw_rating": 84.0,
+          "score_share_percent": 24.829468,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 21.411764706
+        },
+        {
+          "attribute": "SPD",
+          "attribute_percentile": 100.0,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 3,
+          "effective_coefficient": 0.19607843137254902,
+          "elite_tail_scarcity": 0.994792,
+          "local_density_within_one": 7,
+          "marginal_pancake_value": {
+            "1": 0.196078431,
+            "2": 0.392156863,
+            "3": 0.588235294,
+            "5": 0.980392157
+          },
+          "peer_count": 576,
+          "raw_rating": 87.0,
+          "score_share_percent": 19.781719,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 17.058823529
+        }
+      ],
+      "card_id": "card:a9071885a558bee8450e",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "CTH",
+          "attribute_percentile": 98.4375,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 14,
+          "effective_coefficient": 0.2549019607843137,
+          "elite_tail_scarcity": 0.975694,
+          "local_density_within_one": 24,
+          "marginal_pancake_value": {
+            "1": 0.254901961,
+            "2": 0.509803922,
+            "3": 0.764705882,
+            "5": 1.274509804
+          },
+          "peer_count": 576,
+          "raw_rating": 84.0,
+          "score_share_percent": 24.829468,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 21.411764706
+        },
+        {
+          "attribute": "SRR",
+          "attribute_percentile": 99.652778,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 5,
+          "effective_coefficient": 0.3137254901960784,
+          "elite_tail_scarcity": 0.991319,
+          "local_density_within_one": 7,
+          "marginal_pancake_value": {
+            "1": 0.31372549,
+            "2": 0.62745098,
+            "3": 0.941176471,
+            "5": 1.568627451
+          },
+          "peer_count": 576,
+          "raw_rating": 87.0,
+          "score_share_percent": 31.65075,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 27.294117647
+        },
+        {
+          "attribute": "MRR",
+          "attribute_percentile": 99.826389,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 4,
+          "effective_coefficient": 0.17647058823529413,
+          "elite_tail_scarcity": 0.993056,
+          "local_density_within_one": 7,
+          "marginal_pancake_value": {
+            "1": 0.176470588,
+            "2": 0.352941176,
+            "3": 0.529411765,
+            "5": 0.882352941
+          },
+          "peer_count": 576,
+          "raw_rating": 87.0,
+          "score_share_percent": 17.803547,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 15.352941176
+        }
+      ],
+      "player_name": "Malachi Toney",
+      "position_family": "WR",
+      "score": 86.235294
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "PBF",
+          "attribute_percentile": 95.238095,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 25,
+          "effective_coefficient": 0.25,
+          "elite_tail_scarcity": 0.943311,
+          "local_density_within_one": 32,
+          "marginal_pancake_value": {
+            "1": 0.25,
+            "2": 0.5,
+            "3": 0.75,
+            "5": 1.25
+          },
+          "peer_count": 441,
+          "raw_rating": 84.0,
+          "score_share_percent": 25.808037,
+          "strength_class": "STRONG",
+          "weighted_contribution": 21.0
+        },
+        {
+          "attribute": "RBF",
+          "attribute_percentile": 79.166667,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 15,
+          "effective_coefficient": 0.24,
+          "elite_tail_scarcity": 0.375,
+          "local_density_within_one": 19,
+          "marginal_pancake_value": {
+            "1": 0.24,
+            "2": 0.48,
+            "3": 0.72,
+            "5": 1.2
+          },
+          "peer_count": 24,
+          "raw_rating": 85.0,
+          "score_share_percent": 25.070665,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 20.4
+        },
+        {
+          "attribute": "STR",
+          "attribute_percentile": 94.557823,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 39,
+          "effective_coefficient": 0.13,
+          "elite_tail_scarcity": 0.911565,
+          "local_density_within_one": 41,
+          "marginal_pancake_value": {
+            "1": 0.13,
+            "2": 0.26,
+            "3": 0.39,
+            "5": 0.65
+          },
+          "peer_count": 441,
+          "raw_rating": 82.0,
+          "score_share_percent": 13.100651,
+          "strength_class": "STRONG",
+          "weighted_contribution": 10.66
+        }
+      ],
+      "card_id": "card:0dfef086dfd8d85794d6",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "SPD",
+          "attribute_percentile": 12.5,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 22,
+          "effective_coefficient": 0.03,
+          "elite_tail_scarcity": 0.083333,
+          "local_density_within_one": 3,
+          "marginal_pancake_value": {
+            "1": 0.03,
+            "2": 0.06,
+            "3": 0.09,
+            "5": 0.15
+          },
+          "peer_count": 24,
+          "raw_rating": 63.0,
+          "score_share_percent": 2.322723,
+          "strength_class": "WEAK",
+          "weighted_contribution": 1.89
+        },
+        {
+          "attribute": "AWR",
+          "attribute_percentile": 29.166667,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 20,
+          "effective_coefficient": 0.1,
+          "elite_tail_scarcity": 0.166667,
+          "local_density_within_one": 3,
+          "marginal_pancake_value": {
+            "1": 0.1,
+            "2": 0.2,
+            "3": 0.3,
+            "5": 0.5
+          },
+          "peer_count": 24,
+          "raw_rating": 75.0,
+          "score_share_percent": 9.217156,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 7.5
+        },
+        {
+          "attribute": "IBL",
+          "attribute_percentile": 29.166667,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 18,
+          "effective_coefficient": 0.04,
+          "elite_tail_scarcity": 0.25,
+          "local_density_within_one": 8,
+          "marginal_pancake_value": {
+            "1": 0.04,
+            "2": 0.08,
+            "3": 0.12,
+            "5": 0.2
+          },
+          "peer_count": 24,
+          "raw_rating": 81.0,
+          "score_share_percent": 3.981811,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 3.24
+        }
+      ],
+      "player_name": "Samson Okunlola",
+      "position_family": "OT",
+      "score": 81.37
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "RBP",
+          "attribute_percentile": 97.106109,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 20,
+          "effective_coefficient": 0.41304347826086957,
+          "elite_tail_scarcity": 0.935691,
+          "local_density_within_one": 34,
+          "marginal_pancake_value": {
+            "1": 0.413043478,
+            "2": 0.826086957,
+            "3": 1.239130435,
+            "5": 2.065217391
+          },
+          "peer_count": 311,
+          "raw_rating": 85.0,
+          "score_share_percent": 42.189133,
+          "strength_class": "STRONG",
+          "weighted_contribution": 35.108695652
+        },
+        {
+          "attribute": "STR",
+          "attribute_percentile": 90.675241,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 42,
+          "effective_coefficient": 0.32608695652173914,
+          "elite_tail_scarcity": 0.864952,
+          "local_density_within_one": 36,
+          "marginal_pancake_value": {
+            "1": 0.326086957,
+            "2": 0.652173913,
+            "3": 0.97826087,
+            "5": 1.630434783
+          },
+          "peer_count": 311,
+          "raw_rating": 83.0,
+          "score_share_percent": 32.523511,
+          "strength_class": "STRONG",
+          "weighted_contribution": 27.065217391
+        },
+        {
+          "attribute": "RBK",
+          "attribute_percentile": 80.707395,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 74,
+          "effective_coefficient": 0.21739130434782608,
+          "elite_tail_scarcity": 0.762058,
+          "local_density_within_one": 51,
+          "marginal_pancake_value": {
+            "1": 0.217391304,
+            "2": 0.434782609,
+            "3": 0.652173913,
+            "5": 1.086956522
+          },
+          "peer_count": 311,
+          "raw_rating": 80.0,
+          "score_share_percent": 20.898642,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 17.391304348
+        }
+      ],
+      "card_id": "card:38d5dbb6bd21993e002b",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "RBK",
+          "attribute_percentile": 80.707395,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 74,
+          "effective_coefficient": 0.21739130434782608,
+          "elite_tail_scarcity": 0.762058,
+          "local_density_within_one": 51,
+          "marginal_pancake_value": {
+            "1": 0.217391304,
+            "2": 0.434782609,
+            "3": 0.652173913,
+            "5": 1.086956522
+          },
+          "peer_count": 311,
+          "raw_rating": 80.0,
+          "score_share_percent": 20.898642,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 17.391304348
+        },
+        {
+          "attribute": "STR",
+          "attribute_percentile": 90.675241,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 42,
+          "effective_coefficient": 0.32608695652173914,
+          "elite_tail_scarcity": 0.864952,
+          "local_density_within_one": 36,
+          "marginal_pancake_value": {
+            "1": 0.326086957,
+            "2": 0.652173913,
+            "3": 0.97826087,
+            "5": 1.630434783
+          },
+          "peer_count": 311,
+          "raw_rating": 83.0,
+          "score_share_percent": 32.523511,
+          "strength_class": "STRONG",
+          "weighted_contribution": 27.065217391
+        },
+        {
+          "attribute": "RBP",
+          "attribute_percentile": 97.106109,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 20,
+          "effective_coefficient": 0.41304347826086957,
+          "elite_tail_scarcity": 0.935691,
+          "local_density_within_one": 34,
+          "marginal_pancake_value": {
+            "1": 0.413043478,
+            "2": 0.826086957,
+            "3": 1.239130435,
+            "5": 2.065217391
+          },
+          "peer_count": 311,
+          "raw_rating": 85.0,
+          "score_share_percent": 42.189133,
+          "strength_class": "STRONG",
+          "weighted_contribution": 35.108695652
+        }
+      ],
+      "player_name": "Thomas Shrader",
+      "position_family": "G",
+      "score": 83.217391
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "RBP",
+          "attribute_percentile": 96.774194,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 3,
+          "effective_coefficient": 0.2037037037037037,
+          "elite_tail_scarcity": 0.903226,
+          "local_density_within_one": 8,
+          "marginal_pancake_value": {
+            "1": 0.203703704,
+            "2": 0.407407407,
+            "3": 0.611111111,
+            "5": 1.018518519
+          },
+          "peer_count": 31,
+          "raw_rating": 87.0,
+          "score_share_percent": 21.125828,
+          "strength_class": "STRONG",
+          "weighted_contribution": 17.722222222
+        },
+        {
+          "attribute": "PBP",
+          "attribute_percentile": 100.0,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 2,
+          "effective_coefficient": 0.19444444444444445,
+          "elite_tail_scarcity": 0.935484,
+          "local_density_within_one": 4,
+          "marginal_pancake_value": {
+            "1": 0.194444444,
+            "2": 0.388888889,
+            "3": 0.583333333,
+            "5": 0.972222222
+          },
+          "peer_count": 31,
+          "raw_rating": 86.0,
+          "score_share_percent": 19.933775,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 16.722222222
+        },
+        {
+          "attribute": "AWR",
+          "attribute_percentile": 90.322581,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 6,
+          "effective_coefficient": 0.1388888888888889,
+          "elite_tail_scarcity": 0.806452,
+          "local_density_within_one": 6,
+          "marginal_pancake_value": {
+            "1": 0.138888889,
+            "2": 0.277777778,
+            "3": 0.416666667,
+            "5": 0.694444444
+          },
+          "peer_count": 31,
+          "raw_rating": 84.0,
+          "score_share_percent": 13.907285,
+          "strength_class": "STRONG",
+          "weighted_contribution": 11.666666667
+        }
+      ],
+      "card_id": "card:28c9e84b73a9edb8662a",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "LBK",
+          "attribute_percentile": 70.967742,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 12,
+          "effective_coefficient": 0.037037037037037035,
+          "elite_tail_scarcity": 0.612903,
+          "local_density_within_one": 6,
+          "marginal_pancake_value": {
+            "1": 0.037037037,
+            "2": 0.074074074,
+            "3": 0.111111111,
+            "5": 0.185185185
+          },
+          "peer_count": 31,
+          "raw_rating": 81.0,
+          "score_share_percent": 3.576159,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 3.0
+        },
+        {
+          "attribute": "AGI",
+          "attribute_percentile": 77.419355,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 12,
+          "effective_coefficient": 0.018518518518518517,
+          "elite_tail_scarcity": 0.612903,
+          "local_density_within_one": 6,
+          "marginal_pancake_value": {
+            "1": 0.018518519,
+            "2": 0.037037037,
+            "3": 0.055555556,
+            "5": 0.092592593
+          },
+          "peer_count": 31,
+          "raw_rating": 65.0,
+          "score_share_percent": 1.434879,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 1.203703704
+        },
+        {
+          "attribute": "PBF",
+          "attribute_percentile": 80.645161,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 7,
+          "effective_coefficient": 0.07407407407407407,
+          "elite_tail_scarcity": 0.774194,
+          "local_density_within_one": 7,
+          "marginal_pancake_value": {
+            "1": 0.074074074,
+            "2": 0.148148148,
+            "3": 0.222222222,
+            "5": 0.37037037
+          },
+          "peer_count": 31,
+          "raw_rating": 80.0,
+          "score_share_percent": 7.064018,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 5.925925926
+        }
+      ],
+      "player_name": "Carson Hinzman",
+      "position_family": "C",
+      "score": 83.888889
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "PBP",
+          "attribute_percentile": 76.0,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 13,
+          "effective_coefficient": 0.22,
+          "elite_tail_scarcity": 0.48,
+          "local_density_within_one": 16,
+          "marginal_pancake_value": {
+            "1": 0.22,
+            "2": 0.44,
+            "3": 0.66,
+            "5": 1.1
+          },
+          "peer_count": 25,
+          "raw_rating": 84.0,
+          "score_share_percent": 22.77545,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 18.48
+        },
+        {
+          "attribute": "RBP",
+          "attribute_percentile": 88.745981,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 46,
+          "effective_coefficient": 0.19,
+          "elite_tail_scarcity": 0.85209,
+          "local_density_within_one": 33,
+          "marginal_pancake_value": {
+            "1": 0.19,
+            "2": 0.38,
+            "3": 0.57,
+            "5": 0.95
+          },
+          "peer_count": 311,
+          "raw_rating": 83.0,
+          "score_share_percent": 19.435544,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 15.77
+        },
+        {
+          "attribute": "STR",
+          "attribute_percentile": 86.495177,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 55,
+          "effective_coefficient": 0.15,
+          "elite_tail_scarcity": 0.823151,
+          "local_density_within_one": 49,
+          "marginal_pancake_value": {
+            "1": 0.15,
+            "2": 0.3,
+            "3": 0.45,
+            "5": 0.75
+          },
+          "peer_count": 311,
+          "raw_rating": 82.0,
+          "score_share_percent": 15.158984,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 12.3
+        }
+      ],
+      "card_id": "card:05b737e0828809d8a979",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "AWR",
+          "attribute_percentile": 52.0,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 14,
+          "effective_coefficient": 0.11,
+          "elite_tail_scarcity": 0.44,
+          "local_density_within_one": 11,
+          "marginal_pancake_value": {
+            "1": 0.11,
+            "2": 0.22,
+            "3": 0.33,
+            "5": 0.55
+          },
+          "peer_count": 25,
+          "raw_rating": 81.0,
+          "score_share_percent": 10.98102,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 8.91
+        },
+        {
+          "attribute": "IBL",
+          "attribute_percentile": 52.0,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 16,
+          "effective_coefficient": 0.07,
+          "elite_tail_scarcity": 0.36,
+          "local_density_within_one": 9,
+          "marginal_pancake_value": {
+            "1": 0.07,
+            "2": 0.14,
+            "3": 0.21,
+            "5": 0.35
+          },
+          "peer_count": 25,
+          "raw_rating": 82.0,
+          "score_share_percent": 7.074193,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 5.74
+        },
+        {
+          "attribute": "ACC",
+          "attribute_percentile": 52.0,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 16,
+          "effective_coefficient": 0.02,
+          "elite_tail_scarcity": 0.36,
+          "local_density_within_one": 7,
+          "marginal_pancake_value": {
+            "1": 0.02,
+            "2": 0.04,
+            "3": 0.06,
+            "5": 0.1
+          },
+          "peer_count": 25,
+          "raw_rating": 64.0,
+          "score_share_percent": 1.57752,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 1.28
+        }
+      ],
+      "player_name": "Anthony Donkoh",
+      "position_family": "G",
+      "score": 81.14
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "PBF",
+          "attribute_percentile": 99.092971,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 9,
+          "effective_coefficient": 0.4807692307692308,
+          "elite_tail_scarcity": 0.979592,
+          "local_density_within_one": 19,
+          "marginal_pancake_value": {
+            "1": 0.480769231,
+            "2": 0.961538462,
+            "3": 1.442307692,
+            "5": 2.403846154
+          },
+          "peer_count": 441,
+          "raw_rating": 86.0,
+          "score_share_percent": 49.154092,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 41.346153846
+        },
+        {
+          "attribute": "STR",
+          "attribute_percentile": 94.557823,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 39,
+          "effective_coefficient": 0.25,
+          "elite_tail_scarcity": 0.911565,
+          "local_density_within_one": 41,
+          "marginal_pancake_value": {
+            "1": 0.25,
+            "2": 0.5,
+            "3": 0.75,
+            "5": 1.25
+          },
+          "peer_count": 441,
+          "raw_rating": 82.0,
+          "score_share_percent": 24.371285,
+          "strength_class": "STRONG",
+          "weighted_contribution": 20.5
+        },
+        {
+          "attribute": "RBK",
+          "attribute_percentile": 87.981859,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 70,
+          "effective_coefficient": 0.15384615384615385,
+          "elite_tail_scarcity": 0.84127,
+          "local_density_within_one": 55,
+          "marginal_pancake_value": {
+            "1": 0.153846154,
+            "2": 0.307692308,
+            "3": 0.461538462,
+            "5": 0.769230769
+          },
+          "peer_count": 441,
+          "raw_rating": 81.0,
+          "score_share_percent": 14.814815,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 12.461538462
+        }
+      ],
+      "card_id": "card:aabd2c5d508df4e1cabc",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "RBK",
+          "attribute_percentile": 87.981859,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 70,
+          "effective_coefficient": 0.15384615384615385,
+          "elite_tail_scarcity": 0.84127,
+          "local_density_within_one": 55,
+          "marginal_pancake_value": {
+            "1": 0.153846154,
+            "2": 0.307692308,
+            "3": 0.461538462,
+            "5": 0.769230769
+          },
+          "peer_count": 441,
+          "raw_rating": 81.0,
+          "score_share_percent": 14.814815,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 12.461538462
+        },
+        {
+          "attribute": "STR",
+          "attribute_percentile": 94.557823,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 39,
+          "effective_coefficient": 0.25,
+          "elite_tail_scarcity": 0.911565,
+          "local_density_within_one": 41,
+          "marginal_pancake_value": {
+            "1": 0.25,
+            "2": 0.5,
+            "3": 0.75,
+            "5": 1.25
+          },
+          "peer_count": 441,
+          "raw_rating": 82.0,
+          "score_share_percent": 24.371285,
+          "strength_class": "STRONG",
+          "weighted_contribution": 20.5
+        },
+        {
+          "attribute": "PBF",
+          "attribute_percentile": 99.092971,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 9,
+          "effective_coefficient": 0.4807692307692308,
+          "elite_tail_scarcity": 0.979592,
+          "local_density_within_one": 19,
+          "marginal_pancake_value": {
+            "1": 0.480769231,
+            "2": 0.961538462,
+            "3": 1.442307692,
+            "5": 2.403846154
+          },
+          "peer_count": 441,
+          "raw_rating": 86.0,
+          "score_share_percent": 49.154092,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 41.346153846
+        }
+      ],
+      "player_name": "Cason Henry",
+      "position_family": "OT",
+      "score": 84.115385
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "MCV",
+          "attribute_percentile": 95.256917,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 17,
+          "effective_coefficient": 0.15,
+          "elite_tail_scarcity": 0.932806,
+          "local_density_within_one": 10,
+          "marginal_pancake_value": {
+            "1": 0.15,
+            "2": 0.3,
+            "3": 0.45,
+            "5": 0.75
+          },
+          "peer_count": 253,
+          "raw_rating": 84.0,
+          "score_share_percent": 15.416616,
+          "strength_class": "STRONG",
+          "weighted_contribution": 12.6
+        },
+        {
+          "attribute": "SPD",
+          "attribute_percentile": 96.442688,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 14,
+          "effective_coefficient": 0.14,
+          "elite_tail_scarcity": 0.944664,
+          "local_density_within_one": 13,
+          "marginal_pancake_value": {
+            "1": 0.14,
+            "2": 0.28,
+            "3": 0.42,
+            "5": 0.7
+          },
+          "peer_count": 253,
+          "raw_rating": 85.0,
+          "score_share_percent": 14.560137,
+          "strength_class": "STRONG",
+          "weighted_contribution": 11.9
+        },
+        {
+          "attribute": "ACC",
+          "attribute_percentile": 66.666667,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 10,
+          "effective_coefficient": 0.11,
+          "elite_tail_scarcity": 0.444444,
+          "local_density_within_one": 6,
+          "marginal_pancake_value": {
+            "1": 0.11,
+            "2": 0.22,
+            "3": 0.33,
+            "5": 0.55
+          },
+          "peer_count": 18,
+          "raw_rating": 86.0,
+          "score_share_percent": 11.574697,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 9.46
+        }
+      ],
+      "card_id": "card:4595176827b3dc5e510c",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "PUR",
+          "attribute_percentile": 11.111111,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 18,
+          "effective_coefficient": 0.04,
+          "elite_tail_scarcity": 0.0,
+          "local_density_within_one": 3,
+          "marginal_pancake_value": {
+            "1": 0.04,
+            "2": 0.08,
+            "3": 0.12,
+            "5": 0.2
+          },
+          "peer_count": 18,
+          "raw_rating": 78.0,
+          "score_share_percent": 3.817448,
+          "strength_class": "WEAK",
+          "weighted_contribution": 3.12
+        },
+        {
+          "attribute": "STR",
+          "attribute_percentile": 16.666667,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 16,
+          "effective_coefficient": 0.02,
+          "elite_tail_scarcity": 0.111111,
+          "local_density_within_one": 1,
+          "marginal_pancake_value": {
+            "1": 0.02,
+            "2": 0.04,
+            "3": 0.06,
+            "5": 0.1
+          },
+          "peer_count": 18,
+          "raw_rating": 63.0,
+          "score_share_percent": 1.541662,
+          "strength_class": "WEAK",
+          "weighted_contribution": 1.26
+        },
+        {
+          "attribute": "AWR",
+          "attribute_percentile": 44.444444,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 11,
+          "effective_coefficient": 0.1,
+          "elite_tail_scarcity": 0.388889,
+          "local_density_within_one": 9,
+          "marginal_pancake_value": {
+            "1": 0.1,
+            "2": 0.2,
+            "3": 0.3,
+            "5": 0.5
+          },
+          "peer_count": 18,
+          "raw_rating": 78.0,
+          "score_share_percent": 9.543619,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 7.8
+        }
+      ],
+      "player_name": "Dashawn Spears",
+      "position_family": "S",
+      "score": 81.73
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "TAK",
+          "attribute_percentile": 97.395833,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 13,
+          "effective_coefficient": 0.6086956521739131,
+          "elite_tail_scarcity": 0.932292,
+          "local_density_within_one": 12,
+          "marginal_pancake_value": {
+            "1": 0.608695652,
+            "2": 1.217391304,
+            "3": 1.826086957,
+            "5": 3.043478261
+          },
+          "peer_count": 192,
+          "raw_rating": 83.0,
+          "score_share_percent": 60.300986,
+          "strength_class": "STRONG",
+          "weighted_contribution": 50.52173913
+        },
+        {
+          "attribute": "SPD",
+          "attribute_percentile": 98.958333,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 3,
+          "effective_coefficient": 0.391304347826087,
+          "elite_tail_scarcity": 0.984375,
+          "local_density_within_one": 5,
+          "marginal_pancake_value": {
+            "1": 0.391304348,
+            "2": 0.782608696,
+            "3": 1.173913043,
+            "5": 1.956521739
+          },
+          "peer_count": 192,
+          "raw_rating": 85.0,
+          "score_share_percent": 39.699014,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 33.260869565
+        }
+      ],
+      "card_id": "card:09e54a6775235476c252",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "TAK",
+          "attribute_percentile": 97.395833,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 13,
+          "effective_coefficient": 0.6086956521739131,
+          "elite_tail_scarcity": 0.932292,
+          "local_density_within_one": 12,
+          "marginal_pancake_value": {
+            "1": 0.608695652,
+            "2": 1.217391304,
+            "3": 1.826086957,
+            "5": 3.043478261
+          },
+          "peer_count": 192,
+          "raw_rating": 83.0,
+          "score_share_percent": 60.300986,
+          "strength_class": "STRONG",
+          "weighted_contribution": 50.52173913
+        },
+        {
+          "attribute": "SPD",
+          "attribute_percentile": 98.958333,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 3,
+          "effective_coefficient": 0.391304347826087,
+          "elite_tail_scarcity": 0.984375,
+          "local_density_within_one": 5,
+          "marginal_pancake_value": {
+            "1": 0.391304348,
+            "2": 0.782608696,
+            "3": 1.173913043,
+            "5": 1.956521739
+          },
+          "peer_count": 192,
+          "raw_rating": 85.0,
+          "score_share_percent": 39.699014,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 33.260869565
+        }
+      ],
+      "player_name": "Chris Cole",
+      "position_family": "SAM",
+      "score": 83.782609
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "TAK",
+          "attribute_percentile": 99.667774,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 5,
+          "effective_coefficient": 0.2,
+          "elite_tail_scarcity": 0.983389,
+          "local_density_within_one": 12,
+          "marginal_pancake_value": {
+            "1": 0.2,
+            "2": 0.4,
+            "3": 0.6,
+            "5": 1.0
+          },
+          "peer_count": 301,
+          "raw_rating": 87.0,
+          "score_share_percent": 20.667538,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 17.4
+        },
+        {
+          "attribute": "PUR",
+          "attribute_percentile": 69.230769,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 6,
+          "effective_coefficient": 0.15,
+          "elite_tail_scarcity": 0.538462,
+          "local_density_within_one": 4,
+          "marginal_pancake_value": {
+            "1": 0.15,
+            "2": 0.3,
+            "3": 0.45,
+            "5": 0.75
+          },
+          "peer_count": 13,
+          "raw_rating": 84.0,
+          "score_share_percent": 14.966148,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 12.6
+        },
+        {
+          "attribute": "STR",
+          "attribute_percentile": 76.923077,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 11,
+          "effective_coefficient": 0.1,
+          "elite_tail_scarcity": 0.153846,
+          "local_density_within_one": 9,
+          "marginal_pancake_value": {
+            "1": 0.1,
+            "2": 0.2,
+            "3": 0.3,
+            "5": 0.5
+          },
+          "peer_count": 13,
+          "raw_rating": 84.0,
+          "score_share_percent": 9.977432,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 8.4
+        }
+      ],
+      "card_id": "card:bd19b32b10b907c9708b",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "AWR",
+          "attribute_percentile": 7.692308,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 13,
+          "effective_coefficient": 0.07,
+          "elite_tail_scarcity": 0.0,
+          "local_density_within_one": 1,
+          "marginal_pancake_value": {
+            "1": 0.07,
+            "2": 0.14,
+            "3": 0.21,
+            "5": 0.35
+          },
+          "peer_count": 13,
+          "raw_rating": 75.0,
+          "score_share_percent": 6.235895,
+          "strength_class": "MAJOR DEFICIENCY",
+          "weighted_contribution": 5.25
+        },
+        {
+          "attribute": "PUR",
+          "attribute_percentile": 69.230769,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 6,
+          "effective_coefficient": 0.15,
+          "elite_tail_scarcity": 0.538462,
+          "local_density_within_one": 4,
+          "marginal_pancake_value": {
+            "1": 0.15,
+            "2": 0.3,
+            "3": 0.45,
+            "5": 0.75
+          },
+          "peer_count": 13,
+          "raw_rating": 84.0,
+          "score_share_percent": 14.966148,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 12.6
+        },
+        {
+          "attribute": "FMV",
+          "attribute_percentile": 69.230769,
+          "availability": "AVAILABLE",
+          "confidence": "HIGH",
+          "count_at_or_above": 7,
+          "effective_coefficient": 0.02,
+          "elite_tail_scarcity": 0.461538,
+          "local_density_within_one": 3,
+          "marginal_pancake_value": {
+            "1": 0.02,
+            "2": 0.04,
+            "3": 0.06,
+            "5": 0.1
+          },
+          "peer_count": 13,
+          "raw_rating": 76.0,
+          "score_share_percent": 1.80544,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 1.52
+        }
+      ],
+      "player_name": "Drayk Bowen",
+      "position_family": "MIKE",
+      "score": 84.19
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "TAK",
+          "attribute_percentile": 100.0,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 1,
+          "effective_coefficient": 0.5862068965517241,
+          "elite_tail_scarcity": 0.966667,
+          "local_density_within_one": 2,
+          "marginal_pancake_value": {
+            "1": 0.586206897,
+            "2": 1.172413793,
+            "3": 1.75862069,
+            "5": 2.931034483
+          },
+          "peer_count": 30,
+          "raw_rating": 88.0,
+          "score_share_percent": 59.294491,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 51.586206897
+        },
+        {
+          "attribute": "BSH",
+          "attribute_percentile": 100.0,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 1,
+          "effective_coefficient": 0.2413793103448276,
+          "elite_tail_scarcity": 0.966667,
+          "local_density_within_one": 3,
+          "marginal_pancake_value": {
+            "1": 0.24137931,
+            "2": 0.482758621,
+            "3": 0.724137931,
+            "5": 1.206896552
+          },
+          "peer_count": 30,
+          "raw_rating": 86.0,
+          "score_share_percent": 23.860484,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 20.75862069
+        },
+        {
+          "attribute": "SPD",
+          "attribute_percentile": 100.0,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 2,
+          "effective_coefficient": 0.1724137931034483,
+          "elite_tail_scarcity": 0.933333,
+          "local_density_within_one": 2,
+          "marginal_pancake_value": {
+            "1": 0.172413793,
+            "2": 0.344827586,
+            "3": 0.517241379,
+            "5": 0.862068966
+          },
+          "peer_count": 30,
+          "raw_rating": 85.0,
+          "score_share_percent": 16.845026,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 14.655172414
+        }
+      ],
+      "card_id": "card:94dbbba544de1b65478d",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "TAK",
+          "attribute_percentile": 100.0,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 1,
+          "effective_coefficient": 0.5862068965517241,
+          "elite_tail_scarcity": 0.966667,
+          "local_density_within_one": 2,
+          "marginal_pancake_value": {
+            "1": 0.586206897,
+            "2": 1.172413793,
+            "3": 1.75862069,
+            "5": 2.931034483
+          },
+          "peer_count": 30,
+          "raw_rating": 88.0,
+          "score_share_percent": 59.294491,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 51.586206897
+        },
+        {
+          "attribute": "BSH",
+          "attribute_percentile": 100.0,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 1,
+          "effective_coefficient": 0.2413793103448276,
+          "elite_tail_scarcity": 0.966667,
+          "local_density_within_one": 3,
+          "marginal_pancake_value": {
+            "1": 0.24137931,
+            "2": 0.482758621,
+            "3": 0.724137931,
+            "5": 1.206896552
+          },
+          "peer_count": 30,
+          "raw_rating": 86.0,
+          "score_share_percent": 23.860484,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 20.75862069
+        },
+        {
+          "attribute": "SPD",
+          "attribute_percentile": 100.0,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 2,
+          "effective_coefficient": 0.1724137931034483,
+          "elite_tail_scarcity": 0.933333,
+          "local_density_within_one": 2,
+          "marginal_pancake_value": {
+            "1": 0.172413793,
+            "2": 0.344827586,
+            "3": 0.517241379,
+            "5": 0.862068966
+          },
+          "peer_count": 30,
+          "raw_rating": 85.0,
+          "score_share_percent": 16.845026,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 14.655172414
+        }
+      ],
+      "player_name": "Keaton Thomas",
+      "position_family": "SAM",
+      "score": 87.0
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "ZCV",
+          "attribute_percentile": 88.349515,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 45,
+          "effective_coefficient": 0.39215686274509803,
+          "elite_tail_scarcity": 0.854369,
+          "local_density_within_one": 34,
+          "marginal_pancake_value": {
+            "1": 0.392156863,
+            "2": 0.784313725,
+            "3": 1.176470588,
+            "5": 1.960784314
+          },
+          "peer_count": 309,
+          "raw_rating": 83.0,
+          "score_share_percent": 38.712687,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 32.549019608
+        },
+        {
+          "attribute": "SPD",
+          "attribute_percentile": 96.763754,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 16,
+          "effective_coefficient": 0.35294117647058826,
+          "elite_tail_scarcity": 0.94822,
+          "local_density_within_one": 18,
+          "marginal_pancake_value": {
+            "1": 0.352941176,
+            "2": 0.705882353,
+            "3": 1.058823529,
+            "5": 1.764705882
+          },
+          "peer_count": 309,
+          "raw_rating": 86.0,
+          "score_share_percent": 36.100746,
+          "strength_class": "STRONG",
+          "weighted_contribution": 30.352941176
+        },
+        {
+          "attribute": "PRS",
+          "attribute_percentile": 88.02589,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 54,
+          "effective_coefficient": 0.09803921568627451,
+          "elite_tail_scarcity": 0.825243,
+          "local_density_within_one": 35,
+          "marginal_pancake_value": {
+            "1": 0.098039216,
+            "2": 0.196078431,
+            "3": 0.294117647,
+            "5": 0.490196078
+          },
+          "peer_count": 309,
+          "raw_rating": 80.0,
+          "score_share_percent": 9.328358,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 7.843137255
+        }
+      ],
+      "card_id": "card:2a79a6e3f272a16ec712",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "PRS",
+          "attribute_percentile": 88.02589,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 54,
+          "effective_coefficient": 0.09803921568627451,
+          "elite_tail_scarcity": 0.825243,
+          "local_density_within_one": 35,
+          "marginal_pancake_value": {
+            "1": 0.098039216,
+            "2": 0.196078431,
+            "3": 0.294117647,
+            "5": 0.490196078
+          },
+          "peer_count": 309,
+          "raw_rating": 80.0,
+          "score_share_percent": 9.328358,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 7.843137255
+        },
+        {
+          "attribute": "ZCV",
+          "attribute_percentile": 88.349515,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 45,
+          "effective_coefficient": 0.39215686274509803,
+          "elite_tail_scarcity": 0.854369,
+          "local_density_within_one": 34,
+          "marginal_pancake_value": {
+            "1": 0.392156863,
+            "2": 0.784313725,
+            "3": 1.176470588,
+            "5": 1.960784314
+          },
+          "peer_count": 309,
+          "raw_rating": 83.0,
+          "score_share_percent": 38.712687,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 32.549019608
+        },
+        {
+          "attribute": "MCV",
+          "attribute_percentile": 95.79288,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 24,
+          "effective_coefficient": 0.0784313725490196,
+          "elite_tail_scarcity": 0.92233,
+          "local_density_within_one": 26,
+          "marginal_pancake_value": {
+            "1": 0.078431373,
+            "2": 0.156862745,
+            "3": 0.235294118,
+            "5": 0.392156863
+          },
+          "peer_count": 309,
+          "raw_rating": 85.0,
+          "score_share_percent": 7.929105,
+          "strength_class": "STRONG",
+          "weighted_contribution": 6.666666667
+        }
+      ],
+      "player_name": "Cormani McClain",
+      "position_family": "CB",
+      "score": 84.078431
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "MCV",
+          "attribute_percentile": 98.554217,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 11,
+          "effective_coefficient": 0.4,
+          "elite_tail_scarcity": 0.973494,
+          "local_density_within_one": 22,
+          "marginal_pancake_value": {
+            "1": 0.4,
+            "2": 0.8,
+            "3": 1.2,
+            "5": 2.0
+          },
+          "peer_count": 415,
+          "raw_rating": 86.0,
+          "score_share_percent": 40.635739,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 34.4
+        },
+        {
+          "attribute": "SPD",
+          "attribute_percentile": 98.313253,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 15,
+          "effective_coefficient": 0.36363636363636365,
+          "elite_tail_scarcity": 0.963855,
+          "local_density_within_one": 21,
+          "marginal_pancake_value": {
+            "1": 0.363636364,
+            "2": 0.727272727,
+            "3": 1.090909091,
+            "5": 1.818181818
+          },
+          "peer_count": 415,
+          "raw_rating": 86.0,
+          "score_share_percent": 36.941581,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 31.272727273
+        },
+        {
+          "attribute": "PRS",
+          "attribute_percentile": 92.048193,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 48,
+          "effective_coefficient": 0.12727272727272726,
+          "elite_tail_scarcity": 0.884337,
+          "local_density_within_one": 44,
+          "marginal_pancake_value": {
+            "1": 0.127272727,
+            "2": 0.254545455,
+            "3": 0.381818182,
+            "5": 0.636363636
+          },
+          "peer_count": 415,
+          "raw_rating": 80.0,
+          "score_share_percent": 12.027491,
+          "strength_class": "STRONG",
+          "weighted_contribution": 10.181818182
+        }
+      ],
+      "card_id": "card:82e224614ae152b34749",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "ZCV",
+          "attribute_percentile": 76.626506,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 115,
+          "effective_coefficient": 0.03636363636363636,
+          "elite_tail_scarcity": 0.722892,
+          "local_density_within_one": 43,
+          "marginal_pancake_value": {
+            "1": 0.036363636,
+            "2": 0.072727273,
+            "3": 0.109090909,
+            "5": 0.181818182
+          },
+          "peer_count": 415,
+          "raw_rating": 76.0,
+          "score_share_percent": 3.264605,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 2.763636364
+        },
+        {
+          "attribute": "PRS",
+          "attribute_percentile": 92.048193,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 48,
+          "effective_coefficient": 0.12727272727272726,
+          "elite_tail_scarcity": 0.884337,
+          "local_density_within_one": 44,
+          "marginal_pancake_value": {
+            "1": 0.127272727,
+            "2": 0.254545455,
+            "3": 0.381818182,
+            "5": 0.636363636
+          },
+          "peer_count": 415,
+          "raw_rating": 80.0,
+          "score_share_percent": 12.027491,
+          "strength_class": "STRONG",
+          "weighted_contribution": 10.181818182
+        },
+        {
+          "attribute": "JMP",
+          "attribute_percentile": 98.072289,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 15,
+          "effective_coefficient": 0.07272727272727272,
+          "elite_tail_scarcity": 0.963855,
+          "local_density_within_one": 22,
+          "marginal_pancake_value": {
+            "1": 0.072727273,
+            "2": 0.145454545,
+            "3": 0.218181818,
+            "5": 0.363636364
+          },
+          "peer_count": 415,
+          "raw_rating": 83.0,
+          "score_share_percent": 7.130584,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 6.036363636
+        }
+      ],
+      "player_name": "Devin Sanchez",
+      "position_family": "CB",
+      "score": 84.654545
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "FMV",
+          "attribute_percentile": 97.304582,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 18,
+          "effective_coefficient": 0.4791666666666667,
+          "elite_tail_scarcity": 0.951482,
+          "local_density_within_one": 24,
+          "marginal_pancake_value": {
+            "1": 0.479166667,
+            "2": 0.958333333,
+            "3": 1.4375,
+            "5": 2.395833333
+          },
+          "peer_count": 371,
+          "raw_rating": 86.0,
+          "score_share_percent": 49.351297,
+          "strength_class": "STRONG",
+          "weighted_contribution": 41.208333333
+        },
+        {
+          "attribute": "TAK",
+          "attribute_percentile": 90.83558,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 42,
+          "effective_coefficient": 0.3125,
+          "elite_tail_scarcity": 0.886792,
+          "local_density_within_one": 28,
+          "marginal_pancake_value": {
+            "1": 0.3125,
+            "2": 0.625,
+            "3": 0.9375,
+            "5": 1.5625
+          },
+          "peer_count": 371,
+          "raw_rating": 80.0,
+          "score_share_percent": 29.94012,
+          "strength_class": "STRONG",
+          "weighted_contribution": 25.0
+        },
+        {
+          "attribute": "SPD",
+          "attribute_percentile": 97.843666,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 15,
+          "effective_coefficient": 0.20833333333333334,
+          "elite_tail_scarcity": 0.959569,
+          "local_density_within_one": 16,
+          "marginal_pancake_value": {
+            "1": 0.208333333,
+            "2": 0.416666667,
+            "3": 0.625,
+            "5": 1.041666667
+          },
+          "peer_count": 371,
+          "raw_rating": 83.0,
+          "score_share_percent": 20.708583,
+          "strength_class": "STRONG",
+          "weighted_contribution": 17.291666667
+        }
+      ],
+      "card_id": "card:694cbce7bfc14a1ea61a",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "TAK",
+          "attribute_percentile": 90.83558,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 42,
+          "effective_coefficient": 0.3125,
+          "elite_tail_scarcity": 0.886792,
+          "local_density_within_one": 28,
+          "marginal_pancake_value": {
+            "1": 0.3125,
+            "2": 0.625,
+            "3": 0.9375,
+            "5": 1.5625
+          },
+          "peer_count": 371,
+          "raw_rating": 80.0,
+          "score_share_percent": 29.94012,
+          "strength_class": "STRONG",
+          "weighted_contribution": 25.0
+        },
+        {
+          "attribute": "FMV",
+          "attribute_percentile": 97.304582,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 18,
+          "effective_coefficient": 0.4791666666666667,
+          "elite_tail_scarcity": 0.951482,
+          "local_density_within_one": 24,
+          "marginal_pancake_value": {
+            "1": 0.479166667,
+            "2": 0.958333333,
+            "3": 1.4375,
+            "5": 2.395833333
+          },
+          "peer_count": 371,
+          "raw_rating": 86.0,
+          "score_share_percent": 49.351297,
+          "strength_class": "STRONG",
+          "weighted_contribution": 41.208333333
+        },
+        {
+          "attribute": "SPD",
+          "attribute_percentile": 97.843666,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 15,
+          "effective_coefficient": 0.20833333333333334,
+          "elite_tail_scarcity": 0.959569,
+          "local_density_within_one": 16,
+          "marginal_pancake_value": {
+            "1": 0.208333333,
+            "2": 0.416666667,
+            "3": 0.625,
+            "5": 1.041666667
+          },
+          "peer_count": 371,
+          "raw_rating": 83.0,
+          "score_share_percent": 20.708583,
+          "strength_class": "STRONG",
+          "weighted_contribution": 17.291666667
+        }
+      ],
+      "player_name": "Clayton Smith",
+      "position_family": "EDGE",
+      "score": 83.5
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "PMV",
+          "attribute_percentile": 92.957746,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 10,
+          "effective_coefficient": 0.5,
+          "elite_tail_scarcity": 0.859155,
+          "local_density_within_one": 10,
+          "marginal_pancake_value": {
+            "1": 0.5,
+            "2": 1.0,
+            "3": 1.5,
+            "5": 2.5
+          },
+          "peer_count": 71,
+          "raw_rating": 86.0,
+          "score_share_percent": 50.628847,
+          "strength_class": "STRONG",
+          "weighted_contribution": 43.0
+        },
+        {
+          "attribute": "TAK",
+          "attribute_percentile": 92.957746,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 8,
+          "effective_coefficient": 0.29545454545454547,
+          "elite_tail_scarcity": 0.887324,
+          "local_density_within_one": 6,
+          "marginal_pancake_value": {
+            "1": 0.295454545,
+            "2": 0.590909091,
+            "3": 0.886363636,
+            "5": 1.477272727
+          },
+          "peer_count": 71,
+          "raw_rating": 84.0,
+          "score_share_percent": 29.221301,
+          "strength_class": "STRONG",
+          "weighted_contribution": 24.818181818
+        },
+        {
+          "attribute": "BSH",
+          "attribute_percentile": 92.957746,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 10,
+          "effective_coefficient": 0.13636363636363635,
+          "elite_tail_scarcity": 0.859155,
+          "local_density_within_one": 8,
+          "marginal_pancake_value": {
+            "1": 0.136363636,
+            "2": 0.272727273,
+            "3": 0.409090909,
+            "5": 0.681818182
+          },
+          "peer_count": 71,
+          "raw_rating": 86.0,
+          "score_share_percent": 13.807867,
+          "strength_class": "STRONG",
+          "weighted_contribution": 11.727272727
+        }
+      ],
+      "card_id": "card:759d0f58682372373c93",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "PMV",
+          "attribute_percentile": 92.957746,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 10,
+          "effective_coefficient": 0.5,
+          "elite_tail_scarcity": 0.859155,
+          "local_density_within_one": 10,
+          "marginal_pancake_value": {
+            "1": 0.5,
+            "2": 1.0,
+            "3": 1.5,
+            "5": 2.5
+          },
+          "peer_count": 71,
+          "raw_rating": 86.0,
+          "score_share_percent": 50.628847,
+          "strength_class": "STRONG",
+          "weighted_contribution": 43.0
+        },
+        {
+          "attribute": "TAK",
+          "attribute_percentile": 92.957746,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 8,
+          "effective_coefficient": 0.29545454545454547,
+          "elite_tail_scarcity": 0.887324,
+          "local_density_within_one": 6,
+          "marginal_pancake_value": {
+            "1": 0.295454545,
+            "2": 0.590909091,
+            "3": 0.886363636,
+            "5": 1.477272727
+          },
+          "peer_count": 71,
+          "raw_rating": 84.0,
+          "score_share_percent": 29.221301,
+          "strength_class": "STRONG",
+          "weighted_contribution": 24.818181818
+        },
+        {
+          "attribute": "BSH",
+          "attribute_percentile": 92.957746,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 10,
+          "effective_coefficient": 0.13636363636363635,
+          "elite_tail_scarcity": 0.859155,
+          "local_density_within_one": 8,
+          "marginal_pancake_value": {
+            "1": 0.136363636,
+            "2": 0.272727273,
+            "3": 0.409090909,
+            "5": 0.681818182
+          },
+          "peer_count": 71,
+          "raw_rating": 86.0,
+          "score_share_percent": 13.807867,
+          "strength_class": "STRONG",
+          "weighted_contribution": 11.727272727
+        }
+      ],
+      "player_name": "Amare Adams",
+      "position_family": "DT",
+      "score": 84.931818
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "PMV",
+          "attribute_percentile": 97.183099,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 5,
+          "effective_coefficient": 0.5,
+          "elite_tail_scarcity": 0.929577,
+          "local_density_within_one": 10,
+          "marginal_pancake_value": {
+            "1": 0.5,
+            "2": 1.0,
+            "3": 1.5,
+            "5": 2.5
+          },
+          "peer_count": 71,
+          "raw_rating": 87.0,
+          "score_share_percent": 51.313673,
+          "strength_class": "STRONG",
+          "weighted_contribution": 43.5
+        },
+        {
+          "attribute": "TAK",
+          "attribute_percentile": 85.915493,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 13,
+          "effective_coefficient": 0.29545454545454547,
+          "elite_tail_scarcity": 0.816901,
+          "local_density_within_one": 9,
+          "marginal_pancake_value": {
+            "1": 0.295454545,
+            "2": 0.590909091,
+            "3": 0.886363636,
+            "5": 1.477272727
+          },
+          "peer_count": 71,
+          "raw_rating": 82.0,
+          "score_share_percent": 28.579089,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 24.227272727
+        },
+        {
+          "attribute": "BSH",
+          "attribute_percentile": 92.957746,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 10,
+          "effective_coefficient": 0.13636363636363635,
+          "elite_tail_scarcity": 0.859155,
+          "local_density_within_one": 8,
+          "marginal_pancake_value": {
+            "1": 0.136363636,
+            "2": 0.272727273,
+            "3": 0.409090909,
+            "5": 0.681818182
+          },
+          "peer_count": 71,
+          "raw_rating": 86.0,
+          "score_share_percent": 13.83378,
+          "strength_class": "STRONG",
+          "weighted_contribution": 11.727272727
+        }
+      ],
+      "card_id": "card:ef43c16371707d38c984",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "TAK",
+          "attribute_percentile": 85.915493,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 13,
+          "effective_coefficient": 0.29545454545454547,
+          "elite_tail_scarcity": 0.816901,
+          "local_density_within_one": 9,
+          "marginal_pancake_value": {
+            "1": 0.295454545,
+            "2": 0.590909091,
+            "3": 0.886363636,
+            "5": 1.477272727
+          },
+          "peer_count": 71,
+          "raw_rating": 82.0,
+          "score_share_percent": 28.579089,
+          "strength_class": "AVERAGE",
+          "weighted_contribution": 24.227272727
+        },
+        {
+          "attribute": "BSH",
+          "attribute_percentile": 92.957746,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 10,
+          "effective_coefficient": 0.13636363636363635,
+          "elite_tail_scarcity": 0.859155,
+          "local_density_within_one": 8,
+          "marginal_pancake_value": {
+            "1": 0.136363636,
+            "2": 0.272727273,
+            "3": 0.409090909,
+            "5": 0.681818182
+          },
+          "peer_count": 71,
+          "raw_rating": 86.0,
+          "score_share_percent": 13.83378,
+          "strength_class": "STRONG",
+          "weighted_contribution": 11.727272727
+        },
+        {
+          "attribute": "SPD",
+          "attribute_percentile": 94.366197,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 7,
+          "effective_coefficient": 0.06818181818181818,
+          "elite_tail_scarcity": 0.901408,
+          "local_density_within_one": 10,
+          "marginal_pancake_value": {
+            "1": 0.068181818,
+            "2": 0.136363636,
+            "3": 0.204545455,
+            "5": 0.340909091
+          },
+          "peer_count": 71,
+          "raw_rating": 78.0,
+          "score_share_percent": 6.273458,
+          "strength_class": "STRONG",
+          "weighted_contribution": 5.318181818
+        }
+      ],
+      "player_name": "DJ Hicks",
+      "position_family": "DT",
+      "score": 84.772727
+    },
+    {
+      "best_modeled_strengths": [
+        {
+          "attribute": "PMV",
+          "attribute_percentile": 93.989071,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 20,
+          "effective_coefficient": 0.5111111111111111,
+          "elite_tail_scarcity": 0.89071,
+          "local_density_within_one": 21,
+          "marginal_pancake_value": {
+            "1": 0.511111111,
+            "2": 1.022222222,
+            "3": 1.533333333,
+            "5": 2.555555556
+          },
+          "peer_count": 183,
+          "raw_rating": 85.0,
+          "score_share_percent": 51.47446,
+          "strength_class": "STRONG",
+          "weighted_contribution": 43.444444444
+        },
+        {
+          "attribute": "TAK",
+          "attribute_percentile": 98.907104,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 6,
+          "effective_coefficient": 0.3333333333333333,
+          "elite_tail_scarcity": 0.967213,
+          "local_density_within_one": 8,
+          "marginal_pancake_value": {
+            "1": 0.333333333,
+            "2": 0.666666667,
+            "3": 1.0,
+            "5": 1.666666667
+          },
+          "peer_count": 183,
+          "raw_rating": 86.0,
+          "score_share_percent": 33.965245,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 28.666666667
+        },
+        {
+          "attribute": "SPD",
+          "attribute_percentile": 90.163934,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 23,
+          "effective_coefficient": 0.15555555555555556,
+          "elite_tail_scarcity": 0.874317,
+          "local_density_within_one": 23,
+          "marginal_pancake_value": {
+            "1": 0.155555556,
+            "2": 0.311111111,
+            "3": 0.466666667,
+            "5": 0.777777778
+          },
+          "peer_count": 183,
+          "raw_rating": 79.0,
+          "score_share_percent": 14.560295,
+          "strength_class": "STRONG",
+          "weighted_contribution": 12.288888889
+        }
+      ],
+      "card_id": "card:b809bd14fe3b3c2144f6",
+      "largest_modeled_deficiencies": [
+        {
+          "attribute": "SPD",
+          "attribute_percentile": 90.163934,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 23,
+          "effective_coefficient": 0.15555555555555556,
+          "elite_tail_scarcity": 0.874317,
+          "local_density_within_one": 23,
+          "marginal_pancake_value": {
+            "1": 0.155555556,
+            "2": 0.311111111,
+            "3": 0.466666667,
+            "5": 0.777777778
+          },
+          "peer_count": 183,
+          "raw_rating": 79.0,
+          "score_share_percent": 14.560295,
+          "strength_class": "STRONG",
+          "weighted_contribution": 12.288888889
+        },
+        {
+          "attribute": "PMV",
+          "attribute_percentile": 93.989071,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 20,
+          "effective_coefficient": 0.5111111111111111,
+          "elite_tail_scarcity": 0.89071,
+          "local_density_within_one": 21,
+          "marginal_pancake_value": {
+            "1": 0.511111111,
+            "2": 1.022222222,
+            "3": 1.533333333,
+            "5": 2.555555556
+          },
+          "peer_count": 183,
+          "raw_rating": 85.0,
+          "score_share_percent": 51.47446,
+          "strength_class": "STRONG",
+          "weighted_contribution": 43.444444444
+        },
+        {
+          "attribute": "TAK",
+          "attribute_percentile": 98.907104,
+          "availability": "AVAILABLE",
+          "confidence": "LOW",
+          "count_at_or_above": 6,
+          "effective_coefficient": 0.3333333333333333,
+          "elite_tail_scarcity": 0.967213,
+          "local_density_within_one": 8,
+          "marginal_pancake_value": {
+            "1": 0.333333333,
+            "2": 0.666666667,
+            "3": 1.0,
+            "5": 1.666666667
+          },
+          "peer_count": 183,
+          "raw_rating": 86.0,
+          "score_share_percent": 33.965245,
+          "strength_class": "ELITE MODEL STRENGTH",
+          "weighted_contribution": 28.666666667
+        }
+      ],
+      "player_name": "Kelby Collins",
+      "position_family": "EDGE",
+      "score": 84.4
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "budgets": {
+    "100000": {
+      "action": "UPGRADE",
+      "budget": 100000,
+      "intrinsic_value": 31.151124,
+      "keep_coins": false,
+      "rank_gain": 66,
+      "rejected": [],
+      "remaining": 44500,
+      "score_improvement": 5.033913,
+      "selected": [
+        {
+          "card_id": "card:f35e84cba0d56c4270c3",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 55500,
+          "player_name": "Brendan Black",
+          "rank_gain": 66,
+          "score_improvement": 5.033913,
+          "value_index": 31.151124
+        }
+      ],
+      "spent": 55500,
+      "status": "BUDGET_EVALUATED"
+    },
+    "1000000": {
+      "action": "BUDGET UPGRADE",
+      "budget": 1000000,
+      "intrinsic_value": 94.29751,
+      "keep_coins": false,
+      "rank_gain": 182,
+      "rejected": [],
+      "remaining": 283500,
+      "score_improvement": 17.213287,
+      "selected": [
+        {
+          "card_id": "card:f35e84cba0d56c4270c3",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 55500,
+          "player_name": "Brendan Black",
+          "rank_gain": 66,
+          "score_improvement": 5.033913,
+          "value_index": 31.151124
+        },
+        {
+          "card_id": "card:4bd7645117856f967450",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 129000,
+          "player_name": "E'Marion Harris",
+          "rank_gain": 69,
+          "score_improvement": 7.014615,
+          "value_index": 33.804679
+        },
+        {
+          "card_id": "card:f093049f3f59d1f230cf",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 532000,
+          "player_name": "Kip Lewis",
+          "rank_gain": 47,
+          "score_improvement": 5.164759,
+          "value_index": 29.341707
+        }
+      ],
+      "spent": 716500,
+      "status": "BUDGET_EVALUATED"
+    },
+    "150000": {
+      "action": "UPGRADE",
+      "budget": 150000,
+      "intrinsic_value": 33.804679,
+      "keep_coins": false,
+      "rank_gain": 69,
+      "rejected": [],
+      "remaining": 21000,
+      "score_improvement": 7.014615,
+      "selected": [
+        {
+          "card_id": "card:4bd7645117856f967450",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 129000,
+          "player_name": "E'Marion Harris",
+          "rank_gain": 69,
+          "score_improvement": 7.014615,
+          "value_index": 33.804679
+        }
+      ],
+      "spent": 129000,
+      "status": "BUDGET_EVALUATED"
+    },
+    "2000000": {
+      "action": "BUDGET UPGRADE",
+      "budget": 2000000,
+      "intrinsic_value": 137.491991,
+      "keep_coins": false,
+      "rank_gain": 243,
+      "rejected": [],
+      "remaining": 435500,
+      "score_improvement": 22.608287,
+      "selected": [
+        {
+          "card_id": "card:f35e84cba0d56c4270c3",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 55500,
+          "player_name": "Brendan Black",
+          "rank_gain": 66,
+          "score_improvement": 5.033913,
+          "value_index": 31.151124
+        },
+        {
+          "card_id": "card:4bd7645117856f967450",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 129000,
+          "player_name": "E'Marion Harris",
+          "rank_gain": 69,
+          "score_improvement": 7.014615,
+          "value_index": 33.804679
+        },
+        {
+          "card_id": "card:f093049f3f59d1f230cf",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 532000,
+          "player_name": "Kip Lewis",
+          "rank_gain": 47,
+          "score_improvement": 5.164759,
+          "value_index": 29.341707
+        },
+        {
+          "card_id": "card:f26cd7a4829a431b0af5",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 848000,
+          "player_name": "Bray Hubbard",
+          "rank_gain": 61,
+          "score_improvement": 5.395,
+          "value_index": 43.194481
+        }
+      ],
+      "spent": 1564500,
+      "status": "BUDGET_EVALUATED"
+    },
+    "250000": {
+      "action": "BUDGET UPGRADE",
+      "budget": 250000,
+      "intrinsic_value": 64.955803,
+      "keep_coins": false,
+      "rank_gain": 135,
+      "rejected": [],
+      "remaining": 65500,
+      "score_improvement": 12.048528,
+      "selected": [
+        {
+          "card_id": "card:f35e84cba0d56c4270c3",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 55500,
+          "player_name": "Brendan Black",
+          "rank_gain": 66,
+          "score_improvement": 5.033913,
+          "value_index": 31.151124
+        },
+        {
+          "card_id": "card:4bd7645117856f967450",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 129000,
+          "player_name": "E'Marion Harris",
+          "rank_gain": 69,
+          "score_improvement": 7.014615,
+          "value_index": 33.804679
+        }
+      ],
+      "spent": 184500,
+      "status": "BUDGET_EVALUATED"
+    },
+    "50000": {
+      "action": "KEEP",
+      "budget": 50000,
+      "intrinsic_value": 0,
+      "keep_coins": true,
+      "rank_gain": 0,
+      "rejected": [],
+      "remaining": 50000,
+      "score_improvement": 0.0,
+      "selected": [],
+      "spent": 0,
+      "status": "BUDGET_EVALUATED"
+    },
+    "500000": {
+      "action": "BUDGET UPGRADE",
+      "budget": 500000,
+      "intrinsic_value": 64.955803,
+      "keep_coins": false,
+      "rank_gain": 135,
+      "rejected": [],
+      "remaining": 315500,
+      "score_improvement": 12.048528,
+      "selected": [
+        {
+          "card_id": "card:f35e84cba0d56c4270c3",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 55500,
+          "player_name": "Brendan Black",
+          "rank_gain": 66,
+          "score_improvement": 5.033913,
+          "value_index": 31.151124
+        },
+        {
+          "card_id": "card:4bd7645117856f967450",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 129000,
+          "player_name": "E'Marion Harris",
+          "rank_gain": 69,
+          "score_improvement": 7.014615,
+          "value_index": 33.804679
+        }
+      ],
+      "spent": 184500,
+      "status": "BUDGET_EVALUATED"
+    },
+    "5000000": {
+      "action": "BUDGET UPGRADE",
+      "budget": 5000000,
+      "intrinsic_value": 137.491991,
+      "keep_coins": false,
+      "rank_gain": 243,
+      "rejected": [],
+      "remaining": 3435500,
+      "score_improvement": 22.608287,
+      "selected": [
+        {
+          "card_id": "card:f35e84cba0d56c4270c3",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 55500,
+          "player_name": "Brendan Black",
+          "rank_gain": 66,
+          "score_improvement": 5.033913,
+          "value_index": 31.151124
+        },
+        {
+          "card_id": "card:4bd7645117856f967450",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 129000,
+          "player_name": "E'Marion Harris",
+          "rank_gain": 69,
+          "score_improvement": 7.014615,
+          "value_index": 33.804679
+        },
+        {
+          "card_id": "card:f093049f3f59d1f230cf",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 532000,
+          "player_name": "Kip Lewis",
+          "rank_gain": 47,
+          "score_improvement": 5.164759,
+          "value_index": 29.341707
+        },
+        {
+          "card_id": "card:f26cd7a4829a431b0af5",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 848000,
+          "player_name": "Bray Hubbard",
+          "rank_gain": 61,
+          "score_improvement": 5.395,
+          "value_index": 43.194481
+        }
+      ],
+      "spent": 1564500,
+      "status": "BUDGET_EVALUATED"
+    },
+    "750000": {
+      "action": "BUDGET UPGRADE",
+      "budget": 750000,
+      "intrinsic_value": 94.29751,
+      "keep_coins": false,
+      "rank_gain": 182,
+      "rejected": [],
+      "remaining": 33500,
+      "score_improvement": 17.213287,
+      "selected": [
+        {
+          "card_id": "card:f35e84cba0d56c4270c3",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 55500,
+          "player_name": "Brendan Black",
+          "rank_gain": 66,
+          "score_improvement": 5.033913,
+          "value_index": 31.151124
+        },
+        {
+          "card_id": "card:4bd7645117856f967450",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 129000,
+          "player_name": "E'Marion Harris",
+          "rank_gain": 69,
+          "score_improvement": 7.014615,
+          "value_index": 33.804679
+        },
+        {
+          "card_id": "card:f093049f3f59d1f230cf",
+          "market_quality": "CONTEXT_ONLY",
+          "net_cost": 532000,
+          "player_name": "Kip Lewis",
+          "rank_gain": 47,
+          "score_improvement": 5.164759,
+          "value_index": 29.341707
+        }
+      ],
+      "spent": 716500,
+      "status": "BUDGET_EVALUATED"
+    }
+  },
+  "evidence_warning": "OP-X-027 prices are contextual; allocations are scenarios, not BUY"
+}

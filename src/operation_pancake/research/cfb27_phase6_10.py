@@ -44,6 +44,14 @@ CFB_FAN_CROSS_CHECKS = [
 ]
 
 
+def _parse_release_date(value: str) -> datetime:
+    """Accept legacy M/D/Y and canonical ISO-8601 release timestamps."""
+    try:
+        return datetime.strptime(value, "%m/%d/%Y")
+    except ValueError:
+        return datetime.fromisoformat(value.replace("Z", "+00:00")).replace(tzinfo=None)
+
+
 def _json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -430,8 +438,17 @@ def case_maps(cards: list[dict], groups: list[dict], proximity: dict) -> dict:
             for card in sorted(seau_cards, key=lambda row: row["overall"])
         ],
         "known_progression_states": [81, 84, 86, 87],
-        "validated_vectors_available": [86, 87],
-        "missing_states": [81, 84],
+        "validated_vectors_available": sorted(
+            card["overall"] for card in seau_cards if card.get("extraction_status") == "COMPLETE"
+        ),
+        "missing_states": sorted(
+            state
+            for state in (81, 84, 86, 87)
+            if not any(
+                card["overall"] == state and card.get("extraction_status") == "COMPLETE"
+                for card in seau_cards
+            )
+        ),
         "final_ratings_inferred": False,
     }
     te = {}
@@ -520,7 +537,9 @@ def capability_chronology(cards: list[dict], proximity: dict) -> dict:
         if row["status"] not in {"AT_THRESHOLD", "ABOVE"}:
             continue
         card = card_map[row["card_id"]]
-        release = datetime.strptime(card["release_date"], "%m/%d/%Y").date().isoformat()
+        if not card.get("release_date"):
+            continue
+        release = _parse_release_date(card["release_date"]).date().isoformat()
         key = (row["position"], row["archetype"], row["ability"], row["tier"])
         candidate = {
             "position": key[0],
@@ -563,7 +582,7 @@ def special_targeting(proximity: dict) -> dict:
         if row["status"] == "INSUFFICIENT_REQUIREMENTS":
             continue
         month = (
-            datetime.strptime(row["release_date"], "%m/%d/%Y").strftime("%Y-%m")
+            _parse_release_date(row["release_date"]).strftime("%Y-%m")
             if row.get("release_date")
             else "UNKNOWN"
         )
@@ -656,14 +675,15 @@ def ovr_capability_comparison(cards: list[dict], chronology: dict) -> dict:
     ceilings_before = {}
     for position, position_cards in sorted(by_position.items()):
         ceiling = -1
+        dated_position_cards = [card for card in position_cards if card.get("release_date")]
         for card in sorted(
-            position_cards,
+            dated_position_cards,
             key=lambda row: (
-                datetime.strptime(row["release_date"], "%m/%d/%Y").date(),
+                _parse_release_date(row["release_date"]).date(),
                 row["external_card_id"],
             ),
         ):
-            release = datetime.strptime(card["release_date"], "%m/%d/%Y").date().isoformat()
+            release = _parse_release_date(card["release_date"]).date().isoformat()
             ceilings_before[(position, release)] = ceiling
             if card["overall"] > ceiling:
                 ceiling = card["overall"]
@@ -752,7 +772,11 @@ def replacement_pressure_v3(root: Path, cards: list[dict], chronology: dict, cat
     phase4 = _json(root / "data/research/cfb27_inheritance_phase4/release_intelligence.json")[
         "replacement_pressure"
     ]
-    latest = max(datetime.strptime(card["release_date"], "%m/%d/%Y").date() for card in cards)
+    latest = max(
+        _parse_release_date(card["release_date"]).date()
+        for card in cards
+        if card.get("release_date")
+    )
     last_capability = {}
     for row in chronology["first_access"]:
         date = datetime.fromisoformat(row["date"]).date()

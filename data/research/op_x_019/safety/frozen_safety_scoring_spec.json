@@ -1,0 +1,46 @@
+{
+  "operation": "OP-X-019-SAFETY",
+  "freeze": {
+    "blind_outcomes_observed": false,
+    "repository_head": "c2c5c13ecf327918659a386138ae71eb8589568d",
+    "timestamp": "2026-08-20T00:00:01.8183785-07:00"
+  },
+  "model": {
+    "id": "S-M19-ARCH-001",
+    "version": "v1.0",
+    "applicability": "historical aggregate S population; no unsupported FS/SS subtype inference",
+    "formula": "sum(attribute * exact Madden 19 archetype weight) / sum(included weights)",
+    "missing_attribute_rule": "omit unavailable weighted attributes and renormalize denominator",
+    "displayed_ovr_calibration": "none",
+    "rounding": "none; retain full-precision score for ranking",
+    "confidence": "strong historical prior with exact/supported terminology mappings"
+  },
+  "provenance": {
+    "source_id": "SRC-M19-001",
+    "origin": "Madden 19 XML-derived attribute weights credited to Teutonic",
+    "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view",
+    "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+    "workbook_sheet": "Data Version",
+    "workbook_rows": "66, 68:69"
+  },
+  "weights": {
+    "Hybrid": {"ACC": 11, "AGI": 8, "AWR": 10, "JMP": 3, "MCV": 15, "PRC": 10, "PRS": 5, "PUR": 4, "SPD": 14, "STR": 2, "TAK": 11, "ZCV": 7},
+    "Run Support": {"ACC": 8, "AGI": 6, "AWR": 11, "BSH": 2, "POW": 4, "JMP": 3, "MCV": 6, "PRC": 11, "PRS": 3, "PUR": 9, "SPD": 9, "STR": 2, "TAK": 15, "ZCV": 8},
+    "Zone Coverage": {"ACC": 10, "AGI": 8, "AWR": 11, "JMP": 3, "MCV": 6, "PRC": 11, "PUR": 6, "SPD": 14, "STR": 2, "TAK": 11, "ZCV": 22}
+  },
+  "source_weight_totals": {"Hybrid": 100, "Run Support": 97, "Zone Coverage": 104},
+  "archetype_mappings": {
+    "CFB25": {
+      "Hybrid": {"model_archetype": "Hybrid", "status": "EXACT", "basis": "exact name"},
+      "Run Support": {"model_archetype": "Run Support", "status": "EXACT", "basis": "exact name"},
+      "Zone": {"model_archetype": "Zone Coverage", "status": "SUPPORTED", "basis": "same zone-safety role with shortened label"}
+    },
+    "CFB26": {
+      "Hybrid": {"model_archetype": "Hybrid", "status": "EXACT", "basis": "exact name"},
+      "Box Specialist": {"model_archetype": "Run Support", "status": "SUPPORTED", "basis": "box/run-support safety role"},
+      "Coverage Specialist": {"model_archetype": "Zone Coverage", "status": "SUPPORTED", "basis": "coverage/zone safety role"}
+    }
+  },
+  "exclusions": {},
+  "scientific_control": "Frozen before any CFB25/CFB26 safety score, residual, or ranking outcome was calculated."
+}

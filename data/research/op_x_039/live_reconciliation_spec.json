@@ -1,0 +1,8 @@
+{
+  "market_monitor_gate": "live + exact canonical match + explicitly auctionable",
+  "match": "exact player + OVR + position + program; exactly one canonical row",
+  "nonauctionable_monitoring": false,
+  "normal_pancake_scoring": "begins only after exact canonical linkage",
+  "preserve_reveal_record": true,
+  "unmatched_status": "LIVE \u2014 CANONICAL MATCH REQUIRED"
+}

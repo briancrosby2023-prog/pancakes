@@ -1,0 +1,2034 @@
+{
+  "controls": {
+    "displayed_overall_prediction": "forbidden",
+    "fallback_models": "forbidden",
+    "prices": "caller-supplied only"
+  },
+  "game": "CFB27",
+  "models": [
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Center": 108
+      },
+      "evidence_paths": [
+        "data/research/center_exact_validation/madden_center_frozen_model.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "C",
+      "formula": "weighted mean of exact Madden 19 center weights",
+      "freeze_commit": null,
+      "id": "C-M19-RANK-001",
+      "limitations": [
+        "center ranking only; exact displayed overall is out of scope"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "all weighted attributes required",
+      "model_type": "position ranking",
+      "production": true,
+      "profiles": {
+        "Center": {
+          "ACC": 2,
+          "AGI": 2,
+          "AWR": 15,
+          "IBL": 6,
+          "LBK": 4,
+          "PBF": 8,
+          "PBK": 2,
+          "PBP": 21,
+          "RBK": 10,
+          "RBP": 22,
+          "SPD": 2,
+          "STR": 14
+        }
+      },
+      "provenance": {},
+      "validation": {
+        "archetype": "all",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.9766021378257229,
+        "cfb25_n": 356,
+        "cfb26_accuracy": 0.9869921863305691,
+        "cfb26_n": 372,
+        "cross_season_verdict": "DURABLE PASS (RANKING PRODUCTION ONLY)",
+        "locked": true,
+        "model": "C-M19-RANK-001",
+        "next_scientific_action": "Use for ranking only; do not emit absolute predicted OVR.",
+        "position": "C",
+        "production_status": "production",
+        "remaining_blocker": "Displayed-OVR calibration remains unvalidated and outside model scope.",
+        "version": "v1.0"
+      },
+      "version": "v1.0"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Man to Man": 100,
+        "Slot": 100,
+        "Zone": 100
+      },
+      "evidence_paths": [
+        "data/research/op_x_018/cb/frozen_cb_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "CB",
+      "formula": "sum(attribute * exact Madden 19 archetype weight) / sum(included weights)",
+      "freeze_commit": "f13e8eaae473d2939372090f7e773e2b8ddc4738",
+      "id": "CB-M19-ARCH-001",
+      "limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "omit unavailable terms and renormalize",
+      "model_type": "position/archetype ranking",
+      "production": true,
+      "profiles": {
+        "Man to Man": {
+          "ACC": 18,
+          "AGI": 4,
+          "AWR": 9,
+          "CTH": 2,
+          "JMP": 4,
+          "MCV": 22,
+          "PRC": 9,
+          "PRS": 7,
+          "SPD": 20,
+          "TAK": 3,
+          "ZCV": 2
+        },
+        "Slot": {
+          "ACC": 14,
+          "AGI": 10,
+          "AWR": 9,
+          "BSH": 2,
+          "CTH": 2,
+          "JMP": 4,
+          "MCV": 14,
+          "PRC": 9,
+          "PRS": 3,
+          "PUR": 4,
+          "SPD": 12,
+          "TAK": 12,
+          "ZCV": 5
+        },
+        "Zone": {
+          "ACC": 20,
+          "AGI": 4,
+          "AWR": 9,
+          "CTH": 2,
+          "JMP": 4,
+          "MCV": 4,
+          "PRC": 9,
+          "PRS": 5,
+          "SPD": 18,
+          "TAK": 5,
+          "ZCV": 20
+        }
+      },
+      "provenance": {
+        "source_id": "SRC-M19-001",
+        "workbook_rows": "3, 6:7",
+        "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+        "workbook_sheet": "Data Version",
+        "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view"
+      },
+      "validation": {
+        "archetype": "generation-mapped archetype vectors",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.9831884436654093,
+        "cfb25_n": 1079,
+        "cfb26_accuracy": 0.9980881194834281,
+        "cfb26_n": 953,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "CB-M19-ARCH-001",
+        "next_scientific_action": "Prospective validation only.",
+        "position": "CB",
+        "production_status": "production",
+        "remaining_blocker": "None.",
+        "version": "v1.0"
+      },
+      "version": "v1.0"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Power Rusher": 100,
+        "Run Stopper": 100,
+        "Speed Rusher": 100
+      },
+      "evidence_paths": [
+        "data/research/op_x_019/dt/frozen_dt_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "DT",
+      "formula": "sum(attribute * exact Madden 19 DT archetype weight) / sum(included weights)",
+      "freeze_commit": "9279ebb3ba6c95ed3e7e33ac398b77bebc54693b",
+      "id": "DT-M19-ARCH-001",
+      "limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "omit unavailable terms and renormalize",
+      "model_type": "position/archetype ranking",
+      "production": true,
+      "profiles": {
+        "Power Rusher": {
+          "ACC": 6,
+          "AGI": 3,
+          "AWR": 9,
+          "BSH": 6,
+          "PMV": 22,
+          "POW": 3,
+          "PRC": 9,
+          "PUR": 6,
+          "SPD": 3,
+          "STR": 20,
+          "TAK": 13
+        },
+        "Run Stopper": {
+          "ACC": 6,
+          "AGI": 3,
+          "AWR": 8,
+          "BSH": 22,
+          "POW": 3,
+          "PRC": 8,
+          "PUR": 8,
+          "SPD": 4,
+          "STR": 21,
+          "TAK": 17
+        },
+        "Speed Rusher": {
+          "ACC": 8,
+          "AGI": 4,
+          "AWR": 8,
+          "BSH": 4,
+          "FMV": 22,
+          "POW": 3,
+          "PRC": 8,
+          "PUR": 7,
+          "SPD": 6,
+          "STR": 17,
+          "TAK": 13
+        }
+      },
+      "provenance": {
+        "source_id": "SRC-M19-001",
+        "workbook_rows": "15:17",
+        "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+        "workbook_sheet": "Data Version",
+        "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view"
+      },
+      "validation": {
+        "archetype": "generation-mapped archetype vectors",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.9978872649023279,
+        "cfb25_n": 609,
+        "cfb26_accuracy": 0.9893341617479549,
+        "cfb26_n": 633,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "DT-M19-ARCH-001",
+        "next_scientific_action": "Prospective validation only.",
+        "position": "DT",
+        "production_status": "production",
+        "remaining_blocker": "None.",
+        "version": "v1.0"
+      },
+      "version": "v1.0"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Power Rusher": 100,
+        "Run Stopper": 100,
+        "Speed Rusher": 100
+      },
+      "evidence_paths": [
+        "data/research/op_x_019/edge/frozen_edge_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "EDGE",
+      "formula": "sum(attribute * exact Madden 19 DE archetype weight) / sum(included weights)",
+      "freeze_commit": "b6419ddc6caca909a4ad10c7b668b0ba3f6af6a4",
+      "id": "EDGE-M19-ARCH-001",
+      "limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "omit unavailable terms and renormalize",
+      "model_type": "position/archetype ranking",
+      "production": true,
+      "profiles": {
+        "Power Rusher": {
+          "ACC": 10,
+          "AGI": 6,
+          "AWR": 7,
+          "PMV": 23,
+          "POW": 3,
+          "PRC": 7,
+          "PUR": 7,
+          "SPD": 7,
+          "STR": 15,
+          "TAK": 15
+        },
+        "Run Stopper": {
+          "ACC": 8,
+          "AGI": 5,
+          "AWR": 9,
+          "BSH": 18,
+          "FMV": 2,
+          "PMV": 2,
+          "POW": 3,
+          "PRC": 9,
+          "PUR": 9,
+          "SPD": 5,
+          "STR": 12,
+          "TAK": 18
+        },
+        "Speed Rusher": {
+          "ACC": 14,
+          "AGI": 9,
+          "AWR": 7,
+          "FMV": 23,
+          "POW": 3,
+          "PRC": 7,
+          "PUR": 7,
+          "SPD": 10,
+          "STR": 5,
+          "TAK": 15
+        }
+      },
+      "provenance": {
+        "source_id": "SRC-M19-001",
+        "workbook_rows": "10:12",
+        "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+        "workbook_sheet": "Data Version",
+        "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view"
+      },
+      "validation": {
+        "archetype": "generation-mapped archetype vectors",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.9976335513825279,
+        "cfb25_n": 831,
+        "cfb26_accuracy": 0.9892748802759428,
+        "cfb26_n": 898,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "EDGE-M19-ARCH-001",
+        "next_scientific_action": "Prospective validation only.",
+        "position": "EDGE",
+        "production_status": "production",
+        "remaining_blocker": "None.",
+        "version": "v1.0"
+      },
+      "version": "v1.0"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Blocking": 102,
+        "Utility": 100
+      },
+      "evidence_paths": [
+        "data/research/op_x_020/fb/frozen_fb_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "FB",
+      "formula": "sum(attribute * exact Madden 19 FB archetype weight) / sum(included weights)",
+      "freeze_commit": "1d696da59aa195dc7716a27e51e18273d9fc6fdc",
+      "id": "FB-M19-ARCH-001",
+      "limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "omit unavailable terms and renormalize",
+      "model_type": "position/archetype ranking",
+      "production": true,
+      "profiles": {
+        "Blocking": {
+          "ACC": 2,
+          "AGI": 2,
+          "AWR": 10,
+          "BTK": 6,
+          "CAR": 5,
+          "CIT": 2,
+          "CTH": 2,
+          "IBL": 20,
+          "LBK": 7,
+          "PBF": 1,
+          "PBK": 4,
+          "PBP": 1,
+          "RBF": 3,
+          "RBK": 10,
+          "RBP": 5,
+          "SPD": 1,
+          "SRR": 5,
+          "STR": 9,
+          "TRK": 7
+        },
+        "Utility": {
+          "ACC": 5,
+          "AGI": 5,
+          "AWR": 10,
+          "BCV": 6,
+          "BTK": 4,
+          "CAR": 7,
+          "CIT": 2,
+          "CTH": 8,
+          "ELU": 3,
+          "IBL": 11,
+          "LBK": 5,
+          "PBK": 2,
+          "RBK": 3,
+          "SFA": 4,
+          "SPD": 5,
+          "SRR": 9,
+          "STR": 6,
+          "TRK": 5
+        }
+      },
+      "provenance": {
+        "source_id": "SRC-M19-001",
+        "workbook_rows": "19:20",
+        "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+        "workbook_sheet": "Data Version",
+        "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view"
+      },
+      "validation": {
+        "archetype": "generation-mapped archetype vectors",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.983177570093458,
+        "cfb25_n": 58,
+        "cfb26_accuracy": 0.9884742041712404,
+        "cfb26_n": 62,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "FB-M19-ARCH-001",
+        "next_scientific_action": "Prospective validation only.",
+        "position": "FB",
+        "production_status": "production",
+        "remaining_blocker": "None.",
+        "version": "v1.0"
+      },
+      "version": "v1.0"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Agile": 100,
+        "Pass Protector": 100,
+        "Power": 100
+      },
+      "evidence_paths": [
+        "data/research/op_x_020/guard/frozen_guard_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "G",
+      "formula": "sum(attribute * exact Madden 19 OG archetype weight) / sum(included weights)",
+      "freeze_commit": "6a5c717768d4f13f6296ef1fdb312ca77dbfd4a3",
+      "id": "OG-M19-ARCH-001",
+      "limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "omit unavailable terms and renormalize",
+      "model_type": "position/archetype ranking",
+      "production": true,
+      "profiles": {
+        "Agile": {
+          "ACC": 2,
+          "AGI": 3,
+          "AWR": 10,
+          "IBL": 7,
+          "LBK": 8,
+          "PBF": 23,
+          "PBK": 4,
+          "RBF": 20,
+          "RBK": 8,
+          "SPD": 2,
+          "STR": 13
+        },
+        "Pass Protector": {
+          "ACC": 2,
+          "AGI": 2,
+          "AWR": 14,
+          "IBL": 5,
+          "PBF": 28,
+          "PBK": 5,
+          "PBP": 28,
+          "SPD": 2,
+          "STR": 14
+        },
+        "Power": {
+          "ACC": 2,
+          "AGI": 2,
+          "AWR": 11,
+          "IBL": 7,
+          "LBK": 8,
+          "PBK": 2,
+          "PBP": 22,
+          "RBK": 10,
+          "RBP": 19,
+          "SPD": 2,
+          "STR": 15
+        }
+      },
+      "provenance": {
+        "source_id": "SRC-M19-001",
+        "workbook_rows": "41:43",
+        "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+        "workbook_sheet": "Data Version",
+        "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view"
+      },
+      "validation": {
+        "archetype": "generation-mapped archetype vectors",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.9974785869950838,
+        "cfb25_n": 702,
+        "cfb26_accuracy": 0.996478081065493,
+        "cfb26_n": 713,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "OG-M19-ARCH-001",
+        "next_scientific_action": "Prospective validation only.",
+        "position": "G",
+        "production_status": "production",
+        "remaining_blocker": "None.",
+        "version": "v1.0"
+      },
+      "version": "v1.0"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Accurate": 100,
+        "Power": 100
+      },
+      "evidence_paths": [
+        "data/research/op_x_020/kp/frozen_kp_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "KP",
+      "formula": "sum(available attribute * exact Madden 19 K/P archetype weight) / sum(available weights)",
+      "freeze_commit": "fb320d746bf1120b4dd9a09ebd2a0480760877fa",
+      "id": "KP-M19-ARCH-001",
+      "limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "omit unavailable terms and renormalize",
+      "model_type": "position/archetype ranking",
+      "production": true,
+      "profiles": {
+        "Accurate": {
+          "AWR": 40,
+          "KAC": 60
+        },
+        "Power": {
+          "AWR": 40,
+          "KPW": 60
+        }
+      },
+      "provenance": {
+        "source_id": "SRC-M19-001",
+        "workbook_rows": "27, 30, 79:80",
+        "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+        "workbook_sheet": "Data Version",
+        "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view"
+      },
+      "validation": {
+        "archetype": "generation-mapped archetype vectors",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.9873072921592736,
+        "cfb25_n": 336,
+        "cfb26_accuracy": 0.9919320392957145,
+        "cfb26_n": 323,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "KP-M19-ARCH-001",
+        "next_scientific_action": "Prospective validation only.",
+        "position": "KP",
+        "production_status": "production",
+        "remaining_blocker": "None.",
+        "version": "v1.0"
+      },
+      "version": "v1.0"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Field General": 100,
+        "Pass Coverage": 100,
+        "Run Stopper": 100
+      },
+      "evidence_paths": [
+        "data/research/op_x_019/mike/frozen_mike_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "MIKE",
+      "formula": "sum(attribute * exact Madden 19 MLB archetype weight) / sum(included weights)",
+      "freeze_commit": "0142f301f0a526f83ef76c1b2d608b1f6350d536",
+      "id": "MIKE-M19-ARCH-001",
+      "limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "omit unavailable terms and renormalize",
+      "model_type": "position/archetype ranking",
+      "production": true,
+      "profiles": {
+        "Field General": {
+          "ACC": 9,
+          "AGI": 7,
+          "AWR": 9,
+          "BSH": 7,
+          "MCV": 5,
+          "PRC": 9,
+          "PUR": 14,
+          "SPD": 5,
+          "STR": 8,
+          "TAK": 17,
+          "ZCV": 10
+        },
+        "Pass Coverage": {
+          "ACC": 10,
+          "AGI": 8,
+          "AWR": 7,
+          "MCV": 10,
+          "PRC": 7,
+          "PUR": 12,
+          "SPD": 7,
+          "STR": 4,
+          "TAK": 15,
+          "ZCV": 20
+        },
+        "Run Stopper": {
+          "ACC": 8,
+          "AGI": 7,
+          "AWR": 7,
+          "BSH": 9,
+          "FMV": 2,
+          "MCV": 2,
+          "PMV": 2,
+          "POW": 2,
+          "PRC": 7,
+          "PUR": 15,
+          "SPD": 4,
+          "STR": 10,
+          "TAK": 20,
+          "ZCV": 5
+        }
+      },
+      "provenance": {
+        "source_id": "SRC-M19-001",
+        "workbook_rows": "35:37",
+        "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+        "workbook_sheet": "Data Version",
+        "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view"
+      },
+      "validation": {
+        "archetype": "generation-mapped archetype vectors",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.9959977849375755,
+        "cfb25_n": 708,
+        "cfb26_accuracy": 0.9976890479536272,
+        "cfb26_n": 614,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "MIKE-M19-ARCH-001",
+        "next_scientific_action": "Prospective validation only.",
+        "position": "MIKE",
+        "production_status": "production",
+        "remaining_blocker": "None.",
+        "version": "v1.0"
+      },
+      "version": "v1.0"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Agile": 100,
+        "Pass Protector": 100,
+        "Power": 100
+      },
+      "evidence_paths": [
+        "data/research/op_x_020/tackle/frozen_tackle_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "OT",
+      "formula": "sum(attribute * exact Madden 19 OT archetype weight) / sum(included weights)",
+      "freeze_commit": "f1a7912f8e984e860ef8945131401507bebf56a2",
+      "id": "OT-M19-ARCH-001",
+      "limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "omit unavailable terms and renormalize",
+      "model_type": "position/archetype ranking",
+      "production": true,
+      "profiles": {
+        "Agile": {
+          "ACC": 2,
+          "AGI": 3,
+          "AWR": 10,
+          "IBL": 4,
+          "LBK": 2,
+          "PBF": 25,
+          "PBK": 6,
+          "RBF": 24,
+          "RBK": 8,
+          "SPD": 3,
+          "STR": 13
+        },
+        "Pass Protector": {
+          "ACC": 2,
+          "AGI": 2,
+          "AWR": 14,
+          "IBL": 2,
+          "PBF": 28,
+          "PBK": 8,
+          "PBP": 28,
+          "SPD": 2,
+          "STR": 14
+        },
+        "Power": {
+          "ACC": 2,
+          "AGI": 2,
+          "AWR": 10,
+          "IBL": 4,
+          "LBK": 2,
+          "PBK": 4,
+          "PBP": 24,
+          "RBK": 10,
+          "RBP": 25,
+          "SPD": 2,
+          "STR": 15
+        }
+      },
+      "provenance": {
+        "source_id": "SRC-M19-001",
+        "workbook_rows": "44:46",
+        "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+        "workbook_sheet": "Data Version",
+        "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view"
+      },
+      "validation": {
+        "archetype": "generation-mapped archetype vectors",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.9977103713785144,
+        "cfb25_n": 743,
+        "cfb26_accuracy": 0.9920845809885444,
+        "cfb26_n": 719,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "OT-M19-ARCH-001",
+        "next_scientific_action": "Prospective validation only.",
+        "position": "OT",
+        "production_status": "production",
+        "remaining_blocker": "None.",
+        "version": "v1.0"
+      },
+      "version": "v1.0"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Shared": 100
+      },
+      "evidence_paths": [
+        "scripts/op_x_017_historical_qb_validation.py",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "QB",
+      "formula": "weighted mean of frozen shared QB vector",
+      "freeze_commit": null,
+      "id": "QB-SHARED-001",
+      "limitations": [
+        "Pure Runner is unsupported",
+        "ranking score only"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "all weighted attributes required",
+      "model_type": "shared position ranking",
+      "production": true,
+      "profiles": {
+        "Shared": {
+          "ACC": 1,
+          "AGI": 8,
+          "AWR": 10,
+          "BSK": 4,
+          "DAC": 18,
+          "MAC": 12,
+          "PAC": 4,
+          "RUN": 1,
+          "SAC": 12,
+          "SPD": 3,
+          "THP": 18,
+          "TUP": 9
+        }
+      },
+      "provenance": {
+        "source": "frozen OP-X-017 QB validation"
+      },
+      "validation": {
+        "archetype": "shared; Pure Runner excluded",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.9837366491832922,
+        "cfb25_n": 621,
+        "cfb26_accuracy": 0.9922397030228036,
+        "cfb26_n": 494,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "QB-SHARED-001",
+        "next_scientific_action": "Prospective validation; separately resolve Pure Runner.",
+        "position": "QB",
+        "production_status": "production",
+        "remaining_blocker": "Pure Runner remains outside production scope.",
+        "version": "v1.0"
+      },
+      "version": "v1.0"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Elusive Back": 100,
+        "Power Back": 100,
+        "Receiving Back": 100
+      },
+      "evidence_paths": [
+        "data/research/op_x_020/rb/frozen_rb_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "RB",
+      "formula": "sum(attribute * exact Madden 19 HB archetype weight) / sum(included weights)",
+      "freeze_commit": "0075a7bbd21f38f660c5e534fd86ddcf6c933648",
+      "id": "RB-M19-ARCH-001",
+      "limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "omit unavailable terms and renormalize",
+      "model_type": "position/archetype ranking",
+      "production": true,
+      "profiles": {
+        "Elusive Back": {
+          "ACC": 13,
+          "AGI": 11,
+          "AWR": 8,
+          "BCV": 10,
+          "BTK": 6,
+          "CAR": 11,
+          "ELU": 10,
+          "JKM": 9,
+          "SPD": 13,
+          "SPM": 9
+        },
+        "Power Back": {
+          "ACC": 9,
+          "AGI": 5,
+          "AWR": 8,
+          "BCV": 10,
+          "BTK": 12,
+          "CAR": 13,
+          "SFA": 11,
+          "SPD": 9,
+          "STR": 10,
+          "TRK": 13
+        },
+        "Receiving Back": {
+          "ACC": 12,
+          "AGI": 8,
+          "AWR": 9,
+          "BCV": 5,
+          "CAR": 7,
+          "CIT": 8,
+          "CTH": 14,
+          "ELU": 4,
+          "JKM": 5,
+          "RLS": 1,
+          "SPD": 12,
+          "SPM": 5,
+          "SRR": 10
+        }
+      },
+      "provenance": {
+        "source_id": "SRC-M19-001",
+        "workbook_rows": "22, 24:25",
+        "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+        "workbook_sheet": "Data Version",
+        "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view"
+      },
+      "validation": {
+        "archetype": "generation-mapped archetype vectors",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.980767851225836,
+        "cfb25_n": 783,
+        "cfb26_accuracy": 0.9868312949486218,
+        "cfb26_n": 747,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "RB-M19-ARCH-001",
+        "next_scientific_action": "Prospective validation only.",
+        "position": "RB",
+        "production_status": "production",
+        "remaining_blocker": "None.",
+        "version": "v1.0"
+      },
+      "version": "v1.0"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Hybrid": 100,
+        "Run Support": 97,
+        "Zone Coverage": 104
+      },
+      "evidence_paths": [
+        "data/research/op_x_019/safety/frozen_safety_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "S",
+      "formula": "sum(attribute * exact Madden 19 archetype weight) / sum(included weights)",
+      "freeze_commit": "c2c5c13ecf327918659a386138ae71eb8589568d",
+      "id": "S-M19-ARCH-001",
+      "limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "omit unavailable terms and renormalize",
+      "model_type": "position/archetype ranking",
+      "production": true,
+      "profiles": {
+        "Hybrid": {
+          "ACC": 11,
+          "AGI": 8,
+          "AWR": 10,
+          "JMP": 3,
+          "MCV": 15,
+          "PRC": 10,
+          "PRS": 5,
+          "PUR": 4,
+          "SPD": 14,
+          "STR": 2,
+          "TAK": 11,
+          "ZCV": 7
+        },
+        "Run Support": {
+          "ACC": 8,
+          "AGI": 6,
+          "AWR": 11,
+          "BSH": 2,
+          "JMP": 3,
+          "MCV": 6,
+          "POW": 4,
+          "PRC": 11,
+          "PRS": 3,
+          "PUR": 9,
+          "SPD": 9,
+          "STR": 2,
+          "TAK": 15,
+          "ZCV": 8
+        },
+        "Zone Coverage": {
+          "ACC": 10,
+          "AGI": 8,
+          "AWR": 11,
+          "JMP": 3,
+          "MCV": 6,
+          "PRC": 11,
+          "PUR": 6,
+          "SPD": 14,
+          "STR": 2,
+          "TAK": 11,
+          "ZCV": 22
+        }
+      },
+      "provenance": {
+        "origin": "Madden 19 XML-derived attribute weights credited to Teutonic",
+        "source_id": "SRC-M19-001",
+        "workbook_rows": "66, 68:69",
+        "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+        "workbook_sheet": "Data Version",
+        "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view"
+      },
+      "validation": {
+        "archetype": "generation-mapped archetype vectors",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.9976099557704459,
+        "cfb25_n": 955,
+        "cfb26_accuracy": 0.994680338807387,
+        "cfb26_n": 949,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "S-M19-ARCH-001",
+        "next_scientific_action": "Prospective validation only.",
+        "position": "S",
+        "production_status": "production",
+        "remaining_blocker": "None.",
+        "version": "v1.0"
+      },
+      "version": "v1.0"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "MLB Field General": 100,
+        "OLB Pass Coverage": 93,
+        "OLB Power Rusher": 98,
+        "OLB Run Stopper": 100,
+        "OLB Speed Rusher": 96
+      },
+      "evidence_paths": [
+        "data/research/op_x_019/sam/frozen_sam_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "SAM",
+      "formula": "sum(attribute * frozen historical role-vector weight) / sum(included weights)",
+      "freeze_commit": "5a526b8d8ef52dfe1c0cb34ee046e135e330ca65",
+      "id": "SAM-M19-ROLE-001",
+      "limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "omit unavailable terms and renormalize",
+      "model_type": "position/archetype ranking",
+      "production": true,
+      "profiles": {
+        "MLB Field General": {
+          "ACC": 9,
+          "AGI": 7,
+          "AWR": 9,
+          "BSH": 7,
+          "MCV": 5,
+          "PRC": 9,
+          "PUR": 14,
+          "SPD": 5,
+          "STR": 8,
+          "TAK": 17,
+          "ZCV": 10
+        },
+        "OLB Pass Coverage": {
+          "ACC": 11,
+          "AGI": 4,
+          "AWR": 9,
+          "MCV": 6,
+          "PRC": 9,
+          "PUR": 11,
+          "SPD": 9,
+          "STR": 2,
+          "TAK": 14,
+          "ZCV": 18
+        },
+        "OLB Power Rusher": {
+          "ACC": 10,
+          "AGI": 2,
+          "AWR": 7,
+          "MCV": 2,
+          "PMV": 22,
+          "POW": 2,
+          "PRC": 7,
+          "PUR": 12,
+          "SPD": 5,
+          "STR": 8,
+          "TAK": 15,
+          "ZCV": 6
+        },
+        "OLB Run Stopper": {
+          "ACC": 9,
+          "AGI": 2,
+          "AWR": 7,
+          "BSH": 16,
+          "MCV": 2,
+          "POW": 3,
+          "PRC": 7,
+          "PUR": 16,
+          "SPD": 6,
+          "STR": 10,
+          "TAK": 16,
+          "ZCV": 6
+        },
+        "OLB Speed Rusher": {
+          "ACC": 13,
+          "AGI": 5,
+          "AWR": 7,
+          "FMV": 22,
+          "MCV": 2,
+          "PRC": 7,
+          "PUR": 10,
+          "SPD": 8,
+          "STR": 6,
+          "TAK": 10,
+          "ZCV": 6
+        }
+      },
+      "provenance": {
+        "source_id": "SRC-M19-001",
+        "workbook_rows": "35, 48:51",
+        "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+        "workbook_sheet": "Data Version",
+        "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view"
+      },
+      "validation": {
+        "archetype": "generation-mapped archetype vectors",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.9974285923567124,
+        "cfb25_n": 733,
+        "cfb26_accuracy": 0.9915450520619824,
+        "cfb26_n": 778,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "SAM-M19-ROLE-001",
+        "next_scientific_action": "Prospective validation only.",
+        "position": "SAM",
+        "production_status": "production",
+        "remaining_blocker": "None.",
+        "version": "v1.0"
+      },
+      "version": "v1.0"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Possession": 100
+      },
+      "evidence_paths": [
+        "data/research/op_x_016/frozen_te_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "TE",
+      "formula": "Madden19 Possession",
+      "freeze_commit": null,
+      "id": "TE-MODEL-001",
+      "limitations": [
+        "ranking score only"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "If an attribute is unavailable in the historical source, omit that term and renormalize by the sum of available frozen weights. No coefficient is estimated or replaced.",
+      "model_type": "archetype ranking",
+      "production": true,
+      "profiles": {
+        "Possession": {
+          "ACC": 4,
+          "AGI": 3,
+          "AWR": 9,
+          "BCV": 1,
+          "BTK": 2,
+          "CIT": 14,
+          "CTH": 10,
+          "IBL": 4,
+          "LBK": 2,
+          "MRR": 6,
+          "PBF": 2,
+          "PBK": 3,
+          "PBP": 2,
+          "RBF": 4,
+          "RBK": 5,
+          "RBP": 4,
+          "RLS": 2,
+          "SFA": 2,
+          "SPC": 1,
+          "SPD": 3,
+          "SRR": 12,
+          "STR": 4,
+          "TRK": 1
+        }
+      },
+      "provenance": {
+        "recovery_rule": "Exact authoritative workbook values; no inference from CFB25/26 observations",
+        "source_id": "SRC-M19-001",
+        "weight_source": "Operation_Pancake_Master_Database_v1.6_TE_Formula_Phase_Complete.xlsx :: Madden19_TE_Weights"
+      },
+      "validation": {
+        "archetype": "Gritty Possession",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.9993307937815299,
+        "cfb25_n": 201,
+        "cfb26_accuracy": 0.9901731399157697,
+        "cfb26_n": 67,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "TE-MODEL-001",
+        "next_scientific_action": "Prospective validation only.",
+        "position": "TE",
+        "production_status": "production",
+        "remaining_blocker": "None.",
+        "version": "v1.1"
+      },
+      "version": "v1.1"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Possession": 100,
+        "Vertical Threat": 100
+      },
+      "evidence_paths": [
+        "data/research/op_x_016/frozen_te_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "TE",
+      "formula": "0.71 * Madden19 Vertical Threat + 0.29 * Madden19 Possession",
+      "freeze_commit": null,
+      "id": "TE-MODEL-003",
+      "limitations": [
+        "ranking score only"
+      ],
+      "locked": false,
+      "missing_attribute_rule": "If an attribute is unavailable in the historical source, omit that term and renormalize by the sum of available frozen weights. No coefficient is estimated or replaced.",
+      "model_type": "archetype ranking",
+      "production": true,
+      "profiles": {
+        "Possession": {
+          "ACC": 4,
+          "AGI": 3,
+          "AWR": 9,
+          "BCV": 1,
+          "BTK": 2,
+          "CIT": 14,
+          "CTH": 10,
+          "IBL": 4,
+          "LBK": 2,
+          "MRR": 6,
+          "PBF": 2,
+          "PBK": 3,
+          "PBP": 2,
+          "RBF": 4,
+          "RBK": 5,
+          "RBP": 4,
+          "RLS": 2,
+          "SFA": 2,
+          "SPC": 1,
+          "SPD": 3,
+          "SRR": 12,
+          "STR": 4,
+          "TRK": 1
+        },
+        "Vertical Threat": {
+          "ACC": 7,
+          "AGI": 4,
+          "AWR": 9,
+          "BCV": 2,
+          "BTK": 3,
+          "CIT": 8,
+          "CTH": 11,
+          "DRR": 5,
+          "ELU": 2,
+          "JMP": 3,
+          "MRR": 9,
+          "PBF": 1,
+          "PBK": 2,
+          "PBP": 1,
+          "RBF": 3,
+          "RBK": 3,
+          "RBP": 3,
+          "RLS": 3,
+          "SFA": 2,
+          "SPC": 4,
+          "SPD": 7,
+          "SRR": 7,
+          "TRK": 1
+        }
+      },
+      "provenance": {
+        "recovery_rule": "Exact authoritative workbook values; no inference from CFB25/26 observations",
+        "source_id": "SRC-M19-001",
+        "weight_source": "Operation_Pancake_Master_Database_v1.6_TE_Formula_Phase_Complete.xlsx :: Madden19_TE_Weights"
+      },
+      "validation": {
+        "archetype": "Physical Route Runner",
+        "at_or_above_95_percent": false,
+        "cfb25_accuracy": null,
+        "cfb25_n": 0,
+        "cfb26_accuracy": 0.9981641785336376,
+        "cfb26_n": 403,
+        "cross_season_verdict": "INSUFFICIENT CROSS-SEASON EVIDENCE",
+        "locked": false,
+        "model": "TE-MODEL-003",
+        "next_scientific_action": "Retain frozen; await independent compatible population.",
+        "position": "TE",
+        "production_status": "production",
+        "remaining_blocker": "No CFB25 compatible Physical Route Runner population.",
+        "version": "v1.1"
+      },
+      "version": "v1.1"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": false,
+        "ranking": false
+      },
+      "denominators": {
+        "Blocking": 100
+      },
+      "evidence_paths": [
+        "data/research/op_x_016/frozen_te_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "TE",
+      "formula": "Madden19 Blocking",
+      "freeze_commit": null,
+      "id": "TE-MODEL-004",
+      "limitations": [
+        "diagnostic/non-production; excluded from rankings"
+      ],
+      "locked": false,
+      "missing_attribute_rule": "If an attribute is unavailable in the historical source, omit that term and renormalize by the sum of available frozen weights. No coefficient is estimated or replaced.",
+      "model_type": "archetype ranking",
+      "production": false,
+      "profiles": {
+        "Blocking": {
+          "AWR": 9,
+          "BTK": 2,
+          "CIT": 3,
+          "CTH": 3,
+          "IBL": 9,
+          "LBK": 8,
+          "MRR": 4,
+          "PBF": 6,
+          "PBK": 8,
+          "PBP": 6,
+          "RBF": 9,
+          "RBK": 10,
+          "RBP": 9,
+          "SFA": 2,
+          "SRR": 5,
+          "STR": 6,
+          "TRK": 1
+        }
+      },
+      "provenance": {
+        "recovery_rule": "Exact authoritative workbook values; no inference from CFB25/26 observations",
+        "source_id": "SRC-M19-001",
+        "weight_source": "Operation_Pancake_Master_Database_v1.6_TE_Formula_Phase_Complete.xlsx :: Madden19_TE_Weights"
+      },
+      "validation": {
+        "archetype": "Pure Blocker",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.9723200393088199,
+        "cfb25_n": 162,
+        "cfb26_accuracy": 0.9977753058954394,
+        "cfb26_n": 63,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": false,
+        "model": "TE-MODEL-004",
+        "next_scientific_action": "Retain frozen; await independent compatible population.",
+        "position": "TE",
+        "production_status": "diagnostic/non-production",
+        "remaining_blocker": "Non-production external prior.",
+        "version": "v1.1"
+      },
+      "version": "v1.1"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Vertical Threat": 103
+      },
+      "evidence_paths": [
+        "data/research/op_x_016/frozen_te_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "TE",
+      "formula": "Madden19 Vertical Threat +2 LBK +3 IBL",
+      "freeze_commit": null,
+      "id": "TE-MODEL-006",
+      "limitations": [
+        "ranking score only"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "If an attribute is unavailable in the historical source, omit that term and renormalize by the sum of available frozen weights. No coefficient is estimated or replaced.",
+      "model_type": "archetype ranking",
+      "production": true,
+      "profiles": {
+        "Vertical Threat": {
+          "ACC": 7,
+          "AGI": 4,
+          "AWR": 9,
+          "BCV": 2,
+          "BTK": 3,
+          "CIT": 8,
+          "CTH": 11,
+          "DRR": 5,
+          "IBL": 3,
+          "JMP": 3,
+          "LBK": 2,
+          "MRR": 9,
+          "PBF": 1,
+          "PBK": 2,
+          "PBP": 1,
+          "RBF": 3,
+          "RBK": 3,
+          "RBP": 3,
+          "RLS": 3,
+          "SFA": 2,
+          "SPC": 4,
+          "SPD": 7,
+          "SRR": 7,
+          "TRK": 1
+        }
+      },
+      "provenance": {
+        "recovery_rule": "Exact authoritative workbook values; no inference from CFB25/26 observations",
+        "source_id": "SRC-M19-001",
+        "weight_source": "Operation_Pancake_Master_Database_v1.6_TE_Formula_Phase_Complete.xlsx :: Madden19_TE_Weights"
+      },
+      "validation": {
+        "archetype": "Vertical Threat",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.995279358510088,
+        "cfb25_n": 179,
+        "cfb26_accuracy": 0.9982291240975344,
+        "cfb26_n": 124,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "TE-MODEL-006",
+        "next_scientific_action": "Prospective validation only.",
+        "position": "TE",
+        "production_status": "production",
+        "remaining_blocker": "None.",
+        "version": "v1.3"
+      },
+      "version": "v1.3"
+    },
+    {
+      "capabilities": {
+        "displayed_overall_prediction": false,
+        "player_comparison": true,
+        "ranking": true
+      },
+      "denominators": {
+        "Deep Threat": 99,
+        "Possession": 100,
+        "Red Zone": 101,
+        "Slot": 100
+      },
+      "evidence_paths": [
+        "data/research/op_x_018/frozen_wr_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "family": "WR",
+      "formula": "sum(attribute * exact Madden 19 archetype weight) / sum(included weights)",
+      "freeze_commit": "44dbd9f7bcca87f62ad654f5dec124cbeaaba745",
+      "id": "WR-M19-ARCH-001",
+      "limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "locked": true,
+      "missing_attribute_rule": "omit unavailable terms and renormalize",
+      "model_type": "position/archetype ranking",
+      "production": true,
+      "profiles": {
+        "Deep Threat": {
+          "ACC": 12,
+          "AGI": 8,
+          "AWR": 9,
+          "CIT": 7,
+          "CTH": 12,
+          "DRR": 15,
+          "ELU": 2,
+          "JKM": 1,
+          "JMP": 1,
+          "MRR": 6,
+          "RLS": 9,
+          "SPC": 4,
+          "SPD": 12,
+          "SPM": 1
+        },
+        "Possession": {
+          "ACC": 8,
+          "AGI": 6,
+          "AWR": 7,
+          "BTK": 1,
+          "CAR": 2,
+          "CIT": 15,
+          "CTH": 14,
+          "ELU": 1,
+          "JMP": 3,
+          "MRR": 10,
+          "RLS": 5,
+          "SFA": 2,
+          "SPC": 2,
+          "SPD": 8,
+          "SRR": 13,
+          "STR": 2,
+          "TRK": 1
+        },
+        "Red Zone": {
+          "ACC": 9,
+          "AGI": 7,
+          "AWR": 10,
+          "BTK": 1,
+          "CIT": 10,
+          "CTH": 13,
+          "JMP": 5,
+          "MRR": 5,
+          "RLS": 10,
+          "SFA": 1,
+          "SPC": 9,
+          "SPD": 9,
+          "SRR": 9,
+          "STR": 2,
+          "TRK": 1
+        },
+        "Slot": {
+          "ACC": 12,
+          "AGI": 7,
+          "AWR": 10,
+          "BTK": 1,
+          "CAR": 1,
+          "CIT": 14,
+          "CTH": 13,
+          "DRR": 3,
+          "ELU": 2,
+          "JKM": 1,
+          "MRR": 9,
+          "SPD": 10,
+          "SPM": 1,
+          "SRR": 16
+        }
+      },
+      "provenance": {
+        "guide_url": "https://forums.operationsports.com/forums/forum/football/madden-nfl-football/862218-guide-weightings-towards-the-ovr-for-each-attribute-at-every-position-archetype",
+        "image_sha256": "fea8891288bf668ad8e35db2c4d7b49f35fcdefdbaff49b862f06a0ae6a1273c",
+        "image_url": "https://i.imgur.com/iLPIamw.jpg",
+        "origin": "Madden 19 XML-derived attribute weights credited to Teutonic",
+        "source_id": "SRC-M19-001",
+        "workbook_rows": "75:78",
+        "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+        "workbook_sheet": "Data Version",
+        "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view"
+      },
+      "validation": {
+        "archetype": "generation-mapped archetype vectors",
+        "at_or_above_95_percent": true,
+        "cfb25_accuracy": 0.9949339120336197,
+        "cfb25_n": 1305,
+        "cfb26_accuracy": 0.9883536328039858,
+        "cfb26_n": 1157,
+        "cross_season_verdict": "DURABLE PASS",
+        "locked": true,
+        "model": "WR-M19-ARCH-001",
+        "next_scientific_action": "Prospective validation only.",
+        "position": "WR",
+        "production_status": "production",
+        "remaining_blocker": "None.",
+        "version": "v1.0"
+      },
+      "version": "v1.0"
+    }
+  ],
+  "position_aliases": {
+    "FS": "S",
+    "HB": "RB",
+    "K": "KP",
+    "LE": "EDGE",
+    "LG": "G",
+    "LT": "OT",
+    "MLB": "MIKE",
+    "P": "KP",
+    "RE": "EDGE",
+    "RG": "G",
+    "RT": "OT",
+    "SS": "S",
+    "WILL": "SAM"
+  },
+  "routes": {
+    "C": {
+      "*": {
+        "basis": "position-shared center ranking model",
+        "confidence": "EXACT_POSITION",
+        "model_id": "C-M19-RANK-001",
+        "profile": "Center",
+        "version": "v1.0"
+      }
+    },
+    "CB": {
+      "Boundary": {
+        "basis": "outside/boundary man-corner role",
+        "confidence": "HYPOTHESIS",
+        "model_id": "CB-M19-ARCH-001",
+        "profile": "Man to Man",
+        "version": "v1.0"
+      },
+      "Bump and Run": {
+        "basis": "press/man coverage role",
+        "confidence": "SUPPORTED",
+        "model_id": "CB-M19-ARCH-001",
+        "profile": "Man to Man",
+        "version": "v1.0"
+      },
+      "Field": {
+        "basis": "space/field coverage role",
+        "confidence": "HYPOTHESIS",
+        "model_id": "CB-M19-ARCH-001",
+        "profile": "Zone",
+        "version": "v1.0"
+      },
+      "Legacy Corner": {
+        "basis": "single special archetype",
+        "confidence": "UNSUPPORTED",
+        "model_id": "CB-M19-ARCH-001",
+        "profile": null,
+        "version": "v1.0"
+      },
+      "Zone": {
+        "basis": "exact name",
+        "confidence": "PROVEN",
+        "model_id": "CB-M19-ARCH-001",
+        "profile": "Zone",
+        "version": "v1.0"
+      },
+      "ratings boosts To see all possible ratings boosts, click here Description Season 5: Charles Woodson General SPD 87 ACC 87 AGI 88 COD 88 AWR 80 STR 70 JMP 85 PRC 85 RET 83 TGH 90 Coverage MCV 84 ZCV 86 PRS 85 CTH 76 CIT 73 SPC 73 Tackling TAK 72 POW 74 PUR 80 BSH 79 IBL 74 Pass Rush FMV 55 PMV 61 Team Michigan Height 6'1\" Weight 210 lbs. Archetype Field": {
+        "basis": "malformed scraped archetype label",
+        "confidence": "UNSUPPORTED",
+        "model_id": "CB-M19-ARCH-001",
+        "profile": null,
+        "version": "v1.0"
+      }
+    },
+    "DT": {
+      "Gap Specialist": {
+        "basis": "gap-control/run-stopping role",
+        "confidence": "SUPPORTED",
+        "model_id": "DT-M19-ARCH-001",
+        "profile": "Run Stopper",
+        "version": "v1.0"
+      },
+      "Power Rusher": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "model_id": "DT-M19-ARCH-001",
+        "profile": "Power Rusher",
+        "version": "v1.0"
+      },
+      "Pure Power": {
+        "basis": "power-rush role",
+        "confidence": "SUPPORTED",
+        "model_id": "DT-M19-ARCH-001",
+        "profile": "Power Rusher",
+        "version": "v1.0"
+      },
+      "Speed Rusher": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "model_id": "DT-M19-ARCH-001",
+        "profile": "Speed Rusher",
+        "version": "v1.0"
+      }
+    },
+    "EDGE": {
+      "Gap Specialist": {
+        "basis": "gap-control/run-stopping role",
+        "confidence": "SUPPORTED",
+        "model_id": "EDGE-M19-ARCH-001",
+        "profile": "Run Stopper",
+        "version": "v1.0"
+      },
+      "Power Rusher": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "model_id": "EDGE-M19-ARCH-001",
+        "profile": "Power Rusher",
+        "version": "v1.0"
+      },
+      "Pure Power": {
+        "basis": "power-rush role",
+        "confidence": "SUPPORTED",
+        "model_id": "EDGE-M19-ARCH-001",
+        "profile": "Power Rusher",
+        "version": "v1.0"
+      },
+      "Speed Rusher": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "model_id": "EDGE-M19-ARCH-001",
+        "profile": "Speed Rusher",
+        "version": "v1.0"
+      }
+    },
+    "FB": {
+      "Blocking": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "model_id": "FB-M19-ARCH-001",
+        "profile": "Blocking",
+        "version": "v1.0"
+      },
+      "Utility": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "model_id": "FB-M19-ARCH-001",
+        "profile": "Utility",
+        "version": "v1.0"
+      }
+    },
+    "G": {
+      "Agile": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "model_id": "OG-M19-ARCH-001",
+        "profile": "Agile",
+        "version": "v1.0"
+      },
+      "Pass Protector": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "model_id": "OG-M19-ARCH-001",
+        "profile": "Pass Protector",
+        "version": "v1.0"
+      },
+      "Raw Strength": {
+        "basis": "power/strength blocking role",
+        "confidence": "SUPPORTED",
+        "model_id": "OG-M19-ARCH-001",
+        "profile": "Power",
+        "version": "v1.0"
+      },
+      "Well Rounded": {
+        "basis": "no historical balanced OG vector; Power retained as broad run/pass vector without fitting",
+        "confidence": "HYPOTHETICAL",
+        "model_id": "OG-M19-ARCH-001",
+        "profile": "Power",
+        "version": "v1.0"
+      }
+    },
+    "KP": {
+      "Accurate": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "model_id": "KP-M19-ARCH-001",
+        "profile": "Accurate",
+        "version": "v1.0"
+      },
+      "Power": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "model_id": "KP-M19-ARCH-001",
+        "profile": "Power",
+        "version": "v1.0"
+      }
+    },
+    "MIKE": {
+      "Lurker": {
+        "basis": "coverage linebacker role",
+        "confidence": "SUPPORTED",
+        "model_id": "MIKE-M19-ARCH-001",
+        "profile": "Pass Coverage",
+        "version": "v1.0"
+      },
+      "Signal Caller": {
+        "basis": "diagnostic/field-command linebacker role",
+        "confidence": "SUPPORTED",
+        "model_id": "MIKE-M19-ARCH-001",
+        "profile": "Field General",
+        "version": "v1.0"
+      },
+      "Thumper": {
+        "basis": "physical run-stopping linebacker role",
+        "confidence": "SUPPORTED",
+        "model_id": "MIKE-M19-ARCH-001",
+        "profile": "Run Stopper",
+        "version": "v1.0"
+      }
+    },
+    "OT": {
+      "Agile": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "model_id": "OT-M19-ARCH-001",
+        "profile": "Agile",
+        "version": "v1.0"
+      },
+      "Pass Protector": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "model_id": "OT-M19-ARCH-001",
+        "profile": "Pass Protector",
+        "version": "v1.0"
+      },
+      "Raw Strength": {
+        "basis": "power/strength blocking role",
+        "confidence": "SUPPORTED",
+        "model_id": "OT-M19-ARCH-001",
+        "profile": "Power",
+        "version": "v1.0"
+      },
+      "Well Rounded": {
+        "basis": "no historical balanced OT vector; Power retained as broad run/pass vector without fitting",
+        "confidence": "HYPOTHETICAL",
+        "model_id": "OT-M19-ARCH-001",
+        "profile": "Power",
+        "version": "v1.0"
+      }
+    },
+    "QB": {
+      "Backfield Creator": {
+        "basis": "validated shared QB production model",
+        "confidence": "SUPPORTED",
+        "model_id": "QB-SHARED-001",
+        "profile": "Shared",
+        "version": "v1.0"
+      },
+      "Dual Threat": {
+        "basis": "validated shared QB production model",
+        "confidence": "SUPPORTED",
+        "model_id": "QB-SHARED-001",
+        "profile": "Shared",
+        "version": "v1.0"
+      },
+      "Pocket Passer": {
+        "basis": "validated shared QB production model",
+        "confidence": "SUPPORTED",
+        "model_id": "QB-SHARED-001",
+        "profile": "Shared",
+        "version": "v1.0"
+      }
+    },
+    "RB": {
+      "Backfield Threat": {
+        "basis": "backfield receiving role",
+        "confidence": "SUPPORTED",
+        "model_id": "RB-M19-ARCH-001",
+        "profile": "Receiving Back",
+        "version": "v1.0"
+      },
+      "Contact Seeker": {
+        "basis": "contact/power runner role",
+        "confidence": "SUPPORTED",
+        "model_id": "RB-M19-ARCH-001",
+        "profile": "Power Back",
+        "version": "v1.0"
+      },
+      "East/West Playmaker": {
+        "basis": "lateral/elusive runner role",
+        "confidence": "SUPPORTED",
+        "model_id": "RB-M19-ARCH-001",
+        "profile": "Elusive Back",
+        "version": "v1.0"
+      },
+      "Elusive Bruiser": {
+        "basis": "hybrid label; elusive component selected without fitting",
+        "confidence": "HYPOTHETICAL",
+        "model_id": "RB-M19-ARCH-001",
+        "profile": "Elusive Back",
+        "version": "v1.0"
+      },
+      "North/South Blocker": {
+        "basis": "four-card downhill/blocking role; no exact historical HB blocker vector",
+        "confidence": "HYPOTHETICAL",
+        "model_id": "RB-M19-ARCH-001",
+        "profile": "Power Back",
+        "version": "v1.0"
+      },
+      "North/South Receiver": {
+        "basis": "receiving-back role",
+        "confidence": "SUPPORTED",
+        "model_id": "RB-M19-ARCH-001",
+        "profile": "Receiving Back",
+        "version": "v1.0"
+      }
+    },
+    "S": {
+      "Box Specialist": {
+        "basis": "box/run-support safety role",
+        "confidence": "SUPPORTED",
+        "model_id": "S-M19-ARCH-001",
+        "profile": "Run Support",
+        "version": "v1.0"
+      },
+      "Coverage Specialist": {
+        "basis": "coverage/zone safety role",
+        "confidence": "SUPPORTED",
+        "model_id": "S-M19-ARCH-001",
+        "profile": "Zone Coverage",
+        "version": "v1.0"
+      },
+      "Hybrid": {
+        "basis": "exact name",
+        "confidence": "EXACT",
+        "model_id": "S-M19-ARCH-001",
+        "profile": "Hybrid",
+        "version": "v1.0"
+      }
+    },
+    "SAM": {
+      "Lurker": {
+        "basis": "coverage linebacker role",
+        "confidence": "SUPPORTED",
+        "model_id": "SAM-M19-ROLE-001",
+        "profile": "OLB Pass Coverage",
+        "version": "v1.0"
+      },
+      "Signal Caller": {
+        "basis": "CFB26 unified linebacker taxonomy; exact historical field-command role exists at MLB, not OLB",
+        "confidence": "HYPOTHETICAL",
+        "model_id": "SAM-M19-ROLE-001",
+        "profile": "MLB Field General",
+        "version": "v1.0"
+      },
+      "Thumper": {
+        "basis": "physical run-stopping linebacker role",
+        "confidence": "SUPPORTED",
+        "model_id": "SAM-M19-ROLE-001",
+        "profile": "OLB Run Stopper",
+        "version": "v1.0"
+      }
+    },
+    "TE": {
+      "Gritty Possession": {
+        "basis": "Madden19 Possession",
+        "confidence": "SUPPORTED",
+        "model_id": "TE-MODEL-001",
+        "profile": "Possession",
+        "version": "v1.1"
+      },
+      "Physical Route Runner": {
+        "basis": "0.71 * Madden19 Vertical Threat + 0.29 * Madden19 Possession",
+        "confidence": "SUPPORTED_SINGLE_SEASON",
+        "model_id": "TE-MODEL-003",
+        "profile": "Blend",
+        "version": "v1.1"
+      },
+      "Pure Blocker": {
+        "basis": "excluded from primary production scoring",
+        "confidence": "DIAGNOSTIC_ONLY",
+        "model_id": "TE-MODEL-004",
+        "profile": "Blocking",
+        "version": "v1.1"
+      },
+      "Vertical Threat": {
+        "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
+        "confidence": "SUPPORTED",
+        "model_id": "TE-MODEL-006",
+        "profile": "Vertical Threat",
+        "version": "v1.3"
+      }
+    },
+    "WR": {
+      "Contested Specialist": {
+        "basis": "contested-catch role",
+        "confidence": "SUPPORTED",
+        "model_id": "WR-M19-ARCH-001",
+        "profile": "Red Zone",
+        "version": "v1.0"
+      },
+      "Elusive Route Runner": {
+        "basis": "short/intermediate route and elusiveness profile",
+        "confidence": "HYPOTHESIS",
+        "model_id": "WR-M19-ARCH-001",
+        "profile": "Slot",
+        "version": "v1.0"
+      },
+      "Gadget Receiver": {
+        "basis": "short-area/elusive role",
+        "confidence": "HYPOTHESIS",
+        "model_id": "WR-M19-ARCH-001",
+        "profile": "Slot",
+        "version": "v1.0"
+      },
+      "Gritty Possession": {
+        "basis": "possession role and inherited CFB terminology",
+        "confidence": "SUPPORTED",
+        "model_id": "WR-M19-ARCH-001",
+        "profile": "Possession",
+        "version": "v1.0"
+      },
+      "Legacy Receiver": {
+        "basis": "single special archetype; no defensible historical equivalent",
+        "confidence": "UNSUPPORTED",
+        "model_id": "WR-M19-ARCH-001",
+        "profile": null,
+        "version": "v1.0"
+      },
+      "Physical Route Runner": {
+        "basis": "physical receiver role; terminology is not exact",
+        "confidence": "HYPOTHESIS",
+        "model_id": "WR-M19-ARCH-001",
+        "profile": "Red Zone",
+        "version": "v1.0"
+      },
+      "Route Artist": {
+        "basis": "route-running emphasis",
+        "confidence": "HYPOTHESIS",
+        "model_id": "WR-M19-ARCH-001",
+        "profile": "Possession",
+        "version": "v1.0"
+      },
+      "Speedster": {
+        "basis": "speed/deep-threat role",
+        "confidence": "SUPPORTED",
+        "model_id": "WR-M19-ARCH-001",
+        "profile": "Deep Threat",
+        "version": "v1.0"
+      }
+    }
+  },
+  "schema_version": "1.0"
+}

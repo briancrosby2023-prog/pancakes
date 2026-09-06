@@ -13,8 +13,7 @@ from urllib.request import Request, urlopen
 from operation_pancake.acquisition.adapters import AccessPolicy, ExternalCardAdapter
 from operation_pancake.acquisition.models import ExternalCard, RawSnapshot
 
-PARSER_VERSION = "cfb-fan-html-v1"
-POSITION_ALIASES = {"MIKE": "MLB", "LEDG": "LE", "REDG": "RE"}
+PARSER_VERSION = "cfb-fan-html-v2-cfb27-native-positions"
 
 
 def parse_player_listing(html: str, base_url: str = "https://cfb.fan") -> list[str]:
@@ -52,8 +51,7 @@ def parse_player_page(html: str, source_url: str, retrieved_at: str, snapshot: s
     player = " ".join(unescape(re.sub(r"<[^>]+>", "", header_match.group("header"))).split())
     program = _text(meta_match.group("program"))
     overall = int(title_match.group("overall"))
-    source_position = _text(meta_match.group("position"))
-    position = POSITION_ALIASES.get(source_position, source_position)
+    position = _text(meta_match.group("position"))
     ratings_html = html
     general_index = html.find(">General</")
     team_index = html.find('text-lighter-gray">Team</div>', general_index)
@@ -110,7 +108,7 @@ def parse_player_page(html: str, source_url: str, retrieved_at: str, snapshot: s
         raw_snapshot_reference=snapshot,
         extraction_status="COMPLETE" if ratings else "PARTIAL",
         validation_status="STAGED_EXTERNAL_PUBLIC_SOURCE",
-        metadata={"source_position": source_position} if source_position != position else {},
+        metadata={},
     )
 
 

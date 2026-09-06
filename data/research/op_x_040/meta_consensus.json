@@ -1,0 +1,25 @@
+{
+  "levels": [
+    "ANECDOTAL",
+    "COMMON",
+    "CONTESTED",
+    "EMERGING",
+    "OUTDATED",
+    "STRONG CONSENSUS"
+  ],
+  "results": {
+    "current_playbook_evidence": {
+      "contradictions": 0,
+      "independent_source_count": 1,
+      "level": "ANECDOTAL",
+      "support": 1
+    },
+    "qb_ability_evidence": {
+      "contradictions": 1,
+      "independent_source_count": 1,
+      "level": "CONTESTED",
+      "support": 1
+    },
+    "rule": "publisher identity, not document count, defines independence"
+  }
+}

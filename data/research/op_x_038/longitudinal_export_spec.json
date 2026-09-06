@@ -1,0 +1,19 @@
+{
+  "fields": [
+    "observation_id",
+    "card_id",
+    "value",
+    "observation_type",
+    "observed_at",
+    "available_at",
+    "event_time",
+    "campaign_id",
+    "event_id",
+    "platform",
+    "source",
+    "provenance",
+    "confidence"
+  ],
+  "file_mtime_used": false,
+  "leakage_rule": "available_at must be at or before decision time"
+}

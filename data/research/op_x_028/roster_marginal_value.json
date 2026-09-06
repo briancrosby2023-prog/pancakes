@@ -1,0 +1,473 @@
+[
+  {
+    "attribute_efficiency": {
+      "attributes": [
+        {
+          "attribute": "PBK",
+          "delta": -2,
+          "model_weight": 2,
+          "same_ovr_range": null,
+          "weight_tier": "LOW",
+          "weighted_score_contribution": -0.04
+        },
+        {
+          "attribute": "RBK",
+          "delta": 3,
+          "model_weight": 10,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 0.3
+        },
+        {
+          "attribute": "RBP",
+          "delta": 3,
+          "model_weight": 19,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 0.57
+        },
+        {
+          "attribute": "STR",
+          "delta": 6,
+          "model_weight": 15,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 0.9
+        }
+      ],
+      "interpretation": "model contribution is production evidence; same-OVR range is hypothesis evidence",
+      "positive_gain_on_high_weight_attributes": 1.77,
+      "positive_gain_on_low_weight_attributes": 0,
+      "status": "PROFILED"
+    },
+    "candidate": "Brendan Black",
+    "candidate_above_replacement": 14.782609,
+    "candidate_card_id": "card:f35e84cba0d56c4270c3",
+    "candidate_percentile": 100.0,
+    "confidence": "LOW",
+    "confidence_factor": 0.65,
+    "current": "Anthony Donkoh",
+    "current_above_replacement": 9.748696,
+    "current_card_id": "card:05b737e0828809d8a979",
+    "current_percentile": 89.606299,
+    "distance_toward_elite": 1.55,
+    "percentile_gain": 10.393701,
+    "position_family": "G",
+    "rank_gain": 66,
+    "replacement_level_score": 71.391304,
+    "roster_need": 0.415748,
+    "scarcity": {
+      "alternatives_above_candidate": 0,
+      "archetype": "Raw Strength",
+      "archetype_alternatives_above_candidate": 0,
+      "archetype_population_size": 311,
+      "comparable_cards_within_half_score": 1,
+      "distance_to_next_better": null,
+      "distance_to_next_lower": 0.910755,
+      "elite_tail_percentile": 100.0,
+      "population_size": 635,
+      "position_family": "G",
+      "scarcity_index": 0.998425
+    },
+    "score_gain": 5.033913,
+    "score_gain_percent": 6.203984,
+    "status": "VALUED",
+    "value_index": 31.151124,
+    "value_index_components": {
+      "percentile_gain": 0.415748,
+      "rank_gain": 0.103937,
+      "roster_need": 0.415748,
+      "scarcity": 0.998425,
+      "score_gain": 0.507229
+    },
+    "value_index_unadjusted": 47.924807
+  },
+  {
+    "attribute_efficiency": {
+      "attributes": [
+        {
+          "attribute": "PBK",
+          "delta": 9,
+          "model_weight": 6,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 0.54
+        },
+        {
+          "attribute": "PBF",
+          "delta": 7,
+          "model_weight": 25,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 1.75
+        },
+        {
+          "attribute": "RBK",
+          "delta": -3,
+          "model_weight": 8,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": -0.24
+        },
+        {
+          "attribute": "STR",
+          "delta": 5,
+          "model_weight": 13,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 0.65
+        }
+      ],
+      "interpretation": "model contribution is production evidence; same-OVR range is hypothesis evidence",
+      "positive_gain_on_high_weight_attributes": 2.94,
+      "positive_gain_on_low_weight_attributes": 0,
+      "status": "PROFILED"
+    },
+    "candidate": "E'Marion Harris",
+    "candidate_above_replacement": 17.25,
+    "candidate_card_id": "card:4bd7645117856f967450",
+    "candidate_percentile": 100.0,
+    "confidence": "LOW",
+    "confidence_factor": 0.65,
+    "current": "Samson Okunlola",
+    "current_above_replacement": 10.235385,
+    "current_card_id": "card:0dfef086dfd8d85794d6",
+    "current_percentile": 89.762611,
+    "distance_toward_elite": 1.403,
+    "percentile_gain": 10.237389,
+    "position_family": "OT",
+    "rank_gain": 69,
+    "replacement_level_score": 71.134615,
+    "roster_need": 0.409496,
+    "scarcity": {
+      "alternatives_above_candidate": 0,
+      "archetype": "Agile",
+      "archetype_alternatives_above_candidate": 0,
+      "archetype_population_size": 441,
+      "comparable_cards_within_half_score": 1,
+      "distance_to_next_better": null,
+      "distance_to_next_lower": 0.950653,
+      "elite_tail_percentile": 100.0,
+      "population_size": 674,
+      "position_family": "OT",
+      "scarcity_index": 0.998516
+    },
+    "score_gain": 7.014615,
+    "score_gain_percent": 8.62064,
+    "status": "VALUED",
+    "value_index": 33.804679,
+    "value_index_components": {
+      "percentile_gain": 0.409496,
+      "rank_gain": 0.102374,
+      "roster_need": 0.409496,
+      "scarcity": 0.998516,
+      "score_gain": 0.682662
+    },
+    "value_index_unadjusted": 52.007199
+  },
+  {
+    "attribute_efficiency": {
+      "attributes": [
+        {
+          "attribute": "ACC",
+          "delta": 3,
+          "model_weight": 10,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 0.288462
+        },
+        {
+          "attribute": "AGI",
+          "delta": 2,
+          "model_weight": 8,
+          "same_ovr_range": null,
+          "weight_tier": "LOW",
+          "weighted_score_contribution": 0.153846
+        },
+        {
+          "attribute": "AWR",
+          "delta": 8,
+          "model_weight": 11,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 0.846154
+        },
+        {
+          "attribute": "JMP",
+          "delta": 3,
+          "model_weight": 3,
+          "same_ovr_range": null,
+          "weight_tier": "LOW",
+          "weighted_score_contribution": 0.086538
+        },
+        {
+          "attribute": "MCV",
+          "delta": 5,
+          "model_weight": 6,
+          "same_ovr_range": null,
+          "weight_tier": "LOW",
+          "weighted_score_contribution": 0.288462
+        },
+        {
+          "attribute": "PRC",
+          "delta": 4,
+          "model_weight": 11,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 0.423077
+        },
+        {
+          "attribute": "PUR",
+          "delta": 8,
+          "model_weight": 6,
+          "same_ovr_range": null,
+          "weight_tier": "LOW",
+          "weighted_score_contribution": 0.461538
+        },
+        {
+          "attribute": "SPD",
+          "delta": 4,
+          "model_weight": 14,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 0.538462
+        },
+        {
+          "attribute": "STR",
+          "delta": 16,
+          "model_weight": 2,
+          "same_ovr_range": null,
+          "weight_tier": "LOW",
+          "weighted_score_contribution": 0.307692
+        },
+        {
+          "attribute": "TAK",
+          "delta": 5,
+          "model_weight": 11,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 0.528846
+        },
+        {
+          "attribute": "ZCV",
+          "delta": 10,
+          "model_weight": 22,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 2.115385
+        }
+      ],
+      "interpretation": "model contribution is production evidence; same-OVR range is hypothesis evidence",
+      "positive_gain_on_high_weight_attributes": 4.740386,
+      "positive_gain_on_low_weight_attributes": 1.298076,
+      "status": "PROFILED"
+    },
+    "candidate": "Bray Hubbard",
+    "candidate_above_replacement": 15.934524,
+    "candidate_card_id": "card:f26cd7a4829a431b0af5",
+    "candidate_percentile": 100.0,
+    "confidence": "HIGH",
+    "confidence_factor": 1.0,
+    "current": "Dashawn Spears",
+    "current_above_replacement": 10.539524,
+    "current_card_id": "card:4595176827b3dc5e510c",
+    "current_percentile": 92.431762,
+    "distance_toward_elite": 0.784321,
+    "percentile_gain": 7.568238,
+    "position_family": "S",
+    "rank_gain": 61,
+    "replacement_level_score": 71.190476,
+    "roster_need": 0.30273,
+    "scarcity": {
+      "alternatives_above_candidate": 0,
+      "archetype": "Coverage Specialist",
+      "archetype_alternatives_above_candidate": 0,
+      "archetype_population_size": 168,
+      "comparable_cards_within_half_score": 2,
+      "distance_to_next_better": null,
+      "distance_to_next_lower": 0.215,
+      "elite_tail_percentile": 100.0,
+      "population_size": 806,
+      "position_family": "S",
+      "scarcity_index": 0.997519
+    },
+    "score_gain": 5.395,
+    "score_gain_percent": 6.601003,
+    "status": "VALUED",
+    "value_index": 43.194481,
+    "value_index_components": {
+      "percentile_gain": 0.30273,
+      "rank_gain": 0.075682,
+      "roster_need": 0.30273,
+      "scarcity": 0.997519,
+      "score_gain": 0.538945
+    },
+    "value_index_unadjusted": 43.194481
+  },
+  {
+    "attribute_efficiency": {
+      "attributes": [
+        {
+          "attribute": "BSH",
+          "delta": 8,
+          "model_weight": 16,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 1.28
+        },
+        {
+          "attribute": "SPD",
+          "delta": 1,
+          "model_weight": 6,
+          "same_ovr_range": null,
+          "weight_tier": "LOW",
+          "weighted_score_contribution": 0.06
+        },
+        {
+          "attribute": "TAK",
+          "delta": 6,
+          "model_weight": 16,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 0.96
+        }
+      ],
+      "interpretation": "model contribution is production evidence; same-OVR range is hypothesis evidence",
+      "positive_gain_on_high_weight_attributes": 2.24,
+      "positive_gain_on_low_weight_attributes": 0.06,
+      "status": "PROFILED"
+    },
+    "candidate": "Kip Lewis",
+    "candidate_above_replacement": 15.473684,
+    "candidate_card_id": "card:f093049f3f59d1f230cf",
+    "candidate_percentile": 100.0,
+    "confidence": "LOW",
+    "confidence_factor": 0.65,
+    "current": "Chris Cole",
+    "current_above_replacement": 10.308925,
+    "current_card_id": "card:09e54a6775235476c252",
+    "current_percentile": 91.115312,
+    "distance_toward_elite": 0.743707,
+    "percentile_gain": 8.884688,
+    "position_family": "SAM",
+    "rank_gain": 47,
+    "replacement_level_score": 73.473684,
+    "roster_need": 0.355388,
+    "scarcity": {
+      "alternatives_above_candidate": 0,
+      "archetype": "Thumper",
+      "archetype_alternatives_above_candidate": 0,
+      "archetype_population_size": 307,
+      "comparable_cards_within_half_score": 1,
+      "distance_to_next_better": null,
+      "distance_to_next_lower": 1.0,
+      "elite_tail_percentile": 100.0,
+      "population_size": 529,
+      "position_family": "SAM",
+      "scarcity_index": 0.99811
+    },
+    "score_gain": 5.164759,
+    "score_gain_percent": 6.164476,
+    "status": "VALUED",
+    "value_index": 29.341707,
+    "value_index_components": {
+      "percentile_gain": 0.355388,
+      "rank_gain": 0.088847,
+      "roster_need": 0.355388,
+      "scarcity": 0.99811,
+      "score_gain": 0.513772
+    },
+    "value_index_unadjusted": 45.141087
+  },
+  {
+    "attribute_efficiency": {
+      "attributes": [
+        {
+          "attribute": "JMP",
+          "delta": 2,
+          "model_weight": 4,
+          "same_ovr_range": null,
+          "weight_tier": "LOW",
+          "weighted_score_contribution": 0.08
+        },
+        {
+          "attribute": "MCV",
+          "delta": 3,
+          "model_weight": 4,
+          "same_ovr_range": null,
+          "weight_tier": "LOW",
+          "weighted_score_contribution": 0.12
+        },
+        {
+          "attribute": "PRS",
+          "delta": 5,
+          "model_weight": 5,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 0.25
+        },
+        {
+          "attribute": "SPD",
+          "delta": 3,
+          "model_weight": 18,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 0.54
+        },
+        {
+          "attribute": "ZCV",
+          "delta": 5,
+          "model_weight": 20,
+          "same_ovr_range": null,
+          "weight_tier": "HIGH",
+          "weighted_score_contribution": 1.0
+        }
+      ],
+      "interpretation": "model contribution is production evidence; same-OVR range is hypothesis evidence",
+      "positive_gain_on_high_weight_attributes": 1.79,
+      "positive_gain_on_low_weight_attributes": 0.2,
+      "status": "PROFILED"
+    },
+    "candidate": "Kobe Black",
+    "candidate_above_replacement": 16.598574,
+    "candidate_card_id": "card:7084891b08e603666bea",
+    "candidate_percentile": 100.0,
+    "confidence": "LOW",
+    "confidence_factor": 0.65,
+    "current": "Cormani McClain",
+    "current_above_replacement": 12.696613,
+    "current_card_id": "card:2a79a6e3f272a16ec712",
+    "current_percentile": 95.71263,
+    "distance_toward_elite": 0.0,
+    "percentile_gain": 4.28737,
+    "position_family": "CB",
+    "rank_gain": 37,
+    "replacement_level_score": 71.381818,
+    "roster_need": 0.171495,
+    "scarcity": {
+      "alternatives_above_candidate": 0,
+      "archetype": "Field",
+      "archetype_alternatives_above_candidate": 0,
+      "archetype_population_size": 309,
+      "comparable_cards_within_half_score": 1,
+      "distance_to_next_better": null,
+      "distance_to_next_lower": 0.529412,
+      "elite_tail_percentile": 100.0,
+      "population_size": 863,
+      "position_family": "CB",
+      "scarcity_index": 0.998841
+    },
+    "score_gain": 3.901961,
+    "score_gain_percent": 4.640858,
+    "status": "VALUED",
+    "value_index": 21.177744,
+    "value_index_components": {
+      "percentile_gain": 0.171495,
+      "rank_gain": 0.042874,
+      "roster_need": 0.171495,
+      "scarcity": 0.998841,
+      "score_gain": 0.369526
+    },
+    "value_index_unadjusted": 32.581145
+  }
+]

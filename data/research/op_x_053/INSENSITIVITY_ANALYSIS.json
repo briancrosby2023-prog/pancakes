@@ -1,0 +1,30 @@
+{
+  "decisions": [
+    {
+      "decision": "frozen canonical/scoring science",
+      "insensitive": true,
+      "reason": "Context cannot modify frozen populations, coefficients, OP-X-028 science, or OP-X-051 candidate science.",
+      "underlying_evidence_known": false,
+      "unknown_fields": [
+        "deployment",
+        "equipped_abilities_ap",
+        "observed_usage",
+        "acquisition_state",
+        "market_evidence"
+      ]
+    },
+    {
+      "decision": "ROLE CANDIDATE classification",
+      "insensitive": true,
+      "reason": "Missing realized context cannot promote or erase frozen ROLE CANDIDATE records; VERIFIED ROLE FIT remains prohibited without evidence.",
+      "underlying_evidence_known": false,
+      "unknown_fields": [
+        "deployment",
+        "equipped_abilities_ap",
+        "observed_usage",
+        "acquisition_state"
+      ]
+    }
+  ],
+  "semantic_rule": "decision insensitive does not mean underlying evidence known"
+}

@@ -1,0 +1,16 @@
+{
+  "capture_timestamp": "2026-08-20T02:35:50.1867402-07:00",
+  "controls": {
+    "future_timestamp": "must not be treated as fresh",
+    "missing_source_timestamp": "INSUFFICIENT MARKET DATA",
+    "single_observation": "INSUFFICIENT MARKET DATA",
+    "stale_over_24_hours": "INSUFFICIENT MARKET DATA",
+    "timezone_naive": "REJECT"
+  },
+  "cfb_fan_trial": {
+    "capture_time_known": true,
+    "page_claim": "real time",
+    "source_observation_time_known": false,
+    "status": "FRESHNESS_UNPROVEN_FOR_BUY"
+  }
+}

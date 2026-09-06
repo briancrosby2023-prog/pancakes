@@ -1,0 +1,17 @@
+{
+  "examples": [
+    "PRICE CHECK REQUIRED -> WAIT",
+    "WAIT -> BUY",
+    "BUY -> WAIT"
+  ],
+  "ignored_alone": [
+    "ingestion timestamp",
+    "observation age metadata"
+  ],
+  "material_fields": [
+    "gm_action",
+    "market_evidence_quality",
+    "net_upgrade_cost"
+  ],
+  "persistence_hook": "compare previous purchase object with regenerated object"
+}

@@ -1,0 +1,39 @@
+{
+  "class_method": "contextual efficiency quintiles within a declared opportunity set",
+  "class_warning": "classification is not an estimate of auction clearing price",
+  "confidence_factors": {
+    "HIGH": 1.0,
+    "LOW": 0.65,
+    "MEDIUM": 0.85
+  },
+  "market_price_included": false,
+  "normalization": {
+    "percentile_gain": "gain / 25 percentile points, capped [0,1]",
+    "rank_gain": "gain / position population, capped [0,1]",
+    "roster_need": "(100 - current percentile) / 25, capped [0,1]",
+    "scarcity": "1 - comparable cards within +/-0.5 / position population",
+    "score_gain": "gain / within-position p50-to-p90 score span, capped [0,1]"
+  },
+  "price_grid": [
+    10000,
+    25000,
+    50000,
+    75000,
+    100000,
+    150000,
+    250000,
+    500000,
+    750000,
+    1000000,
+    2000000,
+    5000000
+  ],
+  "version": "op-x-028-v1",
+  "weights": {
+    "percentile_gain": 0.25,
+    "rank_gain": 0.15,
+    "roster_need": 0.2,
+    "scarcity": 0.15,
+    "score_gain": 0.25
+  }
+}

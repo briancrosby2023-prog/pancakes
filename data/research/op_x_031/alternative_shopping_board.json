@@ -1,0 +1,494 @@
+[
+  {
+    "best_football": "Brendan Black",
+    "best_near_equivalent": {
+      "archetype": "Pass Protector",
+      "card_id": "card:223972d9a434a9d9fb4c",
+      "market_evidence": {
+        "dispersion_ratio": null,
+        "evidence_quality": "INSUFFICIENT",
+        "latest_observation": null,
+        "latest_price": null,
+        "observation_age_hours": null,
+        "observation_semantics": null,
+        "recent_range": null,
+        "risk_flags": [
+          "NO MARKET OBSERVATION"
+        ],
+        "sample_size": 0,
+        "statistics": {
+          "observation_count": 0,
+          "quality": "INSUFFICIENT"
+        }
+      },
+      "overall": 87,
+      "player_name": "Addison Nichols",
+      "rank_difference": 1,
+      "score_difference": -0.910755,
+      "target_attribute_advantages": [
+        {
+          "attribute": "RBP",
+          "candidate_attribute_percentile": 99.678457,
+          "candidate_count_at_or_above": 9,
+          "candidate_effective_coefficient": 0.41304347826086957,
+          "candidate_rating": 86,
+          "current_attribute_percentile": null,
+          "current_effective_coefficient": 0,
+          "current_rating": 82,
+          "rating_delta": 4,
+          "role": "PRIMARY UPGRADE DRIVER",
+          "score_contribution_change": 35.52173913,
+          "share_of_total_improvement_percent": 3900.251893
+        },
+        {
+          "attribute": "RBK",
+          "candidate_attribute_percentile": 100.0,
+          "candidate_count_at_or_above": 2,
+          "candidate_effective_coefficient": 0.21739130434782608,
+          "candidate_rating": 85,
+          "current_attribute_percentile": null,
+          "current_effective_coefficient": 0,
+          "current_rating": 81,
+          "rating_delta": 4,
+          "role": "PRIMARY UPGRADE DRIVER",
+          "score_contribution_change": 18.47826087,
+          "share_of_total_improvement_percent": 2028.894804
+        }
+      ],
+      "target_attribute_losses": [
+        {
+          "attribute": "STR",
+          "candidate_attribute_percentile": 100.0,
+          "candidate_count_at_or_above": 1,
+          "candidate_effective_coefficient": 0.32608695652173914,
+          "candidate_rating": 88,
+          "current_attribute_percentile": 95.833333,
+          "current_effective_coefficient": 0.7368421052631579,
+          "current_rating": 85,
+          "rating_delta": 3,
+          "role": "LOSS/OFFSET",
+          "score_contribution_change": -33.935926773,
+          "share_of_total_improvement_percent": -3726.131262
+        },
+        {
+          "attribute": "PBK",
+          "candidate_attribute_percentile": 78.135048,
+          "candidate_count_at_or_above": 73,
+          "candidate_effective_coefficient": 0.043478260869565216,
+          "candidate_rating": 80,
+          "current_attribute_percentile": 100.0,
+          "current_effective_coefficient": 0.2631578947368421,
+          "current_rating": 86,
+          "rating_delta": -6,
+          "role": "LOSS/OFFSET",
+          "score_contribution_change": -19.153318077,
+          "share_of_total_improvement_percent": -2103.015419
+        }
+      ]
+    },
+    "best_value": "PRICE CHECK REQUIRED",
+    "budget": "PRICE CHECK REQUIRED",
+    "current": "Anthony Donkoh",
+    "premium": "Brendan Black",
+    "reason": "alternative prices lack sufficient evidence"
+  },
+  {
+    "best_football": "E'Marion Harris",
+    "best_near_equivalent": {
+      "archetype": "Raw Strength",
+      "card_id": "card:1edf998eda9232b48690",
+      "market_evidence": {
+        "dispersion_ratio": null,
+        "evidence_quality": "INSUFFICIENT",
+        "latest_observation": null,
+        "latest_price": null,
+        "observation_age_hours": null,
+        "observation_semantics": null,
+        "recent_range": null,
+        "risk_flags": [
+          "NO MARKET OBSERVATION"
+        ],
+        "sample_size": 0,
+        "statistics": {
+          "observation_count": 0,
+          "quality": "INSUFFICIENT"
+        }
+      },
+      "overall": 87,
+      "player_name": "Drew Azzopardi",
+      "rank_difference": 1,
+      "score_difference": -0.950653,
+      "target_attribute_advantages": [
+        {
+          "attribute": "PBF",
+          "candidate_attribute_percentile": 100.0,
+          "candidate_count_at_or_above": 1,
+          "candidate_effective_coefficient": 0.4807692307692308,
+          "candidate_rating": 91,
+          "current_attribute_percentile": null,
+          "current_effective_coefficient": 0,
+          "current_rating": 83,
+          "rating_delta": 8,
+          "role": "PRIMARY UPGRADE DRIVER",
+          "score_contribution_change": 43.75,
+          "share_of_total_improvement_percent": 4602.09982
+        },
+        {
+          "attribute": "PBK",
+          "candidate_attribute_percentile": 100.0,
+          "candidate_count_at_or_above": 1,
+          "candidate_effective_coefficient": 0.11538461538461539,
+          "candidate_rating": 89,
+          "current_attribute_percentile": 100.0,
+          "current_effective_coefficient": 0.07547169811320754,
+          "current_rating": 87,
+          "rating_delta": 2,
+          "role": "PRIMARY UPGRADE DRIVER",
+          "score_contribution_change": 3.703193033,
+          "share_of_total_improvement_percent": 389.542034
+        }
+      ],
+      "target_attribute_losses": [
+        {
+          "attribute": "PBP",
+          "candidate_attribute_percentile": null,
+          "candidate_count_at_or_above": null,
+          "candidate_effective_coefficient": 0,
+          "candidate_rating": 89,
+          "current_attribute_percentile": 100.0,
+          "current_effective_coefficient": 0.4528301886792453,
+          "current_rating": 89,
+          "rating_delta": 0,
+          "role": "LOSS/OFFSET",
+          "score_contribution_change": -40.301886792,
+          "share_of_total_improvement_percent": -4239.38985
+        },
+        {
+          "attribute": "STR",
+          "candidate_attribute_percentile": 100.0,
+          "candidate_count_at_or_above": 1,
+          "candidate_effective_coefficient": 0.25,
+          "candidate_rating": 87,
+          "current_attribute_percentile": 100.0,
+          "current_effective_coefficient": 0.2830188679245283,
+          "current_rating": 88,
+          "rating_delta": -1,
+          "role": "LOSS/OFFSET",
+          "score_contribution_change": -3.155660377,
+          "share_of_total_improvement_percent": -331.946607
+        },
+        {
+          "attribute": "RBK",
+          "candidate_attribute_percentile": 91.38322,
+          "candidate_count_at_or_above": 53,
+          "candidate_effective_coefficient": 0.15384615384615385,
+          "candidate_rating": 82,
+          "current_attribute_percentile": 93.010753,
+          "current_effective_coefficient": 0.18867924528301888,
+          "current_rating": 83,
+          "rating_delta": -1,
+          "role": "LOSS/OFFSET",
+          "score_contribution_change": -3.044992743,
+          "share_of_total_improvement_percent": -320.305384
+        }
+      ]
+    },
+    "best_value": "PRICE CHECK REQUIRED",
+    "budget": "PRICE CHECK REQUIRED",
+    "current": "Samson Okunlola",
+    "premium": "E'Marion Harris",
+    "reason": "alternative prices lack sufficient evidence"
+  },
+  {
+    "best_football": "Kip Lewis",
+    "best_near_equivalent": {
+      "archetype": "Thumper",
+      "card_id": "card:9722de1cce1370c64d9c",
+      "market_evidence": {
+        "dispersion_ratio": null,
+        "evidence_quality": "INSUFFICIENT",
+        "latest_observation": null,
+        "latest_price": null,
+        "observation_age_hours": null,
+        "observation_semantics": null,
+        "recent_range": null,
+        "risk_flags": [
+          "NO MARKET OBSERVATION"
+        ],
+        "sample_size": 0,
+        "statistics": {
+          "observation_count": 0,
+          "quality": "INSUFFICIENT"
+        }
+      },
+      "overall": 87,
+      "player_name": "Isaiah Glasker",
+      "rank_difference": 1,
+      "score_difference": -1.0,
+      "target_attribute_advantages": [
+        {
+          "attribute": "TAK",
+          "candidate_attribute_percentile": 99.674267,
+          "candidate_count_at_or_above": 2,
+          "candidate_effective_coefficient": 0.42105263157894735,
+          "candidate_rating": 89,
+          "current_attribute_percentile": 99.348534,
+          "current_effective_coefficient": 0.42105263157894735,
+          "current_rating": 88,
+          "rating_delta": 1,
+          "role": "PRIMARY UPGRADE DRIVER",
+          "score_contribution_change": 0.421052632,
+          "share_of_total_improvement_percent": 42.105263
+        },
+        {
+          "attribute": "BSH",
+          "candidate_attribute_percentile": 100.0,
+          "candidate_count_at_or_above": 1,
+          "candidate_effective_coefficient": 0.42105263157894735,
+          "candidate_rating": 90,
+          "current_attribute_percentile": 99.674267,
+          "current_effective_coefficient": 0.42105263157894735,
+          "current_rating": 89,
+          "rating_delta": 1,
+          "role": "PRIMARY UPGRADE DRIVER",
+          "score_contribution_change": 0.421052631,
+          "share_of_total_improvement_percent": 42.105263
+        },
+        {
+          "attribute": "SPD",
+          "candidate_attribute_percentile": 99.348534,
+          "candidate_count_at_or_above": 5,
+          "candidate_effective_coefficient": 0.15789473684210525,
+          "candidate_rating": 86,
+          "current_attribute_percentile": 98.371336,
+          "current_effective_coefficient": 0.15789473684210525,
+          "current_rating": 85,
+          "rating_delta": 1,
+          "role": "PRIMARY UPGRADE DRIVER",
+          "score_contribution_change": 0.157894736,
+          "share_of_total_improvement_percent": 15.789474
+        }
+      ],
+      "target_attribute_losses": []
+    },
+    "best_value": "PRICE CHECK REQUIRED",
+    "budget": "PRICE CHECK REQUIRED",
+    "current": "Chris Cole",
+    "premium": "Kip Lewis",
+    "reason": "alternative prices lack sufficient evidence"
+  },
+  {
+    "best_football": "Bray Hubbard",
+    "best_near_equivalent": {
+      "archetype": "Hybrid",
+      "card_id": "card:96dbd9e1a37747c6a19d",
+      "market_evidence": {
+        "dispersion_ratio": null,
+        "evidence_quality": "INSUFFICIENT",
+        "latest_observation": null,
+        "latest_price": null,
+        "observation_age_hours": null,
+        "observation_semantics": null,
+        "recent_range": null,
+        "risk_flags": [
+          "NO MARKET OBSERVATION"
+        ],
+        "sample_size": 0,
+        "statistics": {
+          "observation_count": 0,
+          "quality": "INSUFFICIENT"
+        }
+      },
+      "overall": 90,
+      "player_name": "Jay Green",
+      "rank_difference": 1,
+      "score_difference": -0.215,
+      "target_attribute_advantages": [
+        {
+          "attribute": "ZCV",
+          "candidate_attribute_percentile": 99.404762,
+          "candidate_count_at_or_above": 2,
+          "candidate_effective_coefficient": 0.21153846153846154,
+          "candidate_rating": 89,
+          "current_attribute_percentile": 100.0,
+          "current_effective_coefficient": 0.07,
+          "current_rating": 90,
+          "rating_delta": -1,
+          "role": "PRIMARY UPGRADE DRIVER",
+          "score_contribution_change": 12.526923077,
+          "share_of_total_improvement_percent": 5826.47585
+        },
+        {
+          "attribute": "PUR",
+          "candidate_attribute_percentile": 100.0,
+          "candidate_count_at_or_above": 1,
+          "candidate_effective_coefficient": 0.057692307692307696,
+          "candidate_rating": 86,
+          "current_attribute_percentile": 94.444444,
+          "current_effective_coefficient": 0.04,
+          "current_rating": 85,
+          "rating_delta": 1,
+          "role": "PRIMARY UPGRADE DRIVER",
+          "score_contribution_change": 1.561538462,
+          "share_of_total_improvement_percent": 726.296959
+        },
+        {
+          "attribute": "AWR",
+          "candidate_attribute_percentile": 100.0,
+          "candidate_count_at_or_above": 1,
+          "candidate_effective_coefficient": 0.10576923076923077,
+          "candidate_rating": 86,
+          "current_attribute_percentile": 38.888889,
+          "current_effective_coefficient": 0.1,
+          "current_rating": 77,
+          "rating_delta": 9,
+          "role": "PRIMARY UPGRADE DRIVER",
+          "score_contribution_change": 1.396153846,
+          "share_of_total_improvement_percent": 649.373882
+        }
+      ],
+      "target_attribute_losses": [
+        {
+          "attribute": "MCV",
+          "candidate_attribute_percentile": 100.0,
+          "candidate_count_at_or_above": 1,
+          "candidate_effective_coefficient": 0.057692307692307696,
+          "candidate_rating": 89,
+          "current_attribute_percentile": 100.0,
+          "current_effective_coefficient": 0.15,
+          "current_rating": 89,
+          "rating_delta": 0,
+          "role": "LOSS/OFFSET",
+          "score_contribution_change": -8.215384615,
+          "share_of_total_improvement_percent": -3821.109123
+        },
+        {
+          "attribute": "PRS",
+          "candidate_attribute_percentile": null,
+          "candidate_count_at_or_above": null,
+          "candidate_effective_coefficient": 0,
+          "candidate_rating": 76,
+          "current_attribute_percentile": 100.0,
+          "current_effective_coefficient": 0.05,
+          "current_rating": 84,
+          "rating_delta": -8,
+          "role": "LOSS/OFFSET",
+          "score_contribution_change": -4.2,
+          "share_of_total_improvement_percent": -1953.488372
+        },
+        {
+          "attribute": "ACC",
+          "candidate_attribute_percentile": 100.0,
+          "candidate_count_at_or_above": 1,
+          "candidate_effective_coefficient": 0.09615384615384616,
+          "candidate_rating": 89,
+          "current_attribute_percentile": 100.0,
+          "current_effective_coefficient": 0.11,
+          "current_rating": 90,
+          "rating_delta": -1,
+          "role": "LOSS/OFFSET",
+          "score_contribution_change": -1.342307692,
+          "share_of_total_improvement_percent": -624.329159
+        }
+      ]
+    },
+    "best_value": "PRICE CHECK REQUIRED",
+    "budget": "PRICE CHECK REQUIRED",
+    "current": "Dashawn Spears",
+    "premium": "Bray Hubbard",
+    "reason": "alternative prices lack sufficient evidence"
+  },
+  {
+    "best_football": "Kobe Black",
+    "best_near_equivalent": {
+      "archetype": "Field",
+      "card_id": "card:7cd97d2fa34571827964",
+      "market_evidence": {
+        "dispersion_ratio": null,
+        "evidence_quality": "INSUFFICIENT",
+        "latest_observation": null,
+        "latest_price": null,
+        "observation_age_hours": null,
+        "observation_semantics": null,
+        "recent_range": null,
+        "risk_flags": [
+          "NO MARKET OBSERVATION"
+        ],
+        "sample_size": 0,
+        "statistics": {
+          "observation_count": 0,
+          "quality": "INSUFFICIENT"
+        }
+      },
+      "overall": 87,
+      "player_name": "Dontay Joyner",
+      "rank_difference": 1,
+      "score_difference": -0.529412,
+      "target_attribute_advantages": [
+        {
+          "attribute": "SPD",
+          "candidate_attribute_percentile": 100.0,
+          "candidate_count_at_or_above": 4,
+          "candidate_effective_coefficient": 0.35294117647058826,
+          "candidate_rating": 89,
+          "current_attribute_percentile": 97.411003,
+          "current_effective_coefficient": 0.35294117647058826,
+          "current_rating": 87,
+          "rating_delta": 2,
+          "role": "PRIMARY UPGRADE DRIVER",
+          "score_contribution_change": 0.705882353,
+          "share_of_total_improvement_percent": 133.333274
+        },
+        {
+          "attribute": "MCV",
+          "candidate_attribute_percentile": 99.676375,
+          "candidate_count_at_or_above": 3,
+          "candidate_effective_coefficient": 0.0784313725490196,
+          "candidate_rating": 88,
+          "current_attribute_percentile": 92.23301,
+          "current_effective_coefficient": 0.0784313725490196,
+          "current_rating": 84,
+          "rating_delta": 4,
+          "role": "PRIMARY UPGRADE DRIVER",
+          "score_contribution_change": 0.31372549,
+          "share_of_total_improvement_percent": 59.259233
+        }
+      ],
+      "target_attribute_losses": [
+        {
+          "attribute": "ZCV",
+          "candidate_attribute_percentile": 99.352751,
+          "candidate_count_at_or_above": 5,
+          "candidate_effective_coefficient": 0.39215686274509803,
+          "candidate_rating": 88,
+          "current_attribute_percentile": 99.676375,
+          "current_effective_coefficient": 0.39215686274509803,
+          "current_rating": 89,
+          "rating_delta": -1,
+          "role": "LOSS/OFFSET",
+          "score_contribution_change": -0.392156862,
+          "share_of_total_improvement_percent": -74.074041
+        },
+        {
+          "attribute": "PRS",
+          "candidate_attribute_percentile": 99.676375,
+          "candidate_count_at_or_above": 7,
+          "candidate_effective_coefficient": 0.09803921568627451,
+          "candidate_rating": 85,
+          "current_attribute_percentile": 100.0,
+          "current_effective_coefficient": 0.09803921568627451,
+          "current_rating": 86,
+          "rating_delta": -1,
+          "role": "LOSS/OFFSET",
+          "score_contribution_change": -0.098039216,
+          "share_of_total_improvement_percent": -18.51851
+        }
+      ]
+    },
+    "best_value": "PRICE CHECK REQUIRED",
+    "budget": "PRICE CHECK REQUIRED",
+    "current": "Cormani McClain",
+    "premium": "Kobe Black",
+    "reason": "alternative prices lack sufficient evidence"
+  }
+]

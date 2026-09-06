@@ -1,0 +1,14 @@
+{
+  "op_x_029_tests": {"passed": 14, "status": "PASS"},
+  "targeted_regression_suite": {"passed": 66, "status": "PASS"},
+  "broader_pytest": {
+    "status": "BLOCKED_DURING_COLLECTION",
+    "reason": "pre-existing E.15 acquisition test imports requests, absent from workspace environment",
+    "new_op_x_029_failure": false
+  },
+  "changed_file_ruff": "PASS",
+  "diff_check": "PASS",
+  "fixture_real_history_separation": "PASS",
+  "frozen_op_x_028_files_modified": false,
+  "real_observations_written": 0
+}

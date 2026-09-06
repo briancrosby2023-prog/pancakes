@@ -25,7 +25,7 @@ from operation_pancake.evidence.ingestion import (
 def main() -> None:
     parser = argparse.ArgumentParser(prog="operation-pancake")
     parser.add_argument("--root", type=Path, default=Path.cwd())
-    sub = parser.add_subparsers(dest="command", required=True)
+    sub = parser.add_subparsers(dest="command")
     search = sub.add_parser("search")
     search.add_argument("query", nargs="?", default="")
     search.add_argument("--position")
@@ -52,8 +52,40 @@ def main() -> None:
     acquire_import.add_argument("--dry-run", action="store_true")
     acquire_sub.add_parser("status")
     acquire_sub.add_parser("conflicts")
+    gm_run = sub.add_parser("gm-run")
+    gm_run.add_argument("--output-dir", type=Path)
+    roster_run = sub.add_parser("roster-run")
+    roster_run.add_argument("--output-dir", type=Path)
+    market_run = sub.add_parser("market-run")
+    market_run.add_argument("--output-dir", type=Path)
+    market_run.add_argument("--as-of", default="2026-08-20T00:00:00-07:00")
+    market_run.add_argument("--input", type=Path, action="append", default=[])
     args = parser.parse_args()
+    if args.command is None:
+        parser.print_help()
+        return
     root = args.root.resolve()
+    if args.command == "gm-run":
+        from operation_pancake.production import build_production_outputs
+
+        print(json.dumps(build_production_outputs(root, args.output_dir), indent=2, sort_keys=True))
+        return
+    if args.command == "roster-run":
+        from operation_pancake.production import build_roster_outputs
+
+        print(json.dumps(build_roster_outputs(root, args.output_dir), indent=2, sort_keys=True))
+        return
+    if args.command == "market-run":
+        from operation_pancake.production import build_market_outputs
+
+        print(
+            json.dumps(
+                build_market_outputs(root, args.output_dir, args.as_of, args.input),
+                indent=2,
+                sort_keys=True,
+            )
+        )
+        return
     index = build_evidence_index(root)
     state_path = root / "data/evidence/ingestion_state.json"
     ingestor = BulkManifestIngestor(index, IngestionState.load(state_path))

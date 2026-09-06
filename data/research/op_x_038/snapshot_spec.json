@@ -1,0 +1,16 @@
+{
+  "partial_success": true,
+  "production_persist_requires_real_scope": true,
+  "repeat_safe": true,
+  "steps": [
+    "load active campaigns",
+    "ingest export",
+    "resolve exact identities",
+    "validate",
+    "append/deduplicate",
+    "update sufficiency",
+    "run Opportunity Monitor",
+    "emit material alerts",
+    "update event coverage"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "canonical_schema": "operation_pancake.production.market.CanonicalMarketObservation",
+  "required_for_canonical_ingestion": ["exact or unique identity", "positive whole price", "CUT_COINS", "source", "timezone-aware observed_at", "observation_type", "provenance"],
+  "semantics": {
+    "CFB_FAN_PUBLIC_DISPLAY": {
+      "admissible_for_buy": false,
+      "description": "platform-selected price shown on the public player list/detail surface",
+      "missing": ["source observation timestamp", "explicit lowest-listing/median/completed-sale definition", "sample count"],
+      "use": "price-request prioritization and manual cross-check only"
+    },
+    "USER_SUPPLIED_OBSERVATION": {
+      "admissible_for_buy": "only after exact identity, freshness, sample, risk, football, affordability, and contextual valuation controls",
+      "description": "timestamped manual evidence with explicit provenance and price meaning"
+    }
+  }
+}

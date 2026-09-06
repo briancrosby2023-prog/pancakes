@@ -1,0 +1,104 @@
+{
+  "captured_at": "2026-08-20T21:01:00-07:00",
+  "starting_bankroll": 300000,
+  "target_profit": 50000,
+  "market_conditions": {
+    "assessment": "Public current market evidence is insufficient to support an actionable +50K trade without inventing a live entry price. CFB.FAN's public Prices Dashboard describes real-time market data, but its detailed Price Tracker redirects to authentication in the accessible research environment. The supplied controlling evidence says overall training was about 28.32 coins/training and Season 2 eligible 83s had already experienced major demand shocks, so chasing generic 83s is not defensible.",
+    "current_public_price_tracker_access": "Detailed CFB.FAN Price Tracker redirected to sign-in; no authentication bypass attempted.",
+    "known_control_card": "Bryson Washington 88 OVR: supplied prior evidence had ~172,400 25-sale median and ~175,400 then-lowest listing; PASS unless materially changed. No new authenticated price history was available to establish a change."
+  },
+  "routes_tested": [
+    "single-card flips via public/indexed CUT27 market evidence",
+    "multiple smaller flips",
+    "training arbitrage by OVR quicksell ladder",
+    "83+ Premium Training Pack conversion",
+    "Season 2 collection/scheme-component distortion",
+    "promo-driven supply/training compression",
+    "Platinum quicksell-floor arbitrage concept"
+  ],
+  "candidates_examined": [
+    {
+      "route": "generic 83 OVR training",
+      "training_value": 800,
+      "known_market_context": "Controlling evidence places generic training-equivalent target around 25.2K while eligible Season 2 83s were observed around 62K-72.5K.",
+      "verdict": "REJECT as a generic buy; collection premium overwhelms training value on affected cards."
+    },
+    {
+      "route": "86/87 training",
+      "training_values": {"86": 2400, "87": 3500},
+      "verdict": "WATCH only. Current actionable listings were not recoverable from the public unauthenticated price surface, so no live CPT edge can be proved."
+    },
+    {
+      "route": "Bryson Washington 88 control flip",
+      "prior_lowest_listing": 175400,
+      "prior_25_sale_median": 172400,
+      "verdict": "PASS on supplied evidence because entry was above median before tax."
+    },
+    {
+      "route": "Platinum quicksell-floor arbitrage",
+      "verdict": "Mechanically attractive if a Platinum is listed below its fixed coin quicksell value, but no current actionable sub-floor listing was independently observed; therefore not promoted to BUY."
+    }
+  ],
+  "rejected_candidates": [
+    "Bryson Washington 88 at ~175.4K prior listing: entry above ~172.4K median and tax destroys flip margin.",
+    "Inflated Season 2 eligible 83s at 62K-72.5K: not training buys; already crowded collection-demand trade.",
+    "83+ Premium Training Pack as bankroll-growth route: probability distribution remains insufficient for defensible EV and jackpot dependence is prohibited.",
+    "Any card requiring an inferred current BIN from stale/indexed snippets rather than an observed actionable price."
+  ],
+  "qualified_opportunities": [],
+  "best_move": "WAIT",
+  "buy_threshold": "No card-specific live BUY threshold can be defended from the accessible current evidence. For a flip, require an observed actionable entry sufficiently below a recent completed-sale distribution that 0.90 x conservative exit - buy price remains positive with meaningful margin and adequate liquidity. For training, require observed CPT materially below the ~28.32 controlling market level and a separately validated profitable conversion route.",
+  "exit_target": null,
+  "tax_assumption": 0.10,
+  "expected_net_profit": 0,
+  "capital_required": 0,
+  "bankroll_exposure": 0.0,
+  "liquidity": "Preserved; 300K remains liquid under WAIT.",
+  "confidence": "HIGH that no BUY meets the requested evidence standard from the data legitimately accessible in this run; LOW confidence that no opportunity exists in-game, because authenticated/live price-history visibility is incomplete.",
+  "risks": [
+    "The CUT27 market can change faster than indexed web results.",
+    "Detailed CFB.FAN Price Tracker is authentication-gated in this environment.",
+    "Listings and completed sales must not be conflated.",
+    "Collection-driven 83 prices can look like momentum opportunities while being poor training value.",
+    "Forcing a trade to hit +50K would violate the evidence standard."
+  ],
+  "training_analysis": {
+    "verified_cut27_standard_quicksell_values": {"83": 800, "84": 1160, "85": 1680, "86": 2400, "87": 3500, "88": 5100},
+    "controlling_current_overall_cpt": 28.32,
+    "implied_prices_at_28_32_cpt": {"83": 22656, "84": 32851.2, "85": 47577.6, "86": 67968, "87": 99120, "88": 144432},
+    "assessment": "These are valuation reference points, not observed live listings. A training BUY requires an actual listing below the relevant reference and a justified use for the training. College Kickoff compression was not independently measurable from the accessible public price history."
+  },
+  "collection_analysis": {
+    "assessment": "Season 2 collection demand has already repriced affected 83s sharply according to supplied evidence. No newly discovered underpriced scheme component with live completed-sale support was found. Do not chase the obvious 83 trade."
+  },
+  "pack_analysis": {
+    "route": "83+ Premium Training Pack",
+    "known_cost_from prior Pancake evidence": 3000,
+    "equivalent_coin_cost_at_28_32_cpt": 84960,
+    "gross_sale_break_even_after_10pct_tax": 94400,
+    "probability_evidence": "Insufficient for defensible EV in this run.",
+    "verdict": "PASS / NO DEFENSIBLE EV. At 28.32 CPT the pack consumes ~84,960 coin-equivalent training and requires ~94,400 gross sale value merely to break even after 10% tax."
+  },
+  "sources": [
+    {
+      "title": "[CUT 27] Player Training Quicksell Values - CFB.FAN",
+      "url": "https://cfb.fan/forums/forum/ultimate-team-4/topic/cut-27-training-player-quicksell-coin-values-7207/",
+      "supports": "83=800, 84=1160, 85=1680, 86=2400, 87=3500, 88=5100 standard training quicksells"
+    },
+    {
+      "title": "CFB 27 Ultimate Team Quicksell Values (Platinum and Core) - CollegeFootball.gg",
+      "url": "https://collegefootball.gg/cfb-27-ultimate-team-quicksell-values-platinum-and-core/",
+      "supports": "Independent corroboration of CUT27 standard training ladder and Platinum coin quicksell concept"
+    },
+    {
+      "title": "CFB.FAN Prices Dashboard",
+      "url": "https://cfb.fan/prices/",
+      "supports": "CFB.FAN describes the dashboard as showing CUT27 market activity in real time; detailed tracker link was authentication-gated during this run"
+    },
+    {
+      "title": "User-supplied LIVE 300K → 350K MONEY HUNT controlling evidence",
+      "supports": "~28.32 overall CPT, eligible 83 shock examples 62K-72.5K, generic 83 training-equivalent target ~25.2K, Bryson Washington prior sale distribution"
+    }
+  ],
+  "final_action": "WAIT. Preserve the full ~300K bankroll. Do not buy generic inflated 83s, do not roll the 83+ Premium Training Pack at ~28.32 CPT without probability evidence, and do not force a card flip without a current actionable entry plus completed-sale exit evidence. The next actionable trigger is a verified live undercut with tax-adjusted margin and adequate sales velocity, or a measured training compression materially below the current ~28.32 CPT baseline paired with a validated conversion route."
+}

@@ -1,0 +1,105 @@
+[
+  {
+    "BEST PLAYER": {
+      "status": "PRICE CHECK REQUIRED"
+    },
+    "BEST VALUE": {
+      "status": "INSUFFICIENT MARKET DATA"
+    },
+    "BUDGET UPGRADE": {
+      "reason": "no budget supplied",
+      "status": "PRICE CHECK REQUIRED"
+    },
+    "PREMIUM UPGRADE": {
+      "status": "INSUFFICIENT MARKET DATA"
+    },
+    "position_family": "CB"
+  },
+  {
+    "BEST PLAYER": {
+      "status": "PRICE CHECK REQUIRED"
+    },
+    "BEST VALUE": {
+      "status": "INSUFFICIENT MARKET DATA"
+    },
+    "BUDGET UPGRADE": {
+      "reason": "no budget supplied",
+      "status": "PRICE CHECK REQUIRED"
+    },
+    "PREMIUM UPGRADE": {
+      "status": "INSUFFICIENT MARKET DATA"
+    },
+    "position_family": "G"
+  },
+  {
+    "BEST PLAYER": {
+      "status": "PRICE CHECK REQUIRED"
+    },
+    "BEST VALUE": {
+      "status": "INSUFFICIENT MARKET DATA"
+    },
+    "BUDGET UPGRADE": {
+      "reason": "no budget supplied",
+      "status": "PRICE CHECK REQUIRED"
+    },
+    "PREMIUM UPGRADE": {
+      "status": "INSUFFICIENT MARKET DATA"
+    },
+    "position_family": "OT"
+  },
+  {
+    "BEST PLAYER": {
+      "card_id": "card:f26cd7a4829a431b0af5",
+      "observation_type": "PUBLIC_DISPLAY_PRICE",
+      "observed_price": 888000,
+      "pancake_score": 87.125,
+      "player_name": "Bray Hubbard",
+      "position_family": "S",
+      "position_rank": 1,
+      "relative_market_value": null,
+      "relative_value_reason": "fewer than two priced cards in position family",
+      "risk_flags": [
+        "STALE PRICE",
+        "SINGLE OBSERVATION",
+        "INSUFFICIENT DATA"
+      ],
+      "training_economics": {
+        "coin_quicksell_floor": null,
+        "coins_per_training": null,
+        "effective_downside": null,
+        "overall": 89,
+        "program": "Season 1",
+        "source": "src/operation_pancake/research/cfb27_op_x_012.py",
+        "status": "UNSUPPORTED",
+        "training_value": null
+      }
+    },
+    "BEST VALUE": {
+      "status": "INSUFFICIENT MARKET DATA"
+    },
+    "BUDGET UPGRADE": {
+      "reason": "no budget supplied",
+      "status": "PRICE CHECK REQUIRED"
+    },
+    "PREMIUM UPGRADE": {
+      "status": "INSUFFICIENT MARKET DATA"
+    },
+    "position_family": "S"
+  },
+  {
+    "BEST PLAYER": {
+      "status": "PRICE CHECK REQUIRED"
+    },
+    "BEST VALUE": {
+      "status": "INSUFFICIENT MARKET DATA"
+    },
+    "BUDGET UPGRADE": {
+      "reason": "no budget supplied",
+      "status": "PRICE CHECK REQUIRED"
+    },
+    "PREMIUM UPGRADE": {
+      "status": "INSUFFICIENT MARKET DATA"
+    },
+    "position_family": "SAM"
+  }
+]

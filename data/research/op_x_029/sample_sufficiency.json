@@ -1,0 +1,7 @@
+{
+  "EARLY": "fewer than 4 observations, fewer than 3 times, under 24h span, or over 48h age",
+  "INSUFFICIENT": "fewer than 2 observations/times, unresolved identity, or future timestamp",
+  "STRONG": "at least 8 observations, 5 times, 72h span, latest <=12h, dispersion <=15%",
+  "USABLE": "at least 4 observations, 3 times, 24h span, meaningful semantics, latest <=24h",
+  "rationale": "thresholds require independent temporal breadth and resist rapid duplicate checks"
+}

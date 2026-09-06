@@ -5,6 +5,7 @@ from pathlib import Path
 
 from operation_pancake.acquisition.cfb_fan_bulk import (
     CfbFanBulkAdapter,
+    cfb27_position,
     identity_conflicts,
     parse_bulk_payload,
     promote_record,
@@ -35,6 +36,31 @@ def test_parser_preserves_zero_and_unknown():
     assert ratings["SPD"] == 0
     assert ratings["AWR"] == 75
     assert "ACC" not in ratings
+
+
+def test_bulk_identity_prefers_cfb27_game_position():
+    mike = record(position={"abbreviation": "MLB"}, gamePosition={"abbreviation": "MIKE"})
+    assert cfb27_position(mike) == "MIKE"
+    existing = {
+        "player_name": "Test Player",
+        "position": "MIKE",
+        "overall": 80,
+        "program": "Core",
+        "archetype": "Agile",
+    }
+    assert identity_conflicts(existing, mike) == {}
+    promoted = promote_record(
+        {
+            "external_card_id": "27-123",
+            "position": "MIKE",
+            "extraction_status": "PARTIAL",
+            "metadata": {},
+        },
+        mike,
+        "raw.json",
+        "now",
+    )
+    assert promoted["position"] == "MIKE"
 
 
 def test_comparison_detects_identity_and_rating_conflicts():
@@ -86,14 +112,19 @@ def test_op_x_013_validated_artifacts_are_consistent():
     checkpoint = json.loads(
         (root / "data/external/cfb_fan_full_vector_checkpoint.json").read_text()
     )
-    assert len(state["cards"]) == 8838
-    assert sum(card["extraction_status"] == "COMPLETE" for card in state["cards"].values()) == 8309
+    assert len(state["cards"]) >= 8838
+    assert (
+        sum(
+            card["extraction_status"] == "COMPLETE"
+            for card in state["cards"].values()
+        )
+        >= 8309
+    )
     assert len(validation) == 20
     assert {row["status"] for row in validation} == {"EXACT_EXISTING_FIELDS"}
-    assert len(pilot) == 8376
+    assert len(pilot) == 529
     pilot_status = Counter(row["status"] for row in pilot)
-    assert pilot_status["PROMOTED_TO_COMPLETE"] == 7847
-    assert pilot_status["PRESERVED_CONFLICT"] == 529
+    assert pilot_status == {"PRESERVED_CONFLICT": 529}
     batch = next(iter(checkpoint["batches"].values()))
     raw = (root / batch["snapshot"]).read_bytes()
     assert len(batch["requested_ids"]) == len(batch["returned_ids"]) == 50

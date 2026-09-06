@@ -1,0 +1,42 @@
+{
+  "candidate_signals": [
+    "days_to_event",
+    "price_trend",
+    "sale_volume_acceleration",
+    "listing_supply_change",
+    "spread",
+    "volatility",
+    "training_efficiency",
+    "collection_eligibility",
+    "scheme_eligibility",
+    "ovr_tier",
+    "football_value_percentile",
+    "discovery_tier",
+    "scarcity",
+    "near_equivalent_availability",
+    "program_release_age",
+    "market_drawdown"
+  ],
+  "reason": "no labeled historical market windows",
+  "rejected": [],
+  "tested": [],
+  "untested": [
+    "days_to_event",
+    "price_trend",
+    "sale_volume_acceleration",
+    "listing_supply_change",
+    "spread",
+    "volatility",
+    "training_efficiency",
+    "collection_eligibility",
+    "scheme_eligibility",
+    "ovr_tier",
+    "football_value_percentile",
+    "discovery_tier",
+    "scarcity",
+    "near_equivalent_availability",
+    "program_release_age",
+    "market_drawdown"
+  ],
+  "validated": []
+}

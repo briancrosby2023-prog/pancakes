@@ -1,6 +1,6 @@
 {
   "C": {
-    "cards": 122,
+    "cards": 315,
     "maximum_gap_days": 9,
     "mean_days_between_release_days": 3.5,
     "position_ceiling_replacements": [
@@ -245,11 +245,6 @@
         "ovr": 79
       },
       {
-        "card_id": "102026556",
-        "date": "07/01/2026",
-        "ovr": 80
-      },
-      {
         "card_id": "27-102026556",
         "date": "07/01/2026",
         "ovr": 80
@@ -490,11 +485,6 @@
         "ovr": 84
       },
       {
-        "card_id": "9021692",
-        "date": "07/01/2026",
-        "ovr": 84
-      },
-      {
         "card_id": "27-2023669",
         "date": "07/01/2026",
         "ovr": 85
@@ -543,14 +533,19 @@
     "release_days": 13
   },
   "CB": {
-    "cards": 23,
-    "maximum_gap_days": 6,
-    "mean_days_between_release_days": 2.3333,
+    "cards": 863,
+    "maximum_gap_days": 3,
+    "mean_days_between_release_days": 1.4483,
     "position_ceiling_replacements": [
       {
         "card_id": "27-801022750",
         "date": "07/01/2026",
         "ovr": 87
+      },
+      {
+        "card_id": "27-800022750",
+        "date": "2026-07-01T18:00:18.080429Z",
+        "ovr": 88
       },
       {
         "card_id": "27-110026099",
@@ -593,12 +588,12 @@
         "ovr": 88
       }
     ],
-    "release_days": 19
+    "release_days": 30
   },
   "DT": {
-    "cards": 15,
-    "maximum_gap_days": 24,
-    "mean_days_between_release_days": 15,
+    "cards": 635,
+    "maximum_gap_days": 7,
+    "mean_days_between_release_days": 2.8,
     "position_ceiling_replacements": [
       {
         "card_id": "27-2000985",
@@ -659,14 +654,102 @@
         "card_id": "27-9023028",
         "date": "07/01/2026",
         "ovr": 85
+      },
+      {
+        "card_id": "27-2023028",
+        "date": "2026-07-01T18:00:18.094465Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-200000747",
+        "date": "2026-07-01T18:00:18.099334Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-250006073",
+        "date": "2026-07-10T17:35:37.598522Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-250000116",
+        "date": "2026-07-17T17:35:45.464623Z",
+        "ovr": 86
+      },
+      {
+        "card_id": "27-250022001",
+        "date": "2026-07-20T17:35:57.842440Z",
+        "ovr": 86
+      },
+      {
+        "card_id": "27-240021049",
+        "date": "2026-07-22T17:36:00.436193Z",
+        "ovr": 86
+      },
+      {
+        "card_id": "27-240018763",
+        "date": "2026-07-25T14:36:14.095176Z",
+        "ovr": 87
+      },
+      {
+        "card_id": "27-213026172",
+        "date": "2026-08-04T15:08:04.115161Z",
+        "ovr": 87
+      },
+      {
+        "card_id": "27-280024459",
+        "date": "2026-08-07T17:35:44.936385Z",
+        "ovr": 87
+      },
+      {
+        "card_id": "27-270003763",
+        "date": "2026-08-12T17:35:46.901287Z",
+        "ovr": 88
       }
     ],
-    "release_days": 3
+    "release_days": 16
+  },
+  "FB": {
+    "cards": 28,
+    "maximum_gap_days": 8,
+    "mean_days_between_release_days": 3.75,
+    "position_ceiling_replacements": [
+      {
+        "card_id": "27-9009968",
+        "date": "2026-07-01T18:00:18.072860Z",
+        "ovr": 80
+      },
+      {
+        "card_id": "27-102026052",
+        "date": "2026-07-01T18:00:18.078110Z",
+        "ovr": 80
+      },
+      {
+        "card_id": "27-2009968",
+        "date": "2026-07-01T18:00:18.078578Z",
+        "ovr": 80
+      },
+      {
+        "card_id": "27-102026917",
+        "date": "2026-07-01T18:00:18.079590Z",
+        "ovr": 80
+      },
+      {
+        "card_id": "27-240206423",
+        "date": "2026-07-02T16:46:08.324755Z",
+        "ovr": 83
+      },
+      {
+        "card_id": "27-212026052",
+        "date": "2026-07-14T17:47:29.160447Z",
+        "ovr": 86
+      }
+    ],
+    "release_days": 9
   },
   "FS": {
-    "cards": 23,
-    "maximum_gap_days": 13,
-    "mean_days_between_release_days": 4.625,
+    "cards": 400,
+    "maximum_gap_days": 5,
+    "mean_days_between_release_days": 2.2105,
     "position_ceiling_replacements": [
       {
         "card_id": "27-2005767",
@@ -729,6 +812,26 @@
         "ovr": 85
       },
       {
+        "card_id": "27-2000917",
+        "date": "2026-07-01T18:00:18.065708Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-110002916",
+        "date": "2026-07-05T14:35:38.591369Z",
+        "ovr": 86
+      },
+      {
+        "card_id": "27-200000741",
+        "date": "2026-07-07T17:36:30.638437Z",
+        "ovr": 86
+      },
+      {
+        "card_id": "27-250021771",
+        "date": "2026-07-13T17:35:37.549281Z",
+        "ovr": 86
+      },
+      {
         "card_id": "27-213026309",
         "date": "07/14/2026",
         "ovr": 87
@@ -754,12 +857,12 @@
         "ovr": 88
       }
     ],
-    "release_days": 9
+    "release_days": 20
   },
   "HB": {
-    "cards": 23,
-    "maximum_gap_days": 7,
-    "mean_days_between_release_days": 2.4706,
+    "cards": 776,
+    "maximum_gap_days": 3,
+    "mean_days_between_release_days": 1.5556,
     "position_ceiling_replacements": [
       {
         "card_id": "27-201025824",
@@ -792,12 +895,65 @@
         "ovr": 90
       }
     ],
-    "release_days": 18
+    "release_days": 28
+  },
+  "K": {
+    "cards": 97,
+    "maximum_gap_days": 16,
+    "mean_days_between_release_days": 9.25,
+    "position_ceiling_replacements": [
+      {
+        "card_id": "27-9003954",
+        "date": "2026-07-01T18:00:18.060812Z",
+        "ovr": 81
+      },
+      {
+        "card_id": "27-2001048",
+        "date": "2026-07-01T18:00:18.066034Z",
+        "ovr": 82
+      },
+      {
+        "card_id": "27-9010297",
+        "date": "2026-07-01T18:00:18.073313Z",
+        "ovr": 82
+      },
+      {
+        "card_id": "27-2010297",
+        "date": "2026-07-01T18:00:18.079264Z",
+        "ovr": 82
+      },
+      {
+        "card_id": "27-9018260",
+        "date": "2026-07-01T18:00:18.080975Z",
+        "ovr": 82
+      },
+      {
+        "card_id": "27-2018260",
+        "date": "2026-07-01T18:00:18.085825Z",
+        "ovr": 82
+      },
+      {
+        "card_id": "27-9001048",
+        "date": "2026-07-01T18:00:18.098904Z",
+        "ovr": 82
+      },
+      {
+        "card_id": "27-251020055",
+        "date": "2026-07-17T17:35:45.464667Z",
+        "ovr": 82
+      },
+      {
+        "card_id": "27-240003954",
+        "date": "2026-07-22T17:36:00.436251Z",
+        "ovr": 84
+      }
+    ],
+    "release_days": 5
   },
   "LE": {
-    "cards": 19,
-    "maximum_gap_days": 14,
-    "mean_days_between_release_days": 5.2857,
+    "cards": 401,
+    "maximum_gap_days": 5,
+    "mean_days_between_release_days": 2.2105,
     "position_ceiling_replacements": [
       {
         "card_id": "27-2018641",
@@ -855,12 +1011,12 @@
         "ovr": 88
       }
     ],
-    "release_days": 8
+    "release_days": 20
   },
   "LG": {
-    "cards": 23,
-    "maximum_gap_days": 21,
-    "mean_days_between_release_days": 7,
+    "cards": 314,
+    "maximum_gap_days": 9,
+    "mean_days_between_release_days": 3.8182,
     "position_ceiling_replacements": [
       {
         "card_id": "27-2010722",
@@ -953,12 +1109,12 @@
         "ovr": 87
       }
     ],
-    "release_days": 7
+    "release_days": 12
   },
   "LT": {
-    "cards": 23,
-    "maximum_gap_days": 8,
-    "mean_days_between_release_days": 3.7,
+    "cards": 339,
+    "maximum_gap_days": 6,
+    "mean_days_between_release_days": 2.4667,
     "position_ceiling_replacements": [
       {
         "card_id": "27-9000496",
@@ -1021,6 +1177,31 @@
         "ovr": 85
       },
       {
+        "card_id": "27-2002569",
+        "date": "2026-07-01T18:00:18.068929Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-9008663",
+        "date": "2026-07-01T18:00:18.069924Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-2008663",
+        "date": "2026-07-01T18:00:18.077131Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-201014832",
+        "date": "2026-07-01T18:00:18.099385Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-9002569",
+        "date": "2026-07-01T18:00:18.099923Z",
+        "ovr": 85
+      },
+      {
         "card_id": "27-201002569",
         "date": "07/09/2026",
         "ovr": 86
@@ -1046,12 +1227,12 @@
         "ovr": 88
       }
     ],
-    "release_days": 11
+    "release_days": 16
   },
   "MLB": {
-    "cards": 23,
-    "maximum_gap_days": 11,
-    "mean_days_between_release_days": 3.3636,
+    "cards": 456,
+    "maximum_gap_days": 4,
+    "mean_days_between_release_days": 2,
     "position_ceiling_replacements": [
       {
         "card_id": "27-2006788",
@@ -1114,12 +1295,55 @@
         "ovr": 88
       }
     ],
-    "release_days": 12
+    "release_days": 22
+  },
+  "P": {
+    "cards": 79,
+    "maximum_gap_days": 13,
+    "mean_days_between_release_days": 9.25,
+    "position_ceiling_replacements": [
+      {
+        "card_id": "27-8020197",
+        "date": "2026-07-01T18:00:18.059996Z",
+        "ovr": 78
+      },
+      {
+        "card_id": "27-2030793",
+        "date": "2026-07-01T18:00:18.063375Z",
+        "ovr": 79
+      },
+      {
+        "card_id": "27-2001440",
+        "date": "2026-07-01T18:00:18.066633Z",
+        "ovr": 82
+      },
+      {
+        "card_id": "27-2032959",
+        "date": "2026-07-01T18:00:18.067947Z",
+        "ovr": 82
+      },
+      {
+        "card_id": "27-9020949",
+        "date": "2026-07-01T18:00:18.083298Z",
+        "ovr": 84
+      },
+      {
+        "card_id": "27-2020949",
+        "date": "2026-07-01T18:00:18.091120Z",
+        "ovr": 84
+      },
+      {
+        "card_id": "27-240003452",
+        "date": "2026-07-25T14:36:14.095225Z",
+        "ovr": 84
+      }
+    ],
+    "release_days": 5
   },
   "QB": {
-    "cards": 23,
-    "maximum_gap_days": 7,
-    "mean_days_between_release_days": 3,
+    "cards": 470,
+    "maximum_gap_days": 5,
+    "mean_days_between_release_days": 1.9091,
     "position_ceiling_replacements": [
       {
         "card_id": "27-9021429",
@@ -1167,6 +1391,11 @@
         "ovr": 86
       },
       {
+        "card_id": "27-250025962",
+        "date": "2026-07-10T17:35:37.598432Z",
+        "ovr": 86
+      },
+      {
         "card_id": "27-201033236",
         "date": "07/14/2026",
         "ovr": 88
@@ -1192,12 +1421,12 @@
         "ovr": 89
       }
     ],
-    "release_days": 15
+    "release_days": 23
   },
   "RE": {
-    "cards": 19,
-    "maximum_gap_days": 17,
-    "mean_days_between_release_days": 5.375,
+    "cards": 409,
+    "maximum_gap_days": 6,
+    "mean_days_between_release_days": 1.9545,
     "position_ceiling_replacements": [
       {
         "card_id": "27-2020312",
@@ -1250,6 +1479,36 @@
         "ovr": 85
       },
       {
+        "card_id": "27-9006335",
+        "date": "2026-07-01T18:00:18.064944Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-200023016",
+        "date": "2026-07-01T18:00:18.085745Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-240019061",
+        "date": "2026-07-11T14:35:48.907221Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-110002927",
+        "date": "2026-07-12T14:35:32.477266Z",
+        "ovr": 86
+      },
+      {
+        "card_id": "27-250020312",
+        "date": "2026-07-17T17:35:45.464746Z",
+        "ovr": 87
+      },
+      {
+        "card_id": "27-250020399",
+        "date": "2026-07-20T17:35:57.842430Z",
+        "ovr": 87
+      },
+      {
         "card_id": "27-201006335",
         "date": "07/21/2026",
         "ovr": 88
@@ -1265,12 +1524,12 @@
         "ovr": 89
       }
     ],
-    "release_days": 9
+    "release_days": 23
   },
   "RG": {
-    "cards": 15,
-    "maximum_gap_days": 16,
-    "mean_days_between_release_days": 9.75,
+    "cards": 321,
+    "maximum_gap_days": 6,
+    "mean_days_between_release_days": 3,
     "position_ceiling_replacements": [
       {
         "card_id": "27-9010063",
@@ -1316,14 +1575,59 @@
         "card_id": "27-9020985",
         "date": "07/01/2026",
         "ovr": 84
+      },
+      {
+        "card_id": "27-9009232",
+        "date": "2026-07-01T18:00:18.071455Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-2009232",
+        "date": "2026-07-01T18:00:18.077632Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-9019770",
+        "date": "2026-07-01T18:00:18.082090Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-200020637",
+        "date": "2026-07-01T18:00:18.084202Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-9023056",
+        "date": "2026-07-01T18:00:18.084990Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-2019770",
+        "date": "2026-07-01T18:00:18.089059Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-2023056",
+        "date": "2026-07-01T18:00:18.094518Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-250020985",
+        "date": "2026-07-13T17:35:37.549276Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-260019770",
+        "date": "2026-08-03T14:35:44.583978Z",
+        "ovr": 87
       }
     ],
-    "release_days": 5
+    "release_days": 15
   },
   "RT": {
-    "cards": 15,
-    "maximum_gap_days": 37,
-    "mean_days_between_release_days": 37,
+    "cards": 335,
+    "maximum_gap_days": 7,
+    "mean_days_between_release_days": 3.0833,
     "position_ceiling_replacements": [
       {
         "card_id": "27-2033840",
@@ -1389,14 +1693,81 @@
         "card_id": "27-9024640",
         "date": "07/01/2026",
         "ovr": 84
+      },
+      {
+        "card_id": "27-9007027",
+        "date": "2026-07-01T18:00:18.066476Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-9009038",
+        "date": "2026-07-01T18:00:18.071009Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-2007027",
+        "date": "2026-07-01T18:00:18.075526Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-2009038",
+        "date": "2026-07-01T18:00:18.077475Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-200002586",
+        "date": "2026-07-06T17:35:58.764519Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-250023934",
+        "date": "2026-07-13T17:35:37.549298Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-240007027",
+        "date": "2026-07-15T17:43:21.114638Z",
+        "ovr": 86
+      },
+      {
+        "card_id": "27-240001067",
+        "date": "2026-07-18T14:35:40.276967Z",
+        "ovr": 86
+      },
+      {
+        "card_id": "27-2110900009",
+        "date": "2026-07-28T17:48:33.424345Z",
+        "ovr": 87
+      },
+      {
+        "card_id": "27-270008086",
+        "date": "2026-07-29T17:43:51.420787Z",
+        "ovr": 87
+      },
+      {
+        "card_id": "27-260024640",
+        "date": "2026-07-31T14:35:44.677479Z",
+        "ovr": 87
+      },
+      {
+        "card_id": "27-280007550",
+        "date": "2026-08-07T17:35:44.936470Z",
+        "ovr": 87
       }
     ],
-    "release_days": 2
+    "release_days": 13
+  },
+  "SAM": {
+    "cards": 0,
+    "maximum_gap_days": null,
+    "mean_days_between_release_days": null,
+    "position_ceiling_replacements": [],
+    "release_days": 0
   },
   "SS": {
-    "cards": 23,
-    "maximum_gap_days": 13,
-    "mean_days_between_release_days": 4.375,
+    "cards": 406,
+    "maximum_gap_days": 8,
+    "mean_days_between_release_days": 2.2105,
     "position_ceiling_replacements": [
       {
         "card_id": "27-9007553",
@@ -1444,6 +1815,16 @@
         "ovr": 85
       },
       {
+        "card_id": "27-200019149",
+        "date": "2026-07-05T14:35:38.591447Z",
+        "ovr": 86
+      },
+      {
+        "card_id": "27-110000934",
+        "date": "2026-07-12T14:35:32.477323Z",
+        "ovr": 86
+      },
+      {
         "card_id": "27-240008068",
         "date": "07/15/2026",
         "ovr": 87
@@ -1469,12 +1850,12 @@
         "ovr": 90
       }
     ],
-    "release_days": 9
+    "release_days": 20
   },
   "TE": {
-    "cards": 23,
-    "maximum_gap_days": 14,
-    "mean_days_between_release_days": 3.5,
+    "cards": 512,
+    "maximum_gap_days": 4,
+    "mean_days_between_release_days": 1.8261,
     "position_ceiling_replacements": [
       {
         "card_id": "27-201010739",
@@ -1507,6 +1888,16 @@
         "ovr": 85
       },
       {
+        "card_id": "27-9021011",
+        "date": "2026-07-01T18:00:18.083343Z",
+        "ovr": 85
+      },
+      {
+        "card_id": "27-2021011",
+        "date": "2026-07-01T18:00:18.091201Z",
+        "ovr": 85
+      },
+      {
         "card_id": "27-200021195",
         "date": "07/06/2026",
         "ovr": 85
@@ -1527,6 +1918,26 @@
         "ovr": 86
       },
       {
+        "card_id": "27-240019293",
+        "date": "2026-07-18T14:35:40.276919Z",
+        "ovr": 86
+      },
+      {
+        "card_id": "27-250009353",
+        "date": "2026-07-20T17:35:57.842407Z",
+        "ovr": 86
+      },
+      {
+        "card_id": "27-240031547",
+        "date": "2026-07-22T17:36:00.436232Z",
+        "ovr": 86
+      },
+      {
+        "card_id": "27-110003066",
+        "date": "2026-07-26T14:35:49.395085Z",
+        "ovr": 86
+      },
+      {
         "card_id": "27-201018293",
         "date": "07/28/2026",
         "ovr": 89
@@ -1542,12 +1953,19 @@
         "ovr": 90
       }
     ],
-    "release_days": 13
+    "release_days": 24
+  },
+  "WILL": {
+    "cards": 0,
+    "maximum_gap_days": null,
+    "mean_days_between_release_days": null,
+    "position_ceiling_replacements": [],
+    "release_days": 0
   },
   "WR": {
-    "cards": 23,
-    "maximum_gap_days": 5,
-    "mean_days_between_release_days": 2.4706,
+    "cards": 1153,
+    "maximum_gap_days": 4,
+    "mean_days_between_release_days": 1.6154,
     "position_ceiling_replacements": [
       {
         "card_id": "27-201008726",
@@ -1575,6 +1993,6 @@
         "ovr": 89
       }
     ],
-    "release_days": 18
+    "release_days": 27
   }
 }

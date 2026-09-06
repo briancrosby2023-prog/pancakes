@@ -1,0 +1,16 @@
+{
+  "batch_size": "all 39 monitored cards may be included",
+  "secrets": "never accepted or persisted",
+  "supported_formats": [
+    "JSON",
+    "CSV"
+  ],
+  "workflow": [
+    "export/copy structured rows from ordinary browser",
+    "add exact canonical card IDs and campaign",
+    "import once",
+    "normalize through recorder firewall",
+    "review quarantined failures",
+    "append only accepted real rows"
+  ]
+}

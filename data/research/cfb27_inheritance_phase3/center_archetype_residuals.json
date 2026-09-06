@@ -1,20 +1,20 @@
 {
   "by_archetype": {
     "Agile": {
-      "mean_residual": 0.713854,
-      "n": 4
+      "mean_residual": 0.756639,
+      "n": 2
     },
     "Pass Protector": {
-      "mean_residual": 0.086828,
+      "mean_residual": 0.126886,
       "n": 20
     },
     "Raw Strength": {
-      "mean_residual": -0.248941,
+      "mean_residual": -0.22213,
       "n": 18
     }
   },
   "classification": "POSSIBLE_ARCHETYPE_OR_SELECTION_EFFECT",
   "decision": "NO_CORRECTION_PROMOTED",
   "limitation": "Sparse program/date/OVR cells prevent clean simultaneous causal control.",
-  "permutation_p_value_uncontrolled": 0.038961
+  "permutation_p_value_uncontrolled": 0.126873
 }

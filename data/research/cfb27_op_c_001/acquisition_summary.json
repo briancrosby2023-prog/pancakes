@@ -1,0 +1,33 @@
+{
+  "bulk_batches": 180,
+  "bulk_conflicts": 529,
+  "conflict_fields": {
+    "position": 529
+  },
+  "duplicate_source_ids_in_population": 0,
+  "endpoint": "https://cfb.fan/api/27/player-items/",
+  "failed_batches": 0,
+  "full_vector_coverage_percent": 94.014,
+  "full_vectors": 8309,
+  "ids_missing_from_responses": [],
+  "ids_requested": 8426,
+  "ids_returned": 8426,
+  "ids_unexpected_in_responses": [],
+  "partial_vectors": 529,
+  "pilot_statuses": {
+    "PRESERVED_CONFLICT": 529
+  },
+  "population": 8838,
+  "resume_cursor": "full-vector-priority-promoted-0",
+  "validation": {
+    "access_bypass": false,
+    "card_version_collapse": false,
+    "fabricated_metadata": false,
+    "full_to_partial_downgrade": false,
+    "guessed_ratings": false,
+    "ovr_derived_ratings": false,
+    "silent_conflicts": false,
+    "synthetic_vectors": false,
+    "unknown_zero_conversion": false
+  }
+}

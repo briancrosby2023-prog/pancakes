@@ -1,0 +1,60 @@
+{
+  "free_bnd_role_coverage": {
+    "after_status": "UNKNOWN",
+    "before_status": "UNKNOWN",
+    "new_evidence": [],
+    "reason": "Free/BND evidence absent",
+    "remaining_unknowns": [
+      "acquisition state"
+    ]
+  },
+  "moneyball_alternatives": {
+    "after_status": "UNCHANGED ROLE CANDIDATE",
+    "before_status": "2252 ROLE CANDIDATE relationships",
+    "new_evidence": [],
+    "reason": "No realized context promotes candidates to verified fit",
+    "remaining_unknowns": [
+      "deployment",
+      "equipped build",
+      "usage",
+      "acquisition state"
+    ]
+  },
+  "purchase_avoidance": {
+    "after_status": "UNKNOWN",
+    "before_status": "UNKNOWN",
+    "new_evidence": [],
+    "reason": "Acquisition and market evidence absent",
+    "remaining_unknowns": [
+      "acquisition state",
+      "market evidence"
+    ]
+  },
+  "roster_mismatches": {
+    "after_status": "UNKNOWN",
+    "before_status": "UNKNOWN",
+    "new_evidence": [],
+    "reason": "Deployment evidence absent",
+    "remaining_unknowns": [
+      "deployment"
+    ]
+  },
+  "roster_role_coverage": {
+    "after_status": "UNCHANGED UNKNOWN",
+    "before_status": "PARTIAL/CONTEXT REQUIRED",
+    "new_evidence": [],
+    "reason": "No observed deployment evidence",
+    "remaining_unknowns": [
+      "deployment"
+    ]
+  },
+  "zero_coin_improvements": {
+    "after_status": "UNKNOWN",
+    "before_status": "UNKNOWN",
+    "new_evidence": [],
+    "reason": "Acquisition state absent",
+    "remaining_unknowns": [
+      "acquisition state"
+    ]
+  }
+}

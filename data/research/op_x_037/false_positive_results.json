@@ -1,0 +1,45 @@
+{
+  "cases": {
+    "high_spread": {
+      "confidence": "LOW",
+      "reasons": [
+        "HIGH SPREAD"
+      ],
+      "state": "NO ACTION"
+    },
+    "low_liquidity": {
+      "confidence": "LOW",
+      "reasons": [
+        "LOW LIQUIDITY"
+      ],
+      "state": "NO ACTION"
+    },
+    "price_rise_without_volume": {
+      "confidence": "LOW",
+      "reasons": [
+        "NO VOLUME CONFIRMATION"
+      ],
+      "state": "NO ACTION"
+    },
+    "single_anomalous_sale": {
+      "confidence": "LOW",
+      "reasons": [
+        "INSUFFICIENT SALES",
+        "ANOMALOUS SINGLE OBSERVATION",
+        "NO VOLUME CONFIRMATION",
+        "LOW LIQUIDITY",
+        "HIGH SPREAD",
+        "CATALYST UNVERIFIED"
+      ],
+      "state": "NO ACTION"
+    },
+    "unverified_collection_rumor": {
+      "confidence": "LOW",
+      "reasons": [
+        "CATALYST UNVERIFIED"
+      ],
+      "state": "NO ACTION"
+    }
+  },
+  "policy": "prefer NO ACTION"
+}

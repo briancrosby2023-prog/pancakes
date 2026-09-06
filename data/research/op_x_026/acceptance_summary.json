@@ -1,0 +1,24 @@
+{
+  "acceptance_verdict": "ACCEPTED_WITH_DOCUMENTED_GAPS",
+  "as_of": "2026-08-20T12:00:00-07:00",
+  "branch": "agent/op-x-012-reconcile-artifacts",
+  "cli_entry_point": ".venv/Scripts/operation-pancake-gm.exe",
+  "implemented_product": "OP-X-025",
+  "operations": {
+    "budget_optimizer": "PASS_INDEPENDENT_BRUTE_FORCE",
+    "cli": "PASS",
+    "comparison": "PASS",
+    "freshness_and_risk": "PASS",
+    "manual_market": "PASS",
+    "moneyball": "PASS_WITHOUT_LIVE_BUY_THRESHOLDS",
+    "player_lookup": "PASS",
+    "research_production_firewall": "PASS",
+    "roster": "PASS"
+  },
+  "test_data_policy": "All OP-X-026 fixture prices are labeled TEST DATA.",
+  "unavailable": [
+    "automated live market acquisition",
+    "unqualified BUY from a single or stale observation",
+    "predictive LTD depreciation"
+  ]
+}

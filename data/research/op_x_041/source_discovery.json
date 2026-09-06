@@ -1,0 +1,34 @@
+{
+  "accepted": [
+    "OPX041-CFBFAN-RANKINGS",
+    "OPX041-CFBFAN-DEFENSE",
+    "OPX041-ERIC-PLAYBOOK-VIDEO",
+    "OPX041-ATHLON-ERIC-REPORT",
+    "OPX041-GAMESPOT-PLAYBOOKS",
+    "OPX041-EA-UT-DEEP-DIVE",
+    "OPX041-EA-AUG6-UPDATE"
+  ],
+  "rejected_or_limited": [
+    {
+      "reason": "Windows ACL startup failure",
+      "surface": "browser runtime"
+    },
+    {
+      "reason": "insufficient competitive provenance",
+      "surface": "generic listicles"
+    },
+    {
+      "reason": "historical only",
+      "surface": "historical CUT26 videos"
+    }
+  ],
+  "search_lanes": [
+    "current QB rankings",
+    "numerical QB thresholds",
+    "abilities",
+    "release preference",
+    "offensive playbooks",
+    "defensive playbooks",
+    "roster usage"
+  ]
+}

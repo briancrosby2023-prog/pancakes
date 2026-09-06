@@ -1,0 +1,29 @@
+{
+  "operation": "OP-X-020-RB",
+  "freeze": {"blind_outcomes_observed": false, "repository_head": "0075a7bbd21f38f660c5e534fd86ddcf6c933648", "timestamp": "2026-08-20T00:10:12.9128236-07:00"},
+  "model": {"id": "RB-M19-ARCH-001", "version": "v1.0", "applicability": "CFB25/26 HB populations", "formula": "sum(attribute * exact Madden 19 HB archetype weight) / sum(included weights)", "displayed_ovr_calibration": "none", "rounding": "none", "confidence": "exact CFB25 names; supported/hypothetical CFB26 role mappings"},
+  "provenance": {"source_id": "SRC-M19-001", "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view", "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5", "workbook_sheet": "Data Version", "workbook_rows": "22, 24:25"},
+  "weights": {
+    "Elusive Back": {"ACC": 13, "AGI": 11, "AWR": 8, "BCV": 10, "BTK": 6, "CAR": 11, "ELU": 10, "JKM": 9, "SPD": 13, "SPM": 9},
+    "Power Back": {"ACC": 9, "AGI": 5, "AWR": 8, "BCV": 10, "BTK": 12, "CAR": 13, "SPD": 9, "SFA": 11, "STR": 10, "TRK": 13},
+    "Receiving Back": {"ACC": 12, "AGI": 8, "AWR": 9, "BCV": 5, "CAR": 7, "CTH": 14, "CIT": 8, "ELU": 4, "JKM": 5, "RLS": 1, "SRR": 10, "SPD": 12, "SPM": 5}
+  },
+  "source_weight_totals": {"Elusive Back": 100, "Power Back": 100, "Receiving Back": 100},
+  "archetype_mappings": {
+    "CFB25": {
+      "Elusive Back": {"model_archetype": "Elusive Back", "status": "EXACT", "basis": "exact name"},
+      "Power Back": {"model_archetype": "Power Back", "status": "EXACT", "basis": "exact name"},
+      "Receiving Back": {"model_archetype": "Receiving Back", "status": "EXACT", "basis": "exact name"}
+    },
+    "CFB26": {
+      "East/West Playmaker": {"model_archetype": "Elusive Back", "status": "SUPPORTED", "basis": "lateral/elusive runner role"},
+      "Elusive Bruiser": {"model_archetype": "Elusive Back", "status": "HYPOTHETICAL", "basis": "hybrid label; elusive component selected without fitting"},
+      "Contact Seeker": {"model_archetype": "Power Back", "status": "SUPPORTED", "basis": "contact/power runner role"},
+      "Backfield Threat": {"model_archetype": "Receiving Back", "status": "SUPPORTED", "basis": "backfield receiving role"},
+      "North/South Receiver": {"model_archetype": "Receiving Back", "status": "SUPPORTED", "basis": "receiving-back role"},
+      "North/South Blocker": {"model_archetype": "Power Back", "status": "HYPOTHETICAL", "basis": "four-card downhill/blocking role; no exact historical HB blocker vector"}
+    }
+  },
+  "exclusions": {},
+  "scientific_control": "Frozen before any CFB25/26 HB score, residual, or ranking outcome was calculated."
+}

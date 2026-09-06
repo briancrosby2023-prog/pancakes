@@ -1,0 +1,26 @@
+{
+  "cross_position_raw_score_comparison": false,
+  "football_value_index_weights": {
+    "archetype_percentile": 0.15,
+    "confidence": 0.05,
+    "higher_ovr_victim_rate": 0.1,
+    "near_equivalent_selectivity": 0.05,
+    "ovr_efficiency": 0.25,
+    "position_percentile": 0.2,
+    "same_ovr_dominance": 0.15,
+    "weighted_attribute_scarcity": 0.05
+  },
+  "limitations": [
+    "ranking-model value, not proven gameplay value",
+    "partial evidence is confidence-disclosed"
+  ],
+  "normalization": "within production position family; archetype components within position/archetype",
+  "ovr_efficiency_selected": "position score percentile minus position OVR percentile",
+  "price_independent": true,
+  "tested_formulations": [
+    "percentile gap",
+    "same-archetype/same-OVR median residual",
+    "rank/OVR percentile gap"
+  ],
+  "universe": 8184
+}

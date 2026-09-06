@@ -1,0 +1,47 @@
+{
+  "campaign_types": [
+    "EVENT WINDOW",
+    "NEAR-EQUIVALENT ALTERNATIVES",
+    "PANCAKE TOP 10",
+    "PANCAKE TOP 25",
+    "PERSONAL HIT LIST",
+    "ROSTER UPGRADES",
+    "SCHEME / COLLECTION",
+    "SEASON TRANSITION",
+    "TRAINING BASKET"
+  ],
+  "deduplication": "exact card ID across active campaigns; reasons/sources preserved",
+  "fields": [
+    "campaign_id",
+    "campaign_type",
+    "schema_version",
+    "cards",
+    "reason",
+    "start_time",
+    "end_time",
+    "desired_cadence_minutes",
+    "observation_types_requested",
+    "event_id",
+    "priority",
+    "active",
+    "last_successful_observation",
+    "next_due_observation",
+    "sample_sufficiency"
+  ],
+  "priority_tiers": {
+    "TIER 1": [
+      "Personal Hit List",
+      "Top 10",
+      "roster upgrades"
+    ],
+    "TIER 2": [
+      "near-equivalent alternatives",
+      "remaining Top 25"
+    ],
+    "TIER 3": [
+      "collection",
+      "training",
+      "discovery"
+    ]
+  }
+}

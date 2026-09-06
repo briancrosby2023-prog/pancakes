@@ -1,0 +1,31 @@
+{
+  "contradicting_publishers": [
+    "diorhightower"
+  ],
+  "contradicting_sources": 1,
+  "findings": [
+    {
+      "classification": "SUPPORTS 85",
+      "publisher_id": "diorhightower",
+      "scope": "high-level position ranking",
+      "source_id": "OPX041-CFBFAN-RANKINGS",
+      "threshold": 85
+    },
+    {
+      "classification": "CONTRADICTS THRESHOLD CONCEPT",
+      "publisher_id": "diorhightower",
+      "scope": "budget-competitive recommendations below 85",
+      "source_id": "OPX042-CFBFAN-BUDGET",
+      "threshold": 81
+    }
+  ],
+  "supporting_independent_sources": 1,
+  "supporting_publishers": [
+    "diorhightower"
+  ],
+  "threshold_values": [
+    81,
+    85
+  ],
+  "verdict": "CONTESTED / SOURCE-SPECIFIC"
+}

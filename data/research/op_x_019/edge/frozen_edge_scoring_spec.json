@@ -1,0 +1,45 @@
+{
+  "operation": "OP-X-019-EDGE",
+  "freeze": {
+    "blind_outcomes_observed": false,
+    "repository_head": "b6419ddc6caca909a4ad10c7b668b0ba3f6af6a4",
+    "timestamp": "2026-08-20T00:01:16.9244521-07:00"
+  },
+  "model": {
+    "id": "EDGE-M19-ARCH-001",
+    "version": "v1.0",
+    "applicability": "CFB25 DE and CFB26 EDGE populations",
+    "formula": "sum(attribute * exact Madden 19 DE archetype weight) / sum(included weights)",
+    "displayed_ovr_calibration": "none",
+    "rounding": "none",
+    "confidence": "strong historical prior; renamed CFB26 roles are supported mappings"
+  },
+  "provenance": {
+    "source_id": "SRC-M19-001",
+    "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view",
+    "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+    "workbook_sheet": "Data Version",
+    "workbook_rows": "10:12"
+  },
+  "weights": {
+    "Power Rusher": {"ACC": 10, "AGI": 6, "AWR": 7, "POW": 3, "PRC": 7, "PMV": 23, "PUR": 7, "SPD": 7, "STR": 15, "TAK": 15},
+    "Run Stopper": {"ACC": 8, "AGI": 5, "AWR": 9, "BSH": 18, "FMV": 2, "POW": 3, "PRC": 9, "PMV": 2, "PUR": 9, "SPD": 5, "STR": 12, "TAK": 18},
+    "Speed Rusher": {"ACC": 14, "AGI": 9, "AWR": 7, "FMV": 23, "POW": 3, "PRC": 7, "PUR": 7, "SPD": 10, "STR": 5, "TAK": 15}
+  },
+  "source_weight_totals": {"Power Rusher": 100, "Run Stopper": 100, "Speed Rusher": 100},
+  "archetype_mappings": {
+    "CFB25": {
+      "Power Rusher": {"model_archetype": "Power Rusher", "status": "EXACT", "basis": "exact name"},
+      "Run Stopper": {"model_archetype": "Run Stopper", "status": "EXACT", "basis": "exact name"},
+      "Speed Rusher": {"model_archetype": "Speed Rusher", "status": "EXACT", "basis": "exact name"}
+    },
+    "CFB26": {
+      "Power Rusher": {"model_archetype": "Power Rusher", "status": "EXACT", "basis": "exact name"},
+      "Speed Rusher": {"model_archetype": "Speed Rusher", "status": "EXACT", "basis": "exact name"},
+      "Gap Specialist": {"model_archetype": "Run Stopper", "status": "SUPPORTED", "basis": "gap-control/run-stopping role"},
+      "Pure Power": {"model_archetype": "Power Rusher", "status": "SUPPORTED", "basis": "power-rush role"}
+    }
+  },
+  "exclusions": {},
+  "scientific_control": "Frozen before any CFB25 DE or CFB26 EDGE score, residual, or ranking outcome was calculated."
+}

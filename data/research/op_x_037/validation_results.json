@@ -1,0 +1,25 @@
+{
+  "event_order": [
+    "cut25-season-2",
+    "cut26-standouts",
+    "cut26-season-2"
+  ],
+  "folds": [
+    {
+      "test_event_id": "cut26-standouts",
+      "train_event_ids": [
+        "cut25-season-2"
+      ]
+    },
+    {
+      "test_event_id": "cut26-season-2",
+      "train_event_ids": [
+        "cut25-season-2",
+        "cut26-standouts"
+      ]
+    }
+  ],
+  "forecast_promoted": false,
+  "status": "VALIDATION BLOCKED \u2014 INSUFFICIENT HISTORICAL MARKET WINDOWS",
+  "sufficient_market_events": 0
+}

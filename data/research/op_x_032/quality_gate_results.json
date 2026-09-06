@@ -1,0 +1,28 @@
+{
+  "broad_pytest": {
+    "errors": 0,
+    "failed": 15,
+    "passed": 612,
+    "status": "PRE_EXISTING_FAILURES",
+    "warnings": 4
+  },
+  "changed_file_ruff": "PASS",
+  "cli_acceptance": {
+    "passed": 14,
+    "total": 14
+  },
+  "diff_check": "PASS",
+  "new_failures": 0,
+  "op_x_025_through_032": {
+    "passed": 77,
+    "status": "PASS"
+  },
+  "scientifically_intentional_unsupported": {
+    "diagnostic_only_te_pure_blocker": 11,
+    "unsupported_qb_pure_runner": 85
+  },
+  "targeted_op_x_032_and_dependency": {
+    "passed": 12,
+    "status": "PASS"
+  }
+}

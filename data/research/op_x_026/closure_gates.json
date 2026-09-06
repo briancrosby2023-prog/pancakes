@@ -1,0 +1,18 @@
+{
+  "all_required_gates_pass": false,
+  "gates": {
+    "acceptance": "success",
+    "diffcheck": "success",
+    "focused": "success",
+    "persistence": "success",
+    "persistence_tests": "success",
+    "pytest": "failure",
+    "ruff": "failure",
+    "science": "success"
+  },
+  "milestone": "OP-X-026E",
+  "pre_persistence_head": "50d4aefd37e251ff42eb31f3f52606dcaaad2c52",
+  "prior_run_555_evidence_preserved": true,
+  "run_id": "33040494483",
+  "trigger_sha": "50d4aefd37e251ff42eb31f3f52606dcaaad2c52"
+}

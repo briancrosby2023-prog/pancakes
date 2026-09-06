@@ -1,0 +1,17 @@
+{
+  "existing_evidence_index_extended": true,
+  "pipeline": [
+    "SOURCE",
+    "EXTRACTION",
+    "CLAIM",
+    "CONFIDENCE",
+    "CONSENSUS",
+    "KNOWLEDGE",
+    "DATABASE APPLICATION",
+    "GM DECISION"
+  ],
+  "serialized_evidence_counts": {
+    "knowledge_claims": 8,
+    "sources": 23
+  }
+}

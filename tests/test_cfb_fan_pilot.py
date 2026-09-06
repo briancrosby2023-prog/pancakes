@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from operation_pancake.acquisition.cfb_fan import PARSER_VERSION, parse_player_page
+from operation_pancake.acquisition.cfb_fan import parse_player_page
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE = ROOT / "data/external/cfb_fan_pilot_state.json"
@@ -61,21 +61,8 @@ def test_player_parser_captures_full_center_vector() -> None:
         "Raw Strength",
     )
     assert set(card.displayed_ratings) == {
-        "SPD",
-        "ACC",
-        "AGI",
-        "COD",
-        "AWR",
-        "STR",
-        "TGH",
-        "RBK",
-        "RBF",
-        "RBP",
-        "PBK",
-        "PBF",
-        "PBP",
-        "LBK",
-        "IBL",
+        "SPD", "ACC", "AGI", "COD", "AWR", "STR", "TGH", "RBK", "RBF", "RBP",
+        "PBK", "PBF", "PBP", "LBK", "IBL",
     }
     assert card.displayed_ratings["STR"] == 85
 
@@ -94,7 +81,9 @@ def test_pilot_report_is_staging_only_and_rate_safe() -> None:
         "new_external_cards": 5,
     }
     assert report["failed_pages"] == []
-    assert report["parser_version"] == PARSER_VERSION
+    # This checked-in report is a historical freeze. Its parser version must
+    # describe the parser that produced it, not whatever parser is current now.
+    assert report["parser_version"] == "cfb-fan-html-v1"
     assert "<=12 requests/minute" in report["request_observations"]
 
 

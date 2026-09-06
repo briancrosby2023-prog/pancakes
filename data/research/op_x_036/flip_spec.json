@@ -1,0 +1,10 @@
+{
+  "default_minimum_profit": 1,
+  "default_minimum_roi": 0.0,
+  "requires": [
+    "qualified completed-sale history",
+    "explicit tax/fee rate",
+    "exact identity"
+  ],
+  "warning": "a low listing relative to an unqualified display price is not a FLIP"
+}

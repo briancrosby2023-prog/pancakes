@@ -3,14 +3,10 @@ name: OP-X-013 Historical Database Acquisition
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - agent/op-x-012-reconcile-artifacts
     paths:
-      - '.github/workflows/op-x-013-historical-acquisition.yml'
-  pull_request:
-    branches: [main]
-    types: [opened, synchronize, reopened]
-    paths:
-      - '.github/op-x-013-trigger.txt'
+      - data/operational_memory/cfb26_launch_request.json
 
 concurrency:
   group: op-x-013-historical-acquisition
@@ -20,7 +16,7 @@ permissions:
   contents: write
 
 jobs:
-  acquire-cfb26:
+  acquire:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -30,19 +26,33 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install acquisition dependencies
-        run: python -m pip install requests beautifulsoup4
-      - name: Acquire CFB26 all-position population
-        run: python scripts/op_x_013_historical_acquisition.py --seasons 26 --pause 0.12
-      - name: Persist OP-X-013 CFB26 acquisition checkpoint
-        if: always()
-        shell: bash
+      - name: Configure durable checkpoint commits
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/research/op_x_013 2>/dev/null || true
+      - name: Run proven CFB27 population recipe for CFB26 with durable checkpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          for end_page in 50 100 150 200 250 300 350 400 450 500 550 600 650 676; do
+            python scripts/run_cfb27_population_v3.py --season 26 --last-page "$end_page"
+            git add data/external/cfb_fan_26_population_v3_checkpoint.json \
+                    data/external/cfb_fan_26_population_state.json \
+                    data/external/raw/cfb_fan_26_global_listings 2>/dev/null || true
+            if ! git diff --cached --quiet; then
+              git commit -m "Checkpoint CFB26 proven-path through page ${end_page}"
+              git push origin HEAD:agent/op-x-012-reconcile-artifacts
+            fi
+          done
+      - name: Persist any final CFB26 proven-path state
+        if: always()
+        shell: bash
+        run: |
+          git add data/external/cfb_fan_26_population_v3_checkpoint.json \
+                  data/external/cfb_fan_26_population_state.json \
+                  data/external/raw/cfb_fan_26_global_listings 2>/dev/null || true
           if ! git diff --cached --quiet; then
-            git commit -m 'Checkpoint OP-X-013 CFB26 all-position acquisition'
+            git commit -m 'Checkpoint CFB26 proven-path population acquisition'
             git push origin HEAD:agent/op-x-012-reconcile-artifacts
           fi
       - name: Upload CFB26 acquisition evidence
@@ -50,39 +60,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: op-x-013-cfb26-acquisition
-          path: data/research/op_x_013
-          if-no-files-found: warn
-
-  acquire-cfb25:
-    needs: acquire-cfb26
-    runs-on: ubuntu-latest
-    timeout-minutes: 90
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: agent/op-x-012-reconcile-artifacts
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Install acquisition dependencies
-        run: python -m pip install requests beautifulsoup4
-      - name: Acquire CFB25 all-position population
-        run: python scripts/op_x_013_historical_acquisition.py --seasons 25 --pause 0.12
-      - name: Persist OP-X-013 CFB25 acquisition checkpoint
-        if: always()
-        shell: bash
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/research/op_x_013 2>/dev/null || true
-          if ! git diff --cached --quiet; then
-            git commit -m 'Checkpoint OP-X-013 CFB25 all-position acquisition'
-            git push origin HEAD:agent/op-x-012-reconcile-artifacts
-          fi
-      - name: Upload CFB25 acquisition evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: op-x-013-cfb25-acquisition
-          path: data/research/op_x_013
+          path: |
+            data/external/cfb_fan_26_population_v3_checkpoint.json
+            data/external/cfb_fan_26_population_state.json
+            data/external/raw/cfb_fan_26_global_listings
           if-no-files-found: warn

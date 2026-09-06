@@ -1,0 +1,138 @@
+{
+  "GM RECOMMENDATIONS": {
+    "blocker": "prices absent for value-qualified recommendations",
+    "evidence": "quality priorities and replacements generated from real roster",
+    "executable_entry_point": "RosterGMEngine.replacements/strength_and_priorities",
+    "next_action": "supply candidate price/resale/budget or connect market ingestion",
+    "status": "COMPLETE",
+    "tests": "replacement, role tradeoff, grouping, and budget tests"
+  },
+  "LTD ENGINE": {
+    "blocker": "market data absent",
+    "evidence": "supported downside/current-state interface; prediction withheld",
+    "executable_entry_point": "operation-pancake market-run",
+    "next_action": "define only after source coverage",
+    "status": "PARTIAL",
+    "tests": "OP-X-023 targeted market production tests"
+  },
+  "MARKET INGESTION": {
+    "blocker": "no trustworthy source data",
+    "evidence": "8 real observations ingested; no live structured acquisition",
+    "executable_entry_point": "operation-pancake market-run",
+    "next_action": "acquire licensed/reliable prices",
+    "status": "PARTIAL",
+    "tests": "OP-X-023 targeted market production tests"
+  },
+  "MARKET RISK": {
+    "blocker": "price history absent",
+    "evidence": "staleness, sample, liquidity, spread, LTD, and insufficient-data flags implemented",
+    "executable_entry_point": "operation-pancake market-run",
+    "next_action": "build after longitudinal prices",
+    "status": "PARTIAL",
+    "tests": "OP-X-023 targeted market production tests"
+  },
+  "MODEL COVERAGE": {
+    "blocker": "QB Pure Runner intentionally unsupported",
+    "evidence": "15 named normalized families / 18 concrete model records",
+    "executable_entry_point": "build_model_registry",
+    "next_action": "prospective validation only",
+    "status": "COMPLETE",
+    "tests": "test_registry_covers_all_named_position_families_and_preserves_controls"
+  },
+  "MODEL ROUTING": {
+    "blocker": "none",
+    "evidence": "8,742 production routes; 85 unsupported; 11 diagnostic",
+    "executable_entry_point": "ProductionEngine.route",
+    "next_action": "add routes only when frozen evidence exists",
+    "status": "COMPLETE",
+    "tests": "test_router_has_explicit_unsupported_and_diagnostic_outcomes"
+  },
+  "PLAYER DATABASE": {
+    "blocker": "none",
+    "evidence": "8,838 unique canonical CFB27 cards loaded",
+    "executable_entry_point": "operation-pancake gm-run",
+    "next_action": "refresh through canonical acquisition pipeline",
+    "status": "COMPLETE",
+    "tests": "test_canonical_population_is_complete_and_identity_unique"
+  },
+  "PLAYER SCORING": {
+    "blocker": "654 records lack sufficient production evidence",
+    "evidence": "8184 current cards scored",
+    "executable_entry_point": "ProductionEngine.score",
+    "next_action": "improve canonical attribute completeness",
+    "status": "COMPLETE",
+    "tests": "test_score_is_deterministic_and_partial_coverage_is_disclosed"
+  },
+  "POSITION RANKINGS": {
+    "blocker": "cross-role interpretation requires disclosed context",
+    "evidence": "rankings for 15 families",
+    "executable_entry_point": "ProductionEngine.rank",
+    "next_action": "add role filters to UI",
+    "status": "COMPLETE",
+    "tests": "production GM tests"
+  },
+  "PRICE HISTORY": {
+    "blocker": "market ingestion absent",
+    "evidence": "8 timestamped observations persisted",
+    "executable_entry_point": "operation-pancake market-run",
+    "next_action": "start after price acquisition",
+    "status": "PARTIAL",
+    "tests": "OP-X-023 targeted market production tests"
+  },
+  "PROVENANCE/EVIDENCE": {
+    "blocker": "none",
+    "evidence": "model and card evidence paths persisted",
+    "executable_entry_point": "model_registry.json and scored population",
+    "next_action": "retain on every refresh",
+    "status": "COMPLETE",
+    "tests": "registry controls test"
+  },
+  "ROSTER EVALUATION": {
+    "blocker": "none for resolved roster; unresolved slots are explicitly excluded",
+    "evidence": "scoring, depth, strength, and starter evaluation executed",
+    "executable_entry_point": "RosterGMEngine and operation-pancake roster-run",
+    "next_action": "rerun automatically when roster identities change",
+    "status": "COMPLETE",
+    "tests": "roster scoring, depth, starter, percentile, and priority tests"
+  },
+  "ROSTER INGESTION": {
+    "blocker": "six identities need card-detail evidence",
+    "evidence": "18/24 identities defensibly resolved",
+    "executable_entry_point": "operation-pancake roster-run",
+    "next_action": "collect native OVR/program or external card ID for unresolved slots",
+    "status": "PARTIAL",
+    "tests": "identity matching and ambiguity rejection tests"
+  },
+  "TEST COVERAGE": {
+    "blocker": "automated live-market acquisition remains unavailable",
+    "evidence": "OP-X-026 acceptance plus production, registry, roster, market, and integration suites: 70 passed",
+    "executable_entry_point": "pytest tests/test_op_x_026_acceptance.py tests/test_op_x_025_gm_product.py",
+    "next_action": "retain acceptance coverage as product surfaces evolve",
+    "status": "PARTIAL",
+    "tests": "OP-X-026 targeted acceptance and relevant production suites"
+  },
+  "UPGRADE COMPARISON": {
+    "blocker": "none",
+    "evidence": "real-card persisted demonstration",
+    "executable_entry_point": "ProductionEngine.compare",
+    "next_action": "surface through user interface",
+    "status": "COMPLETE",
+    "tests": "test_comparison_and_optional_value_never_invent_price"
+  },
+  "USER-FACING INTERFACE": {
+    "blocker": "no interactive roster editor; CLI is the accepted surface",
+    "evidence": "installed operation-pancake-gm entry point accepted for help, failures, player, compare, price, budget, roster, and price-check",
+    "executable_entry_point": "operation-pancake-gm",
+    "next_action": "add interactive editing only when product requirements justify it",
+    "status": "COMPLETE",
+    "tests": "OP-X-026 installed CLI acceptance"
+  },
+  "VALUE/MONEYBALL": {
+    "blocker": "canonical market export has zero rows",
+    "evidence": "production calculations executed; all current prices stale",
+    "executable_entry_point": "operation-pancake market-run",
+    "next_action": "connect trustworthy market prices",
+    "status": "PARTIAL",
+    "tests": "OP-X-023 targeted market production tests"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "as_of": "2026-08-20T00:00:00-07:00",
+  "live_acquisition_blocker": "public dashboard content is client-rendered; no repository-established structured API or reproducible payload contract",
+  "prohibited_actions_not_attempted": [
+    "authentication bypass",
+    "anti-bot evasion",
+    "invented API",
+    "fabricated price"
+  ],
+  "sources": {
+    "CFB_FAN_PUBLIC": {
+      "semantics": "dashboard advertises real-time market; repository observations are public display prices, not completed sales",
+      "status": "PUBLIC_CLIENT_RENDERED_LIVE_DASHBOARD; AUTOMATED PAYLOAD NOT ESTABLISHED",
+      "url": "https://cfb.fan/prices/"
+    },
+    "REPOSITORY_SNAPSHOT": {
+      "path": "data/research/cfb27_op_x_003/market_observations.json",
+      "status": "INGESTED_REAL_STALE_OBSERVATIONS"
+    },
+    "USER_SUPPLIED": {
+      "status": "PRODUCTION JSON/CSV INGESTION READY"
+    }
+  },
+  "supplied_input_files": []
+}

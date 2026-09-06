@@ -1,0 +1,131 @@
+name: E.14 Quality Gate
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'agent/op-x-012-reconcile-artifacts'
+
+concurrency:
+  group: e14-quality-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install project and development tools
+        run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
+
+      - name: Run Ruff
+        run: python -m ruff check .
+
+      - name: Derive Alpha diagnostics
+        run: |
+          python scripts/generate_cfb27_alpha_readiness.py
+          python scripts/inspect_cfb27_v3_checkpoint.py
+
+      - name: Execute canonical E.14
+        run: python scripts/run_cfb27_e14.py
+
+      - name: Verify canonical population and evidence matrix
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path('data/research/cfb27_e14/evidence_matrix.json')
+          if not p.is_file() or not p.stat().st_size:
+              raise SystemExit('canonical evidence_matrix.json missing or empty')
+          d = json.loads(p.read_text())
+          pop = d.get('population', {})
+          count = pop.get('input_records')
+          if count != 8838:
+              raise SystemExit(f'canonical population mismatch: {count!r} != 8838')
+
+          text = p.read_text()
+          for attribute in ('BSH', 'PRC', 'SPD', 'PMV', 'FMV'):
+              if attribute not in text:
+                  raise SystemExit(f'required E.14 attribute missing: {attribute}')
+          PY
+
+      - name: Refresh deterministic research artifacts
+        run: |
+          python scripts/refresh_cfb27_inheritance_phase1.py
+          python scripts/generate_cfb27_op_c_001.py
+          python scripts/generate_cfb27_op_x_002.py
+          python scripts/generate_cfb27_op_x_003.py
+          python scripts/generate_cfb27_op_x_012.py
+          python scripts/generate_cfb27_phase2_analysis.py
+          python scripts/generate_cfb27_phase3_analysis.py
+          python scripts/generate_cfb27_phase5_analysis.py
+          python scripts/generate_cfb27_phase6_10_analysis.py
+          python scripts/generate_evidence_index.py
+          python scripts/generate_qb_model_comparison.py
+
+      - name: Run pytest
+        run: python -m pytest -ra -vv
+
+      - name: Verify Operation Pancake CLI
+        run: operation-pancake --help
+
+      - name: Publish canonical E.14 artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: e14-quality-gate-artifacts
+          path: |
+            data/research/cfb27_alpha/readiness.json
+            data/research/cfb27_alpha/v3_checkpoint_summary.json
+            data/research/cfb27_e14/execution_discovery.json
+            data/research/cfb27_e14/evidence_matrix.json
+          if-no-files-found: error
+
+      - name: Persist E.14 completion receipt
+        shell: bash
+        run: |
+          receipt='data/research/cfb27_e14/quality_gate_completion.json'
+          if [ -e "$receipt" ]; then
+            echo 'Durable E.14 completion receipt already exists.'
+            exit 0
+          fi
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          receipt = {
+              'section': 'OP-X-012E.14',
+              'status': 'COMPLETE',
+              'run_id': int(os.environ['GITHUB_RUN_ID']),
+              'run_number': int(os.environ['GITHUB_RUN_NUMBER']),
+              'validated_head_sha': os.environ['GITHUB_SHA'],
+              'alpha': 'PASS',
+              'ruff': 'PASS',
+              'pytest': 'PASS',
+              'cli': 'PASS',
+              'canonical_count': 8838,
+              'evidence_matrix': 'data/research/cfb27_e14/evidence_matrix.json',
+              'required_attributes': ['BSH', 'PRC', 'SPD', 'PMV', 'FMV'],
+              'artifacts_uploaded': True,
+          }
+          path = Path('data/research/cfb27_e14/quality_gate_completion.json')
+          path.write_text(json.dumps(receipt, indent=2) + '\n')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$receipt"
+          git commit -m 'Checkpoint E.14 quality gate completion'
+          git push

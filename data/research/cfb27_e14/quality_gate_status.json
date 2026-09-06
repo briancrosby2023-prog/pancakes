@@ -1,0 +1,28 @@
+{
+  "section": "OP-X-012E.14",
+  "run_id": 33022371712,
+  "run_number": 296,
+  "validated_head_sha": "3634e34af606527bd2a90ba6a69842793e02fcad",
+  "status": "INCOMPLETE",
+  "first_unresolved_failure": "ruff",
+  "gates": {
+    "install": "success",
+    "ruff": "failure",
+    "alpha": "success",
+    "e14": "success",
+    "evidence": "success",
+    "refresh": "success",
+    "pytest": "success",
+    "cli": "success",
+    "artifacts": "success"
+  },
+  "canonical_count_required": 8838,
+  "required_attributes": [
+    "BSH",
+    "PRC",
+    "SPD",
+    "PMV",
+    "FMV"
+  ],
+  "e15_started": false
+}

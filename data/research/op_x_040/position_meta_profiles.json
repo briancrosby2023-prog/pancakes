@@ -1,0 +1,123 @@
+{
+  "C": {
+    "criteria": [],
+    "position": "C",
+    "status": "UNKNOWN \u2014 RESEARCH REQUIRED",
+    "supported_thresholds": []
+  },
+  "CB": {
+    "criteria": [],
+    "position": "CB",
+    "status": "UNKNOWN \u2014 RESEARCH REQUIRED",
+    "supported_thresholds": []
+  },
+  "DT": {
+    "criteria": [],
+    "position": "DT",
+    "status": "UNKNOWN \u2014 RESEARCH REQUIRED",
+    "supported_thresholds": []
+  },
+  "EDGE": {
+    "criteria": [],
+    "position": "EDGE",
+    "status": "UNKNOWN \u2014 RESEARCH REQUIRED",
+    "supported_thresholds": []
+  },
+  "FB": {
+    "criteria": [],
+    "position": "FB",
+    "status": "UNKNOWN \u2014 RESEARCH REQUIRED",
+    "supported_thresholds": []
+  },
+  "G": {
+    "criteria": [],
+    "position": "G",
+    "status": "UNKNOWN \u2014 RESEARCH REQUIRED",
+    "supported_thresholds": []
+  },
+  "K/P": {
+    "criteria": [],
+    "position": "K/P",
+    "status": "UNKNOWN \u2014 RESEARCH REQUIRED",
+    "supported_thresholds": []
+  },
+  "MIKE": {
+    "criteria": [],
+    "position": "MIKE",
+    "status": "UNKNOWN \u2014 RESEARCH REQUIRED",
+    "supported_thresholds": []
+  },
+  "OT": {
+    "criteria": [],
+    "position": "OT",
+    "status": "UNKNOWN \u2014 RESEARCH REQUIRED",
+    "supported_thresholds": []
+  },
+  "QB": {
+    "criteria": [
+      {
+        "claim_id": "OPX040-CLAIM-003",
+        "confidence": "HIGH",
+        "contradictions": [],
+        "criterion_type": "ABILITY REQUIREMENT",
+        "evidence_timestamp": "2026-08-20T12:00:00+00:00",
+        "extraction": "PAGE TEXT",
+        "fact_type": "DATABASE OBSERVATION",
+        "formation": null,
+        "game": "CFB27",
+        "position": "QB",
+        "predicate": "ability_effect",
+        "provenance": "https://cfb.fan/abilities/dot/",
+        "publication_date": null,
+        "role": "POCKET",
+        "scheme": null,
+        "scope": "GENERAL COMPETITIVE META",
+        "season": null,
+        "source_id": "OPX040-CFBFAN-DOT",
+        "source_tier": 2,
+        "source_type": "WEB",
+        "status": "STRONG EVIDENCE",
+        "subject": "Dot!",
+        "superseded_by": null,
+        "threshold": null,
+        "valid_from": null,
+        "valid_until": null,
+        "value": "Accuracy boost for open receivers with feet set and a clean pocket; effect varies by tier",
+        "video_timestamp": null
+      }
+    ],
+    "position": "QB",
+    "status": "EVIDENCE AVAILABLE",
+    "supported_thresholds": []
+  },
+  "RB": {
+    "criteria": [],
+    "position": "RB",
+    "status": "UNKNOWN \u2014 RESEARCH REQUIRED",
+    "supported_thresholds": []
+  },
+  "SAFETY": {
+    "criteria": [],
+    "position": "SAFETY",
+    "status": "UNKNOWN \u2014 RESEARCH REQUIRED",
+    "supported_thresholds": []
+  },
+  "SAM": {
+    "criteria": [],
+    "position": "SAM",
+    "status": "UNKNOWN \u2014 RESEARCH REQUIRED",
+    "supported_thresholds": []
+  },
+  "TE": {
+    "criteria": [],
+    "position": "TE",
+    "status": "UNKNOWN \u2014 RESEARCH REQUIRED",
+    "supported_thresholds": []
+  },
+  "WR": {
+    "criteria": [],
+    "position": "WR",
+    "status": "UNKNOWN \u2014 RESEARCH REQUIRED",
+    "supported_thresholds": []
+  }
+}

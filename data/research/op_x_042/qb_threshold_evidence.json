@@ -1,0 +1,22 @@
+{
+  "ability_equip_requirements": [
+    {
+      "ability": "Dot!",
+      "attribute": "DAC",
+      "scope": "CFB27 archetype requirement; not CUT item equip proof",
+      "threshold": 98,
+      "tier": "Platinum"
+    }
+  ],
+  "source_specific": [
+    {
+      "attribute": "THP",
+      "threshold": 85
+    },
+    {
+      "attribute": "MAC",
+      "threshold": 85
+    }
+  ],
+  "supported_meta_thresholds": []
+}

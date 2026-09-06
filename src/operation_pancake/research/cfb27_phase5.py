@@ -67,6 +67,14 @@ ATTRIBUTE_ALIASES = {
 }
 
 
+def _parse_release_date(value: str) -> datetime:
+    """Accept legacy M/D/Y and canonical ISO-8601 release timestamps."""
+    try:
+        return datetime.strptime(value, "%m/%d/%Y")
+    except ValueError:
+        return datetime.fromisoformat(value.replace("Z", "+00:00")).replace(tzinfo=None)
+
+
 def load_inventories(root: Path) -> dict[str, dict]:
     result = {}
     for game in GAMES:
@@ -372,7 +380,7 @@ def capability_chronology(cards: list[dict], proximity: dict) -> dict:
         raw_date = card.get("release_date")
         if not raw_date:
             continue
-        release = datetime.strptime(raw_date, "%m/%d/%Y").date().isoformat()
+        release = _parse_release_date(raw_date).date().isoformat()
         key = (row["position"], row["archetype"], row["ability"], row["tier"])
         candidate = {
             "position": key[0],

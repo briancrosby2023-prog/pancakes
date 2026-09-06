@@ -1,0 +1,63 @@
+{
+  "operation": "OP-X-018",
+  "freeze": {
+    "blind_outcomes_observed": false,
+    "repository_head": "44dbd9f7bcca87f62ad654f5dec124cbeaaba745",
+    "timestamp": "2026-08-19T23:52:17.0990680-07:00"
+  },
+  "model": {
+    "id": "WR-M19-ARCH-001",
+    "version": "v1.0",
+    "confidence": "strong historical prior; cross-generation mappings are explicitly graded",
+    "formula": "sum(attribute * exact Madden 19 archetype weight) / sum(included weights)",
+    "missing_attribute_rule": "omit unavailable weighted attributes and renormalize the denominator",
+    "displayed_ovr_calibration": "none",
+    "rounding": "none; retain full-precision latent score for ranking"
+  },
+  "provenance": {
+    "source_id": "SRC-M19-001",
+    "origin": "Madden 19 XML-derived attribute weights credited to Teutonic",
+    "guide_url": "https://forums.operationsports.com/forums/forum/football/madden-nfl-football/862218-guide-weightings-towards-the-ovr-for-each-attribute-at-every-position-archetype",
+    "image_url": "https://i.imgur.com/iLPIamw.jpg",
+    "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view",
+    "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5",
+    "image_sha256": "fea8891288bf668ad8e35db2c4d7b49f35fcdefdbaff49b862f06a0ae6a1273c",
+    "workbook_sheet": "Data Version",
+    "workbook_rows": "75:78"
+  },
+  "attribute_map": {
+    "Acceleration": "ACC", "Agility": "AGI", "Awareness": "AWR",
+    "BreakTackle": "BTK", "Carrying": "CAR", "Catching": "CTH",
+    "CatchInTraffic": "CIT", "DeepRouteRunning": "DRR", "Elusiveness": "ELU",
+    "Juke": "JKM", "Jumping": "JMP", "MediumRouteRunning": "MRR",
+    "Release": "RLS", "ShortRouteRunning": "SRR", "SpectacularCatch": "SPC",
+    "Speed": "SPD", "Spin": "SPM", "StiffArm": "SFA", "Strength": "STR",
+    "Trucking": "TRK"
+  },
+  "weights": {
+    "Deep Threat": {"ACC": 12, "AGI": 8, "AWR": 9, "CTH": 12, "CIT": 7, "DRR": 15, "ELU": 2, "JKM": 1, "JMP": 1, "MRR": 6, "RLS": 9, "SPC": 4, "SPD": 12, "SPM": 1},
+    "Possession": {"ACC": 8, "AGI": 6, "AWR": 7, "BTK": 1, "CAR": 2, "CTH": 14, "CIT": 15, "ELU": 1, "JMP": 3, "MRR": 10, "RLS": 5, "SRR": 13, "SPC": 2, "SPD": 8, "SFA": 2, "STR": 2, "TRK": 1},
+    "Red Zone": {"ACC": 9, "AGI": 7, "AWR": 10, "BTK": 1, "CTH": 13, "CIT": 10, "JMP": 5, "MRR": 5, "RLS": 10, "SRR": 9, "SPC": 9, "SPD": 9, "SFA": 1, "STR": 2, "TRK": 1},
+    "Slot": {"ACC": 12, "AGI": 7, "AWR": 10, "BTK": 1, "CAR": 1, "CTH": 13, "CIT": 14, "DRR": 3, "ELU": 2, "JKM": 1, "MRR": 9, "SRR": 16, "SPD": 10, "SPM": 1}
+  },
+  "source_weight_totals": {"Deep Threat": 99, "Possession": 100, "Red Zone": 101, "Slot": 100},
+  "archetype_mappings": {
+    "CFB25": {
+      "Deep Threat": {"model_archetype": "Deep Threat", "status": "PROVEN", "basis": "exact name"},
+      "Route Runner": {"model_archetype": "Possession", "status": "HYPOTHESIS", "basis": "route-running emphasis; no exact historical label"},
+      "Physical": {"model_archetype": "Red Zone", "status": "SUPPORTED", "basis": "physical/contested-catch role and Red Zone strength/jump/catch profile"},
+      "Slot": {"model_archetype": "Slot", "status": "PROVEN", "basis": "exact name"}
+    },
+    "CFB26": {
+      "Speedster": {"model_archetype": "Deep Threat", "status": "SUPPORTED", "basis": "speed/deep-threat role"},
+      "Elusive Route Runner": {"model_archetype": "Slot", "status": "HYPOTHESIS", "basis": "short/intermediate route and elusiveness profile"},
+      "Route Artist": {"model_archetype": "Possession", "status": "HYPOTHESIS", "basis": "route-running emphasis"},
+      "Contested Specialist": {"model_archetype": "Red Zone", "status": "SUPPORTED", "basis": "contested-catch role"},
+      "Physical Route Runner": {"model_archetype": "Red Zone", "status": "HYPOTHESIS", "basis": "physical receiver role; terminology is not exact"},
+      "Gritty Possession": {"model_archetype": "Possession", "status": "SUPPORTED", "basis": "possession role and inherited CFB terminology"},
+      "Gadget Receiver": {"model_archetype": "Slot", "status": "HYPOTHESIS", "basis": "short-area/elusive role"},
+      "Legacy Receiver": {"model_archetype": null, "status": "UNSUPPORTED", "basis": "single special archetype; no defensible historical equivalent"}
+    }
+  },
+  "scientific_control": "Specification and mappings frozen before any CFB25/CFB26 WR outcome scoring or residual inspection. Madden weights are priors, not asserted CFB truth."
+}

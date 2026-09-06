@@ -1,0 +1,33 @@
+{
+  "buy_requirements_weakened": false,
+  "dimensions": [
+    "observations",
+    "distinct times",
+    "timespan",
+    "freshness",
+    "sale samples",
+    "listing samples",
+    "supply samples",
+    "volume samples",
+    "checkpoint coverage"
+  ],
+  "real_state": {
+    "distinct_times": 0,
+    "event_checkpoint_coverage": null,
+    "freshness_hours": null,
+    "listing_samples": 0,
+    "observations": 0,
+    "sale_samples": 0,
+    "state": "NO DATA",
+    "supply_samples": 0,
+    "timespan_hours": 0,
+    "volume_samples": 0
+  },
+  "states": [
+    "NO DATA",
+    "INSUFFICIENT",
+    "EARLY",
+    "USABLE",
+    "STRONG"
+  ]
+}

@@ -51,10 +51,9 @@ def test_prospective_validation_never_refits_or_reuses_training_ids() -> None:
 
 def test_release_and_moneyball_outputs_are_noncausal_and_complete() -> None:
     summary = _load("data/research/cfb27_inheritance_phase3/phase3_summary.json")
-    assert (
-        sum(row["new_cards"] for row in summary["release_chronology"]["daily"])
-        == summary["population"]["total"]
-    )
+    chronology = summary["release_chronology"]
+    dated = sum(row["new_cards"] for row in chronology["daily"])
+    assert dated + chronology["cards_without_release_date"] == summary["population"]["total"]
     assert summary["same_ovr_variance_and_cost"]["rows"]
     assert summary["gameplay_evidence_join_schema"]["claims_populated"] is False
     assert all("warning" in row for row in summary["same_ovr_variance_and_cost"]["rows"])
@@ -78,7 +77,14 @@ def test_phase3_rebuilds_deterministically() -> None:
     state = _load("data/external/cfb_fan_population_state.json")
     freeze = _load("data/research/cfb27_inheritance_phase3/phase3_frozen_snapshot.json")
     phase2 = _load("data/research/cfb27_inheritance_phase2/phase2_summary.json")
-    rebuilt = build_phase3_analysis(list(state["cards"].values()), freeze, phase2)
+    checkpoint = _load("data/external/cfb_fan_population_v3_checkpoint.json")
+    frozen_ids = set(checkpoint["cards"])
+    frozen_cards = [
+        card
+        for card in state["cards"].values()
+        if card["external_card_id"] in frozen_ids
+    ]
+    rebuilt = build_phase3_analysis(frozen_cards, freeze, phase2)
     assert (
         hashlib.sha256(json.dumps(rebuilt, sort_keys=True).encode()).hexdigest()
         == hashlib.sha256(

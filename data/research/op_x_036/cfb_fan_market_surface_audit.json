@@ -1,0 +1,36 @@
+{
+  "adapter_built": false,
+  "audit_date": "2026-08-20",
+  "automated_access": "NOT ESTABLISHED",
+  "manual_fallback": "OP-X-035 compact exact-card snapshot entry",
+  "player_page": {
+    "note": "market detail appears dynamic; browser network inspection could not start because a local deny-read pytest ACL terminated the browser runtime",
+    "price_request_contract": "NOT ESTABLISHED",
+    "public_html_verified": true,
+    "static_fields_observed": [
+      "exact card version",
+      "OVR",
+      "position",
+      "program",
+      "attributes",
+      "quicksell"
+    ],
+    "url_pattern": "https://cfb.fan/players/..."
+  },
+  "price_dashboard": {
+    "page_claim": "real-time CUT 27 market dashboard",
+    "public_html_verified": true,
+    "url": "https://cfb.fan/prices/"
+  },
+  "price_tracker": {
+    "authentication": "redirects to sign-in when unauthenticated",
+    "structured_contract": "NOT INSPECTED; no authentication or access control bypass attempted",
+    "url": "https://cfb.fan/price-tracker/"
+  },
+  "safety": [
+    "no guessed endpoints",
+    "no Cloudflare bypass",
+    "no authentication bypass",
+    "no rate-limit bypass"
+  ]
+}

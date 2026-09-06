@@ -1,0 +1,23 @@
+{
+  "adapter_built": false,
+  "browser_attempted": true,
+  "market_request_schema": "UNKNOWN",
+  "public_html_prior_verified": [
+    "exact player/version",
+    "OVR",
+    "position",
+    "program",
+    "attributes",
+    "quicksell"
+  ],
+  "reason": "ordinary browser runtime could not start because pre-existing deny-read pytest ACLs terminate the sandbox helper before navigation",
+  "result": "BLOCKED BEFORE NAVIGATION",
+  "safety": [
+    "no guessed endpoints",
+    "no Cloudflare bypass",
+    "no authentication bypass",
+    "no bulk crawl"
+  ],
+  "structured_contract_found": false,
+  "surface": "public individual player page Prices section"
+}

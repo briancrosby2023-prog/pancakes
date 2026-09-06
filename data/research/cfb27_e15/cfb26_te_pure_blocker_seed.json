@@ -1,0 +1,24 @@
+{
+  "phase":"OP-X-012E.15",
+  "season":26,
+  "source":"CFB.FAN",
+  "family":"TE",
+  "archetype":"Pure Blocker",
+  "purpose":"Cross-season archetype discrimination; not pooled training data",
+  "records":[
+    {"player":"Ryan Wolfer","overall":67,"oop_ovr":{"FB":68,"WR":62},"ratings":{"SPD":67,"AWR":60,"STR":67,"CTH":67,"CIT":60,"SRR":55,"MRR":53,"DRR":50},"source_url":"https://cfb.fan/players/30938-ryan-wolfer/"},
+    {"player":"Gabe Landers","overall":67,"oop_ovr":{"FB":68,"WR":61},"ratings":{"SPD":70,"AWR":60,"STR":67,"CTH":70,"CIT":50,"SRR":55,"MRR":53,"DRR":50,"RBK":67,"RBF":67,"RBP":67,"PBK":67,"PBF":67,"PBP":67,"LBK":67,"IBL":67},"source_url":"https://cfb.fan/players/33197-gabe-landers/26-2033197/"},
+    {"player":"Ja'Kavion Nonar","overall":68,"oop_ovr":{"FB":66,"WR":64},"ratings":{"SPD":68,"AWR":62,"STR":68,"CTH":68,"CIT":52,"SRR":56,"MRR":53,"DRR":50,"RBK":68,"RBF":68,"RBP":68,"PBK":68,"PBF":68,"PBP":68,"LBK":68,"IBL":68},"source_url":"https://cfb.fan/players/23236-jakavion-nonar/"},
+    {"player":"Andreas Paaske","overall":68,"oop_ovr":{"FB":69,"WR":63},"ratings":{"SPD":68,"AWR":68,"STR":68,"CTH":68,"CIT":52,"SRR":55,"MRR":53,"DRR":51,"RBK":68,"RBF":68,"RBP":68,"PBK":68,"PBF":68,"PBP":68,"LBK":64,"IBL":68},"source_url":"https://cfb.fan/players/20478-andreas-paaske/"},
+    {"player":"Alex Honig","overall":70,"oop_ovr":{"FB":71,"WR":65},"ratings":{"SPD":70,"AWR":65,"STR":70,"CTH":70,"CIT":55,"SRR":57,"MRR":56,"DRR":54,"RBK":70,"RBF":70,"RBP":70,"PBK":70,"PBF":70,"PBP":70,"LBK":70,"IBL":70},"source_url":"https://cfb.fan/players/8189-alex-honig/"},
+    {"player":"Quinton Stewart","overall":71,"oop_ovr":{"FB":71,"WR":63},"ratings":{"SPD":70,"AWR":67,"STR":71,"CTH":71,"CIT":55,"SRR":55,"MRR":53,"DRR":51,"RBK":71,"RBF":71,"RBP":71,"PBK":71,"PBF":71,"PBP":71,"LBK":68,"IBL":71},"source_url":"https://cfb.fan/players/2872-quinton-stewart/"},
+    {"player":"Emeka Iloh","overall":73,"oop_ovr":{"FB":73,"WR":68},"ratings":{"SPD":72,"AWR":69,"STR":73,"CTH":70,"CIT":57,"SRR":57,"MRR":56,"DRR":54,"RBK":73,"RBF":73,"RBP":73,"PBK":70,"PBF":73,"PBP":73,"LBK":72,"IBL":73},"source_url":"https://cfb.fan/players/24548-emeka-iloh/"}
+  ],
+  "inferences":[
+    "Pure Blocker TE OVR can track a broad blocking/strength component while route-running remains 10-20 points below OVR.",
+    "This directly rejects a receiving-only universal TE formula.",
+    "FB OOP can equal or exceed native TE for some Pure Blockers while WR OOP is consistently depressed, reinforcing role-specific valuation.",
+    "Exact coefficient accuracy is not claimed from this seed."
+  ],
+  "accuracy_claim":"NONE"
+}

@@ -1,0 +1,18 @@
+{
+  "reuse": "data/research/op_x_043/EVIDENCE_SCHEMA.json and competitive_evidence registry",
+  "field": "context_evidence_kind",
+  "kinds": [
+    "OBSERVED_USAGE",
+    "RECOMMENDATION",
+    "REJECTION",
+    "LIMITATION",
+    "UNKNOWN"
+  ],
+  "rules": [
+    "Recommendation is not observed usage.",
+    "Absence from lineup is not rejection.",
+    "Market sale is not football rejection.",
+    "Observed usage requires actual use, lineup, gameplay, substitution, or specialist deployment evidence.",
+    "Publisher-family independence remains controlled by OP-X-043A."
+  ]
+}

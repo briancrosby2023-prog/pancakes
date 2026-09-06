@@ -1,0 +1,23 @@
+{
+  "operation": "OP-X-020-FB",
+  "freeze": {"blind_outcomes_observed": false, "repository_head": "1d696da59aa195dc7716a27e51e18273d9fc6fdc", "timestamp": "2026-08-20T00:11:15.8187144-07:00"},
+  "model": {"id": "FB-M19-ARCH-001", "version": "v1.0", "applicability": "CFB25/26 FB populations", "formula": "sum(attribute * exact Madden 19 FB archetype weight) / sum(included weights)", "displayed_ovr_calibration": "none", "rounding": "none", "confidence": "exact archetype names in both generations"},
+  "provenance": {"source_id": "SRC-M19-001", "workbook_url": "https://drive.google.com/file/d/1C5J9Qo6-EF__YtKqdzbL3csgNP_fgapc/view", "workbook_sha256": "6ceeee58a2fe358422476262d6cefaba48c0ec2503d4aa5a9d71ba406c016aa5", "workbook_sheet": "Data Version", "workbook_rows": "19:20"},
+  "weights": {
+    "Utility": {"ACC": 5, "AGI": 5, "AWR": 10, "BCV": 6, "BTK": 4, "CAR": 7, "CTH": 8, "CIT": 2, "ELU": 3, "IBL": 11, "LBK": 5, "PBK": 2, "RBK": 3, "SRR": 9, "SPD": 5, "SFA": 4, "STR": 6, "TRK": 5},
+    "Blocking": {"ACC": 2, "AGI": 2, "AWR": 10, "BTK": 6, "CAR": 5, "CTH": 2, "CIT": 2, "IBL": 20, "LBK": 7, "PBK": 4, "PBF": 1, "PBP": 1, "RBK": 10, "RBF": 3, "RBP": 5, "SRR": 5, "SPD": 1, "STR": 9, "TRK": 7}
+  },
+  "source_weight_totals": {"Utility": 100, "Blocking": 102},
+  "archetype_mappings": {
+    "CFB25": {
+      "Utility": {"model_archetype": "Utility", "status": "EXACT", "basis": "exact name"},
+      "Blocking": {"model_archetype": "Blocking", "status": "EXACT", "basis": "exact name"}
+    },
+    "CFB26": {
+      "Utility": {"model_archetype": "Utility", "status": "EXACT", "basis": "exact name"},
+      "Blocking": {"model_archetype": "Blocking", "status": "EXACT", "basis": "exact name"}
+    }
+  },
+  "exclusions": {},
+  "scientific_control": "Frozen before any CFB25/26 FB score, residual, or ranking outcome was calculated."
+}
