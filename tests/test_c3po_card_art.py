@@ -7,15 +7,7 @@ def test_google_known_program_drives_art_without_overwriting_screenshot_ovr():
     player = C3POPlayer("OFFENSE", "LG 1", "Luke Montgomery", 87)
     roster = C3PORoster((player,), "google-gemini", "gemini-3.7-flash")
     fingerprint = observation_fingerprint(player, 0)
-    programs = {
-        fingerprint: C3POCardObservation(
-            fingerprint=fingerprint,
-            player_name="Luke Montgomery",
-            displayed_ovr=87,
-            program="Season 2",
-            state="IDENTIFIED",
-        )
-    }
+    programs = {fingerprint: C3POCardObservation(fingerprint=fingerprint, player_name="Luke Montgomery", displayed_ovr=87, program="Season 2", state="IDENTIFIED")}
     page = render_c3po_roster(roster, programs)
     assert 'class="feature-art"' in page
     assert "202019231.png" in page
@@ -57,26 +49,21 @@ def test_special_teams_uses_one_six_position_row_in_cfbfan_order():
 
 
 def test_defense_splits_mike_and_cb_into_two_six_position_rows():
-    roster = C3PORoster(
-        (
-            C3POPlayer("DEFENSE", "FS 1", "Free Safety", 89),
-            C3POPlayer("DEFENSE", "WILL 1", "Will", 87),
-            C3POPlayer("DEFENSE", "MIKE 1", "Mike One", 89),
-            C3POPlayer("DEFENSE", "MIKE 2", "Mike Two", 86),
-            C3POPlayer("DEFENSE", "SAM 1", "Sam", 88),
-            C3POPlayer("DEFENSE", "SS 1", "Strong Safety", 87),
-            C3POPlayer("DEFENSE", "CB 1", "Corner One", 87),
-            C3POPlayer("DEFENSE", "CB 2", "Corner Two", 86),
-            C3POPlayer("DEFENSE", "CB 3", "Corner Three", 85),
-            C3POPlayer("DEFENSE", "REDG 1", "Right Edge", 86),
-            C3POPlayer("DEFENSE", "DT 1", "Tackle", 86),
-            C3POPlayer("DEFENSE", "LEDG 1", "Left Edge", 86),
-        ),
-        "google-gemini",
-        "gemini-3.7-flash",
-    )
+    roster = C3PORoster((C3POPlayer("DEFENSE", "FS 1", "Free Safety", 89), C3POPlayer("DEFENSE", "WILL 1", "Will", 87), C3POPlayer("DEFENSE", "MIKE 1", "Mike One", 89), C3POPlayer("DEFENSE", "MIKE 2", "Mike Two", 86), C3POPlayer("DEFENSE", "SAM 1", "Sam", 88), C3POPlayer("DEFENSE", "SS 1", "Strong Safety", 87), C3POPlayer("DEFENSE", "CB 1", "Corner One", 87), C3POPlayer("DEFENSE", "CB 2", "Corner Two", 86), C3POPlayer("DEFENSE", "CB 3", "Corner Three", 85), C3POPlayer("DEFENSE", "REDG 1", "Right Edge", 86), C3POPlayer("DEFENSE", "DT 1", "Tackle", 86), C3POPlayer("DEFENSE", "LEDG 1", "Left Edge", 86)), "google-gemini", "gemini-3.7-flash")
     page = render_c3po_roster(roster)
     defense = page[page.index('id="defense"'):page.index('id="special-teams"')]
     headings = ["FS", "WILL", "MIKE1", "MIKE2", "SAM", "SS", "CB1", "CB2", "REDG", "DT", "LEDG", "CB3"]
     positions = [defense.index(f"<h3>{heading}</h3>") for heading in headings]
     assert positions == sorted(positions)
+
+
+def test_specialists_use_balanced_five_by_two_grid():
+    roster = C3PORoster(
+        tuple(C3POPlayer("SPECIALISTS", f"{slot} 1", slot, 87) for slot in ("3DRB", "PWHB", "SLWR", "GAD", "NT", "SUBLB", "RRE", "RDT", "RLE", "SLCB")),
+        "google-gemini",
+        "gemini-3.7-flash",
+    )
+    page = render_c3po_roster(roster)
+    specialists = page[page.index('id="specialists"'):]
+    assert 'class="position-grid specialists-grid"' in specialists
+    assert ".specialists-grid{grid-template-columns:repeat(5,minmax(0,1fr))}" in page
