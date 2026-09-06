@@ -150,12 +150,15 @@ def test_design_signals_are_not_gameplay_proof() -> None:
     assert all(row["gameplay_proof"] is False for row in signals)
 
 
-def test_phase6_10_is_deterministic_and_frozen() -> None:
+def test_phase6_10_is_deterministic_with_fixed_threshold_sources() -> None:
     first = build_phase6_10(ROOT)
     second = build_phase6_10(ROOT)
     assert first == second
     assert first["frozen_input"]["source_commit"] == "8555000"
-    assert first["frozen_input"]["population_n"] == 8838
+    state = json.loads(
+        (ROOT / "data/external/cfb_fan_population_state.json").read_text()
+    )
+    assert first["frozen_input"]["population_n"] == len(state["cards"])
     assert first["data_validation"] == {
         "access_bypass": False,
         "canonical_modified": False,

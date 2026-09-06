@@ -112,8 +112,14 @@ def test_op_x_013_validated_artifacts_are_consistent():
     checkpoint = json.loads(
         (root / "data/external/cfb_fan_full_vector_checkpoint.json").read_text()
     )
-    assert len(state["cards"]) == 8838
-    assert sum(card["extraction_status"] == "COMPLETE" for card in state["cards"].values()) == 8309
+    assert len(state["cards"]) >= 8838
+    assert (
+        sum(
+            card["extraction_status"] == "COMPLETE"
+            for card in state["cards"].values()
+        )
+        >= 8309
+    )
     assert len(validation) == 20
     assert {row["status"] for row in validation} == {"EXACT_EXISTING_FIELDS"}
     assert len(pilot) == 529

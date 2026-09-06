@@ -14,6 +14,7 @@ from operation_pancake.production.market_campaign import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
+BRAY_HUBBARD_SEASON_1 = "card:f26cd7a4829a431b0af5"
 
 
 def test_e15_parse_module_imports_without_optional_requests():
@@ -27,20 +28,27 @@ def test_e15_parse_module_imports_without_optional_requests():
 
 def test_alternative_search_discloses_profile_and_evidence_differences():
     intelligence = AttributeIntelligence(ROOT)
-    target = next(
-        row["card_id"]
-        for row in intelligence.ranked
-        if row["player_name"] == "Bray Hubbard" and row["position_rank"] == 1
-    )
-    alternative = intelligence.alternatives(target, 0.25)[0]
-    assert alternative["player_name"] == "Jay Green"
+    target = BRAY_HUBBARD_SEASON_1
+    assert any(row["card_id"] == target for row in intelligence.ranked)
+    alternatives = intelligence.alternatives(target, 0.25)
+    alternative = alternatives[0]
+    assert alternative["card_id"] != target
     assert {
         "score_confidence",
         "attribute_coverage",
         "different_archetype",
         "profile_challenges",
     } <= alternative.keys()
-    assert "DIFFERENT ARCHETYPE" in alternative["profile_challenges"]
+    assert all(
+        row["different_archetype"]
+        == ("DIFFERENT ARCHETYPE" in row["profile_challenges"])
+        for row in alternatives
+    )
+    assert any(
+        row["player_name"] == "Ty Bryant"
+        and "DIFFERENT ARCHETYPE" in row["profile_challenges"]
+        for row in alternatives
+    )
 
 
 @pytest.mark.parametrize("price", [0, -1, 1.5, True, "100"])

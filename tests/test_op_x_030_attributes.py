@@ -10,6 +10,10 @@ from operation_pancake.production.attributes import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
+CARD_IDS = {
+    "Anthony Donkoh": "card:05b737e0828809d8a979",
+    "Brendan Black": "card:f35e84cba0d56c4270c3",
+}
 
 
 @pytest.fixture(scope="module")
@@ -17,16 +21,14 @@ def intelligence():
     return AttributeIntelligence(ROOT)
 
 
-def target(intelligence, name, rank):
-    return next(
-        row["card_id"]
-        for row in intelligence.ranked
-        if row["player_name"] == name and row["position_rank"] == rank
-    )
+def target(intelligence, name):
+    card_id = CARD_IDS[name]
+    assert any(row["card_id"] == card_id for row in intelligence.ranked)
+    return card_id
 
 
 def test_contributions_reconcile_and_are_deterministic(intelligence):
-    card_id = target(intelligence, "Brendan Black", 1)
+    card_id = target(intelligence, "Brendan Black")
     first = intelligence.contribution(card_id)
     assert abs(first["reconciliation_error"]) < 1e-6
     assert first == intelligence.contribution(card_id)
@@ -34,7 +36,7 @@ def test_contributions_reconcile_and_are_deterministic(intelligence):
 
 
 def test_attribute_percentile_scarcity_and_position_normalization(intelligence):
-    guard = intelligence.contribution(target(intelligence, "Brendan Black", 1))
+    guard = intelligence.contribution(target(intelligence, "Brendan Black"))
     assert all(0 <= row["attribute_percentile"] <= 100 for row in guard["contributions"])
     assert all(
         row["peer_count"] > 0 and row["count_at_or_above"] > 0 for row in guard["contributions"]
@@ -43,8 +45,8 @@ def test_attribute_percentile_scarcity_and_position_normalization(intelligence):
 
 
 def test_comparison_reconciles_positive_and_negative_tradeoffs(intelligence):
-    current = target(intelligence, "Anthony Donkoh", 67)
-    candidate = target(intelligence, "Brendan Black", 1)
+    current = target(intelligence, "Anthony Donkoh")
+    candidate = target(intelligence, "Brendan Black")
     result = intelligence.compare(current, candidate)
     assert result["status"] == "DECOMPOSED"
     assert abs(result["reconciliation_error"]) < 1e-6
@@ -52,7 +54,7 @@ def test_comparison_reconciles_positive_and_negative_tradeoffs(intelligence):
 
 
 def test_near_equivalents_and_attribute_upgrade_search(intelligence):
-    card_id = target(intelligence, "Anthony Donkoh", 67)
+    card_id = target(intelligence, "Anthony Donkoh")
     assert intelligence.alternatives(card_id, 1.0)
     upgrades = intelligence.attribute_upgrades(card_id, "RBK", min_score_gain=1)
     assert upgrades and all(row["attribute_gain"] > 0 for row in upgrades)

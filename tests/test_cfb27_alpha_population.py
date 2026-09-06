@@ -11,12 +11,18 @@ def test_alpha_population_reuses_snapshotted_vectors_without_mutating_state():
     persisted = json.loads((ROOT / "data/external/cfb_fan_population_state.json").read_text())
     alpha = build_alpha_population(ROOT)
     summary = alpha["summary"]
-    assert summary["total"] == len(persisted["cards"]) == 8838
-    assert summary["persisted_complete"] == 8309
+    assert summary["total"] == len(persisted["cards"])
+    persisted_complete = sum(
+        card["extraction_status"] == "COMPLETE" for card in persisted["cards"].values()
+    )
+    assert summary["persisted_complete"] == persisted_complete
     assert summary["mutates_persisted_state"] is False
     assert summary["alpha_complete"] >= summary["persisted_complete"]
-    assert summary["alpha_complete"] + summary["alpha_partial"] == 8838
-    assert summary["alpha_position_only_promotions"] == summary["alpha_complete"] - 8309
+    assert summary["alpha_complete"] + summary["alpha_partial"] == summary["total"]
+    assert (
+        summary["alpha_position_only_promotions"]
+        == summary["alpha_complete"] - persisted_complete
+    )
 
 
 def test_promoted_alpha_cards_preserve_cfb27_position_and_provenance():

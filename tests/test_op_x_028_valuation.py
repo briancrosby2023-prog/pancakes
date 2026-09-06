@@ -110,12 +110,12 @@ def test_gm_value_surface_handles_identity_and_keeps_price_downstream():
     current = next(
         row["card_id"]
         for row in gm.ranked
-        if row["player_name"] == "Anthony Donkoh" and row["position_rank"] == 67
+        if row["player_name"] == "Anthony Donkoh" and row["program"] == "Phenoms"
     )
     candidate = next(
         row["card_id"]
         for row in gm.ranked
-        if row["player_name"] == "Brendan Black" and row["position_rank"] == 1
+        if row["player_name"] == "Brendan Black" and row["program"] == "Prime Prospects"
     )
     result = gm.value(current, candidate)
     assert result["status"] == "VALUED"

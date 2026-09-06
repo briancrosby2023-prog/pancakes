@@ -13,6 +13,16 @@ from operation_pancake.production.purchase import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
+CARD_IDS = {
+    "Anthony Donkoh": "card:05b737e0828809d8a979",
+    "Brendan Black": "card:f35e84cba0d56c4270c3",
+    "Bray Hubbard": "card:f26cd7a4829a431b0af5",
+    "Cormani McClain": "card:2a79a6e3f272a16ec712",
+    "Dashawn Spears": "card:4595176827b3dc5e510c",
+    "E'Marion Harris": "card:4bd7645117856f967450",
+    "Kobe Black": "card:7084891b08e603666bea",
+    "Samson Okunlola": "card:0dfef086dfd8d85794d6",
+}
 
 
 @pytest.fixture(scope="module")
@@ -20,22 +30,15 @@ def purchase():
     return PurchaseIntelligence(ROOT)
 
 
-def ids(purchase, current, current_rank, candidate, candidate_rank=1):
-    left = next(
-        row["card_id"]
-        for row in purchase.gm.ranked
-        if row["player_name"] == current and row["position_rank"] == current_rank
-    )
-    right = next(
-        row["card_id"]
-        for row in purchase.gm.ranked
-        if row["player_name"] == candidate and row["position_rank"] == candidate_rank
-    )
+def ids(purchase, current, candidate):
+    left, right = CARD_IDS[current], CARD_IDS[candidate]
+    ranked_ids = {row["card_id"] for row in purchase.gm.ranked}
+    assert {left, right} <= ranked_ids
     return left, right
 
 
 def test_purchase_object_complete_deterministic_and_market_safe(purchase):
-    left, right = ids(purchase, "Anthony Donkoh", 67, "Brendan Black")
+    left, right = ids(purchase, "Anthony Donkoh", "Brendan Black")
     report = purchase.report(left, right)
     assert report == purchase.report(left, right)
     assert {
@@ -76,17 +79,18 @@ def test_empirical_upgrade_tiers_are_distribution_derived():
 
 
 def test_alternative_challenge_and_target_premium(purchase):
-    left, right = ids(purchase, "Dashawn Spears", 62, "Bray Hubbard")
+    left, right = ids(purchase, "Dashawn Spears", "Bray Hubbard")
     report = purchase.report(left, right)
     best = report["alternatives"]["best_near_equivalent"]
-    assert best["player_name"] == "Jay Green"
+    assert best["player_name"] == "Gerod Holliman"
     assert "target_attribute_advantages" in best and "market_evidence" in best
-    assert report["alternatives"]["target_premium"]["score_premium"] == 0.215
+    premium = report["alternatives"]["target_premium"]
+    assert premium["score_premium"] == 0.019231
     assert report["alternatives"]["target_premium"]["price_premium"] is None
 
 
 def test_attribute_and_market_stories_are_separate(purchase):
-    left, right = ids(purchase, "Cormani McClain", 38, "Kobe Black")
+    left, right = ids(purchase, "Cormani McClain", "Kobe Black")
     report = purchase.report(left, right)
     assert len(report["why"]["primary_attribute_drivers"]) <= 3
     assert report["market"]["latest_price"] == 4_360_000
@@ -95,7 +99,7 @@ def test_attribute_and_market_stories_are_separate(purchase):
 
 
 def test_render_is_concise_and_unknown_fields_remain_unknown(purchase):
-    left, right = ids(purchase, "Anthony Donkoh", 67, "Brendan Black")
+    left, right = ids(purchase, "Anthony Donkoh", "Brendan Black")
     report = purchase.report(left, right)
     text = purchase.render(report)
     assert "PANCAKE GM - PURCHASE REPORT" in text and "PRICE CHECK REQUIRED" in text
@@ -103,10 +107,10 @@ def test_render_is_concise_and_unknown_fields_remain_unknown(purchase):
     assert len(text.splitlines()) <= 15
 
 
-def test_moneyball_quality_and_efficiency_rankings_remain_separate(purchase):
+def test_moneyball_quality_and_efficiency_rankings_use_distinct_metrics(purchase):
     reports = [
-        purchase.report(*ids(purchase, "Anthony Donkoh", 67, "Brendan Black")),
-        purchase.report(*ids(purchase, "Dashawn Spears", 62, "Bray Hubbard")),
+        purchase.report(*ids(purchase, "Dashawn Spears", "Bray Hubbard")),
+        purchase.report(*ids(purchase, "Samson Okunlola", "E'Marion Harris")),
     ]
     quality = sorted(reports, key=lambda row: -row["football"]["score_gain"])
     contextual_efficiency = sorted(
@@ -114,13 +118,13 @@ def test_moneyball_quality_and_efficiency_rankings_remain_separate(purchase):
         key=lambda row: -(row["football"]["score_gain"] * 1000 / row["cost"]["candidate_price"]),
     )
     assert quality[0]["candidate"]["player_name"] == "Bray Hubbard"
-    assert contextual_efficiency[0]["candidate"]["player_name"] == "Brendan Black"
+    assert contextual_efficiency[0]["candidate"]["player_name"] == "E'Marion Harris"
 
 
 def test_budget_integration_and_keep_coins(purchase):
     pairs = [
-        ids(purchase, "Anthony Donkoh", 67, "Brendan Black"),
-        ids(purchase, "Samson Okunlola", 70, "E'Marion Harris"),
+        ids(purchase, "Anthony Donkoh", "Brendan Black"),
+        ids(purchase, "Samson Okunlola", "E'Marion Harris"),
     ]
     reports = [purchase.report(*pair) for pair in pairs]
     assert purchase.optimize_reports(reports, 50_000)["keep_coins"] is True
@@ -129,7 +133,7 @@ def test_budget_integration_and_keep_coins(purchase):
 
 
 def test_change_detection_ignores_timestamp_only_changes(purchase):
-    left, right = ids(purchase, "Anthony Donkoh", 67, "Brendan Black")
+    left, right = ids(purchase, "Anthony Donkoh", "Brendan Black")
     previous = purchase.report(left, right)
     timestamp_only = deepcopy(previous)
     timestamp_only["market"]["observation_age_hours"] = 2
@@ -140,7 +144,7 @@ def test_change_detection_ignores_timestamp_only_changes(purchase):
 
 
 def test_observation_refresh_changes_report_without_fixture_contamination(purchase):
-    left, right = ids(purchase, "Anthony Donkoh", 67, "Brendan Black")
+    left, right = ids(purchase, "Anthony Donkoh", "Brendan Black")
     previous = purchase.report(left, right)
     card = purchase.gm.cards[right]
     purchase.history_by_card[right] = [

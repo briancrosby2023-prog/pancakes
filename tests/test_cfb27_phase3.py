@@ -77,7 +77,14 @@ def test_phase3_rebuilds_deterministically() -> None:
     state = _load("data/external/cfb_fan_population_state.json")
     freeze = _load("data/research/cfb27_inheritance_phase3/phase3_frozen_snapshot.json")
     phase2 = _load("data/research/cfb27_inheritance_phase2/phase2_summary.json")
-    rebuilt = build_phase3_analysis(list(state["cards"].values()), freeze, phase2)
+    checkpoint = _load("data/external/cfb_fan_population_v3_checkpoint.json")
+    frozen_ids = set(checkpoint["cards"])
+    frozen_cards = [
+        card
+        for card in state["cards"].values()
+        if card["external_card_id"] in frozen_ids
+    ]
+    rebuilt = build_phase3_analysis(frozen_cards, freeze, phase2)
     assert (
         hashlib.sha256(json.dumps(rebuilt, sort_keys=True).encode()).hexdigest()
         == hashlib.sha256(
