@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 """
 
 OFFENSE_POSITION_ORDER = ("LT", "LG", "C", "RG", "RT", "TE", "WR1", "WR3", "HB", "QB", "FB", "WR2")
+SPECIAL_TEAMS_POSITION_ORDER = ("P", "K", "KR", "PR", "LS", "KOS")
 
 
 def _program_value(card_observation) -> tuple[str, bool]:
@@ -85,9 +86,13 @@ def _position_group(slot: str) -> tuple[str, int]:
 
 
 def _ordered_groups(view: str, groups: dict[str, list[tuple[int, object, object]]]):
-    if view != "OFFENSE":
+    if view == "OFFENSE":
+        order = OFFENSE_POSITION_ORDER
+    elif view == "SPECIAL TEAMS":
+        order = SPECIAL_TEAMS_POSITION_ORDER
+    else:
         return groups.items()
-    rank = {position: index for index, position in enumerate(OFFENSE_POSITION_ORDER)}
+    rank = {position: index for index, position in enumerate(order)}
     return sorted(groups.items(), key=lambda item: (rank.get(item[0], len(rank)), item[0]))
 
 
