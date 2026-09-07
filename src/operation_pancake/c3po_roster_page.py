@@ -6,7 +6,7 @@ import re
 
 from operation_pancake.c3po_roster import VIEWS, C3PORoster, observation_fingerprint, roster_observations
 
-CARD_ART = {("luke montgomery", "season 2"): "https://media.cfb.fan/cdn-cgi/image/format%3Dauto%2Cwidth%3D300%2Cheight%3D401%2Cquality%3D80%2Cfit%3Dcover%2Cgravity%3Dtop/27/cutdb/playeritem/202019231.png"}
+CARD_ART = {("luke montgomery", 87): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/202019231.png"}
 
 LINEUP_STYLE = """
 <style>
@@ -37,10 +37,9 @@ def _program_value(card_observation) -> tuple[str, bool]:
 
 
 def _card_art(player, card_observation) -> str | None:
-    program, missing = _program_value(card_observation)
-    if missing or not player.name:
+    if not player.name:
         return None
-    return CARD_ART.get((player.name.strip().casefold(), program.strip().casefold()))
+    return CARD_ART.get((player.name.strip().casefold(), player.displayed_ovr))
 
 
 def _player_choice(player, card_observation=None, *, selected: bool) -> str:
