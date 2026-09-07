@@ -65,10 +65,11 @@ class C3POCardObservation:
     state: str
     confidence: str | None = None
     positive_visual_evidence: tuple[str, ...] = ()
+    art_url: str | None = None
 
 
 class C3POCardObservationStore:
-    """Persist C-3PO program observations independently of the roster."""
+    """Persist C-3PO program and artwork observations independently of the roster."""
 
     def __init__(self, path: Path):
         self.path = path
@@ -106,6 +107,11 @@ class C3POCardObservationStore:
                 )
                 if isinstance(evidence, list)
                 else (),
+                art_url=(
+                    row.get("art_url")
+                    if isinstance(row.get("art_url"), str) and row.get("art_url").strip()
+                    else None
+                ),
             )
         return observations
 
@@ -125,6 +131,7 @@ class C3POCardObservationStore:
                     "positive_visual_evidence": list(
                         observation.positive_visual_evidence
                     ),
+                    "art_url": observation.art_url,
                 }
             )
         temporary = self.path.with_suffix(self.path.suffix + ".tmp")
