@@ -2,9 +2,12 @@ from operation_pancake.c3po_card_version import (
     C3POCardObservation,
     C3POCardObservationStore,
 )
-from operation_pancake.c3po_roster import C3POPlayer, C3PORoster, observation_fingerprint
+from operation_pancake.c3po_roster import (
+    C3POPlayer,
+    C3PORoster,
+    observation_fingerprint,
+)
 from operation_pancake.c3po_roster_page import render_c3po_roster
-
 
 LUKE_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/202019231.png"
 
@@ -32,13 +35,14 @@ def test_known_observation_persists_art_and_renders_at_existing_lg_location(tmp_
 
     programs = store.load()
     page = render_c3po_roster(_roster(player), programs)
+    lg_start = page.index("<h3>LG</h3>")
+    lg_group = page[lg_start : page.index("</section>", lg_start)]
 
     assert programs[fingerprint].art_url == LUKE_ART_URL
-    assert f'src="{LUKE_ART_URL}"' in page
-    assert '<h3>LG</h3>' in page
-    assert 'data-slot="LG 1"' in page
-    assert "CARD NOT READ" in page
-    assert '<span class="choice-ovr">87</span>' in page
+    assert f'src="{LUKE_ART_URL}"' in lg_group
+    assert 'data-slot="LG 1"' in lg_group
+    assert "CARD NOT READ" in lg_group
+    assert '<span class="choice-ovr">87</span>' in lg_group
 
 
 def test_unknown_art_keeps_placeholder_instead_of_substituting_a_card():
