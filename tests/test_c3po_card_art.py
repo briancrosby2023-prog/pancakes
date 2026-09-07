@@ -1,30 +1,44 @@
-from operation_pancake.c3po_card_version import C3POCardObservation
+from operation_pancake.c3po_card_version import (
+    C3POCardObservation,
+    C3POCardObservationStore,
+)
 from operation_pancake.c3po_roster import C3POPlayer, C3PORoster, observation_fingerprint
 from operation_pancake.c3po_roster_page import render_c3po_roster
+
+
+LUKE_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/202019231.png"
 
 
 def _roster(*players: C3POPlayer) -> C3PORoster:
     return C3PORoster(players, "google-gemini", "gemini-3.7-flash")
 
 
-def test_google_known_program_drives_art_without_overwriting_screenshot_ovr():
+def test_known_observation_persists_art_and_renders_at_existing_lg_location(tmp_path):
     player = C3POPlayer("OFFENSE", "LG 1", "Luke Montgomery", 87)
     fingerprint = observation_fingerprint(player, 0)
-    programs = {
-        fingerprint: C3POCardObservation(
-            fingerprint=fingerprint,
-            player_name="Luke Montgomery",
-            displayed_ovr=87,
-            program="Season 2",
-            state="IDENTIFIED",
-        )
-    }
+    store = C3POCardObservationStore(tmp_path / "c3po-programs.json")
+    store.save(
+        {
+            fingerprint: C3POCardObservation(
+                fingerprint=fingerprint,
+                player_name="Luke Montgomery",
+                displayed_ovr=87,
+                program=None,
+                state="UNCERTAIN",
+                art_url=LUKE_ART_URL,
+            )
+        }
+    )
+
+    programs = store.load()
     page = render_c3po_roster(_roster(player), programs)
-    assert 'class="feature-art"' in page
-    assert "202019231.png" in page
+
+    assert programs[fingerprint].art_url == LUKE_ART_URL
+    assert f'src="{LUKE_ART_URL}"' in page
+    assert '<h3>LG</h3>' in page
+    assert 'data-slot="LG 1"' in page
+    assert "CARD NOT READ" in page
     assert '<span class="choice-ovr">87</span>' in page
-    assert "80 OVR" not in page
-    assert "88 OVR" not in page
 
 
 def test_unknown_art_keeps_placeholder_instead_of_substituting_a_card():
