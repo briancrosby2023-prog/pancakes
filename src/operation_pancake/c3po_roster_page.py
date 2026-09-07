@@ -6,8 +6,6 @@ import re
 
 from operation_pancake.c3po_roster import VIEWS, C3PORoster, observation_fingerprint, roster_observations
 
-CARD_ART = {("luke montgomery", 87): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/202019231.png"}
-
 LINEUP_STYLE = """
 <style>
 .team-panel{background:transparent;border:0;box-shadow:none;padding:0;margin-top:12px}
@@ -37,9 +35,10 @@ def _program_value(card_observation) -> tuple[str, bool]:
 
 
 def _card_art(player, card_observation) -> str | None:
-    if not player.name:
+    if not player.name or card_observation is None:
         return None
-    return CARD_ART.get((player.name.strip().casefold(), player.displayed_ovr))
+    art_url = getattr(card_observation, "art_url", None)
+    return art_url if isinstance(art_url, str) and art_url.strip() else None
 
 
 def _player_choice(player, card_observation=None, *, selected: bool) -> str:
@@ -87,7 +86,7 @@ def _view_anchor(view: str) -> str:
 
 
 def render_c3po_roster(roster: C3PORoster, programs=None) -> str:
-    """Render the saved C-3PO roster and independently persisted programs."""
+    """Render the saved C-3PO roster and independently persisted programs/art."""
     if roster.status == "PROVIDER FAILURE":
         return LINEUP_STYLE + '<section id="my-team" class="team-panel"><header class="team-header"><p class="eyebrow">OPERATION PANCAKE</p><h1>My Team</h1></header><p class="provider-failure">C-3PO could not read the screenshots. Your previous roster was not replaced.</p></section>'
     programs = programs if hasattr(programs, "get") else {}
