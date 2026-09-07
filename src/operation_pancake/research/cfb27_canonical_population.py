@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from operation_pancake.research.cfb27_card_art import existing_card_art_asset
 from operation_pancake.research.cfb27_op_x_001 import _cards
 from operation_pancake.research.cfb27_op_x_010 import _public_entities
 
@@ -17,7 +18,10 @@ EXPORT_NAMES = {
 
 def materialize_canonical_population(root: Path) -> dict[str, int]:
     """Write only the canonical population exports read by production scoring."""
-    public = _public_entities(_cards(root))
+    cards = _cards(root)
+    for card in cards:
+        card["card_art_asset"] = existing_card_art_asset(root, card)
+    public = _public_entities(cards)
     export_dir = root / "data/research/cfb27_op_x_010/canonical_exports_v2"
     export_dir.mkdir(parents=True, exist_ok=True)
     counts = {}

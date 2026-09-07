@@ -53,6 +53,8 @@ def _public_entities(cards: list[dict]) -> dict:
             "release_date": card.get("release_date"),
             "upgradeability": "UNKNOWN",
         }
+        if card.get("card_art_asset"):
+            entity["card_art_asset"] = card["card_art_asset"]
         card_entities.append(entity)
         by_player[player_id].append(entity)
         ratings = dict(sorted(card.get("displayed_ratings", {}).items()))

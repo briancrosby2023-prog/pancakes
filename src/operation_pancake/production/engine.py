@@ -67,6 +67,8 @@ class ProductionEngine:
             "routing": route,
             "source": card.get("source"),
         }
+        if card.get("card_art_asset"):
+            base["card_art_asset"] = card["card_art_asset"]
         if route["status"] != "ROUTED":
             return {
                 **base,

@@ -18,6 +18,7 @@ from operation_pancake.acquisition.cfb_fan_bulk import (
     rating_conflicts,
     ratings_from_record,
 )
+from operation_pancake.research.cfb27_card_art import acquire_card_art
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE = ROOT / "data/external/cfb_fan_population_state.json"
@@ -149,6 +150,10 @@ def main() -> None:
             rejected[external_id] = "NO_PROVENANCE_BATCH"
             continue
         card = structured_card(listing, record, batch["snapshot"], retrieved_at)
+        try:
+            card["card_art_asset"] = acquire_card_art(ROOT, card)
+        except (OSError, ValueError):
+            card["card_art_asset"] = None
         state["cards"][f"CFB_FAN:{external_id}"] = card
         accepted.append(external_id)
     save(STATE, state)
