@@ -16,7 +16,7 @@ CASON_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,heigh
 JOSH_PETTY_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260025229.png"
 THOMAS_SHRADER_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260021328.png"
 KEYAN_BURNETT_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260021232.png"
-MALACHI_TONEY_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260025282.png"
+MARTELLUS_BENNETT_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/104026256.png"
 
 
 def _roster(*players: C3POPlayer) -> C3PORoster:
@@ -58,13 +58,13 @@ def test_cason_henry_known_card_art_is_seeded_for_observed_85():
 
 def test_new_verified_card_art_survives_save_reload_and_renders_at_roster_position(tmp_path):
     cases = (
-        ("LT 1", "Josh Petty", 81, "Phenoms", JOSH_PETTY_ART_URL),
-        ("LG 1", "Thomas Shrader", 85, "Phenoms", THOMAS_SHRADER_ART_URL),
-        ("TE 1", "Keyan Burnett", 83, "Phenoms", KEYAN_BURNETT_ART_URL),
-        ("WR 1", "Malachi Toney", 87, "Phenoms", MALACHI_TONEY_ART_URL),
+        ("OFFENSE", "LT 1", "Josh Petty", 81, "Phenoms", JOSH_PETTY_ART_URL),
+        ("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85, "Phenoms", THOMAS_SHRADER_ART_URL),
+        ("DEFENSE", "RRE 1", "Keyan Burnett", 83, "Phenoms", KEYAN_BURNETT_ART_URL),
+        ("DEFENSE", "SUBLB 2", "Martellus Bennett", 82, "Core Legends Modern", MARTELLUS_BENNETT_ART_URL),
     )
-    for index, (slot, name, ovr, program, art_url) in enumerate(cases):
-        player = C3POPlayer("OFFENSE", slot, name, ovr, program=program)
+    for index, (view, slot, name, ovr, program, art_url) in enumerate(cases):
+        player = C3POPlayer(view, slot, name, ovr, program=program)
         fingerprint = observation_fingerprint(player, 0)
         store = C3POCardObservationStore(tmp_path / f"programs-{index}.json")
         store.save(
