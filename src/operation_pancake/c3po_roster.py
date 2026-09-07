@@ -22,7 +22,7 @@ KNOWN_CARD_ART = {
     ("josh petty", 81): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260025229.png",
     ("thomas shrader", 85): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260021328.png",
     ("keyan burnett", 83): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260021232.png",
-    ("malachi toney", 87): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260025282.png",
+    ("martellus bennett", 82): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/104026256.png",
 }
 
 PROMPT = """You are C-3PO, a literal data-entry clerk. Read the four attached
