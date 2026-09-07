@@ -65,7 +65,7 @@ def test_new_verified_card_art_survives_save_reload_and_renders_at_roster_positi
     )
     for index, (slot, name, ovr, program, art_url) in enumerate(cases):
         player = C3POPlayer("OFFENSE", slot, name, ovr, program=program)
-        fingerprint = observation_fingerprint(player, index)
+        fingerprint = observation_fingerprint(player, 0)
         store = C3POCardObservationStore(tmp_path / f"programs-{index}.json")
         store.save(
             {
