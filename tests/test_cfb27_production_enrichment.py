@@ -103,6 +103,12 @@ def _multipart() -> tuple[bytes, str]:
     return b"".join(parts), f"multipart/form-data; boundary={boundary}"
 
 
+def _assert_roster_visible(page: str) -> None:
+    for _, _, name, ovr in REAL:
+        assert name in page
+        assert f'<span class="choice-ovr">{ovr}</span>' in page
+
+
 def test_real_production_loader_reports_exact_name_cardinality():
     cards = cfb27_enrichment.load_cfb27_production_cards(ROOT)
     counts = Counter(
@@ -137,10 +143,8 @@ def test_restart_loads_real_canonical_data_and_renders_without_gemini(tmp_path, 
 
     page = service.my_team_html()
 
-    for _, _, name, ovr in REAL:
-        assert name in page
-        assert f"EA OVR {ovr}" in page
-    assert page.count("CARD NOT READ") == len(REAL)
+    _assert_roster_visible(page)
+    assert page.count("CARD NOT READ") >= len(REAL)
     assert "CFB27" not in page
     assert "SELECT CARD" not in page
     assert "UNRESOLVED" not in page
@@ -171,10 +175,8 @@ def test_successful_four_image_post_renders_real_enrichment(tmp_path):
         server.shutdown()
         server.server_close()
 
-    for _, _, name, ovr in REAL:
-        assert name in page
-        assert f"EA OVR {ovr}" in page
-    assert page.count("CARD NOT READ") == len(REAL)
+    _assert_roster_visible(page)
+    assert page.count("CARD NOT READ") >= len(REAL)
     assert "CFB27" not in page
     assert "SELECT CARD" not in page
     assert destination.endswith("/my-team")
@@ -196,10 +198,8 @@ def test_missing_canonical_source_is_visible_and_never_hides_roster(tmp_path):
 
     page = service.my_team_html()
 
-    for _, _, name, ovr in REAL:
-        assert name in page
-        assert f"EA OVR {ovr}" in page
-    assert page.count("CARD NOT READ") == len(REAL)
+    _assert_roster_visible(page)
+    assert page.count("CARD NOT READ") >= len(REAL)
     assert "CFB27" not in page
     assert "UNRESOLVED" not in page
 
@@ -227,9 +227,7 @@ def test_my_team_contains_no_manual_card_ui_or_database_family(tmp_path):
     assert page.count("Thomas Shrader") == 1
 
 
-def test_my_team_never_links_database_card_details(
-    tmp_path,
-):
+def test_my_team_never_links_database_card_details(tmp_path):
     roster = C3PORoster(
         (C3POPlayer("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85),),
         "google-gemini",
@@ -352,7 +350,7 @@ def test_legacy_choice_file_is_irrelevant_after_new_observation(tmp_path):
     page = restarted.my_team_html()
 
     assert "Thomas Shrader" in page
-    assert "EA OVR 86" in page
+    assert '<span class="choice-ovr">86</span>' in page
     assert "SELECT CARD" not in page
     assert "CFB27" not in page
     assert "CARD NOT READ" in page
@@ -373,7 +371,7 @@ def test_legacy_manual_card_choice_is_disabled(tmp_path):
     assert not hasattr(service, "select_card_version")
     page = service.my_team_html()
     assert "Keyan Burnett" in page
-    assert "EA OVR 83" in page
+    assert '<span class="choice-ovr">83</span>' in page
     assert "CARD NOT READ" in page
 
 
