@@ -16,6 +16,10 @@ from typing import Any, Callable, Iterable
 VIEWS = ("OFFENSE", "DEFENSE", "SPECIAL TEAMS", "SPECIALISTS")
 LOGGER = logging.getLogger(__name__)
 
+KNOWN_CARD_ART = {
+    ("luke montgomery", 87): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/202019231.png"
+}
+
 PROMPT = """You are C-3PO, a literal data-entry clerk. Read the four attached
 EA SPORTS COLLEGE FOOTBALL 27 Team Manager screenshots. The four sections are
 OFFENSE, DEFENSE, SPECIAL TEAMS, and SPECIALISTS. For every visible lineup slot,
@@ -120,6 +124,12 @@ def _program(value: Any) -> str | None:
         return None
     value = value.strip()
     return value or None
+
+
+def _known_art_url(name: str | None, displayed_ovr: int | None) -> str | None:
+    if not name:
+        return None
+    return KNOWN_CARD_ART.get((name.strip().casefold(), displayed_ovr))
 
 
 def _rows_from_payload(payload: Any) -> list[dict[str, Any]]:
@@ -314,10 +324,20 @@ class C3PORosterService:
         from operation_pancake.c3po_card_version import C3POCardObservation
         programs = {}
         for occurrence, observation in roster_observations(roster):
-            if not observation.name or not observation.program:
+            art_url = _known_art_url(observation.name, observation.displayed_ovr)
+            if not observation.name or (not observation.program and not art_url):
                 continue
             fingerprint = observation_fingerprint(observation, occurrence)
-            programs[fingerprint] = C3POCardObservation(fingerprint=fingerprint, player_name=observation.name, displayed_ovr=observation.displayed_ovr, program=observation.program, state="IDENTIFIED", confidence="HIGH", positive_visual_evidence=("program read in roster screenshot request",))
+            programs[fingerprint] = C3POCardObservation(
+                fingerprint=fingerprint,
+                player_name=observation.name,
+                displayed_ovr=observation.displayed_ovr,
+                program=observation.program,
+                state="IDENTIFIED" if observation.program else "UNCERTAIN",
+                confidence="HIGH" if observation.program else None,
+                positive_visual_evidence=("program read in roster screenshot request",) if observation.program else (),
+                art_url=art_url,
+            )
         if programs:
             self.card_observation_store.save(programs)
         return len(programs)
@@ -373,6 +393,15 @@ class C3PORosterService:
             decision = batch_result.decisions.get(representative_fingerprint, CardVersionDecision.no_evidence())
             if decision.state in {"IDENTIFIED", "AMBIGUOUS", "NO_EVIDENCE"}:
                 for fingerprint, observation in group:
-                    updated_observations[fingerprint] = C3POCardObservation(fingerprint=fingerprint, player_name=observation.name or "", displayed_ovr=observation.displayed_ovr, program=decision.program, state="IDENTIFIED" if decision.state == "IDENTIFIED" else "UNCERTAIN", confidence=decision.confidence, positive_visual_evidence=decision.positive_visual_evidence)
+                    updated_observations[fingerprint] = C3POCardObservation(
+                        fingerprint=fingerprint,
+                        player_name=observation.name or "",
+                        displayed_ovr=observation.displayed_ovr,
+                        program=decision.program,
+                        state="IDENTIFIED" if decision.state == "IDENTIFIED" else "UNCERTAIN",
+                        confidence=decision.confidence,
+                        positive_visual_evidence=decision.positive_visual_evidence,
+                        art_url=_known_art_url(observation.name, observation.displayed_ovr),
+                    )
         self.card_observation_store.save(updated_observations)
         return CardVersionAnalysisOutcome(len(requests), request_succeeded=True)
