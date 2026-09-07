@@ -12,6 +12,10 @@ from operation_pancake.c3po_roster_page import render_c3po_roster
 
 LUKE_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/202019231.png"
 CASON_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260010612.png"
+JOSH_PETTY_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260025229.png"
+THOMAS_SHRADER_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260021328.png"
+KEYAN_BURNETT_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260021232.png"
+MALACHI_TONEY_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260025282.png"
 
 
 def _roster(*players: C3POPlayer) -> C3PORoster:
@@ -49,6 +53,43 @@ def test_known_observation_persists_art_and_renders_at_existing_lg_location(tmp_
 
 def test_cason_henry_known_card_art_is_seeded_for_observed_85():
     assert _known_art_url("Cason Henry", 85) == CASON_ART_URL
+
+
+def test_new_verified_card_art_survives_save_reload_and_renders_at_roster_position(tmp_path):
+    cases = (
+        ("LT 1", "Josh Petty", 81, "Phenoms", JOSH_PETTY_ART_URL),
+        ("LG 1", "Thomas Shrader", 85, "Phenoms", THOMAS_SHRADER_ART_URL),
+        ("TE 1", "Keyan Burnett", 83, "Phenoms", KEYAN_BURNETT_ART_URL),
+        ("WR 1", "Malachi Toney", 87, "Phenoms", MALACHI_TONEY_ART_URL),
+    )
+    for index, (slot, name, ovr, program, art_url) in enumerate(cases):
+        player = C3POPlayer("OFFENSE", slot, name, ovr, program=program)
+        fingerprint = observation_fingerprint(player, index)
+        store = C3POCardObservationStore(tmp_path / f"programs-{index}.json")
+        store.save(
+            {
+                fingerprint: C3POCardObservation(
+                    fingerprint=fingerprint,
+                    player_name=name,
+                    displayed_ovr=ovr,
+                    program=program,
+                    state="IDENTIFIED",
+                    art_url=_known_art_url(name, ovr),
+                )
+            }
+        )
+
+        programs = store.load()
+        page = render_c3po_roster(_roster(player), programs)
+        position = slot.split()[0]
+        start = page.index(f"<h3>{position}</h3>")
+        group = page[start : page.index("</section>", start)]
+
+        assert programs[fingerprint].art_url == art_url
+        assert f'src="{art_url}"' in group
+        assert f'data-slot="{slot}"' in group
+        assert f'<span class="choice-ovr">{ovr}</span>' in group
+        assert program in group
 
 
 def test_unknown_art_keeps_placeholder_instead_of_substituting_a_card():
