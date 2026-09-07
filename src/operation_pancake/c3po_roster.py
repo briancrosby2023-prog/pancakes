@@ -19,6 +19,10 @@ LOGGER = logging.getLogger(__name__)
 KNOWN_CARD_ART = {
     ("luke montgomery", 87): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/202019231.png",
     ("cason henry", 85): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260010612.png",
+    ("josh petty", 81): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260025229.png",
+    ("thomas shrader", 85): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260021328.png",
+    ("keyan burnett", 83): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260021232.png",
+    ("malachi toney", 87): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260025282.png",
 }
 
 PROMPT = """You are C-3PO, a literal data-entry clerk. Read the four attached
