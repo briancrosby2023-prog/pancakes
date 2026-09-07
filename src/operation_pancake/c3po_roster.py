@@ -16,15 +16,6 @@ from typing import Any, Callable, Iterable
 VIEWS = ("OFFENSE", "DEFENSE", "SPECIAL TEAMS", "SPECIALISTS")
 LOGGER = logging.getLogger(__name__)
 
-KNOWN_CARD_ART = {
-    ("luke montgomery", 87): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/202019231.png",
-    ("cason henry", 85): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260010612.png",
-    ("josh petty", 81): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260025229.png",
-    ("thomas shrader", 85): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260021328.png",
-    ("keyan burnett", 83): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260021232.png",
-    ("martellus bennett", 82): "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/104026256.png",
-}
-
 PROMPT = """You are C-3PO, a literal data-entry clerk. Read the four attached
 EA SPORTS COLLEGE FOOTBALL 27 Team Manager screenshots. The four sections are
 OFFENSE, DEFENSE, SPECIAL TEAMS, and SPECIALISTS. For every visible lineup slot,
@@ -129,12 +120,6 @@ def _program(value: Any) -> str | None:
         return None
     value = value.strip()
     return value or None
-
-
-def _known_art_url(name: str | None, displayed_ovr: int | None) -> str | None:
-    if not name:
-        return None
-    return KNOWN_CARD_ART.get((name.strip().casefold(), displayed_ovr))
 
 
 def _rows_from_payload(payload: Any) -> list[dict[str, Any]]:
@@ -311,10 +296,10 @@ def roster_observations(roster: C3PORoster) -> tuple[tuple[int | str, C3POPlayer
 
 class C3PORosterService:
     """The product boundary: four images in, persisted C-3PO roster out."""
-    def __init__(self, store: C3PORosterStore, provider: Any, enrichment_cards: Iterable[dict[str, Any]] | None = None, card_choice_store: Any | None = None, source_evidence_store: Any | None = None, version_analyzer: Any | None = None, card_observation_store: Any | None = None):
+    def __init__(self, store: C3PORosterStore, provider: Any, enrichment_cards: Iterable[dict[str, Any]] | Callable[[], Iterable[dict[str, Any]]] | None = None, card_choice_store: Any | None = None, source_evidence_store: Any | None = None, version_analyzer: Any | None = None, card_observation_store: Any | None = None, card_art_root: Path | None = None):
         self.store = store
         self.provider = provider
-        self.enrichment_cards = None if enrichment_cards is None else tuple(enrichment_cards)
+        self.enrichment_cards = enrichment_cards
         self.card_choice_store = card_choice_store
         self.source_evidence_store = source_evidence_store
         self.version_analyzer = version_analyzer
@@ -322,16 +307,22 @@ class C3PORosterService:
             from operation_pancake.c3po_card_version import C3POCardObservationStore
             card_observation_store = C3POCardObservationStore(store.path.parent / "c3po-programs.json")
         self.card_observation_store = card_observation_store
+        self.card_art_root = card_art_root
 
-    def _persist_inline_programs(self, roster: C3PORoster) -> int:
+    def _exact_art(self, observation: C3POPlayer, program: str | None):
+        from operation_pancake.card_art import resolve_exact_card_art
+        cards = self.enrichment_cards() if callable(self.enrichment_cards) else self.enrichment_cards
+        return resolve_exact_card_art(cards or (), observation.name, program)
+
+    def persist_inline_programs(self, roster: C3PORoster) -> int:
         if self.card_observation_store is None:
             return 0
         from operation_pancake.c3po_card_version import C3POCardObservation
         programs = {}
         for occurrence, observation in roster_observations(roster):
-            art_url = _known_art_url(observation.name, observation.displayed_ovr)
-            if not observation.name or (not observation.program and not art_url):
+            if not observation.name or not observation.program:
                 continue
+            card_id, art_asset = self._exact_art(observation, observation.program)
             fingerprint = observation_fingerprint(observation, occurrence)
             programs[fingerprint] = C3POCardObservation(
                 fingerprint=fingerprint,
@@ -341,7 +332,8 @@ class C3PORosterService:
                 state="IDENTIFIED" if observation.program else "UNCERTAIN",
                 confidence="HIGH" if observation.program else None,
                 positive_visual_evidence=("program read in roster screenshot request",) if observation.program else (),
-                art_url=art_url,
+                card_id=card_id,
+                art_asset=art_asset,
             )
         if programs:
             self.card_observation_store.save(programs)
@@ -357,7 +349,7 @@ class C3PORosterService:
                 except (OSError, ValueError, TypeError):
                     LOGGER.exception("C-3PO source evidence could not be persisted")
             self.store.save(roster)
-            self._persist_inline_programs(roster)
+            self.persist_inline_programs(roster)
         return roster
 
     def my_team_html(self) -> str:
@@ -370,7 +362,12 @@ class C3PORosterService:
 
     def analyze_card_versions(self, roster: C3PORoster):
         """Explicit legacy-compatible analyzer; normal imports never invoke it."""
-        from operation_pancake.c3po_card_version import CardVersionAnalysisOutcome, CardVersionAnalysisRequest, CardVersionBatchResult, CardVersionDecision
+        from operation_pancake.c3po_card_version import (
+            CardVersionAnalysisOutcome,
+            CardVersionAnalysisRequest,
+            CardVersionBatchResult,
+            CardVersionDecision,
+        )
         if self.source_evidence_store is None or self.version_analyzer is None or self.card_observation_store is None:
             return CardVersionAnalysisOutcome(0, request_succeeded=False)
         work_groups = card_version_work_groups(roster)
@@ -384,20 +381,44 @@ class C3PORosterService:
         if evidence is None:
             return CardVersionAnalysisOutcome(len(work_groups), request_succeeded=False)
         requests = tuple(CardVersionAnalysisRequest(group[0][0], group[0][1]) for group in work_groups)
+        roster_observations_count = sum(len(group) for group in work_groups)
         try:
             batch_result = self.version_analyzer.analyze_batch(requests, evidence)
         except Exception:
             LOGGER.exception("C-3PO program batch analysis failed")
             batch_result = CardVersionBatchResult({}, request_succeeded=False)
         if not batch_result.request_succeeded:
+            result = (
+                "RATE_LIMITED"
+                if batch_result.rate_limited
+                else "TIMEOUT"
+                if batch_result.timed_out
+                else "PROVIDER_FAILURE"
+            )
+            LOGGER.info(
+                "VERSION ANALYZER BATCH request_count=1 work_items=%d "
+                "roster_observations=%d source_evidence_compatible=yes "
+                "source_images=%d result=%s",
+                len(requests),
+                roster_observations_count,
+                len(evidence.images),
+                result,
+            )
             return CardVersionAnalysisOutcome(len(requests), request_succeeded=False, provider_failed=True, rate_limited=batch_result.rate_limited, timed_out=batch_result.timed_out)
         from operation_pancake.c3po_card_version import C3POCardObservation
         updated_observations = {}
         for group in work_groups:
             representative_fingerprint, representative = group[0]
             decision = batch_result.decisions.get(representative_fingerprint, CardVersionDecision.no_evidence())
+            LOGGER.info(
+                "VERSION ANALYZER RESULT player=%s result=%s program=%s",
+                representative.name,
+                decision.state,
+                decision.program or "not-read",
+            )
             if decision.state in {"IDENTIFIED", "AMBIGUOUS", "NO_EVIDENCE"}:
                 for fingerprint, observation in group:
+                    card_id, art_asset = self._exact_art(observation, decision.program)
                     updated_observations[fingerprint] = C3POCardObservation(
                         fingerprint=fingerprint,
                         player_name=observation.name or "",
@@ -406,7 +427,16 @@ class C3PORosterService:
                         state="IDENTIFIED" if decision.state == "IDENTIFIED" else "UNCERTAIN",
                         confidence=decision.confidence,
                         positive_visual_evidence=decision.positive_visual_evidence,
-                        art_url=_known_art_url(observation.name, observation.displayed_ovr),
+                        card_id=card_id,
+                        art_asset=art_asset,
                     )
         self.card_observation_store.save(updated_observations)
+        LOGGER.info(
+            "VERSION ANALYZER BATCH request_count=1 work_items=%d "
+            "roster_observations=%d source_evidence_compatible=yes "
+            "source_images=%d result=SUCCESS",
+            len(requests),
+            roster_observations_count,
+            len(evidence.images),
+        )
         return CardVersionAnalysisOutcome(len(requests), request_succeeded=True)

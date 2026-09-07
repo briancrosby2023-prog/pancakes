@@ -65,7 +65,8 @@ class C3POCardObservation:
     state: str
     confidence: str | None = None
     positive_visual_evidence: tuple[str, ...] = ()
-    art_url: str | None = None
+    card_id: str | None = None
+    art_asset: str | None = None
 
 
 class C3POCardObservationStore:
@@ -107,9 +108,14 @@ class C3POCardObservationStore:
                 )
                 if isinstance(evidence, list)
                 else (),
-                art_url=(
-                    row.get("art_url")
-                    if isinstance(row.get("art_url"), str) and row.get("art_url").strip()
+                card_id=(
+                    row.get("card_id")
+                    if isinstance(row.get("card_id"), str) and row.get("card_id").strip()
+                    else None
+                ),
+                art_asset=(
+                    row.get("art_asset")
+                    if isinstance(row.get("art_asset"), str) and row.get("art_asset").strip()
                     else None
                 ),
             )
@@ -131,7 +137,8 @@ class C3POCardObservationStore:
                     "positive_visual_evidence": list(
                         observation.positive_visual_evidence
                     ),
-                    "art_url": observation.art_url,
+                    "card_id": observation.card_id,
+                    "art_asset": observation.art_asset,
                 }
             )
         temporary = self.path.with_suffix(self.path.suffix + ".tmp")

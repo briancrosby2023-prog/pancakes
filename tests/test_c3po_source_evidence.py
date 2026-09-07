@@ -209,6 +209,7 @@ def test_identified_program_persists_without_mutating_roster(tmp_path):
     service = _service(tmp_path, _Provider(), analyzer)
     roster = service.import_four(_screenshots(tmp_path))
     roster_bytes = service.store.path.read_bytes()
+    service.analyze_card_versions(roster)
     assert len(analyzer.calls) == 1
 
     page = service.my_team_html()
@@ -236,7 +237,8 @@ def test_analyzer_can_report_program_absent_from_database(tmp_path):
         CardVersionDecision.identified("SEASON 2", ("Visible Season 2 badge",))
     )
     service = _service(tmp_path, _Provider(), analyzer)
-    service.import_four(_screenshots(tmp_path))
+    roster = service.import_four(_screenshots(tmp_path))
+    service.analyze_card_versions(roster)
 
     page = service.my_team_html()
 
@@ -256,7 +258,8 @@ def test_non_unique_or_failed_analysis_renders_card_not_read(tmp_path):
         case.mkdir()
         analyzer = _RecordingAnalyzer(decision)
         service = _service(case, _Provider(), analyzer)
-        service.import_four(_screenshots(case))
+        roster = service.import_four(_screenshots(case))
+        service.analyze_card_versions(roster)
         assert len(analyzer.calls) == 1
         assert "CARD NOT READ" in service.my_team_html()
         assert len(analyzer.calls) == 1
@@ -333,7 +336,7 @@ def test_stale_automatic_choice_fails_open_after_new_observation(tmp_path):
     assert changed.players[0].displayed_ovr == 86
     page = service.my_team_html()
     assert "Thomas Shrader" in page
-    assert "EA OVR 86" in page
+    assert '<span class="choice-ovr">86</span>' in page
     assert "CARD NOT READ" in page
     assert "PHENOMS" not in page
 
@@ -365,7 +368,8 @@ def test_version_diagnostics_are_bounded_and_exclude_sensitive_payloads(
     )
     service = _service(tmp_path, _Provider(), analyzer)
 
-    service.import_four(_screenshots(tmp_path))
+    roster = service.import_four(_screenshots(tmp_path))
+    service.analyze_card_versions(roster)
 
     messages = "\n".join(record.getMessage() for record in caplog.records)
     assert "VERSION ANALYZER BATCH request_count=1" in messages
@@ -631,9 +635,10 @@ def test_real_provider_boundary_batches_and_deduplicates_identical_work(tmp_path
     assert "Phenoms" not in prompt
     assert service.store.path.read_bytes() == roster_bytes
     assert service.store.load().players == (repeated, repeated, juan)
-    assert service.my_team_html().count("PHENOMS") == 2
-    assert "Juan Gaston" in service.my_team_html()
-    assert "CARD NOT READ" in service.my_team_html()
+    page = service.my_team_html()
+    assert page.count('data-program="PHENOMS"') == 2
+    assert "Juan Gaston" in page
+    assert "CARD NOT READ" in page
 
 
 def test_same_name_with_different_immutable_evidence_is_not_deduplicated(tmp_path):

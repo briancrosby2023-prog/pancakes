@@ -1,10 +1,16 @@
 """Operation Pancake My Team presentation for the authoritative C-3PO roster."""
+# ruff: noqa: E501
 from __future__ import annotations
 
 import html
 import re
 
-from operation_pancake.c3po_roster import VIEWS, C3PORoster, observation_fingerprint, roster_observations
+from operation_pancake.c3po_roster import (
+    VIEWS,
+    C3PORoster,
+    observation_fingerprint,
+    roster_observations,
+)
 
 LINEUP_STYLE = """
 <style>
@@ -37,8 +43,9 @@ def _program_value(card_observation) -> tuple[str, bool]:
 def _card_art(player, card_observation) -> str | None:
     if not player.name or card_observation is None:
         return None
-    art_url = getattr(card_observation, "art_url", None)
-    return art_url if isinstance(art_url, str) and art_url.strip() else None
+    from operation_pancake.card_art import local_art_url
+
+    return local_art_url(getattr(card_observation, "art_asset", None))
 
 
 def _player_choice(player, card_observation=None, *, selected: bool) -> str:
@@ -73,10 +80,14 @@ def _position_group(slot: str, view: str | None = None) -> tuple[str, int]:
 
 
 def _ordered_groups(view: str, groups: dict[str, list[tuple[int, object, object]]]):
-    if view == "OFFENSE": order = OFFENSE_POSITION_ORDER
-    elif view == "DEFENSE": order = DEFENSE_POSITION_ORDER
-    elif view == "SPECIAL TEAMS": order = SPECIAL_TEAMS_POSITION_ORDER
-    else: return groups.items()
+    if view == "OFFENSE":
+        order = OFFENSE_POSITION_ORDER
+    elif view == "DEFENSE":
+        order = DEFENSE_POSITION_ORDER
+    elif view == "SPECIAL TEAMS":
+        order = SPECIAL_TEAMS_POSITION_ORDER
+    else:
+        return groups.items()
     rank = {position: index for index, position in enumerate(order)}
     return sorted(groups.items(), key=lambda item: (rank.get(item[0], len(rank)), item[0]))
 
@@ -94,11 +105,16 @@ def render_c3po_roster(roster: C3PORoster, programs=None) -> str:
     for view_index, view in enumerate(VIEWS):
         groups: dict[str, list[tuple[int, object, object]]] = {}
         for occurrence, player in roster_observations(roster):
-            if player.view != view: continue
+            if player.view != view:
+                continue
             position, depth = _position_group(player.slot, view)
             fingerprint = observation_fingerprint(player, occurrence)
             program = programs.get(fingerprint)
-            if program is not None and (getattr(program, "player_name", None) != (player.name or "") or getattr(program, "displayed_ovr", None) != player.displayed_ovr): program = None
+            if program is not None and (
+                getattr(program, "player_name", None) != (player.name or "")
+                or getattr(program, "displayed_ovr", None) != player.displayed_ovr
+            ):
+                program = None
             groups.setdefault(position, []).append((depth, player, program))
         cards = []
         for position, rows in _ordered_groups(view, groups):

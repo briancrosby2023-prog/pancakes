@@ -183,7 +183,8 @@ def test_luke_and_kj_programs_persist_before_database_enrichment(tmp_path):
     persisted = observation_store.load()
     assert {row.program for row in persisted.values()} == {"SEASON 2", "PHENOMS"}
     page = service.my_team_html()
-    assert "Luke Montgomery" in page and "EA OVR 87" in page
+    assert "Luke Montgomery" in page
+    assert '<span class="choice-ovr">87</span>' in page
     assert "SEASON 2" in page
     assert "Core Rare" not in page
     assert "Orientation" not in page
@@ -319,7 +320,7 @@ def test_missing_program_and_missing_name_are_product_states(tmp_path):
     assert "Luke Montgomery" in page
     assert "CARD NOT READ" in page
     assert "NAME NOT READ" in page
-    assert page.count('class="player ') == 2
+    assert page.count('class="player-choice') == 2
 
 
 def test_program_analysis_excludes_name_not_read_observations(tmp_path):
@@ -460,5 +461,5 @@ def test_compact_slots_and_nested_backups_render_and_analyze_as_one_depth_group(
     ]
     assert page.count('<section class="position-group"><h3>LT</h3>') == 1
     assert "Josh Petty" in page and "Luke Montgomery" in page
-    assert page.count('class="player starter"') == 1
-    assert page.count('class="player backup"') == 1
+    assert page.count('class="player-choice') == 2
+    assert page.count('class="player-choice selected"') == 1

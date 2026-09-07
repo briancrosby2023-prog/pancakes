@@ -1,3 +1,8 @@
+import threading
+import urllib.request
+from http.server import ThreadingHTTPServer
+
+from operation_pancake import c3po_roster_app
 from operation_pancake.c3po_card_version import (
     C3POCardObservation,
     C3POCardObservationStore,
@@ -5,25 +10,34 @@ from operation_pancake.c3po_card_version import (
 from operation_pancake.c3po_roster import (
     C3POPlayer,
     C3PORoster,
-    _known_art_url,
+    C3PORosterService,
+    C3PORosterStore,
     observation_fingerprint,
 )
 from operation_pancake.c3po_roster_page import render_c3po_roster
 
-# Verified CFB.FAN playeritem URLs below are evidence-bound to known roster observations.
-LUKE_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/202019231.png"
-CASON_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260010612.png"
-JOSH_PETTY_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260025229.png"
-THOMAS_SHRADER_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260021328.png"
-KEYAN_BURNETT_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260021232.png"
-MARTELLUS_BENNETT_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/104026256.png"
+CARD_ID = "card:90a8312982d3c1270826"
+ART_FILENAME = "card-90a8312982d3c1270826.png"
+ART_ASSET = f"data/production/card_art/{ART_FILENAME}"
+ART_URL = f"/card-art/{ART_FILENAME}"
 
 
 def _roster(*players: C3POPlayer) -> C3PORoster:
     return C3PORoster(players, "google-gemini", "gemini-3.7-flash")
 
 
-def test_known_observation_persists_art_and_renders_at_existing_lg_location(tmp_path):
+def _cards(*, program="Season 2", asset=ART_ASSET):
+    return (
+        {
+            "card_id": CARD_ID,
+            "player_name": "Luke Montgomery",
+            "program": program,
+            "card_art_asset": asset,
+        },
+    )
+
+
+def test_exact_card_resolution_persists_local_art_and_renders_at_lg(tmp_path):
     player = C3POPlayer("OFFENSE", "LG 1", "Luke Montgomery", 87)
     fingerprint = observation_fingerprint(player, 0)
     store = C3POCardObservationStore(tmp_path / "c3po-programs.json")
@@ -33,9 +47,10 @@ def test_known_observation_persists_art_and_renders_at_existing_lg_location(tmp_
                 fingerprint=fingerprint,
                 player_name="Luke Montgomery",
                 displayed_ovr=87,
-                program=None,
-                state="UNCERTAIN",
-                art_url=LUKE_ART_URL,
+                program="Season 2",
+                state="IDENTIFIED",
+                card_id=CARD_ID,
+                art_asset=ART_ASSET,
             )
         }
     )
@@ -45,49 +60,138 @@ def test_known_observation_persists_art_and_renders_at_existing_lg_location(tmp_
     lg_start = page.index("<h3>LG</h3>")
     lg_group = page[lg_start : page.index("</section>", lg_start)]
 
-    assert programs[fingerprint].art_url == LUKE_ART_URL
-    assert f'src="{LUKE_ART_URL}"' in lg_group
+    assert programs[fingerprint].card_id == CARD_ID
+    assert programs[fingerprint].art_asset == ART_ASSET
+    assert f'src="{ART_URL}"' in lg_group
     assert 'data-slot="LG 1"' in lg_group
-    assert "CARD NOT READ" in lg_group
+    assert "Season 2" in lg_group
     assert '<span class="choice-ovr">87</span>' in lg_group
 
 
-def test_cason_henry_known_card_art_is_seeded_for_observed_85():
-    assert _known_art_url("Cason Henry", 85) == CASON_ART_URL
-
-
-def test_new_verified_card_art_survives_save_reload_and_renders_at_roster_position(tmp_path):
-    cases = (
-        ("OFFENSE", "LT 1", "Josh Petty", 81, "Phenoms", JOSH_PETTY_ART_URL),
-        ("SPECIAL TEAMS", "LS 1", "Thomas Shrader", 85, "Phenoms", THOMAS_SHRADER_ART_URL),
-        ("DEFENSE", "RRE 1", "Keyan Burnett", 83, "Phenoms", KEYAN_BURNETT_ART_URL),
-        ("DEFENSE", "SUBLB 2", "Martellus Bennett", 82, "Core Legends Modern", MARTELLUS_BENNETT_ART_URL),
+def test_exact_card_resolution_carries_local_asset_through_service(tmp_path):
+    player = C3POPlayer("OFFENSE", "LG 1", "Luke Montgomery", 87, program="Season 2")
+    service = C3PORosterService(
+        C3PORosterStore(tmp_path / "roster.json"),
+        provider=None,
+        enrichment_cards=_cards(),
+        card_observation_store=C3POCardObservationStore(tmp_path / "programs.json"),
     )
-    for index, (view, slot, name, ovr, program, art_url) in enumerate(cases):
-        player = C3POPlayer(view, slot, name, ovr, program=program)
-        fingerprint = observation_fingerprint(player, 0)
-        store = C3POCardObservationStore(tmp_path / f"programs-{index}.json")
-        store.save(
-            {
-                fingerprint: C3POCardObservation(
-                    fingerprint=fingerprint,
-                    player_name=name,
-                    displayed_ovr=ovr,
-                    program=program,
-                    state="IDENTIFIED",
-                    art_url=_known_art_url(name, ovr),
-                )
-            }
+
+    assert service.persist_inline_programs(_roster(player)) == 1
+    stored = service.card_observation_store.load()
+    observation = stored[observation_fingerprint(player, 0)]
+    assert observation.card_id == CARD_ID
+    assert observation.art_asset == ART_ASSET
+    assert ART_URL in service.render_html(_roster(player))
+
+
+def test_rendering_survives_acquisition_source_disappearance(tmp_path):
+    source = tmp_path / "acquisition.png"
+    source.write_bytes(b"acquisition is not runtime authority")
+    player = C3POPlayer("OFFENSE", "LG 1", "Luke Montgomery", 87)
+    fingerprint = observation_fingerprint(player, 0)
+    programs = {
+        fingerprint: C3POCardObservation(
+            fingerprint,
+            "Luke Montgomery",
+            87,
+            "Season 2",
+            "IDENTIFIED",
+            card_id=CARD_ID,
+            art_asset=ART_ASSET,
         )
+    }
+    source.unlink()
 
-        programs = store.load()
-        page = render_c3po_roster(_roster(player), programs)
+    page = render_c3po_roster(_roster(player), programs)
+    assert ART_URL in page
+    assert "media.cfb.fan" not in page
+    assert "cfb.fan" not in page
 
-        assert programs[fingerprint].art_url == art_url
-        assert f'src="{art_url}"' in page
-        assert f'data-slot="{slot}"' in page
-        assert f'<span class="choice-ovr">{ovr}</span>' in page
-        assert program in page
+
+def test_unresolved_or_different_exact_card_does_not_inherit_art(tmp_path):
+    service = C3PORosterService(
+        C3PORosterStore(tmp_path / "roster.json"),
+        provider=None,
+        enrichment_cards=_cards(program="Season 2"),
+        card_observation_store=C3POCardObservationStore(tmp_path / "programs.json"),
+    )
+    unknown_version = C3POPlayer(
+        "OFFENSE", "LG 1", "Luke Montgomery", 87, program="Core Rare"
+    )
+
+    service.persist_inline_programs(_roster(unknown_version))
+    stored = service.card_observation_store.load()[
+        observation_fingerprint(unknown_version, 0)
+    ]
+    assert stored.card_id is None
+    assert stored.art_asset is None
+    assert '<img class="feature-art"' not in service.render_html(_roster(unknown_version))
+
+
+def test_duplicate_observations_stay_separate_and_share_exact_card_asset(tmp_path):
+    players = (
+        C3POPlayer("OFFENSE", "LG 1", "Luke Montgomery", 87, program="Season 2"),
+        C3POPlayer("SPECIALISTS", "LS 1", "Luke Montgomery", 87, program="Season 2"),
+    )
+    service = C3PORosterService(
+        C3PORosterStore(tmp_path / "roster.json"),
+        provider=None,
+        enrichment_cards=_cards(),
+        card_observation_store=C3POCardObservationStore(tmp_path / "programs.json"),
+    )
+
+    service.persist_inline_programs(_roster(*players))
+    stored = service.card_observation_store.load()
+    assert len(stored) == 2
+    assert len({row.fingerprint for row in stored.values()}) == 2
+    assert {row.art_asset for row in stored.values()} == {ART_ASSET}
+
+
+def test_exact_lookup_and_render_make_zero_artwork_network_requests(tmp_path, monkeypatch):
+    def forbidden_network(*_args, **_kwargs):
+        raise AssertionError("My Team attempted artwork acquisition")
+
+    monkeypatch.setattr(urllib.request, "urlopen", forbidden_network)
+    player = C3POPlayer("OFFENSE", "LG 1", "Luke Montgomery", 87, program="Season 2")
+    service = C3PORosterService(
+        C3PORosterStore(tmp_path / "roster.json"),
+        provider=None,
+        enrichment_cards=_cards(),
+        card_observation_store=C3POCardObservationStore(tmp_path / "programs.json"),
+    )
+
+    service.persist_inline_programs(_roster(player))
+    page = service.render_html(_roster(player))
+    assert ART_URL in page
+    assert "cfb.fan" not in page
+
+
+def test_card_art_route_serves_only_pancake_owned_asset(tmp_path):
+    art_root = tmp_path / "data/production/card_art"
+    art_root.mkdir(parents=True)
+    payload = b"\x89PNG\r\n\x1a\nlocal-image"
+    (art_root / ART_FILENAME).write_bytes(payload)
+    service = C3PORosterService(
+        C3PORosterStore(tmp_path / "roster.json"),
+        provider=None,
+        card_observation_store=C3POCardObservationStore(tmp_path / "programs.json"),
+        card_art_root=art_root,
+    )
+    server = ThreadingHTTPServer(
+        ("127.0.0.1", 0), c3po_roster_app.create_handler(service, tmp_path / "uploads")
+    )
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    try:
+        with urllib.request.urlopen(
+            f"http://127.0.0.1:{server.server_port}{ART_URL}", timeout=5
+        ) as response:
+            assert response.read() == payload
+            assert response.headers["Content-Type"] == "image/png"
+    finally:
+        server.shutdown()
+        server.server_close()
 
 
 def test_unknown_art_keeps_placeholder_instead_of_substituting_a_card():

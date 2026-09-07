@@ -1,4 +1,5 @@
 """Production HTTP boundary for the clean-room C-3PO roster."""
+# ruff: noqa: E501
 from __future__ import annotations
 
 import html
@@ -101,6 +102,31 @@ def create_handler(service: C3PORosterService, upload_root: Path):
 
         def do_GET(self) -> None:  # noqa: N802
             path = urlparse(self.path).path
+            if path.startswith("/card-art/"):
+                filename = path.removeprefix("/card-art/")
+                target = service.card_art_root / filename if service.card_art_root else None
+                if (
+                    target is None
+                    or not filename
+                    or Path(filename).name != filename
+                    or target.suffix.lower() not in {".jpg", ".png", ".webp"}
+                    or not target.is_file()
+                ):
+                    self._send(_page("<h1>Not found</h1>", active=""), 404)
+                    return
+                payload = target.read_bytes()
+                self.send_response(200)
+                content_types = {
+                    ".jpg": "image/jpeg",
+                    ".png": "image/png",
+                    ".webp": "image/webp",
+                }
+                self.send_header("Content-Type", content_types[target.suffix.lower()])
+                self.send_header("Content-Length", str(len(payload)))
+                self.send_header("Cache-Control", "public, max-age=31536000, immutable")
+                self.end_headers()
+                self.wfile.write(payload)
+                return
             if path in {"/", "/setup"}:
                 setup = (
                     '<section class="setup-intro"><p class="eyebrow">TEAM SETUP</p>'
@@ -157,6 +183,8 @@ def create_service(
     card_observation_path: Path | None = None,
     version_analyzer=None,
 ) -> C3PORosterService:
+    from operation_pancake.cfb27_enrichment import load_cfb27_production_cards
+
     resolved_root = root.resolve()
     store_path = roster_path or Path(
         os.getenv(
@@ -167,7 +195,7 @@ def create_service(
     return C3PORosterService(
         C3PORosterStore(store_path),
         provider or GeminiC3POProvider(),
-        enrichment_cards=None,
+        enrichment_cards=lambda: load_cfb27_production_cards(resolved_root),
         card_choice_store=None,
         source_evidence_store=C3POSourceEvidenceStore(
             evidence_path or store_path.parent / "c3po-source-evidence.zip"
@@ -177,6 +205,7 @@ def create_service(
             card_observation_path
             or resolved_root / ".operation_pancake/c3po-programs.json"
         ),
+        card_art_root=resolved_root / "data/production/card_art",
     )
 
 
