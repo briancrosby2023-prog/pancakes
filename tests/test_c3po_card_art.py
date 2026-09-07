@@ -10,7 +10,7 @@ from operation_pancake.c3po_roster import (
 )
 from operation_pancake.c3po_roster_page import render_c3po_roster
 
-# Exact CFB.FAN playeritem URLs below are evidence-bound to known roster observations.
+# Verified CFB.FAN playeritem URLs below are evidence-bound to known roster observations.
 LUKE_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/202019231.png"
 CASON_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260010612.png"
 JOSH_PETTY_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260025229.png"
