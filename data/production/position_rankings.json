@@ -1212,6 +1212,46 @@
       }
     },
     {
+      "archetype": "Zone",
+      "archetype_rank": 1,
+      "attribute_coverage": 1.0,
+      "card_art_asset": "data/production/card_art/card-1f592fc7b5fccfe031df.png",
+      "card_id": "card:1f592fc7b5fccfe031df",
+      "model_evidence_paths": [
+        "data/research/op_x_018/cb/frozen_cb_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 90,
+      "pancake_model_id": "CB-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:79bc39676533f2e548fe",
+      "player_name": "Ty Redmond",
+      "position": "CB",
+      "position_family": "CB",
+      "position_rank": 7,
+      "program": "Sunday Spotlight: Figurines",
+      "routing": {
+        "basis": "exact name",
+        "confidence": "PROVEN",
+        "family": "CB",
+        "model_id": "CB-M19-ARCH-001",
+        "profile": "Zone",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 87.82,
+      "score_confidence": "HIGH",
+      "score_status": "SCORED_COMPLETE",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/24655-ty-redmond/27-120024655/",
+        "raw_snapshot": "data/external/raw/cfb_fan_player_items/4c458f7d68e604e53311c80ce52a4f4c5f030b81664f77d4fa00850f29456ccd.json"
+      }
+    },
+    {
       "archetype": "Field",
       "archetype_rank": 6,
       "attribute_coverage": 1.0,
@@ -1230,7 +1270,7 @@
       "player_name": "Xavier Scott",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 7,
+      "position_rank": 8,
       "program": "Supercharged",
       "routing": {
         "basis": "space/field coverage role",
@@ -1269,7 +1309,7 @@
       "player_name": "LeVar Thornton Jr.",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 8,
+      "position_rank": 9,
       "program": "Ranked",
       "routing": {
         "basis": "space/field coverage role",
@@ -1308,7 +1348,7 @@
       "player_name": "Kobe Black",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 9,
+      "position_rank": 10,
       "program": "Ranked",
       "routing": {
         "basis": "space/field coverage role",
@@ -1326,6 +1366,46 @@
         "card": "CFB_FAN",
         "ratings": "https://cfb.fan/players/22750-kobe-black/27-800022750/",
         "raw_snapshot": "data/external/raw/cfb_fan_player_items/7d7c599177044b2cb22221b2c57a76b21a31259c4110c0f39b5400124a0a6875.json"
+      }
+    },
+    {
+      "archetype": "Zone",
+      "archetype_rank": 2,
+      "attribute_coverage": 1.0,
+      "card_art_asset": "data/production/card_art/card-dce5dff3d8ab245d5b3c.png",
+      "card_id": "card:dce5dff3d8ab245d5b3c",
+      "model_evidence_paths": [
+        "data/research/op_x_018/cb/frozen_cb_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 89,
+      "pancake_model_id": "CB-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:79bc39676533f2e548fe",
+      "player_name": "Ty Redmond",
+      "position": "CB",
+      "position_family": "CB",
+      "position_rank": 11,
+      "program": "Sunday Spotlight: Figurines",
+      "routing": {
+        "basis": "exact name",
+        "confidence": "PROVEN",
+        "family": "CB",
+        "model_id": "CB-M19-ARCH-001",
+        "profile": "Zone",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 86.82,
+      "score_confidence": "HIGH",
+      "score_status": "SCORED_COMPLETE",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/24655-ty-redmond/27-121024655/",
+        "raw_snapshot": "data/external/raw/cfb_fan_player_items/4c458f7d68e604e53311c80ce52a4f4c5f030b81664f77d4fa00850f29456ccd.json"
       }
     },
     {
@@ -1347,7 +1427,7 @@
       "player_name": "Jamari Sharpe",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 10,
+      "position_rank": 12,
       "program": "Phenoms",
       "routing": {
         "basis": "space/field coverage role",
@@ -1386,7 +1466,7 @@
       "player_name": "Kelley Jones",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 11,
+      "position_rank": 13,
       "program": "College Kickoff",
       "routing": {
         "basis": "press/man coverage role",
@@ -1425,7 +1505,7 @@
       "player_name": "Will James",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 12,
+      "position_rank": 14,
       "program": "College Kickoff",
       "routing": {
         "basis": "space/field coverage role",
@@ -1464,7 +1544,7 @@
       "player_name": "Brian Nelson II",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 13,
+      "position_rank": 15,
       "program": "College Kickoff",
       "routing": {
         "basis": "press/man coverage role",
@@ -1503,7 +1583,7 @@
       "player_name": "Jyaire Hill",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 14,
+      "position_rank": 16,
       "program": "Phenoms",
       "routing": {
         "basis": "space/field coverage role",
@@ -1542,7 +1622,7 @@
       "player_name": "Rod Woodson",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 15,
+      "position_rank": 17,
       "program": "Summer Rush",
       "routing": {
         "basis": "space/field coverage role",
@@ -1581,7 +1661,7 @@
       "player_name": "Dick Lane",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 16,
+      "position_rank": 18,
       "program": "Season 2 - Legends - Classic",
       "routing": {
         "basis": "press/man coverage role",
@@ -1620,7 +1700,7 @@
       "player_name": "Jay Crawford",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 17,
+      "position_rank": 19,
       "program": "College Kickoff",
       "routing": {
         "basis": "space/field coverage role",
@@ -1659,7 +1739,7 @@
       "player_name": "Brice Pollock",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 18,
+      "position_rank": 20,
       "program": "Season 1",
       "routing": {
         "basis": "press/man coverage role",
@@ -1698,7 +1778,7 @@
       "player_name": "LeVar Thornton Jr.",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 19,
+      "position_rank": 21,
       "program": "Ranked",
       "routing": {
         "basis": "space/field coverage role",
@@ -1737,7 +1817,7 @@
       "player_name": "Devin Hester",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 20,
+      "position_rank": 22,
       "program": "Sunday Spotlight: Retro",
       "routing": {
         "basis": "space/field coverage role",
@@ -1776,7 +1856,7 @@
       "player_name": "Kaleb Cost",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 21,
+      "position_rank": 23,
       "program": "Sunday Spotlight: Retro",
       "routing": {
         "basis": "space/field coverage role",
@@ -1798,7 +1878,7 @@
     },
     {
       "archetype": "Zone",
-      "archetype_rank": 1,
+      "archetype_rank": 3,
       "attribute_coverage": 1.0,
       "card_id": "card:b547723cea6d3662ecd2",
       "model_evidence_paths": [
@@ -1815,7 +1895,7 @@
       "player_name": "Terhyon Nichols",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 22,
+      "position_rank": 24,
       "program": "Season 2",
       "routing": {
         "basis": "exact name",
@@ -1854,7 +1934,7 @@
       "player_name": "Jay'Vion Cole",
       "position": "CB",
       "position_family": "CB",
-      "position_rank": 23,
+      "position_rank": 25,
       "program": "Supercharged",
       "routing": {
         "basis": "press/man coverage role",
@@ -1872,84 +1952,6 @@
         "card": "CFB_FAN",
         "ratings": "https://cfb.fan/players/19692-jayvion-cole/27-280019692/",
         "raw_snapshot": "data/external/raw/cfb_fan_player_items/59855014e2785e3dc344cec2514ba55874918d12e717dacfa7d509fe739087fb.json"
-      }
-    },
-    {
-      "archetype": "Bump and Run",
-      "archetype_rank": 7,
-      "attribute_coverage": 1.0,
-      "card_id": "card:15730516ddd200c79b31",
-      "model_evidence_paths": [
-        "data/research/op_x_018/cb/frozen_cb_scoring_spec.json",
-        "data/research/op_x_017/coverage_matrix.json"
-      ],
-      "model_limitations": [
-        "ranking score only; not a displayed-overall prediction"
-      ],
-      "native_overall": 88,
-      "pancake_model_id": "CB-M19-ARCH-001",
-      "pancake_model_version": "v1.0",
-      "player_id": "player:d8f494e2fa4ffffafd45",
-      "player_name": "Jontez Williams",
-      "position": "CB",
-      "position_family": "CB",
-      "position_rank": 24,
-      "program": "Prime Prospects",
-      "routing": {
-        "basis": "press/man coverage role",
-        "confidence": "SUPPORTED",
-        "family": "CB",
-        "model_id": "CB-M19-ARCH-001",
-        "profile": "Man to Man",
-        "status": "ROUTED",
-        "version": "v1.0"
-      },
-      "score": 85.47,
-      "score_confidence": "HIGH",
-      "score_status": "SCORED_COMPLETE",
-      "source": {
-        "card": "CFB_FAN",
-        "ratings": "https://cfb.fan/players/19620-jontez-williams/27-270019620/",
-        "raw_snapshot": "data/external/raw/cfb_fan/327d6ca534b5e3f809744d58e82f7d225cd767f6b70e41dacf0432b6bee0b07f.bin"
-      }
-    },
-    {
-      "archetype": "Field",
-      "archetype_rank": 17,
-      "attribute_coverage": 1.0,
-      "card_id": "card:1866054833a6d2dc3c72",
-      "model_evidence_paths": [
-        "data/research/op_x_018/cb/frozen_cb_scoring_spec.json",
-        "data/research/op_x_017/coverage_matrix.json"
-      ],
-      "model_limitations": [
-        "ranking score only; not a displayed-overall prediction"
-      ],
-      "native_overall": 87,
-      "pancake_model_id": "CB-M19-ARCH-001",
-      "pancake_model_version": "v1.0",
-      "player_id": "player:a1d68aaa75134b662d8a",
-      "player_name": "Kobe Black",
-      "position": "CB",
-      "position_family": "CB",
-      "position_rank": 25,
-      "program": "Ranked",
-      "routing": {
-        "basis": "space/field coverage role",
-        "confidence": "HYPOTHESIS",
-        "family": "CB",
-        "model_id": "CB-M19-ARCH-001",
-        "profile": "Zone",
-        "status": "ROUTED",
-        "version": "v1.0"
-      },
-      "score": 85.44,
-      "score_confidence": "HIGH",
-      "score_status": "SCORED_COMPLETE",
-      "source": {
-        "card": "CFB_FAN",
-        "ratings": "https://cfb.fan/players/22750-kobe-black/27-801022750/",
-        "raw_snapshot": "data/external/raw/cfb_fan/991fcf1c221d826321939564b9a4df6e1bf0265496b7e75fc6390fe368c676f5.bin"
       }
     }
   ],
@@ -8678,6 +8680,7 @@
       "archetype": "Agile",
       "archetype_rank": 13,
       "attribute_coverage": 1.0,
+      "card_art_asset": "data/production/card_art/card-aabd2c5d508df4e1cabc.png",
       "card_id": "card:aabd2c5d508df4e1cabc",
       "model_evidence_paths": [
         "data/research/op_x_020/tackle/frozen_tackle_scoring_spec.json",
@@ -9913,6 +9916,46 @@
       }
     },
     {
+      "archetype": "Contact Seeker",
+      "archetype_rank": 1,
+      "attribute_coverage": 1.0,
+      "card_art_asset": "data/production/card_art/card-a1777bab3a309d25066d.png",
+      "card_id": "card:a1777bab3a309d25066d",
+      "model_evidence_paths": [
+        "data/research/op_x_020/rb/frozen_rb_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 90,
+      "pancake_model_id": "RB-M19-ARCH-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:8410c75c614bb89753f7",
+      "player_name": "Carson Hansen",
+      "position": "HB",
+      "position_family": "RB",
+      "position_rank": 4,
+      "program": "Sunday Spotlight: Figurines",
+      "routing": {
+        "basis": "contact/power runner role",
+        "confidence": "SUPPORTED",
+        "family": "RB",
+        "model_id": "RB-M19-ARCH-001",
+        "profile": "Power Back",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 87.92,
+      "score_confidence": "HIGH",
+      "score_status": "SCORED_COMPLETE",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/8071-carson-hansen/27-120008071/",
+        "raw_snapshot": "data/external/raw/cfb_fan_player_items/4c458f7d68e604e53311c80ce52a4f4c5f030b81664f77d4fa00850f29456ccd.json"
+      }
+    },
+    {
       "archetype": "Backfield Threat",
       "archetype_rank": 1,
       "attribute_coverage": 0.96,
@@ -9931,7 +9974,7 @@
       "player_name": "Ousmane Kromah",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 4,
+      "position_rank": 5,
       "program": "Game of the Week",
       "routing": {
         "basis": "backfield receiving role",
@@ -9970,7 +10013,7 @@
       "player_name": "Raleek Brown",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 5,
+      "position_rank": 6,
       "program": "Prime Prospects",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10009,7 +10052,7 @@
       "player_name": "Hollywood Smothers",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 6,
+      "position_rank": 7,
       "program": "Prime Prospects",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10031,7 +10074,7 @@
     },
     {
       "archetype": "Contact Seeker",
-      "archetype_rank": 1,
+      "archetype_rank": 2,
       "attribute_coverage": 1.0,
       "card_id": "card:76563302f5d1cb946335",
       "model_evidence_paths": [
@@ -10048,7 +10091,7 @@
       "player_name": "Eddie George",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 7,
+      "position_rank": 8,
       "program": "Summer Rush",
       "routing": {
         "basis": "contact/power runner role",
@@ -10087,7 +10130,7 @@
       "player_name": "Kendrick Raphael",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 8,
+      "position_rank": 9,
       "program": "Sunday Spotlight: Figurines",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10126,7 +10169,7 @@
       "player_name": "Marcus Allen",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 9,
+      "position_rank": 10,
       "program": "Season 2 - Legends - Classic",
       "routing": {
         "basis": "backfield receiving role",
@@ -10165,7 +10208,7 @@
       "player_name": "Kewan Lacy",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 10,
+      "position_rank": 11,
       "program": "Phenoms",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10204,7 +10247,7 @@
       "player_name": "Bryson Washington",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 11,
+      "position_rank": 12,
       "program": "Prime Prospects",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10243,7 +10286,7 @@
       "player_name": "Cameron Dickey",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 12,
+      "position_rank": 13,
       "program": "Sunday Spotlight: Retro",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10265,7 +10308,7 @@
     },
     {
       "archetype": "Contact Seeker",
-      "archetype_rank": 2,
+      "archetype_rank": 3,
       "attribute_coverage": 1.0,
       "card_id": "card:028ceb6807e19319a115",
       "model_evidence_paths": [
@@ -10282,7 +10325,7 @@
       "player_name": "Jadan Baugh",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 13,
+      "position_rank": 14,
       "program": "Phenoms",
       "routing": {
         "basis": "contact/power runner role",
@@ -10321,7 +10364,7 @@
       "player_name": "Nate Sheppard",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 14,
+      "position_rank": 15,
       "program": "College Kickoff",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10360,7 +10403,7 @@
       "player_name": "Nate Frazier",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 15,
+      "position_rank": 16,
       "program": "Supercharged",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10399,7 +10442,7 @@
       "player_name": "Isaiah Bryant",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 16,
+      "position_rank": 17,
       "program": "Season 2",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10438,7 +10481,7 @@
       "player_name": "Sire Gaines",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 17,
+      "position_rank": 18,
       "program": "Sunday Spotlight: Retro",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10477,7 +10520,7 @@
       "player_name": "Kamari Moulton",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 18,
+      "position_rank": 19,
       "program": "College Kickoff",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10499,7 +10542,7 @@
     },
     {
       "archetype": "Contact Seeker",
-      "archetype_rank": 3,
+      "archetype_rank": 4,
       "attribute_coverage": 1.0,
       "card_id": "card:26c4983f74f2ef6c1ba6",
       "model_evidence_paths": [
@@ -10516,7 +10559,7 @@
       "player_name": "Todd Gurley",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 19,
+      "position_rank": 20,
       "program": "Season 1",
       "routing": {
         "basis": "contact/power runner role",
@@ -10538,7 +10581,7 @@
     },
     {
       "archetype": "Contact Seeker",
-      "archetype_rank": 4,
+      "archetype_rank": 5,
       "attribute_coverage": 1.0,
       "card_id": "card:2268e0a91844de14add6",
       "model_evidence_paths": [
@@ -10555,7 +10598,7 @@
       "player_name": "Mark Fletcher Jr.",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 20,
+      "position_rank": 21,
       "program": "Season 1",
       "routing": {
         "basis": "contact/power runner role",
@@ -10594,7 +10637,7 @@
       "player_name": "Bo Jackson",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 21,
+      "position_rank": 22,
       "program": "Supercharged",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10633,7 +10676,7 @@
       "player_name": "Sutton Smith",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 22,
+      "position_rank": 23,
       "program": "Supercharged",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10672,7 +10715,7 @@
       "player_name": "Turbo Richard",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 23,
+      "position_rank": 24,
       "program": "College Kickoff",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10711,7 +10754,7 @@
       "player_name": "Jai'Den Thomas",
       "position": "HB",
       "position_family": "RB",
-      "position_rank": 24,
+      "position_rank": 25,
       "program": "Standouts",
       "routing": {
         "basis": "lateral/elusive runner role",
@@ -10729,45 +10772,6 @@
         "card": "CFB_FAN",
         "ratings": "https://cfb.fan/players/8771-jaiden-thomas/27-250008771/",
         "raw_snapshot": "data/external/raw/cfb_fan/d63e487a73b396b86fb30f7f69454c8d4e18fe7ad373173accd51fccdb231322.bin"
-      }
-    },
-    {
-      "archetype": "East/West Playmaker",
-      "archetype_rank": 19,
-      "attribute_coverage": 0.9,
-      "card_id": "card:82fdbd31e4abe9d16ad5",
-      "model_evidence_paths": [
-        "data/research/op_x_020/rb/frozen_rb_scoring_spec.json",
-        "data/research/op_x_017/coverage_matrix.json"
-      ],
-      "model_limitations": [
-        "ranking score only; not a displayed-overall prediction"
-      ],
-      "native_overall": 87,
-      "pancake_model_id": "RB-M19-ARCH-001",
-      "pancake_model_version": "v1.0",
-      "player_id": "player:dedef3dd4ff0e3ee31cc",
-      "player_name": "Cameron Dickey",
-      "position": "HB",
-      "position_family": "RB",
-      "position_rank": 25,
-      "program": "Sunday Spotlight: Retro",
-      "routing": {
-        "basis": "lateral/elusive runner role",
-        "confidence": "SUPPORTED",
-        "family": "RB",
-        "model_id": "RB-M19-ARCH-001",
-        "profile": "Elusive Back",
-        "status": "ROUTED",
-        "version": "v1.0"
-      },
-      "score": 84.922222,
-      "score_confidence": "MEDIUM",
-      "score_status": "SCORED_PARTIAL",
-      "source": {
-        "card": "CFB_FAN",
-        "ratings": "https://cfb.fan/players/18638-cameron-dickey/27-111018638/",
-        "raw_snapshot": "data/external/raw/cfb_fan_player_items/5906d6758754dacebb1c14eceb89e09c6dc7f0ae82d0c815de98577ffbb82ebe.json"
       }
     }
   ],
@@ -12140,6 +12144,46 @@
       }
     },
     {
+      "archetype": "Lurker",
+      "archetype_rank": 3,
+      "attribute_coverage": 1.0,
+      "card_art_asset": "data/production/card_art/card-23d0e1dd0ee1a346bc9b.png",
+      "card_id": "card:23d0e1dd0ee1a346bc9b",
+      "model_evidence_paths": [
+        "data/research/op_x_019/sam/frozen_sam_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only; not a displayed-overall prediction"
+      ],
+      "native_overall": 89,
+      "pancake_model_id": "SAM-M19-ROLE-001",
+      "pancake_model_version": "v1.0",
+      "player_id": "player:65f6b4572a84c29a9c48",
+      "player_name": "Brandon Booker",
+      "position": "WILL",
+      "position_family": "SAM",
+      "position_rank": 11,
+      "program": "Sunday Spotlight: Figurines",
+      "routing": {
+        "basis": "coverage linebacker role",
+        "confidence": "SUPPORTED",
+        "family": "SAM",
+        "model_id": "SAM-M19-ROLE-001",
+        "profile": "OLB Pass Coverage",
+        "status": "ROUTED",
+        "version": "v1.0"
+      },
+      "score": 86.989247,
+      "score_confidence": "HIGH",
+      "score_status": "SCORED_COMPLETE",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/20021-brandon-booker/27-120020021/",
+        "raw_snapshot": "data/external/raw/cfb_fan_player_items/4c458f7d68e604e53311c80ce52a4f4c5f030b81664f77d4fa00850f29456ccd.json"
+      }
+    },
+    {
       "archetype": "Thumper",
       "archetype_rank": 7,
       "attribute_coverage": 0.38,
@@ -12158,7 +12202,7 @@
       "player_name": "Rolijah Hardy",
       "position": "WILL",
       "position_family": "SAM",
-      "position_rank": 11,
+      "position_rank": 12,
       "program": "Standouts",
       "routing": {
         "basis": "physical run-stopping linebacker role",
@@ -12197,7 +12241,7 @@
       "player_name": "Aiden Hall",
       "position": "SAM",
       "position_family": "SAM",
-      "position_rank": 12,
+      "position_rank": 13,
       "program": "Cornerstones",
       "routing": {
         "basis": "physical run-stopping linebacker role",
@@ -12236,7 +12280,7 @@
       "player_name": "Donovan Woolen",
       "position": "SAM",
       "position_family": "SAM",
-      "position_rank": 13,
+      "position_rank": 14,
       "program": "Game of the Week",
       "routing": {
         "basis": "physical run-stopping linebacker role",
@@ -12258,7 +12302,7 @@
     },
     {
       "archetype": "Lurker",
-      "archetype_rank": 3,
+      "archetype_rank": 4,
       "attribute_coverage": 0.247312,
       "card_id": "card:d69070410490758709d8",
       "model_evidence_paths": [
@@ -12275,7 +12319,7 @@
       "player_name": "Clay Matthews",
       "position": "SAM",
       "position_family": "SAM",
-      "position_rank": 14,
+      "position_rank": 15,
       "program": "S1 Legends - Modern",
       "routing": {
         "basis": "coverage linebacker role",
@@ -12314,7 +12358,7 @@
       "player_name": "Justin Okoronkwo",
       "position": "SAM",
       "position_family": "SAM",
-      "position_rank": 15,
+      "position_rank": 16,
       "program": "Ranked",
       "routing": {
         "basis": "physical run-stopping linebacker role",
@@ -12353,7 +12397,7 @@
       "player_name": "Kyle Emanuel",
       "position": "SAM",
       "position_family": "SAM",
-      "position_rank": 16,
+      "position_rank": 17,
       "program": "Season 2 - Legends - Modern",
       "routing": {
         "basis": "CFB26 unified linebacker taxonomy; exact historical field-command role exists at MLB, not OLB",
@@ -12392,7 +12436,7 @@
       "player_name": "Jaxton Eck",
       "position": "WILL",
       "position_family": "SAM",
-      "position_rank": 17,
+      "position_rank": 18,
       "program": "College Kickoff",
       "routing": {
         "basis": "physical run-stopping linebacker role",
@@ -12431,7 +12475,7 @@
       "player_name": "Bryan Longwell",
       "position": "SAM",
       "position_family": "SAM",
-      "position_rank": 18,
+      "position_rank": 19,
       "program": "Sunday Spotlight: Retro",
       "routing": {
         "basis": "physical run-stopping linebacker role",
@@ -12470,7 +12514,7 @@
       "player_name": "Jaylen Sneed",
       "position": "SAM",
       "position_family": "SAM",
-      "position_rank": 19,
+      "position_rank": 20,
       "program": "Cornerstones",
       "routing": {
         "basis": "CFB26 unified linebacker taxonomy; exact historical field-command role exists at MLB, not OLB",
@@ -12492,7 +12536,7 @@
     },
     {
       "archetype": "Lurker",
-      "archetype_rank": 4,
+      "archetype_rank": 5,
       "attribute_coverage": 1.0,
       "card_id": "card:8f66aac6c8bdb1aa6d09",
       "model_evidence_paths": [
@@ -12509,7 +12553,7 @@
       "player_name": "Tony Rojas",
       "position": "WILL",
       "position_family": "SAM",
-      "position_rank": 20,
+      "position_rank": 21,
       "program": "Supercharged",
       "routing": {
         "basis": "coverage linebacker role",
@@ -12548,7 +12592,7 @@
       "player_name": "Oumar Diomande",
       "position": "WILL",
       "position_family": "SAM",
-      "position_rank": 21,
+      "position_rank": 22,
       "program": "Standouts",
       "routing": {
         "basis": "physical run-stopping linebacker role",
@@ -12570,7 +12614,7 @@
     },
     {
       "archetype": "Lurker",
-      "archetype_rank": 5,
+      "archetype_rank": 6,
       "attribute_coverage": 1.0,
       "card_id": "card:58112673c5a1a6218547",
       "model_evidence_paths": [
@@ -12587,7 +12631,7 @@
       "player_name": "Gage Jones",
       "position": "SAM",
       "position_family": "SAM",
-      "position_rank": 22,
+      "position_rank": 23,
       "program": "Season 2",
       "routing": {
         "basis": "coverage linebacker role",
@@ -12626,7 +12670,7 @@
       "player_name": "Justin Okoronkwo",
       "position": "SAM",
       "position_family": "SAM",
-      "position_rank": 23,
+      "position_rank": 24,
       "program": "Ranked",
       "routing": {
         "basis": "physical run-stopping linebacker role",
@@ -12665,7 +12709,7 @@
       "player_name": "Baron Hopson",
       "position": "WILL",
       "position_family": "SAM",
-      "position_rank": 24,
+      "position_rank": 25,
       "program": "Cornerstones",
       "routing": {
         "basis": "physical run-stopping linebacker role",
@@ -12683,45 +12727,6 @@
         "card": "CFB_FAN",
         "ratings": "https://cfb.fan/players/10104-baron-hopson/27-240010104/",
         "raw_snapshot": "data/external/raw/cfb_fan_global_listings/6297af1803cb514fafab1e2954dfb8d81fd4140b822a8b2b7a4c1e327d822716.html"
-      }
-    },
-    {
-      "archetype": "Lurker",
-      "archetype_rank": 6,
-      "attribute_coverage": 0.247312,
-      "card_id": "card:6c4d1207f7c6811d0c7a",
-      "model_evidence_paths": [
-        "data/research/op_x_019/sam/frozen_sam_scoring_spec.json",
-        "data/research/op_x_017/coverage_matrix.json"
-      ],
-      "model_limitations": [
-        "ranking score only; not a displayed-overall prediction"
-      ],
-      "native_overall": 86,
-      "pancake_model_id": "SAM-M19-ROLE-001",
-      "pancake_model_version": "v1.0",
-      "player_id": "player:c2d89bbb3b8c3d1b5204",
-      "player_name": "Jalen Woods",
-      "position": "WILL",
-      "position_family": "SAM",
-      "position_rank": 25,
-      "program": "Cornerstones",
-      "routing": {
-        "basis": "coverage linebacker role",
-        "confidence": "SUPPORTED",
-        "family": "SAM",
-        "model_id": "SAM-M19-ROLE-001",
-        "profile": "OLB Pass Coverage",
-        "status": "ROUTED",
-        "version": "v1.0"
-      },
-      "score": 85.217391,
-      "score_confidence": "LOW",
-      "score_status": "SCORED_PARTIAL",
-      "source": {
-        "card": "CFB_FAN",
-        "ratings": "https://cfb.fan/players/22079-jalen-woods/27-240022079/",
-        "raw_snapshot": "data/external/raw/cfb_fan_global_listings/400369f9ed7d25aff1d0bc42cc696d52e57c0550b311a2afb339aa79d10ea169.html"
       }
     }
   ],
@@ -12925,6 +12930,46 @@
       "archetype": "Vertical Threat",
       "archetype_rank": 5,
       "attribute_coverage": 1.0,
+      "card_art_asset": "data/production/card_art/card-6651f2c98ed9bbb7d01d.png",
+      "card_id": "card:6651f2c98ed9bbb7d01d",
+      "model_evidence_paths": [
+        "data/research/op_x_016/frozen_te_scoring_spec.json",
+        "data/research/op_x_017/coverage_matrix.json"
+      ],
+      "model_limitations": [
+        "ranking score only"
+      ],
+      "native_overall": 90,
+      "pancake_model_id": "TE-MODEL-006",
+      "pancake_model_version": "v1.3",
+      "player_id": "player:f1073065c8bfe0bee5e5",
+      "player_name": "Dorian Thomas",
+      "position": "TE",
+      "position_family": "TE",
+      "position_rank": 6,
+      "program": "Sunday Spotlight: Figurines",
+      "routing": {
+        "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
+        "confidence": "SUPPORTED",
+        "family": "TE",
+        "model_id": "TE-MODEL-006",
+        "profile": "Vertical Threat",
+        "status": "ROUTED",
+        "version": "v1.3"
+      },
+      "score": 84.640777,
+      "score_confidence": "HIGH",
+      "score_status": "SCORED_COMPLETE",
+      "source": {
+        "card": "CFB_FAN",
+        "ratings": "https://cfb.fan/players/21011-dorian-thomas/27-120021011/",
+        "raw_snapshot": "data/external/raw/cfb_fan_player_items/4c458f7d68e604e53311c80ce52a4f4c5f030b81664f77d4fa00850f29456ccd.json"
+      }
+    },
+    {
+      "archetype": "Vertical Threat",
+      "archetype_rank": 6,
+      "attribute_coverage": 1.0,
       "card_id": "card:1134cc87e43fc1356f3e",
       "model_evidence_paths": [
         "data/research/op_x_016/frozen_te_scoring_spec.json",
@@ -12940,7 +12985,7 @@
       "player_name": "Rob Gronkowski",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 6,
+      "position_rank": 7,
       "program": "Sunday Spotlight: Retro",
       "routing": {
         "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
@@ -12962,7 +13007,7 @@
     },
     {
       "archetype": "Vertical Threat",
-      "archetype_rank": 6,
+      "archetype_rank": 7,
       "attribute_coverage": 1.0,
       "card_id": "card:4ea1534c7ebb34cadef5",
       "model_evidence_paths": [
@@ -12979,7 +13024,7 @@
       "player_name": "Luke Hasz",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 7,
+      "position_rank": 8,
       "program": "College Kickoff",
       "routing": {
         "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
@@ -13001,7 +13046,7 @@
     },
     {
       "archetype": "Vertical Threat",
-      "archetype_rank": 7,
+      "archetype_rank": 8,
       "attribute_coverage": 1.0,
       "card_id": "card:637aeae11d2e448496f6",
       "model_evidence_paths": [
@@ -13018,7 +13063,7 @@
       "player_name": "JJ Buchanan",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 8,
+      "position_rank": 9,
       "program": "Prime Prospects",
       "routing": {
         "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
@@ -13040,7 +13085,7 @@
     },
     {
       "archetype": "Vertical Threat",
-      "archetype_rank": 8,
+      "archetype_rank": 9,
       "attribute_coverage": 1.0,
       "card_id": "card:343a29fa5f39e7c265cf",
       "model_evidence_paths": [
@@ -13057,7 +13102,7 @@
       "player_name": "Elyiss Williams",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 9,
+      "position_rank": 10,
       "program": "Ranked",
       "routing": {
         "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
@@ -13096,7 +13141,7 @@
       "player_name": "Max Reese",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 10,
+      "position_rank": 11,
       "program": "College Kickoff",
       "routing": {
         "basis": "Madden19 Possession",
@@ -13118,7 +13163,7 @@
     },
     {
       "archetype": "Vertical Threat",
-      "archetype_rank": 9,
+      "archetype_rank": 10,
       "attribute_coverage": 1.0,
       "card_id": "card:c37f603ca4d9487f8229",
       "model_evidence_paths": [
@@ -13135,7 +13180,7 @@
       "player_name": "Decker DeGraaf",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 11,
+      "position_rank": 12,
       "program": "Supercharged",
       "routing": {
         "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
@@ -13157,7 +13202,7 @@
     },
     {
       "archetype": "Vertical Threat",
-      "archetype_rank": 10,
+      "archetype_rank": 11,
       "attribute_coverage": 1.0,
       "card_id": "card:587f715b02f05b3a09f7",
       "model_evidence_paths": [
@@ -13174,7 +13219,7 @@
       "player_name": "Chase Coffman",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 12,
+      "position_rank": 13,
       "program": "Season 2 - Legends - Modern",
       "routing": {
         "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
@@ -13196,7 +13241,7 @@
     },
     {
       "archetype": "Vertical Threat",
-      "archetype_rank": 11,
+      "archetype_rank": 12,
       "attribute_coverage": 1.0,
       "card_id": "card:5d22847c46af5df782fe",
       "model_evidence_paths": [
@@ -13213,7 +13258,7 @@
       "player_name": "Terrance Carter Jr.",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 13,
+      "position_rank": 14,
       "program": "Season 2",
       "routing": {
         "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
@@ -13235,7 +13280,7 @@
     },
     {
       "archetype": "Vertical Threat",
-      "archetype_rank": 12,
+      "archetype_rank": 13,
       "attribute_coverage": 1.0,
       "card_id": "card:0c06ad07ad2d1a0a7bf7",
       "model_evidence_paths": [
@@ -13252,7 +13297,7 @@
       "player_name": "Dylan Wade",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 14,
+      "position_rank": 15,
       "program": "College Kickoff",
       "routing": {
         "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
@@ -13274,7 +13319,7 @@
     },
     {
       "archetype": "Vertical Threat",
-      "archetype_rank": 13,
+      "archetype_rank": 14,
       "attribute_coverage": 1.0,
       "card_id": "card:9a03d98e641ee49fd312",
       "model_evidence_paths": [
@@ -13291,7 +13336,7 @@
       "player_name": "Vernon Davis",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 15,
+      "position_rank": 16,
       "program": "S1 Legends - Millenium",
       "routing": {
         "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
@@ -13313,7 +13358,7 @@
     },
     {
       "archetype": "Vertical Threat",
-      "archetype_rank": 14,
+      "archetype_rank": 15,
       "attribute_coverage": 1.0,
       "card_id": "card:7029127eed28f6dafd4c",
       "model_evidence_paths": [
@@ -13330,7 +13375,7 @@
       "player_name": "Rob Gronkowski",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 16,
+      "position_rank": 17,
       "program": "Sunday Spotlight: Retro",
       "routing": {
         "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
@@ -13369,7 +13414,7 @@
       "player_name": "Hayden Hansen",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 17,
+      "position_rank": 18,
       "program": "Supercharged",
       "routing": {
         "basis": "Madden19 Possession",
@@ -13391,7 +13436,7 @@
     },
     {
       "archetype": "Vertical Threat",
-      "archetype_rank": 15,
+      "archetype_rank": 16,
       "attribute_coverage": 1.0,
       "card_id": "card:a9d59dbc122de080fb0d",
       "model_evidence_paths": [
@@ -13408,7 +13453,7 @@
       "player_name": "Elyiss Williams",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 18,
+      "position_rank": 19,
       "program": "Ranked",
       "routing": {
         "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
@@ -13447,7 +13492,7 @@
       "player_name": "Walker Lyons",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 19,
+      "position_rank": 20,
       "program": "Prime Prospects",
       "routing": {
         "basis": "Madden19 Possession",
@@ -13486,7 +13531,7 @@
       "player_name": "Ozzie Newsome",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 20,
+      "position_rank": 21,
       "program": "S1 Legends - Classic",
       "routing": {
         "basis": "Madden19 Possession",
@@ -13525,7 +13570,7 @@
       "player_name": "Theo Melin Ohrstrom",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 21,
+      "position_rank": 22,
       "program": "Prime Prospects",
       "routing": {
         "basis": "Madden19 Possession",
@@ -13564,7 +13609,7 @@
       "player_name": "River Helms",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 22,
+      "position_rank": 23,
       "program": "Phenoms",
       "routing": {
         "basis": "Madden19 Possession",
@@ -13586,7 +13631,7 @@
     },
     {
       "archetype": "Vertical Threat",
-      "archetype_rank": 16,
+      "archetype_rank": 17,
       "attribute_coverage": 1.0,
       "card_id": "card:52a7f983f84ac24f586f",
       "model_evidence_paths": [
@@ -13603,7 +13648,7 @@
       "player_name": "Dorian Fleming",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 23,
+      "position_rank": 24,
       "program": "Standouts",
       "routing": {
         "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
@@ -13625,7 +13670,7 @@
     },
     {
       "archetype": "Vertical Threat",
-      "archetype_rank": 17,
+      "archetype_rank": 18,
       "attribute_coverage": 1.0,
       "card_id": "card:64c3c1987a8b61e406ba",
       "model_evidence_paths": [
@@ -13642,7 +13687,7 @@
       "player_name": "Elyiss Williams",
       "position": "TE",
       "position_family": "TE",
-      "position_rank": 24,
+      "position_rank": 25,
       "program": "Ranked",
       "routing": {
         "basis": "Madden19 Vertical Threat +2 LBK +3 IBL",
@@ -13660,45 +13705,6 @@
         "card": "CFB_FAN",
         "ratings": "https://cfb.fan/players/24466-elyiss-williams/27-803024466/",
         "raw_snapshot": "data/external/raw/cfb_fan/14bee1480f3ef2701ac11872164f037925714b7c00b5b9f945c053d1d610667a.bin"
-      }
-    },
-    {
-      "archetype": "Gritty Possession",
-      "archetype_rank": 8,
-      "attribute_coverage": 1.0,
-      "card_id": "card:6beef6e7d55df21e4a58",
-      "model_evidence_paths": [
-        "data/research/op_x_016/frozen_te_scoring_spec.json",
-        "data/research/op_x_017/coverage_matrix.json"
-      ],
-      "model_limitations": [
-        "ranking score only"
-      ],
-      "native_overall": 86,
-      "pancake_model_id": "TE-MODEL-001",
-      "pancake_model_version": "v1.1",
-      "player_id": "player:9e5670770db0b32d32e5",
-      "player_name": "Luke Lindenmeyer",
-      "position": "TE",
-      "position_family": "TE",
-      "position_rank": 25,
-      "program": "Cornerstones",
-      "routing": {
-        "basis": "Madden19 Possession",
-        "confidence": "SUPPORTED",
-        "family": "TE",
-        "model_id": "TE-MODEL-001",
-        "profile": "Possession",
-        "status": "ROUTED",
-        "version": "v1.1"
-      },
-      "score": 81.97,
-      "score_confidence": "HIGH",
-      "score_status": "SCORED_COMPLETE",
-      "source": {
-        "card": "CFB_FAN",
-        "ratings": "https://cfb.fan/players/31547-luke-lindenmeyer/27-240031547/",
-        "raw_snapshot": "data/external/raw/cfb_fan_player_items/7d7c599177044b2cb22221b2c57a76b21a31259c4110c0f39b5400124a0a6875.json"
       }
     }
   ],
