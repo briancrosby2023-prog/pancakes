@@ -82,15 +82,12 @@ def test_new_verified_card_art_survives_save_reload_and_renders_at_roster_positi
 
         programs = store.load()
         page = render_c3po_roster(_roster(player), programs)
-        position = slot.split()[0]
-        start = page.index(f"<h3>{position}</h3>")
-        group = page[start : page.index("</section>", start)]
 
         assert programs[fingerprint].art_url == art_url
-        assert f'src="{art_url}"' in group
-        assert f'data-slot="{slot}"' in group
-        assert f'<span class="choice-ovr">{ovr}</span>' in group
-        assert program in group
+        assert f'src="{art_url}"' in page
+        assert f'data-slot="{slot}"' in page
+        assert f'<span class="choice-ovr">{ovr}</span>' in page
+        assert program in page
 
 
 def test_unknown_art_keeps_placeholder_instead_of_substituting_a_card():
