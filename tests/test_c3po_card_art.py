@@ -5,11 +5,13 @@ from operation_pancake.c3po_card_version import (
 from operation_pancake.c3po_roster import (
     C3POPlayer,
     C3PORoster,
+    _known_art_url,
     observation_fingerprint,
 )
 from operation_pancake.c3po_roster_page import render_c3po_roster
 
 LUKE_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/202019231.png"
+CASON_ART_URL = "https://media.cfb.fan/cdn-cgi/image/format=auto,width=300,height=401,quality=80,fit=cover,gravity=top/27/cutdb/playeritem/260010612.png"
 
 
 def _roster(*players: C3POPlayer) -> C3PORoster:
@@ -43,6 +45,10 @@ def test_known_observation_persists_art_and_renders_at_existing_lg_location(tmp_
     assert 'data-slot="LG 1"' in lg_group
     assert "CARD NOT READ" in lg_group
     assert '<span class="choice-ovr">87</span>' in lg_group
+
+
+def test_cason_henry_known_card_art_is_seeded_for_observed_85():
+    assert _known_art_url("Cason Henry", 85) == CASON_ART_URL
 
 
 def test_unknown_art_keeps_placeholder_instead_of_substituting_a_card():
