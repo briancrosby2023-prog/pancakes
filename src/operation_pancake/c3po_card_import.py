@@ -110,21 +110,19 @@ def complete_import(service, roster):
                 else:
                     root = service.card_art_root.parents[2]
                     try:
-                        asset = None
-                        if evidence is not None:
+                        exact_source = acquisition_card(card)
+                        asset = existing_card_art_asset(root, exact_source)
+                        if asset:
+                            reused += 1
+                        else:
+                            asset = acquire_card_art(root, exact_source)
+                            if asset:
+                                acquired += 1
+                        if not asset and evidence is not None:
                             from operation_pancake.c3po_screenshot_art import save_card_crop
                             asset = save_card_crop(evidence, player, card_id, service.card_art_root)
                             if asset:
                                 screenshot_crops += 1
-                        if not asset:
-                            exact_source = acquisition_card(card)
-                            asset = existing_card_art_asset(root, exact_source)
-                            if asset:
-                                reused += 1
-                            else:
-                                asset = acquire_card_art(root, exact_source)
-                                if asset:
-                                    acquired += 1
                         assets[card_id] = asset
                         if not asset:
                             errors[card_id] = (
