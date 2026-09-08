@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import logging
 import re
+from dataclasses import replace
 from urllib.parse import urlparse
 
 from operation_pancake.c3po_card_version import C3POCardObservation, CardVersionAnalysisRequest
@@ -174,6 +175,37 @@ def complete_import(service, roster):
                     card_id=card_id,
                     reason=reason,
                 )
+            )
+
+    # The same owned lineup card can appear in multiple lineup roles with a different
+    # contextual displayed OVR. Reuse an exact card only when every resolved occurrence
+    # of that exact player agrees on card, program, and artwork. Displayed OVR remains
+    # observation-specific and never participates in card identity.
+    by_player = {}
+    for observation in stored.values():
+        by_player.setdefault(observation.player_name.casefold(), []).append(observation)
+    for observations in by_player.values():
+        resolved = [item for item in observations if item.card_id]
+        exact_ids = {item.card_id for item in resolved}
+        if len(exact_ids) != 1 or not resolved:
+            continue
+        source = resolved[0]
+        if any(
+            item.program != source.program or item.art_asset != source.art_asset
+            for item in resolved
+        ):
+            continue
+        for item in observations:
+            if item.card_id or item.state != "UNCERTAIN":
+                continue
+            stored[item.fingerprint] = replace(
+                item,
+                program=source.program,
+                state="IDENTIFIED",
+                confidence="HIGH",
+                positive_visual_evidence=("same owned lineup card across roles",),
+                card_id=source.card_id,
+                art_asset=source.art_asset,
             )
 
     service.card_observation_store.save(stored)
