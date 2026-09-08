@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import logging
 import re
+from urllib.parse import urlparse
 
 from operation_pancake.c3po_card_version import C3POCardObservation, CardVersionAnalysisRequest
 from operation_pancake.c3po_roster import observation_fingerprint, roster_observations
@@ -25,6 +26,24 @@ def exact_candidates(cards, name, program):
         and _normalized(card.get("player_name")) == _normalized(name)
         and _normalized(card.get("program")) in labels
     ]
+
+
+def acquisition_card(card):
+    """Adapt scored provenance only when it reproduces the exact stable ID."""
+    from operation_pancake.models.cfb27_card_state import stable_id
+
+    adapted = dict(card)
+    source = card.get("source") or {}
+    if not adapted.get("external_card_id") and isinstance(source, dict):
+        url = urlparse(source.get("ratings") or "")
+        external_id = url.path.rstrip("/").rsplit("/", 1)[-1]
+        if url.hostname in {"cfb.fan", "www.cfb.fan"} and re.fullmatch(r"27-\d+", external_id):
+            adapted.update(external_source=source.get("card"), external_card_id=external_id)
+    if stable_id(
+        "card", adapted.get("external_source"), adapted.get("external_card_id")
+    ) != card.get("card_id"):
+        raise ValueError("acquisition provenance does not match exact card ID")
+    return adapted
 
 
 def complete_import(service, roster):
@@ -91,11 +110,12 @@ def complete_import(service, roster):
                 else:
                     root = service.card_art_root.parents[2]
                     try:
-                        asset = existing_card_art_asset(root, card)
+                        exact_source = acquisition_card(card)
+                        asset = existing_card_art_asset(root, exact_source)
                         if asset:
                             reused += 1
                         else:
-                            asset = acquire_card_art(root, card)
+                            asset = acquire_card_art(root, exact_source)
                             if asset:
                                 acquired += 1
                         assets[card_id] = asset

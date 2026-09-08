@@ -12,10 +12,11 @@ def setup_flow(tmp_path, monkeypatch, programs, decisions):
 
     cards = [
         dict(
-            card_id="card:one",
+            card_id="card:530a89e75c2dedc339b9",
             player_name="Player One",
             program="Phenoms",
             overall=80,
+            source={"card": "CFB_FAN", "ratings": "https://cfb.fan/players/1-player-one/27-123/"},
             card_art_asset=None,
         ),
         dict(card_id="card:two", player_name="Player Two", program="Phenoms"),
@@ -24,6 +25,8 @@ def setup_flow(tmp_path, monkeypatch, programs, decisions):
     calls = []
 
     def acquire(root, card):
+        assert card["external_source"] == "CFB_FAN"
+        assert card["external_card_id"] == "27-123"
         calls.append(card["card_id"])
         asset = "data/production/card_art/" + card["card_id"].replace(":", "-") + ".png"
         path = root / asset
@@ -80,10 +83,12 @@ def test_chemistry_ovr_and_program_family_resolve_and_acquire_once(tmp_path, mon
     flow = setup_flow(tmp_path, monkeypatch, [("Player One", program)] * 2, {})
     roster = flow.service.import_four(flow.paths)
     saved = list(flow.service.card_observation_store.load().values())
-    assert [x.card_id for x in saved] == ["card:one"] * 2
-    assert all(x.art_asset == "data/production/card_art/card-one.png" for x in saved)
+    assert [x.card_id for x in saved] == ["card:530a89e75c2dedc339b9"] * 2
+    assert all(
+        x.art_asset == "data/production/card_art/card-530a89e75c2dedc339b9.png" for x in saved
+    )
     assert [x.displayed_ovr for x in roster.players] == [91, 91]
-    assert flow.calls == ["card:one"]
+    assert flow.calls == ["card:530a89e75c2dedc339b9"]
     assert not flow.analyzer.batches
 
 
@@ -101,8 +106,8 @@ def test_one_targeted_batch_then_hold_genuine_ambiguity(tmp_path, monkeypatch):
     assert len(flow.analyzer.batches) == 1
     assert len(flow.analyzer.batches[0]) == 2
     saved = {x.player_name: x for x in flow.service.card_observation_store.load().values()}
-    assert saved["Player One"].card_id == "card:one"
+    assert saved["Player One"].card_id == "card:530a89e75c2dedc339b9"
     assert saved["Player One"].art_asset
     assert saved["Player Two"].card_id is None
     assert saved["Player Two"].art_asset is None
-    assert flow.calls == ["card:one"]
+    assert flow.calls == ["card:530a89e75c2dedc339b9"]
