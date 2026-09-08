@@ -67,6 +67,7 @@ class C3POCardObservation:
     positive_visual_evidence: tuple[str, ...] = ()
     card_id: str | None = None
     art_asset: str | None = None
+    visual_evidence: dict[str, Any] | None = None
 
 
 class C3POCardObservationStore:
@@ -118,6 +119,11 @@ class C3POCardObservationStore:
                     if isinstance(row.get("art_asset"), str) and row.get("art_asset").strip()
                     else None
                 ),
+                visual_evidence=(
+                    dict(row["visual_evidence"])
+                    if isinstance(row.get("visual_evidence"), dict)
+                    else None
+                ),
             )
         return observations
 
@@ -153,6 +159,7 @@ class C3POCardObservationStore:
                     ),
                     "card_id": observation.card_id,
                     "art_asset": observation.art_asset,
+                    "visual_evidence": observation.visual_evidence,
                 }
             )
         temporary = self.path.with_suffix(self.path.suffix + ".tmp")
