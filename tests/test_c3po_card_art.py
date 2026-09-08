@@ -295,3 +295,51 @@ def test_specialists_use_balanced_five_by_two_grid():
     assert 'class="position-grid specialists-grid"' in specialists
     expected_grid = ".specialists-grid{grid-template-columns:repeat(5,minmax(0,1fr))}"
     assert expected_grid in page
+
+
+def test_each_persisted_exact_observation_art_is_emitted_and_served(tmp_path):
+    art_root = tmp_path / "data/production/card_art"
+    art_root.mkdir(parents=True)
+    players = (
+        C3POPlayer("OFFENSE", "WR 1", "Same Player", 89),
+        C3POPlayer("SPECIALISTS", "SLWR 1", "Same Player", 87),
+    )
+    store = C3POCardObservationStore(tmp_path / "programs.json")
+    observations = {}
+    for occurrence, player in enumerate(players):
+        fingerprint = observation_fingerprint(player, occurrence)
+        filename = f"observation-{occurrence}.png"
+        (art_root / filename).write_bytes(b"\x89PNG\r\n\x1a\nexact-observation")
+        observations[fingerprint] = C3POCardObservation(
+            fingerprint, player.name, player.displayed_ovr, "Phenoms", "IDENTIFIED",
+            card_id=f"card:{occurrence}",
+            art_asset=f"data/production/card_art/{filename}",
+        )
+    store.save(observations)
+    service = C3PORosterService(
+        C3PORosterStore(tmp_path / "roster.json"), provider=None,
+        card_observation_store=store, card_art_root=art_root,
+    )
+    roster = _roster(*players)
+    service.store.save(roster)
+    page = service.my_team_html()
+    for occurrence in range(2):
+        url = f"/card-art/observation-{occurrence}.png"
+        assert f'data-art="{url}"' in page
+    server = ThreadingHTTPServer(
+        ("127.0.0.1", 0), c3po_roster_app.create_handler(service, tmp_path / "uploads")
+    )
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    try:
+        for occurrence in range(2):
+            with urllib.request.urlopen(
+                f"http://127.0.0.1:{server.server_port}"
+                f"/card-art/observation-{occurrence}.png",
+                timeout=5,
+            ) as response:
+                assert response.status == 200
+                assert response.headers["Content-Type"] == "image/png"
+    finally:
+        server.shutdown()
+        server.server_close()
