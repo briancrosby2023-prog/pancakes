@@ -1,4 +1,5 @@
 """Operation Pancake My Team presentation for the authoritative C-3PO roster."""
+
 # ruff: noqa: E501
 from __future__ import annotations
 
@@ -25,17 +26,34 @@ LINEUP_STYLE = """
 @media(max-width:820px){.position-grid,.specialists-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-card{height:165px}}@media(max-width:620px){.position-grid,.specialists-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lineup-tabs{gap:18px;overflow-x:auto}.team-header{grid-template-columns:1fr}.team-header .update-team{grid-column:1;grid-row:auto;justify-self:start}.feature-card{height:155px}}@media(max-width:420px){.position-grid,.specialists-grid{grid-template-columns:1fr}.feature-card{height:145px}.lineup-tabs{gap:14px}}
 </style>
 <script>
-document.addEventListener("DOMContentLoaded",()=>{const root=document.getElementById("my-team");if(!root)return;const tabs=[...root.querySelectorAll(".lineup-tabs button")],views=[...root.querySelectorAll(".roster-view")];const show=id=>{tabs.forEach(t=>{const on=t.dataset.target===id;t.classList.toggle("active",on);t.setAttribute("aria-selected",on?"true":"false")});views.forEach(v=>v.classList.toggle("active",v.id===id))};tabs.forEach(t=>t.addEventListener("click",()=>show(t.dataset.target)));if(tabs.length)show(tabs[0].dataset.target);root.querySelectorAll(".position-group").forEach(group=>{const card=group.querySelector(".feature-card"),choices=[...group.querySelectorAll(".player-choice")];if(!card||!choices.length)return;const select=choice=>{choices.forEach(c=>c.classList.toggle("selected",c===choice));card.querySelector(".feature-slot").textContent=choice.dataset.slot;const program=card.querySelector(".feature-program");program.textContent=choice.dataset.program;program.classList.toggle("program-missing",choice.dataset.missing==="1");let art=card.querySelector(".feature-art");if(choice.dataset.art){if(!art){art=document.createElement("img");art.className="feature-art";art.alt="";card.prepend(art)}art.src=choice.dataset.art}else if(art){art.remove()}};choices.forEach(choice=>choice.addEventListener("click",()=>select(choice)));select(choices[0])})});
+document.addEventListener("DOMContentLoaded",()=>{const root=document.getElementById("my-team");if(!root)return;const tabs=[...root.querySelectorAll(".lineup-tabs button")],views=[...root.querySelectorAll(".roster-view")];const show=id=>{tabs.forEach(t=>{const on=t.dataset.target===id;t.classList.toggle("active",on);t.setAttribute("aria-selected",on?"true":"false")});views.forEach(v=>v.classList.toggle("active",v.id===id))};tabs.forEach(t=>t.addEventListener("click",()=>show(t.dataset.target)));if(tabs.length){const requested=new URLSearchParams(location.search).get("view");const match=tabs.find(t=>t.dataset.target===requested);show((match||tabs[0]).dataset.target)};root.querySelectorAll(".position-group").forEach(group=>{const card=group.querySelector(".feature-card"),choices=[...group.querySelectorAll(".player-choice")];if(!card||!choices.length)return;const select=choice=>{choices.forEach(c=>c.classList.toggle("selected",c===choice));card.querySelector(".feature-slot").textContent=choice.dataset.slot;const program=card.querySelector(".feature-program");program.textContent=choice.dataset.program;program.classList.toggle("program-missing",choice.dataset.missing==="1");let art=card.querySelector(".feature-art");if(choice.dataset.art){if(!art){art=document.createElement("img");art.className="feature-art";art.alt="";card.prepend(art)}art.src=choice.dataset.art}else if(art){art.remove()}};choices.forEach(choice=>choice.addEventListener("click",()=>select(choice)));select(choices[0])})});
 </script>
 """
 
 OFFENSE_POSITION_ORDER = ("LT", "LG", "C", "RG", "RT", "TE", "WR1", "WR3", "HB", "QB", "FB", "WR2")
-DEFENSE_POSITION_ORDER = ("FS", "WILL", "MIKE1", "MIKE2", "SAM", "SS", "CB1", "CB2", "REDG", "DT", "LEDG", "CB3")
+DEFENSE_POSITION_ORDER = (
+    "FS",
+    "WILL",
+    "MIKE1",
+    "MIKE2",
+    "SAM",
+    "SS",
+    "CB1",
+    "CB2",
+    "REDG",
+    "DT",
+    "LEDG",
+    "CB3",
+)
 SPECIAL_TEAMS_POSITION_ORDER = ("P", "K", "KR", "PR", "LS", "KOS")
 
 
 def _program_value(card_observation) -> tuple[str, bool]:
-    if card_observation is not None and getattr(card_observation, "state", None) == "IDENTIFIED" and getattr(card_observation, "program", None):
+    if (
+        card_observation is not None
+        and getattr(card_observation, "state", None) == "IDENTIFIED"
+        and getattr(card_observation, "program", None)
+    ):
         return card_observation.program, False
     return "CARD NOT READ", True
 
@@ -99,7 +117,10 @@ def _view_anchor(view: str) -> str:
 def render_c3po_roster(roster: C3PORoster, programs=None) -> str:
     """Render the saved C-3PO roster and independently persisted programs/art."""
     if roster.status == "PROVIDER FAILURE":
-        return LINEUP_STYLE + '<section id="my-team" class="team-panel"><header class="team-header"><p class="eyebrow">OPERATION PANCAKE</p><h1>My Team</h1></header><p class="provider-failure">C-3PO could not read the screenshots. Your previous roster was not replaced.</p></section>'
+        return (
+            LINEUP_STYLE
+            + '<section id="my-team" class="team-panel"><header class="team-header"><p class="eyebrow">OPERATION PANCAKE</p><h1>My Team</h1></header><p class="provider-failure">C-3PO could not read the screenshots. Your previous roster was not replaced.</p></section>'
+        )
     programs = programs if hasattr(programs, "get") else {}
     sections = []
     for view_index, view in enumerate(VIEWS):
@@ -122,12 +143,36 @@ def render_c3po_roster(roster: C3PORoster, programs=None) -> str:
             first_player, first_program = ordered[0][1], ordered[0][2]
             first_program_text, first_missing = _program_value(first_program)
             first_art = _card_art(first_player, first_program)
-            choices = "".join(_player_choice(player, program, selected=index == 0) for index, (_depth, player, program) in enumerate(ordered))
-            art_html = f'<img class="feature-art" src="{html.escape(first_art)}" alt="">' if first_art else ""
-            cards.append(f'<section class="position-group"><h3>{html.escape(position)}</h3><div class="feature-card">{art_html}<span class="feature-slot">{html.escape(first_player.slot)}</span><div class="feature-copy"><span class="feature-program{" program-missing" if first_missing else ""}">{html.escape(first_program_text)}</span></div></div><div class="player-list">{choices}</div></section>')
+            choices = "".join(
+                _player_choice(player, program, selected=index == 0)
+                for index, (_depth, player, program) in enumerate(ordered)
+            )
+            art_html = (
+                f'<img class="feature-art" src="{html.escape(first_art)}" alt="">'
+                if first_art
+                else ""
+            )
+            cards.append(
+                f'<section class="position-group"><h3>{html.escape(position)}</h3><div class="feature-card">{art_html}<span class="feature-slot">{html.escape(first_player.slot)}</span><div class="feature-copy"><span class="feature-program{" program-missing" if first_missing else ""}">{html.escape(first_program_text)}</span></div></div><div class="player-list">{choices}</div></section>'
+            )
         empty = '<p class="empty-view">No observations reported.</p>' if not cards else ""
         active = " active" if view_index == 0 else ""
         grid_class = "position-grid specialists-grid" if view == "SPECIALISTS" else "position-grid"
-        sections.append(f'<section id="{_view_anchor(view)}" class="roster-view{active}" data-view="{html.escape(view)}"><div class="section-heading"><h2>{html.escape(view)}</h2></div><div class="{grid_class}">{"".join(cards)}{empty}</div></section>')
-    tabs = '<nav class="lineup-tabs" role="tablist" aria-label="Lineup sections">' + "".join(f'<button type="button" role="tab" data-target="{_view_anchor(view)}">{html.escape(view)}</button>' for view in VIEWS) + "</nav>"
-    return LINEUP_STYLE + '<section id="my-team" class="team-panel"><header class="team-header"><p class="eyebrow">OPERATION PANCAKE</p><h1>My Team</h1><p class="team-subtitle">Your lineup, read directly from EA Team Manager.</p><a class="update-team" href="/setup">UPDATE TEAM</a></header>' + tabs + "".join(sections) + "</section>"
+        sections.append(
+            f'<section id="{_view_anchor(view)}" class="roster-view{active}" data-view="{html.escape(view)}"><div class="section-heading"><h2>{html.escape(view)}</h2></div><div class="{grid_class}">{"".join(cards)}{empty}</div></section>'
+        )
+    tabs = (
+        '<nav class="lineup-tabs" role="tablist" aria-label="Lineup sections">'
+        + "".join(
+            f'<button type="button" role="tab" data-target="{_view_anchor(view)}">{html.escape(view)}</button>'
+            for view in VIEWS
+        )
+        + "</nav>"
+    )
+    return (
+        LINEUP_STYLE
+        + '<section id="my-team" class="team-panel"><header class="team-header"><p class="eyebrow">OPERATION PANCAKE</p><h1>My Team</h1><p class="team-subtitle">Your lineup, read directly from EA Team Manager.</p><a class="update-team" href="/setup">UPDATE TEAM</a></header>'
+        + tabs
+        + "".join(sections)
+        + "</section>"
+    )
