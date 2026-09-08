@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import logging
 import re
+from dataclasses import replace
 from urllib.parse import urlparse
 
 from operation_pancake.c3po_card_version import C3POCardObservation, CardVersionAnalysisRequest
@@ -65,9 +66,7 @@ def complete_import(service, roster):
     clarification = 0
     clarification_reason = "no clarification needed"
     evidence = (
-        service.source_evidence_store.load_for(roster)
-        if service.source_evidence_store
-        else None
+        service.source_evidence_store.load_for(roster) if service.source_evidence_store else None
     )
     if pending:
         clarification_reason = "clarification evidence/analyzer unavailable"
@@ -124,6 +123,7 @@ def complete_import(service, roster):
                                 acquired += 1
                         if not asset and evidence is not None and is_visible_card:
                             from operation_pancake.c3po_screenshot_art import save_card_crop
+
                             asset = save_card_crop(evidence, player, card_id, service.card_art_root)
                             if asset:
                                 screenshot_crops += 1
@@ -150,9 +150,8 @@ def complete_import(service, roster):
             )
             if evidence is not None and service.card_art_root is not None and is_visible_card:
                 from operation_pancake.c3po_screenshot_art import save_observation_crop
-                asset = save_observation_crop(
-                    evidence, player, fingerprint, service.card_art_root
-                )
+
+                asset = save_observation_crop(evidence, player, fingerprint, service.card_art_root)
                 if asset:
                     screenshot_crops += 1
         stored[fingerprint] = C3POCardObservation(
@@ -177,6 +176,35 @@ def complete_import(service, roster):
                     reason=reason,
                 )
             )
+    # Specialist/special-teams duplicates are the same lineup card, not a new card-version choice.
+    # Propagate only when every already-resolved occurrence of that exact player agrees.
+    by_player = {}
+    for observation in stored.values():
+        by_player.setdefault(observation.player_name.casefold(), []).append(observation)
+    for observations in by_player.values():
+        resolved = [item for item in observations if item.card_id]
+        exact_ids = {item.card_id for item in resolved}
+        if len(exact_ids) != 1 or not resolved:
+            continue
+        source = resolved[0]
+        if any(
+            item.program != source.program or item.art_asset != source.art_asset
+            for item in resolved
+        ):
+            continue
+        for item in observations:
+            if item.card_id or item.state != "UNCERTAIN":
+                continue
+            stored[item.fingerprint] = replace(
+                item,
+                program=source.program,
+                state="IDENTIFIED",
+                confidence="HIGH",
+                positive_visual_evidence=("same persisted lineup player exact card",),
+                card_id=source.card_id,
+                art_asset=source.art_asset,
+            )
+
     service.card_observation_store.save(stored)
     report = dict(
         initial_request_count=getattr(service.provider, "request_count", None),
