@@ -9,6 +9,7 @@ from operation_pancake.c3po_roster import (
     C3PORoster,
     C3PORosterService,
     C3PORosterStore,
+    observation_fingerprint,
     roster_observations,
 )
 
@@ -189,3 +190,36 @@ def test_program_store_windows_replace_fallback_preserves_payload(tmp_path, monk
     loaded = store.load()
     assert loaded["fp-0"].art_asset == "data/production/card_art/0.png"
     assert not (tmp_path / "programs.json.tmp").exists()
+
+
+def test_complete_import_does_not_propagate_exact_card_to_same_name_occurrence(tmp_path):
+    from operation_pancake.c3po_card_import import complete_import
+
+    players = (
+        C3POPlayer("OFFENSE", "WR 1", "Same Player", 89, program="Phenoms"),
+        C3POPlayer("SPECIALISTS", "SLWR 1", "Same Player", 87),
+    )
+    roster = C3PORoster(players, "test", "test")
+    service = C3PORosterService(
+        C3PORosterStore(tmp_path / "roster.json"),
+        provider=object(),
+        enrichment_cards=(
+            {
+                "card_id": "card:exact",
+                "player_name": "Same Player",
+                "program": "Phenoms",
+                "card_art_asset": None,
+            },
+        ),
+        card_observation_store=C3POCardObservationStore(tmp_path / "programs.json"),
+    )
+
+    complete_import(service, roster)
+    stored = service.card_observation_store.load()
+
+    first = stored[observation_fingerprint(players[0], 0)]
+    second = stored[observation_fingerprint(players[1], 1)]
+    assert first.card_id == "card:exact"
+    assert second.card_id is None
+    assert second.program is None
+    assert second.art_asset is None
