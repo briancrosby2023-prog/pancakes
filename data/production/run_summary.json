@@ -7,61 +7,61 @@
   "market_status": "UNAVAILABLE_NO_PRICES_IN_CANONICAL_EXPORT",
   "model_usage": {
     "C-M19-RANK-001": 324,
-    "CB-M19-ARCH-001": 904,
+    "CB-M19-ARCH-001": 905,
     "DT-M19-ARCH-001": 666,
     "EDGE-M19-ARCH-001": 810,
     "FB-M19-ARCH-001": 29,
     "KP-M19-ARCH-001": 180,
-    "MIKE-M19-ARCH-001": 475,
-    "OG-M19-ARCH-001": 655,
-    "OT-M19-ARCH-001": 692,
-    "QB-SHARED-001": 405,
-    "RB-M19-ARCH-001": 804,
-    "S-M19-ARCH-001": 844,
-    "SAM-M19-ROLE-001": 565,
+    "MIKE-M19-ARCH-001": 477,
+    "OG-M19-ARCH-001": 656,
+    "OT-M19-ARCH-001": 694,
+    "QB-SHARED-001": 406,
+    "RB-M19-ARCH-001": 806,
+    "S-M19-ARCH-001": 845,
+    "SAM-M19-ROLE-001": 566,
     "TE-MODEL-001": 57,
     "TE-MODEL-003": 284,
     "TE-MODEL-006": 187,
-    "WR-M19-ARCH-001": 1205
+    "WR-M19-ARCH-001": 1206
   },
-  "population": 9219,
+  "population": 9233,
   "position_coverage": {
     "C": 324,
-    "CB": 904,
+    "CB": 905,
     "DT": 666,
     "EDGE": 810,
     "FB": 29,
-    "G": 655,
+    "G": 656,
     "KP": 180,
-    "MIKE": 475,
-    "OT": 692,
-    "QB": 405,
-    "RB": 804,
-    "S": 844,
-    "SAM": 565,
+    "MIKE": 477,
+    "OT": 694,
+    "QB": 406,
+    "RB": 806,
+    "S": 845,
+    "SAM": 566,
     "TE": 528,
-    "WR": 1205
+    "WR": 1206
   },
-  "ranked": 9086,
+  "ranked": 9098,
   "ranking_caveat": "scores from different archetype profiles are shown together for discovery; role context and archetype rank remain explicit",
   "roster_status": "PARTIAL_1_OF_24_EXACT_IDENTITIES",
   "routing_status_counts": {
     "DIAGNOSTIC_ONLY": 12,
-    "ROUTED": 9086,
-    "UNSUPPORTED": 121
+    "ROUTED": 9098,
+    "UNSUPPORTED": 123
   },
   "score_status_counts": {
     "DIAGNOSTIC_ONLY": 12,
-    "SCORED_COMPLETE": 6583,
-    "SCORED_PARTIAL": 2503,
-    "UNSUPPORTED": 121
+    "SCORED_COMPLETE": 6592,
+    "SCORED_PARTIAL": 2506,
+    "UNSUPPORTED": 123
   },
-  "scored": 9086,
-  "unique_card_ids": 9219,
-  "unsupported_or_unscored": 133,
+  "scored": 9098,
+  "unique_card_ids": 9233,
+  "unsupported_or_unscored": 135,
   "unsupported_reasons": {
     "Pure Runner has no production QB model": 85,
     "model is explicitly non-production": 12,
-    "no frozen production route": 36
+    "no frozen production route": 38
   }
 }
