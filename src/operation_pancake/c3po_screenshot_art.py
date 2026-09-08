@@ -39,10 +39,10 @@ def _scaled_box(box, size):
     sx, sy = size[0] / BASE_SIZE[0], size[1] / BASE_SIZE[1]
     left, top, right, bottom = box
     return (
-        max(0, round((left - 10) * sx)),
-        max(0, round((top - 5) * sy)),
-        min(size[0], round((right + 10) * sx)),
-        min(size[1], round((bottom + 8) * sy)),
+        max(0, round(left * sx)),
+        max(0, round(top * sy)),
+        min(size[0], round(right * sx)),
+        min(size[1], round(bottom * sy)),
     )
 
 
