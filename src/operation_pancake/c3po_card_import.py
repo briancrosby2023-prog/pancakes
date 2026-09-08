@@ -64,13 +64,13 @@ def complete_import(service, roster):
     ]
     clarification = 0
     clarification_reason = "no clarification needed"
+    evidence = (
+        service.source_evidence_store.load_for(roster)
+        if service.source_evidence_store
+        else None
+    )
     if pending:
         clarification_reason = "clarification evidence/analyzer unavailable"
-        evidence = (
-            service.source_evidence_store.load_for(roster)
-            if service.source_evidence_store
-            else None
-        )
         if evidence is not None and service.version_analyzer is not None:
             clarification = 1
             try:
@@ -90,7 +90,7 @@ def complete_import(service, roster):
                 LOGGER.warning("%s", clarification_reason)
     assets = {}
     errors = {}
-    reused = acquired = 0
+    reused = acquired = screenshot_crops = 0
     stored = {}
     no_art = []
     for occurrence, player in rows:
@@ -110,14 +110,21 @@ def complete_import(service, roster):
                 else:
                     root = service.card_art_root.parents[2]
                     try:
-                        exact_source = acquisition_card(card)
-                        asset = existing_card_art_asset(root, exact_source)
-                        if asset:
-                            reused += 1
-                        else:
-                            asset = acquire_card_art(root, exact_source)
+                        asset = None
+                        if evidence is not None:
+                            from operation_pancake.c3po_screenshot_art import save_card_crop
+                            asset = save_card_crop(evidence, player, card_id, service.card_art_root)
                             if asset:
-                                acquired += 1
+                                screenshot_crops += 1
+                        if not asset:
+                            exact_source = acquisition_card(card)
+                            asset = existing_card_art_asset(root, exact_source)
+                            if asset:
+                                reused += 1
+                            else:
+                                asset = acquire_card_art(root, exact_source)
+                                if asset:
+                                    acquired += 1
                         assets[card_id] = asset
                         if not asset:
                             errors[card_id] = (
@@ -139,6 +146,13 @@ def complete_import(service, roster):
                 + "; "
                 + clarification_reason
             )
+            if evidence is not None and service.card_art_root is not None:
+                from operation_pancake.c3po_screenshot_art import save_observation_crop
+                asset = save_observation_crop(
+                    evidence, player, fingerprint, service.card_art_root
+                )
+                if asset:
+                    screenshot_crops += 1
         stored[fingerprint] = C3POCardObservation(
             fingerprint,
             player.name or "",
@@ -171,6 +185,7 @@ def complete_import(service, roster):
         unique_exact_cards=len(assets),
         existing_images_reused=reused,
         new_images_acquired=acquired,
+        screenshot_images_cropped=screenshot_crops,
         observations_with_art=sum(bool(x.art_asset) for x in stored.values()),
         no_art=no_art,
     )
