@@ -208,7 +208,9 @@ is supplied and no database constrains what you may report.
 {observations}
 
 Use visible card/program treatment, card design, rarity or program indicators, and
-the immutable lineup context. EA displayed OVR is context, not sufficient by itself.
+the immutable lineup context. EA displayed OVR is chemistry-adjusted, not base card OVR.
+Do not infer or reject a program from displayed OVR. Inspect the named player's
+actual card art/design. This is the only clarification pass; hold if ambiguous.
 Do not guess. Weak, likely, probable, or uncertain evidence means UNCERTAIN. A
 program absent from Pancake's data is still permitted.
 

@@ -20,7 +20,9 @@ PROMPT = """You are C-3PO, a literal data-entry clerk. Read the four attached
 EA SPORTS COLLEGE FOOTBALL 27 Team Manager screenshots. The four sections are
 OFFENSE, DEFENSE, SPECIAL TEAMS, and SPECIALISTS. For every visible lineup slot,
 transcribe only what the pixels show: section, slot label, visible player name,
-displayed OVR when readable, and visible card program/version when readable.
+displayed chemistry-adjusted OVR when readable, and visually identified card program/type.
+Displayed OVR is not base card OVR and must not be used to infer the program.
+Inspect the actual card art/design to identify its program where readable.
 Include visible backups as additional player rows using their visible slot label
 when present. Do not search, infer, correct, reconcile, or replace a player name,
 OVR, or program. If a name or program cannot be read, use null.
@@ -172,6 +174,7 @@ class GeminiC3POProvider:
         self.model = model or os.getenv("PANCAKE_GEMINI_MODEL", "gemini-3.7-flash")
         self.timeout_ms = timeout_ms
         self.client_factory = client_factory
+        self.request_count = 0
 
     def _client(self):
         if self.client_factory is not None:
@@ -180,7 +183,7 @@ class GeminiC3POProvider:
             raise RuntimeError("GEMINI_API_KEY is required for C-3PO transcription")
         from google import genai
         from google.genai import types
-        return genai.Client(api_key=self.api_key, http_options=types.HttpOptions(timeout=self.timeout_ms))
+        return genai.Client(api_key=self.api_key, http_options=types.HttpOptions(timeout=self.timeout_ms, retry_options=types.HttpRetryOptions(attempts=1)))
 
     def read_four(self, screenshots: Iterable[Path]) -> list[dict[str, Any]]:
         paths = tuple(screenshots)
@@ -195,6 +198,7 @@ class GeminiC3POProvider:
                 request_input.append({"type": "image", "data": base64.b64encode(data).decode("ascii"), "mime_type": _mime(path)})
             client = self._client()
             with client:
+                self.request_count += 1
                 interaction = client.interactions.create(model=self.model, input=request_input)
             text = getattr(interaction, "output_text", None)
             if not isinstance(text, str) or not text.strip():
@@ -219,6 +223,7 @@ class GeminiC3POProvider:
             request_input = [{"type": "text", "text": PROMPT}, {"type": "image", "data": base64.b64encode(data).decode("ascii"), "mime_type": _mime(screenshot)}]
             client = self._client()
             with client:
+                self.request_count += 1
                 interaction = client.interactions.create(model=self.model, input=request_input)
             text = getattr(interaction, "output_text", None)
             if not text:
@@ -349,7 +354,8 @@ class C3PORosterService:
                 except (OSError, ValueError, TypeError):
                     LOGGER.exception("C-3PO source evidence could not be persisted")
             self.store.save(roster)
-            self.persist_inline_programs(roster)
+            from operation_pancake.c3po_card_import import complete_import
+            complete_import(self, roster)
         return roster
 
     def my_team_html(self) -> str:
