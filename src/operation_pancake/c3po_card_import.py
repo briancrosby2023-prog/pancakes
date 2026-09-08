@@ -93,7 +93,11 @@ def complete_import(service, roster):
     reused = acquired = screenshot_crops = 0
     stored = {}
     no_art = []
+    visible_occurrences = {}
     for occurrence, player in rows:
+        visible_occurrences.setdefault((player.view, player.slot), occurrence)
+    for occurrence, player in rows:
+        is_visible_card = visible_occurrences[(player.view, player.slot)] == occurrence
         fingerprint = observation_fingerprint(player, occurrence)
         program = programs[fingerprint]
         matches = exact_candidates(cards, player.name, program)
@@ -118,7 +122,7 @@ def complete_import(service, roster):
                             asset = acquire_card_art(root, exact_source)
                             if asset:
                                 acquired += 1
-                        if not asset and evidence is not None:
+                        if not asset and evidence is not None and is_visible_card:
                             from operation_pancake.c3po_screenshot_art import save_card_crop
                             asset = save_card_crop(evidence, player, card_id, service.card_art_root)
                             if asset:
@@ -144,7 +148,7 @@ def complete_import(service, roster):
                 + "; "
                 + clarification_reason
             )
-            if evidence is not None and service.card_art_root is not None:
+            if evidence is not None and service.card_art_root is not None and is_visible_card:
                 from operation_pancake.c3po_screenshot_art import save_observation_crop
                 asset = save_observation_crop(
                     evidence, player, fingerprint, service.card_art_root

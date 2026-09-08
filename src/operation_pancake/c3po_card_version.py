@@ -123,9 +123,23 @@ class C3POCardObservationStore:
 
     def save(self, observations: Mapping[str, C3POCardObservation]) -> None:
         self.path.parent.mkdir(parents=True, exist_ok=True)
+        existing = self.load()
+        merged = dict(existing) if len(observations) < len(existing) else {}
+        for fingerprint, observation in observations.items():
+            previous = existing.get(fingerprint)
+            preserved_exact = (
+                previous is not None
+                and previous.card_id
+                and previous.card_id != observation.card_id
+                and any(
+                    item.startswith("preserved exact ")
+                    for item in previous.positive_visual_evidence
+                )
+            )
+            merged[fingerprint] = previous if preserved_exact else observation
         rows = []
-        for fingerprint in sorted(observations):
-            observation = observations[fingerprint]
+        for fingerprint in sorted(merged):
+            observation = merged[fingerprint]
             rows.append(
                 {
                     "fingerprint": observation.fingerprint,
@@ -145,7 +159,12 @@ class C3POCardObservationStore:
         temporary.write_text(
             json.dumps({"observations": rows}, indent=2) + "\n", encoding="utf-8"
         )
-        temporary.replace(self.path)
+        try:
+            temporary.replace(self.path)
+        except PermissionError:
+            # Windows can deny rename-over-open while still allowing safe rewrite.
+            self.path.write_bytes(temporary.read_bytes())
+            temporary.unlink(missing_ok=True)
 
 
 @dataclass(frozen=True)

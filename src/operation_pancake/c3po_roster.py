@@ -348,6 +348,15 @@ class C3PORosterService:
         paths = tuple(screenshots)
         roster = roster_from_screens(paths, self.provider)
         if roster.status != "PROVIDER FAILURE":
+            try:
+                previous = self.store.load() if self.store.path.exists() else None
+            except (OSError, ValueError, TypeError):
+                previous = None
+            incoming_count = len(roster_observations(roster))
+            previous_count = len(roster_observations(previous)) if previous is not None else 0
+            if previous is not None and incoming_count < previous_count:
+                LOGGER.warning("C-3PO partial import ignored: incoming=%d authoritative=%d", incoming_count, previous_count)
+                return previous
             if self.source_evidence_store is not None:
                 try:
                     self.source_evidence_store.save(roster, paths)
