@@ -11,7 +11,8 @@ def test_desktop_cards_use_larger_standardized_viewport():
 
     page = render_c3po_roster(roster)
 
-    assert "grid-template-columns:repeat(6,minmax(180px,1fr))" in page
+    assert "grid-template-columns:repeat(6,minmax(0,1fr))" in page
     assert ".feature-card{aspect-ratio:3/4" in page
-    assert "max-width:210px" in page
+    assert "max-width:190px" in page
     assert "object-fit:contain" in page
+    assert ".player-list{display:grid" in page
