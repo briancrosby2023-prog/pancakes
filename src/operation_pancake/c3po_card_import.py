@@ -47,7 +47,7 @@ def acquisition_card(card):
     return adapted
 
 
-def complete_import(service, roster):
+def complete_import(service, roster, resolve_fingerprints: set[str] | None = None):
     """One reconciliation, at most one clarification batch, then acquire once per ID."""
     from operation_pancake.research.cfb27_card_art import acquire_card_art, existing_card_art_asset
 
@@ -57,11 +57,26 @@ def complete_import(service, roster):
         else service.enrichment_cards or ()
     )
     rows = roster_observations(roster)
+    existing = service.card_observation_store.load() if service.card_observation_store else {}
+
+    def reusable_existing(fingerprint, player):
+        prior = existing.get(fingerprint)
+        if prior is None or not prior.card_id or not prior.art_asset:
+            return None
+        if prior.player_name.casefold() != (player.name or "").casefold():
+            return None
+        if player.program and player.program != prior.program:
+            return None
+        return prior
+
     programs = {observation_fingerprint(p, i): p.program for i, p in rows}
     pending = [
         CardVersionAnalysisRequest(observation_fingerprint(p, i), p)
         for i, p in rows
-        if p.name and len(exact_candidates(cards, p.name, p.program)) != 1
+        if p.name
+        and (resolve_fingerprints is None or observation_fingerprint(p, i) in resolve_fingerprints)
+        and reusable_existing(observation_fingerprint(p, i), p) is None
+        and len(exact_candidates(cards, p.name, p.program)) != 1
     ]
     clarification = 0
     clarification_reason = "no clarification needed"
@@ -98,6 +113,20 @@ def complete_import(service, roster):
     for occurrence, player in rows:
         is_visible_card = visible_occurrences[(player.view, player.slot)] == occurrence
         fingerprint = observation_fingerprint(player, occurrence)
+        prior = existing.get(fingerprint)
+        if resolve_fingerprints is not None and fingerprint not in resolve_fingerprints:
+            if prior is not None:
+                stored[fingerprint] = prior
+                if prior.card_id and prior.art_asset:
+                    assets.setdefault(prior.card_id, prior.art_asset)
+                    reused += 1
+            continue
+        prior = reusable_existing(fingerprint, player)
+        if prior is not None:
+            stored[fingerprint] = prior
+            assets.setdefault(prior.card_id, prior.art_asset)
+            reused += 1
+            continue
         program = programs[fingerprint]
         matches = exact_candidates(cards, player.name, program)
         card = matches[0] if len(matches) == 1 else None

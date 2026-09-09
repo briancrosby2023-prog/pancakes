@@ -262,6 +262,30 @@ def roster_from_screens(screenshots: Iterable[Path], provider: Any) -> C3PORoste
     return C3PORoster(tuple(players), reads[0]["provider"], reads[0]["model"])
 
 
+def roster_from_partial_screens(screenshots: Iterable[Path], provider: Any) -> tuple[C3PORoster, tuple[str, ...]]:
+    paths = tuple(screenshots)
+    if not 1 <= len(paths) <= 3:
+        raise ValueError("Partial C-3PO roster update requires one to three screenshots")
+    reads = tuple(provider.read(path) for path in paths)
+    if any(read.get("status") == "PROVIDER FAILURE" for read in reads):
+        raise ValueError("C-3PO could not read one or more supplied screenshots")
+    views = tuple(_view(read.get("view")) for read in reads)
+    if any(view is None for view in views):
+        raise ValueError("C-3PO could not identify every supplied Team Manager section")
+    if len(set(views)) != len(views):
+        raise ValueError("Each supplied Team Manager screenshot must be a different section")
+    players = []
+    for read, view in zip(reads, views, strict=True):
+        for row in read.get("players", []):
+            slot = row.get("slot")
+            if slot:
+                players.append(C3POPlayer(view=view, slot=str(slot).strip().upper(), name=row.get("name"), displayed_ovr=_ovr(row.get("displayed_ovr")), backups=tuple(row.get("backups", [])), program=_program(row.get("program"))))
+    if not players:
+        raise ValueError("C-3PO returned no usable lineup rows")
+    first = reads[0]
+    return C3PORoster(tuple(players), first["provider"], first["model"]), tuple(view for view in views if view is not None)
+
+
 def card_version_work_groups(roster: C3PORoster) -> tuple[tuple[Any, ...], ...]:
     """Group only byte-for-byte equivalent immutable version questions."""
     work: dict[tuple[Any, ...], list[Any]] = {}
@@ -343,6 +367,62 @@ class C3PORosterService:
         if programs:
             self.card_observation_store.save(programs)
         return len(programs)
+
+    def import_screenshots(self, screenshots: Iterable[Path]) -> C3PORoster:
+        paths = tuple(screenshots)
+        if len(paths) == 4:
+            return self.import_four(paths)
+        if not 1 <= len(paths) <= 3:
+            raise ValueError("One to four Team Manager screenshots are required")
+        if not self.store.path.exists():
+            raise ValueError("Upload all four Team Manager screenshots for initial setup")
+        try:
+            previous = self.store.load()
+        except (OSError, ValueError, TypeError) as exc:
+            raise ValueError("A valid saved roster is required for a partial update") from exc
+        incoming, supplied_views = roster_from_partial_screens(paths, self.provider)
+        incoming_by_view = {view: tuple(player for player in incoming.players if player.view == view) for view in supplied_views}
+        merged_players = []
+        for view in VIEWS:
+            merged_players.extend(incoming_by_view.get(view, tuple(player for player in previous.players if player.view == view)))
+        merged = C3PORoster(tuple(merged_players), incoming.provider, incoming.model)
+        if self.card_observation_store is not None:
+            from dataclasses import replace
+            old_cards = self.card_observation_store.load()
+            old_rows = {}
+            old_counts = {}
+            for occurrence, player in roster_observations(previous):
+                key = (player.view, player.slot, re.sub(r"[^a-z0-9]+", "", (player.name or "").casefold()))
+                ordinal = old_counts.get(key, 0)
+                old_counts[key] = ordinal + 1
+                prior = old_cards.get(observation_fingerprint(player, occurrence))
+                if prior is not None:
+                    old_rows[(key, ordinal)] = prior
+            preserved = {}
+            new_counts = {}
+            for occurrence, player in roster_observations(merged):
+                key = (player.view, player.slot, re.sub(r"[^a-z0-9]+", "", (player.name or "").casefold()))
+                ordinal = new_counts.get(key, 0)
+                new_counts[key] = ordinal + 1
+                prior = old_rows.get((key, ordinal))
+                if prior is None or (player.program and player.program != prior.program):
+                    continue
+                fingerprint = observation_fingerprint(player, occurrence)
+                preserved[fingerprint] = replace(prior, fingerprint=fingerprint, player_name=player.name or "", displayed_ovr=player.displayed_ovr)
+            if preserved:
+                self.card_observation_store.save(preserved)
+        else:
+            preserved = {}
+        resolve_fingerprints = {
+            observation_fingerprint(player, occurrence)
+            for occurrence, player in roster_observations(merged)
+            if player.view in supplied_views
+            and observation_fingerprint(player, occurrence) not in preserved
+        }
+        self.store.save(merged)
+        from operation_pancake.c3po_card_import import complete_import
+        complete_import(self, merged, resolve_fingerprints=resolve_fingerprints)
+        return merged
 
     def import_four(self, screenshots: Iterable[Path]) -> C3PORoster:
         paths = tuple(screenshots)

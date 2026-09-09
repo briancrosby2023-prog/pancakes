@@ -47,7 +47,7 @@ color:#f5b642}.position-grid{display:grid;grid-template-columns:repeat(3,minmax(
 def _upload_form() -> str:
     return (
         '<section class="upload-panel"><form method="post" action="/team/upload" '
-        'enctype="multipart/form-data" style="display:contents"><label>Four Team Manager screenshots'
+        'enctype="multipart/form-data" style="display:contents"><label>One to four Team Manager screenshots'
         '<input type="file" name="screenshots" accept="image/jpeg,image/png,image/webp" multiple required>'
         "</label><button>ANALYZE MY TEAM</button></form></section>"
     )
@@ -80,8 +80,8 @@ def _uploaded_files(content_type: str, body: bytes, directory: Path) -> tuple[Pa
             path = directory / f"{len(files):02d}-{filename}"
             path.write_bytes(part.get_payload(decode=True) or b"")
             files.append(path)
-    if len(files) != 4:
-        raise ValueError("Exactly four Team Manager screenshots are required")
+    if not 1 <= len(files) <= 4:
+        raise ValueError("One to four Team Manager screenshots are required")
     return tuple(files)
 
 
@@ -130,7 +130,7 @@ def create_handler(service: C3PORosterService, upload_root: Path):
             if path in {"/", "/setup"}:
                 setup = (
                     '<section class="setup-intro"><p class="eyebrow">TEAM SETUP</p>'
-                    '<h1>Update Team</h1><p>Upload all four EA Team Manager views.</p></section>'
+                    '<h1>Update Team</h1><p>Upload only the EA Team Manager sections that changed (1-4 screenshots).</p></section>'
                     + _upload_form()
                 )
                 self._send(_page(setup, active="setup"))
@@ -153,7 +153,7 @@ def create_handler(service: C3PORosterService, upload_root: Path):
                 upload_root.mkdir(parents=True, exist_ok=True)
                 with tempfile.TemporaryDirectory(dir=upload_root) as temporary:
                     screenshots = _uploaded_files(self.headers.get("Content-Type", ""), body, Path(temporary))
-                    service.import_four(screenshots)
+                    service.import_screenshots(screenshots)
                 self.send_response(303)
                 self.send_header("Location", "/my-team")
                 self.send_header("Content-Length", "0")
