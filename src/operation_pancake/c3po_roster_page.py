@@ -132,7 +132,8 @@ def render_c3po_roster(roster: C3PORoster, programs=None) -> str:
             fingerprint = observation_fingerprint(player, occurrence)
             program = programs.get(fingerprint)
             if program is not None and (
-                getattr(program, "player_name", None) != (player.name or "")
+                (getattr(program, "player_name", None) or "").casefold()
+                != (player.name or "").casefold()
                 or getattr(program, "displayed_ovr", None) != player.displayed_ovr
             ):
                 program = None
