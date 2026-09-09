@@ -14,5 +14,5 @@ def test_desktop_cards_use_larger_standardized_viewport():
     assert "grid-template-columns:repeat(6,minmax(0,1fr))" in page
     assert ".feature-card{aspect-ratio:3/4" in page
     assert "max-width:190px" in page
-    assert "object-fit:contain" in page
+    assert "object-fit:fill" in page
     assert ".player-list{display:grid" in page
