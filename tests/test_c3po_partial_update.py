@@ -409,3 +409,27 @@ def test_partial_update_only_analyzes_new_observations(tmp_path: Path):
     service.import_screenshots((shot,))
 
     assert [request.observation.name for request in analyzer.requests] == ["Brand New"]
+
+
+def test_partial_update_rejects_section_that_loses_existing_observations(tmp_path: Path):
+    baseline = _baseline()
+    baseline = C3PORoster(
+        (baseline.players[0], C3POPlayer("OFFENSE", "X2", "Backup", 81), *baseline.players[1:]),
+        "p",
+        "m",
+    )
+    store = C3PORosterStore(tmp_path / "roster.json")
+    store.save(baseline)
+    shot = tmp_path / "offense.png"
+    shot.write_bytes(b"x")
+    service = C3PORosterService(
+        store, _PartialProvider({shot.name: _screen("OFFENSE", "New Offense")})
+    )
+
+    with pytest.raises(ValueError, match="fewer observations"):
+        service.import_screenshots((shot,))
+
+    assert store.load() == baseline
+
+
+pytest = __import__("pytest")

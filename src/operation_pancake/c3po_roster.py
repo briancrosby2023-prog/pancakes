@@ -382,6 +382,10 @@ class C3PORosterService:
             raise ValueError("A valid saved roster is required for a partial update") from exc
         incoming, supplied_views = roster_from_partial_screens(paths, self.provider)
         incoming_by_view = {view: tuple(player for player in incoming.players if player.view == view) for view in supplied_views}
+        for view in supplied_views:
+            previous_count = sum(player.view == view for player in previous.players)
+            if len(incoming_by_view[view]) < previous_count:
+                raise ValueError(f"C-3PO returned fewer observations for {view}; saved roster was not changed")
         merged_players = []
         for view in VIEWS:
             merged_players.extend(incoming_by_view.get(view, tuple(player for player in previous.players if player.view == view)))
