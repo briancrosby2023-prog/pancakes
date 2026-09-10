@@ -225,7 +225,7 @@ def test_complete_import_reuses_same_card_across_role_ovr(tmp_path):
     assert second.displayed_ovr == 87
 
 
-def test_complete_import_replaces_observation_crop_with_exact_page_asset(tmp_path):
+def test_complete_import_prefers_exact_statless_asset_over_page_asset(tmp_path):
     from operation_pancake.c3po_card_import import complete_import
     from operation_pancake.models.cfb27_card_state import stable_id
 
@@ -238,6 +238,8 @@ def test_complete_import_replaces_observation_crop_with_exact_page_asset(tmp_pat
     from PIL import Image
 
     Image.new("RGB", (1, 1)).save(page_asset)
+    raw_asset = art_root / f"{card_id.replace(chr(58), chr(45))}.png"
+    Image.new("RGB", (1, 1)).save(raw_asset)
     store = C3POCardObservationStore(tmp_path / "programs.json")
     fingerprint = observation_fingerprint(player, 0)
     store.save(
@@ -271,4 +273,4 @@ def test_complete_import_replaces_observation_crop_with_exact_page_asset(tmp_pat
 
     complete_import(service, roster)
 
-    assert store.load()[fingerprint].art_asset.endswith("-page.png")
+    assert store.load()[fingerprint].art_asset.endswith(f"{card_id.replace(chr(58), chr(45))}.png")

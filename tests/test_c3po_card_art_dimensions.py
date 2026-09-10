@@ -19,24 +19,24 @@ def _current_rows(root: Path):
     ]
 
 
-def test_current_exact_page_art_is_dom_card_element_size():
+def test_current_exact_statless_art_is_uniform_source_size():
     root = Path(__file__).parents[1]
     rows = [row for row in _current_rows(root) if row.card_id]
     sizes = {
         Image.open(
-            root / "data/production/card_art" / f"{row.card_id.replace(':', '-')}-page.png"
+            root / "data/production/card_art" / f"{row.card_id.replace(':', '-')}.png"
         ).size
         for row in rows
     }
     assert len(rows) == 79
-    assert sizes == {(280, 374)}
+    assert sizes == {(440, 588)}
 
 
-def test_current_resolved_rows_use_exact_card_page_assets():
+def test_current_resolved_rows_use_exact_statless_assets():
     root = Path(__file__).parents[1]
     rows = [row for row in _current_rows(root) if row.card_id]
     assert len(rows) == 79
     assert all(
-        row.art_asset == f"data/production/card_art/{row.card_id.replace(':', '-')}-page.png"
+        row.art_asset == f"data/production/card_art/{row.card_id.replace(':', '-')}.png"
         for row in rows
     )

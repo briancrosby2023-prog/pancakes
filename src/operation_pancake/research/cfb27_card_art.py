@@ -49,14 +49,14 @@ def acquire_card_art(
     card_id = stable_id("card", source, external_card_id)
     art_root = root / "data/production/card_art"
     for extension in SUPPORTED_FORMATS.values():
+        existing = art_root / asset_filename(card_id, extension)
+        if existing.is_file() and _image_extension(existing.read_bytes()) == extension:
+            return existing.relative_to(root).as_posix()
         page_asset = art_root / (
             Path(asset_filename(card_id, extension)).stem + "-page." + extension
         )
         if page_asset.is_file() and _image_extension(page_asset.read_bytes()) == extension:
             return page_asset.relative_to(root).as_posix()
-        existing = art_root / asset_filename(card_id, extension)
-        if existing.is_file() and _image_extension(existing.read_bytes()) == extension:
-            return existing.relative_to(root).as_posix()
     payload = fetcher(card_art_source_url(external_card_id))
     extension = _image_extension(payload)
     if extension is None:
@@ -78,12 +78,12 @@ def existing_card_art_asset(root: Path, card: dict[str, Any]) -> str | None:
     card_id = stable_id("card", source, external_card_id)
     art_root = root / "data/production/card_art"
     for extension in SUPPORTED_FORMATS.values():
+        path = art_root / asset_filename(card_id, extension)
+        if path.is_file() and _image_extension(path.read_bytes()) == extension:
+            return path.relative_to(root).as_posix()
         page_asset = art_root / (
             Path(asset_filename(card_id, extension)).stem + "-page." + extension
         )
         if page_asset.is_file() and _image_extension(page_asset.read_bytes()) == extension:
             return page_asset.relative_to(root).as_posix()
-        path = art_root / asset_filename(card_id, extension)
-        if path.is_file() and _image_extension(path.read_bytes()) == extension:
-            return path.relative_to(root).as_posix()
     return None
