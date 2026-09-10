@@ -17,3 +17,7 @@ def test_desktop_cards_use_reference_geometry_without_overflow():
     assert "object-fit:contain" in page
     assert ".position-group{min-width:0;overflow:hidden}" in page
     assert ".player-list{display:grid" in page
+    assert "grid-template-columns:repeat(3,minmax(0,1fr))" not in page
+    assert ".feature-card{height:165px}" not in page
+    assert ".feature-card{height:155px}" not in page
+    assert ".feature-card{height:145px}" not in page
