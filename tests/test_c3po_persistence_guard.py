@@ -223,3 +223,52 @@ def test_complete_import_reuses_same_card_across_role_ovr(tmp_path):
     assert second.card_id == "card:exact"
     assert second.program == "Phenoms"
     assert second.displayed_ovr == 87
+
+
+def test_complete_import_replaces_observation_crop_with_exact_page_asset(tmp_path):
+    from operation_pancake.c3po_card_import import complete_import
+    from operation_pancake.models.cfb27_card_state import stable_id
+
+    player = C3POPlayer("OFFENSE", "LT 1", "Exact Player", 84, program="Phenoms")
+    roster = C3PORoster((player,), "test", "test")
+    card_id = stable_id("card", "CFB_FAN", "27-123")
+    art_root = tmp_path / "data/production/card_art"
+    art_root.mkdir(parents=True)
+    page_asset = art_root / f"{card_id.replace(':', '-')}-page.png"
+    from PIL import Image
+
+    Image.new("RGB", (1, 1)).save(page_asset)
+    store = C3POCardObservationStore(tmp_path / "programs.json")
+    fingerprint = observation_fingerprint(player, 0)
+    store.save(
+        {
+            fingerprint: C3POCardObservation(
+                fingerprint,
+                "Exact Player",
+                84,
+                "Phenoms",
+                "IDENTIFIED",
+                card_id=card_id,
+                art_asset="data/production/card_art/observation-old.png",
+            )
+        }
+    )
+    service = C3PORosterService(
+        C3PORosterStore(tmp_path / "roster.json"),
+        provider=object(),
+        enrichment_cards=(
+            {
+                "card_id": card_id,
+                "player_name": "Exact Player",
+                "program": "Phenoms",
+                "external_source": "CFB_FAN",
+                "external_card_id": "27-123",
+            },
+        ),
+        card_observation_store=store,
+        card_art_root=art_root,
+    )
+
+    complete_import(service, roster)
+
+    assert store.load()[fingerprint].art_asset.endswith("-page.png")

@@ -12,7 +12,7 @@ def test_desktop_cards_use_reference_geometry_without_overflow():
     page = render_c3po_roster(roster)
 
     assert "grid-template-columns:repeat(6,minmax(0,1fr))" in page
-    assert ".feature-card{aspect-ratio:254/356" in page
+    assert ".feature-card{aspect-ratio:280/374" in page
     assert "max-width:160px" in page
     assert "object-fit:contain" in page
     assert ".position-group{min-width:0;overflow:hidden}" in page

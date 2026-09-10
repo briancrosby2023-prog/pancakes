@@ -63,6 +63,8 @@ def complete_import(service, roster, resolve_fingerprints: set[str] | None = Non
         prior = existing.get(fingerprint)
         if prior is None or not prior.card_id or not prior.art_asset:
             return None
+        if prior.art_asset.rsplit("/", 1)[-1].startswith("observation-"):
+            return None
         if prior.player_name.casefold() != (player.name or "").casefold():
             return None
         if player.program and player.program != prior.program:
