@@ -132,17 +132,7 @@ class C3POCardObservationStore:
         existing = self.load()
         merged = dict(existing) if len(observations) < len(existing) else {}
         for fingerprint, observation in observations.items():
-            previous = existing.get(fingerprint)
-            preserved_exact = (
-                previous is not None
-                and previous.card_id
-                and previous.card_id != observation.card_id
-                and any(
-                    item.startswith("preserved exact ")
-                    for item in previous.positive_visual_evidence
-                )
-            )
-            merged[fingerprint] = previous if preserved_exact else observation
+            merged[fingerprint] = observation
         rows = []
         for fingerprint in sorted(merged):
             observation = merged[fingerprint]

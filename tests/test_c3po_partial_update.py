@@ -308,7 +308,7 @@ def test_upload_parser_rejects_more_than_four_screenshots(tmp_path: Path):
         raise AssertionError("five screenshots must fail")
 
 
-def test_partial_update_reuses_exact_card_across_name_case_and_display_ovr_change(tmp_path: Path):
+def test_partial_update_does_not_reuse_card_across_display_ovr_change(tmp_path: Path):
     baseline = _baseline()
     store = C3PORosterStore(tmp_path / "roster.json")
     store.save(baseline)
@@ -337,8 +337,8 @@ def test_partial_update_reuses_exact_card_across_name_case_and_display_ovr_chang
 
     player = updated.players[0]
     current = card_store.load()[observation_fingerprint(player, 0)]
-    assert current.card_id == "card-offense"
-    assert current.art_asset == "data/production/card_art/card-offense.png"
+    assert current.card_id is None
+    assert current.art_asset is None
     assert current.displayed_ovr == 86
 
 
@@ -408,7 +408,10 @@ def test_partial_update_only_analyzes_new_observations(tmp_path: Path):
 
     service.import_screenshots((shot,))
 
-    assert [request.observation.name for request in analyzer.requests] == ["Brand New"]
+    assert [request.observation.name for request in analyzer.requests] == [
+        "Old OFFENSE",
+        "Brand New",
+    ]
 
 
 def test_partial_update_rejects_section_that_loses_existing_observations(tmp_path: Path):

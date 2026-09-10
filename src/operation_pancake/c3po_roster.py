@@ -411,6 +411,8 @@ class C3PORosterService:
                 prior = old_rows.get((key, ordinal))
                 if prior is None or (player.program and player.program != prior.program):
                     continue
+                if player.displayed_ovr != prior.displayed_ovr:
+                    continue
                 fingerprint = observation_fingerprint(player, occurrence)
                 preserved[fingerprint] = replace(prior, fingerprint=fingerprint, player_name=player.name or "", displayed_ovr=player.displayed_ovr)
             if preserved:

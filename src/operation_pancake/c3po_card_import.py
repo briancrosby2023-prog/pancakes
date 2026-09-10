@@ -15,8 +15,8 @@ from operation_pancake.card_art import _normalized
 LOGGER = logging.getLogger(__name__)
 
 
-def exact_candidates(cards, name, program):
-    """Use visual program alternatives within one player's family; never use OVR."""
+def exact_candidates(cards, name, program, displayed_ovr):
+    """Return only the exact player/program/OVR card instance."""
     labels = re.split(r"\s*(?:/|\||\bor\b)\s*", program or "", flags=re.IGNORECASE)
     labels = {_normalized(label) for label in labels if label.strip()}
     labels = {"phenoms" if label == "kickoffphenoms" else label for label in labels}
@@ -26,6 +26,7 @@ def exact_candidates(cards, name, program):
         if _normalized(name)
         and _normalized(card.get("player_name")) == _normalized(name)
         and _normalized(card.get("program")) in labels
+        and card.get("native_overall") == displayed_ovr
     ]
 
 
@@ -69,6 +70,12 @@ def complete_import(service, roster, resolve_fingerprints: set[str] | None = Non
             return None
         if player.program and player.program != prior.program:
             return None
+        exact_ids = {
+            card.get("card_id")
+            for card in exact_candidates(cards, player.name, prior.program, player.displayed_ovr)
+        }
+        if prior.card_id not in exact_ids:
+            return None
         return prior
 
     programs = {observation_fingerprint(p, i): p.program for i, p in rows}
@@ -78,7 +85,7 @@ def complete_import(service, roster, resolve_fingerprints: set[str] | None = Non
         if p.name
         and (resolve_fingerprints is None or observation_fingerprint(p, i) in resolve_fingerprints)
         and reusable_existing(observation_fingerprint(p, i), p) is None
-        and len(exact_candidates(cards, p.name, p.program)) != 1
+        and len(exact_candidates(cards, p.name, p.program, p.displayed_ovr)) != 1
     ]
     clarification = 0
     clarification_reason = "no clarification needed"
@@ -130,7 +137,7 @@ def complete_import(service, roster, resolve_fingerprints: set[str] | None = Non
             reused += 1
             continue
         program = programs[fingerprint]
-        matches = exact_candidates(cards, player.name, program)
+        matches = exact_candidates(cards, player.name, program, player.displayed_ovr)
         card = matches[0] if len(matches) == 1 else None
         card_id = card.get("card_id") if card else None
         asset = None
@@ -208,13 +215,13 @@ def complete_import(service, roster, resolve_fingerprints: set[str] | None = Non
                 )
             )
 
-    # The same owned lineup card can appear in multiple lineup roles with a different
-    # contextual displayed OVR. Reuse an exact card only when every resolved occurrence
-    # of that exact player agrees on card, program, and artwork. Displayed OVR remains
-    # observation-specific and never participates in card identity.
+    # Reuse across lineup roles only inside the same exact player/OVR observation
+    # family. A different displayed OVR is a different card instance and may not borrow art.
     by_player = {}
     for observation in stored.values():
-        by_player.setdefault(observation.player_name.casefold(), []).append(observation)
+        by_player.setdefault(
+            (observation.player_name.casefold(), observation.displayed_ovr), []
+        ).append(observation)
     for observations in by_player.values():
         resolved = [item for item in observations if item.card_id]
         exact_ids = {item.card_id for item in resolved}

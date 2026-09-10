@@ -69,7 +69,7 @@ def test_partial_enrichment_merges_without_erasing_other_observations(tmp_path):
     assert loaded["fp-78"].player_name == "Player 78"
 
 
-def test_preserved_exact_choice_beats_conflicting_later_mapping(tmp_path):
+def test_current_mapping_replaces_conflicting_historical_mapping(tmp_path):
     store = C3POCardObservationStore(tmp_path / "programs.json")
     preserved = C3POCardObservation(
         "fp",
@@ -97,9 +97,9 @@ def test_preserved_exact_choice_beats_conflicting_later_mapping(tmp_path):
     )
 
     loaded = store.load()["fp"]
-    assert loaded.card_id == "card:phenoms"
-    assert loaded.program == "Phenoms"
-    assert loaded.art_asset.endswith("cason-phenoms.png")
+    assert loaded.card_id == "card:core"
+    assert loaded.program == "Core Rare"
+    assert loaded.art_asset.endswith("cason-core.png")
 
 
 def test_duplicate_name_observations_keep_independent_art_after_reload(tmp_path):
@@ -192,7 +192,7 @@ def test_program_store_windows_replace_fallback_preserves_payload(tmp_path, monk
     assert not (tmp_path / "programs.json.tmp").exists()
 
 
-def test_complete_import_reuses_same_card_across_role_ovr(tmp_path):
+def test_complete_import_does_not_reuse_same_card_across_role_ovr(tmp_path):
     from operation_pancake.c3po_card_import import complete_import
 
     players = (
@@ -208,6 +208,7 @@ def test_complete_import_reuses_same_card_across_role_ovr(tmp_path):
                 "card_id": "card:exact",
                 "player_name": "Same Player",
                 "program": "Phenoms",
+                "native_overall": 89,
                 "card_art_asset": None,
             },
         ),
@@ -220,8 +221,8 @@ def test_complete_import_reuses_same_card_across_role_ovr(tmp_path):
     first = stored[observation_fingerprint(players[0], 0)]
     second = stored[observation_fingerprint(players[1], 1)]
     assert first.card_id == "card:exact"
-    assert second.card_id == "card:exact"
-    assert second.program == "Phenoms"
+    assert second.card_id is None
+    assert second.art_asset is None
     assert second.displayed_ovr == 87
 
 
@@ -263,6 +264,7 @@ def test_complete_import_prefers_exact_statless_asset_over_page_asset(tmp_path):
                 "card_id": card_id,
                 "player_name": "Exact Player",
                 "program": "Phenoms",
+                "native_overall": 84,
                 "external_source": "CFB_FAN",
                 "external_card_id": "27-123",
             },

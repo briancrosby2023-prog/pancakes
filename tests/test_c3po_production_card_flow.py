@@ -15,12 +15,17 @@ def setup_flow(tmp_path, monkeypatch, programs, decisions):
             card_id="card:530a89e75c2dedc339b9",
             player_name="Player One",
             program="Phenoms",
-            overall=80,
+            native_overall=91,
             source={"card": "CFB_FAN", "ratings": "https://cfb.fan/players/1-player-one/27-123/"},
             card_art_asset=None,
         ),
-        dict(card_id="card:two", player_name="Player Two", program="Phenoms"),
-        dict(card_id="card:three", player_name="Player Two", program="Ultimate Alumni"),
+        dict(card_id="card:two", player_name="Player Two", program="Phenoms", native_overall=91),
+        dict(
+            card_id="card:three",
+            player_name="Player Two",
+            program="Ultimate Alumni",
+            native_overall=91,
+        ),
     ]
     calls = []
 
@@ -79,7 +84,7 @@ def setup_flow(tmp_path, monkeypatch, programs, decisions):
 
 
 @pytest.mark.parametrize("program", ["Kickoff Phenoms", "Phenoms / Ultimate Alumni"])
-def test_chemistry_ovr_and_program_family_resolve_and_acquire_once(tmp_path, monkeypatch, program):
+def test_exact_ovr_and_program_family_resolve_and_acquire_once(tmp_path, monkeypatch, program):
     flow = setup_flow(tmp_path, monkeypatch, [("Player One", program)] * 2, {})
     roster = flow.service.import_four(flow.paths)
     saved = list(flow.service.card_observation_store.load().values())
