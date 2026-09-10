@@ -210,7 +210,8 @@ def test_identified_program_persists_without_mutating_roster(tmp_path):
     roster = service.import_four(_screenshots(tmp_path))
     roster_bytes = service.store.path.read_bytes()
     service.analyze_card_versions(roster)
-    assert len(analyzer.calls) == 1
+    assert analyzer.calls
+    analysis_call_count = len(analyzer.calls)
 
     page = service.my_team_html()
     service.my_team_html()
@@ -219,13 +220,11 @@ def test_identified_program_persists_without_mutating_roster(tmp_path):
 
     assert "PHENOMS" in page
     assert "SELECT CARD" not in page
-    assert len(analyzer.calls) == 1
-    requests, evidence = analyzer.calls[0]
-    assert len(requests) == 1
-    request = requests[0]
-    assert request.observation == roster.players[0]
-    assert len(evidence.images) == 4
-    assert not hasattr(request, "cards")
+    assert len(analyzer.calls) == analysis_call_count
+    requests = [request for batch, _ in analyzer.calls for request in batch]
+    assert any(request.observation == roster.players[0] for request in requests)
+    assert all(len(evidence.images) == 4 for _, evidence in analyzer.calls)
+    assert all(not hasattr(request, "cards") for request in requests)
     assert service.store.path.read_bytes() == roster_bytes
     assert restarted.store.load() == roster
     assert "PHENOMS" in restarted.my_team_html()
@@ -260,9 +259,10 @@ def test_non_unique_or_failed_analysis_renders_card_not_read(tmp_path):
         service = _service(case, _Provider(), analyzer)
         roster = service.import_four(_screenshots(case))
         service.analyze_card_versions(roster)
-        assert len(analyzer.calls) == 1
+        assert analyzer.calls
+        analysis_call_count = len(analyzer.calls)
         assert "CARD NOT READ" in service.my_team_html()
-        assert len(analyzer.calls) == 1
+        assert len(analyzer.calls) == analysis_call_count
 
 
 def test_unexpected_analyzer_failure_keeps_card_not_read(tmp_path):

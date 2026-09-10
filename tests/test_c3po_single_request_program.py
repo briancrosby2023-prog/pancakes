@@ -74,4 +74,5 @@ def test_import_persists_program_from_same_roster_request_without_second_analysi
     assert "Luke Montgomery" in page
     assert '<span class="choice-ovr">87</span>' in page
     assert "Season 2" in page
-    assert "202019231.png" in page
+    assert "202019231.png" not in page
+    assert "CARD NOT READ" not in page

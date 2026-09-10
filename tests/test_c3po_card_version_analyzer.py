@@ -77,7 +77,8 @@ def test_targeted_request_preserves_identity_and_supplies_original_images():
     prompt = call["input"][0]["text"]
     assert "identity is already established as Thomas Shrader" in prompt
     assert "Do not identify, rename, reject, or substitute" in prompt
-    assert "EA displayed OVR" in prompt and "not sufficient by itself" in prompt
+    assert "EA displayed OVR is chemistry-adjusted, not base card OVR" in prompt
+    assert "Do not infer or reject a program from displayed OVR" in prompt
     assert "Core Rare" not in prompt and "Phenoms" not in prompt
     assert "card_id=" not in prompt
     assert "Zach Rice" not in prompt
