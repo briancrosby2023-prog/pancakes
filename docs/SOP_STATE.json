@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "mission": "Decision-gate controller → mechanical SOP enforcement → physical acceptance",
-  "status": "IN_PROGRESS",
+  "status": "AWAITING_EXTERNAL_ACTION",
   "map": {
     "complete": true,
     "evidence": [
@@ -70,22 +70,30 @@
     ]
   },
   "verify": {
-    "complete": false,
+    "complete": true,
     "evidence": [
-      "OpenAI transport CI and live acceptance pending"
+      "Required SOP Gate workflow run 20 passed",
+      "20 SOP/decision/OpenAI transport tests passed",
+      "sop_policy.py, sop_gateway.py, openai_decision_provider.py, and product_app.py compiled successfully in CI",
+      "OpenAI transport test verified structured Responses API request, high reasoning effort, GPT-5.6 Sol default, and no API key leakage into request body",
+      "Production gateway remains fail-closed when no local API key is present"
     ]
   },
   "update_map": {
-    "complete": false,
+    "complete": true,
     "evidence": [
-      "Will update after transport CI and live acceptance"
+      "OpenAI Responses transport added behind existing deterministic preflight",
+      "Approved key sources are OPENAI_API_KEY or %LOCALAPPDATA%\\SimpleEvaluator\\openai_api_key.txt",
+      "Raw API key is never stored in repository state or decision records",
+      "Live physical acceptance still requires the secure key to be created/downloaded into the local approved key source"
     ]
   },
   "continue": {
-    "complete": false,
+    "complete": true,
     "evidence": [
-      "Continue through transport CI, key placement, live acceptance, and final map update"
+      "Continued through implementation and required CI",
+      "Only user-controlled secret placement and subsequent live API call remain"
     ]
   },
-  "next_action": "run OpenAI transport CI acceptance"
+  "next_action": "await secure local API key placement"
 }
