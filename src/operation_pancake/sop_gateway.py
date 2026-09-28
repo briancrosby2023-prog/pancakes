@@ -319,18 +319,27 @@ class SOPDecisionGateway:
 
 def production_gateway(root: Path, provider: DecisionProvider | None = None) -> SOPDecisionGateway:
     record_root = root / ".operation_pancake" / "decisions"
+    if provider is None:
+        from operation_pancake.openai_decision_provider import configured_provider
+
+        provider = configured_provider(root) or NoDecisionProvider()
     return SOPDecisionGateway(
-        provider=provider or NoDecisionProvider(),
+        provider=provider,
         store=DecisionRecordStore(record_root),
     )
 
 
 def gateway_status(root: Path) -> dict[str, Any]:
+    from operation_pancake.openai_decision_provider import transport_status
+
+    transport = transport_status(root)
     return {
         "controller": "operation_pancake.sop_gateway",
         "decision_records": str(root / ".operation_pancake" / "decisions"),
         "predecision_required": ["map", "history", "research", "capabilities"],
-        "model_transport": "EXTERNAL_PERMISSION_REQUIRED",
+        "model_transport": "CONFIGURED" if transport["configured"] else "CREDENTIAL_REQUIRED",
+        "model": transport["model"],
+        "key_source": transport["key_source"],
         "direct_chatgpt_interception": False,
         "repository_gate": "required downstream",
     }

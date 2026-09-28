@@ -209,5 +209,5 @@ def test_production_gateway_is_fail_closed_until_transport_is_explicitly_configu
     assert packet.decision_status == BLOCKED_EXTERNAL
     assert packet.missing_requirements == ("MODEL_TRANSPORT_REQUIRED",)
     status = gateway_status(tmp_path)
-    assert status["model_transport"] == "EXTERNAL_PERMISSION_REQUIRED"
+    assert status["model_transport"] == "CREDENTIAL_REQUIRED"
     assert status["direct_chatgpt_interception"] is False
