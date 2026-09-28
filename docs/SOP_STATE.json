@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "mission": "Operation Pancake SOP gate",
+  "status": "IN_PROGRESS",
+  "map": {"complete": true, "evidence": ["project state reviewed"]},
+  "history": {"complete": true, "evidence": ["prior attempts reviewed"]},
+  "research": {"complete": true, "evidence": ["existing CI reviewed", "RED run 36482712899"]},
+  "capabilities": {"complete": true, "evidence": ["GitHub Actions available"]},
+  "plan": {"complete": true, "evidence": ["approved gate design"], "next_action": "implement validator"},
+  "execute": {"complete": true, "evidence": ["gate tests and workflow added"]},
+  "adapt": {"complete": true, "evidence": ["GitHub path selected"]},
+  "verify": {"complete": false, "evidence": []},
+  "update_map": {"complete": false, "evidence": []},
+  "continue": {"complete": true, "evidence": ["continue through verification"]},
+  "next_action": "implement validator and run CI"
+}
