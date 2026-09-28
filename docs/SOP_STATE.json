@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "mission": "Decision-gate controller → mechanical SOP enforcement → physical acceptance",
-  "status": "IN_PROGRESS",
+  "status": "AWAITING_EXTERNAL_ACTION",
   "map": {
     "complete": true,
     "evidence": [
@@ -65,22 +65,30 @@
     ]
   },
   "verify": {
-    "complete": false,
+    "complete": true,
     "evidence": [
-      "CI acceptance pending"
+      "Required SOP Gate workflow run 17 passed",
+      "17 decision-gate/SOP tests passed after production fail-closed transport test was added",
+      "sop_policy.py, sop_gateway.py, and product_app.py compiled successfully in CI",
+      "9,206-card acceptance regression proved missing HISTORY prevents provider invocation",
+      "Restored HISTORY permits only trace-original-acquisition and blocks unrelated manual/provider-email actions",
+      "Production gateway test proved no live model decision runs without explicitly configured transport"
     ]
   },
   "update_map": {
-    "complete": false,
+    "complete": true,
     "evidence": [
-      "Will update after CI"
+      "Persisted decision-gate architecture and model-transport boundary in docs/SOP_DECISION_GATE.md",
+      "Persisted runtime decision schema in schemas/sop_decision.schema.json",
+      "Recorded live OpenAI/ChatGPT physical acceptance as the only remaining external gate"
     ]
   },
   "continue": {
-    "complete": false,
+    "complete": true,
     "evidence": [
-      "Will continue through CI/adaptation and remaining executable work"
+      "Continued through implementation, two CI failures, root-cause fixes, and successful required CI",
+      "No executable repository work remains before the external model-transport permission boundary"
     ]
   },
-  "next_action": "run decision-gate CI acceptance"
+  "next_action": "await external input"
 }
