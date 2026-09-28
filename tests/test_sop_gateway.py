@@ -12,6 +12,8 @@ from operation_pancake.sop_gateway import (
     DecisionTransportUnavailable,
     SOPDecisionGateway,
     StateChanged,
+    gateway_status,
+    production_gateway,
 )
 
 
@@ -195,3 +197,17 @@ def test_database_case_allows_history_grounded_plan_and_blocks_unrelated_action(
             "ask-user-for-manual-card-captures",
             current_state_snapshot=snapshot,
         )
+
+
+def test_production_gateway_is_fail_closed_until_transport_is_explicitly_configured(tmp_path):
+    gate = production_gateway(tmp_path)
+    packet = gate.request_decision(
+        mission="production transport boundary",
+        request="Choose the next Operation Pancake action",
+        evidence=evidence(),
+    )
+    assert packet.decision_status == BLOCKED_EXTERNAL
+    assert packet.missing_requirements == ("MODEL_TRANSPORT_REQUIRED",)
+    status = gateway_status(tmp_path)
+    assert status["model_transport"] == "EXTERNAL_PERMISSION_REQUIRED"
+    assert status["direct_chatgpt_interception"] is False
