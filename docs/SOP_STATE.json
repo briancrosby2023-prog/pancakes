@@ -1,78 +1,94 @@
 {
   "schema_version": 1,
-  "mission": "Operation Pancake SOP gate",
-  "status": "COMPLETE",
+  "mission": "Decision-gate controller → mechanical SOP enforcement → physical acceptance",
+  "status": "AWAITING_EXTERNAL_ACTION",
   "map": {
     "complete": true,
     "evidence": [
-      "project state reviewed",
-      "repository ruleset 24142501 active on product/c3po-clean-room-roster"
+      "Verified active repository SOP ruleset and protected product/c3po-clean-room-roster branch",
+      "Read docs/SOP_STATE.json, scripts/verify_sop_gate.py, tests/test_sop_gate.py, pyproject.toml, product_app.py, c3po_roster.py"
     ]
   },
   "history": {
     "complete": true,
     "evidence": [
-      "prior attempts reviewed",
-      "phase-scoped GitHub write restriction distinguished from permanent project policy"
+      "Recovered repeated failure pattern: consequential decisions made before MAP/HISTORY",
+      "Recovered 9,206-card example where original acquisition history was unresolved before replacement routes were proposed",
+      "Recovered phase-scoped GitHub restriction being incorrectly carried forward as permanent"
     ]
   },
   "research": {
     "complete": true,
     "evidence": [
-      "existing CI reviewed",
-      "RED run 36482712899 failed 5/5 because validator was absent"
+      "Verified current OpenAI Agents SDK supports blocking input guardrails that complete before agent execution",
+      "Verified tool guardrails can block function-tool execution",
+      "Verified current repo has Google Gemini programmatic integration but no OpenAI/ChatGPT programmatic decision transport"
     ]
   },
   "capabilities": {
     "complete": true,
     "evidence": [
-      "GitHub Actions available",
-      "repository ruleset administration completed by repository owner"
+      "GitHub repository read/write and Actions available",
+      "Existing Python package and localhost product_app entry point available",
+      "Existing required sop-gate GitHub check available",
+      "No Desktop Commander used",
+      "No OpenAI API credential or authorized ChatGPT interception path established"
     ]
   },
   "plan": {
     "complete": true,
     "evidence": [
-      "approved gate design",
-      "protect target branch and require sop-gate status check"
-    ]
+      "Add reusable sop_policy module",
+      "Add fail-closed sop_gateway controller and decision-record store",
+      "Wire gateway status/decision/authorize endpoints into existing product_app",
+      "Add regression suite for preflight, state change, unauthorized actions, completion, and 9,206-card history case",
+      "Run through required GitHub SOP gate and record any remaining external physical-acceptance input"
+    ],
+    "next_action": "run decision-gate CI acceptance"
   },
   "execute": {
     "complete": true,
     "evidence": [
-      "tests/test_sop_gate.py",
-      "scripts/verify_sop_gate.py",
-      ".github/workflows/sop-gate.yml",
-      "ruleset 24142501"
+      "src/operation_pancake/sop_policy.py",
+      "src/operation_pancake/sop_gateway.py",
+      "tests/test_sop_gateway.py",
+      "schemas/sop_decision.schema.json",
+      "docs/SOP_DECISION_GATE.md",
+      "product_app integration"
     ]
   },
   "adapt": {
     "complete": true,
     "evidence": [
-      "GitHub path selected",
-      "state file moved to docs/SOP_STATE.json after hidden-path write rejection"
+      "Used existing GitHub path because Desktop Commander is unavailable",
+      "Kept gateway provider-agnostic and fail-closed rather than inventing a ChatGPT web interception path"
     ]
   },
   "verify": {
     "complete": true,
     "evidence": [
-      "RED run 36482712899: 5 tests failed because validator was absent",
-      "GREEN run 36482934662: tests and repository state validation passed",
-      "ruleset API verified enforcement active with empty bypass list and required sop-gate check",
-      "PR #6 merged through protected branch at 84815bad699ef41f21f06c483aab668584d96cc1"
+      "Required SOP Gate workflow run 17 passed",
+      "17 decision-gate/SOP tests passed after production fail-closed transport test was added",
+      "sop_policy.py, sop_gateway.py, and product_app.py compiled successfully in CI",
+      "9,206-card acceptance regression proved missing HISTORY prevents provider invocation",
+      "Restored HISTORY permits only trace-original-acquisition and blocks unrelated manual/provider-email actions",
+      "Production gateway test proved no live model decision runs without explicitly configured transport"
     ]
   },
   "update_map": {
     "complete": true,
     "evidence": [
-      "SOP gate state updated from AWAITING_EXTERNAL_ACTION to COMPLETE after ruleset activation and protected merge"
+      "Persisted decision-gate architecture and model-transport boundary in docs/SOP_DECISION_GATE.md",
+      "Persisted runtime decision schema in schemas/sop_decision.schema.json",
+      "Recorded live OpenAI/ChatGPT physical acceptance as the only remaining external gate"
     ]
   },
   "continue": {
     "complete": true,
     "evidence": [
-      "SOP gate mission complete; Operation Pancake can resume from its authoritative project checkpoint under the enforced gate"
+      "Continued through implementation, two CI failures, root-cause fixes, and successful required CI",
+      "No executable repository work remains before the external model-transport permission boundary"
     ]
   },
-  "next_action": "complete"
+  "next_action": "await external input"
 }
