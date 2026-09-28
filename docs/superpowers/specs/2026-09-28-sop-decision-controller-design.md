@@ -71,6 +71,10 @@ Every Pancake request is classified as either:
 - `informational`: no authoritative project decision or action is being created; or
 - `consequential`: the request can change project direction, state, code, data, tooling, external actions, acceptance, or completion.
 
+Classification is owned by the controller, not by the model that will later make the decision. The model cannot downgrade a request from consequential to informational.
+
+Classification is fail-closed: if the controller cannot confidently establish that a request is informational, it is treated as consequential and must enter the full decision state machine.
+
 A consequential request must enter the state machine below.
 
 ### 2. Deterministic state machine
@@ -97,10 +101,12 @@ Examples:
 
 - MAP: exact checkpoint/state file and version/hash.
 - HISTORY: exact prior decision records, commits, checkpoint sections, or retrieved conversation/project history used.
-- RESEARCH: source identifiers, files, URLs, queries, or a recorded reason that no external research was required.
+- RESEARCH: source identifiers, files, URLs, queries, or a controller-recorded determination that no external research was required.
 - CAPABILITIES: actual tools/connections available at runtime, not assumptions.
 - PLAN: proposed next action tied to the preceding evidence.
 - VERIFY: test/run/browser evidence tied to the executed action.
+
+A model cannot waive a required stage. Any stage-specific determination that work is unnecessary must come from controller policy, be recorded with a reason, and still satisfy the validator.
 
 Evidence references must be serializable and auditable.
 
@@ -231,15 +237,18 @@ Implementation must use TDD and include at least these acceptance cases:
 1. Consequential decision fails when HISTORY is missing.
 2. Consequential decision fails when HISTORY evidence is empty or synthetic.
 3. Consequential decision fails when CAPABILITIES are assumed rather than runtime-verified.
-4. PLAN cannot execute directly without DECISION approval.
-5. A tool action outside approved execution scope is blocked.
-6. A blocker declaration fails unless required research/capability checks completed.
-7. Completion fails unless VERIFY and UPDATE_MAP are complete.
-8. Informational requests can complete without creating unnecessary execution state.
-9. A stale decision is invalidated when authoritative project state changes materially.
-10. GitHub merge remains blocked when the repository `sop-gate` fails.
-11. Decision record preserves exact evidence references used for the decision.
-12. Direct model output cannot change controller state without validator acceptance.
+4. Ambiguous request classification defaults to consequential.
+5. The model cannot downgrade a consequential request to informational.
+6. PLAN cannot execute directly without DECISION approval.
+7. A tool action outside approved execution scope is blocked.
+8. A blocker declaration fails unless required research/capability checks completed.
+9. Completion fails unless VERIFY and UPDATE_MAP are complete.
+10. Informational requests can complete without creating unnecessary execution state.
+11. A stale decision is invalidated when authoritative project state changes materially.
+12. GitHub merge remains blocked when the repository `sop-gate` fails.
+13. Decision record preserves exact evidence references used for the decision.
+14. Direct model output cannot change controller state without validator acceptance.
+15. A model-requested stage waiver cannot bypass controller policy or validator requirements.
 
 ## Rollout
 
