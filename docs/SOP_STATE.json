@@ -1,16 +1,78 @@
 {
   "schema_version": 1,
   "mission": "Operation Pancake SOP gate",
-  "status": "AWAITING_EXTERNAL_ACTION",
-  "map": {"complete": true, "evidence": ["project state reviewed"]},
-  "history": {"complete": true, "evidence": ["prior attempts reviewed"]},
-  "research": {"complete": true, "evidence": ["existing CI reviewed", "RED run 36482712899"]},
-  "capabilities": {"complete": true, "evidence": ["GitHub Actions available", "repository administration write is not exposed by the connector"]},
-  "plan": {"complete": true, "evidence": ["approved gate design"], "next_action": "activate required status check"},
-  "execute": {"complete": true, "evidence": ["tests/test_sop_gate.py", "scripts/verify_sop_gate.py", ".github/workflows/sop-gate.yml"]},
-  "adapt": {"complete": true, "evidence": ["GitHub path selected", "state file moved to docs/SOP_STATE.json after hidden-path write rejection"]},
-  "verify": {"complete": true, "evidence": ["RED run 36482712899: 5 tests failed because validator was absent", "GREEN run 36482934662: tests and repository state validation passed"]},
-  "update_map": {"complete": true, "evidence": ["SOP gate state records verified implementation and remaining activation action"]},
-  "continue": {"complete": true, "evidence": ["remaining action identified: require Operation Pancake SOP Gate on active branch"]},
-  "next_action": "enable branch protection on product/c3po-clean-room-roster requiring the Operation Pancake SOP Gate status check"
+  "status": "COMPLETE",
+  "map": {
+    "complete": true,
+    "evidence": [
+      "project state reviewed",
+      "repository ruleset 24142501 active on product/c3po-clean-room-roster"
+    ]
+  },
+  "history": {
+    "complete": true,
+    "evidence": [
+      "prior attempts reviewed",
+      "phase-scoped GitHub write restriction distinguished from permanent project policy"
+    ]
+  },
+  "research": {
+    "complete": true,
+    "evidence": [
+      "existing CI reviewed",
+      "RED run 36482712899 failed 5/5 because validator was absent"
+    ]
+  },
+  "capabilities": {
+    "complete": true,
+    "evidence": [
+      "GitHub Actions available",
+      "repository ruleset administration completed by repository owner"
+    ]
+  },
+  "plan": {
+    "complete": true,
+    "evidence": [
+      "approved gate design",
+      "protect target branch and require sop-gate status check"
+    ]
+  },
+  "execute": {
+    "complete": true,
+    "evidence": [
+      "tests/test_sop_gate.py",
+      "scripts/verify_sop_gate.py",
+      ".github/workflows/sop-gate.yml",
+      "ruleset 24142501"
+    ]
+  },
+  "adapt": {
+    "complete": true,
+    "evidence": [
+      "GitHub path selected",
+      "state file moved to docs/SOP_STATE.json after hidden-path write rejection"
+    ]
+  },
+  "verify": {
+    "complete": true,
+    "evidence": [
+      "RED run 36482712899: 5 tests failed because validator was absent",
+      "GREEN run 36482934662: tests and repository state validation passed",
+      "ruleset API verified enforcement active with empty bypass list and required sop-gate check",
+      "PR #6 merged through protected branch at 84815bad699ef41f21f06c483aab668584d96cc1"
+    ]
+  },
+  "update_map": {
+    "complete": true,
+    "evidence": [
+      "SOP gate state updated from AWAITING_EXTERNAL_ACTION to COMPLETE after ruleset activation and protected merge"
+    ]
+  },
+  "continue": {
+    "complete": true,
+    "evidence": [
+      "SOP gate mission complete; Operation Pancake can resume from its authoritative project checkpoint under the enforced gate"
+    ]
+  },
+  "next_action": "complete"
 }
