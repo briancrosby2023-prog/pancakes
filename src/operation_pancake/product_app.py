@@ -10,7 +10,7 @@ from operation_pancake.roster_state import RosterAssignment, RosterStore
 from operation_pancake.gm_state import GMStateStore
 from operation_pancake.gm_decisions import GMDecisionService
 from operation_pancake.evo import EVODefinition, EVOStore, compose_evo_decision, enrich_candidates
-from operation_pancake.onboarding import SetupStore, ScreenshotStageStore
+from operation_pancake.onboarding import SetupStore, ScreenshotStageStore\nfrom operation_pancake.sop_gateway import production_gateway, gateway_status
 
 CSS='''*{box-sizing:border-box}body{margin:0;background:#071019;color:#eaf0f6;font:15px system-ui}header{position:sticky;top:0;background:#0b1722;border-bottom:1px solid #233545;padding:14px 22px;z-index:2}nav{max-width:1320px;margin:auto;display:flex;gap:18px;align-items:center;flex-wrap:wrap}nav a{color:#a9c7df;text-decoration:none}.brand{font-weight:800;color:#fff;margin-right:auto}main{max-width:1320px;margin:auto;padding:28px}.hero{background:linear-gradient(135deg,#102638,#111a23);padding:24px;border:1px solid #294157;border-radius:18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.card{background:#0d1b27;border:1px solid #24394b;border-radius:14px;padding:16px;margin:12px 0}.metric{font-size:28px;font-weight:800}.muted{color:#8fa6b8}.warn{color:#ffd27a}.ok{color:#9ee6b0}input,select,button{background:#111f2b;color:#eef5fa;border:1px solid #365064;border-radius:8px;padding:9px}button{cursor:pointer;background:#183c55}form{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}table{width:100%;border-collapse:collapse;background:#0d1b27}th,td{text-align:left;padding:10px;border-bottom:1px solid #263a4b;vertical-align:top}a{color:#79c8ff}.field{display:flex;flex-direction:column;gap:4px}.depth{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.slot{min-height:100px;background:#102434;border:1px solid #31506a;border-radius:12px;padding:10px}.badge{display:inline-block;border:1px solid #45647c;border-radius:999px;padding:2px 7px;margin:2px;font-size:12px}.actions a{margin-right:10px}@media(max-width:800px){.depth{grid-template-columns:repeat(2,1fr)}}'''
 def esc(x): return html.escape(str(x if x is not None else 'UNKNOWN'))
@@ -21,7 +21,7 @@ def intval(v,default=0):
     except (TypeError,ValueError):return default
 
 def create_handler(root:Path,roster_path:Path|None=None,gm_state_path:Path|None=None,evo_path:Path|None=None,setup_path:Path|None=None,stage_path:Path|None=None):
-    gm=GMProduct(root); roster=RosterStore(roster_path or root/'.operation_pancake/roster.json',set(gm.cards)); budgets=GMStateStore(gm_state_path or root/'.operation_pancake/gm.json',set(gm.cards)); evos=EVOStore(evo_path or root/'.operation_pancake/evo.json'); setup=SetupStore(setup_path or root/'.operation_pancake/setup.json'); stages=ScreenshotStageStore(stage_path or root/'.operation_pancake/screenshots.json'); decisions=GMDecisionService(gm)
+    gm=GMProduct(root); roster=RosterStore(roster_path or root/'.operation_pancake/roster.json',set(gm.cards)); budgets=GMStateStore(gm_state_path or root/'.operation_pancake/gm.json',set(gm.cards)); evos=EVOStore(evo_path or root/'.operation_pancake/evo.json'); setup=SetupStore(setup_path or root/'.operation_pancake/setup.json'); stages=ScreenshotStageStore(stage_path or root/'.operation_pancake/screenshots.json'); decisions=GMDecisionService(gm); sop_gateway=production_gateway(root)
     def rows(): return roster.load()
     def owned(): return {x.card_id for x in rows()}
     def slot(name): return next((x for x in rows() if x.slot==name.upper()),None)
@@ -40,10 +40,10 @@ def create_handler(root:Path,roster_path:Path|None=None,gm_state_path:Path|None=
         def send(self,data,status=200,ct='text/html; charset=utf-8'): self.send_response(status); self.send_header('Content-Type',ct); self.end_headers(); self.wfile.write(data)
         def js(self,obj,status=200): self.send(json.dumps(obj,indent=2).encode(),status,'application/json')
         def redir(self,path): self.send_response(303); self.send_header('Location',path); self.end_headers()
-        def form(self): return parse_qs(self.rfile.read(int(self.headers.get('Content-Length','0'))).decode())
+        def form(self): return parse_qs(self.rfile.read(int(self.headers.get('Content-Length','0'))).decode())\n        def json_body(self):\n            length=int(self.headers.get('Content-Length','0')); raw=self.rfile.read(length) if length>0 else b'{}'; payload=json.loads(raw.decode() or '{}');\n            if not isinstance(payload,dict): raise ValueError('JSON body must be an object')\n            return payload
         def do_GET(self):
             p=urlparse(self.path); q=parse_qs(p.query); state=budgets.load(); roster_rows=rows()
-            if p.path=='/api/player': self.js(gm.lookup(card_id=q.get('card_id',[None])[0],player_name=q.get('name',[None])[0],position=q.get('position',[None])[0])); return
+            if p.path=='/api/sop-gate': self.js(gateway_status(root)); return\n            if p.path.startswith('/api/sop-gate/decision/'):\n                decision_id=p.path.rsplit('/',1)[-1]\n                try:self.js(sop_gateway.store.load(decision_id).as_dict());return\n                except (OSError,ValueError,TypeError,json.JSONDecodeError):self.js({'error':'decision not found'},404);return\n            if p.path=='/api/player': self.js(gm.lookup(card_id=q.get('card_id',[None])[0],player_name=q.get('name',[None])[0],position=q.get('position',[None])[0])); return
             if p.path=='/api/roster': self.js({'assignments':[asdict(x) for x in roster_rows]}); return
             if p.path=='/api/gm': self.js({'budget':state.as_dict(),'decisions':[decisions.decision(x) for x in roster_rows],'upgrades':decisions.opportunities(roster_rows,state.prices,state.spendable_budget)}); return
             if p.path=='/api/evo': self.js({'version':EVOStore.VERSION,'definitions':[asdict(x) for x in evos.load()]}); return
