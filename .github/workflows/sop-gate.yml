@@ -32,5 +32,8 @@ jobs:
       - name: Run SOP gate tests
         run: python -m pytest -q tests/test_sop_gate.py tests/test_sop_gateway.py
 
-      - name: Compile decision-gate integration\n        run: python -m py_compile src/operation_pancake/sop_policy.py src/operation_pancake/sop_gateway.py src/operation_pancake/product_app.py\n\n      - name: Validate repository SOP state
+      - name: Compile decision-gate integration
+        run: python -m py_compile src/operation_pancake/sop_policy.py src/operation_pancake/sop_gateway.py src/operation_pancake/product_app.py
+
+      - name: Validate repository SOP state
         run: python scripts/verify_sop_gate.py --state docs/SOP_STATE.json --action commit
