@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
 import uuid
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import asdict, dataclass
@@ -327,12 +326,11 @@ def production_gateway(root: Path, provider: DecisionProvider | None = None) -> 
 
 
 def gateway_status(root: Path) -> dict[str, Any]:
-    model_transport = "CONFIGURED_EXTERNALLY" if os.getenv("OPENAI_API_KEY") else "EXTERNAL_PERMISSION_REQUIRED"
     return {
         "controller": "operation_pancake.sop_gateway",
         "decision_records": str(root / ".operation_pancake" / "decisions"),
         "predecision_required": ["map", "history", "research", "capabilities"],
-        "model_transport": model_transport,
+        "model_transport": "EXTERNAL_PERMISSION_REQUIRED",
         "direct_chatgpt_interception": False,
         "repository_gate": "required downstream",
     }
