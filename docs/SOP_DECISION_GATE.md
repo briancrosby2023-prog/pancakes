@@ -32,15 +32,18 @@ called until deterministic preflight succeeds.
 
 ## Model transport
 
-The repository currently has a Google Gemini integration for screenshot
-transcription, but no programmatic OpenAI/ChatGPT decision transport is
-configured in this branch. Direct ChatGPT web conversations cannot be
-intercepted by repository code.
+The repository now includes an OpenAI Responses API decision transport.
+Direct ChatGPT web conversations still cannot be intercepted by repository
+code; consequential Pancake decisions must go through this gateway.
 
-The gateway therefore fails closed when no decision provider is configured.
-A live OpenAI-backed decision path requires an explicitly authorized
-programmatic credential before it can be enabled. The gate itself does not
-create accounts, buy API access, or spend API credits.
+The transport reads an API key from OPENAI_API_KEY or, on Windows, from
+%LOCALAPPDATA%\\SimpleEvaluator\\openai_api_key.txt. The key is never written
+to the repository or decision records. The default decision model is
+gpt-5.6-sol and can be overridden with PANCAKE_OPENAI_MODEL.
+
+If no key is available, the gateway remains fail-closed and returns
+MODEL_TRANSPORT_REQUIRED. The API call uses structured JSON output, high
+reasoning effort, no built-in web/tool calls, and a 1,200-output-token cap.
 
 ## Acceptance
 
@@ -57,5 +60,7 @@ The regression suite proves:
 - Restoring HISTORY allows the intended trace-original-acquisition action and
   still blocks unrelated manual/provider-email work.
 
-A local live-model acceptance run remains separate from CI and must not be
-claimed until an authorized model transport is configured and exercised.
+CI validates the OpenAI transport request/response boundary without making a
+paid API call. A live-model acceptance run remains separate and must not be
+claimed until the locally stored key is present and the gateway is exercised
+against the real Responses API.
