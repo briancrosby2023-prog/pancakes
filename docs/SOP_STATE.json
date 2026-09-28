@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "mission": "Decision-gate controller → mechanical SOP enforcement → physical acceptance",
-  "status": "AWAITING_EXTERNAL_ACTION",
+  "status": "IN_PROGRESS",
   "map": {
     "complete": true,
     "evidence": [
@@ -22,7 +22,8 @@
     "evidence": [
       "Verified current OpenAI Agents SDK supports blocking input guardrails that complete before agent execution",
       "Verified tool guardrails can block function-tool execution",
-      "Verified current repo has Google Gemini programmatic integration but no OpenAI/ChatGPT programmatic decision transport"
+      "Verified current repo has Google Gemini programmatic integration but no OpenAI/ChatGPT programmatic decision transport",
+      "Verified current OpenAI model guidance recommends GPT-5.6 Sol for complex reasoning and supports Responses API/client SDKs"
     ]
   },
   "capabilities": {
@@ -32,7 +33,8 @@
       "Existing Python package and localhost product_app entry point available",
       "Existing required sop-gate GitHub check available",
       "No Desktop Commander used",
-      "No OpenAI API credential or authorized ChatGPT interception path established"
+      "Brian explicitly approved creation/use of an OpenAI API credential and API spend for this live acceptance step",
+      "OpenAI Platform connection exposes the Personal organization and Default project for key setup"
     ]
   },
   "plan": {
@@ -42,7 +44,8 @@
       "Add fail-closed sop_gateway controller and decision-record store",
       "Wire gateway status/decision/authorize endpoints into existing product_app",
       "Add regression suite for preflight, state change, unauthorized actions, completion, and 9,206-card history case",
-      "Run through required GitHub SOP gate and record any remaining external physical-acceptance input"
+      "Run through required GitHub SOP gate and record any remaining external physical-acceptance input",
+      "Add OpenAI Responses API transport using environment or LOCALAPPDATA key file without storing secrets in the repository"
     ],
     "next_action": "run decision-gate CI acceptance"
   },
@@ -54,7 +57,9 @@
       "tests/test_sop_gateway.py",
       "schemas/sop_decision.schema.json",
       "docs/SOP_DECISION_GATE.md",
-      "product_app integration"
+      "product_app integration",
+      "src/operation_pancake/openai_decision_provider.py",
+      "tests/test_openai_decision_provider.py"
     ]
   },
   "adapt": {
@@ -65,30 +70,22 @@
     ]
   },
   "verify": {
-    "complete": true,
+    "complete": false,
     "evidence": [
-      "Required SOP Gate workflow run 17 passed",
-      "17 decision-gate/SOP tests passed after production fail-closed transport test was added",
-      "sop_policy.py, sop_gateway.py, and product_app.py compiled successfully in CI",
-      "9,206-card acceptance regression proved missing HISTORY prevents provider invocation",
-      "Restored HISTORY permits only trace-original-acquisition and blocks unrelated manual/provider-email actions",
-      "Production gateway test proved no live model decision runs without explicitly configured transport"
+      "OpenAI transport CI and live acceptance pending"
     ]
   },
   "update_map": {
-    "complete": true,
+    "complete": false,
     "evidence": [
-      "Persisted decision-gate architecture and model-transport boundary in docs/SOP_DECISION_GATE.md",
-      "Persisted runtime decision schema in schemas/sop_decision.schema.json",
-      "Recorded live OpenAI/ChatGPT physical acceptance as the only remaining external gate"
+      "Will update after transport CI and live acceptance"
     ]
   },
   "continue": {
-    "complete": true,
+    "complete": false,
     "evidence": [
-      "Continued through implementation, two CI failures, root-cause fixes, and successful required CI",
-      "No executable repository work remains before the external model-transport permission boundary"
+      "Continue through transport CI, key placement, live acceptance, and final map update"
     ]
   },
-  "next_action": "await external input"
+  "next_action": "run OpenAI transport CI acceptance"
 }
