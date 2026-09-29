@@ -16,19 +16,72 @@
     "blocked_actions",
     "decision_status",
     "next_action",
-    "provider_called"
+    "provider_called",
+    "evidence_types",
+    "contradiction_keys",
+    "obstacle_classification",
+    "alternatives_considered",
+    "selected_reason",
+    "implementation_basis_fact_keys",
+    "mutation_requested",
+    "hypothesis_id",
+    "user_action_required",
+    "remaining_executable_routes"
   ],
   "properties": {
-    "decision_id": {"type": "string", "minLength": 1},
-    "mission": {"type": "string", "minLength": 1},
-    "request": {"type": "string", "minLength": 1},
-    "map_evidence": {"type": "array", "items": {"type": "string"}},
-    "history_evidence": {"type": "array", "items": {"type": "string"}},
-    "research_evidence": {"type": "array", "items": {"type": "string"}},
-    "capability_evidence": {"type": "array", "items": {"type": "string"}},
-    "proposed_plan": {"type": "string"},
-    "allowed_actions": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
-    "blocked_actions": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "decision_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mission": {
+      "type": "string",
+      "minLength": 1
+    },
+    "request": {
+      "type": "string",
+      "minLength": 1
+    },
+    "map_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "history_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "research_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "capability_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "proposed_plan": {
+      "type": "string"
+    },
+    "allowed_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "blocked_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
     "decision_status": {
       "enum": [
         "PREFLIGHT_REQUIRED",
@@ -36,14 +89,99 @@
         "DECISION_ALLOWED",
         "ACTION_ALLOWED",
         "BLOCKED_EXTERNAL",
+        "EVIDENCE_GAP",
         "COMPLETE"
       ]
     },
-    "next_action": {"type": "string"},
-    "missing_requirements": {"type": "array", "items": {"type": "string"}},
-    "gate_errors": {"type": "array", "items": {"type": "string"}},
-    "state_fingerprint": {"type": ["string", "null"]},
-    "provider_called": {"type": "boolean"}
+    "next_action": {
+      "type": "string"
+    },
+    "missing_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gate_errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "state_fingerprint": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provider_called": {
+      "type": "boolean"
+    },
+    "evidence_types": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "OBSERVED",
+          "VERIFIED_HISTORY",
+          "EXTERNAL_RESEARCH",
+          "INFERENCE",
+          "UNKNOWN"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "contradiction_keys": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "obstacle_classification": {
+      "enum": [
+        "NONE",
+        "MISSION_PROBLEM",
+        "IMPLEMENTATION_PROBLEM",
+        "CAPABILITY_PROBLEM",
+        "EXTERNAL_DEPENDENCY",
+        "EVIDENCE_GAP"
+      ]
+    },
+    "alternatives_considered": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "selected_reason": {
+      "type": "string"
+    },
+    "implementation_basis_fact_keys": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "mutation_requested": {
+      "type": "boolean"
+    },
+    "hypothesis_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "user_action_required": {
+      "type": "boolean"
+    },
+    "remaining_executable_routes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
   },
   "additionalProperties": false
 }
