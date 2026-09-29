@@ -52,6 +52,35 @@ def evidence(**overrides):
     return result
 
 
+def typed_evidence():
+    return {
+        "map": [{
+            "kind": "OBSERVED",
+            "text": "authoritative checkpoint loaded",
+            "fact_key": "authority_revision",
+            "fact_value": "current",
+        }],
+        "history": [{
+            "kind": "VERIFIED_HISTORY",
+            "text": "prior acquisition attempts reviewed",
+            "fact_key": "history_reviewed",
+            "fact_value": "true",
+        }],
+        "research": [{
+            "kind": "EXTERNAL_RESEARCH",
+            "text": "relevant source constraints checked",
+            "fact_key": "research_checked",
+            "fact_value": "true",
+        }],
+        "capabilities": [{
+            "kind": "OBSERVED",
+            "text": "GitHub and current capabilities inventoried",
+            "fact_key": "capabilities_checked",
+            "fact_value": "true",
+        }],
+    }
+
+
 def gateway(tmp_path, provider=None):
     provider = provider or CountingProvider()
     return SOPDecisionGateway(
@@ -204,10 +233,12 @@ def test_production_gateway_is_fail_closed_until_transport_is_explicitly_configu
     packet = gate.request_decision(
         mission="production transport boundary",
         request="Choose the next Operation Pancake action",
-        evidence=evidence(),
+        evidence=typed_evidence(),
     )
     assert packet.decision_status == BLOCKED_EXTERNAL
     assert packet.missing_requirements == ("MODEL_TRANSPORT_REQUIRED",)
     status = gateway_status(tmp_path)
     assert status["model_transport"] == "CREDENTIAL_REQUIRED"
     assert status["direct_chatgpt_interception"] is False
+    assert status["typed_evidence_required"] is True
+    assert status["automatic_contradiction_gate"] is True
