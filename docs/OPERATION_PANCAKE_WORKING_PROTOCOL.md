@@ -115,3 +115,19 @@ When something fails:
 7. Verify the adapted path.
 8. Update the authority and continue.
 
+
+## Cross-surface evidence and execution
+
+For consequential Operation Pancake work, evidence is classified as OBSERVED, VERIFIED_HISTORY, EXTERNAL_RESEARCH, INFERENCE, or UNKNOWN.
+
+- Every predecision stage must contain trusted evidence from OBSERVED, VERIFIED_HISTORY, or EXTERNAL_RESEARCH.
+- INFERENCE and UNKNOWN may be recorded but cannot be the sole basis for a consequential mutation.
+- Trusted facts with the same fact key and conflicting values create a contradiction and stop planning/execution until reconciled.
+- A mutation plan must cite trusted implementation fact keys from the current evidence set.
+- A failed implementation hypothesis cannot be retried without materially new evidence; two failures invalidate that hypothesis.
+- The user cannot be asked to test while executable technical routes remain.
+
+Consequential mutation in a controlled runtime must flow through the decision-bound tool broker. Direct mutation handlers are not an acceptable bypass. The broker exposes read tools during preflight and only exposes/executes mutation actions authorized by a current decision and state fingerprint.
+
+ChatGPT Project instructions and a global fallback instruction provide the behavioral layer. They are not treated as a hard execution guarantee. The mechanical layer remains the controlled gateway/tool broker.
+

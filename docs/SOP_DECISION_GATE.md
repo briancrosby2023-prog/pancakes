@@ -64,3 +64,13 @@ CI validates the OpenAI transport request/response boundary without making a
 paid API call. A live-model acceptance run remains separate and must not be
 claimed until the locally stored key is present and the gateway is exercised
 against the real Responses API.
+
+## OP-CONTROL-002 hardening
+
+The production gateway now requires typed evidence. Contradictory trusted fact keys fail before the decision provider is called. Mutation decisions must cite trusted implementation fact keys. The gateway records obstacle classification, alternatives, selected reason, user-action requirement, and remaining executable routes.
+
+A persistent hypothesis ledger blocks evidence-free retries and invalidates a theory after two failed attempts. A user-test gate prevents returning work to the user while executable technical routes remain.
+
+`operation_pancake.tool_broker.ControlledToolBroker` is the mechanical execution boundary for model-controlled tools. Read-only tools can be exposed during preflight. Mutation tools require a current decision that was explicitly approved as a mutation decision.
+
+The repository still cannot hard-intercept an arbitrary ordinary ChatGPT turn. The behavioral layer is therefore provided by `docs/CHATGPT_PROJECT_INSTRUCTIONS.md` plus `docs/CHATGPT_GLOBAL_CUSTOM_INSTRUCTION.md`, and completion is prohibited until installation and cross-surface acceptance are verified.

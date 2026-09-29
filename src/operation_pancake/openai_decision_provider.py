@@ -24,6 +24,12 @@ DECISION_SCHEMA = {
         "allowed_actions",
         "blocked_actions",
         "next_action",
+        "obstacle_classification",
+        "alternatives_considered",
+        "selected_reason",
+        "implementation_basis_fact_keys",
+        "user_action_required",
+        "remaining_executable_routes",
     ],
     "properties": {
         "proposed_plan": {"type": "string", "minLength": 1},
@@ -38,16 +44,48 @@ DECISION_SCHEMA = {
             "uniqueItems": True,
         },
         "next_action": {"type": "string", "minLength": 1},
+        "obstacle_classification": {
+            "enum": [
+                "NONE",
+                "MISSION_PROBLEM",
+                "IMPLEMENTATION_PROBLEM",
+                "CAPABILITY_PROBLEM",
+                "EXTERNAL_DEPENDENCY",
+                "EVIDENCE_GAP",
+            ]
+        },
+        "alternatives_considered": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "minItems": 1,
+            "uniqueItems": True,
+        },
+        "selected_reason": {"type": "string", "minLength": 1},
+        "implementation_basis_fact_keys": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "uniqueItems": True,
+        },
+        "user_action_required": {"type": "boolean"},
+        "remaining_executable_routes": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "uniqueItems": True,
+        },
     },
 }
 
 DEVELOPER_INSTRUCTION = """You are the decision engine behind the Operation Pancake
-SOP gateway. The gateway has already validated that MAP, HISTORY, RESEARCH, and
-CAPABILITIES evidence exists. Use only the supplied evidence and request.
-Do not invent missing facts, silently replace history, or broaden the mission.
-Return a concrete proposed_plan, the exact allowed_actions, blocked_actions,
-and one next_action. If the evidence supports only an external dependency,
-make that dependency the next_action rather than inventing a workaround.
+SOP gateway. MAP, HISTORY, RESEARCH, and CAPABILITIES are supplied as typed
+evidence. Use only that evidence and the request. Do not invent missing facts,
+silently replace history, broaden the mission, or self-certify an unknown.
+Return a concrete proposed_plan, exact allowed_actions and blocked_actions,
+one next_action, obstacle_classification, alternatives_considered,
+selected_reason, implementation_basis_fact_keys, user_action_required, and
+remaining_executable_routes. Implementation basis keys must name fact_key
+values that actually appear in trusted supplied evidence. If mutation_requested
+is true and no trusted fact supports implementation, do not invent one. Do not
+send work back to the user while executable technical routes remain.
 Do not include prose outside the required JSON structure."""
 
 
