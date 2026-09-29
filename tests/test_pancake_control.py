@@ -172,6 +172,10 @@ def test_complete_is_rejected_until_both_control_standards_are_verified():
     state["blocker"] = None
     state["active_mission"]["next_action"] = "complete"
     state["handoff"]["next_action"] = "complete"
+    state["enforcement"]["behavioral_standard"]["project_instruction_installed"] = False
+    state["enforcement"]["behavioral_standard"]["global_instruction_installed"] = False
+    state["enforcement"]["mechanical_standard"]["regression_verified"] = False
+    state["enforcement"]["cross_surface_acceptance_verified"] = False
     state["completion"] = {
         "user_facing_objective_verified": True,
         "all_acceptance_criteria_passed": True,
