@@ -11,62 +11,72 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 3,
-  "status": "COMPLETE",
+  "state_revision": 4,
+  "status": "IN_PROGRESS",
   "active_mission": {
-    "id": "OP-CONTROL-001",
-    "objective": "Fix the overall Operation Pancake decision-making process so every consequential project decision follows MAP -> HISTORY -> RESEARCH -> CAPABILITIES -> PLAN -> EXECUTE -> ADAPT -> VERIFY -> UPDATE MAP -> CONTINUE across chats, tools, failures, handoffs, and future features.",
-    "next_action": "complete",
+    "id": "OP-CONTROL-002",
+    "objective": "Enforce the Operation Pancake SOP across ChatGPT behavior and consequential execution so MAP -> HISTORY -> RESEARCH -> CAPABILITIES precede decisions, guessing/retry loops are fail-closed, user testing is last-resort, and controlled mutation cannot bypass a validated decision.",
+    "next_action": "Finish repository regression verification, install the Project/global ChatGPT instruction layer, run fresh-session cross-surface acceptance, then resume Simple Evaluator work only after this mission is accepted.",
     "acceptance_criteria": [
       {
+        "id": "correct-false-completion",
+        "description": "OP-CONTROL-001 is retained as history but no longer represents the behavior-control objective as fully solved.",
+        "passed": true
+      },
+      {
         "id": "single-authority",
-        "description": "One project-wide authoritative control state exists and mission-specific state is subordinate.",
+        "description": "The project-wide authority remains the sole mission/lock/control source across chats and tools.",
         "passed": true
       },
       {
-        "id": "preflight",
-        "description": "MAP/HISTORY/RESEARCH/CAPABILITIES are evidence-backed prerequisites before consequential planning or execution.",
+        "id": "typed-evidence",
+        "description": "Consequential production decisions require typed evidence and contradictory trusted facts fail closed.",
         "passed": true
       },
       {
-        "id": "obstacle-classification",
-        "description": "Failures are classified without silently replacing the active mission, and capability failures drive ADAPT.",
+        "id": "anti-guessing",
+        "description": "Mutation decisions require trusted implementation fact keys; UNKNOWN/INFERENCE cannot be the sole implementation basis.",
         "passed": true
       },
       {
-        "id": "locks",
-        "description": "Accepted and rejected approaches cannot be reopened without materially new evidence.",
+        "id": "hypothesis-circuit-breaker",
+        "description": "A failed implementation theory requires materially new evidence to retry and two failures invalidate that theory.",
         "passed": true
       },
       {
-        "id": "blocker",
-        "description": "BLOCKED is allowed only for a genuine external dependency after capabilities and adaptations are exhausted.",
+        "id": "user-test-gate",
+        "description": "The user cannot be requested to test while executable technical routes remain.",
         "passed": true
       },
       {
-        "id": "handoff",
-        "description": "A deterministic handoff is generated from the authoritative state and detects stale mission/revision/next-action data.",
+        "id": "mutation-broker",
+        "description": "Controlled runtimes expose consequential mutation through a decision-bound tool broker rather than direct mutation handlers.",
         "passed": true
       },
       {
-        "id": "git-enforcement",
-        "description": "Protected CI validates the project-wide control state and its regression suite before persistent repository changes.",
+        "id": "behavioral-artifacts",
+        "description": "Project instructions, global fallback instructions, and a cross-surface acceptance matrix are checked in.",
         "passed": true
       },
       {
-        "id": "regressions",
-        "description": "Known Operation Pancake failures are encoded as regression tests and failure-audit controls.",
-        "passed": true
+        "id": "account-instruction-install",
+        "description": "The Operation Pancake Project instructions and global fallback Custom Instruction are installed in ChatGPT.",
+        "passed": false
       },
       {
-        "id": "fresh-session",
-        "description": "A fresh-session simulation can recover mission, locks, capabilities, and next action from the authority alone.",
-        "passed": true
+        "id": "repository-regressions",
+        "description": "The required SOP CI suite passes with the new cross-surface regressions.",
+        "passed": false
       },
       {
-        "id": "continuation",
-        "description": "The process continues after checkpoints while executable work remains and does not require the user to say next.",
-        "passed": true
+        "id": "fresh-session-acceptance",
+        "description": "Ordinary ChatGPT, Project, Work/Codex handoff, contradiction, retry, user-test, and direct-bypass scenarios pass the acceptance matrix.",
+        "passed": false
+      },
+      {
+        "id": "completion-enforcement",
+        "description": "The validator refuses COMPLETE until both behavioral installation and mechanical/cross-surface verification are recorded.",
+        "passed": false
       }
     ]
   },
@@ -74,59 +84,63 @@
     "map": {
       "complete": true,
       "evidence": [
-        "User clarified that the target is the overall Operation Pancake working process, not the Simple Evaluator gateway.",
-        "Current long-lived repository branch is product/c3po-clean-room-roster.",
-        "Existing docs/SOP_STATE.json is mission-specific and currently scoped to the r56 Simple Evaluator gateway, so it cannot be the sole project-wide authority."
+        "Current authority revision 3 declared OP-CONTROL-001 COMPLETE even though its own gateway status records direct_chatgpt_interception=false.",
+        "Current failure reproduced the original behavior problem: a Simple Evaluator patch direction was chosen before MAP/HISTORY/RESEARCH/CAPABILITIES were restored.",
+        "The existing SOP gateway and repository CI are real controls but do not mechanically intercept ordinary ChatGPT turns."
       ]
     },
     "history": {
       "complete": true,
       "evidence": [
-        "PR #11 incorrectly normalized Simple Evaluator to 127.0.0.1:8788 and added a replacement launcher; PR #12 reverted that after HISTORY recovered the accepted dynamic-port path.",
-        "An Opera connector failure was allowed to replace the active decision-control mission instead of being classified as a capability problem and adapted around.",
-        "Desktop Commander was repeatedly reconsidered after its allowance was exhausted despite an explicit no-retry directive.",
-        "Tests, PRs, packages, and browser checkpoints were repeatedly treated as if they completed the user-facing objective.",
-        "User has repeatedly required the SOP and project history to survive chat/mode handoffs."
+        "PR #11 false 8788 normalization, Opera mission drift, Desktop Commander retries, checkpoint-as-completion, and speculative user testing are already documented failure classes.",
+        "OP-CONTROL-001 created project-wide authority, locks, deterministic handoff, repository preflight and CI, but closed despite the acknowledged ordinary-chat interception gap.",
+        "During OP-SIMPLE-002, r61 was proposed before proving which Windows runtime was actually serving the application, demonstrating the unresolved cross-surface behavior gap."
       ]
     },
     "research": {
       "complete": true,
       "evidence": [
-        "The existing repository SOP gateway can mechanically gate requests routed through it but cannot intercept ordinary ChatGPT web turns.",
-        "The existing repository SOP validator already enforces evidence-backed stages for Git changes but is mission-specific and lacks project-wide mission/lock/handoff/blocker semantics.",
-        "A project-wide source of truth plus deterministic preflight/handoff validation can make repository/Codex work durable while remaining honest that ordinary ChatGPT still depends on consulting that source."
+        "OpenAI Projects support project instructions that apply within the project and override global custom instructions.",
+        "OpenAI Custom Instructions apply across chats and provide a global behavioral fallback.",
+        "OpenAI Responses/function calling supports allowed_tools restrictions; the Agents SDK is appropriate when the application owns tool implementations, state, approvals, and runtime behavior.",
+        "No current product documentation establishes Project or Custom Instructions as a hard execution interceptor; mechanical guarantees require the controlled runtime/tool layer."
       ]
     },
     "capabilities": {
       "complete": true,
       "evidence": [
-        "GitHub connector provides read/write access to the Pancake repository and protected PR workflow.",
-        "Files/Library provides authoritative historical checkpoints across prior chats.",
-        "Container/Python execution can validate new control logic before repository publication.",
-        "Desktop Commander remains excluded until its allowance is restored.",
-        "No authorized direct Windows shell/process channel is assumed in this chat.",
-        "Opera is a browser capability only and must never be treated as the project mission or sole decision-control mechanism."
+        "GitHub repository read/write and protected PR workflow are available.",
+        "Files/Library retrieval and web research are available.",
+        "The current chat can create repository control code and documentation but has no account-setting action for Project instructions or Custom Instructions.",
+        "Desktop Commander remains prohibited and DigitalOcean remains prohibited.",
+        "The existing OpenAI decision transport is fail-closed when a programmatic credential is absent."
       ]
     }
   },
   "capabilities_snapshot": {
     "checked": [
-      "GitHub repository access and PR history",
+      "GitHub repository and protected workflow",
       "Files/Library historical checkpoints",
-      "container/Python local validation capability",
+      "current OpenAI Projects and Custom Instructions documentation",
+      "current OpenAI Responses/Agents tool-control documentation",
+      "available chat setting actions",
+      "existing SOP gateway and product integration",
       "Desktop Commander standing exclusion",
-      "Opera historical capability boundary"
+      "DigitalOcean standing exclusion"
     ],
     "available": [
-      "GitHub repository read/write and protected PR workflow",
+      "GitHub repository read/write and PR workflow",
       "Files/Library retrieval",
-      "container/Python validation",
-      "web research when current external facts materially affect a decision"
+      "container/Python validation where available",
+      "web research",
+      "repository SOP gateway, OpenAI decision transport, and fail-closed tool-broker implementation"
     ],
     "unavailable_or_excluded": [
+      "Direct programmatic modification of ChatGPT Project instructions from this chat",
+      "Direct programmatic modification of ChatGPT global Custom Instructions from this chat",
       "Desktop Commander before allowance restoration",
       "DigitalOcean for Operation Pancake",
-      "Assumed direct Windows process control from this chat"
+      "Assumed universal interception of ordinary ChatGPT turns by repository code"
     ]
   },
   "accepted_locks": [
@@ -151,6 +165,15 @@
       "subject": "Original 3U Browser Watch production acceptance is closed and must not be reopened without a new regression.",
       "evidence": [
         "Authoritative Simple Evaluator checkpoint records physical PRODUCTION_ACCEPTED state."
+      ],
+      "reopen_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "accepted-two-layer-control-standard",
+      "subject": "Operation Pancake behavior control requires both a ChatGPT instruction layer and a fail-closed controlled execution layer; neither alone satisfies the objective.",
+      "evidence": [
+        "Ordinary-chat behavior bypassed repository-only controls during OP-SIMPLE-002.",
+        "Current OpenAI product/API capabilities support behavioral instructions plus application-owned tool restriction."
       ],
       "reopen_policy": "NEW_EVIDENCE_REQUIRED"
     }
@@ -203,6 +226,30 @@
         "User explicitly made overall Operation Pancake decision-making the current priority."
       ],
       "retry_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "reject-instruction-only-completion",
+      "subject": "Declare the control problem solved because Project/Custom Instructions exist without mechanical mutation enforcement.",
+      "evidence": [
+        "Instructions improve behavior but are not documented as a hard tool-execution interceptor."
+      ],
+      "retry_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "reject-guess-patch-loop",
+      "subject": "Create another implementation patch from an unverified root-cause hypothesis or retry a failed hypothesis without materially new evidence.",
+      "evidence": [
+        "The r61 path repeated the historical guess-first failure mode."
+      ],
+      "retry_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "reject-user-test-before-exhaustion",
+      "subject": "Ask the user to install/click/restart/test while legitimate executable technical routes remain.",
+      "evidence": [
+        "Repeated manual testing consumed substantial user time and is explicitly part of the corrected control objective."
+      ],
+      "retry_policy": "NEW_EVIDENCE_REQUIRED"
     }
   ],
   "conflicts": [
@@ -214,30 +261,48 @@
       "evidence": [
         "User clarification in current conversation."
       ]
+    },
+    {
+      "id": "op-control-001-false-completion",
+      "status": "RESOLVED",
+      "conflict": "OP-CONTROL-001 claimed the overall cross-chat behavior objective was complete while the implemented gateway explicitly reported direct_chatgpt_interception=false and ordinary ChatGPT could still skip preflight.",
+      "resolution": "Treat OP-CONTROL-001 as partial repository/runtime enforcement history. OP-CONTROL-002 adds the behavioral instruction layer, strict evidence/anti-guessing controls, fail-closed mutation brokering, and cross-surface acceptance before completion.",
+      "evidence": [
+        "Current user-observed SOP bypass during OP-SIMPLE-002.",
+        "Existing gateway_status direct_chatgpt_interception=false.",
+        "Existing SOP_DECISION_GATE.md states direct ChatGPT conversations cannot be intercepted by repository code."
+      ]
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CONTROL-001-D3",
-    "mission_id": "OP-CONTROL-001",
-    "proposed_action": "Close the project-wide decision-control mission after verifying PR #14 merged and the long-lived branch passed the required SOP Gate.",
+    "decision_id": "OP-CONTROL-002-D1",
+    "mission_id": "OP-CONTROL-002",
+    "proposed_action": "Implement the two-layer cross-surface control system, verify it through the existing required SOP test path, install ChatGPT instruction fallbacks, and run adversarial fresh-session acceptance before returning to feature work.",
     "obstacle_classification": "NONE",
     "history_refs": [
-      "PR #14 merged as e2cb483803f860d1474797c45e240d993c6495cb.",
-      "Long-lived branch contains docs/OPERATION_PANCAKE_CONTROL_STATE.json and root AGENTS.md.",
-      "Operation Pancake SOP Gate push run #33 passed on the merge commit."
+      "OP-CONTROL-001 repository controls are useful but did not intercept ordinary chat.",
+      "OP-SIMPLE-002 r61 direction was selected before required preflight and is the new regression case.",
+      "Existing accepted dynamic-port and Browser Watch locks remain unchanged."
     ],
     "capabilities_checked": [
-      "GitHub branch contents",
-      "GitHub Actions SOP Gate",
-      "project-wide control state"
+      "GitHub branch/PR workflow",
+      "existing sop_gateway and OpenAI decision provider",
+      "Project/Custom Instruction product capabilities",
+      "Responses allowed_tools and application-owned agent runtime",
+      "account setting mutation availability in this chat"
     ],
     "alternatives_considered": [
-      "Leave state BLOCKED after merge — rejected because it would create the stale handoff condition the control is designed to prevent.",
-      "Resume feature work before closing the authority — rejected by reject-feature-before-control.",
-      "Close mission after updating the authority through the protected workflow — selected."
+      "Use instructions alone — rejected because it is not a hard execution barrier.",
+      "Use repository gateway alone — rejected because ordinary chat already bypassed it.",
+      "Use both behavioral instructions and controlled fail-closed execution with cross-surface tests — selected."
     ],
-    "selected_reason": "All acceptance criteria are passed, the control is deployed on the long-lived branch, the required post-merge gate is green, and no executable work remains for this mission.",
-    "changes_mission": false,
+    "selected_reason": "The selected design provides behavioral redundancy across chats and a mechanical backstop for consequential execution, directly covering the failure that OP-CONTROL-001 left open.",
+    "changes_mission": true,
+    "mission_change_reason": "Material new evidence proved the prior overall behavior-control completion claim false.",
+    "mission_change_evidence": [
+      "The assistant skipped the SOP during OP-SIMPLE-002 after OP-CONTROL-001 was marked complete.",
+      "The existing gateway explicitly states direct_chatgpt_interception=false."
+    ],
     "reopens_lock_ids": [],
     "new_evidence_for_reopened_locks": {}
   },
@@ -303,29 +368,85 @@
       ],
       "result": "Project-wide control is deployed and verified on the long-lived branch; all acceptance criteria pass and no executable work remains.",
       "next": "complete"
+    },
+    {
+      "decision_id": "OP-CONTROL-002-D1",
+      "decision": "Reopen the behavior-control objective as a two-layer cross-surface enforcement mission.",
+      "evidence": [
+        "Observed SOP bypass after prior control mission closure.",
+        "Existing gateway cannot intercept ordinary ChatGPT turns.",
+        "OpenAI product instructions can provide cross-chat behavioral guidance while API/runtime tool restriction can provide mechanical execution control."
+      ],
+      "history": [
+        "Prior project failures repeatedly began with missing history/research/capability preflight.",
+        "Repository-only controls were insufficient to prevent the same pattern in ordinary chat."
+      ],
+      "alternatives": [
+        "Instructions only.",
+        "Repository gateway only.",
+        "Behavioral instructions plus controlled execution and adversarial acceptance."
+      ],
+      "result": "OP-CONTROL-002 is active; feature work remains frozen until cross-surface enforcement is accepted.",
+      "next": "Finish repository verification, install account/project instructions, run fresh-session acceptance."
     }
   ],
   "blocker": null,
   "handoff": {
-    "mission_id": "OP-CONTROL-001",
-    "state_revision": 3,
-    "next_action": "complete",
+    "mission_id": "OP-CONTROL-002",
+    "state_revision": 4,
+    "next_action": "Finish repository regression verification, install the Project/global ChatGPT instruction layer, run fresh-session cross-surface acceptance, then resume Simple Evaluator work only after this mission is accepted.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
-      "docs/OPERATION_PANCAKE_DECISION_FAILURE_AUDIT.md"
+      "docs/OPERATION_PANCAKE_DECISION_FAILURE_AUDIT.md",
+      "docs/CHATGPT_PROJECT_INSTRUCTIONS.md",
+      "docs/OP_CONTROL_002_CROSS_SURFACE_ACCEPTANCE.md"
     ],
     "prohibited_restarts": [
-      "Do not hard-code 8788.",
-      "Do not invent a replacement launcher/runtime.",
-      "Do not retry Desktop Commander before allowance restoration.",
-      "Do not turn Opera/browser failure into the mission.",
-      "Do not resume feature work before this control mission is accepted."
+      "Do not resume Simple Evaluator feature debugging before OP-CONTROL-002 acceptance.",
+      "Do not treat Project/Custom Instructions alone as a mechanical guarantee.",
+      "Do not execute a consequential mutation from an UNKNOWN/INFERENCE-only basis.",
+      "Do not retry a failed implementation hypothesis without materially new evidence.",
+      "Do not ask the user to test while executable technical routes remain.",
+      "Do not mark OP-CONTROL-002 COMPLETE before instruction installation and cross-surface acceptance are verified."
     ]
   },
   "completion": {
-    "user_facing_objective_verified": true,
-    "all_acceptance_criteria_passed": true,
-    "remaining_executable_work": []
+    "user_facing_objective_verified": false,
+    "all_acceptance_criteria_passed": false,
+    "remaining_executable_work": [
+      "Verify new strict gateway and adversarial regressions in the required SOP CI path.",
+      "Strengthen project validator so COMPLETE requires both behavioral installation and mechanical/cross-surface verification.",
+      "Regenerate and verify authoritative handoff.",
+      "Install Project instructions and global fallback Custom Instruction through ChatGPT UI.",
+      "Run the cross-surface fresh-session acceptance matrix.",
+      "Only after acceptance, resume OP-SIMPLE-002 from its last verified evidence boundary."
+    ]
+  },
+  "enforcement": {
+    "behavioral_standard": {
+      "project_instruction_artifact": "docs/CHATGPT_PROJECT_INSTRUCTIONS.md",
+      "global_instruction_artifact": "docs/CHATGPT_GLOBAL_CUSTOM_INSTRUCTION.md",
+      "project_instruction_installed": false,
+      "global_instruction_installed": false,
+      "installation_requires_user_ui": true
+    },
+    "mechanical_standard": {
+      "decision_gateway": "src/operation_pancake/sop_gateway.py",
+      "typed_evidence_module": "src/operation_pancake/cross_surface_control.py",
+      "tool_broker": "src/operation_pancake/tool_broker.py",
+      "typed_evidence_required": true,
+      "contradiction_gate": true,
+      "trusted_mutation_basis": true,
+      "hypothesis_circuit_breaker": true,
+      "user_test_gate": true,
+      "responses_allowed_tools_supported": true,
+      "regression_verified": false
+    },
+    "direct_chatgpt_hard_interception": false,
+    "hard_limitations_acknowledged": true,
+    "authorized_consequential_execution_route": "Pancake Control Gateway / decision-bound tool broker",
+    "cross_surface_acceptance_file": "docs/OP_CONTROL_002_CROSS_SURFACE_ACCEPTANCE.md",
+    "cross_surface_acceptance_verified": false
   }
 }
