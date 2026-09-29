@@ -204,3 +204,19 @@ def test_global_instruction_fails_closed_outside_project():
     ]
     for phrase in required:
         assert phrase in instruction
+
+
+def test_codex_instruction_contract_requires_preflight_and_gateway():
+    instruction = (ROOT / "docs" / "CODEX_CUSTOM_INSTRUCTIONS.md").read_text(
+        encoding="utf-8"
+    )
+    required = [
+        "do not make a consequential technical decision",
+        "MAP → HISTORY → RESEARCH → CAPABILITIES",
+        "do not use INFERENCE or UNKNOWN as the sole basis for mutation",
+        "do not retry a failed hypothesis without new evidence",
+        "Pancake Control Gateway / decision-bound tool broker",
+        "checkpoint is not completion",
+    ]
+    for phrase in required:
+        assert phrase in instruction
