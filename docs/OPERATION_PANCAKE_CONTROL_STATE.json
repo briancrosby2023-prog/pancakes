@@ -1,0 +1,302 @@
+{
+  "schema_version": 2,
+  "project": "Operation Pancake",
+  "authority": {
+    "file": "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
+    "sole_project_wide_authority": true,
+    "subordinate_state_files": [
+      "docs/SOP_STATE.json",
+      "Library:/Simple Evaluator/CHECKPOINT_3U_EXECUTION_STATUS.json",
+      "Library:/Simple Evaluator/PANCAKE_GATEWAY_CHECKPOINT_2026-09-29.md"
+    ],
+    "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
+  },
+  "state_revision": 1,
+  "status": "IN_PROGRESS",
+  "active_mission": {
+    "id": "OP-CONTROL-001",
+    "objective": "Fix the overall Operation Pancake decision-making process so every consequential project decision follows MAP -> HISTORY -> RESEARCH -> CAPABILITIES -> PLAN -> EXECUTE -> ADAPT -> VERIFY -> UPDATE MAP -> CONTINUE across chats, tools, failures, handoffs, and future features.",
+    "next_action": "implement and verify the project-wide control validator, deterministic handoff, regression suite, and protected CI enforcement",
+    "acceptance_criteria": [
+      {
+        "id": "single-authority",
+        "description": "One project-wide authoritative control state exists and mission-specific state is subordinate.",
+        "passed": false
+      },
+      {
+        "id": "preflight",
+        "description": "MAP/HISTORY/RESEARCH/CAPABILITIES are evidence-backed prerequisites before consequential planning or execution.",
+        "passed": false
+      },
+      {
+        "id": "obstacle-classification",
+        "description": "Failures are classified without silently replacing the active mission, and capability failures drive ADAPT.",
+        "passed": false
+      },
+      {
+        "id": "locks",
+        "description": "Accepted and rejected approaches cannot be reopened without materially new evidence.",
+        "passed": false
+      },
+      {
+        "id": "blocker",
+        "description": "BLOCKED is allowed only for a genuine external dependency after capabilities and adaptations are exhausted.",
+        "passed": false
+      },
+      {
+        "id": "handoff",
+        "description": "A deterministic handoff is generated from the authoritative state and detects stale mission/revision/next-action data.",
+        "passed": false
+      },
+      {
+        "id": "git-enforcement",
+        "description": "Protected CI validates the project-wide control state and its regression suite before persistent repository changes.",
+        "passed": false
+      },
+      {
+        "id": "regressions",
+        "description": "Known Operation Pancake failures are encoded as regression tests and failure-audit controls.",
+        "passed": false
+      },
+      {
+        "id": "fresh-session",
+        "description": "A fresh-session simulation can recover mission, locks, capabilities, and next action from the authority alone.",
+        "passed": false
+      },
+      {
+        "id": "continuation",
+        "description": "The process continues after checkpoints while executable work remains and does not require the user to say next.",
+        "passed": false
+      }
+    ]
+  },
+  "preflight": {
+    "map": {
+      "complete": true,
+      "evidence": [
+        "User clarified that the target is the overall Operation Pancake working process, not the Simple Evaluator gateway.",
+        "Current long-lived repository branch is product/c3po-clean-room-roster.",
+        "Existing docs/SOP_STATE.json is mission-specific and currently scoped to the r56 Simple Evaluator gateway, so it cannot be the sole project-wide authority."
+      ]
+    },
+    "history": {
+      "complete": true,
+      "evidence": [
+        "PR #11 incorrectly normalized Simple Evaluator to 127.0.0.1:8788 and added a replacement launcher; PR #12 reverted that after HISTORY recovered the accepted dynamic-port path.",
+        "An Opera connector failure was allowed to replace the active decision-control mission instead of being classified as a capability problem and adapted around.",
+        "Desktop Commander was repeatedly reconsidered after its allowance was exhausted despite an explicit no-retry directive.",
+        "Tests, PRs, packages, and browser checkpoints were repeatedly treated as if they completed the user-facing objective.",
+        "User has repeatedly required the SOP and project history to survive chat/mode handoffs."
+      ]
+    },
+    "research": {
+      "complete": true,
+      "evidence": [
+        "The existing repository SOP gateway can mechanically gate requests routed through it but cannot intercept ordinary ChatGPT web turns.",
+        "The existing repository SOP validator already enforces evidence-backed stages for Git changes but is mission-specific and lacks project-wide mission/lock/handoff/blocker semantics.",
+        "A project-wide source of truth plus deterministic preflight/handoff validation can make repository/Codex work durable while remaining honest that ordinary ChatGPT still depends on consulting that source."
+      ]
+    },
+    "capabilities": {
+      "complete": true,
+      "evidence": [
+        "GitHub connector provides read/write access to the Pancake repository and protected PR workflow.",
+        "Files/Library provides authoritative historical checkpoints across prior chats.",
+        "Container/Python execution can validate new control logic before repository publication.",
+        "Desktop Commander remains excluded until its allowance is restored.",
+        "No authorized direct Windows shell/process channel is assumed in this chat.",
+        "Opera is a browser capability only and must never be treated as the project mission or sole decision-control mechanism."
+      ]
+    }
+  },
+  "capabilities_snapshot": {
+    "checked": [
+      "GitHub repository access and PR history",
+      "Files/Library historical checkpoints",
+      "container/Python local validation capability",
+      "Desktop Commander standing exclusion",
+      "Opera historical capability boundary"
+    ],
+    "available": [
+      "GitHub repository read/write and protected PR workflow",
+      "Files/Library retrieval",
+      "container/Python validation",
+      "web research when current external facts materially affect a decision"
+    ],
+    "unavailable_or_excluded": [
+      "Desktop Commander before allowance restoration",
+      "DigitalOcean for Operation Pancake",
+      "Assumed direct Windows process control from this chat"
+    ]
+  },
+  "accepted_locks": [
+    {
+      "id": "accepted-sop-order",
+      "subject": "Operation Pancake SOP order is MAP -> HISTORY -> RESEARCH -> CAPABILITIES -> PLAN -> EXECUTE -> ADAPT -> VERIFY -> UPDATE MAP -> CONTINUE.",
+      "evidence": [
+        "User repeatedly designated this SOP as binding across Operation Pancake work."
+      ],
+      "reopen_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "accepted-dynamic-port",
+      "subject": "Simple Evaluator uses the accepted dynamic localhost-port startup architecture; no fixed port is canonical.",
+      "evidence": [
+        "r34/r49 physical acceptance and PR #12 correction restored dynamic-port startup."
+      ],
+      "reopen_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "accepted-browser-watch",
+      "subject": "Original 3U Browser Watch production acceptance is closed and must not be reopened without a new regression.",
+      "evidence": [
+        "Authoritative Simple Evaluator checkpoint records physical PRODUCTION_ACCEPTED state."
+      ],
+      "reopen_policy": "NEW_EVIDENCE_REQUIRED"
+    }
+  ],
+  "rejected_locks": [
+    {
+      "id": "reject-hardcoded-8788",
+      "subject": "Hard-code 127.0.0.1:8788 as the Simple Evaluator port.",
+      "evidence": [
+        "PR #11 assumption was explicitly reverted by PR #12 after HISTORY contradicted it."
+      ],
+      "retry_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "reject-replacement-launcher",
+      "subject": "Invent a replacement launcher/runtime merely because an existing component is inconvenient.",
+      "evidence": [
+        "Replacement launcher from PR #11 was removed when the accepted startup history was recovered."
+      ],
+      "retry_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "reject-opera-mission-drift",
+      "subject": "Treat an Opera connector failure as a new mission or as proof the overall decision-control effort is blocked.",
+      "evidence": [
+        "Opera is a browser capability; the user explicitly identified the prior Opera derail as mission drift."
+      ],
+      "retry_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "reject-desktop-commander-retry",
+      "subject": "Retry or recheck Desktop Commander before its allowance is restored.",
+      "evidence": [
+        "User explicitly directed that Desktop Commander not be used/check before next month after allowance exhaustion."
+      ],
+      "retry_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "reject-checkpoint-completion",
+      "subject": "Treat a test, commit, CI run, PR, package, screenshot, or intermediate checkpoint as completion while executable work remains.",
+      "evidence": [
+        "User repeatedly identified checkpoint-as-completion as a core failure mode."
+      ],
+      "retry_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "reject-feature-before-control",
+      "subject": "Resume Simple Evaluator/Price Watch/Training Watch feature work before the overall decision-process control mission is implemented and verified.",
+      "evidence": [
+        "User explicitly made overall Operation Pancake decision-making the current priority."
+      ],
+      "retry_policy": "NEW_EVIDENCE_REQUIRED"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "scope-r56-vs-project-wide",
+      "status": "RESOLVED",
+      "conflict": "Prior work treated the Simple Evaluator r56 gateway as the decision-making fix; user clarified the goal is project-wide Operation Pancake decision-making.",
+      "resolution": "Keep r56 as subordinate mission evidence. Build a separate project-wide control layer whose authority is independent of Simple Evaluator.",
+      "evidence": [
+        "User clarification in current conversation."
+      ]
+    }
+  ],
+  "current_decision": {
+    "decision_id": "OP-CONTROL-001-D1",
+    "mission_id": "OP-CONTROL-001",
+    "proposed_action": "Create and enforce one project-wide control state, mandatory preflight validator, deterministic handoff, lock semantics, blocker semantics, failure audit, and protected CI regressions.",
+    "obstacle_classification": "NONE",
+    "history_refs": [
+      "PR #11 false 8788 normalization and replacement launcher",
+      "PR #12 restoration of accepted startup history",
+      "Opera mission-drift incident",
+      "Desktop Commander exhausted-route history",
+      "User clarification that overall Operation Pancake decision-making is the target"
+    ],
+    "capabilities_checked": [
+      "GitHub",
+      "Files/Library",
+      "container/Python",
+      "Desktop Commander exclusion",
+      "Opera browser-only boundary"
+    ],
+    "alternatives_considered": [
+      "Reuse Simple Evaluator r56 gateway as the overall fix \u2014 rejected because it gates only requests routed through that runtime.",
+      "Rely on chat instructions/memory alone \u2014 rejected as insufficiently durable.",
+      "Create a project-wide repository authority plus automated preflight/handoff/CI controls \u2014 selected."
+    ],
+    "selected_reason": "This preserves the accepted project history, survives coding-session boundaries, catches known failure modes mechanically, and does not misrepresent the Simple Evaluator gateway as control over all Operation Pancake work.",
+    "changes_mission": false,
+    "reopens_lock_ids": [],
+    "new_evidence_for_reopened_locks": {}
+  },
+  "decision_journal": [
+    {
+      "decision_id": "OP-CONTROL-001-D1",
+      "decision": "Separate project-wide Operation Pancake decision control from the Simple Evaluator runtime gateway.",
+      "evidence": [
+        "User explicitly clarified the desired scope.",
+        "Existing SOP_STATE is mission-specific.",
+        "Existing gateway cannot intercept ordinary ChatGPT turns."
+      ],
+      "history": [
+        "Opera failure previously caused mission drift.",
+        "False 8788 normalization occurred when history was not recovered before planning."
+      ],
+      "alternatives": [
+        "Continue r56 as if it were the overall fix.",
+        "Use instructions/memory alone.",
+        "Create a project-wide authority with mechanical repository/session controls."
+      ],
+      "result": "Project-wide control architecture selected; Simple Evaluator state is subordinate.",
+      "next": "Implement validator, deterministic handoff, locks/blocker semantics, regression tests, and CI."
+    }
+  ],
+  "blocker": null,
+  "handoff": {
+    "mission_id": "OP-CONTROL-001",
+    "state_revision": 1,
+    "next_action": "implement and verify the project-wide control validator, deterministic handoff, regression suite, and protected CI enforcement",
+    "must_read": [
+      "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
+      "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
+      "docs/OPERATION_PANCAKE_DECISION_FAILURE_AUDIT.md"
+    ],
+    "prohibited_restarts": [
+      "Do not hard-code 8788.",
+      "Do not invent a replacement launcher/runtime.",
+      "Do not retry Desktop Commander before allowance restoration.",
+      "Do not turn Opera/browser failure into the mission.",
+      "Do not resume feature work before this control mission is accepted."
+    ]
+  },
+  "completion": {
+    "user_facing_objective_verified": false,
+    "all_acceptance_criteria_passed": false,
+    "remaining_executable_work": [
+      "Implement project-wide control validator.",
+      "Implement deterministic preflight/handoff CLI.",
+      "Add coding-agent/session bootstrap instructions.",
+      "Encode known failure modes as regression tests.",
+      "Add protected CI enforcement.",
+      "Run fresh-session recovery simulation from authority alone.",
+      "Run the full test suite and reconcile failures.",
+      "Update the authority with verified results and continue until no executable work remains."
+    ]
+  }
+}
