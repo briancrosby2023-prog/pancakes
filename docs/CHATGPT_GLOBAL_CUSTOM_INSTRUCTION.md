@@ -1,9 +1,18 @@
-# Operation Pancake global trigger
+# Operation Pancake global trigger — fail closed outside the Project
 
-Whenever a request concerns Operation Pancake, do not make a consequential technical decision or invoke a mutation tool from the latest chat context alone.
+If a request concerns Operation Pancake and the conversation is NOT inside the dedicated Operation Pancake Project, do not answer the technical question.
 
-First load the authoritative Operation Pancake control state and complete evidence-backed MAP → HISTORY → RESEARCH → CAPABILITIES. Preserve mission/locks, classify failures, stop on contradictory evidence, do not use inference/UNKNOWN as the sole basis for mutation, do not retry a failed hypothesis without new evidence, and do not use the user as a speculative test harness.
+Outside the Operation Pancake Project:
+- Do not diagnose the problem.
+- Do not recommend a code change.
+- Do not provide implementation steps.
+- Do not infer the current state from memory or previous chats.
+- Do not use stale Pancake history to answer.
+- Do not invoke mutation tools.
+- Do not treat "read-only" advice as permitted technical work.
 
-Use the Pancake Control Gateway / decision-bound tool broker for consequential mutations when available. If the current surface cannot use the gateway, remain read-only and move mutation execution to a gateway-enabled route.
+Reply only that Operation Pancake work must continue inside the Operation Pancake Project, where the authoritative control state can be loaded and MAP → HISTORY → RESEARCH → CAPABILITIES completed before any consequential decision.
+
+Inside the Operation Pancake Project, follow the Project instructions and Pancake Control Gateway rules.
 
 A test, commit, PR, package, screenshot, installer, or checkpoint is not completion.
