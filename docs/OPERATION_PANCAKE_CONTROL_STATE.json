@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 5,
+  "state_revision": 6,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CONTROL-002",
     "objective": "Enforce the Operation Pancake SOP across ChatGPT behavior and consequential execution so MAP -> HISTORY -> RESEARCH -> CAPABILITIES precede decisions, guessing/retry loops are fail-closed, user testing is last-resort, and controlled mutation cannot bypass a validated decision.",
-    "next_action": "Install the ChatGPT instruction layer and run cross-surface acceptance before resuming Simple Evaluator work.",
+    "next_action": "Replace the global ChatGPT instruction with the fail-closed outside-Project rule, rerun the fresh ordinary-chat adversarial test, then continue cross-surface acceptance.",
     "acceptance_criteria": [
       {
         "id": "correct-false-completion",
@@ -94,7 +94,8 @@
       "evidence": [
         "PR #11 false 8788 normalization, Opera mission drift, Desktop Commander retries, checkpoint-as-completion, and speculative user testing are already documented failure classes.",
         "OP-CONTROL-001 created project-wide authority, locks, deterministic handoff, repository preflight and CI, but closed despite the acknowledged ordinary-chat interception gap.",
-        "During OP-SIMPLE-002, r61 was proposed before proving which Windows runtime was actually serving the application, demonstrating the unresolved cross-surface behavior gap."
+        "During OP-SIMPLE-002, r61 was proposed before proving which Windows runtime was actually serving the application, demonstrating the unresolved cross-surface behavior gap.",
+        "Fresh ordinary ChatGPT adversarial test after initial global-instruction installation failed: the assistant supplied an r61-style code change before loading current authority/preflight."
       ]
     },
     "research": {
@@ -103,7 +104,8 @@
         "OpenAI Projects support project instructions that apply within the project and override global custom instructions.",
         "OpenAI Custom Instructions apply across chats and provide a global behavioral fallback.",
         "OpenAI Responses/function calling supports allowed_tools restrictions; the Agents SDK is appropriate when the application owns tool implementations, state, approvals, and runtime behavior.",
-        "No current product documentation establishes Project or Custom Instructions as a hard execution interceptor; mechanical guarantees require the controlled runtime/tool layer."
+        "No current product documentation establishes Project or Custom Instructions as a hard execution interceptor; mechanical guarantees require the controlled runtime/tool layer.",
+        "OpenAI documentation says Custom Instructions are applied across chats, but does not document them as a hard execution interceptor; Project instructions apply only inside the project and override global instructions there."
       ]
     },
     "capabilities": {
@@ -275,34 +277,30 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CONTROL-002-D1",
+    "decision_id": "OP-CONTROL-002-D3",
     "mission_id": "OP-CONTROL-002",
-    "proposed_action": "Implement the two-layer cross-surface control system, verify it through the existing required SOP test path, install ChatGPT instruction fallbacks, and run adversarial fresh-session acceptance before returning to feature work.",
-    "obstacle_classification": "NONE",
+    "proposed_action": "Make ordinary ChatGPT fail closed for Operation Pancake: outside the dedicated Project it may not diagnose, plan, recommend code, infer state from memory, or treat read-only advice as permitted technical work; it must redirect to the Project.",
+    "obstacle_classification": "IMPLEMENTATION_PROBLEM",
     "history_refs": [
-      "OP-CONTROL-001 repository controls are useful but did not intercept ordinary chat.",
-      "OP-SIMPLE-002 r61 direction was selected before required preflight and is the new regression case.",
-      "Existing accepted dynamic-port and Browser Watch locks remain unchanged."
+      "Initial global instruction allowed a 'remain read-only' path.",
+      "Fresh ordinary-chat test used that ambiguity to provide a concrete r61-style change without current preflight.",
+      "Project-specific instruction layer remains persistent and repository mechanical layer is green."
     ],
     "capabilities_checked": [
-      "GitHub branch/PR workflow",
-      "existing sop_gateway and OpenAI decision provider",
-      "Project/Custom Instruction product capabilities",
-      "Responses allowed_tools and application-owned agent runtime",
-      "account setting mutation availability in this chat"
+      "ChatGPT Custom Instructions behavior and limits",
+      "Project instructions precedence",
+      "repository authority and acceptance matrix",
+      "GitHub branch/PR validation route"
     ],
     "alternatives_considered": [
-      "Use instructions alone — rejected because it is not a hard execution barrier.",
-      "Use repository gateway alone — rejected because ordinary chat already bypassed it.",
-      "Use both behavioral instructions and controlled fail-closed execution with cross-surface tests — selected."
+      "Keep the existing global instruction and accept the failure — rejected.",
+      "Keep allowing ordinary-chat read-only Pancake technical advice — rejected because it reproduced the failure mode.",
+      "Fail closed outside the Project and reserve technical Pancake work for the Project/controlled runtime — selected."
     ],
-    "selected_reason": "The selected design provides behavioral redundancy across chats and a mechanical backstop for consequential execution, directly covering the failure that OP-CONTROL-001 left open.",
-    "changes_mission": true,
-    "mission_change_reason": "Material new evidence proved the prior overall behavior-control completion claim false.",
-    "mission_change_evidence": [
-      "The assistant skipped the SOP during OP-SIMPLE-002 after OP-CONTROL-001 was marked complete.",
-      "The existing gateway explicitly states direct_chatgpt_interception=false."
-    ],
+    "selected_reason": "The failed response followed the old instruction's read-only loophole. Removing that loophole directly addresses the observed failure without weakening the Project or mechanical controls.",
+    "changes_mission": false,
+    "mission_change_reason": "",
+    "mission_change_evidence": [],
     "reopens_lock_ids": [],
     "new_evidence_for_reopened_locks": {}
   },
@@ -388,13 +386,32 @@
       ],
       "result": "OP-CONTROL-002 is active; feature work remains frozen until cross-surface enforcement is accepted.",
       "next": "Finish repository verification, install account/project instructions, run fresh-session acceptance."
+    },
+    {
+      "decision_id": "OP-CONTROL-002-D3",
+      "decision": "Change the global ChatGPT fallback from read-only technical advice to fail-closed redirect outside the Operation Pancake Project.",
+      "evidence": [
+        "Fresh ordinary-chat adversarial test produced a concrete code recommendation despite recognizing the SOP.",
+        "The installed global instruction explicitly allowed a 'remain read-only' mode, creating an ambiguity between mutation and consequential technical advice."
+      ],
+      "history": [
+        "The project goal is to stop guess-first technical decisions, not merely stop file writes.",
+        "Repository and Project layers already provide the authorized technical-work path."
+      ],
+      "alternatives": [
+        "Accept the failed test.",
+        "Strengthen the outside-Project rule to prohibit all technical Pancake advice and redirect.",
+        "Abandon the behavioral layer."
+      ],
+      "result": "A fail-closed global instruction revision is required; ordinary-chat acceptance remains failed until physically retested.",
+      "next": "Install revised global instruction and rerun the ordinary-chat adversarial test."
     }
   ],
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CONTROL-002",
-    "state_revision": 5,
-    "next_action": "Install the ChatGPT instruction layer and run cross-surface acceptance before resuming Simple Evaluator work.",
+    "state_revision": 6,
+    "next_action": "Replace the global ChatGPT instruction with the fail-closed outside-Project rule, rerun the fresh ordinary-chat adversarial test, then continue cross-surface acceptance.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -415,20 +432,22 @@
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
     "remaining_executable_work": [
-      "Strengthen project validator so COMPLETE requires both behavioral installation and mechanical/cross-surface verification.",
-      "Regenerate and verify authoritative handoff.",
-      "Install Project instructions and global fallback Custom Instruction through ChatGPT UI.",
-      "Run the cross-surface fresh-session acceptance matrix.",
-      "Only after acceptance, resume OP-SIMPLE-002 from its last verified evidence boundary."
+      "Install the revised fail-closed global ChatGPT Custom Instruction.",
+      "Rerun the fresh ordinary-chat adversarial acceptance test.",
+      "Run the remaining Project/Codex/Work cross-surface acceptance scenarios.",
+      "Record verified behavioral installation and cross-surface results in authority.",
+      "Only after all acceptance passes, close OP-CONTROL-002 and resume OP-SIMPLE-002."
     ]
   },
   "enforcement": {
     "behavioral_standard": {
       "project_instruction_artifact": "docs/CHATGPT_PROJECT_INSTRUCTIONS.md",
       "global_instruction_artifact": "docs/CHATGPT_GLOBAL_CUSTOM_INSTRUCTION.md",
-      "project_instruction_installed": false,
+      "project_instruction_installed": true,
       "global_instruction_installed": false,
-      "installation_requires_user_ui": true
+      "installation_requires_user_ui": true,
+      "global_instruction_revision": 2,
+      "global_instruction_previous_revision_failed_acceptance": true
     },
     "mechanical_standard": {
       "decision_gateway": "src/operation_pancake/sop_gateway.py",

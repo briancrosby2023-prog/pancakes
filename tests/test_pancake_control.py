@@ -186,3 +186,21 @@ def test_complete_is_rejected_until_both_control_standards_are_verified():
     assert any("global instruction installation" in error for error in errors)
     assert any("mechanical enforcement regression" in error for error in errors)
     assert any("cross-surface acceptance" in error for error in errors)
+
+
+def test_global_instruction_fails_closed_outside_project():
+    instruction = (ROOT / "docs" / "CHATGPT_GLOBAL_CUSTOM_INSTRUCTION.md").read_text(
+        encoding="utf-8"
+    )
+    required = [
+        "conversation is NOT inside the dedicated Operation Pancake Project",
+        "do not answer the technical question",
+        "Do not diagnose the problem.",
+        "Do not recommend a code change.",
+        "Do not provide implementation steps.",
+        "Do not infer the current state from memory or previous chats.",
+        'Do not treat "read-only" advice as permitted technical work.',
+        "Reply only that Operation Pancake work must continue inside the Operation Pancake Project",
+    ]
+    for phrase in required:
+        assert phrase in instruction
