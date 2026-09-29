@@ -1,7 +1,7 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 2
-Status: BLOCKED
+State revision: 3
+Status: COMPLETE
 Mission ID: OP-CONTROL-001
 
 ## Mission
@@ -40,7 +40,7 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-feature-before-control: Resume Simple Evaluator/Price Watch/Training Watch feature work before the overall decision-process control mission is implemented and verified.
 
 ## Next action
-authorize merge of PR #14 into product/c3po-clean-room-roster so the verified project-wide control becomes the long-lived branch authority
+complete
 
 ## Remaining executable work
 - None

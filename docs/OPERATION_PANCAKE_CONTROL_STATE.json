@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 2,
-  "status": "BLOCKED",
+  "state_revision": 3,
+  "status": "COMPLETE",
   "active_mission": {
     "id": "OP-CONTROL-001",
     "objective": "Fix the overall Operation Pancake decision-making process so every consequential project decision follows MAP -> HISTORY -> RESEARCH -> CAPABILITIES -> PLAN -> EXECUTE -> ADAPT -> VERIFY -> UPDATE MAP -> CONTINUE across chats, tools, failures, handoffs, and future features.",
-    "next_action": "authorize merge of PR #14 into product/c3po-clean-room-roster so the verified project-wide control becomes the long-lived branch authority",
+    "next_action": "complete",
     "acceptance_criteria": [
       {
         "id": "single-authority",
@@ -217,27 +217,26 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CONTROL-001-D2",
+    "decision_id": "OP-CONTROL-001-D3",
     "mission_id": "OP-CONTROL-001",
-    "proposed_action": "Merge the verified project-wide control PR into the long-lived product branch after explicit user authorization.",
-    "obstacle_classification": "EXTERNAL_DEPENDENCY",
+    "proposed_action": "Close the project-wide decision-control mission after verifying PR #14 merged and the long-lived branch passed the required SOP Gate.",
+    "obstacle_classification": "NONE",
     "history_refs": [
-      "PR #14 contains only project-wide decision-control files plus SOP workflow extension.",
-      "Operation Pancake SOP Gate run #31 passed all nine workflow steps.",
-      "Standing Operation Pancake rule requires explicit permission before merge/publish."
+      "PR #14 merged as e2cb483803f860d1474797c45e240d993c6495cb.",
+      "Long-lived branch contains docs/OPERATION_PANCAKE_CONTROL_STATE.json and root AGENTS.md.",
+      "Operation Pancake SOP Gate push run #33 passed on the merge commit."
     ],
     "capabilities_checked": [
-      "GitHub PR/write access",
+      "GitHub branch contents",
       "GitHub Actions SOP Gate",
-      "Files/Library",
-      "container/Python validation"
+      "project-wide control state"
     ],
     "alternatives_considered": [
-      "Leave the control only on the feature branch — rejected because future work on the long-lived branch would not inherit AGENTS.md or the authority.",
-      "Merge without explicit permission — rejected by the standing no-merge-without-permission rule.",
-      "Continue feature work first — rejected by reject-feature-before-control."
+      "Leave state BLOCKED after merge — rejected because it would create the stale handoff condition the control is designed to prevent.",
+      "Resume feature work before closing the authority — rejected by reject-feature-before-control.",
+      "Close mission after updating the authority through the protected workflow — selected."
     ],
-    "selected_reason": "All executable technical work is verified. Deployment to the long-lived protected branch is the only remaining step and requires the user-reserved merge authorization.",
+    "selected_reason": "All acceptance criteria are passed, the control is deployed on the long-lived branch, the required post-merge gate is green, and no executable work remains for this mission.",
     "changes_mission": false,
     "reopens_lock_ids": [],
     "new_evidence_for_reopened_locks": {}
@@ -284,30 +283,33 @@
       ],
       "result": "All technical acceptance criteria passed; the only remaining boundary is explicit authorization to merge PR #14 into the long-lived branch.",
       "next": "Obtain explicit merge authorization, merge PR #14, then verify the long-lived branch contains the authority and rerun preflight there."
+    },
+    {
+      "decision_id": "OP-CONTROL-001-D3",
+      "decision": "Close the overall Operation Pancake decision-making control mission only after deployment and post-merge verification on the long-lived branch.",
+      "evidence": [
+        "PR #14 merged successfully as e2cb483803f860d1474797c45e240d993c6495cb.",
+        "Long-lived product/c3po-clean-room-roster contains the authoritative control state and AGENTS.md bootstrap.",
+        "Operation Pancake SOP Gate push run #33 completed successfully on the merge commit."
+      ],
+      "history": [
+        "The mission explicitly prohibited treating PR/CI as completion before deployment verification.",
+        "Revision 2 correctly stopped at the user-reserved merge authorization boundary."
+      ],
+      "alternatives": [
+        "Call complete before merge.",
+        "Leave the pre-merge blocker in the authority.",
+        "Close only after merge and post-merge gate verification."
+      ],
+      "result": "Project-wide control is deployed and verified on the long-lived branch; all acceptance criteria pass and no executable work remains.",
+      "next": "complete"
     }
   ],
-  "blocker": {
-    "type": "EXTERNAL_DEPENDENCY",
-    "capabilities_checked": [
-      "GitHub repository write/PR access",
-      "GitHub Actions SOP Gate",
-      "Files/Library",
-      "container/Python validation"
-    ],
-    "adaptations_attempted": [
-      "Built and verified the control locally.",
-      "Published it on a dedicated branch.",
-      "Opened PR #14 through the protected workflow.",
-      "Ran the real repository SOP Gate to success.",
-      "Reconciled all acceptance criteria and generated the revision-2 handoff."
-    ],
-    "remaining_executable_routes": [],
-    "user_action": "Explicitly authorize merging PR #14 into product/c3po-clean-room-roster."
-  },
+  "blocker": null,
   "handoff": {
     "mission_id": "OP-CONTROL-001",
-    "state_revision": 2,
-    "next_action": "authorize merge of PR #14 into product/c3po-clean-room-roster so the verified project-wide control becomes the long-lived branch authority",
+    "state_revision": 3,
+    "next_action": "complete",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -322,7 +324,7 @@
     ]
   },
   "completion": {
-    "user_facing_objective_verified": false,
+    "user_facing_objective_verified": true,
     "all_acceptance_criteria_passed": true,
     "remaining_executable_work": []
   }
