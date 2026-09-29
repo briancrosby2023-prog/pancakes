@@ -315,10 +315,11 @@ class SOPDecisionGateway:
             )
 
         post_decision_errors: list[str] = []
-        if not alternatives_considered:
-            post_decision_errors.append("ALTERNATIVES_REQUIRED")
-        if not selected_reason:
-            post_decision_errors.append("SELECTED_REASON_REQUIRED")
+        if self.strict_evidence:
+            if not alternatives_considered:
+                post_decision_errors.append("ALTERNATIVES_REQUIRED")
+            if not selected_reason:
+                post_decision_errors.append("SELECTED_REASON_REQUIRED")
         if self.strict_evidence and typed_gate is not None:
             post_decision_errors.extend(
                 trusted_basis_errors(
