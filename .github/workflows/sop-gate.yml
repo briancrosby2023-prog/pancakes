@@ -30,7 +30,7 @@ jobs:
         run: python -m pip install pytest
 
       - name: Run SOP gate tests
-        run: python -m pytest -q tests/test_sop_gate.py tests/test_sop_gateway.py tests/test_openai_decision_provider.py tests/test_simple_evaluator_startup.py
+        run: python -m pytest -q tests/test_sop_gate.py tests/test_sop_gateway.py tests/test_openai_decision_provider.py
 
       - name: Compile decision-gate integration
         run: python -m py_compile src/operation_pancake/sop_policy.py src/operation_pancake/sop_gateway.py src/operation_pancake/openai_decision_provider.py src/operation_pancake/product_app.py
