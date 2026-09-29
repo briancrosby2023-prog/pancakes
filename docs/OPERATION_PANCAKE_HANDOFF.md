@@ -1,7 +1,7 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 1
-Status: IN_PROGRESS
+State revision: 2
+Status: BLOCKED
 Mission ID: OP-CONTROL-001
 
 ## Mission
@@ -40,17 +40,10 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-feature-before-control: Resume Simple Evaluator/Price Watch/Training Watch feature work before the overall decision-process control mission is implemented and verified.
 
 ## Next action
-implement and verify the project-wide control validator, deterministic handoff, regression suite, and protected CI enforcement
+authorize merge of PR #14 into product/c3po-clean-room-roster so the verified project-wide control becomes the long-lived branch authority
 
 ## Remaining executable work
-- Implement project-wide control validator.
-- Implement deterministic preflight/handoff CLI.
-- Add coding-agent/session bootstrap instructions.
-- Encode known failure modes as regression tests.
-- Add protected CI enforcement.
-- Run fresh-session recovery simulation from authority alone.
-- Run the full test suite and reconcile failures.
-- Update the authority with verified results and continue until no executable work remains.
+- None
 
 ## Completion rule
 A commit, test, CI run, PR, package, screenshot, or progress report is only a checkpoint.

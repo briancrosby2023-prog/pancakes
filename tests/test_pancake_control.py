@@ -98,8 +98,15 @@ def test_genuine_external_blocker_is_valid_after_routes_exhausted():
 def test_checkpoint_cannot_be_called_complete_with_remaining_work():
     state = load_state()
     state["status"] = "COMPLETE"
-    state["completion"]["user_facing_objective_verified"] = True
+    state["blocker"] = None
+    state["active_mission"]["acceptance_criteria"][0]["passed"] = False
+    state["completion"] = {
+        "user_facing_objective_verified": True,
+        "all_acceptance_criteria_passed": False,
+        "remaining_executable_work": ["physical acceptance remains"],
+    }
     state["active_mission"]["next_action"] = "complete"
+    state["handoff"]["next_action"] = "complete"
     errors = validate_control_state(state)
     assert any("acceptance criterion" in error.lower() for error in errors)
     assert any("executable work remains" in error.lower() for error in errors)
@@ -142,6 +149,7 @@ def test_completion_passes_only_when_every_criterion_and_work_item_is_done():
     for criterion in state["active_mission"]["acceptance_criteria"]:
         criterion["passed"] = True
     state["status"] = "COMPLETE"
+    state["blocker"] = None
     state["active_mission"]["next_action"] = "complete"
     state["handoff"]["next_action"] = "complete"
     state["completion"] = {

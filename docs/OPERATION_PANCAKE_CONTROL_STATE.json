@@ -11,62 +11,62 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 1,
-  "status": "IN_PROGRESS",
+  "state_revision": 2,
+  "status": "BLOCKED",
   "active_mission": {
     "id": "OP-CONTROL-001",
     "objective": "Fix the overall Operation Pancake decision-making process so every consequential project decision follows MAP -> HISTORY -> RESEARCH -> CAPABILITIES -> PLAN -> EXECUTE -> ADAPT -> VERIFY -> UPDATE MAP -> CONTINUE across chats, tools, failures, handoffs, and future features.",
-    "next_action": "implement and verify the project-wide control validator, deterministic handoff, regression suite, and protected CI enforcement",
+    "next_action": "authorize merge of PR #14 into product/c3po-clean-room-roster so the verified project-wide control becomes the long-lived branch authority",
     "acceptance_criteria": [
       {
         "id": "single-authority",
         "description": "One project-wide authoritative control state exists and mission-specific state is subordinate.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "preflight",
         "description": "MAP/HISTORY/RESEARCH/CAPABILITIES are evidence-backed prerequisites before consequential planning or execution.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "obstacle-classification",
         "description": "Failures are classified without silently replacing the active mission, and capability failures drive ADAPT.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "locks",
         "description": "Accepted and rejected approaches cannot be reopened without materially new evidence.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "blocker",
         "description": "BLOCKED is allowed only for a genuine external dependency after capabilities and adaptations are exhausted.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "handoff",
         "description": "A deterministic handoff is generated from the authoritative state and detects stale mission/revision/next-action data.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "git-enforcement",
         "description": "Protected CI validates the project-wide control state and its regression suite before persistent repository changes.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "regressions",
         "description": "Known Operation Pancake failures are encoded as regression tests and failure-audit controls.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "fresh-session",
         "description": "A fresh-session simulation can recover mission, locks, capabilities, and next action from the authority alone.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "continuation",
         "description": "The process continues after checkpoints while executable work remains and does not require the user to say next.",
-        "passed": false
+        "passed": true
       }
     ]
   },
@@ -217,30 +217,27 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CONTROL-001-D1",
+    "decision_id": "OP-CONTROL-001-D2",
     "mission_id": "OP-CONTROL-001",
-    "proposed_action": "Create and enforce one project-wide control state, mandatory preflight validator, deterministic handoff, lock semantics, blocker semantics, failure audit, and protected CI regressions.",
-    "obstacle_classification": "NONE",
+    "proposed_action": "Merge the verified project-wide control PR into the long-lived product branch after explicit user authorization.",
+    "obstacle_classification": "EXTERNAL_DEPENDENCY",
     "history_refs": [
-      "PR #11 false 8788 normalization and replacement launcher",
-      "PR #12 restoration of accepted startup history",
-      "Opera mission-drift incident",
-      "Desktop Commander exhausted-route history",
-      "User clarification that overall Operation Pancake decision-making is the target"
+      "PR #14 contains only project-wide decision-control files plus SOP workflow extension.",
+      "Operation Pancake SOP Gate run #31 passed all nine workflow steps.",
+      "Standing Operation Pancake rule requires explicit permission before merge/publish."
     ],
     "capabilities_checked": [
-      "GitHub",
+      "GitHub PR/write access",
+      "GitHub Actions SOP Gate",
       "Files/Library",
-      "container/Python",
-      "Desktop Commander exclusion",
-      "Opera browser-only boundary"
+      "container/Python validation"
     ],
     "alternatives_considered": [
-      "Reuse Simple Evaluator r56 gateway as the overall fix \u2014 rejected because it gates only requests routed through that runtime.",
-      "Rely on chat instructions/memory alone \u2014 rejected as insufficiently durable.",
-      "Create a project-wide repository authority plus automated preflight/handoff/CI controls \u2014 selected."
+      "Leave the control only on the feature branch — rejected because future work on the long-lived branch would not inherit AGENTS.md or the authority.",
+      "Merge without explicit permission — rejected by the standing no-merge-without-permission rule.",
+      "Continue feature work first — rejected by reject-feature-before-control."
     ],
-    "selected_reason": "This preserves the accepted project history, survives coding-session boundaries, catches known failure modes mechanically, and does not misrepresent the Simple Evaluator gateway as control over all Operation Pancake work.",
+    "selected_reason": "All executable technical work is verified. Deployment to the long-lived protected branch is the only remaining step and requires the user-reserved merge authorization.",
     "changes_mission": false,
     "reopens_lock_ids": [],
     "new_evidence_for_reopened_locks": {}
@@ -265,13 +262,52 @@
       ],
       "result": "Project-wide control architecture selected; Simple Evaluator state is subordinate.",
       "next": "Implement validator, deterministic handoff, locks/blocker semantics, regression tests, and CI."
+    },
+    {
+      "decision_id": "OP-CONTROL-001-D2",
+      "decision": "Treat green CI as verification evidence, not completion; reconcile all criteria and stop only at the explicit merge-authorization boundary.",
+      "evidence": [
+        "Local project-wide regression suite: 13/13 passed.",
+        "Project control validate: PASS.",
+        "Project preflight: PASS.",
+        "Deterministic handoff check: PASS.",
+        "PR #14 Operation Pancake SOP Gate run #31: success; tests, compile, mission-specific SOP state, project-wide control, and handoff checks all passed."
+      ],
+      "history": [
+        "Previous Pancake sessions repeatedly stopped at tests/PRs/checkpoints or changed mission after a tool failure.",
+        "The current mission explicitly requires continuing through checkpoints until only a genuine external dependency remains."
+      ],
+      "alternatives": [
+        "Stop at green CI and call the mission complete.",
+        "Merge without explicit authorization.",
+        "Continue to unrelated feature work."
+      ],
+      "result": "All technical acceptance criteria passed; the only remaining boundary is explicit authorization to merge PR #14 into the long-lived branch.",
+      "next": "Obtain explicit merge authorization, merge PR #14, then verify the long-lived branch contains the authority and rerun preflight there."
     }
   ],
-  "blocker": null,
+  "blocker": {
+    "type": "EXTERNAL_DEPENDENCY",
+    "capabilities_checked": [
+      "GitHub repository write/PR access",
+      "GitHub Actions SOP Gate",
+      "Files/Library",
+      "container/Python validation"
+    ],
+    "adaptations_attempted": [
+      "Built and verified the control locally.",
+      "Published it on a dedicated branch.",
+      "Opened PR #14 through the protected workflow.",
+      "Ran the real repository SOP Gate to success.",
+      "Reconciled all acceptance criteria and generated the revision-2 handoff."
+    ],
+    "remaining_executable_routes": [],
+    "user_action": "Explicitly authorize merging PR #14 into product/c3po-clean-room-roster."
+  },
   "handoff": {
     "mission_id": "OP-CONTROL-001",
-    "state_revision": 1,
-    "next_action": "implement and verify the project-wide control validator, deterministic handoff, regression suite, and protected CI enforcement",
+    "state_revision": 2,
+    "next_action": "authorize merge of PR #14 into product/c3po-clean-room-roster so the verified project-wide control becomes the long-lived branch authority",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -287,16 +323,7 @@
   },
   "completion": {
     "user_facing_objective_verified": false,
-    "all_acceptance_criteria_passed": false,
-    "remaining_executable_work": [
-      "Implement project-wide control validator.",
-      "Implement deterministic preflight/handoff CLI.",
-      "Add coding-agent/session bootstrap instructions.",
-      "Encode known failure modes as regression tests.",
-      "Add protected CI enforcement.",
-      "Run fresh-session recovery simulation from authority alone.",
-      "Run the full test suite and reconcile failures.",
-      "Update the authority with verified results and continue until no executable work remains."
-    ]
+    "all_acceptance_criteria_passed": true,
+    "remaining_executable_work": []
   }
 }
