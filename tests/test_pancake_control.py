@@ -152,9 +152,33 @@ def test_completion_passes_only_when_every_criterion_and_work_item_is_done():
     state["blocker"] = None
     state["active_mission"]["next_action"] = "complete"
     state["handoff"]["next_action"] = "complete"
+    state["enforcement"]["behavioral_standard"]["project_instruction_installed"] = True
+    state["enforcement"]["behavioral_standard"]["global_instruction_installed"] = True
+    state["enforcement"]["mechanical_standard"]["regression_verified"] = True
+    state["enforcement"]["cross_surface_acceptance_verified"] = True
     state["completion"] = {
         "user_facing_objective_verified": True,
         "all_acceptance_criteria_passed": True,
         "remaining_executable_work": [],
     }
     assert validate_control_state(state) == []
+
+
+def test_complete_is_rejected_until_both_control_standards_are_verified():
+    state = load_state()
+    for criterion in state["active_mission"]["acceptance_criteria"]:
+        criterion["passed"] = True
+    state["status"] = "COMPLETE"
+    state["blocker"] = None
+    state["active_mission"]["next_action"] = "complete"
+    state["handoff"]["next_action"] = "complete"
+    state["completion"] = {
+        "user_facing_objective_verified": True,
+        "all_acceptance_criteria_passed": True,
+        "remaining_executable_work": [],
+    }
+    errors = validate_control_state(state)
+    assert any("project instruction installation" in error for error in errors)
+    assert any("global instruction installation" in error for error in errors)
+    assert any("mechanical enforcement regression" in error for error in errors)
+    assert any("cross-surface acceptance" in error for error in errors)
