@@ -106,7 +106,14 @@ class ControlledToolBroker:
                     f"mutation tool {name} requires current project state"
                 )
             try:
-                self.authorizer.authorize_action(
+                mutation_authorizer = getattr(
+                    self.authorizer, "authorize_mutation_action", None
+                )
+                if mutation_authorizer is None:
+                    raise ToolExecutionBlocked(
+                        "authorizer does not expose mutation authorization"
+                    )
+                mutation_authorizer(
                     decision_id,
                     name,
                     current_state_snapshot=current_state_snapshot,
