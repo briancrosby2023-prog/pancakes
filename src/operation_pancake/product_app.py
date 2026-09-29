@@ -1,6 +1,6 @@
 """Acceptance-first browser UI composed over the accepted Operation Pancake engines."""
 from __future__ import annotations
-import argparse, html, json
+import argparse, html, json, os
 from dataclasses import asdict
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -12,6 +12,18 @@ from operation_pancake.gm_decisions import GMDecisionService
 from operation_pancake.evo import EVODefinition, EVOStore, compose_evo_decision, enrich_candidates
 from operation_pancake.onboarding import SetupStore, ScreenshotStageStore
 from operation_pancake.sop_gateway import gateway_status, production_gateway
+
+DEFAULT_SIMPLE_EVALUATOR_PORT = 8788
+
+def configured_port() -> int:
+    raw = os.getenv('PANCAKE_PORT', str(DEFAULT_SIMPLE_EVALUATOR_PORT)).strip()
+    try:
+        port = int(raw)
+    except ValueError as exc:
+        raise ValueError(f'PANCAKE_PORT must be an integer, got {raw!r}') from exc
+    if not 1 <= port <= 65535:
+        raise ValueError(f'PANCAKE_PORT must be between 1 and 65535, got {port}')
+    return port
 
 CSS='''*{box-sizing:border-box}body{margin:0;background:#071019;color:#eaf0f6;font:15px system-ui}header{position:sticky;top:0;background:#0b1722;border-bottom:1px solid #233545;padding:14px 22px;z-index:2}nav{max-width:1320px;margin:auto;display:flex;gap:18px;align-items:center;flex-wrap:wrap}nav a{color:#a9c7df;text-decoration:none}.brand{font-weight:800;color:#fff;margin-right:auto}main{max-width:1320px;margin:auto;padding:28px}.hero{background:linear-gradient(135deg,#102638,#111a23);padding:24px;border:1px solid #294157;border-radius:18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.card{background:#0d1b27;border:1px solid #24394b;border-radius:14px;padding:16px;margin:12px 0}.metric{font-size:28px;font-weight:800}.muted{color:#8fa6b8}.warn{color:#ffd27a}.ok{color:#9ee6b0}input,select,button{background:#111f2b;color:#eef5fa;border:1px solid #365064;border-radius:8px;padding:9px}button{cursor:pointer;background:#183c55}form{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}table{width:100%;border-collapse:collapse;background:#0d1b27}th,td{text-align:left;padding:10px;border-bottom:1px solid #263a4b;vertical-align:top}a{color:#79c8ff}.field{display:flex;flex-direction:column;gap:4px}.depth{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.slot{min-height:100px;background:#102434;border:1px solid #31506a;border-radius:12px;padding:10px}.badge{display:inline-block;border:1px solid #45647c;border-radius:999px;padding:2px 7px;margin:2px;font-size:12px}.actions a{margin-right:10px}@media(max-width:800px){.depth{grid-template-columns:repeat(2,1fr)}}'''
 def esc(x): return html.escape(str(x if x is not None else 'UNKNOWN'))
@@ -49,7 +61,9 @@ def create_handler(root:Path,roster_path:Path|None=None,gm_state_path:Path|None=
             if not isinstance(payload,dict): raise ValueError('JSON body must be an object')
             return payload
         def do_GET(self):
-            p=urlparse(self.path); q=parse_qs(p.query); state=budgets.load(); roster_rows=rows()
+            p=urlparse(self.path); q=parse_qs(p.query)
+            if p.path=='/api/health': self.js({'status':'ok','service':'simple-evaluator'}); return
+            state=budgets.load(); roster_rows=rows()
             if p.path=='/api/sop-gate': self.js(gateway_status(root)); return
             if p.path.startswith('/api/sop-gate/decision/'):
                 decision_id=p.path.rsplit('/',1)[-1]
@@ -158,5 +172,5 @@ def create_handler(root:Path,roster_path:Path|None=None,gm_state_path:Path|None=
     return H
 
 def main():
-    p=argparse.ArgumentParser(prog='operation-pancake-app');p.add_argument('--root',type=Path,default=Path.cwd());p.add_argument('--host',default='127.0.0.1');p.add_argument('--port',type=int,default=8765);a=p.parse_args();s=ThreadingHTTPServer((a.host,a.port),create_handler(a.root.resolve()));print(f'Operation Pancake: http://{a.host}:{a.port}');s.serve_forever()
+    p=argparse.ArgumentParser(prog='operation-pancake-app');p.add_argument('--root',type=Path,default=Path.cwd());p.add_argument('--host',default='127.0.0.1');p.add_argument('--port',type=int,default=configured_port());a=p.parse_args();s=ThreadingHTTPServer((a.host,a.port),create_handler(a.root.resolve()));print(f'Operation Pancake: http://{a.host}:{a.port}');s.serve_forever()
 if __name__=='__main__':main()
