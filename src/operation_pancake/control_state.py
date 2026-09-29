@@ -286,6 +286,17 @@ def validate_control_state(state: Mapping[str, Any]) -> list[str]:
         if completion.get("all_acceptance_criteria_passed") is not all_passed:
             errors.append("completion.all_acceptance_criteria_passed must match the acceptance criteria.")
         if status == "COMPLETE":
+            enforcement = state.get("enforcement") if isinstance(state.get("enforcement"), Mapping) else {}
+            behavioral = enforcement.get("behavioral_standard") if isinstance(enforcement.get("behavioral_standard"), Mapping) else {}
+            mechanical = enforcement.get("mechanical_standard") if isinstance(enforcement.get("mechanical_standard"), Mapping) else {}
+            if behavioral.get("project_instruction_installed") is not True:
+                errors.append("COMPLETE requires project instruction installation.")
+            if behavioral.get("global_instruction_installed") is not True:
+                errors.append("COMPLETE requires global instruction installation.")
+            if mechanical.get("regression_verified") is not True:
+                errors.append("COMPLETE requires mechanical enforcement regression verification.")
+            if enforcement.get("cross_surface_acceptance_verified") is not True:
+                errors.append("COMPLETE requires cross-surface acceptance verification.")
             if remaining:
                 errors.append("COMPLETE status is invalid while executable work remains.")
             if not verified:
