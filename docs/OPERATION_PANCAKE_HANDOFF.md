@@ -1,11 +1,11 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 3
-Status: COMPLETE
-Mission ID: OP-CONTROL-001
+State revision: 4
+Status: IN_PROGRESS
+Mission ID: OP-CONTROL-002
 
 ## Mission
-Fix the overall Operation Pancake decision-making process so every consequential project decision follows MAP -> HISTORY -> RESEARCH -> CAPABILITIES -> PLAN -> EXECUTE -> ADAPT -> VERIFY -> UPDATE MAP -> CONTINUE across chats, tools, failures, handoffs, and future features.
+Enforce the Operation Pancake SOP across ChatGPT behavior and consequential execution so MAP -> HISTORY -> RESEARCH -> CAPABILITIES precede decisions, guessing/retry loops are fail-closed, user testing is last-resort, and controlled mutation cannot bypass a validated decision.
 
 ## Mandatory SOP
 MAP → HISTORY → RESEARCH → CAPABILITIES → PLAN → EXECUTE → ADAPT → VERIFY → UPDATE MAP → CONTINUE
@@ -15,21 +15,23 @@ Read `docs/OPERATION_PANCAKE_CONTROL_STATE.json` first and validate it before ma
 Do not let the newest obstacle replace the recorded mission.
 
 ## Preflight evidence
-- MAP: User clarified that the target is the overall Operation Pancake working process, not the Simple Evaluator gateway. | Current long-lived repository branch is product/c3po-clean-room-roster. | Existing docs/SOP_STATE.json is mission-specific and currently scoped to the r56 Simple Evaluator gateway, so it cannot be the sole project-wide authority.
-- HISTORY: PR #11 incorrectly normalized Simple Evaluator to 127.0.0.1:8788 and added a replacement launcher; PR #12 reverted that after HISTORY recovered the accepted dynamic-port path. | An Opera connector failure was allowed to replace the active decision-control mission instead of being classified as a capability problem and adapted around. | Desktop Commander was repeatedly reconsidered after its allowance was exhausted despite an explicit no-retry directive. | Tests, PRs, packages, and browser checkpoints were repeatedly treated as if they completed the user-facing objective. | User has repeatedly required the SOP and project history to survive chat/mode handoffs.
-- RESEARCH: The existing repository SOP gateway can mechanically gate requests routed through it but cannot intercept ordinary ChatGPT web turns. | The existing repository SOP validator already enforces evidence-backed stages for Git changes but is mission-specific and lacks project-wide mission/lock/handoff/blocker semantics. | A project-wide source of truth plus deterministic preflight/handoff validation can make repository/Codex work durable while remaining honest that ordinary ChatGPT still depends on consulting that source.
-- CAPABILITIES: GitHub connector provides read/write access to the Pancake repository and protected PR workflow. | Files/Library provides authoritative historical checkpoints across prior chats. | Container/Python execution can validate new control logic before repository publication. | Desktop Commander remains excluded until its allowance is restored. | No authorized direct Windows shell/process channel is assumed in this chat. | Opera is a browser capability only and must never be treated as the project mission or sole decision-control mechanism.
+- MAP: Current authority revision 3 declared OP-CONTROL-001 COMPLETE even though its own gateway status records direct_chatgpt_interception=false. | Current failure reproduced the original behavior problem: a Simple Evaluator patch direction was chosen before MAP/HISTORY/RESEARCH/CAPABILITIES were restored. | The existing SOP gateway and repository CI are real controls but do not mechanically intercept ordinary ChatGPT turns.
+- HISTORY: PR #11 false 8788 normalization, Opera mission drift, Desktop Commander retries, checkpoint-as-completion, and speculative user testing are already documented failure classes. | OP-CONTROL-001 created project-wide authority, locks, deterministic handoff, repository preflight and CI, but closed despite the acknowledged ordinary-chat interception gap. | During OP-SIMPLE-002, r61 was proposed before proving which Windows runtime was actually serving the application, demonstrating the unresolved cross-surface behavior gap.
+- RESEARCH: OpenAI Projects support project instructions that apply within the project and override global custom instructions. | OpenAI Custom Instructions apply across chats and provide a global behavioral fallback. | OpenAI Responses/function calling supports allowed_tools restrictions; the Agents SDK is appropriate when the application owns tool implementations, state, approvals, and runtime behavior. | No current product documentation establishes Project or Custom Instructions as a hard execution interceptor; mechanical guarantees require the controlled runtime/tool layer.
+- CAPABILITIES: GitHub repository read/write and protected PR workflow are available. | Files/Library retrieval and web research are available. | The current chat can create repository control code and documentation but has no account-setting action for Project instructions or Custom Instructions. | Desktop Commander remains prohibited and DigitalOcean remains prohibited. | The existing OpenAI decision transport is fail-closed when a programmatic credential is absent.
 
 ## Available capabilities
-- GitHub repository read/write and protected PR workflow
+- GitHub repository read/write and PR workflow
 - Files/Library retrieval
-- container/Python validation
-- web research when current external facts materially affect a decision
+- container/Python validation where available
+- web research
+- repository SOP gateway, OpenAI decision transport, and fail-closed tool-broker implementation
 
 ## Accepted — do not reopen without materially new evidence
 - accepted-sop-order: Operation Pancake SOP order is MAP -> HISTORY -> RESEARCH -> CAPABILITIES -> PLAN -> EXECUTE -> ADAPT -> VERIFY -> UPDATE MAP -> CONTINUE.
 - accepted-dynamic-port: Simple Evaluator uses the accepted dynamic localhost-port startup architecture; no fixed port is canonical.
 - accepted-browser-watch: Original 3U Browser Watch production acceptance is closed and must not be reopened without a new regression.
+- accepted-two-layer-control-standard: Operation Pancake behavior control requires both a ChatGPT instruction layer and a fail-closed controlled execution layer; neither alone satisfies the objective.
 
 ## Rejected/superseded — do not retry without materially new evidence
 - reject-hardcoded-8788: Hard-code 127.0.0.1:8788 as the Simple Evaluator port.
@@ -38,12 +40,20 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-desktop-commander-retry: Retry or recheck Desktop Commander before its allowance is restored.
 - reject-checkpoint-completion: Treat a test, commit, CI run, PR, package, screenshot, or intermediate checkpoint as completion while executable work remains.
 - reject-feature-before-control: Resume Simple Evaluator/Price Watch/Training Watch feature work before the overall decision-process control mission is implemented and verified.
+- reject-instruction-only-completion: Declare the control problem solved because Project/Custom Instructions exist without mechanical mutation enforcement.
+- reject-guess-patch-loop: Create another implementation patch from an unverified root-cause hypothesis or retry a failed hypothesis without materially new evidence.
+- reject-user-test-before-exhaustion: Ask the user to install/click/restart/test while legitimate executable technical routes remain.
 
 ## Next action
-complete
+Finish repository regression verification, install the Project/global ChatGPT instruction layer, run fresh-session cross-surface acceptance, then resume Simple Evaluator work only after this mission is accepted.
 
 ## Remaining executable work
-- None
+- Verify new strict gateway and adversarial regressions in the required SOP CI path.
+- Strengthen project validator so COMPLETE requires both behavioral installation and mechanical/cross-surface verification.
+- Regenerate and verify authoritative handoff.
+- Install Project instructions and global fallback Custom Instruction through ChatGPT UI.
+- Run the cross-surface fresh-session acceptance matrix.
+- Only after acceptance, resume OP-SIMPLE-002 from its last verified evidence boundary.
 
 ## Completion rule
 A commit, test, CI run, PR, package, screenshot, or progress report is only a checkpoint.
