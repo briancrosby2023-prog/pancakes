@@ -26,11 +26,10 @@ DECISION_SCHEMA = {
         "next_action",
     ],
     "properties": {
-        "proposed_plan": {"type": "string", "minLength": 1},
+        "proposed_plan": {"type": "string"},
         "allowed_actions": {
             "type": "array",
             "items": {"type": "string", "minLength": 1},
-            "uniqueItems": True,
         },
         "blocked_actions": {
             "type": "array",
@@ -51,22 +50,39 @@ make that dependency the next_action rather than inventing a workaround.
 Do not include prose outside the required JSON structure."""
 
 
-def default_key_file() -> Path | None:
+def key_file_candidates() -> tuple[Path, ...]:
     explicit = os.getenv("PANCAKE_OPENAI_API_KEY_FILE")
     if explicit:
-        return Path(explicit).expanduser()
+        return (Path(explicit).expanduser(),)
     local_app_data = os.getenv("LOCALAPPDATA")
     if not local_app_data:
+        return ()
+    root = Path(local_app_data) / "SimpleEvaluator"
+    return (
+        root / "openai_api_key.txt",
+        root / "openai-api-key (1).txt",
+    )
+
+
+def default_key_file() -> Path | None:
+    candidates = key_file_candidates()
+    if not candidates:
         return None
-    return Path(local_app_data) / "SimpleEvaluator" / "openai_api_key.txt"
+    for path in candidates:
+        if path.is_file():
+            return path
+    return candidates[0]
 
 
 def key_source() -> str | None:
     if os.getenv("OPENAI_API_KEY", "").strip():
         return "OPENAI_API_KEY"
-    path = default_key_file()
-    if path and path.is_file() and path.read_text(encoding="utf-8").strip():
-        return str(path)
+    for path in key_file_candidates():
+        try:
+            if path.is_file() and path.read_text(encoding="utf-8").strip():
+                return str(path)
+        except OSError:
+            continue
     return None
 
 
@@ -74,10 +90,14 @@ def _load_api_key() -> str | None:
     environment = os.getenv("OPENAI_API_KEY", "").strip()
     if environment:
         return environment
-    path = default_key_file()
-    if path and path.is_file():
-        value = path.read_text(encoding="utf-8").strip()
-        return value or None
+    for path in key_file_candidates():
+        try:
+            if path.is_file():
+                value = path.read_text(encoding="utf-8").strip()
+                if value:
+                    return value
+        except OSError:
+            continue
     return None
 
 
