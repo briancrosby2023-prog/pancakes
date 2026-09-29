@@ -49,6 +49,19 @@ def test_provider_sends_structured_responses_request_without_exposing_key(monkey
                                         "allowed_actions": ["trace-original-acquisition"],
                                         "blocked_actions": ["ask-user-for-manual-card-captures"],
                                         "next_action": "trace-original-acquisition",
+                                        "obstacle_classification": "NONE",
+                                        "alternatives_considered": [
+                                            "Trace prior acquisition history",
+                                            "Inspect verified repository evidence"
+                                        ],
+                                        "selected_reason": "The selected route is evidence-backed.",
+                                        "implementation_basis_fact_keys": [
+                                            "history_reviewed"
+                                        ],
+                                        "user_action_required": False,
+                                        "remaining_executable_routes": [
+                                            "trace-original-acquisition"
+                                        ],
                                     }
                                 ),
                             }
