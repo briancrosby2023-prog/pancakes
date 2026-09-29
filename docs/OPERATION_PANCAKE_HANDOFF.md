@@ -1,6 +1,6 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 7
+State revision: 8
 Status: IN_PROGRESS
 Mission ID: OP-CONTROL-002
 
@@ -45,13 +45,12 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-user-test-before-exhaustion: Ask the user to install/click/restart/test while legitimate executable technical routes remain.
 
 ## Next action
-Run the fresh Operation Pancake Project adversarial bootstrap test, then complete Codex/Work cross-surface acceptance.
+Verify the Codex/repository surface and deterministic handoff surface against the same adversarial SOP-bypass scenario, then close OP-CONTROL-002 only if those remaining surfaces pass.
 
 ## Remaining executable work
-- Run the fresh Operation Pancake Project adversarial bootstrap test.
-- Run the Codex/repository cross-surface acceptance scenario.
-- Run the Work/handoff cross-surface acceptance scenario.
-- Record final cross-surface results and close OP-CONTROL-002 only if all scenarios pass.
+- Verify the Codex/repository adversarial surface without relying on a direct-write bypass.
+- Verify deterministic handoff preserves active mission, locks, preflight requirement, and next action.
+- Record final cross-surface results and close OP-CONTROL-002 only if both remaining surfaces pass.
 - Resume OP-SIMPLE-002 only after OP-CONTROL-002 is accepted.
 
 ## Completion rule
