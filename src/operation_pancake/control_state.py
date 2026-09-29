@@ -59,33 +59,6 @@ def _validate_stage(stage: Any, label: str, errors: list[str]) -> None:
 
 def lock_index(state: Mapping[str, Any]) -> dict[str, Mapping[str, Any]]:
     result: dict[str, Mapping[str, Any]] = {}
-    enforcement = _require_mapping(state.get("enforcement"), "enforcement", errors)
-    if enforcement:
-        behavioral = _require_mapping(
-            enforcement.get("behavioral_standard"),
-            "enforcement.behavioral_standard",
-            errors,
-        )
-        mechanical = _require_mapping(
-            enforcement.get("mechanical_standard"),
-            "enforcement.mechanical_standard",
-            errors,
-        )
-        if behavioral:
-            for field in ("project_instruction_artifact", "global_instruction_artifact"):
-                if not _text(behavioral.get(field)):
-                    errors.append(f"enforcement.behavioral_standard.{field} is required.")
-        if mechanical:
-            for field in ("decision_gateway", "typed_evidence_module", "tool_broker"):
-                if not _text(mechanical.get(field)):
-                    errors.append(f"enforcement.mechanical_standard.{field} is required.")
-        if enforcement.get("hard_limitations_acknowledged") is not True:
-            errors.append("enforcement.hard_limitations_acknowledged must be true.")
-        if not _text(enforcement.get("authorized_consequential_execution_route")):
-            errors.append("enforcement.authorized_consequential_execution_route is required.")
-        if not _text(enforcement.get("cross_surface_acceptance_file")):
-            errors.append("enforcement.cross_surface_acceptance_file is required.")
-
     for field in ("accepted_locks", "rejected_locks"):
         for item in _list(state.get(field)):
             if isinstance(item, Mapping) and _text(item.get("id")):
@@ -162,6 +135,33 @@ def validate_control_state(state: Mapping[str, Any]) -> list[str]:
             errors.append("capabilities_snapshot.available must not be empty.")
         if not isinstance(capabilities.get("unavailable_or_excluded"), list):
             errors.append("capabilities_snapshot.unavailable_or_excluded must be an array.")
+
+    enforcement = _require_mapping(state.get("enforcement"), "enforcement", errors)
+    if enforcement:
+        behavioral = _require_mapping(
+            enforcement.get("behavioral_standard"),
+            "enforcement.behavioral_standard",
+            errors,
+        )
+        mechanical = _require_mapping(
+            enforcement.get("mechanical_standard"),
+            "enforcement.mechanical_standard",
+            errors,
+        )
+        if behavioral:
+            for field in ("project_instruction_artifact", "global_instruction_artifact"):
+                if not _text(behavioral.get(field)):
+                    errors.append(f"enforcement.behavioral_standard.{field} is required.")
+        if mechanical:
+            for field in ("decision_gateway", "typed_evidence_module", "tool_broker"):
+                if not _text(mechanical.get(field)):
+                    errors.append(f"enforcement.mechanical_standard.{field} is required.")
+        if enforcement.get("hard_limitations_acknowledged") is not True:
+            errors.append("enforcement.hard_limitations_acknowledged must be true.")
+        if not _text(enforcement.get("authorized_consequential_execution_route")):
+            errors.append("enforcement.authorized_consequential_execution_route is required.")
+        if not _text(enforcement.get("cross_surface_acceptance_file")):
+            errors.append("enforcement.cross_surface_acceptance_file is required.")
 
     for field in ("accepted_locks", "rejected_locks"):
         items = _list(state.get(field))
