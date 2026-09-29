@@ -1,93 +1,93 @@
 {
   "schema_version": 1,
-  "mission": "Restore the proven Simple Evaluator startup path and complete live SOP-gateway acceptance without inventing a replacement runtime",
+  "mission": "Physically accept the r56 Operation Pancake SOP decision gateway on the actual Simple Evaluator Windows runtime without redesigning the accepted startup path",
   "status": "IN_PROGRESS",
   "map": {
     "complete": true,
     "evidence": [
-      "Opera Browser Connector was proven live by a successful open-tab read",
-      "A manual probe to 127.0.0.1:8788 returned ERR_CONNECTION_REFUSED",
-      "Authoritative Simple Evaluator checkpoint is PRODUCTION_ACCEPTED under r34 / release 3T 1.2.0 / helper 1.4.9",
-      "Accepted Simple Evaluator installation root is %LOCALAPPDATA%\\SimpleEvaluator"
+      "Authoritative installed root remains %LOCALAPPDATA%\\SimpleEvaluator and the accepted server keeps dynamic localhost port selection.",
+      "The packaged r49 runtime lacked /api/sop-gate; r56 integrates the existing gateway into the actual Simple Evaluator server payload.",
+      "Latest evaluator product safeguards from r55 are retained; the gateway integration does not replace product_app or create a new launcher."
     ]
   },
   "history": {
     "complete": true,
     "evidence": [
-      "Recovered the accepted physical r34 path before making further runtime changes",
-      "r34 fixed stale .app-state.lock cleanup, direct loopback health probing, installed server.py hash verification, exclusive-bind startup, and startup diagnostics",
-      "r34 reached PRODUCTION_ACCEPTED on the physical workstation at 2026-09-27T06:19:42Z",
-      "The frozen accepted evaluator used the existing Simple Evaluator localhost service path; 8788 was not established as its accepted port",
-      "PR #11's 8788 normalization was based on an unsupported assumption and is being fully reverted"
+      "r49 Windows recovery physically passed exclusive binding and dynamic-port startup.",
+      "PR #9 merged the fail-closed decision gateway; PR #10 merged the OpenAI Responses provider; PR #12 restored the accepted startup architecture.",
+      "User already authorized reuse of the existing local OpenAI API key; do not request or replace it.",
+      "r50-r55 are later evaluator/market fixes; r56 is built on r55 so those product fixes are not regressed."
     ]
   },
   "research": {
     "complete": true,
     "evidence": [
-      "Read CHECKPOINT_3U_EXECUTION_STATUS.json from the project Library and recovered r34 acceptance evidence",
-      "Recovered r34 artifact identity Run-Simple-Evaluator-3U-START-HERE-r34.zip and SHA-256 367bb334b4c44bff5d290b7a4f8b8fd3613b68f091788bab454d4ed723c092ee",
-      "Recovered accepted release identity 3T / 1.2.0 / helper 1.4.9",
-      "Confirmed current repository product_app is a separate runtime and must not be substituted for the accepted Simple Evaluator package"
+      "Recovered and decoded the authoritative r55 updater payload from the Simple Evaluator Library before editing.",
+      "Current OpenAI documentation confirms gpt-5.6-sol supports Responses and Structured Outputs.",
+      "Current strict Structured Outputs supports array minItems/maxItems but not uniqueItems; r56 removes unsupported uniqueItems/minLength schema keywords while retaining application-level validation.",
+      "Recovered the existing authorized local key filename compatibility requirement without accessing or exposing the key contents."
     ]
   },
   "capabilities": {
     "complete": true,
     "evidence": [
-      "GitHub read/write and protected PR workflow available",
-      "Project Library provides the authoritative Simple Evaluator acceptance checkpoint",
-      "Opera Browser Connector can verify the localhost service when its MCP session is connected",
-      "Desktop Commander remains excluded because its monthly allowance is exhausted",
-      "No local Windows command execution is currently assumed"
+      "GitHub connector has admin/push access and PR #13 uses the established protected PR/CI path.",
+      "Container execution can build and internally verify the updater artifact but is not the user's Windows workstation.",
+      "Desktop Commander remains excluded.",
+      "The r56 updater itself performs the real Windows live OpenAI decision and fail-closed acceptance after installation, reducing the remaining external action to one local updater launch."
     ]
   },
   "plan": {
     "complete": true,
     "evidence": [
-      "Revert PR #11's unsupported 8788 product_app changes",
-      "Preserve the already accepted r34 Simple Evaluator runtime instead of creating a replacement launcher",
-      "Verify the accepted localhost service path through Opera when the browser MCP session is available",
-      "If the service is down, use the already accepted r34 startup/recovery path rather than inventing another launcher",
-      "Then complete the pending live SOP-gateway API acceptance using the local key already placed by Brian"
+      "Integrate sop_policy, sop_gateway, openai_decision_provider, and the SOP routes into the actual Simple Evaluator server payload.",
+      "Preserve r55 update mechanics, dynamic port discovery, Browser Watch 1.4.12, value-probe behavior, and protected user state.",
+      "Have r56 automatically verify gateway status, run one real DECISION_ALLOWED request, verify persistence/action authorization, then verify missing HISTORY returns PREFLIGHT_REQUIRED with provider_called=false.",
+      "Mark the mission complete only after physical Windows acceptance evidence exists."
     ],
-    "next_action": "merge corrective PR and resume accepted r34 runtime verification"
+    "next_action": "run the verified r56 updater once on the physical Windows workstation"
   },
   "execute": {
     "complete": true,
     "evidence": [
-      "Restored product_app.py to pre-PR-11 state",
-      "Restored pyproject.toml to pre-PR-11 state",
-      "Restored sop-gate workflow to pre-PR-11 state",
-      "Removed invented Run-Simple-Evaluator.cmd replacement launcher",
-      "Removed the regression test built around the false 8788 assumption"
+      "Built Update-Simple-Evaluator-r56.zip on top of the r55 payload.",
+      "Packaged server exposes GET /api/sop-gate, GET /api/sop-gate/decision/<id>, POST /api/sop-gate/decision, and POST /api/sop-gate/authorize.",
+      "Added key filename compatibility and corrected the strict OpenAI schema before the live call.",
+      "Added a one-shot sop_acceptance.py invoked automatically by the updater.",
+      "PR #13 carries the source-side provider/test/state corrections through the protected GitHub workflow."
     ]
   },
   "adapt": {
     "complete": true,
     "evidence": [
-      "Corrected course immediately after HISTORY recovered the already accepted r34 runtime",
-      "Stopped treating 8788 as the canonical evaluator port",
-      "Returned to the proven r34 startup/recovery mechanism"
+      "A bare-payload protected-state test initially observed expected default-file creation; reran as a dirty-upgrade simulation with sentinel user state and verified byte-for-byte preservation.",
+      "Research found unsupported strict-schema keywords before physical acceptance; corrected the provider rather than sending a known-bad request."
     ]
   },
   "verify": {
     "complete": false,
     "evidence": [
-      "Pending corrective PR SOP Gate",
-      "Pending live accepted-runtime localhost verification",
-      "Pending live SOP-gateway OpenAI call"
+      "Fake-provider gateway decision/persistence/authorization and missing-HISTORY rejection passed.",
+      "Packaged HTTP server gateway routes and dynamic-port startup passed in isolation.",
+      "Dirty-upgrade protected-state simulation passed.",
+      "Outer single-launcher ZIP, embedded payload SHA-256, 32-file update manifest, 152-file run manifest, and bootstrap checks passed.",
+      "Physical Windows real OpenAI call and missing-HISTORY acceptance are still pending.",
+      "PR #13 Operation Pancake SOP Gate run #29 passed tests, decision-gate compile, and repository SOP-state validation."
     ]
   },
   "update_map": {
     "complete": true,
     "evidence": [
-      "SOP state now records the r34 accepted baseline and the reversal of the unsupported 8788 assumption"
+      "This SOP state records r56 internal evidence and keeps acceptance incomplete pending physical Windows verification.",
+      "r56 outer SHA-256: 0d5e473909c065701d08714bdbcf83a057e5f01563ac82930c6649c09ff06655.",
+      "r56 embedded payload SHA-256: 9c72ae8c21938a6dc280b0f006eae4874bd4bdf591a94518bd78a2ebf859715e."
     ]
   },
   "continue": {
     "complete": true,
     "evidence": [
-      "Proceed through corrective CI/merge, then verify the accepted r34 local service and live SOP gateway"
+      "Proceed to the single physical r56 updater acceptance; do not return to feature work first."
     ]
   },
-  "next_action": "merge corrective PR after green SOP Gate, then verify the accepted r34 runtime and run live SOP-gateway acceptance"
+  "next_action": "run Update-Simple-Evaluator-r56.zip once on the physical Windows workstation; updater performs the live acceptance automatically"
 }
