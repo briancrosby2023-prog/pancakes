@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 4,
+  "state_revision": 5,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CONTROL-002",
     "objective": "Enforce the Operation Pancake SOP across ChatGPT behavior and consequential execution so MAP -> HISTORY -> RESEARCH -> CAPABILITIES precede decisions, guessing/retry loops are fail-closed, user testing is last-resort, and controlled mutation cannot bypass a validated decision.",
-    "next_action": "Finish repository regression verification, install the Project/global ChatGPT instruction layer, run fresh-session cross-surface acceptance, then resume Simple Evaluator work only after this mission is accepted.",
+    "next_action": "Install the ChatGPT instruction layer and run cross-surface acceptance before resuming Simple Evaluator work.",
     "acceptance_criteria": [
       {
         "id": "correct-false-completion",
@@ -66,7 +66,7 @@
       {
         "id": "repository-regressions",
         "description": "The required SOP CI suite passes with the new cross-surface regressions.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "fresh-session-acceptance",
@@ -393,8 +393,8 @@
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CONTROL-002",
-    "state_revision": 4,
-    "next_action": "Finish repository regression verification, install the Project/global ChatGPT instruction layer, run fresh-session cross-surface acceptance, then resume Simple Evaluator work only after this mission is accepted.",
+    "state_revision": 5,
+    "next_action": "Install the ChatGPT instruction layer and run cross-surface acceptance before resuming Simple Evaluator work.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -415,7 +415,6 @@
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
     "remaining_executable_work": [
-      "Verify new strict gateway and adversarial regressions in the required SOP CI path.",
       "Strengthen project validator so COMPLETE requires both behavioral installation and mechanical/cross-surface verification.",
       "Regenerate and verify authoritative handoff.",
       "Install Project instructions and global fallback Custom Instruction through ChatGPT UI.",
@@ -441,7 +440,7 @@
       "hypothesis_circuit_breaker": true,
       "user_test_gate": true,
       "responses_allowed_tools_supported": true,
-      "regression_verified": false
+      "regression_verified": true
     },
     "direct_chatgpt_hard_interception": false,
     "hard_limitations_acknowledged": true,
