@@ -1,89 +1,93 @@
 {
   "schema_version": 1,
-  "mission": "Repair Simple Evaluator localhost startup and eliminate recurring 127.0.0.1 connection-refused loop",
+  "mission": "Restore the proven Simple Evaluator startup path and complete live SOP-gateway acceptance without inventing a replacement runtime",
   "status": "IN_PROGRESS",
   "map": {
     "complete": true,
     "evidence": [
-      "Opera Browser Connector is live and can list/read Brian's open tabs",
-      "Physical navigation to http://127.0.0.1:8788 returned ERR_CONNECTION_REFUSED",
-      "Protected product branch product/c3po-clean-room-roster inspected at fd3e6628c8cd9c3c629a94f6c323b5da34907b86",
-      "src/operation_pancake/product_app.py defaulted to port 8765 while physical Simple Evaluator acceptance targeted 8788"
+      "Opera Browser Connector was proven live by a successful open-tab read",
+      "A manual probe to 127.0.0.1:8788 returned ERR_CONNECTION_REFUSED",
+      "Authoritative Simple Evaluator checkpoint is PRODUCTION_ACCEPTED under r34 / release 3T 1.2.0 / helper 1.4.9",
+      "Accepted Simple Evaluator installation root is %LOCALAPPDATA%\\SimpleEvaluator"
     ]
   },
   "history": {
     "complete": true,
     "evidence": [
-      "Recovered repeated month-long failure pattern where browser connectivity was blamed despite localhost connection refusal",
-      "Recovered user-facing Simple Evaluator physical acceptance route at 127.0.0.1:8788",
-      "Recovered that downloaded r31/3U packaging was intended as the one-click local acceptance path",
-      "Preserved existing C3PO entry point instead of silently replacing it"
+      "Recovered the accepted physical r34 path before making further runtime changes",
+      "r34 fixed stale .app-state.lock cleanup, direct loopback health probing, installed server.py hash verification, exclusive-bind startup, and startup diagnostics",
+      "r34 reached PRODUCTION_ACCEPTED on the physical workstation at 2026-09-27T06:19:42Z",
+      "The frozen accepted evaluator used the existing Simple Evaluator localhost service path; 8788 was not established as its accepted port",
+      "PR #11's 8788 normalization was based on an unsupported assumption and is being fully reverted"
     ]
   },
   "research": {
     "complete": true,
     "evidence": [
-      "Inspected current product_app startup, pyproject entry points, SOP gate policy, and CI workflow",
-      "Verified no committed Simple Evaluator launcher existed on the protected product branch",
-      "Verified product_app had no health endpoint and defaulted to 8765"
+      "Read CHECKPOINT_3U_EXECUTION_STATUS.json from the project Library and recovered r34 acceptance evidence",
+      "Recovered r34 artifact identity Run-Simple-Evaluator-3U-START-HERE-r34.zip and SHA-256 367bb334b4c44bff5d290b7a4f8b8fd3613b68f091788bab454d4ed723c092ee",
+      "Recovered accepted release identity 3T / 1.2.0 / helper 1.4.9",
+      "Confirmed current repository product_app is a separate runtime and must not be substituted for the accepted Simple Evaluator package"
     ]
   },
   "capabilities": {
     "complete": true,
     "evidence": [
-      "GitHub read/write, protected PR workflow, and Actions are available",
-      "Opera Browser Connector is available for physical localhost verification after launch",
-      "Desktop Commander is intentionally excluded because its allowance is exhausted",
-      "No local-machine command execution capability is assumed"
+      "GitHub read/write and protected PR workflow available",
+      "Project Library provides the authoritative Simple Evaluator acceptance checkpoint",
+      "Opera Browser Connector can verify the localhost service when its MCP session is connected",
+      "Desktop Commander remains excluded because its monthly allowance is exhausted",
+      "No local Windows command execution is currently assumed"
     ]
   },
   "plan": {
     "complete": true,
     "evidence": [
-      "Make 8788 the canonical Simple Evaluator default while retaining PANCAKE_PORT override",
-      "Add a dedicated simple-evaluator package entry point without replacing the legacy C3PO entry point",
-      "Add a Windows one-click launcher that starts product_app, polls /api/health, and opens the browser only after the service answers",
-      "Add regression tests so launcher and app cannot drift ports again",
-      "Run required SOP CI, merge through branch protection, then perform physical localhost acceptance"
+      "Revert PR #11's unsupported 8788 product_app changes",
+      "Preserve the already accepted r34 Simple Evaluator runtime instead of creating a replacement launcher",
+      "Verify the accepted localhost service path through Opera when the browser MCP session is available",
+      "If the service is down, use the already accepted r34 startup/recovery path rather than inventing another launcher",
+      "Then complete the pending live SOP-gateway API acceptance using the local key already placed by Brian"
     ],
-    "next_action": "run CI acceptance"
+    "next_action": "merge corrective PR and resume accepted r34 runtime verification"
   },
   "execute": {
     "complete": true,
     "evidence": [
-      "product_app canonical port changed to 8788 with validated PANCAKE_PORT override",
-      "product_app /api/health endpoint added",
-      "simple-evaluator console entry point added",
-      "scripts/Run-Simple-Evaluator.cmd added with 30-second health verification",
-      "tests/test_simple_evaluator_startup.py added",
-      "required SOP workflow extended to run startup regression tests"
+      "Restored product_app.py to pre-PR-11 state",
+      "Restored pyproject.toml to pre-PR-11 state",
+      "Restored sop-gate workflow to pre-PR-11 state",
+      "Removed invented Run-Simple-Evaluator.cmd replacement launcher",
+      "Removed the regression test built around the false 8788 assumption"
     ]
   },
   "adapt": {
     "complete": true,
     "evidence": [
-      "Stopped treating the Opera connector as the fault after direct tab access succeeded",
-      "Avoided Desktop Commander and repaired the committed startup path through GitHub"
+      "Corrected course immediately after HISTORY recovered the already accepted r34 runtime",
+      "Stopped treating 8788 as the canonical evaluator port",
+      "Returned to the proven r34 startup/recovery mechanism"
     ]
   },
   "verify": {
     "complete": false,
     "evidence": [
-      "Pending required GitHub SOP Gate run",
-      "Pending physical Windows launch and Opera localhost verification"
+      "Pending corrective PR SOP Gate",
+      "Pending live accepted-runtime localhost verification",
+      "Pending live SOP-gateway OpenAI call"
     ]
   },
   "update_map": {
-    "complete": false,
+    "complete": true,
     "evidence": [
-      "This SOP state now records the verified localhost failure and implemented startup repair"
+      "SOP state now records the r34 accepted baseline and the reversal of the unsupported 8788 assumption"
     ]
   },
   "continue": {
-    "complete": false,
+    "complete": true,
     "evidence": [
-      "After CI, merge and proceed directly to physical launch acceptance"
+      "Proceed through corrective CI/merge, then verify the accepted r34 local service and live SOP gateway"
     ]
   },
-  "next_action": "run required GitHub SOP Gate, merge if green, then physically launch and verify 127.0.0.1:8788"
+  "next_action": "merge corrective PR after green SOP Gate, then verify the accepted r34 runtime and run live SOP-gateway acceptance"
 }
