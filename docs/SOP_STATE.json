@@ -45,7 +45,7 @@
       "Have r56 automatically verify gateway status, run one real DECISION_ALLOWED request, verify persistence/action authorization, then verify missing HISTORY returns PREFLIGHT_REQUIRED with provider_called=false.",
       "Mark the mission complete only after physical Windows acceptance evidence exists."
     ],
-    "next_action": "finish PR #13 CI, then run the verified r56 updater once on the physical Windows workstation"
+    "next_action": "run the verified r56 updater once on the physical Windows workstation"
   },
   "execute": {
     "complete": true,
@@ -53,7 +53,8 @@
       "Built Update-Simple-Evaluator-r56.zip on top of the r55 payload.",
       "Packaged server exposes GET /api/sop-gate, GET /api/sop-gate/decision/<id>, POST /api/sop-gate/decision, and POST /api/sop-gate/authorize.",
       "Added key filename compatibility and corrected the strict OpenAI schema before the live call.",
-      "Added a one-shot sop_acceptance.py invoked automatically by the updater."
+      "Added a one-shot sop_acceptance.py invoked automatically by the updater.",
+      "PR #13 carries the source-side provider/test/state corrections through the protected GitHub workflow."
     ]
   },
   "adapt": {
@@ -70,7 +71,8 @@
       "Packaged HTTP server gateway routes and dynamic-port startup passed in isolation.",
       "Dirty-upgrade protected-state simulation passed.",
       "Outer single-launcher ZIP, embedded payload SHA-256, 32-file update manifest, 152-file run manifest, and bootstrap checks passed.",
-      "Physical Windows real OpenAI call and missing-HISTORY acceptance are still pending."
+      "Physical Windows real OpenAI call and missing-HISTORY acceptance are still pending.",
+      "PR #13 Operation Pancake SOP Gate run #29 passed tests, decision-gate compile, and repository SOP-state validation."
     ]
   },
   "update_map": {
@@ -84,8 +86,8 @@
   "continue": {
     "complete": true,
     "evidence": [
-      "Continue through PR #13 CI and the single physical r56 updater acceptance; do not return to feature work first."
+      "Proceed to the single physical r56 updater acceptance; do not return to feature work first."
     ]
   },
-  "next_action": "finish PR #13 CI, then run Update-Simple-Evaluator-r56.zip once on the physical Windows workstation; updater performs the live acceptance automatically"
+  "next_action": "run Update-Simple-Evaluator-r56.zip once on the physical Windows workstation; updater performs the live acceptance automatically"
 }
