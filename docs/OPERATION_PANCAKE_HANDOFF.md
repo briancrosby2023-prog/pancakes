@@ -1,6 +1,6 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 4
+State revision: 5
 Status: IN_PROGRESS
 Mission ID: OP-CONTROL-002
 
@@ -45,10 +45,9 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-user-test-before-exhaustion: Ask the user to install/click/restart/test while legitimate executable technical routes remain.
 
 ## Next action
-Finish repository regression verification, install the Project/global ChatGPT instruction layer, run fresh-session cross-surface acceptance, then resume Simple Evaluator work only after this mission is accepted.
+Install the ChatGPT instruction layer and run cross-surface acceptance before resuming Simple Evaluator work.
 
 ## Remaining executable work
-- Verify new strict gateway and adversarial regressions in the required SOP CI path.
 - Strengthen project validator so COMPLETE requires both behavioral installation and mechanical/cross-surface verification.
 - Regenerate and verify authoritative handoff.
 - Install Project instructions and global fallback Custom Instruction through ChatGPT UI.
