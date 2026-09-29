@@ -29,14 +29,13 @@ DECISION_SCHEMA = {
         "proposed_plan": {"type": "string"},
         "allowed_actions": {
             "type": "array",
-            "items": {"type": "string", "minLength": 1},
+            "items": {"type": "string"},
         },
         "blocked_actions": {
             "type": "array",
-            "items": {"type": "string", "minLength": 1},
-            "uniqueItems": True,
+            "items": {"type": "string"},
         },
-        "next_action": {"type": "string", "minLength": 1},
+        "next_action": {"type": "string"},
     },
 }
 
