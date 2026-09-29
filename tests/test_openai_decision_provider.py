@@ -78,6 +78,9 @@ def test_provider_sends_structured_responses_request_without_exposing_key(monkey
     assert captured["url"].endswith("/v1/responses")
     assert captured["body"]["model"] == "gpt-5.6-sol"
     assert captured["body"]["text"]["format"]["type"] == "json_schema"
+    schema_json = json.dumps(captured["body"]["text"]["format"]["schema"])
+    assert "uniqueItems" not in schema_json
+    assert "minLength" not in schema_json
     assert captured["body"]["reasoning"]["effort"] == "high"
     serialized = json.dumps(captured["body"])
     assert "sk-test-secret" not in serialized
@@ -98,6 +101,21 @@ def test_transport_reads_key_from_local_app_data(monkeypatch, tmp_path):
     assert status["configured"] is True
     assert status["model"] == "gpt-5.6-sol"
 
+
+
+def test_transport_reads_existing_legacy_local_key_filename(monkeypatch, tmp_path):
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    monkeypatch.delenv("PANCAKE_OPENAI_API_KEY_FILE", raising=False)
+    monkeypatch.setenv("LOCALAPPDATA", str(tmp_path))
+    key_file = tmp_path / "SimpleEvaluator" / "openai-api-key (1).txt"
+    key_file.parent.mkdir(parents=True)
+    key_file.write_text("sk-existing-local-test\n", encoding="utf-8")
+
+    assert default_key_file() == key_file
+    assert key_source() == str(key_file)
+    status = transport_status(Path("."))
+    assert status["configured"] is True
+    assert status["model"] == "gpt-5.6-sol"
 
 def test_environment_key_takes_precedence(monkeypatch, tmp_path):
     monkeypatch.setenv("OPENAI_API_KEY", "sk-env-test")
