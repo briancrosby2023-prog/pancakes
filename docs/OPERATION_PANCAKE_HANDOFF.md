@@ -1,6 +1,6 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 5
+State revision: 6
 Status: IN_PROGRESS
 Mission ID: OP-CONTROL-002
 
@@ -16,8 +16,8 @@ Do not let the newest obstacle replace the recorded mission.
 
 ## Preflight evidence
 - MAP: Current authority revision 3 declared OP-CONTROL-001 COMPLETE even though its own gateway status records direct_chatgpt_interception=false. | Current failure reproduced the original behavior problem: a Simple Evaluator patch direction was chosen before MAP/HISTORY/RESEARCH/CAPABILITIES were restored. | The existing SOP gateway and repository CI are real controls but do not mechanically intercept ordinary ChatGPT turns.
-- HISTORY: PR #11 false 8788 normalization, Opera mission drift, Desktop Commander retries, checkpoint-as-completion, and speculative user testing are already documented failure classes. | OP-CONTROL-001 created project-wide authority, locks, deterministic handoff, repository preflight and CI, but closed despite the acknowledged ordinary-chat interception gap. | During OP-SIMPLE-002, r61 was proposed before proving which Windows runtime was actually serving the application, demonstrating the unresolved cross-surface behavior gap.
-- RESEARCH: OpenAI Projects support project instructions that apply within the project and override global custom instructions. | OpenAI Custom Instructions apply across chats and provide a global behavioral fallback. | OpenAI Responses/function calling supports allowed_tools restrictions; the Agents SDK is appropriate when the application owns tool implementations, state, approvals, and runtime behavior. | No current product documentation establishes Project or Custom Instructions as a hard execution interceptor; mechanical guarantees require the controlled runtime/tool layer.
+- HISTORY: PR #11 false 8788 normalization, Opera mission drift, Desktop Commander retries, checkpoint-as-completion, and speculative user testing are already documented failure classes. | OP-CONTROL-001 created project-wide authority, locks, deterministic handoff, repository preflight and CI, but closed despite the acknowledged ordinary-chat interception gap. | During OP-SIMPLE-002, r61 was proposed before proving which Windows runtime was actually serving the application, demonstrating the unresolved cross-surface behavior gap. | Fresh ordinary ChatGPT adversarial test after initial global-instruction installation failed: the assistant supplied an r61-style code change before loading current authority/preflight.
+- RESEARCH: OpenAI Projects support project instructions that apply within the project and override global custom instructions. | OpenAI Custom Instructions apply across chats and provide a global behavioral fallback. | OpenAI Responses/function calling supports allowed_tools restrictions; the Agents SDK is appropriate when the application owns tool implementations, state, approvals, and runtime behavior. | No current product documentation establishes Project or Custom Instructions as a hard execution interceptor; mechanical guarantees require the controlled runtime/tool layer. | OpenAI documentation says Custom Instructions are applied across chats, but does not document them as a hard execution interceptor; Project instructions apply only inside the project and override global instructions there.
 - CAPABILITIES: GitHub repository read/write and protected PR workflow are available. | Files/Library retrieval and web research are available. | The current chat can create repository control code and documentation but has no account-setting action for Project instructions or Custom Instructions. | Desktop Commander remains prohibited and DigitalOcean remains prohibited. | The existing OpenAI decision transport is fail-closed when a programmatic credential is absent.
 
 ## Available capabilities
@@ -45,14 +45,14 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-user-test-before-exhaustion: Ask the user to install/click/restart/test while legitimate executable technical routes remain.
 
 ## Next action
-Install the ChatGPT instruction layer and run cross-surface acceptance before resuming Simple Evaluator work.
+Replace the global ChatGPT instruction with the fail-closed outside-Project rule, rerun the fresh ordinary-chat adversarial test, then continue cross-surface acceptance.
 
 ## Remaining executable work
-- Strengthen project validator so COMPLETE requires both behavioral installation and mechanical/cross-surface verification.
-- Regenerate and verify authoritative handoff.
-- Install Project instructions and global fallback Custom Instruction through ChatGPT UI.
-- Run the cross-surface fresh-session acceptance matrix.
-- Only after acceptance, resume OP-SIMPLE-002 from its last verified evidence boundary.
+- Install the revised fail-closed global ChatGPT Custom Instruction.
+- Rerun the fresh ordinary-chat adversarial acceptance test.
+- Run the remaining Project/Codex/Work cross-surface acceptance scenarios.
+- Record verified behavioral installation and cross-surface results in authority.
+- Only after all acceptance passes, close OP-CONTROL-002 and resume OP-SIMPLE-002.
 
 ## Completion rule
 A commit, test, CI run, PR, package, screenshot, or progress report is only a checkpoint.
