@@ -11,72 +11,47 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 9,
-  "status": "COMPLETE",
+  "state_revision": 10,
+  "status": "IN_PROGRESS",
   "active_mission": {
-    "id": "OP-CONTROL-002",
-    "objective": "Enforce the Operation Pancake SOP across ChatGPT behavior and consequential execution so MAP -> HISTORY -> RESEARCH -> CAPABILITIES precede decisions, guessing/retry loops are fail-closed, user testing is last-resort, and controlled mutation cannot bypass a validated decision.",
-    "next_action": "complete",
+    "id": "OP-SIMPLE-002",
+    "objective": "Repair Player Evaluator Update All Prices value-probe lifecycle so 429, source failure, helper silence, or restart cannot leave an indefinite RUNNING batch or falsely report completion.",
+    "next_action": "Restart the current installed Simple Evaluator once through the existing accepted dynamic-port launcher/start path without clearing the persistent market-source lock or starting another bulk refresh; then verify restart recovery and protected-state preservation.",
     "acceptance_criteria": [
       {
-        "id": "correct-false-completion",
-        "description": "OP-CONTROL-001 is retained as history but no longer represents the behavior-control objective as fully solved.",
-        "passed": true
+        "id": "restart-recovery",
+        "description": "After restart, abandoned value-probe state is terminal (RATE_LIMITED/INTERRUPTED as appropriate), never zombie RUNNING, and no temporary value-probe watch survives.",
+        "passed": false
       },
       {
-        "id": "single-authority",
-        "description": "The project-wide authority remains the sole mission/lock/control source across chats and tools.",
-        "passed": true
+        "id": "persistent-429-lock",
+        "description": "The observed persistent HTTP 429 market-source lock survives restart and prevents a new bulk refresh until an explicit clear; the acceptance run does not clear it.",
+        "passed": false
       },
       {
-        "id": "typed-evidence",
-        "description": "Consequential production decisions require typed evidence and contradictory trusted facts fail closed.",
-        "passed": true
+        "id": "protected-state-preserved",
+        "description": "Existing completed price observations, saved user Price Watches, and other protected user state survive restart.",
+        "passed": false
       },
       {
-        "id": "anti-guessing",
-        "description": "Mutation decisions require trusted implementation fact keys; UNKNOWN/INFERENCE cannot be the sole implementation basis.",
-        "passed": true
+        "id": "player-evaluator-ui",
+        "description": "Player Evaluator Top 5 remains available after restart and terminal failure state is not rendered as successful N/N completion.",
+        "passed": false
       },
       {
-        "id": "hypothesis-circuit-breaker",
-        "description": "A failed implementation theory requires materially new evidence to retry and two failures invalidate that theory.",
-        "passed": true
+        "id": "r61-rate-limit-feedback",
+        "description": "With the persistent lock active, r61 keeps Update All Prices user-actionable for explanatory feedback without starting a market request; Clear Market Source Lock remains explicit.",
+        "passed": false
       },
       {
-        "id": "user-test-gate",
-        "description": "The user cannot be requested to test while executable technical routes remain.",
-        "passed": true
+        "id": "training-watch-preserved",
+        "description": "Training Watch engineering behavior remains intact and its authorized-market-refresh path remains fail-closed; no unauthorized automated market source is added.",
+        "passed": false
       },
       {
-        "id": "mutation-broker",
-        "description": "Controlled runtimes expose consequential mutation through a decision-bound tool broker rather than direct mutation handlers.",
-        "passed": true
-      },
-      {
-        "id": "behavioral-artifacts",
-        "description": "Project instructions, global fallback instructions, and a cross-surface acceptance matrix are checked in.",
-        "passed": true
-      },
-      {
-        "id": "account-instruction-install",
-        "description": "The Operation Pancake Project instructions and global fallback Custom Instruction are installed in ChatGPT.",
-        "passed": true
-      },
-      {
-        "id": "repository-regressions",
-        "description": "The required SOP CI suite passes with the new cross-surface regressions.",
-        "passed": true
-      },
-      {
-        "id": "fresh-session-acceptance",
-        "description": "Ordinary ChatGPT outside the Project and the Operation Pancake Project bootstrap/adversarial scenarios pass; Work/Codex are conditional surfaces and, when used, must preserve the same authority bootstrap and brokered execution path. The current acceptance run explicitly excludes Work/Codex by user directive.",
-        "passed": true
-      },
-      {
-        "id": "completion-enforcement",
-        "description": "The validator refuses COMPLETE until behavioral installation, required/conditional cross-surface acceptance, mechanical enforcement, and deployment verification are recorded.",
-        "passed": true
+        "id": "browser-watch-preserved",
+        "description": "Accepted Browser Watch remains intact on helper 1.4.12; original Browser Watch production acceptance is not reopened absent a regression.",
+        "passed": false
       }
     ]
   },
@@ -84,58 +59,37 @@
     "map": {
       "complete": true,
       "evidence": [
-        "Current authority revision 3 declared OP-CONTROL-001 COMPLETE even though its own gateway status records direct_chatgpt_interception=false.",
-        "Current failure reproduced the original behavior problem: a Simple Evaluator patch direction was chosen before MAP/HISTORY/RESEARCH/CAPABILITIES were restored.",
-        "The existing SOP gateway and repository CI are real controls but do not mechanically intercept ordinary ChatGPT turns.",
-        "Revision 7's Work/Codex-dependent next action became stale after the user explicitly required a no-Work/no-Codex solution and the durable Windows control worker passed physical acceptance."
+        "OP-CONTROL-002 is COMPLETE on long-lived revision 9 / 88b5009674686ee4050bb2ab75b0a1410a185b98 and the durable worker reports revision 9 READY.",
+        "Library checkpoint Operation-Pancake-OP-SIMPLE-002-checkpoint.json records OP-SIMPLE-002 as frozen at physical acceptance: r60 rate-limit path passed and restart/state-preservation remained.",
+        "Current Windows RELEASE.json reports 3T / 1.2.0 / helper 1.4.12 with status R61_RATE_LIMIT_UI_FIX_PENDING_PHYSICAL_ACCEPTANCE."
       ]
     },
     "history": {
       "complete": true,
       "evidence": [
-        "PR #11 false 8788 normalization, Opera mission drift, Desktop Commander retries, checkpoint-as-completion, and speculative user testing are already documented failure classes.",
-        "OP-CONTROL-001 created project-wide authority, locks, deterministic handoff, repository preflight and CI, but closed despite the acknowledged ordinary-chat interception gap.",
-        "During OP-SIMPLE-002, r61 was proposed before proving which Windows runtime was actually serving the application, demonstrating the unresolved cross-surface behavior gap.",
-        "Fresh ordinary ChatGPT adversarial test after initial global-instruction installation failed: the assistant supplied an r61-style code change before loading current authority/preflight.",
-        "The durable worker was reconstructed from preserved evidence, installed through two broker-authorized mutations, and verified with live RED/GREEN/restart tests on DESKTOP-M730I21.",
-        "Independent pre-publication verification of the first local revision-8 branch found docs/OPERATION_PANCAKE_HANDOFF.md had one extra trailing newline; publication was stopped before any push or merge.",
-        "After the corrected ad9acd8 revision-8 branch passed 57/57 tests, the first publication attempt was stopped with zero remote mutation when OAuth reauthorization returned 'Your session has ended'.",
-        "A live refresh diagnostic after D8 returned HTTP 503 Service Unavailable from the ChatGPT token endpoint; the publication process remained pre-decision and no remote branch existed.",
-        "PR #35 merged the exact D9 revision-8 candidate 440f26aaf235b5b23a3979a551c2ddeba26ea923 into the long-lived product branch as a295eeb7f271dcd8e45d3ab798e5fb74fb60e81b.",
-        "Post-merge GitHub checks on a295eeb7 passed: Operation Pancake SOP Gate success and C3PO Clean Room Acceptance success.",
-        "Independent Windows verification of the merge commit passed authority validate, preflight, canonical handoff, durable-runner self-test, and 59/59 focused regressions.",
-        "The stale revision-7 durable worker was replaced through DECISION_ALLOWED runtime-upgrade-ee5d8319bc0c7997f070 using ControlledToolBroker; the replacement worker is READY on revision 8 / a295eeb7.",
-        "Post-merge issue #36 completed through DECISION_ALLOWED inspect_control_state and returned clean revision-8 authority on a295eeb7 with zero mutation.",
-        "The first broker-authorized revision-9 closure commit attempt (close-r9-6e695770d612cfeea89b) failed before commit because the handler used strip() on git status output, removing the leading status-column space from the first path and misreading docs/... as ocs/...; cleanup removed the worktree and branch and left the product checkout clean."
+        "The OP-SIMPLE-002 checkpoint objective is to prevent indefinite RUNNING or false completion on 429/source/helper/restart failures.",
+        "r60 restored the persistent 429 lock, explicit terminal states, bounded per-card timeout, startup recovery of abandoned RUNNING metadata, and protected-state persistence.",
+        "r61 is an internally verified UI-only follow-up: Update All Prices remains actionable during a persistent 429 lock so the existing client guard can explain the lock; server value-probe state machine, Browser Watch 1.4.12, Price Watch, Training Watch, and saved state are unchanged.",
+        "Original Browser Watch production acceptance is closed/accepted and must not be reopened without a new regression.",
+        "Training Watch engineering is complete; unattended current-price collection still requires an expressly authorized provider source and is not part of this restart acceptance."
       ]
     },
     "research": {
       "complete": true,
       "evidence": [
-        "OpenAI Projects support project instructions that apply within the project and override global custom instructions.",
-        "OpenAI Custom Instructions apply across chats and provide a global behavioral fallback.",
-        "OpenAI Responses/function calling supports allowed_tools restrictions; the Agents SDK is appropriate when the application owns tool implementations, state, approvals, and runtime behavior.",
-        "No current product documentation establishes Project or Custom Instructions as a hard execution interceptor; mechanical guarantees require the controlled runtime/tool layer.",
-        "OpenAI documentation says Custom Instructions are applied across chats, but does not document them as a hard execution interceptor; Project instructions apply only inside the project and override global instructions there.",
-        "The ChatGPT-plan OAuth Responses flow returned an observed HTTP 400 for unsupported max_output_tokens; removing only that parameter produced HTTP 200 and a valid structured decision response.",
-        "Windows core.autocrlf=true caused raw checked-out bytes to differ from trusted Git blob hashes; accepting only the exact LF-normalized blob hash fixed the false rejection while a real tamper still failed.",
-        "The canonical scripts/pancake_control.py handoff --check compares the checked-in handoff to render_handoff(state) exactly; adding a second trailing newline is invalid.",
-        "The stored ID token exp was observed older than current time by more than nine hours; the returning OAuth path unconditionally reused it as id_token_hint after refresh failure. Expired hints must be omitted while login_hint, client id, PKCE, and post-callback identity validation remain enforced.",
-        "Transient OAuth refresh failures (429/500/502/503/504) must remain fail-closed and must not trigger interactive reauthorization; non-transient refresh rejection may still fall back to the returning OAuth flow.",
-        "Canonical Git/LF SHA-256 for scripts/pancake_local_control.py at a295eeb7 is 412e14b0d6c3b637bff65278aceb0d1d4b92f9f3a7aaef94a9b16dcbc7f6d24d; the deployed Windows CRLF checkout normalizes to the same canonical bytes and has raw SHA-256 ee5d8319bc0c7997f070e42d32a59941fa684433944563889d9f2a4b5320d59f."
+        "Current Windows app-state reports value_probe_status=RATE_LIMITED with persistent_lock=true, not RUNNING, after the prior 429 failure.",
+        "Current app-state retains two user Price Watches and current launch.py --check reports deployment_ready=true.",
+        "Browser helper heartbeat is current, Edge-based, version 1.4.12, and version_matches=true.",
+        "No evidence supports clearing the persistent market-source lock or starting another bulk refresh as part of restart acceptance."
       ]
     },
     "capabilities": {
       "complete": true,
       "evidence": [
-        "GitHub repository read/write and protected PR workflow are available.",
-        "Files/Library retrieval and web research are available.",
-        "The current chat can create repository control code and documentation but has no account-setting action for Project instructions or Custom Instructions.",
-        "The existing OpenAI decision transport is fail-closed when a programmatic credential is absent.",
-        "Desktop Commander allowance was restored on 2026-10-01, the user explicitly authorized its use, and DESKTOP-M730I21 was connected only as bootstrap/recovery transport.",
-        "A persistent Windows GitHub-inbox worker now provides ordinary-Project execution without Work or Codex and routes consequential actions through SOPDecisionGateway and ControlledToolBroker.",
-        "DigitalOcean remains prohibited.",
-        "The long-lived revision-8 branch, GitHub CI, merged Windows worktree, durable runtime, and live GitHub-inbox execution path were all independently re-verified after merge without Work or Codex."
+        "Desktop Commander is online and explicitly authorized as Windows execution transport.",
+        "The current accepted Simple Evaluator dynamic-port launcher/check path is available; fixed localhost port assumptions remain prohibited.",
+        "The Operation Pancake revision-9 Gateway/Broker is READY for consequential authority/product execution decisions.",
+        "Work and Codex remain unnecessary and are excluded by current user directive."
       ]
     }
   },
@@ -155,7 +109,11 @@
       "PR #35 exact-head merge and long-lived commit a295eeb7",
       "GitHub SOP Gate and C3PO acceptance on merge commit",
       "Windows post-merge validate/preflight/handoff/self-test/59-test suite",
-      "brokered revision-8 runtime replacement and live post-merge inbox request"
+      "brokered revision-8 runtime replacement and live post-merge inbox request",
+      "Library OP-SIMPLE-002 frozen checkpoint",
+      "current Windows r61 RELEASE/VALUE_PROBE_RECOVERY/RATE_LIMIT feedback evidence",
+      "current app-state value-probe terminal state and protected watches",
+      "current launch.py diagnostics and Browser Helper 1.4.12 heartbeat"
     ],
     "available": [
       "GitHub repository read/write and PR workflow",
@@ -166,14 +124,16 @@
       "Desktop Commander bootstrap/recovery transport while allowance is restored",
       "persistent Windows GitHub-inbox control worker with plan OAuth decision provider",
       "read-only loopback worker health surface with no mutation HTTP endpoint",
-      "deployed revision-8 persistent Windows GitHub-inbox worker bound to long-lived merge a295eeb7"
+      "deployed revision-8 persistent Windows GitHub-inbox worker bound to long-lived merge a295eeb7",
+      "Desktop Commander for current Windows Simple Evaluator inspection/restart acceptance",
+      "existing accepted dynamic-port Simple Evaluator launcher/check path"
     ],
     "unavailable_or_excluded": [
       "Direct programmatic modification of ChatGPT Project instructions from this chat",
       "Direct programmatic modification of ChatGPT global Custom Instructions from this chat",
       "DigitalOcean for Operation Pancake",
       "Assumed universal interception of ordinary ChatGPT turns by repository code",
-      "Work and Codex are intentionally excluded from this acceptance run by current user directive; they are optional surfaces, not completion dependencies."
+      "Work and Codex are intentionally excluded by current user directive and are not required for OP-SIMPLE-002."
     ]
   },
   "accepted_locks": [
@@ -319,25 +279,15 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CONTROL-002-D10",
-    "mission_id": "OP-CONTROL-002",
-    "proposed_action": "Close OP-CONTROL-002 because the accepted control artifacts are merged, CI-green, independently verified on Windows, deployed to the durable worker, and live-inbox verified on the long-lived branch.",
+    "decision_id": "OP-SIMPLE-002-D1",
+    "mission_id": "OP-SIMPLE-002",
+    "proposed_action": "Unfreeze OP-SIMPLE-002 and continue from its preserved physical restart-recovery gate on the current installed r61+r60 stack, without reopening accepted Browser Watch or changing market-source authorization.",
     "obstacle_classification": "NONE",
     "history_refs": [
-      "Fresh ordinary-chat fail-closed acceptance already passed under revision 7.",
-      "Fresh Project adversarial bootstrap on 2026-09-29 refused the skip-SOP exact-code-change prompt after loading authority.",
-      "On 2026-10-01 the durable Windows control worker passed physical RED/GREEN/restart acceptance without Work or Codex.",
-      "Pre-publication revision-8 verification caught and isolated a one-byte handoff drift before publication.",
-      "Pre-publication publication rehearsal exposed an expired id_token_hint reauthorization defect before any remote branch, PR, or merge was created.",
-      "Current user instruction explicitly says to follow the rules and complete all steps of the publication/merge/closure outline with no Work or Codex and Desktop Commander available.",
-      "Live token refresh returned HTTP 503; the worker now suppresses interactive OAuth fallback for transient refresh failures.",
-      "PR #35 merged exact D9 head 440f26a as a295eeb7.",
-      "Both merge-commit GitHub workflows completed successfully.",
-      "Post-merge Windows verification passed validate/preflight/handoff/self-test and 59/59 focused regressions.",
-      "Brokered runtime upgrade deployed worker ee5d8319 on the merged authority.",
-      "Post-merge live inbox request postmerge-r8-inspect-20261001 completed on clean a295eeb7.",
-      "First closure attempt close-r9-6e695770d612cfeea89b failed before commit on the observed git-status leading-space parser defect.",
-      "Failure cleanup removed the closure worktree and branch and left product/c3po-clean-room-roster clean."
+      "OP-CONTROL-002 revision 9 is COMPLETE and deployed.",
+      "Library Operation-Pancake-OP-SIMPLE-002-checkpoint.json preserves the frozen r60 physical acceptance boundary.",
+      "Current Windows r61 evidence is a UI-only rate-limit feedback change pending physical acceptance.",
+      "Current app state is RATE_LIMITED with persistent lock, two saved watches, and live Browser Helper 1.4.12."
     ],
     "capabilities_checked": [
       "GitHub authority and protected workflow",
@@ -349,22 +299,20 @@
       "Authenticated git push --dry-run for the exact revision-8 branch succeeded without exposing credentials."
     ],
     "alternatives_considered": [
-      "Keep Work/Codex as hard completion dependencies \u2014 rejected because the user explicitly prohibited them and the durable broker is surface-independent.",
-      "Declare OP-CONTROL-002 COMPLETE before publishing/deployment verification \u2014 rejected by the checkpoint/completion rule.",
-      "Push or merge without current authorization \u2014 rejected by the existing user-reserved publication boundary.",
-      "Prepare and validate a local revision-8 reconciliation branch, then stop only at explicit publish/merge authorization \u2014 selected.",
-      "Remain BLOCKED waiting for publication authorization after the user supplied that authorization \u2014 rejected.",
-      "Close before merge/deployment verification \u2014 rejected by checkpoint-as-completion.",
-      "Leave OP-CONTROL-002 IN_PROGRESS after all long-lived verification is green \u2014 rejected because no executable control work remains.",
-      "Mark OP-CONTROL-002 COMPLETE with terminal next_action=complete \u2014 selected.",
-      "Retry the unchanged closure handler \u2014 rejected because the observed parser defect would recur.",
-      "Bypass the broker and write closure files directly \u2014 rejected.",
-      "Correct only the status-output trimming defect, rebuild the exact closure bundle with this history, and use a fresh Gateway/Broker decision \u2014 selected."
+      "Resume the unaccepted r61 archive as a new development direction \u2014 rejected; current Windows r61 already exists and needs physical acceptance.",
+      "Clear the persistent market-source lock and start another bulk refresh \u2014 rejected; the frozen checkpoint explicitly says not to do this for restart acceptance.",
+      "Reopen Browser Watch production acceptance \u2014 rejected without a new Browser Watch regression.",
+      "Resume OP-SIMPLE-002 at the restart/state-preservation gate using Desktop Commander and existing launcher \u2014 selected."
     ],
-    "selected_reason": "The original behavior-control objective and every acceptance criterion are verified on the long-lived branch. The durable worker is deployed on the merged revision-8 authority, post-merge CI and 59/59 Windows regressions pass, and the live post-merge inbox request completed through Gateway/Broker. The closure implementation failure was fail-closed, fully cleaned up, and is preserved in history evidence. No OP-CONTROL-002 executable work remains.",
-    "changes_mission": false,
-    "mission_change_reason": "",
-    "mission_change_evidence": [],
+    "selected_reason": "OP-CONTROL-002 is complete, the exact OP-SIMPLE-002 checkpoint and current Windows state are reconciled, and the remaining product evidence gap is a bounded restart/state-preservation acceptance that can be executed without user testing.",
+    "changes_mission": true,
+    "mission_change_reason": "OP-CONTROL-002 is COMPLETE on the long-lived branch and its durable worker is revision 9 READY; the previously frozen OP-SIMPLE-002 mission may now resume without violating the feature-before-control lock.",
+    "mission_change_evidence": [
+      "Long-lived revision 9 records OP-CONTROL-002 COMPLETE with no remaining executable control work.",
+      "Durable worker health reports revision 9 / 88b5009674686ee4050bb2ab75b0a1410a185b98 READY.",
+      "Library Operation-Pancake-OP-SIMPLE-002-checkpoint.json preserves the frozen OP-SIMPLE-002 restart/state-preservation gate.",
+      "Current Windows r61/r60 evidence reconciles the installed stack and remaining physical acceptance scope."
+    ],
     "reopens_lock_ids": [
       "reject-desktop-commander-retry"
     ],
@@ -628,13 +576,35 @@
       ],
       "result": "OP-CONTROL-002 is complete on the long-lived branch with the durable ordinary-Project control path deployed and verified.",
       "next": "complete"
+    },
+    {
+      "decision_id": "OP-SIMPLE-002-D1",
+      "decision": "Unfreeze OP-SIMPLE-002 only after OP-CONTROL-002 completion and resume at the preserved current Windows restart/state-preservation acceptance boundary.",
+      "evidence": [
+        "Long-lived revision 9 marks OP-CONTROL-002 COMPLETE with no remaining executable control work.",
+        "OP-SIMPLE-002 checkpoint records r60 rate-limit physical path passed and restart/state preservation pending.",
+        "Current installed release is r61 pending physical acceptance; r61 changes only rate-limit button feedback and preserves the r60 server state machine.",
+        "Current Windows value-probe state is RATE_LIMITED/persistent_lock=true, two user watches remain, Browser Helper 1.4.12 is alive, and deployment diagnostics pass."
+      ],
+      "history": [
+        "Feature work was frozen until OP-CONTROL-002 completion; that prerequisite is now satisfied.",
+        "Original Browser Watch production acceptance remains closed.",
+        "Training Watch provider authorization remains a separate external gate and is not widened into this restart acceptance."
+      ],
+      "alternatives": [
+        "Restart feature development from r61 artifact history \u2014 rejected.",
+        "Start a fresh bulk price run \u2014 rejected.",
+        "Execute the preserved restart acceptance on the installed stack \u2014 selected."
+      ],
+      "result": "OP-SIMPLE-002 is active with a bounded physical restart/state-preservation acceptance as the next action.",
+      "next": "Restart current installed Simple Evaluator through the accepted launcher, preserve the 429 lock, and verify recovery/state preservation."
     }
   ],
   "blocker": null,
   "handoff": {
-    "mission_id": "OP-CONTROL-002",
-    "state_revision": 9,
-    "next_action": "complete",
+    "mission_id": "OP-SIMPLE-002",
+    "state_revision": 10,
+    "next_action": "Restart the current installed Simple Evaluator once through the existing accepted dynamic-port launcher/start path without clearing the persistent market-source lock or starting another bulk refresh; then verify restart recovery and protected-state preservation.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -654,9 +624,15 @@
     ]
   },
   "completion": {
-    "user_facing_objective_verified": true,
-    "all_acceptance_criteria_passed": true,
-    "remaining_executable_work": []
+    "user_facing_objective_verified": false,
+    "all_acceptance_criteria_passed": false,
+    "remaining_executable_work": [
+      "Capture the current protected-state baseline without clearing the market-source lock.",
+      "Restart Simple Evaluator through the existing accepted dynamic-port launcher/start path.",
+      "Verify no zombie value-probe RUNNING/temp watch returns and persistent RATE_LIMITED lock survives.",
+      "Verify saved prices, user Price Watches, Player Evaluator Top 5, r61 lock feedback, Training Watch, and Browser Watch remain intact.",
+      "Record physical acceptance and close OP-SIMPLE-002 only if every bounded criterion passes."
+    ]
   },
   "enforcement": {
     "behavioral_standard": {
