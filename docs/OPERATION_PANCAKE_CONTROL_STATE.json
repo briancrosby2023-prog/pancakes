@@ -11,47 +11,47 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 10,
-  "status": "IN_PROGRESS",
+  "state_revision": 11,
+  "status": "COMPLETE",
   "active_mission": {
     "id": "OP-SIMPLE-002",
     "objective": "Repair Player Evaluator Update All Prices value-probe lifecycle so 429, source failure, helper silence, or restart cannot leave an indefinite RUNNING batch or falsely report completion.",
-    "next_action": "Restart the current installed Simple Evaluator once through the existing accepted dynamic-port launcher/start path without clearing the persistent market-source lock or starting another bulk refresh; then verify restart recovery and protected-state preservation.",
+    "next_action": "complete",
     "acceptance_criteria": [
       {
         "id": "restart-recovery",
         "description": "After restart, abandoned value-probe state is terminal (RATE_LIMITED/INTERRUPTED as appropriate), never zombie RUNNING, and no temporary value-probe watch survives.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "persistent-429-lock",
         "description": "The observed persistent HTTP 429 market-source lock survives restart and prevents a new bulk refresh until an explicit clear; the acceptance run does not clear it.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "protected-state-preserved",
         "description": "Existing completed price observations, saved user Price Watches, and other protected user state survive restart.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "player-evaluator-ui",
         "description": "Player Evaluator Top 5 remains available after restart and terminal failure state is not rendered as successful N/N completion.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "r61-rate-limit-feedback",
         "description": "With the persistent lock active, r61 keeps Update All Prices user-actionable for explanatory feedback without starting a market request; Clear Market Source Lock remains explicit.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "training-watch-preserved",
         "description": "Training Watch engineering behavior remains intact and its authorized-market-refresh path remains fail-closed; no unauthorized automated market source is added.",
-        "passed": false
+        "passed": true
       },
       {
         "id": "browser-watch-preserved",
         "description": "Accepted Browser Watch remains intact on helper 1.4.12; original Browser Watch production acceptance is not reopened absent a regression.",
-        "passed": false
+        "passed": true
       }
     ]
   },
@@ -71,7 +71,16 @@
         "r60 restored the persistent 429 lock, explicit terminal states, bounded per-card timeout, startup recovery of abandoned RUNNING metadata, and protected-state persistence.",
         "r61 is an internally verified UI-only follow-up: Update All Prices remains actionable during a persistent 429 lock so the existing client guard can explain the lock; server value-probe state machine, Browser Watch 1.4.12, Price Watch, Training Watch, and saved state are unchanged.",
         "Original Browser Watch production acceptance is closed/accepted and must not be reopened without a new regression.",
-        "Training Watch engineering is complete; unattended current-price collection still requires an expressly authorized provider source and is not part of this restart acceptance."
+        "Training Watch engineering is complete; unattended current-price collection still requires an expressly authorized provider source and is not part of this restart acceptance.",
+        "Revision 10 OP-SIMPLE-002 transition PR #38 merged exact head 60bd9530b18cfee9dfeb78d303f6f7df9a06154a as 44c19cfbf16f8f91afff462ade3b8c1f9d473989; both post-merge GitHub workflows succeeded.",
+        "The durable Operation Pancake worker was broker-rebound to revision 10 / OP-SIMPLE-002 under decision runtime-rebind-r10-44c19cfbf16f8f91 and reported READY.",
+        "Protected Simple Evaluator baseline captured before restart: dynamic port 8766 / PID 47484, persistent RATE_LIMITED 10/31 lock, zero temporary value-probe watches, two user Price Watches, 130 state observations, 100 feed observations, exact semantic hashes, Browser Helper 1.4.12.",
+        "Brokered restart decision simple-restart-r10-3273ef7f6aad39d0cc2b passed: PID 47484 -> 30984 on accepted port 8766; RATE_LIMITED/persistent lock, zero temporary probe watches, user watches, observations, feed, alerts, Training runtime, and Browser Helper 1.4.12 were unchanged.",
+        "Live r61 UI and implementation verification confirmed Player Evaluator position selector and Top 5 contract remain reachable; terminal RATE_LIMITED/failure branches return before COMPLETED rendering; Update All Prices stays executable for explanatory lock feedback but returns before constructing value-probe-start; Clear Market Source Lock remains explicit.",
+        "Training Watch physical fail-closed probe returned HTTP 409 MARKET_SOURCE_UNAVAILABLE with authorization_required=true because no authorized-market-source.json exists; app-state, market-feed, alerts, and watch-runtime hashes were unchanged.",
+        "Browser Helper live status after restart reported alive=true, reported_version=1.4.12, version_matches=true; prior Browser Watch production acceptance was not reopened.",
+        "Brokered product acceptance metadata decision record-simple-acceptance-92033b259310cb2254a6 promoted RELEASE.json to PRODUCTION_ACCEPTED and r60/r61/helper evidence to PHYSICALLY_ACCEPTED, creating R60_R61_PHYSICAL_ACCEPTANCE_20261001.json.",
+        "Brokered acceptance activation decision activate-simple-acceptance-3285cec5545554c5f996 restarted PID 30984 -> 45596 on port 8766, loaded PRODUCTION_ACCEPTED into health/diagnostics, regenerated PRODUCTION_RELEASE_REPORT_3T.json with PASS / PRODUCTION_ACCEPTED, and preserved every protected hash and the persistent RATE_LIMITED lock."
       ]
     },
     "research": {
@@ -80,7 +89,11 @@
         "Current Windows app-state reports value_probe_status=RATE_LIMITED with persistent_lock=true, not RUNNING, after the prior 429 failure.",
         "Current app-state retains two user Price Watches and current launch.py --check reports deployment_ready=true.",
         "Browser helper heartbeat is current, Edge-based, version 1.4.12, and version_matches=true.",
-        "No evidence supports clearing the persistent market-source lock or starting another bulk refresh as part of restart acceptance."
+        "No evidence supports clearing the persistent market-source lock or starting another bulk refresh as part of restart acceptance.",
+        "Installed server.py startup calls value_probe_status(); terminal RATE_LIMITED is preserved, orphaned RUNNING without a temporary purpose=value_probe watch becomes INTERRUPTED, and terminalization removes temporary probe watches.",
+        "Installed r61 applyValueProbeRateLimitUi keeps Update All Prices disabled=false under a persistent lock, displays explanatory lock feedback, exposes Clear Market Source Lock explicitly, and refreshValuePrices returns before creating a value-probe-start URL.",
+        "Installed Training Watch authorized-market-refresh is fail-closed: absent authorized provider configuration returns MARKET_SOURCE_UNAVAILABLE/authorization_required and never falls back to automated CFB.FAN collection.",
+        "The project release contract requires physical workstation acceptance before promotion; the installed release is now PRODUCTION_ACCEPTED and the standard production report independently returns PASS / PRODUCTION_ACCEPTED."
       ]
     },
     "capabilities": {
@@ -89,7 +102,8 @@
         "Desktop Commander is online and explicitly authorized as Windows execution transport.",
         "The current accepted Simple Evaluator dynamic-port launcher/check path is available; fixed localhost port assumptions remain prohibited.",
         "The Operation Pancake revision-9 Gateway/Broker is READY for consequential authority/product execution decisions.",
-        "Work and Codex remain unnecessary and are excluded by current user directive."
+        "Work and Codex remain unnecessary and are excluded by current user directive.",
+        "Desktop Commander, Opera read-only browser inspection, the revision-10 durable Gateway/Broker worker, accepted dynamic launcher, local diagnostics/status endpoints, and release_check.py were all used to complete physical acceptance without Work, Codex, a user test loop, a market-lock clear, or another bulk refresh."
       ]
     }
   },
@@ -113,7 +127,14 @@
       "Library OP-SIMPLE-002 frozen checkpoint",
       "current Windows r61 RELEASE/VALUE_PROBE_RECOVERY/RATE_LIMIT feedback evidence",
       "current app-state value-probe terminal state and protected watches",
-      "current launch.py diagnostics and Browser Helper 1.4.12 heartbeat"
+      "current launch.py diagnostics and Browser Helper 1.4.12 heartbeat",
+      "revision-10 OP-SIMPLE-002 long-lived authority and green CI",
+      "brokered dynamic-port Simple Evaluator restart/state-preservation acceptance",
+      "live Player Evaluator/r61 lock-feedback implementation and UI evidence",
+      "Training Watch HTTP 409 fail-closed physical probe with unchanged protected state",
+      "Browser Helper 1.4.12 live heartbeat after restart",
+      "brokered r60/r61 physical-acceptance metadata promotion",
+      "PRODUCTION_ACCEPTED health/diagnostics and PASS production release report"
     ],
     "available": [
       "GitHub repository read/write and PR workflow",
@@ -126,7 +147,8 @@
       "read-only loopback worker health surface with no mutation HTTP endpoint",
       "deployed revision-8 persistent Windows GitHub-inbox worker bound to long-lived merge a295eeb7",
       "Desktop Commander for current Windows Simple Evaluator inspection/restart acceptance",
-      "existing accepted dynamic-port Simple Evaluator launcher/check path"
+      "existing accepted dynamic-port Simple Evaluator launcher/check path",
+      "physically accepted Simple Evaluator 3T / 1.2.0 r61 installation with persistent 429 safety lock and Browser Helper 1.4.12"
     ],
     "unavailable_or_excluded": [
       "Direct programmatic modification of ChatGPT Project instructions from this chat",
@@ -279,15 +301,20 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-SIMPLE-002-D1",
+    "decision_id": "OP-SIMPLE-002-D2",
     "mission_id": "OP-SIMPLE-002",
-    "proposed_action": "Unfreeze OP-SIMPLE-002 and continue from its preserved physical restart-recovery gate on the current installed r61+r60 stack, without reopening accepted Browser Watch or changing market-source authorization.",
+    "proposed_action": "Close OP-SIMPLE-002 after the bounded Windows restart, protected-state verification, Player Evaluator/r61 UI verification, Training Watch fail-closed probe, Browser Watch preservation check, and product acceptance promotion all passed.",
     "obstacle_classification": "NONE",
     "history_refs": [
       "OP-CONTROL-002 revision 9 is COMPLETE and deployed.",
       "Library Operation-Pancake-OP-SIMPLE-002-checkpoint.json preserves the frozen r60 physical acceptance boundary.",
       "Current Windows r61 evidence is a UI-only rate-limit feedback change pending physical acceptance.",
-      "Current app state is RATE_LIMITED with persistent lock, two saved watches, and live Browser Helper 1.4.12."
+      "Current app state is RATE_LIMITED with persistent lock, two saved watches, and live Browser Helper 1.4.12.",
+      "Revision 10 merged and both post-merge workflows passed.",
+      "Brokered physical restart/state-preservation acceptance passed on dynamic port 8766.",
+      "Training Watch authorization-required 409 probe left protected files unchanged.",
+      "Browser Helper 1.4.12 remained live and matching.",
+      "Product acceptance metadata and standard production report are now PRODUCTION_ACCEPTED/PASS."
     ],
     "capabilities_checked": [
       "GitHub authority and protected workflow",
@@ -302,10 +329,14 @@
       "Resume the unaccepted r61 archive as a new development direction \u2014 rejected; current Windows r61 already exists and needs physical acceptance.",
       "Clear the persistent market-source lock and start another bulk refresh \u2014 rejected; the frozen checkpoint explicitly says not to do this for restart acceptance.",
       "Reopen Browser Watch production acceptance \u2014 rejected without a new Browser Watch regression.",
-      "Resume OP-SIMPLE-002 at the restart/state-preservation gate using Desktop Commander and existing launcher \u2014 selected."
+      "Resume OP-SIMPLE-002 at the restart/state-preservation gate using Desktop Commander and existing launcher \u2014 selected.",
+      "Close from static tests alone \u2014 rejected by the physical-acceptance requirement.",
+      "Clear the persistent 429 lock and run another bulk refresh \u2014 rejected by the accepted lock and unnecessary for the bounded restart gate.",
+      "Ask the user to click/test the UI \u2014 rejected because executable inspection routes remained.",
+      "Close only after restart, protected-state, UI/lock-feedback, Training Watch, Browser Watch, and product acceptance promotion all passed \u2014 selected."
     ],
-    "selected_reason": "OP-CONTROL-002 is complete, the exact OP-SIMPLE-002 checkpoint and current Windows state are reconciled, and the remaining product evidence gap is a bounded restart/state-preservation acceptance that can be executed without user testing.",
-    "changes_mission": true,
+    "selected_reason": "Every acceptance criterion is physically evidenced on the installed Windows release. The persistent 429 lock was never cleared, no new bulk refresh was started, protected user/market state remained exact, r61 feedback and terminal rendering are correct, Training Watch remains fail-closed, Browser Helper 1.4.12 remains live, and the installed release/report are PRODUCTION_ACCEPTED/PASS. No OP-SIMPLE-002 executable work remains.",
+    "changes_mission": false,
     "mission_change_reason": "OP-CONTROL-002 is COMPLETE on the long-lived branch and its durable worker is revision 9 READY; the previously frozen OP-SIMPLE-002 mission may now resume without violating the feature-before-control lock.",
     "mission_change_evidence": [
       "Long-lived revision 9 records OP-CONTROL-002 COMPLETE with no remaining executable control work.",
@@ -598,13 +629,38 @@
       ],
       "result": "OP-SIMPLE-002 is active with a bounded physical restart/state-preservation acceptance as the next action.",
       "next": "Restart current installed Simple Evaluator through the accepted launcher, preserve the 429 lock, and verify recovery/state preservation."
+    },
+    {
+      "decision_id": "OP-SIMPLE-002-D2",
+      "decision": "Close the Simple Evaluator r60/r61 physical-acceptance mission only after every bounded criterion passes on the installed Windows release.",
+      "evidence": [
+        "simple-restart-r10-3273ef7f6aad39d0cc2b: brokered restart/state preservation PASS.",
+        "Live /value-probe-status.json remained RATE_LIMITED, active=false, persistent_lock=true, 10/31; zero temporary value-probe watches survived.",
+        "Player Evaluator and r61 installed UI/branching preserve Top 5 access and never render RATE_LIMITED/terminal failure as successful completion.",
+        "Training Watch live authorized-market-refresh returned 409 MARKET_SOURCE_UNAVAILABLE, authorization_required=true, with protected files unchanged.",
+        "Browser Helper live heartbeat remained 1.4.12/version_matches=true.",
+        "record-simple-acceptance-92033b259310cb2254a6 and activate-simple-acceptance-3285cec5545554c5f996 promoted and activated physical acceptance; release_check PASS / PRODUCTION_ACCEPTED."
+      ],
+      "history": [
+        "Browser Watch and dynamic-port architecture were previously accepted and were not reopened absent regression.",
+        "The persistent CFB.FAN 429 lock is accepted safety state and was deliberately not cleared.",
+        "Work and Codex were not used for this acceptance run."
+      ],
+      "alternatives": [
+        "Run another bulk refresh \u2014 rejected.",
+        "Require user testing \u2014 rejected.",
+        "Keep OP-SIMPLE-002 open after every bounded acceptance criterion passed \u2014 rejected.",
+        "Close with terminal next_action=complete \u2014 selected."
+      ],
+      "result": "OP-SIMPLE-002 physical acceptance is complete on the installed production release.",
+      "next": "complete"
     }
   ],
   "blocker": null,
   "handoff": {
     "mission_id": "OP-SIMPLE-002",
-    "state_revision": 10,
-    "next_action": "Restart the current installed Simple Evaluator once through the existing accepted dynamic-port launcher/start path without clearing the persistent market-source lock or starting another bulk refresh; then verify restart recovery and protected-state preservation.",
+    "state_revision": 11,
+    "next_action": "complete",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -624,15 +680,9 @@
     ]
   },
   "completion": {
-    "user_facing_objective_verified": false,
-    "all_acceptance_criteria_passed": false,
-    "remaining_executable_work": [
-      "Capture the current protected-state baseline without clearing the market-source lock.",
-      "Restart Simple Evaluator through the existing accepted dynamic-port launcher/start path.",
-      "Verify no zombie value-probe RUNNING/temp watch returns and persistent RATE_LIMITED lock survives.",
-      "Verify saved prices, user Price Watches, Player Evaluator Top 5, r61 lock feedback, Training Watch, and Browser Watch remain intact.",
-      "Record physical acceptance and close OP-SIMPLE-002 only if every bounded criterion passes."
-    ]
+    "user_facing_objective_verified": true,
+    "all_acceptance_criteria_passed": true,
+    "remaining_executable_work": []
   },
   "enforcement": {
     "behavioral_standard": {
