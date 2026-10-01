@@ -11,47 +11,52 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 11,
-  "status": "COMPLETE",
+  "state_revision": 12,
+  "status": "BLOCKED",
   "active_mission": {
-    "id": "OP-SIMPLE-002",
-    "objective": "Repair Player Evaluator Update All Prices value-probe lifecycle so 429, source failure, helper silence, or restart cannot leave an indefinite RUNNING batch or falsely report completion.",
-    "next_action": "complete",
+    "id": "OP-CATALOG-001",
+    "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
+    "next_action": "Obtain explicit user approval to send the preserved Stormstrike/CFB.FAN data-access request to business@stormstrike.gg; do not send before approval.",
     "acceptance_criteria": [
       {
-        "id": "restart-recovery",
-        "description": "After restart, abandoned value-probe state is terminal (RATE_LIMITED/INTERRUPTED as appropriate), never zombie RUNNING, and no temporary value-probe watch survives.",
-        "passed": true
+        "id": "authorized-current-source",
+        "description": "A provider-authorized current structured catalog/export/feed or expressly permitted collection method establishes stable exact-card IDs, provenance, coverage, and actual ratings; completeness is labeled honestly.",
+        "passed": false
       },
       {
-        "id": "persistent-429-lock",
-        "description": "The observed persistent HTTP 429 market-source lock survives restart and prevents a new bulk refresh until an explicit clear; the acceptance run does not clear it.",
-        "passed": true
+        "id": "version-aware-import",
+        "description": "New exact-card IDs are added and same IDs reconciled only with evidence; older player versions, provenance, prices, watches, and protected state remain intact.",
+        "passed": false
       },
       {
-        "id": "protected-state-preserved",
-        "description": "Existing completed price observations, saved user Price Watches, and other protected user state survive restart.",
-        "passed": true
+        "id": "required-fs-examples",
+        "description": "Jordan Allen 91 FS, Ashlynd Barker 91 FS, Kingston Lopa 90 FS, Earl Little Jr. 90 FS, and Xavier Filsaime 90 FS are present with exact identity and required scoring attributes, or each has a concrete source-supported exclusion reason.",
+        "passed": false
       },
       {
-        "id": "player-evaluator-ui",
-        "description": "Player Evaluator Top 5 remains available after restart and terminal failure state is not rendered as successful N/N completion.",
-        "passed": true
+        "id": "rankings-revalidated",
+        "description": "All 19 supported position groups are recalculated deterministically using unchanged accepted scoring models, with missing-attribute, reward, Platinum Rare, and other exclusions reported.",
+        "passed": false
       },
       {
-        "id": "r61-rate-limit-feedback",
-        "description": "With the persistent lock active, r61 keeps Update All Prices user-actionable for explanatory feedback without starting a market request; Clear Market Source Lock remains explicit.",
-        "passed": true
+        "id": "value-pools-rebuilt",
+        "description": "Best Value candidate pools are rebuilt from the refreshed catalog without copying prices between card versions; new cards begin CURRENT PRICE UNKNOWN until observed.",
+        "passed": false
       },
       {
-        "id": "training-watch-preserved",
-        "description": "Training Watch engineering behavior remains intact and its authorized-market-refresh path remains fail-closed; no unauthorized automated market source is added.",
-        "passed": true
+        "id": "price-identity-persistence",
+        "description": "Old and new versions coexist through restart/update, prices stay attached to exact card IDs, and saved watches/protected state survive.",
+        "passed": false
       },
       {
-        "id": "browser-watch-preserved",
-        "description": "Accepted Browser Watch remains intact on helper 1.4.12; original Browser Watch production acceptance is not reopened absent a regression.",
-        "passed": true
+        "id": "new-card-chrome-pricing",
+        "description": "Eligible newly imported exact cards resolve through the already accepted Chrome/browser-helper pricing path without reopening accepted Browser Watch behavior.",
+        "passed": false
+      },
+      {
+        "id": "catalog-completeness-honest",
+        "description": "Before/after counts, additions, updates, rejections, source dates, coverage limitations, and any remaining incompleteness are recorded; a partial delta is never labeled current-complete.",
+        "passed": false
       }
     ]
   },
@@ -59,51 +64,40 @@
     "map": {
       "complete": true,
       "evidence": [
-        "OP-CONTROL-002 is COMPLETE on long-lived revision 9 / 88b5009674686ee4050bb2ab75b0a1410a185b98 and the durable worker reports revision 9 READY.",
-        "Library checkpoint Operation-Pancake-OP-SIMPLE-002-checkpoint.json records OP-SIMPLE-002 as frozen at physical acceptance: r60 rate-limit path passed and restart/state-preservation remained.",
-        "Current Windows RELEASE.json reports 3T / 1.2.0 / helper 1.4.12 with status R61_RATE_LIMIT_UI_FIX_PENDING_PHYSICAL_ACCEPTANCE."
+        "Long-lived revision 11 / eacf147918554a29bca94f76277670779559fec9 is COMPLETE for OP-SIMPLE-002 with all seven criteria passed.",
+        "The durable Windows control worker was broker-rebound on 2026-10-01 and now reports revision 11, exact head eacf147918554a29bca94f76277670779559fec9, OP-SIMPLE-002, READY, with worker SHA-256 ee5d8319bc0c7997f070e42d32a59941fa684433944563889d9f2a4b5320d59f unchanged.",
+        "Installed Simple Evaluator remains 3T / 1.2.0 PRODUCTION_ACCEPTED with Browser Helper 1.4.12 and the protected persistent RATE_LIMITED 10/31 market lock."
       ]
     },
     "history": {
       "complete": true,
       "evidence": [
-        "The OP-SIMPLE-002 checkpoint objective is to prevent indefinite RUNNING or false completion on 429/source/helper/restart failures.",
-        "r60 restored the persistent 429 lock, explicit terminal states, bounded per-card timeout, startup recovery of abandoned RUNNING metadata, and protected-state persistence.",
-        "r61 is an internally verified UI-only follow-up: Update All Prices remains actionable during a persistent 429 lock so the existing client guard can explain the lock; server value-probe state machine, Browser Watch 1.4.12, Price Watch, Training Watch, and saved state are unchanged.",
-        "Original Browser Watch production acceptance is closed/accepted and must not be reopened without a new regression.",
-        "Training Watch engineering is complete; unattended current-price collection still requires an expressly authorized provider source and is not part of this restart acceptance.",
-        "Revision 10 OP-SIMPLE-002 transition PR #38 merged exact head 60bd9530b18cfee9dfeb78d303f6f7df9a06154a as 44c19cfbf16f8f91afff462ade3b8c1f9d473989; both post-merge GitHub workflows succeeded.",
-        "The durable Operation Pancake worker was broker-rebound to revision 10 / OP-SIMPLE-002 under decision runtime-rebind-r10-44c19cfbf16f8f91 and reported READY.",
-        "Protected Simple Evaluator baseline captured before restart: dynamic port 8766 / PID 47484, persistent RATE_LIMITED 10/31 lock, zero temporary value-probe watches, two user Price Watches, 130 state observations, 100 feed observations, exact semantic hashes, Browser Helper 1.4.12.",
-        "Brokered restart decision simple-restart-r10-3273ef7f6aad39d0cc2b passed: PID 47484 -> 30984 on accepted port 8766; RATE_LIMITED/persistent lock, zero temporary probe watches, user watches, observations, feed, alerts, Training runtime, and Browser Helper 1.4.12 were unchanged.",
-        "Live r61 UI and implementation verification confirmed Player Evaluator position selector and Top 5 contract remain reachable; terminal RATE_LIMITED/failure branches return before COMPLETED rendering; Update All Prices stays executable for explanatory lock feedback but returns before constructing value-probe-start; Clear Market Source Lock remains explicit.",
-        "Training Watch physical fail-closed probe returned HTTP 409 MARKET_SOURCE_UNAVAILABLE with authorization_required=true because no authorized-market-source.json exists; app-state, market-feed, alerts, and watch-runtime hashes were unchanged.",
-        "Browser Helper live status after restart reported alive=true, reported_version=1.4.12, version_matches=true; prior Browser Watch production acceptance was not reopened.",
-        "Brokered product acceptance metadata decision record-simple-acceptance-92033b259310cb2254a6 promoted RELEASE.json to PRODUCTION_ACCEPTED and r60/r61/helper evidence to PHYSICALLY_ACCEPTED, creating R60_R61_PHYSICAL_ACCEPTANCE_20261001.json.",
-        "Brokered acceptance activation decision activate-simple-acceptance-3285cec5545554c5f996 restarted PID 30984 -> 45596 on port 8766, loaded PRODUCTION_ACCEPTED into health/diagnostics, regenerated PRODUCTION_RELEASE_REPORT_3T.json with PASS / PRODUCTION_ACCEPTED, and preserved every protected hash and the persistent RATE_LIMITED lock."
+        "The preserved catalog milestone requires CURRENT CATALOG ACQUISITION -> EXACT-CARD IMPORT -> RANKING ACCEPTANCE before Training Watch completion.",
+        "Installed baseline is 9,206 exact cards and is explicitly NOT current-complete.",
+        "The saved discovery artifact contains 9,233 records, only +27 versus installed, and its records are 2026-08-19 PARTIAL_LISTING_VECTOR evidence; it is not a current-complete scoring catalog.",
+        "September 28 checkpoint research already exhausted alternative catalog sources, preserved an unsent provider request, and required explicit approval before any external message, purchase, or account creation.",
+        "Accepted Chrome pricing, Browser Watch, dynamic-port behavior, OP-SIMPLE-002 physical acceptance, and scoring models must not be reopened without materially new evidence."
       ]
     },
     "research": {
       "complete": true,
       "evidence": [
-        "Current Windows app-state reports value_probe_status=RATE_LIMITED with persistent_lock=true, not RUNNING, after the prior 429 failure.",
-        "Current app-state retains two user Price Watches and current launch.py --check reports deployment_ready=true.",
-        "Browser helper heartbeat is current, Edge-based, version 1.4.12, and version_matches=true.",
-        "No evidence supports clearing the persistent market-source lock or starting another bulk refresh as part of restart acceptance.",
-        "Installed server.py startup calls value_probe_status(); terminal RATE_LIMITED is preserved, orphaned RUNNING without a temporary purpose=value_probe watch becomes INTERRUPTED, and terminalization removes temporary probe watches.",
-        "Installed r61 applyValueProbeRateLimitUi keeps Update All Prices disabled=false under a persistent lock, displays explanatory lock feedback, exposes Clear Market Source Lock explicitly, and refreshValuePrices returns before creating a value-probe-start URL.",
-        "Installed Training Watch authorized-market-refresh is fail-closed: absent authorized provider configuration returns MARKET_SOURCE_UNAVAILABLE/authorization_required and never falls back to automated CFB.FAN collection.",
-        "The project release contract requires physical workstation acceptance before promotion; the installed release is now PRODUCTION_ACCEPTED and the standard production report independently returns PASS / PRODUCTION_ACCEPTED."
+        "Current October 1 CFB.FAN public pages contain later exact-card versions, including Ashlynd Barker 91 FS and Kingston Lopa 90 FS, proving the installed/saved snapshot is stale.",
+        "The local 9,233 discovery does not contain the required Jordan Allen 91, Ashlynd Barker 91, Kingston Lopa 90, Earl Little Jr. 90, or Xavier Filsaime 90 acceptance versions.",
+        "Stormstrike Terms last updated 2026-05-13 prohibit automated means such as bots, scrapers, or crawlers except where expressly permitted, and prohibit automated scraping/copying in Acceptable Use.",
+        "CFB27 Nation Terms last updated 2026-06-25 prohibit scraping or republishing content without permission; its public GitHub repository is documentation-only under CC BY 4.0 and contains no card dataset.",
+        "EA Season 3 pages provide only a bounded official player-item subset, not a current-complete exact-card catalog with all required scoring attributes.",
+        "No authorized current-complete structured catalog feed/export or provider permission was found after current web, Library, repository, and installed-state research."
       ]
     },
     "capabilities": {
       "complete": true,
       "evidence": [
-        "Desktop Commander is online and explicitly authorized as Windows execution transport.",
-        "The current accepted Simple Evaluator dynamic-port launcher/check path is available; fixed localhost port assumptions remain prohibited.",
-        "The Operation Pancake revision-9 Gateway/Broker is READY for consequential authority/product execution decisions.",
-        "Work and Codex remain unnecessary and are excluded by current user directive.",
-        "Desktop Commander, Opera read-only browser inspection, the revision-10 durable Gateway/Broker worker, accepted dynamic launcher, local diagnostics/status endpoints, and release_check.py were all used to complete physical acceptance without Work, Codex, a user test loop, a market-lock clear, or another bulk refresh."
+        "Desktop Commander is online as bootstrap/recovery transport; the durable Gateway/Broker is synchronized at revision 11 and READY.",
+        "The installed evaluator already has version-aware catalog import/persistence infrastructure and accepted exact-card Chrome pricing behavior.",
+        "Web/GitHub/Library research can verify sources but cannot create provider permission.",
+        "No authorized provider feed/configuration or current-complete local export is available.",
+        "External provider outreach is technically possible after approval, but history explicitly prohibits sending it before user approval."
       ]
     }
   },
@@ -134,7 +128,10 @@
       "Training Watch HTTP 409 fail-closed physical probe with unchanged protected state",
       "Browser Helper 1.4.12 live heartbeat after restart",
       "brokered r60/r61 physical-acceptance metadata promotion",
-      "PRODUCTION_ACCEPTED health/diagnostics and PASS production release report"
+      "PRODUCTION_ACCEPTED health/diagnostics and PASS production release report",
+      "revision-11 durable worker reconciliation to eacf1479 with unchanged worker bytes",
+      "October 1 current catalog-source research across installed state, Library, Stormstrike terms, CFB27 Nation terms/repository, EA public Season 3 pages, and current CFB.FAN evidence",
+      "9,233 saved discovery delta rechecked against installed 9,206 and required current FS examples"
     ],
     "available": [
       "GitHub repository read/write and PR workflow",
@@ -148,14 +145,19 @@
       "deployed revision-8 persistent Windows GitHub-inbox worker bound to long-lived merge a295eeb7",
       "Desktop Commander for current Windows Simple Evaluator inspection/restart acceptance",
       "existing accepted dynamic-port Simple Evaluator launcher/check path",
-      "physically accepted Simple Evaluator 3T / 1.2.0 r61 installation with persistent 429 safety lock and Browser Helper 1.4.12"
+      "physically accepted Simple Evaluator 3T / 1.2.0 r61 installation with persistent 429 safety lock and Browser Helper 1.4.12",
+      "version-aware installed catalog importer/persistence path",
+      "accepted Chrome/browser-helper exact-card price observation path after catalog import"
     ],
     "unavailable_or_excluded": [
       "Direct programmatic modification of ChatGPT Project instructions from this chat",
       "Direct programmatic modification of ChatGPT global Custom Instructions from this chat",
       "DigitalOcean for Operation Pancake",
       "Assumed universal interception of ordinary ChatGPT turns by repository code",
-      "Work and Codex are intentionally excluded by current user directive and are not required for OP-SIMPLE-002."
+      "Work and Codex are intentionally excluded by current user directive and are not required for OP-SIMPLE-002.",
+      "Provider-authorized current-complete CFB27 exact-card catalog/export/feed",
+      "Permission to automate Stormstrike/CFB.FAN collection",
+      "Current-complete local structured export with stable exact-card IDs and required scoring attributes"
     ]
   },
   "accepted_locks": [
@@ -189,6 +191,14 @@
       "evidence": [
         "Ordinary-chat behavior bypassed repository-only controls during OP-SIMPLE-002.",
         "Current OpenAI product/API capabilities support behavioral instructions plus application-owned tool restriction."
+      ],
+      "reopen_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "accepted-provider-contact-approval",
+      "subject": "External provider messages, paid access, or account creation for catalog acquisition require explicit user approval before execution.",
+      "evidence": [
+        "September 28 preserved catalog execution outline explicitly required approval before sending the provider request and recorded that nothing was sent."
       ],
       "reopen_policy": "NEW_EVIDENCE_REQUIRED"
     }
@@ -265,6 +275,14 @@
         "Repeated manual testing consumed substantial user time and is explicitly part of the corrected control objective."
       ],
       "retry_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "reject-prohibited-catalog-scraping",
+      "subject": "Automate collection from CFB.FAN/Stormstrike or scrape/republish CFB27 Nation without express permission.",
+      "evidence": [
+        "Current Stormstrike Terms prohibit automated access except where expressly permitted; current CFB27 Nation Terms prohibit scraping/republishing without permission."
+      ],
+      "retry_policy": "NEW_EVIDENCE_REQUIRED"
     }
   ],
   "conflicts": [
@@ -301,59 +319,41 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-SIMPLE-002-D2",
-    "mission_id": "OP-SIMPLE-002",
-    "proposed_action": "Close OP-SIMPLE-002 after the bounded Windows restart, protected-state verification, Player Evaluator/r61 UI verification, Training Watch fail-closed probe, Browser Watch preservation check, and product acceptance promotion all passed.",
-    "obstacle_classification": "NONE",
+    "decision_id": "OP-CATALOG-001-D1",
+    "mission_id": "OP-CATALOG-001",
+    "proposed_action": "Activate the verified current-catalog acquisition mission and stop at the preserved provider-contact approval boundary because no legitimate current-complete source remains executable without external permission.",
+    "obstacle_classification": "EXTERNAL_DEPENDENCY",
     "history_refs": [
-      "OP-CONTROL-002 revision 9 is COMPLETE and deployed.",
-      "Library Operation-Pancake-OP-SIMPLE-002-checkpoint.json preserves the frozen r60 physical acceptance boundary.",
-      "Current Windows r61 evidence is a UI-only rate-limit feedback change pending physical acceptance.",
-      "Current app state is RATE_LIMITED with persistent lock, two saved watches, and live Browser Helper 1.4.12.",
-      "Revision 10 merged and both post-merge workflows passed.",
-      "Brokered physical restart/state-preservation acceptance passed on dynamic port 8766.",
-      "Training Watch authorization-required 409 probe left protected files unchanged.",
-      "Browser Helper 1.4.12 remained live and matching.",
-      "Product acceptance metadata and standard production report are now PRODUCTION_ACCEPTED/PASS."
+      "OP-SIMPLE-002 revision 11 is COMPLETE and the durable worker is synchronized.",
+      "September 28 catalog-refresh checkpoint and execution outline place catalog acquisition before Training Watch.",
+      "Provider request draft exists and remains unsent by explicit prior rule."
     ],
     "capabilities_checked": [
-      "GitHub authority and protected workflow",
-      "Operation Pancake Project instructions",
-      "Desktop Commander restored transport",
-      "persistent Windows GitHub-inbox worker",
-      "ChatGPT-plan OAuth decision provider",
-      "SOPDecisionGateway and ControlledToolBroker",
-      "Authenticated git push --dry-run for the exact revision-8 branch succeeded without exposing credentials."
+      "Installed catalog importer and persistent cards.json path",
+      "Saved 9,233 discovery artifact",
+      "Current Stormstrike/CFB.FAN terms and public card evidence",
+      "Current CFB27 Nation terms and public GitHub repository",
+      "EA Season 3 public player-item information",
+      "Desktop Commander, GitHub, Files/Library, web research, durable Gateway/Broker"
     ],
     "alternatives_considered": [
-      "Resume the unaccepted r61 archive as a new development direction \u2014 rejected; current Windows r61 already exists and needs physical acceptance.",
-      "Clear the persistent market-source lock and start another bulk refresh \u2014 rejected; the frozen checkpoint explicitly says not to do this for restart acceptance.",
-      "Reopen Browser Watch production acceptance \u2014 rejected without a new Browser Watch regression.",
-      "Resume OP-SIMPLE-002 at the restart/state-preservation gate using Desktop Commander and existing launcher \u2014 selected.",
-      "Close from static tests alone \u2014 rejected by the physical-acceptance requirement.",
-      "Clear the persistent 429 lock and run another bulk refresh \u2014 rejected by the accepted lock and unnecessary for the bounded restart gate.",
-      "Ask the user to click/test the UI \u2014 rejected because executable inspection routes remained.",
-      "Close only after restart, protected-state, UI/lock-feedback, Training Watch, Browser Watch, and product acceptance promotion all passed \u2014 selected."
+      "Import the +27 August partial-listing records as current-complete \u2014 rejected because they are stale, partial, and omit required current cards.",
+      "Resume historical automated CFB.FAN discovery \u2014 rejected because current terms require express permission.",
+      "Scrape or reuse CFB27 Nation website data \u2014 rejected by current terms; public repository contains no dataset.",
+      "Use EA public Season 3 page as complete catalog \u2014 rejected because it is a limited item subset without complete scoring data.",
+      "Ask the user to manually collect hundreds of cards \u2014 rejected by the user-test/source-acquisition rule.",
+      "Request provider-authorized export/feed or permitted method \u2014 selected."
     ],
-    "selected_reason": "Every acceptance criterion is physically evidenced on the installed Windows release. The persistent 429 lock was never cleared, no new bulk refresh was started, protected user/market state remained exact, r61 feedback and terminal rendering are correct, Training Watch remains fail-closed, Browser Helper 1.4.12 remains live, and the installed release/report are PRODUCTION_ACCEPTED/PASS. No OP-SIMPLE-002 executable work remains.",
-    "changes_mission": false,
-    "mission_change_reason": "OP-CONTROL-002 is COMPLETE on the long-lived branch and its durable worker is revision 9 READY; the previously frozen OP-SIMPLE-002 mission may now resume without violating the feature-before-control lock.",
+    "selected_reason": "Catalog completeness is the verified upstream unfinished product objective and every legitimate executable source route has been exhausted; provider authorization is now the one precise external dependency.",
+    "changes_mission": true,
+    "mission_change_reason": "OP-SIMPLE-002 is complete; preserved project history identifies current catalog acquisition as the next unfinished objective before Training Watch.",
     "mission_change_evidence": [
-      "Long-lived revision 9 records OP-CONTROL-002 COMPLETE with no remaining executable control work.",
-      "Durable worker health reports revision 9 / 88b5009674686ee4050bb2ab75b0a1410a185b98 READY.",
-      "Library Operation-Pancake-OP-SIMPLE-002-checkpoint.json preserves the frozen OP-SIMPLE-002 restart/state-preservation gate.",
-      "Current Windows r61/r60 evidence reconciles the installed stack and remaining physical acceptance scope."
+      "Installed catalog explicitly reports 9,206 cards and NOT current-complete.",
+      "Preserved catalog outline sequences current catalog refresh before Training Watch.",
+      "Current public evidence proves newer exact-card versions exist while no authorized current-complete structured source is available."
     ],
-    "reopens_lock_ids": [
-      "reject-desktop-commander-retry"
-    ],
-    "new_evidence_for_reopened_locks": {
-      "reject-desktop-commander-retry": [
-        "The time-bounded prohibition expired on 2026-10-01.",
-        "Desktop Commander allowance reset to 100% and the user explicitly authorized its use.",
-        "DESKTOP-M730I21 connected successfully and was used only for bootstrap/recovery transport."
-      ]
-    }
+    "reopens_lock_ids": [],
+    "new_evidence_for_reopened_locks": {}
   },
   "decision_journal": [
     {
@@ -654,13 +654,57 @@
       ],
       "result": "OP-SIMPLE-002 physical acceptance is complete on the installed production release.",
       "next": "complete"
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D1",
+      "decision": "Select current CFB27 catalog acquisition as the next mission and classify provider authorization as the external source dependency after exhausting legitimate technical routes.",
+      "evidence": [
+        "Revision-11 durable worker reconciliation PASS at eacf1479 with unchanged worker hash.",
+        "Installed catalog is 9,206 and explicitly not current-complete.",
+        "Saved 9,233 discovery is an August partial-listing snapshot, only +27, and omits all five required current FS acceptance versions.",
+        "October 1 current CFB.FAN pages prove newer versions exist.",
+        "Current Stormstrike and CFB27 Nation terms prohibit the automation routes absent permission.",
+        "CFB27 Nation public repository contains no reusable card dataset; EA public Season 3 data is incomplete."
+      ],
+      "history": [
+        "September 28 preserved execution outline requires provider-message approval before sending and forbids manual mass collection.",
+        "Catalog refresh precedes Training Watch completion.",
+        "Accepted pricing, Browser Watch, scoring, and product acceptance remain closed."
+      ],
+      "alternatives": [
+        "Stale/partial import \u2014 rejected.",
+        "Unauthorized scraping \u2014 rejected.",
+        "Manual mass capture \u2014 rejected.",
+        "Provider-authorized source request \u2014 selected."
+      ],
+      "result": "OP-CATALOG-001 is selected but blocked on one explicit provider-contact approval; no product or market mutation is justified before that input.",
+      "next": "Obtain explicit user approval to send the preserved Stormstrike/CFB.FAN data-access request to business@stormstrike.gg."
     }
   ],
-  "blocker": null,
+  "blocker": {
+    "type": "EXTERNAL_DEPENDENCY",
+    "capabilities_checked": [
+      "Current local/export inventory",
+      "Installed importer/persistence path",
+      "Current provider terms",
+      "Public GitHub alternatives",
+      "Official EA public item information",
+      "Web/Library/GitHub/Desktop Commander research"
+    ],
+    "adaptations_attempted": [
+      "Rechecked the saved 9,233 discovery delta and required acceptance cards.",
+      "Searched for newer authorized project/Library exports or provider permission.",
+      "Researched current structured-source alternatives.",
+      "Inspected the public CFB27 Nation repository for a separately licensed card artifact.",
+      "Checked official EA current player-item publication as a possible structured fallback."
+    ],
+    "remaining_executable_routes": [],
+    "user_action": "Approve sending the preserved read-only data-access request to business@stormstrike.gg. No message, purchase, or account action will occur before that approval."
+  },
   "handoff": {
-    "mission_id": "OP-SIMPLE-002",
-    "state_revision": 11,
-    "next_action": "complete",
+    "mission_id": "OP-CATALOG-001",
+    "state_revision": 12,
+    "next_action": "Obtain explicit user approval to send the preserved Stormstrike/CFB.FAN data-access request to business@stormstrike.gg; do not send before approval.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -680,8 +724,8 @@
     ]
   },
   "completion": {
-    "user_facing_objective_verified": true,
-    "all_acceptance_criteria_passed": true,
+    "user_facing_objective_verified": false,
+    "all_acceptance_criteria_passed": false,
     "remaining_executable_work": []
   },
   "enforcement": {
