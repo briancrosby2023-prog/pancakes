@@ -83,3 +83,13 @@ The current user directive explicitly requires no Work and no Codex for this acc
 ## Current authorized execution phase
 
 The user has now explicitly authorized the previously stated publication/merge/closure outline. Revision 8 therefore remains IN_PROGRESS rather than BLOCKED. Publication, CI, merge, long-lived verification, and the final closure revision must still execute through fresh Gateway/Broker decisions before OP-CONTROL-002 can be COMPLETE.
+
+## Long-lived deployment and closure verification — PASS
+
+- PR #35 merged exact D9 head 440f26aaf235b5b23a3979a551c2ddeba26ea923 into product/c3po-clean-room-roster as a295eeb7f271dcd8e45d3ab798e5fb74fb60e81b.
+- GitHub Operation Pancake SOP Gate and C3PO Clean Room Acceptance both completed successfully on the merge commit.
+- Independent Windows verification of the merged commit passed pancake_control.py validate, preflight, canonical handoff, durable-runner self-test, and the focused suite at 59/59.
+- The stale revision-7 durable worker was transactionally replaced through SOPDecisionGateway -> ControlledToolBroker under decision runtime-upgrade-ee5d8319bc0c7997f070.
+- Deployed Windows worker health is READY on revision 8 / a295eeb7; canonical Git/LF runner SHA-256 is 412e14b0d6c3b637bff65278aceb0d1d4b92f9f3a7aaef94a9b16dcbc7f6d24d, while the CRLF checkout/runtime bytes are ee5d8319bc0c7997f070e42d32a59941fa684433944563889d9f2a4b5320d59f and normalize to the canonical hash.
+- Post-merge issue #36 (postmerge-r8-inspect-20261001) completed through an exact-action Gateway/Broker decision and returned clean long-lived revision-8 authority with zero mutation.
+- No OP-CONTROL-002 executable work remains. Revision 9 may therefore set status COMPLETE and terminal next_action complete.

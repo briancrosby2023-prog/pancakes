@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 8,
-  "status": "IN_PROGRESS",
+  "state_revision": 9,
+  "status": "COMPLETE",
   "active_mission": {
     "id": "OP-CONTROL-002",
     "objective": "Enforce the Operation Pancake SOP across ChatGPT behavior and consequential execution so MAP -> HISTORY -> RESEARCH -> CAPABILITIES precede decisions, guessing/retry loops are fail-closed, user testing is last-resort, and controlled mutation cannot bypass a validated decision.",
-    "next_action": "Under the user's current explicit authorization, publish and merge the validated revision-8 reconciliation branch through the brokered GitHub path; then verify the long-lived branch and create the final closure revision if green.",
+    "next_action": "complete",
     "acceptance_criteria": [
       {
         "id": "correct-false-completion",
@@ -100,7 +100,13 @@
         "The durable worker was reconstructed from preserved evidence, installed through two broker-authorized mutations, and verified with live RED/GREEN/restart tests on DESKTOP-M730I21.",
         "Independent pre-publication verification of the first local revision-8 branch found docs/OPERATION_PANCAKE_HANDOFF.md had one extra trailing newline; publication was stopped before any push or merge.",
         "After the corrected ad9acd8 revision-8 branch passed 57/57 tests, the first publication attempt was stopped with zero remote mutation when OAuth reauthorization returned 'Your session has ended'.",
-        "A live refresh diagnostic after D8 returned HTTP 503 Service Unavailable from the ChatGPT token endpoint; the publication process remained pre-decision and no remote branch existed."
+        "A live refresh diagnostic after D8 returned HTTP 503 Service Unavailable from the ChatGPT token endpoint; the publication process remained pre-decision and no remote branch existed.",
+        "PR #35 merged the exact D9 revision-8 candidate 440f26aaf235b5b23a3979a551c2ddeba26ea923 into the long-lived product branch as a295eeb7f271dcd8e45d3ab798e5fb74fb60e81b.",
+        "Post-merge GitHub checks on a295eeb7 passed: Operation Pancake SOP Gate success and C3PO Clean Room Acceptance success.",
+        "Independent Windows verification of the merge commit passed authority validate, preflight, canonical handoff, durable-runner self-test, and 59/59 focused regressions.",
+        "The stale revision-7 durable worker was replaced through DECISION_ALLOWED runtime-upgrade-ee5d8319bc0c7997f070 using ControlledToolBroker; the replacement worker is READY on revision 8 / a295eeb7.",
+        "Post-merge issue #36 completed through DECISION_ALLOWED inspect_control_state and returned clean revision-8 authority on a295eeb7 with zero mutation.",
+        "The first broker-authorized revision-9 closure commit attempt (close-r9-6e695770d612cfeea89b) failed before commit because the handler used strip() on git status output, removing the leading status-column space from the first path and misreading docs/... as ocs/...; cleanup removed the worktree and branch and left the product checkout clean."
       ]
     },
     "research": {
@@ -115,7 +121,8 @@
         "Windows core.autocrlf=true caused raw checked-out bytes to differ from trusted Git blob hashes; accepting only the exact LF-normalized blob hash fixed the false rejection while a real tamper still failed.",
         "The canonical scripts/pancake_control.py handoff --check compares the checked-in handoff to render_handoff(state) exactly; adding a second trailing newline is invalid.",
         "The stored ID token exp was observed older than current time by more than nine hours; the returning OAuth path unconditionally reused it as id_token_hint after refresh failure. Expired hints must be omitted while login_hint, client id, PKCE, and post-callback identity validation remain enforced.",
-        "Transient OAuth refresh failures (429/500/502/503/504) must remain fail-closed and must not trigger interactive reauthorization; non-transient refresh rejection may still fall back to the returning OAuth flow."
+        "Transient OAuth refresh failures (429/500/502/503/504) must remain fail-closed and must not trigger interactive reauthorization; non-transient refresh rejection may still fall back to the returning OAuth flow.",
+        "Canonical Git/LF SHA-256 for scripts/pancake_local_control.py at a295eeb7 is 412e14b0d6c3b637bff65278aceb0d1d4b92f9f3a7aaef94a9b16dcbc7f6d24d; the deployed Windows CRLF checkout normalizes to the same canonical bytes and has raw SHA-256 ee5d8319bc0c7997f070e42d32a59941fa684433944563889d9f2a4b5320d59f."
       ]
     },
     "capabilities": {
@@ -127,7 +134,8 @@
         "The existing OpenAI decision transport is fail-closed when a programmatic credential is absent.",
         "Desktop Commander allowance was restored on 2026-10-01, the user explicitly authorized its use, and DESKTOP-M730I21 was connected only as bootstrap/recovery transport.",
         "A persistent Windows GitHub-inbox worker now provides ordinary-Project execution without Work or Codex and routes consequential actions through SOPDecisionGateway and ControlledToolBroker.",
-        "DigitalOcean remains prohibited."
+        "DigitalOcean remains prohibited.",
+        "The long-lived revision-8 branch, GitHub CI, merged Windows worktree, durable runtime, and live GitHub-inbox execution path were all independently re-verified after merge without Work or Codex."
       ]
     }
   },
@@ -143,7 +151,11 @@
       "DigitalOcean standing exclusion",
       "Desktop Commander restored October 1 and DESKTOP-M730I21 online",
       "durable GitHub-inbox worker physical RED/GREEN/restart acceptance",
-      "ChatGPT-plan OAuth direct decision transport"
+      "ChatGPT-plan OAuth direct decision transport",
+      "PR #35 exact-head merge and long-lived commit a295eeb7",
+      "GitHub SOP Gate and C3PO acceptance on merge commit",
+      "Windows post-merge validate/preflight/handoff/self-test/59-test suite",
+      "brokered revision-8 runtime replacement and live post-merge inbox request"
     ],
     "available": [
       "GitHub repository read/write and PR workflow",
@@ -153,7 +165,8 @@
       "repository SOP gateway, OpenAI decision transport, and fail-closed tool-broker implementation",
       "Desktop Commander bootstrap/recovery transport while allowance is restored",
       "persistent Windows GitHub-inbox control worker with plan OAuth decision provider",
-      "read-only loopback worker health surface with no mutation HTTP endpoint"
+      "read-only loopback worker health surface with no mutation HTTP endpoint",
+      "deployed revision-8 persistent Windows GitHub-inbox worker bound to long-lived merge a295eeb7"
     ],
     "unavailable_or_excluded": [
       "Direct programmatic modification of ChatGPT Project instructions from this chat",
@@ -306,9 +319,9 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CONTROL-002-D9",
+    "decision_id": "OP-CONTROL-002-D10",
     "mission_id": "OP-CONTROL-002",
-    "proposed_action": "Use the current explicit user authorization to publish and merge only the freshly rebuilt, fully validated revision-8 reconciliation branch through SOPDecisionGateway and ControlledToolBroker, then perform long-lived verification before closure.",
+    "proposed_action": "Close OP-CONTROL-002 because the accepted control artifacts are merged, CI-green, independently verified on Windows, deployed to the durable worker, and live-inbox verified on the long-lived branch.",
     "obstacle_classification": "NONE",
     "history_refs": [
       "Fresh ordinary-chat fail-closed acceptance already passed under revision 7.",
@@ -317,7 +330,14 @@
       "Pre-publication revision-8 verification caught and isolated a one-byte handoff drift before publication.",
       "Pre-publication publication rehearsal exposed an expired id_token_hint reauthorization defect before any remote branch, PR, or merge was created.",
       "Current user instruction explicitly says to follow the rules and complete all steps of the publication/merge/closure outline with no Work or Codex and Desktop Commander available.",
-      "Live token refresh returned HTTP 503; the worker now suppresses interactive OAuth fallback for transient refresh failures."
+      "Live token refresh returned HTTP 503; the worker now suppresses interactive OAuth fallback for transient refresh failures.",
+      "PR #35 merged exact D9 head 440f26a as a295eeb7.",
+      "Both merge-commit GitHub workflows completed successfully.",
+      "Post-merge Windows verification passed validate/preflight/handoff/self-test and 59/59 focused regressions.",
+      "Brokered runtime upgrade deployed worker ee5d8319 on the merged authority.",
+      "Post-merge live inbox request postmerge-r8-inspect-20261001 completed on clean a295eeb7.",
+      "First closure attempt close-r9-6e695770d612cfeea89b failed before commit on the observed git-status leading-space parser defect.",
+      "Failure cleanup removed the closure worktree and branch and left product/c3po-clean-room-roster clean."
     ],
     "capabilities_checked": [
       "GitHub authority and protected workflow",
@@ -333,9 +353,15 @@
       "Declare OP-CONTROL-002 COMPLETE before publishing/deployment verification \u2014 rejected by the checkpoint/completion rule.",
       "Push or merge without current authorization \u2014 rejected by the existing user-reserved publication boundary.",
       "Prepare and validate a local revision-8 reconciliation branch, then stop only at explicit publish/merge authorization \u2014 selected.",
-      "Remain BLOCKED waiting for publication authorization after the user supplied that authorization \u2014 rejected."
+      "Remain BLOCKED waiting for publication authorization after the user supplied that authorization \u2014 rejected.",
+      "Close before merge/deployment verification \u2014 rejected by checkpoint-as-completion.",
+      "Leave OP-CONTROL-002 IN_PROGRESS after all long-lived verification is green \u2014 rejected because no executable control work remains.",
+      "Mark OP-CONTROL-002 COMPLETE with terminal next_action=complete \u2014 selected.",
+      "Retry the unchanged closure handler \u2014 rejected because the observed parser defect would recur.",
+      "Bypass the broker and write closure files directly \u2014 rejected.",
+      "Correct only the status-output trimming defect, rebuild the exact closure bundle with this history, and use a fresh Gateway/Broker decision \u2014 selected."
     ],
-    "selected_reason": "Publication is authorized and remains the next mission action, but the durable OAuth path must not convert a transient auth-service outage into a user-action loop. The corrected worker now fails closed on 429/5xx refresh errors and preserves interactive reauthorization only for non-transient refresh rejection; the rebuilt revision-8 branch must pass this regression before publication resumes.",
+    "selected_reason": "The original behavior-control objective and every acceptance criterion are verified on the long-lived branch. The durable worker is deployed on the merged revision-8 authority, post-merge CI and 59/59 Windows regressions pass, and the live post-merge inbox request completed through Gateway/Broker. The closure implementation failure was fail-closed, fully cleaned up, and is preserved in history evidence. No OP-CONTROL-002 executable work remains.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
@@ -580,13 +606,35 @@
       ],
       "result": "The candidate OAuth path no longer turns transient token-service outages into interactive user testing.",
       "next": "Rebuild and fully validate revision 8, then resume brokered publication when the token service is available."
+    },
+    {
+      "decision_id": "OP-CONTROL-002-D10",
+      "decision": "Close OP-CONTROL-002 only after long-lived merge, CI, Windows deployment, and live durable-worker verification all pass.",
+      "evidence": [
+        "PR #35 merged exact revision-8 head 440f26aaf235b5b23a3979a551c2ddeba26ea923 as a295eeb7f271dcd8e45d3ab798e5fb74fb60e81b.",
+        "Operation Pancake SOP Gate and C3PO Clean Room Acceptance both succeeded on a295eeb7.",
+        "Detached Windows post-merge verification passed validate, preflight, canonical handoff, self-test, and 59/59 focused regressions.",
+        "DECISION_ALLOWED runtime-upgrade-ee5d8319bc0c7997f070 replaced the stale revision-7 worker transactionally; revision-8 worker health is READY.",
+        "Post-merge GitHub-inbox request postmerge-r8-inspect-20261001 completed through an exact-action DECISION_ALLOWED and returned clean revision-8 state."
+      ],
+      "history": [
+        "Checkpoint-as-completion was repeatedly rejected throughout OP-CONTROL-002.",
+        "Work and Codex were explicitly excluded from this acceptance run and are conditional, not completion dependencies."
+      ],
+      "alternatives": [
+        "Close before merge or deployment verification \u2014 rejected.",
+        "Keep the mission open despite no remaining executable control work \u2014 rejected.",
+        "Close after long-lived verification \u2014 selected."
+      ],
+      "result": "OP-CONTROL-002 is complete on the long-lived branch with the durable ordinary-Project control path deployed and verified.",
+      "next": "complete"
     }
   ],
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CONTROL-002",
-    "state_revision": 8,
-    "next_action": "Under the user's current explicit authorization, publish and merge the validated revision-8 reconciliation branch through the brokered GitHub path; then verify the long-lived branch and create the final closure revision if green.",
+    "state_revision": 9,
+    "next_action": "complete",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -608,11 +656,7 @@
   "completion": {
     "user_facing_objective_verified": true,
     "all_acceptance_criteria_passed": true,
-    "remaining_executable_work": [
-      "Publish the validated revision-8 reconciliation branch and open its PR through the Gateway/Broker under the user's current explicit authorization.",
-      "Wait for required GitHub checks, merge the validated PR through a fresh Gateway/Broker decision, and verify the long-lived product branch.",
-      "Create, validate, publish, and merge the post-deployment closure revision only if long-lived verification remains green."
-    ]
+    "remaining_executable_work": []
   },
   "enforcement": {
     "behavioral_standard": {
@@ -642,7 +686,12 @@
       "windows_crlf_integrity_regression_verified": true,
       "chatgpt_plan_oauth_verified": true,
       "chatgpt_plan_oauth_reauthorization_expiry_regression_verified": true,
-      "chatgpt_plan_oauth_transient_refresh_fail_closed_regression_verified": true
+      "chatgpt_plan_oauth_transient_refresh_fail_closed_regression_verified": true,
+      "deployed_windows_worker_sha256": "ee5d8319bc0c7997f070e42d32a59941fa684433944563889d9f2a4b5320d59f",
+      "long_lived_revision8_merge_commit": "a295eeb7f271dcd8e45d3ab798e5fb74fb60e81b",
+      "post_merge_ci_verified": true,
+      "post_merge_windows_verified": true,
+      "post_merge_live_inbox_verified": true
     },
     "direct_chatgpt_hard_interception": false,
     "hard_limitations_acknowledged": true,
