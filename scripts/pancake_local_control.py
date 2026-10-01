@@ -59,7 +59,8 @@ CONTROL_BLOB_MANIFEST = {
     "src/operation_pancake/__init__.py": "7717f63dcbe06a36daa249a7722a9ea7792647ef",
     "src/operation_pancake/sop_policy.py": "ca60e2b9ee54ba7df8688c59cfa511bf5598727d",
     "src/operation_pancake/cross_surface_control.py": "20e1382041a30d110e27c645a93020793c96865b",
-    "src/operation_pancake/sop_gateway.py": "0b77383653ff703582e0e2ce45a43f7d1a6b1cc7",
+    "src/operation_pancake/sop_gateway.py": "0291aa4e996d0cf692edc02151415c523ab08e9e",
+    "src/operation_pancake/authority_guard.py": "ca18be3e394a09c06b1bb590e1a38c4fad637a3e",
     "src/operation_pancake/tool_broker.py": "8c4221fa39dcdd316757945166c96dacebfc589b",
     "src/operation_pancake/control_state.py": "e5b0128217cd503482aecf6e913aa9dd72443a2a",
 }
@@ -96,7 +97,7 @@ DECISION_SCHEMA = {
         "proposed_plan", "allowed_actions", "blocked_actions", "next_action",
         "obstacle_classification", "alternatives_considered", "selected_reason",
         "implementation_basis_fact_keys", "user_action_required",
-        "remaining_executable_routes",
+        "remaining_executable_routes", "selected_route_id", "remaining_route_ids",
     ],
     "properties": {
         "proposed_plan": {"type": "string", "minLength": 1},
@@ -125,6 +126,10 @@ DECISION_SCHEMA = {
         "remaining_executable_routes": {
             "type": "array", "items": {"type": "string", "minLength": 1},
         },
+        "selected_route_id": {"type": "string", "minLength": 1},
+        "remaining_route_ids": {
+            "type": "array", "items": {"type": "string", "minLength": 1},
+        },
     },
 }
 
@@ -134,10 +139,14 @@ evidence. Use only that evidence and the request. Do not invent missing facts,
 silently replace history, broaden the mission, or self-certify an unknown.
 Return a concrete proposed_plan, exact allowed_actions and blocked_actions,
 one next_action, obstacle_classification, alternatives_considered,
-selected_reason, implementation_basis_fact_keys, user_action_required, and
-remaining_executable_routes. Implementation basis keys must name fact_key
-values that actually appear in trusted supplied evidence. If mutation_requested
-is true and no trusted fact supports implementation, do not invent one. Do not
+selected_reason, implementation_basis_fact_keys, user_action_required,
+remaining_executable_routes, selected_route_id, and remaining_route_ids.
+If authority_guard is present, select only a route permitted by its structured
+constraints: REQUIRED_NEXT must be selected before any other route, REJECTED
+must never be selected or retained, and user action is forbidden while a
+REQUIRED_NEXT route exists. Implementation basis keys must name fact_key values
+that actually appear in trusted supplied evidence. If mutation_requested is
+true and no trusted fact supports implementation, do not invent one. Do not
 send work back to the user while executable technical routes remain.
 Do not include prose outside the required JSON structure."""
 
@@ -1006,6 +1015,7 @@ class ChatGPTPlanOAuthDecisionProvider:
                 "typed_evidence": context.get("typed_evidence"),
                 "state_fingerprint": context.get("state_fingerprint"),
                 "mutation_requested": context.get("mutation_requested"),
+                "authority_guard": context.get("authority_guard"),
                 "instruction": context.get("instruction"),
             },
             sort_keys=True,
@@ -1310,6 +1320,8 @@ def controlled_apply(
         store=DecisionRecordStore(runtime_root / "decisions"),
         strict_evidence=True,
         hypotheses=HypothesisLedger(runtime_root / "hypotheses.json"),
+        authority_path=repo / AUTHORITY_REL,
+        require_authority_guard=True,
     )
     snapshot = build_state_snapshot(repo, target, capsule.content_sha256)
     evidence = build_evidence(repo, snapshot, capsule, bootstrap_history=bootstrap_history)
@@ -1692,6 +1704,8 @@ def execute_frozen_control_request(
         store=DecisionRecordStore(runtime_root / "decisions"),
         strict_evidence=True,
         hypotheses=HypothesisLedger(runtime_root / "hypotheses.json"),
+        authority_path=repo / AUTHORITY_REL,
+        require_authority_guard=True,
     )
     decision_snapshot = inbox_state_snapshot(repo, snapshot_hash)
     evidence = inbox_typed_evidence(decision_snapshot, snapshot_hash)
@@ -2348,6 +2362,8 @@ def authorized_runtime_install(repo: Path, worker_bytes: bytes, *, provider=None
         store=DecisionRecordStore(gateway_root / "decisions"),
         strict_evidence=True,
         hypotheses=HypothesisLedger(gateway_root / "hypotheses.json"),
+        authority_path=repo / AUTHORITY_REL,
+        require_authority_guard=True,
     )
     decision_id = "runtime-install-" + worker_sha[:20]
     packet = gateway.request_decision(

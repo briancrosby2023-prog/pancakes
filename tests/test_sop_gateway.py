@@ -232,6 +232,13 @@ def test_database_case_allows_history_grounded_plan_and_blocks_unrelated_action(
 
 
 def test_production_gateway_is_fail_closed_until_transport_is_explicitly_configured(tmp_path):
+    authority = tmp_path / "docs" / "OPERATION_PANCAKE_CONTROL_STATE.json"
+    authority.parent.mkdir(parents=True)
+    authority.write_text(json.dumps({
+        "state_revision": 1,
+        "active_mission": {"id": "production transport boundary"},
+        "decision_guard": {"version": 1, "constraints": []},
+    }), encoding="utf-8")
     gate = production_gateway(tmp_path)
     packet = gate.request_decision(
         mission="production transport boundary",
@@ -403,3 +410,151 @@ def test_tool_broker_requires_decision_for_mutation(tmp_path):
         decision_id=packet.decision_id,
         current_state_snapshot=snapshot,
     ) == "written"
+
+
+class GuardProvider:
+    def __init__(self, selected_route_id, *, user_action_required=False):
+        self.calls = 0
+        self.contexts = []
+        self.payload = {
+            "proposed_plan": "Follow the authority-backed route.",
+            "allowed_actions": ["write-change"],
+            "blocked_actions": ["guess-and-patch"],
+            "next_action": "write-change",
+            "obstacle_classification": "IMPLEMENTATION_PROBLEM",
+            "alternatives_considered": [
+                "Use the authority-required route",
+                "Use the superseded provider-email route",
+            ],
+            "selected_reason": "The route is selected from authoritative history.",
+            "implementation_basis_fact_keys": ["runtime_version"],
+            "user_action_required": user_action_required,
+            "remaining_executable_routes": [],
+            "selected_route_id": selected_route_id,
+            "remaining_route_ids": [],
+        }
+
+    def decide(self, request, context):
+        self.calls += 1
+        self.contexts.append(context)
+        return self.payload
+
+
+def write_catalog_guard(tmp_path):
+    authority = tmp_path / "OPERATION_PANCAKE_CONTROL_STATE.json"
+    authority.write_text(json.dumps({
+        "state_revision": 13,
+        "active_mission": {"id": "OP-CATALOG-001"},
+        "decision_guard": {
+            "version": 1,
+            "constraints": [
+                {
+                    "id": "catalog-provider-email-rejected",
+                    "mission_id": "OP-CATALOG-001",
+                    "route_id": "catalog-provider-email",
+                    "status": "REJECTED",
+                    "description": "Provider-email route was not approved; find another way.",
+                    "source": "verified checkpoint",
+                },
+                {
+                    "id": "catalog-history-reconcile-required",
+                    "mission_id": "OP-CATALOG-001",
+                    "route_id": "catalog-historical-bulk-reconcile",
+                    "status": "REQUIRED_NEXT",
+                    "description": "Continue from the recovered historical bulk acquisition program.",
+                    "source": "verified checkpoint",
+                },
+            ],
+        },
+    }), encoding="utf-8")
+    return authority
+
+
+def guarded_strict_gate(tmp_path, provider):
+    authority = write_catalog_guard(tmp_path)
+    return SOPDecisionGateway(
+        provider=provider,
+        store=DecisionRecordStore(tmp_path / "guarded-decisions"),
+        strict_evidence=True,
+        hypotheses=HypothesisLedger(tmp_path / "guarded-hypotheses.json"),
+        authority_path=authority,
+        require_authority_guard=True,
+    )
+
+
+def test_authority_guard_blocks_rejected_route_even_when_caller_omits_history(tmp_path):
+    provider = GuardProvider("catalog-provider-email", user_action_required=True)
+    gate = guarded_strict_gate(tmp_path, provider)
+    packet = gate.request_decision(
+        mission="OP-CATALOG-001",
+        request="Choose the next catalog action.",
+        evidence=strict_evidence(),
+        mutation_requested=True,
+        state_snapshot={"revision": 13},
+    )
+    assert provider.calls == 1
+    assert packet.decision_status == EVIDENCE_GAP
+    assert "AUTHORITY_ROUTE_REJECTED:catalog-provider-email" in packet.gate_errors
+    assert any(
+        error.startswith("AUTHORITATIVE_REQUIRED_ROUTE_NOT_SELECTED:")
+        for error in packet.gate_errors
+    )
+    assert any(
+        error.startswith("USER_ACTION_BLOCKED_BY_AUTHORITATIVE_ROUTE:")
+        for error in packet.gate_errors
+    )
+    guard = provider.contexts[0]["authority_guard"]
+    assert guard["required_next_routes"] == ["catalog-historical-bulk-reconcile"]
+    assert guard["rejected_routes"] == ["catalog-provider-email"]
+    assert any(
+        "catalog-provider-email" in item
+        for item in packet.history_evidence
+    )
+
+
+def test_authority_guard_injected_history_triggers_contradiction_before_provider(tmp_path):
+    provider = GuardProvider("catalog-historical-bulk-reconcile")
+    gate = guarded_strict_gate(tmp_path, provider)
+    data = strict_evidence()
+    data["history"].append({
+        "kind": "VERIFIED_HISTORY",
+        "text": "Stale caller says provider email is required.",
+        "fact_key": "authority_route:catalog-provider-email",
+        "fact_value": "REQUIRED_NEXT",
+    })
+    packet = gate.request_decision(
+        mission="OP-CATALOG-001",
+        request="Choose the next catalog action.",
+        evidence=data,
+    )
+    assert packet.decision_status == PREFLIGHT_REQUIRED
+    assert "authority_route:catalog-provider-email" in packet.contradiction_keys
+    assert provider.calls == 0
+
+
+def test_authority_guard_allows_required_route_and_invalidates_after_guard_change(tmp_path):
+    provider = GuardProvider("catalog-historical-bulk-reconcile")
+    gate = guarded_strict_gate(tmp_path, provider)
+    snapshot = {"revision": 13}
+    packet = gate.request_decision(
+        mission="OP-CATALOG-001",
+        request="Apply the guarded history repair.",
+        evidence=strict_evidence(),
+        mutation_requested=True,
+        state_snapshot=snapshot,
+    )
+    assert packet.decision_status == DECISION_ALLOWED
+    assert packet.selected_route_id == "catalog-historical-bulk-reconcile"
+    assert packet.authority_guard_fingerprint
+
+    authority = gate.authority_path
+    payload = json.loads(authority.read_text(encoding="utf-8"))
+    payload["decision_guard"]["constraints"][1]["description"] += " Updated."
+    authority.write_text(json.dumps(payload), encoding="utf-8")
+
+    with pytest.raises(StateChanged, match="history/route constraints changed"):
+        gate.authorize_mutation_action(
+            packet.decision_id,
+            "write-change",
+            current_state_snapshot=snapshot,
+        )
