@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 12,
-  "status": "BLOCKED",
+  "state_revision": 13,
+  "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Obtain explicit user approval to send the preserved Stormstrike/CFB.FAN data-access request to business@stormstrike.gg; do not send before approval.",
+    "next_action": "Reconcile the recovered historical CFB27 bulk acquisition program, its provenance, current permitted-use basis, and source reachability; do not send a provider request or perform live collection until that read-only reconciliation is complete.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -72,32 +72,31 @@
     "history": {
       "complete": true,
       "evidence": [
-        "The preserved catalog milestone requires CURRENT CATALOG ACQUISITION -> EXACT-CARD IMPORT -> RANKING ACCEPTANCE before Training Watch completion.",
-        "Installed baseline is 9,206 exact cards and is explicitly NOT current-complete.",
-        "The saved discovery artifact contains 9,233 records, only +27 versus installed, and its records are 2026-08-19 PARTIAL_LISTING_VECTOR evidence; it is not a current-complete scoring catalog.",
-        "September 28 checkpoint research already exhausted alternative catalog sources, preserved an unsent provider request, and required explicit approval before any external message, purchase, or account creation.",
-        "Accepted Chrome pricing, Browser Watch, dynamic-port behavior, OP-SIMPLE-002 physical acceptance, and scoring models must not be reopened without materially new evidence."
+        "OP-SIMPLE-002 revision 11 remains COMPLETE; revision 12 selected OP-CATALOG-001 but incorrectly reopened an older provider-email approval branch.",
+        "Verified September 28 history records the user direction: Find another way; provider-email route not approved and not sent.",
+        "The later September 28 historical_bulk_acquisition_correction identified src/operation_pancake/acquisition/cfb_fan_bulk.py plus scripts/refresh_cfb27_canonical_delta.py as the actual saved bulk acquisition/refresh program.",
+        "That correction explicitly says the unsent provider request is not the only investigative path and requires continuing from the recovered acquisition program and provenance.",
+        "Installed baseline remains 9,206 exact cards; the saved September 8 canonical population is 9,233 and is not current-complete.",
+        "Accepted Chrome pricing, Browser Watch, dynamic-port behavior, OP-SIMPLE-002 physical acceptance, and scoring models remain closed absent regression."
       ]
     },
     "research": {
       "complete": true,
       "evidence": [
-        "Current October 1 CFB.FAN public pages contain later exact-card versions, including Ashlynd Barker 91 FS and Kingston Lopa 90 FS, proving the installed/saved snapshot is stale.",
-        "The local 9,233 discovery does not contain the required Jordan Allen 91, Ashlynd Barker 91, Kingston Lopa 90, Earl Little Jr. 90, or Xavier Filsaime 90 acceptance versions.",
-        "Stormstrike Terms last updated 2026-05-13 prohibit automated means such as bots, scrapers, or crawlers except where expressly permitted, and prohibit automated scraping/copying in Acceptable Use.",
-        "CFB27 Nation Terms last updated 2026-06-25 prohibit scraping or republishing content without permission; its public GitHub repository is documentation-only under CC BY 4.0 and contains no card dataset.",
-        "EA Season 3 pages provide only a bounded official player-item subset, not a current-complete exact-card catalog with all required scoring attributes.",
-        "No authorized current-complete structured catalog feed/export or provider permission was found after current web, Library, repository, and installed-state research."
+        "The recovered bulk adapter uses the public CFB.FAN /api/27/player-items/ route, batches up to 50 IDs, records hashed raw JSON/provenance, and historically ran at 12 requests/minute.",
+        "The recovered delta refresh reconciles current listing discovery to canonical exact IDs and uses the bulk adapter only for missing IDs; the September 8 saved refresh reached 9,233 with zero missing IDs, duplicates, old IDs lost, or rejected conflicts.",
+        "Historical successful access alone does not establish current permission; current Stormstrike terms restrict automated access except where expressly permitted.",
+        "No evidence establishes that a new permission requirement arose after the successful saved acquisitions; the permitted-use basis and source reachability therefore remain an evidence gap to reconcile before any live collection.",
+        "The recovered adapter's generic retry behavior must not be used to evade an access-control or rate-limit response."
       ]
     },
     "capabilities": {
       "complete": true,
       "evidence": [
-        "Desktop Commander is online as bootstrap/recovery transport; the durable Gateway/Broker is synchronized at revision 11 and READY.",
-        "The installed evaluator already has version-aware catalog import/persistence infrastructure and accepted exact-card Chrome pricing behavior.",
-        "Web/GitHub/Library research can verify sources but cannot create provider permission.",
-        "No authorized provider feed/configuration or current-complete local export is available.",
-        "External provider outreach is technically possible after approval, but history explicitly prohibits sending it before user approval."
+        "Desktop Commander is available as bootstrap/recovery transport and the durable Gateway/Broker is READY on revision 12.",
+        "The live repository contains the historical CFB27 bulk adapter, delta-refresh script, saved provenance reports, and version-aware evaluator catalog importer.",
+        "Read-only repository, Library, and current-source research can reconcile the historical acquisition path without user action or live collection.",
+        "Consequential mutations remain broker-only; provider messaging remains approval-gated if ever selected later."
       ]
     }
   },
@@ -131,7 +130,10 @@
       "PRODUCTION_ACCEPTED health/diagnostics and PASS production release report",
       "revision-11 durable worker reconciliation to eacf1479 with unchanged worker bytes",
       "October 1 current catalog-source research across installed state, Library, Stormstrike terms, CFB27 Nation terms/repository, EA public Season 3 pages, and current CFB.FAN evidence",
-      "9,233 saved discovery delta rechecked against installed 9,206 and required current FS examples"
+      "9,233 saved discovery delta rechecked against installed 9,206 and required current FS examples",
+      "revision-12 stale-history regression analysis against September 28 catalog checkpoints",
+      "recovered historical CFB27 bulk adapter and delta-refresh provenance",
+      "authoritative route-guard design for REQUIRED_NEXT and REJECTED history"
     ],
     "available": [
       "GitHub repository read/write and PR workflow",
@@ -147,7 +149,9 @@
       "existing accepted dynamic-port Simple Evaluator launcher/check path",
       "physically accepted Simple Evaluator 3T / 1.2.0 r61 installation with persistent 429 safety lock and Browser Helper 1.4.12",
       "version-aware installed catalog importer/persistence path",
-      "accepted Chrome/browser-helper exact-card price observation path after catalog import"
+      "accepted Chrome/browser-helper exact-card price observation path after catalog import",
+      "historical CFB27 bulk acquisition adapter and saved provenance",
+      "read-only reconciliation of permitted-use basis and source reachability"
     ],
     "unavailable_or_excluded": [
       "Direct programmatic modification of ChatGPT Project instructions from this chat",
@@ -199,6 +203,15 @@
       "subject": "External provider messages, paid access, or account creation for catalog acquisition require explicit user approval before execution.",
       "evidence": [
         "September 28 preserved catalog execution outline explicitly required approval before sending the provider request and recorded that nothing was sent."
+      ],
+      "reopen_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "accepted-authoritative-history-route-guard",
+      "subject": "Consequential strict decisions must independently load structured REQUIRED_NEXT/REJECTED route constraints from the project authority; caller-supplied history cannot omit or override them.",
+      "evidence": [
+        "Revision 12 demonstrated that a valid Gateway/Broker can still authorize the wrong direction when the caller supplies an incomplete older history subset.",
+        "The revision-13 guard injects authority constraints into HISTORY, rejects conflicting/rejected route selections, and fingerprints the guard again at action authorization."
       ],
       "reopen_policy": "NEW_EVIDENCE_REQUIRED"
     }
@@ -283,6 +296,15 @@
         "Current Stormstrike Terms prohibit automated access except where expressly permitted; current CFB27 Nation Terms prohibit scraping/republishing without permission."
       ],
       "retry_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "reject-provider-email-as-catalog-next-action",
+      "subject": "Treat the preserved Stormstrike/CFB.FAN provider-email request as the current or only next action for OP-CATALOG-001.",
+      "evidence": [
+        "September 28 checkpoint records user_direction: Find another way; provider-email route not approved and not sent.",
+        "The later historical_bulk_acquisition_correction recovered the bulk adapter/refresh program and explicitly says not to treat the unsent provider request as the only investigative path."
+      ],
+      "retry_policy": "NEW_EVIDENCE_REQUIRED"
     }
   ],
   "conflicts": [
@@ -316,42 +338,45 @@
         "The cross-surface acceptance document's completion conditions require ordinary-chat and Project-chat acceptance plus mechanical enforcement, not Work/Codex availability.",
         "The persistent Windows worker passed live RED/GREEN/restart acceptance independently of Work/Codex."
       ]
+    },
+    {
+      "id": "rev12-stale-history-provider-email",
+      "status": "RESOLVED",
+      "conflict": "Revision 12 encoded provider-contact approval as the sole blocker even though newer September 28 history records that the provider-email route was not approved and that the historical bulk acquisition program had been recovered.",
+      "resolution": "Supersede the revision-12 next action. OP-CATALOG-001 returns to IN_PROGRESS on the required catalog-historical-bulk-reconcile route, and strict decisions mechanically load route constraints from authority.",
+      "evidence": [
+        "Library CHECKPOINT_3U_EXECUTION_STATUS.json alternative_catalog_source_research_20260928 user_direction.",
+        "Library CHECKPOINT_3U_EXECUTION_STATUS.json historical_bulk_acquisition_correction_20260928.",
+        "Live repository src/operation_pancake/acquisition/cfb_fan_bulk.py and scripts/refresh_cfb27_canonical_delta.py."
+      ]
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D1",
+    "decision_id": "OP-CATALOG-001-D2",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Activate the verified current-catalog acquisition mission and stop at the preserved provider-contact approval boundary because no legitimate current-complete source remains executable without external permission.",
-    "obstacle_classification": "EXTERNAL_DEPENDENCY",
+    "proposed_action": "Repair the stale-history decision-control regression, supersede provider-email as the next action, and resume read-only reconciliation of the recovered historical bulk acquisition path before any live collection.",
+    "obstacle_classification": "IMPLEMENTATION_PROBLEM",
     "history_refs": [
-      "OP-SIMPLE-002 revision 11 is COMPLETE and the durable worker is synchronized.",
-      "September 28 catalog-refresh checkpoint and execution outline place catalog acquisition before Training Watch.",
-      "Provider request draft exists and remains unsent by explicit prior rule."
+      "September 28: provider-email route not approved and not sent; find another way.",
+      "September 28: historical bulk acquisition program identified; unsent provider request is not the only investigative path.",
+      "Revision 12 incorrectly omitted that newer history and encoded the older approval branch."
     ],
     "capabilities_checked": [
-      "Installed catalog importer and persistent cards.json path",
-      "Saved 9,233 discovery artifact",
-      "Current Stormstrike/CFB.FAN terms and public card evidence",
-      "Current CFB27 Nation terms and public GitHub repository",
-      "EA Season 3 public player-item information",
-      "Desktop Commander, GitHub, Files/Library, web research, durable Gateway/Broker"
+      "SOPDecisionGateway caller-supplied evidence path",
+      "durable ChatGPT-plan OAuth decision provider context/schema",
+      "ControlledToolBroker execution authorization",
+      "historical CFB27 bulk adapter and delta-refresh program",
+      "Library catalog checkpoint supersession history"
     ],
     "alternatives_considered": [
-      "Import the +27 August partial-listing records as current-complete \u2014 rejected because they are stale, partial, and omit required current cards.",
-      "Resume historical automated CFB.FAN discovery \u2014 rejected because current terms require express permission.",
-      "Scrape or reuse CFB27 Nation website data \u2014 rejected by current terms; public repository contains no dataset.",
-      "Use EA public Season 3 page as complete catalog \u2014 rejected because it is a limited item subset without complete scoring data.",
-      "Ask the user to manually collect hundreds of cards \u2014 rejected by the user-test/source-acquisition rule.",
-      "Request provider-authorized export/feed or permitted method \u2014 selected."
+      "Keep revision 12 and ask again for provider-contact approval — rejected because it reopens a settled user decision.",
+      "Only edit the revision-12 next_action text — rejected because it leaves the stale-history architecture hole open.",
+      "Add authority-backed REQUIRED_NEXT/REJECTED route enforcement and repair the catalog next action — selected."
     ],
-    "selected_reason": "Catalog completeness is the verified upstream unfinished product objective and every legitimate executable source route has been exhausted; provider authorization is now the one precise external dependency.",
-    "changes_mission": true,
-    "mission_change_reason": "OP-SIMPLE-002 is complete; preserved project history identifies current catalog acquisition as the next unfinished objective before Training Watch.",
-    "mission_change_evidence": [
-      "Installed catalog explicitly reports 9,206 cards and NOT current-complete.",
-      "Preserved catalog outline sequences current catalog refresh before Training Watch.",
-      "Current public evidence proves newer exact-card versions exist while no authorized current-complete structured source is available."
-    ],
+    "selected_reason": "The root failure is verified: the Gateway trusted a caller-selected history subset. A structured authority-backed route guard closes that omission path and the recovered bulk-acquisition reconciliation remains executable without user action.",
+    "changes_mission": false,
+    "mission_change_reason": "",
+    "mission_change_evidence": [],
     "reopens_lock_ids": [],
     "new_evidence_for_reopened_locks": {}
   },
@@ -470,9 +495,9 @@
         "Revision 2 removed that loophole and was merged in PR #17 after SOP Gate #46 passed."
       ],
       "alternatives": [
-        "Treat the first failed ordinary-chat result as acceptable \u2014 rejected.",
-        "Allow ordinary-chat technical advice while prohibiting writes \u2014 rejected.",
-        "Fail closed outside the Project and physically retest \u2014 selected and passed."
+        "Treat the first failed ordinary-chat result as acceptable — rejected.",
+        "Allow ordinary-chat technical advice while prohibiting writes — rejected.",
+        "Fail closed outside the Project and physically retest — selected and passed."
       ],
       "result": "Ordinary ChatGPT outside-Project acceptance passes; remaining fresh Project/Codex/Work scenarios are still required.",
       "next": "Run the fresh Operation Pancake Project adversarial bootstrap test."
@@ -517,9 +542,9 @@
         "Checkpoint-as-completion remains prohibited."
       ],
       "alternatives": [
-        "Publish despite the mismatch \u2014 rejected.",
-        "Patch the validated branch directly outside the broker \u2014 rejected.",
-        "Rebuild the same five-path revision-8 bundle with canonical handoff bytes and a regression gate \u2014 selected."
+        "Publish despite the mismatch — rejected.",
+        "Patch the validated branch directly outside the broker — rejected.",
+        "Rebuild the same five-path revision-8 bundle with canonical handoff bytes and a regression gate — selected."
       ],
       "result": "A corrected revision-8 bundle is required and must pass canonical handoff verification before publication authorization is requested.",
       "next": "Create and validate the corrected brokered revision-8 branch, then stop at explicit publish/merge authorization if green."
@@ -538,9 +563,9 @@
         "Checkpoint-as-completion and publish-before-verification remain prohibited."
       ],
       "alternatives": [
-        "Retry the same stale-hint OAuth request \u2014 rejected.",
-        "Bypass the Gateway/Broker and publish directly \u2014 rejected.",
-        "Omit only expired id_token_hint values, retain login_hint/client-id/PKCE/identity validation, add a regression, and rebuild revision 8 \u2014 selected."
+        "Retry the same stale-hint OAuth request — rejected.",
+        "Bypass the Gateway/Broker and publish directly — rejected.",
+        "Omit only expired id_token_hint values, retain login_hint/client-id/PKCE/identity validation, add a regression, and rebuild revision 8 — selected."
       ],
       "result": "A new revision-8 candidate is required before publication; the prior ad9acd8 candidate remains local-only and superseded.",
       "next": "Rebuild and validate revision 8 with the OAuth hint-expiry regression, then resume brokered publication if green."
@@ -559,9 +584,9 @@
         "GitHub writes remain user-reserved and broker-bound even after authorization; direct mutation shortcuts remain prohibited."
       ],
       "alternatives": [
-        "Continue reporting an external authorization blocker after authorization was supplied \u2014 rejected.",
-        "Use direct GitHub connector writes outside the broker \u2014 rejected.",
-        "Proceed through fresh bounded Gateway/Broker publication and merge decisions, then close only after long-lived verification \u2014 selected."
+        "Continue reporting an external authorization blocker after authorization was supplied — rejected.",
+        "Use direct GitHub connector writes outside the broker — rejected.",
+        "Proceed through fresh bounded Gateway/Broker publication and merge decisions, then close only after long-lived verification — selected."
       ],
       "result": "Publication is authorized but not yet deployed; revision 8 is IN_PROGRESS with executable publish/merge/post-merge work remaining.",
       "next": "Rebuild and validate the OAuth-expiry-corrected revision-8 branch, then publish it through the brokered GitHub path."
@@ -579,9 +604,9 @@
         "D7 already removed expired ID-token hints from legitimate returning OAuth reauthorization."
       ],
       "alternatives": [
-        "Ask the user to reauthorize during a transient 503 outage \u2014 rejected.",
-        "Retry publication without changing the refresh classification \u2014 rejected.",
-        "Surface transient 429/5xx refresh failures fail-closed, retain reauthorization only for non-transient rejection, add regression, rebuild revision 8 \u2014 selected."
+        "Ask the user to reauthorize during a transient 503 outage — rejected.",
+        "Retry publication without changing the refresh classification — rejected.",
+        "Surface transient 429/5xx refresh failures fail-closed, retain reauthorization only for non-transient rejection, add regression, rebuild revision 8 — selected."
       ],
       "result": "The candidate OAuth path no longer turns transient token-service outages into interactive user testing.",
       "next": "Rebuild and fully validate revision 8, then resume brokered publication when the token service is available."
@@ -601,9 +626,9 @@
         "Work and Codex were explicitly excluded from this acceptance run and are conditional, not completion dependencies."
       ],
       "alternatives": [
-        "Close before merge or deployment verification \u2014 rejected.",
-        "Keep the mission open despite no remaining executable control work \u2014 rejected.",
-        "Close after long-lived verification \u2014 selected."
+        "Close before merge or deployment verification — rejected.",
+        "Keep the mission open despite no remaining executable control work — rejected.",
+        "Close after long-lived verification — selected."
       ],
       "result": "OP-CONTROL-002 is complete on the long-lived branch with the durable ordinary-Project control path deployed and verified.",
       "next": "complete"
@@ -623,9 +648,9 @@
         "Training Watch provider authorization remains a separate external gate and is not widened into this restart acceptance."
       ],
       "alternatives": [
-        "Restart feature development from r61 artifact history \u2014 rejected.",
-        "Start a fresh bulk price run \u2014 rejected.",
-        "Execute the preserved restart acceptance on the installed stack \u2014 selected."
+        "Restart feature development from r61 artifact history — rejected.",
+        "Start a fresh bulk price run — rejected.",
+        "Execute the preserved restart acceptance on the installed stack — selected."
       ],
       "result": "OP-SIMPLE-002 is active with a bounded physical restart/state-preservation acceptance as the next action.",
       "next": "Restart current installed Simple Evaluator through the accepted launcher, preserve the 429 lock, and verify recovery/state preservation."
@@ -647,10 +672,10 @@
         "Work and Codex were not used for this acceptance run."
       ],
       "alternatives": [
-        "Run another bulk refresh \u2014 rejected.",
-        "Require user testing \u2014 rejected.",
-        "Keep OP-SIMPLE-002 open after every bounded acceptance criterion passed \u2014 rejected.",
-        "Close with terminal next_action=complete \u2014 selected."
+        "Run another bulk refresh — rejected.",
+        "Require user testing — rejected.",
+        "Keep OP-SIMPLE-002 open after every bounded acceptance criterion passed — rejected.",
+        "Close with terminal next_action=complete — selected."
       ],
       "result": "OP-SIMPLE-002 physical acceptance is complete on the installed production release.",
       "next": "complete"
@@ -672,39 +697,41 @@
         "Accepted pricing, Browser Watch, scoring, and product acceptance remain closed."
       ],
       "alternatives": [
-        "Stale/partial import \u2014 rejected.",
-        "Unauthorized scraping \u2014 rejected.",
-        "Manual mass capture \u2014 rejected.",
-        "Provider-authorized source request \u2014 selected."
+        "Stale/partial import — rejected.",
+        "Unauthorized scraping — rejected.",
+        "Manual mass capture — rejected.",
+        "Provider-authorized source request — selected."
       ],
       "result": "OP-CATALOG-001 is selected but blocked on one explicit provider-contact approval; no product or market mutation is justified before that input.",
       "next": "Obtain explicit user approval to send the preserved Stormstrike/CFB.FAN data-access request to business@stormstrike.gg."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D2",
+      "decision": "Supersede the revision-12 provider-email blocker and install an authority-backed history/route guard before continuing catalog acquisition.",
+      "evidence": [
+        "Newer September 28 user direction rejects provider email as the next action.",
+        "Historical bulk acquisition program and provenance were recovered later the same day.",
+        "SOPDecisionGateway currently validates only caller-supplied evidence and therefore cannot detect omitted newer history."
+      ],
+      "history": [
+        "Mutation bypass controls remain valid and accepted.",
+        "The defect is pre-execution history selection, not broker execution.",
+        "No provider message, live collection, scoring change, market-lock clear, or product-state mutation is authorized by this correction."
+      ],
+      "alternatives": [
+        "Repeat provider approval — rejected.",
+        "Text-only map correction — rejected.",
+        "Mechanical authority-history guard plus corrected required route — selected."
+      ],
+      "result": "OP-CATALOG-001 is IN_PROGRESS with catalog-historical-bulk-reconcile as the authority-required next route.",
+      "next": "Reconcile the recovered historical CFB27 bulk acquisition program, its provenance, current permitted-use basis, and source reachability; do not send a provider request or perform live collection until that read-only reconciliation is complete."
     }
   ],
-  "blocker": {
-    "type": "EXTERNAL_DEPENDENCY",
-    "capabilities_checked": [
-      "Current local/export inventory",
-      "Installed importer/persistence path",
-      "Current provider terms",
-      "Public GitHub alternatives",
-      "Official EA public item information",
-      "Web/Library/GitHub/Desktop Commander research"
-    ],
-    "adaptations_attempted": [
-      "Rechecked the saved 9,233 discovery delta and required acceptance cards.",
-      "Searched for newer authorized project/Library exports or provider permission.",
-      "Researched current structured-source alternatives.",
-      "Inspected the public CFB27 Nation repository for a separately licensed card artifact.",
-      "Checked official EA current player-item publication as a possible structured fallback."
-    ],
-    "remaining_executable_routes": [],
-    "user_action": "Approve sending the preserved read-only data-access request to business@stormstrike.gg. No message, purchase, or account action will occur before that approval."
-  },
+  "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 12,
-    "next_action": "Obtain explicit user approval to send the preserved Stormstrike/CFB.FAN data-access request to business@stormstrike.gg; do not send before approval.",
+    "state_revision": 13,
+    "next_action": "Reconcile the recovered historical CFB27 bulk acquisition program, its provenance, current permitted-use basis, and source reachability; do not send a provider request or perform live collection until that read-only reconciliation is complete.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -726,7 +753,10 @@
   "completion": {
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
-    "remaining_executable_work": []
+    "remaining_executable_work": [
+      "catalog-historical-bulk-reconcile",
+      "After reconciliation, choose only an authority-permitted source acquisition route and continue OP-CATALOG-001."
+    ]
   },
   "enforcement": {
     "behavioral_standard": {
@@ -761,7 +791,9 @@
       "long_lived_revision8_merge_commit": "a295eeb7f271dcd8e45d3ab798e5fb74fb60e81b",
       "post_merge_ci_verified": true,
       "post_merge_windows_verified": true,
-      "post_merge_live_inbox_verified": true
+      "post_merge_live_inbox_verified": true,
+      "authoritative_history_route_guard": true,
+      "authority_guard_schema_version": 1
     },
     "direct_chatgpt_hard_interception": false,
     "hard_limitations_acknowledged": true,
@@ -800,5 +832,26 @@
         ]
       }
     }
+  },
+  "decision_guard": {
+    "version": 1,
+    "constraints": [
+      {
+        "id": "catalog-provider-email-rejected",
+        "mission_id": "OP-CATALOG-001",
+        "route_id": "catalog-provider-email",
+        "status": "REJECTED",
+        "description": "The provider-email route was explicitly not approved as the next action; the user directed Operation Pancake to find another way.",
+        "source": "Library:/Simple Evaluator/CHECKPOINT_3U_EXECUTION_STATUS.json#alternative_catalog_source_research_20260928"
+      },
+      {
+        "id": "catalog-historical-bulk-reconcile-required",
+        "mission_id": "OP-CATALOG-001",
+        "route_id": "catalog-historical-bulk-reconcile",
+        "status": "REQUIRED_NEXT",
+        "description": "Continue from the recovered historical bulk acquisition program and reconcile its provenance, current permitted-use basis, and source reachability before choosing any external-user action or live collection.",
+        "source": "Library:/Simple Evaluator/CHECKPOINT_3U_EXECUTION_STATUS.json#historical_bulk_acquisition_correction_20260928"
+      }
+    ]
   }
 }

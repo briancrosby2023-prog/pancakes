@@ -1,7 +1,7 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 12
-Status: BLOCKED
+State revision: 13
+Status: IN_PROGRESS
 Mission ID: OP-CATALOG-001
 
 ## Mission
@@ -16,9 +16,9 @@ Do not let the newest obstacle replace the recorded mission.
 
 ## Preflight evidence
 - MAP: Long-lived revision 11 / eacf147918554a29bca94f76277670779559fec9 is COMPLETE for OP-SIMPLE-002 with all seven criteria passed. | The durable Windows control worker was broker-rebound on 2026-10-01 and now reports revision 11, exact head eacf147918554a29bca94f76277670779559fec9, OP-SIMPLE-002, READY, with worker SHA-256 ee5d8319bc0c7997f070e42d32a59941fa684433944563889d9f2a4b5320d59f unchanged. | Installed Simple Evaluator remains 3T / 1.2.0 PRODUCTION_ACCEPTED with Browser Helper 1.4.12 and the protected persistent RATE_LIMITED 10/31 market lock.
-- HISTORY: The preserved catalog milestone requires CURRENT CATALOG ACQUISITION -> EXACT-CARD IMPORT -> RANKING ACCEPTANCE before Training Watch completion. | Installed baseline is 9,206 exact cards and is explicitly NOT current-complete. | The saved discovery artifact contains 9,233 records, only +27 versus installed, and its records are 2026-08-19 PARTIAL_LISTING_VECTOR evidence; it is not a current-complete scoring catalog. | September 28 checkpoint research already exhausted alternative catalog sources, preserved an unsent provider request, and required explicit approval before any external message, purchase, or account creation. | Accepted Chrome pricing, Browser Watch, dynamic-port behavior, OP-SIMPLE-002 physical acceptance, and scoring models must not be reopened without materially new evidence.
-- RESEARCH: Current October 1 CFB.FAN public pages contain later exact-card versions, including Ashlynd Barker 91 FS and Kingston Lopa 90 FS, proving the installed/saved snapshot is stale. | The local 9,233 discovery does not contain the required Jordan Allen 91, Ashlynd Barker 91, Kingston Lopa 90, Earl Little Jr. 90, or Xavier Filsaime 90 acceptance versions. | Stormstrike Terms last updated 2026-05-13 prohibit automated means such as bots, scrapers, or crawlers except where expressly permitted, and prohibit automated scraping/copying in Acceptable Use. | CFB27 Nation Terms last updated 2026-06-25 prohibit scraping or republishing content without permission; its public GitHub repository is documentation-only under CC BY 4.0 and contains no card dataset. | EA Season 3 pages provide only a bounded official player-item subset, not a current-complete exact-card catalog with all required scoring attributes. | No authorized current-complete structured catalog feed/export or provider permission was found after current web, Library, repository, and installed-state research.
-- CAPABILITIES: Desktop Commander is online as bootstrap/recovery transport; the durable Gateway/Broker is synchronized at revision 11 and READY. | The installed evaluator already has version-aware catalog import/persistence infrastructure and accepted exact-card Chrome pricing behavior. | Web/GitHub/Library research can verify sources but cannot create provider permission. | No authorized provider feed/configuration or current-complete local export is available. | External provider outreach is technically possible after approval, but history explicitly prohibits sending it before user approval.
+- HISTORY: OP-SIMPLE-002 revision 11 remains COMPLETE; revision 12 selected OP-CATALOG-001 but incorrectly reopened an older provider-email approval branch. | Verified September 28 history records the user direction: Find another way; provider-email route not approved and not sent. | The later September 28 historical_bulk_acquisition_correction identified src/operation_pancake/acquisition/cfb_fan_bulk.py plus scripts/refresh_cfb27_canonical_delta.py as the actual saved bulk acquisition/refresh program. | That correction explicitly says the unsent provider request is not the only investigative path and requires continuing from the recovered acquisition program and provenance. | Installed baseline remains 9,206 exact cards; the saved September 8 canonical population is 9,233 and is not current-complete. | Accepted Chrome pricing, Browser Watch, dynamic-port behavior, OP-SIMPLE-002 physical acceptance, and scoring models remain closed absent regression.
+- RESEARCH: The recovered bulk adapter uses the public CFB.FAN /api/27/player-items/ route, batches up to 50 IDs, records hashed raw JSON/provenance, and historically ran at 12 requests/minute. | The recovered delta refresh reconciles current listing discovery to canonical exact IDs and uses the bulk adapter only for missing IDs; the September 8 saved refresh reached 9,233 with zero missing IDs, duplicates, old IDs lost, or rejected conflicts. | Historical successful access alone does not establish current permission; current Stormstrike terms restrict automated access except where expressly permitted. | No evidence establishes that a new permission requirement arose after the successful saved acquisitions; the permitted-use basis and source reachability therefore remain an evidence gap to reconcile before any live collection. | The recovered adapter's generic retry behavior must not be used to evade an access-control or rate-limit response.
+- CAPABILITIES: Desktop Commander is available as bootstrap/recovery transport and the durable Gateway/Broker is READY on revision 12. | The live repository contains the historical CFB27 bulk adapter, delta-refresh script, saved provenance reports, and version-aware evaluator catalog importer. | Read-only repository, Library, and current-source research can reconcile the historical acquisition path without user action or live collection. | Consequential mutations remain broker-only; provider messaging remains approval-gated if ever selected later.
 
 ## Available capabilities
 - GitHub repository read/write and PR workflow
@@ -35,6 +35,8 @@ Do not let the newest obstacle replace the recorded mission.
 - physically accepted Simple Evaluator 3T / 1.2.0 r61 installation with persistent 429 safety lock and Browser Helper 1.4.12
 - version-aware installed catalog importer/persistence path
 - accepted Chrome/browser-helper exact-card price observation path after catalog import
+- historical CFB27 bulk acquisition adapter and saved provenance
+- read-only reconciliation of permitted-use basis and source reachability
 
 ## Accepted — do not reopen without materially new evidence
 - accepted-sop-order: Operation Pancake SOP order is MAP -> HISTORY -> RESEARCH -> CAPABILITIES -> PLAN -> EXECUTE -> ADAPT -> VERIFY -> UPDATE MAP -> CONTINUE.
@@ -42,6 +44,7 @@ Do not let the newest obstacle replace the recorded mission.
 - accepted-browser-watch: Original 3U Browser Watch production acceptance is closed and must not be reopened without a new regression.
 - accepted-two-layer-control-standard: Operation Pancake behavior control requires both a ChatGPT instruction layer and a fail-closed controlled execution layer; neither alone satisfies the objective.
 - accepted-provider-contact-approval: External provider messages, paid access, or account creation for catalog acquisition require explicit user approval before execution.
+- accepted-authoritative-history-route-guard: Consequential strict decisions must independently load structured REQUIRED_NEXT/REJECTED route constraints from the project authority; caller-supplied history cannot omit or override them.
 
 ## Rejected/superseded — do not retry without materially new evidence
 - reject-hardcoded-8788: Hard-code 127.0.0.1:8788 as the Simple Evaluator port.
@@ -54,12 +57,14 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-guess-patch-loop: Create another implementation patch from an unverified root-cause hypothesis or retry a failed hypothesis without materially new evidence.
 - reject-user-test-before-exhaustion: Ask the user to install/click/restart/test while legitimate executable technical routes remain.
 - reject-prohibited-catalog-scraping: Automate collection from CFB.FAN/Stormstrike or scrape/republish CFB27 Nation without express permission.
+- reject-provider-email-as-catalog-next-action: Treat the preserved Stormstrike/CFB.FAN provider-email request as the current or only next action for OP-CATALOG-001.
 
 ## Next action
-Obtain explicit user approval to send the preserved Stormstrike/CFB.FAN data-access request to business@stormstrike.gg; do not send before approval.
+Reconcile the recovered historical CFB27 bulk acquisition program, its provenance, current permitted-use basis, and source reachability; do not send a provider request or perform live collection until that read-only reconciliation is complete.
 
 ## Remaining executable work
-- None
+- catalog-historical-bulk-reconcile
+- After reconciliation, choose only an authority-permitted source acquisition route and continue OP-CATALOG-001.
 
 ## Completion rule
 A commit, test, CI run, PR, package, screenshot, or progress report is only a checkpoint.

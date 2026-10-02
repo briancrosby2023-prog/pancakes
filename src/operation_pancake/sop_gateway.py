@@ -22,6 +22,11 @@ from operation_pancake.cross_surface_control import (
     validate_typed_evidence,
     validate_user_test_boundary,
 )
+from operation_pancake.authority_guard import (
+    AuthorityGuardError,
+    AuthorityGuardSnapshot,
+    load_authority_guard,
+)
 
 PREFLIGHT_REQUIRED = "PREFLIGHT_REQUIRED"
 PREFLIGHT_PASS = "PREFLIGHT_PASS"
@@ -91,6 +96,9 @@ class DecisionPacket:
     hypothesis_id: str | None = None
     user_action_required: bool = False
     remaining_executable_routes: tuple[str, ...] = ()
+    selected_route_id: str | None = None
+    remaining_route_ids: tuple[str, ...] = ()
+    authority_guard_fingerprint: str | None = None
 
     def as_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -137,9 +145,12 @@ class DecisionRecordStore:
             "alternatives_considered",
             "implementation_basis_fact_keys",
             "remaining_executable_routes",
+            "remaining_route_ids",
         }
         for field in tuple_fields:
             payload[field] = tuple(payload.get(field, ()))
+        payload.setdefault("selected_route_id", None)
+        payload.setdefault("authority_guard_fingerprint", None)
         return DecisionPacket(**payload)
 
 
@@ -160,11 +171,15 @@ class SOPDecisionGateway:
         store: DecisionRecordStore,
         strict_evidence: bool = False,
         hypotheses: HypothesisLedger | None = None,
+        authority_path: Path | None = None,
+        require_authority_guard: bool = False,
     ):
         self.provider = provider
         self.store = store
         self.strict_evidence = strict_evidence
         self.hypotheses = hypotheses
+        self.authority_path = Path(authority_path) if authority_path is not None else None
+        self.require_authority_guard = require_authority_guard
 
     def request_decision(
         self,
@@ -191,8 +206,25 @@ class SOPDecisionGateway:
         cross_surface_errors: list[str] = []
         evidence_types: tuple[str, ...] = ()
         contradiction_keys: tuple[str, ...] = ()
+        authority_guard: AuthorityGuardSnapshot | None = None
+        evidence_for_validation: Mapping[str, Sequence[Any]] = evidence
         if self.strict_evidence:
-            typed_gate = validate_typed_evidence(evidence)
+            staged_evidence = {
+                stage: list(evidence.get(stage, ()))
+                for stage in ("map", "history", "research", "capabilities")
+            }
+            try:
+                authority_guard = load_authority_guard(
+                    self.authority_path,
+                    mission,
+                    required=self.require_authority_guard,
+                )
+            except AuthorityGuardError as exc:
+                cross_surface_errors.append(str(exc))
+            if authority_guard is not None:
+                staged_evidence["history"].extend(authority_guard.evidence_items())
+            evidence_for_validation = staged_evidence
+            typed_gate = validate_typed_evidence(evidence_for_validation)
             plain_evidence = typed_gate.plain()
             cross_surface_errors.extend(typed_gate.errors)
             evidence_types = typed_gate.kinds()
@@ -224,6 +256,9 @@ class SOPDecisionGateway:
             research_evidence=_clean_items(plain_evidence.get("research")),
             capability_evidence=_clean_items(plain_evidence.get("capabilities")),
             state_fingerprint=fingerprint,
+            authority_guard_fingerprint=(
+                authority_guard.fingerprint if authority_guard is not None else None
+            ),
             evidence_types=evidence_types,
             contradiction_keys=contradiction_keys,
             mutation_requested=mutation_requested,
@@ -260,9 +295,14 @@ class SOPDecisionGateway:
                 for stage in typed_gate.items
             } if typed_gate is not None else None,
             "mutation_requested": mutation_requested,
+            "authority_guard": (
+                authority_guard.context() if authority_guard is not None else None
+            ),
             "instruction": (
                 "Return a structured Operation Pancake plan only. Evidence was validated "
-                "before this call; do not invent or self-certify missing evidence."
+                "before this call; do not invent or self-certify missing evidence. "
+                "If authority_guard is present, its REQUIRED_NEXT and REJECTED route "
+                "constraints are mandatory and override caller omission."
             ),
         }
 
@@ -307,6 +347,8 @@ class SOPDecisionGateway:
         remaining_executable_routes = _clean_items(
             decision.get("remaining_executable_routes")
         )
+        selected_route_id = str(decision.get("selected_route_id", "")).strip() or None
+        remaining_route_ids = _clean_items(decision.get("remaining_route_ids"))
         overlap = set(allowed_actions) & set(blocked_actions)
         if overlap:
             raise SOPGatewayError(
@@ -334,6 +376,14 @@ class SOPDecisionGateway:
                     remaining_executable_routes=remaining_executable_routes,
                 )
             )
+        if self.strict_evidence and authority_guard is not None:
+            post_decision_errors.extend(
+                authority_guard.decision_errors(
+                    selected_route_id=selected_route_id,
+                    remaining_route_ids=remaining_route_ids,
+                    user_action_required=user_action_required,
+                )
+            )
         if post_decision_errors:
             packet = DecisionPacket(
                 **base,
@@ -351,6 +401,8 @@ class SOPDecisionGateway:
                 implementation_basis_fact_keys=implementation_basis_fact_keys,
                 user_action_required=user_action_required,
                 remaining_executable_routes=remaining_executable_routes,
+                selected_route_id=selected_route_id,
+                remaining_route_ids=remaining_route_ids,
             )
             self.store.save(packet)
             return packet
@@ -369,6 +421,8 @@ class SOPDecisionGateway:
             implementation_basis_fact_keys=implementation_basis_fact_keys,
             user_action_required=user_action_required,
             remaining_executable_routes=remaining_executable_routes,
+            selected_route_id=selected_route_id,
+            remaining_route_ids=remaining_route_ids,
         )
         self.store.save(packet)
         return packet
@@ -384,6 +438,25 @@ class SOPDecisionGateway:
         if not action:
             raise ValueError("action is required")
         packet = self.store.load(decision_id)
+        if packet.authority_guard_fingerprint is not None:
+            try:
+                current_guard = load_authority_guard(
+                    self.authority_path,
+                    packet.mission,
+                    required=self.require_authority_guard,
+                )
+            except AuthorityGuardError as exc:
+                raise StateChanged(
+                    "Authoritative decision guard became unavailable; rerun preflight"
+                ) from exc
+            if (
+                current_guard is None
+                or current_guard.fingerprint != packet.authority_guard_fingerprint
+            ):
+                raise StateChanged(
+                    "Authoritative history/route constraints changed after the decision; "
+                    "rerun MAP/HISTORY/RESEARCH/CAPABILITIES"
+                )
         if packet.decision_status != DECISION_ALLOWED:
             raise ActionBlocked(
                 f"Decision {decision_id} is not actionable; status={packet.decision_status}"
@@ -492,6 +565,8 @@ def production_gateway(root: Path, provider: DecisionProvider | None = None) -> 
         store=DecisionRecordStore(record_root),
         strict_evidence=True,
         hypotheses=HypothesisLedger(root / ".operation_pancake" / "hypotheses.json"),
+        authority_path=root / "docs" / "OPERATION_PANCAKE_CONTROL_STATE.json",
+        require_authority_guard=True,
     )
 
 
