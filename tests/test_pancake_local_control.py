@@ -231,3 +231,7 @@ def test_single_worktab_runtime_loader_has_importlib_util_available():
     assert hasattr(mod.importlib, "util")
     assert callable(mod.importlib.util.spec_from_file_location)
     assert callable(mod.importlib.util.module_from_spec)
+
+def test_single_worktab_action_revision_pin_matches_revision_22():
+    action = load_single_worktab_action()
+    assert action.EXPECTED_AUTHORITY_REVISION == 22

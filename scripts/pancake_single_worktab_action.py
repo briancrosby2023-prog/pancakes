@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
+EXPECTED_AUTHORITY_REVISION = 22
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -549,7 +550,7 @@ def write_release_accepted(control) -> str:
 def run(repo: Path, control) -> Mapping[str, Any]:
     if os.name != "nt":
         raise control.EvidenceGap("single-worktab physical acceptance is Windows-only")
-    control.verify_repo(repo, expected_revision=20, expected_branch="product/c3po-clean-room-roster", require_clean=True)
+    control.verify_repo(repo, expected_revision=EXPECTED_AUTHORITY_REVISION, expected_branch="product/c3po-clean-room-roster", require_clean=True)
     installed_hashes = verify_installed_files(control)
     before = protected_snapshot()
     verify_protected(before, control, allow_new_observations=False)

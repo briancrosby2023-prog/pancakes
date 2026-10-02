@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 21,
+  "state_revision": 22,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Deploy the revision-21 durable-worker loader fix, then submit a fresh bounded complete_simple_single_worktab_acceptance GitHub-inbox request through SOPDecisionGateway -> ControlledToolBroker. Revision 21 fixes the verified importlib.util loader failure from request single-worktab-accept-r20-final-20261002 without changing the fixed physical-acceptance action, source-access locks, scoring, exact-card identity, protected state, or browser behavior. After rebind, execute the action once with a new request_id and continue through physical acceptance; do not ask the user to test while this corrected durable route remains executable.",
+    "next_action": "Deploy the revision-22 single-worktab action authority-pin fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r21-final-20261002-1410 is terminal and must not be replayed. Revision 22 changes only the action's verified stale authority pin from revision 20 to revision 22 plus focused regression coverage and authority/handoff bookkeeping; it does not change browser logic, source access, scoring, exact-card identity, protected state, or locks.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -64,37 +64,34 @@
     "map": {
       "complete": true,
       "evidence": [
-        "OBSERVED: revision 20 / 0d447fdc is the live OP-CATALOG-001 authority; the durable Windows GitHub-inbox worker is READY on that exact head with worker SHA-256 355444a3.",
-        "OBSERVED: all seven installed Simple Evaluator single-worktab integration files match the validated Browser Helper 1.4.13 candidate, including explicit MIN_PAGE_DWELL_MS = 5000.",
-        "OBSERVED: control issue #49 was accepted, frozen, decision-created and executed by the revision-20 durable worker, proving the GitHub-inbox -> Gateway -> Broker transport is live.",
-        "OBSERVED: request single-worktab-accept-r20-final-20261002 failed before browser mutation with AttributeError: module 'importlib' has no attribute 'util'."
+        "OBSERVED: revision 21 / b917d2c4 is the live OP-CATALOG-001 authority and the durable Windows GitHub-inbox worker is READY on that exact head with worker SHA-256 4d2c0862.",
+        "OBSERVED: all installed single-worktab files match the validated Browser Helper 1.4.13 candidate after the brokered watch.js repair.",
+        "OBSERVED: fresh immutable issue #51 was accepted and frozen by the revision-21 durable worker but terminated before browser mutation with ControlError: wrong authority revision: expected 20, observed 21."
       ]
     },
     "history": {
       "complete": true,
       "evidence": [
-        "VERIFIED_HISTORY: both raw CFB.FAN acquisition clients remain denied with one-request HTTP 403 ACCESS_DENIAL and may not be retried or emulated.",
-        "VERIFIED_HISTORY: revision 20 added complete_simple_single_worktab_acceptance as a fixed mutating durable inbox action and was merged/rebound successfully before issue #49 executed.",
-        "VERIFIED_HISTORY: the revision-20 action itself was not physically retried after failure; the failure occurred in the worker loader before pancake_single_worktab_action.py could execute.",
-        "VERIFIED_HISTORY: prior Edge restart, missing Reload-control and AppActivate hypotheses remain invalidated and are not reopened by this loader fix."
+        "VERIFIED_HISTORY: issue #49 exposed and revision 21 fixed the durable runner importlib.util loader defect; revision-21 worker deployment is complete and READY.",
+        "VERIFIED_HISTORY: issue #51 is terminal and may not be replayed.",
+        "VERIFIED_HISTORY: both denied raw CFB.FAN acquisition routes remain fail-closed; provider-email remains rejected; scoring, exact-card identity and protected-state locks remain unchanged."
       ]
     },
     "research": {
       "complete": true,
       "evidence": [
-        "OBSERVED: scripts/pancake_local_control.py imports importlib but calls importlib.util.spec_from_file_location inside run_single_worktab_acceptance; on the durable worker this raised AttributeError before loading the fixed action module.",
-        "OBSERVED: scripts/pancake_single_worktab_action.py already imports importlib.util correctly; therefore the fault is isolated to the durable runner loader, not the action's browser logic.",
-        "OBSERVED: adding an explicit import importlib.util to the durable runner is the minimal code correction; a focused regression test can assert that the runtime loader exposes spec_from_file_location and module_from_spec.",
-        "INFERENCE supported by the exact traceback and source inspection: no browser, source-access, scoring, identity, persistence, or market-lock behavior needs to change for this correction."
+        "OBSERVED: scripts/pancake_single_worktab_action.py run() still calls control.verify_repo with expected_revision=20.",
+        "OBSERVED: under the revision-21 worker this exact stale pin produced issue #51 failure 'wrong authority revision: expected 20, observed 21' before browser mutation.",
+        "OBSERVED: the narrow correction is to bind the unchanged physical-acceptance action to revision 22 and add focused regression coverage for that pin.",
+        "INFERENCE supported by exact receipt and source line: browser logic, source access, scoring, identity, persistence and market-lock behavior do not need to change."
       ]
     },
     "capabilities": {
       "complete": true,
       "evidence": [
-        "OBSERVED: revision-20 Gateway/Broker, GitHub inbox transport and durable worker are healthy enough to receive and execute immutable issue requests through DECISION_CREATED.",
-        "OBSERVED: the local repository can stage a four-path revision-21 correction: durable runner, focused loader regression test, authority state and canonical handoff.",
-        "OBSERVED: the existing bounded patch, exact PR publication/merge, and rollback-capable runtime-rebind mechanisms remain available for a minimal revision-21 deployment.",
-        "OBSERVED: after revision-21 rebind, the already-registered complete_simple_single_worktab_acceptance action remains the required bounded route; a fresh request_id avoids replaying the failed issue #49 request."
+        "OBSERVED: revision-21 Gateway/Broker, immutable GitHub-inbox transport and durable worker are healthy and processed issue #51 to the action boundary.",
+        "OBSERVED: the local repository can stage a four-path revision-22 correction: physical-acceptance action revision pin, focused regression test, authority state and canonical handoff.",
+        "OBSERVED: bounded patch, exact publication/merge and rollback-capable runtime-rebind mechanisms remain available."
       ]
     }
   },
@@ -163,7 +160,10 @@
       "staged complete_simple_single_worktab_acceptance fail-closed handler and focused registry/toggle-selector tests",
       "revision-20 durable request issue #49 reached execution and failed before browser mutation on missing importlib.util loader attribute",
       "exact runner source defect: importlib.util used without importing importlib.util in pancake_local_control.py",
-      "minimal revision-21 importlib.util loader fix plus focused regression test"
+      "minimal revision-21 importlib.util loader fix plus focused regression test",
+      "issue #51 terminal failure: wrong authority revision expected 20 observed 21 before browser mutation",
+      "exact action source stale pin: pancake_single_worktab_action.py run() expected_revision=20",
+      "minimal revision-22 authority-pin fix plus focused regression test"
     ],
     "available": [
       "GitHub repository read/write and PR workflow",
@@ -194,7 +194,9 @@
       "revision-20 durable inbox action for fixed single-worktab browser activation and physical acceptance through Gateway/Broker",
       "fail-closed Windows UI Automation inside the durable worker with exact installed-helper/protected-state preconditions",
       "revision-21 minimal durable-loader repair through bounded patch/publish/merge/rebind",
-      "fresh immutable GitHub-inbox request for the unchanged complete_simple_single_worktab_acceptance action after corrected worker deployment"
+      "fresh immutable GitHub-inbox request for the unchanged complete_simple_single_worktab_acceptance action after corrected worker deployment",
+      "revision-22 minimal single-worktab action authority-pin repair through bounded patch/publish/merge/rebind",
+      "fresh immutable GitHub-inbox request for complete_simple_single_worktab_acceptance after revision-22 deployment"
     ],
     "unavailable_or_excluded": [
       "Direct programmatic modification of ChatGPT Project instructions from this chat",
@@ -439,29 +441,28 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D10",
+    "decision_id": "OP-CATALOG-001-D11",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Fix only the verified durable-worker importlib.util loader defect, deploy revision 21, then submit one fresh immutable control request for the unchanged complete_simple_single_worktab_acceptance action.",
+    "proposed_action": "Fix only the verified stale authority revision pin in the physical single-worktab action, deploy revision 22, then submit one fresh immutable acceptance request.",
     "obstacle_classification": "IMPLEMENTATION_PROBLEM",
     "history_refs": [
-      "Revision 20 and its durable action were successfully merged and rebound before issue #49 executed.",
-      "Issue #49 failed before browser mutation with an exact AttributeError in the runner loader.",
-      "The failed request_id is terminal and must not be replayed; the corrected worker requires a fresh immutable request."
+      "Revision 21 fixed the prior durable-loader defect and is deployed READY.",
+      "Issue #51 failed before browser mutation with exact ControlError expected revision 20 observed 21.",
+      "Issue #51 request_id is terminal and must not be replayed."
     ],
     "capabilities_checked": [
-      "live revision-20 authority and READY worker",
-      "issue #49 FAILED receipt and exact error",
-      "runner source import and run_single_worktab_acceptance loader path",
-      "action-module imports and existing focused tests",
+      "live revision-21 authority and READY worker",
+      "issue #51 FAILED receipt and exact error",
+      "physical-action run() source line with expected_revision=20",
       "bounded patch/publish/merge/runtime-rebind pipeline"
     ],
     "alternatives_considered": [
-      "Replay issue #49 unchanged — rejected because terminal request IDs cannot be replayed and the implementation defect would recur.",
-      "Bypass the durable worker and run browser mutation directly — rejected by the execution rule and because the controlled durable route remains repairable.",
-      "Change the physical-acceptance action — rejected because the observed failure occurred before that action loaded.",
-      "Add explicit importlib.util to the durable runner with a focused regression test — selected."
+      "Replay issue #51 unchanged — rejected because terminal request IDs cannot be replayed and the stale pin would recur.",
+      "Submit a request claiming revision 20 — rejected because the durable inbox correctly validates current authority revision 21.",
+      "Bypass the durable worker and operate the browser directly — rejected by the execution rule.",
+      "Change only the action authority pin to revision 22 with regression coverage — selected."
     ],
-    "selected_reason": "The exact traceback and source inspection isolate a one-line durable-loader defect. Correcting that loader is materially new evidence and the narrowest legitimate way to continue the already-selected single-tab acceptance route without changing browser or source behavior.",
+    "selected_reason": "The exact terminal receipt and action source isolate a stale hard-coded revision check before browser mutation. Updating that pin is materially new evidence and the narrowest legitimate correction.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
@@ -995,13 +996,35 @@
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS with a verified IMPLEMENTATION_PROBLEM and a narrow revision-21 repair path.",
       "next": "Deploy the revision-21 durable-worker loader fix, then submit a fresh bounded complete_simple_single_worktab_acceptance GitHub-inbox request through SOPDecisionGateway -> ControlledToolBroker. Revision 21 fixes the verified importlib.util loader failure from request single-worktab-accept-r20-final-20261002 without changing the fixed physical-acceptance action, source-access locks, scoring, exact-card identity, protected state, or browser behavior. After rebind, execute the action once with a new request_id and continue through physical acceptance; do not ask the user to test while this corrected durable route remains executable."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D11",
+      "decision": "Repair only the stale physical-action authority revision pin before issuing a fresh single-worktab acceptance request.",
+      "evidence": [
+        "Issue #51 terminal receipt: wrong authority revision expected 20 observed 21.",
+        "pancake_single_worktab_action.py run() still hard-codes expected_revision=20.",
+        "Failure occurred before browser mutation under a healthy revision-21 durable worker."
+      ],
+      "history": [
+        "Revision 21 loader repair is deployed and READY.",
+        "Issue #51 is terminal and will not be replayed.",
+        "Denied source-route, scoring, identity, persistence and user-test locks remain unchanged."
+      ],
+      "alternatives": [
+        "Replay failed request — rejected.",
+        "Lie about current revision — rejected.",
+        "Direct browser bypass — rejected.",
+        "Minimal action revision-pin fix with regression test — selected."
+      ],
+      "result": "OP-CATALOG-001 remains IN_PROGRESS with a verified IMPLEMENTATION_PROBLEM and a narrow revision-22 repair path.",
+      "next": "Deploy the revision-22 single-worktab action authority-pin fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r21-final-20261002-1410 is terminal and must not be replayed. Revision 22 changes only the action's verified stale authority pin from revision 20 to revision 22 plus focused regression coverage and authority/handoff bookkeeping; it does not change browser logic, source access, scoring, exact-card identity, protected state, or locks."
     }
   ],
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 21,
-    "next_action": "Deploy the revision-21 durable-worker loader fix, then submit a fresh bounded complete_simple_single_worktab_acceptance GitHub-inbox request through SOPDecisionGateway -> ControlledToolBroker. Revision 21 fixes the verified importlib.util loader failure from request single-worktab-accept-r20-final-20261002 without changing the fixed physical-acceptance action, source-access locks, scoring, exact-card identity, protected state, or browser behavior. After rebind, execute the action once with a new request_id and continue through physical acceptance; do not ask the user to test while this corrected durable route remains executable.",
+    "state_revision": 22,
+    "next_action": "Deploy the revision-22 single-worktab action authority-pin fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r21-final-20261002-1410 is terminal and must not be replayed. Revision 22 changes only the action's verified stale authority pin from revision 20 to revision 22 plus focused regression coverage and authority/handoff bookkeeping; it does not change browser logic, source access, scoring, exact-card identity, protected state, or locks.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -1024,9 +1047,9 @@
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
     "remaining_executable_work": [
-      "Create, validate, publish and merge the minimal revision-21 durable-worker importlib.util loader repair with focused regression coverage.",
-      "Rebind the Windows durable worker to revision 21 and verify exact worker bytes, READY health, clean product branch and control validation.",
-      "Create one fresh immutable GitHub control issue for complete_simple_single_worktab_acceptance and let the corrected durable worker execute it through Gateway/Broker.",
+      "Create, validate, publish and merge the minimal revision-22 single-worktab action authority-pin repair with focused regression coverage.",
+      "Rebind the Windows durable worker to revision 22 and verify exact worker bytes, READY health, clean product branch and control validation.",
+      "Create one fresh immutable GitHub control issue for complete_simple_single_worktab_acceptance and let the revision-22 worker execute it through Gateway/Broker.",
       "Verify the physical-acceptance receipt: live Browser Helper 1.4.13, one reusable CFB.FAN work tab, minimum five-second rendered-page dwell, exact-card price persistence, saved-watch serialization, fail-closed protections, protected state, tab hygiene and dynamic-port restart persistence.",
       "Advance the authority only with verified physical-acceptance evidence, synchronize the durable worker, then hand Simple Evaluator to the user for normal product acceptance only if no executable technical debugging remains."
     ]
@@ -1122,8 +1145,8 @@
         "mission_id": "OP-CATALOG-001",
         "route_id": "catalog-rendered-browser-single-tab-integration",
         "status": "REQUIRED_NEXT",
-        "description": "The next executable route is to deploy the revision-21 durable-worker importlib.util loader fix, then execute the unchanged complete_simple_single_worktab_acceptance action through a fresh immutable GitHub-inbox request and SOPDecisionGateway -> ControlledToolBroker. The failed issue #49 request must not be replayed. The route must not retry or emulate denied raw HTTP clients, clear the persistent rate-limit lock, change scoring, or hand browser activation/testing to the user.",
-        "source": "Operation Pancake revision 21 evidence from terminal issue #49 loader failure"
+        "description": "The next executable route is to deploy the revision-22 physical-action authority-pin fix, then execute complete_simple_single_worktab_acceptance through one fresh immutable GitHub-inbox request and SOPDecisionGateway -> ControlledToolBroker. Failed issues #49 and #51 must not be replayed. The route must not retry denied raw HTTP clients, clear the persistent rate-limit lock, change scoring, or hand browser activation/testing to the user.",
+        "source": "Operation Pancake revision 22 evidence from terminal issue #51 stale authority-pin failure"
       }
     ]
   }
