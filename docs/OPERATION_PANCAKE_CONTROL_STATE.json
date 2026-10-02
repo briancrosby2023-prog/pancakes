@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 20,
+  "state_revision": 21,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Deploy the revision-20 durable GitHub-inbox worker extension and execute its fixed complete_simple_single_worktab_acceptance action through SOPDecisionGateway -> ControlledToolBroker. The action must preserve both denied raw-request locks and the persistent RATE_LIMITED value-probe lock, activate the already-installed Browser Helper 1.4.13 without touching source authentication, physically prove one reusable CFB.FAN work tab with the minimum five-second rendered-page dwell and exact-card price persistence, restart through the accepted dynamic-port launcher, and return verified evidence before the authority is advanced again. Do not ask the user to test while this durable route remains executable.",
+    "next_action": "Deploy the revision-21 durable-worker loader fix, then submit a fresh bounded complete_simple_single_worktab_acceptance GitHub-inbox request through SOPDecisionGateway -> ControlledToolBroker. Revision 21 fixes the verified importlib.util loader failure from request single-worktab-accept-r20-final-20261002 without changing the fixed physical-acceptance action, source-access locks, scoring, exact-card identity, protected state, or browser behavior. After rebind, execute the action once with a new request_id and continue through physical acceptance; do not ask the user to test while this corrected durable route remains executable.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -64,37 +64,37 @@
     "map": {
       "complete": true,
       "evidence": [
-        "OBSERVED: revision 19 / 9c886fe8 is the live OP-CATALOG-001 authority and the durable Windows GitHub-inbox worker is READY on that exact head.",
-        "OBSERVED: the broker-authorized browser-helper/watch.js repair completed successfully; all seven installed single-worktab integration files now match the validated 1.4.13 candidate, including explicit MIN_PAGE_DWELL_MS = 5000.",
-        "OBSERVED: protected Simple Evaluator state remains intact after the repair: two saved Price Watches, 130 state observations, 100 feed observations, unchanged alerts/runtime hashes, and the persistent RATE_LIMITED value-probe lock.",
-        "OBSERVED: the live browser-helper heartbeat still reports runtime 1.4.12 while expected_version is 1.4.13, so physical browser activation/acceptance remains unfinished."
+        "OBSERVED: revision 20 / 0d447fdc is the live OP-CATALOG-001 authority; the durable Windows GitHub-inbox worker is READY on that exact head with worker SHA-256 355444a3.",
+        "OBSERVED: all seven installed Simple Evaluator single-worktab integration files match the validated Browser Helper 1.4.13 candidate, including explicit MIN_PAGE_DWELL_MS = 5000.",
+        "OBSERVED: control issue #49 was accepted, frozen, decision-created and executed by the revision-20 durable worker, proving the GitHub-inbox -> Gateway -> Broker transport is live.",
+        "OBSERVED: request single-worktab-accept-r20-final-20261002 failed before browser mutation with AttributeError: module 'importlib' has no attribute 'util'."
       ]
     },
     "history": {
       "complete": true,
       "evidence": [
         "VERIFIED_HISTORY: both raw CFB.FAN acquisition clients remain denied with one-request HTTP 403 ACCESS_DENIAL and may not be retried or emulated.",
-        "VERIFIED_HISTORY: the normal rendered-page path previously loaded all five required FS examples without 403/CAPTCHA/login challenge and exposed stable exact-card identities and displayed rating vectors.",
-        "VERIFIED_HISTORY: the first Edge restart hypothesis did not reload the unpacked helper, the direct Reload-control hypothesis found no Reload control while the extension was off, and two AppActivate-based UI Automation attempts failed; those failed hypotheses are not being retried.",
-        "VERIFIED_HISTORY: Edge currently recognizes Simple Evaluator Browser Watch 1.4.13 from the exact installed folder but reports the extension off with an explicit Developer-mode requirement."
+        "VERIFIED_HISTORY: revision 20 added complete_simple_single_worktab_acceptance as a fixed mutating durable inbox action and was merged/rebound successfully before issue #49 executed.",
+        "VERIFIED_HISTORY: the revision-20 action itself was not physically retried after failure; the failure occurred in the worker loader before pancake_single_worktab_action.py could execute.",
+        "VERIFIED_HISTORY: prior Edge restart, missing Reload-control and AppActivate hypotheses remain invalidated and are not reopened by this loader fix."
       ]
     },
     "research": {
       "complete": true,
       "evidence": [
-        "OBSERVED: the exact on-disk single-worktab implementation gap is closed; the remaining gap is browser-runtime activation plus physical acceptance, not scoring, catalog identity, or another product redesign.",
-        "OBSERVED: ordinary-chat Remote Desktop Commander can still inspect the exact Edge extension surface but current UI mutation/foreground execution is blocked or unreliable on this surface, while the persistent Windows worker already provides the sanctioned GitHub-inbox -> Gateway -> Broker execution path.",
-        "OBSERVED: scripts/pancake_local_control.py supports a fixed symbolic inbox registry with mutating actions authorized individually through SOPDecisionGateway and ControlledToolBroker; extending that registry avoids arbitrary shell exposure and does not bypass the control architecture.",
-        "INFERENCE supported by the live control architecture: moving the bounded browser acceptance handler into the durable worker is the narrowest legitimate route to finish physical acceptance without handing the debugging loop to the user."
+        "OBSERVED: scripts/pancake_local_control.py imports importlib but calls importlib.util.spec_from_file_location inside run_single_worktab_acceptance; on the durable worker this raised AttributeError before loading the fixed action module.",
+        "OBSERVED: scripts/pancake_single_worktab_action.py already imports importlib.util correctly; therefore the fault is isolated to the durable runner loader, not the action's browser logic.",
+        "OBSERVED: adding an explicit import importlib.util to the durable runner is the minimal code correction; a focused regression test can assert that the runtime loader exposes spec_from_file_location and module_from_spec.",
+        "INFERENCE supported by the exact traceback and source inspection: no browser, source-access, scoring, identity, persistence, or market-lock behavior needs to change for this correction."
       ]
     },
     "capabilities": {
       "complete": true,
       "evidence": [
-        "OBSERVED: revision-19 Gateway/Broker is healthy and successfully executed the exact one-file watch.js repair with preimage/candidate hash checks, backup, post-hash verification, syntax validation and protected-state verification.",
-        "OBSERVED: the durable GitHub-inbox worker runs in the authorized Windows environment and already executes registered symbolic mutations through its own SOPDecisionGateway -> ControlledToolBroker.",
-        "OBSERVED: the staged revision-20 worker adds exactly one fixed mutating symbolic action, complete_simple_single_worktab_acceptance, backed by a repository-controlled handler that contains no arbitrary command/user input surface and fails closed on ambiguous UI identity.",
-        "OBSERVED: the staged handler verifies installed 1.4.13 hashes and protected state, uses exact Edge/UI Automation evidence to identify Developer mode, requires one reusable CFB.FAN work tab, measures rendered-page dwell against persisted exact-card observations, preserves the persistent rate-limit lock, restarts via the dynamic-port launcher, and marks release acceptance only after physical checks pass."
+        "OBSERVED: revision-20 Gateway/Broker, GitHub inbox transport and durable worker are healthy enough to receive and execute immutable issue requests through DECISION_CREATED.",
+        "OBSERVED: the local repository can stage a four-path revision-21 correction: durable runner, focused loader regression test, authority state and canonical handoff.",
+        "OBSERVED: the existing bounded patch, exact PR publication/merge, and rollback-capable runtime-rebind mechanisms remain available for a minimal revision-21 deployment.",
+        "OBSERVED: after revision-21 rebind, the already-registered complete_simple_single_worktab_acceptance action remains the required bounded route; a fresh request_id avoids replaying the failed issue #49 request."
       ]
     }
   },
@@ -160,7 +160,10 @@
       "broker-authorized watch.js repair to exact validated 1.4.13 candidate hash with protected-state preservation",
       "current Edge 1.4.13 on-disk / 1.4.12 live-runtime mismatch and explicit Developer-mode requirement",
       "durable GitHub-inbox symbolic action registry and Gateway/Broker execution path for fixed local Windows mutations",
-      "staged complete_simple_single_worktab_acceptance fail-closed handler and focused registry/toggle-selector tests"
+      "staged complete_simple_single_worktab_acceptance fail-closed handler and focused registry/toggle-selector tests",
+      "revision-20 durable request issue #49 reached execution and failed before browser mutation on missing importlib.util loader attribute",
+      "exact runner source defect: importlib.util used without importing importlib.util in pancake_local_control.py",
+      "minimal revision-21 importlib.util loader fix plus focused regression test"
     ],
     "available": [
       "GitHub repository read/write and PR workflow",
@@ -189,7 +192,9 @@
       "existing Browser Helper same-tab value-price batch navigation with five-second dwell and exact-card URL matching",
       "brokered installed Simple Evaluator hotfix/rollback and physical acceptance path",
       "revision-20 durable inbox action for fixed single-worktab browser activation and physical acceptance through Gateway/Broker",
-      "fail-closed Windows UI Automation inside the durable worker with exact installed-helper/protected-state preconditions"
+      "fail-closed Windows UI Automation inside the durable worker with exact installed-helper/protected-state preconditions",
+      "revision-21 minimal durable-loader repair through bounded patch/publish/merge/rebind",
+      "fresh immutable GitHub-inbox request for the unchanged complete_simple_single_worktab_acceptance action after corrected worker deployment"
     ],
     "unavailable_or_excluded": [
       "Direct programmatic modification of ChatGPT Project instructions from this chat",
@@ -434,41 +439,34 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D9",
+    "decision_id": "OP-CATALOG-001-D10",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Extend only the durable controlled-worker symbolic registry with one fixed single-worktab physical-acceptance action, deploy that worker, then execute the action through the existing GitHub-inbox -> Gateway -> Broker route.",
-    "obstacle_classification": "CAPABILITY_PROBLEM",
+    "proposed_action": "Fix only the verified durable-worker importlib.util loader defect, deploy revision 21, then submit one fresh immutable control request for the unchanged complete_simple_single_worktab_acceptance action.",
+    "obstacle_classification": "IMPLEMENTATION_PROBLEM",
     "history_refs": [
-      "Revision 19 already selected catalog-rendered-browser-single-tab-integration as REQUIRED_NEXT.",
-      "The exact watch.js repair is complete and all installed 1.4.13 integration files match the validated candidate.",
-      "Direct browser-runtime activation attempts on the ordinary-chat surface failed closed without completing physical acceptance."
+      "Revision 20 and its durable action were successfully merged and rebound before issue #49 executed.",
+      "Issue #49 failed before browser mutation with an exact AttributeError in the runner loader.",
+      "The failed request_id is terminal and must not be replayed; the corrected worker requires a fresh immutable request."
     ],
     "capabilities_checked": [
-      "live revision-19 authority and READY durable worker",
-      "successful Gateway/Broker one-file repair receipt and preserved protected-state hashes",
-      "durable GitHub-inbox fixed-action registry and decision-bound mutation broker",
-      "staged fail-closed single-worktab acceptance action and focused tests"
+      "live revision-20 authority and READY worker",
+      "issue #49 FAILED receipt and exact error",
+      "runner source import and run_single_worktab_acceptance loader path",
+      "action-module imports and existing focused tests",
+      "bounded patch/publish/merge/runtime-rebind pipeline"
     ],
     "alternatives_considered": [
-      "Retry Edge process restart — rejected because the hypothesis already failed and no materially new evidence supports repeating it.",
-      "Retry WScript AppActivate UI Automation — rejected because repeated foreground failures invalidate that hypothesis.",
-      "Ask the user to enable Developer mode/reload/test — rejected while a legitimate durable controlled-worker route remains executable.",
-      "Bypass the Gateway with direct Desktop Commander/browser mutation — rejected by the project execution rule.",
-      "Extend the existing durable fixed-action registry with one bounded acceptance handler — selected."
+      "Replay issue #49 unchanged — rejected because terminal request IDs cannot be replayed and the implementation defect would recur.",
+      "Bypass the durable worker and run browser mutation directly — rejected by the execution rule and because the controlled durable route remains repairable.",
+      "Change the physical-acceptance action — rejected because the observed failure occurred before that action loaded.",
+      "Add explicit importlib.util to the durable runner with a focused regression test — selected."
     ],
-    "selected_reason": "The implementation itself is now on disk and validated. The unresolved problem is execution-surface capability for browser activation/physical acceptance. The durable Windows worker is already the accepted decision-bound mutation broker and can expose one fixed fail-closed action without arbitrary shell access or user intervention.",
+    "selected_reason": "The exact traceback and source inspection isolate a one-line durable-loader defect. Correcting that loader is materially new evidence and the narrowest legitimate way to continue the already-selected single-tab acceptance route without changing browser or source behavior.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
-    "reopens_lock_ids": [
-      "accepted-browser-watch"
-    ],
-    "new_evidence_for_reopened_locks": {
-      "accepted-browser-watch": [
-        "The single-worktab 1.4.13 files are now installed exactly, but live helper runtime remains 1.4.12, so physical Browser Watch acceptance is still incomplete.",
-        "A fixed durable-worker acceptance action is required to close the observed browser-runtime regression without reopening scoring or source-acquisition behavior."
-      ]
-    }
+    "reopens_lock_ids": [],
+    "new_evidence_for_reopened_locks": {}
   },
   "decision_journal": [
     {
@@ -975,13 +973,35 @@
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS; the exact next executable route is to deploy and invoke complete_simple_single_worktab_acceptance through the durable controlled worker.",
       "next": "Deploy the revision-20 durable GitHub-inbox worker extension and execute its fixed complete_simple_single_worktab_acceptance action through SOPDecisionGateway -> ControlledToolBroker. The action must preserve both denied raw-request locks and the persistent RATE_LIMITED value-probe lock, activate the already-installed Browser Helper 1.4.13 without touching source authentication, physically prove one reusable CFB.FAN work tab with the minimum five-second rendered-page dwell and exact-card price persistence, restart through the accepted dynamic-port launcher, and return verified evidence before the authority is advanced again. Do not ask the user to test while this durable route remains executable."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D10",
+      "decision": "Repair only the verified importlib.util durable-loader defect before reissuing the single-worktab acceptance request.",
+      "evidence": [
+        "Issue #49 terminal receipt: AttributeError module 'importlib' has no attribute 'util'.",
+        "Runner imports importlib but run_single_worktab_acceptance calls importlib.util.spec_from_file_location.",
+        "Action module already imports importlib.util correctly; failure occurred before action execution."
+      ],
+      "history": [
+        "Revision 20 durable action deployment itself succeeded.",
+        "Issue #49 is terminal and is not replayed.",
+        "Denied source-route, scoring, identity, persistence and user-test locks remain unchanged."
+      ],
+      "alternatives": [
+        "Replay failed request — rejected.",
+        "Direct browser mutation bypass — rejected.",
+        "Rewrite action logic — rejected as unsupported by the failure evidence.",
+        "Minimal runner import fix with regression test — selected."
+      ],
+      "result": "OP-CATALOG-001 remains IN_PROGRESS with a verified IMPLEMENTATION_PROBLEM and a narrow revision-21 repair path.",
+      "next": "Deploy the revision-21 durable-worker loader fix, then submit a fresh bounded complete_simple_single_worktab_acceptance GitHub-inbox request through SOPDecisionGateway -> ControlledToolBroker. Revision 21 fixes the verified importlib.util loader failure from request single-worktab-accept-r20-final-20261002 without changing the fixed physical-acceptance action, source-access locks, scoring, exact-card identity, protected state, or browser behavior. After rebind, execute the action once with a new request_id and continue through physical acceptance; do not ask the user to test while this corrected durable route remains executable."
     }
   ],
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 20,
-    "next_action": "Deploy the revision-20 durable GitHub-inbox worker extension and execute its fixed complete_simple_single_worktab_acceptance action through SOPDecisionGateway -> ControlledToolBroker. The action must preserve both denied raw-request locks and the persistent RATE_LIMITED value-probe lock, activate the already-installed Browser Helper 1.4.13 without touching source authentication, physically prove one reusable CFB.FAN work tab with the minimum five-second rendered-page dwell and exact-card price persistence, restart through the accepted dynamic-port launcher, and return verified evidence before the authority is advanced again. Do not ask the user to test while this durable route remains executable.",
+    "state_revision": 21,
+    "next_action": "Deploy the revision-21 durable-worker loader fix, then submit a fresh bounded complete_simple_single_worktab_acceptance GitHub-inbox request through SOPDecisionGateway -> ControlledToolBroker. Revision 21 fixes the verified importlib.util loader failure from request single-worktab-accept-r20-final-20261002 without changing the fixed physical-acceptance action, source-access locks, scoring, exact-card identity, protected state, or browser behavior. After rebind, execute the action once with a new request_id and continue through physical acceptance; do not ask the user to test while this corrected durable route remains executable.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -1004,11 +1024,11 @@
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
     "remaining_executable_work": [
-      "Publish and merge the tested revision-20 worker/authority change that registers complete_simple_single_worktab_acceptance as a fixed mutating GitHub-inbox action.",
-      "Rebind the durable Windows worker to revision 20 and verify the exact new worker bytes, READY health, clean product branch, and control self-test.",
-      "Submit one bounded revision-20 control request for complete_simple_single_worktab_acceptance and let the durable worker execute it through SOPDecisionGateway -> ControlledToolBroker.",
-      "Verify the action evidence: live Browser Helper 1.4.13, exact one-tab rendered-page observations with minimum five-second dwell, exact-card price persistence, saved-watch serialization, fail-closed protections, protected state, tab hygiene, and dynamic-port restart persistence.",
-      "Advance the authority only with the verified physical-acceptance receipt, synchronize the durable worker again, and then hand the installed Simple Evaluator to the user for normal product acceptance if no executable technical debugging remains."
+      "Create, validate, publish and merge the minimal revision-21 durable-worker importlib.util loader repair with focused regression coverage.",
+      "Rebind the Windows durable worker to revision 21 and verify exact worker bytes, READY health, clean product branch and control validation.",
+      "Create one fresh immutable GitHub control issue for complete_simple_single_worktab_acceptance and let the corrected durable worker execute it through Gateway/Broker.",
+      "Verify the physical-acceptance receipt: live Browser Helper 1.4.13, one reusable CFB.FAN work tab, minimum five-second rendered-page dwell, exact-card price persistence, saved-watch serialization, fail-closed protections, protected state, tab hygiene and dynamic-port restart persistence.",
+      "Advance the authority only with verified physical-acceptance evidence, synchronize the durable worker, then hand Simple Evaluator to the user for normal product acceptance only if no executable technical debugging remains."
     ]
   },
   "enforcement": {
@@ -1102,8 +1122,8 @@
         "mission_id": "OP-CATALOG-001",
         "route_id": "catalog-rendered-browser-single-tab-integration",
         "status": "REQUIRED_NEXT",
-        "description": "The next executable route is the revision-20 durable GitHub-inbox action complete_simple_single_worktab_acceptance, which must execute the already-selected bounded single-tab rendered-browser integration through SOPDecisionGateway -> ControlledToolBroker. It must not retry or emulate the denied raw HTTP clients, clear the persistent rate-limit lock, change scoring, or hand browser activation/testing to the user while the durable action is executable.",
-        "source": "Operation Pancake revision 20 capability reconciliation after brokered 1.4.13 file repair"
+        "description": "The next executable route is to deploy the revision-21 durable-worker importlib.util loader fix, then execute the unchanged complete_simple_single_worktab_acceptance action through a fresh immutable GitHub-inbox request and SOPDecisionGateway -> ControlledToolBroker. The failed issue #49 request must not be replayed. The route must not retry or emulate denied raw HTTP clients, clear the persistent rate-limit lock, change scoring, or hand browser activation/testing to the user.",
+        "source": "Operation Pancake revision 21 evidence from terminal issue #49 loader failure"
       }
     ]
   }
