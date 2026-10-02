@@ -1,6 +1,6 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 22
+State revision: 23
 Status: IN_PROGRESS
 Mission ID: OP-CATALOG-001
 
@@ -15,10 +15,10 @@ Read `docs/OPERATION_PANCAKE_CONTROL_STATE.json` first and validate it before ma
 Do not let the newest obstacle replace the recorded mission.
 
 ## Preflight evidence
-- MAP: OBSERVED: revision 21 / b917d2c4 is the live OP-CATALOG-001 authority and the durable Windows GitHub-inbox worker is READY on that exact head with worker SHA-256 4d2c0862. | OBSERVED: all installed single-worktab files match the validated Browser Helper 1.4.13 candidate after the brokered watch.js repair. | OBSERVED: fresh immutable issue #51 was accepted and frozen by the revision-21 durable worker but terminated before browser mutation with ControlError: wrong authority revision: expected 20, observed 21.
-- HISTORY: VERIFIED_HISTORY: issue #49 exposed and revision 21 fixed the durable runner importlib.util loader defect; revision-21 worker deployment is complete and READY. | VERIFIED_HISTORY: issue #51 is terminal and may not be replayed. | VERIFIED_HISTORY: both denied raw CFB.FAN acquisition routes remain fail-closed; provider-email remains rejected; scoring, exact-card identity and protected-state locks remain unchanged.
-- RESEARCH: OBSERVED: scripts/pancake_single_worktab_action.py run() still calls control.verify_repo with expected_revision=20. | OBSERVED: under the revision-21 worker this exact stale pin produced issue #51 failure 'wrong authority revision: expected 20, observed 21' before browser mutation. | OBSERVED: the narrow correction is to bind the unchanged physical-acceptance action to revision 22 and add focused regression coverage for that pin. | INFERENCE supported by exact receipt and source line: browser logic, source access, scoring, identity, persistence and market-lock behavior do not need to change.
-- CAPABILITIES: OBSERVED: revision-21 Gateway/Broker, immutable GitHub-inbox transport and durable worker are healthy and processed issue #51 to the action boundary. | OBSERVED: the local repository can stage a four-path revision-22 correction: physical-acceptance action revision pin, focused regression test, authority state and canonical handoff. | OBSERVED: bounded patch, exact publication/merge and rollback-capable runtime-rebind mechanisms remain available.
+- MAP: OBSERVED: revision 22 / e8173bcc is the live OP-CATALOG-001 authority and the durable Windows GitHub-inbox worker is READY on that exact head with worker SHA-256 4d2c0862. | OBSERVED: fresh immutable issue #53 was accepted and reached the revision-22 physical-acceptance action, then terminated before browser mutation with ModuleNotFoundError: No module named 'server'. | OBSERVED: all installed Browser Helper 1.4.13 single-worktab files remain at their accepted candidate hashes and the persistent RATE_LIMITED lock remains protected.
+- HISTORY: VERIFIED_HISTORY: revision 21 fixed the durable runner importlib.util loader defect; revision 22 fixed the stale action authority pin; both are deployed and verified. | VERIFIED_HISTORY: failed issues #49, #51 and #53 are terminal and may not be replayed. | VERIFIED_HISTORY: both denied raw CFB.FAN acquisition routes remain fail-closed; provider-email remains rejected; scoring, exact-card identity and protected-state locks remain unchanged.
+- RESEARCH: OBSERVED: pancake_single_worktab_action.load_launch_module executes Simple Evaluator launch.py with importlib.util.spec_from_file_location without putting the Simple Evaluator APP directory on sys.path. | OBSERVED: installed Simple Evaluator launch.py imports sibling module server at top level; without APP on sys.path that exact import raises ModuleNotFoundError before browser mutation. | OBSERVED: the narrow correction is to expose APP on sys.path only while launch.py executes, then remove the temporary path, with a focused sibling-import regression test. | INFERENCE supported by the exact receipt and source inspection: browser automation logic, source access, scoring, identity, persistence and market-lock behavior do not need to change.
+- CAPABILITIES: OBSERVED: revision-22 Gateway/Broker, immutable GitHub-inbox transport and durable worker are healthy and processed issue #53 to the physical-action loader boundary. | OBSERVED: the repository can stage a four-path revision-23 correction: physical-action launch loader/revision pin, focused regression tests, authority state and canonical handoff. | OBSERVED: bounded patch, exact publication/merge and rollback-capable runtime-rebind mechanisms remain available.
 
 ## Available capabilities
 - GitHub repository read/write and PR workflow
@@ -52,6 +52,8 @@ Do not let the newest obstacle replace the recorded mission.
 - fresh immutable GitHub-inbox request for the unchanged complete_simple_single_worktab_acceptance action after corrected worker deployment
 - revision-22 minimal single-worktab action authority-pin repair through bounded patch/publish/merge/rebind
 - fresh immutable GitHub-inbox request for complete_simple_single_worktab_acceptance after revision-22 deployment
+- revision-23 minimal single-worktab launch-loader sibling-import repair through bounded patch/publish/merge/rebind
+- fresh immutable GitHub-inbox request for complete_simple_single_worktab_acceptance after revision-23 deployment
 
 ## Accepted — do not reopen without materially new evidence
 - accepted-sop-order: Operation Pancake SOP order is MAP -> HISTORY -> RESEARCH -> CAPABILITIES -> PLAN -> EXECUTE -> ADAPT -> VERIFY -> UPDATE MAP -> CONTINUE.
@@ -77,12 +79,12 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-catalog-denied-route-retry: Retry either observed-denied CFB.FAN acquisition request, or change client identity/authentication/cookies/headers/proxy/rate behavior to regain access, without materially new evidence that the denial condition changed.
 
 ## Next action
-Deploy the revision-22 single-worktab action authority-pin fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r21-final-20261002-1410 is terminal and must not be replayed. Revision 22 changes only the action's verified stale authority pin from revision 20 to revision 22 plus focused regression coverage and authority/handoff bookkeeping; it does not change browser logic, source access, scoring, exact-card identity, protected state, or locks.
+Deploy the revision-23 single-worktab launch-loader sibling-import fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r22-final-e8173bcc is terminal and must not be replayed. Revision 23 fixes only the verified load_launch_module failure to resolve Simple Evaluator sibling imports while loading launch.py, plus updates the action revision pin, focused regression coverage and authority/handoff bookkeeping; browser behavior, source access, scoring, exact-card identity, protected state and locks remain unchanged.
 
 ## Remaining executable work
-- Create, validate, publish and merge the minimal revision-22 single-worktab action authority-pin repair with focused regression coverage.
-- Rebind the Windows durable worker to revision 22 and verify exact worker bytes, READY health, clean product branch and control validation.
-- Create one fresh immutable GitHub control issue for complete_simple_single_worktab_acceptance and let the revision-22 worker execute it through Gateway/Broker.
+- Create, validate, publish and merge the minimal revision-23 single-worktab launch-loader sibling-import repair with focused regression coverage.
+- Rebind the Windows durable worker to revision 23 and verify READY health, clean product branch and control validation.
+- Create one fresh immutable GitHub control issue for complete_simple_single_worktab_acceptance and let the revision-23 worker execute it through Gateway/Broker.
 - Verify the physical-acceptance receipt: live Browser Helper 1.4.13, one reusable CFB.FAN work tab, minimum five-second rendered-page dwell, exact-card price persistence, saved-watch serialization, fail-closed protections, protected state, tab hygiene and dynamic-port restart persistence.
 - Advance the authority only with verified physical-acceptance evidence, synchronize the durable worker, then hand Simple Evaluator to the user for normal product acceptance only if no executable technical debugging remains.
 
