@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 18,
-  "status": "BLOCKED",
+  "state_revision": 19,
+  "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Do not retry the denied player-items or public-player-page acquisition requests and do not change client identity, authentication, cookies, headers, proxy, or rate behavior to obtain access. Resume catalog acquisition only after materially new technical evidence establishes that one of the established routes is no longer denied, or a current structured exact-card source becomes available through a non-bypass route. Re-run MAP -> HISTORY -> RESEARCH -> CAPABILITIES before any new collection.",
+    "next_action": "Implement and physically verify the bounded single-tab normal-rendered CFB.FAN browser work queue in the accepted Simple Evaluator runtime for known exact-card page and price observations only: reuse one work tab, preserve a minimum five-second navigation dwell, validate exact card identity, and stop on 403/429/CAPTCHA/login/access challenge or unexpected page state. Preserve both denied raw-request locks, provider-email rejection, unchanged scoring, exact-card persistence, and catalog authorization limits. Complete installed-app acceptance before asking the user to test.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -64,38 +64,37 @@
     "map": {
       "complete": true,
       "evidence": [
-        "Revision 17 / 86541a7cb20cd508030794309edde59f40a52da0 was physically synchronized to the Windows durable worker through DECISION_ALLOWED runtime-rebind-r17-86541a7cb20cd508; the worker reported READY for OP-CATALOG-001 with unchanged SHA-256 37defb2b.",
-        "Post-rebind local verification found HEAD 86541a7cb20cd508030794309edde59f40a52da0, a clean worktree, control validation PASS, preflight PASS, canonical handoff output, and the runner self-test embedded in the install validation PASS.",
-        "Revision 15's player-items probe and revision 16's historical public-player-page probe each returned one-request HTTP 403 ACCESS_DENIAL with no retry.",
-        "Both established live acquisition routes remain fail-closed; the runtime synchronization does not reopen catalog collection."
+        "OBSERVED: revision 18 / 1fd712f2 is the live OP-CATALOG-001 authority and the durable Windows GitHub-inbox worker is READY on that exact head.",
+        "OBSERVED: the installed Simple Evaluator remains release 3T / 1.2.0 PRODUCTION_ACCEPTED with Browser Helper 1.4.12 and accepted dynamic-port startup.",
+        "OBSERVED: one normal connected-browser CFB.FAN tab successfully rendered Jordan Allen 91 FS, Ashlynd Barker 91 FS, Kingston Lopa 90 FS, Earl Little Jr. 90 FS, and Xavier Filsaime 90 FS with stable exact-card IDs and displayed rating vectors; no 403, CAPTCHA, or login/access challenge appeared on those rendered pages.",
+        "OBSERVED: the user exposed tab-clutter as a regression and requires one reusable CFB.FAN work tab with temporary tabs closed when work finishes."
       ]
     },
     "history": {
       "complete": true,
       "evidence": [
-        "The bulk player-items route historically completed 190 batches / 9,390 requested and returned / zero failures and a successful September 8 delta.",
-        "The distinct public-player-page route historically fetched six fixed pages at <=12 requests/minute with no API calls and full_rating_vector_acquisition=GOOD.",
-        "The repository's listing parser is intentionally PARTIAL_LISTING_VECTOR and cannot replace the complete structured/detail vectors required by scoring.",
-        "Earlier OP-CATALOG-001 research already exhausted installed-state/cache recovery, CFB27 Nation, official EA, xpay AgentFeed, and public GitHub alternatives for a current-complete structured exact-card catalog."
+        "VERIFIED_HISTORY: the player-items raw request and historical CfbFanPublicAdapter raw public-page request each returned one-request HTTP 403 ACCESS_DENIAL and remain fail-closed with no retry or bypass.",
+        "VERIFIED_HISTORY: Browser Watch 1.4.12 and the Simple Evaluator dynamic-port runtime were physically accepted; accepted scoring models, watches, price identity, and protected state must remain intact.",
+        "OBSERVED: Browser Helper 1.4.12 already uses one value-price probe tab, navigates that same tab with chrome.tabs.update after VALUE_PROBE_NAVIGATION_DELAY_MS=5000, and closes the probe tab on completion or 429.",
+        "OBSERVED: normal saved card watches still use per-tab alarm/reload behavior and the UI opens new source tabs, which conflicts with the newly explicit single-work-tab requirement."
       ]
     },
     "research": {
       "complete": true,
       "evidence": [
-        "OBSERVED: player-items exact-card request returned HTTP 403 from the Windows operational host.",
-        "OBSERVED: public player-page exact-card request through the historical CfbFanPublicAdapter also returned HTTP 403 from the same host.",
-        "EXTERNAL_RESEARCH: current CFB.FAN player/listing content remains externally indexed and current, including a September 27 Jordan Allen 91 FS page with a full displayed rating vector and a current players listing; the evidence does not support a general site outage.",
-        "INFERENCE supported by the two independent local denials plus external visibility: the blocker is current access for Operation Pancake's established acquisition clients, not absence of current CFB.FAN data.",
-        "No accepted route permits changing client identity or transport characteristics to evade the observed 403 responses."
+        "OBSERVED: normal rendered CFB.FAN exact-card pages are reachable through the connected browser for all five required FS examples while the two denied raw HTTP acquisition clients remain denied.",
+        "EXTERNAL_RESEARCH: Stormstrike terms currently restrict automated scraping/access except where expressly permitted; therefore the rendered-browser path is not promoted to a provider-authorized current-complete catalog source and may not be used to evade the denied clients.",
+        "OBSERVED: the installed browser helper reads visible PlayStation Live Auctions DOM state, stops on HTTP 429 or user-action-required preflight, and records only exact-card URL-matched FOUND/NO_LISTING observations.",
+        "INFERENCE supported by installed code and browser evidence: the immediate product gap is shared-tab orchestration/tab hygiene for already accepted rendered browser price observations, not a need to alter scoring or retry denied catalog clients."
       ]
     },
     "capabilities": {
       "complete": true,
       "evidence": [
-        "The durable Gateway/Broker worker is synchronized to revision 17 with unchanged worker bytes and remains READY on the GitHub-inbox transport.",
-        "The historical bulk and public-page parsers remain intact, but both corresponding live request paths are currently denied by observed HTTP 403 responses.",
-        "Version-aware import, unchanged scoring models, conflict validation, and accepted Chrome exact-card pricing remain ready but are gated on acquiring a valid current exact-card delta.",
-        "No immediate non-bypass technical collection route is supported by current evidence."
+        "OBSERVED: Browser Helper 1.4.12 has Chromium tabs permission and already performs same-tab five-second value-probe navigation and tab removal.",
+        "OBSERVED: server.py already owns exact-card URL matching, bounded value-probe batches, progress/terminal states, observation persistence, alerts, and 429 fail-closed behavior.",
+        "OBSERVED: Simple-Evaluator.html already provides Top 5, Best Value, Price Watch, Training Watch, exact-card identity, and progress UI; the current Update Prices path is a bounded comparison-card batch rather than a full 9,000-card scan.",
+        "OBSERVED: the Gateway/ControlledToolBroker, rollback-capable Windows mutation handlers, accepted launcher, and physical acceptance probes are available for a bounded installed-product hotfix."
       ]
     }
   },
@@ -154,7 +153,10 @@
       "revision-16 CfbFanPublicAdapter one-page probe: HTTP 403 ACCESS_DENIAL with no retry",
       "two independent established CFB.FAN acquisition paths now fail closed on HTTP 403 from the Windows operational host",
       "current external CFB.FAN indexing confirms current player data exists despite local acquisition denials",
-      "revision-17 brokered runtime rebind completed: worker READY at 86541a7c with unchanged SHA-256 and clean validated operational clone"
+      "revision-17 brokered runtime rebind completed: worker READY at 86541a7c with unchanged SHA-256 and clean validated operational clone",
+      "October 2 normal rendered CFB.FAN browser-page evidence for all five required FS exact cards with no access challenge",
+      "installed Browser Helper 1.4.12 single-tab value-probe path: 5000ms same-tab navigation delay and close-on-completion",
+      "installed saved-watch per-tab reload/tab-open behavior identified as the concrete single-tab hygiene regression"
     ],
     "available": [
       "GitHub repository read/write and PR workflow",
@@ -178,7 +180,10 @@
       "existing conservative 12-requests/minute 50-card bulk adapter",
       "existing version-aware CFB27 delta refresh with hashed provenance and conflict checks",
       "existing CfbFanPublicAdapter public-player-page parser and fixed-page acquisition path",
-      "saved exact-card public player-page source_reference URLs from established listing discovery"
+      "saved exact-card public player-page source_reference URLs from established listing discovery",
+      "normal rendered CFB.FAN exact-card page inspection for known source pages through the connected browser, bounded and fail-closed",
+      "existing Browser Helper same-tab value-price batch navigation with five-second dwell and exact-card URL matching",
+      "brokered installed Simple Evaluator hotfix/rollback and physical acceptance path"
     ],
     "unavailable_or_excluded": [
       "Direct programmatic modification of ChatGPT Project instructions from this chat",
@@ -219,7 +224,8 @@
       "id": "accepted-browser-watch",
       "subject": "Original 3U Browser Watch production acceptance is closed and must not be reopened without a new regression.",
       "evidence": [
-        "Authoritative Simple Evaluator checkpoint records physical PRODUCTION_ACCEPTED state."
+        "Authoritative Simple Evaluator checkpoint records physical PRODUCTION_ACCEPTED state.",
+        "October 2 user-visible tab-clutter regression plus installed-code inspection shows saved watches still depend on per-tab reloads while the accepted value-probe path already proves same-tab five-second navigation."
       ],
       "reopen_policy": "NEW_EVIDENCE_REQUIRED"
     },
@@ -422,32 +428,42 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D7",
+    "decision_id": "OP-CATALOG-001-D8",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Persist the successful revision-17 durable-worker synchronization as a bookkeeping-only authority update while preserving the existing EXTERNAL_DEPENDENCY blocker and zero executable catalog-collection routes.",
-    "obstacle_classification": "EXTERNAL_DEPENDENCY",
+    "proposed_action": "Narrowly reopen Browser Watch orchestration to integrate the already-proven single-tab rendered-page queue across user-started exact-card price checks while preserving all source-denial, scoring, identity, persistence, and authorization locks.",
+    "obstacle_classification": "IMPLEMENTATION_PROBLEM",
     "history_refs": [
-      "Revision 17 is the merged authority that records both one-request HTTP 403 ACCESS_DENIAL results.",
-      "The Windows operational clone and durable worker were stale at revision 16 until the brokered revision-17 rebind completed.",
-      "The runtime worker bytes remained unchanged across the synchronization."
+      "Revision 18 correctly preserved both denied raw CFB.FAN request routes and the no-bypass/no-retry locks.",
+      "Simple Evaluator 3T / 1.2.0 and Browser Helper 1.4.12 are physically accepted and remain the product baseline.",
+      "The accepted value-probe path already demonstrates one-tab sequential five-second navigation; saved watches still use per-tab behavior."
     ],
     "capabilities_checked": [
-      "Revision-17 long-lived GitHub authority",
-      "Windows operational clone and durable worker health",
-      "Brokered install_local_control_runtime recovery path",
-      "Post-rebind validate/preflight/handoff/self-test evidence"
+      "live revision-18 authority and READY durable worker",
+      "normal connected-browser rendering of five required FS exact-card pages",
+      "installed Browser Helper 1.4.12 tabs/alarm/navigation implementation",
+      "installed Simple Evaluator server/value-probe/observation persistence implementation",
+      "Gateway/Broker rollback-capable installed-product mutation path"
     ],
     "alternatives_considered": [
-      "Leave stale revision-16 deployment evidence in the authority — rejected because it is no longer true.",
-      "Reopen catalog acquisition after control synchronization — rejected because the two HTTP 403 denials and no-bypass locks are unchanged.",
-      "Persist only the synchronization evidence and preserve the external blocker — selected."
+      "Retry either denied raw HTTP route — rejected by existing lock and unnecessary for rendered browser price observations.",
+      "Create a replacement browser/runtime system — rejected because the accepted helper already contains the needed single-tab primitive.",
+      "Keep per-watch tabs and ask the user to manage them — rejected because tab hygiene is a verified product regression and executable technical work remains.",
+      "Narrowly adapt the existing accepted Browser Helper/value-probe orchestration to one shared work tab — selected."
     ],
-    "selected_reason": "The synchronization succeeded and changed only control-state deployment, not catalog-source reachability. The authoritative map must record the observed deployment state without reopening rejected acquisition routes.",
+    "selected_reason": "The installed code gives a verified root cause and a minimal reuse path: same-tab five-second navigation already exists for value probes, while saved watches and UI links are the remaining tab-sprawl gap.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
-    "reopens_lock_ids": [],
-    "new_evidence_for_reopened_locks": {}
+    "reopens_lock_ids": [
+      "accepted-browser-watch"
+    ],
+    "new_evidence_for_reopened_locks": {
+      "accepted-browser-watch": [
+        "User screenshot and direct tab inventory demonstrated browser-tab clutter as a current regression.",
+        "Installed background.js shows accepted value probes already reuse one tab with a 5000ms navigation delay and close it on completion.",
+        "Installed saved-watch path still schedules/reloads per tab and UI source actions open new tabs, proving the regression is orchestration-specific rather than a reason to redesign Browser Watch."
+      ]
+    }
   },
   "decision_journal": [
     {
@@ -909,32 +925,35 @@
       ],
       "result": "Control-state drift is reconciled; the catalog mission remains BLOCKED / EXTERNAL_DEPENDENCY with zero executable collection routes.",
       "next": "Do not retry the denied player-items or public-player-page acquisition requests and do not change client identity, authentication, cookies, headers, proxy, or rate behavior to obtain access. Resume catalog acquisition only after materially new technical evidence establishes that one of the established routes is no longer denied, or a current structured exact-card source becomes available through a non-bypass route. Re-run MAP -> HISTORY -> RESEARCH -> CAPABILITIES before any new collection."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D8",
+      "decision": "Reopen only Browser Watch orchestration for the verified single-tab rendered-page regression and resume bounded installed-product work.",
+      "evidence": [
+        "Five required FS normal browser pages rendered with exact identities/full displayed vectors and no access challenge.",
+        "Browser Helper 1.4.12 already reuses one value-probe tab with a 5000ms delay and closes it at terminal state.",
+        "Saved watch/UI paths still create or depend on per-card tabs, matching the user's observed clutter."
+      ],
+      "history": [
+        "Both denied raw request routes remain rejected for retry.",
+        "Provider email remains rejected as next action.",
+        "Scoring, exact-card identity, Browser Watch persistence, and dynamic-port acceptance remain preserved."
+      ],
+      "alternatives": [
+        "Retry denied raw clients — rejected.",
+        "Replacement runtime — rejected.",
+        "Manual tab management — rejected while technical work remains.",
+        "Minimal single-tab orchestration hotfix — selected."
+      ],
+      "result": "OP-CATALOG-001 returns to IN_PROGRESS for the bounded single-tab rendered-browser integration and installed-app acceptance; this does not establish a provider-authorized current-complete catalog source.",
+      "next": "Implement and physically verify the bounded single-tab normal-rendered CFB.FAN browser work queue in the accepted Simple Evaluator runtime for known exact-card page and price observations only: reuse one work tab, preserve a minimum five-second navigation dwell, validate exact card identity, and stop on 403/429/CAPTCHA/login/access challenge or unexpected page state. Preserve both denied raw-request locks, provider-email rejection, unchanged scoring, exact-card persistence, and catalog authorization limits. Complete installed-app acceptance before asking the user to test."
     }
   ],
-  "blocker": {
-    "type": "EXTERNAL_DEPENDENCY",
-    "capabilities_checked": [
-      "Historical player-items bulk acquisition and exact current one-request probe",
-      "Historical CfbFanPublicAdapter public-player-page acquisition and exact current one-request probe",
-      "Current public listing summaries and full-vector limitation",
-      "Existing local catalog/browser-cache recovery",
-      "CFB27 Nation, official EA, xpay AgentFeed, and public GitHub alternatives",
-      "Current external web visibility of CFB.FAN player/listing data"
-    ],
-    "adaptations_attempted": [
-      "Deployed revision 15 and probed the same established public unauthenticated player-items route once; received HTTP 403 and stopped.",
-      "Recovered the separate historically executed CfbFanPublicAdapter public-player-page route, deployed revision 16, and probed one known exact card once; received HTTP 403 and stopped.",
-      "Verified listing summaries are partial and cannot supply the complete scoring vectors.",
-      "Verified current CFB.FAN player data still exists externally, avoiding a false general-site-outage conclusion.",
-      "Preserved the no-bypass/no-retry lock instead of changing client identity or access behavior."
-    ],
-    "remaining_executable_routes": [],
-    "user_action": "No user action is currently requested. Resume only when materially new technical evidence establishes non-bypass access to an established route or a current structured exact-card source becomes available."
-  },
+  "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 18,
-    "next_action": "Do not retry the denied player-items or public-player-page acquisition requests and do not change client identity, authentication, cookies, headers, proxy, or rate behavior to obtain access. Resume catalog acquisition only after materially new technical evidence establishes that one of the established routes is no longer denied, or a current structured exact-card source becomes available through a non-bypass route. Re-run MAP -> HISTORY -> RESEARCH -> CAPABILITIES before any new collection.",
+    "state_revision": 19,
+    "next_action": "Implement and physically verify the bounded single-tab normal-rendered CFB.FAN browser work queue in the accepted Simple Evaluator runtime for known exact-card page and price observations only: reuse one work tab, preserve a minimum five-second navigation dwell, validate exact card identity, and stop on 403/429/CAPTCHA/login/access challenge or unexpected page state. Preserve both denied raw-request locks, provider-email rejection, unchanged scoring, exact-card persistence, and catalog authorization limits. Complete installed-app acceptance before asking the user to test.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -956,7 +975,13 @@
   "completion": {
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
-    "remaining_executable_work": []
+    "remaining_executable_work": [
+      "Integrate a single reusable rendered CFB.FAN work-tab queue for user-started exact-card price checks and saved Price Watch cycles using the existing five-second navigation primitive.",
+      "Remove app-driven new-tab sprawl for exact-card browser checks and preserve stop-on-403/429/CAPTCHA/login/access-challenge behavior.",
+      "Run focused internal tests and brokered installed-product deployment with rollback and protected-state preservation.",
+      "Physically verify dynamic-port startup, Browser Helper behavior, exact-card price persistence, saved watches, tab hygiene, progress/terminal states, and restart persistence before user testing.",
+      "Update the authority with verified product acceptance results and the next genuine catalog boundary."
+    ]
   },
   "enforcement": {
     "behavioral_standard": {
@@ -1043,6 +1068,14 @@
         "status": "REJECTED",
         "description": "The provider-email route was explicitly not approved as the next action; the user directed Operation Pancake to find another way.",
         "source": "Library:/Simple Evaluator/CHECKPOINT_3U_EXECUTION_STATUS.json#alternative_catalog_source_research_20260928"
+      },
+      {
+        "id": "catalog-rendered-browser-single-tab-required",
+        "mission_id": "OP-CATALOG-001",
+        "route_id": "catalog-rendered-browser-single-tab-integration",
+        "status": "REQUIRED_NEXT",
+        "description": "The next executable route is the bounded installed-product integration and physical acceptance of one reusable normal-rendered CFB.FAN work tab for known exact-card browser price observations. It must not retry or emulate the denied raw HTTP clients.",
+        "source": "Operation Pancake revision 19 observed browser evidence and installed Simple Evaluator 1.4.12 implementation inspection"
       }
     ]
   }
