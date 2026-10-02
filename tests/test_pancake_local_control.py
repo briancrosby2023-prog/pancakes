@@ -180,3 +180,48 @@ def test_rate_limit_delay_is_conservative():
     mod = load_runner()
     assert mod.rate_limit_delay(429, {"Retry-After": "30"}, now=100) >= mod.CONTROL_POLL_SECONDS
     assert mod.rate_limit_delay(403, {"X-RateLimit-Reset": "400"}, now=100) >= 305
+
+
+def load_single_worktab_action():
+    path = REPO / "scripts" / "pancake_single_worktab_action.py"
+    spec = importlib.util.spec_from_file_location("pancake_single_worktab_action_tested", path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
+
+
+def test_single_worktab_acceptance_is_registered_as_mutating_inbox_action():
+    mod = load_runner()
+    registry = mod.build_inbox_registry(REPO)
+    assert mod.SINGLE_WORKTAB_ACCEPTANCE_ACTION in mod.INBOX_ACTIONS
+    assert mod.SINGLE_WORKTAB_ACCEPTANCE_ACTION in mod.INBOX_MUTATING_ACTIONS
+    assert mod.SINGLE_WORKTAB_ACCEPTANCE_ACTION in mod.DECISION_ACTION_TOKENS
+    mutating, handler = registry[mod.SINGLE_WORKTAB_ACCEPTANCE_ACTION]
+    assert mutating is True
+    assert callable(handler)
+
+
+def test_single_worktab_developer_toggle_selector_is_fail_closed_and_spatial():
+    runner = load_runner()
+    action = load_single_worktab_action()
+    snapshot = {
+        "Labels": [{"Name": "Developer mode", "X": 100, "Y": 50, "W": 110, "H": 24}],
+        "Toggles": [
+            {"Name": "", "AutomationId": "dev-toggle", "Enabled": True, "State": "Off", "X": 250, "Y": 50, "W": 36, "H": 22},
+            {"Name": "", "AutomationId": "unrelated", "Enabled": True, "State": "On", "X": 250, "Y": 180, "W": 36, "H": 22},
+        ],
+    }
+    chosen = action.select_developer_toggle(snapshot, runner)
+    assert chosen["AutomationId"] == "dev-toggle"
+
+    ambiguous = {
+        "Labels": [{"Name": "Developer mode", "X": 100, "Y": 50, "W": 110, "H": 24}],
+        "Toggles": [
+            {"Name": "", "AutomationId": "a", "Enabled": True, "State": "Off", "X": 250, "Y": 48, "W": 36, "H": 22},
+            {"Name": "", "AutomationId": "b", "Enabled": True, "State": "Off", "X": 255, "Y": 52, "W": 36, "H": 22},
+        ],
+    }
+    with pytest.raises(runner.EvidenceGap, match="ambiguous"):
+        action.select_developer_toggle(ambiguous, runner)

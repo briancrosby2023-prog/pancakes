@@ -71,13 +71,18 @@ CONTROL_TITLE_PREFIX = "[OPERATION PANCAKE CONTROL] "
 CONTROL_TRUSTED_CREATOR = "briancrosby2023-prog"
 CONTROL_POLL_SECONDS = 120
 RUNTIME_INSTALL_ACTION = "install_local_control_runtime"
+SINGLE_WORKTAB_ACCEPTANCE_ACTION = "complete_simple_single_worktab_acceptance"
 INBOX_ACTIONS = {
     "inspect_control_state",
     "read_bootstrap_result",
     "run_control_validation",
     "regenerate_authorized_handoff",
+    SINGLE_WORKTAB_ACCEPTANCE_ACTION,
 }
-INBOX_MUTATING_ACTIONS = {"regenerate_authorized_handoff"}
+INBOX_MUTATING_ACTIONS = {
+    "regenerate_authorized_handoff",
+    SINGLE_WORKTAB_ACCEPTANCE_ACTION,
+}
 DECISION_ACTION_TOKENS = sorted({TARGET_ACTION, RUNTIME_INSTALL_ACTION, *INBOX_ACTIONS})
 CONTROL_REQUEST_FIELDS = {
     "schema", "request_id", "mission", "expected_repository", "expected_branch",
@@ -1666,12 +1671,28 @@ def regenerate_handoff_transaction(repo: Path) -> Mapping[str, Any]:
         raise
 
 
+def run_single_worktab_acceptance(repo: Path) -> Mapping[str, Any]:
+    path = repo / "scripts" / "pancake_single_worktab_action.py"
+    if not path.is_file():
+        raise EvidenceGap("single-worktab acceptance module is missing")
+    spec = importlib.util.spec_from_file_location("pancake_single_worktab_action_runtime", path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    if spec.loader is None:
+        raise EvidenceGap("single-worktab acceptance module loader is unavailable")
+    spec.loader.exec_module(module)
+    if getattr(module, "ACTION", "") != SINGLE_WORKTAB_ACCEPTANCE_ACTION:
+        raise EvidenceGap("single-worktab acceptance module action mismatch")
+    return module.run(repo, sys.modules[__name__])
+
+
 def build_inbox_registry(repo: Path) -> dict[str, tuple[bool, Any]]:
     return {
         "inspect_control_state": (False, lambda: verify_repo(repo, require_clean=False)),
         "read_bootstrap_result": (False, read_bootstrap_result_action),
         "run_control_validation": (False, lambda: {"status": "PASS", "output": fixed_control_validation(repo)}),
         "regenerate_authorized_handoff": (True, lambda: regenerate_handoff_transaction(repo)),
+        SINGLE_WORKTAB_ACCEPTANCE_ACTION: (True, lambda: run_single_worktab_acceptance(repo)),
     }
 
 
