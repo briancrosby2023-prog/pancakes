@@ -1,7 +1,7 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 16
-Status: IN_PROGRESS
+State revision: 17
+Status: BLOCKED
 Mission ID: OP-CATALOG-001
 
 ## Mission
@@ -15,10 +15,10 @@ Read `docs/OPERATION_PANCAKE_CONTROL_STATE.json` first and validate it before ma
 Do not let the newest obstacle replace the recorded mission.
 
 ## Preflight evidence
-- MAP: Long-lived revision 15 / 5f88f934421b3b36123b2cb6a8c48c1c8a762e41 is deployed and the durable worker reports READY for OP-CATALOG-001. | The authority-required one-request probe of https://cfb.fan/api/27/player-items/?ids=110000178 returned HTTP 403 at 2026-10-02T03:43:56Z and correctly stopped without retry. | The failed structured-endpoint probe blocks the existing bulk-endpoint delta path but does not establish that every historically used public CFB.FAN acquisition path is unavailable.
-- HISTORY: The repository contains the earlier CfbFanPublicAdapter and run_cfb_fan_controlled_pilot.py historical path for fixed public player pages. | The historical controlled pilot fetched six fixed public player pages sequentially at <=12 requests/minute with no API calls and recorded full_rating_vector_acquisition=GOOD. | The public-player-page parser extracts exact season card ID, player identity, position, overall, program, archetype, team/date when present, and displayed ratings; cards with ratings are marked COMPLETE. | The global listing parser remains explicitly partial and is not itself a substitute for a complete rating vector.
-- RESEARCH: OBSERVED: the revision-15 bulk player-items probe received HTTP 403 and persisted ACCESS_DENIAL evidence outside the repository. | OBSERVED: run_cfb27_population_v3.py labels listing summaries PARTIAL_LISTING_VECTOR and explicitly does not claim a full vector. | VERIFIED_HISTORY: the older public-player-page adapter previously acquired complete rating vectors without using the API. | UNKNOWN: current reachability and current parser compatibility of the public player-page route; one bounded probe can resolve that evidence gap without retry or bypass.
-- CAPABILITIES: CfbFanPublicAdapter remains present with public HTML parsing and a 12 requests/minute access policy. | Saved listing records retain stable public player-page source_reference URLs containing exact 27-* card IDs. | A fixed-purpose one-page probe can use the historical public-page method, validate exact identity/ratings, persist evidence, and stop on denial without invoking the blocked player-items API. | Version-aware import, conflict checks, unchanged scoring models, and accepted Chrome exact-card pricing remain available only after a valid current delta is acquired.
+- MAP: Long-lived revision 16 / de7536e52429d123b5f4f6d2b8146d18b10de6b6 is deployed and the durable worker reports READY for OP-CATALOG-001. | Revision 15's one-request public unauthenticated player-items probe returned HTTP 403 ACCESS_DENIAL at 2026-10-02T03:43:56Z with no retry. | Revision 16's one-request historical CfbFanPublicAdapter public-player-page probe returned HTTP 403 ACCESS_DENIAL at 2026-10-02T03:58:07Z with no retry. | Both established live acquisition routes have therefore reached their fail-closed stop condition.
+- HISTORY: The bulk player-items route historically completed 190 batches / 9,390 requested and returned / zero failures and a successful September 8 delta. | The distinct public-player-page route historically fetched six fixed pages at <=12 requests/minute with no API calls and full_rating_vector_acquisition=GOOD. | The repository's listing parser is intentionally PARTIAL_LISTING_VECTOR and cannot replace the complete structured/detail vectors required by scoring. | Earlier OP-CATALOG-001 research already exhausted installed-state/cache recovery, CFB27 Nation, official EA, xpay AgentFeed, and public GitHub alternatives for a current-complete structured exact-card catalog.
+- RESEARCH: OBSERVED: player-items exact-card request returned HTTP 403 from the Windows operational host. | OBSERVED: public player-page exact-card request through the historical CfbFanPublicAdapter also returned HTTP 403 from the same host. | EXTERNAL_RESEARCH: current CFB.FAN player/listing content remains externally indexed and current, including a September 27 Jordan Allen 91 FS page with a full displayed rating vector and a current players listing; the evidence does not support a general site outage. | INFERENCE supported by the two independent local denials plus external visibility: the blocker is current access for Operation Pancake's established acquisition clients, not absence of current CFB.FAN data. | No accepted route permits changing client identity or transport characteristics to evade the observed 403 responses.
+- CAPABILITIES: The historical bulk and public-page parsers remain intact, but both corresponding live request paths are currently denied by observed HTTP 403 responses. | Version-aware import, unchanged scoring models, conflict validation, and accepted Chrome exact-card pricing remain ready but are gated on acquiring a valid current exact-card delta. | Read-only web research can confirm that newer public card data exists, but it is not a current-complete structured catalog and is not an accepted replacement mass-acquisition route. | No remaining immediate non-bypass technical collection route is supported by current evidence.
 
 ## Available capabilities
 - GitHub repository read/write and PR workflow
@@ -39,11 +39,9 @@ Do not let the newest obstacle replace the recorded mission.
 - read-only reconciliation of permitted-use basis and source reachability
 - read-only monitoring for materially new authorized structured CUT-source evidence
 - version-aware exact-card import and accepted Chrome pricing path once a permitted source exists
-- bounded reachability probe of the existing public unauthenticated CFB.FAN player-items endpoint
 - existing conservative 12-requests/minute 50-card bulk adapter
 - existing version-aware CFB27 delta refresh with hashed provenance and conflict checks
 - existing CfbFanPublicAdapter public-player-page parser and fixed-page acquisition path
-- one bounded public-player-page reachability/validation probe with no API and no retry
 - saved exact-card public player-page source_reference URLs from established listing discovery
 
 ## Accepted — do not reopen without materially new evidence
@@ -67,14 +65,13 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-user-test-before-exhaustion: Ask the user to install/click/restart/test while legitimate executable technical routes remain.
 - reject-provider-email-as-catalog-next-action: Treat the preserved Stormstrike/CFB.FAN provider-email request as the current or only next action for OP-CATALOG-001.
 - reject-catalog-access-bypass: Bypass authentication, CAPTCHA, access controls, explicit denial, or rate limits; change identity/rate behavior to evade source restrictions.
+- reject-catalog-denied-route-retry: Retry either observed-denied CFB.FAN acquisition request, or change client identity/authentication/cookies/headers/proxy/rate behavior to regain access, without materially new evidence that the denial condition changed.
 
 ## Next action
-Run one bounded reachability/validation probe of one known exact-card CFB.FAN public player page using the already-existing CfbFanPublicAdapter. Use one unauthenticated request with the historical public-page method, no API call and no retry; validate exact-card identity and a nonempty/full displayed rating vector. Stop on explicit denial, authentication/CAPTCHA/access-control challenge, HTTP 429, unexpected page shape, identity conflict, or incomplete ratings; do not bypass or evade. If the probe passes, reconcile the existing listing-discovery URLs with this historical public-page adapter before authorizing any broader delta refresh.
+Do not retry the denied player-items or public-player-page acquisition requests and do not change client identity, authentication, cookies, headers, proxy, or rate behavior to obtain access. Resume catalog acquisition only after materially new technical evidence establishes that one of the established routes is no longer denied, or a current structured exact-card source becomes available through a non-bypass route. Re-run MAP -> HISTORY -> RESEARCH -> CAPABILITIES before any new collection.
 
 ## Remaining executable work
-- catalog-existing-public-player-page-probe
-- If the public-player-page probe passes, reconcile the existing listing-discovery URLs with CfbFanPublicAdapter and authorize only the smallest validated delta-acquisition step needed for current exact-card vectors.
-- If the public-player-page probe fails with denial/challenge/429 or incompatible/incomplete data, classify the observed failure and update the authority without bypass or repeat.
+- None
 
 ## Completion rule
 A commit, test, CI run, PR, package, screenshot, or progress report is only a checkpoint.
