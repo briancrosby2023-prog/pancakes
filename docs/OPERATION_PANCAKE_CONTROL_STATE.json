@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 13,
-  "status": "IN_PROGRESS",
+  "state_revision": 14,
+  "status": "BLOCKED",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Reconcile the recovered historical CFB27 bulk acquisition program, its provenance, current permitted-use basis, and source reachability; do not send a provider request or perform live collection until that read-only reconciliation is complete.",
+    "next_action": "Await materially new evidence of an expressly permitted current structured CFB27 CUT catalog, delta, export, or feed. If such evidence appears, verify its permission, coverage, stable exact-card identity, and required ratings before import. Do not resume automated CFB.FAN/Stormstrike collection, use the rejected provider-email route, or ask the user to manually assemble the catalog.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -64,39 +64,40 @@
     "map": {
       "complete": true,
       "evidence": [
-        "Long-lived revision 11 / eacf147918554a29bca94f76277670779559fec9 is COMPLETE for OP-SIMPLE-002 with all seven criteria passed.",
-        "The durable Windows control worker was broker-rebound on 2026-10-01 and now reports revision 11, exact head eacf147918554a29bca94f76277670779559fec9, OP-SIMPLE-002, READY, with worker SHA-256 ee5d8319bc0c7997f070e42d32a59941fa684433944563889d9f2a4b5320d59f unchanged.",
-        "Installed Simple Evaluator remains 3T / 1.2.0 PRODUCTION_ACCEPTED with Browser Helper 1.4.12 and the protected persistent RATE_LIMITED 10/31 market lock."
+        "Long-lived revision 13 / 08d8247c4ec6d270f5b784e2bbeb42fe22ec3f45 is deployed for OP-CATALOG-001 with the authoritative history-route guard active.",
+        "The durable Windows worker is READY on revision 13 / 08d8247c with worker SHA-256 37defb2bb4fac8bae2fedef4e6b1a1bbf39592a2ed1667672adee7c42b460f65.",
+        "Live post-merge authority validation, preflight, canonical handoff, runner self-test, and 62/62 focused controls pass; the stale provider-email route is blocked mechanically."
       ]
     },
     "history": {
       "complete": true,
       "evidence": [
-        "OP-SIMPLE-002 revision 11 remains COMPLETE; revision 12 selected OP-CATALOG-001 but incorrectly reopened an older provider-email approval branch.",
-        "Verified September 28 history records the user direction: Find another way; provider-email route not approved and not sent.",
-        "The later September 28 historical_bulk_acquisition_correction identified src/operation_pancake/acquisition/cfb_fan_bulk.py plus scripts/refresh_cfb27_canonical_delta.py as the actual saved bulk acquisition/refresh program.",
-        "That correction explicitly says the unsent provider request is not the only investigative path and requires continuing from the recovered acquisition program and provenance.",
-        "Installed baseline remains 9,206 exact cards; the saved September 8 canonical population is 9,233 and is not current-complete.",
-        "Accepted Chrome pricing, Browser Watch, dynamic-port behavior, OP-SIMPLE-002 physical acceptance, and scoring models remain closed absent regression."
+        "Revision 13 corrected the stale-history defect and required catalog-historical-bulk-reconcile before any new source action.",
+        "The historical bulk program used public CFB.FAN listing pages plus /api/27/player-items/ in 50-card batches, preserved raw hashes/provenance, and performed no authentication, CAPTCHA, access-control, or rate-limit bypass.",
+        "The saved full-vector checkpoint contains 190 successful batches, 9,390 requested and 9,390 returned card IDs, zero failures, across 2026-08-14 through 2026-09-08.",
+        "The September 8 delta refresh ended at 9,233 exact cards with 14/14 missing IDs accepted, zero missing IDs, zero duplicates, and zero old IDs lost.",
+        "Installed Simple Evaluator remains at 9,206 cards and lacks the required newer Jordan Allen 91, Ashlynd Barker 91, Kingston Lopa 90, Earl Little Jr. 90, and Xavier Filsaime 90 versions."
       ]
     },
     "research": {
       "complete": true,
       "evidence": [
-        "The recovered bulk adapter uses the public CFB.FAN /api/27/player-items/ route, batches up to 50 IDs, records hashed raw JSON/provenance, and historically ran at 12 requests/minute.",
-        "The recovered delta refresh reconciles current listing discovery to canonical exact IDs and uses the bulk adapter only for missing IDs; the September 8 saved refresh reached 9,233 with zero missing IDs, duplicates, old IDs lost, or rejected conflicts.",
-        "Historical successful access alone does not establish current permission; current Stormstrike terms restrict automated access except where expressly permitted.",
-        "No evidence establishes that a new permission requirement arose after the successful saved acquisitions; the permitted-use basis and source reachability therefore remain an evidence gap to reconcile before any live collection.",
-        "The recovered adapter's generic retry behavior must not be used to evade an access-control or rate-limit response."
+        "Stormstrike Terms updated 2026-05-13 predate the August-September historical acquisitions and prohibit automated means such as bots, scrapers, or crawlers except where expressly permitted; historical successful unauthenticated access does not establish permission.",
+        "Current CFB.FAN public pages are reachable and current, but no public API documentation, export control, or express automation permission was found.",
+        "CFB27 Nation's public Player Cards Browser currently exposes zero official CUT item rows, its public repository contains no card dataset/source implementation, and its terms prohibit scraping/republishing without permission.",
+        "Official EA sources expose base-game ratings, editorial CUT player-item/program pages, and personal EA account-data download, but no current-complete structured CFB27 CUT catalog API/export was found.",
+        "An xpay AgentFeed listing exists for CFB.FAN but identifies a detected RSS/news feed with weekly T+3d delivery; it does not establish access to the CUT card database.",
+        "Local installed cards.json is 9,206 cards and stale. Normal Chrome history contains newer card/listing visits, including Kingston Lopa 90, but a bounded scan of 9,085 Chrome cache files / 548,567,485 bytes found no retained current card/API payload; the only Kingston hit was an analytics URL containing the page address.",
+        "Global public GitHub searches found no reusable current CFB27 CUT JSON/CSV dataset or public implementation of the historical CFB.FAN bulk endpoint."
       ]
     },
     "capabilities": {
       "complete": true,
       "evidence": [
-        "Desktop Commander is available as bootstrap/recovery transport and the durable Gateway/Broker is READY on revision 12.",
-        "The live repository contains the historical CFB27 bulk adapter, delta-refresh script, saved provenance reports, and version-aware evaluator catalog importer.",
-        "Read-only repository, Library, and current-source research can reconcile the historical acquisition path without user action or live collection.",
-        "Consequential mutations remain broker-only; provider messaging remains approval-gated if ever selected later."
+        "Repository, Library, current web research, installed evaluator state, browser history/cache, GitHub alternatives, CFB27 Nation, official EA sources, and the recovered historical acquisition program were all inspected read-only.",
+        "No live CFB.FAN catalog/API collection request was issued during reconciliation.",
+        "No provider message, purchase, account creation, scoring mutation, market-lock clear, Browser Watch reopening, or evaluator product mutation occurred.",
+        "No legitimate executable technical route currently supplies a permitted current-complete structured CUT exact-card catalog or delta."
       ]
     }
   },
@@ -133,7 +134,17 @@
       "9,233 saved discovery delta rechecked against installed 9,206 and required current FS examples",
       "revision-12 stale-history regression analysis against September 28 catalog checkpoints",
       "recovered historical CFB27 bulk adapter and delta-refresh provenance",
-      "authoritative route-guard design for REQUIRED_NEXT and REJECTED history"
+      "authoritative route-guard design for REQUIRED_NEXT and REJECTED history",
+      "revision-13 authoritative history-route guard merge, worker rebind, live adversarial acceptance, and 62/62 post-merge control suite",
+      "historical CFB.FAN full-vector checkpoint: 190 batches / 9,390 requested and returned / zero failures / Aug 14-Sep 8",
+      "September 8 9,233-card canonical delta refresh provenance and conflict checks",
+      "current Stormstrike terms versus historical acquisition dates and methods",
+      "current CFB.FAN public page reachability without live structured endpoint probing",
+      "CFB27 Nation Player Cards Browser, terms, and 22-file public repository",
+      "official EA ratings/CUT editorial/account-data routes",
+      "xpay CFB.FAN AgentFeed listing scope",
+      "installed 9,206-card data plus Chrome history/cache read-only recovery",
+      "global public GitHub search for current CUT datasets/adapters"
     ],
     "available": [
       "GitHub repository read/write and PR workflow",
@@ -151,7 +162,9 @@
       "version-aware installed catalog importer/persistence path",
       "accepted Chrome/browser-helper exact-card price observation path after catalog import",
       "historical CFB27 bulk acquisition adapter and saved provenance",
-      "read-only reconciliation of permitted-use basis and source reachability"
+      "read-only reconciliation of permitted-use basis and source reachability",
+      "read-only monitoring for materially new authorized structured CUT-source evidence",
+      "version-aware exact-card import and accepted Chrome pricing path once a permitted source exists"
     ],
     "unavailable_or_excluded": [
       "Direct programmatic modification of ChatGPT Project instructions from this chat",
@@ -161,7 +174,12 @@
       "Work and Codex are intentionally excluded by current user directive and are not required for OP-SIMPLE-002.",
       "Provider-authorized current-complete CFB27 exact-card catalog/export/feed",
       "Permission to automate Stormstrike/CFB.FAN collection",
-      "Current-complete local structured export with stable exact-card IDs and required scoring attributes"
+      "Current-complete local structured export with stable exact-card IDs and required scoring attributes",
+      "Express permission to automate current CFB.FAN/Stormstrike card collection",
+      "A current-complete authorized structured CFB27 CUT catalog/export/feed",
+      "A recoverable current-complete catalog payload already present in local browser cache/history",
+      "A usable current CUT card dataset in the public CFB27 Nation repository/browser",
+      "An official EA current-complete CUT catalog API/export"
     ]
   },
   "accepted_locks": [
@@ -352,28 +370,36 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D2",
+    "decision_id": "OP-CATALOG-001-D3",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Repair the stale-history decision-control regression, supersede provider-email as the next action, and resume read-only reconciliation of the recovered historical bulk acquisition path before any live collection.",
-    "obstacle_classification": "IMPLEMENTATION_PROBLEM",
+    "proposed_action": "Close the required historical-bulk reconciliation as complete and classify current catalog acquisition as blocked on an external authorized-source dependency after exhausting legitimate read-only technical routes.",
+    "obstacle_classification": "EXTERNAL_DEPENDENCY",
     "history_refs": [
-      "September 28: provider-email route not approved and not sent; find another way.",
-      "September 28: historical bulk acquisition program identified; unsent provider request is not the only investigative path.",
-      "Revision 12 incorrectly omitted that newer history and encoded the older approval branch."
+      "Revision 13 requires catalog-historical-bulk-reconcile and rejects provider email as the current route.",
+      "Historical CFB.FAN bulk acquisition and September 8 delta-refresh provenance are fully recovered.",
+      "Installed catalog remains 9,206 while current public evidence proves newer exact-card versions exist."
     ],
     "capabilities_checked": [
-      "SOPDecisionGateway caller-supplied evidence path",
-      "durable ChatGPT-plan OAuth decision provider context/schema",
-      "ControlledToolBroker execution authorization",
-      "historical CFB27 bulk adapter and delta-refresh program",
-      "Library catalog checkpoint supersession history"
+      "Recovered historical listing/bulk acquisition code and checkpoints",
+      "Current Stormstrike/CFB.FAN terms and public source surfaces",
+      "Installed evaluator cards/state",
+      "Chrome history and 548 MB bounded cache recovery scan",
+      "CFB27 Nation site/terms/repository",
+      "Official EA ratings, CUT editorial pages, and account-data export",
+      "xpay CFB.FAN AgentFeed listing",
+      "Global public GitHub CUT dataset/adapter search"
     ],
     "alternatives_considered": [
-      "Keep revision 12 and ask again for provider-contact approval — rejected because it reopens a settled user decision.",
-      "Only edit the revision-12 next_action text — rejected because it leaves the stale-history architecture hole open.",
-      "Add authority-backed REQUIRED_NEXT/REJECTED route enforcement and repair the catalog next action — selected."
+      "Resume historical automated CFB.FAN collection — rejected because current terms require express permission and none was found.",
+      "Use already-loaded browser/cache data as the current delta — exhausted; history has URLs but no recoverable current ratings/catalog payload.",
+      "Use CFB27 Nation as a structured source — rejected because its current card browser has zero official CUT rows and public repository has no dataset.",
+      "Use official EA as a complete source — rejected because no current-complete CUT catalog API/export was found.",
+      "Use xpay AgentFeed — rejected for this mission because the observed listing is an RSS/news content feed, not the CUT card database.",
+      "Use search-engine-indexed CFB.FAN pages as a bulk substitute — rejected because that would not establish provider-authorized structured catalog access or completeness.",
+      "Ask the user for manual mass collection — rejected by the user-test/source-acquisition rule.",
+      "Wait for materially new evidence of an expressly permitted structured source — selected."
     ],
-    "selected_reason": "The root failure is verified: the Gateway trusted a caller-selected history subset. A structured authority-backed route guard closes that omission path and the recovered bulk-acquisition reconciliation remains executable without user action.",
+    "selected_reason": "The authority-required reconciliation is complete and no legitimate executable route currently provides both current-complete exact-card data and a permitted structured acquisition basis. Continuing collection would either violate accepted locks or mislabel partial data as complete.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
@@ -725,13 +751,59 @@
       ],
       "result": "OP-CATALOG-001 is IN_PROGRESS with catalog-historical-bulk-reconcile as the authority-required next route.",
       "next": "Reconcile the recovered historical CFB27 bulk acquisition program, its provenance, current permitted-use basis, and source reachability; do not send a provider request or perform live collection until that read-only reconciliation is complete."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D3",
+      "decision": "Complete the historical bulk/source reconciliation and stop new catalog collection until materially new evidence supplies an expressly permitted structured source.",
+      "evidence": [
+        "Historical full-vector checkpoint: 190 batches, 9,390 requested/returned, zero failures, Aug 14-Sep 8.",
+        "Stormstrike automation restriction predates those runs; no express permission or public catalog API/export was found.",
+        "Installed catalog is 9,206 and required current FS versions are absent.",
+        "Browser history proves newer pages were visited, but 9,085-file / 548,567,485-byte cache scan recovered no current card/API payload.",
+        "CFB27 Nation, official EA, xpay AgentFeed, and public GitHub alternatives do not provide a usable authorized current-complete CUT exact-card dataset."
+      ],
+      "history": [
+        "Provider email remains a rejected current route.",
+        "Unauthorized CFB.FAN/Stormstrike automation remains rejected.",
+        "Manual user mass collection remains rejected.",
+        "Scoring models, market lock, Browser Watch, and installed product state remain unchanged."
+      ],
+      "alternatives": [
+        "Unauthorized historical refresh — rejected.",
+        "Local-cache recovery — exhausted.",
+        "Third-party/official alternatives — exhausted for a current-complete structured catalog.",
+        "Wait for materially new authorized-source evidence — selected."
+      ],
+      "result": "OP-CATALOG-001 is BLOCKED on an external authorized-source dependency. No user action is currently requested and no executable technical route remains.",
+      "next": "Await materially new evidence of an expressly permitted current structured CFB27 CUT catalog, delta, export, or feed. If such evidence appears, verify its permission, coverage, stable exact-card identity, and required ratings before import. Do not resume automated CFB.FAN/Stormstrike collection, use the rejected provider-email route, or ask the user to manually assemble the catalog."
     }
   ],
-  "blocker": null,
+  "blocker": {
+    "type": "EXTERNAL_DEPENDENCY",
+    "capabilities_checked": [
+      "Historical CFB.FAN bulk/listing acquisition and provenance",
+      "Current Stormstrike/CFB.FAN terms and public source surfaces",
+      "Installed evaluator catalog/state",
+      "Chrome history and bounded cache recovery",
+      "CFB27 Nation site/terms/repository",
+      "Official EA data/API/export surfaces",
+      "xpay CFB.FAN AgentFeed scope",
+      "Public GitHub current CUT dataset/adapter search"
+    ],
+    "adaptations_attempted": [
+      "Recovered and reconciled the exact historical bulk-acquisition implementation and saved checkpoints.",
+      "Compared historical acquisition dates to current provider terms.",
+      "Inspected alternative structured-source providers and official EA sources.",
+      "Inspected already-loaded local browser history/cache without issuing new CFB.FAN collection requests.",
+      "Verified the installed 9,206-card data cannot satisfy the required current-card acceptance examples."
+    ],
+    "remaining_executable_routes": [],
+    "user_action": "No user action is currently requested. Resume only when materially new evidence establishes an expressly permitted current structured CFB27 CUT catalog, delta, export, or feed."
+  },
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 13,
-    "next_action": "Reconcile the recovered historical CFB27 bulk acquisition program, its provenance, current permitted-use basis, and source reachability; do not send a provider request or perform live collection until that read-only reconciliation is complete.",
+    "state_revision": 14,
+    "next_action": "Await materially new evidence of an expressly permitted current structured CFB27 CUT catalog, delta, export, or feed. If such evidence appears, verify its permission, coverage, stable exact-card identity, and required ratings before import. Do not resume automated CFB.FAN/Stormstrike collection, use the rejected provider-email route, or ask the user to manually assemble the catalog.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -753,10 +825,7 @@
   "completion": {
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
-    "remaining_executable_work": [
-      "catalog-historical-bulk-reconcile",
-      "After reconciliation, choose only an authority-permitted source acquisition route and continue OP-CATALOG-001."
-    ]
+    "remaining_executable_work": []
   },
   "enforcement": {
     "behavioral_standard": {
@@ -843,14 +912,6 @@
         "status": "REJECTED",
         "description": "The provider-email route was explicitly not approved as the next action; the user directed Operation Pancake to find another way.",
         "source": "Library:/Simple Evaluator/CHECKPOINT_3U_EXECUTION_STATUS.json#alternative_catalog_source_research_20260928"
-      },
-      {
-        "id": "catalog-historical-bulk-reconcile-required",
-        "mission_id": "OP-CATALOG-001",
-        "route_id": "catalog-historical-bulk-reconcile",
-        "status": "REQUIRED_NEXT",
-        "description": "Continue from the recovered historical bulk acquisition program and reconcile its provenance, current permitted-use basis, and source reachability before choosing any external-user action or live collection.",
-        "source": "Library:/Simple Evaluator/CHECKPOINT_3U_EXECUTION_STATUS.json#historical_bulk_acquisition_correction_20260928"
       }
     ]
   }
