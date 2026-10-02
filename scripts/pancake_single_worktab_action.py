@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 22
+EXPECTED_AUTHORITY_REVISION = 23
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -79,11 +79,22 @@ def run_ps_json(script: str, control) -> Any:
 
 
 def load_launch_module():
-    spec = importlib.util.spec_from_file_location("simple_evaluator_launch_acceptance", APP / "launch.py")
-    module = importlib.util.module_from_spec(spec)
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+    app_path = str(APP)
+    inserted = app_path not in sys.path
+    if inserted:
+        sys.path.insert(0, app_path)
+    try:
+        spec = importlib.util.spec_from_file_location("simple_evaluator_launch_acceptance", APP / "launch.py")
+        module = importlib.util.module_from_spec(spec)
+        assert spec.loader is not None
+        spec.loader.exec_module(module)
+        return module
+    finally:
+        if inserted:
+            try:
+                sys.path.remove(app_path)
+            except ValueError:
+                pass
 
 
 def protected_snapshot() -> dict[str, Any]:

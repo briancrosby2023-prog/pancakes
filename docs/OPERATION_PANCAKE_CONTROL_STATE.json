@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 22,
+  "state_revision": 23,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Deploy the revision-22 single-worktab action authority-pin fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r21-final-20261002-1410 is terminal and must not be replayed. Revision 22 changes only the action's verified stale authority pin from revision 20 to revision 22 plus focused regression coverage and authority/handoff bookkeeping; it does not change browser logic, source access, scoring, exact-card identity, protected state, or locks.",
+    "next_action": "Deploy the revision-23 single-worktab launch-loader sibling-import fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r22-final-e8173bcc is terminal and must not be replayed. Revision 23 fixes only the verified load_launch_module failure to resolve Simple Evaluator sibling imports while loading launch.py, plus updates the action revision pin, focused regression coverage and authority/handoff bookkeeping; browser behavior, source access, scoring, exact-card identity, protected state and locks remain unchanged.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -64,33 +64,33 @@
     "map": {
       "complete": true,
       "evidence": [
-        "OBSERVED: revision 21 / b917d2c4 is the live OP-CATALOG-001 authority and the durable Windows GitHub-inbox worker is READY on that exact head with worker SHA-256 4d2c0862.",
-        "OBSERVED: all installed single-worktab files match the validated Browser Helper 1.4.13 candidate after the brokered watch.js repair.",
-        "OBSERVED: fresh immutable issue #51 was accepted and frozen by the revision-21 durable worker but terminated before browser mutation with ControlError: wrong authority revision: expected 20, observed 21."
+        "OBSERVED: revision 22 / e8173bcc is the live OP-CATALOG-001 authority and the durable Windows GitHub-inbox worker is READY on that exact head with worker SHA-256 4d2c0862.",
+        "OBSERVED: fresh immutable issue #53 was accepted and reached the revision-22 physical-acceptance action, then terminated before browser mutation with ModuleNotFoundError: No module named 'server'.",
+        "OBSERVED: all installed Browser Helper 1.4.13 single-worktab files remain at their accepted candidate hashes and the persistent RATE_LIMITED lock remains protected."
       ]
     },
     "history": {
       "complete": true,
       "evidence": [
-        "VERIFIED_HISTORY: issue #49 exposed and revision 21 fixed the durable runner importlib.util loader defect; revision-21 worker deployment is complete and READY.",
-        "VERIFIED_HISTORY: issue #51 is terminal and may not be replayed.",
+        "VERIFIED_HISTORY: revision 21 fixed the durable runner importlib.util loader defect; revision 22 fixed the stale action authority pin; both are deployed and verified.",
+        "VERIFIED_HISTORY: failed issues #49, #51 and #53 are terminal and may not be replayed.",
         "VERIFIED_HISTORY: both denied raw CFB.FAN acquisition routes remain fail-closed; provider-email remains rejected; scoring, exact-card identity and protected-state locks remain unchanged."
       ]
     },
     "research": {
       "complete": true,
       "evidence": [
-        "OBSERVED: scripts/pancake_single_worktab_action.py run() still calls control.verify_repo with expected_revision=20.",
-        "OBSERVED: under the revision-21 worker this exact stale pin produced issue #51 failure 'wrong authority revision: expected 20, observed 21' before browser mutation.",
-        "OBSERVED: the narrow correction is to bind the unchanged physical-acceptance action to revision 22 and add focused regression coverage for that pin.",
-        "INFERENCE supported by exact receipt and source line: browser logic, source access, scoring, identity, persistence and market-lock behavior do not need to change."
+        "OBSERVED: pancake_single_worktab_action.load_launch_module executes Simple Evaluator launch.py with importlib.util.spec_from_file_location without putting the Simple Evaluator APP directory on sys.path.",
+        "OBSERVED: installed Simple Evaluator launch.py imports sibling module server at top level; without APP on sys.path that exact import raises ModuleNotFoundError before browser mutation.",
+        "OBSERVED: the narrow correction is to expose APP on sys.path only while launch.py executes, then remove the temporary path, with a focused sibling-import regression test.",
+        "INFERENCE supported by the exact receipt and source inspection: browser automation logic, source access, scoring, identity, persistence and market-lock behavior do not need to change."
       ]
     },
     "capabilities": {
       "complete": true,
       "evidence": [
-        "OBSERVED: revision-21 Gateway/Broker, immutable GitHub-inbox transport and durable worker are healthy and processed issue #51 to the action boundary.",
-        "OBSERVED: the local repository can stage a four-path revision-22 correction: physical-acceptance action revision pin, focused regression test, authority state and canonical handoff.",
+        "OBSERVED: revision-22 Gateway/Broker, immutable GitHub-inbox transport and durable worker are healthy and processed issue #53 to the physical-action loader boundary.",
+        "OBSERVED: the repository can stage a four-path revision-23 correction: physical-action launch loader/revision pin, focused regression tests, authority state and canonical handoff.",
         "OBSERVED: bounded patch, exact publication/merge and rollback-capable runtime-rebind mechanisms remain available."
       ]
     }
@@ -163,7 +163,10 @@
       "minimal revision-21 importlib.util loader fix plus focused regression test",
       "issue #51 terminal failure: wrong authority revision expected 20 observed 21 before browser mutation",
       "exact action source stale pin: pancake_single_worktab_action.py run() expected_revision=20",
-      "minimal revision-22 authority-pin fix plus focused regression test"
+      "minimal revision-22 authority-pin fix plus focused regression test",
+      "issue #53 terminal failure: ModuleNotFoundError No module named server before browser mutation",
+      "exact launch-loader defect: action executes launch.py without temporary Simple Evaluator APP sys.path",
+      "minimal revision-23 sibling-import loader fix plus focused regression test"
     ],
     "available": [
       "GitHub repository read/write and PR workflow",
@@ -196,7 +199,9 @@
       "revision-21 minimal durable-loader repair through bounded patch/publish/merge/rebind",
       "fresh immutable GitHub-inbox request for the unchanged complete_simple_single_worktab_acceptance action after corrected worker deployment",
       "revision-22 minimal single-worktab action authority-pin repair through bounded patch/publish/merge/rebind",
-      "fresh immutable GitHub-inbox request for complete_simple_single_worktab_acceptance after revision-22 deployment"
+      "fresh immutable GitHub-inbox request for complete_simple_single_worktab_acceptance after revision-22 deployment",
+      "revision-23 minimal single-worktab launch-loader sibling-import repair through bounded patch/publish/merge/rebind",
+      "fresh immutable GitHub-inbox request for complete_simple_single_worktab_acceptance after revision-23 deployment"
     ],
     "unavailable_or_excluded": [
       "Direct programmatic modification of ChatGPT Project instructions from this chat",
@@ -441,28 +446,28 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D11",
+    "decision_id": "OP-CATALOG-001-D12",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Fix only the verified stale authority revision pin in the physical single-worktab action, deploy revision 22, then submit one fresh immutable acceptance request.",
+    "proposed_action": "Fix only the verified Simple Evaluator launch-module sibling-import loader defect, deploy revision 23, then submit one fresh immutable acceptance request.",
     "obstacle_classification": "IMPLEMENTATION_PROBLEM",
     "history_refs": [
-      "Revision 21 fixed the prior durable-loader defect and is deployed READY.",
-      "Issue #51 failed before browser mutation with exact ControlError expected revision 20 observed 21.",
-      "Issue #51 request_id is terminal and must not be replayed."
+      "Revision 22 is deployed READY and issue #53 reached the physical action.",
+      "Issue #53 failed before browser mutation with exact ModuleNotFoundError No module named server.",
+      "Issue #53 request_id is terminal and must not be replayed."
     ],
     "capabilities_checked": [
-      "live revision-21 authority and READY worker",
-      "issue #51 FAILED receipt and exact error",
-      "physical-action run() source line with expected_revision=20",
+      "live revision-22 authority and READY worker",
+      "issue #53 FAILED receipt and exact error",
+      "action load_launch_module source and installed launch.py sibling import",
       "bounded patch/publish/merge/runtime-rebind pipeline"
     ],
     "alternatives_considered": [
-      "Replay issue #51 unchanged — rejected because terminal request IDs cannot be replayed and the stale pin would recur.",
-      "Submit a request claiming revision 20 — rejected because the durable inbox correctly validates current authority revision 21.",
+      "Replay issue #53 unchanged — rejected because the terminal request ID cannot be replayed and the loader defect would recur.",
+      "Modify installed Simple Evaluator launch.py — rejected because the installed app is not defective and that would broaden mutation scope.",
       "Bypass the durable worker and operate the browser directly — rejected by the execution rule.",
-      "Change only the action authority pin to revision 22 with regression coverage — selected."
+      "Temporarily expose APP on sys.path only while loading launch.py, with regression coverage — selected."
     ],
-    "selected_reason": "The exact terminal receipt and action source isolate a stale hard-coded revision check before browser mutation. Updating that pin is materially new evidence and the narrowest legitimate correction.",
+    "selected_reason": "The terminal receipt and both source files isolate a Python module-resolution defect before browser mutation. A temporary APP sys.path context is the narrowest legitimate correction.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
@@ -1018,13 +1023,35 @@
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS with a verified IMPLEMENTATION_PROBLEM and a narrow revision-22 repair path.",
       "next": "Deploy the revision-22 single-worktab action authority-pin fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r21-final-20261002-1410 is terminal and must not be replayed. Revision 22 changes only the action's verified stale authority pin from revision 20 to revision 22 plus focused regression coverage and authority/handoff bookkeeping; it does not change browser logic, source access, scoring, exact-card identity, protected state, or locks."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D12",
+      "decision": "Repair only the Simple Evaluator launch-module sibling-import loader before issuing another physical acceptance request.",
+      "evidence": [
+        "Issue #53 terminal receipt: ModuleNotFoundError No module named server.",
+        "action load_launch_module executes launch.py without APP on sys.path.",
+        "installed launch.py imports sibling server at module load and failure occurred before browser mutation."
+      ],
+      "history": [
+        "Revision 22 authority-pin repair is deployed and READY.",
+        "Issue #53 is terminal and will not be replayed.",
+        "Denied source-route, scoring, identity, persistence and user-test locks remain unchanged."
+      ],
+      "alternatives": [
+        "Replay failed request — rejected.",
+        "Modify installed launch.py — rejected.",
+        "Direct browser bypass — rejected.",
+        "Minimal temporary APP sys.path loader context with regression test — selected."
+      ],
+      "result": "OP-CATALOG-001 remains IN_PROGRESS with a verified IMPLEMENTATION_PROBLEM and a narrow revision-23 repair path.",
+      "next": "Deploy the revision-23 single-worktab launch-loader sibling-import fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r22-final-e8173bcc is terminal and must not be replayed. Revision 23 fixes only the verified load_launch_module failure to resolve Simple Evaluator sibling imports while loading launch.py, plus updates the action revision pin, focused regression coverage and authority/handoff bookkeeping; browser behavior, source access, scoring, exact-card identity, protected state and locks remain unchanged."
     }
   ],
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 22,
-    "next_action": "Deploy the revision-22 single-worktab action authority-pin fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r21-final-20261002-1410 is terminal and must not be replayed. Revision 22 changes only the action's verified stale authority pin from revision 20 to revision 22 plus focused regression coverage and authority/handoff bookkeeping; it does not change browser logic, source access, scoring, exact-card identity, protected state, or locks.",
+    "state_revision": 23,
+    "next_action": "Deploy the revision-23 single-worktab launch-loader sibling-import fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r22-final-e8173bcc is terminal and must not be replayed. Revision 23 fixes only the verified load_launch_module failure to resolve Simple Evaluator sibling imports while loading launch.py, plus updates the action revision pin, focused regression coverage and authority/handoff bookkeeping; browser behavior, source access, scoring, exact-card identity, protected state and locks remain unchanged.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -1047,9 +1074,9 @@
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
     "remaining_executable_work": [
-      "Create, validate, publish and merge the minimal revision-22 single-worktab action authority-pin repair with focused regression coverage.",
-      "Rebind the Windows durable worker to revision 22 and verify exact worker bytes, READY health, clean product branch and control validation.",
-      "Create one fresh immutable GitHub control issue for complete_simple_single_worktab_acceptance and let the revision-22 worker execute it through Gateway/Broker.",
+      "Create, validate, publish and merge the minimal revision-23 single-worktab launch-loader sibling-import repair with focused regression coverage.",
+      "Rebind the Windows durable worker to revision 23 and verify READY health, clean product branch and control validation.",
+      "Create one fresh immutable GitHub control issue for complete_simple_single_worktab_acceptance and let the revision-23 worker execute it through Gateway/Broker.",
       "Verify the physical-acceptance receipt: live Browser Helper 1.4.13, one reusable CFB.FAN work tab, minimum five-second rendered-page dwell, exact-card price persistence, saved-watch serialization, fail-closed protections, protected state, tab hygiene and dynamic-port restart persistence.",
       "Advance the authority only with verified physical-acceptance evidence, synchronize the durable worker, then hand Simple Evaluator to the user for normal product acceptance only if no executable technical debugging remains."
     ]
@@ -1145,8 +1172,8 @@
         "mission_id": "OP-CATALOG-001",
         "route_id": "catalog-rendered-browser-single-tab-integration",
         "status": "REQUIRED_NEXT",
-        "description": "The next executable route is to deploy the revision-22 physical-action authority-pin fix, then execute complete_simple_single_worktab_acceptance through one fresh immutable GitHub-inbox request and SOPDecisionGateway -> ControlledToolBroker. Failed issues #49 and #51 must not be replayed. The route must not retry denied raw HTTP clients, clear the persistent rate-limit lock, change scoring, or hand browser activation/testing to the user.",
-        "source": "Operation Pancake revision 22 evidence from terminal issue #51 stale authority-pin failure"
+        "description": "The next executable route is to deploy the revision-23 launch-loader sibling-import fix, then execute complete_simple_single_worktab_acceptance through one fresh immutable GitHub-inbox request and SOPDecisionGateway -> ControlledToolBroker. Failed issues #49, #51 and #53 must not be replayed. The route must not retry denied raw HTTP clients, clear the persistent rate-limit lock, change scoring, or hand browser activation/testing to the user.",
+        "source": "Operation Pancake revision 23 evidence from terminal issue #53 launch-loader failure"
       }
     ]
   }

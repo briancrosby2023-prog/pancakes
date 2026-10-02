@@ -232,6 +232,20 @@ def test_single_worktab_runtime_loader_has_importlib_util_available():
     assert callable(mod.importlib.util.spec_from_file_location)
     assert callable(mod.importlib.util.module_from_spec)
 
-def test_single_worktab_action_revision_pin_matches_revision_22():
+def test_single_worktab_action_revision_pin_matches_revision_23():
     action = load_single_worktab_action()
-    assert action.EXPECTED_AUTHORITY_REVISION == 22
+    assert action.EXPECTED_AUTHORITY_REVISION == 23
+
+def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, monkeypatch):
+    action = load_single_worktab_action()
+    (tmp_path / "server.py").write_text("VALUE = 42\n", encoding="utf-8")
+    (tmp_path / "launch.py").write_text("import server\nVALUE = server.VALUE\n", encoding="utf-8")
+    monkeypatch.setattr(action, "APP", tmp_path)
+    previous = sys.modules.pop("server", None)
+    try:
+        loaded = action.load_launch_module()
+        assert loaded.VALUE == 42
+    finally:
+        sys.modules.pop("server", None)
+        if previous is not None:
+            sys.modules["server"] = previous
