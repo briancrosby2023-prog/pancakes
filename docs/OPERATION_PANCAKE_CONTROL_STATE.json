@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 19,
+  "state_revision": 20,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Implement and physically verify the bounded single-tab normal-rendered CFB.FAN browser work queue in the accepted Simple Evaluator runtime for known exact-card page and price observations only: reuse one work tab, preserve a minimum five-second navigation dwell, validate exact card identity, and stop on 403/429/CAPTCHA/login/access challenge or unexpected page state. Preserve both denied raw-request locks, provider-email rejection, unchanged scoring, exact-card persistence, and catalog authorization limits. Complete installed-app acceptance before asking the user to test.",
+    "next_action": "Deploy the revision-20 durable GitHub-inbox worker extension and execute its fixed complete_simple_single_worktab_acceptance action through SOPDecisionGateway -> ControlledToolBroker. The action must preserve both denied raw-request locks and the persistent RATE_LIMITED value-probe lock, activate the already-installed Browser Helper 1.4.13 without touching source authentication, physically prove one reusable CFB.FAN work tab with the minimum five-second rendered-page dwell and exact-card price persistence, restart through the accepted dynamic-port launcher, and return verified evidence before the authority is advanced again. Do not ask the user to test while this durable route remains executable.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -64,37 +64,37 @@
     "map": {
       "complete": true,
       "evidence": [
-        "OBSERVED: revision 18 / 1fd712f2 is the live OP-CATALOG-001 authority and the durable Windows GitHub-inbox worker is READY on that exact head.",
-        "OBSERVED: the installed Simple Evaluator remains release 3T / 1.2.0 PRODUCTION_ACCEPTED with Browser Helper 1.4.12 and accepted dynamic-port startup.",
-        "OBSERVED: one normal connected-browser CFB.FAN tab successfully rendered Jordan Allen 91 FS, Ashlynd Barker 91 FS, Kingston Lopa 90 FS, Earl Little Jr. 90 FS, and Xavier Filsaime 90 FS with stable exact-card IDs and displayed rating vectors; no 403, CAPTCHA, or login/access challenge appeared on those rendered pages.",
-        "OBSERVED: the user exposed tab-clutter as a regression and requires one reusable CFB.FAN work tab with temporary tabs closed when work finishes."
+        "OBSERVED: revision 19 / 9c886fe8 is the live OP-CATALOG-001 authority and the durable Windows GitHub-inbox worker is READY on that exact head.",
+        "OBSERVED: the broker-authorized browser-helper/watch.js repair completed successfully; all seven installed single-worktab integration files now match the validated 1.4.13 candidate, including explicit MIN_PAGE_DWELL_MS = 5000.",
+        "OBSERVED: protected Simple Evaluator state remains intact after the repair: two saved Price Watches, 130 state observations, 100 feed observations, unchanged alerts/runtime hashes, and the persistent RATE_LIMITED value-probe lock.",
+        "OBSERVED: the live browser-helper heartbeat still reports runtime 1.4.12 while expected_version is 1.4.13, so physical browser activation/acceptance remains unfinished."
       ]
     },
     "history": {
       "complete": true,
       "evidence": [
-        "VERIFIED_HISTORY: the player-items raw request and historical CfbFanPublicAdapter raw public-page request each returned one-request HTTP 403 ACCESS_DENIAL and remain fail-closed with no retry or bypass.",
-        "VERIFIED_HISTORY: Browser Watch 1.4.12 and the Simple Evaluator dynamic-port runtime were physically accepted; accepted scoring models, watches, price identity, and protected state must remain intact.",
-        "OBSERVED: Browser Helper 1.4.12 already uses one value-price probe tab, navigates that same tab with chrome.tabs.update after VALUE_PROBE_NAVIGATION_DELAY_MS=5000, and closes the probe tab on completion or 429.",
-        "OBSERVED: normal saved card watches still use per-tab alarm/reload behavior and the UI opens new source tabs, which conflicts with the newly explicit single-work-tab requirement."
+        "VERIFIED_HISTORY: both raw CFB.FAN acquisition clients remain denied with one-request HTTP 403 ACCESS_DENIAL and may not be retried or emulated.",
+        "VERIFIED_HISTORY: the normal rendered-page path previously loaded all five required FS examples without 403/CAPTCHA/login challenge and exposed stable exact-card identities and displayed rating vectors.",
+        "VERIFIED_HISTORY: the first Edge restart hypothesis did not reload the unpacked helper, the direct Reload-control hypothesis found no Reload control while the extension was off, and two AppActivate-based UI Automation attempts failed; those failed hypotheses are not being retried.",
+        "VERIFIED_HISTORY: Edge currently recognizes Simple Evaluator Browser Watch 1.4.13 from the exact installed folder but reports the extension off with an explicit Developer-mode requirement."
       ]
     },
     "research": {
       "complete": true,
       "evidence": [
-        "OBSERVED: normal rendered CFB.FAN exact-card pages are reachable through the connected browser for all five required FS examples while the two denied raw HTTP acquisition clients remain denied.",
-        "EXTERNAL_RESEARCH: Stormstrike terms currently restrict automated scraping/access except where expressly permitted; therefore the rendered-browser path is not promoted to a provider-authorized current-complete catalog source and may not be used to evade the denied clients.",
-        "OBSERVED: the installed browser helper reads visible PlayStation Live Auctions DOM state, stops on HTTP 429 or user-action-required preflight, and records only exact-card URL-matched FOUND/NO_LISTING observations.",
-        "INFERENCE supported by installed code and browser evidence: the immediate product gap is shared-tab orchestration/tab hygiene for already accepted rendered browser price observations, not a need to alter scoring or retry denied catalog clients."
+        "OBSERVED: the exact on-disk single-worktab implementation gap is closed; the remaining gap is browser-runtime activation plus physical acceptance, not scoring, catalog identity, or another product redesign.",
+        "OBSERVED: ordinary-chat Remote Desktop Commander can still inspect the exact Edge extension surface but current UI mutation/foreground execution is blocked or unreliable on this surface, while the persistent Windows worker already provides the sanctioned GitHub-inbox -> Gateway -> Broker execution path.",
+        "OBSERVED: scripts/pancake_local_control.py supports a fixed symbolic inbox registry with mutating actions authorized individually through SOPDecisionGateway and ControlledToolBroker; extending that registry avoids arbitrary shell exposure and does not bypass the control architecture.",
+        "INFERENCE supported by the live control architecture: moving the bounded browser acceptance handler into the durable worker is the narrowest legitimate route to finish physical acceptance without handing the debugging loop to the user."
       ]
     },
     "capabilities": {
       "complete": true,
       "evidence": [
-        "OBSERVED: Browser Helper 1.4.12 has Chromium tabs permission and already performs same-tab five-second value-probe navigation and tab removal.",
-        "OBSERVED: server.py already owns exact-card URL matching, bounded value-probe batches, progress/terminal states, observation persistence, alerts, and 429 fail-closed behavior.",
-        "OBSERVED: Simple-Evaluator.html already provides Top 5, Best Value, Price Watch, Training Watch, exact-card identity, and progress UI; the current Update Prices path is a bounded comparison-card batch rather than a full 9,000-card scan.",
-        "OBSERVED: the Gateway/ControlledToolBroker, rollback-capable Windows mutation handlers, accepted launcher, and physical acceptance probes are available for a bounded installed-product hotfix."
+        "OBSERVED: revision-19 Gateway/Broker is healthy and successfully executed the exact one-file watch.js repair with preimage/candidate hash checks, backup, post-hash verification, syntax validation and protected-state verification.",
+        "OBSERVED: the durable GitHub-inbox worker runs in the authorized Windows environment and already executes registered symbolic mutations through its own SOPDecisionGateway -> ControlledToolBroker.",
+        "OBSERVED: the staged revision-20 worker adds exactly one fixed mutating symbolic action, complete_simple_single_worktab_acceptance, backed by a repository-controlled handler that contains no arbitrary command/user input surface and fails closed on ambiguous UI identity.",
+        "OBSERVED: the staged handler verifies installed 1.4.13 hashes and protected state, uses exact Edge/UI Automation evidence to identify Developer mode, requires one reusable CFB.FAN work tab, measures rendered-page dwell against persisted exact-card observations, preserves the persistent rate-limit lock, restarts via the dynamic-port launcher, and marks release acceptance only after physical checks pass."
       ]
     }
   },
@@ -156,7 +156,11 @@
       "revision-17 brokered runtime rebind completed: worker READY at 86541a7c with unchanged SHA-256 and clean validated operational clone",
       "October 2 normal rendered CFB.FAN browser-page evidence for all five required FS exact cards with no access challenge",
       "installed Browser Helper 1.4.12 single-tab value-probe path: 5000ms same-tab navigation delay and close-on-completion",
-      "installed saved-watch per-tab reload/tab-open behavior identified as the concrete single-tab hygiene regression"
+      "installed saved-watch per-tab reload/tab-open behavior identified as the concrete single-tab hygiene regression",
+      "broker-authorized watch.js repair to exact validated 1.4.13 candidate hash with protected-state preservation",
+      "current Edge 1.4.13 on-disk / 1.4.12 live-runtime mismatch and explicit Developer-mode requirement",
+      "durable GitHub-inbox symbolic action registry and Gateway/Broker execution path for fixed local Windows mutations",
+      "staged complete_simple_single_worktab_acceptance fail-closed handler and focused registry/toggle-selector tests"
     ],
     "available": [
       "GitHub repository read/write and PR workflow",
@@ -183,7 +187,9 @@
       "saved exact-card public player-page source_reference URLs from established listing discovery",
       "normal rendered CFB.FAN exact-card page inspection for known source pages through the connected browser, bounded and fail-closed",
       "existing Browser Helper same-tab value-price batch navigation with five-second dwell and exact-card URL matching",
-      "brokered installed Simple Evaluator hotfix/rollback and physical acceptance path"
+      "brokered installed Simple Evaluator hotfix/rollback and physical acceptance path",
+      "revision-20 durable inbox action for fixed single-worktab browser activation and physical acceptance through Gateway/Broker",
+      "fail-closed Windows UI Automation inside the durable worker with exact installed-helper/protected-state preconditions"
     ],
     "unavailable_or_excluded": [
       "Direct programmatic modification of ChatGPT Project instructions from this chat",
@@ -428,29 +434,29 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D8",
+    "decision_id": "OP-CATALOG-001-D9",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Narrowly reopen Browser Watch orchestration to integrate the already-proven single-tab rendered-page queue across user-started exact-card price checks while preserving all source-denial, scoring, identity, persistence, and authorization locks.",
-    "obstacle_classification": "IMPLEMENTATION_PROBLEM",
+    "proposed_action": "Extend only the durable controlled-worker symbolic registry with one fixed single-worktab physical-acceptance action, deploy that worker, then execute the action through the existing GitHub-inbox -> Gateway -> Broker route.",
+    "obstacle_classification": "CAPABILITY_PROBLEM",
     "history_refs": [
-      "Revision 18 correctly preserved both denied raw CFB.FAN request routes and the no-bypass/no-retry locks.",
-      "Simple Evaluator 3T / 1.2.0 and Browser Helper 1.4.12 are physically accepted and remain the product baseline.",
-      "The accepted value-probe path already demonstrates one-tab sequential five-second navigation; saved watches still use per-tab behavior."
+      "Revision 19 already selected catalog-rendered-browser-single-tab-integration as REQUIRED_NEXT.",
+      "The exact watch.js repair is complete and all installed 1.4.13 integration files match the validated candidate.",
+      "Direct browser-runtime activation attempts on the ordinary-chat surface failed closed without completing physical acceptance."
     ],
     "capabilities_checked": [
-      "live revision-18 authority and READY durable worker",
-      "normal connected-browser rendering of five required FS exact-card pages",
-      "installed Browser Helper 1.4.12 tabs/alarm/navigation implementation",
-      "installed Simple Evaluator server/value-probe/observation persistence implementation",
-      "Gateway/Broker rollback-capable installed-product mutation path"
+      "live revision-19 authority and READY durable worker",
+      "successful Gateway/Broker one-file repair receipt and preserved protected-state hashes",
+      "durable GitHub-inbox fixed-action registry and decision-bound mutation broker",
+      "staged fail-closed single-worktab acceptance action and focused tests"
     ],
     "alternatives_considered": [
-      "Retry either denied raw HTTP route — rejected by existing lock and unnecessary for rendered browser price observations.",
-      "Create a replacement browser/runtime system — rejected because the accepted helper already contains the needed single-tab primitive.",
-      "Keep per-watch tabs and ask the user to manage them — rejected because tab hygiene is a verified product regression and executable technical work remains.",
-      "Narrowly adapt the existing accepted Browser Helper/value-probe orchestration to one shared work tab — selected."
+      "Retry Edge process restart — rejected because the hypothesis already failed and no materially new evidence supports repeating it.",
+      "Retry WScript AppActivate UI Automation — rejected because repeated foreground failures invalidate that hypothesis.",
+      "Ask the user to enable Developer mode/reload/test — rejected while a legitimate durable controlled-worker route remains executable.",
+      "Bypass the Gateway with direct Desktop Commander/browser mutation — rejected by the project execution rule.",
+      "Extend the existing durable fixed-action registry with one bounded acceptance handler — selected."
     ],
-    "selected_reason": "The installed code gives a verified root cause and a minimal reuse path: same-tab five-second navigation already exists for value probes, while saved watches and UI links are the remaining tab-sprawl gap.",
+    "selected_reason": "The implementation itself is now on disk and validated. The unresolved problem is execution-surface capability for browser activation/physical acceptance. The durable Windows worker is already the accepted decision-bound mutation broker and can expose one fixed fail-closed action without arbitrary shell access or user intervention.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
@@ -459,9 +465,8 @@
     ],
     "new_evidence_for_reopened_locks": {
       "accepted-browser-watch": [
-        "User screenshot and direct tab inventory demonstrated browser-tab clutter as a current regression.",
-        "Installed background.js shows accepted value probes already reuse one tab with a 5000ms navigation delay and close it on completion.",
-        "Installed saved-watch path still schedules/reloads per tab and UI source actions open new tabs, proving the regression is orchestration-specific rather than a reason to redesign Browser Watch."
+        "The single-worktab 1.4.13 files are now installed exactly, but live helper runtime remains 1.4.12, so physical Browser Watch acceptance is still incomplete.",
+        "A fixed durable-worker acceptance action is required to close the observed browser-runtime regression without reopening scoring or source-acquisition behavior."
       ]
     }
   },
@@ -947,13 +952,36 @@
       ],
       "result": "OP-CATALOG-001 returns to IN_PROGRESS for the bounded single-tab rendered-browser integration and installed-app acceptance; this does not establish a provider-authorized current-complete catalog source.",
       "next": "Implement and physically verify the bounded single-tab normal-rendered CFB.FAN browser work queue in the accepted Simple Evaluator runtime for known exact-card page and price observations only: reuse one work tab, preserve a minimum five-second navigation dwell, validate exact card identity, and stop on 403/429/CAPTCHA/login/access challenge or unexpected page state. Preserve both denied raw-request locks, provider-email rejection, unchanged scoring, exact-card persistence, and catalog authorization limits. Complete installed-app acceptance before asking the user to test."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D9",
+      "decision": "Move the remaining single-worktab browser activation and physical acceptance into one fixed durable-worker inbox action; preserve every source-denial, scoring, identity, persistence and user-test lock.",
+      "evidence": [
+        "All seven installed 1.4.13 integration files match the validated candidate after the brokered watch.js repair.",
+        "Live helper runtime remains 1.4.12 and Edge explicitly reports that the installed 1.4.13 unpacked extension requires Developer mode.",
+        "Ordinary-chat direct browser mutation is currently blocked/unreliable, while the durable worker already provides the sanctioned fixed-action Gateway/Broker execution route."
+      ],
+      "history": [
+        "Edge restart and AppActivate hypotheses are invalidated and are not retried.",
+        "Both denied raw CFB.FAN request routes remain fail-closed.",
+        "User testing remains prohibited while executable technical work remains."
+      ],
+      "alternatives": [
+        "Repeat failed browser restart — rejected.",
+        "Repeat failed AppActivate approach — rejected.",
+        "Direct mutation bypass — rejected.",
+        "User manual activation — rejected while durable route remains.",
+        "Durable fixed-action extension — selected."
+      ],
+      "result": "OP-CATALOG-001 remains IN_PROGRESS; the exact next executable route is to deploy and invoke complete_simple_single_worktab_acceptance through the durable controlled worker.",
+      "next": "Deploy the revision-20 durable GitHub-inbox worker extension and execute its fixed complete_simple_single_worktab_acceptance action through SOPDecisionGateway -> ControlledToolBroker. The action must preserve both denied raw-request locks and the persistent RATE_LIMITED value-probe lock, activate the already-installed Browser Helper 1.4.13 without touching source authentication, physically prove one reusable CFB.FAN work tab with the minimum five-second rendered-page dwell and exact-card price persistence, restart through the accepted dynamic-port launcher, and return verified evidence before the authority is advanced again. Do not ask the user to test while this durable route remains executable."
     }
   ],
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 19,
-    "next_action": "Implement and physically verify the bounded single-tab normal-rendered CFB.FAN browser work queue in the accepted Simple Evaluator runtime for known exact-card page and price observations only: reuse one work tab, preserve a minimum five-second navigation dwell, validate exact card identity, and stop on 403/429/CAPTCHA/login/access challenge or unexpected page state. Preserve both denied raw-request locks, provider-email rejection, unchanged scoring, exact-card persistence, and catalog authorization limits. Complete installed-app acceptance before asking the user to test.",
+    "state_revision": 20,
+    "next_action": "Deploy the revision-20 durable GitHub-inbox worker extension and execute its fixed complete_simple_single_worktab_acceptance action through SOPDecisionGateway -> ControlledToolBroker. The action must preserve both denied raw-request locks and the persistent RATE_LIMITED value-probe lock, activate the already-installed Browser Helper 1.4.13 without touching source authentication, physically prove one reusable CFB.FAN work tab with the minimum five-second rendered-page dwell and exact-card price persistence, restart through the accepted dynamic-port launcher, and return verified evidence before the authority is advanced again. Do not ask the user to test while this durable route remains executable.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -976,11 +1004,11 @@
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
     "remaining_executable_work": [
-      "Integrate a single reusable rendered CFB.FAN work-tab queue for user-started exact-card price checks and saved Price Watch cycles using the existing five-second navigation primitive.",
-      "Remove app-driven new-tab sprawl for exact-card browser checks and preserve stop-on-403/429/CAPTCHA/login/access-challenge behavior.",
-      "Run focused internal tests and brokered installed-product deployment with rollback and protected-state preservation.",
-      "Physically verify dynamic-port startup, Browser Helper behavior, exact-card price persistence, saved watches, tab hygiene, progress/terminal states, and restart persistence before user testing.",
-      "Update the authority with verified product acceptance results and the next genuine catalog boundary."
+      "Publish and merge the tested revision-20 worker/authority change that registers complete_simple_single_worktab_acceptance as a fixed mutating GitHub-inbox action.",
+      "Rebind the durable Windows worker to revision 20 and verify the exact new worker bytes, READY health, clean product branch, and control self-test.",
+      "Submit one bounded revision-20 control request for complete_simple_single_worktab_acceptance and let the durable worker execute it through SOPDecisionGateway -> ControlledToolBroker.",
+      "Verify the action evidence: live Browser Helper 1.4.13, exact one-tab rendered-page observations with minimum five-second dwell, exact-card price persistence, saved-watch serialization, fail-closed protections, protected state, tab hygiene, and dynamic-port restart persistence.",
+      "Advance the authority only with the verified physical-acceptance receipt, synchronize the durable worker again, and then hand the installed Simple Evaluator to the user for normal product acceptance if no executable technical debugging remains."
     ]
   },
   "enforcement": {
@@ -1074,8 +1102,8 @@
         "mission_id": "OP-CATALOG-001",
         "route_id": "catalog-rendered-browser-single-tab-integration",
         "status": "REQUIRED_NEXT",
-        "description": "The next executable route is the bounded installed-product integration and physical acceptance of one reusable normal-rendered CFB.FAN work tab for known exact-card browser price observations. It must not retry or emulate the denied raw HTTP clients.",
-        "source": "Operation Pancake revision 19 observed browser evidence and installed Simple Evaluator 1.4.12 implementation inspection"
+        "description": "The next executable route is the revision-20 durable GitHub-inbox action complete_simple_single_worktab_acceptance, which must execute the already-selected bounded single-tab rendered-browser integration through SOPDecisionGateway -> ControlledToolBroker. It must not retry or emulate the denied raw HTTP clients, clear the persistent rate-limit lock, change scoring, or hand browser activation/testing to the user while the durable action is executable.",
+        "source": "Operation Pancake revision 20 capability reconciliation after brokered 1.4.13 file repair"
       }
     ]
   }
