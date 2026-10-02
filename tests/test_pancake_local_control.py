@@ -225,3 +225,9 @@ def test_single_worktab_developer_toggle_selector_is_fail_closed_and_spatial():
     }
     with pytest.raises(runner.EvidenceGap, match="ambiguous"):
         action.select_developer_toggle(ambiguous, runner)
+
+def test_single_worktab_runtime_loader_has_importlib_util_available():
+    mod = load_runner()
+    assert hasattr(mod.importlib, "util")
+    assert callable(mod.importlib.util.spec_from_file_location)
+    assert callable(mod.importlib.util.module_from_spec)

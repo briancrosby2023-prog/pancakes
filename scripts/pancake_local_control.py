@@ -13,6 +13,7 @@ import ctypes
 import ctypes.wintypes
 import hashlib
 import importlib
+import importlib.util
 import re
 import http.server
 import json
