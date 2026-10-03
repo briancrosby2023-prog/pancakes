@@ -1,6 +1,6 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 25
+State revision: 26
 Status: IN_PROGRESS
 Mission ID: OP-CATALOG-001
 
@@ -15,10 +15,10 @@ Read `docs/OPERATION_PANCAKE_CONTROL_STATE.json` first and validate it before ma
 Do not let the newest obstacle replace the recorded mission.
 
 ## Preflight evidence
-- MAP: OBSERVED: revision 24 / 8353905c is live, clean and READY for OP-CATALOG-001. | OBSERVED: immutable issue #60 reached brokered physical acceptance and failed with WinError 5 replacing server.py.r24.tmp over live server.py. | OBSERVED: rollback preserved original server SHA bd2be607..., pending release state, protected data, and validated temp postimage SHA f073dfe2.
-- HISTORY: VERIFIED_HISTORY: revision 24 was broker-created, published as PR #59, passed SOP Gate, merged at 8353905c and rebound READY. | VERIFIED_HISTORY: issues #58 and #60 are terminal and may not be replayed. | VERIFIED_HISTORY: denied raw routes, provider-email rejection, unchanged scoring/exact-card identity and persistent 429 lock remain preserved.
-- RESEARCH: OBSERVED: revision-24 patch_installed_server hash-validates server.py.r24.tmp then calls os.replace while the live server is still running; only afterward does run() restart the server. | OBSERVED: server.py is not read-only and the user ACL is full; exact pre/post hashes are correct, isolating the failure to Windows live replacement ordering. | OBSERVED: existing restart_server already has exact-listener stop plus accepted dynamic-port relaunch mechanics; split stop/start is the narrow evidence-grounded repair.
-- CAPABILITIES: OBSERVED: revision-24 Gateway/Broker and durable worker are healthy and authorized all prior controlled stages. | OBSERVED: a four-path revision-25 patch can change only action ordering, focused tests, authority and canonical handoff. | OBSERVED: no user action, paid service, scoring change, catalog collection or source-access retry is required.
+- MAP: OBSERVED: revision 25 / 11c012a3 is live, clean and READY for OP-CATALOG-001. | OBSERVED: fresh immutable issue #62 reached brokered physical acceptance and failed with the same WinError 5 replacing server.py.r24.tmp over server.py as terminal issue #60. | OBSERVED: controlled recovery restored Simple Evaluator on dynamic port 8766 with the original server/release hashes and protected state unchanged.
+- HISTORY: VERIFIED_HISTORY: revision 25 was broker-created, published as PR #61, passed SOP Gate, merged at 11c012a3 and rebound READY. | VERIFIED_HISTORY: issues #60 and #62 are terminal; two failures invalidate the running-listener/stop-order hypothesis as the sole root cause. | VERIFIED_HISTORY: denied raw routes, provider-email rejection, scoring, exact-card identity, watches and persistent 429 lock remain preserved.
+- RESEARCH: OBSERVED: controlled filesystem diagnostic stopped the exact server and observed the old PID absent after 0.14 seconds; byte-identical os.replace to server.py still failed with WinError 5. | OBSERVED: in the same controlled diagnostic, a byte-identical in-place server.py write with flush/fsync succeeded, the app relaunched on the accepted dynamic port, and protected state remained unchanged. | OBSERVED: separate brokered byte-identical probes proved os.replace succeeds for RELEASE.json and PRODUCTION_WORKSTATION_ACCEPTANCE_3T.json, so the restriction is server.py-specific in the tested runtime.
+- CAPABILITIES: OBSERVED: revision-25 Gateway/Broker and durable worker are healthy and authorized the controlled diagnostics and runtime recovery. | OBSERVED: a four-path revision-26 patch can change only the server.py application primitive/process-exit guard, focused tests, authority and canonical handoff. | OBSERVED: no user action, paid service, scoring change, catalog collection, source-access retry or JSON acceptance-write redesign is required.
 
 ## Available capabilities
 - GitHub repository read/write and PR workflow
@@ -81,13 +81,13 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-catalog-denied-route-retry: Retry either observed-denied CFB.FAN acquisition request, or change client identity/authentication/cookies/headers/proxy/rate behavior to regain access, without materially new evidence that the denial condition changed.
 
 ## Next action
-Deploy the minimal revision-25 Windows stop-before-replace correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request. Issue #60 is terminal. Revision 25 must stop the exact Simple Evaluator listener before replacing the already hash-validated server.py postimage, relaunch only through the accepted dynamic-port launcher, and use the same stop-before-restore order during rollback. Preserve all Revision-24 Browser Helper logic, scoring, exact-card identity, watches, source locks and the persistent RATE_LIMITED value-probe lock.
+Deploy the evidence-backed revision-26 server-write correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request. Issues #60 and #62 are terminal and must not be replayed. Controlled Windows diagnostics proved that after the old Simple Evaluator PID is absent, atomic os.replace of server.py still fails with WinError 5 while a byte-identical in-place write succeeds and protected state survives; the same atomic replacement succeeds for RELEASE.json and PRODUCTION_WORKSTATION_ACCEPTANCE_3T.json. Revision 26 must therefore use a flushed/fsynced, hash-verified in-place write only for server.py, explicitly confirm the old PID is absent, keep the JSON atomic writes unchanged, and preserve all Browser Helper, scoring, exact-card identity, watches, source locks and persistent RATE_LIMITED protections.
 
 ## Remaining executable work
-- Validate revision-25 in an isolated git clone with authority/handoff/self-test and focused tests.
-- Obtain fresh Gateway/Broker authorization; create/publish/merge exact revision-25 and rebind the worker.
-- Submit a fresh immutable full single-worktab acceptance request; do not replay issue #60.
-- Verify stop-before-replace, dynamic relaunch, helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.
+- Validate revision-26 with authority/handoff/self-test and focused tests.
+- Obtain fresh Gateway/Broker authorization; create/publish/merge exact revision-26 and rebind the worker.
+- Submit a fresh immutable full single-worktab acceptance request; do not replay issues #60 or #62.
+- Verify server in-place postimage write, helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.
 - Continue OP-CATALOG-001 because the five current FS versions still are not imported and catalog criteria remain open.
 
 ## Completion rule

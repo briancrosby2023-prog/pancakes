@@ -232,9 +232,9 @@ def test_single_worktab_runtime_loader_has_importlib_util_available():
     assert callable(mod.importlib.util.spec_from_file_location)
     assert callable(mod.importlib.util.module_from_spec)
 
-def test_single_worktab_action_revision_pin_matches_revision_25():
+def test_single_worktab_action_revision_pin_matches_revision_26():
     action = load_single_worktab_action()
-    assert action.EXPECTED_AUTHORITY_REVISION == 25
+    assert action.EXPECTED_AUTHORITY_REVISION == 26
 
 def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, monkeypatch):
     action = load_single_worktab_action()
@@ -292,7 +292,7 @@ def test_single_worktab_r24_full_acceptance_is_transactional_and_restart_verifie
     assert "server_backup = server_path.read_bytes()" in run_block
     assert "acceptance_backup = acceptance_path.read_bytes()" in run_block
     assert "release_backup = release_path.read_bytes()" in run_block
-    assert "server_path.write_bytes(server_backup)" in run_block
+    assert "write_server_bytes_in_place(server_path, server_backup, control)" in run_block
     assert "acceptance_path.write_bytes(acceptance_backup)" in run_block
     assert "release_path.write_bytes(release_backup)" in run_block
     assert 'health_final.get("release_status") != "PRODUCTION_ACCEPTED"' in run_block
@@ -329,4 +329,28 @@ def test_single_worktab_r25_stops_server_before_atomic_patch_and_restarts_after(
     rollback = run_block[run_block.index("except Exception:"):]
     restore_stop = "rollback_pid = stop_server(int(current_port), launch, control)"
     assert restore_stop in rollback
-    assert rollback.index(restore_stop) < rollback.index("server_path.write_bytes(server_backup)")
+    assert rollback.index(restore_stop) < rollback.index("write_server_bytes_in_place(server_path, server_backup, control)")
+
+def test_single_worktab_r26_uses_verified_inplace_server_write_only_for_server_py():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    patch_start = source.index("def patch_installed_server")
+    patch_end = source.index("def verify_installed_stop_conditions", patch_start)
+    patch_block = source[patch_start:patch_end]
+    assert "write_server_bytes_in_place(path, postimage, control)" in patch_block
+    assert "os.replace(temp, path)" not in patch_block
+    helper_start = source.index("def write_server_bytes_in_place")
+    helper_block = source[helper_start:patch_start]
+    assert 'path.open("wb")' in helper_block
+    assert "handle.flush()" in helper_block
+    assert "os.fsync(handle.fileno())" in helper_block
+    assert "def process_exists" in source
+    stop_start = source.index("def stop_server")
+    stop_end = source.index("def start_server", stop_start)
+    stop_block = source[stop_start:stop_end]
+    assert "listener_gone and not process_exists(pid)" in stop_block
+    # Controlled probes proved JSON atomic replacement works; retain it there.
+    full_accept_start = source.index("def write_full_acceptance")
+    release_start = source.index("def write_release_accepted")
+    assert "os.replace(temp, path)" in source[full_accept_start:source.index("def find_controlled_edge", full_accept_start)]
+    assert "os.replace(temp, path)" in source[release_start:source.index("def run(repo: Path, control)", release_start)]

@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 25
+EXPECTED_AUTHORITY_REVISION = 26
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -186,6 +186,20 @@ def verify_installed_files(control, *, prepatch: bool = False) -> dict[str, str]
 
 
 
+def write_server_bytes_in_place(path: Path, data: bytes, control) -> str:
+    # Controlled Windows diagnostics proved rename/replace of server.py is denied
+    # even after the old PID is absent, while a byte-identical in-place write is
+    # permitted. Preserve the file identity/ACL and make the write durable.
+    try:
+        with path.open("wb") as handle:
+            handle.write(data)
+            handle.flush()
+            os.fsync(handle.fileno())
+    except OSError as exc:
+        raise control.ControlError(f"server.py in-place write failed: {exc}") from exc
+    return sha256(path)
+
+
 def patch_installed_server(control) -> dict[str, Any]:
     path = APP / "server.py"
     raw = path.read_bytes()
@@ -302,8 +316,18 @@ def patch_installed_server(control) -> dict[str, Any]:
         except OSError:
             pass
         raise control.ControlError(f"patched server hash mismatch: {after}")
-    os.replace(temp, path)
-    return {"changed": True, "before_sha256": before, "after_sha256": sha256(path)}
+    postimage = temp.read_bytes()
+    try:
+        written = write_server_bytes_in_place(path, postimage, control)
+    finally:
+        try:
+            if temp.exists():
+                temp.unlink()
+        except OSError:
+            pass
+    if written != EXPECTED_SERVER_SHA256:
+        raise control.ControlError(f"installed server write hash mismatch: {written}")
+    return {"changed": True, "before_sha256": before, "after_sha256": written}
 
 
 def verify_installed_stop_conditions(control) -> dict[str, Any]:
@@ -770,17 +794,36 @@ def listener_pid(port: int) -> int | None:
     return int(raw["OwningProcess"]) if raw and raw.get("OwningProcess") is not None else None
 
 
+def process_exists(pid: int) -> bool:
+    cp = subprocess.run(
+        [
+            "powershell", "-NoProfile", "-Command",
+            f"if(Get-Process -Id {int(pid)} -ErrorAction SilentlyContinue){{exit 0}}else{{exit 1}}",
+        ],
+        stdin=subprocess.DEVNULL,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    return cp.returncode == 0
+
+
 def stop_server(port: int, launch, control) -> int:
     pid = listener_pid(port)
     if not pid:
         raise control.EvidenceGap("Simple Evaluator listener PID is unavailable for stop")
     os.kill(pid, signal.SIGTERM)
     deadline = time.time() + 10
+    listener_gone = False
     while time.time() < deadline:
-        if launch.probe(port, timeout=0.2) is None:
+        if not listener_gone and launch.probe(port, timeout=0.2) is None:
+            listener_gone = True
+        if listener_gone and not process_exists(pid):
             return int(pid)
-        time.sleep(0.2)
-    raise control.ControlError("Simple Evaluator server did not stop")
+        time.sleep(0.05)
+    if not listener_gone:
+        raise control.ControlError("Simple Evaluator listener did not stop")
+    raise control.ControlError("Simple Evaluator process did not fully exit")
 
 
 def start_server(previous_pid: int | None, launch, control) -> tuple[int, int]:
@@ -1132,7 +1175,9 @@ def run(repo: Path, control) -> Mapping[str, Any]:
             if current_port is not None:
                 rollback_pid = stop_server(int(current_port), launch, control)
             if server_path.read_bytes() != server_backup:
-                server_path.write_bytes(server_backup)
+                restored = write_server_bytes_in_place(server_path, server_backup, control)
+                if restored != hashlib.sha256(server_backup).hexdigest():
+                    raise control.ControlError("server.py rollback hash mismatch")
             temp = server_path.with_suffix(".py.r24.tmp")
             if temp.exists():
                 temp.unlink()
