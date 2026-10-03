@@ -277,9 +277,9 @@ def test_single_worktab_runtime_loader_has_importlib_util_available():
     assert callable(mod.importlib.util.spec_from_file_location)
     assert callable(mod.importlib.util.module_from_spec)
 
-def test_single_worktab_action_revision_pin_matches_revision_32():
+def test_single_worktab_action_revision_pin_matches_revision_33():
     action = load_single_worktab_action()
-    assert action.EXPECTED_AUTHORITY_REVISION == 32
+    assert action.EXPECTED_AUTHORITY_REVISION == 33
 
 def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, monkeypatch):
     action = load_single_worktab_action()
@@ -310,7 +310,7 @@ def test_single_worktab_r24_hardens_server_heartbeat_and_acceptance_boundary():
     action = load_single_worktab_action()
     source = Path(action.__file__).read_text(encoding="utf-8")
     assert action.EXPECTED_SERVER_PREPATCH_SHA256 == "bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37"
-    assert action.EXPECTED_SERVER_SHA256 == "f073dfe2ca39a47076bf1c1663d6071a10cc5c7b5f6f2bab7cb003a5c5c615d2"
+    assert action.EXPECTED_SERVER_SHA256 == "95e6f98e61a3cb0a3133619348426c186302f6a19c3cb6a676d7d747b1534da8"
     assert "def patch_installed_server" in source
     assert "browser_helper_stale_heartbeat_ignored" in source
     assert "current.get(\"version\") == expected" in source
@@ -462,3 +462,21 @@ def test_single_worktab_r30_uses_uia_omnibox_focus_and_exact_foreground_verifica
     assert "SetForegroundWindow" not in block
     assert "AppActivate" not in block
     assert block.index("$addr.SetFocus()") < block.index("$vp.SetValue")
+
+
+def test_single_worktab_r33_preserves_saved_watch_on_prices_fragment_only():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    assert action.EXPECTED_AUTHORITY_REVISION == 33
+    assert action.EXPECTED_SERVER_PREPATCH_SHA256 == "bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37"
+    assert action.EXPECTED_SERVER_SHA256 == "95e6f98e61a3cb0a3133619348426c186302f6a19c3cb6a676d7d747b1534da8"
+    start = source.index("def patch_installed_server")
+    end = source.index("def verify_installed_stop_conditions", start)
+    block = source[start:end]
+    assert 'old_watch_config = """' in block
+    assert 'new_watch_config = """' in block
+    assert 'BROWSER_WORK_TAB_FRAGMENT in str(page_url or "")' in block
+    assert 'urlsplit(str(page_url or "")).fragment.lower() == "prices"' in block
+    assert 'saved-watch fragment patch anchor drift' in block
+    assert '.replace(old_watch_config, new_watch_config, 1)' in block
+    assert 'plain watched-card URL' not in block  # behavior stays encoded as exact fragment gate, not broad activation

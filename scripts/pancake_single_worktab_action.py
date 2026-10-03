@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 32
+EXPECTED_AUTHORITY_REVISION = 33
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -29,7 +29,7 @@ EXPECTED_MANIFEST_SHA256 = "51beb29b86febf22cfcbcf50e06a10b3525dbbcbe7e7c537ec6e
 EXPECTED_BACKGROUND_SHA256 = "a3ce6c9884a514331bb614c5bbf8ff8b68ea2e56cfdde36a6bdeb616c5c6444e"
 EXPECTED_PREFLIGHT_SHA256 = "6a4c835a95b812f81503a4a36302bed39adf43f38871473f3cda77311dbef59f"
 EXPECTED_SERVER_PREPATCH_SHA256 = "bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37"
-EXPECTED_SERVER_SHA256 = "f073dfe2ca39a47076bf1c1663d6071a10cc5c7b5f6f2bab7cb003a5c5c615d2"
+EXPECTED_SERVER_SHA256 = "95e6f98e61a3cb0a3133619348426c186302f6a19c3cb6a676d7d747b1534da8"
 EXPECTED_UI_SHA256 = "8dc0a0eb54a33ec2e0ee8df243ecbb9b0f7f4e8f764008cb68d843ebe8e2a355"
 PENDING_RELEASE_SHA256 = "60549a6729a3205055992c982fb3b180a96ab5a34fec82a26ff57afb914b45d8"
 BASE_USER_WATCH_HASH = "00eed84885792a43314e78d17a18f228ae8554d35d11fa8c5d84d2154a334105"
@@ -306,11 +306,31 @@ def patch_installed_server(control) -> dict[str, Any]:
         return existing
     return None
 """
+    old_watch_config = """        elif BROWSER_WORK_TAB_FRAGMENT in str(page_url or ""):
+            watch = next((item for item in matches if item.get("purpose") != "value_probe"), None)
+"""
+    new_watch_config = """        elif (
+            BROWSER_WORK_TAB_FRAGMENT in str(page_url or "")
+            or urlsplit(str(page_url or "")).fragment.lower() == "prices"
+        ):
+            # The shared work tab begins with #simple-evaluator-worktab, but
+            # CFB.FAN replaces the fragment with #prices when its player-local
+            # Prices view is selected. Preserve the user-started saved watch on
+            # that same exact-card page so a refresh can still record FOUND or
+            # NO_LISTING instead of silently deactivating the helper.
+            watch = next((item for item in matches if item.get("purpose") != "value_probe"), None)
+"""
     if text.count(old_heartbeat) != 1:
         raise control.EvidenceGap("installed server heartbeat patch anchor drift")
     if text.count(old_acceptance) != 1:
         raise control.EvidenceGap("installed server acceptance patch anchor drift")
-    text = text.replace(old_heartbeat, new_heartbeat, 1).replace(old_acceptance, new_acceptance, 1)
+    if text.count(old_watch_config) != 1:
+        raise control.EvidenceGap("installed server saved-watch fragment patch anchor drift")
+    text = (
+        text.replace(old_heartbeat, new_heartbeat, 1)
+        .replace(old_acceptance, new_acceptance, 1)
+        .replace(old_watch_config, new_watch_config, 1)
+    )
     temp = path.with_suffix(".py.r24.tmp")
     temp.write_text(text, encoding="utf-8", newline="\n")
     after = sha256(temp)
