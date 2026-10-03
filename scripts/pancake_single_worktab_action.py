@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 37
+EXPECTED_AUTHORITY_REVISION = 38
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -207,10 +207,25 @@ def write_server_bytes_in_place(path: Path, data: bytes, control) -> str:
     return sha256(path)
 
 
+def write_helper_bytes_in_place(path: Path, data: bytes, control) -> str:
+    try:
+        with path.open("r+b") as handle:
+            handle.seek(0)
+            handle.write(data)
+            handle.truncate()
+            handle.flush()
+            os.fsync(handle.fileno())
+    except OSError as exc:
+        raise control.ControlError(f"helper in-place write failed for {path.name}: {exc}") from exc
+    return sha256(path)
+
+
 def write_runtime_bytes(path: Path, data: bytes, control) -> str:
     if path.name == "server.py":
         return write_server_bytes_in_place(path, data, control)
-    temp = path.with_name(path.name + ".r35.tmp")
+    if path.parent == HELPER_DIR:
+        return write_helper_bytes_in_place(path, data, control)
+    temp = path.with_name(path.name + ".r38.tmp")
     try:
         with temp.open("wb") as handle:
             handle.write(data)
