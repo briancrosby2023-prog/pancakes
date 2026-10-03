@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 31
+EXPECTED_AUTHORITY_REVISION = 32
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -809,11 +809,19 @@ $url=($addr.GetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern)
 $all=$root.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)
 $reload=@()
 foreach($e in $all){{
-  if($e.Current.ControlType -eq [System.Windows.Automation.ControlType]::Button -and $e.Current.IsEnabled -and [string]$e.Current.Name -match '^(Reload|Reload this page)$'){{
+  $name=[string]$e.Current.Name
+  $aid=[string]$e.Current.AutomationId
+  if(
+    $e.Current.ControlType -eq [System.Windows.Automation.ControlType]::Button -and
+    $e.Current.IsEnabled -and
+    -not $e.Current.IsOffscreen -and
+    $aid -eq "view_1003" -and
+    $name -match '^(Refresh|Reload|Reload this page)$'
+  ){{
     try{{ $null=$e.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern); $reload += $e }}catch{{}}
   }}
 }}
-if($reload.Count -ne 1){{ throw ("Expected exactly one Reload button; observed "+$reload.Count) }}
+if($reload.Count -ne 1){{ throw ("Expected exactly one enabled visible Edge refresh/reload button view_1003; observed "+$reload.Count) }}
 ($reload[0].GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern)).Invoke()
 $utc=[DateTime]::UtcNow.ToString("o")
 [pscustomobject]@{{Title=[string]$preferred[0].Name;Url=$url;ReloadedAt=$utc;TabCount=$tabs.Count}} | ConvertTo-Json -Depth 4
