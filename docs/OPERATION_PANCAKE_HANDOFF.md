@@ -1,6 +1,6 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 26
+State revision: 27
 Status: IN_PROGRESS
 Mission ID: OP-CATALOG-001
 
@@ -15,10 +15,10 @@ Read `docs/OPERATION_PANCAKE_CONTROL_STATE.json` first and validate it before ma
 Do not let the newest obstacle replace the recorded mission.
 
 ## Preflight evidence
-- MAP: OBSERVED: revision 25 / 11c012a3 is live, clean and READY for OP-CATALOG-001. | OBSERVED: fresh immutable issue #62 reached brokered physical acceptance and failed with the same WinError 5 replacing server.py.r24.tmp over server.py as terminal issue #60. | OBSERVED: controlled recovery restored Simple Evaluator on dynamic port 8766 with the original server/release hashes and protected state unchanged.
-- HISTORY: VERIFIED_HISTORY: revision 25 was broker-created, published as PR #61, passed SOP Gate, merged at 11c012a3 and rebound READY. | VERIFIED_HISTORY: issues #60 and #62 are terminal; two failures invalidate the running-listener/stop-order hypothesis as the sole root cause. | VERIFIED_HISTORY: denied raw routes, provider-email rejection, scoring, exact-card identity, watches and persistent 429 lock remain preserved.
-- RESEARCH: OBSERVED: controlled filesystem diagnostic stopped the exact server and observed the old PID absent after 0.14 seconds; byte-identical os.replace to server.py still failed with WinError 5. | OBSERVED: in the same controlled diagnostic, a byte-identical in-place server.py write with flush/fsync succeeded, the app relaunched on the accepted dynamic port, and protected state remained unchanged. | OBSERVED: separate brokered byte-identical probes proved os.replace succeeds for RELEASE.json and PRODUCTION_WORKSTATION_ACCEPTANCE_3T.json, so the restriction is server.py-specific in the tested runtime.
-- CAPABILITIES: OBSERVED: revision-25 Gateway/Broker and durable worker are healthy and authorized the controlled diagnostics and runtime recovery. | OBSERVED: a four-path revision-26 patch can change only the server.py application primitive/process-exit guard, focused tests, authority and canonical handoff. | OBSERVED: no user action, paid service, scoring change, catalog collection, source-access retry or JSON acceptance-write redesign is required.
+- MAP: OBSERVED: revision 26 / 23a64231 is live, clean and READY for OP-CATALOG-001. | OBSERVED: fresh immutable issue #64 passed the Revision-26 server.py in-place write boundary and failed later with ControlError Windows UI Automation returned no JSON. | OBSERVED: post-#64 rollback restored original server/release hashes; current Windows process inventory contains no visible Edge root with --load-extension=*SimpleEvaluator*browser-helper*.
+- HISTORY: VERIFIED_HISTORY: issues #60 and #62 are terminal Windows server.py replacement failures; revision 26 replaced only that blocked primitive with the controlled in-place write and #64 progressed beyond it. | VERIFIED_HISTORY: the Revision-19 Edge restart/--load-extension-only hypothesis failed because helper runtime remained 1.4.12; it is not sufficient activation and must not be retried as such. | VERIFIED_HISTORY: later Revision-19 evidence showed the installed 1.4.13 extension recognized but OFF with Developer mode required; enabling Developer mode on the controlled Edge window then produced live helper 1.4.13. Issues #60/#62/#64 remain terminal.
+- RESEARCH: OBSERVED: revision-26 find_controlled_edge requires one visible Edge root whose command line contains --load-extension=*SimpleEvaluator*browser-helper*; with no matching process its PowerShell pipeline emitted no JSON, exactly matching #64. | OBSERVED: current process inspection shows only unrelated headless Edge profiles and no matching visible controlled helper window. | OBSERVED: historical bounded control used debugging port 9255, --remote-allow-origins=*, --load-extension=<installed browser-helper>, --no-first-run, --new-window and existing-profile reuse; the later successful activation navigated that same controlled tab to edge://extensions, enabled Developer mode, returned to the shared CFB.FAN URL and verified helper 1.4.13.
+- CAPABILITIES: OBSERVED: revision-26 Gateway/Broker and durable worker remain healthy and READY after #64 rollback. | OBSERVED: the physical action can distinguish an absent controlled Edge window, create only the bounded historical helper window, navigate the same selected tab through the exact extensions surface and back to the current queue URL, and then reuse all existing acceptance checks. | OBSERVED: no user action, paid service, catalog collection, source-access retry, scoring change, broad browser termination or new database is required.
 
 ## Available capabilities
 - GitHub repository read/write and PR workflow
@@ -56,6 +56,7 @@ Do not let the newest obstacle replace the recorded mission.
 - fresh immutable GitHub-inbox request for complete_simple_single_worktab_acceptance after revision-23 deployment
 - revision-24 minimal single-worktab management-page navigation repair through bounded patch/publish/merge/rebind
 - fresh immutable GitHub-inbox request for complete_simple_single_worktab_acceptance after revision-24 deployment
+- revision-27 bounded self-recovery of the controlled Edge helper window followed by same-tab Developer-mode activation and queue return
 
 ## Accepted — do not reopen without materially new evidence
 - accepted-sop-order: Operation Pancake SOP order is MAP -> HISTORY -> RESEARCH -> CAPABILITIES -> PLAN -> EXECUTE -> ADAPT -> VERIFY -> UPDATE MAP -> CONTINUE.
@@ -79,15 +80,16 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-provider-email-as-catalog-next-action: Treat the preserved Stormstrike/CFB.FAN provider-email request as the current or only next action for OP-CATALOG-001.
 - reject-catalog-access-bypass: Bypass authentication, CAPTCHA, access controls, explicit denial, or rate limits; change identity/rate behavior to evade source restrictions.
 - reject-catalog-denied-route-retry: Retry either observed-denied CFB.FAN acquisition request, or change client identity/authentication/cookies/headers/proxy/rate behavior to regain access, without materially new evidence that the denial condition changed.
+- reject-issue64-replay: Replay issue #64 or depend on an already-open controlled Edge helper window without materially new evidence.
 
 ## Next action
-Deploy the evidence-backed revision-26 server-write correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request. Issues #60 and #62 are terminal and must not be replayed. Controlled Windows diagnostics proved that after the old Simple Evaluator PID is absent, atomic os.replace of server.py still fails with WinError 5 while a byte-identical in-place write succeeds and protected state survives; the same atomic replacement succeeds for RELEASE.json and PRODUCTION_WORKSTATION_ACCEPTANCE_3T.json. Revision 26 must therefore use a flushed/fsynced, hash-verified in-place write only for server.py, explicitly confirm the old PID is absent, keep the JSON atomic writes unchanged, and preserve all Browser Helper, scoring, exact-card identity, watches, source locks and persistent RATE_LIMITED protections.
+Deploy the minimal revision-27 controlled-Edge recovery correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request. Issues #60, #62 and #64 are terminal and must not be replayed. Revision 26 fixed the server.py Windows write primitive and #64 progressed past that boundary, then failed because no visible Edge root process existed with the installed --load-extension Simple Evaluator helper; find_controlled_edge therefore produced no UI Automation JSON. Revision 27 must recreate only the bounded historical controlled Edge window when absent using debugging port 9255, the exact installed helper, existing-profile reuse and the current shared CFB.FAN queue URL; then it must run the already-proven Developer-mode activation sequence on that same tab before continuing the unchanged dwell/cadence/persistence/evaluator/restart acceptance. Preserve scoring, exact-card identity, watches, denied source locks and the persistent RATE_LIMITED value-probe lock.
 
 ## Remaining executable work
-- Validate revision-26 with authority/handoff/self-test and focused tests.
-- Obtain fresh Gateway/Broker authorization; create/publish/merge exact revision-26 and rebind the worker.
-- Submit a fresh immutable full single-worktab acceptance request; do not replay issues #60 or #62.
-- Verify server in-place postimage write, helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.
+- Validate revision-27 with authority/handoff/self-test and focused tests.
+- Obtain fresh Gateway/Broker authorization; create/publish/merge exact revision-27 and rebind the worker.
+- Submit a fresh immutable full single-worktab acceptance request; do not replay issues #60, #62 or #64.
+- Verify controlled Edge self-recovery, helper 1.4.13 activation, one-tab dwell/cadence, protected state, evaluator and both restart proofs.
 - Continue OP-CATALOG-001 because the five current FS versions still are not imported and catalog criteria remain open.
 
 ## Completion rule

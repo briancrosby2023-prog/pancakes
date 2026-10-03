@@ -232,9 +232,9 @@ def test_single_worktab_runtime_loader_has_importlib_util_available():
     assert callable(mod.importlib.util.spec_from_file_location)
     assert callable(mod.importlib.util.module_from_spec)
 
-def test_single_worktab_action_revision_pin_matches_revision_26():
+def test_single_worktab_action_revision_pin_matches_revision_27():
     action = load_single_worktab_action()
-    assert action.EXPECTED_AUTHORITY_REVISION == 26
+    assert action.EXPECTED_AUTHORITY_REVISION == 27
 
 def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, monkeypatch):
     action = load_single_worktab_action()
@@ -354,3 +354,28 @@ def test_single_worktab_r26_uses_verified_inplace_server_write_only_for_server_p
     release_start = source.index("def write_release_accepted")
     assert "os.replace(temp, path)" in source[full_accept_start:source.index("def find_controlled_edge", full_accept_start)]
     assert "os.replace(temp, path)" in source[release_start:source.index("def run(repo: Path, control)", release_start)]
+
+def test_single_worktab_r27_self_recovers_missing_controlled_edge_then_uses_dev_mode_path():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    assert action.DEBUG_PORT == 9255
+    assert action.EXTENSION_ID == "fgocmjlihbapenekkflcofdjmdodmboe"
+    assert "def controlled_edge_rows" in source
+    assert "[pscustomobject]@{{Rows=@($p)}}" in source
+    launch_start = source.index("def launch_controlled_edge")
+    launch_end = source.index("def navigate_selected_url", launch_start)
+    launch_block = source[launch_start:launch_end]
+    assert 'f"--remote-debugging-port={DEBUG_PORT}"' in launch_block
+    assert '"--remote-allow-origins=*"' in launch_block
+    assert 'f"--load-extension={HELPER_DIR}"' in launch_block
+    assert '"--no-first-run"' in launch_block
+    assert '"--new-window"' in launch_block
+    assert "--user-data-dir" not in launch_block
+    run_block = source[source.index("def run(repo: Path, control)"):]
+    assert "find_controlled_edge(control, allow_absent=True)" in run_block
+    assert "edge = launch_controlled_edge(queue, control)" in run_block
+    assert 'f"edge://extensions/?id={EXTENSION_ID}"' in run_block
+    assert run_block.index("edge = launch_controlled_edge(queue, control)") < run_block.index("open_extensions_root_and_snapshot(edge_pid, control)")
+    assert run_block.index("toggle_exact(edge_pid, chosen, control)") < run_block.index("navigate_selected_url(edge_pid, activation_url, control)")
+    assert run_block.index("navigate_selected_url(edge_pid, activation_url, control)") < run_block.index("helper = wait_helper(int(port), control, seconds=30)")
+    assert "Revision 19 proved that --load-extension alone is not sufficient." in run_block

@@ -15,10 +15,12 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 26
+EXPECTED_AUTHORITY_REVISION = 27
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
+DEBUG_PORT = 9255
+EXTENSION_ID = "fgocmjlihbapenekkflcofdjmdodmboe"
 EXPECTED_HELPER_VERSION = "1.4.13"
 EXPECTED_WATCH_SHA256 = "1faebe0b39ecf35879d35d16ce2a0aedb04cf15dc882350e55b39a2fea286912"
 EXPECTED_MANIFEST_SHA256 = "51beb29b86febf22cfcbcf50e06a10b3525dbbcbe7e7c537ec6ed8cd8d2d9b97"
@@ -466,23 +468,104 @@ def write_full_acceptance(
     return sha256(path)
 
 
-def find_controlled_edge(control) -> dict[str, Any]:
-    helper = str(HELPER_DIR).replace("\\", "\\\\")
+def controlled_edge_rows(control) -> list[dict[str, Any]]:
     ps = rf'''
 $p=@(Get-CimInstance Win32_Process | Where-Object {{ $_.Name -eq 'msedge.exe' -and $_.CommandLine -notmatch '--type=' -and $_.CommandLine -like '*--load-extension=*SimpleEvaluator*browser-helper*' }} | ForEach-Object {{
   $gp=Get-Process -Id $_.ProcessId -ErrorAction SilentlyContinue
   if($gp -and $gp.MainWindowHandle -ne 0){{ [pscustomobject]@{{ProcessId=$_.ProcessId;CommandLine=$_.CommandLine;MainWindowHandle=[long]$gp.MainWindowHandle;MainWindowTitle=$gp.MainWindowTitle}} }}
 }})
-$p | ConvertTo-Json -Depth 4
+[pscustomobject]@{{Rows=@($p)}} | ConvertTo-Json -Depth 5
 '''
-    rows = run_ps_json(ps, control)
+    payload = run_ps_json(ps, control)
+    rows = payload.get("Rows") or []
     if isinstance(rows, dict):
         rows = [rows]
-    rows = rows or []
-    exact = [row for row in rows if str(HELPER_DIR).lower() in str(row.get("CommandLine") or "").lower()]
+    return [dict(row) for row in rows if isinstance(row, dict)]
+
+
+def find_controlled_edge(control, *, allow_absent: bool = False) -> dict[str, Any] | None:
+    rows = controlled_edge_rows(control)
+    exact = [
+        row for row in rows
+        if str(HELPER_DIR).lower() in str(row.get("CommandLine") or "").lower()
+    ]
+    if not exact and allow_absent:
+        return None
     if len(exact) != 1:
         raise control.EvidenceGap(f"expected one controlled Edge helper window; observed {len(exact)}")
     return exact[0]
+
+
+def launch_controlled_edge(queue: Mapping[str, Any], control) -> dict[str, Any]:
+    source_url = str(queue.get("source_url") or "")
+    if (
+        queue.get("active") is not True
+        or not source_url.startswith("https://cfb.fan/")
+        or "#simple-evaluator-worktab" not in source_url
+    ):
+        raise control.EvidenceGap("shared CFB.FAN work URL is unavailable for controlled Edge recovery")
+    if not EDGE.is_file():
+        raise control.EvidenceGap("Microsoft Edge executable is unavailable")
+    if find_controlled_edge(control, allow_absent=True) is not None:
+        raise control.EvidenceGap("controlled Edge appeared before bounded recovery launch")
+    cmd = [
+        str(EDGE),
+        f"--remote-debugging-port={DEBUG_PORT}",
+        "--remote-allow-origins=*",
+        f"--load-extension={HELPER_DIR}",
+        "--no-first-run",
+        "--new-window",
+        source_url,
+    ]
+    subprocess.Popen(
+        cmd,
+        stdin=subprocess.DEVNULL,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    deadline = time.time() + 15
+    last = None
+    while time.time() < deadline:
+        last = find_controlled_edge(control, allow_absent=True)
+        if last is not None:
+            cmdline = str(last.get("CommandLine") or "")
+            title = str(last.get("MainWindowTitle") or "")
+            if (
+                f"--remote-debugging-port={DEBUG_PORT}" in cmdline
+                and str(HELPER_DIR).lower() in cmdline.lower()
+                and title
+            ):
+                last["LaunchedByAction"] = True
+                return last
+        time.sleep(0.25)
+    raise control.ControlError(f"controlled Edge helper window did not appear after bounded launch: {last!r}")
+
+
+def navigate_selected_url(edge_pid: int, url: str, control) -> dict[str, Any]:
+    safe = str(url).replace("'", "''")
+    ps = rf'''
+Add-Type -AssemblyName UIAutomationClient
+Add-Type -AssemblyName UIAutomationTypes
+Add-Type -AssemblyName System.Windows.Forms
+$p=Get-Process -Id {edge_pid} -ErrorAction Stop
+$ws=New-Object -ComObject WScript.Shell
+if(-not $ws.AppActivate($p.Id)){{ throw "Edge window activation failed" }}
+$root=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
+$cond=[System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::AutomationIdProperty,"view_1021")
+$addr=$root.FindFirst([System.Windows.Automation.TreeScope]::Descendants,$cond)
+if($null -eq $addr){{ throw "Edge address bar not found" }}
+$addr.SetFocus()
+$vp=$addr.GetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern)
+$vp.SetValue('{safe}')
+[System.Windows.Forms.SendKeys]::SendWait("{{ENTER}}")
+Start-Sleep -Seconds 2
+$root=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
+$addr=$root.FindFirst([System.Windows.Automation.TreeScope]::Descendants,$cond)
+$actual=""
+if($addr){{ try{{ $actual=($addr.GetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern)).Current.Value }}catch{{}} }}
+[pscustomobject]@{{Title=$p.MainWindowTitle;Url=$actual}} | ConvertTo-Json -Depth 4
+'''
+    return dict(run_ps_json(ps, control))
 
 
 def uia_snapshot(edge_pid: int, control) -> dict[str, Any]:
@@ -919,19 +1002,43 @@ def run(repo: Path, control) -> Mapping[str, Any]:
         if queue.get("schema") != "simple-evaluator-browser-work-queue-v1" or queue.get("active") is not True:
             raise control.EvidenceGap("single-worktab queue is not active")
 
-        edge = find_controlled_edge(control)
+        edge = find_controlled_edge(control, allow_absent=True)
+        if edge is None:
+            edge = launch_controlled_edge(queue, control)
         edge_pid = int(edge["ProcessId"])
-        pre_uia = uia_snapshot(edge_pid, control)
-        if "Extensions" not in str(pre_uia.get("Title") or ""):
-            raise control.EvidenceGap("controlled Edge window is not on the known extension-details surface")
+
+        # Revision 19 proved that --load-extension alone is not sufficient.
+        # Recovery launch creates only the controlled window; activation still
+        # uses the materially distinct, previously successful Developer-mode path.
+        details = navigate_selected_url(
+            edge_pid,
+            f"edge://extensions/?id={EXTENSION_ID}",
+            control,
+        )
+        if "Extensions" not in str(details.get("Title") or ""):
+            raise control.EvidenceGap("controlled Edge did not reach the extension-details surface")
 
         root = open_extensions_root_and_snapshot(edge_pid, control)
         chosen = select_developer_toggle(root, control)
         toggle = toggle_exact(edge_pid, chosen, control)
+
+        activation_queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
+        activation_url = str(activation_queue.get("source_url") or "")
+        if (
+            activation_queue.get("active") is not True
+            or not activation_url.startswith("https://cfb.fan/")
+            or "#simple-evaluator-worktab" not in activation_url
+        ):
+            raise control.EvidenceGap("shared work URL changed before helper activation")
+        navigate_selected_url(edge_pid, activation_url, control)
         helper = wait_helper(int(port), control, seconds=30)
 
-        obs_before = observations()
         first_queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
+        first_source = str(first_queue.get("source_url") or "")
+        current_url = current_selected_url(edge_pid, control)
+        if current_url.split("#", 1)[0].rstrip("/") != first_source.split("#", 1)[0].rstrip("/"):
+            navigate_selected_url(edge_pid, first_source, control)
+        obs_before = observations()
         first_id = str(first_queue.get("card_id") or "")
         if not first_id:
             raise control.EvidenceGap("first queue card ID is absent")
