@@ -1,6 +1,6 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 27
+State revision: 28
 Status: IN_PROGRESS
 Mission ID: OP-CATALOG-001
 
@@ -15,10 +15,10 @@ Read `docs/OPERATION_PANCAKE_CONTROL_STATE.json` first and validate it before ma
 Do not let the newest obstacle replace the recorded mission.
 
 ## Preflight evidence
-- MAP: OBSERVED: revision 26 / 23a64231 is live, clean and READY for OP-CATALOG-001. | OBSERVED: fresh immutable issue #64 passed the Revision-26 server.py in-place write boundary and failed later with ControlError Windows UI Automation returned no JSON. | OBSERVED: post-#64 rollback restored original server/release hashes; current Windows process inventory contains no visible Edge root with --load-extension=*SimpleEvaluator*browser-helper*.
-- HISTORY: VERIFIED_HISTORY: issues #60 and #62 are terminal Windows server.py replacement failures; revision 26 replaced only that blocked primitive with the controlled in-place write and #64 progressed beyond it. | VERIFIED_HISTORY: the Revision-19 Edge restart/--load-extension-only hypothesis failed because helper runtime remained 1.4.12; it is not sufficient activation and must not be retried as such. | VERIFIED_HISTORY: later Revision-19 evidence showed the installed 1.4.13 extension recognized but OFF with Developer mode required; enabling Developer mode on the controlled Edge window then produced live helper 1.4.13. Issues #60/#62/#64 remain terminal.
-- RESEARCH: OBSERVED: revision-26 find_controlled_edge requires one visible Edge root whose command line contains --load-extension=*SimpleEvaluator*browser-helper*; with no matching process its PowerShell pipeline emitted no JSON, exactly matching #64. | OBSERVED: current process inspection shows only unrelated headless Edge profiles and no matching visible controlled helper window. | OBSERVED: historical bounded control used debugging port 9255, --remote-allow-origins=*, --load-extension=<installed browser-helper>, --no-first-run, --new-window and existing-profile reuse; the later successful activation navigated that same controlled tab to edge://extensions, enabled Developer mode, returned to the shared CFB.FAN URL and verified helper 1.4.13.
-- CAPABILITIES: OBSERVED: revision-26 Gateway/Broker and durable worker remain healthy and READY after #64 rollback. | OBSERVED: the physical action can distinguish an absent controlled Edge window, create only the bounded historical helper window, navigate the same selected tab through the exact extensions surface and back to the current queue URL, and then reuse all existing acceptance checks. | OBSERVED: no user action, paid service, catalog collection, source-access retry, scoring change, broad browser termination or new database is required.
+- MAP: OBSERVED: revision 27 / d8ec2182 is merged and deployed through Gateway/Broker. | OBSERVED: issue #66 terminal receipt failed only at the exact Installed extensions lookup with observed count 0. | OBSERVED: protected runtime is intact: 2 watches, 130 state observations, 100 feed observations, helper 1.4.13 live and RATE_LIMITED lock active.
+- HISTORY: VERIFIED_HISTORY: issues #60/#62/#64/#66 are terminal and must not be replayed. | VERIFIED_HISTORY: Revision 27 fixed the missing controlled-Edge window; current controlled Edge uses port 9255 and the exact installed helper. | VERIFIED_HISTORY: Developer-mode action preserves an already-On state as AlreadyOn.
+- RESEARCH: OBSERVED: Revision-27 open_extensions_root_and_snapshot performs one exact Installed extensions lookup and fails immediately on zero matches. | VERIFIED_HISTORY: the same exact link was present on subsequent inspection after #66. | INFERENCE: zero-then-present evidence is consistent with a UI readiness race; Revision 28 addresses only that boundary with a bounded exact-condition poll.
+- CAPABILITIES: OBSERVED: durable worker, SOPDecisionGateway and ControlledToolBroker remain available. | OBSERVED: a four-path Revision-28 candidate changes only readiness polling, focused tests, authority and canonical handoff. | OBSERVED: no Work/Codex dependency, source retry, scoring change, database change, broad browser termination or user action is required.
 
 ## Available capabilities
 - GitHub repository read/write and PR workflow
@@ -57,6 +57,7 @@ Do not let the newest obstacle replace the recorded mission.
 - revision-24 minimal single-worktab management-page navigation repair through bounded patch/publish/merge/rebind
 - fresh immutable GitHub-inbox request for complete_simple_single_worktab_acceptance after revision-24 deployment
 - revision-27 bounded self-recovery of the controlled Edge helper window followed by same-tab Developer-mode activation and queue return
+- revision-28 bounded exact Installed extensions readiness polling with Developer-mode AlreadyOn preservation
 
 ## Accepted — do not reopen without materially new evidence
 - accepted-sop-order: Operation Pancake SOP order is MAP -> HISTORY -> RESEARCH -> CAPABILITIES -> PLAN -> EXECUTE -> ADAPT -> VERIFY -> UPDATE MAP -> CONTINUE.
@@ -81,15 +82,15 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-catalog-access-bypass: Bypass authentication, CAPTCHA, access controls, explicit denial, or rate limits; change identity/rate behavior to evade source restrictions.
 - reject-catalog-denied-route-retry: Retry either observed-denied CFB.FAN acquisition request, or change client identity/authentication/cookies/headers/proxy/rate behavior to regain access, without materially new evidence that the denial condition changed.
 - reject-issue64-replay: Replay issue #64 or depend on an already-open controlled Edge helper window without materially new evidence.
+- reject-issue66-replay: Replay issue #66 or replace the exact Installed extensions condition with an unbounded/generic delay.
 
 ## Next action
-Deploy the minimal revision-27 controlled-Edge recovery correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request. Issues #60, #62 and #64 are terminal and must not be replayed. Revision 26 fixed the server.py Windows write primitive and #64 progressed past that boundary, then failed because no visible Edge root process existed with the installed --load-extension Simple Evaluator helper; find_controlled_edge therefore produced no UI Automation JSON. Revision 27 must recreate only the bounded historical controlled Edge window when absent using debugging port 9255, the exact installed helper, existing-profile reuse and the current shared CFB.FAN queue URL; then it must run the already-proven Developer-mode activation sequence on that same tab before continuing the unchanged dwell/cadence/persistence/evaluator/restart acceptance. Preserve scoring, exact-card identity, watches, denied source locks and the persistent RATE_LIMITED value-probe lock.
+Submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed revision 28; do not replay issues #60, #62, #64 or #66. Issue #66 is terminal after Revision 27 reached the controlled Edge extensions flow and failed at an immediate UI lookup that observed zero enabled Installed extensions hyperlinks. Revision 28 changes only that readiness boundary to a bounded exact-condition poll and preserves all existing locks.
 
 ## Remaining executable work
-- Validate revision-27 with authority/handoff/self-test and focused tests.
-- Obtain fresh Gateway/Broker authorization; create/publish/merge exact revision-27 and rebind the worker.
-- Submit a fresh immutable full single-worktab acceptance request; do not replay issues #60, #62 or #64.
-- Verify controlled Edge self-recovery, helper 1.4.13 activation, one-tab dwell/cadence, protected state, evaluator and both restart proofs.
+- Publish/merge/rebind the exact Revision-28 four-path readiness correction through fresh Gateway/Broker authorization.
+- Submit one fresh immutable full single-worktab acceptance request; do not replay issues #60, #62, #64 or #66.
+- Verify helper 1.4.13, exact readiness handling, one-tab dwell/cadence, protected state, evaluator and both restart proofs.
 - Continue OP-CATALOG-001 because the five current FS versions still are not imported and catalog criteria remain open.
 
 ## Completion rule

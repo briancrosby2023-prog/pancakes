@@ -15,12 +15,14 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 27
+EXPECTED_AUTHORITY_REVISION = 28
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
 DEBUG_PORT = 9255
 EXTENSION_ID = "fgocmjlihbapenekkflcofdjmdodmboe"
+EXTENSIONS_LINK_READY_TIMEOUT_SECONDS = 12
+EXTENSIONS_LINK_POLL_MS = 250
 EXPECTED_HELPER_VERSION = "1.4.13"
 EXPECTED_WATCH_SHA256 = "1faebe0b39ecf35879d35d16ce2a0aedb04cf15dc882350e55b39a2fea286912"
 EXPECTED_MANIFEST_SHA256 = "51beb29b86febf22cfcbcf50e06a10b3525dbbcbe7e7c537ec6ed8cd8d2d9b97"
@@ -596,19 +598,26 @@ def open_extensions_root_and_snapshot(edge_pid: int, control) -> dict[str, Any]:
 Add-Type -AssemblyName UIAutomationClient
 Add-Type -AssemblyName UIAutomationTypes
 $p=Get-Process -Id {edge_pid} -ErrorAction Stop
-$root=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
-$all=$root.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)
+$deadline=(Get-Date).AddSeconds({EXTENSIONS_LINK_READY_TIMEOUT_SECONDS})
 $links=@()
-foreach($e in $all){{
-  if(
-    $e.Current.ControlType -eq [System.Windows.Automation.ControlType]::Hyperlink -and
-    [string]$e.Current.Name -eq "Installed extensions" -and
-    $e.Current.IsEnabled
-  ){{
-    try{{ $null=$e.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern); $links += $e }}catch{{}}
+do{{
+  $root=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
+  $all=$root.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)
+  $links=@()
+  foreach($e in $all){{
+    if(
+      $e.Current.ControlType -eq [System.Windows.Automation.ControlType]::Hyperlink -and
+      [string]$e.Current.Name -eq "Installed extensions" -and
+      $e.Current.IsEnabled
+    ){{
+      try{{ $null=$e.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern); $links += $e }}catch{{}}
+    }}
   }}
-}}
-if($links.Count -ne 1){{ throw ("Expected exactly one enabled Installed extensions hyperlink; observed "+$links.Count) }}
+  if($links.Count -gt 1){{ throw ("Expected at most one enabled Installed extensions hyperlink during readiness wait; observed "+$links.Count) }}
+  if($links.Count -eq 1){{ break }}
+  Start-Sleep -Milliseconds {EXTENSIONS_LINK_POLL_MS}
+}}while((Get-Date) -lt $deadline)
+if($links.Count -ne 1){{ throw ("Expected exactly one enabled Installed extensions hyperlink before readiness deadline; observed "+$links.Count) }}
 ($links[0].GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern)).Invoke()
 Start-Sleep -Seconds 2
 $root=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
