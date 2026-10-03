@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 40
+EXPECTED_AUTHORITY_REVISION = 41
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -297,7 +297,11 @@ def reload_helper_extension(edge_pid: int, control) -> dict[str, Any]:
     # The extensions root exposes one explicit Reload button inside the exact
     # Simple Evaluator unpacked-extension card. Use that control; do not toggle
     # enable state, restart the browser, or rely on proximity.
-    navigate_selected_url(edge_pid, "edge://extensions/", control)
+    # Edge 153 retains the exact extension details route when edge://extensions/
+    # is entered through the address bar, even with confirmed foreground focus.
+    # Use the already-proven exact Installed extensions hyperlink route to reach
+    # the extensions root before matching the exact extension-card Reload control.
+    open_extensions_root_and_snapshot(edge_pid, control)
     ps = rf"""
 Add-Type -AssemblyName UIAutomationClient
 Add-Type -AssemblyName UIAutomationTypes
