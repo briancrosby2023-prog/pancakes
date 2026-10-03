@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 35
+EXPECTED_AUTHORITY_REVISION = 36
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -294,15 +294,12 @@ if($on -ne "On"){{ throw ("Extension did not re-enable after reload; observed "+
     return result
 
 
-def verify_installed_stop_conditions(control) -> dict[str, Any]:
+def verify_installed_stop_conditions(control, *, prepatch: bool = False) -> dict[str, Any]:
     watch = (HELPER_DIR / "watch.js").read_text(encoding="utf-8")
     background = (HELPER_DIR / "background.js").read_text(encoding="utf-8")
     required_watch = [
         "const MIN_INTERVAL_SECONDS = 120;",
         "const MIN_PAGE_DWELL_MS = 5000;",
-        "normal-search-submitted",
-        "normal-search-result-selected",
-        "#f_name",
         "user-action-required",
         "access-denied",
         "rate-limited",
@@ -312,21 +309,32 @@ def verify_installed_stop_conditions(control) -> dict[str, Any]:
         "simple-evaluator:browser-work-stop",
         "simple-evaluator:value-probe-rate-limited",
     ]
-    missing = [token for token in required_watch if token not in watch]
-    if missing:
-        raise control.EvidenceGap("installed stop-condition logic drift: " + ", ".join(missing))
     required_background = [
         "const MIN_INTERVAL_SECONDS = 120;",
         "simple-evaluator:browser-work-stop",
         "await clearTabSchedule(tabId);",
         "chrome.tabs.update(tabId, {url: workTabUrl",
-        "const NORMAL_SEARCH_URL = 'https://cfb.fan/27/players/#simple-evaluator-worktab';",
-        "currentBrowserWork",
     ]
+    if not prepatch:
+        required_watch.extend([
+            "normal-search-submitted",
+            "normal-search-result-selected",
+            "#f_name",
+        ])
+        required_background.extend([
+            "const NORMAL_SEARCH_URL = 'https://cfb.fan/27/players/#simple-evaluator-worktab';",
+            "currentBrowserWork",
+        ])
+    missing = [token for token in required_watch if token not in watch]
+    if missing:
+        stage = "prepatch" if prepatch else "postpatch"
+        raise control.EvidenceGap(f"installed {stage} stop-condition logic drift: " + ", ".join(missing))
     missing_bg = [token for token in required_background if token not in background]
     if missing_bg:
-        raise control.EvidenceGap("installed scheduler/stop logic drift: " + ", ".join(missing_bg))
+        stage = "prepatch" if prepatch else "postpatch"
+        raise control.EvidenceGap(f"installed {stage} scheduler/stop logic drift: " + ", ".join(missing_bg))
     return {
+        "stage": "prepatch" if prepatch else "postpatch",
         "watch_stop_tokens": required_watch,
         "background_scheduler_tokens": required_background,
         "watch_sha256": sha256(HELPER_DIR / "watch.js"),
@@ -987,7 +995,7 @@ def run(repo: Path, control) -> Mapping[str, Any]:
     installed_hashes_prepatch = verify_installed_files(control, prepatch=True)
     before = protected_snapshot()
     verify_protected(before, control, allow_new_observations=False)
-    stop_checks = verify_installed_stop_conditions(control)
+    prepatch_stop_checks = verify_installed_stop_conditions(control, prepatch=True)
     evaluator_checks = evaluator_acceptance(control)
 
     launch = load_launch_module()
@@ -1027,6 +1035,7 @@ def run(repo: Path, control) -> Mapping[str, Any]:
         port, _ = start_server(server_stopped_pid, launch, control)
         server_stopped_pid = None
         installed_hashes = verify_installed_files(control, prepatch=False)
+        stop_checks = verify_installed_stop_conditions(control, prepatch=False)
 
         queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
         if queue.get("schema") != "simple-evaluator-browser-work-queue-v1" or queue.get("active") is not True:
@@ -1266,6 +1275,7 @@ def run(repo: Path, control) -> Mapping[str, Any]:
                 "observed_delta_seconds": round(cadence_delta, 3),
                 "observed_at": cadence_obs.get("observed_at"),
             },
+            "prepatch_stop_condition_checks": prepatch_stop_checks,
             "stop_condition_checks": stop_checks,
             "evaluator_checks": evaluator_checks,
             "tab_cleanup": cleanup,
