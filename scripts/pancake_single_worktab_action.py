@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 38
+EXPECTED_AUTHORITY_REVISION = 39
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -298,28 +298,64 @@ Add-Type -AssemblyName UIAutomationClient
 Add-Type -AssemblyName UIAutomationTypes
 $p=Get-Process -Id {edge_pid} -ErrorAction Stop
 $root=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
-$buttons=$root.FindAll([System.Windows.Automation.TreeScope]::Descendants,
-  [System.Windows.Automation.PropertyCondition]::new(
-    [System.Windows.Automation.AutomationElement]::ControlTypeProperty,
-    [System.Windows.Automation.ControlType]::Button))
-$matches=@($buttons | Where-Object {{ $_.Current.Name -eq "Extension on" -and -not $_.Current.IsOffscreen -and $_.Current.IsEnabled }})
-if($matches.Count -ne 1){{ throw ("Expected one visible enabled Extension on control; observed "+$matches.Count) }}
-$toggle=$matches[0].GetCurrentPattern([System.Windows.Automation.TogglePattern]::Pattern)
-$before=[string]$toggle.Current.ToggleState
-if($before -ne "On"){{ throw ("Expected extension enabled before reload; observed "+$before) }}
-$toggle.Toggle()
-Start-Sleep -Milliseconds 500
-$off=[string]$toggle.Current.ToggleState
-if($off -ne "Off"){{ throw ("Extension did not disable for reload; observed "+$off) }}
-$toggle.Toggle()
-Start-Sleep -Milliseconds 700
-$on=[string]$toggle.Current.ToggleState
-if($on -ne "On"){{ throw ("Extension did not re-enable after reload; observed "+$on) }}
-[pscustomobject]@{{Before=$before;AfterDisable=$off;AfterEnable=$on}} | ConvertTo-Json -Compress
+$all=$root.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)
+$links=@()
+foreach($e in $all){{
+  if(
+    $e.Current.ControlType -eq [System.Windows.Automation.ControlType]::Hyperlink -and
+    [string]$e.Current.Name -eq "Installed extensions" -and
+    $e.Current.IsEnabled
+  ){{
+    try{{ $null=$e.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern); $links += $e }}catch{{}}
+  }}
+}}
+if($links.Count -ne 1){{ throw ("Expected exactly one enabled Installed extensions hyperlink; observed "+$links.Count) }}
+($links[0].GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern)).Invoke()
+Start-Sleep -Seconds 2
+$root=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
+$all=$root.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)
+$reloads=@()
+$rows=@()
+foreach($e in $all){{
+  if(
+    $e.Current.ControlType -eq [System.Windows.Automation.ControlType]::Button -and
+    [string]$e.Current.Name -eq "Reload" -and
+    $e.Current.IsEnabled
+  ){{
+    $cur=$e
+    $cardName=""
+    for($i=0;$i -lt 5;$i++){{
+      try{{ $cur=[System.Windows.Automation.TreeWalker]::ControlViewWalker.GetParent($cur) }}catch{{ $cur=$null }}
+      if($null -eq $cur){{ break }}
+      $name=[string]$cur.Current.Name
+      if($name -match "fgocmjlihbapenekkflcofdjmdodmboe" -and $name -match "Simple Evaluator Browser Watch"){{
+        $cardName=$name
+        break
+      }}
+    }}
+    $rows += [pscustomobject]@{{Offscreen=$e.Current.IsOffscreen;Enabled=$e.Current.IsEnabled;CardName=$cardName}}
+    if($cardName -ne ""){{
+      try{{ $null=$e.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern); $reloads += $e }}catch{{}}
+    }}
+  }}
+}}
+if($reloads.Count -ne 1){{
+  throw ("Expected exactly one Simple Evaluator Reload button; observed "+$reloads.Count+"; rows="+(($rows | ConvertTo-Json -Compress)))
+}}
+$offscreen=$reloads[0].Current.IsOffscreen
+($reloads[0].GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern)).Invoke()
+Start-Sleep -Seconds 3
+[pscustomobject]@{{
+  ReloadCount=$reloads.Count;
+  ReloadInvoked=$true;
+  ReloadWasOffscreen=$offscreen;
+  ExtensionId="fgocmjlihbapenekkflcofdjmdodmboe";
+  WindowTitle=(Get-Process -Id {edge_pid}).MainWindowTitle
+}} | ConvertTo-Json -Depth 4
 """
     result = run_ps_json(ps, control)
-    if result.get("AfterEnable") != "On":
-        raise control.ControlError(f"Browser Helper reload failed: {result!r}")
+    if result.get("ReloadInvoked") is not True or int(result.get("ReloadCount") or 0) != 1:
+        raise control.ControlError(f"Browser Helper explicit Reload failed: {result!r}")
     return result
 
 
