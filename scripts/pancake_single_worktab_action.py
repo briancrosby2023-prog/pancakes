@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 38
+EXPECTED_AUTHORITY_REVISION = 40
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -293,6 +293,11 @@ def patch_installed_runtime(repo: Path, control) -> dict[str, Any]:
 
 
 def reload_helper_extension(edge_pid: int, control) -> dict[str, Any]:
+    # Edge 153 no longer exposes Reload on the extension details surface.
+    # The extensions root exposes one explicit Reload button inside the exact
+    # Simple Evaluator unpacked-extension card. Use that control; do not toggle
+    # enable state, restart the browser, or rely on proximity.
+    navigate_selected_url(edge_pid, "edge://extensions/", control)
     ps = rf"""
 Add-Type -AssemblyName UIAutomationClient
 Add-Type -AssemblyName UIAutomationTypes
@@ -302,24 +307,52 @@ $buttons=$root.FindAll([System.Windows.Automation.TreeScope]::Descendants,
   [System.Windows.Automation.PropertyCondition]::new(
     [System.Windows.Automation.AutomationElement]::ControlTypeProperty,
     [System.Windows.Automation.ControlType]::Button))
-$matches=@($buttons | Where-Object {{ $_.Current.Name -eq "Extension on" -and -not $_.Current.IsOffscreen -and $_.Current.IsEnabled }})
-if($matches.Count -ne 1){{ throw ("Expected one visible enabled Extension on control; observed "+$matches.Count) }}
-$toggle=$matches[0].GetCurrentPattern([System.Windows.Automation.TogglePattern]::Pattern)
-$before=[string]$toggle.Current.ToggleState
-if($before -ne "On"){{ throw ("Expected extension enabled before reload; observed "+$before) }}
-$toggle.Toggle()
-Start-Sleep -Milliseconds 500
-$off=[string]$toggle.Current.ToggleState
-if($off -ne "Off"){{ throw ("Extension did not disable for reload; observed "+$off) }}
-$toggle.Toggle()
-Start-Sleep -Milliseconds 700
-$on=[string]$toggle.Current.ToggleState
-if($on -ne "On"){{ throw ("Extension did not re-enable after reload; observed "+$on) }}
-[pscustomobject]@{{Before=$before;AfterDisable=$off;AfterEnable=$on}} | ConvertTo-Json -Compress
+$matches=@()
+foreach($button in $buttons){{
+  if($button.Current.Name -ne "Reload" -or -not $button.Current.IsEnabled){{ continue }}
+  $node=$button
+  $card=$null
+  for($i=0;$i -lt 6;$i++){{
+    try{{$node=[System.Windows.Automation.TreeWalker]::ControlViewWalker.GetParent($node)}}catch{{$node=$null}}
+    if($null -eq $node){{ break }}
+    if($node.Current.ControlType -eq [System.Windows.Automation.ControlType]::ListItem){{
+      $label=[string]$node.Current.Name
+      if($label.Contains("Simple Evaluator Browser Watch") -and $label.Contains("{EXTENSION_ID}")){{
+        $card=$node
+        break
+      }}
+    }}
+  }}
+  if($null -ne $card){{ $matches += [pscustomobject]@{{Button=$button;Card=$card}} }}
+}}
+if($matches.Count -ne 1){{ throw ("Expected exactly one exact-card Reload control; observed "+$matches.Count) }}
+$target=$matches[0].Button
+$beforeOffscreen=[bool]$target.Current.IsOffscreen
+try{{
+  $scroll=$target.GetCurrentPattern([System.Windows.Automation.ScrollItemPattern]::Pattern)
+  $scroll.ScrollIntoView()
+  Start-Sleep -Milliseconds 300
+}}catch{{
+  throw ("Exact Reload control does not support ScrollItemPattern: "+$_.Exception.Message)
+}}
+$afterOffscreen=[bool]$target.Current.IsOffscreen
+$invoke=$target.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern)
+$invoke.Invoke()
+Start-Sleep -Seconds 2
+[pscustomobject]@{{
+  ReloadCount=$matches.Count
+  ExtensionId="{EXTENSION_ID}"
+  CardName=[string]$matches[0].Card.Current.Name
+  BeforeOffscreen=$beforeOffscreen
+  AfterOffscreen=$afterOffscreen
+  Invoked=$true
+}} | ConvertTo-Json -Compress
 """
     result = run_ps_json(ps, control)
-    if result.get("AfterEnable") != "On":
-        raise control.ControlError(f"Browser Helper reload failed: {result!r}")
+    if result.get("ReloadCount") != 1 or result.get("Invoked") is not True:
+        raise control.ControlError(f"Browser Helper explicit Reload failed: {result!r}")
+    if result.get("ExtensionId") != EXTENSION_ID:
+        raise control.ControlError(f"Browser Helper explicit Reload identity drift: {result!r}")
     return result
 
 
