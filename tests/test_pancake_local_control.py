@@ -232,9 +232,9 @@ def test_single_worktab_runtime_loader_has_importlib_util_available():
     assert callable(mod.importlib.util.spec_from_file_location)
     assert callable(mod.importlib.util.module_from_spec)
 
-def test_single_worktab_action_revision_pin_matches_revision_23():
+def test_single_worktab_action_revision_pin_matches_revision_24():
     action = load_single_worktab_action()
-    assert action.EXPECTED_AUTHORITY_REVISION == 23
+    assert action.EXPECTED_AUTHORITY_REVISION == 24
 
 def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, monkeypatch):
     action = load_single_worktab_action()
@@ -249,3 +249,65 @@ def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, m
         sys.modules.pop("server", None)
         if previous is not None:
             sys.modules["server"] = previous
+
+def test_single_worktab_extensions_root_uses_exact_installed_extensions_hyperlink():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    start = source.index("def open_extensions_root_and_snapshot")
+    end = source.index("def select_developer_toggle", start)
+    block = source[start:end]
+    assert '"Installed extensions"' in block
+    assert "ControlType]::Hyperlink" in block
+    assert 'Name -eq "Back"' not in block
+
+
+def test_single_worktab_r24_hardens_server_heartbeat_and_acceptance_boundary():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    assert action.EXPECTED_SERVER_PREPATCH_SHA256 == "bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37"
+    assert action.EXPECTED_SERVER_SHA256 == "f073dfe2ca39a47076bf1c1663d6071a10cc5c7b5f6f2bab7cb003a5c5c615d2"
+    assert "def patch_installed_server" in source
+    assert "browser_helper_stale_heartbeat_ignored" in source
+    assert "current.get(\"version\") == expected" in source
+    assert "full_single_worktab_acceptance" in source
+    assert "server cannot self-write" not in source  # implementation, not commentary-only authority prose
+
+
+def test_single_worktab_r24_requires_real_saved_watch_cadence_before_acceptance():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    run_block = source[source.index("def run(repo: Path, control)"):]
+    assert 'cadence_queue.get("status") != "WAITING"' in run_block
+    assert "cadence_wait > 120.25" in run_block
+    assert "cadence_delta < 120.0" in run_block
+    assert "cadence_elapsed < 4.85" in run_block
+    assert run_block.index("cadence_delta < 120.0") < run_block.index("write_full_acceptance(")
+    assert run_block.index("write_full_acceptance(") < run_block.index("write_release_accepted(control)")
+
+
+def test_single_worktab_r24_full_acceptance_is_transactional_and_restart_verified():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    run_block = source[source.index("def run(repo: Path, control)"):]
+    assert "server_backup = server_path.read_bytes()" in run_block
+    assert "acceptance_backup = acceptance_path.read_bytes()" in run_block
+    assert "release_backup = release_path.read_bytes()" in run_block
+    assert "server_path.write_bytes(server_backup)" in run_block
+    assert "acceptance_path.write_bytes(acceptance_backup)" in run_block
+    assert "release_path.write_bytes(release_backup)" in run_block
+    assert 'health_final.get("release_status") != "PRODUCTION_ACCEPTED"' in run_block
+    assert 'diagnostics_final.get("deployment_ready") is not True' in run_block
+    assert 'acceptance_final.get("full_single_worktab_acceptance") is not True' in run_block
+
+
+def test_single_worktab_r24_checks_stops_evaluator_and_five_fs_identity_gap():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    assert "def verify_installed_stop_conditions" in source
+    assert "simple-evaluator:browser-work-stop" in source
+    assert "market-timeout" in source
+    assert "def evaluator_acceptance" in source
+    assert "required_positions" in source
+    for name in ("Jordan Allen", "Ashlynd Barker", "Kingston Lopa", "Earl Little Jr.", "Xavier Filsaime"):
+        assert name in source
+    assert "CURRENT_BROWSER_IDENTITIES_OBSERVED_PREVIOUSLY_BUT_NOT_YET_IMPORTED" in source
