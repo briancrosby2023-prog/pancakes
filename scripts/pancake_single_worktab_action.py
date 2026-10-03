@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 30
+EXPECTED_AUTHORITY_REVISION = 31
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -659,6 +659,32 @@ def select_developer_toggle(snapshot: Mapping[str, Any], control) -> dict[str, A
         labels = [labels]
     if isinstance(toggles, dict):
         toggles = [toggles]
+
+    exact = []
+    for toggle in toggles:
+        if toggle.get("Enabled") is not True or str(toggle.get("State")) not in {"Off", "On"}:
+            continue
+        if str(toggle.get("Name") or "").strip().casefold() != "developer mode":
+            continue
+        if str(toggle.get("AutomationId") or "") != "dev-switch":
+            continue
+        x = float(toggle.get("X") or 0.0)
+        y = float(toggle.get("Y") or 0.0)
+        w = float(toggle.get("W") or 0.0)
+        h = float(toggle.get("H") or 0.0)
+        if w <= 0 or h <= 0:
+            continue
+        chosen = dict(toggle)
+        chosen["Selection"] = "ExactDeveloperModeDevSwitch"
+        chosen["Distance"] = 0.0
+        exact.append(chosen)
+    if len(exact) > 1:
+        raise control.EvidenceGap(
+            f"Developer mode exact dev-switch remains ambiguous: observed {len(exact)}"
+        )
+    if len(exact) == 1:
+        return exact[0]
+
     if len(labels) != 1:
         raise control.EvidenceGap(f"expected one Developer mode label; observed {len(labels)}")
     label = labels[0]
@@ -697,6 +723,7 @@ def select_developer_toggle(snapshot: Mapping[str, Any], control) -> dict[str, A
             + ", ".join(f"{item[0]:.1f}" for item in candidates[:3])
         )
     chosen = dict(candidates[0][1])
+    chosen["Selection"] = "SpatialFallback"
     chosen["Distance"] = round(candidates[0][0], 3)
     return chosen
 

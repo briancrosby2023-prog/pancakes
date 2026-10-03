@@ -1,6 +1,6 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 30
+State revision: 31
 Status: IN_PROGRESS
 Mission ID: OP-CATALOG-001
 
@@ -15,10 +15,10 @@ Read `docs/OPERATION_PANCAKE_CONTROL_STATE.json` first and validate it before ma
 Do not let the newest obstacle replace the recorded mission.
 
 ## Preflight evidence
-- MAP: OBSERVED: Revision 29 / a0212778 is merged, deployed and READY for OP-CATALOG-001. | OBSERVED: fresh immutable issue #71 passed request freeze and Gateway/Broker authorization, then failed only in navigate_selected_url because the exact target Edge window did not become foreground under SetForegroundWindow. | OBSERVED: the exact controlled Edge PID 29544 / handle 55643466 remains available with the installed helper and current extensions surface.
-- HISTORY: VERIFIED_HISTORY: issues #60/#62/#64/#66/#69/#71 are terminal and must not be replayed. | VERIFIED_HISTORY: Revision 29 replaced AppActivate with exact-handle ShowWindow plus SetForegroundWindow but that hypothesis failed in the real acceptance context. | VERIFIED_HISTORY: denied source routes, provider-email rejection, exact-card identity, watches, persistent RATE_LIMITED lock, dynamic-port architecture and scoring remain unchanged.
-- RESEARCH: OBSERVED: Revision-29 acceptance #71 failed specifically at exact-handle foreground verification after bounded SetForegroundWindow attempts. | OBSERVED: on the same exact controlled Edge handle, a bounded minimized-window probe using UI Automation address-bar SetFocus() returned TargetIsForeground=true and AddressHasFocus=true with no navigation or data mutation. | OBSERVED: the existing r30 candidate uses only ShowWindow(SW_RESTORE), exact address-bar UIA SetFocus(), HasKeyboardFocus and exact GetForegroundWindow verification; it contains neither SetForegroundWindow nor AppActivate.
-- CAPABILITIES: OBSERVED: the failure is isolated to navigate_selected_url's foreground primitive; the exact process/window selector, address-bar AutomationId view_1021, ValuePattern and downstream acceptance logic remain available. | OBSERVED: Revision 30 can replace only the failed SetForegroundWindow loop with bounded exact-address-bar UIA SetFocus verification and one focused regression test. | OBSERVED: the recorded-chat DecisionProvider route remains available through the unchanged strict SOPDecisionGateway and ControlledToolBroker without paid API credits, Work or Codex.
+- MAP: OBSERVED: Revision 30 / eae7c051 is merged, deployed and READY for OP-CATALOG-001. | OBSERVED: fresh immutable issue #73 passed request freeze and Gateway/Broker authorization, progressed past Revision-30 foreground handling, and failed only because select_developer_toggle observed two nodes named Developer mode. | OBSERVED: the exact controlled Edge PID 29544 / handle 55643466 remains available with Browser Helper 1.4.13 and the extensions surface.
+- HISTORY: VERIFIED_HISTORY: issues #60/#62/#64/#66/#69/#71/#73 are terminal and must not be replayed. | VERIFIED_HISTORY: Revision 30 replaced the failed SetForegroundWindow dependency with UIA address-bar focus and progressed acceptance to the later Developer-mode selector. | VERIFIED_HISTORY: denied source routes, provider-email rejection, exact-card identity, watches, persistent RATE_LIMITED lock, dynamic-port architecture and scoring remain unchanged.
+- RESEARCH: OBSERVED: current UIA tree contains exactly two elements named Developer mode: one ControlType.Text at X117/Y661 with empty AutomationId and one ControlType.Button at X435/Y660 with AutomationId dev-switch. | OBSERVED: the Button node is the sole enabled visible Developer mode TogglePattern control, state On, and has the same RuntimeId as the dev-switch toggle entry; the other same-name node has no TogglePattern. | OBSERVED: three other TogglePattern controls are distinct by name/AutomationId/geometry; exact dev-switch identity removes the false label ambiguity without broadening selection.
+- CAPABILITIES: OBSERVED: select_developer_toggle already receives toggle Name, AutomationId, Enabled, State and geometry, so Revision 31 needs no broader browser/UI mutation surface. | OBSERVED: Revision 31 can prefer the exact dev-switch TogglePattern control, fail closed on duplicate exact matches, and preserve the existing spatial fallback for older UI trees. | OBSERVED: the recorded-chat DecisionProvider route remains available through the unchanged strict SOPDecisionGateway and ControlledToolBroker without paid API credits, Work or Codex.
 
 ## Available capabilities
 - GitHub repository read/write and PR workflow
@@ -86,12 +86,12 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-issue69-replay: Replay issue #69 or retry WScript.Shell.AppActivate by PID/title without materially new evidence.
 
 ## Next action
-Deploy the minimal Revision-30 UIA omnibox-focus correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 30. Do not replay issues #60, #62, #64, #66, #69 or #71. Issue #71 is terminal after Revision 29 failed because SetForegroundWindow did not make the exact controlled Edge handle foreground in the real acceptance context. A materially new bounded probe on the same exact minimized controlled Edge handle proved UI Automation address-bar SetFocus() succeeds, makes the exact handle foreground, and gives the address bar keyboard focus. Revision 30 must replace only the failed SetForegroundWindow dependency with bounded exact-address-bar UIA SetFocus plus HasKeyboardFocus and exact foreground-handle verification, preserving every existing server, helper, one-tab, dwell/cadence, exact-card, protected-state, evaluator, restart, denied-source, persistent RATE_LIMITED and unchanged-scoring guard.
+Deploy the minimal Revision-31 exact Developer-mode toggle identity correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 31. Do not replay issues #60, #62, #64, #66, #69, #71 or #73. Issue #73 is terminal after Revision 30 passed the foreground-navigation boundary and failed only because the UIA snapshot contained two nodes named Developer mode. A bounded read-only probe proved those are not two controls: one is ControlType.Text with no AutomationId, while the other is the single enabled visible TogglePattern button named Developer mode with AutomationId dev-switch and state On. Revision 31 must prefer exactly one enabled usable TogglePattern Developer mode control with exact AutomationId dev-switch and fail closed if that exact control is duplicated; retain the existing spatial-label selector only as a fallback when the exact dev-switch control is absent. Preserve every existing foreground, readiness, server, helper, one-tab, dwell/cadence, exact-card, protected-state, evaluator, restart, denied-source, persistent RATE_LIMITED and unchanged-scoring guard.
 
 ## Remaining executable work
-- Publish/merge/rebind the exact Revision-30 four-path UIA omnibox-focus correction through fresh Gateway/Broker authorization.
-- Submit one fresh immutable full single-worktab acceptance request; do not replay issues #60, #62, #64, #66, #69 or #71.
-- Verify exact UIA omnibox focus, helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.
+- Publish/merge/rebind the exact Revision-31 four-path dev-switch selector correction through fresh Gateway/Broker authorization.
+- Submit one fresh immutable full single-worktab acceptance request; do not replay issues #60, #62, #64, #66, #69, #71 or #73.
+- Verify exact dev-switch selection plus helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.
 - Continue OP-CATALOG-001 because the five current FS versions still are not imported and catalog criteria remain open.
 
 ## Completion rule

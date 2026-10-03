@@ -226,15 +226,46 @@ def test_single_worktab_developer_toggle_selector_is_fail_closed_and_spatial():
     with pytest.raises(runner.EvidenceGap, match="ambiguous"):
         action.select_developer_toggle(ambiguous, runner)
 
+
+def test_single_worktab_r31_prefers_exact_dev_switch_when_uia_duplicates_developer_mode_name():
+    runner = load_runner()
+    action = load_single_worktab_action()
+    snapshot = {
+        "Labels": [
+            {"Name": "Developer mode", "AutomationId": "", "X": 117, "Y": 661, "W": 165, "H": 31},
+            {"Name": "Developer mode", "AutomationId": "dev-switch", "X": 435, "Y": 660, "W": 59, "H": 33},
+        ],
+        "Toggles": [
+            {"Name": "Developer mode", "AutomationId": "dev-switch", "Enabled": True, "State": "On", "X": 435, "Y": 660, "W": 59, "H": 33},
+            {"Name": "Allow extensions from other stores.", "AutomationId": "other-store-switch", "Enabled": True, "State": "Off", "X": 435, "Y": 740, "W": 59, "H": 33},
+        ],
+    }
+    chosen = action.select_developer_toggle(snapshot, runner)
+    assert chosen["AutomationId"] == "dev-switch"
+    assert chosen["Name"] == "Developer mode"
+    assert chosen["Selection"] == "ExactDeveloperModeDevSwitch"
+    assert chosen["State"] == "On"
+
+    duplicate_exact = {
+        "Labels": snapshot["Labels"],
+        "Toggles": [
+            snapshot["Toggles"][0],
+            {**snapshot["Toggles"][0], "X": 500},
+        ],
+    }
+    with pytest.raises(runner.EvidenceGap, match="exact dev-switch remains ambiguous"):
+        action.select_developer_toggle(duplicate_exact, runner)
+
+
 def test_single_worktab_runtime_loader_has_importlib_util_available():
     mod = load_runner()
     assert hasattr(mod.importlib, "util")
     assert callable(mod.importlib.util.spec_from_file_location)
     assert callable(mod.importlib.util.module_from_spec)
 
-def test_single_worktab_action_revision_pin_matches_revision_30():
+def test_single_worktab_action_revision_pin_matches_revision_31():
     action = load_single_worktab_action()
-    assert action.EXPECTED_AUTHORITY_REVISION == 30
+    assert action.EXPECTED_AUTHORITY_REVISION == 31
 
 def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, monkeypatch):
     action = load_single_worktab_action()
