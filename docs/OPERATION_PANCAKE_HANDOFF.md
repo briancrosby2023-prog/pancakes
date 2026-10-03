@@ -1,6 +1,6 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 29
+State revision: 30
 Status: IN_PROGRESS
 Mission ID: OP-CATALOG-001
 
@@ -15,10 +15,10 @@ Read `docs/OPERATION_PANCAKE_CONTROL_STATE.json` first and validate it before ma
 Do not let the newest obstacle replace the recorded mission.
 
 ## Preflight evidence
-- MAP: OBSERVED: Revision 28 / aaffb31b is merged, deployed and READY for OP-CATALOG-001. | OBSERVED: fresh immutable issue #69 passed request freeze and Gateway/Broker authorization, then failed only in navigate_selected_url because Edge window activation failed at WScript.Shell.AppActivate. | OBSERVED: exact controlled Edge PID 29544 has a valid main window handle/title and was minimized during the failure.
-- HISTORY: VERIFIED_HISTORY: issues #60/#62/#64/#66/#69 are terminal and must not be replayed. | VERIFIED_HISTORY: Revision 28 fixed the #66 zero-link readiness boundary and progressed acceptance to the later window-activation step. | VERIFIED_HISTORY: denied source routes, provider-email rejection, exact-card identity, watches, persistent RATE_LIMITED lock, dynamic-port architecture and scoring remain unchanged.
-- RESEARCH: OBSERVED: both WScript.Shell.AppActivate(process id) and AppActivate(window title) returned false for the exact controlled Edge root. | OBSERVED: on the same exact MainWindowHandle, ShowWindow(SW_RESTORE) returned successfully, SetForegroundWindow returned true, and GetForegroundWindow matched the exact target handle. | EXTERNAL_RESEARCH: Microsoft Windows documents foreground restrictions for SetForegroundWindow and SW_RESTORE behavior for restoring minimized windows.
-- CAPABILITIES: OBSERVED: the failure is isolated to navigate_selected_url's foreground primitive; the existing exact process/window selector and all downstream UI Automation remain available. | OBSERVED: Revision-29 can replace only AppActivate with bounded exact-handle ShowWindow/SetForegroundWindow/GetForegroundWindow verification and add focused regression coverage. | OBSERVED: the existing recorded-chat DecisionProvider route still passes the unchanged strict SOPDecisionGateway and ControlledToolBroker without paid API credits, Work or Codex.
+- MAP: OBSERVED: Revision 29 / a0212778 is merged, deployed and READY for OP-CATALOG-001. | OBSERVED: fresh immutable issue #71 passed request freeze and Gateway/Broker authorization, then failed only in navigate_selected_url because the exact target Edge window did not become foreground under SetForegroundWindow. | OBSERVED: the exact controlled Edge PID 29544 / handle 55643466 remains available with the installed helper and current extensions surface.
+- HISTORY: VERIFIED_HISTORY: issues #60/#62/#64/#66/#69/#71 are terminal and must not be replayed. | VERIFIED_HISTORY: Revision 29 replaced AppActivate with exact-handle ShowWindow plus SetForegroundWindow but that hypothesis failed in the real acceptance context. | VERIFIED_HISTORY: denied source routes, provider-email rejection, exact-card identity, watches, persistent RATE_LIMITED lock, dynamic-port architecture and scoring remain unchanged.
+- RESEARCH: OBSERVED: Revision-29 acceptance #71 failed specifically at exact-handle foreground verification after bounded SetForegroundWindow attempts. | OBSERVED: on the same exact controlled Edge handle, a bounded minimized-window probe using UI Automation address-bar SetFocus() returned TargetIsForeground=true and AddressHasFocus=true with no navigation or data mutation. | OBSERVED: the existing r30 candidate uses only ShowWindow(SW_RESTORE), exact address-bar UIA SetFocus(), HasKeyboardFocus and exact GetForegroundWindow verification; it contains neither SetForegroundWindow nor AppActivate.
+- CAPABILITIES: OBSERVED: the failure is isolated to navigate_selected_url's foreground primitive; the exact process/window selector, address-bar AutomationId view_1021, ValuePattern and downstream acceptance logic remain available. | OBSERVED: Revision 30 can replace only the failed SetForegroundWindow loop with bounded exact-address-bar UIA SetFocus verification and one focused regression test. | OBSERVED: the recorded-chat DecisionProvider route remains available through the unchanged strict SOPDecisionGateway and ControlledToolBroker without paid API credits, Work or Codex.
 
 ## Available capabilities
 - GitHub repository read/write and PR workflow
@@ -86,12 +86,12 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-issue69-replay: Replay issue #69 or retry WScript.Shell.AppActivate by PID/title without materially new evidence.
 
 ## Next action
-Deploy the minimal Revision-29 exact-window foreground correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 29. Do not replay issues #60, #62, #64, #66 or #69. Issue #69 is terminal after Revision 28 progressed into navigate_selected_url and failed solely because WScript.Shell.AppActivate returned false for the exact controlled Edge process while its valid main window was minimized. A bounded read-only probe on that exact handle proved ShowWindow(SW_RESTORE) plus SetForegroundWindow succeeds and GetForegroundWindow returns the exact target handle. Revision 29 must replace only the fragile AppActivate dependency with bounded exact-handle restore/foreground verification, preserving every existing server, helper, one-tab, dwell/cadence, exact-card, protected-state, evaluator, restart, denied-source, persistent RATE_LIMITED and unchanged-scoring guard.
+Deploy the minimal Revision-30 UIA omnibox-focus correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 30. Do not replay issues #60, #62, #64, #66, #69 or #71. Issue #71 is terminal after Revision 29 failed because SetForegroundWindow did not make the exact controlled Edge handle foreground in the real acceptance context. A materially new bounded probe on the same exact minimized controlled Edge handle proved UI Automation address-bar SetFocus() succeeds, makes the exact handle foreground, and gives the address bar keyboard focus. Revision 30 must replace only the failed SetForegroundWindow dependency with bounded exact-address-bar UIA SetFocus plus HasKeyboardFocus and exact foreground-handle verification, preserving every existing server, helper, one-tab, dwell/cadence, exact-card, protected-state, evaluator, restart, denied-source, persistent RATE_LIMITED and unchanged-scoring guard.
 
 ## Remaining executable work
-- Publish/merge/rebind the exact Revision-29 four-path foreground correction through fresh Gateway/Broker authorization.
-- Submit one fresh immutable full single-worktab acceptance request; do not replay issues #60, #62, #64, #66 or #69.
-- Verify exact-window restore/foreground handling, helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.
+- Publish/merge/rebind the exact Revision-30 four-path UIA omnibox-focus correction through fresh Gateway/Broker authorization.
+- Submit one fresh immutable full single-worktab acceptance request; do not replay issues #60, #62, #64, #66, #69 or #71.
+- Verify exact UIA omnibox focus, helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.
 - Continue OP-CATALOG-001 because the five current FS versions still are not imported and catalog criteria remain open.
 
 ## Completion rule
