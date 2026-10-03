@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 28
+EXPECTED_AUTHORITY_REVISION = 29
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -550,8 +550,23 @@ Add-Type -AssemblyName UIAutomationClient
 Add-Type -AssemblyName UIAutomationTypes
 Add-Type -AssemblyName System.Windows.Forms
 $p=Get-Process -Id {edge_pid} -ErrorAction Stop
-$ws=New-Object -ComObject WScript.Shell
-if(-not $ws.AppActivate($p.Id)){{ throw "Edge window activation failed" }}
+Add-Type -Namespace OperationPancake -Name Win32Focus -MemberDefinition @'
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern bool ShowWindow(System.IntPtr hWnd, int nCmdShow);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern bool SetForegroundWindow(System.IntPtr hWnd);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern System.IntPtr GetForegroundWindow();
+'@
+$hWnd=[System.IntPtr]$p.MainWindowHandle
+if($hWnd -eq [System.IntPtr]::Zero){{ throw "Target Edge window has no main window handle" }}
+$SW_RESTORE=9
+$null=[OperationPancake.Win32Focus]::ShowWindow($hWnd,$SW_RESTORE)
+$focusDeadline=(Get-Date).AddSeconds(3)
+$focused=$false
+do{{
+  $null=[OperationPancake.Win32Focus]::SetForegroundWindow($hWnd)
+  Start-Sleep -Milliseconds 100
+  $focused=([OperationPancake.Win32Focus]::GetForegroundWindow() -eq $hWnd)
+}}while((-not $focused) -and (Get-Date) -lt $focusDeadline)
+if(-not $focused){{ throw "Target Edge window did not become foreground" }}
 $root=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
 $cond=[System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::AutomationIdProperty,"view_1021")
 $addr=$root.FindFirst([System.Windows.Automation.TreeScope]::Descendants,$cond)

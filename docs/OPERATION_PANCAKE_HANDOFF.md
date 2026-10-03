@@ -1,6 +1,6 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 28
+State revision: 29
 Status: IN_PROGRESS
 Mission ID: OP-CATALOG-001
 
@@ -15,10 +15,10 @@ Read `docs/OPERATION_PANCAKE_CONTROL_STATE.json` first and validate it before ma
 Do not let the newest obstacle replace the recorded mission.
 
 ## Preflight evidence
-- MAP: OBSERVED: revision 27 / d8ec2182 is merged and deployed through Gateway/Broker. | OBSERVED: issue #66 terminal receipt failed only at the exact Installed extensions lookup with observed count 0. | OBSERVED: protected runtime is intact: 2 watches, 130 state observations, 100 feed observations, helper 1.4.13 live and RATE_LIMITED lock active.
-- HISTORY: VERIFIED_HISTORY: issues #60/#62/#64/#66 are terminal and must not be replayed. | VERIFIED_HISTORY: Revision 27 fixed the missing controlled-Edge window; current controlled Edge uses port 9255 and the exact installed helper. | VERIFIED_HISTORY: Developer-mode action preserves an already-On state as AlreadyOn.
-- RESEARCH: OBSERVED: Revision-27 open_extensions_root_and_snapshot performs one exact Installed extensions lookup and fails immediately on zero matches. | VERIFIED_HISTORY: the same exact link was present on subsequent inspection after #66. | INFERENCE: zero-then-present evidence is consistent with a UI readiness race; Revision 28 addresses only that boundary with a bounded exact-condition poll.
-- CAPABILITIES: OBSERVED: durable worker, SOPDecisionGateway and ControlledToolBroker remain available. | OBSERVED: a four-path Revision-28 candidate changes only readiness polling, focused tests, authority and canonical handoff. | OBSERVED: no Work/Codex dependency, source retry, scoring change, database change, broad browser termination or user action is required.
+- MAP: OBSERVED: Revision 28 / aaffb31b is merged, deployed and READY for OP-CATALOG-001. | OBSERVED: fresh immutable issue #69 passed request freeze and Gateway/Broker authorization, then failed only in navigate_selected_url because Edge window activation failed at WScript.Shell.AppActivate. | OBSERVED: exact controlled Edge PID 29544 has a valid main window handle/title and was minimized during the failure.
+- HISTORY: VERIFIED_HISTORY: issues #60/#62/#64/#66/#69 are terminal and must not be replayed. | VERIFIED_HISTORY: Revision 28 fixed the #66 zero-link readiness boundary and progressed acceptance to the later window-activation step. | VERIFIED_HISTORY: denied source routes, provider-email rejection, exact-card identity, watches, persistent RATE_LIMITED lock, dynamic-port architecture and scoring remain unchanged.
+- RESEARCH: OBSERVED: both WScript.Shell.AppActivate(process id) and AppActivate(window title) returned false for the exact controlled Edge root. | OBSERVED: on the same exact MainWindowHandle, ShowWindow(SW_RESTORE) returned successfully, SetForegroundWindow returned true, and GetForegroundWindow matched the exact target handle. | EXTERNAL_RESEARCH: Microsoft Windows documents foreground restrictions for SetForegroundWindow and SW_RESTORE behavior for restoring minimized windows.
+- CAPABILITIES: OBSERVED: the failure is isolated to navigate_selected_url's foreground primitive; the existing exact process/window selector and all downstream UI Automation remain available. | OBSERVED: Revision-29 can replace only AppActivate with bounded exact-handle ShowWindow/SetForegroundWindow/GetForegroundWindow verification and add focused regression coverage. | OBSERVED: the existing recorded-chat DecisionProvider route still passes the unchanged strict SOPDecisionGateway and ControlledToolBroker without paid API credits, Work or Codex.
 
 ## Available capabilities
 - GitHub repository read/write and PR workflow
@@ -83,14 +83,15 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-catalog-denied-route-retry: Retry either observed-denied CFB.FAN acquisition request, or change client identity/authentication/cookies/headers/proxy/rate behavior to regain access, without materially new evidence that the denial condition changed.
 - reject-issue64-replay: Replay issue #64 or depend on an already-open controlled Edge helper window without materially new evidence.
 - reject-issue66-replay: Replay issue #66 or replace the exact Installed extensions condition with an unbounded/generic delay.
+- reject-issue69-replay: Replay issue #69 or retry WScript.Shell.AppActivate by PID/title without materially new evidence.
 
 ## Next action
-Submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed revision 28; do not replay issues #60, #62, #64 or #66. Issue #66 is terminal after Revision 27 reached the controlled Edge extensions flow and failed at an immediate UI lookup that observed zero enabled Installed extensions hyperlinks. Revision 28 changes only that readiness boundary to a bounded exact-condition poll and preserves all existing locks.
+Deploy the minimal Revision-29 exact-window foreground correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 29. Do not replay issues #60, #62, #64, #66 or #69. Issue #69 is terminal after Revision 28 progressed into navigate_selected_url and failed solely because WScript.Shell.AppActivate returned false for the exact controlled Edge process while its valid main window was minimized. A bounded read-only probe on that exact handle proved ShowWindow(SW_RESTORE) plus SetForegroundWindow succeeds and GetForegroundWindow returns the exact target handle. Revision 29 must replace only the fragile AppActivate dependency with bounded exact-handle restore/foreground verification, preserving every existing server, helper, one-tab, dwell/cadence, exact-card, protected-state, evaluator, restart, denied-source, persistent RATE_LIMITED and unchanged-scoring guard.
 
 ## Remaining executable work
-- Publish/merge/rebind the exact Revision-28 four-path readiness correction through fresh Gateway/Broker authorization.
-- Submit one fresh immutable full single-worktab acceptance request; do not replay issues #60, #62, #64 or #66.
-- Verify helper 1.4.13, exact readiness handling, one-tab dwell/cadence, protected state, evaluator and both restart proofs.
+- Publish/merge/rebind the exact Revision-29 four-path foreground correction through fresh Gateway/Broker authorization.
+- Submit one fresh immutable full single-worktab acceptance request; do not replay issues #60, #62, #64, #66 or #69.
+- Verify exact-window restore/foreground handling, helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.
 - Continue OP-CATALOG-001 because the five current FS versions still are not imported and catalog criteria remain open.
 
 ## Completion rule
