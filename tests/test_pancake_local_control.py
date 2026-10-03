@@ -232,9 +232,9 @@ def test_single_worktab_runtime_loader_has_importlib_util_available():
     assert callable(mod.importlib.util.spec_from_file_location)
     assert callable(mod.importlib.util.module_from_spec)
 
-def test_single_worktab_action_revision_pin_matches_revision_28():
+def test_single_worktab_action_revision_pin_matches_revision_29():
     action = load_single_worktab_action()
-    assert action.EXPECTED_AUTHORITY_REVISION == 28
+    assert action.EXPECTED_AUTHORITY_REVISION == 29
 
 def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, monkeypatch):
     action = load_single_worktab_action()
@@ -398,3 +398,19 @@ def test_single_worktab_r28_waits_for_installed_extensions_readiness_and_preserv
     toggle_block = source[toggle_start:toggle_end]
     assert '$action="AlreadyOn"' in toggle_block
     assert 'ToggleState]::Off' in toggle_block
+
+
+def test_single_worktab_r29_restores_exact_edge_handle_before_navigation_without_appactivate():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    start = source.index("def navigate_selected_url")
+    end = source.index("def uia_snapshot", start)
+    block = source[start:end]
+    assert "ShowWindow" in block
+    assert "SetForegroundWindow" in block
+    assert "GetForegroundWindow" in block
+    assert "$p.MainWindowHandle" in block
+    assert "SW_RESTORE" in block
+    assert "Target Edge window did not become foreground" in block
+    assert "Start-Sleep -Milliseconds 100" in block
+    assert "AppActivate" not in block

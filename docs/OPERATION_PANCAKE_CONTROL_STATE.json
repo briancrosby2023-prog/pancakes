@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 28,
+  "state_revision": 29,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed revision 28; do not replay issues #60, #62, #64 or #66. Issue #66 is terminal after Revision 27 reached the controlled Edge extensions flow and failed at an immediate UI lookup that observed zero enabled Installed extensions hyperlinks. Revision 28 changes only that readiness boundary to a bounded exact-condition poll and preserves all existing locks.",
+    "next_action": "Deploy the minimal Revision-29 exact-window foreground correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 29. Do not replay issues #60, #62, #64, #66 or #69. Issue #69 is terminal after Revision 28 progressed into navigate_selected_url and failed solely because WScript.Shell.AppActivate returned false for the exact controlled Edge process while its valid main window was minimized. A bounded read-only probe on that exact handle proved ShowWindow(SW_RESTORE) plus SetForegroundWindow succeeds and GetForegroundWindow returns the exact target handle. Revision 29 must replace only the fragile AppActivate dependency with bounded exact-handle restore/foreground verification, preserving every existing server, helper, one-tab, dwell/cadence, exact-card, protected-state, evaluator, restart, denied-source, persistent RATE_LIMITED and unchanged-scoring guard.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -64,33 +64,33 @@
     "map": {
       "complete": true,
       "evidence": [
-        "OBSERVED: revision 27 / d8ec2182 is merged and deployed through Gateway/Broker.",
-        "OBSERVED: issue #66 terminal receipt failed only at the exact Installed extensions lookup with observed count 0.",
-        "OBSERVED: protected runtime is intact: 2 watches, 130 state observations, 100 feed observations, helper 1.4.13 live and RATE_LIMITED lock active."
+        "OBSERVED: Revision 28 / aaffb31b is merged, deployed and READY for OP-CATALOG-001.",
+        "OBSERVED: fresh immutable issue #69 passed request freeze and Gateway/Broker authorization, then failed only in navigate_selected_url because Edge window activation failed at WScript.Shell.AppActivate.",
+        "OBSERVED: exact controlled Edge PID 29544 has a valid main window handle/title and was minimized during the failure."
       ]
     },
     "history": {
       "complete": true,
       "evidence": [
-        "VERIFIED_HISTORY: issues #60/#62/#64/#66 are terminal and must not be replayed.",
-        "VERIFIED_HISTORY: Revision 27 fixed the missing controlled-Edge window; current controlled Edge uses port 9255 and the exact installed helper.",
-        "VERIFIED_HISTORY: Developer-mode action preserves an already-On state as AlreadyOn."
+        "VERIFIED_HISTORY: issues #60/#62/#64/#66/#69 are terminal and must not be replayed.",
+        "VERIFIED_HISTORY: Revision 28 fixed the #66 zero-link readiness boundary and progressed acceptance to the later window-activation step.",
+        "VERIFIED_HISTORY: denied source routes, provider-email rejection, exact-card identity, watches, persistent RATE_LIMITED lock, dynamic-port architecture and scoring remain unchanged."
       ]
     },
     "research": {
       "complete": true,
       "evidence": [
-        "OBSERVED: Revision-27 open_extensions_root_and_snapshot performs one exact Installed extensions lookup and fails immediately on zero matches.",
-        "VERIFIED_HISTORY: the same exact link was present on subsequent inspection after #66.",
-        "INFERENCE: zero-then-present evidence is consistent with a UI readiness race; Revision 28 addresses only that boundary with a bounded exact-condition poll."
+        "OBSERVED: both WScript.Shell.AppActivate(process id) and AppActivate(window title) returned false for the exact controlled Edge root.",
+        "OBSERVED: on the same exact MainWindowHandle, ShowWindow(SW_RESTORE) returned successfully, SetForegroundWindow returned true, and GetForegroundWindow matched the exact target handle.",
+        "EXTERNAL_RESEARCH: Microsoft Windows documents foreground restrictions for SetForegroundWindow and SW_RESTORE behavior for restoring minimized windows."
       ]
     },
     "capabilities": {
       "complete": true,
       "evidence": [
-        "OBSERVED: durable worker, SOPDecisionGateway and ControlledToolBroker remain available.",
-        "OBSERVED: a four-path Revision-28 candidate changes only readiness polling, focused tests, authority and canonical handoff.",
-        "OBSERVED: no Work/Codex dependency, source retry, scoring change, database change, broad browser termination or user action is required."
+        "OBSERVED: the failure is isolated to navigate_selected_url's foreground primitive; the existing exact process/window selector and all downstream UI Automation remain available.",
+        "OBSERVED: Revision-29 can replace only AppActivate with bounded exact-handle ShowWindow/SetForegroundWindow/GetForegroundWindow verification and add focused regression coverage.",
+        "OBSERVED: the existing recorded-chat DecisionProvider route still passes the unchanged strict SOPDecisionGateway and ControlledToolBroker without paid API credits, Work or Codex."
       ]
     }
   },
@@ -416,6 +416,16 @@
         "The remaining correction is the bounded exact UI readiness condition."
       ],
       "retry_policy": "NEW_EVIDENCE_REQUIRED"
+    },
+    {
+      "id": "reject-issue69-replay",
+      "subject": "Replay issue #69 or retry WScript.Shell.AppActivate by PID/title without materially new evidence.",
+      "evidence": [
+        "Issue #69 is terminal with an exact Edge window activation failure at AppActivate.",
+        "Both AppActivate PID and title probes returned false on the exact controlled Edge window.",
+        "The evidence-backed replacement is exact-handle restore/foreground verification."
+      ],
+      "retry_policy": "NEW_EVIDENCE_REQUIRED"
     }
   ],
   "conflicts": [
@@ -474,30 +484,31 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D18",
+    "decision_id": "OP-CATALOG-001-D19",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Replace the immediate Installed extensions lookup with a bounded poll for exactly one enabled InvokePattern hyperlink, then continue the unchanged acceptance path.",
+    "proposed_action": "Replace only navigate_selected_url's failing AppActivate dependency with bounded exact-MainWindowHandle restore and foreground verification, then continue the unchanged acceptance path.",
     "obstacle_classification": "IMPLEMENTATION_PROBLEM",
     "history_refs": [
-      "Revision 27 is deployed at d8ec2182 and #66 is terminal.",
-      "#66 failed after controlled Edge creation at the exact zero-link lookup.",
-      "Protected runtime remains intact and helper 1.4.13 is live."
+      "Revision 28 is deployed at aaffb31b and issue #69 is terminal.",
+      "#69 failed after immutable request freeze and Gateway/Broker authorization at the exact AppActivate foreground step.",
+      "All prior protected locks and accepted acceptance guards remain unchanged."
     ],
     "capabilities_checked": [
-      "#66 terminal receipt",
-      "protected runtime and installed hashes",
-      "controlled Edge/helper 1.4.13",
-      "Revision-27 exact hyperlink and AlreadyOn logic",
-      "Gateway/Broker patch/publish/merge/rebind pipeline"
+      "#69 terminal receipt and stack trace",
+      "exact controlled Edge PID/title/MainWindowHandle state",
+      "AppActivate PID/title read-only failure probe",
+      "ShowWindow(SW_RESTORE)+SetForegroundWindow+GetForegroundWindow exact-handle success probe",
+      "Microsoft Windows foreground/restore documentation",
+      "Gateway/Broker patch/publish/merge/rebind pipeline with recorded-chat DecisionProvider"
     ],
     "alternatives_considered": [
-      "Replay #66 unchanged - rejected.",
-      "Long blind sleep - rejected.",
-      "Generic navigation fallback - rejected.",
-      "Ask user to manipulate Edge - rejected.",
-      "Bounded exact-condition poll - selected."
+      "Replay #69 unchanged - rejected.",
+      "Retry AppActivate by PID/title - rejected after both exact probes failed.",
+      "Generic window-title or broad browser focus fallback - rejected.",
+      "Ask user to restore/focus Edge - rejected while exact-handle technical route remains executable.",
+      "Bounded exact-handle restore/foreground verification - selected."
     ],
-    "selected_reason": "The failure is isolated to zero matches at one immediate exact UI lookup while the target was subsequently available; bounded condition polling preserves the exact selector and fail-closed behavior.",
+    "selected_reason": "The failure is isolated and observed: the exact controlled Edge window exists but is minimized and AppActivate fails, while exact-handle SW_RESTORE plus SetForegroundWindow succeeds and GetForegroundWindow verifies the target. This is the smallest evidence-backed correction.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
@@ -619,9 +630,9 @@
         "Revision 2 removed that loophole and was merged in PR #17 after SOP Gate #46 passed."
       ],
       "alternatives": [
-        "Treat the first failed ordinary-chat result as acceptable — rejected.",
-        "Allow ordinary-chat technical advice while prohibiting writes — rejected.",
-        "Fail closed outside the Project and physically retest — selected and passed."
+        "Treat the first failed ordinary-chat result as acceptable \u2014 rejected.",
+        "Allow ordinary-chat technical advice while prohibiting writes \u2014 rejected.",
+        "Fail closed outside the Project and physically retest \u2014 selected and passed."
       ],
       "result": "Ordinary ChatGPT outside-Project acceptance passes; remaining fresh Project/Codex/Work scenarios are still required.",
       "next": "Run the fresh Operation Pancake Project adversarial bootstrap test."
@@ -666,9 +677,9 @@
         "Checkpoint-as-completion remains prohibited."
       ],
       "alternatives": [
-        "Publish despite the mismatch — rejected.",
-        "Patch the validated branch directly outside the broker — rejected.",
-        "Rebuild the same five-path revision-8 bundle with canonical handoff bytes and a regression gate — selected."
+        "Publish despite the mismatch \u2014 rejected.",
+        "Patch the validated branch directly outside the broker \u2014 rejected.",
+        "Rebuild the same five-path revision-8 bundle with canonical handoff bytes and a regression gate \u2014 selected."
       ],
       "result": "A corrected revision-8 bundle is required and must pass canonical handoff verification before publication authorization is requested.",
       "next": "Create and validate the corrected brokered revision-8 branch, then stop at explicit publish/merge authorization if green."
@@ -687,9 +698,9 @@
         "Checkpoint-as-completion and publish-before-verification remain prohibited."
       ],
       "alternatives": [
-        "Retry the same stale-hint OAuth request — rejected.",
-        "Bypass the Gateway/Broker and publish directly — rejected.",
-        "Omit only expired id_token_hint values, retain login_hint/client-id/PKCE/identity validation, add a regression, and rebuild revision 8 — selected."
+        "Retry the same stale-hint OAuth request \u2014 rejected.",
+        "Bypass the Gateway/Broker and publish directly \u2014 rejected.",
+        "Omit only expired id_token_hint values, retain login_hint/client-id/PKCE/identity validation, add a regression, and rebuild revision 8 \u2014 selected."
       ],
       "result": "A new revision-8 candidate is required before publication; the prior ad9acd8 candidate remains local-only and superseded.",
       "next": "Rebuild and validate revision 8 with the OAuth hint-expiry regression, then resume brokered publication if green."
@@ -708,9 +719,9 @@
         "GitHub writes remain user-reserved and broker-bound even after authorization; direct mutation shortcuts remain prohibited."
       ],
       "alternatives": [
-        "Continue reporting an external authorization blocker after authorization was supplied — rejected.",
-        "Use direct GitHub connector writes outside the broker — rejected.",
-        "Proceed through fresh bounded Gateway/Broker publication and merge decisions, then close only after long-lived verification — selected."
+        "Continue reporting an external authorization blocker after authorization was supplied \u2014 rejected.",
+        "Use direct GitHub connector writes outside the broker \u2014 rejected.",
+        "Proceed through fresh bounded Gateway/Broker publication and merge decisions, then close only after long-lived verification \u2014 selected."
       ],
       "result": "Publication is authorized but not yet deployed; revision 8 is IN_PROGRESS with executable publish/merge/post-merge work remaining.",
       "next": "Rebuild and validate the OAuth-expiry-corrected revision-8 branch, then publish it through the brokered GitHub path."
@@ -728,9 +739,9 @@
         "D7 already removed expired ID-token hints from legitimate returning OAuth reauthorization."
       ],
       "alternatives": [
-        "Ask the user to reauthorize during a transient 503 outage — rejected.",
-        "Retry publication without changing the refresh classification — rejected.",
-        "Surface transient 429/5xx refresh failures fail-closed, retain reauthorization only for non-transient rejection, add regression, rebuild revision 8 — selected."
+        "Ask the user to reauthorize during a transient 503 outage \u2014 rejected.",
+        "Retry publication without changing the refresh classification \u2014 rejected.",
+        "Surface transient 429/5xx refresh failures fail-closed, retain reauthorization only for non-transient rejection, add regression, rebuild revision 8 \u2014 selected."
       ],
       "result": "The candidate OAuth path no longer turns transient token-service outages into interactive user testing.",
       "next": "Rebuild and fully validate revision 8, then resume brokered publication when the token service is available."
@@ -750,9 +761,9 @@
         "Work and Codex were explicitly excluded from this acceptance run and are conditional, not completion dependencies."
       ],
       "alternatives": [
-        "Close before merge or deployment verification — rejected.",
-        "Keep the mission open despite no remaining executable control work — rejected.",
-        "Close after long-lived verification — selected."
+        "Close before merge or deployment verification \u2014 rejected.",
+        "Keep the mission open despite no remaining executable control work \u2014 rejected.",
+        "Close after long-lived verification \u2014 selected."
       ],
       "result": "OP-CONTROL-002 is complete on the long-lived branch with the durable ordinary-Project control path deployed and verified.",
       "next": "complete"
@@ -772,9 +783,9 @@
         "Training Watch provider authorization remains a separate external gate and is not widened into this restart acceptance."
       ],
       "alternatives": [
-        "Restart feature development from r61 artifact history — rejected.",
-        "Start a fresh bulk price run — rejected.",
-        "Execute the preserved restart acceptance on the installed stack — selected."
+        "Restart feature development from r61 artifact history \u2014 rejected.",
+        "Start a fresh bulk price run \u2014 rejected.",
+        "Execute the preserved restart acceptance on the installed stack \u2014 selected."
       ],
       "result": "OP-SIMPLE-002 is active with a bounded physical restart/state-preservation acceptance as the next action.",
       "next": "Restart current installed Simple Evaluator through the accepted launcher, preserve the 429 lock, and verify recovery/state preservation."
@@ -796,10 +807,10 @@
         "Work and Codex were not used for this acceptance run."
       ],
       "alternatives": [
-        "Run another bulk refresh — rejected.",
-        "Require user testing — rejected.",
-        "Keep OP-SIMPLE-002 open after every bounded acceptance criterion passed — rejected.",
-        "Close with terminal next_action=complete — selected."
+        "Run another bulk refresh \u2014 rejected.",
+        "Require user testing \u2014 rejected.",
+        "Keep OP-SIMPLE-002 open after every bounded acceptance criterion passed \u2014 rejected.",
+        "Close with terminal next_action=complete \u2014 selected."
       ],
       "result": "OP-SIMPLE-002 physical acceptance is complete on the installed production release.",
       "next": "complete"
@@ -821,10 +832,10 @@
         "Accepted pricing, Browser Watch, scoring, and product acceptance remain closed."
       ],
       "alternatives": [
-        "Stale/partial import — rejected.",
-        "Unauthorized scraping — rejected.",
-        "Manual mass capture — rejected.",
-        "Provider-authorized source request — selected."
+        "Stale/partial import \u2014 rejected.",
+        "Unauthorized scraping \u2014 rejected.",
+        "Manual mass capture \u2014 rejected.",
+        "Provider-authorized source request \u2014 selected."
       ],
       "result": "OP-CATALOG-001 is selected but blocked on one explicit provider-contact approval; no product or market mutation is justified before that input.",
       "next": "Obtain explicit user approval to send the preserved Stormstrike/CFB.FAN data-access request to business@stormstrike.gg."
@@ -843,9 +854,9 @@
         "No provider message, live collection, scoring change, market-lock clear, or product-state mutation is authorized by this correction."
       ],
       "alternatives": [
-        "Repeat provider approval — rejected.",
-        "Text-only map correction — rejected.",
-        "Mechanical authority-history guard plus corrected required route — selected."
+        "Repeat provider approval \u2014 rejected.",
+        "Text-only map correction \u2014 rejected.",
+        "Mechanical authority-history guard plus corrected required route \u2014 selected."
       ],
       "result": "OP-CATALOG-001 is IN_PROGRESS with catalog-historical-bulk-reconcile as the authority-required next route.",
       "next": "Reconcile the recovered historical CFB27 bulk acquisition program, its provenance, current permitted-use basis, and source reachability; do not send a provider request or perform live collection until that read-only reconciliation is complete."
@@ -867,10 +878,10 @@
         "Scoring models, market lock, Browser Watch, and installed product state remain unchanged."
       ],
       "alternatives": [
-        "Unauthorized historical refresh — rejected.",
-        "Local-cache recovery — exhausted.",
-        "Third-party/official alternatives — exhausted for a current-complete structured catalog.",
-        "Wait for materially new authorized-source evidence — selected."
+        "Unauthorized historical refresh \u2014 rejected.",
+        "Local-cache recovery \u2014 exhausted.",
+        "Third-party/official alternatives \u2014 exhausted for a current-complete structured catalog.",
+        "Wait for materially new authorized-source evidence \u2014 selected."
       ],
       "result": "OP-CATALOG-001 is BLOCKED on an external authorized-source dependency. No user action is currently requested and no executable technical route remains.",
       "next": "Await materially new evidence of an expressly permitted current structured CFB27 CUT catalog, delta, export, or feed. If such evidence appears, verify its permission, coverage, stable exact-card identity, and required ratings before import. Do not resume automated CFB.FAN/Stormstrike collection, use the rejected provider-email route, or ask the user to manually assemble the catalog."
@@ -890,10 +901,10 @@
         "Scoring models, Browser Watch acceptance, and protected market state remain unchanged."
       ],
       "alternatives": [
-        "New acquisition method — rejected.",
-        "External-permission wait — superseded as a technical blocker.",
-        "Blind full refresh — rejected.",
-        "Bounded probe then existing refresh — selected."
+        "New acquisition method \u2014 rejected.",
+        "External-permission wait \u2014 superseded as a technical blocker.",
+        "Blind full refresh \u2014 rejected.",
+        "Bounded probe then existing refresh \u2014 selected."
       ],
       "result": "OP-CATALOG-001 returns to IN_PROGRESS; current endpoint reachability is the next executable evidence gap.",
       "next": "Run one bounded reachability probe of the existing public unauthenticated CFB.FAN player-items endpoint using the already-established acquisition method. If it returns normally and exact-card identity/ratings validate, resume the existing delta-refresh pipeline with the same batching and conservative rate limits. Stop on explicit denial, authentication/CAPTCHA/access-control challenge, or HTTP 429; do not bypass or evade."
@@ -913,10 +924,10 @@
         "Scoring models, Browser Watch acceptance, market locks, and installed evaluator state remain unchanged."
       ],
       "alternatives": [
-        "Retry player-items — rejected.",
-        "Declare all source access unavailable from one endpoint-specific 403 — rejected.",
-        "Use partial listings as full vectors — rejected.",
-        "Bounded existing public-player-page probe — selected."
+        "Retry player-items \u2014 rejected.",
+        "Declare all source access unavailable from one endpoint-specific 403 \u2014 rejected.",
+        "Use partial listings as full vectors \u2014 rejected.",
+        "Bounded existing public-player-page probe \u2014 selected."
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS; the bulk endpoint is denied, but one historically established non-API public-page route remains an executable evidence gap.",
       "next": "Run one bounded reachability/validation probe of one known exact-card CFB.FAN public player page using the already-existing CfbFanPublicAdapter. Use one unauthenticated request with the historical public-page method, no API call and no retry; validate exact-card identity and a nonempty/full displayed rating vector. Stop on explicit denial, authentication/CAPTCHA/access-control challenge, HTTP 429, unexpected page shape, identity conflict, or incomplete ratings; do not bypass or evade. If the probe passes, reconcile the existing listing-discovery URLs with this historical public-page adapter before authorizing any broader delta refresh."
@@ -936,10 +947,10 @@
         "Scoring models, Browser Watch, market locks, and installed product state remain unchanged."
       ],
       "alternatives": [
-        "Retry/alter denied clients — rejected.",
-        "Partial listings — insufficient.",
-        "New mass-acquisition transport — rejected.",
-        "External dependency pending materially new non-bypass evidence — selected."
+        "Retry/alter denied clients \u2014 rejected.",
+        "Partial listings \u2014 insufficient.",
+        "New mass-acquisition transport \u2014 rejected.",
+        "External dependency pending materially new non-bypass evidence \u2014 selected."
       ],
       "result": "OP-CATALOG-001 is BLOCKED by current observed access denial on both established live acquisition paths; no immediate executable technical collection route remains.",
       "next": "Do not retry the denied player-items or public-player-page acquisition requests and do not change client identity, authentication, cookies, headers, proxy, or rate behavior to obtain access. Resume catalog acquisition only after materially new technical evidence establishes that one of the established routes is no longer denied, or a current structured exact-card source becomes available through a non-bypass route. Re-run MAP -> HISTORY -> RESEARCH -> CAPABILITIES before any new collection."
@@ -958,9 +969,9 @@
         "Access-control, identity, header, cookie, proxy, and rate-behavior bypass remains rejected."
       ],
       "alternatives": [
-        "Reopen collection — rejected.",
-        "Leave stale deployment map — rejected.",
-        "Bookkeeping-only authority correction — selected."
+        "Reopen collection \u2014 rejected.",
+        "Leave stale deployment map \u2014 rejected.",
+        "Bookkeeping-only authority correction \u2014 selected."
       ],
       "result": "Control-state drift is reconciled; the catalog mission remains BLOCKED / EXTERNAL_DEPENDENCY with zero executable collection routes.",
       "next": "Do not retry the denied player-items or public-player-page acquisition requests and do not change client identity, authentication, cookies, headers, proxy, or rate behavior to obtain access. Resume catalog acquisition only after materially new technical evidence establishes that one of the established routes is no longer denied, or a current structured exact-card source becomes available through a non-bypass route. Re-run MAP -> HISTORY -> RESEARCH -> CAPABILITIES before any new collection."
@@ -979,10 +990,10 @@
         "Scoring, exact-card identity, Browser Watch persistence, and dynamic-port acceptance remain preserved."
       ],
       "alternatives": [
-        "Retry denied raw clients — rejected.",
-        "Replacement runtime — rejected.",
-        "Manual tab management — rejected while technical work remains.",
-        "Minimal single-tab orchestration hotfix — selected."
+        "Retry denied raw clients \u2014 rejected.",
+        "Replacement runtime \u2014 rejected.",
+        "Manual tab management \u2014 rejected while technical work remains.",
+        "Minimal single-tab orchestration hotfix \u2014 selected."
       ],
       "result": "OP-CATALOG-001 returns to IN_PROGRESS for the bounded single-tab rendered-browser integration and installed-app acceptance; this does not establish a provider-authorized current-complete catalog source.",
       "next": "Implement and physically verify the bounded single-tab normal-rendered CFB.FAN browser work queue in the accepted Simple Evaluator runtime for known exact-card page and price observations only: reuse one work tab, preserve a minimum five-second navigation dwell, validate exact card identity, and stop on 403/429/CAPTCHA/login/access challenge or unexpected page state. Preserve both denied raw-request locks, provider-email rejection, unchanged scoring, exact-card persistence, and catalog authorization limits. Complete installed-app acceptance before asking the user to test."
@@ -1001,11 +1012,11 @@
         "User testing remains prohibited while executable technical work remains."
       ],
       "alternatives": [
-        "Repeat failed browser restart — rejected.",
-        "Repeat failed AppActivate approach — rejected.",
-        "Direct mutation bypass — rejected.",
-        "User manual activation — rejected while durable route remains.",
-        "Durable fixed-action extension — selected."
+        "Repeat failed browser restart \u2014 rejected.",
+        "Repeat failed AppActivate approach \u2014 rejected.",
+        "Direct mutation bypass \u2014 rejected.",
+        "User manual activation \u2014 rejected while durable route remains.",
+        "Durable fixed-action extension \u2014 selected."
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS; the exact next executable route is to deploy and invoke complete_simple_single_worktab_acceptance through the durable controlled worker.",
       "next": "Deploy the revision-20 durable GitHub-inbox worker extension and execute its fixed complete_simple_single_worktab_acceptance action through SOPDecisionGateway -> ControlledToolBroker. The action must preserve both denied raw-request locks and the persistent RATE_LIMITED value-probe lock, activate the already-installed Browser Helper 1.4.13 without touching source authentication, physically prove one reusable CFB.FAN work tab with the minimum five-second rendered-page dwell and exact-card price persistence, restart through the accepted dynamic-port launcher, and return verified evidence before the authority is advanced again. Do not ask the user to test while this durable route remains executable."
@@ -1024,10 +1035,10 @@
         "Denied source-route, scoring, identity, persistence and user-test locks remain unchanged."
       ],
       "alternatives": [
-        "Replay failed request — rejected.",
-        "Direct browser mutation bypass — rejected.",
-        "Rewrite action logic — rejected as unsupported by the failure evidence.",
-        "Minimal runner import fix with regression test — selected."
+        "Replay failed request \u2014 rejected.",
+        "Direct browser mutation bypass \u2014 rejected.",
+        "Rewrite action logic \u2014 rejected as unsupported by the failure evidence.",
+        "Minimal runner import fix with regression test \u2014 selected."
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS with a verified IMPLEMENTATION_PROBLEM and a narrow revision-21 repair path.",
       "next": "Deploy the revision-21 durable-worker loader fix, then submit a fresh bounded complete_simple_single_worktab_acceptance GitHub-inbox request through SOPDecisionGateway -> ControlledToolBroker. Revision 21 fixes the verified importlib.util loader failure from request single-worktab-accept-r20-final-20261002 without changing the fixed physical-acceptance action, source-access locks, scoring, exact-card identity, protected state, or browser behavior. After rebind, execute the action once with a new request_id and continue through physical acceptance; do not ask the user to test while this corrected durable route remains executable."
@@ -1046,10 +1057,10 @@
         "Denied source-route, scoring, identity, persistence and user-test locks remain unchanged."
       ],
       "alternatives": [
-        "Replay failed request — rejected.",
-        "Lie about current revision — rejected.",
-        "Direct browser bypass — rejected.",
-        "Minimal action revision-pin fix with regression test — selected."
+        "Replay failed request \u2014 rejected.",
+        "Lie about current revision \u2014 rejected.",
+        "Direct browser bypass \u2014 rejected.",
+        "Minimal action revision-pin fix with regression test \u2014 selected."
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS with a verified IMPLEMENTATION_PROBLEM and a narrow revision-22 repair path.",
       "next": "Deploy the revision-22 single-worktab action authority-pin fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r21-final-20261002-1410 is terminal and must not be replayed. Revision 22 changes only the action's verified stale authority pin from revision 20 to revision 22 plus focused regression coverage and authority/handoff bookkeeping; it does not change browser logic, source access, scoring, exact-card identity, protected state, or locks."
@@ -1068,10 +1079,10 @@
         "Denied source-route, scoring, identity, persistence and user-test locks remain unchanged."
       ],
       "alternatives": [
-        "Replay failed request — rejected.",
-        "Modify installed launch.py — rejected.",
-        "Direct browser bypass — rejected.",
-        "Minimal temporary APP sys.path loader context with regression test — selected."
+        "Replay failed request \u2014 rejected.",
+        "Modify installed launch.py \u2014 rejected.",
+        "Direct browser bypass \u2014 rejected.",
+        "Minimal temporary APP sys.path loader context with regression test \u2014 selected."
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS with a verified IMPLEMENTATION_PROBLEM and a narrow revision-23 repair path.",
       "next": "Deploy the revision-23 single-worktab launch-loader sibling-import fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r22-final-e8173bcc is terminal and must not be replayed. Revision 23 fixes only the verified load_launch_module failure to resolve Simple Evaluator sibling imports while loading launch.py, plus updates the action revision pin, focused regression coverage and authority/handoff bookkeeping; browser behavior, source access, scoring, exact-card identity, protected state and locks remain unchanged."
@@ -1090,10 +1101,10 @@
         "Denied source-route, scoring, identity, persistence, dynamic-port and user-test locks remain unchanged."
       ],
       "alternatives": [
-        "Replay failed request — rejected.",
-        "Retry generic Back navigation — rejected as failed hypothesis.",
-        "Direct browser bypass — rejected.",
-        "Exact Installed extensions Hyperlink navigation with existing fail-closed selector — selected."
+        "Replay failed request \u2014 rejected.",
+        "Retry generic Back navigation \u2014 rejected as failed hypothesis.",
+        "Direct browser bypass \u2014 rejected.",
+        "Exact Installed extensions Hyperlink navigation with existing fail-closed selector \u2014 selected."
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS with a verified IMPLEMENTATION_PROBLEM and a narrow revision-24 management-page navigation repair path.",
       "next": "Deploy the revision-24 exact Installed extensions hyperlink navigation fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r23-retry1-48cee181 (issue #58) is terminal and must not be replayed. Revision 24 fixes only the verified Developer-mode management-page navigation defect by using the exact enabled Installed extensions hyperlink instead of the failed generic Back-button hypothesis; browser pricing logic, source access, scoring, exact-card identity, protected state, dynamic-port architecture and all access/rate locks remain unchanged."
@@ -1167,13 +1178,36 @@
       ],
       "result": "Revision-28 readiness-only correction selected for Gateway/Broker publication.",
       "next": "Publish/merge/rebind Revision 28 through Gateway/Broker, then submit one fresh immutable full acceptance request."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D19",
+      "decision": "Restore and foreground the exact controlled Edge MainWindowHandle instead of relying on WScript.Shell.AppActivate.",
+      "evidence": [
+        "#69 exact receipt and stack trace failed only at AppActivate before address-bar UI Automation.",
+        "The exact controlled Edge window was visible but minimized with a valid MainWindowHandle.",
+        "Exact-handle ShowWindow(SW_RESTORE)+SetForegroundWindow succeeded and GetForegroundWindow matched the target."
+      ],
+      "history": [
+        "Issues #60/#62/#64/#66/#69 are terminal.",
+        "Revision 28 readiness correction is deployed and retained.",
+        "Denied-source, scoring, exact-card, watch and persistent 429 locks remain unchanged."
+      ],
+      "alternatives": [
+        "Replay #69.",
+        "Retry AppActivate PID/title.",
+        "Generic/title-based focus fallback.",
+        "User manually restores Edge.",
+        "Bounded exact-handle SW_RESTORE + SetForegroundWindow verification."
+      ],
+      "result": "Revision-29 exact-window foreground correction selected for Gateway/Broker publication.",
+      "next": "Validate Revision 29, broker patch/publish/merge/rebind, then submit one fresh immutable full acceptance request."
     }
   ],
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 28,
-    "next_action": "Submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed revision 28; do not replay issues #60, #62, #64 or #66. Issue #66 is terminal after Revision 27 reached the controlled Edge extensions flow and failed at an immediate UI lookup that observed zero enabled Installed extensions hyperlinks. Revision 28 changes only that readiness boundary to a bounded exact-condition poll and preserves all existing locks.",
+    "state_revision": 29,
+    "next_action": "Deploy the minimal Revision-29 exact-window foreground correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 29. Do not replay issues #60, #62, #64, #66 or #69. Issue #69 is terminal after Revision 28 progressed into navigate_selected_url and failed solely because WScript.Shell.AppActivate returned false for the exact controlled Edge process while its valid main window was minimized. A bounded read-only probe on that exact handle proved ShowWindow(SW_RESTORE) plus SetForegroundWindow succeeds and GetForegroundWindow returns the exact target handle. Revision 29 must replace only the fragile AppActivate dependency with bounded exact-handle restore/foreground verification, preserving every existing server, helper, one-tab, dwell/cadence, exact-card, protected-state, evaluator, restart, denied-source, persistent RATE_LIMITED and unchanged-scoring guard.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -1196,9 +1230,9 @@
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
     "remaining_executable_work": [
-      "Publish/merge/rebind the exact Revision-28 four-path readiness correction through fresh Gateway/Broker authorization.",
-      "Submit one fresh immutable full single-worktab acceptance request; do not replay issues #60, #62, #64 or #66.",
-      "Verify helper 1.4.13, exact readiness handling, one-tab dwell/cadence, protected state, evaluator and both restart proofs.",
+      "Publish/merge/rebind the exact Revision-29 four-path foreground correction through fresh Gateway/Broker authorization.",
+      "Submit one fresh immutable full single-worktab acceptance request; do not replay issues #60, #62, #64, #66 or #69.",
+      "Verify exact-window restore/foreground handling, helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.",
       "Continue OP-CATALOG-001 because the five current FS versions still are not imported and catalog criteria remain open."
     ]
   },
@@ -1293,8 +1327,8 @@
         "mission_id": "OP-CATALOG-001",
         "route_id": "catalog-rendered-browser-single-tab-integration",
         "status": "REQUIRED_NEXT",
-        "description": "The next executable route is to publish Revision 28's bounded exact Installed extensions readiness correction through Gateway/Broker, then execute complete_simple_single_worktab_acceptance through one fresh immutable GitHub-inbox request. Preserve Revision-27 Edge recovery, Developer-mode AlreadyOn behavior, server hardening, one-tab reuse, >=5-second dwell, >=120-second cadence, exact-card persistence, protected state, evaluator, restart proofs, persistent 429 lock and unchanged scoring. Issues #60/#62/#64/#66 must not be replayed.",
-        "source": "Operation Pancake revision-28 D18 evidence: terminal issue #66 exact zero-link readiness failure"
+        "description": "The next executable route is to deploy Revision 29's bounded exact-window foreground correction through Gateway/Broker, then execute complete_simple_single_worktab_acceptance through one fresh immutable GitHub-inbox request. Preserve Revision-28 exact Installed extensions readiness polling, Revision-27 Edge recovery, Developer-mode AlreadyOn behavior, server hardening, one-tab reuse, >=5-second dwell, >=120-second cadence, exact-card persistence, protected state, evaluator, restart proofs, persistent 429 lock and unchanged scoring. Issues #60/#62/#64/#66/#69 must not be replayed.",
+        "source": "Operation Pancake Revision-29 D19 evidence: terminal issue #69 exact AppActivate failure plus exact-handle foreground probe"
       }
     ]
   }
