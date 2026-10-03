@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 24
+EXPECTED_AUTHORITY_REVISION = 25
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -770,18 +770,20 @@ def listener_pid(port: int) -> int | None:
     return int(raw["OwningProcess"]) if raw and raw.get("OwningProcess") is not None else None
 
 
-def restart_server(port: int, launch, control) -> tuple[int, int]:
+def stop_server(port: int, launch, control) -> int:
     pid = listener_pid(port)
     if not pid:
-        raise control.EvidenceGap("Simple Evaluator listener PID is unavailable for restart")
+        raise control.EvidenceGap("Simple Evaluator listener PID is unavailable for stop")
     os.kill(pid, signal.SIGTERM)
     deadline = time.time() + 10
     while time.time() < deadline:
         if launch.probe(port, timeout=0.2) is None:
-            break
+            return int(pid)
         time.sleep(0.2)
-    else:
-        raise control.ControlError("Simple Evaluator server did not stop")
+    raise control.ControlError("Simple Evaluator server did not stop")
+
+
+def start_server(previous_pid: int | None, launch, control) -> tuple[int, int]:
     cp = subprocess.run(
         [sys.executable, str(APP / "launch.py"), "--browser", "none"],
         cwd=str(APP),
@@ -800,9 +802,14 @@ def restart_server(port: int, launch, control) -> tuple[int, int]:
     if new_port is None:
         raise control.ControlError("dynamic-port launcher did not produce a capable server")
     new_pid = listener_pid(new_port)
-    if not new_pid or new_pid == pid:
-        raise control.ControlError("Simple Evaluator restart did not produce a new listener PID")
+    if not new_pid or (previous_pid is not None and new_pid == previous_pid):
+        raise control.ControlError("Simple Evaluator start did not produce a new listener PID")
     return int(new_port), int(new_pid)
+
+
+def restart_server(port: int, launch, control) -> tuple[int, int]:
+    old_pid = stop_server(port, launch, control)
+    return start_server(old_pid, launch, control)
 
 
 def write_release_accepted(control) -> str:
@@ -849,14 +856,20 @@ def run(repo: Path, control) -> Mapping[str, Any]:
     acceptance_backup = acceptance_path.read_bytes() if acceptance_existed else None
     server_patch: dict[str, Any] | None = None
     edge_pid: int | None = None
+    server_stopped_pid: int | None = None
 
     try:
         # Harden the installed acceptance boundary before activating 1.4.13:
         # stale 1.4.12 Chromium heartbeats can no longer clobber a compatible
         # 1.4.13 heartbeat, and the server can no longer self-certify a narrow PASS.
+        # Windows can deny atomic replacement of server.py while the live
+        # interpreter still owns the installed file. Stop the exact listener
+        # first, apply the already hash-validated patch, then relaunch through
+        # the accepted dynamic-port launcher.
+        server_stopped_pid = stop_server(int(port), launch, control)
         server_patch = patch_installed_server(control)
-        if server_patch.get("changed"):
-            port, _ = restart_server(int(port), launch, control)
+        port, _ = start_server(server_stopped_pid, launch, control)
+        server_stopped_pid = None
         installed_hashes = verify_installed_files(control, prepatch=False)
 
         queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
@@ -1112,14 +1125,19 @@ def run(repo: Path, control) -> Mapping[str, Any]:
         except OSError:
             pass
         try:
+            # Restore server.py only while its interpreter is stopped. This is
+            # required on Windows for the same reason as the forward patch.
+            current_port = launch.find_running_server()
+            rollback_pid = server_stopped_pid
+            if current_port is not None:
+                rollback_pid = stop_server(int(current_port), launch, control)
             if server_path.read_bytes() != server_backup:
                 server_path.write_bytes(server_backup)
-        except OSError:
-            pass
-        try:
-            current_port = launch.find_running_server()
-            if current_port is not None:
-                restart_server(int(current_port), launch, control)
+            temp = server_path.with_suffix(".py.r24.tmp")
+            if temp.exists():
+                temp.unlink()
+            if rollback_pid is not None:
+                start_server(rollback_pid, launch, control)
         except Exception:
             pass
         raise

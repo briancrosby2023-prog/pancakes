@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 24,
+  "state_revision": 25,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Deploy the superseding revision-24 single-worktab repair through a fresh Gateway/Broker authorization. Revision 24 must combine the exact Installed extensions Hyperlink navigation correction with the now-observed acceptance-boundary hardening: transactionally patch the exact installed server preimage so a live 1.4.13 heartbeat cannot be clobbered by stale 1.4.12 Chromium heartbeats and the server cannot self-write a narrow production PASS; then execute one fresh immutable complete_simple_single_worktab_acceptance request proving one reusable CFB.FAN tab, >=5-second dwell, exact-card persistence, a real >=120-second saved-watch cadence, fail-closed stop conditions, protected-state preservation, all-19-position evaluator determinism/Platinum Rare exclusion, explicit five-FS installed identity checks, browser cleanup, pending-state restart persistence, full transactional acceptance write, and a second restart that reports PRODUCTION_ACCEPTED. Do not replay terminal issue #58, retry denied raw HTTP routes, clear the persistent 429 lock, change scoring, or ask the user to test while this route remains executable.",
+    "next_action": "Deploy the minimal revision-25 Windows stop-before-replace correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request. Issue #60 is terminal. Revision 25 must stop the exact Simple Evaluator listener before replacing the already hash-validated server.py postimage, relaunch only through the accepted dynamic-port launcher, and use the same stop-before-restore order during rollback. Preserve all Revision-24 Browser Helper logic, scoring, exact-card identity, watches, source locks and the persistent RATE_LIMITED value-probe lock.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -64,42 +64,33 @@
     "map": {
       "complete": true,
       "evidence": [
-        "OBSERVED: revision 23 / 48cee181 is the live OP-CATALOG-001 authority and the durable Windows GitHub-inbox worker is READY on that exact head with worker SHA-256 4d2c0862.",
-        "OBSERVED: issue #58 received DECISION_ALLOWED for complete_simple_single_worktab_acceptance on catalog-rendered-browser-single-tab-integration and then failed closed inside physical acceptance with EVIDENCE_GAP 'expected one Developer mode label; observed 0' before any Developer-mode toggle.",
-        "OBSERVED: the controlled Edge process PID 52280 remains on the Simple Evaluator Browser Watch 1.4.13 extension-details surface at edge://extensions, with Extension off and the visible message 'To use this extension, turn on developer mode.'",
-        "OBSERVED: installed release 3T / 1.2.0 remains FROZEN_PENDING_PHYSICAL_ACCEPTANCE with all seven expected 1.4.13 file hashes present, but live helper status is still 1.4.12/version_matches=false and deployment_ready=false; no live activation or acceptance mutation has occurred."
+        "OBSERVED: revision 24 / 8353905c is live, clean and READY for OP-CATALOG-001.",
+        "OBSERVED: immutable issue #60 reached brokered physical acceptance and failed with WinError 5 replacing server.py.r24.tmp over live server.py.",
+        "OBSERVED: rollback preserved original server SHA bd2be607..., pending release state, protected data, and validated temp postimage SHA f073dfe2."
       ]
     },
     "history": {
       "complete": true,
       "evidence": [
-        "VERIFIED_HISTORY: revisions 21, 22 and 23 fixed the durable-loader import, stale authority pin and Simple Evaluator sibling-import loader defects respectively and are deployed through the controlled patch/publish/merge/rebind path.",
-        "VERIFIED_HISTORY: issues #49, #51, #53, #55, #56 and #58 are terminal and may not be replayed; issue #57 was a read-only decision-provider recovery probe and produced a valid DECISION_ALLOWED packet.",
-        "VERIFIED_HISTORY: both denied raw CFB.FAN acquisition routes remain fail-closed; provider-email remains rejected; scoring, exact-card identity, protected state and the persistent RATE_LIMITED value-probe lock remain unchanged.",
-        "VERIFIED_HISTORY: the historical workstation PASS is Browser Helper 1.4.9 and the October 1 production report is Browser Helper 1.4.12, so neither artifact can satisfy the pending 1.4.13 acceptance."
+        "VERIFIED_HISTORY: revision 24 was broker-created, published as PR #59, passed SOP Gate, merged at 8353905c and rebound READY.",
+        "VERIFIED_HISTORY: issues #58 and #60 are terminal and may not be replayed.",
+        "VERIFIED_HISTORY: denied raw routes, provider-email rejection, unchanged scoring/exact-card identity and persistent 429 lock remain preserved."
       ]
     },
     "research": {
       "complete": true,
       "evidence": [
-        "OBSERVED: current Windows UI Automation on the verified Edge extension-details surface exposes exactly one enabled 'Installed extensions' Hyperlink supporting InvokePattern and also a generic enabled Back button.",
-        "OBSERVED: revision-23 open_extensions_root_and_snapshot uses the generic Back button and immediately expects one exact Developer mode label; issue #58 observed zero labels after that navigation, so that navigation hypothesis failed.",
-        "EXTERNAL_RESEARCH: Microsoft Edge extension guidance places the Developer mode control on the Manage extensions / edge://extensions management page, consistent with navigating via the explicit Installed extensions breadcrumb/link.",
-        "OBSERVED: the narrow materially-new implementation hypothesis is to invoke the exact enabled Installed extensions Hyperlink, then perform the existing fail-closed Developer-mode label/toggle scan; no browser pricing, source access, scoring, persistence or identity logic needs to change.",
-        "OBSERVED: installed server.py stores one shared browser-helper heartbeat and unconditionally overwrites it on every Chromium heartbeat; therefore a stale Chrome 1.4.12 runtime can clobber a valid Edge 1.4.13 heartbeat and make readiness oscillate.",
-        "OBSERVED: installed server.py can self-write PRODUCTION_WORKSTATION_ACCEPTANCE_3T.json after one watched card has two expected-version observations >=120 seconds apart, while the revision-24 physical action can write RELEASE.json PRODUCTION_ACCEPTED without proving the full user completion outline. Both are premature acceptance paths.",
-        "OBSERVED: candidate-only isolation tests prove an exact server preimage bd2be607... -> postimage f073dfe2... hardening can preserve a fresh compatible 1.4.13 heartbeat against later stale 1.4.12 writers and suppress automatic narrow acceptance without changing scoring, market parsing, source access, watches, or the 429 lock.",
-        "OBSERVED: candidate-only evaluator checks pass deterministically across all 19 supported positions with Platinum Rare excluded; the installed 9,206-card catalog still has zero exact matches for Jordan Allen 91 FS, Ashlynd Barker 91 FS, Kingston Lopa 90 FS, Earl Little Jr. 90 FS, and Xavier Filsaime 90 FS, so the catalog mission remains IN_PROGRESS even if Browser Helper acceptance passes."
+        "OBSERVED: revision-24 patch_installed_server hash-validates server.py.r24.tmp then calls os.replace while the live server is still running; only afterward does run() restart the server.",
+        "OBSERVED: server.py is not read-only and the user ACL is full; exact pre/post hashes are correct, isolating the failure to Windows live replacement ordering.",
+        "OBSERVED: existing restart_server already has exact-listener stop plus accepted dynamic-port relaunch mechanics; split stop/start is the narrow evidence-grounded repair."
       ]
     },
     "capabilities": {
       "complete": true,
       "evidence": [
-        "OBSERVED: revision-23 Gateway/Broker, immutable GitHub-inbox transport and durable worker are healthy; issue #58 reached the physical Browser Helper action under DECISION_ALLOWED.",
-        "OBSERVED: the repository can stage a four-path revision-24 correction: physical-acceptance management-page navigation/revision pin, focused regression tests, authority state and canonical handoff.",
-        "OBSERVED: bounded patch, exact publication/merge and rollback-capable runtime-rebind mechanisms remain available; no direct browser or installed-product mutation is required to create the correction.",
-        "OBSERVED: complete_simple_single_worktab_acceptance is already a registered mutating durable-worker action, so the exact installed-server acceptance hardening can remain inside the existing Gateway/Broker-controlled acceptance transaction with rollback rather than inventing a new mutation surface.",
-        "OBSERVED: the plan-backed Gateway currently returns subscription_sharing_usage_limit_exceeded for both default Sol and the supported Luna model override; no sanctioned cached/offline continuation exists and the separate API transport is not configured."
+        "OBSERVED: revision-24 Gateway/Broker and durable worker are healthy and authorized all prior controlled stages.",
+        "OBSERVED: a four-path revision-25 patch can change only action ordering, focused tests, authority and canonical handoff.",
+        "OBSERVED: no user action, paid service, scoring change, catalog collection or source-access retry is required."
       ]
     }
   },
@@ -459,32 +450,29 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D14",
+    "decision_id": "OP-CATALOG-001-D15",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Supersede the unmerged navigation-only revision-24 candidate with one revision-24 controlled acceptance repair that fixes the exact Installed extensions navigation defect and the two newly observed acceptance-boundary defects, then run full transactional 1.4.13 physical acceptance through the existing registered action.",
-    "obstacle_classification": "CAPABILITY_PROBLEM",
+    "proposed_action": "Stop the exact Simple Evaluator listener before the validated server.py replacement and before rollback restoration, reuse the accepted dynamic-port relaunch path, then redeploy and rerun fresh full physical acceptance.",
+    "obstacle_classification": "IMPLEMENTATION_PROBLEM",
     "history_refs": [
-      "Revision 23 remains the live clean authority/worker and issue #58 is terminal.",
-      "The earlier revision-24 navigation-only commit is local-only and was never published, merged, rebound, or executed against the browser.",
-      "Historical production acceptance artifacts are stale for 1.4.13."
+      "Revision 24 is deployed READY at 8353905c and issue #60 is terminal.",
+      "Issue #60 failed at os.replace before Browser Helper activation; rollback is clean.",
+      "Revision-24 acceptance logic and protected state remain otherwise unchanged."
     ],
     "capabilities_checked": [
-      "live revision-23 authority and READY worker",
-      "existing revision-24 local navigation patch and 68-test result",
-      "installed server heartbeat/acceptance implementation",
-      "registered mutating complete_simple_single_worktab_acceptance handler",
-      "candidate-only exact server pre/post hash hardening test",
-      "all-19-position evaluator acceptance check",
-      "plan OAuth Sol and Luna decision-provider health probes"
+      "live revision-24 authority and READY worker",
+      "issue #60 receipt and rollback state",
+      "server ACL/attributes and exact pre/post hashes",
+      "revision-24 patch/restart source",
+      "bounded patch/publish/merge/rebind pipeline"
     ],
     "alternatives_considered": [
-      "Publish the old navigation-only r24 candidate unchanged ? rejected because it would leave two verified false-acceptance/readiness defects.",
-      "Bypass the Gateway and patch the installed server directly ? rejected by the controlled-execution rule.",
-      "Kill or disable the user's Chrome instances to suppress stale heartbeats ? rejected as intrusive and unnecessary.",
-      "Add a new mutation endpoint/action ? rejected because the existing registered physical-acceptance action already owns the bounded installed-product transaction.",
-      "Supersede the unmerged r24 candidate with combined navigation + transactional acceptance hardening ? selected."
+      "Replay #60 unchanged - rejected because the terminal request and defect would recur.",
+      "Patch live server.py directly - rejected by broker-only execution.",
+      "Change file ACL/ownership - rejected because ACL is already full and file is not read-only.",
+      "Stop exact listener before replacement and rollback restoration, then use accepted dynamic-port relaunch - selected."
     ],
-    "selected_reason": "The newly observed defects are direct implementation evidence, not guesses. Because revision 24 is still local-only, folding the fixes into one superseding r24 candidate avoids an extra deploy/rebind cycle while preserving the same required route and broker boundary.",
+    "selected_reason": "The terminal WinError 5 plus exact source order and clean ACL/hash evidence isolate one Windows replacement-order defect. Reusing the existing stop/relaunch mechanics is the narrowest correction.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
@@ -606,9 +594,9 @@
         "Revision 2 removed that loophole and was merged in PR #17 after SOP Gate #46 passed."
       ],
       "alternatives": [
-        "Treat the first failed ordinary-chat result as acceptable — rejected.",
-        "Allow ordinary-chat technical advice while prohibiting writes — rejected.",
-        "Fail closed outside the Project and physically retest — selected and passed."
+        "Treat the first failed ordinary-chat result as acceptable \u2014 rejected.",
+        "Allow ordinary-chat technical advice while prohibiting writes \u2014 rejected.",
+        "Fail closed outside the Project and physically retest \u2014 selected and passed."
       ],
       "result": "Ordinary ChatGPT outside-Project acceptance passes; remaining fresh Project/Codex/Work scenarios are still required.",
       "next": "Run the fresh Operation Pancake Project adversarial bootstrap test."
@@ -653,9 +641,9 @@
         "Checkpoint-as-completion remains prohibited."
       ],
       "alternatives": [
-        "Publish despite the mismatch — rejected.",
-        "Patch the validated branch directly outside the broker — rejected.",
-        "Rebuild the same five-path revision-8 bundle with canonical handoff bytes and a regression gate — selected."
+        "Publish despite the mismatch \u2014 rejected.",
+        "Patch the validated branch directly outside the broker \u2014 rejected.",
+        "Rebuild the same five-path revision-8 bundle with canonical handoff bytes and a regression gate \u2014 selected."
       ],
       "result": "A corrected revision-8 bundle is required and must pass canonical handoff verification before publication authorization is requested.",
       "next": "Create and validate the corrected brokered revision-8 branch, then stop at explicit publish/merge authorization if green."
@@ -674,9 +662,9 @@
         "Checkpoint-as-completion and publish-before-verification remain prohibited."
       ],
       "alternatives": [
-        "Retry the same stale-hint OAuth request — rejected.",
-        "Bypass the Gateway/Broker and publish directly — rejected.",
-        "Omit only expired id_token_hint values, retain login_hint/client-id/PKCE/identity validation, add a regression, and rebuild revision 8 — selected."
+        "Retry the same stale-hint OAuth request \u2014 rejected.",
+        "Bypass the Gateway/Broker and publish directly \u2014 rejected.",
+        "Omit only expired id_token_hint values, retain login_hint/client-id/PKCE/identity validation, add a regression, and rebuild revision 8 \u2014 selected."
       ],
       "result": "A new revision-8 candidate is required before publication; the prior ad9acd8 candidate remains local-only and superseded.",
       "next": "Rebuild and validate revision 8 with the OAuth hint-expiry regression, then resume brokered publication if green."
@@ -695,9 +683,9 @@
         "GitHub writes remain user-reserved and broker-bound even after authorization; direct mutation shortcuts remain prohibited."
       ],
       "alternatives": [
-        "Continue reporting an external authorization blocker after authorization was supplied — rejected.",
-        "Use direct GitHub connector writes outside the broker — rejected.",
-        "Proceed through fresh bounded Gateway/Broker publication and merge decisions, then close only after long-lived verification — selected."
+        "Continue reporting an external authorization blocker after authorization was supplied \u2014 rejected.",
+        "Use direct GitHub connector writes outside the broker \u2014 rejected.",
+        "Proceed through fresh bounded Gateway/Broker publication and merge decisions, then close only after long-lived verification \u2014 selected."
       ],
       "result": "Publication is authorized but not yet deployed; revision 8 is IN_PROGRESS with executable publish/merge/post-merge work remaining.",
       "next": "Rebuild and validate the OAuth-expiry-corrected revision-8 branch, then publish it through the brokered GitHub path."
@@ -715,9 +703,9 @@
         "D7 already removed expired ID-token hints from legitimate returning OAuth reauthorization."
       ],
       "alternatives": [
-        "Ask the user to reauthorize during a transient 503 outage — rejected.",
-        "Retry publication without changing the refresh classification — rejected.",
-        "Surface transient 429/5xx refresh failures fail-closed, retain reauthorization only for non-transient rejection, add regression, rebuild revision 8 — selected."
+        "Ask the user to reauthorize during a transient 503 outage \u2014 rejected.",
+        "Retry publication without changing the refresh classification \u2014 rejected.",
+        "Surface transient 429/5xx refresh failures fail-closed, retain reauthorization only for non-transient rejection, add regression, rebuild revision 8 \u2014 selected."
       ],
       "result": "The candidate OAuth path no longer turns transient token-service outages into interactive user testing.",
       "next": "Rebuild and fully validate revision 8, then resume brokered publication when the token service is available."
@@ -737,9 +725,9 @@
         "Work and Codex were explicitly excluded from this acceptance run and are conditional, not completion dependencies."
       ],
       "alternatives": [
-        "Close before merge or deployment verification — rejected.",
-        "Keep the mission open despite no remaining executable control work — rejected.",
-        "Close after long-lived verification — selected."
+        "Close before merge or deployment verification \u2014 rejected.",
+        "Keep the mission open despite no remaining executable control work \u2014 rejected.",
+        "Close after long-lived verification \u2014 selected."
       ],
       "result": "OP-CONTROL-002 is complete on the long-lived branch with the durable ordinary-Project control path deployed and verified.",
       "next": "complete"
@@ -759,9 +747,9 @@
         "Training Watch provider authorization remains a separate external gate and is not widened into this restart acceptance."
       ],
       "alternatives": [
-        "Restart feature development from r61 artifact history — rejected.",
-        "Start a fresh bulk price run — rejected.",
-        "Execute the preserved restart acceptance on the installed stack — selected."
+        "Restart feature development from r61 artifact history \u2014 rejected.",
+        "Start a fresh bulk price run \u2014 rejected.",
+        "Execute the preserved restart acceptance on the installed stack \u2014 selected."
       ],
       "result": "OP-SIMPLE-002 is active with a bounded physical restart/state-preservation acceptance as the next action.",
       "next": "Restart current installed Simple Evaluator through the accepted launcher, preserve the 429 lock, and verify recovery/state preservation."
@@ -783,10 +771,10 @@
         "Work and Codex were not used for this acceptance run."
       ],
       "alternatives": [
-        "Run another bulk refresh — rejected.",
-        "Require user testing — rejected.",
-        "Keep OP-SIMPLE-002 open after every bounded acceptance criterion passed — rejected.",
-        "Close with terminal next_action=complete — selected."
+        "Run another bulk refresh \u2014 rejected.",
+        "Require user testing \u2014 rejected.",
+        "Keep OP-SIMPLE-002 open after every bounded acceptance criterion passed \u2014 rejected.",
+        "Close with terminal next_action=complete \u2014 selected."
       ],
       "result": "OP-SIMPLE-002 physical acceptance is complete on the installed production release.",
       "next": "complete"
@@ -808,10 +796,10 @@
         "Accepted pricing, Browser Watch, scoring, and product acceptance remain closed."
       ],
       "alternatives": [
-        "Stale/partial import — rejected.",
-        "Unauthorized scraping — rejected.",
-        "Manual mass capture — rejected.",
-        "Provider-authorized source request — selected."
+        "Stale/partial import \u2014 rejected.",
+        "Unauthorized scraping \u2014 rejected.",
+        "Manual mass capture \u2014 rejected.",
+        "Provider-authorized source request \u2014 selected."
       ],
       "result": "OP-CATALOG-001 is selected but blocked on one explicit provider-contact approval; no product or market mutation is justified before that input.",
       "next": "Obtain explicit user approval to send the preserved Stormstrike/CFB.FAN data-access request to business@stormstrike.gg."
@@ -830,9 +818,9 @@
         "No provider message, live collection, scoring change, market-lock clear, or product-state mutation is authorized by this correction."
       ],
       "alternatives": [
-        "Repeat provider approval — rejected.",
-        "Text-only map correction — rejected.",
-        "Mechanical authority-history guard plus corrected required route — selected."
+        "Repeat provider approval \u2014 rejected.",
+        "Text-only map correction \u2014 rejected.",
+        "Mechanical authority-history guard plus corrected required route \u2014 selected."
       ],
       "result": "OP-CATALOG-001 is IN_PROGRESS with catalog-historical-bulk-reconcile as the authority-required next route.",
       "next": "Reconcile the recovered historical CFB27 bulk acquisition program, its provenance, current permitted-use basis, and source reachability; do not send a provider request or perform live collection until that read-only reconciliation is complete."
@@ -854,10 +842,10 @@
         "Scoring models, market lock, Browser Watch, and installed product state remain unchanged."
       ],
       "alternatives": [
-        "Unauthorized historical refresh — rejected.",
-        "Local-cache recovery — exhausted.",
-        "Third-party/official alternatives — exhausted for a current-complete structured catalog.",
-        "Wait for materially new authorized-source evidence — selected."
+        "Unauthorized historical refresh \u2014 rejected.",
+        "Local-cache recovery \u2014 exhausted.",
+        "Third-party/official alternatives \u2014 exhausted for a current-complete structured catalog.",
+        "Wait for materially new authorized-source evidence \u2014 selected."
       ],
       "result": "OP-CATALOG-001 is BLOCKED on an external authorized-source dependency. No user action is currently requested and no executable technical route remains.",
       "next": "Await materially new evidence of an expressly permitted current structured CFB27 CUT catalog, delta, export, or feed. If such evidence appears, verify its permission, coverage, stable exact-card identity, and required ratings before import. Do not resume automated CFB.FAN/Stormstrike collection, use the rejected provider-email route, or ask the user to manually assemble the catalog."
@@ -877,10 +865,10 @@
         "Scoring models, Browser Watch acceptance, and protected market state remain unchanged."
       ],
       "alternatives": [
-        "New acquisition method — rejected.",
-        "External-permission wait — superseded as a technical blocker.",
-        "Blind full refresh — rejected.",
-        "Bounded probe then existing refresh — selected."
+        "New acquisition method \u2014 rejected.",
+        "External-permission wait \u2014 superseded as a technical blocker.",
+        "Blind full refresh \u2014 rejected.",
+        "Bounded probe then existing refresh \u2014 selected."
       ],
       "result": "OP-CATALOG-001 returns to IN_PROGRESS; current endpoint reachability is the next executable evidence gap.",
       "next": "Run one bounded reachability probe of the existing public unauthenticated CFB.FAN player-items endpoint using the already-established acquisition method. If it returns normally and exact-card identity/ratings validate, resume the existing delta-refresh pipeline with the same batching and conservative rate limits. Stop on explicit denial, authentication/CAPTCHA/access-control challenge, or HTTP 429; do not bypass or evade."
@@ -900,10 +888,10 @@
         "Scoring models, Browser Watch acceptance, market locks, and installed evaluator state remain unchanged."
       ],
       "alternatives": [
-        "Retry player-items — rejected.",
-        "Declare all source access unavailable from one endpoint-specific 403 — rejected.",
-        "Use partial listings as full vectors — rejected.",
-        "Bounded existing public-player-page probe — selected."
+        "Retry player-items \u2014 rejected.",
+        "Declare all source access unavailable from one endpoint-specific 403 \u2014 rejected.",
+        "Use partial listings as full vectors \u2014 rejected.",
+        "Bounded existing public-player-page probe \u2014 selected."
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS; the bulk endpoint is denied, but one historically established non-API public-page route remains an executable evidence gap.",
       "next": "Run one bounded reachability/validation probe of one known exact-card CFB.FAN public player page using the already-existing CfbFanPublicAdapter. Use one unauthenticated request with the historical public-page method, no API call and no retry; validate exact-card identity and a nonempty/full displayed rating vector. Stop on explicit denial, authentication/CAPTCHA/access-control challenge, HTTP 429, unexpected page shape, identity conflict, or incomplete ratings; do not bypass or evade. If the probe passes, reconcile the existing listing-discovery URLs with this historical public-page adapter before authorizing any broader delta refresh."
@@ -923,10 +911,10 @@
         "Scoring models, Browser Watch, market locks, and installed product state remain unchanged."
       ],
       "alternatives": [
-        "Retry/alter denied clients — rejected.",
-        "Partial listings — insufficient.",
-        "New mass-acquisition transport — rejected.",
-        "External dependency pending materially new non-bypass evidence — selected."
+        "Retry/alter denied clients \u2014 rejected.",
+        "Partial listings \u2014 insufficient.",
+        "New mass-acquisition transport \u2014 rejected.",
+        "External dependency pending materially new non-bypass evidence \u2014 selected."
       ],
       "result": "OP-CATALOG-001 is BLOCKED by current observed access denial on both established live acquisition paths; no immediate executable technical collection route remains.",
       "next": "Do not retry the denied player-items or public-player-page acquisition requests and do not change client identity, authentication, cookies, headers, proxy, or rate behavior to obtain access. Resume catalog acquisition only after materially new technical evidence establishes that one of the established routes is no longer denied, or a current structured exact-card source becomes available through a non-bypass route. Re-run MAP -> HISTORY -> RESEARCH -> CAPABILITIES before any new collection."
@@ -945,9 +933,9 @@
         "Access-control, identity, header, cookie, proxy, and rate-behavior bypass remains rejected."
       ],
       "alternatives": [
-        "Reopen collection — rejected.",
-        "Leave stale deployment map — rejected.",
-        "Bookkeeping-only authority correction — selected."
+        "Reopen collection \u2014 rejected.",
+        "Leave stale deployment map \u2014 rejected.",
+        "Bookkeeping-only authority correction \u2014 selected."
       ],
       "result": "Control-state drift is reconciled; the catalog mission remains BLOCKED / EXTERNAL_DEPENDENCY with zero executable collection routes.",
       "next": "Do not retry the denied player-items or public-player-page acquisition requests and do not change client identity, authentication, cookies, headers, proxy, or rate behavior to obtain access. Resume catalog acquisition only after materially new technical evidence establishes that one of the established routes is no longer denied, or a current structured exact-card source becomes available through a non-bypass route. Re-run MAP -> HISTORY -> RESEARCH -> CAPABILITIES before any new collection."
@@ -966,10 +954,10 @@
         "Scoring, exact-card identity, Browser Watch persistence, and dynamic-port acceptance remain preserved."
       ],
       "alternatives": [
-        "Retry denied raw clients — rejected.",
-        "Replacement runtime — rejected.",
-        "Manual tab management — rejected while technical work remains.",
-        "Minimal single-tab orchestration hotfix — selected."
+        "Retry denied raw clients \u2014 rejected.",
+        "Replacement runtime \u2014 rejected.",
+        "Manual tab management \u2014 rejected while technical work remains.",
+        "Minimal single-tab orchestration hotfix \u2014 selected."
       ],
       "result": "OP-CATALOG-001 returns to IN_PROGRESS for the bounded single-tab rendered-browser integration and installed-app acceptance; this does not establish a provider-authorized current-complete catalog source.",
       "next": "Implement and physically verify the bounded single-tab normal-rendered CFB.FAN browser work queue in the accepted Simple Evaluator runtime for known exact-card page and price observations only: reuse one work tab, preserve a minimum five-second navigation dwell, validate exact card identity, and stop on 403/429/CAPTCHA/login/access challenge or unexpected page state. Preserve both denied raw-request locks, provider-email rejection, unchanged scoring, exact-card persistence, and catalog authorization limits. Complete installed-app acceptance before asking the user to test."
@@ -988,11 +976,11 @@
         "User testing remains prohibited while executable technical work remains."
       ],
       "alternatives": [
-        "Repeat failed browser restart — rejected.",
-        "Repeat failed AppActivate approach — rejected.",
-        "Direct mutation bypass — rejected.",
-        "User manual activation — rejected while durable route remains.",
-        "Durable fixed-action extension — selected."
+        "Repeat failed browser restart \u2014 rejected.",
+        "Repeat failed AppActivate approach \u2014 rejected.",
+        "Direct mutation bypass \u2014 rejected.",
+        "User manual activation \u2014 rejected while durable route remains.",
+        "Durable fixed-action extension \u2014 selected."
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS; the exact next executable route is to deploy and invoke complete_simple_single_worktab_acceptance through the durable controlled worker.",
       "next": "Deploy the revision-20 durable GitHub-inbox worker extension and execute its fixed complete_simple_single_worktab_acceptance action through SOPDecisionGateway -> ControlledToolBroker. The action must preserve both denied raw-request locks and the persistent RATE_LIMITED value-probe lock, activate the already-installed Browser Helper 1.4.13 without touching source authentication, physically prove one reusable CFB.FAN work tab with the minimum five-second rendered-page dwell and exact-card price persistence, restart through the accepted dynamic-port launcher, and return verified evidence before the authority is advanced again. Do not ask the user to test while this durable route remains executable."
@@ -1011,10 +999,10 @@
         "Denied source-route, scoring, identity, persistence and user-test locks remain unchanged."
       ],
       "alternatives": [
-        "Replay failed request — rejected.",
-        "Direct browser mutation bypass — rejected.",
-        "Rewrite action logic — rejected as unsupported by the failure evidence.",
-        "Minimal runner import fix with regression test — selected."
+        "Replay failed request \u2014 rejected.",
+        "Direct browser mutation bypass \u2014 rejected.",
+        "Rewrite action logic \u2014 rejected as unsupported by the failure evidence.",
+        "Minimal runner import fix with regression test \u2014 selected."
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS with a verified IMPLEMENTATION_PROBLEM and a narrow revision-21 repair path.",
       "next": "Deploy the revision-21 durable-worker loader fix, then submit a fresh bounded complete_simple_single_worktab_acceptance GitHub-inbox request through SOPDecisionGateway -> ControlledToolBroker. Revision 21 fixes the verified importlib.util loader failure from request single-worktab-accept-r20-final-20261002 without changing the fixed physical-acceptance action, source-access locks, scoring, exact-card identity, protected state, or browser behavior. After rebind, execute the action once with a new request_id and continue through physical acceptance; do not ask the user to test while this corrected durable route remains executable."
@@ -1033,10 +1021,10 @@
         "Denied source-route, scoring, identity, persistence and user-test locks remain unchanged."
       ],
       "alternatives": [
-        "Replay failed request — rejected.",
-        "Lie about current revision — rejected.",
-        "Direct browser bypass — rejected.",
-        "Minimal action revision-pin fix with regression test — selected."
+        "Replay failed request \u2014 rejected.",
+        "Lie about current revision \u2014 rejected.",
+        "Direct browser bypass \u2014 rejected.",
+        "Minimal action revision-pin fix with regression test \u2014 selected."
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS with a verified IMPLEMENTATION_PROBLEM and a narrow revision-22 repair path.",
       "next": "Deploy the revision-22 single-worktab action authority-pin fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r21-final-20261002-1410 is terminal and must not be replayed. Revision 22 changes only the action's verified stale authority pin from revision 20 to revision 22 plus focused regression coverage and authority/handoff bookkeeping; it does not change browser logic, source access, scoring, exact-card identity, protected state, or locks."
@@ -1055,10 +1043,10 @@
         "Denied source-route, scoring, identity, persistence and user-test locks remain unchanged."
       ],
       "alternatives": [
-        "Replay failed request — rejected.",
-        "Modify installed launch.py — rejected.",
-        "Direct browser bypass — rejected.",
-        "Minimal temporary APP sys.path loader context with regression test — selected."
+        "Replay failed request \u2014 rejected.",
+        "Modify installed launch.py \u2014 rejected.",
+        "Direct browser bypass \u2014 rejected.",
+        "Minimal temporary APP sys.path loader context with regression test \u2014 selected."
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS with a verified IMPLEMENTATION_PROBLEM and a narrow revision-23 repair path.",
       "next": "Deploy the revision-23 single-worktab launch-loader sibling-import fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r22-final-e8173bcc is terminal and must not be replayed. Revision 23 fixes only the verified load_launch_module failure to resolve Simple Evaluator sibling imports while loading launch.py, plus updates the action revision pin, focused regression coverage and authority/handoff bookkeeping; browser behavior, source access, scoring, exact-card identity, protected state and locks remain unchanged."
@@ -1077,10 +1065,10 @@
         "Denied source-route, scoring, identity, persistence, dynamic-port and user-test locks remain unchanged."
       ],
       "alternatives": [
-        "Replay failed request — rejected.",
-        "Retry generic Back navigation — rejected as failed hypothesis.",
-        "Direct browser bypass — rejected.",
-        "Exact Installed extensions Hyperlink navigation with existing fail-closed selector — selected."
+        "Replay failed request \u2014 rejected.",
+        "Retry generic Back navigation \u2014 rejected as failed hypothesis.",
+        "Direct browser bypass \u2014 rejected.",
+        "Exact Installed extensions Hyperlink navigation with existing fail-closed selector \u2014 selected."
       ],
       "result": "OP-CATALOG-001 remains IN_PROGRESS with a verified IMPLEMENTATION_PROBLEM and a narrow revision-24 management-page navigation repair path.",
       "next": "Deploy the revision-24 exact Installed extensions hyperlink navigation fix, then submit one fresh immutable complete_simple_single_worktab_acceptance request through the READY durable GitHub-inbox -> SOPDecisionGateway -> ControlledToolBroker route. Request single-worktab-accept-r23-retry1-48cee181 (issue #58) is terminal and must not be replayed. Revision 24 fixes only the verified Developer-mode management-page navigation defect by using the exact enabled Installed extensions hyperlink instead of the failed generic Back-button hypothesis; browser pricing logic, source access, scoring, exact-card identity, protected state, dynamic-port architecture and all access/rate locks remain unchanged."
@@ -1114,8 +1102,8 @@
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 24,
-    "next_action": "Deploy the superseding revision-24 single-worktab repair through a fresh Gateway/Broker authorization. Revision 24 must combine the exact Installed extensions Hyperlink navigation correction with the now-observed acceptance-boundary hardening: transactionally patch the exact installed server preimage so a live 1.4.13 heartbeat cannot be clobbered by stale 1.4.12 Chromium heartbeats and the server cannot self-write a narrow production PASS; then execute one fresh immutable complete_simple_single_worktab_acceptance request proving one reusable CFB.FAN tab, >=5-second dwell, exact-card persistence, a real >=120-second saved-watch cadence, fail-closed stop conditions, protected-state preservation, all-19-position evaluator determinism/Platinum Rare exclusion, explicit five-FS installed identity checks, browser cleanup, pending-state restart persistence, full transactional acceptance write, and a second restart that reports PRODUCTION_ACCEPTED. Do not replay terminal issue #58, retry denied raw HTTP routes, clear the persistent 429 lock, change scoring, or ask the user to test while this route remains executable.",
+    "state_revision": 25,
+    "next_action": "Deploy the minimal revision-25 Windows stop-before-replace correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request. Issue #60 is terminal. Revision 25 must stop the exact Simple Evaluator listener before replacing the already hash-validated server.py postimage, relaunch only through the accepted dynamic-port launcher, and use the same stop-before-restore order during rollback. Preserve all Revision-24 Browser Helper logic, scoring, exact-card identity, watches, source locks and the persistent RATE_LIMITED value-probe lock.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -1138,12 +1126,11 @@
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
     "remaining_executable_work": [
-      "Validate the superseding revision-24 candidate against an isolated copy of the live revision-23 repository, including authority/handoff checks and focused/full control tests.",
-      "Obtain one fresh Gateway/Broker authorization for the superseding revision-24 bounded repository patch; do not reuse the prior navigation-only authorization.",
-      "Publish/merge the exact authorized revision-24 head, rebind the durable worker, and verify READY/clean revision-24 health.",
-      "Issue one fresh immutable complete_simple_single_worktab_acceptance request and let the revision-24 worker execute the transactional installed-server hardening plus full 1.4.13 physical acceptance.",
-      "Verify live 1.4.13 remains stable despite stale Chromium heartbeats; exactly one CFB.FAN work tab; >=5-second dwell; >=120-second cadence; exact-card persistence; fail-closed stops; protected state; evaluator checks; five-FS installed identity checks; two restart proofs; cleanup; and comprehensive acceptance artifact.",
-      "Continue OP-CATALOG-001 after Browser Helper acceptance because the five required newer FS versions are still not imported and all eight catalog mission acceptance criteria remain false."
+      "Validate revision-25 in an isolated git clone with authority/handoff/self-test and focused tests.",
+      "Obtain fresh Gateway/Broker authorization; create/publish/merge exact revision-25 and rebind the worker.",
+      "Submit a fresh immutable full single-worktab acceptance request; do not replay issue #60.",
+      "Verify stop-before-replace, dynamic relaunch, helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.",
+      "Continue OP-CATALOG-001 because the five current FS versions still are not imported and catalog criteria remain open."
     ]
   },
   "enforcement": {
