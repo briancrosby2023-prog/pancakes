@@ -227,6 +227,20 @@ def test_single_worktab_developer_toggle_selector_is_fail_closed_and_spatial():
         action.select_developer_toggle(ambiguous, runner)
 
 
+
+def test_single_worktab_r32_uses_exact_edge_refresh_button_identity():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    start = source.index("def choose_work_tab_and_reload")
+    end = source.index("def parse_dt", start)
+    block = source[start:end]
+    assert '$aid -eq "view_1003"' in block
+    assert "'^(Refresh|Reload|Reload this page)$'" in block
+    assert "$e.Current.IsOffscreen" in block
+    assert "InvokePattern" in block
+    assert "enabled visible Edge refresh/reload button view_1003" in block
+
+
 def test_single_worktab_r31_prefers_exact_dev_switch_when_uia_duplicates_developer_mode_name():
     runner = load_runner()
     action = load_single_worktab_action()
@@ -263,9 +277,9 @@ def test_single_worktab_runtime_loader_has_importlib_util_available():
     assert callable(mod.importlib.util.spec_from_file_location)
     assert callable(mod.importlib.util.module_from_spec)
 
-def test_single_worktab_action_revision_pin_matches_revision_31():
+def test_single_worktab_action_revision_pin_matches_revision_32():
     action = load_single_worktab_action()
-    assert action.EXPECTED_AUTHORITY_REVISION == 31
+    assert action.EXPECTED_AUTHORITY_REVISION == 32
 
 def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, monkeypatch):
     action = load_single_worktab_action()

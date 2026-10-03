@@ -1,6 +1,6 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 31
+State revision: 32
 Status: IN_PROGRESS
 Mission ID: OP-CATALOG-001
 
@@ -15,10 +15,10 @@ Read `docs/OPERATION_PANCAKE_CONTROL_STATE.json` first and validate it before ma
 Do not let the newest obstacle replace the recorded mission.
 
 ## Preflight evidence
-- MAP: OBSERVED: Revision 30 / eae7c051 is merged, deployed and READY for OP-CATALOG-001. | OBSERVED: fresh immutable issue #73 passed request freeze and Gateway/Broker authorization, progressed past Revision-30 foreground handling, and failed only because select_developer_toggle observed two nodes named Developer mode. | OBSERVED: the exact controlled Edge PID 29544 / handle 55643466 remains available with Browser Helper 1.4.13 and the extensions surface.
-- HISTORY: VERIFIED_HISTORY: issues #60/#62/#64/#66/#69/#71/#73 are terminal and must not be replayed. | VERIFIED_HISTORY: Revision 30 replaced the failed SetForegroundWindow dependency with UIA address-bar focus and progressed acceptance to the later Developer-mode selector. | VERIFIED_HISTORY: denied source routes, provider-email rejection, exact-card identity, watches, persistent RATE_LIMITED lock, dynamic-port architecture and scoring remain unchanged.
-- RESEARCH: OBSERVED: current UIA tree contains exactly two elements named Developer mode: one ControlType.Text at X117/Y661 with empty AutomationId and one ControlType.Button at X435/Y660 with AutomationId dev-switch. | OBSERVED: the Button node is the sole enabled visible Developer mode TogglePattern control, state On, and has the same RuntimeId as the dev-switch toggle entry; the other same-name node has no TogglePattern. | OBSERVED: three other TogglePattern controls are distinct by name/AutomationId/geometry; exact dev-switch identity removes the false label ambiguity without broadening selection.
-- CAPABILITIES: OBSERVED: select_developer_toggle already receives toggle Name, AutomationId, Enabled, State and geometry, so Revision 31 needs no broader browser/UI mutation surface. | OBSERVED: Revision 31 can prefer the exact dev-switch TogglePattern control, fail closed on duplicate exact matches, and preserve the existing spatial fallback for older UI trees. | OBSERVED: the recorded-chat DecisionProvider route remains available through the unchanged strict SOPDecisionGateway and ControlledToolBroker without paid API credits, Work or Codex.
+- MAP: OBSERVED: Revision 31 / f6a9241c is merged, deployed and READY for OP-CATALOG-001. | OBSERVED: fresh immutable issue #75 passed request freeze and Gateway/Broker authorization, progressed past Revision-31 Developer-mode selection, and failed only because choose_work_tab_and_reload observed zero buttons named Reload or Reload this page. | OBSERVED: the exact controlled Edge window is on the correct single CFB.FAN Jaleel Skinner tab at https://cfb.fan/players/2557-jaleel-skinner/27-2002557/#prices.
+- HISTORY: VERIFIED_HISTORY: issues #60/#62/#64/#66/#69/#71/#73/#75 are terminal and must not be replayed. | VERIFIED_HISTORY: Revision 31 exact dev-switch selector is deployed and progressed acceptance to the later work-tab reload step. | VERIFIED_HISTORY: denied source routes, provider-email rejection, exact-card identity, watches, persistent RATE_LIMITED lock, dynamic-port architecture and scoring remain unchanged.
+- RESEARCH: OBSERVED: current exact Edge UIA toolbar contains one enabled visible Button Name Refresh with AutomationId view_1003 at X106/Y92 and InvokePattern support. | OBSERVED: the current UIA toolbar contains no Button named Reload or Reload this page, explaining issue #75's zero-match failure. | OBSERVED: current window contains exactly one selected CFB.FAN tab and the correct #prices address-bar URL, so the failure is isolated to reload-control identity rather than tab selection.
+- CAPABILITIES: OBSERVED: choose_work_tab_and_reload already enumerates the current window's UIA Buttons and invokes InvokePattern, so Revision 32 needs only a narrower exact identity predicate. | OBSERVED: exact AutomationId view_1003 plus enabled/visible/Button/name/InvokePattern checks fail closed and do not broaden browser mutation. | OBSERVED: the recorded-chat DecisionProvider route remains available through the unchanged strict SOPDecisionGateway and ControlledToolBroker without paid API credits, Work or Codex.
 
 ## Available capabilities
 - GitHub repository read/write and PR workflow
@@ -86,12 +86,12 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-issue69-replay: Replay issue #69 or retry WScript.Shell.AppActivate by PID/title without materially new evidence.
 
 ## Next action
-Deploy the minimal Revision-31 exact Developer-mode toggle identity correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 31. Do not replay issues #60, #62, #64, #66, #69, #71 or #73. Issue #73 is terminal after Revision 30 passed the foreground-navigation boundary and failed only because the UIA snapshot contained two nodes named Developer mode. A bounded read-only probe proved those are not two controls: one is ControlType.Text with no AutomationId, while the other is the single enabled visible TogglePattern button named Developer mode with AutomationId dev-switch and state On. Revision 31 must prefer exactly one enabled usable TogglePattern Developer mode control with exact AutomationId dev-switch and fail closed if that exact control is duplicated; retain the existing spatial-label selector only as a fallback when the exact dev-switch control is absent. Preserve every existing foreground, readiness, server, helper, one-tab, dwell/cadence, exact-card, protected-state, evaluator, restart, denied-source, persistent RATE_LIMITED and unchanged-scoring guard.
+Deploy the minimal Revision-32 exact Edge refresh-button identity correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 32. Do not replay issues #60, #62, #64, #66, #69, #71, #73 or #75. Issue #75 is terminal after Revision 31 passed foreground and Developer-mode selection, selected the correct single CFB.FAN tab at the #prices URL, and failed only because choose_work_tab_and_reload searched for button names Reload/Reload this page while the current Edge UIA tree exposes the actual enabled visible toolbar refresh button as Name Refresh, AutomationId view_1003, with InvokePattern. Revision 32 must identify exactly one enabled visible Button with AutomationId view_1003, supported name Refresh/Reload/Reload this page and InvokePattern, fail closed otherwise, and preserve every existing selector, foreground, readiness, server, helper, one-tab, dwell/cadence, exact-card, protected-state, evaluator, restart, denied-source, persistent RATE_LIMITED and unchanged-scoring guard.
 
 ## Remaining executable work
-- Publish/merge/rebind the exact Revision-31 four-path dev-switch selector correction through fresh Gateway/Broker authorization.
-- Submit one fresh immutable full single-worktab acceptance request; do not replay issues #60, #62, #64, #66, #69, #71 or #73.
-- Verify exact dev-switch selection plus helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.
+- Publish/merge/rebind the exact Revision-32 four-path Edge refresh-button selector correction through fresh Gateway/Broker authorization.
+- Submit one fresh immutable full single-worktab acceptance request; do not replay issues #60, #62, #64, #66, #69, #71, #73 or #75.
+- Verify exact refresh identity plus helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.
 - Continue OP-CATALOG-001 because the five current FS versions still are not imported and catalog criteria remain open.
 
 ## Completion rule
