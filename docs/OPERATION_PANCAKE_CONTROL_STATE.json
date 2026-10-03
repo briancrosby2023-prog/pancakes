@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 38,
+  "state_revision": 39,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Deploy the harness-only Revision-38 helper in-place write correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #88 is terminal and reached runtime installation: canonical server/release postimages began installing, but atomic os.replace of browser-helper/background.js failed with WinError 5 Access denied before helper postimage installation completed. The acceptance rollback restored every exact preimage (server bd2be607..., release 60549a67..., background a3ce6c98..., watch 1faebe0b..., manifest 51beb29b...), left no temp files, Simple Evaluator is healthy with 130 observations/2 active watches, and the durable worker is READY on Revision 37. Read-only capability proof shows RELEASE.json and all three helper target files are owner-writable/not read-only and each opens r+b successfully without byte/hash change. Revision 38 must keep server.py on its accepted in-place write path, keep RELEASE.json atomic replacement, and write only browser-helper background.js/watch.js/manifest.json in place using r+b -> seek(0) -> write exact canonical Git blob bytes -> truncate -> flush -> fsync -> hash verify. Preserve unchanged Revision-35 normal-search runtime content/helper 1.4.14, Revision-36 pre/post stop checks, Revision-37 canonical Git blob loading, one reusable tab, >=5-second dwell, >=120-second cadence, denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while a fresh controlled acceptance remains executable.",
+    "next_action": "Reconcile terminal Revision-38 acceptance issue #90 and complete one read-only current-Edge reload-control proof before any new implementation mutation. Issue #90 is terminal and reached postimage installation successfully: exact Revision-35 canonical runtime bytes were installed using Revision-38 helper in-place writes, but the live Edge runtime remained Browser Helper 1.4.13 while the server expected 1.4.14 after the current harness toggled Extension on off/on. Rollback restored every exact preimage and protected state. VERIFIED_HISTORY says the earlier successful r19 recovery required an explicit unpacked-extension Reload action rather than a browser/process restart or enable toggle. OBSERVED current Edge 153 on edge://extensions/?id=fgocmjlihbapenekkflcofdjmdodmboe exposes Developer mode, Extension on, and Remove but no Reload button, so the historical details-surface selector is stale. Next, inspect the current edge://extensions/ root UI read-only on the exact controlled Edge window, identify a unique explicit Reload control for the Simple Evaluator Browser Watch card if present, and prove its exact automation identity without invoking it. Do not mutate helper code/runtime, replay issue #90, retry denied raw routes, clear locks, change scoring, or ask the user to test until that current reload control is proven.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -68,14 +68,16 @@
         "OBSERVED: current acceptance source still contains direct stored-player acquisition and installed background scheduler still navigates queued source URLs.",
         "OBSERVED: Revision-35 acceptance issue #83 is terminal with EVIDENCE_GAP before runtime installation.",
         "OBSERVED: Revision-36 acceptance issue #85 is terminal after reaching the registered action but before any installed runtime postimage write.",
-        "OBSERVED: Revision-37 acceptance issue #88 is terminal after atomic background.js replacement failed; rollback restored every exact preimage and worker/server health."
+        "OBSERVED: Revision-37 acceptance issue #88 is terminal after atomic background.js replacement failed; rollback restored every exact preimage and worker/server health.",
+        "OBSERVED: Revision-38 acceptance issue #90 is terminal after runtime postimages installed but Browser Helper runtime stayed 1.4.13 instead of expected 1.4.14; rollback restored exact preimages."
       ]
     },
     "history": {
       "complete": true,
       "evidence": [
         "VERIFIED_HISTORY: issue #80 and prior listed acceptance issues are terminal and must not be replayed.",
-        "VERIFIED_HISTORY: October 2-3 accepted workflow requires normal rendered CFB.FAN search for searches and price checks; denied raw routes, scoring, exact-card and persistent RATE_LIMITED locks remain unchanged."
+        "VERIFIED_HISTORY: October 2-3 accepted workflow requires normal rendered CFB.FAN search for searches and price checks; denied raw routes, scoring, exact-card and persistent RATE_LIMITED locks remain unchanged.",
+        "VERIFIED_HISTORY: r19 proved process restart/--load-extension did not reload changed unpacked-extension bytes; successful recovery required an explicit unpacked-extension Reload action."
       ]
     },
     "research": {
@@ -87,7 +89,8 @@
         "OBSERVED: exact result identity can fail closed by comparing the rendered result href to queued source_url while never navigating to that stored URL.",
         "OBSERVED: verify_installed_stop_conditions ran before patch_installed_runtime but required Revision-35 postimage tokens, proving the failure is harness ordering rather than normal-search runtime behavior.",
         "OBSERVED: issue #85 repository postimage drift is Windows line-ending conversion: working-tree server.py SHA 8e3a9980... with 1,934 CRLF versus canonical Git blob SHA bc0582bf... with zero CRLF, exactly equal to the frozen expected postimage.",
-        "OBSERVED: issue #88 failed specifically on os.replace(background.js.r35.tmp, background.js) with WinError 5; no helper postimage was accepted."
+        "OBSERVED: issue #88 failed specifically on os.replace(background.js.r35.tmp, background.js) with WinError 5; no helper postimage was accepted.",
+        "OBSERVED: current Edge 153 extension details UI for fgocmjlihbapenekkflcofdjmdodmboe exposes Developer mode, Extension on and Remove but no Reload button, so the historical r19 details-surface Reload selector is stale."
       ]
     },
     "capabilities": {
@@ -99,7 +102,8 @@
         "OBSERVED: exact Revision-35 runtime postimages pass node --check / server py_compile and can be installed/rolled back transactionally by exact hashes.",
         "OBSERVED: Revision-36 can separate prepatch legacy stop checks from postpatch normal-search stop checks without changing any Revision-35 runtime postimage bytes.",
         "OBSERVED: local git show HEAD:runtime/simple_evaluator/server.py returns the exact canonical frozen postimage bytes independent of Windows working-tree line-ending conversion.",
-        "OBSERVED: RELEASE.json/background.js/watch.js/manifest.json each opens r+b successfully with no byte/hash change; background.js is owner FullControl, Archive, not read-only."
+        "OBSERVED: RELEASE.json/background.js/watch.js/manifest.json each opens r+b successfully with no byte/hash change; background.js is owner FullControl, Archive, not read-only.",
+        "OBSERVED: the exact controlled Edge PID/window remains available for read-only UI Automation inspection of edge://extensions/ root without user action."
       ]
     }
   },
@@ -512,27 +516,26 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D28",
+    "decision_id": "OP-CATALOG-001-D29",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Deploy Revision-38 helper in-place runtime writes, then run one fresh full acceptance.",
-    "obstacle_classification": "IMPLEMENTATION_PROBLEM",
+    "proposed_action": "Reconcile issue #90 and prove the current Edge explicit Reload control read-only before any implementation mutation.",
+    "obstacle_classification": "EVIDENCE_GAP",
     "history_refs": [
-      "Issue #88 terminal on atomic background.js replace.",
-      "Rollback fully restored protected runtime."
+      "Issue #90 terminal after helper runtime stayed 1.4.13.",
+      "r19 explicit Reload requirement."
     ],
     "capabilities_checked": [
       "clean controlled source-repo-r8",
-      "helper r+b write-handle capability",
-      "canonical Git blob postimages",
+      "current Edge 153 UI Automation",
       "SOPDecisionGateway and ControlledToolBroker"
     ],
     "alternatives_considered": [
-      "Retry atomic helper replacement - rejected because #88 proved that exact method fails.",
-      "Change normal-search content - rejected because failure occurred during file installation.",
-      "Ask user to close/restart browser - rejected while verified in-place write capability exists.",
-      "Use in-place helper writes with exact hash verification - selected."
+      "Retry Extension on off/on - rejected by issue #90.",
+      "Copy the old r19 details-page Reload selector blindly - rejected because current Edge 153 exposes no such control.",
+      "Restart Edge with --load-extension - rejected by verified r19 history.",
+      "Read-only inspect current extensions root for the explicit Reload control - selected."
     ],
-    "selected_reason": "Atomic helper rename is observed failing while direct writable handles are observed available; in-place exact-byte writes avoid the failed rename path.",
+    "selected_reason": "The current activation control identity is unknown and the historical details-page selector is demonstrably stale.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
@@ -1335,13 +1338,36 @@
       ],
       "result": "Revision-38 helper in-place write correction selected.",
       "next": "Deploy the harness-only Revision-38 helper in-place write correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #88 is terminal and reached runtime installation: canonical server/release postimages began installing, but atomic os.replace of browser-helper/background.js failed with WinError 5 Access denied before helper postimage installation completed. The acceptance rollback restored every exact preimage (server bd2be607..., release 60549a67..., background a3ce6c98..., watch 1faebe0b..., manifest 51beb29b...), left no temp files, Simple Evaluator is healthy with 130 observations/2 active watches, and the durable worker is READY on Revision 37. Read-only capability proof shows RELEASE.json and all three helper target files are owner-writable/not read-only and each opens r+b successfully without byte/hash change. Revision 38 must keep server.py on its accepted in-place write path, keep RELEASE.json atomic replacement, and write only browser-helper background.js/watch.js/manifest.json in place using r+b -> seek(0) -> write exact canonical Git blob bytes -> truncate -> flush -> fsync -> hash verify. Preserve unchanged Revision-35 normal-search runtime content/helper 1.4.14, Revision-36 pre/post stop checks, Revision-37 canonical Git blob loading, one reusable tab, >=5-second dwell, >=120-second cadence, denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while a fresh controlled acceptance remains executable."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D29",
+      "decision": "Do not patch helper activation yet; first re-prove the explicit unpacked-extension Reload control on the current Edge 153 extensions root.",
+      "evidence": [
+        "Issue #90 terminal receipt: helper expected 1.4.14 but live Edge reported 1.4.13 after Extension on off/on.",
+        "Issue #90 rollback restored all exact runtime preimages and protected state.",
+        "Historical r19 evidence says explicit Reload was required; restart and simple enable-state changes were insufficient.",
+        "Current Edge 153 details surface contains no Reload button."
+      ],
+      "history": [
+        "Issues #90/#88/#85/#83 and prior listed acceptance issues are terminal and must not be replayed.",
+        "Revision-35 normal-search content, Revision-36 pre/post checks, Revision-37 canonical Git blob loading, and Revision-38 helper in-place writes remain selected.",
+        "Denied-source, exact-card, persistent RATE_LIMITED, Platinum Rare and unchanged-scoring locks remain unchanged."
+      ],
+      "alternatives": [
+        "Retry Extension on off/on - rejected by issue #90.",
+        "Copy the old r19 details-page Reload selector blindly - rejected because current Edge 153 exposes no such control.",
+        "Restart Edge with --load-extension - rejected by verified r19 history.",
+        "Read-only inspect current extensions root for the explicit Reload control - selected."
+      ],
+      "result": "Revision-39 authority-only reconciliation selected; implementation mutation is prohibited until the current reload control is proven.",
+      "next": "Reconcile terminal Revision-38 acceptance issue #90 and complete one read-only current-Edge reload-control proof before any new implementation mutation. Issue #90 is terminal and reached postimage installation successfully: exact Revision-35 canonical runtime bytes were installed using Revision-38 helper in-place writes, but the live Edge runtime remained Browser Helper 1.4.13 while the server expected 1.4.14 after the current harness toggled Extension on off/on. Rollback restored every exact preimage and protected state. VERIFIED_HISTORY says the earlier successful r19 recovery required an explicit unpacked-extension Reload action rather than a browser/process restart or enable toggle. OBSERVED current Edge 153 on edge://extensions/?id=fgocmjlihbapenekkflcofdjmdodmboe exposes Developer mode, Extension on, and Remove but no Reload button, so the historical details-surface selector is stale. Next, inspect the current edge://extensions/ root UI read-only on the exact controlled Edge window, identify a unique explicit Reload control for the Simple Evaluator Browser Watch card if present, and prove its exact automation identity without invoking it. Do not mutate helper code/runtime, replay issue #90, retry denied raw routes, clear locks, change scoring, or ask the user to test until that current reload control is proven."
     }
   ],
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 38,
-    "next_action": "Deploy the harness-only Revision-38 helper in-place write correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #88 is terminal and reached runtime installation: canonical server/release postimages began installing, but atomic os.replace of browser-helper/background.js failed with WinError 5 Access denied before helper postimage installation completed. The acceptance rollback restored every exact preimage (server bd2be607..., release 60549a67..., background a3ce6c98..., watch 1faebe0b..., manifest 51beb29b...), left no temp files, Simple Evaluator is healthy with 130 observations/2 active watches, and the durable worker is READY on Revision 37. Read-only capability proof shows RELEASE.json and all three helper target files are owner-writable/not read-only and each opens r+b successfully without byte/hash change. Revision 38 must keep server.py on its accepted in-place write path, keep RELEASE.json atomic replacement, and write only browser-helper background.js/watch.js/manifest.json in place using r+b -> seek(0) -> write exact canonical Git blob bytes -> truncate -> flush -> fsync -> hash verify. Preserve unchanged Revision-35 normal-search runtime content/helper 1.4.14, Revision-36 pre/post stop checks, Revision-37 canonical Git blob loading, one reusable tab, >=5-second dwell, >=120-second cadence, denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while a fresh controlled acceptance remains executable.",
+    "state_revision": 39,
+    "next_action": "Reconcile terminal Revision-38 acceptance issue #90 and complete one read-only current-Edge reload-control proof before any new implementation mutation. Issue #90 is terminal and reached postimage installation successfully: exact Revision-35 canonical runtime bytes were installed using Revision-38 helper in-place writes, but the live Edge runtime remained Browser Helper 1.4.13 while the server expected 1.4.14 after the current harness toggled Extension on off/on. Rollback restored every exact preimage and protected state. VERIFIED_HISTORY says the earlier successful r19 recovery required an explicit unpacked-extension Reload action rather than a browser/process restart or enable toggle. OBSERVED current Edge 153 on edge://extensions/?id=fgocmjlihbapenekkflcofdjmdodmboe exposes Developer mode, Extension on, and Remove but no Reload button, so the historical details-surface selector is stale. Next, inspect the current edge://extensions/ root UI read-only on the exact controlled Edge window, identify a unique explicit Reload control for the Simple Evaluator Browser Watch card if present, and prove its exact automation identity without invoking it. Do not mutate helper code/runtime, replay issue #90, retry denied raw routes, clear locks, change scoring, or ask the user to test until that current reload control is proven.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -1364,8 +1390,9 @@
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
     "remaining_executable_work": [
-      "Broker patch/publish/merge/rebind Revision 38 helper in-place correction.",
-      "Run one fresh full controlled acceptance using unchanged normal-search runtime postimages.",
+      "Broker patch/publish/merge/rebind Revision 39 authority-only reconciliation.",
+      "Read-only prove the current Edge 153 extensions-root explicit Reload control.",
+      "Implement only the proven helper reload correction through Gateway/Broker and run one fresh full controlled acceptance.",
       "Continue OP-CATALOG-001 catalog import/revalidation criteria after Browser Watch acceptance."
     ]
   },
@@ -1460,8 +1487,8 @@
         "mission_id": "OP-CATALOG-001",
         "route_id": "catalog-rendered-browser-single-tab-integration",
         "status": "REQUIRED_NEXT",
-        "description": "Deploy the harness-only Revision-38 helper in-place write correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #88 is terminal and reached runtime installation: canonical server/release postimages began installing, but atomic os.replace of browser-helper/background.js failed with WinError 5 Access denied before helper postimage installation completed. The acceptance rollback restored every exact preimage (server bd2be607..., release 60549a67..., background a3ce6c98..., watch 1faebe0b..., manifest 51beb29b...), left no temp files, Simple Evaluator is healthy with 130 observations/2 active watches, and the durable worker is READY on Revision 37. Read-only capability proof shows RELEASE.json and all three helper target files are owner-writable/not read-only and each opens r+b successfully without byte/hash change. Revision 38 must keep server.py on its accepted in-place write path, keep RELEASE.json atomic replacement, and write only browser-helper background.js/watch.js/manifest.json in place using r+b -> seek(0) -> write exact canonical Git blob bytes -> truncate -> flush -> fsync -> hash verify. Preserve unchanged Revision-35 normal-search runtime content/helper 1.4.14, Revision-36 pre/post stop checks, Revision-37 canonical Git blob loading, one reusable tab, >=5-second dwell, >=120-second cadence, denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while a fresh controlled acceptance remains executable.",
-        "source": "Operation Pancake Revision-38 D28 issue-88 helper-write proof"
+        "description": "Reconcile terminal Revision-38 acceptance issue #90 and complete one read-only current-Edge reload-control proof before any new implementation mutation. Issue #90 is terminal and reached postimage installation successfully: exact Revision-35 canonical runtime bytes were installed using Revision-38 helper in-place writes, but the live Edge runtime remained Browser Helper 1.4.13 while the server expected 1.4.14 after the current harness toggled Extension on off/on. Rollback restored every exact preimage and protected state. VERIFIED_HISTORY says the earlier successful r19 recovery required an explicit unpacked-extension Reload action rather than a browser/process restart or enable toggle. OBSERVED current Edge 153 on edge://extensions/?id=fgocmjlihbapenekkflcofdjmdodmboe exposes Developer mode, Extension on, and Remove but no Reload button, so the historical details-surface selector is stale. Next, inspect the current edge://extensions/ root UI read-only on the exact controlled Edge window, identify a unique explicit Reload control for the Simple Evaluator Browser Watch card if present, and prove its exact automation identity without invoking it. Do not mutate helper code/runtime, replay issue #90, retry denied raw routes, clear locks, change scoring, or ask the user to test until that current reload control is proven.",
+        "source": "Operation Pancake Revision-39 D29 issue-90/current-Edge reload-control evidence"
       }
     ]
   },
@@ -1668,6 +1695,29 @@
       ],
       "result": "Revision-38 helper in-place write correction selected.",
       "next": "Deploy the harness-only Revision-38 helper in-place write correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #88 is terminal and reached runtime installation: canonical server/release postimages began installing, but atomic os.replace of browser-helper/background.js failed with WinError 5 Access denied before helper postimage installation completed. The acceptance rollback restored every exact preimage (server bd2be607..., release 60549a67..., background a3ce6c98..., watch 1faebe0b..., manifest 51beb29b...), left no temp files, Simple Evaluator is healthy with 130 observations/2 active watches, and the durable worker is READY on Revision 37. Read-only capability proof shows RELEASE.json and all three helper target files are owner-writable/not read-only and each opens r+b successfully without byte/hash change. Revision 38 must keep server.py on its accepted in-place write path, keep RELEASE.json atomic replacement, and write only browser-helper background.js/watch.js/manifest.json in place using r+b -> seek(0) -> write exact canonical Git blob bytes -> truncate -> flush -> fsync -> hash verify. Preserve unchanged Revision-35 normal-search runtime content/helper 1.4.14, Revision-36 pre/post stop checks, Revision-37 canonical Git blob loading, one reusable tab, >=5-second dwell, >=120-second cadence, denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while a fresh controlled acceptance remains executable."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D29",
+      "decision": "Do not patch helper activation yet; first re-prove the explicit unpacked-extension Reload control on the current Edge 153 extensions root.",
+      "evidence": [
+        "Issue #90 terminal receipt: helper expected 1.4.14 but live Edge reported 1.4.13 after Extension on off/on.",
+        "Issue #90 rollback restored all exact runtime preimages and protected state.",
+        "Historical r19 evidence says explicit Reload was required; restart and simple enable-state changes were insufficient.",
+        "Current Edge 153 details surface contains no Reload button."
+      ],
+      "history": [
+        "Issues #90/#88/#85/#83 and prior listed acceptance issues are terminal and must not be replayed.",
+        "Revision-35 normal-search content, Revision-36 pre/post checks, Revision-37 canonical Git blob loading, and Revision-38 helper in-place writes remain selected.",
+        "Denied-source, exact-card, persistent RATE_LIMITED, Platinum Rare and unchanged-scoring locks remain unchanged."
+      ],
+      "alternatives": [
+        "Retry Extension on off/on - rejected by issue #90.",
+        "Copy the old r19 details-page Reload selector blindly - rejected because current Edge 153 exposes no such control.",
+        "Restart Edge with --load-extension - rejected by verified r19 history.",
+        "Read-only inspect current extensions root for the explicit Reload control - selected."
+      ],
+      "result": "Revision-39 authority-only reconciliation selected; implementation mutation is prohibited until the current reload control is proven.",
+      "next": "Reconcile terminal Revision-38 acceptance issue #90 and complete one read-only current-Edge reload-control proof before any new implementation mutation. Issue #90 is terminal and reached postimage installation successfully: exact Revision-35 canonical runtime bytes were installed using Revision-38 helper in-place writes, but the live Edge runtime remained Browser Helper 1.4.13 while the server expected 1.4.14 after the current harness toggled Extension on off/on. Rollback restored every exact preimage and protected state. VERIFIED_HISTORY says the earlier successful r19 recovery required an explicit unpacked-extension Reload action rather than a browser/process restart or enable toggle. OBSERVED current Edge 153 on edge://extensions/?id=fgocmjlihbapenekkflcofdjmdodmboe exposes Developer mode, Extension on, and Remove but no Reload button, so the historical details-surface selector is stale. Next, inspect the current edge://extensions/ root UI read-only on the exact controlled Edge window, identify a unique explicit Reload control for the Simple Evaluator Browser Watch card if present, and prove its exact automation identity without invoking it. Do not mutate helper code/runtime, replay issue #90, retry denied raw routes, clear locks, change scoring, or ask the user to test until that current reload control is proven."
     }
   ]
 }
