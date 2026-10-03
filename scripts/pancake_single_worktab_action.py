@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 23
+EXPECTED_AUTHORITY_REVISION = 24
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -24,7 +24,8 @@ EXPECTED_WATCH_SHA256 = "1faebe0b39ecf35879d35d16ce2a0aedb04cf15dc882350e55b39a2
 EXPECTED_MANIFEST_SHA256 = "51beb29b86febf22cfcbcf50e06a10b3525dbbcbe7e7c537ec6ed8cd8d2d9b97"
 EXPECTED_BACKGROUND_SHA256 = "a3ce6c9884a514331bb614c5bbf8ff8b68ea2e56cfdde36a6bdeb616c5c6444e"
 EXPECTED_PREFLIGHT_SHA256 = "6a4c835a95b812f81503a4a36302bed39adf43f38871473f3cda77311dbef59f"
-EXPECTED_SERVER_SHA256 = "bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37"
+EXPECTED_SERVER_PREPATCH_SHA256 = "bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37"
+EXPECTED_SERVER_SHA256 = "f073dfe2ca39a47076bf1c1663d6071a10cc5c7b5f6f2bab7cb003a5c5c615d2"
 EXPECTED_UI_SHA256 = "8dc0a0eb54a33ec2e0ee8df243ecbb9b0f7f4e8f764008cb68d843ebe8e2a355"
 PENDING_RELEASE_SHA256 = "60549a6729a3205055992c982fb3b180a96ab5a34fec82a26ff57afb914b45d8"
 BASE_USER_WATCH_HASH = "00eed84885792a43314e78d17a18f228ae8554d35d11fa8c5d84d2154a334105"
@@ -155,9 +156,9 @@ def verify_protected(snapshot: Mapping[str, Any], control, *, allow_new_observat
         raise control.EvidenceGap("persistent RATE_LIMITED value-probe lock drift")
 
 
-def verify_installed_files(control) -> dict[str, str]:
+def verify_installed_files(control, *, prepatch: bool = False) -> dict[str, str]:
     expected = {
-        "server.py": EXPECTED_SERVER_SHA256,
+        "server.py": EXPECTED_SERVER_PREPATCH_SHA256 if prepatch else EXPECTED_SERVER_SHA256,
         "Simple-Evaluator.html": EXPECTED_UI_SHA256,
         "browser-helper/background.js": EXPECTED_BACKGROUND_SHA256,
         "browser-helper/watch.js": EXPECTED_WATCH_SHA256,
@@ -182,6 +183,263 @@ def verify_installed_files(control) -> dict[str, str]:
     if release.get("status") != "FROZEN_PENDING_PHYSICAL_ACCEPTANCE":
         raise control.EvidenceGap("installed release is not pending physical acceptance")
     return actual
+
+
+
+def patch_installed_server(control) -> dict[str, Any]:
+    path = APP / "server.py"
+    raw = path.read_bytes()
+    before = hashlib.sha256(raw).hexdigest()
+    if before == EXPECTED_SERVER_SHA256:
+        return {"changed": False, "before_sha256": before, "after_sha256": before}
+    if before != EXPECTED_SERVER_PREPATCH_SHA256:
+        raise control.EvidenceGap(f"installed server preimage drift: {before}")
+    text = raw.decode("utf-8")
+    old_heartbeat = """    record = {
+        "schema": BROWSER_HEARTBEAT_SCHEMA,
+        "version": version,
+        "expected_version": expected or None,
+        "version_matches": bool(expected and version == expected),
+        "browser_family": browser_family,
+        "user_agent": user_agent or None,
+        "page_diagnostic": page_diagnostic,
+        "last_seen_at": now,
+        "release": RELEASE_ID,
+        "release_version": RELEASE_VERSION,
+    }
+    write_json_atomic(BROWSER_HEARTBEAT, record, backup_existing=False)
+    record_event(OPERATION_LOG, "browser_helper_heartbeat", release=RELEASE_ID, version=RELEASE_VERSION, details={
+        "browser_family": browser_family, "reported_version": version, "expected_version": expected,
+        "version_matches": bool(expected and version == expected),
+    })
+    return {"ok": True, **record}
+"""
+    new_heartbeat = """    record = {
+        "schema": BROWSER_HEARTBEAT_SCHEMA,
+        "version": version,
+        "expected_version": expected or None,
+        "version_matches": bool(expected and version == expected),
+        "browser_family": browser_family,
+        "user_agent": user_agent or None,
+        "page_diagnostic": page_diagnostic,
+        "last_seen_at": now,
+        "release": RELEASE_ID,
+        "release_version": RELEASE_VERSION,
+    }
+    # Multiple Chromium profiles may still have an older helper runtime loaded.
+    # Once the expected helper has produced a live heartbeat, a mismatched older
+    # runtime must not clobber that compatible health record.
+    current = {}
+    if BROWSER_HEARTBEAT.exists():
+        try:
+            raw_current = json.loads(BROWSER_HEARTBEAT.read_text(encoding="utf-8"))
+            if isinstance(raw_current, dict) and raw_current.get("schema") == BROWSER_HEARTBEAT_SCHEMA:
+                current = raw_current
+        except (OSError, ValueError, json.JSONDecodeError):
+            current = {}
+    current_seen = _parse_utc(current.get("last_seen_at")) if current else None
+    current_age = None if current_seen is None else max(
+        0, int((datetime.now(timezone.utc) - current_seen).total_seconds())
+    )
+    keep_compatible = bool(
+        expected
+        and version != expected
+        and current.get("version") == expected
+        and current_age is not None
+        and current_age <= BROWSER_HEARTBEAT_MAX_AGE_SECONDS
+    )
+    if keep_compatible:
+        record_event(OPERATION_LOG, "browser_helper_stale_heartbeat_ignored", release=RELEASE_ID, version=RELEASE_VERSION, details={
+            "browser_family": browser_family, "reported_version": version, "expected_version": expected,
+            "kept_browser_family": current.get("browser_family"), "kept_version": current.get("version"),
+        })
+        return {"ok": True, "ignored_version_mismatch": True, **current}
+    write_json_atomic(BROWSER_HEARTBEAT, record, backup_existing=False)
+    record_event(OPERATION_LOG, "browser_helper_heartbeat", release=RELEASE_ID, version=RELEASE_VERSION, details={
+        "browser_family": browser_family, "reported_version": version, "expected_version": expected,
+        "version_matches": bool(expected and version == expected),
+    })
+    return {"ok": True, **record}
+"""
+    old_acceptance = """def maybe_write_production_acceptance(state: dict | None = None) -> dict | None:
+    existing = production_acceptance_status()
+    if existing.get("status") == "PASS" and existing.get("checkpoint") == RELEASE_ID and str(existing.get("release_version") or "") == RELEASE_VERSION:
+        return existing
+    result = _production_acceptance_candidate(state)
+    if result is not None:
+        write_json_atomic(PRODUCTION_ACCEPTANCE, result, backup_existing=False)
+        record_event(OPERATION_LOG, "production_acceptance_pass", release=RELEASE_ID, version=RELEASE_VERSION, details={
+            "browser_family": result.get("browser_family"), "card_id": result.get("card_id"),
+            "observed_delta_seconds": result.get("observed_delta_seconds"),
+        })
+    return result
+"""
+    new_acceptance = """def maybe_write_production_acceptance(state: dict | None = None) -> dict | None:
+    # Full 1.4.13 single-worktab acceptance is transactional and is written only
+    # by the brokered physical-acceptance action after cadence, tab hygiene,
+    # protected-state, stop-condition, evaluator, and restart checks all pass.
+    existing = production_acceptance_status()
+    if (
+        existing.get("status") == "PASS"
+        and existing.get("checkpoint") == RELEASE_ID
+        and str(existing.get("release_version") or "") == RELEASE_VERSION
+        and existing.get("full_single_worktab_acceptance") is True
+    ):
+        return existing
+    return None
+"""
+    if text.count(old_heartbeat) != 1:
+        raise control.EvidenceGap("installed server heartbeat patch anchor drift")
+    if text.count(old_acceptance) != 1:
+        raise control.EvidenceGap("installed server acceptance patch anchor drift")
+    text = text.replace(old_heartbeat, new_heartbeat, 1).replace(old_acceptance, new_acceptance, 1)
+    temp = path.with_suffix(".py.r24.tmp")
+    temp.write_text(text, encoding="utf-8", newline="\n")
+    after = sha256(temp)
+    if after != EXPECTED_SERVER_SHA256:
+        try:
+            temp.unlink()
+        except OSError:
+            pass
+        raise control.ControlError(f"patched server hash mismatch: {after}")
+    os.replace(temp, path)
+    return {"changed": True, "before_sha256": before, "after_sha256": sha256(path)}
+
+
+def verify_installed_stop_conditions(control) -> dict[str, Any]:
+    watch = (HELPER_DIR / "watch.js").read_text(encoding="utf-8")
+    background = (HELPER_DIR / "background.js").read_text(encoding="utf-8")
+    required_watch = [
+        "const MIN_INTERVAL_SECONDS = 120;",
+        "const MIN_PAGE_DWELL_MS = 5000;",
+        "user-action-required",
+        "access-denied",
+        "rate-limited",
+        "market-source-error",
+        "parse-error",
+        "market-timeout",
+        "simple-evaluator:browser-work-stop",
+        "simple-evaluator:value-probe-rate-limited",
+    ]
+    missing = [token for token in required_watch if token not in watch]
+    if missing:
+        raise control.EvidenceGap("installed stop-condition logic drift: " + ", ".join(missing))
+    required_background = [
+        "const MIN_INTERVAL_SECONDS = 120;",
+        "simple-evaluator:browser-work-stop",
+        "await clearTabSchedule(tabId);",
+        "chrome.tabs.update(tabId, {url: workTabUrl",
+    ]
+    missing_bg = [token for token in required_background if token not in background]
+    if missing_bg:
+        raise control.EvidenceGap("installed scheduler/stop logic drift: " + ", ".join(missing_bg))
+    return {
+        "watch_stop_tokens": required_watch,
+        "background_scheduler_tokens": required_background,
+        "watch_sha256": sha256(HELPER_DIR / "watch.js"),
+        "background_sha256": sha256(HELPER_DIR / "background.js"),
+    }
+
+
+def evaluator_acceptance(control) -> dict[str, Any]:
+    spec = importlib.util.spec_from_file_location("simple_evaluator_evaluator_acceptance", APP / "evaluator.py")
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    data = read_json(APP / "cards.json")
+    cards = data.get("cards") if isinstance(data, dict) else None
+    models = data.get("simple_models") if isinstance(data, dict) else None
+    if not isinstance(cards, list) or not isinstance(models, dict) or len(cards) != 9206:
+        raise control.EvidenceGap("evaluator catalog/model baseline drift")
+    if len({str(card.get("id") or "") for card in cards if isinstance(card, dict)}) != len(cards):
+        raise control.EvidenceGap("duplicate exact-card identity in evaluator catalog")
+    results: dict[str, list[str]] = {}
+    for position, model in sorted(models.items()):
+        first = module.rank_position(cards, position, model, limit=5)
+        second = module.rank_position(cards, position, model, limit=5)
+        first_ids = [str(row.get("id") or "") for row in first]
+        if first_ids != [str(row.get("id") or "") for row in second]:
+            raise control.ControlError(f"nondeterministic evaluator results for {position}")
+        if any(str(row.get("program") or "").strip().casefold() == "platinum rare" for row in first):
+            raise control.ControlError(f"Platinum Rare leaked into evaluator results for {position}")
+        results[position] = first_ids
+    required_positions = {
+        "QB","HB","FB","WR","TE","LT","LG","C","RG","RT",
+        "EDGE","DT","MLB","OLB","CB","FS","SS","K","P",
+    }
+    if set(results) != required_positions:
+        raise control.EvidenceGap(f"supported evaluator positions drift: {sorted(results)}")
+    targets = [
+        ("Jordan Allen", 91, "FS"),
+        ("Ashlynd Barker", 91, "FS"),
+        ("Kingston Lopa", 90, "FS"),
+        ("Earl Little Jr.", 90, "FS"),
+        ("Xavier Filsaime", 90, "FS"),
+    ]
+    target_rows = []
+    for name, ovr, position in targets:
+        matches = [
+            card for card in cards
+            if isinstance(card, dict)
+            and str(card.get("name") or "") == name
+            and int(card.get("ovr") or -1) == ovr
+            and str(card.get("position") or "") == position
+        ]
+        target_rows.append({"name": name, "ovr": ovr, "position": position, "installed_matches": len(matches)})
+    # The current mission explicitly records these newer FS versions as not yet
+    # imported. Acceptance must expose that gap rather than silently treating
+    # older same-name cards as identity matches.
+    if any(row["installed_matches"] for row in target_rows):
+        raise control.EvidenceGap("required-FS installed identity baseline changed; authority must be reconciled before acceptance")
+    return {
+        "catalog_card_count": len(cards),
+        "position_count": len(results),
+        "top5_ids_by_position": results,
+        "fs_top5_ids": results["FS"],
+        "platinum_rare_excluded": True,
+        "required_fs_installed_identity_checks": target_rows,
+        "required_fs_status": "CURRENT_BROWSER_IDENTITIES_OBSERVED_PREVIOUSLY_BUT_NOT_YET_IMPORTED",
+    }
+
+
+def write_full_acceptance(
+    *,
+    helper: Mapping[str, Any],
+    first_obs: Mapping[str, Any],
+    cadence_obs: Mapping[str, Any],
+    cadence_delta: float,
+    tab_cleanup: Mapping[str, Any],
+    stop_checks: Mapping[str, Any],
+    evaluator_checks: Mapping[str, Any],
+    protected_after: Mapping[str, Any],
+    restart_port: int,
+) -> str:
+    path = APP / "PRODUCTION_WORKSTATION_ACCEPTANCE_3T.json"
+    result = {
+        "schema": "simple-evaluator-production-acceptance-v1",
+        "checkpoint": "3T",
+        "release_version": "1.2.0",
+        "release_status_before_acceptance": "FROZEN_PENDING_PHYSICAL_ACCEPTANCE",
+        "status": "PASS",
+        "full_single_worktab_acceptance": True,
+        "accepted_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "browser_family": helper.get("browser_family"),
+        "browser_helper_version": EXPECTED_HELPER_VERSION,
+        "card_id": str(first_obs.get("card_id") or ""),
+        "interval_seconds_required": 120,
+        "observed_delta_seconds": round(cadence_delta, 3),
+        "first_observation": dict(first_obs),
+        "second_cadence_observation": dict(cadence_obs),
+        "one_worktab_proof": dict(tab_cleanup),
+        "stop_condition_proof": dict(stop_checks),
+        "evaluator_checks": dict(evaluator_checks),
+        "protected_state_after": dict(protected_after),
+        "restart_port": int(restart_port),
+    }
+    temp = path.with_suffix(".json.r24.tmp")
+    temp.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8", newline="\n")
+    os.replace(temp, path)
+    return sha256(path)
 
 
 def find_controlled_edge(control) -> dict[str, Any]:
@@ -227,20 +485,24 @@ foreach($t in $tabs){{
 
 
 def open_extensions_root_and_snapshot(edge_pid: int, control) -> dict[str, Any]:
-    ps = rf'''
+    ps = rf"""
 Add-Type -AssemblyName UIAutomationClient
 Add-Type -AssemblyName UIAutomationTypes
 $p=Get-Process -Id {edge_pid} -ErrorAction Stop
 $root=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
 $all=$root.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)
-$backs=@()
+$links=@()
 foreach($e in $all){{
-  if($e.Current.ControlType -eq [System.Windows.Automation.ControlType]::Button -and [string]$e.Current.Name -eq "Back" -and $e.Current.IsEnabled){{
-    try{{ $null=$e.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern); $backs += $e }}catch{{}}
+  if(
+    $e.Current.ControlType -eq [System.Windows.Automation.ControlType]::Hyperlink -and
+    [string]$e.Current.Name -eq "Installed extensions" -and
+    $e.Current.IsEnabled
+  ){{
+    try{{ $null=$e.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern); $links += $e }}catch{{}}
   }}
 }}
-if($backs.Count -ne 1){{ throw ("Expected exactly one enabled Extensions Back button; observed "+$backs.Count) }}
-($backs[0].GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern)).Invoke()
+if($links.Count -ne 1){{ throw ("Expected exactly one enabled Installed extensions hyperlink; observed "+$links.Count) }}
+($links[0].GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern)).Invoke()
 Start-Sleep -Seconds 2
 $root=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
 $all=$root.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)
@@ -258,9 +520,8 @@ foreach($e in $all){{
   }}catch{{}}
 }}
 [pscustomobject]@{{Title=$p.MainWindowTitle;Labels=$labels;Toggles=$toggles}} | ConvertTo-Json -Depth 6
-'''
+"""
     return run_ps_json(ps, control)
-
 
 def select_developer_toggle(snapshot: Mapping[str, Any], control) -> dict[str, Any]:
     labels = snapshot.get("Labels") or []
@@ -561,130 +822,304 @@ def write_release_accepted(control) -> str:
 def run(repo: Path, control) -> Mapping[str, Any]:
     if os.name != "nt":
         raise control.EvidenceGap("single-worktab physical acceptance is Windows-only")
-    control.verify_repo(repo, expected_revision=EXPECTED_AUTHORITY_REVISION, expected_branch="product/c3po-clean-room-roster", require_clean=True)
-    installed_hashes = verify_installed_files(control)
+    control.verify_repo(
+        repo,
+        expected_revision=EXPECTED_AUTHORITY_REVISION,
+        expected_branch="product/c3po-clean-room-roster",
+        require_clean=True,
+    )
+
+    installed_hashes_prepatch = verify_installed_files(control, prepatch=True)
     before = protected_snapshot()
     verify_protected(before, control, allow_new_observations=False)
+    stop_checks = verify_installed_stop_conditions(control)
+    evaluator_checks = evaluator_acceptance(control)
+
     launch = load_launch_module()
     port = launch.find_running_server()
     if port is None:
         raise control.EvidenceGap("Simple Evaluator server is not running")
-    queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
-    if queue.get("schema") != "simple-evaluator-browser-work-queue-v1" or queue.get("active") is not True:
-        raise control.EvidenceGap("single-worktab queue is not active")
-    edge = find_controlled_edge(control)
-    edge_pid = int(edge["ProcessId"])
-    pre_uia = uia_snapshot(edge_pid, control)
-    if "Extensions" not in str(pre_uia.get("Title") or ""):
-        raise control.EvidenceGap("controlled Edge window is not on the known extension-details surface")
 
-    root = open_extensions_root_and_snapshot(edge_pid, control)
-    chosen = select_developer_toggle(root, control)
-    toggle = toggle_exact(edge_pid, chosen, control)
-    helper = wait_helper(int(port), control, seconds=30)
+    release_path = APP / "RELEASE.json"
+    acceptance_path = APP / "PRODUCTION_WORKSTATION_ACCEPTANCE_3T.json"
+    server_path = APP / "server.py"
+    release_backup = release_path.read_bytes()
+    server_backup = server_path.read_bytes()
+    acceptance_existed = acceptance_path.exists()
+    acceptance_backup = acceptance_path.read_bytes() if acceptance_existed else None
+    server_patch: dict[str, Any] | None = None
+    edge_pid: int | None = None
 
-    obs_before = observations()
-    first_queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
-    first_id = str(first_queue.get("card_id") or "")
-    if not first_id:
-        raise control.EvidenceGap("first queue card ID is absent")
-    reload_info = choose_work_tab_and_reload(edge_pid, first_queue, control)
-    reload_at = parse_dt(str(reload_info["ReloadedAt"]))
-    first_obs, first_elapsed = wait_observation(
-        first_id,
-        after=reload_at,
-        count_before=len(obs_before),
-        seconds=60,
-        control=control,
-    )
-    if first_elapsed < 5.0:
-        raise control.ControlError(f"first rendered-page observation violated 5-second dwell: {first_elapsed:.3f}s")
-
-    next_queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
-    next_id = str(next_queue.get("card_id") or "")
-    if not next_id or next_id == first_id:
-        raise control.EvidenceGap(f"second saved-watch queue card is not distinct: {next_id!r}")
-    second_url, navigation_detected_at = wait_url_change(
-        edge_pid,
-        str(reload_info.get("Url") or ""),
-        seconds=30,
-        control=control,
-    )
-    second_obs, second_elapsed = wait_observation(
-        next_id,
-        after=navigation_detected_at,
-        count_before=len(obs_before) + 1,
-        seconds=60,
-        control=control,
-    )
-    if second_elapsed < 4.85:
-        raise control.ControlError(
-            f"second rendered-page observation is inconsistent with 5-second dwell: {second_elapsed:.3f}s"
-        )
-
-    selected = uia_snapshot(edge_pid, control)
-    selected_title = ""
-    tabs = selected.get("Tabs") or []
-    if isinstance(tabs, dict):
-        tabs = [tabs]
-    selected_rows = [row for row in tabs if row.get("Selected") is True]
-    if len(selected_rows) == 1:
-        selected_title = str(selected_rows[0].get("Name") or "")
-    cleanup = close_known_temporary_tabs(edge_pid, selected_title, control)
-    remaining = cleanup.get("Remaining") or []
-    if isinstance(remaining, str):
-        remaining = [remaining]
-    cfb_titles = [name for name in remaining if "CFB.FAN" in str(name)]
-    if len(cfb_titles) != 1:
-        raise control.ControlError(f"tab hygiene failed: expected one CFB.FAN tab, observed {len(cfb_titles)}")
-
-    mid = protected_snapshot()
-    verify_protected(mid, control, allow_new_observations=True)
-    new_port, new_pid = restart_server(int(port), launch, control)
-    helper_after_restart = wait_helper(new_port, control, seconds=30)
-    queue_after_restart = http_json(f"http://127.0.0.1:{new_port}/browser-watch-next.json")
-    after_restart = protected_snapshot()
-    verify_protected(after_restart, control, allow_new_observations=True)
-    if queue_after_restart.get("schema") != "simple-evaluator-browser-work-queue-v1":
-        raise control.ControlError("single-worktab queue did not survive dynamic-port restart")
-
-    release_backup = (APP / "RELEASE.json").read_bytes()
     try:
-        accepted_release_sha = write_release_accepted(control)
-        release = read_json(APP / "RELEASE.json")
-        if release.get("status") != "PRODUCTION_ACCEPTED":
-            raise control.ControlError("release acceptance status write did not persist")
-    except Exception:
-        (APP / "RELEASE.json").write_bytes(release_backup)
-        raise
+        # Harden the installed acceptance boundary before activating 1.4.13:
+        # stale 1.4.12 Chromium heartbeats can no longer clobber a compatible
+        # 1.4.13 heartbeat, and the server can no longer self-certify a narrow PASS.
+        server_patch = patch_installed_server(control)
+        if server_patch.get("changed"):
+            port, _ = restart_server(int(port), launch, control)
+        installed_hashes = verify_installed_files(control, prepatch=False)
 
-    return {
-        "status": "PASS",
-        "installed_hashes_before_acceptance": installed_hashes,
-        "edge_pid": edge_pid,
-        "developer_mode": toggle,
-        "helper_before_restart": helper,
-        "first_observation": {
-            "card_id": first_id,
-            "elapsed_seconds": round(first_elapsed, 3),
-            "observed_at": first_obs.get("observed_at"),
-            "price_state": first_obs.get("listing_state") or first_obs.get("status"),
-        },
-        "second_observation": {
-            "card_id": next_id,
-            "elapsed_from_navigation_detection_seconds": round(second_elapsed, 3),
-            "detected_url": second_url,
-            "observed_at": second_obs.get("observed_at"),
-            "price_state": second_obs.get("listing_state") or second_obs.get("status"),
-        },
-        "tab_cleanup": cleanup,
-        "cfb_tab_count_after_cleanup": len(cfb_titles),
-        "old_server_port": int(port),
-        "new_server_port": new_port,
-        "new_server_pid": new_pid,
-        "helper_after_restart": helper_after_restart,
-        "queue_after_restart": queue_after_restart,
-        "protected_before": before,
-        "protected_after_restart": after_restart,
-        "accepted_release_sha256": accepted_release_sha,
-    }
+        queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
+        if queue.get("schema") != "simple-evaluator-browser-work-queue-v1" or queue.get("active") is not True:
+            raise control.EvidenceGap("single-worktab queue is not active")
+
+        edge = find_controlled_edge(control)
+        edge_pid = int(edge["ProcessId"])
+        pre_uia = uia_snapshot(edge_pid, control)
+        if "Extensions" not in str(pre_uia.get("Title") or ""):
+            raise control.EvidenceGap("controlled Edge window is not on the known extension-details surface")
+
+        root = open_extensions_root_and_snapshot(edge_pid, control)
+        chosen = select_developer_toggle(root, control)
+        toggle = toggle_exact(edge_pid, chosen, control)
+        helper = wait_helper(int(port), control, seconds=30)
+
+        obs_before = observations()
+        first_queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
+        first_id = str(first_queue.get("card_id") or "")
+        if not first_id:
+            raise control.EvidenceGap("first queue card ID is absent")
+        reload_info = choose_work_tab_and_reload(edge_pid, first_queue, control)
+        reload_at = parse_dt(str(reload_info["ReloadedAt"]))
+        first_obs, first_elapsed = wait_observation(
+            first_id,
+            after=reload_at,
+            count_before=len(obs_before),
+            seconds=60,
+            control=control,
+        )
+        if first_elapsed < 5.0:
+            raise control.ControlError(
+                f"first rendered-page observation violated 5-second dwell: {first_elapsed:.3f}s"
+            )
+
+        next_queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
+        next_id = str(next_queue.get("card_id") or "")
+        if not next_id or next_id == first_id:
+            raise control.EvidenceGap(f"second saved-watch queue card is not distinct: {next_id!r}")
+        second_url, navigation_detected_at = wait_url_change(
+            edge_pid,
+            str(reload_info.get("Url") or ""),
+            seconds=30,
+            control=control,
+        )
+        second_obs, second_elapsed = wait_observation(
+            next_id,
+            after=navigation_detected_at,
+            count_before=len(obs_before) + 1,
+            seconds=60,
+            control=control,
+        )
+        if second_elapsed < 4.85:
+            raise control.ControlError(
+                f"second rendered-page observation is inconsistent with 5-second dwell: {second_elapsed:.3f}s"
+            )
+
+        # Prove the real saved-watch 120-second scheduler. After both currently-due
+        # watches have been observed, the next cycle must wait for a previously
+        # observed exact card rather than immediately spinning.
+        cadence_queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
+        cadence_id = str(cadence_queue.get("card_id") or "")
+        cadence_wait = float(cadence_queue.get("wait_seconds") or 0.0)
+        if (
+            cadence_queue.get("active") is not True
+            or cadence_queue.get("due_now") is True
+            or cadence_queue.get("status") != "WAITING"
+            or cadence_id not in {first_id, next_id}
+            or cadence_wait <= 0.0
+            or cadence_wait > 120.25
+        ):
+            raise control.ControlError(f"120-second saved-watch scheduling proof failed: {cadence_queue!r}")
+        prior_obs = first_obs if cadence_id == first_id else second_obs
+        cadence_url, cadence_navigation_at = wait_url_change(
+            edge_pid,
+            second_url,
+            seconds=max(35.0, cadence_wait + 35.0),
+            control=control,
+        )
+        cadence_obs, cadence_elapsed = wait_observation(
+            cadence_id,
+            after=cadence_navigation_at,
+            count_before=len(obs_before) + 2,
+            seconds=60,
+            control=control,
+        )
+        if cadence_elapsed < 4.85:
+            raise control.ControlError(
+                f"cadence rendered-page observation is inconsistent with 5-second dwell: {cadence_elapsed:.3f}s"
+            )
+        cadence_delta = (
+            parse_dt(str(cadence_obs.get("observed_at") or ""))
+            - parse_dt(str(prior_obs.get("observed_at") or ""))
+        ).total_seconds()
+        if cadence_delta < 120.0:
+            raise control.ControlError(
+                f"saved-watch cadence violated 120-second minimum: {cadence_delta:.3f}s"
+            )
+
+        selected = uia_snapshot(edge_pid, control)
+        selected_title = ""
+        tabs = selected.get("Tabs") or []
+        if isinstance(tabs, dict):
+            tabs = [tabs]
+        selected_rows = [row for row in tabs if row.get("Selected") is True]
+        if len(selected_rows) == 1:
+            selected_title = str(selected_rows[0].get("Name") or "")
+        cleanup = close_known_temporary_tabs(edge_pid, selected_title, control)
+        remaining = cleanup.get("Remaining") or []
+        if isinstance(remaining, str):
+            remaining = [remaining]
+        cfb_titles = [name for name in remaining if "CFB.FAN" in str(name)]
+        if len(cfb_titles) != 1:
+            raise control.ControlError(
+                f"tab hygiene failed: expected one CFB.FAN tab, observed {len(cfb_titles)}"
+            )
+
+        mid = protected_snapshot()
+        verify_protected(mid, control, allow_new_observations=True)
+
+        # Restart once while still pending and prove the queue, helper, exact-card
+        # observations, server hotfix, and protected state survive.
+        restart_port, restart_pid = restart_server(int(port), launch, control)
+        helper_after_restart = wait_helper(restart_port, control, seconds=30)
+        queue_after_restart = http_json(
+            f"http://127.0.0.1:{restart_port}/browser-watch-next.json"
+        )
+        after_restart = protected_snapshot()
+        verify_protected(after_restart, control, allow_new_observations=True)
+        if queue_after_restart.get("schema") != "simple-evaluator-browser-work-queue-v1":
+            raise control.ControlError("single-worktab queue did not survive dynamic-port restart")
+        persisted = observations()
+        persisted_ids = {
+            str(row.get("card_id") or "")
+            for row in persisted
+            if isinstance(row, dict)
+            and row.get("collection_method") == "USER_STARTED_BROWSER_WATCH"
+            and row.get("helper_version") == EXPECTED_HELPER_VERSION
+        }
+        if not {first_id, next_id}.issubset(persisted_ids):
+            raise control.ControlError("exact-card 1.4.13 observations did not persist through restart")
+
+        acceptance_sha = write_full_acceptance(
+            helper=helper_after_restart,
+            first_obs=prior_obs,
+            cadence_obs=cadence_obs,
+            cadence_delta=cadence_delta,
+            tab_cleanup=cleanup,
+            stop_checks=stop_checks,
+            evaluator_checks=evaluator_checks,
+            protected_after=after_restart,
+            restart_port=restart_port,
+        )
+        accepted_release_sha = write_release_accepted(control)
+
+        # RELEASE is read at server import time. Restart again after the accepted
+        # write so health/diagnostics must actually load and report the accepted
+        # release, not merely observe the file on disk.
+        final_port, final_pid = restart_server(restart_port, launch, control)
+        helper_final = wait_helper(final_port, control, seconds=30)
+        health_final = http_json(f"http://127.0.0.1:{final_port}/health.json")
+        diagnostics_final = http_json(f"http://127.0.0.1:{final_port}/diagnostics.json")
+        final_protected = protected_snapshot()
+        verify_protected(final_protected, control, allow_new_observations=True)
+        if health_final.get("release_status") != "PRODUCTION_ACCEPTED":
+            raise control.ControlError(f"accepted release did not survive restart: {health_final!r}")
+        diag_release = diagnostics_final.get("release") or {}
+        if (
+            diagnostics_final.get("deployment_ready") is not True
+            or diag_release.get("status") != "PRODUCTION_ACCEPTED"
+            or (diagnostics_final.get("browser_helper") or {}).get("version_matches") is not True
+        ):
+            raise control.ControlError(
+                f"final accepted diagnostics are not deployment-ready: {diagnostics_final!r}"
+            )
+        acceptance_final = http_json(
+            f"http://127.0.0.1:{final_port}/production-acceptance.json"
+        )
+        if (
+            acceptance_final.get("status") != "PASS"
+            or acceptance_final.get("full_single_worktab_acceptance") is not True
+            or float(acceptance_final.get("observed_delta_seconds") or 0) < 120.0
+        ):
+            raise control.ControlError(f"full acceptance record did not survive restart: {acceptance_final!r}")
+
+        verify_installed_files(control, prepatch=False)
+        return {
+            "status": "PASS",
+            "installed_hashes_before_server_hardening": installed_hashes_prepatch,
+            "installed_hashes_after_server_hardening": installed_hashes,
+            "server_hardening": server_patch,
+            "edge_pid": edge_pid,
+            "developer_mode": toggle,
+            "helper_live": helper,
+            "first_observation": {
+                "card_id": first_id,
+                "elapsed_seconds": round(first_elapsed, 3),
+                "observed_at": first_obs.get("observed_at"),
+                "price_state": first_obs.get("listing_state") or first_obs.get("status"),
+            },
+            "second_observation": {
+                "card_id": next_id,
+                "elapsed_from_navigation_detection_seconds": round(second_elapsed, 3),
+                "detected_url": second_url,
+                "observed_at": second_obs.get("observed_at"),
+                "price_state": second_obs.get("listing_state") or second_obs.get("status"),
+            },
+            "cadence_observation": {
+                "card_id": cadence_id,
+                "scheduled_wait_seconds": round(cadence_wait, 3),
+                "detected_url": cadence_url,
+                "elapsed_from_navigation_detection_seconds": round(cadence_elapsed, 3),
+                "observed_delta_seconds": round(cadence_delta, 3),
+                "observed_at": cadence_obs.get("observed_at"),
+            },
+            "stop_condition_checks": stop_checks,
+            "evaluator_checks": evaluator_checks,
+            "tab_cleanup": cleanup,
+            "cfb_tab_count_after_cleanup": len(cfb_titles),
+            "restart_pending": {
+                "port": restart_port,
+                "pid": restart_pid,
+                "helper": helper_after_restart,
+                "queue": queue_after_restart,
+            },
+            "restart_accepted": {
+                "port": final_port,
+                "pid": final_pid,
+                "helper": helper_final,
+                "health": health_final,
+                "diagnostics_deployment_ready": diagnostics_final.get("deployment_ready"),
+            },
+            "protected_before": before,
+            "protected_after_restart": after_restart,
+            "protected_final": final_protected,
+            "full_acceptance_sha256": acceptance_sha,
+            "accepted_release_sha256": accepted_release_sha,
+        }
+    except Exception:
+        # Fail closed and restore every acceptance-boundary file. Best-effort
+        # restart reloads the restored pending release/original server if the
+        # server hotfix had already been activated.
+        try:
+            release_path.write_bytes(release_backup)
+        except OSError:
+            pass
+        try:
+            if acceptance_existed and acceptance_backup is not None:
+                acceptance_path.write_bytes(acceptance_backup)
+            elif acceptance_path.exists():
+                acceptance_path.unlink()
+        except OSError:
+            pass
+        try:
+            if server_path.read_bytes() != server_backup:
+                server_path.write_bytes(server_backup)
+        except OSError:
+            pass
+        try:
+            current_port = launch.find_running_server()
+            if current_port is not None:
+                restart_server(int(current_port), launch, control)
+        except Exception:
+            pass
+        raise
