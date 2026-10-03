@@ -232,9 +232,9 @@ def test_single_worktab_runtime_loader_has_importlib_util_available():
     assert callable(mod.importlib.util.spec_from_file_location)
     assert callable(mod.importlib.util.module_from_spec)
 
-def test_single_worktab_action_revision_pin_matches_revision_24():
+def test_single_worktab_action_revision_pin_matches_revision_25():
     action = load_single_worktab_action()
-    assert action.EXPECTED_AUTHORITY_REVISION == 24
+    assert action.EXPECTED_AUTHORITY_REVISION == 25
 
 def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, monkeypatch):
     action = load_single_worktab_action()
@@ -311,3 +311,22 @@ def test_single_worktab_r24_checks_stops_evaluator_and_five_fs_identity_gap():
     for name in ("Jordan Allen", "Ashlynd Barker", "Kingston Lopa", "Earl Little Jr.", "Xavier Filsaime"):
         assert name in source
     assert "CURRENT_BROWSER_IDENTITIES_OBSERVED_PREVIOUSLY_BUT_NOT_YET_IMPORTED" in source
+
+def test_single_worktab_r25_stops_server_before_atomic_patch_and_restarts_after():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    run_block = source[source.index("def run(repo: Path, control)"):]
+    stop_call = "server_stopped_pid = stop_server(int(port), launch, control)"
+    patch_call = "server_patch = patch_installed_server(control)"
+    start_call = "port, _ = start_server(server_stopped_pid, launch, control)"
+    assert stop_call in run_block
+    assert patch_call in run_block
+    assert start_call in run_block
+    assert run_block.index(stop_call) < run_block.index(patch_call) < run_block.index(start_call)
+    restart_block = source[source.index("def restart_server"):source.index("def write_release_accepted")]
+    assert "old_pid = stop_server(port, launch, control)" in restart_block
+    assert "return start_server(old_pid, launch, control)" in restart_block
+    rollback = run_block[run_block.index("except Exception:"):]
+    restore_stop = "rollback_pid = stop_server(int(current_port), launch, control)"
+    assert restore_stop in rollback
+    assert rollback.index(restore_stop) < rollback.index("server_path.write_bytes(server_backup)")
