@@ -1,6 +1,6 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 34
+State revision: 35
 Status: IN_PROGRESS
 Mission ID: OP-CATALOG-001
 
@@ -15,10 +15,10 @@ Read `docs/OPERATION_PANCAKE_CONTROL_STATE.json` first and validate it before ma
 Do not let the newest obstacle replace the recorded mission.
 
 ## Preflight evidence
-- MAP: OBSERVED: GitHub long-lived branch HEAD is 668c02abf9b8f308394ecac2d6fd91a36f27e1c2 with authority Revision 33 and durable worker READY at that exact head. | OBSERVED: Revision-33 acceptance issue #80 ran and failed terminally because no exact-card browser observation arrived within 60 seconds. | OBSERVED: current pancake_single_worktab_action.py still calls navigate_selected_url(edge_pid, first_source), so price/search acquisition remains direct stored-player-URL navigation.
-- HISTORY: VERIFIED_HISTORY: issues #60/#62/#64/#66/#69/#71/#73/#75/#77/#78/#80 are terminal and must not be replayed. | VERIFIED_HISTORY: on 2026-10-02 the accepted CFB.FAN workflow for searches and price checks was the normal rendered site flow in one reusable tab with >=5-second dwell and sequential navigation; direct/raw request routes remained closed. | VERIFIED_HISTORY: the user reconfirmed on 2026-10-03 that normal search was the only route that produced search/price answers; this supersedes further debugging of direct stored-player URL acquisition. | VERIFIED_HISTORY: denied source routes, provider-email rejection, exact-card identity, watches, persistent RATE_LIMITED lock, dynamic-port architecture and scoring remain unchanged.
-- RESEARCH: OBSERVED: current acceptance code still navigates directly from browser-watch-next source_url rather than performing the accepted normal rendered site search. | VERIFIED_HISTORY: normal rendered CFB.FAN pages/searches produced visible exact-card data and price answers when direct/raw acquisition paths did not. | OBSERVED: Revision-33 #prices continuity did not resolve persistence; issue #80 failed at the same no-observation boundary, so another direct-route symptom patch lacks an evidence basis.
-- CAPABILITIES: OBSERVED: durable Windows GitHub-inbox worker is READY at Revision 33 / HEAD 668c02ab with SOPDecisionGateway -> ControlledToolBroker available. | OBSERVED: the clean controlled repository is C:/Users/Trash Panda/AppData/Local/OperationPancakeControl/source-repo-r8; the stale dirty developer checkout is excluded from mutation. | OBSERVED: existing single-tab browser automation, exact-card identity checks, >=5-second dwell, >=120-second cadence, persistence contracts and rollback protections can be retained while only acquisition navigation is replaced. | OBSERVED: Desktop Commander is available only as bounded Windows execution/recovery transport; GitHub remains the normal read path.
+- MAP: OBSERVED: long-lived branch/runtime is Revision 34 at 7a9df794 with OP-CATALOG-001 IN_PROGRESS and normal rendered search REQUIRED_NEXT. | OBSERVED: current acceptance source still contains direct stored-player acquisition and installed background scheduler still navigates queued source URLs.
+- HISTORY: VERIFIED_HISTORY: issue #80 and prior listed acceptance issues are terminal and must not be replayed. | VERIFIED_HISTORY: October 2-3 accepted workflow requires normal rendered CFB.FAN search for searches and price checks; denied raw routes, scoring, exact-card and persistent RATE_LIMITED locks remain unchanged.
+- RESEARCH: OBSERVED: rendered CFB27 Players controls are f_name, f_overall__gte, f_overall__lte and one visible Apply Filters control. | OBSERVED: normal rendered search for Jaleel Skinner returned two 81 OVR cards, Core Rare 27-2002557 and Platinum Rare 27-9002557, proving name+OVR alone is ambiguous. | OBSERVED: selecting the rendered exact Core Rare result opened the correct exact-card page; after >=5-second dwell the player-local PRICES control class sub-nav__link js-scroll-link exposed PlayStation Live Auctions. | OBSERVED: exact result identity can fail closed by comparing the rendered result href to queued source_url while never navigating to that stored URL.
+- CAPABILITIES: OBSERVED: Browser Helper content scripts match https://cfb.fan/*, so they run on /27/players/ and exact-card pages. | OBSERVED: exact Edge Extension on TogglePattern can reload the unpacked helper without restarting the browser. | OBSERVED: saved-watch queue already provides card_id/name/ovr/program/source_url; Revision-35 server postimage adds source_url/program to active value-probe status. | OBSERVED: exact Revision-35 runtime postimages pass node --check / server py_compile and can be installed/rolled back transactionally by exact hashes.
 
 ## Available capabilities
 - GitHub repository read/write and PR workflow
@@ -87,14 +87,12 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-issue69-replay: Replay issue #69 or retry WScript.Shell.AppActivate by PID/title without materially new evidence.
 
 ## Next action
-Replace the direct stored-player-URL acquisition step in the rendered-browser single-tab route with the accepted normal rendered CFB.FAN search workflow: normal site search -> deterministic exact-card result selection -> >=5-second rendered dwell -> visible player-level Prices/Live Auctions -> FOUND or NO_LISTING observation persistence. Do not patch the Revision-33 direct-URL/#prices path again. Issue #80 is terminal at the same no-exact-card-observation boundary. Preserve one reusable tab, >=120-second cadence, exact-card identity, protected watches/state, denied-source locks, persistent RATE_LIMITED lock, Platinum Rare exclusion and unchanged scoring. Before any implementation mutation, prove the exact normal-search UI controls and exact-card disambiguation fail-closed; then make one bounded hypothesis/revision through Gateway/Broker.
+Deploy the single Revision-35 normal rendered search acquisition correction through the existing SOPDecisionGateway -> ControlledToolBroker path, then execute one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 35. The implementation must use one reusable authenticated tab and fixed CFB27 Players search page, rendered f_name plus OVR filters, deterministic exact result selection by the rendered href matching the queued stable exact-card source identity, >=5-second player-page dwell, and the visible player-local Prices/Live Auctions control. All saved-watch and value-probe browser transitions must return to the normal search page rather than navigate stored player URLs. Preserve issue #80 as terminal, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion, >=120-second cadence and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable.
 
 ## Remaining executable work
-- Prove the exact normal rendered CFB.FAN search UI controls and fail-closed exact-card disambiguation in one reusable authenticated tab.
-- Replace only direct stored-player-URL acquisition with the proven normal rendered search -> exact-card -> >=5-second dwell -> player-level Prices/Live Auctions path through Gateway/Broker.
-- Prove one exact-card FOUND/NO_LISTING observation persists end-to-end, then prove the second saved watch and same-tab reuse.
-- Prove real >=120-second watch cadence, protected state, evaluator regressions and restart durability.
-- Continue OP-CATALOG-001 because catalog import/revalidation criteria remain open.
+- Broker patch/publish/merge/rebind Revision 35 exact normal-search postimages and acceptance action.
+- Run one fresh full controlled acceptance proving two exact-card observations, same-tab reuse, >=120-second cadence, protected state, evaluator regressions and restart durability.
+- Continue OP-CATALOG-001 catalog import/revalidation criteria after Browser Watch acceptance.
 
 ## Completion rule
 A commit, test, CI run, PR, package, screenshot, or progress report is only a checkpoint.

@@ -279,7 +279,7 @@ def test_single_worktab_runtime_loader_has_importlib_util_available():
 
 def test_single_worktab_action_revision_pin_matches_revision_33():
     action = load_single_worktab_action()
-    assert action.EXPECTED_AUTHORITY_REVISION == 33
+    assert action.EXPECTED_AUTHORITY_REVISION == 35
 
 def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, monkeypatch):
     action = load_single_worktab_action()
@@ -306,16 +306,17 @@ def test_single_worktab_extensions_root_uses_exact_installed_extensions_hyperlin
     assert 'Name -eq "Back"' not in block
 
 
+
 def test_single_worktab_r24_hardens_server_heartbeat_and_acceptance_boundary():
     action = load_single_worktab_action()
-    source = Path(action.__file__).read_text(encoding="utf-8")
+    repo = Path(action.__file__).resolve().parents[1]
+    server = (repo / "runtime" / "simple_evaluator" / "server.py").read_text(encoding="utf-8")
     assert action.EXPECTED_SERVER_PREPATCH_SHA256 == "bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37"
-    assert action.EXPECTED_SERVER_SHA256 == "95e6f98e61a3cb0a3133619348426c186302f6a19c3cb6a676d7d747b1534da8"
-    assert "def patch_installed_server" in source
-    assert "browser_helper_stale_heartbeat_ignored" in source
-    assert "current.get(\"version\") == expected" in source
-    assert "full_single_worktab_acceptance" in source
-    assert "server cannot self-write" not in source  # implementation, not commentary-only authority prose
+    assert action.EXPECTED_SERVER_SHA256 == "bc0582bfc95845d748cec60b21e39181f247b125675070ca87b76fd3c4acf69e"
+    assert "browser_helper_stale_heartbeat_ignored" in server
+    assert 'current.get("version") == expected' in server
+    assert "full_single_worktab_acceptance" in server
+    assert "def patch_installed_runtime" in Path(action.__file__).read_text(encoding="utf-8")
 
 
 def test_single_worktab_r24_requires_real_saved_watch_cadence_before_acceptance():
@@ -330,14 +331,16 @@ def test_single_worktab_r24_requires_real_saved_watch_cadence_before_acceptance(
     assert run_block.index("write_full_acceptance(") < run_block.index("write_release_accepted(control)")
 
 
+
 def test_single_worktab_r24_full_acceptance_is_transactional_and_restart_verified():
     action = load_single_worktab_action()
     source = Path(action.__file__).read_text(encoding="utf-8")
     run_block = source[source.index("def run(repo: Path, control)"):]
-    assert "server_backup = server_path.read_bytes()" in run_block
+    assert "runtime_backups = {str(path): path.read_bytes() for path in runtime_paths}" in run_block
     assert "acceptance_backup = acceptance_path.read_bytes()" in run_block
-    assert "release_backup = release_path.read_bytes()" in run_block
-    assert "write_server_bytes_in_place(server_path, server_backup, control)" in run_block
+    assert "release_backup = runtime_backups[str(release_path)]" in run_block
+    assert "for raw_path, backup in runtime_backups.items()" in run_block
+    assert "write_runtime_bytes(target, backup, control)" in run_block
     assert "acceptance_path.write_bytes(acceptance_backup)" in run_block
     assert "release_path.write_bytes(release_backup)" in run_block
     assert 'health_final.get("release_status") != "PRODUCTION_ACCEPTED"' in run_block
@@ -357,12 +360,13 @@ def test_single_worktab_r24_checks_stops_evaluator_and_five_fs_identity_gap():
         assert name in source
     assert "CURRENT_BROWSER_IDENTITIES_OBSERVED_PREVIOUSLY_BUT_NOT_YET_IMPORTED" in source
 
+
 def test_single_worktab_r25_stops_server_before_atomic_patch_and_restarts_after():
     action = load_single_worktab_action()
     source = Path(action.__file__).read_text(encoding="utf-8")
     run_block = source[source.index("def run(repo: Path, control)"):]
     stop_call = "server_stopped_pid = stop_server(int(port), launch, control)"
-    patch_call = "server_patch = patch_installed_server(control)"
+    patch_call = "runtime_patch = patch_installed_runtime(repo, control)"
     start_call = "port, _ = start_server(server_stopped_pid, launch, control)"
     assert stop_call in run_block
     assert patch_call in run_block
@@ -374,31 +378,34 @@ def test_single_worktab_r25_stops_server_before_atomic_patch_and_restarts_after(
     rollback = run_block[run_block.index("except Exception:"):]
     restore_stop = "rollback_pid = stop_server(int(current_port), launch, control)"
     assert restore_stop in rollback
-    assert rollback.index(restore_stop) < rollback.index("write_server_bytes_in_place(server_path, server_backup, control)")
+    assert rollback.index(restore_stop) < rollback.index("for raw_path, backup in runtime_backups.items()")
+
+
 
 def test_single_worktab_r26_uses_verified_inplace_server_write_only_for_server_py():
     action = load_single_worktab_action()
     source = Path(action.__file__).read_text(encoding="utf-8")
-    patch_start = source.index("def patch_installed_server")
-    patch_end = source.index("def verify_installed_stop_conditions", patch_start)
-    patch_block = source[patch_start:patch_end]
-    assert "write_server_bytes_in_place(path, postimage, control)" in patch_block
-    assert "os.replace(temp, path)" not in patch_block
-    helper_start = source.index("def write_server_bytes_in_place")
-    helper_block = source[helper_start:patch_start]
+    server_start = source.index("def write_server_bytes_in_place")
+    runtime_start = source.index("def write_runtime_bytes", server_start)
+    patch_start = source.index("def patch_installed_runtime", runtime_start)
+    helper_block = source[server_start:runtime_start]
+    runtime_block = source[runtime_start:patch_start]
+    patch_block = source[patch_start:source.index("def reload_helper_extension", patch_start)]
     assert 'path.open("wb")' in helper_block
     assert "handle.flush()" in helper_block
     assert "os.fsync(handle.fileno())" in helper_block
+    assert 'if path.name == "server.py":' in runtime_block
+    assert "return write_server_bytes_in_place(path, data, control)" in runtime_block
+    assert "os.replace(temp, path)" in runtime_block
+    assert "repository runtime postimage drift" in patch_block
+    assert "installed runtime preimage drift" in patch_block
     assert "def process_exists" in source
     stop_start = source.index("def stop_server")
     stop_end = source.index("def start_server", stop_start)
     stop_block = source[stop_start:stop_end]
     assert "listener_gone and not process_exists(pid)" in stop_block
-    # Controlled probes proved JSON atomic replacement works; retain it there.
-    full_accept_start = source.index("def write_full_acceptance")
-    release_start = source.index("def write_release_accepted")
-    assert "os.replace(temp, path)" in source[full_accept_start:source.index("def find_controlled_edge", full_accept_start)]
-    assert "os.replace(temp, path)" in source[release_start:source.index("def run(repo: Path, control)", release_start)]
+
+
 
 def test_single_worktab_r27_self_recovers_missing_controlled_edge_then_uses_dev_mode_path():
     action = load_single_worktab_action()
@@ -421,9 +428,11 @@ def test_single_worktab_r27_self_recovers_missing_controlled_edge_then_uses_dev_
     assert "edge = launch_controlled_edge(queue, control)" in run_block
     assert 'f"edge://extensions/?id={EXTENSION_ID}"' in run_block
     assert run_block.index("edge = launch_controlled_edge(queue, control)") < run_block.index("open_extensions_root_and_snapshot(edge_pid, control)")
-    assert run_block.index("toggle_exact(edge_pid, chosen, control)") < run_block.index("navigate_selected_url(edge_pid, activation_url, control)")
-    assert run_block.index("navigate_selected_url(edge_pid, activation_url, control)") < run_block.index("helper = wait_helper(int(port), control, seconds=30)")
+    assert run_block.index("toggle_exact(edge_pid, chosen, control)") < run_block.index("reload_helper_extension(edge_pid, control)")
+    assert run_block.index("reload_helper_extension(edge_pid, control)") < run_block.index("navigate_selected_url(edge_pid, NORMAL_SEARCH_URL, control)")
+    assert run_block.index("navigate_selected_url(edge_pid, NORMAL_SEARCH_URL, control)") < run_block.index("helper = wait_helper(int(port), control, seconds=30)")
     assert "Revision 19 proved that --load-extension alone is not sufficient." in run_block
+
 
 def test_single_worktab_r28_waits_for_installed_extensions_readiness_and_preserves_dev_mode_on():
     action = load_single_worktab_action()
@@ -464,19 +473,46 @@ def test_single_worktab_r30_uses_uia_omnibox_focus_and_exact_foreground_verifica
     assert block.index("$addr.SetFocus()") < block.index("$vp.SetValue")
 
 
+
 def test_single_worktab_r33_preserves_saved_watch_on_prices_fragment_only():
     action = load_single_worktab_action()
-    source = Path(action.__file__).read_text(encoding="utf-8")
-    assert action.EXPECTED_AUTHORITY_REVISION == 33
+    repo = Path(action.__file__).resolve().parents[1]
+    server = (repo / "runtime" / "simple_evaluator" / "server.py").read_text(encoding="utf-8")
+    assert action.EXPECTED_AUTHORITY_REVISION == 35
     assert action.EXPECTED_SERVER_PREPATCH_SHA256 == "bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37"
-    assert action.EXPECTED_SERVER_SHA256 == "95e6f98e61a3cb0a3133619348426c186302f6a19c3cb6a676d7d747b1534da8"
-    start = source.index("def patch_installed_server")
-    end = source.index("def verify_installed_stop_conditions", start)
-    block = source[start:end]
-    assert 'old_watch_config = """' in block
-    assert 'new_watch_config = """' in block
-    assert 'BROWSER_WORK_TAB_FRAGMENT in str(page_url or "")' in block
-    assert 'urlsplit(str(page_url or "")).fragment.lower() == "prices"' in block
-    assert 'saved-watch fragment patch anchor drift' in block
-    assert '.replace(old_watch_config, new_watch_config, 1)' in block
-    assert 'plain watched-card URL' not in block  # behavior stays encoded as exact fragment gate, not broad activation
+    assert action.EXPECTED_SERVER_SHA256 == "bc0582bfc95845d748cec60b21e39181f247b125675070ca87b76fd3c4acf69e"
+    assert 'BROWSER_WORK_TAB_FRAGMENT in str(page_url or "")' in server
+    assert 'urlsplit(str(page_url or "")).fragment.lower() == "prices"' in server
+    assert "same exact-card page" in server
+
+
+def test_single_worktab_r35_uses_normal_rendered_search_for_all_browser_work():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    repo = Path(action.__file__).resolve().parents[1]
+    bg = (repo / "runtime" / "simple_evaluator" / "browser-helper" / "background.js").read_text(encoding="utf-8")
+    watch = (repo / "runtime" / "simple_evaluator" / "browser-helper" / "watch.js").read_text(encoding="utf-8")
+    server = (repo / "runtime" / "simple_evaluator" / "server.py").read_text(encoding="utf-8")
+    manifest = json.loads((repo / "runtime" / "simple_evaluator" / "browser-helper" / "manifest.json").read_text(encoding="utf-8"))
+    assert action.EXPECTED_AUTHORITY_REVISION == 35
+    assert action.EXPECTED_HELPER_VERSION == "1.4.14"
+    assert action.NORMAL_SEARCH_URL == "https://cfb.fan/27/players/#simple-evaluator-worktab"
+    run_block = source[source.index("def run(repo: Path, control)"):]
+    assert "navigate_selected_url(edge_pid, first_source, control)" not in run_block
+    assert "navigate_selected_url(edge_pid, NORMAL_SEARCH_URL, control)" in run_block
+    assert "reload_helper_extension(edge_pid, control)" in run_block
+    assert "patch_installed_runtime(repo, control)" in run_block
+    assert "const NORMAL_SEARCH_URL = 'https://cfb.fan/27/players/#simple-evaluator-worktab';" in bg
+    assert "currentBrowserWork" in bg
+    assert "simple-evaluator:get-browser-work" in bg
+    assert "return NORMAL_SEARCH_URL;" in bg
+    assert "normal-search-submitted" in watch
+    assert "normal-search-result-selected" in watch
+    assert "#f_name" in watch
+    assert "#f_overall__gte" in watch and "#f_overall__lte" in watch
+    assert "normalizedCardUrl(link.href) === expected" in watch
+    assert "history.replaceState" in watch
+    assert 'BROWSER_NORMAL_SEARCH_URL = "https://cfb.fan/27/players/#simple-evaluator-worktab"' in server
+    assert '"current_program": card.get("program"), "source_url": _browser_work_url(card.get("source", ""))' in server
+    assert server.count('self.send_header("Location", BROWSER_NORMAL_SEARCH_URL)') == 2
+    assert manifest["version"] == "1.4.14"

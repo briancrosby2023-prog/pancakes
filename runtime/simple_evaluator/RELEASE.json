@@ -1,0 +1,22 @@
+{
+  "schema": "simple-evaluator-release-v1",
+  "product": "Simple Evaluator + Price Watch",
+  "release": "3T",
+  "version": "1.2.0",
+  "status": "FROZEN_PENDING_PHYSICAL_ACCEPTANCE",
+  "browser_helper_version": "1.4.14",
+  "browser_priority": [
+    "edge",
+    "chrome"
+  ],
+  "browser_watch_interval_seconds": 120,
+  "acceptance_file": "PRODUCTION_WORKSTATION_ACCEPTANCE_3T.json",
+  "release_report_file": "PRODUCTION_RELEASE_REPORT_3T.json",
+  "operational_audit_file": "operations/LATEST_OPERATIONAL_AUDIT.json",
+  "support_bundle_dir": "support-bundles",
+  "stability_report_file": "operations/LATEST_STABILITY_REPORT.json",
+  "evaluator_policy_version": "1.5",
+  "catalog_refresh_policy_version": "1.2",
+  "value_price_refresh_policy_version": "1.5",
+  "evaluator_ui_policy_version": "1.4"
+}
