@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import importlib.util
 import json
@@ -279,7 +279,7 @@ def test_single_worktab_runtime_loader_has_importlib_util_available():
 
 def test_single_worktab_action_revision_pin_matches_revision_33():
     action = load_single_worktab_action()
-    assert action.EXPECTED_AUTHORITY_REVISION == 36
+    assert action.EXPECTED_AUTHORITY_REVISION == 37
 
 def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, monkeypatch):
     action = load_single_worktab_action()
@@ -397,7 +397,7 @@ def test_single_worktab_r26_uses_verified_inplace_server_write_only_for_server_p
     assert 'if path.name == "server.py":' in runtime_block
     assert "return write_server_bytes_in_place(path, data, control)" in runtime_block
     assert "os.replace(temp, path)" in runtime_block
-    assert "repository runtime postimage drift" in patch_block
+    assert "repository runtime Git blob drift" in patch_block
     assert "installed runtime preimage drift" in patch_block
     assert "def process_exists" in source
     stop_start = source.index("def stop_server")
@@ -478,7 +478,7 @@ def test_single_worktab_r33_preserves_saved_watch_on_prices_fragment_only():
     action = load_single_worktab_action()
     repo = Path(action.__file__).resolve().parents[1]
     server = (repo / "runtime" / "simple_evaluator" / "server.py").read_text(encoding="utf-8")
-    assert action.EXPECTED_AUTHORITY_REVISION == 36
+    assert action.EXPECTED_AUTHORITY_REVISION == 37
     assert action.EXPECTED_SERVER_PREPATCH_SHA256 == "bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37"
     assert action.EXPECTED_SERVER_SHA256 == "bc0582bfc95845d748cec60b21e39181f247b125675070ca87b76fd3c4acf69e"
     assert 'BROWSER_WORK_TAB_FRAGMENT in str(page_url or "")' in server
@@ -494,7 +494,7 @@ def test_single_worktab_r35_uses_normal_rendered_search_for_all_browser_work():
     watch = (repo / "runtime" / "simple_evaluator" / "browser-helper" / "watch.js").read_text(encoding="utf-8")
     server = (repo / "runtime" / "simple_evaluator" / "server.py").read_text(encoding="utf-8")
     manifest = json.loads((repo / "runtime" / "simple_evaluator" / "browser-helper" / "manifest.json").read_text(encoding="utf-8"))
-    assert action.EXPECTED_AUTHORITY_REVISION == 36
+    assert action.EXPECTED_AUTHORITY_REVISION == 37
     assert action.EXPECTED_HELPER_VERSION == "1.4.14"
     assert action.NORMAL_SEARCH_URL == "https://cfb.fan/27/players/#simple-evaluator-worktab"
     run_block = source[source.index("def run(repo: Path, control)"):]
@@ -521,7 +521,7 @@ def test_single_worktab_r35_uses_normal_rendered_search_for_all_browser_work():
 def test_single_worktab_r36_checks_old_runtime_before_install_and_new_runtime_after():
     action = load_single_worktab_action()
     source = Path(action.__file__).read_text(encoding="utf-8")
-    assert action.EXPECTED_AUTHORITY_REVISION == 36
+    assert action.EXPECTED_AUTHORITY_REVISION == 37
     start = source.index("def verify_installed_stop_conditions")
     end = source.index("def evaluator_acceptance", start)
     block = source[start:end]
@@ -537,3 +537,22 @@ def test_single_worktab_r36_checks_old_runtime_before_install_and_new_runtime_af
     assert pre in run_block and patch in run_block and post in run_block
     assert run_block.index(pre) < run_block.index(patch) < run_block.index(post)
     assert '"prepatch_stop_condition_checks": prepatch_stop_checks' in run_block
+
+
+def test_single_worktab_r37_uses_canonical_git_blob_runtime_postimages():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    assert action.EXPECTED_AUTHORITY_REVISION == 37
+    start = source.index("def repository_runtime_postimage_bytes")
+    end = source.index("def patch_installed_runtime", start)
+    helper = source[start:end]
+    assert '["git", "-C", str(repo), "show", f"HEAD:{git_path}"]' in helper
+    assert 'stdout=subprocess.PIPE' in helper
+    patch_start = source.index("def patch_installed_runtime")
+    patch_end = source.index("def reload_helper_extension", patch_start)
+    patch = source[patch_start:patch_end]
+    assert "postimage = repository_runtime_postimage_bytes(repo, rel, control)" in patch
+    assert "hashlib.sha256(postimage).hexdigest() != post_hash" in patch
+    assert "write_runtime_bytes(target, postimage, control)" in patch
+    assert "source.read_bytes()" not in patch
+    assert "sha256(source)" not in patch

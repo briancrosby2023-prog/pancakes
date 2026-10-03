@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 36,
+  "state_revision": 37,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Deploy the harness-only Revision-36 correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #83 is terminal and failed before runtime installation because Revision 35 checked postimage normal-search tokens against the prepatch Browser Helper. Revision 36 must verify legacy stop/scheduler invariants before installation, install the already-validated unchanged Revision-35 runtime postimages, then verify normal-search stop/scheduler invariants after installation before browser activation. Preserve the exact Revision-35 normal rendered search implementation, helper 1.4.14 postimages, one reusable tab, >=5-second dwell, >=120-second cadence, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable.",
+    "next_action": "Deploy the harness-only Revision-37 canonical-Git-blob runtime-postimage correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #85 is terminal and reached the registered acceptance action but stopped before any installed runtime write because Windows checkout converted the committed LF runtime/server.py postimage to CRLF: working-tree SHA-256 8e3a9980cd64136c7c0c9b6bbe32f95227a6f1fbfa17a8969373361f4f9f1eb4 with 1,934 CRLF sequences versus canonical Git blob SHA-256 bc0582bfc95845d748cec60b21e39181f247b125675070ca87b76fd3c4acf69e with zero CRLF, exactly matching the frozen expected postimage. Revision 37 must verify and install runtime postimages from canonical HEAD Git blob bytes, not line-ending-converted working-tree bytes. Preserve the unchanged Revision-35 normal-search runtime content/helper 1.4.14, Revision-36 pre/post stop checks, one reusable tab, >=5-second dwell, >=120-second cadence, denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while a fresh controlled acceptance remains executable.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -66,7 +66,8 @@
       "evidence": [
         "OBSERVED: long-lived branch/runtime is Revision 34 at 7a9df794 with OP-CATALOG-001 IN_PROGRESS and normal rendered search REQUIRED_NEXT.",
         "OBSERVED: current acceptance source still contains direct stored-player acquisition and installed background scheduler still navigates queued source URLs.",
-        "OBSERVED: Revision-35 acceptance issue #83 is terminal with EVIDENCE_GAP before runtime installation."
+        "OBSERVED: Revision-35 acceptance issue #83 is terminal with EVIDENCE_GAP before runtime installation.",
+        "OBSERVED: Revision-36 acceptance issue #85 is terminal after reaching the registered action but before any installed runtime postimage write."
       ]
     },
     "history": {
@@ -83,7 +84,8 @@
         "OBSERVED: normal rendered search for Jaleel Skinner returned two 81 OVR cards, Core Rare 27-2002557 and Platinum Rare 27-9002557, proving name+OVR alone is ambiguous.",
         "OBSERVED: selecting the rendered exact Core Rare result opened the correct exact-card page; after >=5-second dwell the player-local PRICES control class sub-nav__link js-scroll-link exposed PlayStation Live Auctions.",
         "OBSERVED: exact result identity can fail closed by comparing the rendered result href to queued source_url while never navigating to that stored URL.",
-        "OBSERVED: verify_installed_stop_conditions ran before patch_installed_runtime but required Revision-35 postimage tokens, proving the failure is harness ordering rather than normal-search runtime behavior."
+        "OBSERVED: verify_installed_stop_conditions ran before patch_installed_runtime but required Revision-35 postimage tokens, proving the failure is harness ordering rather than normal-search runtime behavior.",
+        "OBSERVED: issue #85 repository postimage drift is Windows line-ending conversion: working-tree server.py SHA 8e3a9980... with 1,934 CRLF versus canonical Git blob SHA bc0582bf... with zero CRLF, exactly equal to the frozen expected postimage."
       ]
     },
     "capabilities": {
@@ -93,7 +95,8 @@
         "OBSERVED: exact Edge Extension on TogglePattern can reload the unpacked helper without restarting the browser.",
         "OBSERVED: saved-watch queue already provides card_id/name/ovr/program/source_url; Revision-35 server postimage adds source_url/program to active value-probe status.",
         "OBSERVED: exact Revision-35 runtime postimages pass node --check / server py_compile and can be installed/rolled back transactionally by exact hashes.",
-        "OBSERVED: Revision-36 can separate prepatch legacy stop checks from postpatch normal-search stop checks without changing any Revision-35 runtime postimage bytes."
+        "OBSERVED: Revision-36 can separate prepatch legacy stop checks from postpatch normal-search stop checks without changing any Revision-35 runtime postimage bytes.",
+        "OBSERVED: local git show HEAD:runtime/simple_evaluator/server.py returns the exact canonical frozen postimage bytes independent of Windows working-tree line-ending conversion."
       ]
     }
   },
@@ -506,27 +509,27 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D26",
+    "decision_id": "OP-CATALOG-001-D27",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Deploy the harness-only Revision-36 pre/post stop-check ordering correction, then run one fresh full acceptance.",
+    "proposed_action": "Deploy Revision-37 canonical Git blob postimage loading, then run one fresh full acceptance.",
     "obstacle_classification": "IMPLEMENTATION_PROBLEM",
     "history_refs": [
-      "Issue #83 terminal before runtime install.",
-      "Revision 35 normal-search route remains REQUIRED_NEXT."
+      "Issue #85 terminal before installed runtime write.",
+      "Revision-35 runtime content remains unchanged."
     ],
     "capabilities_checked": [
       "clean controlled source-repo-r8",
+      "canonical local Git blob access",
       "SOPDecisionGateway and ControlledToolBroker",
-      "unchanged Revision-35 runtime postimages",
       "focused control suite"
     ],
     "alternatives_considered": [
-      "Change normal-search runtime code - rejected because #83 failed before runtime installation.",
-      "Remove stop-condition verification - rejected.",
-      "Replay #83 - rejected because terminal.",
-      "Split prepatch legacy checks and postpatch Revision-35 checks - selected."
+      "Change normal-search runtime content - rejected because canonical blob already matches the expected postimage.",
+      "Accept the CRLF working-tree hash - rejected because it would install bytes different from the validated frozen postimage.",
+      "Replay #85 - rejected because terminal.",
+      "Read exact postimages from canonical Git blobs - selected."
     ],
-    "selected_reason": "The exact #83 failure is fully explained by checking postimage tokens before installation.",
+    "selected_reason": "The committed runtime blob is exactly correct; only Windows checkout conversion caused the hash drift.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
@@ -1285,13 +1288,35 @@
       ],
       "result": "Revision-36 harness-only pre/post stop-check ordering correction selected.",
       "next": "Deploy the harness-only Revision-36 correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #83 is terminal and failed before runtime installation because Revision 35 checked postimage normal-search tokens against the prepatch Browser Helper. Revision 36 must verify legacy stop/scheduler invariants before installation, install the already-validated unchanged Revision-35 runtime postimages, then verify normal-search stop/scheduler invariants after installation before browser activation. Preserve the exact Revision-35 normal rendered search implementation, helper 1.4.14 postimages, one reusable tab, >=5-second dwell, >=120-second cadence, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D27",
+      "decision": "Read, verify and install runtime postimages from canonical Git blob bytes rather than Windows line-ending-converted working-tree files.",
+      "evidence": [
+        "Issue #85 terminal receipt: repository runtime postimage drift: server.py.",
+        "Working-tree server.py SHA 8e3a9980... length 89819 with 1,934 CRLF sequences.",
+        "Canonical Git blob server.py SHA bc0582bf... length 87885 with zero CRLF, exactly matching the expected Revision-35 server postimage."
+      ],
+      "history": [
+        "Issue #85 is terminal and must not be replayed.",
+        "Revision-35 normal-search runtime content and Revision-36 pre/post stop-check ordering remain selected.",
+        "All denied-source, exact-card, persistent RATE_LIMITED, Platinum Rare and unchanged-scoring locks remain unchanged."
+      ],
+      "alternatives": [
+        "Change normal-search runtime content - rejected because canonical blob already matches the expected postimage.",
+        "Accept the CRLF working-tree hash - rejected because it would install bytes different from the validated frozen postimage.",
+        "Replay #85 - rejected because terminal.",
+        "Read exact postimages from canonical Git blobs - selected."
+      ],
+      "result": "Revision-37 harness-only canonical Git blob postimage correction selected.",
+      "next": "Deploy the harness-only Revision-37 canonical-Git-blob runtime-postimage correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #85 is terminal and reached the registered acceptance action but stopped before any installed runtime write because Windows checkout converted the committed LF runtime/server.py postimage to CRLF: working-tree SHA-256 8e3a9980cd64136c7c0c9b6bbe32f95227a6f1fbfa17a8969373361f4f9f1eb4 with 1,934 CRLF sequences versus canonical Git blob SHA-256 bc0582bfc95845d748cec60b21e39181f247b125675070ca87b76fd3c4acf69e with zero CRLF, exactly matching the frozen expected postimage. Revision 37 must verify and install runtime postimages from canonical HEAD Git blob bytes, not line-ending-converted working-tree bytes. Preserve the unchanged Revision-35 normal-search runtime content/helper 1.4.14, Revision-36 pre/post stop checks, one reusable tab, >=5-second dwell, >=120-second cadence, denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while a fresh controlled acceptance remains executable."
     }
   ],
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 36,
-    "next_action": "Deploy the harness-only Revision-36 correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #83 is terminal and failed before runtime installation because Revision 35 checked postimage normal-search tokens against the prepatch Browser Helper. Revision 36 must verify legacy stop/scheduler invariants before installation, install the already-validated unchanged Revision-35 runtime postimages, then verify normal-search stop/scheduler invariants after installation before browser activation. Preserve the exact Revision-35 normal rendered search implementation, helper 1.4.14 postimages, one reusable tab, >=5-second dwell, >=120-second cadence, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable.",
+    "state_revision": 37,
+    "next_action": "Deploy the harness-only Revision-37 canonical-Git-blob runtime-postimage correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #85 is terminal and reached the registered acceptance action but stopped before any installed runtime write because Windows checkout converted the committed LF runtime/server.py postimage to CRLF: working-tree SHA-256 8e3a9980cd64136c7c0c9b6bbe32f95227a6f1fbfa17a8969373361f4f9f1eb4 with 1,934 CRLF sequences versus canonical Git blob SHA-256 bc0582bfc95845d748cec60b21e39181f247b125675070ca87b76fd3c4acf69e with zero CRLF, exactly matching the frozen expected postimage. Revision 37 must verify and install runtime postimages from canonical HEAD Git blob bytes, not line-ending-converted working-tree bytes. Preserve the unchanged Revision-35 normal-search runtime content/helper 1.4.14, Revision-36 pre/post stop checks, one reusable tab, >=5-second dwell, >=120-second cadence, denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while a fresh controlled acceptance remains executable.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -1314,7 +1339,7 @@
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
     "remaining_executable_work": [
-      "Broker patch/publish/merge/rebind Revision 36 harness-only correction.",
+      "Broker patch/publish/merge/rebind Revision 37 harness-only canonical-blob correction.",
       "Run one fresh full controlled acceptance using unchanged Revision-35 normal-search runtime postimages.",
       "Continue OP-CATALOG-001 catalog import/revalidation criteria after Browser Watch acceptance."
     ]
@@ -1410,8 +1435,8 @@
         "mission_id": "OP-CATALOG-001",
         "route_id": "catalog-rendered-browser-single-tab-integration",
         "status": "REQUIRED_NEXT",
-        "description": "Deploy the harness-only Revision-36 correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #83 is terminal and failed before runtime installation because Revision 35 checked postimage normal-search tokens against the prepatch Browser Helper. Revision 36 must verify legacy stop/scheduler invariants before installation, install the already-validated unchanged Revision-35 runtime postimages, then verify normal-search stop/scheduler invariants after installation before browser activation. Preserve the exact Revision-35 normal rendered search implementation, helper 1.4.14 postimages, one reusable tab, >=5-second dwell, >=120-second cadence, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable.",
-        "source": "Operation Pancake Revision-36 D26 issue-83 harness-order proof"
+        "description": "Deploy the harness-only Revision-37 canonical-Git-blob runtime-postimage correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #85 is terminal and reached the registered acceptance action but stopped before any installed runtime write because Windows checkout converted the committed LF runtime/server.py postimage to CRLF: working-tree SHA-256 8e3a9980cd64136c7c0c9b6bbe32f95227a6f1fbfa17a8969373361f4f9f1eb4 with 1,934 CRLF sequences versus canonical Git blob SHA-256 bc0582bfc95845d748cec60b21e39181f247b125675070ca87b76fd3c4acf69e with zero CRLF, exactly matching the frozen expected postimage. Revision 37 must verify and install runtime postimages from canonical HEAD Git blob bytes, not line-ending-converted working-tree bytes. Preserve the unchanged Revision-35 normal-search runtime content/helper 1.4.14, Revision-36 pre/post stop checks, one reusable tab, >=5-second dwell, >=120-second cadence, denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while a fresh controlled acceptance remains executable.",
+        "source": "Operation Pancake Revision-37 D27 issue-85 canonical-blob proof"
       }
     ]
   },
@@ -1574,6 +1599,28 @@
       ],
       "result": "Revision-36 harness-only pre/post stop-check ordering correction selected.",
       "next": "Deploy the harness-only Revision-36 correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #83 is terminal and failed before runtime installation because Revision 35 checked postimage normal-search tokens against the prepatch Browser Helper. Revision 36 must verify legacy stop/scheduler invariants before installation, install the already-validated unchanged Revision-35 runtime postimages, then verify normal-search stop/scheduler invariants after installation before browser activation. Preserve the exact Revision-35 normal rendered search implementation, helper 1.4.14 postimages, one reusable tab, >=5-second dwell, >=120-second cadence, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D27",
+      "decision": "Read, verify and install runtime postimages from canonical Git blob bytes rather than Windows line-ending-converted working-tree files.",
+      "evidence": [
+        "Issue #85 terminal receipt: repository runtime postimage drift: server.py.",
+        "Working-tree server.py SHA 8e3a9980... length 89819 with 1,934 CRLF sequences.",
+        "Canonical Git blob server.py SHA bc0582bf... length 87885 with zero CRLF, exactly matching the expected Revision-35 server postimage."
+      ],
+      "history": [
+        "Issue #85 is terminal and must not be replayed.",
+        "Revision-35 normal-search runtime content and Revision-36 pre/post stop-check ordering remain selected.",
+        "All denied-source, exact-card, persistent RATE_LIMITED, Platinum Rare and unchanged-scoring locks remain unchanged."
+      ],
+      "alternatives": [
+        "Change normal-search runtime content - rejected because canonical blob already matches the expected postimage.",
+        "Accept the CRLF working-tree hash - rejected because it would install bytes different from the validated frozen postimage.",
+        "Replay #85 - rejected because terminal.",
+        "Read exact postimages from canonical Git blobs - selected."
+      ],
+      "result": "Revision-37 harness-only canonical Git blob postimage correction selected.",
+      "next": "Deploy the harness-only Revision-37 canonical-Git-blob runtime-postimage correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #85 is terminal and reached the registered acceptance action but stopped before any installed runtime write because Windows checkout converted the committed LF runtime/server.py postimage to CRLF: working-tree SHA-256 8e3a9980cd64136c7c0c9b6bbe32f95227a6f1fbfa17a8969373361f4f9f1eb4 with 1,934 CRLF sequences versus canonical Git blob SHA-256 bc0582bfc95845d748cec60b21e39181f247b125675070ca87b76fd3c4acf69e with zero CRLF, exactly matching the frozen expected postimage. Revision 37 must verify and install runtime postimages from canonical HEAD Git blob bytes, not line-ending-converted working-tree bytes. Preserve the unchanged Revision-35 normal-search runtime content/helper 1.4.14, Revision-36 pre/post stop checks, one reusable tab, >=5-second dwell, >=120-second cadence, denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while a fresh controlled acceptance remains executable."
     }
   ]
 }

@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 36
+EXPECTED_AUTHORITY_REVISION = 37
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -228,8 +228,22 @@ def write_runtime_bytes(path: Path, data: bytes, control) -> str:
     return sha256(path)
 
 
+def repository_runtime_postimage_bytes(repo: Path, rel: str, control) -> bytes:
+    git_path = (RUNTIME_POSTIMAGE_REL / rel).as_posix()
+    cp = subprocess.run(
+        ["git", "-C", str(repo), "show", f"HEAD:{git_path}"],
+        stdin=subprocess.DEVNULL,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+    )
+    if cp.returncode != 0:
+        detail = cp.stderr.decode("utf-8", "replace").strip()
+        raise control.EvidenceGap(f"repository runtime Git blob unavailable: {rel}: {detail}")
+    return bytes(cp.stdout)
+
+
 def patch_installed_runtime(repo: Path, control) -> dict[str, Any]:
-    post_root = repo / RUNTIME_POSTIMAGE_REL
     expected_pre = {
         "server.py": EXPECTED_SERVER_PREPATCH_SHA256,
         "RELEASE.json": PREPATCH_RELEASE_SHA256,
@@ -246,17 +260,17 @@ def patch_installed_runtime(repo: Path, control) -> dict[str, Any]:
     }
     changed = {}
     for rel, post_hash in expected_post.items():
-        source = post_root / rel
+        postimage = repository_runtime_postimage_bytes(repo, rel, control)
         target = APP / rel
-        if not source.is_file() or sha256(source) != post_hash:
-            raise control.EvidenceGap(f"repository runtime postimage drift: {rel}")
+        if hashlib.sha256(postimage).hexdigest() != post_hash:
+            raise control.EvidenceGap(f"repository runtime Git blob drift: {rel}")
         before = sha256(target)
         if before == post_hash:
             changed[rel] = {"changed": False, "before_sha256": before, "after_sha256": before}
             continue
         if before != expected_pre[rel]:
             raise control.EvidenceGap(f"installed runtime preimage drift: {rel}={before}")
-        after = write_runtime_bytes(target, source.read_bytes(), control)
+        after = write_runtime_bytes(target, postimage, control)
         if after != post_hash:
             raise control.ControlError(f"installed runtime postimage hash mismatch: {rel}={after}")
         changed[rel] = {"changed": True, "before_sha256": before, "after_sha256": after}
