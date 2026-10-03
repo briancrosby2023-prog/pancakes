@@ -1,6 +1,6 @@
 # Operation Pancake — Authoritative Handoff
 
-State revision: 33
+State revision: 34
 Status: IN_PROGRESS
 Mission ID: OP-CATALOG-001
 
@@ -15,10 +15,10 @@ Read `docs/OPERATION_PANCAKE_CONTROL_STATE.json` first and validate it before ma
 Do not let the newest obstacle replace the recorded mission.
 
 ## Preflight evidence
-- MAP: OBSERVED: Revision 32 / 05408d6b is merged, deployed and READY for OP-CATALOG-001. | OBSERVED: issue #77 and authenticated issue #78 are terminal with the same error: no exact-card browser observation arrived for card:35874d31612524812b6f within 60 seconds. | OBSERVED: after user authentication, the exact controlled Edge PID 29544 remained on Jaleel Skinner CFB.FAN and Browser Helper 1.4.13 reported page_diagnostic stage market-parsed at #prices with market_state NO_LISTING.
-- HISTORY: VERIFIED_HISTORY: issues #60/#62/#64/#66/#69/#71/#73/#75/#77/#78 are terminal and must not be replayed. | VERIFIED_HISTORY: the authentication hypothesis is closed because the newly authenticated run #78 failed at the identical observation boundary. | VERIFIED_HISTORY: denied source routes, provider-email rejection, exact-card identity, watches, persistent RATE_LIMITED lock, dynamic-port architecture and scoring remain unchanged.
-- RESEARCH: OBSERVED: installed Browser Helper watch.js sends an observation for both FOUND and NO_LISTING after parsePlayStationMarket returns a terminal market result. | OBSERVED: live /browser-watch-config.json for Jaleel Skinner #prices returns card_id card:35874d31612524812b6f but active=false and watch_id=null despite the enabled saved watch for that exact card. | OBSERVED: the current server activates a saved watch only when page_url contains #simple-evaluator-worktab; CFB.FAN replaces that fragment with #prices on the player-local Prices view. | OBSERVED: a temporary Revision-33 server postimage preserves active=true for #simple-evaluator-worktab and #prices while keeping the same watched card's plain URL active=false.
-- CAPABILITIES: OBSERVED: failed acceptance restores installed server.py to exact prepatch SHA-256 bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37. | OBSERVED: the existing acceptance action already owns the bounded stop-server -> hash-verified in-place server patch -> restart -> rollback path; Revision 33 can add one exact server anchor without creating a new mutation surface. | OBSERVED: the candidate three-anchor server postimage is SHA-256 95e6f98e61a3cb0a3133619348426c186302f6a19c3cb6a676d7d747b1534da8 and passed temporary behavioral proof for worktab/prices/plain fragments.
+- MAP: OBSERVED: GitHub long-lived branch HEAD is 668c02abf9b8f308394ecac2d6fd91a36f27e1c2 with authority Revision 33 and durable worker READY at that exact head. | OBSERVED: Revision-33 acceptance issue #80 ran and failed terminally because no exact-card browser observation arrived within 60 seconds. | OBSERVED: current pancake_single_worktab_action.py still calls navigate_selected_url(edge_pid, first_source), so price/search acquisition remains direct stored-player-URL navigation.
+- HISTORY: VERIFIED_HISTORY: issues #60/#62/#64/#66/#69/#71/#73/#75/#77/#78/#80 are terminal and must not be replayed. | VERIFIED_HISTORY: on 2026-10-02 the accepted CFB.FAN workflow for searches and price checks was the normal rendered site flow in one reusable tab with >=5-second dwell and sequential navigation; direct/raw request routes remained closed. | VERIFIED_HISTORY: the user reconfirmed on 2026-10-03 that normal search was the only route that produced search/price answers; this supersedes further debugging of direct stored-player URL acquisition. | VERIFIED_HISTORY: denied source routes, provider-email rejection, exact-card identity, watches, persistent RATE_LIMITED lock, dynamic-port architecture and scoring remain unchanged.
+- RESEARCH: OBSERVED: current acceptance code still navigates directly from browser-watch-next source_url rather than performing the accepted normal rendered site search. | VERIFIED_HISTORY: normal rendered CFB.FAN pages/searches produced visible exact-card data and price answers when direct/raw acquisition paths did not. | OBSERVED: Revision-33 #prices continuity did not resolve persistence; issue #80 failed at the same no-observation boundary, so another direct-route symptom patch lacks an evidence basis.
+- CAPABILITIES: OBSERVED: durable Windows GitHub-inbox worker is READY at Revision 33 / HEAD 668c02ab with SOPDecisionGateway -> ControlledToolBroker available. | OBSERVED: the clean controlled repository is C:/Users/Trash Panda/AppData/Local/OperationPancakeControl/source-repo-r8; the stale dirty developer checkout is excluded from mutation. | OBSERVED: existing single-tab browser automation, exact-card identity checks, >=5-second dwell, >=120-second cadence, persistence contracts and rollback protections can be retained while only acquisition navigation is replaced. | OBSERVED: Desktop Commander is available only as bounded Windows execution/recovery transport; GitHub remains the normal read path.
 
 ## Available capabilities
 - GitHub repository read/write and PR workflow
@@ -58,6 +58,7 @@ Do not let the newest obstacle replace the recorded mission.
 - fresh immutable GitHub-inbox request for complete_simple_single_worktab_acceptance after revision-24 deployment
 - revision-27 bounded self-recovery of the controlled Edge helper window followed by same-tab Developer-mode activation and queue return
 - revision-28 bounded exact Installed extensions readiness polling with Developer-mode AlreadyOn preservation
+- normal rendered CFB.FAN site search -> exact-card selection -> >=5-second dwell -> player-level Prices/Live Auctions -> observation persistence
 
 ## Accepted — do not reopen without materially new evidence
 - accepted-sop-order: Operation Pancake SOP order is MAP -> HISTORY -> RESEARCH -> CAPABILITIES -> PLAN -> EXECUTE -> ADAPT -> VERIFY -> UPDATE MAP -> CONTINUE.
@@ -86,13 +87,14 @@ Do not let the newest obstacle replace the recorded mission.
 - reject-issue69-replay: Replay issue #69 or retry WScript.Shell.AppActivate by PID/title without materially new evidence.
 
 ## Next action
-Deploy the minimal Revision-33 saved-watch #prices-fragment continuity correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 33. Do not replay issues #60, #62, #64, #66, #69, #71, #73, #75, #77 or #78. Issues #77 and #78 are terminal after both the earlier and newly authenticated Revision-32 runs failed at the same no-exact-card-observation boundary. Current Browser Helper 1.4.13 parses the Jaleel Skinner #prices page as NO_LISTING and watch.js is coded to send NO_LISTING observations, but the live local server returns browser-watch-config active=false for that exact #prices URL even though the exact card and enabled saved watch are present. Revision 33 must extend only the existing transactional hash-verified server patch so the exact saved watch remains active when the same exact-card page is in either #simple-evaluator-worktab or #prices state, while a plain watched-card URL remains inactive. Preserve every existing foreground, Developer-mode, refresh-control, server hardening, helper, one-tab, dwell/cadence, exact-card, protected-state, evaluator, restart, denied-source, persistent RATE_LIMITED and unchanged-scoring guard.
+Replace the direct stored-player-URL acquisition step in the rendered-browser single-tab route with the accepted normal rendered CFB.FAN search workflow: normal site search -> deterministic exact-card result selection -> >=5-second rendered dwell -> visible player-level Prices/Live Auctions -> FOUND or NO_LISTING observation persistence. Do not patch the Revision-33 direct-URL/#prices path again. Issue #80 is terminal at the same no-exact-card-observation boundary. Preserve one reusable tab, >=120-second cadence, exact-card identity, protected watches/state, denied-source locks, persistent RATE_LIMITED lock, Platinum Rare exclusion and unchanged scoring. Before any implementation mutation, prove the exact normal-search UI controls and exact-card disambiguation fail-closed; then make one bounded hypothesis/revision through Gateway/Broker.
 
 ## Remaining executable work
-- Validate and publish/merge/rebind the exact Revision-33 four-path saved-watch #prices continuity correction through fresh Gateway/Broker authorization.
-- Submit one fresh immutable full single-worktab acceptance request; do not replay issues #60, #62, #64, #66, #69, #71, #73, #75, #77 or #78.
-- Verify exact-card FOUND/NO_LISTING persistence across both saved watches, real >=120-second cadence, protected state, evaluator and both restart proofs.
-- Continue OP-CATALOG-001 because the five current FS versions still are not imported and catalog criteria remain open.
+- Prove the exact normal rendered CFB.FAN search UI controls and fail-closed exact-card disambiguation in one reusable authenticated tab.
+- Replace only direct stored-player-URL acquisition with the proven normal rendered search -> exact-card -> >=5-second dwell -> player-level Prices/Live Auctions path through Gateway/Broker.
+- Prove one exact-card FOUND/NO_LISTING observation persists end-to-end, then prove the second saved watch and same-tab reuse.
+- Prove real >=120-second watch cadence, protected state, evaluator regressions and restart durability.
+- Continue OP-CATALOG-001 because catalog import/revalidation criteria remain open.
 
 ## Completion rule
 A commit, test, CI run, PR, package, screenshot, or progress report is only a checkpoint.
