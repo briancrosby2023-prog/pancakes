@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 32,
+  "state_revision": 33,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Deploy the minimal Revision-32 exact Edge refresh-button identity correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 32. Do not replay issues #60, #62, #64, #66, #69, #71, #73 or #75. Issue #75 is terminal after Revision 31 passed foreground and Developer-mode selection, selected the correct single CFB.FAN tab at the #prices URL, and failed only because choose_work_tab_and_reload searched for button names Reload/Reload this page while the current Edge UIA tree exposes the actual enabled visible toolbar refresh button as Name Refresh, AutomationId view_1003, with InvokePattern. Revision 32 must identify exactly one enabled visible Button with AutomationId view_1003, supported name Refresh/Reload/Reload this page and InvokePattern, fail closed otherwise, and preserve every existing selector, foreground, readiness, server, helper, one-tab, dwell/cadence, exact-card, protected-state, evaluator, restart, denied-source, persistent RATE_LIMITED and unchanged-scoring guard.",
+    "next_action": "Deploy the minimal Revision-33 saved-watch #prices-fragment continuity correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 33. Do not replay issues #60, #62, #64, #66, #69, #71, #73, #75, #77 or #78. Issues #77 and #78 are terminal after both the earlier and newly authenticated Revision-32 runs failed at the same no-exact-card-observation boundary. Current Browser Helper 1.4.13 parses the Jaleel Skinner #prices page as NO_LISTING and watch.js is coded to send NO_LISTING observations, but the live local server returns browser-watch-config active=false for that exact #prices URL even though the exact card and enabled saved watch are present. Revision 33 must extend only the existing transactional hash-verified server patch so the exact saved watch remains active when the same exact-card page is in either #simple-evaluator-worktab or #prices state, while a plain watched-card URL remains inactive. Preserve every existing foreground, Developer-mode, refresh-control, server hardening, helper, one-tab, dwell/cadence, exact-card, protected-state, evaluator, restart, denied-source, persistent RATE_LIMITED and unchanged-scoring guard.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -64,33 +64,34 @@
     "map": {
       "complete": true,
       "evidence": [
-        "OBSERVED: Revision 31 / f6a9241c is merged, deployed and READY for OP-CATALOG-001.",
-        "OBSERVED: fresh immutable issue #75 passed request freeze and Gateway/Broker authorization, progressed past Revision-31 Developer-mode selection, and failed only because choose_work_tab_and_reload observed zero buttons named Reload or Reload this page.",
-        "OBSERVED: the exact controlled Edge window is on the correct single CFB.FAN Jaleel Skinner tab at https://cfb.fan/players/2557-jaleel-skinner/27-2002557/#prices."
+        "OBSERVED: Revision 32 / 05408d6b is merged, deployed and READY for OP-CATALOG-001.",
+        "OBSERVED: issue #77 and authenticated issue #78 are terminal with the same error: no exact-card browser observation arrived for card:35874d31612524812b6f within 60 seconds.",
+        "OBSERVED: after user authentication, the exact controlled Edge PID 29544 remained on Jaleel Skinner CFB.FAN and Browser Helper 1.4.13 reported page_diagnostic stage market-parsed at #prices with market_state NO_LISTING."
       ]
     },
     "history": {
       "complete": true,
       "evidence": [
-        "VERIFIED_HISTORY: issues #60/#62/#64/#66/#69/#71/#73/#75 are terminal and must not be replayed.",
-        "VERIFIED_HISTORY: Revision 31 exact dev-switch selector is deployed and progressed acceptance to the later work-tab reload step.",
+        "VERIFIED_HISTORY: issues #60/#62/#64/#66/#69/#71/#73/#75/#77/#78 are terminal and must not be replayed.",
+        "VERIFIED_HISTORY: the authentication hypothesis is closed because the newly authenticated run #78 failed at the identical observation boundary.",
         "VERIFIED_HISTORY: denied source routes, provider-email rejection, exact-card identity, watches, persistent RATE_LIMITED lock, dynamic-port architecture and scoring remain unchanged."
       ]
     },
     "research": {
       "complete": true,
       "evidence": [
-        "OBSERVED: current exact Edge UIA toolbar contains one enabled visible Button Name Refresh with AutomationId view_1003 at X106/Y92 and InvokePattern support.",
-        "OBSERVED: the current UIA toolbar contains no Button named Reload or Reload this page, explaining issue #75's zero-match failure.",
-        "OBSERVED: current window contains exactly one selected CFB.FAN tab and the correct #prices address-bar URL, so the failure is isolated to reload-control identity rather than tab selection."
+        "OBSERVED: installed Browser Helper watch.js sends an observation for both FOUND and NO_LISTING after parsePlayStationMarket returns a terminal market result.",
+        "OBSERVED: live /browser-watch-config.json for Jaleel Skinner #prices returns card_id card:35874d31612524812b6f but active=false and watch_id=null despite the enabled saved watch for that exact card.",
+        "OBSERVED: the current server activates a saved watch only when page_url contains #simple-evaluator-worktab; CFB.FAN replaces that fragment with #prices on the player-local Prices view.",
+        "OBSERVED: a temporary Revision-33 server postimage preserves active=true for #simple-evaluator-worktab and #prices while keeping the same watched card's plain URL active=false."
       ]
     },
     "capabilities": {
       "complete": true,
       "evidence": [
-        "OBSERVED: choose_work_tab_and_reload already enumerates the current window's UIA Buttons and invokes InvokePattern, so Revision 32 needs only a narrower exact identity predicate.",
-        "OBSERVED: exact AutomationId view_1003 plus enabled/visible/Button/name/InvokePattern checks fail closed and do not broaden browser mutation.",
-        "OBSERVED: the recorded-chat DecisionProvider route remains available through the unchanged strict SOPDecisionGateway and ControlledToolBroker without paid API credits, Work or Codex."
+        "OBSERVED: failed acceptance restores installed server.py to exact prepatch SHA-256 bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37.",
+        "OBSERVED: the existing acceptance action already owns the bounded stop-server -> hash-verified in-place server patch -> restart -> rollback path; Revision 33 can add one exact server anchor without creating a new mutation surface.",
+        "OBSERVED: the candidate three-anchor server postimage is SHA-256 95e6f98e61a3cb0a3133619348426c186302f6a19c3cb6a676d7d747b1534da8 and passed temporary behavioral proof for worktab/prices/plain fragments."
       ]
     }
   },
@@ -181,7 +182,11 @@
       "Revision-31 exact dev-switch selector with duplicate-exact fail-closed and spatial fallback",
       "Revision-31 fresh immutable acceptance issue #75 terminal zero Reload-name match after correct CFB tab selection",
       "current Edge UIA toolbar exact refresh button: Name Refresh AutomationId view_1003 enabled visible InvokePattern",
-      "Revision-32 exact view_1003 refresh/reload selector with fail-closed identity checks"
+      "Revision-32 exact view_1003 refresh/reload selector with fail-closed identity checks",
+      "Revision-32 issues #77 and #78 identical no-exact-card-observation failures across pre-auth and authenticated environments",
+      "live Jaleel Skinner #prices browser-watch-config: exact card identified but active=false/watch_id=null despite enabled saved watch",
+      "Revision-33 temp server behavior proof: worktab active=true, prices active=true, plain URL active=false",
+      "Revision-33 transactional server postimage SHA-256 95e6f98e61a3cb0a3133619348426c186302f6a19c3cb6a676d7d747b1534da8"
     ],
     "available": [
       "GitHub repository read/write and PR workflow",
@@ -1215,8 +1220,8 @@
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 32,
-    "next_action": "Deploy the minimal Revision-32 exact Edge refresh-button identity correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 32. Do not replay issues #60, #62, #64, #66, #69, #71, #73 or #75. Issue #75 is terminal after Revision 31 passed foreground and Developer-mode selection, selected the correct single CFB.FAN tab at the #prices URL, and failed only because choose_work_tab_and_reload searched for button names Reload/Reload this page while the current Edge UIA tree exposes the actual enabled visible toolbar refresh button as Name Refresh, AutomationId view_1003, with InvokePattern. Revision 32 must identify exactly one enabled visible Button with AutomationId view_1003, supported name Refresh/Reload/Reload this page and InvokePattern, fail closed otherwise, and preserve every existing selector, foreground, readiness, server, helper, one-tab, dwell/cadence, exact-card, protected-state, evaluator, restart, denied-source, persistent RATE_LIMITED and unchanged-scoring guard.",
+    "state_revision": 33,
+    "next_action": "Deploy the minimal Revision-33 saved-watch #prices-fragment continuity correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 33. Do not replay issues #60, #62, #64, #66, #69, #71, #73, #75, #77 or #78. Issues #77 and #78 are terminal after both the earlier and newly authenticated Revision-32 runs failed at the same no-exact-card-observation boundary. Current Browser Helper 1.4.13 parses the Jaleel Skinner #prices page as NO_LISTING and watch.js is coded to send NO_LISTING observations, but the live local server returns browser-watch-config active=false for that exact #prices URL even though the exact card and enabled saved watch are present. Revision 33 must extend only the existing transactional hash-verified server patch so the exact saved watch remains active when the same exact-card page is in either #simple-evaluator-worktab or #prices state, while a plain watched-card URL remains inactive. Preserve every existing foreground, Developer-mode, refresh-control, server hardening, helper, one-tab, dwell/cadence, exact-card, protected-state, evaluator, restart, denied-source, persistent RATE_LIMITED and unchanged-scoring guard.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -1239,9 +1244,9 @@
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
     "remaining_executable_work": [
-      "Publish/merge/rebind the exact Revision-32 four-path Edge refresh-button selector correction through fresh Gateway/Broker authorization.",
-      "Submit one fresh immutable full single-worktab acceptance request; do not replay issues #60, #62, #64, #66, #69, #71, #73 or #75.",
-      "Verify exact refresh identity plus helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.",
+      "Validate and publish/merge/rebind the exact Revision-33 four-path saved-watch #prices continuity correction through fresh Gateway/Broker authorization.",
+      "Submit one fresh immutable full single-worktab acceptance request; do not replay issues #60, #62, #64, #66, #69, #71, #73, #75, #77 or #78.",
+      "Verify exact-card FOUND/NO_LISTING persistence across both saved watches, real >=120-second cadence, protected state, evaluator and both restart proofs.",
       "Continue OP-CATALOG-001 because the five current FS versions still are not imported and catalog criteria remain open."
     ]
   },
@@ -1336,8 +1341,8 @@
         "mission_id": "OP-CATALOG-001",
         "route_id": "catalog-rendered-browser-single-tab-integration",
         "status": "REQUIRED_NEXT",
-        "description": "The next executable route is to deploy Revision 32's exact Edge refresh-button selector correction through Gateway/Broker, then execute complete_simple_single_worktab_acceptance through one fresh immutable GitHub-inbox request. Require exactly one enabled visible Button with AutomationId view_1003, supported name Refresh/Reload/Reload this page and InvokePattern; fail closed otherwise. Preserve Revision-31 exact dev-switch selection, Revision-30 UIA omnibox focus, Revision-29 exact-window restore, Revision-28 Installed extensions readiness, Revision-27 Edge recovery, Developer-mode AlreadyOn behavior, server hardening, one-tab reuse, >=5-second dwell, >=120-second cadence, exact-card persistence, protected state, evaluator, restart proofs, persistent 429 lock and unchanged scoring. Issues #60/#62/#64/#66/#69/#71/#73/#75 must not be replayed.",
-        "source": "Operation Pancake Revision-32 D22 evidence: terminal issue #75 plus exact current Edge toolbar UIA inspection"
+        "description": "The next executable route is to deploy Revision 33's exact saved-watch #prices-fragment continuity correction through Gateway/Broker, then execute complete_simple_single_worktab_acceptance through one fresh immutable GitHub-inbox request. Keep the saved watch active only when the exact watched card page is in #simple-evaluator-worktab or #prices state; keep the plain watched-card URL inactive. Preserve Revision-32 refresh identity, Revision-31 dev-switch selection, Revision-30 UIA omnibox focus, Revision-29 exact-window restore, Revision-28 Installed extensions readiness, Revision-27 Edge recovery, server hardening, one-tab reuse, >=5-second dwell, >=120-second cadence, exact-card persistence, protected state, evaluator, restart proofs, persistent 429 lock and unchanged scoring. Issues #60/#62/#64/#66/#69/#71/#73/#75/#77/#78 must not be replayed.",
+        "source": "Operation Pancake Revision-33 D23 evidence: terminal #77/#78 plus live active=false #prices watch-config and narrow temp-server behavior proof"
       }
     ]
   },
@@ -1410,6 +1415,30 @@
       ],
       "result": "Revision-32 exact Edge refresh-button identity correction selected for Gateway/Broker publication.",
       "next": "Validate Revision 32, broker patch/publish/merge/rebind, then submit one fresh immutable full acceptance request."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D23",
+      "decision": "Preserve the user-started saved watch when the same exact controlled card page transitions from #simple-evaluator-worktab to CFB.FAN's #prices fragment.",
+      "evidence": [
+        "#77 and authenticated #78 both failed because no exact-card browser observation arrived within 60 seconds.",
+        "Browser Helper 1.4.13 parsed Jaleel Skinner #prices as NO_LISTING and watch.js is coded to send NO_LISTING observations.",
+        "Live browser-watch-config for that exact #prices URL identified Jaleel Skinner but returned active=false/watch_id=null despite the enabled saved watch.",
+        "Temporary Revision-33 server proof returned active=true for worktab and prices, while the plain watched-card URL stayed active=false."
+      ],
+      "history": [
+        "Issues #60/#62/#64/#66/#69/#71/#73/#75/#77/#78 are terminal.",
+        "Authentication as the cause of the observation failure is invalidated by authenticated issue #78.",
+        "Denied-source, scoring, exact-card, watch and persistent 429 locks remain unchanged."
+      ],
+      "alternatives": [
+        "Replay #77 or #78.",
+        "Change authentication again.",
+        "Broaden all watched-card URLs to active.",
+        "Modify Browser Helper navigation/storage with a new mutation surface.",
+        "Extend the existing transactional server patch only for exact #prices fragment continuity."
+      ],
+      "result": "Revision-33 exact saved-watch #prices continuity correction selected for Gateway/Broker publication.",
+      "next": "Validate Revision 33, broker patch/publish/merge/rebind, then submit one fresh immutable full acceptance request."
     }
   ]
 }
