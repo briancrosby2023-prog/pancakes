@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 35,
+  "state_revision": 36,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Deploy the single Revision-35 normal rendered search acquisition correction through the existing SOPDecisionGateway -> ControlledToolBroker path, then execute one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 35. The implementation must use one reusable authenticated tab and fixed CFB27 Players search page, rendered f_name plus OVR filters, deterministic exact result selection by the rendered href matching the queued stable exact-card source identity, >=5-second player-page dwell, and the visible player-local Prices/Live Auctions control. All saved-watch and value-probe browser transitions must return to the normal search page rather than navigate stored player URLs. Preserve issue #80 as terminal, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion, >=120-second cadence and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable.",
+    "next_action": "Deploy the harness-only Revision-36 correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #83 is terminal and failed before runtime installation because Revision 35 checked postimage normal-search tokens against the prepatch Browser Helper. Revision 36 must verify legacy stop/scheduler invariants before installation, install the already-validated unchanged Revision-35 runtime postimages, then verify normal-search stop/scheduler invariants after installation before browser activation. Preserve the exact Revision-35 normal rendered search implementation, helper 1.4.14 postimages, one reusable tab, >=5-second dwell, >=120-second cadence, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -65,7 +65,8 @@
       "complete": true,
       "evidence": [
         "OBSERVED: long-lived branch/runtime is Revision 34 at 7a9df794 with OP-CATALOG-001 IN_PROGRESS and normal rendered search REQUIRED_NEXT.",
-        "OBSERVED: current acceptance source still contains direct stored-player acquisition and installed background scheduler still navigates queued source URLs."
+        "OBSERVED: current acceptance source still contains direct stored-player acquisition and installed background scheduler still navigates queued source URLs.",
+        "OBSERVED: Revision-35 acceptance issue #83 is terminal with EVIDENCE_GAP before runtime installation."
       ]
     },
     "history": {
@@ -81,7 +82,8 @@
         "OBSERVED: rendered CFB27 Players controls are f_name, f_overall__gte, f_overall__lte and one visible Apply Filters control.",
         "OBSERVED: normal rendered search for Jaleel Skinner returned two 81 OVR cards, Core Rare 27-2002557 and Platinum Rare 27-9002557, proving name+OVR alone is ambiguous.",
         "OBSERVED: selecting the rendered exact Core Rare result opened the correct exact-card page; after >=5-second dwell the player-local PRICES control class sub-nav__link js-scroll-link exposed PlayStation Live Auctions.",
-        "OBSERVED: exact result identity can fail closed by comparing the rendered result href to queued source_url while never navigating to that stored URL."
+        "OBSERVED: exact result identity can fail closed by comparing the rendered result href to queued source_url while never navigating to that stored URL.",
+        "OBSERVED: verify_installed_stop_conditions ran before patch_installed_runtime but required Revision-35 postimage tokens, proving the failure is harness ordering rather than normal-search runtime behavior."
       ]
     },
     "capabilities": {
@@ -90,7 +92,8 @@
         "OBSERVED: Browser Helper content scripts match https://cfb.fan/*, so they run on /27/players/ and exact-card pages.",
         "OBSERVED: exact Edge Extension on TogglePattern can reload the unpacked helper without restarting the browser.",
         "OBSERVED: saved-watch queue already provides card_id/name/ovr/program/source_url; Revision-35 server postimage adds source_url/program to active value-probe status.",
-        "OBSERVED: exact Revision-35 runtime postimages pass node --check / server py_compile and can be installed/rolled back transactionally by exact hashes."
+        "OBSERVED: exact Revision-35 runtime postimages pass node --check / server py_compile and can be installed/rolled back transactionally by exact hashes.",
+        "OBSERVED: Revision-36 can separate prepatch legacy stop checks from postpatch normal-search stop checks without changing any Revision-35 runtime postimage bytes."
       ]
     }
   },
@@ -503,29 +506,27 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D25",
+    "decision_id": "OP-CATALOG-001-D26",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Deploy the exact validated Revision-35 normal-search runtime postimages and run the full controlled single-worktab acceptance.",
+    "proposed_action": "Deploy the harness-only Revision-36 pre/post stop-check ordering correction, then run one fresh full acceptance.",
     "obstacle_classification": "IMPLEMENTATION_PROBLEM",
     "history_refs": [
-      "Revision 34 / D24 requires normal rendered search.",
-      "Issue #80 is terminal.",
-      "Jaleel normal search physically proved exact Core Rare vs Platinum Rare disambiguation."
+      "Issue #83 terminal before runtime install.",
+      "Revision 35 normal-search route remains REQUIRED_NEXT."
     ],
     "capabilities_checked": [
       "clean controlled source-repo-r8",
       "SOPDecisionGateway and ControlledToolBroker",
-      "rendered CFB27 search controls",
-      "exact Extension on reload toggle",
-      "validated r35 runtime postimages"
+      "unchanged Revision-35 runtime postimages",
+      "focused control suite"
     ],
     "alternatives_considered": [
-      "Continue direct-player URL symptom patching - rejected by Revision 34 and terminal #80.",
-      "Use name+OVR only - rejected because two Jaleel Skinner 81 cards were observed.",
-      "Ask the user to search/test manually - rejected while controlled executable routes remain.",
-      "Normal rendered search plus exact rendered href identity - selected."
+      "Change normal-search runtime code - rejected because #83 failed before runtime installation.",
+      "Remove stop-condition verification - rejected.",
+      "Replay #83 - rejected because terminal.",
+      "Split prepatch legacy checks and postpatch Revision-35 checks - selected."
     ],
-    "selected_reason": "The required normal rendered search route is now physically mapped and can deterministically select exact cards by rendered href while preserving the existing parser/persistence contract.",
+    "selected_reason": "The exact #83 failure is fully explained by checking postimage tokens before installation.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
@@ -1262,13 +1263,35 @@
       ],
       "result": "Revision-35 normal-search acquisition candidate selected for bounded Gateway/Broker publication and physical acceptance.",
       "next": "Deploy the single Revision-35 normal rendered search acquisition correction through the existing SOPDecisionGateway -> ControlledToolBroker path, then execute one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 35. The implementation must use one reusable authenticated tab and fixed CFB27 Players search page, rendered f_name plus OVR filters, deterministic exact result selection by the rendered href matching the queued stable exact-card source identity, >=5-second player-page dwell, and the visible player-local Prices/Live Auctions control. All saved-watch and value-probe browser transitions must return to the normal search page rather than navigate stored player URLs. Preserve issue #80 as terminal, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion, >=120-second cadence and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D26",
+      "decision": "Correct only the Revision-35 acceptance harness ordering so legacy installed stop conditions are checked before runtime installation and normal-search postimage stop conditions are checked immediately after installation.",
+      "evidence": [
+        "Issue #83 terminal receipt: installed stop-condition logic drift for normal-search-submitted, normal-search-result-selected, #f_name.",
+        "run() calls verify_installed_stop_conditions before patch_installed_runtime.",
+        "Those three missing tokens exist only in the validated Revision-35 watch.js postimage."
+      ],
+      "history": [
+        "Issue #83 is terminal and must not be replayed.",
+        "Revision 35 normal-search runtime postimages remain the selected implementation hypothesis and were never installed by #83.",
+        "All denied-source, exact-card, persistent RATE_LIMITED, Platinum Rare and unchanged-scoring locks remain unchanged."
+      ],
+      "alternatives": [
+        "Change normal-search runtime code - rejected because #83 failed before runtime installation.",
+        "Remove stop-condition verification - rejected.",
+        "Replay #83 - rejected because terminal.",
+        "Split prepatch legacy checks and postpatch Revision-35 checks - selected."
+      ],
+      "result": "Revision-36 harness-only pre/post stop-check ordering correction selected.",
+      "next": "Deploy the harness-only Revision-36 correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #83 is terminal and failed before runtime installation because Revision 35 checked postimage normal-search tokens against the prepatch Browser Helper. Revision 36 must verify legacy stop/scheduler invariants before installation, install the already-validated unchanged Revision-35 runtime postimages, then verify normal-search stop/scheduler invariants after installation before browser activation. Preserve the exact Revision-35 normal rendered search implementation, helper 1.4.14 postimages, one reusable tab, >=5-second dwell, >=120-second cadence, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable."
     }
   ],
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 35,
-    "next_action": "Deploy the single Revision-35 normal rendered search acquisition correction through the existing SOPDecisionGateway -> ControlledToolBroker path, then execute one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 35. The implementation must use one reusable authenticated tab and fixed CFB27 Players search page, rendered f_name plus OVR filters, deterministic exact result selection by the rendered href matching the queued stable exact-card source identity, >=5-second player-page dwell, and the visible player-local Prices/Live Auctions control. All saved-watch and value-probe browser transitions must return to the normal search page rather than navigate stored player URLs. Preserve issue #80 as terminal, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion, >=120-second cadence and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable.",
+    "state_revision": 36,
+    "next_action": "Deploy the harness-only Revision-36 correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #83 is terminal and failed before runtime installation because Revision 35 checked postimage normal-search tokens against the prepatch Browser Helper. Revision 36 must verify legacy stop/scheduler invariants before installation, install the already-validated unchanged Revision-35 runtime postimages, then verify normal-search stop/scheduler invariants after installation before browser activation. Preserve the exact Revision-35 normal rendered search implementation, helper 1.4.14 postimages, one reusable tab, >=5-second dwell, >=120-second cadence, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -1291,8 +1314,8 @@
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
     "remaining_executable_work": [
-      "Broker patch/publish/merge/rebind Revision 35 exact normal-search postimages and acceptance action.",
-      "Run one fresh full controlled acceptance proving two exact-card observations, same-tab reuse, >=120-second cadence, protected state, evaluator regressions and restart durability.",
+      "Broker patch/publish/merge/rebind Revision 36 harness-only correction.",
+      "Run one fresh full controlled acceptance using unchanged Revision-35 normal-search runtime postimages.",
       "Continue OP-CATALOG-001 catalog import/revalidation criteria after Browser Watch acceptance."
     ]
   },
@@ -1387,8 +1410,8 @@
         "mission_id": "OP-CATALOG-001",
         "route_id": "catalog-rendered-browser-single-tab-integration",
         "status": "REQUIRED_NEXT",
-        "description": "Deploy the single Revision-35 normal rendered search acquisition correction through the existing SOPDecisionGateway -> ControlledToolBroker path, then execute one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 35. The implementation must use one reusable authenticated tab and fixed CFB27 Players search page, rendered f_name plus OVR filters, deterministic exact result selection by the rendered href matching the queued stable exact-card source identity, >=5-second player-page dwell, and the visible player-local Prices/Live Auctions control. All saved-watch and value-probe browser transitions must return to the normal search page rather than navigate stored player URLs. Preserve issue #80 as terminal, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion, >=120-second cadence and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable.",
-        "source": "Operation Pancake Revision-35 D25 physical normal-search control proof"
+        "description": "Deploy the harness-only Revision-36 correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #83 is terminal and failed before runtime installation because Revision 35 checked postimage normal-search tokens against the prepatch Browser Helper. Revision 36 must verify legacy stop/scheduler invariants before installation, install the already-validated unchanged Revision-35 runtime postimages, then verify normal-search stop/scheduler invariants after installation before browser activation. Preserve the exact Revision-35 normal rendered search implementation, helper 1.4.14 postimages, one reusable tab, >=5-second dwell, >=120-second cadence, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable.",
+        "source": "Operation Pancake Revision-36 D26 issue-83 harness-order proof"
       }
     ]
   },
@@ -1529,6 +1552,28 @@
       ],
       "result": "Revision-35 normal-search acquisition candidate selected for bounded Gateway/Broker publication and physical acceptance.",
       "next": "Deploy the single Revision-35 normal rendered search acquisition correction through the existing SOPDecisionGateway -> ControlledToolBroker path, then execute one fresh immutable complete_simple_single_worktab_acceptance request against deployed Revision 35. The implementation must use one reusable authenticated tab and fixed CFB27 Players search page, rendered f_name plus OVR filters, deterministic exact result selection by the rendered href matching the queued stable exact-card source identity, >=5-second player-page dwell, and the visible player-local Prices/Live Auctions control. All saved-watch and value-probe browser transitions must return to the normal search page rather than navigate stored player URLs. Preserve issue #80 as terminal, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion, >=120-second cadence and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D26",
+      "decision": "Correct only the Revision-35 acceptance harness ordering so legacy installed stop conditions are checked before runtime installation and normal-search postimage stop conditions are checked immediately after installation.",
+      "evidence": [
+        "Issue #83 terminal receipt: installed stop-condition logic drift for normal-search-submitted, normal-search-result-selected, #f_name.",
+        "run() calls verify_installed_stop_conditions before patch_installed_runtime.",
+        "Those three missing tokens exist only in the validated Revision-35 watch.js postimage."
+      ],
+      "history": [
+        "Issue #83 is terminal and must not be replayed.",
+        "Revision 35 normal-search runtime postimages remain the selected implementation hypothesis and were never installed by #83.",
+        "All denied-source, exact-card, persistent RATE_LIMITED, Platinum Rare and unchanged-scoring locks remain unchanged."
+      ],
+      "alternatives": [
+        "Change normal-search runtime code - rejected because #83 failed before runtime installation.",
+        "Remove stop-condition verification - rejected.",
+        "Replay #83 - rejected because terminal.",
+        "Split prepatch legacy checks and postpatch Revision-35 checks - selected."
+      ],
+      "result": "Revision-36 harness-only pre/post stop-check ordering correction selected.",
+      "next": "Deploy the harness-only Revision-36 correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh immutable complete_simple_single_worktab_acceptance request. Issue #83 is terminal and failed before runtime installation because Revision 35 checked postimage normal-search tokens against the prepatch Browser Helper. Revision 36 must verify legacy stop/scheduler invariants before installation, install the already-validated unchanged Revision-35 runtime postimages, then verify normal-search stop/scheduler invariants after installation before browser activation. Preserve the exact Revision-35 normal rendered search implementation, helper 1.4.14 postimages, one reusable tab, >=5-second dwell, >=120-second cadence, all denied-source locks, persistent RATE_LIMITED lock, exact-card identity, protected state, Platinum Rare exclusion and unchanged scoring. Do not ask the user to test while the fresh controlled acceptance remains executable."
     }
   ]
 }

@@ -279,7 +279,7 @@ def test_single_worktab_runtime_loader_has_importlib_util_available():
 
 def test_single_worktab_action_revision_pin_matches_revision_33():
     action = load_single_worktab_action()
-    assert action.EXPECTED_AUTHORITY_REVISION == 35
+    assert action.EXPECTED_AUTHORITY_REVISION == 36
 
 def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, monkeypatch):
     action = load_single_worktab_action()
@@ -478,7 +478,7 @@ def test_single_worktab_r33_preserves_saved_watch_on_prices_fragment_only():
     action = load_single_worktab_action()
     repo = Path(action.__file__).resolve().parents[1]
     server = (repo / "runtime" / "simple_evaluator" / "server.py").read_text(encoding="utf-8")
-    assert action.EXPECTED_AUTHORITY_REVISION == 35
+    assert action.EXPECTED_AUTHORITY_REVISION == 36
     assert action.EXPECTED_SERVER_PREPATCH_SHA256 == "bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37"
     assert action.EXPECTED_SERVER_SHA256 == "bc0582bfc95845d748cec60b21e39181f247b125675070ca87b76fd3c4acf69e"
     assert 'BROWSER_WORK_TAB_FRAGMENT in str(page_url or "")' in server
@@ -494,7 +494,7 @@ def test_single_worktab_r35_uses_normal_rendered_search_for_all_browser_work():
     watch = (repo / "runtime" / "simple_evaluator" / "browser-helper" / "watch.js").read_text(encoding="utf-8")
     server = (repo / "runtime" / "simple_evaluator" / "server.py").read_text(encoding="utf-8")
     manifest = json.loads((repo / "runtime" / "simple_evaluator" / "browser-helper" / "manifest.json").read_text(encoding="utf-8"))
-    assert action.EXPECTED_AUTHORITY_REVISION == 35
+    assert action.EXPECTED_AUTHORITY_REVISION == 36
     assert action.EXPECTED_HELPER_VERSION == "1.4.14"
     assert action.NORMAL_SEARCH_URL == "https://cfb.fan/27/players/#simple-evaluator-worktab"
     run_block = source[source.index("def run(repo: Path, control)"):]
@@ -516,3 +516,24 @@ def test_single_worktab_r35_uses_normal_rendered_search_for_all_browser_work():
     assert '"current_program": card.get("program"), "source_url": _browser_work_url(card.get("source", ""))' in server
     assert server.count('self.send_header("Location", BROWSER_NORMAL_SEARCH_URL)') == 2
     assert manifest["version"] == "1.4.14"
+
+
+def test_single_worktab_r36_checks_old_runtime_before_install_and_new_runtime_after():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    assert action.EXPECTED_AUTHORITY_REVISION == 36
+    start = source.index("def verify_installed_stop_conditions")
+    end = source.index("def evaluator_acceptance", start)
+    block = source[start:end]
+    assert "prepatch: bool = False" in block
+    assert "if not prepatch:" in block
+    assert '"normal-search-submitted"' in block
+    assert '"normal-search-result-selected"' in block
+    assert '"#f_name"' in block
+    run_block = source[source.index("def run(repo: Path, control)"):]
+    pre = "prepatch_stop_checks = verify_installed_stop_conditions(control, prepatch=True)"
+    patch = "runtime_patch = patch_installed_runtime(repo, control)"
+    post = "stop_checks = verify_installed_stop_conditions(control, prepatch=False)"
+    assert pre in run_block and patch in run_block and post in run_block
+    assert run_block.index(pre) < run_block.index(patch) < run_block.index(post)
+    assert '"prepatch_stop_condition_checks": prepatch_stop_checks' in run_block
