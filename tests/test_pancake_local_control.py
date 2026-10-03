@@ -232,9 +232,9 @@ def test_single_worktab_runtime_loader_has_importlib_util_available():
     assert callable(mod.importlib.util.spec_from_file_location)
     assert callable(mod.importlib.util.module_from_spec)
 
-def test_single_worktab_action_revision_pin_matches_revision_27():
+def test_single_worktab_action_revision_pin_matches_revision_28():
     action = load_single_worktab_action()
-    assert action.EXPECTED_AUTHORITY_REVISION == 27
+    assert action.EXPECTED_AUTHORITY_REVISION == 28
 
 def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, monkeypatch):
     action = load_single_worktab_action()
@@ -379,3 +379,22 @@ def test_single_worktab_r27_self_recovers_missing_controlled_edge_then_uses_dev_
     assert run_block.index("toggle_exact(edge_pid, chosen, control)") < run_block.index("navigate_selected_url(edge_pid, activation_url, control)")
     assert run_block.index("navigate_selected_url(edge_pid, activation_url, control)") < run_block.index("helper = wait_helper(int(port), control, seconds=30)")
     assert "Revision 19 proved that --load-extension alone is not sufficient." in run_block
+
+def test_single_worktab_r28_waits_for_installed_extensions_readiness_and_preserves_dev_mode_on():
+    action = load_single_worktab_action()
+    source = Path(action.__file__).read_text(encoding="utf-8")
+    assert action.EXTENSIONS_LINK_READY_TIMEOUT_SECONDS == 12
+    assert action.EXTENSIONS_LINK_POLL_MS == 250
+    start = source.index("def open_extensions_root_and_snapshot")
+    end = source.index("def select_developer_toggle", start)
+    block = source[start:end]
+    assert "$deadline=(Get-Date).AddSeconds({EXTENSIONS_LINK_READY_TIMEOUT_SECONDS})" in block
+    assert "if($links.Count -gt 1)" in block
+    assert "Start-Sleep -Milliseconds {EXTENSIONS_LINK_POLL_MS}" in block
+    assert "while((Get-Date) -lt $deadline)" in block
+    assert "before readiness deadline" in block
+    toggle_start = source.index("def toggle_exact")
+    toggle_end = source.index("def wait_helper", toggle_start)
+    toggle_block = source[toggle_start:toggle_end]
+    assert '$action="AlreadyOn"' in toggle_block
+    assert 'ToggleState]::Off' in toggle_block
