@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 25,
+  "state_revision": 26,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Deploy the minimal revision-25 Windows stop-before-replace correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request. Issue #60 is terminal. Revision 25 must stop the exact Simple Evaluator listener before replacing the already hash-validated server.py postimage, relaunch only through the accepted dynamic-port launcher, and use the same stop-before-restore order during rollback. Preserve all Revision-24 Browser Helper logic, scoring, exact-card identity, watches, source locks and the persistent RATE_LIMITED value-probe lock.",
+    "next_action": "Deploy the evidence-backed revision-26 server-write correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request. Issues #60 and #62 are terminal and must not be replayed. Controlled Windows diagnostics proved that after the old Simple Evaluator PID is absent, atomic os.replace of server.py still fails with WinError 5 while a byte-identical in-place write succeeds and protected state survives; the same atomic replacement succeeds for RELEASE.json and PRODUCTION_WORKSTATION_ACCEPTANCE_3T.json. Revision 26 must therefore use a flushed/fsynced, hash-verified in-place write only for server.py, explicitly confirm the old PID is absent, keep the JSON atomic writes unchanged, and preserve all Browser Helper, scoring, exact-card identity, watches, source locks and persistent RATE_LIMITED protections.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -64,33 +64,33 @@
     "map": {
       "complete": true,
       "evidence": [
-        "OBSERVED: revision 24 / 8353905c is live, clean and READY for OP-CATALOG-001.",
-        "OBSERVED: immutable issue #60 reached brokered physical acceptance and failed with WinError 5 replacing server.py.r24.tmp over live server.py.",
-        "OBSERVED: rollback preserved original server SHA bd2be607..., pending release state, protected data, and validated temp postimage SHA f073dfe2."
+        "OBSERVED: revision 25 / 11c012a3 is live, clean and READY for OP-CATALOG-001.",
+        "OBSERVED: fresh immutable issue #62 reached brokered physical acceptance and failed with the same WinError 5 replacing server.py.r24.tmp over server.py as terminal issue #60.",
+        "OBSERVED: controlled recovery restored Simple Evaluator on dynamic port 8766 with the original server/release hashes and protected state unchanged."
       ]
     },
     "history": {
       "complete": true,
       "evidence": [
-        "VERIFIED_HISTORY: revision 24 was broker-created, published as PR #59, passed SOP Gate, merged at 8353905c and rebound READY.",
-        "VERIFIED_HISTORY: issues #58 and #60 are terminal and may not be replayed.",
-        "VERIFIED_HISTORY: denied raw routes, provider-email rejection, unchanged scoring/exact-card identity and persistent 429 lock remain preserved."
+        "VERIFIED_HISTORY: revision 25 was broker-created, published as PR #61, passed SOP Gate, merged at 11c012a3 and rebound READY.",
+        "VERIFIED_HISTORY: issues #60 and #62 are terminal; two failures invalidate the running-listener/stop-order hypothesis as the sole root cause.",
+        "VERIFIED_HISTORY: denied raw routes, provider-email rejection, scoring, exact-card identity, watches and persistent 429 lock remain preserved."
       ]
     },
     "research": {
       "complete": true,
       "evidence": [
-        "OBSERVED: revision-24 patch_installed_server hash-validates server.py.r24.tmp then calls os.replace while the live server is still running; only afterward does run() restart the server.",
-        "OBSERVED: server.py is not read-only and the user ACL is full; exact pre/post hashes are correct, isolating the failure to Windows live replacement ordering.",
-        "OBSERVED: existing restart_server already has exact-listener stop plus accepted dynamic-port relaunch mechanics; split stop/start is the narrow evidence-grounded repair."
+        "OBSERVED: controlled filesystem diagnostic stopped the exact server and observed the old PID absent after 0.14 seconds; byte-identical os.replace to server.py still failed with WinError 5.",
+        "OBSERVED: in the same controlled diagnostic, a byte-identical in-place server.py write with flush/fsync succeeded, the app relaunched on the accepted dynamic port, and protected state remained unchanged.",
+        "OBSERVED: separate brokered byte-identical probes proved os.replace succeeds for RELEASE.json and PRODUCTION_WORKSTATION_ACCEPTANCE_3T.json, so the restriction is server.py-specific in the tested runtime."
       ]
     },
     "capabilities": {
       "complete": true,
       "evidence": [
-        "OBSERVED: revision-24 Gateway/Broker and durable worker are healthy and authorized all prior controlled stages.",
-        "OBSERVED: a four-path revision-25 patch can change only action ordering, focused tests, authority and canonical handoff.",
-        "OBSERVED: no user action, paid service, scoring change, catalog collection or source-access retry is required."
+        "OBSERVED: revision-25 Gateway/Broker and durable worker are healthy and authorized the controlled diagnostics and runtime recovery.",
+        "OBSERVED: a four-path revision-26 patch can change only the server.py application primitive/process-exit guard, focused tests, authority and canonical handoff.",
+        "OBSERVED: no user action, paid service, scoring change, catalog collection, source-access retry or JSON acceptance-write redesign is required."
       ]
     }
   },
@@ -450,29 +450,30 @@
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D15",
+    "decision_id": "OP-CATALOG-001-D16",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Stop the exact Simple Evaluator listener before the validated server.py replacement and before rollback restoration, reuse the accepted dynamic-port relaunch path, then redeploy and rerun fresh full physical acceptance.",
+    "proposed_action": "Use a flushed/fsynced, hash-verified in-place write only for the validated server.py postimage after the exact old PID is absent; keep JSON atomic replacements unchanged; redeploy and rerun fresh full physical acceptance.",
     "obstacle_classification": "IMPLEMENTATION_PROBLEM",
     "history_refs": [
-      "Revision 24 is deployed READY at 8353905c and issue #60 is terminal.",
-      "Issue #60 failed at os.replace before Browser Helper activation; rollback is clean.",
-      "Revision-24 acceptance logic and protected state remain otherwise unchanged."
+      "Revision 25 is deployed READY at 11c012a3.",
+      "Issues #60 and #62 are terminal with identical WinError 5 atomic server.py replacement failures.",
+      "Controlled filesystem diagnostics proved server.py atomic replace fails after PID absence while in-place write succeeds; JSON atomic replaces succeed."
     ],
     "capabilities_checked": [
-      "live revision-24 authority and READY worker",
-      "issue #60 receipt and rollback state",
-      "server ACL/attributes and exact pre/post hashes",
-      "revision-24 patch/restart source",
+      "live revision-25 authority and READY worker",
+      "issue #60/#62 receipts",
+      "brokered byte-identical server replace-vs-write diagnostic",
+      "brokered RELEASE/acceptance JSON atomic-replace diagnostic",
+      "dynamic-port runtime recovery and protected-state verification",
       "bounded patch/publish/merge/rebind pipeline"
     ],
     "alternatives_considered": [
-      "Replay #60 unchanged - rejected because the terminal request and defect would recur.",
-      "Patch live server.py directly - rejected by broker-only execution.",
-      "Change file ACL/ownership - rejected because ACL is already full and file is not read-only.",
-      "Stop exact listener before replacement and rollback restoration, then use accepted dynamic-port relaunch - selected."
+      "Retry stop-before-replace unchanged - rejected after two terminal failures.",
+      "Add more delay before os.replace - rejected because atomic replace failed after confirmed PID absence.",
+      "Replace all atomic writes - rejected because controlled probes proved both JSON targets support atomic replace.",
+      "Use verified in-place write only for server.py after confirmed PID absence - selected from controlled evidence."
     ],
-    "selected_reason": "The terminal WinError 5 plus exact source order and clean ACL/hash evidence isolate one Windows replacement-order defect. Reusing the existing stop/relaunch mechanics is the narrowest correction.",
+    "selected_reason": "The controlled diagnostics isolate the failure to the server.py rename/replace primitive, not content, ACL, active listener, JSON targets, or protected state. In-place writing the exact bytes succeeded under the same conditions.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
@@ -1102,8 +1103,8 @@
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 25,
-    "next_action": "Deploy the minimal revision-25 Windows stop-before-replace correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request. Issue #60 is terminal. Revision 25 must stop the exact Simple Evaluator listener before replacing the already hash-validated server.py postimage, relaunch only through the accepted dynamic-port launcher, and use the same stop-before-restore order during rollback. Preserve all Revision-24 Browser Helper logic, scoring, exact-card identity, watches, source locks and the persistent RATE_LIMITED value-probe lock.",
+    "state_revision": 26,
+    "next_action": "Deploy the evidence-backed revision-26 server-write correction through the existing Gateway/Broker path, then submit one fresh immutable complete_simple_single_worktab_acceptance request. Issues #60 and #62 are terminal and must not be replayed. Controlled Windows diagnostics proved that after the old Simple Evaluator PID is absent, atomic os.replace of server.py still fails with WinError 5 while a byte-identical in-place write succeeds and protected state survives; the same atomic replacement succeeds for RELEASE.json and PRODUCTION_WORKSTATION_ACCEPTANCE_3T.json. Revision 26 must therefore use a flushed/fsynced, hash-verified in-place write only for server.py, explicitly confirm the old PID is absent, keep the JSON atomic writes unchanged, and preserve all Browser Helper, scoring, exact-card identity, watches, source locks and persistent RATE_LIMITED protections.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
@@ -1126,10 +1127,10 @@
     "user_facing_objective_verified": false,
     "all_acceptance_criteria_passed": false,
     "remaining_executable_work": [
-      "Validate revision-25 in an isolated git clone with authority/handoff/self-test and focused tests.",
-      "Obtain fresh Gateway/Broker authorization; create/publish/merge exact revision-25 and rebind the worker.",
-      "Submit a fresh immutable full single-worktab acceptance request; do not replay issue #60.",
-      "Verify stop-before-replace, dynamic relaunch, helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.",
+      "Validate revision-26 with authority/handoff/self-test and focused tests.",
+      "Obtain fresh Gateway/Broker authorization; create/publish/merge exact revision-26 and rebind the worker.",
+      "Submit a fresh immutable full single-worktab acceptance request; do not replay issues #60 or #62.",
+      "Verify server in-place postimage write, helper 1.4.13, one-tab dwell/cadence, protected state, evaluator and both restart proofs.",
       "Continue OP-CATALOG-001 because the five current FS versions still are not imported and catalog criteria remain open."
     ]
   },
