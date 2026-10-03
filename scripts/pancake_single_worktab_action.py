@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 33
+EXPECTED_AUTHORITY_REVISION = 35
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -23,15 +23,21 @@ DEBUG_PORT = 9255
 EXTENSION_ID = "fgocmjlihbapenekkflcofdjmdodmboe"
 EXTENSIONS_LINK_READY_TIMEOUT_SECONDS = 12
 EXTENSIONS_LINK_POLL_MS = 250
-EXPECTED_HELPER_VERSION = "1.4.13"
-EXPECTED_WATCH_SHA256 = "1faebe0b39ecf35879d35d16ce2a0aedb04cf15dc882350e55b39a2fea286912"
-EXPECTED_MANIFEST_SHA256 = "51beb29b86febf22cfcbcf50e06a10b3525dbbcbe7e7c537ec6ed8cd8d2d9b97"
-EXPECTED_BACKGROUND_SHA256 = "a3ce6c9884a514331bb614c5bbf8ff8b68ea2e56cfdde36a6bdeb616c5c6444e"
+EXPECTED_HELPER_VERSION = "1.4.14"
+EXPECTED_WATCH_SHA256 = "12f0ec58e3784c4a03fa65846ff6ae9df5a0850b88d39686f1eecc9044bfb3c6"
+EXPECTED_MANIFEST_SHA256 = "5a92d6cf6e8b78bcc81b17fc94deeba5156f83b97a486a5f72b53563e4db83c2"
+EXPECTED_BACKGROUND_SHA256 = "d275b00ddb0d6dd56050145fd527da75538a582f41678c4b2f004d2f78799b0c"
 EXPECTED_PREFLIGHT_SHA256 = "6a4c835a95b812f81503a4a36302bed39adf43f38871473f3cda77311dbef59f"
 EXPECTED_SERVER_PREPATCH_SHA256 = "bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37"
-EXPECTED_SERVER_SHA256 = "95e6f98e61a3cb0a3133619348426c186302f6a19c3cb6a676d7d747b1534da8"
+EXPECTED_SERVER_SHA256 = "bc0582bfc95845d748cec60b21e39181f247b125675070ca87b76fd3c4acf69e"
 EXPECTED_UI_SHA256 = "8dc0a0eb54a33ec2e0ee8df243ecbb9b0f7f4e8f764008cb68d843ebe8e2a355"
-PENDING_RELEASE_SHA256 = "60549a6729a3205055992c982fb3b180a96ab5a34fec82a26ff57afb914b45d8"
+PENDING_RELEASE_SHA256 = "86c9c3574be1f73d47fb2a21e897d890ee351872bc8d0564a894a091013ccc5e"
+PREPATCH_WATCH_SHA256 = "1faebe0b39ecf35879d35d16ce2a0aedb04cf15dc882350e55b39a2fea286912"
+PREPATCH_MANIFEST_SHA256 = "51beb29b86febf22cfcbcf50e06a10b3525dbbcbe7e7c537ec6ed8cd8d2d9b97"
+PREPATCH_BACKGROUND_SHA256 = "a3ce6c9884a514331bb614c5bbf8ff8b68ea2e56cfdde36a6bdeb616c5c6444e"
+PREPATCH_RELEASE_SHA256 = "60549a6729a3205055992c982fb3b180a96ab5a34fec82a26ff57afb914b45d8"
+NORMAL_SEARCH_URL = "https://cfb.fan/27/players/#simple-evaluator-worktab"
+RUNTIME_POSTIMAGE_REL = Path("runtime") / "simple_evaluator"
 BASE_USER_WATCH_HASH = "00eed84885792a43314e78d17a18f228ae8554d35d11fa8c5d84d2154a334105"
 BASE_STATE_OBS_HASH = "8af2f5ef3195f5499ef3b9e80038d1e71a7fa2de06eba5ca41767b8a90786733"
 BASE_FEED_OBS_HASH = "071ef8007045310d41267b033773b49d33f3c0787a327c6e3a74ad729c9a34d0"
@@ -164,11 +170,11 @@ def verify_installed_files(control, *, prepatch: bool = False) -> dict[str, str]
     expected = {
         "server.py": EXPECTED_SERVER_PREPATCH_SHA256 if prepatch else EXPECTED_SERVER_SHA256,
         "Simple-Evaluator.html": EXPECTED_UI_SHA256,
-        "browser-helper/background.js": EXPECTED_BACKGROUND_SHA256,
-        "browser-helper/watch.js": EXPECTED_WATCH_SHA256,
+        "browser-helper/background.js": PREPATCH_BACKGROUND_SHA256 if prepatch else EXPECTED_BACKGROUND_SHA256,
+        "browser-helper/watch.js": PREPATCH_WATCH_SHA256 if prepatch else EXPECTED_WATCH_SHA256,
         "browser-helper/preflight.js": EXPECTED_PREFLIGHT_SHA256,
-        "browser-helper/manifest.json": EXPECTED_MANIFEST_SHA256,
-        "RELEASE.json": PENDING_RELEASE_SHA256,
+        "browser-helper/manifest.json": PREPATCH_MANIFEST_SHA256 if prepatch else EXPECTED_MANIFEST_SHA256,
+        "RELEASE.json": PREPATCH_RELEASE_SHA256 if prepatch else PENDING_RELEASE_SHA256,
     }
     actual: dict[str, str] = {}
     for rel, digest in expected.items():
@@ -180,20 +186,17 @@ def verify_installed_files(control, *, prepatch: bool = False) -> dict[str, str]
             raise control.EvidenceGap(f"installed single-worktab file hash drift: {rel}={actual[rel]}")
     manifest = read_json(APP / "browser-helper/manifest.json")
     release = read_json(APP / "RELEASE.json")
-    if manifest.get("version") != EXPECTED_HELPER_VERSION:
-        raise control.EvidenceGap("installed helper manifest is not 1.4.13")
-    if release.get("browser_helper_version") != EXPECTED_HELPER_VERSION:
-        raise control.EvidenceGap("installed release does not expect helper 1.4.13")
+    expected_version = "1.4.13" if prepatch else EXPECTED_HELPER_VERSION
+    if manifest.get("version") != expected_version:
+        raise control.EvidenceGap(f"installed helper manifest is not {expected_version}")
+    if release.get("browser_helper_version") != expected_version:
+        raise control.EvidenceGap(f"installed release does not expect helper {expected_version}")
     if release.get("status") != "FROZEN_PENDING_PHYSICAL_ACCEPTANCE":
         raise control.EvidenceGap("installed release is not pending physical acceptance")
     return actual
 
 
-
 def write_server_bytes_in_place(path: Path, data: bytes, control) -> str:
-    # Controlled Windows diagnostics proved rename/replace of server.py is denied
-    # even after the old PID is absent, while a byte-identical in-place write is
-    # permitted. Preserve the file identity/ACL and make the write durable.
     try:
         with path.open("wb") as handle:
             handle.write(data)
@@ -204,154 +207,91 @@ def write_server_bytes_in_place(path: Path, data: bytes, control) -> str:
     return sha256(path)
 
 
-def patch_installed_server(control) -> dict[str, Any]:
-    path = APP / "server.py"
-    raw = path.read_bytes()
-    before = hashlib.sha256(raw).hexdigest()
-    if before == EXPECTED_SERVER_SHA256:
-        return {"changed": False, "before_sha256": before, "after_sha256": before}
-    if before != EXPECTED_SERVER_PREPATCH_SHA256:
-        raise control.EvidenceGap(f"installed server preimage drift: {before}")
-    text = raw.decode("utf-8")
-    old_heartbeat = """    record = {
-        "schema": BROWSER_HEARTBEAT_SCHEMA,
-        "version": version,
-        "expected_version": expected or None,
-        "version_matches": bool(expected and version == expected),
-        "browser_family": browser_family,
-        "user_agent": user_agent or None,
-        "page_diagnostic": page_diagnostic,
-        "last_seen_at": now,
-        "release": RELEASE_ID,
-        "release_version": RELEASE_VERSION,
-    }
-    write_json_atomic(BROWSER_HEARTBEAT, record, backup_existing=False)
-    record_event(OPERATION_LOG, "browser_helper_heartbeat", release=RELEASE_ID, version=RELEASE_VERSION, details={
-        "browser_family": browser_family, "reported_version": version, "expected_version": expected,
-        "version_matches": bool(expected and version == expected),
-    })
-    return {"ok": True, **record}
-"""
-    new_heartbeat = """    record = {
-        "schema": BROWSER_HEARTBEAT_SCHEMA,
-        "version": version,
-        "expected_version": expected or None,
-        "version_matches": bool(expected and version == expected),
-        "browser_family": browser_family,
-        "user_agent": user_agent or None,
-        "page_diagnostic": page_diagnostic,
-        "last_seen_at": now,
-        "release": RELEASE_ID,
-        "release_version": RELEASE_VERSION,
-    }
-    # Multiple Chromium profiles may still have an older helper runtime loaded.
-    # Once the expected helper has produced a live heartbeat, a mismatched older
-    # runtime must not clobber that compatible health record.
-    current = {}
-    if BROWSER_HEARTBEAT.exists():
-        try:
-            raw_current = json.loads(BROWSER_HEARTBEAT.read_text(encoding="utf-8"))
-            if isinstance(raw_current, dict) and raw_current.get("schema") == BROWSER_HEARTBEAT_SCHEMA:
-                current = raw_current
-        except (OSError, ValueError, json.JSONDecodeError):
-            current = {}
-    current_seen = _parse_utc(current.get("last_seen_at")) if current else None
-    current_age = None if current_seen is None else max(
-        0, int((datetime.now(timezone.utc) - current_seen).total_seconds())
-    )
-    keep_compatible = bool(
-        expected
-        and version != expected
-        and current.get("version") == expected
-        and current_age is not None
-        and current_age <= BROWSER_HEARTBEAT_MAX_AGE_SECONDS
-    )
-    if keep_compatible:
-        record_event(OPERATION_LOG, "browser_helper_stale_heartbeat_ignored", release=RELEASE_ID, version=RELEASE_VERSION, details={
-            "browser_family": browser_family, "reported_version": version, "expected_version": expected,
-            "kept_browser_family": current.get("browser_family"), "kept_version": current.get("version"),
-        })
-        return {"ok": True, "ignored_version_mismatch": True, **current}
-    write_json_atomic(BROWSER_HEARTBEAT, record, backup_existing=False)
-    record_event(OPERATION_LOG, "browser_helper_heartbeat", release=RELEASE_ID, version=RELEASE_VERSION, details={
-        "browser_family": browser_family, "reported_version": version, "expected_version": expected,
-        "version_matches": bool(expected and version == expected),
-    })
-    return {"ok": True, **record}
-"""
-    old_acceptance = """def maybe_write_production_acceptance(state: dict | None = None) -> dict | None:
-    existing = production_acceptance_status()
-    if existing.get("status") == "PASS" and existing.get("checkpoint") == RELEASE_ID and str(existing.get("release_version") or "") == RELEASE_VERSION:
-        return existing
-    result = _production_acceptance_candidate(state)
-    if result is not None:
-        write_json_atomic(PRODUCTION_ACCEPTANCE, result, backup_existing=False)
-        record_event(OPERATION_LOG, "production_acceptance_pass", release=RELEASE_ID, version=RELEASE_VERSION, details={
-            "browser_family": result.get("browser_family"), "card_id": result.get("card_id"),
-            "observed_delta_seconds": result.get("observed_delta_seconds"),
-        })
-    return result
-"""
-    new_acceptance = """def maybe_write_production_acceptance(state: dict | None = None) -> dict | None:
-    # Full 1.4.13 single-worktab acceptance is transactional and is written only
-    # by the brokered physical-acceptance action after cadence, tab hygiene,
-    # protected-state, stop-condition, evaluator, and restart checks all pass.
-    existing = production_acceptance_status()
-    if (
-        existing.get("status") == "PASS"
-        and existing.get("checkpoint") == RELEASE_ID
-        and str(existing.get("release_version") or "") == RELEASE_VERSION
-        and existing.get("full_single_worktab_acceptance") is True
-    ):
-        return existing
-    return None
-"""
-    old_watch_config = """        elif BROWSER_WORK_TAB_FRAGMENT in str(page_url or ""):
-            watch = next((item for item in matches if item.get("purpose") != "value_probe"), None)
-"""
-    new_watch_config = """        elif (
-            BROWSER_WORK_TAB_FRAGMENT in str(page_url or "")
-            or urlsplit(str(page_url or "")).fragment.lower() == "prices"
-        ):
-            # The shared work tab begins with #simple-evaluator-worktab, but
-            # CFB.FAN replaces the fragment with #prices when its player-local
-            # Prices view is selected. Preserve the user-started saved watch on
-            # that same exact-card page so a refresh can still record FOUND or
-            # NO_LISTING instead of silently deactivating the helper.
-            watch = next((item for item in matches if item.get("purpose") != "value_probe"), None)
-"""
-    if text.count(old_heartbeat) != 1:
-        raise control.EvidenceGap("installed server heartbeat patch anchor drift")
-    if text.count(old_acceptance) != 1:
-        raise control.EvidenceGap("installed server acceptance patch anchor drift")
-    if text.count(old_watch_config) != 1:
-        raise control.EvidenceGap("installed server saved-watch fragment patch anchor drift")
-    text = (
-        text.replace(old_heartbeat, new_heartbeat, 1)
-        .replace(old_acceptance, new_acceptance, 1)
-        .replace(old_watch_config, new_watch_config, 1)
-    )
-    temp = path.with_suffix(".py.r24.tmp")
-    temp.write_text(text, encoding="utf-8", newline="\n")
-    after = sha256(temp)
-    if after != EXPECTED_SERVER_SHA256:
-        try:
-            temp.unlink()
-        except OSError:
-            pass
-        raise control.ControlError(f"patched server hash mismatch: {after}")
-    postimage = temp.read_bytes()
+def write_runtime_bytes(path: Path, data: bytes, control) -> str:
+    if path.name == "server.py":
+        return write_server_bytes_in_place(path, data, control)
+    temp = path.with_name(path.name + ".r35.tmp")
     try:
-        written = write_server_bytes_in_place(path, postimage, control)
+        with temp.open("wb") as handle:
+            handle.write(data)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temp, path)
+    except OSError as exc:
+        raise control.ControlError(f"runtime postimage write failed for {path.name}: {exc}") from exc
     finally:
         try:
             if temp.exists():
                 temp.unlink()
         except OSError:
             pass
-    if written != EXPECTED_SERVER_SHA256:
-        raise control.ControlError(f"installed server write hash mismatch: {written}")
-    return {"changed": True, "before_sha256": before, "after_sha256": written}
+    return sha256(path)
+
+
+def patch_installed_runtime(repo: Path, control) -> dict[str, Any]:
+    post_root = repo / RUNTIME_POSTIMAGE_REL
+    expected_pre = {
+        "server.py": EXPECTED_SERVER_PREPATCH_SHA256,
+        "RELEASE.json": PREPATCH_RELEASE_SHA256,
+        "browser-helper/background.js": PREPATCH_BACKGROUND_SHA256,
+        "browser-helper/watch.js": PREPATCH_WATCH_SHA256,
+        "browser-helper/manifest.json": PREPATCH_MANIFEST_SHA256,
+    }
+    expected_post = {
+        "server.py": EXPECTED_SERVER_SHA256,
+        "RELEASE.json": PENDING_RELEASE_SHA256,
+        "browser-helper/background.js": EXPECTED_BACKGROUND_SHA256,
+        "browser-helper/watch.js": EXPECTED_WATCH_SHA256,
+        "browser-helper/manifest.json": EXPECTED_MANIFEST_SHA256,
+    }
+    changed = {}
+    for rel, post_hash in expected_post.items():
+        source = post_root / rel
+        target = APP / rel
+        if not source.is_file() or sha256(source) != post_hash:
+            raise control.EvidenceGap(f"repository runtime postimage drift: {rel}")
+        before = sha256(target)
+        if before == post_hash:
+            changed[rel] = {"changed": False, "before_sha256": before, "after_sha256": before}
+            continue
+        if before != expected_pre[rel]:
+            raise control.EvidenceGap(f"installed runtime preimage drift: {rel}={before}")
+        after = write_runtime_bytes(target, source.read_bytes(), control)
+        if after != post_hash:
+            raise control.ControlError(f"installed runtime postimage hash mismatch: {rel}={after}")
+        changed[rel] = {"changed": True, "before_sha256": before, "after_sha256": after}
+    return changed
+
+
+def reload_helper_extension(edge_pid: int, control) -> dict[str, Any]:
+    ps = rf"""
+Add-Type -AssemblyName UIAutomationClient
+Add-Type -AssemblyName UIAutomationTypes
+$p=Get-Process -Id {edge_pid} -ErrorAction Stop
+$root=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
+$buttons=$root.FindAll([System.Windows.Automation.TreeScope]::Descendants,
+  [System.Windows.Automation.PropertyCondition]::new(
+    [System.Windows.Automation.AutomationElement]::ControlTypeProperty,
+    [System.Windows.Automation.ControlType]::Button))
+$matches=@($buttons | Where-Object {{ $_.Current.Name -eq "Extension on" -and -not $_.Current.IsOffscreen -and $_.Current.IsEnabled }})
+if($matches.Count -ne 1){{ throw ("Expected one visible enabled Extension on control; observed "+$matches.Count) }}
+$toggle=$matches[0].GetCurrentPattern([System.Windows.Automation.TogglePattern]::Pattern)
+$before=[string]$toggle.Current.ToggleState
+if($before -ne "On"){{ throw ("Expected extension enabled before reload; observed "+$before) }}
+$toggle.Toggle()
+Start-Sleep -Milliseconds 500
+$off=[string]$toggle.Current.ToggleState
+if($off -ne "Off"){{ throw ("Extension did not disable for reload; observed "+$off) }}
+$toggle.Toggle()
+Start-Sleep -Milliseconds 700
+$on=[string]$toggle.Current.ToggleState
+if($on -ne "On"){{ throw ("Extension did not re-enable after reload; observed "+$on) }}
+[pscustomobject]@{{Before=$before;AfterDisable=$off;AfterEnable=$on}} | ConvertTo-Json -Compress
+"""
+    result = run_ps_json(ps, control)
+    if result.get("AfterEnable") != "On":
+        raise control.ControlError(f"Browser Helper reload failed: {result!r}")
+    return result
 
 
 def verify_installed_stop_conditions(control) -> dict[str, Any]:
@@ -360,6 +300,9 @@ def verify_installed_stop_conditions(control) -> dict[str, Any]:
     required_watch = [
         "const MIN_INTERVAL_SECONDS = 120;",
         "const MIN_PAGE_DWELL_MS = 5000;",
+        "normal-search-submitted",
+        "normal-search-result-selected",
+        "#f_name",
         "user-action-required",
         "access-denied",
         "rate-limited",
@@ -377,6 +320,8 @@ def verify_installed_stop_conditions(control) -> dict[str, Any]:
         "simple-evaluator:browser-work-stop",
         "await clearTabSchedule(tabId);",
         "chrome.tabs.update(tabId, {url: workTabUrl",
+        "const NORMAL_SEARCH_URL = 'https://cfb.fan/27/players/#simple-evaluator-worktab';",
+        "currentBrowserWork",
     ]
     missing_bg = [token for token in required_background if token not in background]
     if missing_bg:
@@ -1053,24 +998,32 @@ def run(repo: Path, control) -> Mapping[str, Any]:
     release_path = APP / "RELEASE.json"
     acceptance_path = APP / "PRODUCTION_WORKSTATION_ACCEPTANCE_3T.json"
     server_path = APP / "server.py"
-    release_backup = release_path.read_bytes()
-    server_backup = server_path.read_bytes()
+    runtime_paths = [
+        APP / "server.py",
+        APP / "RELEASE.json",
+        APP / "browser-helper" / "background.js",
+        APP / "browser-helper" / "watch.js",
+        APP / "browser-helper" / "manifest.json",
+    ]
+    runtime_backups = {str(path): path.read_bytes() for path in runtime_paths}
+    release_backup = runtime_backups[str(release_path)]
+    server_backup = runtime_backups[str(server_path)]
     acceptance_existed = acceptance_path.exists()
     acceptance_backup = acceptance_path.read_bytes() if acceptance_existed else None
-    server_patch: dict[str, Any] | None = None
+    runtime_patch: dict[str, Any] | None = None
     edge_pid: int | None = None
     server_stopped_pid: int | None = None
 
     try:
-        # Harden the installed acceptance boundary before activating 1.4.13:
+        # Harden the installed acceptance boundary before activating 1.4.14:
         # stale 1.4.12 Chromium heartbeats can no longer clobber a compatible
-        # 1.4.13 heartbeat, and the server can no longer self-certify a narrow PASS.
+        # 1.4.14 heartbeat, and the server can no longer self-certify a narrow PASS.
         # Windows can deny atomic replacement of server.py while the live
         # interpreter still owns the installed file. Stop the exact listener
         # first, apply the already hash-validated patch, then relaunch through
         # the accepted dynamic-port launcher.
         server_stopped_pid = stop_server(int(port), launch, control)
-        server_patch = patch_installed_server(control)
+        runtime_patch = patch_installed_runtime(repo, control)
         port, _ = start_server(server_stopped_pid, launch, control)
         server_stopped_pid = None
         installed_hashes = verify_installed_files(control, prepatch=False)
@@ -1098,34 +1051,32 @@ def run(repo: Path, control) -> Mapping[str, Any]:
         root = open_extensions_root_and_snapshot(edge_pid, control)
         chosen = select_developer_toggle(root, control)
         toggle = toggle_exact(edge_pid, chosen, control)
+        details = navigate_selected_url(
+            edge_pid,
+            f"edge://extensions/?id={EXTENSION_ID}",
+            control,
+        )
+        extension_reload = reload_helper_extension(edge_pid, control)
 
         activation_queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
-        activation_url = str(activation_queue.get("source_url") or "")
+        activation_source = str(activation_queue.get("source_url") or "")
         if (
             activation_queue.get("active") is not True
-            or not activation_url.startswith("https://cfb.fan/")
-            or "#simple-evaluator-worktab" not in activation_url
+            or not activation_source.startswith("https://cfb.fan/")
+            or not activation_queue.get("card_id")
+            or not activation_queue.get("name")
         ):
-            raise control.EvidenceGap("shared work URL changed before helper activation")
-        navigate_selected_url(edge_pid, activation_url, control)
-        helper = wait_helper(int(port), control, seconds=30)
-
-        first_queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
-        first_source = str(first_queue.get("source_url") or "")
-        current_url = current_selected_url(edge_pid, control)
-        if current_url.split("#", 1)[0].rstrip("/") != first_source.split("#", 1)[0].rstrip("/"):
-            navigate_selected_url(edge_pid, first_source, control)
+            raise control.EvidenceGap("exact-card work identity changed before normal-search activation")
         obs_before = observations()
-        first_id = str(first_queue.get("card_id") or "")
-        if not first_id:
-            raise control.EvidenceGap("first queue card ID is absent")
-        reload_info = choose_work_tab_and_reload(edge_pid, first_queue, control)
-        reload_at = parse_dt(str(reload_info["ReloadedAt"]))
+        first_id = str(activation_queue.get("card_id") or "")
+        first_started = datetime.now(timezone.utc)
+        navigate_selected_url(edge_pid, NORMAL_SEARCH_URL, control)
+        helper = wait_helper(int(port), control, seconds=30)
         first_obs, first_elapsed = wait_observation(
             first_id,
-            after=reload_at,
+            after=first_started,
             count_before=len(obs_before),
-            seconds=60,
+            seconds=90,
             control=control,
         )
         if first_elapsed < 5.0:
@@ -1133,13 +1084,14 @@ def run(repo: Path, control) -> Mapping[str, Any]:
                 f"first rendered-page observation violated 5-second dwell: {first_elapsed:.3f}s"
             )
 
+        first_url = current_selected_url(edge_pid, control)
         next_queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
         next_id = str(next_queue.get("card_id") or "")
         if not next_id or next_id == first_id:
             raise control.EvidenceGap(f"second saved-watch queue card is not distinct: {next_id!r}")
         second_url, navigation_detected_at = wait_url_change(
             edge_pid,
-            str(reload_info.get("Url") or ""),
+            first_url,
             seconds=30,
             control=control,
         )
@@ -1238,7 +1190,7 @@ def run(repo: Path, control) -> Mapping[str, Any]:
             and row.get("helper_version") == EXPECTED_HELPER_VERSION
         }
         if not {first_id, next_id}.issubset(persisted_ids):
-            raise control.ControlError("exact-card 1.4.13 observations did not persist through restart")
+            raise control.ControlError("exact-card 1.4.14 observations did not persist through restart")
 
         acceptance_sha = write_full_acceptance(
             helper=helper_after_restart,
@@ -1288,9 +1240,10 @@ def run(repo: Path, control) -> Mapping[str, Any]:
             "status": "PASS",
             "installed_hashes_before_server_hardening": installed_hashes_prepatch,
             "installed_hashes_after_server_hardening": installed_hashes,
-            "server_hardening": server_patch,
+            "runtime_postimages": runtime_patch,
             "edge_pid": edge_pid,
             "developer_mode": toggle,
+            "extension_reload": extension_reload,
             "helper_live": helper,
             "first_observation": {
                 "card_id": first_id,
@@ -1358,13 +1311,18 @@ def run(repo: Path, control) -> Mapping[str, Any]:
             rollback_pid = server_stopped_pid
             if current_port is not None:
                 rollback_pid = stop_server(int(current_port), launch, control)
-            if server_path.read_bytes() != server_backup:
-                restored = write_server_bytes_in_place(server_path, server_backup, control)
-                if restored != hashlib.sha256(server_backup).hexdigest():
-                    raise control.ControlError("server.py rollback hash mismatch")
-            temp = server_path.with_suffix(".py.r24.tmp")
-            if temp.exists():
-                temp.unlink()
+            for raw_path, backup in runtime_backups.items():
+                target = Path(raw_path)
+                if target.read_bytes() != backup:
+                    restored = write_runtime_bytes(target, backup, control)
+                    if restored != hashlib.sha256(backup).hexdigest():
+                        raise control.ControlError(f"runtime rollback hash mismatch: {target.name}")
+            if edge_pid is not None:
+                try:
+                    navigate_selected_url(edge_pid, f"edge://extensions/?id={EXTENSION_ID}", control)
+                    reload_helper_extension(edge_pid, control)
+                except Exception:
+                    pass
             if rollback_pid is not None:
                 start_server(rollback_pid, launch, control)
         except Exception:
