@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 46
+EXPECTED_AUTHORITY_REVISION = 47
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -32,6 +32,7 @@ EXPECTED_SERVER_PREPATCH_SHA256 = "bd2be6072354a91a37acc43a16783488abb700ac2784c
 EXPECTED_SERVER_SHA256 = "60cdcbfde9b306d28d0732968622c8759150bb4a07e57bf68548b4e61f5dad76"
 EXPECTED_UI_SHA256 = "8dc0a0eb54a33ec2e0ee8df243ecbb9b0f7f4e8f764008cb68d843ebe8e2a355"
 PENDING_RELEASE_SHA256 = "7f720e56e566d4c803e5293786ffdfa51af496d430faf2ebbff3ff49adaa56a3"
+ACCEPTED_RELEASE_SHA256 = "b70dcc20caa290c3ef839df6ebdd021f56bad492aca621c1feec2bf2b19b02b2"
 PREPATCH_WATCH_SHA256 = "1faebe0b39ecf35879d35d16ce2a0aedb04cf15dc882350e55b39a2fea286912"
 PREPATCH_MANIFEST_SHA256 = "51beb29b86febf22cfcbcf50e06a10b3525dbbcbe7e7c537ec6ed8cd8d2d9b97"
 PREPATCH_BACKGROUND_SHA256 = "a3ce6c9884a514331bb614c5bbf8ff8b68ea2e56cfdde36a6bdeb616c5c6444e"
@@ -197,7 +198,14 @@ def verify_protected(
         raise control.EvidenceGap("persistent RATE_LIMITED value-probe lock drift")
 
 
-def verify_installed_files(control, *, prepatch: bool = False) -> dict[str, str]:
+def verify_installed_files(control, *, prepatch: bool = False, accepted: bool = False) -> dict[str, str]:
+    if prepatch and accepted:
+        raise control.EvidenceGap("installed-file verification cannot be both prepatch and accepted")
+    expected_release_sha = (
+        PREPATCH_RELEASE_SHA256
+        if prepatch
+        else ACCEPTED_RELEASE_SHA256 if accepted else PENDING_RELEASE_SHA256
+    )
     expected = {
         "server.py": EXPECTED_SERVER_PREPATCH_SHA256 if prepatch else EXPECTED_SERVER_SHA256,
         "Simple-Evaluator.html": EXPECTED_UI_SHA256,
@@ -205,7 +213,7 @@ def verify_installed_files(control, *, prepatch: bool = False) -> dict[str, str]
         "browser-helper/watch.js": PREPATCH_WATCH_SHA256 if prepatch else EXPECTED_WATCH_SHA256,
         "browser-helper/preflight.js": EXPECTED_PREFLIGHT_SHA256,
         "browser-helper/manifest.json": PREPATCH_MANIFEST_SHA256 if prepatch else EXPECTED_MANIFEST_SHA256,
-        "RELEASE.json": PREPATCH_RELEASE_SHA256 if prepatch else PENDING_RELEASE_SHA256,
+        "RELEASE.json": expected_release_sha,
     }
     actual: dict[str, str] = {}
     for rel, digest in expected.items():
@@ -222,8 +230,9 @@ def verify_installed_files(control, *, prepatch: bool = False) -> dict[str, str]
         raise control.EvidenceGap(f"installed helper manifest is not {expected_version}")
     if release.get("browser_helper_version") != expected_version:
         raise control.EvidenceGap(f"installed release does not expect helper {expected_version}")
-    if release.get("status") != "FROZEN_PENDING_PHYSICAL_ACCEPTANCE":
-        raise control.EvidenceGap("installed release is not pending physical acceptance")
+    expected_status = "PRODUCTION_ACCEPTED" if accepted else "FROZEN_PENDING_PHYSICAL_ACCEPTANCE"
+    if release.get("status") != expected_status:
+        raise control.EvidenceGap(f"installed release status drift: {release.get('status')!r}")
     return actual
 
 
@@ -1344,11 +1353,12 @@ def run(repo: Path, control) -> Mapping[str, Any]:
         ):
             raise control.ControlError(f"full acceptance record did not survive restart: {acceptance_final!r}")
 
-        verify_installed_files(control, prepatch=False)
+        final_installed_hashes = verify_installed_files(control, prepatch=False, accepted=True)
         return {
             "status": "PASS",
             "installed_hashes_before_server_hardening": installed_hashes_prepatch,
             "installed_hashes_after_server_hardening": installed_hashes,
+            "installed_hashes_final_accepted": final_installed_hashes,
             "runtime_postimages": runtime_patch,
             "edge_pid": edge_pid,
             "developer_mode": toggle,
