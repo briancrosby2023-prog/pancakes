@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 44
+EXPECTED_AUTHORITY_REVISION = 45
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -1202,9 +1202,10 @@ def run(repo: Path, control) -> Mapping[str, Any]:
         ):
             raise control.ControlError(f"120-second saved-watch scheduling proof failed: {cadence_queue!r}")
         prior_obs = first_obs if cadence_id == first_id else second_obs
+        cadence_prior_url = current_selected_url(edge_pid, control)
         cadence_url, cadence_navigation_at = wait_url_change(
             edge_pid,
-            second_url,
+            cadence_prior_url,
             seconds=max(35.0, cadence_wait + 35.0),
             control=control,
         )
