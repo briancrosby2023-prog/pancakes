@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 44
+EXPECTED_AUTHORITY_REVISION = 45
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -40,9 +40,11 @@ NORMAL_SEARCH_URL = "https://cfb.fan/27/players/#simple-evaluator-worktab"
 WINDOWS_NO_WINDOW = subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0
 RUNTIME_POSTIMAGE_REL = Path("runtime") / "simple_evaluator"
 BASE_USER_WATCH_HASH = "00eed84885792a43314e78d17a18f228ae8554d35d11fa8c5d84d2154a334105"
-BASE_STATE_OBS_HASH = "8af2f5ef3195f5499ef3b9e80038d1e71a7fa2de06eba5ca41767b8a90786733"
-BASE_FEED_OBS_HASH = "071ef8007045310d41267b033773b49d33f3c0787a327c6e3a74ad729c9a34d0"
-BASE_ALERTS_HASH = "f53c678abb7ff40e4dc9d1ad55db4da27cd0d67766e9a6c1e51092d5794d2ac1"
+BASE_STATE_OBS_HASH = "9ab55d9b1f8f794657160ad13be9e475eb3a285f062fc818058ef61b04ab0b43"
+BASE_FEED_OBS_HASH = "0468cbb0e49bdfa9db52e9166f439e34e1607d4577f4510878c450ede95c760d"
+BASE_ALERTS_HASH = "b25cae4df77095ba617139f75699266bc779ccfb207d03b0ce4a03655f63abc2"
+BASE_ALERTS_COUNT = 1
+BASE_ALERTS_PREFIX_HASH = "0ea591cf8f49b0ffbf662db1a21de46a5355d9d2632452f59699fd74b0d892d5"
 BASE_RUNTIME_HASH = "fc8fbead3120f4620cac3aebe2b9b5990d7f39e61e97628c28f85bb678d03638"
 STALE_TEST_TAB_TITLES = {
     "Kingston Lopa Stars of the Week 90 OVR - College Football 27 - CFB.FAN",
@@ -121,6 +123,7 @@ def protected_snapshot() -> dict[str, Any]:
     probes = [w for w in watches if isinstance(w, dict) and w.get("purpose") == "value_probe"]
     observations = state.get("observations") if isinstance(state.get("observations"), list) else []
     feed_observations = feed.get("observations") if isinstance(feed.get("observations"), list) else []
+    alert_rows = alerts.get("alerts") if isinstance(alerts.get("alerts"), list) else []
     return {
         "user_watch_count": len(users),
         "user_watches_hash": json_hash(users),
@@ -130,6 +133,8 @@ def protected_snapshot() -> dict[str, Any]:
         "feed_observation_count": len(feed_observations),
         "feed_observations_hash": json_hash(feed_observations),
         "alerts_hash": json_hash(alerts),
+        "alerts_count": len(alert_rows),
+        "alerts_prefix_hash": json_hash(alert_rows[:BASE_ALERTS_COUNT]),
         "watch_runtime_hash": json_hash(runtime),
         "value_probe_status": state.get("value_probe_status"),
         "value_probe_rate_limit": state.get("value_probe_rate_limit"),
@@ -141,20 +146,25 @@ def verify_protected(snapshot: Mapping[str, Any], control, *, allow_new_observat
     exact = {
         "user_watch_count": 2,
         "user_watches_hash": BASE_USER_WATCH_HASH,
-        "alerts_hash": BASE_ALERTS_HASH,
         "watch_runtime_hash": BASE_RUNTIME_HASH,
     }
     for key, value in exact.items():
         if snapshot.get(key) != value:
             raise control.EvidenceGap(f"protected state drift: {key}={snapshot.get(key)!r}")
     if allow_new_observations:
-        if int(snapshot.get("state_observation_count", -1)) < 130:
+        if int(snapshot.get("alerts_count", -1)) < BASE_ALERTS_COUNT:
+            raise control.EvidenceGap("alert history regressed")
+        if snapshot.get("alerts_prefix_hash") != BASE_ALERTS_PREFIX_HASH:
+            raise control.EvidenceGap("pre-existing alert history changed")
+        if int(snapshot.get("state_observation_count", -1)) < 132:
             raise control.EvidenceGap("state observations regressed")
         if int(snapshot.get("feed_observation_count", -1)) < 100:
             raise control.EvidenceGap("feed observations regressed")
     else:
+        if snapshot.get("alerts_hash") != BASE_ALERTS_HASH:
+            raise control.EvidenceGap(f"protected alert baseline drift: alerts_hash={snapshot.get('alerts_hash')!r}")
         expected = {
-            "state_observation_count": 130,
+            "state_observation_count": 132,
             "state_observations_hash": BASE_STATE_OBS_HASH,
             "feed_observation_count": 100,
             "feed_observations_hash": BASE_FEED_OBS_HASH,
@@ -1189,6 +1199,11 @@ def run(repo: Path, control) -> Mapping[str, Any]:
         # Prove the real saved-watch 120-second scheduler. After both currently-due
         # watches have been observed, the next cycle must wait for a previously
         # observed exact card rather than immediately spinning.
+        cadence_prior_url = current_selected_url(edge_pid, control)
+        expected_second_base = str(next_queue.get("source_url") or "").split("#", 1)[0].rstrip("/")
+        cadence_prior_base = cadence_prior_url.split("#", 1)[0].rstrip("/")
+        if cadence_prior_base != expected_second_base:
+            raise control.EvidenceGap(f"second exact-card URL changed before cadence proof: {cadence_prior_url!r}")
         cadence_queue = http_json(f"http://127.0.0.1:{port}/browser-watch-next.json")
         cadence_id = str(cadence_queue.get("card_id") or "")
         cadence_wait = float(cadence_queue.get("wait_seconds") or 0.0)
@@ -1204,7 +1219,7 @@ def run(repo: Path, control) -> Mapping[str, Any]:
         prior_obs = first_obs if cadence_id == first_id else second_obs
         cadence_url, cadence_navigation_at = wait_url_change(
             edge_pid,
-            second_url,
+            cadence_prior_url,
             seconds=max(35.0, cadence_wait + 35.0),
             control=control,
         )
