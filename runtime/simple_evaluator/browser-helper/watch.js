@@ -179,7 +179,7 @@
   function isNormalSearchPage() {
     let path = location.pathname || '/';
     if (!path.endsWith('/')) path += '/';
-    return path === '/27/players/';
+    return path === '/27/players/' || path === '/players/';
   }
 
   function setFormValue(el, value) {
