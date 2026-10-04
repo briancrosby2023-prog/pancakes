@@ -279,7 +279,7 @@ def test_single_worktab_runtime_loader_has_importlib_util_available():
 
 def test_single_worktab_action_revision_pin_matches_revision_33():
     action = load_single_worktab_action()
-    assert action.EXPECTED_AUTHORITY_REVISION == 43
+    assert action.EXPECTED_AUTHORITY_REVISION == 44
 
 def test_single_worktab_launch_loader_resolves_sibling_server_import(tmp_path, monkeypatch):
     action = load_single_worktab_action()
@@ -312,7 +312,7 @@ def test_single_worktab_r24_hardens_server_heartbeat_and_acceptance_boundary():
     repo = Path(action.__file__).resolve().parents[1]
     server = (repo / "runtime" / "simple_evaluator" / "server.py").read_text(encoding="utf-8")
     assert action.EXPECTED_SERVER_PREPATCH_SHA256 == "bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37"
-    assert action.EXPECTED_SERVER_SHA256 == "fe133d12f8c98ac5cee6bf0183e386bc2f07960ba777350cc598d563402d2b6a"
+    assert action.EXPECTED_SERVER_SHA256 == "60cdcbfde9b306d28d0732968622c8759150bb4a07e57bf68548b4e61f5dad76"
     assert "browser_helper_stale_heartbeat_ignored" in server
     assert 'current.get("version") == expected' in server
     assert "full_single_worktab_acceptance" in server
@@ -478,9 +478,9 @@ def test_single_worktab_r33_preserves_saved_watch_on_prices_fragment_only():
     action = load_single_worktab_action()
     repo = Path(action.__file__).resolve().parents[1]
     server = (repo / "runtime" / "simple_evaluator" / "server.py").read_text(encoding="utf-8")
-    assert action.EXPECTED_AUTHORITY_REVISION == 43
+    assert action.EXPECTED_AUTHORITY_REVISION == 44
     assert action.EXPECTED_SERVER_PREPATCH_SHA256 == "bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37"
-    assert action.EXPECTED_SERVER_SHA256 == "fe133d12f8c98ac5cee6bf0183e386bc2f07960ba777350cc598d563402d2b6a"
+    assert action.EXPECTED_SERVER_SHA256 == "60cdcbfde9b306d28d0732968622c8759150bb4a07e57bf68548b4e61f5dad76"
     assert 'BROWSER_WORK_TAB_FRAGMENT in str(page_url or "")' in server
     assert 'urlsplit(str(page_url or "")).fragment.lower() == "prices"' in server
     assert "same exact-card page" in server
@@ -494,7 +494,7 @@ def test_single_worktab_r35_uses_normal_rendered_search_for_all_browser_work():
     watch = (repo / "runtime" / "simple_evaluator" / "browser-helper" / "watch.js").read_text(encoding="utf-8")
     server = (repo / "runtime" / "simple_evaluator" / "server.py").read_text(encoding="utf-8")
     manifest = json.loads((repo / "runtime" / "simple_evaluator" / "browser-helper" / "manifest.json").read_text(encoding="utf-8"))
-    assert action.EXPECTED_AUTHORITY_REVISION == 43
+    assert action.EXPECTED_AUTHORITY_REVISION == 44
     assert action.EXPECTED_HELPER_VERSION == "1.4.16"
     assert action.NORMAL_SEARCH_URL == "https://cfb.fan/27/players/#simple-evaluator-worktab"
     run_block = source[source.index("def run(repo: Path, control)"):]
@@ -521,7 +521,7 @@ def test_single_worktab_r35_uses_normal_rendered_search_for_all_browser_work():
 def test_single_worktab_r36_checks_old_runtime_before_install_and_new_runtime_after():
     action = load_single_worktab_action()
     source = Path(action.__file__).read_text(encoding="utf-8")
-    assert action.EXPECTED_AUTHORITY_REVISION == 43
+    assert action.EXPECTED_AUTHORITY_REVISION == 44
     start = source.index("def verify_installed_stop_conditions")
     end = source.index("def evaluator_acceptance", start)
     block = source[start:end]
@@ -542,7 +542,7 @@ def test_single_worktab_r36_checks_old_runtime_before_install_and_new_runtime_af
 def test_single_worktab_r37_uses_canonical_git_blob_runtime_postimages():
     action = load_single_worktab_action()
     source = Path(action.__file__).read_text(encoding="utf-8")
-    assert action.EXPECTED_AUTHORITY_REVISION == 43
+    assert action.EXPECTED_AUTHORITY_REVISION == 44
     start = source.index("def repository_runtime_postimage_bytes")
     end = source.index("def patch_installed_runtime", start)
     helper = source[start:end]
@@ -561,7 +561,7 @@ def test_single_worktab_r37_uses_canonical_git_blob_runtime_postimages():
 def test_single_worktab_r38_writes_helper_postimages_in_place_without_atomic_replace():
     action = load_single_worktab_action()
     source = Path(action.__file__).read_text(encoding="utf-8")
-    assert action.EXPECTED_AUTHORITY_REVISION == 43
+    assert action.EXPECTED_AUTHORITY_REVISION == 44
     start = source.index("def write_helper_bytes_in_place")
     end = source.index("def write_runtime_bytes", start)
     helper = source[start:end]
@@ -583,7 +583,7 @@ def test_single_worktab_r38_writes_helper_postimages_in_place_without_atomic_rep
 def test_single_worktab_r40_uses_exact_extensions_root_reload_not_enable_toggle():
     action = load_single_worktab_action()
     source = Path(action.__file__).read_text(encoding="utf-8")
-    assert action.EXPECTED_AUTHORITY_REVISION == 43
+    assert action.EXPECTED_AUTHORITY_REVISION == 44
     start = source.index("def reload_helper_extension")
     end = source.index("def verify_installed_stop_conditions", start)
     block = source[start:end]
@@ -602,7 +602,7 @@ def test_single_worktab_r40_uses_exact_extensions_root_reload_not_enable_toggle(
 def test_single_worktab_r41_uses_installed_extensions_route_before_exact_reload():
     action = load_single_worktab_action()
     source = Path(action.__file__).read_text(encoding="utf-8")
-    assert action.EXPECTED_AUTHORITY_REVISION == 43
+    assert action.EXPECTED_AUTHORITY_REVISION == 44
     start = source.index("def reload_helper_extension")
     end = source.index("def verify_installed_stop_conditions", start)
     block = source[start:end]
@@ -622,7 +622,7 @@ def test_single_worktab_r42_accepts_canonical_players_redirect_for_normal_search
     manifest = json.loads((repo / "runtime" / "simple_evaluator" / "browser-helper" / "manifest.json").read_text(encoding="utf-8"))
     release = json.loads((repo / "runtime" / "simple_evaluator" / "RELEASE.json").read_text(encoding="utf-8"))
     source = Path(action.__file__).read_text(encoding="utf-8")
-    assert action.EXPECTED_AUTHORITY_REVISION == 43
+    assert action.EXPECTED_AUTHORITY_REVISION == 44
     assert action.EXPECTED_HELPER_VERSION == "1.4.16"
     assert "return path === '/27/players/' || path === '/players/';" in watch
     assert "async function driveNormalSearch(work)" in watch

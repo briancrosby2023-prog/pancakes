@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 43
+EXPECTED_AUTHORITY_REVISION = 44
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -29,7 +29,7 @@ EXPECTED_MANIFEST_SHA256 = "7420183f6d3c7cb54ee520b24644f7af357fb8fc7f032c5dcfc5
 EXPECTED_BACKGROUND_SHA256 = "d275b00ddb0d6dd56050145fd527da75538a582f41678c4b2f004d2f78799b0c"
 EXPECTED_PREFLIGHT_SHA256 = "6a4c835a95b812f81503a4a36302bed39adf43f38871473f3cda77311dbef59f"
 EXPECTED_SERVER_PREPATCH_SHA256 = "bd2be6072354a91a37acc43a16783488abb700ac2784c10641cd4fb1b864dc37"
-EXPECTED_SERVER_SHA256 = "fe133d12f8c98ac5cee6bf0183e386bc2f07960ba777350cc598d563402d2b6a"
+EXPECTED_SERVER_SHA256 = "60cdcbfde9b306d28d0732968622c8759150bb4a07e57bf68548b4e61f5dad76"
 EXPECTED_UI_SHA256 = "8dc0a0eb54a33ec2e0ee8df243ecbb9b0f7f4e8f764008cb68d843ebe8e2a355"
 PENDING_RELEASE_SHA256 = "7f720e56e566d4c803e5293786ffdfa51af496d430faf2ebbff3ff49adaa56a3"
 PREPATCH_WATCH_SHA256 = "1faebe0b39ecf35879d35d16ce2a0aedb04cf15dc882350e55b39a2fea286912"
@@ -37,6 +37,7 @@ PREPATCH_MANIFEST_SHA256 = "51beb29b86febf22cfcbcf50e06a10b3525dbbcbe7e7c537ec6e
 PREPATCH_BACKGROUND_SHA256 = "a3ce6c9884a514331bb614c5bbf8ff8b68ea2e56cfdde36a6bdeb616c5c6444e"
 PREPATCH_RELEASE_SHA256 = "60549a6729a3205055992c982fb3b180a96ab5a34fec82a26ff57afb914b45d8"
 NORMAL_SEARCH_URL = "https://cfb.fan/27/players/#simple-evaluator-worktab"
+WINDOWS_NO_WINDOW = subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0
 RUNTIME_POSTIMAGE_REL = Path("runtime") / "simple_evaluator"
 BASE_USER_WATCH_HASH = "00eed84885792a43314e78d17a18f228ae8554d35d11fa8c5d84d2154a334105"
 BASE_STATE_OBS_HASH = "8af2f5ef3195f5499ef3b9e80038d1e71a7fa2de06eba5ca41767b8a90786733"
@@ -77,6 +78,7 @@ def run_ps_json(script: str, control) -> Any:
         encoding="utf-8",
         errors="replace",
         check=False,
+        creationflags=WINDOWS_NO_WINDOW,
     )
     if cp.returncode != 0:
         raise control.ControlError("Windows UI Automation failed: " + cp.stdout[-6000:])
@@ -966,6 +968,7 @@ def listener_pid(port: int) -> int | None:
         encoding="utf-8",
         errors="replace",
         check=False,
+        creationflags=WINDOWS_NO_WINDOW,
     )
     if cp.returncode != 0 or not cp.stdout.strip():
         return None
@@ -983,6 +986,7 @@ def process_exists(pid: int) -> bool:
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
         check=False,
+        creationflags=WINDOWS_NO_WINDOW,
     )
     return cp.returncode == 0
 
