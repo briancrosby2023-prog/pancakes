@@ -547,10 +547,11 @@
           try {
             const result = await sendObservation(config, parsed);
             const next = result && result.next_refresh_at ? new Date(result.next_refresh_at).toISOString() : '';
-            mark('recorded', `${parsed.state} · ${result && result.card_id || config.card_id || ''}${next ? ` · next ${next}` : ''}`);
+            mark('recorded', `${parsed.state} Â· ${result && result.card_id || config.card_id || ''}${next ? ` Â· next ${next}` : ''}`);
             publishPageDiagnostic('observation-recorded', {market_state: parsed.state, detail: result && result.card_id || config.card_id || '', next_refresh_at: next || null});
           } catch (error) {
             mark('local-app-unavailable', error.message || String(error));
+            publishPageDiagnostic('observation-send-error', {market_state: parsed.state, detail: String(error && error.message || error)});
             setTimeout(start, WATCH_RECHECK_MS);
           }
           return;

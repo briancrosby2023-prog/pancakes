@@ -459,7 +459,7 @@ def set_value_probe(card_id: str | None) -> dict:
                 "purpose": "value_probe",
                 "silent": True,
                 "card_id": card_id,
-                "label": f"Evaluator price · {card.get('name')} {card.get('ovr')}",
+                "label": f"Evaluator price Â· {card.get('name')} {card.get('ovr')}",
                 "max_price": None,
                 "alert_when_found": False,
                 "enabled": True,
@@ -526,7 +526,7 @@ def start_value_probe_batch(card_ids: list[str]) -> dict:
             "purpose": "value_probe",
             "silent": True,
             "card_id": clean_ids[0],
-            "label": f"Evaluator price · {first.get('name')} {first.get('ovr')}",
+            "label": f"Evaluator price Â· {first.get('name')} {first.get('ovr')}",
             "max_price": None,
             "alert_when_found": False,
             "enabled": True,
@@ -751,7 +751,7 @@ def advance_value_probe_after_observation(state: dict, observed_card_id: str, ca
         updated = dict(watch)
         updated["batch_index"] = next_index
         updated["card_id"] = next_id
-        updated["label"] = f"Evaluator price · {next_card.get('name')} {next_card.get('ovr')}"
+        updated["label"] = f"Evaluator price Â· {next_card.get('name')} {next_card.get('ovr')}"
         updated["expires_at"] = (datetime.now(timezone.utc) + timedelta(minutes=20)).isoformat().replace("+00:00", "Z")
         updated["batch_last_progress_at"] = now_text
         updated["batch_current_started_at"] = now_text
@@ -974,6 +974,7 @@ def record_browser_observation(payload: dict, native_alerts: bool = True) -> dic
         if not any(_watch_is_active(w) and w.get("card_id") == card["id"] for w in state.get("watches", [])):
             raise ValueError("exact card does not have an active saved watch or value-price probe")
         alerts_doc = read_json(ALERTS, DEFAULT_ALERTS)
+        protected_state = {key: state[key] for key in (VALUE_PROBE_RATE_LIMIT_KEY, VALUE_PROBE_STATUS_KEY) if key in state}
         state, alerts_doc, alerts_added = process_payload(
             payload_doc,
             cards_by_id,
@@ -981,6 +982,7 @@ def record_browser_observation(payload: dict, native_alerts: bool = True) -> dic
             alerts_doc,
             native_alerts=native_alerts,
         )
+        state.update(protected_state)
         value_probe = advance_value_probe_after_observation(state, card["id"], cards_by_id)
         browser_cycle = None
         if not (isinstance(value_probe, dict) and value_probe.get("active") is True):
