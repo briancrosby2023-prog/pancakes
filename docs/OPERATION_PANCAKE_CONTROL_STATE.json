@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 44,
+  "state_revision": 45,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Deploy only the validated Revision44 Windows state-write correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh full single-worktab acceptance. Revision43 issue102 is terminal and must not be replayed. Durable trace proves exact Jaleel normal search, exact href selection, dwell, Prices tab and NO_LISTING parse all pass; browser observation then fails with Failed to fetch. A brokered exact-byte live probe proves os.replace(app-state.json) is denied with WinError5 while preserving the exact SHA, Restart Manager identifies Desktop Commander holding the file, and r+b access succeeds. Keep Revision43 protected-state preservation and Helper 1.4.16 unchanged. Add only a STATE_LOCK-scoped Windows PermissionError fallback that preserves an exact preimage backup, writes r+b in place, fsyncs and readback-verifies, plus hide acceptance PowerShell child windows. Preserve every accepted/rejected lock, exact identity, normal rendered search, one tab, >=5-second dwell, >=120-second cadence, persistent RATE_LIMITED and unchanged scoring. Continue catalog acceptance criteria immediately after physical acceptance.",
+    "next_action": "Deploy only the validated Revision45 acceptance-harness cadence-baseline correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh full single-worktab acceptance. Issue104 is terminal and must not be replayed. Revision44 is proven live: exact Jaleel NO_LISTING and Jelani Thurman FOUND 20000 observations persisted through the Windows sharing lock while protected persistent RATE_LIMITED state survived. The remaining issue104 failure is acceptance-only: after second observation the harness used stale second_url captured at the earlier normal-search transition as the baseline for the cadence wait. At 07:47:02.900Z the actual queue wait for Jaleel was 107.073 seconds, but stale-baseline wait_url_change can return immediately because the tab is already on the second exact-card page, starting a 60-second observation timeout before the 120-second due time. Capture current_selected_url immediately before cadence wait; preserve the 120-second cadence requirement and every runtime/search/scoring lock. After physical acceptance, continue all OP-CATALOG-001 catalog criteria.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -73,7 +73,8 @@
         "OBSERVED: Revision-40 issue #94 is terminal at exact Reload lookup; rollback restored exact prepatch runtime hashes, 2 watches, 130 observations, persistent RATE_LIMITED and READY Revision-40 worker.",
         "OBSERVED: Revision-41 acceptance issue #96 is terminal after Helper 1.4.14 activation and normal-search navigation, with no exact-card observation within 90 seconds; rollback restored protected state.",
         "OBSERVED: Clean HEAD 89e3d505 authority Revision 42 OP-CATALOG-001, preflight PASS, all acceptance false. Live gateway health READY matches. Next-action text predates terminal issue98; reconcile with newer checkpoint while retaining route and every lock.",
-        "OBSERVED: Revision43 / 082ea3b1 is clean, deployed and READY; issue102 is terminal FAILED and rollback restored 130 observations, 2 user watches, persistent RATE_LIMITED and installed helper 1.4.13."
+        "OBSERVED: Revision43 / 082ea3b1 is clean, deployed and READY; issue102 is terminal FAILED and rollback restored 130 observations, 2 user watches, persistent RATE_LIMITED and installed helper 1.4.13.",
+        "OBSERVED: Revision44/acd21b1e is clean and READY; issue104 is terminal FAILED only at third cadence observation after first two live observations persisted successfully."
       ]
     },
     "history": {
@@ -85,7 +86,8 @@
         "VERIFIED_HISTORY: issue #94 must not be replayed; Revision-40 exact Reload selector and prior Revision-35/36/37/38 fixes remain selected.",
         "VERIFIED_HISTORY: issue #96 must not be replayed; Revision-41 extension-root/Reload activation, Revision-38 in-place writes, Revision-37 canonical blobs and normal rendered search remain selected.",
         "VERIFIED_HISTORY: Issue98 terminal FAILED after exact Jaleel #prices market-parsed NO_LISTING. User forbids replay of 98/99. Prepared search-readiness r43 invalidated and must remain unexecuted. All accepted and rejected locks retained.",
-        "VERIFIED_HISTORY: Issues98/99/101/102 are terminal. Search-readiness r43 remains invalidated; normal rendered search, exact identity, dwell/cadence, persistent RATE_LIMITED and unchanged scoring remain selected."
+        "VERIFIED_HISTORY: Issues98/99/101/102 are terminal. Search-readiness r43 remains invalidated; normal rendered search, exact identity, dwell/cadence, persistent RATE_LIMITED and unchanged scoring remain selected.",
+        "VERIFIED_HISTORY: Issue104 is terminal. Revision44 Windows state-write correction is proven live and retained; search-readiness remains invalidated."
       ]
     },
     "research": {
@@ -108,7 +110,8 @@
         "OBSERVED: direct physical navigation to https://cfb.fan/27/players/#simple-evaluator-worktab ends at https://cfb.fan/players/#simple-evaluator-worktab.",
         "OBSERVED: Helper 1.4.14 isNormalSearchPage() returns true only for /27/players/, so driveNormalSearch() is skipped on the observed canonical /players/ route.",
         "OBSERVED: process_payload replaces state with only schema updated_at observations watches; record_browser_observation uses its returned state. watch.js catches sendObservation without page diagnostic. Isolated recorded function and HTTP evidence persisted copied observations 130 to131. Exact live exception still unknown; no search behavior correction justified.",
-        "OBSERVED: issue102 durable trace reached exact Jaleel NO_LISTING then repeatedly observation-send-error Failed to fetch. Isolated Revision43 HTTP path completes in 82.7ms. Restart Manager reports Desktop Commander holds app-state.json; brokered exact-byte os.replace on live app-state.json returns PermissionError WinError5 with unchanged SHA; r+b open succeeds."
+        "OBSERVED: issue102 durable trace reached exact Jaleel NO_LISTING then repeatedly observation-send-error Failed to fetch. Isolated Revision43 HTTP path completes in 82.7ms. Restart Manager reports Desktop Commander holds app-state.json; brokered exact-byte os.replace on live app-state.json returns PermissionError WinError5 with unchanged SHA; r+b open succeeds.",
+        "OBSERVED: Issue104 trace records Jaleel NO_LISTING at 07:46:49.973Z and Jelani FOUND 20000 at 07:47:02.597Z. Queue reconstruction at 07:47:02.900Z selects Jaleel WAITING 107.073s until 07:48:49.973Z. Acceptance uses stale second_url from the prior normal-search transition as cadence wait baseline, so wait_url_change can return immediately while current tab is already second exact-card #prices, starting a 60s timeout before due."
       ]
     },
     "capabilities": {
@@ -127,7 +130,8 @@
         "OBSERVED: the correction is bounded to watch.js canonical-route recognition plus helper identity/hash updates; background scheduler, server routing, exact-card selection, persistence, scoring and protected locks remain unchanged.",
         "OBSERVED: Desktop Commander allowance restored in authority. Python -B read-only preflight PASS. Existing SOPDecisionGateway strict typed evidence, authority guard and ControlledToolBroker available. Use recorded current model decision as in prior authorized executors; mutations confined to registered handler.",
         "OBSERVED: two behavioral regressions RED on Revision42 and GREEN after bounded server preservation and watch.js diagnostic correction; Node syntax PASS.",
-        "OBSERVED: Windows-safe r+b seek/write/truncate/flush/fsync under STATE_LOCK can bypass the observed replace-sharing denial without killing Desktop Commander; CREATE_NO_WINDOW can suppress acceptance PowerShell children."
+        "OBSERVED: Windows-safe r+b seek/write/truncate/flush/fsync under STATE_LOCK can bypass the observed replace-sharing denial without killing Desktop Commander; CREATE_NO_WINDOW can suppress acceptance PowerShell children.",
+        "OBSERVED: Harness can capture current_selected_url immediately before cadence wait and preserve the existing 120-second scheduling proof without changing server/helper runtime."
       ]
     }
   },
@@ -559,30 +563,40 @@
         "Direct r+b open on the same live file succeeds.",
         "Isolated Revision43 health+POST completes in 82.7ms, rejecting timeout as root cause."
       ]
+    },
+    {
+      "id": "r44-cadence-baseline",
+      "status": "RESOLVED",
+      "conflict": "Revision44 physical acceptance issue104 timed out waiting 60s for the third observation even though the saved-watch cadence queue was not due for 107.073s.",
+      "resolution": "Do not change the 120-second runtime cadence. Fix the acceptance harness to baseline wait_url_change from current_selected_url immediately before the cadence wait rather than stale second_url captured during the previous normal-search transition.",
+      "evidence": [
+        "Jaleel observation at 07:46:49.973Z.",
+        "Jelani observation at 07:47:02.597Z.",
+        "Queue at 07:47:02.900Z: Jaleel WAITING 107.073s, due 07:48:49.973Z.",
+        "Source shows cadence wait uses second_url captured before the second exact-card page loaded."
+      ]
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D34",
+    "decision_id": "OP-CATALOG-001-D35",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Use a Windows-only, browser-observation-only in-place state-write fallback after observed atomic replace PermissionError; hide acceptance PowerShell child windows.",
+    "proposed_action": "Correct only the acceptance cadence URL baseline; preserve 120-second runtime scheduling and all Revision44 behavior.",
     "obstacle_classification": "IMPLEMENTATION_PROBLEM",
     "history_refs": [
-      "Issues98/99/101/102 terminal; search-readiness r43 invalidated; Revision43 state-preservation and diagnostic changes retained."
+      "Issue104 terminal; Revision44 persistence fix retained."
     ],
     "capabilities_checked": [
-      "brokered exact-byte live replace probe",
-      "Windows Restart Manager",
-      "live r+b file access",
-      "SOPDecisionGateway and ControlledToolBroker",
-      "CREATE_NO_WINDOW acceptance wrapper"
+      "durable trace",
+      "exact queue simulation",
+      "acceptance source",
+      "SOPDecisionGateway and ControlledToolBroker"
     ],
     "alternatives_considered": [
-      "Increase timeout rejected by 82.7ms isolated path.",
-      "Retry search readiness rejected by exact-page trace.",
-      "Kill Desktop Commander rejected while bounded code route exists.",
-      "Broad persistence rewrite rejected."
+      "Change scheduler rejected.",
+      "Increase timeout rejected.",
+      "Harness baseline correction selected."
     ],
-    "selected_reason": "Live WinError5 atomic-replace failure is directly reproduced, and in-place access on the same locked file is directly available.",
+    "selected_reason": "Queue timing and source chronology directly reproduce the false-early timeout.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
@@ -1516,13 +1530,31 @@
       ],
       "result": "Revision44 candidate selected for focused validation and physical acceptance.",
       "next": "Publish/merge/rebind exact Revision44 through Gateway/Broker and run one fresh acceptance; then continue catalog criteria."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D35",
+      "decision": "Fix only stale cadence wait baseline in acceptance harness.",
+      "evidence": [
+        "Issue104 first two observations persist successfully.",
+        "Queue wait 107.073s exceeds old 60s window when stale URL baseline returns immediately."
+      ],
+      "history": [
+        "Issue104 terminal; Revision44 live persistence fix retained."
+      ],
+      "alternatives": [
+        "Scheduler change rejected.",
+        "Timeout-only change rejected.",
+        "Current-URL cadence baseline selected."
+      ],
+      "result": "Revision45 candidate selected for focused validation.",
+      "next": "Publish/merge/rebind exact Revision45 and run one fresh acceptance; then continue catalog mission."
     }
   ],
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 44,
-    "next_action": "Deploy only the validated Revision44 Windows state-write correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh full single-worktab acceptance. Revision43 issue102 is terminal and must not be replayed. Durable trace proves exact Jaleel normal search, exact href selection, dwell, Prices tab and NO_LISTING parse all pass; browser observation then fails with Failed to fetch. A brokered exact-byte live probe proves os.replace(app-state.json) is denied with WinError5 while preserving the exact SHA, Restart Manager identifies Desktop Commander holding the file, and r+b access succeeds. Keep Revision43 protected-state preservation and Helper 1.4.16 unchanged. Add only a STATE_LOCK-scoped Windows PermissionError fallback that preserves an exact preimage backup, writes r+b in place, fsyncs and readback-verifies, plus hide acceptance PowerShell child windows. Preserve every accepted/rejected lock, exact identity, normal rendered search, one tab, >=5-second dwell, >=120-second cadence, persistent RATE_LIMITED and unchanged scoring. Continue catalog acceptance criteria immediately after physical acceptance.",
+    "state_revision": 45,
+    "next_action": "Deploy only the validated Revision45 acceptance-harness cadence-baseline correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh full single-worktab acceptance. Issue104 is terminal and must not be replayed. Revision44 is proven live: exact Jaleel NO_LISTING and Jelani Thurman FOUND 20000 observations persisted through the Windows sharing lock while protected persistent RATE_LIMITED state survived. The remaining issue104 failure is acceptance-only: after second observation the harness used stale second_url captured at the earlier normal-search transition as the baseline for the cadence wait. At 07:47:02.900Z the actual queue wait for Jaleel was 107.073 seconds, but stale-baseline wait_url_change can return immediately because the tab is already on the second exact-card page, starting a 60-second observation timeout before the 120-second due time. Capture current_selected_url immediately before cadence wait; preserve the 120-second cadence requirement and every runtime/search/scoring lock. After physical acceptance, continue all OP-CATALOG-001 catalog criteria.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
