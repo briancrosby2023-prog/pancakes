@@ -912,6 +912,59 @@ def browser_watch_config(page_url: str) -> dict:
     }
 
 
+
+def _write_browser_observation_state(state: dict) -> str:
+    """Persist browser-observation state despite a Windows read-sharing lock.
+
+    The normal path remains atomic. The fallback is used only when Windows
+    denies the replace operation. It preserves an exact preimage backup,
+    writes the already-validated JSON under STATE_LOCK in place, fsyncs, and
+    verifies the parsed payload before returning success.
+    """
+    preimage = STATE.read_bytes()
+    try:
+        write_json_atomic(STATE, state)
+        return "ATOMIC"
+    except PermissionError as atomic_error:
+        if os.name != "nt":
+            raise
+        target_bytes = (json.dumps(state, indent=2) + "\n").encode("utf-8")
+        backup = backup_path(STATE)
+        try:
+            with backup.open("wb") as handle:
+                handle.write(preimage)
+                handle.flush()
+                os.fsync(handle.fileno())
+            with STATE.open("r+b") as handle:
+                handle.seek(0)
+                handle.write(target_bytes)
+                handle.truncate()
+                handle.flush()
+                os.fsync(handle.fileno())
+            verified = json.loads(STATE.read_text(encoding="utf-8"))
+            if verified != state:
+                raise OSError("browser observation in-place state verification failed")
+        except Exception as fallback_error:
+            try:
+                with STATE.open("r+b") as handle:
+                    handle.seek(0)
+                    handle.write(preimage)
+                    handle.truncate()
+                    handle.flush()
+                    os.fsync(handle.fileno())
+            except Exception as restore_error:
+                raise RuntimeError("browser observation fallback and exact preimage restore both failed") from restore_error
+            raise atomic_error from fallback_error
+        try:
+            record_event(OPERATION_LOG, "browser_observation_state_inplace_fallback", release=RELEASE_ID, version=RELEASE_VERSION, details={
+                "path": str(STATE),
+                "reason": str(atomic_error)[:500],
+            })
+        except Exception:
+            pass
+        return "INPLACE_WINDOWS_SHARING_FALLBACK"
+
+
 def _write_browser_feed(observation: dict, card_ids: set[str]) -> None:
     ensure_feed()
     try:
@@ -987,7 +1040,7 @@ def record_browser_observation(payload: dict, native_alerts: bool = True) -> dic
         browser_cycle = None
         if not (isinstance(value_probe, dict) and value_probe.get("active") is True):
             browser_cycle = _browser_watch_next_from_state(state, cards_by_id)
-        write_json_atomic(STATE, state)
+        state_write_mode = _write_browser_observation_state(state)
         write_json_atomic(ALERTS, alerts_doc)
     _write_browser_feed(observation, card_ids)
     acceptance = maybe_write_production_acceptance(state)
@@ -995,7 +1048,7 @@ def record_browser_observation(payload: dict, native_alerts: bool = True) -> dic
         "card_id": card["id"], "status": status, "price": observation.get("price"),
         "listing_count": observation.get("listing_count"), "observed_at": observation.get("observed_at"),
         "browser_family": observation.get("browser_family"), "helper_version": observation.get("helper_version"),
-        "alerts_added": alerts_added,
+        "alerts_added": alerts_added, "state_write_mode": state_write_mode,
     })
     return {
         "schema": BROWSER_OBSERVATION_SCHEMA,
@@ -1006,6 +1059,7 @@ def record_browser_observation(payload: dict, native_alerts: bool = True) -> dic
         "listing_count": observation.get("listing_count"),
         "observed_at": observation["observed_at"],
         "alerts_added": alerts_added,
+        "state_write_mode": state_write_mode,
         "stored_observations": len(state.get("observations", [])),
         "interval_seconds": BROWSER_WATCH_INTERVAL_SECONDS,
         "browser_family": observation.get("browser_family"),

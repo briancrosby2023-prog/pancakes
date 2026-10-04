@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 43,
+  "state_revision": 44,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Deploy only the validated Revision43 observation-integrity correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh full single-worktab acceptance. Preserve protected value_probe_rate_limit/value_probe_status on browser-observation writes and publish exact sendObservation exception through existing durable heartbeat diagnostics. No acquisition/search behavior changes. Revision42 reached exact Jaleel #prices and parsed NO_LISTING; copied function/HTTP persistence 130->131 is verified. Issues98/99 are terminal and must not be replayed; prepared search-readiness r43 is invalidated and must remain unexecuted. Preserve every accepted/rejected lock, exact identity, normal rendered search, one tab, >=5-second dwell, >=120-second cadence, persistent RATE_LIMITED and unchanged scoring. Adapt only from fresh exact evidence and continue catalog acceptance criteria.",
+    "next_action": "Deploy only the validated Revision44 Windows state-write correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh full single-worktab acceptance. Revision43 issue102 is terminal and must not be replayed. Durable trace proves exact Jaleel normal search, exact href selection, dwell, Prices tab and NO_LISTING parse all pass; browser observation then fails with Failed to fetch. A brokered exact-byte live probe proves os.replace(app-state.json) is denied with WinError5 while preserving the exact SHA, Restart Manager identifies Desktop Commander holding the file, and r+b access succeeds. Keep Revision43 protected-state preservation and Helper 1.4.16 unchanged. Add only a STATE_LOCK-scoped Windows PermissionError fallback that preserves an exact preimage backup, writes r+b in place, fsyncs and readback-verifies, plus hide acceptance PowerShell child windows. Preserve every accepted/rejected lock, exact identity, normal rendered search, one tab, >=5-second dwell, >=120-second cadence, persistent RATE_LIMITED and unchanged scoring. Continue catalog acceptance criteria immediately after physical acceptance.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -72,7 +72,8 @@
         "OBSERVED: Revision-38 acceptance issue #90 is terminal after runtime postimages installed but Browser Helper runtime stayed 1.4.13 instead of expected 1.4.14; rollback restored exact preimages.",
         "OBSERVED: Revision-40 issue #94 is terminal at exact Reload lookup; rollback restored exact prepatch runtime hashes, 2 watches, 130 observations, persistent RATE_LIMITED and READY Revision-40 worker.",
         "OBSERVED: Revision-41 acceptance issue #96 is terminal after Helper 1.4.14 activation and normal-search navigation, with no exact-card observation within 90 seconds; rollback restored protected state.",
-        "OBSERVED: Clean HEAD 89e3d505 authority Revision 42 OP-CATALOG-001, preflight PASS, all acceptance false. Live gateway health READY matches. Next-action text predates terminal issue98; reconcile with newer checkpoint while retaining route and every lock."
+        "OBSERVED: Clean HEAD 89e3d505 authority Revision 42 OP-CATALOG-001, preflight PASS, all acceptance false. Live gateway health READY matches. Next-action text predates terminal issue98; reconcile with newer checkpoint while retaining route and every lock.",
+        "OBSERVED: Revision43 / 082ea3b1 is clean, deployed and READY; issue102 is terminal FAILED and rollback restored 130 observations, 2 user watches, persistent RATE_LIMITED and installed helper 1.4.13."
       ]
     },
     "history": {
@@ -83,7 +84,8 @@
         "VERIFIED_HISTORY: r19 proved process restart/--load-extension did not reload changed unpacked-extension bytes; successful recovery required an explicit unpacked-extension Reload action.",
         "VERIFIED_HISTORY: issue #94 must not be replayed; Revision-40 exact Reload selector and prior Revision-35/36/37/38 fixes remain selected.",
         "VERIFIED_HISTORY: issue #96 must not be replayed; Revision-41 extension-root/Reload activation, Revision-38 in-place writes, Revision-37 canonical blobs and normal rendered search remain selected.",
-        "VERIFIED_HISTORY: Issue98 terminal FAILED after exact Jaleel #prices market-parsed NO_LISTING. User forbids replay of 98/99. Prepared search-readiness r43 invalidated and must remain unexecuted. All accepted and rejected locks retained."
+        "VERIFIED_HISTORY: Issue98 terminal FAILED after exact Jaleel #prices market-parsed NO_LISTING. User forbids replay of 98/99. Prepared search-readiness r43 invalidated and must remain unexecuted. All accepted and rejected locks retained.",
+        "VERIFIED_HISTORY: Issues98/99/101/102 are terminal. Search-readiness r43 remains invalidated; normal rendered search, exact identity, dwell/cadence, persistent RATE_LIMITED and unchanged scoring remain selected."
       ]
     },
     "research": {
@@ -105,7 +107,8 @@
         "OBSERVED: Edge history for the issue #96 window records /27/players/#simple-evaluator-worktab and canonical /players/#simple-evaluator-worktab at the same visit time, with no exact-card URL afterward.",
         "OBSERVED: direct physical navigation to https://cfb.fan/27/players/#simple-evaluator-worktab ends at https://cfb.fan/players/#simple-evaluator-worktab.",
         "OBSERVED: Helper 1.4.14 isNormalSearchPage() returns true only for /27/players/, so driveNormalSearch() is skipped on the observed canonical /players/ route.",
-        "OBSERVED: process_payload replaces state with only schema updated_at observations watches; record_browser_observation uses its returned state. watch.js catches sendObservation without page diagnostic. Isolated recorded function and HTTP evidence persisted copied observations 130 to131. Exact live exception still unknown; no search behavior correction justified."
+        "OBSERVED: process_payload replaces state with only schema updated_at observations watches; record_browser_observation uses its returned state. watch.js catches sendObservation without page diagnostic. Isolated recorded function and HTTP evidence persisted copied observations 130 to131. Exact live exception still unknown; no search behavior correction justified.",
+        "OBSERVED: issue102 durable trace reached exact Jaleel NO_LISTING then repeatedly observation-send-error Failed to fetch. Isolated Revision43 HTTP path completes in 82.7ms. Restart Manager reports Desktop Commander holds app-state.json; brokered exact-byte os.replace on live app-state.json returns PermissionError WinError5 with unchanged SHA; r+b open succeeds."
       ]
     },
     "capabilities": {
@@ -123,7 +126,8 @@
         "OBSERVED: existing open_extensions_root_and_snapshot already performs the proven fail-closed Installed extensions hyperlink navigation and can be reused without new selector/proximity logic.",
         "OBSERVED: the correction is bounded to watch.js canonical-route recognition plus helper identity/hash updates; background scheduler, server routing, exact-card selection, persistence, scoring and protected locks remain unchanged.",
         "OBSERVED: Desktop Commander allowance restored in authority. Python -B read-only preflight PASS. Existing SOPDecisionGateway strict typed evidence, authority guard and ControlledToolBroker available. Use recorded current model decision as in prior authorized executors; mutations confined to registered handler.",
-        "OBSERVED: two behavioral regressions RED on Revision42 and GREEN after bounded server preservation and watch.js diagnostic correction; Node syntax PASS."
+        "OBSERVED: two behavioral regressions RED on Revision42 and GREEN after bounded server preservation and watch.js diagnostic correction; Node syntax PASS.",
+        "OBSERVED: Windows-safe r+b seek/write/truncate/flush/fsync under STATE_LOCK can bypass the observed replace-sharing denial without killing Desktop Commander; CREATE_NO_WINDOW can suppress acceptance PowerShell children."
       ]
     }
   },
@@ -542,28 +546,43 @@
       "evidence": [
         "process_payload replaces state with only schema updated_at observations watches; record_browser_observation uses its returned state. watch.js catches sendObservation without page diagnostic. Isolated recorded function and HTTP evidence persisted copied observations 130 to131. Exact live exception still unknown; no search behavior correction justified."
       ]
+    },
+    {
+      "id": "r43-live-app-state-sharing-lock",
+      "status": "RESOLVED",
+      "conflict": "Revision43 exposed the exact live sendObservation failure but browser observation still could not persist because Windows denied atomic replacement of the live app-state file.",
+      "resolution": "Do not change acquisition or timeout. On Windows only, browser-observation STATE persistence may fall back after PermissionError to exact-backup + in-place r+b write + fsync + readback verification while STATE_LOCK is held. Do not kill Desktop Commander while this bounded route exists.",
+      "evidence": [
+        "Issue102 durable trace repeatedly records observation-send-error Failed to fetch immediately after exact Jaleel NO_LISTING.",
+        "Brokered exact-byte live os.replace probe returns PermissionError WinError5 with unchanged before/after SHA.",
+        "Restart Manager identifies Desktop Commander Node runtime holding app-state.json.",
+        "Direct r+b open on the same live file succeeds.",
+        "Isolated Revision43 health+POST completes in 82.7ms, rejecting timeout as root cause."
+      ]
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D33",
+    "decision_id": "OP-CATALOG-001-D34",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Preserve protected state and expose hidden observation exception; search-readiness candidate invalidated.",
+    "proposed_action": "Use a Windows-only, browser-observation-only in-place state-write fallback after observed atomic replace PermissionError; hide acceptance PowerShell child windows.",
     "obstacle_classification": "IMPLEMENTATION_PROBLEM",
     "history_refs": [
-      "Issue98 terminal FAILED after exact Jaleel #prices market-parsed NO_LISTING. User forbids replay of 98/99. Prepared search-readiness r43 invalidated and must remain unexecuted. All accepted and rejected locks retained."
+      "Issues98/99/101/102 terminal; search-readiness r43 invalidated; Revision43 state-preservation and diagnostic changes retained."
     ],
     "capabilities_checked": [
-      "clean controlled source-repo-r8",
-      "Edge history",
-      "physical canonical redirect reproduction",
-      "Helper watch.js normal-search detection",
-      "SOPDecisionGateway and ControlledToolBroker"
+      "brokered exact-byte live replace probe",
+      "Windows Restart Manager",
+      "live r+b file access",
+      "SOPDecisionGateway and ControlledToolBroker",
+      "CREATE_NO_WINDOW acceptance wrapper"
     ],
     "alternatives_considered": [
-      "Search readiness rejected by exact-page NO_LISTING evidence.",
-      "State preservation and durable exception diagnostic selected."
+      "Increase timeout rejected by 82.7ms isolated path.",
+      "Retry search readiness rejected by exact-page trace.",
+      "Kill Desktop Commander rejected while bounded code route exists.",
+      "Broad persistence rewrite rejected."
     ],
-    "selected_reason": "Observed state loss and hidden exception; no search mutation justified.",
+    "selected_reason": "Live WinError5 atomic-replace failure is directly reproduced, and in-place access on the same locked file is directly available.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
@@ -1476,13 +1495,34 @@
       ],
       "result": "Minimal integrity/diagnostic candidate passed two regressions; live acceptance pending.",
       "next": "Deploy only the validated Revision43 observation-integrity correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh full single-worktab acceptance. Preserve protected value_probe_rate_limit/value_probe_status on browser-observation writes and publish exact sendObservation exception through existing durable heartbeat diagnostics. No acquisition/search behavior changes. Revision42 reached exact Jaleel #prices and parsed NO_LISTING; copied function/HTTP persistence 130->131 is verified. Issues98/99 are terminal and must not be replayed; prepared search-readiness r43 is invalidated and must remain unexecuted. Preserve every accepted/rejected lock, exact identity, normal rendered search, one tab, >=5-second dwell, >=120-second cadence, persistent RATE_LIMITED and unchanged scoring. Adapt only from fresh exact evidence and continue catalog acceptance criteria."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D34",
+      "decision": "Fix only the observed Windows live-state replace boundary and suppress acceptance PowerShell child windows; do not change acquisition or scoring.",
+      "evidence": [
+        "Issue102 exact durable trace: search/select/dwell/Prices/NO_LISTING pass then Failed to fetch.",
+        "Brokered exact-byte live replace probe reproduces WinError5 with unchanged SHA.",
+        "Restart Manager identifies Desktop Commander lock; r+b open succeeds."
+      ],
+      "history": [
+        "Issues98/99/101/102 terminal; search-readiness candidate invalidated.",
+        "Revision43 protected-state preservation and Helper1.4.16 remain selected."
+      ],
+      "alternatives": [
+        "Timeout change rejected.",
+        "Search mutation rejected.",
+        "Kill Desktop Commander rejected.",
+        "Bounded Windows fallback selected."
+      ],
+      "result": "Revision44 candidate selected for focused validation and physical acceptance.",
+      "next": "Publish/merge/rebind exact Revision44 through Gateway/Broker and run one fresh acceptance; then continue catalog criteria."
     }
   ],
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 43,
-    "next_action": "Deploy only the validated Revision43 observation-integrity correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh full single-worktab acceptance. Preserve protected value_probe_rate_limit/value_probe_status on browser-observation writes and publish exact sendObservation exception through existing durable heartbeat diagnostics. No acquisition/search behavior changes. Revision42 reached exact Jaleel #prices and parsed NO_LISTING; copied function/HTTP persistence 130->131 is verified. Issues98/99 are terminal and must not be replayed; prepared search-readiness r43 is invalidated and must remain unexecuted. Preserve every accepted/rejected lock, exact identity, normal rendered search, one tab, >=5-second dwell, >=120-second cadence, persistent RATE_LIMITED and unchanged scoring. Adapt only from fresh exact evidence and continue catalog acceptance criteria.",
+    "state_revision": 44,
+    "next_action": "Deploy only the validated Revision44 Windows state-write correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh full single-worktab acceptance. Revision43 issue102 is terminal and must not be replayed. Durable trace proves exact Jaleel normal search, exact href selection, dwell, Prices tab and NO_LISTING parse all pass; browser observation then fails with Failed to fetch. A brokered exact-byte live probe proves os.replace(app-state.json) is denied with WinError5 while preserving the exact SHA, Restart Manager identifies Desktop Commander holding the file, and r+b access succeeds. Keep Revision43 protected-state preservation and Helper 1.4.16 unchanged. Add only a STATE_LOCK-scoped Windows PermissionError fallback that preserves an exact preimage backup, writes r+b in place, fsyncs and readback-verifies, plus hide acceptance PowerShell child windows. Preserve every accepted/rejected lock, exact identity, normal rendered search, one tab, >=5-second dwell, >=120-second cadence, persistent RATE_LIMITED and unchanged scoring. Continue catalog acceptance criteria immediately after physical acceptance.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
