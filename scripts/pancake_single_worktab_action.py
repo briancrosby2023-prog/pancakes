@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 ACTION = "complete_simple_single_worktab_acceptance"
-EXPECTED_AUTHORITY_REVISION = 45
+EXPECTED_AUTHORITY_REVISION = 46
 APP = Path(r"C:\Users\Trash Panda\AppData\Local\SimpleEvaluator")
 HELPER_DIR = APP / "browser-helper"
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -121,6 +121,12 @@ def protected_snapshot() -> dict[str, Any]:
     probes = [w for w in watches if isinstance(w, dict) and w.get("purpose") == "value_probe"]
     observations = state.get("observations") if isinstance(state.get("observations"), list) else []
     feed_observations = feed.get("observations") if isinstance(feed.get("observations"), list) else []
+    alert_rows = alerts.get("alerts") if isinstance(alerts.get("alerts"), list) else []
+    alert_keys = sorted(
+        str(row.get("key") or "")
+        for row in alert_rows
+        if isinstance(row, dict) and row.get("key")
+    )
     return {
         "user_watch_count": len(users),
         "user_watches_hash": json_hash(users),
@@ -130,6 +136,8 @@ def protected_snapshot() -> dict[str, Any]:
         "feed_observation_count": len(feed_observations),
         "feed_observations_hash": json_hash(feed_observations),
         "alerts_hash": json_hash(alerts),
+        "alert_count": len(alert_rows),
+        "alert_keys": alert_keys,
         "watch_runtime_hash": json_hash(runtime),
         "value_probe_status": state.get("value_probe_status"),
         "value_probe_rate_limit": state.get("value_probe_rate_limit"),
@@ -137,31 +145,52 @@ def protected_snapshot() -> dict[str, Any]:
     }
 
 
-def verify_protected(snapshot: Mapping[str, Any], control, *, allow_new_observations: bool = False) -> None:
+def verify_protected(
+    snapshot: Mapping[str, Any],
+    control,
+    *,
+    allow_new_observations: bool = False,
+    baseline: Mapping[str, Any] | None = None,
+) -> None:
     exact = {
         "user_watch_count": 2,
         "user_watches_hash": BASE_USER_WATCH_HASH,
-        "alerts_hash": BASE_ALERTS_HASH,
+        "probe_watch_count": 0,
         "watch_runtime_hash": BASE_RUNTIME_HASH,
     }
     for key, value in exact.items():
         if snapshot.get(key) != value:
             raise control.EvidenceGap(f"protected state drift: {key}={snapshot.get(key)!r}")
-    if allow_new_observations:
-        if int(snapshot.get("state_observation_count", -1)) < 130:
-            raise control.EvidenceGap("state observations regressed")
-        if int(snapshot.get("feed_observation_count", -1)) < 100:
-            raise control.EvidenceGap("feed observations regressed")
-    else:
+
+    minimum_state = 130
+    minimum_feed = 100
+    if int(snapshot.get("state_observation_count", -1)) < minimum_state:
+        raise control.EvidenceGap("state observations regressed below accepted floor")
+    if int(snapshot.get("feed_observation_count", -1)) < minimum_feed:
+        raise control.EvidenceGap("feed observations regressed below accepted floor")
+
+    if baseline is not None:
+        if int(snapshot.get("state_observation_count", -1)) < int(baseline.get("state_observation_count", -1)):
+            raise control.EvidenceGap("state observations regressed from acceptance baseline")
+        if int(snapshot.get("feed_observation_count", -1)) < int(baseline.get("feed_observation_count", -1)):
+            raise control.EvidenceGap("feed observations regressed from acceptance baseline")
+        before_alerts = set(str(x) for x in (baseline.get("alert_keys") or []))
+        current_alerts = set(str(x) for x in (snapshot.get("alert_keys") or []))
+        missing = sorted(before_alerts - current_alerts)
+        if missing:
+            raise control.EvidenceGap(f"pre-existing alerts disappeared: {missing!r}")
+    elif not allow_new_observations:
         expected = {
             "state_observation_count": 130,
             "state_observations_hash": BASE_STATE_OBS_HASH,
             "feed_observation_count": 100,
             "feed_observations_hash": BASE_FEED_OBS_HASH,
+            "alerts_hash": BASE_ALERTS_HASH,
         }
         for key, value in expected.items():
             if snapshot.get(key) != value:
-                raise control.EvidenceGap(f"protected observation baseline drift: {key}={snapshot.get(key)!r}")
+                raise control.EvidenceGap(f"protected historical baseline drift: {key}={snapshot.get(key)!r}")
+
     vp = snapshot.get("value_probe_status") or {}
     rl = snapshot.get("value_probe_rate_limit") or {}
     if vp.get("status") != "RATE_LIMITED" or vp.get("persistent_lock") is not True or rl.get("active") is not True:
@@ -1064,7 +1093,7 @@ def run(repo: Path, control) -> Mapping[str, Any]:
 
     installed_hashes_prepatch = verify_installed_files(control, prepatch=True)
     before = protected_snapshot()
-    verify_protected(before, control, allow_new_observations=False)
+    verify_protected(before, control, allow_new_observations=True)
     prepatch_stop_checks = verify_installed_stop_conditions(control, prepatch=True)
     evaluator_checks = evaluator_acceptance(control)
 
@@ -1248,7 +1277,7 @@ def run(repo: Path, control) -> Mapping[str, Any]:
             )
 
         mid = protected_snapshot()
-        verify_protected(mid, control, allow_new_observations=True)
+        verify_protected(mid, control, allow_new_observations=True, baseline=before)
 
         # Restart once while still pending and prove the queue, helper, exact-card
         # observations, server hotfix, and protected state survive.
@@ -1258,7 +1287,7 @@ def run(repo: Path, control) -> Mapping[str, Any]:
             f"http://127.0.0.1:{restart_port}/browser-watch-next.json"
         )
         after_restart = protected_snapshot()
-        verify_protected(after_restart, control, allow_new_observations=True)
+        verify_protected(after_restart, control, allow_new_observations=True, baseline=before)
         if queue_after_restart.get("schema") != "simple-evaluator-browser-work-queue-v1":
             raise control.ControlError("single-worktab queue did not survive dynamic-port restart")
         persisted = observations()
@@ -1293,7 +1322,7 @@ def run(repo: Path, control) -> Mapping[str, Any]:
         health_final = http_json(f"http://127.0.0.1:{final_port}/health.json")
         diagnostics_final = http_json(f"http://127.0.0.1:{final_port}/diagnostics.json")
         final_protected = protected_snapshot()
-        verify_protected(final_protected, control, allow_new_observations=True)
+        verify_protected(final_protected, control, allow_new_observations=True, baseline=before)
         if health_final.get("release_status") != "PRODUCTION_ACCEPTED":
             raise control.ControlError(f"accepted release did not survive restart: {health_final!r}")
         diag_release = diagnostics_final.get("release") or {}
