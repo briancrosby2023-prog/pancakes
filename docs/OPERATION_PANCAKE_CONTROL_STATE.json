@@ -11,12 +11,12 @@
     ],
     "rule": "Mission-specific checkpoints are evidence only. They may not redefine the project-wide mission or bypass this control state."
   },
-  "state_revision": 46,
+  "state_revision": 47,
   "status": "IN_PROGRESS",
   "active_mission": {
     "id": "OP-CATALOG-001",
     "objective": "Obtain a permitted current CFB27 exact-card catalog or delta, import missing exact-card versions without replacing older versions, and revalidate current Top 5 and Best Value results on unchanged scoring models.",
-    "next_action": "Deploy only the validated Revision46 acceptance-harness protected-baseline correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh full single-worktab acceptance. Revision45 cadence correction remains selected and issue104 remains terminal. Current live state legitimately contains 132 browser observations and one TARGET_PRICE_REACHED alert created before issue104's later cadence-harness failure; do not delete or reset them. Replace historical exact-start enforcement with fail-closed monotonic acceptance verification: accepted user watches, zero probe watches, watch-runtime hash and persistent RATE_LIMITED remain exact; state/feed observation counts may not fall below accepted floors or the captured starting counts; every pre-existing alert key must remain present while legitimate new alerts may be appended. Preserve all runtime/search/scoring locks. After physical acceptance, continue every OP-CATALOG-001 catalog criterion.",
+    "next_action": "Deploy only the validated Revision47 acceptance-harness final-release verifier correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh full single-worktab acceptance. Issue108 is terminal and must not be replayed. Issue108 reached the end of physical acceptance and failed only because the final verify_installed_files(prepatch=False) still expected pending RELEASE SHA 7f720e56... after write_release_accepted had correctly produced PRODUCTION_ACCEPTED RELEASE SHA b70dcc20.... Deterministic reconstruction proves b70dcc20... is exactly the canonical Helper1.4.16 release with status PRODUCTION_ACCEPTED. Keep pending verification before acceptance and require the accepted SHA/status only at the final post-acceptance verification. Preserve every prior runtime/search/cadence/protected-state/scoring lock. After physical acceptance, continue every OP-CATALOG-001 catalog criterion.",
     "acceptance_criteria": [
       {
         "id": "authorized-current-source",
@@ -75,7 +75,8 @@
         "OBSERVED: Clean HEAD 89e3d505 authority Revision 42 OP-CATALOG-001, preflight PASS, all acceptance false. Live gateway health READY matches. Next-action text predates terminal issue98; reconcile with newer checkpoint while retaining route and every lock.",
         "OBSERVED: Revision43 / 082ea3b1 is clean, deployed and READY; issue102 is terminal FAILED and rollback restored 130 observations, 2 user watches, persistent RATE_LIMITED and installed helper 1.4.13.",
         "OBSERVED: Revision44/acd21b1e is clean and READY; issue104 is terminal FAILED only at third cadence observation after first two live observations persisted successfully.",
-        "OBSERVED: Revision45/8b3c775c is clean and READY. Live protected state now has 132 observations and one target-price alert retained from issue104."
+        "OBSERVED: Revision45/8b3c775c is clean and READY. Live protected state now has 132 observations and one target-price alert retained from issue104.",
+        "OBSERVED: Revision46/c491068c is clean and READY; issue108 is terminal EVIDENCE_GAP at only the final installed RELEASE hash check after accepted release write."
       ]
     },
     "history": {
@@ -89,7 +90,8 @@
         "VERIFIED_HISTORY: Issue98 terminal FAILED after exact Jaleel #prices market-parsed NO_LISTING. User forbids replay of 98/99. Prepared search-readiness r43 invalidated and must remain unexecuted. All accepted and rejected locks retained.",
         "VERIFIED_HISTORY: Issues98/99/101/102 are terminal. Search-readiness r43 remains invalidated; normal rendered search, exact identity, dwell/cadence, persistent RATE_LIMITED and unchanged scoring remain selected.",
         "VERIFIED_HISTORY: Issue104 is terminal. Revision44 Windows state-write correction is proven live and retained; search-readiness remains invalidated.",
-        "VERIFIED_HISTORY: Issue104's first two browser observations and resulting target-price alert are legitimate persisted product data; they must not be reset merely because the later cadence acceptance check failed."
+        "VERIFIED_HISTORY: Issue104's first two browser observations and resulting target-price alert are legitimate persisted product data; they must not be reset merely because the later cadence acceptance check failed.",
+        "VERIFIED_HISTORY: Issue108 is terminal. Revisions44/45/46 fixes remain selected; accepted release state created during a failed later verifier must not be treated as a runtime defect."
       ]
     },
     "research": {
@@ -114,7 +116,8 @@
         "OBSERVED: process_payload replaces state with only schema updated_at observations watches; record_browser_observation uses its returned state. watch.js catches sendObservation without page diagnostic. Isolated recorded function and HTTP evidence persisted copied observations 130 to131. Exact live exception still unknown; no search behavior correction justified.",
         "OBSERVED: issue102 durable trace reached exact Jaleel NO_LISTING then repeatedly observation-send-error Failed to fetch. Isolated Revision43 HTTP path completes in 82.7ms. Restart Manager reports Desktop Commander holds app-state.json; brokered exact-byte os.replace on live app-state.json returns PermissionError WinError5 with unchanged SHA; r+b open succeeds.",
         "OBSERVED: Issue104 trace records Jaleel NO_LISTING at 07:46:49.973Z and Jelani FOUND 20000 at 07:47:02.597Z. Queue reconstruction at 07:47:02.900Z selects Jaleel WAITING 107.073s until 07:48:49.973Z. Acceptance uses stale second_url from the prior normal-search transition as cadence wait baseline, so wait_url_change can return immediately while current tab is already second exact-card #prices, starting a 60s timeout before due.",
-        "OBSERVED: verify_protected still requires historical 130-observation/zero-alert hashes at start and historical alerts_hash at all later checks. Current state is 132 observations plus one real alert, so Revision45 acceptance would fail before testing cadence and any successful FOUND watch may append another alert."
+        "OBSERVED: verify_protected still requires historical 130-observation/zero-alert hashes at start and historical alerts_hash at all later checks. Current state is 132 observations plus one real alert, so Revision45 acceptance would fail before testing cadence and any successful FOUND watch may append another alert.",
+        "OBSERVED: issue108 RELEASE SHA b70dcc20... deterministically equals the canonical Helper1.4.16 RELEASE.json with status PRODUCTION_ACCEPTED. Source writes acceptance + accepted release, restarts and verifies accepted health/diagnostics/acceptance, then incorrectly calls verify_installed_files(prepatch=False), which requires pending SHA 7f720e56...."
       ]
     },
     "capabilities": {
@@ -135,7 +138,8 @@
         "OBSERVED: two behavioral regressions RED on Revision42 and GREEN after bounded server preservation and watch.js diagnostic correction; Node syntax PASS.",
         "OBSERVED: Windows-safe r+b seek/write/truncate/flush/fsync under STATE_LOCK can bypass the observed replace-sharing denial without killing Desktop Commander; CREATE_NO_WINDOW can suppress acceptance PowerShell children.",
         "OBSERVED: Harness can capture current_selected_url immediately before cadence wait and preserve the existing 120-second scheduling proof without changing server/helper runtime.",
-        "OBSERVED: Acceptance can fail closed using the captured starting protected snapshot as a monotonic baseline: counts cannot regress, pre-existing alert keys cannot disappear, exact watches/runtime/RATE_LIMITED locks remain enforced, and new legitimate observations/alerts are allowed."
+        "OBSERVED: Acceptance can fail closed using the captured starting protected snapshot as a monotonic baseline: counts cannot regress, pre-existing alert keys cannot disappear, exact watches/runtime/RATE_LIMITED locks remain enforced, and new legitimate observations/alerts are allowed.",
+        "OBSERVED: Final installed-file verification can fail closed on a distinct deterministic ACCEPTED_RELEASE_SHA256/status while retaining pending verification before acceptance."
       ]
     }
   },
@@ -579,28 +583,39 @@
         "Queue at 07:47:02.900Z: Jaleel WAITING 107.073s, due 07:48:49.973Z.",
         "Source shows cadence wait uses second_url captured before the second exact-card page loaded."
       ]
+    },
+    {
+      "id": "r46-final-release-verifier",
+      "status": "RESOLVED",
+      "conflict": "Issue108 reached accepted release state but final file verification compared RELEASE.json to the pending-release hash.",
+      "resolution": "Keep pending hash/status verification before acceptance; add a distinct accepted=True final verification requiring deterministic PRODUCTION_ACCEPTED SHA b70dcc20... and status PRODUCTION_ACCEPTED.",
+      "evidence": [
+        "Issue108 receipt reports RELEASE SHA b70dcc20....",
+        "Deterministic reconstruction from canonical Helper1.4.16 release plus status PRODUCTION_ACCEPTED yields exactly b70dcc20....",
+        "Source order writes accepted release and verifies accepted health/diagnostics before the incorrect pending-hash final check."
+      ]
     }
   ],
   "current_decision": {
-    "decision_id": "OP-CATALOG-001-D36",
+    "decision_id": "OP-CATALOG-001-D37",
     "mission_id": "OP-CATALOG-001",
-    "proposed_action": "Replace stale historical protected-state exact hashes in the acceptance harness with a captured monotonic starting baseline while retaining exact invariant locks.",
+    "proposed_action": "Distinguish pending and accepted RELEASE.json states in the final acceptance verifier only.",
     "obstacle_classification": "IMPLEMENTATION_PROBLEM",
     "history_refs": [
-      "Issue104 terminal; valid observations/alert retained; Revision45 cadence fix retained."
+      "Issue108 terminal; Revisions44/45/46 retained."
     ],
     "capabilities_checked": [
-      "live protected_snapshot",
-      "alerts.json",
+      "issue108 receipt",
+      "deterministic release hash reconstruction",
       "acceptance source",
       "SOPDecisionGateway and ControlledToolBroker"
     ],
     "alternatives_considered": [
-      "Reset valid state rejected.",
-      "Refresh hashes each run rejected.",
-      "Monotonic baseline selected."
+      "Change release writer rejected.",
+      "Remove final verification rejected.",
+      "State-specific final accepted verification selected."
     ],
-    "selected_reason": "Current exact-start assertions are already provably stale before a new run.",
+    "selected_reason": "The accepted file is correct; the final verifier's expected state is wrong.",
     "changes_mission": false,
     "mission_change_reason": "",
     "mission_change_evidence": [],
@@ -1570,13 +1585,31 @@
       ],
       "result": "Revision46 candidate selected for focused validation.",
       "next": "Publish/merge/rebind Revision46 and run one fresh acceptance."
+    },
+    {
+      "decision_id": "OP-CATALOG-001-D37",
+      "decision": "Fix only final accepted RELEASE verification after issue108.",
+      "evidence": [
+        "b70dcc20... is exact PRODUCTION_ACCEPTED Helper1.4.16 release hash.",
+        "Final verifier still expects pending 7f720e56... after accepted write."
+      ],
+      "history": [
+        "Issue108 terminal; prior runtime/harness fixes retained."
+      ],
+      "alternatives": [
+        "Release writer change rejected.",
+        "Verification removal rejected.",
+        "Accepted-state verifier selected."
+      ],
+      "result": "Revision47 candidate selected for focused validation.",
+      "next": "Publish/merge/rebind exact Revision47 and run one fresh acceptance; then continue catalog mission."
     }
   ],
   "blocker": null,
   "handoff": {
     "mission_id": "OP-CATALOG-001",
-    "state_revision": 46,
-    "next_action": "Deploy only the validated Revision46 acceptance-harness protected-baseline correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh full single-worktab acceptance. Revision45 cadence correction remains selected and issue104 remains terminal. Current live state legitimately contains 132 browser observations and one TARGET_PRICE_REACHED alert created before issue104's later cadence-harness failure; do not delete or reset them. Replace historical exact-start enforcement with fail-closed monotonic acceptance verification: accepted user watches, zero probe watches, watch-runtime hash and persistent RATE_LIMITED remain exact; state/feed observation counts may not fall below accepted floors or the captured starting counts; every pre-existing alert key must remain present while legitimate new alerts may be appended. Preserve all runtime/search/scoring locks. After physical acceptance, continue every OP-CATALOG-001 catalog criterion.",
+    "state_revision": 47,
+    "next_action": "Deploy only the validated Revision47 acceptance-harness final-release verifier correction through SOPDecisionGateway -> ControlledToolBroker, then run one fresh full single-worktab acceptance. Issue108 is terminal and must not be replayed. Issue108 reached the end of physical acceptance and failed only because the final verify_installed_files(prepatch=False) still expected pending RELEASE SHA 7f720e56... after write_release_accepted had correctly produced PRODUCTION_ACCEPTED RELEASE SHA b70dcc20.... Deterministic reconstruction proves b70dcc20... is exactly the canonical Helper1.4.16 release with status PRODUCTION_ACCEPTED. Keep pending verification before acceptance and require the accepted SHA/status only at the final post-acceptance verification. Preserve every prior runtime/search/cadence/protected-state/scoring lock. After physical acceptance, continue every OP-CATALOG-001 catalog criterion.",
     "must_read": [
       "docs/OPERATION_PANCAKE_CONTROL_STATE.json",
       "docs/OPERATION_PANCAKE_WORKING_PROTOCOL.md",
